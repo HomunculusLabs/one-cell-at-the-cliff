@@ -227,7 +227,7 @@ print('(6) L153 fold: silW rebase + halves + pooled bases match l150 stored json
 r154 = json.loads((P / 'banc/l154/results_l154.json').read_text())
 assert (r154['n_pos'], r154['n_neg'], r154['n_zero']) == (6, 10, 0)
 assert abs(r154['p_two_sided'] - 0.4545) < 5e-5 and r154['direction_met'] is False
-assert '6+/10− of 16, p=.4545' in draft and 'NOT MET' in draft_ws, (
+assert '6+/10− of 16, p=.4545' in draft and 'Not met' in draft_ws, (
     'L154 negative-direction wording drift')
 # anchor re-draw quote (.70/.32 on -> .45/1.09 off); house style has no
 # leading zero, so assert the literal + the rounding numerically
@@ -301,7 +301,7 @@ assert 'census is queued (L156)' not in draft, 'superseded clause survived'
 # trace-level forms survive only as the disclosed de-duplication note, so
 # the literal gate follows the new wording (section (19b) re-derives both).
 for lit in ('518 of 518 and 361 of 500 [l156.pooled]',
-            '449 of 449 UNIQUE SEEDS', '348 of 433 unique seeds',
+            '449 of 449 unique seeds', '348 of 433 unique seeds',
             'median .100 Hz', 'linear detrend in every',
             'a real slow oscillation rather than', 'stimulus-locked one'):
     assert lit in draft, ('l156 quote drift', lit)
@@ -596,13 +596,18 @@ assert _nb['F3_fully_rederived'] == dict(K=73, carrier_rank=21, twin_rank=33)
 # locators that used to carry the bullet MARKER are re-pointed at the prose
 # form ANCHORED TO A LINE START (equally strong: the labelled paragraph must
 # still open its own line; it can no longer match mid-sentence either).
-_m1 = re.search(r'(?m)^DATA FLOOR:', draft)
+_m1 = re.search(r'(?m)^Data floor:', draft)
+# (b4-iii-c-i): the §4 label is now the de-emphasised prose form. STRICTLY
+# STRONGER than a bare re-point: the retired all-caps form is asserted GONE,
+# so the gate cannot pass on either spelling.
+assert not re.search(r'(?m)^DATA FLOOR:', draft), (
+    '(b4-iii-c-i) the retired all-caps §4 label survives')
 _m2 = re.search(r'(?m)^Wet-lab predictions', draft)
 assert _m1 and _m2 and _m1.start() < _m2.start(), (
     'l169b §4 locators lost their line-start prose form')
 _s4txt = draft[_m1.start():_m2.start()]
 _nw4 = lambda s: re.sub(r'\s+', ' ', s)
-for _lit in ('[l169b.forms]', 'fully RE-DERIVED, not\n  frozen',
+for _lit in ('[l169b.forms]', 'fully re-derived, not\n  frozen',
              'K (77 \u2192 73)',
              'five cells out, one in', 'ranks (21 and 33)',
              're-ordering rather than\n  turnover'):
@@ -673,7 +678,7 @@ assert nums['l169b2.lat_descriptive']['v']['meanL']['f4wA'] == 0.698
 # §4 (b2) prose contract — every quoted value a draft literal
 for _lit in ('[l169b2.dyn]', '[l169b2.lat_descriptive]',
              'kR 0/16', 'meanR .043/.081/.082', 'upper bound .194',
-             'cutng25 SUPER 16/16 meanR .754', 'cutwA PARTIAL 3/16 .371',
+             'cutng25 super 16/16 meanR .754', 'cutwA partial 3/16 .371',
              '\u2212.001 paired, 8 up / 8 down',
              'G2_no_transfer', 'f4wA meanL .698, kL 16/16',
              'f4ng .289, paired \u2212.409, 16/16 seeds down',
@@ -1492,7 +1497,7 @@ for _lit in ('| cutwA (k=24 base) | 72/258 | [.228,.337] | .404 | [.385,.425] | 
              'NOISE SEED of ONE FIXED NETWORK'):
     assert _lit in _s29, ('(19g) §2.9 literal missing', repr(_lit))
 _lim172 = draft[draft.index('## 4. Limitations'):]
-for _lit in ('UNIT OF INFERENCE', '449 of 449 UNIQUE SEEDS',
+for _lit in ('Unit of inference', '449 of 449 unique seeds',
              '348 of 433 unique seeds', 'removes 69 and 67 repeat observations',
              '.722 to .804'):
     assert _lit in _lim172, ('(19g) §4 literal missing', repr(_lit))
@@ -2059,6 +2064,27 @@ assert 'LANE-RESEARCH' not in _now_b3b, \
     '(23) the internal-artefact reference returned to §1-§2.3'
 assert 'novelty sweep run on' in re.sub(r'\s+', ' ', _now_b3b), \
     '(23) the authored replacement for the artefact reference is missing'
+# L174 (b4-iii-c-i) RE-POINT. The (b3b-i) freeze predates the reflow, so its
+# offsets do NOT align with the live span (the first attempt asserted equal
+# span lengths and failed honestly — recorded, not loosened). The de-emphasis
+# is a CASE-ONLY edit, so each still-missing literal is re-pointed to its
+# CASE-INSENSITIVE image and the gate asserts three things per literal: the
+# image is present case-insensitively (words and adjacency intact — exactly
+# what this literal class protects), the retired all-caps form is ABSENT, and
+# the declared exception set is exactly these four. Nothing about the claim is
+# weakened: section (30) proves the whole draft changed by CASE ALONE, so a
+# reworded claim cannot hide inside a case-insensitive match.
+_low_b3b = _now_b3b.lower()
+_case_b4c = []
+for _s in list(_miss_b3b):
+    assert _s.lower() in _low_b3b, \
+        ('(23) literal lost for a reason other than case', _s)
+    assert _s not in _now_b3b, ('(23) retired all-caps literal survives', _s)
+    _case_b4c.append(_s)
+    _miss_b3b.remove(_s)
+assert sorted(_case_b4c) == ['(1) at gain-certified MATCHED', 'MATCH',
+                             'STIMULUS-SET', 'individually NECESSARY'], \
+    ('(23) the declared case-only exception set moved', sorted(_case_b4c))
 assert not _miss_b3b, '(23) literal(s) lost from §1-§2.3: %r' % _miss_b3b[:4]
 
 # P3: the scramble sub-block (table + three numbered findings) is untouched.
@@ -2577,16 +2603,16 @@ for _m in re.finditer(r'(?m)^- (.+)$', _pre_b4):
     assert ('- ' + _m.group(1)) not in _now_b4, \
         '(26) bullet opener survived: %r' % _m.group(1)[:56]
 for _frag in ('Rate fidelity: no spikes, no per-cell kinetics',
-              'Frequency claims are BAND-RELATIVE',
+              'Frequency claims are band-relative',
               'Readout is simulated motor-pool structure duty',
               'The transition interior is gain-regime-dependent',
-              'UNIT OF INFERENCE: every interval in this paper',
+              'Unit of inference: every interval in this paper',
               'Arm depth is unequal by construction',
-              'DATA FLOOR: the BANC v626 connections release',
-              'Wet-lab predictions are NOT derived here.'):
+              'Data floor: the BANC v626 connections release',
+              'Wet-lab predictions are not derived here.'):
     assert _frag in _ws_b4, '(26) de-dashed opener missing: %r' % _frag
 for _frag in ('There is a single specimen per connectome (BANC v626 one female;',
-              'OPERATING-POINT PROXIMITY carries a convergent disclosure from the'):
+              'Operating-point proximity carries a convergent disclosure from the'):
     assert _frag in _ws_b4, '(26) authored opener missing: %r' % _frag
 
 # T7: the sentence splits. Each declared (old -> new) edit must be ABSENT in
@@ -2594,8 +2620,8 @@ for _frag in ('There is a single specimen per connectome (BANC v626 one female;'
 # the whole span must be unchanged apart from the connective set.
 _SPL_B4 = [('n = 16) and the registered R-side cliff',
             'n = 16). The registered R-side cliff'),
-           ('cutwA PARTIAL 3/16 .371), and the f4ng-vs-f4tw',
-            'cutwA PARTIAL 3/16 .371). The f4ng-vs-f4tw'),
+           ('cutwA partial 3/16 .371), and the f4ng-vs-f4tw',
+            'cutwA partial 3/16 .371). The f4ng-vs-f4tw'),
            ('quantifies the pattern: in the l65-baseline arm',
             'quantifies the pattern. In the l65-baseline arm'),
            ('one (\u00a72.8) \u2014 while the intact closure',
@@ -2605,7 +2631,7 @@ _SPL_B4 = [('n = 16) and the registered R-side cliff',
            ('strongest members 36/36), while the Ti pools',
             'strongest members 36/36). The Ti pools'),
            ('Jaccard .9231 \u2014 while the TWIN selection',
-            'Jaccard .9231. The TWIN selection'),
+            'Jaccard .9231. The twin selection'),
            ('rather than weight: in that preregistered screen',
             'rather than weight. In that preregistered screen'),
            ('thresholds of 10\u201315, and the stated cause',
@@ -2630,7 +2656,7 @@ _OPEN_B4 = [('- Single specimen per connectome (BANC v626 one female; '
              'There is a single specimen per connectome (BANC v626 one '
              'female; MaleCNS one male);'),
             ('- OPERATING-POINT PROXIMITY, with a convergent disclosure from the',
-             'OPERATING-POINT PROXIMITY carries a convergent disclosure from the')]
+             'Operating-point proximity carries a convergent disclosure from the')]
 # (b4-iii-b) adds its ONE declared §4 relabel to the declared-edit list, so
 # the T7 strong form still runs end to end from the (b4-i) pre-image.
 _REL_B4 = [('(two fresh batches, B33/B34)', '(two fresh batches, G/H)')]

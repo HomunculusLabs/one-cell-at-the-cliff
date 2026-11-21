@@ -1,0 +1,70 @@
+owned occurrences in slice: 64
+by class: {'STRIP_EMPHASIS': 60, 'CLASS_LABEL_lowercase': 3, '<UNCLASSIFIED>': 1}
+sentence-initial (first letter kept): 5
+
+  L  507 MATCHED              -> matched              | (1) at gain-certified MATCHED operating points, cohort removal collapses
+  L  510 ONE                  -> one                  | dose curve. (2) The transition step is carried by ONE cell's IDENTITY, not its
+  L  510 IDENTITY             -> identity             | dose curve. (2) The transition step is carried by ONE cell's IDENTITY, not its
+  L  511 INTERMEDIATE         -> intermediate         | removal mass (mass-twin XOR: the twin lands INTERMEDIATE at
+  L  514 SUFFICIENT           -> sufficient           | SUFFICIENT, not unique, and set-dependently so: of seven carrier-free cohorts
+  L  516 EDGE                 -> edge                 | do not. The carrier's causal footprint is its EDGE SET, and its own firing
+  L  516 SET                  -> set                  | do not. The carrier's causal footprint is its EDGE SET, and its own firing
+  L  518 ACTIVITY             -> activity             | carrier's own ACTIVITY is substrate-gated: not detectably moving on the intact
+  L  520 BAND-RELATIVE        -> band-relative        | [l172.pooled]). (4) Frequency claims are BAND-RELATIVE, and the sub-band line
+  L  521 STIMULUS-SET         -> stimulus-set         | that prompted the rule is STIMULUS-SET: the drive envelope's own spectrum
+  L  539 DOES                 -> does                 | mirrors at rate fidelity. The open question has moved from DOES wiring matter
+  L  540 WHICH                -> which                | to WHICH wiring decisions matter — at what granularity (statistics vs exact
+  L  558 ORDER                -> order                | ORDER is conserved. FeCO proprioceptive input modulates frequency and
+  L  560 FLEXOR               -> flexor               | IN12B003 strongly drives tibia-FLEXOR motor neurons that the modeling triad
+^ L  562 AMENDMENT            -> Amendment            | substrate, the same pools our transition gates. AMENDMENT (their signed
+  L  564 OFF                  -> off                  | prediction and ran it at rate fidelity (whole-run mech-OFF, fresh batch H,
+^ L  565 NOT                  -> Not                  | paired seeds): NOT MET — dominant-frequency deltas go 6+/10− of 16, p=.4545
+  L  565 MET                  -> met                  | paired seeds): NOT MET — dominant-frequency deltas go 6+/10− of 16, p=.4545
+  L  568 ENTRAINER            -> entrainer            | sinusoid was the ENTRAINER, not a throttle. The STRUCTURE axis matches the
+  L  568 STRUCTURE            -> structure            | sinusoid was the ENTRAINER, not a throttle. The STRUCTURE axis matches the
+  L  579 SUFFICIENCY          -> sufficiency          | SUFFICIENCY on the hand-curated 148-neuron walking circuit of [4], and it does
+  L  580 NECESSARY            -> necessary            | report that the circuit's three interneurons are individually NECESSARY — not
+  L  593 SUFFICIENCY          -> sufficiency          | (c) Wet-lab single-neuron work anchors single-cell SUFFICIENCY in the animal:
+  L  637 EMERGES              -> emerges              | identity step EMERGES in an UNCURATED bulk-extracted subnet and survives a
+  L  637 UNCURATED            -> uncurated            | identity step EMERGES in an UNCURATED bulk-extracted subnet and survives a
+  L  638 MASS-                -> mass-                | MASS-matched twin control, with the carrier's own removal mass 9.72× below any
+  L 1370 MODEL                -> model                | Rate fidelity: no spikes, no per-cell kinetics; the claim is about the MODEL
+  L 1373 BAND-RELATIVE        -> band-relative        | Frequency claims are BAND-RELATIVE, and the sub-band line is STIMULUS-SET
+  L 1373 STIMULUS-SET         -> stimulus-set         | Frequency claims are BAND-RELATIVE, and the sub-band line is STIMULUS-SET
+  L 1378 BELOW                -> below                | often sits BELOW it (16/16 on-drive vs 11/16 mech-off seeds; untruncated mean
+  L 1381 UNIQUE               -> unique               | 449 of 449 UNIQUE SEEDS (Wilson lb .992) at a stable median .100 Hz that
+  L 1381 SEEDS                -> seeds                | 449 of 449 UNIQUE SEEDS (Wilson lb .992) at a stable median .100 Hz that
+  L 1402 NAME                 -> name                 | Our cross-connectome comparisons also join cell types by type NAME, a
+^ L 1411 OPERATING-POINT      -> Operating-point      | OPERATING-POINT PROXIMITY carries a convergent disclosure from the nearest
+  L 1411 PROXIMITY            -> proximity            | OPERATING-POINT PROXIMITY carries a convergent disclosure from the nearest
+^ L 1424 UNIT                 -> Unit                 | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1424 OF                   -> of                   | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1424 INFERENCE            -> inference            | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1424 NOISE                -> noise                | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1424 SEEDS                -> seeds                | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1424 ONE                  -> one                  | UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+  L 1425 FIXED                -> fixed                | FIXED NETWORK — one graph, one bisected gain, one drive protocol; the seed
+  L 1425 NETWORK              -> network              | FIXED NETWORK — one graph, one bisected gain, one drive protocol; the seed
+  L 1438 SINGLE-BATCH         -> single-batch         | motor+in combo remains SINGLE-BATCH at n=16) [l172.pooled]. Comparisons
+^ L 1442 DATA                 -> Data                 | DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair-level
+  L 1442 FLOOR                -> floor                | DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair-level
+  L 1442 IMPLICIT             -> implicit             | DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair-level
+  L 1444 ROWS                 -> rows                 | below; the 574,733 one-synapse per-neuropil ROWS exist only as intra-pair
+  L 1448 DETECTION            -> detection            | Kopel-class caveat that does apply is about DETECTION rather than weight. In
+  L 1455 ADMISSIBLE           -> admissible           | as doing so. Under the strongest ADMISSIBLE floor (f4: keep pairs with ≥ 4
+  L 1457 CARRIER              -> carrier              | CARRIER is robust — rank 25 → 21 (inside the 19–29 window), 69/80 edges
+  L 1458 TWIN                 -> twin                 | survive, heavy-cohort Jaccard .9231. The TWIN selection is floor-3-contingent
+  L 1461 RE-DERIVED           -> re-derived           | is fully RE-DERIVED, not frozen: K (77 → 73), heavy-cohort membership
+  L 1463 SET                  -> set                  | [l169b.forms]. Freezing the cohort SET and re-ordering alone already
+  L 1465 STATIC               -> static               | re-ordering rather than turnover [l169b.forms]. The f4 bound is STATIC ONLY:
+  L 1465 ONLY                 -> only                 | re-ordering rather than turnover [l169b.forms]. The f4 bound is STATIC ONLY:
+  L 1469 NOT                  -> not                  | batch, n = 16). The registered R-side cliff does NOT transfer: all three f4
+  L 1471 SAME                 -> same                 | base-substrate arms reproduce on the SAME seeds
+  L 1472 SUPER                -> super                | (cutng25 SUPER 16/16 meanR .754, cutwA PARTIAL 3/16 .371). The f4ng-vs-f4tw
+  L 1472 PARTIAL              -> partial              | (cutng25 SUPER 16/16 meanR .754, cutwA PARTIAL 3/16 .371). The f4ng-vs-f4tw
+  L 1475 STATIC               -> static               | property of the STATIC ladder, not of the dynamics on the floored substrate —
+  L 1478 LEFT                 -> left                 | claim: on the floored substrate the structure moves to the LEFT side
+  L 1480 COSTS                -> costs                | COSTS structure (f4ng .289, paired −.409, 16/16 seeds down) more than its
+  L 1484 NOT                  -> not                  | Wet-lab predictions are NOT derived here.
+
+wrote /home/t3rpz/critters/peabrain-lab/banc/l174b4iiic/plan_i.json

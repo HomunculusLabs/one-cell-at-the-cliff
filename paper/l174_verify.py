@@ -149,14 +149,14 @@ print("(4b) CERT-1 re-resolution of the pre-existing entries: %d/%d MATCH%s"
 # ------------------------------------------------------------------ (5)
 REQUIRED = [
     "ApproxBrain [6] is the closest formal neighbour",
-    "individually NECESSARY",
+    "individually necessary",
     "over 32 held-out parameter draws",
     "necessity is",
     "compared against other subsets rather than against a cell of",
     "matched removal mass",
     "FlyHack [5] stress-tests a connectome-constrained visual",
     "only 25 of 50 ensemble",
-    "Kopel-class caveat that does apply is about DETECTION rather than",
+    "Kopel-class caveat that does apply is about detection rather than",
     "only 22% of",
     "they cannot bound attachment completeness",
     "Walking-CPG field context (Sapkal et al. [34])",

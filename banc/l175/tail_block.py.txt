@@ -1,0 +1,74 @@
+log(f"rollouts done {time.time()-t0:.0f}s")
+if MODE == "work":
+    atomic_json(f"{OUT}/done_w{WID}.json", dict(
+        wid=WID, nw=NW, arms=["cutwA"] + MY_ARMS, seeds=SEEDS,
+        gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+        track=TRACK, dm=DM, secs=time.time() - t0))
+    log(f"worker {WID} DONE {time.time()-t0:.0f}s")
+    sys.exit(0)
+
+# ---------------- census tail: full-closure x_mean + twin selection -------
+assert MODE == "census"
+assert json.load(open(ANCH_PATH))["c0a_pass"], "census C0A not PASS (VOID)"
+xm3 = np.stack([XM[f"xmean_cutwA_{s}"].astype(np.float64) for s in CENSUS_SEEDS])
+assert xm3.shape == (3, n_cutk["cutwA"])
+xbar = xm3.mean(0)
+drive_loc = xbar * OW_EFF[gi_wA]
+atomic_savez(f"{OUT}/census_k24.npz", dict(
+    gi=gi_wA.astype(np.int64), root_id=ids_all[gi_wA],
+    seeds=np.array(CENSUS_SEEDS), x_mean=xm3, x_mean_3seed=xbar,
+    out_w_raw=OW_RAW[gi_wA], out_w_eff=OW_EFF[gi_wA],
+    eff_sign=EFF_SIGN[gi_wA], delivered_drive=drive_loc,
+    g_cutwA=np.float64(GAIN["cutwA"]), win=np.int64(WIN),
+    window_gi=np.array(WIN_CELLS), window_rank=np.array(WIN_RANKS)))
+_lc = int(loc_wA[GI_CARRIER])
+d_car, m_car, x_car = float(drive_loc[_lc]), float(OW_RAW[GI_CARRIER]), float(xbar[_lc])
+assert d_car > 0, "carrier delivers zero drive on the k=24 base (STOP)"
+
+
+def select(pool_mask, label):
+    cand = np.where(pool_mask[gi_wA])[0]            # local idx on the base
+    d = drive_loc[cand]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        score = np.where(d > 0, np.abs(np.log(d / d_car)), np.inf)
+        tie = np.where(OW_RAW[gi_wA[cand]] > 0,
+                       np.abs(np.log(OW_RAW[gi_wA[cand]] / m_car)), np.inf)
+    o = np.lexsort((gi_wA[cand], tie, score))       # score, then tie, then gi
+    rows = []
+    for j in o[:6]:
+        g = int(gi_wA[cand[j]])
+        ci = cell_info(g)
+        ci.update(x_mean=float(xbar[cand[j]]),
+                  x_mean_seeds=[float(v) for v in xm3[:, cand[j]]],
+                  delivered_drive=float(d[j]), drive_ratio=float(d[j] / d_car),
+                  abs_log_drive_ratio=float(score[j]),
+                  mass_ratio=float(OW_RAW[g] / m_car),
+                  abs_log_mass_ratio=float(tie[j]))
+        rows.append(ci)
+    log(f"SELECT {label}: pool {len(cand)} | pick gi {rows[0]['gi']} "
+        f"{rows[0]['super_class']}/{rows[0]['cell_type']}/{rows[0]['side']} "
+        f"x {rows[0]['x_mean']:.4f} w_eff {rows[0]['out_w_eff']:.2f} "
+        f"drive ratio {rows[0]['drive_ratio']:.5f} sign {rows[0]['eff_sign']:+.0f}")
+    return dict(pool_n=int(len(cand)), n_positive_drive=int((d > 0).sum()),
+                pick=rows[0], runners_up=rows[1:6])
+
+
+car = cell_info(GI_CARRIER)
+car.update(x_mean=x_car, x_mean_seeds=[float(v) for v in xm3[:, _lc]],
+           delivered_drive=d_car)
+_l319 = int(loc_wA[319])
+tw = cell_info(319)
+tw.update(x_mean=float(xbar[_l319]), x_mean_seeds=[float(v) for v in xm3[:, _l319]],
+          delivered_drive=float(drive_loc[_l319]))
+sel = dict(rule="argmin |log(drive_cand/drive_carrier)|, tie-break smaller "
+                "|log(mass_cand/mass_carrier)| (mass = raw out|w| onto the "
+                "k=24-base closure), then gi; drive = x_mean(k=24 base, "
+                "3-seed mean) x |Wb| column abs-sum (PREREG)",
+           census_seeds=CENSUS_SEEDS, carrier=car, mass_twin_319=tw,
+           dmA=select(POOL_A, "dmA (primary, any class)"),
+           dmC=select(POOL_C, "dmC (secondary, pure-projector DN, carrier sign)"),
+           active_frac_k24=float((xbar > 0.05).mean()))
+atomic_json(f"{OUT}/selection.json", sel)
+log(f"census carrier x {x_car:.4f} drive {d_car:.3f} | twin319 x "
+    f"{tw['x_mean']:.5f} drive {tw['delivered_drive']:.4f} | "
+    f"census_k24.npz + selection.json written | {time.time()-t0:.0f}s")

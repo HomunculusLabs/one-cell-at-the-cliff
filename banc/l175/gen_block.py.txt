@@ -1,0 +1,253 @@
+# ======================= L175 GEN BLOCK (additive) =======================
+# Generic single-cell arms on the cutwA (k=24) base: wA + ONE extra cell.
+OUT = "l175"
+n_new_total = int(keep_new.sum())
+total_mass = float(cell_mass.sum())
+ngmass = cell_mass[order[:K]][~is_glut[heav]]      # ng_desc order (l131_static form)
+WIN_CELLS = [int(x) for x in ng_desc[24:58]]       # ranks 25..58
+WIN_RANKS = list(range(25, 59))
+assert len(WIN_CELLS) == 34 and len(set(WIN_CELLS)) == 34
+# --- window / id pins re-derived from stored tables (never prose) ---
+assert WIN_CELLS[0] == GI_CARRIER == S131["rank_ids"]["rank25"] == 1110
+assert WIN_CELLS[1] == S131["rank_ids"]["rank26"] == 319
+assert float(ngmass[24] / total_mass) == S131["rank_mass"]["rank25"]
+assert float(ngmass[25] / total_mass) == S131["rank_mass"]["rank26"]
+_r135 = json.load(open("l135/results_l135.json"))
+assert _r135["xor"]["p2"]["rank25_id"] == 1110
+assert _r135["xor"]["p2"]["rank26_id"] == 319
+assert _r135["xor"]["p2"]["m25"] == float(ngmass[24] / total_mass)
+assert _r135["xor"]["p2"]["m26"] == float(ngmass[25] / total_mass)
+assert sorted(int(x) for x in ng_desc) == S121["ngladder"]["k58"]["drop_ids"]
+assert [int(x) for x in np.sort(ng_desc[:24])] == \
+    S131["prefix"]["cutwA"]["drop_ids"]
+assert all(ngmass[i] >= ngmass[i + 1] for i in range(57)), "ng not mass-desc"
+
+# --- out-weights onto the k=24-base closure (emask_wA = the cutwA edge set) ---
+_ev = vals_all[emask_wA]
+_es = src_all[emask_wA]
+OW_RAW = np.zeros(Nall)
+np.add.at(OW_RAW, _es, np.abs(_ev))
+OW_EFF = np.zeros(Nall)          # model-true |Wb| column sum (inhibitory x BETA)
+np.add.at(OW_EFF, _es, np.abs(_ev) * np.where(_ev < 0, BETA, 1.0))
+OW_N = np.zeros(Nall, np.int64)
+np.add.at(OW_N, _es, 1)
+OW_MOT = np.zeros(Nall)          # raw |w| onto motor targets only
+_em = tier_of_dst[dst_all[emask_wA]] == "motor_other"
+np.add.at(OW_MOT, _es[_em], np.abs(_ev[_em]))
+EFF_SIGN = np.where(is_glut, -np.abs(sign_all), sign_all).astype(np.float64)
+_c1 = json.load(open("l169c/static.json"))["P1_carrier"]
+assert _c1["gi"] == GI_CARRIER
+assert int(OW_N[GI_CARRIER]) == _c1["out_edges"] == 80, int(OW_N[GI_CARRIER])
+assert abs(float(OW_RAW[GI_CARRIER]) - _c1["out_mass"]) < 1e-9, \
+    float(OW_RAW[GI_CARRIER])
+# matrix-level cross-check: OW_EFF == |Wb_wA| column abs-sum (float32 tol)
+_colsum = np.zeros(n_cutk["cutwA"])
+np.add.at(_colsum, Wb_wA.col_indices().numpy(), np.abs(Wb_wA.values().numpy()))
+for _g in (GI_CARRIER, 319):
+    assert abs(_colsum[loc_wA[_g]] - OW_EFF[_g]) < 1e-3 * max(1.0, OW_EFF[_g]), _g
+assert np.allclose(_colsum, OW_EFF[gi_wA], rtol=1e-4, atol=1e-3)
+
+# --- prior-arm cells (stored KEYS, never memory) ---
+USED = set()
+_used_files = 0
+for _f in sorted(glob.glob("l*/raw_l*.npz")):
+    if _f.startswith("l175/"):
+        continue
+    _z = np.load(_f)
+    _used_files += 1
+    for _k in _z.files:
+        if _k.endswith("_drop") or _k in ("silrand_ids", "clamp_id"):
+            USED.update(int(x) for x in np.atleast_1d(_z[_k]).ravel())
+_hom = json.load(open("l169c/static.json"))["P2_hom_identity"]["identity"]["gi"]
+assert _hom == 928
+USED.add(int(_hom))
+assert GI_CARRIER in USED and 319 in USED and all(int(x) in USED for x in ng_desc[:29])
+
+# --- fresh-seed absence: any-key-endswith scan over EVERY stored npz ---
+_seedre = re.compile(r"_(\d+)\.npy$")
+_fresh = set(B39) | set(CENSUS_SEEDS[2:])
+N_NPZ_SCANNED = 0
+for _f in sorted(glob.glob("**/*.npz", recursive=True)):
+    if _f.startswith("l175/"):
+        continue
+    N_NPZ_SCANNED += 1
+    for _n in zipfile.ZipFile(_f).namelist():
+        _m = _seedre.search(_n)
+        assert not (_m and int(_m.group(1)) in _fresh), \
+            ("fresh seed collides (STOP)", _f, _n)
+
+# --- candidate pools for the drive-matched twin (PREREG selection rule) ---
+in_wA = keep_cutk["cutwA"]
+is_motor_g = np.zeros(Nall, bool)
+is_motor_g[mg_all] = True
+is_dng100_g = np.zeros(Nall, bool)
+is_dng100_g[dng100_all] = True
+is_used_g = np.zeros(Nall, bool)
+is_used_g[sorted(USED)] = True
+is_ng58_g = np.zeros(Nall, bool)
+is_ng58_g[ng_desc] = True
+POOL_A = in_wA & ~is_ng58_g & ~is_used_g & ~is_motor_g & ~is_dng100_g
+POOL_C = POOL_A & in_new_cell & (EFF_SIGN == EFF_SIGN[GI_CARRIER])
+_ann1 = ann.drop_duplicates("gi").set_index("gi")
+
+
+def cell_info(g):
+    g = int(g)
+    r = _ann1.loc[g] if g in _ann1.index else None
+    return dict(
+        gi=g, root_id=str(int(ids_all[g])),
+        super_class=(str(r["super_class"]) if r is not None else ""),
+        cell_type=(str(r["cell_type"]) if r is not None else ""),
+        side=(str(r["side"]) if r is not None else ""),
+        eff_sign=float(EFF_SIGN[g]), is_glut=bool(is_glut[g]),
+        in_dn_new=bool(in_new_cell[g]), is_mech=bool(mech_mask[g]),
+        lineage_mass_share=float(outmass[g] / total_mass),
+        out_w_raw=float(OW_RAW[g]), out_w_eff=float(OW_EFF[g]),
+        out_w_motor=float(OW_MOT[g]), out_edges=int(OW_N[g]))
+
+
+GEN = {}
+GEN_ARMS = []
+
+
+def add_arm(name, extra_gi):
+    """wA + one extra cell, through the lineage build()/wb()/pools_for()."""
+    extra_gi = int(extra_gi)
+    assert name not in GEN and name not in WB
+    assert in_wA[extra_gi], (name, "cell absent from the k=24 base (STOP)")
+    assert not is_motor_g[extra_gi] and not is_dng100_g[extra_gi], name
+    drop = np.sort(np.concatenate([ng_desc[:24], np.array([extra_gi])]))
+    assert len(set(int(x) for x in drop)) == 25
+    keep = keep_new.copy()
+    keep[drop] = False
+    assert int(keep.sum()) == n_new_total - 25, name
+    W, loc = build(keep)
+    assert W.values().numel() == cutk_pins["cutwA"]["edges"] - int(
+        ((src_all == extra_gi) | (dst_all == extra_gi))[emask_wA].sum()), name
+    gi_a = np.where(keep)[0]
+    old_mask = keep[gi_old]
+    kept_mask = keep[new_g]
+    GEN[name] = dict(
+        extra=extra_gi, drop=drop, loc=loc, pos_in_new=loc_n[gi_a],
+        old_mask=old_mask, old_pos=loc[gi_old[old_mask]],
+        kept_mask=kept_mask, kept_new=loc[new_g[kept_mask]],
+        edges=int(W.values().numel()), n=int(keep.sum()))
+    POOLS[name] = pools_for(loc, keep)
+    for pk in POOLS["cutwA"]:
+        assert len(POOLS[name][pk]) == len(POOLS["cutwA"][pk]), (name, pk)
+    mech[name] = np.where(mech_mask[keep])[0]
+    _m = np.zeros(int(keep.sum()), bool)
+    _m[loc[mg_all[keep[mg_all]]]] = True
+    motor[name] = _m
+    dng100[name] = np.sort(loc[dng100_all[keep[dng100_all]]])
+    assert len(dng100[name]) == S92["dng100"], name
+    WB[name] = wb(W)
+    N_OF[name] = int(keep.sum())
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+def gen_init(name, X0o, X0n):
+    """Lineage init form (Xc[old_pos]=X0o; Xc[kept_new]=X0n[kept_mask])."""
+    g = GEN[name]
+    Xc = torch.zeros(N_OF[name], 1)
+    Xc[g["old_pos"]] = X0o[g["old_mask"]]
+    Xc[g["kept_new"]] = X0n[g["kept_mask"]]
+    return Xc.clone()
+
+
+def LOC_OF(a):
+    return loc_wA if a == "cutwA" else GEN[a]["loc"]
+
+
+def atomic_savez(path, d):
+    tmp = path[:-4] + ".tmp.npz"
+    np.savez(tmp, **d)
+    os.replace(tmp, path)
+
+
+def atomic_json(path, obj):
+    tmp = path + ".tmp"
+    json.dump(obj, open(tmp, "w"), indent=1)
+    os.replace(tmp, path)
+
+
+SC = [f"sc{r}" for r in WIN_RANKS]
+SC_GI = dict(zip(SC, WIN_CELLS))
+DM = {}
+if MODE in ("static", "work"):
+    for _nm in SC:
+        add_arm(_nm, SC_GI[_nm])
+
+    # CERT-GEN (static): the generic plumbing for ranks 25/26 is IDENTICAL
+    # to the lineage's hand-written cutng25 / cutng25p plumbing.
+    def _cert_gen(name, lin, Wb_ref, pos_ref, oldpos_ref, mask_ref, kn_ref):
+        g = GEN[name]
+        assert torch.equal(WB[name].crow_indices(), Wb_ref.crow_indices())
+        assert torch.equal(WB[name].col_indices(), Wb_ref.col_indices())
+        assert torch.equal(WB[name].values(), Wb_ref.values())
+        assert np.array_equal(g["drop"], cutk_drop[lin])
+        assert np.array_equal(g["pos_in_new"], pos_ref)
+        assert g["old_mask"].all() and np.array_equal(g["old_pos"], oldpos_ref)
+        assert np.array_equal(g["kept_mask"], mask_ref)
+        assert np.array_equal(g["kept_new"], kn_ref)
+        assert sorted(POOLS[name]) == sorted(POOLS[lin])
+        for pk in POOLS[lin]:
+            assert np.array_equal(POOLS[name][pk], POOLS[lin][pk]), pk
+        assert np.array_equal(mech[name], mech[lin])
+        assert np.array_equal(motor[name], motor[lin])
+        assert np.array_equal(dng100[name], dng100[lin])
+        assert N_OF[name] == N_OF[lin] and g["edges"] == cutk_pins[lin]["edges"]
+
+    _cert_gen("sc25", "cutng25", Wb_p25, p25_pos_in_new, old_pos_in_p25,
+              kept_new_mask_p25, kept_new_cutcutng25)
+    _cert_gen("sc26", "cutng25p", Wb_p25p, p25p_pos_in_new, old_pos_in_p25p,
+              kept_new_mask_p25p, kept_new_cutcutng25p)
+    log("CERT-GEN static: sc25 == cutng25, sc26 == cutng25p plumbing EXACT: PASS")
+
+if MODE == "work":
+    _sel = json.load(open(f"{OUT}/selection.json"))
+    DM["dmA"] = int(_sel["dmA"]["pick"]["gi"])
+    DM["dmC"] = int(_sel["dmC"]["pick"]["gi"])
+    assert POOL_A[DM["dmA"]] and POOL_C[DM["dmC"]], "selection outside pool (STOP)"
+    add_arm("dmA", DM["dmA"])
+    if DM["dmC"] != DM["dmA"]:
+        add_arm("dmC", DM["dmC"])
+TRACK = WIN_CELLS + [DM[k] for k in ("dmA", "dmC") if k in DM]
+
+if MODE == "static":
+    _wt = []
+    for _r, _g in zip(WIN_RANKS, WIN_CELLS):
+        _ci = cell_info(_g)
+        _ci.update(rank=_r, arm=f"sc{_r}", n=GEN[f"sc{_r}"]["n"],
+                   edges=GEN[f"sc{_r}"]["edges"],
+                   ng_mass_share=float(ngmass[_r - 1] / total_mass))
+        assert abs(_ci["ng_mass_share"] - _ci["lineage_mass_share"]) < 1e-15
+        _wt.append(_ci)
+    _pa = np.where(POOL_A)[0]
+    _sup_by = {}
+    for _g in _pa:
+        _k = str(_ann1.loc[_g]["super_class"]) if _g in _ann1.index else ""
+        _sup_by[_k] = _sup_by.get(_k, 0) + 1
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L175 static pins (zero rollouts): window ranks 25-58 on the "
+               "cutwA (k=24) base, out-weights onto the k=24-base closure, "
+               "prior-arm cells, twin candidate pools, fresh-seed absence.",
+        src="l150_run.py transform (l175/build_scan.py)",
+        window=_wt, carrier_gi=GI_CARRIER, twin_gi=319,
+        n_wA=n_cutk["cutwA"], edges_wA=cutk_pins["cutwA"]["edges"],
+        used_cells_n=len(USED), used_files_scanned=_used_files,
+        used_cells=sorted(USED),
+        pool_A_n=int(POOL_A.sum()), pool_A_by_super=_sup_by,
+        pool_C_n=int(POOL_C.sum()),
+        carrier_eff_sign=float(EFF_SIGN[GI_CARRIER]),
+        fresh_batch=[B39[0], B39[-1]], census_seeds=CENSUS_SEEDS,
+        npz_scanned_for_seed_absence=N_NPZ_SCANNED,
+        seed_absence="PASS", cert_gen_static="PASS",
+        g_stored=dict(cutwA=G_CUTWA_STORED, cutng25=G_CUTNG25_STORED,
+                      cutng25p=G_CUTNG25P_STORED)))
+    log(f"static.json written | window 34 | pool_A {int(POOL_A.sum())} "
+        f"{_sup_by} | pool_C {int(POOL_C.sum())} | used {len(USED)} | "
+        f"npz scanned {N_NPZ_SCANNED} | {time.time()-t0:.0f}s")
+    sys.exit(0)
+# ===================== end L175 GEN BLOCK =====================

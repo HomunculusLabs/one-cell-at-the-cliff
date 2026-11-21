@@ -1,0 +1,712 @@
+{
+ "scope": [
+  "## 1. Introduction",
+  "## 3. Methods",
+  "## 4. Limitations (honest, per card)"
+ ],
+ "ranges": {
+  "## 1. Introduction": [
+   504,
+   643
+  ],
+  "## 3. Methods": [
+   1195,
+   1367
+  ],
+  "## 4. Limitations (honest, per card)": [
+   1368,
+   1485
+  ]
+ },
+ "inscope_counts": {
+  "STRIP_EMPHASIS": 95,
+  "KEEP_ACRONYM": 10,
+  "<UNCLASSIFIED>": 11,
+  "NOTATION_spell_out": 4,
+  "KEEP_MAPPING": 11,
+  "CLASS_LABEL_lowercase": 6,
+  "KEEP_PROPER": 6,
+  "KEEP_CELLID": 4,
+  "KEEP_SYMBOL": 3
+ },
+ "unclassified": {
+  "NO": 1,
+  "IS": 1,
+  "OF": 1,
+  "BY": 2,
+  "CC": 1,
+  "NT": 1,
+  "DT": 2,
+  "BG": 2
+ },
+ "unclassified_sites": {
+  "NO": [
+   [
+    1223,
+    "## 3. Methods"
+   ]
+  ],
+  "IS": [
+   [
+    1325,
+    "## 3. Methods"
+   ]
+  ],
+  "OF": [
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "BY": [
+   [
+    1199,
+    "## 3. Methods"
+   ],
+   [
+    1318,
+    "## 3. Methods"
+   ]
+  ],
+  "CC": [
+   [
+    1199,
+    "## 3. Methods"
+   ]
+  ],
+  "NT": [
+   [
+    1201,
+    "## 3. Methods"
+   ]
+  ],
+  "DT": [
+   [
+    1218,
+    "## 3. Methods"
+   ],
+   [
+    1345,
+    "## 3. Methods"
+   ]
+  ],
+  "BG": [
+   [
+    1218,
+    "## 3. Methods"
+   ],
+   [
+    1347,
+    "## 3. Methods"
+   ]
+  ]
+ },
+ "strip_sites": [
+  [
+   565,
+   "NOT",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1469,
+   "NOT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1484,
+   "NOT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   564,
+   "OFF",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   579,
+   "SUFFICIENCY",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   593,
+   "SUFFICIENCY",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1279,
+   "SUPER",
+   "CLASS_LABEL_lowercase",
+   "## 3. Methods"
+  ],
+  [
+   1472,
+   "SUPER",
+   "CLASS_LABEL_lowercase",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1465,
+   "STATIC",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1475,
+   "STATIC",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1280,
+   "NOT-SUPER",
+   "CLASS_LABEL_lowercase",
+   "## 3. Methods"
+  ],
+  [
+   1280,
+   "PARTIAL",
+   "CLASS_LABEL_lowercase",
+   "## 3. Methods"
+  ],
+  [
+   1472,
+   "PARTIAL",
+   "CLASS_LABEL_lowercase",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   507,
+   "MATCHED",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1442,
+   "FLOOR",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1253,
+   "EXACTLY",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   510,
+   "ONE",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1285,
+   "ONE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1424,
+   "ONE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1287,
+   "UNIQUE-SEED",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   511,
+   "INTERMEDIATE",
+   "CLASS_LABEL_lowercase",
+   "## 1. Introduction"
+  ],
+  [
+   1424,
+   "UNIT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1424,
+   "INFERENCE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1336,
+   "PARSED",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1465,
+   "ONLY",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1448,
+   "DETECTION",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1309,
+   "BEFORE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1316,
+   "BEFORE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   558,
+   "ORDER",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   510,
+   "IDENTITY",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   514,
+   "SUFFICIENT",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   516,
+   "EDGE",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   516,
+   "SET",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1463,
+   "SET",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   518,
+   "ACTIVITY",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   520,
+   "BAND-RELATIVE",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1373,
+   "BAND-RELATIVE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   521,
+   "STIMULUS-SET",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1373,
+   "STIMULUS-SET",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   539,
+   "DOES",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   540,
+   "WHICH",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   560,
+   "FLEXOR",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   562,
+   "AMENDMENT",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   565,
+   "MET",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   568,
+   "ENTRAINER",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   568,
+   "STRUCTURE",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   580,
+   "NECESSARY",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   637,
+   "EMERGES",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   637,
+   "UNCURATED",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   638,
+   "MASS-",
+   "STRIP_EMPHASIS",
+   "## 1. Introduction"
+  ],
+  [
+   1478,
+   "LEFT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1321,
+   "BIT-IDENTICAL",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1327,
+   "BIT-IDENTICAL",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1318,
+   "CONSTRUCTION",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1378,
+   "BELOW",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1425,
+   "FIXED",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1228,
+   "NOISE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1348,
+   "NOISE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1424,
+   "NOISE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1425,
+   "NETWORK",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1200,
+   "SUMMING",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1222,
+   "AFTER",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1222,
+   "INSIDE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1224,
+   "CONSTANT",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1236,
+   "CHOPPED",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1239,
+   "ENVELOPE'",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1245,
+   "OWN",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1249,
+   "SETTLE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1349,
+   "SETTLE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1259,
+   "ABSOLUTE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1273,
+   "NEGATIVE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1274,
+   "PER",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1275,
+   "SIDE",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1275,
+   "DUTY",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1284,
+   "FRESH",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1290,
+   "NETWORKS",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1313,
+   "PREVIOUS",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1321,
+   "KEPT",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1326,
+   "PLUS",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1330,
+   "SUBSET",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1331,
+   "FAILED",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1345,
+   "WIN",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1362,
+   "UNRANKED",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1363,
+   "NEXT",
+   "STRIP_EMPHASIS",
+   "## 3. Methods"
+  ],
+  [
+   1370,
+   "MODEL",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1381,
+   "UNIQUE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1381,
+   "SEEDS",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1424,
+   "SEEDS",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1402,
+   "NAME",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1411,
+   "OPERATING-POINT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1411,
+   "PROXIMITY",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1438,
+   "SINGLE-BATCH",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1442,
+   "DATA",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1442,
+   "IMPLICIT",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1444,
+   "ROWS",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1455,
+   "ADMISSIBLE",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1457,
+   "CARRIER",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1458,
+   "TWIN",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1461,
+   "RE-DERIVED",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1471,
+   "SAME",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1480,
+   "COSTS",
+   "STRIP_EMPHASIS",
+   "## 4. Limitations (honest, per card)"
+  ]
+ ]
+}

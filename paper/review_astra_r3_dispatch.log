@@ -1,0 +1,350 @@
+Query: Referee dispatch (owner request, round 3, cross-family). Read 
+/home/t3rpz/critters/peabrain-lab/paper/review_astra_r3_BRIEF.md and execute it 
+completely. The L175 scan has finished (verdict_l175.out, results_l175.json, 
+L175-FINDINGS.md) — analyze it as FINAL. Write your report to 
+paper/review_astra_r3.md and evidence to paper/review_astra_evidence_r3/.
+📖 Read review_astra_r3_BRIEF.md
+📚 Skill peabrain-flybrain  0.1s
+✗ Delegate 3x: Independently audit histori... | Spot-check adjudication aga... | Novelty sweep for all 3 bri... [Delegation budget for this one-shot run is ex...]
+💻 $ pwd + 1 command
+✍️ Write paper/review_astra_evidence_r3/NOTES.md
+│ paper/review_astra_evidence_r3/NOTES.md
+│ @@ -0,0 +1 @@
+│ +Round 3, read-only CPU audit. The local L175 directory has verdict.out, not verdict_l175.out; use the actual JSON, preregistration, and worker artifacts to determine completeness. No training or fresh trials.
+📖 Read PREREG.md  0.1s
+📖 Read L175-FINDINGS.md  0.1s
+📖 Read review_claudeai_fable_20261121.md  0.1s
+📖 Read review_fable_r2.md L1-75  0.1s
+🔎 Grep launder|7/7|silent.twin|round.2  0.1s
+💻 $ python -B - <<'PY' from pathlib import Path as P import json for f in ['paper/DRAFT.md','paper/CLAIM-MAP.md','paper/review_fable.md','paper/review_fable_r2.md','LAB-INTENT.md','/home/t3rpz/critters/peabrain/LANE-LOG.md']: l=P(f).read_text().splitlines() + 6 commands  0.2s
+📖 Read DRAFT.md L467-578
+📖 Read verdict_l175.py
+📖 Read p1_duty_from_raw.py
+✗ $ python -B - <<'PY' import json, pathlib as p P=p.Path d=json.load(open('paper/numbers.json')) + 9 commands  1.2s [Blocked: command or referenced script cannot ...]
+💻 $ python -B - <<'PY' import json, pathlib as p P=p.Path d=json.load(open('paper/numbers.json')) + 7 commands  0.8s
+
+────────────────────────────────────────
+**Checking RNG coordinate slices**
+∴ Thought for 9s
+────────────────────────────────────────
+
+🔎 Grep randn|noise|invd|norm|log1p|active_frac  0.1s
+💻 $ python -B - <<'PY' from pathlib import Path as P import json, zipfile for f in ['banc/l172/stats.json','banc/l172/inv2.json','banc/l150/results_l150.json','banc/l169/results_l169.json','banc/l135/results_l135.json']: d=json.load(open(f)) + 7 commands  2.6s
+🔍 Search single cell stimulation deletion hub neuron suppress population bursts developing neuronal network structural functional connectivity Luccioli dynamical control single neuron deletion matched degree  2.0s
+🔍 Search stroke lesion network mapping location controlling lesion volume matched control lesions Boes 2015 lesion volume location behavioral deficits Siegel  2.0s
+🔍 Search single neuron ablation C elegans DVA laser ablation AVB transition oscillatory dynamics forward locomotion descending pathway bifurcation Gao network  2.0s
+✗ $ python -B - <<'PY' import json from pathlib import Path as P s=json.load(open('banc/l172/stats.json'))['per_seed'] + 6 commands  3.3s [Blocked: command or referenced script cannot ...]
+📖 Read LANE-LOG.md L416
+🔎 Grep normaliz|normalis|^Title
+✗ $ python -B -c "import json; s=json.load(open('banc/l172/stats.json'))['per_seed'];print(str(s)[:350]);" + 1 command  0.3s [exit 1]
+🔍 Search network lesions brain lesions matched in size location hubs controls matched lesion volume targeted connector hubs simulated lesions Gratton Warren lesions critical brain regions  0.8s
+🔍 Search matched firing rates control hub cells non hub cells single neuron stimulation Bonifazi degree matched non hubs ablation neural network activity matched synaptic input dynamic clamp stomatogastric synaptic conductance replace single cell  0.8s
+
+────────────────────────────────────────
+**Rescoring unique B39**
+∴ Thought for 2s
+────────────────────────────────────────
+
+💻 $ python -B - <<'PY' import json from pathlib import Path as P print(json.load(open('banc/l172/stats.json'))['per_seed']['cutwA'].keys()) + 9 commands  3.0s
+💻 $ python -B -c "from pathlib import Path; print('\n'.join(Path('paper/DRAFT.md').read_text().splitlines()[449:464]));print('\n'.join(Path('banc/l135_run.py').read_text().splitlines()[242:285]));" + 1 command  0.2s
+
+────────────────────────────────────────
+**Implementing raw scoring**
+∴ Thought for 40s
+────────────────────────────────────────
+
+✍️ Write paper/review_astra_evidence_r3/audit.py
+│ paper/review_astra_evidence_r3/audit.py
+│ @@ -0,0 +1,60 @@
+│ +"""Offline, CPU numpy + standard library only. Run from lab root or any directory."""
+│ +from pathlib import Path
+│ +import csv,hashlib,json,math,statistics,re
+│ +from collections import Counter,defaultdict
+│ +import numpy as np
+│ +E=Path(__file__).resolve().parent; R=E.parents[1]; B=R/'banc'; L=B/'l175'
+│ +def load(f): return json.loads(f.read_bytes())
+│ +def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+│ +for f in [R/'paper/DRAFT.md',R/'paper/numbers.json',R/'paper/CLAIM-MAP.md',B/'l172/stats.json',L/'PREREG.md',L/'results_l175.json',L/'verdict.out',L/'L175-FINDINGS.md']:print(f.relative_to(R),sha(f))
+│ +s=load(B/'l172/stats.json'); ledger=load(R/'paper/numbers.json')['l172.pooled']['v']; v=load(L/'results_l175.json');assert v['status']=='FINAL' and v['prereg_sha256']==sha(L/'PREREG.md')
+│ +def wil(k,n):
+│ + z=statistics.NormalDist().inv_cdf(.975); c=(k+z*z/2)/(n+z*z);h=z*math.sqrt(k*(n-k)/n+z*z/4)/(n+z*z);return max(0,c-h),min(1,c+h)
+│ +# Per-seed source JSON is an input; independently verify it below from raw.
+│ +hist={}
+│ +for a in ['cutng25','cutng25p','cutwA','cut58','cutscr0']:
+│ + t=s['per_seed'][a]; row=dict(zip(t['seeds'],t['dutyR'],strict=True)); assert len(row)==len(t['seeds']);hist[a]=row;k=sum(x>=.5 for x in row.values());n=len(row);assert (k,n)==(ledger[a]['kR'],ledger[a]['n']);print('canonical json',a,k,n,wil(k,n))
+│ +t=hist['cutng25p']; base=hist['cutwA']; c=Counter((x>=.5,base[i]>=.5) for i,x in t.items());u,w=c[True,False],c[False,True];print('matched twin/base',c,'p',min(1,2*sum(math.comb(u+w,j) for j in range(min(u,w)+1))/2**(u+w)))
+│ +z=np.load(B/'l137/raw_l137.npz'); x=z['census_x'].mean(axis=1); ids=z['census_ids'].tolist();print('intact means',[(i,x[ids.index(i)]) for i in (1110,319)],'active',sum(x>.05),len(x));z.close()
+│ +# Compute both windows together using non-overlapping index ranges in endpoint space.
+│ +ends=np.arange(499,6000,10);mask07=((ends>=500)&(ends<2000))|(ends>=4500);mask14=(ends>=2500)&(ends<4000)
+│ +def duty(z,a,i,side='R'):
+│ + f,e=[np.lib.stride_tricks.sliding_window_view(z[f'Ti_{p}{side}_{a}_{i}'][:6000].astype(float),500)[::10] for p in 'fe'];f=f-f.mean(1)[:,None];e=e-e.mean(1)[:,None];ff=np.einsum('ij,ij->i',f,f);ee=np.einsum('ij,ij->i',e,e);fe=np.einsum('ij,ij->i',f,e);ok=(ff>500e-12)&(ee>500e-12)&(-fe>=.25*np.sqrt(ff*ee));return tuple(round(float(ok[m].mean()),3) for m in (mask07,mask14))
+│ +raw=defaultdict(dict)
+│ +for file in s['admissibility']['admissible']:
+│ + with np.load(B/file) as z:
+│ +  for name in z.files:
+│ +   h=re.fullmatch(r'Ti_fR_(cutng25p?|cutwA|cut58|cutscr0)_(\d+)',name)
+│ +   if h:
+│ +    a,i=h[1],int(h[2]); d=duty(z,a,i);assert raw[a].setdefault(i,d)==d
+│ +for a,rows in raw.items():
+│ + assert set(rows)==set(hist[a]);assert all(abs(ds[0]-hist[a][i])<.00051 for i,ds in rows.items());print('historic raw',a,len(rows),'chopped/unchopped k',np.sum(np.array(list(rows.values()))>=.5,axis=0))
+│ +# L175 every fresh seed, both sides. Save arm and seed-level data for reuse.
+│ +assert v['seeds']==list(range(3545,3561)); rows=[v['base'],*v['window'],*v['twins'].values()]; by={r['arm']:r for r in rows};obs={};records=[]
+│ +for file in sorted(L.glob('raw_w*.npz')):
+│ + with np.load(file) as z:
+│ +  for a in sorted(set(n.split('_')[2] for n in z.files if n.startswith('Ti_fR_'))):
+│ +   vals=np.array([[*duty(z,a,i),*duty(z,a,i,'L')] for i in v['seeds']]);assert a not in obs or np.array_equal(vals,obs[a]);obs[a]=vals
+│ +assert set(obs)==set(by) and len(obs)==37
+│ +with (E/'b39-seeds.csv').open('w') as f:
+│ + out=csv.writer(f);out.writerow(['arm','seed','R07','R14','L07','L14']);
+│ + for a,ds in obs.items():
+│ +  for i,row in zip(v['seeds'],ds):out.writerow([a,i,*row])
+│ +def band(k,m):return 'S' if k>=12 and m>=.60 else ('N' if k<=8 and m<=.50 else 'I')
+│ +for a,r in by.items():
+│ + ds=obs[a];k=(ds>=.5).sum(axis=0);m=np.round(ds.mean(axis=0),3);assert np.array_equal(ds[:,0],r['dutyR']) and np.array_equal(ds[:,2],r['dutyL']);assert (k[0],k[2])==(r['kR'],r['kL']);assert abs(m[0]-r['meanR'])<=.00101
+│ + records.append([a,*k,*m,band(k[0],r['meanR']),band(k[1],m[1])]);
+│ +with (E/'b39-arms.csv').open('w') as f:
+│ + out=csv.writer(f);out.writerow(['arm','kR07','kR14','kL07','kL14','meanR07','meanR14','meanL07','meanL14','registered_band','descriptive_fast_band']);out.writerows(records)
+│ +print('unchopped notable',[(r[0],r[2],r[6],r[-1]) for r in records if r[-1]!='N' or r[0] in ('dmA','dmC','cutwA','sc26')]);
+│ +cls={r[0]:r[-2] for r in records}; win=v['window'];cen=np.load(L/'census_k24.npz');ids=cen['gi'].tolist();xb=cen['x_mean_3seed'];out=cen['out_w_eff'];
+│ +for r in rows[1:]:
+│ + j=ids.index(r['gi']);assert abs(r['x_mean']-xb[j])<1e-7 and abs(xb[j]*out[j]-r['delivered_drive'])<1e-4
+│ +A=[r for r in win[1:] if r['x_mean']>.05];H=[r for r in A if r['drive_ratio_to_carrier']>=.5];active=[win[0],*A];sil=[r for r in win if r['x_mean']<=.05]; ns=lambda rr:sum(cls[r['arm']]=='S' for r in rr)
+│ +def rho(rr,x,y):
+│ + def rank(vals):return [sum(t<v for t in vals)+(sum(t==v for t in vals)+1)/2 for v in vals]
+│ + return np.corrcoef(rank([r[x] for r in rr]),rank([r[y] for r in rr]))[0,1]
+│ +rh=rho(active,'delivered_drive','meanR'); E0=cls['sc25']!='S' or any(cls[a]=='S' for a in ('cutwA','sc26'));D1=cls['dmA']=='S' and rh>=.50 and (not H or ns(H)>=len(H)/2);D2=cls['dmA']=='N' and cls['sc25']=='S' and A and ns(A)<=len(A)/4
+│ +print('branch','E0' if E0 else 'D1' if D1 else 'D2' if D2 else 'D3');print('window',Counter(cls[r['arm']] for r in win),'A,H,silent',[(ns(g),len(g)) for g in (A,H,sil)],'rho',rh,rho([r for r in active if r['eff_sign']>0],'delivered_drive','meanR')); print('rho gain',*[rho(rr,'gain','meanR') for rr in (win[1:],sil)]);
+│ +for a in ('sc25','sc26','dmA','dmC'):
+│ + r=by[a];print('targeted',a,'matched B39 drive ratio',r['x_mean_base_b39']*r['out_w_eff']/(by['sc25']['x_mean_base_b39']*by['sc25']['out_w_eff']),'motor mass fraction',r['out_w_motor']/r['out_w_eff'],'gross motor drive',r['x_mean']*r['out_w_motor'],'paired07 mean vs base',float((obs[a][:,0]-obs['cutwA'][:,0]).mean()))
+💻 $ CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1 /home/t3rpz/critters/peabrain/.venv/bin/python -Bu paper/review_astra_evidence_r3/audit.py  7.1s
+📖 Read audit.out  1.4s
+📖 Read b39-arms.csv  1.4s
+🔎 Grep def build|def wb|vals =|BETA|WB =  1.4s
+🔍 Search laser ablation Chalfie Sulston White Southgate Thomson Brenner neural circuit touch sensitivity 1985 DOI  1.4s
+🔍 Search matched volume control lesions mirror lesions same volume lesion lesion mapping same size randomly placed virtual lesions network brain lesions equal size Honey Sporns constant size 2008  1.5s
+🔍 Search Modulation of Neural Network Activity through Single Cell Ablation author DOI 2018  1.5s
+
+────────────────────────────────────────
+**Checking prereg calculations**
+∴ Thought for 2s
+────────────────────────────────────────
+
+📖 Read verdict.out
+📖 Read verdict.out
+📖 Read DRAFT.md L1200-1254
+📖 Read verdict_l175.py L136-229
+📖 Read review_fable.md L100-148
+📖 Read gains_w0.json  0.1s
+
+────────────────────────────────────────
+**Testing carrier matrix stability**
+∴ Thought for 2s
+────────────────────────────────────────
+
+🔧 Patch paper/review_astra_evidence_r3/NOTES.md
+│ paper/review_astra_evidence_r3/NOTES.md
+│ @@ -1 +1,3 @@
+│  Round 3, read-only CPU audit. The local L175 directory has verdict.out, not verdict_l175.out; use the actual JSON, preregistration, and worker artifacts to determine completeness. No training or fresh trials.
+│ +
+│ +First pass: pinned the draft, claim map, ledger, prereg and final JSON in audit.out. Recomputed canonical pools from seed rows and separately from traces (using the lab’s admissibility list); confirmed paired asymmetry and L137 census. B39 independent scoring completed: all 37 arms, both sides, every fresh seed, both stimulus conditions. Neither B39 twin flips under either scoring window. The fast-window result is a sensitivity analysis, not a replacement decision rule.
+
+────────────────────────────────────────
+**Designing paired correlation checks**
+∴ Thought for 8s
+────────────────────────────────────────
+
+✍️ Write paper/review_astra_evidence_r3/locked.py
+│ paper/review_astra_evidence_r3/locked.py
+│ @@ -0,0 +1,16 @@
+│ +"""Exploratory stimulus/time-locked negative control: compare flexor of seed i with extensor of j. No rollouts."""
+│ +from pathlib import Path
+│ +import json, numpy as np,csv
+│ +E=Path(__file__).resolve().parent;L=E.parents[1]/'banc/l175';v=json.loads((L/'results_l175.json').read_text());ends=np.arange(499,6000,10); bins=[(ends>=500)&(ends<2000),(ends>=2500)&(ends<4000),ends>=4500]; chopped=bins[0]|bins[2]; seeds=v['seeds']; arms=['cutwA','sc25','sc26','sc27','sc40','dmA','dmC']; extra=[]
+│ +for a in arms:
+│ + file=next(p for p in sorted(L.glob('gains_w*.json')) if a in json.loads(p.read_text())['gain']); w=file.stem.split('_')[-1]
+│ + with np.load(L/f'raw_{w}.npz') as z:
+│ +  arr=[]; valid=[]
+│ +  for p in ('fR','eR'):
+│ +   X=np.stack([z[f'Ti_{p}_{a}_{i}'][:6000] for i in seeds]).astype(float);X=np.lib.stride_tricks.sliding_window_view(X,500,axis=1)[:,::10,:];X=X-X.mean(axis=2,keepdims=True);norm=np.sqrt((X**2).sum(axis=2));valid.append(norm.T>np.sqrt(500)*1e-6);arr.append(np.transpose(X/np.maximum(norm[:,:,None],1e-100),(1,0,2)).copy())
+│ +  ok=(arr[0]@arr[1].transpose(0,2,1)<=-.25)&valid[0][:,:,None]&valid[1][:,None,:]; ix=~np.eye(len(seeds),dtype=bool)
+│ +  for label,m in zip(('chopped','first','fast','last'),[chopped,*bins]):
+│ +   duty=ok[m].mean(0);same=duty.diagonal();cross=duty[ix];extra.append([a,label,round(float(same.mean()),4),round(float(cross.mean()),4),int(sum(same>=.5)),int(sum(cross>=.5)),len(cross)]);
+│ +with (E/'locked.csv').open('w') as f:
+│ + out=csv.writer(f);out.writerow(['arm','segment','same_mean','cross_mean','same_k_of_16','cross_k','cross_pairs_nonindependent']);out.writerows(extra)
+│ +print(*extra,sep='\n')
+💻 $ CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1 /home/t3rpz/critters/peabrain/.venv/bin/python -B paper/review_astra_evidence_r3/locked.py  2.2s
+💻 $ python -B - <<'PY' from pathlib import Path import json,math v=json.load(open('banc/l175/results_l175.json')) + 7 commands  1.5s
+
+────────────────────────────────────────
+**Checking raw selection-arm data**
+∴ Thought for 1s
+────────────────────────────────────────
+
+🔍 Search stomatogastric dynamic clamp replace biological synaptic input recorded conductance same waveform postsynaptic neurons artificial inhibition pyloric pacemaker identical input phase follower neurons  0.8s
+🔍 Search The Functional Consequences of Changes in the Strength and Duration of Synaptic Inputs to Oscillatory Neurons author year doi same area  0.7s
+
+────────────────────────────────────────
+**Checking raw anchor equality**
+∴ Thought for 5s
+────────────────────────────────────────
+
+✍️ Write paper/review_astra_evidence_r3/anchors.py
+│ paper/review_astra_evidence_r3/anchors.py
+│ @@ -0,0 +1,19 @@
+│ +"""Independently compare stored array payloads, not nanmax differences."""
+│ +from pathlib import Path
+│ +import json,numpy as np
+│ +E=Path(__file__).resolve().parent;B=E.parents[1]/'banc';L=B/'l175'
+│ +def ident(a,b):return a.shape==b.shape and a.dtype==b.dtype and a.tobytes()==b.tobytes()
+│ +keys=['mm','xm','af']+[f'{p}_{x}{s}' for p,xy in [('Ti','fe'),('Tr','fe'),('Ta','ab'),('Sr','ab'),('Pr','ab')] for x in xy for s in 'LR'];old=np.load(B/'l135/raw_l135.npz');ref=np.load(L/'raw_w0.npz');n=m=0
+│ +for w in range(5):
+│ + assert (L/f'done_w{w}.json').exists();z=np.load(L/f'raw_w{w}.npz'); g=json.loads((L/f'gains_w{w}.json').read_text())['gain']
+│ + for a,b in [('cutwA','cutwA'),('sc25','cutng25'),('sc26','cutng25p')]:
+│ +  if a not in g:continue
+│ +  for i in (801,901):
+│ +   for k in keys:
+│ +    assert ident(z[f'{k}_{a}_{i}'],old[f'{k}_{b}_{i}']); n+=1
+│ + if w:
+│ +  for i in [801,901,*range(3545,3561)]:
+│ +   for k in [*keys,'xwin']:
+│ +    name=f'{k}_cutwA_{i}';assert ident(z[name],ref[name]);m+=1
+│ + z.close()
+│ +print('L135 to L175 arrays identical (dtype, shape and bytes):',n,'; cross-worker base:',m)
+💻 $ CUDA_VISIBLE_DEVICES='' /home/t3rpz/critters/peabrain/.venv/bin/python -B paper/review_astra_evidence_r3/anchors.py + 1 command  0.7s
+
+────────────────────────────────────────
+**Checking N5 and N4**
+∴ Thought for 2s
+────────────────────────────────────────
+
+📖 Read review_fable_r2.md L187-253
+📖 Read verdict.out
+💻 $ python -B - <<'PY' from pathlib import Path as P import zipfile,json q=P('banc/banc_graph.pt') + 5 commands  0.9s
+✍️ Write paper/review_astra_r3.md
+│ paper/review_astra_r3.md
+│ @@ -0,0 +1,75 @@
+│ +# Round 3 referee report — Major revision
+│ +
+│ +**The carrier replicates; the title still claims the wrong control did the isolating.** On the specified 24-cell-cut BANC model, removing DNp33-L is an unusually reproducible way to raise right-tibia antagonist duty. FINAL L175 materially improves the paper: of 34 single-cell removals from the specified rank window, only DNp33-L meets the registered upward criterion, and neither of two comparably active-output controls meets it. That is worth publishing. It does not establish an all-or-none endogenous motor transition, a mechanism called “identity,” or a general property of flies. My strongest new concern is empirical: much of the carrier's chopped-window signal survives pairing flexor and extensor traces from **different runs**.
+│ +
+│ +Suggested title: **Removing DNp33-L selectively raises right-tibia antagonist duty in a perturbed fly connectome model.** Use the matched controls in the subtitle or abstract, where there is room to say what was matched.
+│ +
+│ +## 1. Independent arithmetic and trace audit
+│ +
+│ +Scope: draft SHA `d76fa7d6…`, not a promised repair; prereg `7af87de7…`, result `c45418ac…`. CPU only, no new trajectories, no author/referee analysis functions imported. The local final console artifact is `banc/l175/verdict.out` (`FINAL=True`); the JSON says `FINAL`. Input hashes, executable probes, stdout and CSVs are in `review_astra_evidence_r3/`.
+│ +
+│ +I first thresholded the per-seed right-duty arrays in `banc/l172/stats.json`, checked unique seed IDs, and calculated two-sided 95% Wilson score intervals. I then independently reconstructed the counts from the historical raw Ti traces on the declared admissible-file list, checking duplicate seed values before collapsing them. This tests the aggregation conditional on that list; it does not independently certify every historical file's admission. No L175 outcomes or repeated worker copies were appended to the historical pool.
+│ +
+│ +| Historical intervention | Positive / unique seeds | Wilson 95% | Draft §2.9 |
+│ +|---|---:|---:|---|
+│ +| carrier cutng25 | 203/210 | .932806–.983761 | matches |
+│ +| mass twin cutng25p | 30/66 | .340241–.573850 | matches |
+│ +| base cutwA | 72/258 | .227885–.336737 | matches |
+│ +
+│ +These are intervals for noise seeds on a specified model. They are not intervals across cell identities, connectomes or animals. A seed is positive at duty ≥.5; a whole arm meeting SUPER is a different statement.
+│ +
+│ +## 2. Adjudicating the laboratory’s “7/7”
+│ +
+│ +The spot checks support an honest adjudication, not numbers copied forward. In particular:
+│ +
+│ +- **Silent mass twin (N1).** Reading `l137/raw_l137.npz:census_x` by `census_ids`, intact mean rates are .454166 (gi 1110) and .003313 (gi 319); 27 of 60 census entries, not 26/58, exceed .05. More importantly, the *cut-base* L175 three-seed census gives .3891 vs .0005. This distinction matters: the baseline for deletion is not the intact circuit. Low mean activity is not literal zero current at all times.
+│ +- **Readout dependence (N2).** I calculated negative Pearson correlation in 500-step windows at a 10-step stride on the stored right flexor/extensor series; nearly flat windows do not pass. Same correlation and seed cutoffs in the post-transient continuously driven middle segment: carrier 203→132/210, twin 30→0/66, base 72→0/258, k=58 1→186/258, scramble 0 41→9/50. Thus the carrier ordering persists but the large-cut endpoint actually reverses. The instrument changes frequency, envelope and position in the trial together; this is not an experiment isolating chopping alone.
+│ +- **Methods (N3, weight leg).** Draft lines 1207–1213 still claim in-degree normalization. `banc/l135_run.py:288–309` uses signed `log1p(gcount)`, with glutamate sign override, then multiplies negative entries by β. COO coalescing is not normalization. The L175 update multiplies the resulting matrix by the arm gain. Printing the actual matrix equation, included cell sets and sign table is necessary for a reader to reproduce the intervention. Also reconcile “bounded rate xᵢ ∈ (0,RMAX]” with the explicitly upper-only clamp in the next paragraph.
+│ +- **Same-seed inference (N6).** On the twin’s 66 seeds: both positive 7, both negative 24, twin-only 23, base-only 12. Exact two-sided McNemar p=.089531 (30/66 vs 19/66). The draft’s .008 addresses differently pooled margins; it is not paired evidence that the twin raises the base. Nor does .0895 establish no effect.
+│ +- **Scramble pooling (part of N7).** Canonical raw union 41/50 versus abstract 39/48. A fresh-only count can be valid if labelled, not interchangeable with the canonical one. The B36 floor-4 table also explicitly gives carrier/base/twin all 0/16 on the right (N5 fragility); this is artifact inspection, not an independent raw re-score of that experiment.
+│ +
+│ +I do not certify a blanket seven new independent reruns. `LANE-LOG.md` line 416 mixes reruns of referee code, checks against code/prose, and other observations, not seven replications with independent implementations. Matching a rerun confirms reproducibility; the independent census, pooled raw scores and discordant-pair table above additionally test correctness.
+│ +
+│ +## 3. FINAL L175: decision and limits
+│ +
+│ +I found all five worker completion markers and scored all 37 distinct arms on all 16 B39 seeds (3545–3560), both sides, from raw traces. The stored seed-level chopped duties agree. Independent byte comparisons (dtype and shape included) confirm all 322 L135 anchor comparisons and all 1,728 cross-worker base comparisons. The prereg hash agrees with the result; this is an integrity check, not an external timestamp. The lab discloses checkpointing per completed seed rather than per arm; no missing final arm or outcome-dependent truncation is apparent.
+│ +
+│ +| Arm on cutwA | kR/16 | meanR | Δ mean vs paired base | Registered class |
+│ +|---|---:|---:|---:|---|
+│ +| base | 5 | .408 | — | NOT-SUPER (partial) |
+│ +| sc25, DNp33-L, gi 1110 | 16 | .758 | +.351 | SUPER |
+│ +| sc26, mass twin, gi 319 | 2 | .378 | −.029 | NOT-SUPER |
+│ +| dmA, primary, gi 511 | 5 | .390 | −.018 | NOT-SUPER (partial) |
+│ +| dmC, same projector class and sign, gi 1480 | 2 | .366 | −.041 | NOT-SUPER |
+│ +
+│ +**D2_identity_carried fired as registered.** E0 did not: all three controls are on their predicted sides. D1 did not: the primary twin does not flip, active-cell Spearman ρ=.187 (<.50), and zero of ten other active cells with ≥half-carrier drive flip. D2 requires the primary NOT-SUPER, carrier SUPER, and ≤¼ of the other active window cells SUPER: observed 0/13. The secondary twin agrees, so D3 is not the decision. Excitatory-only ρ=.548 (n=8) does not override the registered order. Of the 34 window arms: 1 SUPER, 10 intermediate, 23 NOT-SUPER; zero of 20 low-mean-rate arms SUPER. Seven other active cells exceed carrier drive without reaching SUPER. P1/P2 correct; the modal D3 forecast and non-descending primary-twin forecast were wrong. “0/13 SUPER” does not mean “0/13 affected”: sc33 and sc34 score 0/16 in the opposite direction.
+│ +
+│ +The **scalar match is real**. Mean base rate × total absolute effective out-weight gives census ratios to carrier of 1.00265 (dmA) and 1.00595 (dmC); using the held-out B39 base mean rates gives .99348 and 1.00455. That directly challenges a scalar-output-only explanation. The matched quantity is unsigned, time-averaged and pooled over all targets. dmA is inhibitory, unlike the carrier; dmC controls that objection, not all others. The carrier's motor-directed out-weight fraction is .130, versus .015 and .079; mean-rate × motor out-weight is 9.31 vs 1.07 and 5.68 in model units. These are descriptive gross motor quantities, not signed current onto right Ti, and not evidence that motor drive alone explains the effect. Neither drive twin jointly matches the carrier's removal mass. The mass twin is still a useful *static* control, but on B39 it delivers only .0015× carrier drive. No individual twin isolates identity from all possible drive descriptions.
+│ +
+│ +The classifier is one-directional and coarse. Among low-mean-rate deletions, kR spans 2–11/16 and meanR .340–.605; sc40 reaches .605 but only 11 positives, sc27 11 and .596. “Only one meets the registered rule here” is sound; “all others have no effect,” “sharp bifurcation,” and “unique cell” are not. Across the 33 non-carriers ρ(gain,meanR)=−.723, and among the 20 low-mean-rate arms −.833. These are associations across different deletions, not a gain intervention. Carrier gain moves up, against that trend. The B38 gain-swap already tested the original pair (carrier at twin gain 15/16; twin at carrier gain 1/16); do not pretend that control is absent. It does not give a gain-only baseline for the full scan, especially sc47 (+10.3%). The fixed-gain web referee’s directional result is useful corroboration, not a pooled replication: different implementation, arm selection, gain rule and batch size.
+│ +
+│ +**Title consequence:** keep “cell-specific” as a description of a contrast. Drop “mass-twin controls isolate cell identity,” “not delivered drive” without the word *scalar*, and “all-or-none regime transition.” The decisive comparison is now an arm distribution on a particular base plus two prospective scalar-drive matches, not an especially convincing single mass twin. In the paper’s own B37 carrier-edge rewirings one of three also reaches SUPER. L175 is a strong case study about which intervention moves this readout; it does not identify a unique wiring motif or establish a biological switch.
+│ +
+│ +## 4. What a second family would check: can non-simultaneous traces pass?
+│ +
+│ +I tested this rather than just proposing it. First I scored the reserved 1.4-Hz segment of every B39 arm, without altering the registered analysis. Carrier is **8/16, mean .510**, base 0/16 (.000), mass twin 0/16 (.005), dmA 0/16 (.004), dmC 0/16 (.192). Applying the same numerical bands descriptively gives **no SUPER** in that segment. The carrier remains the strongest right-side arm, not a window-independent SUPER. The complete two-side table is `b39-arms.csv`.
+│ +
+│ +Next I kept the waveform clock and arm fixed but paired right flexor from seed i with right extensor from seed j ≠ i. These traces cannot have interacted in the same realization. This breaks same-trial covariation while retaining reproducible time-locked responses. On sc25, chopped mean duty is .7581 for true pairs and **.6217 for cross-seed pairs**; 193 of 240 ordered off-diagonal pairs clear .5. Base: .4077 vs .0971, 0/240 cross-pairs clear .5. In the fast segment the carrier changes from .5100 to .0592, just 2/240 cross-pairs clear .5. The 240 pairings reuse 16 seeds: they are a descriptive negative control, emphatically not 240 independent trials. The cross-pair result supports a reproducible time-locked component, not necessarily direct stimulus drive; a genuinely entrained network also passes. It neither erases the deletion effect nor by itself establishes how much is intrinsic. It does show why “antiphase duty” is safer than “endogenous motor organization.” Use stimulus-phase jitter or a held-out trial-template residual analysis to separate time-locked and within-trial components. Do not subtract the two duties and call the difference a variance fraction.
+│ +
+│ +## 5. Prior art and the novelty that survives
+│ +
+│ +These are specific comparisons, not a claim of exhaustive priority. The paper already discusses Yan et al.; that is not the beginning of the lesion literature.
+│ +
+│ +- **Where a lesion lands.** Honey & Sporns, “Dynamical consequences of lesions in cortical networks” (2008), https://doi.org/10.1002/hbm.20579 — macaque anatomical network, two oscillatory models, nonlocal lesion effects depend on network embedding. It predates Alstott et al. (2009), https://doi.org/10.1371/journal.pcbi.1000408. Chalfie et al., “The neural circuit for touch sensitivity in Caenorhabditis elegans” (1985), https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985 — reconstruction plus selective laser killing of identified precursors to distinguish behavioral pathways; not an acute DN deletion in a rate model.
+│ +- **One neuron can change a collective regime.** Luccioli et al., “Clique of functional hubs orchestrates population bursts in developmentally regulated neural networks” (2014), https://doi.org/10.1371/journal.pcbi.1003823. Their simulated single-neuron deletion scan includes four cells whose individual deletion abolishes population bursts in the observed interval; high structural degree was not the explanation. This is the nearest counterexample to a broad single-cell scan/collective-switch novelty claim, though its network, direction and readout differ. Soloperto et al., “Modulation of Neural Network Activity through Single Cell Ablation” (2016), https://doi.org/10.3390/molecules21081018 — single-cell ablation in culture; change in network bursting related to the ablated cell's baseline firing. Relevant to why a silent comparator is weak, not evidence of an identical threshold switch.
+│ +- **Matching perturbation magnitude is not new.** Boes et al., “Network localization of neurological symptoms from focal brain lesions” (2015), https://pmc.ncbi.nlm.nih.gov/articles/PMC4671478/ — their anatomical-specificity control relocates lesions while preserving each lesion volume; not just a regression on size. Volume is not removed synaptic mass, but the design logic is the same. **Controlling delivered input:** Prinz et al., “The Functional Consequences of Changes in the Strength and Duration of Synaptic Inputs to Oscillatory Neurons” (2003), https://doi.org/10.1523/JNEUROSCI.23-03-00943.2003 — suppress natural feedback and replace it with controlled conductance pulses onto a particular neuron; strength, timing and duration matter. This is a precedent for the *stronger target-resolved control*, not a published example of selecting a deleted-cell twin by the L175 formula.
+│ +
+│ +I did not identify an exact antecedent for selecting a held-out BANC projector by nearest log ratio of base rate × effective out-weight, re-bisecting gain per deletion and running this right-Ti assay. Absence from this sweep is not priority evidence. Present the contribution as the particular reproducible matched comparison and its result, not the invention of size-controlled lesions, cell ablation scans, or network-location dependence.
+│ +
+│ +## Three changes most likely to change my verdict
+│ +
+│ +1. **Make the measured contrast the paper.** Replace the title/abstract, publish the full L175 scan with continuous effects, twins, gain and low-rate controls; plot chopped and fast readouts side by side, including the reversed historical endpoint and the cross-seed negative control. Say explicitly that the base is partial, not killed, and that crossing a duty threshold is not demonstrating a bifurcation.
+│ +2. **Validate the local specificity on a frozen second batch.** Predeclare sc25, both drive twins, boundary arms sc27/sc40 and base. Cross deletion with common versus re-matched gain and include a base-only gain sweep. If the claim is about a mechanism beyond gross drive, add a same-sign, target/side-resolved or waveform-replay comparator; a null on a scalar twin is not that test. Keep wire-jitter and floor-4 failures visible; more noise seeds cannot make one graph into a population.
+│ +3. **Make the exact model and estimand reconstructible from the manuscript.** State closure vs b65, missing upstream inputs, signed log weights, gain target and residuals, and the readout windows. Replace the paired claim based on .008; regenerate abstract, figures and tables from one labelled canonical/fresh-only ledger. Publish versioned preregistration and data references, distinguishing hash agreement now from independently dated prospective registration. Cite the older mechanistic and matched-lesion precedents above.
+│ +
+│ +**Decision:** major revision, not reject-and-rescope. A defensible, interesting result survives two scalar controls and independent raw reconstruction. The remaining distance to publication is the difference between that result and the much stronger mechanism the current title asks the reader to accept.
+
+────────────────────────────────────────
+**Noting reproduction instructions**
+∴ Thought for 6s
+────────────────────────────────────────
+
+🔧 Patch paper/review_astra_evidence_r3/NOTES.md
+│ paper/review_astra_evidence_r3/NOTES.md
+│ @@ -1,3 +1,16 @@
+│  Round 3, read-only CPU audit. The local L175 directory has verdict.out, not verdict_l175.out; use the actual JSON, preregistration, and worker artifacts to determine completeness. No training or fresh trials.
+│
+│  First pass: pinned the draft, claim map, ledger, prereg and final JSON in audit.out. Recomputed canonical pools from seed rows and separately from traces (using the lab’s admissibility list); confirmed paired asymmetry and L137 census. B39 independent scoring completed: all 37 arms, both sides, every fresh seed, both stimulus conditions. Neither B39 twin flips under either scoring window. The fast-window result is a sensitivity analysis, not a replacement decision rule.
+│ +
+│ +Second pass: anchors.py verified every claimed L135 and cross-worker comparison by dtype/shape/bytes; anchors.out records counts. locked.py holds trial time fixed and crosses seed identities on selected arms, retaining all ordered pairs in the average. locked.csv distinguishes repeated-measures cross-pair denominators from the 16 independent noise seeds. Novelty references and relevance limits are in report §5.
+│ +
+│ +Reproduce from lab root (NumPy, CPU; no install or simulation required):
+│ +
+│ +    export CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1
+│ +    P=/home/t3rpz/critters/peabrain/.venv/bin/python
+│ +    E=paper/review_astra_evidence_r3
+│ +    "$P" -B "$E/audit.py" > "$E/audit.out"
+│ +    "$P" -B "$E/anchors.py" > "$E/anchors.out"
+│ +    "$P" -B "$E/locked.py"
+│ +
+│ +The rounded individual seed duties in b39-seeds.csv reproduce the stored instrument; b39-arms.csv computes means with NumPy (round-half ties may differ by .001 from the lab). The locked.csv diagnostics use unrounded fractions before averaging. No tests of significance treat rolling windows or cross-pairs as independent.
+
+────────────────────────────────────────
+✿ Miso
+Verdict: major revision. The DNp33-L result holds. The title still credits the mass twin with isolating more than it does.
+
+FINAL L175 fired the preregistered D2 branch. DNp33-L removal was the only one of 34 window deletions to meet SUPER: 16/16 positive seeds, versus 5/16 for the base and 2/16 for the mass twin. Neither drive-matched twin flipped: 5/16 for the primary and 2/16 for the same-class, same-sign twin. That supports a cell-specific effect in this model, not independence from where or when drive is delivered.
+
+I independently reproduced the historical carrier/twin/base pools (203/210, 30/66, 72/258), Wilson intervals, silent-twin finding, scoring-window reversals, weight-rule mismatch, paired p=.0895, and scramble-pooling discrepancy. The lab’s adjudication holds up on those checks.
+
+One new caution: pairing carrier flexor and extensor traces from different seeds still gave mean chopped duty .622, versus .758 for true pairs. Those traces never interacted in the same run. The deletion effect is real, but the readout captures a substantial time-locked response.
+
+Three changes would most raise my score:
+1. Center the paper on the measured duty contrast; show chopped, unchopped and cross-seed results together.
+2. Repeat the twins and boundary cells on a fresh batch with fixed and re-matched gains.
+3. Correct the Methods and paired inference, and regenerate figures and abstract from explicitly labelled pools.
+
+Report: /home/t3rpz/critters/peabrain-lab/paper/review_astra_r3.mdEvidence: /home/t3rpz/critters/peabrain-lab/paper/review_astra_evidence_r3/
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-1893b7fea15e38605b92b336744624d86cb9533ca4a0f966c1367a6a22a7f853 -p maple
+
+Session:        local-1893b7fea15e38605b92b336744624d86cb9533ca4a0f966c1367a6a22a7f853
+Duration:       7m 59s
+Messages:       85 (1 user, 83 tool calls)

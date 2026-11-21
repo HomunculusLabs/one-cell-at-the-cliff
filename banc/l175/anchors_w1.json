@@ -1,0 +1,17 @@
+{
+ "c0a_pass": true,
+ "c0a_max": 0.0,
+ "n_checks": 92,
+ "pairs": [
+  [
+   "cutwA",
+   "cutwA"
+  ],
+  [
+   "sc26",
+   "cutng25p"
+  ]
+ ],
+ "g_cutwA": 0.14365819573402408,
+ "g_cutwA_stored_exact": true
+}

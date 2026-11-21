@@ -51,7 +51,7 @@ for p in ('matched operating point', 'all-or-none', 'mass-twin',
           'sufficient, not unique', 'set-dependent',
           "drive envelope's", 'unchopped'):
     assert p in flat.lower(), f'abstract missing result marker: {p}'
-assert 'four load-bearing results' in iflat and '(1) at gain-certified MATCHED' in iflat
+assert 'four load-bearing results' in iflat and '(1) at gain-certified matched' in iflat
 # RE-CUT by L171: result (4) is now the stimulus RE-ATTRIBUTION plus the
 # robustness panel; the slow-line census cells are still named in the §1 map
 # but as relocated limitations, and the re-attribution strings are REQUIRED.
@@ -61,9 +61,13 @@ assert 'four load-bearing results' in iflat and '(1) at gain-certified MATCHED' 
 # present.  The twin label must read INTERMEDIATE, never neutral.
 for p in ('5 of 178 at k=19', '188 of 194', '30 of 66, [.340,.574]',
           '78 of 98, Wilson', '449 of 449 baseline traces',
-          '8 of 20 [l157.pooled]', 'STIMULUS-SET', 'INTERMEDIATE',
+          '8 of 20 [l157.pooled]', 'stimulus-set', 'intermediate',
           'drive envelope', '12/16 vs 0/16', '15/16 vs 1/16'):
     assert p in iflat, f'§1 map missing: {p}'
+# (b4-iii-c-i): the twin label is now the lowercase defined term §5 uses.
+# STRICTLY STRONGER: the retired all-caps spelling is asserted GONE from the
+# §1 map, so neither spelling can satisfy the gate silently.
+assert 'INTERMEDIATE' not in iflat, '§1 map: retired all-caps twin label survives'
 for p in ('5/176 at k=19', '170/176 at k=29', '12/32, [.229,.548]',
           '28/32, Wilson lb .719', '518 of 518 baseline traces',
           'the twin is neutral'):
@@ -135,7 +139,7 @@ assert len(s156['included_files']) == 28
 _bflat = re.sub(r'\s+', ' ', body)
 # L172: the §4 census bullet now leads with the UNIQUE-SEED form; the
 # trace-level pair survives as the disclosed de-duplication note.
-assert '449 of 449 UNIQUE SEEDS' in _bflat and 'Wilson lb .992' in _bflat
+assert '449 of 449 unique seeds' in _bflat and 'Wilson lb .992' in _bflat
 assert '348 of 433 unique seeds (lb .764)' in _bflat
 assert '518 of 518 and 361 of 500 [l156.pooled]' in _bflat
 assert 'median .100 Hz' in _bflat

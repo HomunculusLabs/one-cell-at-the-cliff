@@ -1,0 +1,134 @@
+# ---------------- L175 bisects: stored-form loop, vectorized over arms ----
+# Per-arm arithmetic IDENTICAL to the lineage stored-form loop (lo=.12,
+# hi=.18, bracket assert, 24 halvings on bisect_af_mean, GAIN = lo). Arms
+# are dynamically independent (each arm's state reads only its own W, its
+# own gain and the seed-parameterized noise), so ONE settle pass serves
+# every arm's own midpoint. Certified by g_cutwA / g_sc25 / g_sc26 ==
+# stored floats EXACT.
+def bisect_vec(arms):
+    global ARMS
+    _save = ARMS
+    ARMS = list(arms)
+
+    def af_mean(gd):
+        acc = {a: [] for a in arms}
+        for s in ANCH:
+            st = settle_states(s, gd)
+            for a in arms:
+                acc[a].append(float((st[a] > 0.05).float().mean()))
+        return {a: float(np.mean(acc[a])) for a in arms}
+
+    lo_d = {a: 0.12 for a in arms}
+    hi_d = {a: 0.18 for a in arms}
+    af_lo_d, af_hi_d = af_mean(lo_d), af_mean(hi_d)
+    for a in arms:
+        log(f"{a} bracket af(0.12)={af_lo_d[a]:.5f} af(0.18)={af_hi_d[a]:.5f} "
+            f"target {AF_T:.5f}")
+        assert af_lo_d[a] < AF_T < af_hi_d[a], f"{a} bracket fail"
+    for it in range(24):
+        mid = {a: (lo_d[a] + hi_d[a]) / 2 for a in arms}
+        afm = af_mean(mid)
+        for a in arms:
+            if afm[a] < AF_T:
+                lo_d[a] = mid[a]
+            else:
+                hi_d[a] = mid[a]
+    af_d = af_mean(lo_d)
+    ARMS = _save
+    return lo_d, af_d
+
+
+assert ANCH == [11, 22, 33]
+if MODE == "census":
+    MY_ARMS = []
+    RAW_PATH, XM_PATH = f"{OUT}/raw_census.npz", f"{OUT}/xm_census.npz"
+    GAINS_PATH = f"{OUT}/gains_census.json"
+else:
+    _all = SC + [k for k in ("dmA", "dmC") if k in GEN]
+    MY_ARMS = _all[WID::NW]
+    RAW_PATH, XM_PATH = f"{OUT}/raw_w{WID}.npz", f"{OUT}/xm_w{WID}.npz"
+    GAINS_PATH = f"{OUT}/gains_w{WID}.json"
+    log(f"worker {WID}/{NW} arms: cutwA + {MY_ARMS}")
+STORED_G = {"cutwA": G_CUTWA_STORED, "sc25": G_CUTNG25_STORED,
+            "sc26": G_CUTNG25P_STORED}
+new_stairs, af_final = {}, {}
+if os.path.exists(GAINS_PATH):
+    _gj = json.load(open(GAINS_PATH))
+    assert sorted(_gj["gain"]) == sorted(["cutwA"] + MY_ARMS), "gains file arm drift"
+    for _a, _g in _gj["gain"].items():
+        GAIN[_a] = float(_g)
+    new_stairs, af_final = _gj["stairs"], _gj["af_final"]
+    log(f"gains loaded from {GAINS_PATH} (resume)")
+else:
+    _lo, _afd = bisect_vec(["cutwA"] + MY_ARMS)
+    for _a in ["cutwA"] + MY_ARMS:
+        GAIN[_a] = _lo[_a]
+        af_final[_a] = _afd[_a]
+        new_stairs[_a] = abs(_afd[_a] - AF_T)
+        log(f"g_{_a} {_lo[_a]!r} | af_final {_afd[_a]:.6f} | "
+            f"|af-target| {abs(_afd[_a] - AF_T):.2e}"
+            + ("" if 0.14 <= _lo[_a] <= 0.16 else " [OUTSIDE .14-.16 — DISCLOSED]"))
+for _a, _g in STORED_G.items():
+    if _a == "cutwA" or _a in MY_ARMS:
+        assert GAIN[_a] == _g, (_a, GAIN[_a], _g, "stored-form bisect drift (VOID)")
+        log(f"g_{_a} == stored EXACT ({_g!r})")
+atomic_json(GAINS_PATH, dict(gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+                             stairs=new_stairs, af_final=af_final,
+                             stored_exact={a: bool(GAIN[a] == g)
+                                           for a, g in STORED_G.items()
+                                           if a == "cutwA" or a in MY_ARMS}))
+log(f"bisects done {time.time()-t0:.0f}s")
+
+
+def arms_for(seed):
+    if MODE == "census":
+        return ["cutwA"]
+    if seed in ANCH_BIT:
+        return ["cutwA"] + [a for a in MY_ARMS if a in ("sc25", "sc26")]
+    return ["cutwA"] + MY_ARMS
+
+
+_poolkeys = []
+for _pk, (_ag, _bg) in (("Ti", ("f", "e")), ("Tr", ("f", "e")),
+                        ("Ta", ("a", "b")), ("Sr", ("a", "b")),
+                        ("Pr", ("a", "b"))):
+    for _c in (_ag, _bg):
+        for _s in ("L", "R"):
+            _poolkeys.append(f"{_pk}_{_c}{_s}")
+C0A_KEYS = ["mm", "xm"] + _poolkeys
+assert len(C0A_KEYS) == 22
+ANCH_PATH = (f"{OUT}/anchors_census.json" if MODE == "census"
+             else f"{OUT}/anchors_w{WID}.json")
+
+
+def post_seed(seed):
+    """C0A anchor the moment both 801/901 are rolled (early wiring verdict):
+    cutwA vs raw_l135 cutwA; sc25 vs raw_l135 cutng25; sc26 vs cutng25p.
+    Any non-zero = VOID: stop before a single fresh seed is rolled."""
+    if seed != 901:
+        return
+    z135c = np.load("l135/raw_l135.npz")
+    pairs = [("cutwA", "cutwA")] + [(a, l) for a, l in (("sc25", "cutng25"),
+                                                      ("sc26", "cutng25p"))
+                                    if a in MY_ARMS]
+    c0a = {}
+    for a, lin in pairs:
+        for s in (801, 901):
+            for key in C0A_KEYS:
+                assert f"{key}_{lin}_{s}" in z135c.files, "C0A coverage miss"
+                c0a[f"{a}~{lin}_{key}_{s}"] = float(np.abs(
+                    store[f"{key}_{a}_{s}"] - z135c[f"{key}_{lin}_{s}"][:WIN]).max())
+            c0a[f"{a}~{lin}_af_{s}"] = abs(float(store[f"af_{a}_{s}"])
+                                          - float(z135c[f"af_{lin}_{s}"]))
+    mx = max(c0a.values())
+    ok = bool(all(v == 0.0 for v in c0a.values()))
+    atomic_json(ANCH_PATH, dict(c0a_pass=ok, c0a_max=mx, n_checks=len(c0a),
+                                pairs=pairs, g_cutwA=GAIN["cutwA"],
+                                g_cutwA_stored_exact=bool(
+                                    GAIN["cutwA"] == G_CUTWA_STORED)))
+    log(f"C0A-175 {pairs} x 22 keys + af x 2 seeds vs raw_l135: "
+        f"{'PASS' if ok else 'FAIL'} (max {mx:.1e}, {len(c0a)} checks)")
+    if not ok:
+        log("C0A FAIL -> VOID, stopping before any fresh seed")
+        sys.exit(3)
+

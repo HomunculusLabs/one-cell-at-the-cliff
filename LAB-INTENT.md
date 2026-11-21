@@ -8859,3 +8859,7 @@ relabeled; and the label-separator clause was evaluated against the OLD text, so
 `batches, G/batch H` would have shipped); l149_verify section (29) makes it
 permanent; all six verifies green after; DRAFT v3.30; CLAIM-MAP B41 + its
 §-table row.
+
+## L175 stage (b) — single-cell scan + drive-matched twin (2026-11-21, experiment dispatch)
+
+L175 stage (b), 2026-11-21 (owner-directed experiment, fable 5.2 as experimenter): single-cell scan of ng ranks 25-58 on the k=24 base + drive-matched twins, fresh batch 3545-3560, n=16 on all 37 arms -> registered branch D2_identity_carried: carrier 16/16 meanR 0.758 is the only SUPER; mass twin 2/16 (x_mean 0.0005 on the base); drive-matched twins dmA gi 511 5/16 0.390 and dmC gi 1480 2/16 0.366 (drive x1.003/x1.006); 0 of 13 other active cells SUPER; base 5/16; caveat: silent-cell removals span kR 2-11/16 and covary with the re-bisected gain, one batch. Verified: PREREG before any rollout (~/critters/peabrain-lab/banc/l175/PREREG.md); count-asserted transform of l150_run.py (~/critters/peabrain-lab/banc/l175/build_scan.py -> scan_run.py); g_cutwA/g_cutng25/g_cutng25p stored floats EXACT; 322 C0A bit-identity checks vs ~/critters/peabrain-lab/banc/l135/raw_l135.npz max 0.0; metric cert vs results_l135 EXACT; results ~/critters/peabrain-lab/banc/l175/results_l175.json, census ~/critters/peabrain-lab/banc/l175/census_k24.npz, write-up ~/critters/peabrain-lab/banc/l175/L175-FINDINGS.md. No DRAFT/numbers/LANE edit.

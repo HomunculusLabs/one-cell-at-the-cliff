@@ -1,0 +1,3656 @@
+{
+ "draft_sha": "d76fa7d62f1e01891e70b13f900c2e100a46915013282f8768f7a129a08ecea2",
+ "n_distinct": 316,
+ "n_occ": 610,
+ "occ": {
+  "WORKING": 1,
+  "DRAFT": 1,
+  "L140": 2,
+  "L143": 2,
+  "STATUS": 1,
+  "L149": 1,
+  "L144": 1,
+  "L145": 1,
+  "L146": 1,
+  "L148": 1,
+  "CORRECTS": 1,
+  "L151": 1,
+  "IN06B033": 2,
+  "L153": 1,
+  "REPLICATED": 1,
+  "L150": 1,
+  "DUCKOPHILA": 1,
+  "L155": 1,
+  "NOT": 17,
+  "OFF": 3,
+  "L156": 1,
+  "L157": 1,
+  "L158": 1,
+  "L159": 1,
+  "PICKED": 1,
+  "XOR": 15,
+  "NO": 3,
+  "ALL": 1,
+  "GREEN": 1,
+  "PUNCTUATION-ONLY": 1,
+  "L168": 5,
+  "SCRAMBLE": 1,
+  "CONTROL": 1,
+  "FAMILY": 1,
+  "RE-SCOPED": 3,
+  "SET-DEPENDENT": 1,
+  "SUFFICIENCY": 3,
+  "BOTH": 5,
+  "PREREG": 15,
+  "D3": 1,
+  "L169": 6,
+  "GAIN-SWAP": 1,
+  "B35": 2,
+  "D1": 2,
+  "GRAPH-": 1,
+  "SUPER": 27,
+  "SCOPED": 1,
+  "I6": 1,
+  "REFUTE": 1,
+  "E1": 1,
+  "REVIEWER-REPORTED": 2,
+  "IS": 4,
+  "B36": 1,
+  "G1-G4": 1,
+  "STATIC": 3,
+  "DESCRIPTIVE": 1,
+  "C1-C3": 1,
+  "C2": 1,
+  "NONEQUIVALENT": 1,
+  "ARE": 1,
+  "R1-R3": 1,
+  "H1-H2": 1,
+  "B37": 2,
+  "INTACT": 2,
+  "LAST": 2,
+  "E0-E3": 1,
+  "B38": 2,
+  "AT": 4,
+  "NOT-SUPER": 4,
+  "PARTIAL": 11,
+  "L170": 1,
+  "I2": 1,
+  "MATCHED": 5,
+  "BANC": 13,
+  "FLOOR": 4,
+  "ARTIFACT": 1,
+  "UNTESTED": 2,
+  "RECIPROCAL": 2,
+  "L171": 1,
+  "I3": 1,
+  "SLOW": 1,
+  "LINE": 1,
+  "RE-ATTRIBUTED": 1,
+  "A1": 3,
+  "FFT-": 2,
+  "ROBUSTNESS": 1,
+  "PANEL": 1,
+  "ZERO": 4,
+  "B26": 2,
+  "EXACTLY": 3,
+  "RE-CUT": 2,
+  "L172": 1,
+  "I7": 1,
+  "ONE": 7,
+  "UNIQUE-SEED": 3,
+  "CERT-1": 1,
+  "CERT-2": 1,
+  "P4": 1,
+  "REFUTED": 1,
+  "EXCLUDES": 1,
+  "INTERMEDIATE": 4,
+  "CI": 4,
+  "UNIT": 2,
+  "OF": 2,
+  "INFERENCE": 2,
+  "L173": 3,
+  "METHODS": 1,
+  "CERTIFIED": 1,
+  "PARSED": 2,
+  "CLEANEST": 1,
+  "EXACT": 1,
+  "I4": 1,
+  "RETIRED": 2,
+  "RELOCATED": 1,
+  "LARGER": 3,
+  "AND": 3,
+  "L44": 1,
+  "SUBMISSION": 1,
+  "THE": 2,
+  "OWNER'S": 1,
+  "HANDS": 1,
+  "ONLY": 6,
+  "NC": 2,
+  "NE": 2,
+  "L174": 22,
+  "REFERENCE": 1,
+  "API": 8,
+  "DOI": 1,
+  "CORRECTED": 1,
+  "DETECTION": 2,
+  "OPEN": 11,
+  "VNC": 1,
+  "NUMBER": 1,
+  "CNS": 1,
+  "ABSTRACT": 1,
+  "INTO": 1,
+  "BY": 5,
+  "VALUE": 1,
+  "LOCAL": 1,
+  "P3": 1,
+  "I10": 1,
+  "I10'": 2,
+  "DE-DUPLICATION": 1,
+  "IDENTICAL": 4,
+  "BEFORE": 5,
+  "INDENTATION": 4,
+  "CONTAINS": 1,
+  "BYTE-IDENTICAL": 1,
+  "SEVEN": 1,
+  "BYTE-": 1,
+  "CONTENT-WORD": 1,
+  "SEQUENCE": 1,
+  "TWO": 2,
+  "MARKER": 1,
+  "LOCATORS": 1,
+  "LABEL": 1,
+  "DISCLOSED": 2,
+  "DROPS": 1,
+  "DISCUSSION": 1,
+  "TEXT": 1,
+  "ORDER": 3,
+  "ID": 1,
+  "NEW": 1,
+  "CONTROLS": 1,
+  "INHERITED": 1,
+  "LANE-ID": 1,
+  "STRIP": 1,
+  "PREMISE": 1,
+  "FINDING": 1,
+  "BATCH-CODE": 1,
+  "RELABEL": 1,
+  "RUN": 1,
+  "BRANCH": 1,
+  "UNIQUENESS": 1,
+  "IDENTITY": 1,
+  "SUFFICIENT": 2,
+  "EDGE": 2,
+  "SET": 4,
+  "ACTIVITY": 3,
+  "BAND-RELATIVE": 2,
+  "STIMULUS-SET": 2,
+  "DOES": 2,
+  "WHICH": 1,
+  "CPG": 3,
+  "IN12B003": 1,
+  "FLEXOR": 1,
+  "AMENDMENT": 1,
+  "MET": 1,
+  "ENTRAINER": 1,
+  "STRUCTURE": 1,
+  "S07": 1,
+  "CPG-": 1,
+  "NECESSARY": 1,
+  "EMERGES": 1,
+  "UNCURATED": 1,
+  "MASS-": 1,
+  "DN-": 3,
+  "WINDOW": 1,
+  "LEFT": 3,
+  "READS": 1,
+  "REMOVED": 1,
+  "RNG": 3,
+  "SECOND-": 1,
+  "LIGHTER": 1,
+  "CROSSED": 1,
+  "WITH": 1,
+  "BIT-IDENTICAL": 4,
+  "INCREASE": 1,
+  "CO-VARY": 1,
+  "VOLLEY": 1,
+  "ABSORBS": 1,
+  "CUT": 1,
+  "DN": 1,
+  "THRESHOLD": 1,
+  "FOOTPRINT": 1,
+  "RATE": 1,
+  "CONSTRUCTION": 2,
+  "RESULT": 1,
+  "UNCHANGED": 1,
+  "WIRING": 1,
+  "QA": 2,
+  "PRESENCE": 1,
+  "BROADER": 1,
+  "KILL": 2,
+  "NEUTRAL": 1,
+  "UNMATCHED-FLOOR": 1,
+  "BANC'": 3,
+  "OTHER": 1,
+  "HIGHER": 2,
+  "LOWER": 3,
+  "BELOW": 3,
+  "GRAPH": 1,
+  "SPLIT": 1,
+  "FIXED": 3,
+  "A2": 1,
+  "A3": 1,
+  "B1-B4": 1,
+  "STORED": 1,
+  "DC": 1,
+  "ALIGNMENT": 1,
+  "POSITION": 1,
+  "PLV": 1,
+  "PHASE": 1,
+  "UNCHOPPED": 1,
+  "SMALLER": 1,
+  "PRESERVED": 1,
+  "TOXICITY": 1,
+  "B4": 1,
+  "NOISE": 4,
+  "SEED": 1,
+  "NETWORK": 2,
+  "DIFFERENCES": 1,
+  "INCONSISTENT": 1,
+  "TRACES": 1,
+  "DVN": 3,
+  "CC": 2,
+  "SUMMING": 1,
+  "NT": 2,
+  "COO": 1,
+  "RMAX": 3,
+  "DT": 2,
+  "TAU": 2,
+  "BG": 2,
+  "AFTER": 1,
+  "INSIDE": 1,
+  "CONSTANT": 1,
+  "CHOPPED": 1,
+  "ENVELOPE'": 1,
+  "OWN": 1,
+  "SETTLE": 2,
+  "ABSOLUTE": 1,
+  "NEGATIVE": 1,
+  "PER": 1,
+  "SIDE": 1,
+  "DUTY": 1,
+  "FRESH": 1,
+  "NETWORKS": 1,
+  "B27": 1,
+  "B29": 1,
+  "B30": 1,
+  "B31": 1,
+  "B32": 1,
+  "B33": 1,
+  "B34": 1,
+  "C0A": 1,
+  "C0B": 1,
+  "PREVIOUS": 1,
+  "KEPT": 1,
+  "PLUS": 1,
+  "SUBSET": 1,
+  "FAILED": 1,
+  "WIN": 1,
+  "SEG": 1,
+  "UNRANKED": 1,
+  "NEXT": 1,
+  "MODEL": 1,
+  "UNIQUE": 1,
+  "SEEDS": 2,
+  "EMG": 1,
+  "NAME": 1,
+  "OPERATING-POINT": 1,
+  "PROXIMITY": 1,
+  "SINGLE-BATCH": 1,
+  "DATA": 1,
+  "IMPLICIT": 1,
+  "ROWS": 1,
+  "ADMISSIBLE": 1,
+  "CARRIER": 1,
+  "TWIN": 1,
+  "RE-DERIVED": 1,
+  "SAME": 1,
+  "COSTS": 1,
+  "TBD": 1,
+  "TODO": 1,
+  "L152": 2,
+  "PLOS": 2
+ },
+ "unclassified": [
+  "A1",
+  "A2",
+  "A3",
+  "ABSTRACT",
+  "ALL",
+  "API",
+  "ARE",
+  "ARTIFACT",
+  "AT",
+  "B36",
+  "B4",
+  "BATCH-CODE",
+  "BG",
+  "BRANCH",
+  "BY",
+  "BYTE-",
+  "BYTE-IDENTICAL",
+  "C1-C3",
+  "C2",
+  "CC",
+  "CERT-1",
+  "CERT-2",
+  "CERTIFIED",
+  "CI",
+  "CLEANEST",
+  "CNS",
+  "CONTAINS",
+  "CONTENT-WORD",
+  "CONTROL",
+  "CONTROLS",
+  "CORRECTED",
+  "CORRECTS",
+  "D1",
+  "D3",
+  "DC",
+  "DE-DUPLICATION",
+  "DESCRIPTIVE",
+  "DISCUSSION",
+  "DN",
+  "DOI",
+  "DRAFT",
+  "DROPS",
+  "DT",
+  "DUCKOPHILA",
+  "E0-E3",
+  "E1",
+  "EXACT",
+  "EXCLUDES",
+  "FAMILY",
+  "FINDING",
+  "G1-G4",
+  "GAIN-SWAP",
+  "GRAPH-",
+  "GREEN",
+  "H1-H2",
+  "HANDS",
+  "I10",
+  "I10'",
+  "I2",
+  "I3",
+  "I4",
+  "I6",
+  "I7",
+  "ID",
+  "IDENTICAL",
+  "INDENTATION",
+  "INHERITED",
+  "INTO",
+  "IS",
+  "L140",
+  "L143",
+  "L144",
+  "L145",
+  "L146",
+  "L148",
+  "L149",
+  "L150",
+  "L151",
+  "L152",
+  "L153",
+  "L155",
+  "L158",
+  "L159",
+  "L173",
+  "L174",
+  "L44",
+  "LABEL",
+  "LANE-ID",
+  "LAST",
+  "LINE",
+  "LOCAL",
+  "LOCATORS",
+  "MARKER",
+  "METHODS",
+  "NC",
+  "NE",
+  "NEW",
+  "NO",
+  "NONEQUIVALENT",
+  "NT",
+  "NUMBER",
+  "OF",
+  "OPEN",
+  "OWNER'S",
+  "P3",
+  "P4",
+  "PANEL",
+  "PICKED",
+  "PLOS",
+  "PREMISE",
+  "PUNCTUATION-ONLY",
+  "QA",
+  "R1-R3",
+  "RE-ATTRIBUTED",
+  "RE-CUT",
+  "RE-SCOPED",
+  "REFERENCE",
+  "REFUTE",
+  "REFUTED",
+  "RELABEL",
+  "RELOCATED",
+  "REPLICATED",
+  "RETIRED",
+  "REVIEWER-REPORTED",
+  "ROBUSTNESS",
+  "RUN",
+  "SCOPED",
+  "SCRAMBLE",
+  "SEQUENCE",
+  "SET-DEPENDENT",
+  "SEVEN",
+  "SLOW",
+  "STATUS",
+  "STRIP",
+  "SUBMISSION",
+  "TBD",
+  "TEXT",
+  "TODO",
+  "UNIQUENESS",
+  "VALUE",
+  "VNC",
+  "WORKING"
+ ],
+ "per_section": {
+  "<front>": {
+   "<UNCLASSIFIED>": 178,
+   "KEEP_CELLID": 1,
+   "STRIP_EMPHASIS": 45,
+   "DEFER_LANE": 13,
+   "KEEP_ACRONYM": 3,
+   "NOTATION_spell_out": 13,
+   "KEEP_MAPPING": 4,
+   "CLASS_LABEL_lowercase": 6,
+   "KEEP_PROPER": 3
+  },
+  "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)": {
+   "<UNCLASSIFIED>": 4,
+   "DEFER_LANE": 3,
+   "KEEP_PROPER": 1
+  },
+  "## Abstract (draft)": {
+   "KEEP_PROPER": 1,
+   "<UNCLASSIFIED>": 1
+  },
+  "## 1. Introduction": {
+   "STRIP_EMPHASIS": 25,
+   "KEEP_ACRONYM": 5,
+   "CLASS_LABEL_lowercase": 1,
+   "KEEP_CELLID": 2
+  },
+  "## 2. Results": {
+   "KEEP_ACRONYM": 17,
+   "STRIP_EMPHASIS": 89,
+   "CLASS_LABEL_lowercase": 36,
+   "<UNCLASSIFIED>": 16,
+   "KEEP_CELLID": 1,
+   "KEEP_PROPER": 4,
+   "NOTATION_spell_out": 1,
+   "DEFER_BRANCH": 1
+  },
+  "## 3. Methods": {
+   "KEEP_PROPER": 2,
+   "KEEP_ACRONYM": 2,
+   "<UNCLASSIFIED>": 10,
+   "STRIP_EMPHASIS": 35,
+   "KEEP_SYMBOL": 3,
+   "NOTATION_spell_out": 4,
+   "CLASS_LABEL_lowercase": 3,
+   "KEEP_MAPPING": 11,
+   "KEEP_CELLID": 2
+  },
+  "## 4. Limitations (honest, per card)": {
+   "STRIP_EMPHASIS": 35,
+   "KEEP_ACRONYM": 3,
+   "KEEP_PROPER": 4,
+   "<UNCLASSIFIED>": 1,
+   "CLASS_LABEL_lowercase": 2
+  },
+  "## 6. Data & code": {
+   "KEEP_PROPER": 1,
+   "KEEP_ACRONYM": 1,
+   "<UNCLASSIFIED>": 4
+  },
+  "## 7. Author/submit notes": {
+   "<UNCLASSIFIED>": 5
+  },
+  "## References": {
+   "<UNCLASSIFIED>": 6,
+   "KEEP_PROPER": 1,
+   "KEEP_ACRONYM": 1
+  }
+ },
+ "sites": {
+  "WORKING": [
+   [
+    1,
+    "<front>"
+   ]
+  ],
+  "DRAFT": [
+   [
+    1,
+    "<front>"
+   ]
+  ],
+  "L140": [
+   [
+    1,
+    "<front>"
+   ],
+   [
+    3,
+    "<front>"
+   ]
+  ],
+  "L143": [
+   [
+    1,
+    "<front>"
+   ],
+   [
+    4,
+    "<front>"
+   ]
+  ],
+  "STATUS": [
+   [
+    3,
+    "<front>"
+   ]
+  ],
+  "L149": [
+   [
+    4,
+    "<front>"
+   ]
+  ],
+  "L144": [
+   [
+    5,
+    "<front>"
+   ]
+  ],
+  "L145": [
+   [
+    5,
+    "<front>"
+   ]
+  ],
+  "L146": [
+   [
+    6,
+    "<front>"
+   ]
+  ],
+  "L148": [
+   [
+    6,
+    "<front>"
+   ]
+  ],
+  "CORRECTS": [
+   [
+    6,
+    "<front>"
+   ]
+  ],
+  "L151": [
+   [
+    9,
+    "<front>"
+   ]
+  ],
+  "IN06B033": [
+   [
+    10,
+    "<front>"
+   ],
+   [
+    783,
+    "## 2. Results"
+   ]
+  ],
+  "L153": [
+   [
+    10,
+    "<front>"
+   ]
+  ],
+  "REPLICATED": [
+   [
+    11,
+    "<front>"
+   ]
+  ],
+  "L150": [
+   [
+    12,
+    "<front>"
+   ]
+  ],
+  "DUCKOPHILA": [
+   [
+    15,
+    "<front>"
+   ]
+  ],
+  "L155": [
+   [
+    15,
+    "<front>"
+   ]
+  ],
+  "NOT": [
+   [
+    16,
+    "<front>"
+   ],
+   [
+    22,
+    "<front>"
+   ],
+   [
+    51,
+    "<front>"
+   ],
+   [
+    54,
+    "<front>"
+   ],
+   [
+    69,
+    "<front>"
+   ],
+   [
+    81,
+    "<front>"
+   ],
+   [
+    92,
+    "<front>"
+   ],
+   [
+    107,
+    "<front>"
+   ],
+   [
+    120,
+    "<front>"
+   ],
+   [
+    565,
+    "## 1. Introduction"
+   ],
+   [
+    681,
+    "## 2. Results"
+   ],
+   [
+    915,
+    "## 2. Results"
+   ],
+   [
+    991,
+    "## 2. Results"
+   ],
+   [
+    1079,
+    "## 2. Results"
+   ],
+   [
+    1111,
+    "## 2. Results"
+   ],
+   [
+    1469,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1484,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "OFF": [
+   [
+    17,
+    "<front>"
+   ],
+   [
+    564,
+    "## 1. Introduction"
+   ],
+   [
+    1083,
+    "## 2. Results"
+   ]
+  ],
+  "L156": [
+   [
+    18,
+    "<front>"
+   ]
+  ],
+  "L157": [
+   [
+    21,
+    "<front>"
+   ]
+  ],
+  "L158": [
+   [
+    23,
+    "<front>"
+   ]
+  ],
+  "L159": [
+   [
+    30,
+    "<front>"
+   ]
+  ],
+  "PICKED": [
+   [
+    30,
+    "<front>"
+   ]
+  ],
+  "XOR": [
+   [
+    32,
+    "<front>"
+   ],
+   [
+    97,
+    "<front>"
+   ],
+   [
+    511,
+    "## 1. Introduction"
+   ],
+   [
+    657,
+    "## 2. Results"
+   ],
+   [
+    677,
+    "## 2. Results"
+   ],
+   [
+    713,
+    "## 2. Results"
+   ],
+   [
+    891,
+    "## 2. Results"
+   ],
+   [
+    1006,
+    "## 2. Results"
+   ],
+   [
+    1008,
+    "## 2. Results"
+   ],
+   [
+    1058,
+    "## 2. Results"
+   ],
+   [
+    1066,
+    "## 2. Results"
+   ],
+   [
+    1143,
+    "## 2. Results"
+   ],
+   [
+    1267,
+    "## 3. Methods"
+   ],
+   [
+    1460,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1473,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "NO": [
+   [
+    33,
+    "<front>"
+   ],
+   [
+    775,
+    "## 2. Results"
+   ],
+   [
+    1223,
+    "## 3. Methods"
+   ]
+  ],
+  "ALL": [
+   [
+    34,
+    "<front>"
+   ]
+  ],
+  "GREEN": [
+   [
+    34,
+    "<front>"
+   ]
+  ],
+  "PUNCTUATION-ONLY": [
+   [
+    35,
+    "<front>"
+   ]
+  ],
+  "L168": [
+   [
+    38,
+    "<front>"
+   ],
+   [
+    136,
+    "<front>"
+   ],
+   [
+    450,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ],
+   [
+    456,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ],
+   [
+    463,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ]
+  ],
+  "SCRAMBLE": [
+   [
+    39,
+    "<front>"
+   ]
+  ],
+  "CONTROL": [
+   [
+    39,
+    "<front>"
+   ]
+  ],
+  "FAMILY": [
+   [
+    39,
+    "<front>"
+   ]
+  ],
+  "RE-SCOPED": [
+   [
+    43,
+    "<front>"
+   ],
+   [
+    110,
+    "<front>"
+   ],
+   [
+    450,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ]
+  ],
+  "SET-DEPENDENT": [
+   [
+    43,
+    "<front>"
+   ]
+  ],
+  "SUFFICIENCY": [
+   [
+    43,
+    "<front>"
+   ],
+   [
+    579,
+    "## 1. Introduction"
+   ],
+   [
+    593,
+    "## 1. Introduction"
+   ]
+  ],
+  "BOTH": [
+   [
+    45,
+    "<front>"
+   ],
+   [
+    99,
+    "<front>"
+   ],
+   [
+    714,
+    "## 2. Results"
+   ],
+   [
+    1036,
+    "## 2. Results"
+   ],
+   [
+    1180,
+    "## 2. Results"
+   ]
+  ],
+  "PREREG": [
+   [
+    46,
+    "<front>"
+   ],
+   [
+    50,
+    "<front>"
+   ],
+   [
+    59,
+    "<front>"
+   ],
+   [
+    64,
+    "<front>"
+   ],
+   [
+    73,
+    "<front>"
+   ],
+   [
+    73,
+    "<front>"
+   ],
+   [
+    83,
+    "<front>"
+   ],
+   [
+    84,
+    "<front>"
+   ],
+   [
+    95,
+    "<front>"
+   ],
+   [
+    95,
+    "<front>"
+   ],
+   [
+    125,
+    "<front>"
+   ],
+   [
+    146,
+    "<front>"
+   ],
+   [
+    271,
+    "<front>"
+   ],
+   [
+    1063,
+    "## 2. Results"
+   ],
+   [
+    1308,
+    "## 3. Methods"
+   ]
+  ],
+  "D3": [
+   [
+    46,
+    "<front>"
+   ]
+  ],
+  "L169": [
+   [
+    48,
+    "<front>"
+   ],
+   [
+    55,
+    "<front>"
+   ],
+   [
+    63,
+    "<front>"
+   ],
+   [
+    72,
+    "<front>"
+   ],
+   [
+    83,
+    "<front>"
+   ],
+   [
+    94,
+    "<front>"
+   ]
+  ],
+  "GAIN-SWAP": [
+   [
+    48,
+    "<front>"
+   ]
+  ],
+  "B35": [
+   [
+    49,
+    "<front>"
+   ],
+   [
+    1303,
+    "## 3. Methods"
+   ]
+  ],
+  "D1": [
+   [
+    50,
+    "<front>"
+   ],
+   [
+    923,
+    "## 2. Results"
+   ]
+  ],
+  "GRAPH-": [
+   [
+    51,
+    "<front>"
+   ]
+  ],
+  "SUPER": [
+   [
+    53,
+    "<front>"
+   ],
+   [
+    101,
+    "<front>"
+   ],
+   [
+    102,
+    "<front>"
+   ],
+   [
+    661,
+    "## 2. Results"
+   ],
+   [
+    738,
+    "## 2. Results"
+   ],
+   [
+    806,
+    "## 2. Results"
+   ],
+   [
+    818,
+    "## 2. Results"
+   ],
+   [
+    828,
+    "## 2. Results"
+   ],
+   [
+    829,
+    "## 2. Results"
+   ],
+   [
+    830,
+    "## 2. Results"
+   ],
+   [
+    831,
+    "## 2. Results"
+   ],
+   [
+    832,
+    "## 2. Results"
+   ],
+   [
+    835,
+    "## 2. Results"
+   ],
+   [
+    836,
+    "## 2. Results"
+   ],
+   [
+    865,
+    "## 2. Results"
+   ],
+   [
+    866,
+    "## 2. Results"
+   ],
+   [
+    868,
+    "## 2. Results"
+   ],
+   [
+    916,
+    "## 2. Results"
+   ],
+   [
+    917,
+    "## 2. Results"
+   ],
+   [
+    965,
+    "## 2. Results"
+   ],
+   [
+    1016,
+    "## 2. Results"
+   ],
+   [
+    1025,
+    "## 2. Results"
+   ],
+   [
+    1026,
+    "## 2. Results"
+   ],
+   [
+    1034,
+    "## 2. Results"
+   ],
+   [
+    1035,
+    "## 2. Results"
+   ],
+   [
+    1279,
+    "## 3. Methods"
+   ],
+   [
+    1472,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "SCOPED": [
+   [
+    55,
+    "<front>"
+   ]
+  ],
+  "I6": [
+   [
+    56,
+    "<front>"
+   ]
+  ],
+  "REFUTE": [
+   [
+    57,
+    "<front>"
+   ]
+  ],
+  "E1": [
+   [
+    59,
+    "<front>"
+   ]
+  ],
+  "REVIEWER-REPORTED": [
+   [
+    61,
+    "<front>"
+   ],
+   [
+    119,
+    "<front>"
+   ]
+  ],
+  "IS": [
+   [
+    63,
+    "<front>"
+   ],
+   [
+    196,
+    "<front>"
+   ],
+   [
+    460,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ],
+   [
+    1325,
+    "## 3. Methods"
+   ]
+  ],
+  "B36": [
+   [
+    64,
+    "<front>"
+   ]
+  ],
+  "G1-G4": [
+   [
+    65,
+    "<front>"
+   ]
+  ],
+  "STATIC": [
+   [
+    67,
+    "<front>"
+   ],
+   [
+    1465,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1475,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "DESCRIPTIVE": [
+   [
+    68,
+    "<front>"
+   ]
+  ],
+  "C1-C3": [
+   [
+    73,
+    "<front>"
+   ]
+  ],
+  "C2": [
+   [
+    74,
+    "<front>"
+   ]
+  ],
+  "NONEQUIVALENT": [
+   [
+    74,
+    "<front>"
+   ]
+  ],
+  "ARE": [
+   [
+    83,
+    "<front>"
+   ]
+  ],
+  "R1-R3": [
+   [
+    84,
+    "<front>"
+   ]
+  ],
+  "H1-H2": [
+   [
+    84,
+    "<front>"
+   ]
+  ],
+  "B37": [
+   [
+    85,
+    "<front>"
+   ],
+   [
+    1303,
+    "## 3. Methods"
+   ]
+  ],
+  "INTACT": [
+   [
+    89,
+    "<front>"
+   ],
+   [
+    755,
+    "## 2. Results"
+   ]
+  ],
+  "LAST": [
+   [
+    94,
+    "<front>"
+   ],
+   [
+    323,
+    "<front>"
+   ]
+  ],
+  "E0-E3": [
+   [
+    95,
+    "<front>"
+   ]
+  ],
+  "B38": [
+   [
+    96,
+    "<front>"
+   ],
+   [
+    1303,
+    "## 3. Methods"
+   ]
+  ],
+  "AT": [
+   [
+    103,
+    "<front>"
+   ],
+   [
+    116,
+    "<front>"
+   ],
+   [
+    888,
+    "## 2. Results"
+   ],
+   [
+    1039,
+    "## 2. Results"
+   ]
+  ],
+  "NOT-SUPER": [
+   [
+    103,
+    "<front>"
+   ],
+   [
+    1017,
+    "## 2. Results"
+   ],
+   [
+    1039,
+    "## 2. Results"
+   ],
+   [
+    1280,
+    "## 3. Methods"
+   ]
+  ],
+  "PARTIAL": [
+   [
+    106,
+    "<front>"
+   ],
+   [
+    736,
+    "## 2. Results"
+   ],
+   [
+    791,
+    "## 2. Results"
+   ],
+   [
+    826,
+    "## 2. Results"
+   ],
+   [
+    827,
+    "## 2. Results"
+   ],
+   [
+    866,
+    "## 2. Results"
+   ],
+   [
+    914,
+    "## 2. Results"
+   ],
+   [
+    965,
+    "## 2. Results"
+   ],
+   [
+    1046,
+    "## 2. Results"
+   ],
+   [
+    1280,
+    "## 3. Methods"
+   ],
+   [
+    1472,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "L170": [
+   [
+    110,
+    "<front>"
+   ]
+  ],
+  "I2": [
+   [
+    110,
+    "<front>"
+   ]
+  ],
+  "MATCHED": [
+   [
+    111,
+    "<front>"
+   ],
+   [
+    116,
+    "<front>"
+   ],
+   [
+    507,
+    "## 1. Introduction"
+   ],
+   [
+    879,
+    "## 2. Results"
+   ],
+   [
+    888,
+    "## 2. Results"
+   ]
+  ],
+  "BANC": [
+   [
+    112,
+    "<front>"
+   ],
+   [
+    209,
+    "<front>"
+   ],
+   [
+    238,
+    "<front>"
+   ],
+   [
+    469,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ],
+   [
+    477,
+    "## Abstract (draft)"
+   ],
+   [
+    876,
+    "## 2. Results"
+   ],
+   [
+    883,
+    "## 2. Results"
+   ],
+   [
+    1198,
+    "## 3. Methods"
+   ],
+   [
+    1400,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1442,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1449,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1565,
+    "## 6. Data & code"
+   ],
+   [
+    1620,
+    "## References"
+   ]
+  ],
+  "FLOOR": [
+   [
+    115,
+    "<front>"
+   ],
+   [
+    116,
+    "<front>"
+   ],
+   [
+    888,
+    "## 2. Results"
+   ],
+   [
+    1442,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "ARTIFACT": [
+   [
+    115,
+    "<front>"
+   ]
+  ],
+  "UNTESTED": [
+   [
+    116,
+    "<front>"
+   ],
+   [
+    888,
+    "## 2. Results"
+   ]
+  ],
+  "RECIPROCAL": [
+   [
+    118,
+    "<front>"
+   ],
+   [
+    897,
+    "## 2. Results"
+   ]
+  ],
+  "L171": [
+   [
+    123,
+    "<front>"
+   ]
+  ],
+  "I3": [
+   [
+    123,
+    "<front>"
+   ]
+  ],
+  "SLOW": [
+   [
+    123,
+    "<front>"
+   ]
+  ],
+  "LINE": [
+   [
+    123,
+    "<front>"
+   ]
+  ],
+  "RE-ATTRIBUTED": [
+   [
+    124,
+    "<front>"
+   ]
+  ],
+  "A1": [
+   [
+    125,
+    "<front>"
+   ],
+   [
+    1063,
+    "## 2. Results"
+   ],
+   [
+    1070,
+    "## 2. Results"
+   ]
+  ],
+  "FFT-": [
+   [
+    126,
+    "<front>"
+   ],
+   [
+    1071,
+    "## 2. Results"
+   ]
+  ],
+  "ROBUSTNESS": [
+   [
+    130,
+    "<front>"
+   ]
+  ],
+  "PANEL": [
+   [
+    130,
+    "<front>"
+   ]
+  ],
+  "ZERO": [
+   [
+    133,
+    "<front>"
+   ],
+   [
+    146,
+    "<front>"
+   ],
+   [
+    724,
+    "## 2. Results"
+   ],
+   [
+    1065,
+    "## 2. Results"
+   ]
+  ],
+  "B26": [
+   [
+    134,
+    "<front>"
+   ],
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "EXACTLY": [
+   [
+    134,
+    "<front>"
+   ],
+   [
+    1067,
+    "## 2. Results"
+   ],
+   [
+    1253,
+    "## 3. Methods"
+   ]
+  ],
+  "RE-CUT": [
+   [
+    136,
+    "<front>"
+   ],
+   [
+    160,
+    "<front>"
+   ]
+  ],
+  "L172": [
+   [
+    140,
+    "<front>"
+   ]
+  ],
+  "I7": [
+   [
+    140,
+    "<front>"
+   ]
+  ],
+  "ONE": [
+   [
+    140,
+    "<front>"
+   ],
+   [
+    157,
+    "<front>"
+   ],
+   [
+    392,
+    "<front>"
+   ],
+   [
+    510,
+    "## 1. Introduction"
+   ],
+   [
+    1120,
+    "## 2. Results"
+   ],
+   [
+    1285,
+    "## 3. Methods"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "UNIQUE-SEED": [
+   [
+    142,
+    "<front>"
+   ],
+   [
+    1122,
+    "## 2. Results"
+   ],
+   [
+    1287,
+    "## 3. Methods"
+   ]
+  ],
+  "CERT-1": [
+   [
+    146,
+    "<front>"
+   ]
+  ],
+  "CERT-2": [
+   [
+    147,
+    "<front>"
+   ]
+  ],
+  "P4": [
+   [
+    150,
+    "<front>"
+   ]
+  ],
+  "REFUTED": [
+   [
+    150,
+    "<front>"
+   ]
+  ],
+  "EXCLUDES": [
+   [
+    151,
+    "<front>"
+   ]
+  ],
+  "INTERMEDIATE": [
+   [
+    153,
+    "<front>"
+   ],
+   [
+    511,
+    "## 1. Introduction"
+   ],
+   [
+    661,
+    "## 2. Results"
+   ],
+   [
+    1176,
+    "## 2. Results"
+   ]
+  ],
+  "CI": [
+   [
+    155,
+    "<front>"
+   ],
+   [
+    486,
+    "## Abstract (draft)"
+   ],
+   [
+    664,
+    "## 2. Results"
+   ],
+   [
+    1160,
+    "## 2. Results"
+   ]
+  ],
+  "UNIT": [
+   [
+    157,
+    "<front>"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "OF": [
+   [
+    157,
+    "<front>"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "INFERENCE": [
+   [
+    157,
+    "<front>"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "L173": [
+   [
+    163,
+    "<front>"
+   ],
+   [
+    173,
+    "<front>"
+   ],
+   [
+    259,
+    "<front>"
+   ]
+  ],
+  "METHODS": [
+   [
+    163,
+    "<front>"
+   ]
+  ],
+  "CERTIFIED": [
+   [
+    165,
+    "<front>"
+   ]
+  ],
+  "PARSED": [
+   [
+    169,
+    "<front>"
+   ],
+   [
+    1336,
+    "## 3. Methods"
+   ]
+  ],
+  "CLEANEST": [
+   [
+    173,
+    "<front>"
+   ]
+  ],
+  "EXACT": [
+   [
+    176,
+    "<front>"
+   ]
+  ],
+  "I4": [
+   [
+    179,
+    "<front>"
+   ]
+  ],
+  "RETIRED": [
+   [
+    181,
+    "<front>"
+   ],
+   [
+    463,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ]
+  ],
+  "RELOCATED": [
+   [
+    182,
+    "<front>"
+   ]
+  ],
+  "LARGER": [
+   [
+    186,
+    "<front>"
+   ],
+   [
+    759,
+    "## 2. Results"
+   ],
+   [
+    1107,
+    "## 2. Results"
+   ]
+  ],
+  "AND": [
+   [
+    190,
+    "<front>"
+   ],
+   [
+    394,
+    "<front>"
+   ],
+   [
+    669,
+    "## 2. Results"
+   ]
+  ],
+  "L44": [
+   [
+    195,
+    "<front>"
+   ]
+  ],
+  "SUBMISSION": [
+   [
+    196,
+    "<front>"
+   ]
+  ],
+  "THE": [
+   [
+    196,
+    "<front>"
+   ],
+   [
+    659,
+    "## 2. Results"
+   ]
+  ],
+  "OWNER'S": [
+   [
+    196,
+    "<front>"
+   ]
+  ],
+  "HANDS": [
+   [
+    196,
+    "<front>"
+   ]
+  ],
+  "ONLY": [
+   [
+    196,
+    "<front>"
+   ],
+   [
+    339,
+    "<front>"
+   ],
+   [
+    736,
+    "## 2. Results"
+   ],
+   [
+    794,
+    "## 2. Results"
+   ],
+   [
+    796,
+    "## 2. Results"
+   ],
+   [
+    1465,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "NC": [
+   [
+    197,
+    "<front>"
+   ],
+   [
+    1578,
+    "## 7. Author/submit notes"
+   ]
+  ],
+  "NE": [
+   [
+    197,
+    "<front>"
+   ],
+   [
+    1579,
+    "## 7. Author/submit notes"
+   ]
+  ],
+  "L174": [
+   [
+    198,
+    "<front>"
+   ],
+   [
+    213,
+    "<front>"
+   ],
+   [
+    214,
+    "<front>"
+   ],
+   [
+    234,
+    "<front>"
+   ],
+   [
+    236,
+    "<front>"
+   ],
+   [
+    255,
+    "<front>"
+   ],
+   [
+    257,
+    "<front>"
+   ],
+   [
+    277,
+    "<front>"
+   ],
+   [
+    279,
+    "<front>"
+   ],
+   [
+    301,
+    "<front>"
+   ],
+   [
+    302,
+    "<front>"
+   ],
+   [
+    322,
+    "<front>"
+   ],
+   [
+    323,
+    "<front>"
+   ],
+   [
+    346,
+    "<front>"
+   ],
+   [
+    348,
+    "<front>"
+   ],
+   [
+    374,
+    "<front>"
+   ],
+   [
+    376,
+    "<front>"
+   ],
+   [
+    401,
+    "<front>"
+   ],
+   [
+    403,
+    "<front>"
+   ],
+   [
+    429,
+    "<front>"
+   ],
+   [
+    431,
+    "<front>"
+   ],
+   [
+    448,
+    "<front>"
+   ]
+  ],
+  "REFERENCE": [
+   [
+    198,
+    "<front>"
+   ]
+  ],
+  "API": [
+   [
+    200,
+    "<front>"
+   ],
+   [
+    200,
+    "<front>"
+   ],
+   [
+    201,
+    "<front>"
+   ],
+   [
+    218,
+    "<front>"
+   ],
+   [
+    1590,
+    "## References"
+   ],
+   [
+    1590,
+    "## References"
+   ],
+   [
+    1590,
+    "## References"
+   ],
+   [
+    1592,
+    "## References"
+   ]
+  ],
+  "DOI": [
+   [
+    203,
+    "<front>"
+   ]
+  ],
+  "CORRECTED": [
+   [
+    204,
+    "<front>"
+   ]
+  ],
+  "DETECTION": [
+   [
+    209,
+    "<front>"
+   ],
+   [
+    1448,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "OPEN": [
+   [
+    213,
+    "<front>"
+   ],
+   [
+    234,
+    "<front>"
+   ],
+   [
+    255,
+    "<front>"
+   ],
+   [
+    277,
+    "<front>"
+   ],
+   [
+    300,
+    "<front>"
+   ],
+   [
+    321,
+    "<front>"
+   ],
+   [
+    346,
+    "<front>"
+   ],
+   [
+    374,
+    "<front>"
+   ],
+   [
+    401,
+    "<front>"
+   ],
+   [
+    429,
+    "<front>"
+   ],
+   [
+    448,
+    "<front>"
+   ]
+  ],
+  "VNC": [
+   [
+    217,
+    "<front>"
+   ]
+  ],
+  "NUMBER": [
+   [
+    220,
+    "<front>"
+   ]
+  ],
+  "CNS": [
+   [
+    225,
+    "<front>"
+   ]
+  ],
+  "ABSTRACT": [
+   [
+    236,
+    "<front>"
+   ]
+  ],
+  "INTO": [
+   [
+    243,
+    "<front>"
+   ]
+  ],
+  "BY": [
+   [
+    244,
+    "<front>"
+   ],
+   [
+    812,
+    "## 2. Results"
+   ],
+   [
+    1199,
+    "## 3. Methods"
+   ],
+   [
+    1318,
+    "## 3. Methods"
+   ],
+   [
+    1566,
+    "## 6. Data & code"
+   ]
+  ],
+  "VALUE": [
+   [
+    244,
+    "<front>"
+   ]
+  ],
+  "LOCAL": [
+   [
+    247,
+    "<front>"
+   ]
+  ],
+  "P3": [
+   [
+    252,
+    "<front>"
+   ]
+  ],
+  "I10": [
+   [
+    257,
+    "<front>"
+   ]
+  ],
+  "I10'": [
+   [
+    258,
+    "<front>"
+   ],
+   [
+    270,
+    "<front>"
+   ]
+  ],
+  "DE-DUPLICATION": [
+   [
+    262,
+    "<front>"
+   ]
+  ],
+  "IDENTICAL": [
+   [
+    283,
+    "<front>"
+   ],
+   [
+    305,
+    "<front>"
+   ],
+   [
+    326,
+    "<front>"
+   ],
+   [
+    352,
+    "<front>"
+   ]
+  ],
+  "BEFORE": [
+   [
+    287,
+    "<front>"
+   ],
+   [
+    310,
+    "<front>"
+   ],
+   [
+    328,
+    "<front>"
+   ],
+   [
+    1309,
+    "## 3. Methods"
+   ],
+   [
+    1316,
+    "## 3. Methods"
+   ]
+  ],
+  "INDENTATION": [
+   [
+    288,
+    "<front>"
+   ],
+   [
+    311,
+    "<front>"
+   ],
+   [
+    329,
+    "<front>"
+   ],
+   [
+    357,
+    "<front>"
+   ]
+  ],
+  "CONTAINS": [
+   [
+    306,
+    "<front>"
+   ]
+  ],
+  "BYTE-IDENTICAL": [
+   [
+    307,
+    "<front>"
+   ]
+  ],
+  "SEVEN": [
+   [
+    328,
+    "<front>"
+   ]
+  ],
+  "BYTE-": [
+   [
+    333,
+    "<front>"
+   ]
+  ],
+  "CONTENT-WORD": [
+   [
+    353,
+    "<front>"
+   ]
+  ],
+  "SEQUENCE": [
+   [
+    353,
+    "<front>"
+   ]
+  ],
+  "TWO": [
+   [
+    358,
+    "<front>"
+   ],
+   [
+    677,
+    "## 2. Results"
+   ]
+  ],
+  "MARKER": [
+   [
+    358,
+    "<front>"
+   ]
+  ],
+  "LOCATORS": [
+   [
+    359,
+    "<front>"
+   ]
+  ],
+  "LABEL": [
+   [
+    362,
+    "<front>"
+   ]
+  ],
+  "DISCLOSED": [
+   [
+    370,
+    "<front>"
+   ],
+   [
+    697,
+    "## 2. Results"
+   ]
+  ],
+  "DROPS": [
+   [
+    372,
+    "<front>"
+   ]
+  ],
+  "DISCUSSION": [
+   [
+    376,
+    "<front>"
+   ]
+  ],
+  "TEXT": [
+   [
+    380,
+    "<front>"
+   ]
+  ],
+  "ORDER": [
+   [
+    381,
+    "<front>"
+   ],
+   [
+    434,
+    "<front>"
+   ],
+   [
+    558,
+    "## 1. Introduction"
+   ]
+  ],
+  "ID": [
+   [
+    383,
+    "<front>"
+   ]
+  ],
+  "NEW": [
+   [
+    384,
+    "<front>"
+   ]
+  ],
+  "CONTROLS": [
+   [
+    388,
+    "<front>"
+   ]
+  ],
+  "INHERITED": [
+   [
+    398,
+    "<front>"
+   ]
+  ],
+  "LANE-ID": [
+   [
+    403,
+    "<front>"
+   ]
+  ],
+  "STRIP": [
+   [
+    403,
+    "<front>"
+   ]
+  ],
+  "PREMISE": [
+   [
+    424,
+    "<front>"
+   ]
+  ],
+  "FINDING": [
+   [
+    424,
+    "<front>"
+   ]
+  ],
+  "BATCH-CODE": [
+   [
+    431,
+    "<front>"
+   ]
+  ],
+  "RELABEL": [
+   [
+    431,
+    "<front>"
+   ]
+  ],
+  "RUN": [
+   [
+    434,
+    "<front>"
+   ]
+  ],
+  "BRANCH": [
+   [
+    437,
+    "<front>"
+   ]
+  ],
+  "UNIQUENESS": [
+   [
+    457,
+    "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+   ]
+  ],
+  "IDENTITY": [
+   [
+    510,
+    "## 1. Introduction"
+   ]
+  ],
+  "SUFFICIENT": [
+   [
+    514,
+    "## 1. Introduction"
+   ],
+   [
+    704,
+    "## 2. Results"
+   ]
+  ],
+  "EDGE": [
+   [
+    516,
+    "## 1. Introduction"
+   ],
+   [
+    853,
+    "## 2. Results"
+   ]
+  ],
+  "SET": [
+   [
+    516,
+    "## 1. Introduction"
+   ],
+   [
+    678,
+    "## 2. Results"
+   ],
+   [
+    853,
+    "## 2. Results"
+   ],
+   [
+    1463,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "ACTIVITY": [
+   [
+    518,
+    "## 1. Introduction"
+   ],
+   [
+    771,
+    "## 2. Results"
+   ],
+   [
+    840,
+    "## 2. Results"
+   ]
+  ],
+  "BAND-RELATIVE": [
+   [
+    520,
+    "## 1. Introduction"
+   ],
+   [
+    1373,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "STIMULUS-SET": [
+   [
+    521,
+    "## 1. Introduction"
+   ],
+   [
+    1373,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "DOES": [
+   [
+    539,
+    "## 1. Introduction"
+   ],
+   [
+    897,
+    "## 2. Results"
+   ]
+  ],
+  "WHICH": [
+   [
+    540,
+    "## 1. Introduction"
+   ]
+  ],
+  "CPG": [
+   [
+    555,
+    "## 1. Introduction"
+   ],
+   [
+    556,
+    "## 1. Introduction"
+   ],
+   [
+    563,
+    "## 1. Introduction"
+   ]
+  ],
+  "IN12B003": [
+   [
+    560,
+    "## 1. Introduction"
+   ]
+  ],
+  "FLEXOR": [
+   [
+    560,
+    "## 1. Introduction"
+   ]
+  ],
+  "AMENDMENT": [
+   [
+    562,
+    "## 1. Introduction"
+   ]
+  ],
+  "MET": [
+   [
+    565,
+    "## 1. Introduction"
+   ]
+  ],
+  "ENTRAINER": [
+   [
+    568,
+    "## 1. Introduction"
+   ]
+  ],
+  "STRUCTURE": [
+   [
+    568,
+    "## 1. Introduction"
+   ]
+  ],
+  "S07": [
+   [
+    569,
+    "## 1. Introduction"
+   ]
+  ],
+  "CPG-": [
+   [
+    572,
+    "## 1. Introduction"
+   ]
+  ],
+  "NECESSARY": [
+   [
+    580,
+    "## 1. Introduction"
+   ]
+  ],
+  "EMERGES": [
+   [
+    637,
+    "## 1. Introduction"
+   ]
+  ],
+  "UNCURATED": [
+   [
+    637,
+    "## 1. Introduction"
+   ]
+  ],
+  "MASS-": [
+   [
+    638,
+    "## 1. Introduction"
+   ]
+  ],
+  "DN-": [
+   [
+    648,
+    "## 2. Results"
+   ],
+   [
+    781,
+    "## 2. Results"
+   ],
+   [
+    784,
+    "## 2. Results"
+   ]
+  ],
+  "WINDOW": [
+   [
+    652,
+    "## 2. Results"
+   ]
+  ],
+  "LEFT": [
+   [
+    652,
+    "## 2. Results"
+   ],
+   [
+    1173,
+    "## 2. Results"
+   ],
+   [
+    1478,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "READS": [
+   [
+    669,
+    "## 2. Results"
+   ]
+  ],
+  "REMOVED": [
+   [
+    678,
+    "## 2. Results"
+   ]
+  ],
+  "RNG": [
+   [
+    687,
+    "## 2. Results"
+   ],
+   [
+    688,
+    "## 2. Results"
+   ],
+   [
+    692,
+    "## 2. Results"
+   ]
+  ],
+  "SECOND-": [
+   [
+    709,
+    "## 2. Results"
+   ]
+  ],
+  "LIGHTER": [
+   [
+    710,
+    "## 2. Results"
+   ]
+  ],
+  "CROSSED": [
+   [
+    716,
+    "## 2. Results"
+   ]
+  ],
+  "WITH": [
+   [
+    717,
+    "## 2. Results"
+   ]
+  ],
+  "BIT-IDENTICAL": [
+   [
+    744,
+    "## 2. Results"
+   ],
+   [
+    837,
+    "## 2. Results"
+   ],
+   [
+    1321,
+    "## 3. Methods"
+   ],
+   [
+    1327,
+    "## 3. Methods"
+   ]
+  ],
+  "INCREASE": [
+   [
+    747,
+    "## 2. Results"
+   ]
+  ],
+  "CO-VARY": [
+   [
+    751,
+    "## 2. Results"
+   ]
+  ],
+  "VOLLEY": [
+   [
+    761,
+    "## 2. Results"
+   ]
+  ],
+  "ABSORBS": [
+   [
+    764,
+    "## 2. Results"
+   ]
+  ],
+  "CUT": [
+   [
+    772,
+    "## 2. Results"
+   ]
+  ],
+  "DN": [
+   [
+    780,
+    "## 2. Results"
+   ]
+  ],
+  "THRESHOLD": [
+   [
+    801,
+    "## 2. Results"
+   ]
+  ],
+  "FOOTPRINT": [
+   [
+    801,
+    "## 2. Results"
+   ]
+  ],
+  "RATE": [
+   [
+    807,
+    "## 2. Results"
+   ]
+  ],
+  "CONSTRUCTION": [
+   [
+    812,
+    "## 2. Results"
+   ],
+   [
+    1318,
+    "## 3. Methods"
+   ]
+  ],
+  "RESULT": [
+   [
+    814,
+    "## 2. Results"
+   ]
+  ],
+  "UNCHANGED": [
+   [
+    828,
+    "## 2. Results"
+   ]
+  ],
+  "WIRING": [
+   [
+    840,
+    "## 2. Results"
+   ]
+  ],
+  "QA": [
+   [
+    843,
+    "## 2. Results"
+   ],
+   [
+    844,
+    "## 2. Results"
+   ]
+  ],
+  "PRESENCE": [
+   [
+    856,
+    "## 2. Results"
+   ]
+  ],
+  "BROADER": [
+   [
+    864,
+    "## 2. Results"
+   ]
+  ],
+  "KILL": [
+   [
+    865,
+    "## 2. Results"
+   ],
+   [
+    868,
+    "## 2. Results"
+   ]
+  ],
+  "NEUTRAL": [
+   [
+    867,
+    "## 2. Results"
+   ]
+  ],
+  "UNMATCHED-FLOOR": [
+   [
+    875,
+    "## 2. Results"
+   ]
+  ],
+  "BANC'": [
+   [
+    880,
+    "## 2. Results"
+   ],
+   [
+    891,
+    "## 2. Results"
+   ],
+   [
+    1451,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "OTHER": [
+   [
+    911,
+    "## 2. Results"
+   ]
+  ],
+  "HIGHER": [
+   [
+    914,
+    "## 2. Results"
+   ],
+   [
+    1022,
+    "## 2. Results"
+   ]
+  ],
+  "LOWER": [
+   [
+    915,
+    "## 2. Results"
+   ],
+   [
+    1012,
+    "## 2. Results"
+   ],
+   [
+    1024,
+    "## 2. Results"
+   ]
+  ],
+  "BELOW": [
+   [
+    920,
+    "## 2. Results"
+   ],
+   [
+    971,
+    "## 2. Results"
+   ],
+   [
+    1378,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "GRAPH": [
+   [
+    924,
+    "## 2. Results"
+   ]
+  ],
+  "SPLIT": [
+   [
+    969,
+    "## 2. Results"
+   ]
+  ],
+  "FIXED": [
+   [
+    1028,
+    "## 2. Results"
+   ],
+   [
+    1120,
+    "## 2. Results"
+   ],
+   [
+    1425,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "A2": [
+   [
+    1063,
+    "## 2. Results"
+   ]
+  ],
+  "A3": [
+   [
+    1063,
+    "## 2. Results"
+   ]
+  ],
+  "B1-B4": [
+   [
+    1064,
+    "## 2. Results"
+   ]
+  ],
+  "STORED": [
+   [
+    1065,
+    "## 2. Results"
+   ]
+  ],
+  "DC": [
+   [
+    1071,
+    "## 2. Results"
+   ]
+  ],
+  "ALIGNMENT": [
+   [
+    1074,
+    "## 2. Results"
+   ]
+  ],
+  "POSITION": [
+   [
+    1084,
+    "## 2. Results"
+   ]
+  ],
+  "PLV": [
+   [
+    1085,
+    "## 2. Results"
+   ]
+  ],
+  "PHASE": [
+   [
+    1087,
+    "## 2. Results"
+   ]
+  ],
+  "UNCHOPPED": [
+   [
+    1099,
+    "## 2. Results"
+   ]
+  ],
+  "SMALLER": [
+   [
+    1106,
+    "## 2. Results"
+   ]
+  ],
+  "PRESERVED": [
+   [
+    1108,
+    "## 2. Results"
+   ]
+  ],
+  "TOXICITY": [
+   [
+    1114,
+    "## 2. Results"
+   ]
+  ],
+  "B4": [
+   [
+    1114,
+    "## 2. Results"
+   ]
+  ],
+  "NOISE": [
+   [
+    1120,
+    "## 2. Results"
+   ],
+   [
+    1228,
+    "## 3. Methods"
+   ],
+   [
+    1348,
+    "## 3. Methods"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "SEED": [
+   [
+    1120,
+    "## 2. Results"
+   ]
+  ],
+  "NETWORK": [
+   [
+    1120,
+    "## 2. Results"
+   ],
+   [
+    1425,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "DIFFERENCES": [
+   [
+    1156,
+    "## 2. Results"
+   ]
+  ],
+  "INCONSISTENT": [
+   [
+    1187,
+    "## 2. Results"
+   ]
+  ],
+  "TRACES": [
+   [
+    1191,
+    "## 2. Results"
+   ]
+  ],
+  "DVN": [
+   [
+    1199,
+    "## 3. Methods"
+   ],
+   [
+    1565,
+    "## 6. Data & code"
+   ],
+   [
+    1620,
+    "## References"
+   ]
+  ],
+  "CC": [
+   [
+    1199,
+    "## 3. Methods"
+   ],
+   [
+    1566,
+    "## 6. Data & code"
+   ]
+  ],
+  "SUMMING": [
+   [
+    1200,
+    "## 3. Methods"
+   ]
+  ],
+  "NT": [
+   [
+    1201,
+    "## 3. Methods"
+   ],
+   [
+    1566,
+    "## 6. Data & code"
+   ]
+  ],
+  "COO": [
+   [
+    1212,
+    "## 3. Methods"
+   ]
+  ],
+  "RMAX": [
+   [
+    1216,
+    "## 3. Methods"
+   ],
+   [
+    1219,
+    "## 3. Methods"
+   ],
+   [
+    1346,
+    "## 3. Methods"
+   ]
+  ],
+  "DT": [
+   [
+    1218,
+    "## 3. Methods"
+   ],
+   [
+    1345,
+    "## 3. Methods"
+   ]
+  ],
+  "TAU": [
+   [
+    1218,
+    "## 3. Methods"
+   ],
+   [
+    1344,
+    "## 3. Methods"
+   ]
+  ],
+  "BG": [
+   [
+    1218,
+    "## 3. Methods"
+   ],
+   [
+    1347,
+    "## 3. Methods"
+   ]
+  ],
+  "AFTER": [
+   [
+    1222,
+    "## 3. Methods"
+   ]
+  ],
+  "INSIDE": [
+   [
+    1222,
+    "## 3. Methods"
+   ]
+  ],
+  "CONSTANT": [
+   [
+    1224,
+    "## 3. Methods"
+   ]
+  ],
+  "CHOPPED": [
+   [
+    1236,
+    "## 3. Methods"
+   ]
+  ],
+  "ENVELOPE'": [
+   [
+    1239,
+    "## 3. Methods"
+   ]
+  ],
+  "OWN": [
+   [
+    1245,
+    "## 3. Methods"
+   ]
+  ],
+  "SETTLE": [
+   [
+    1249,
+    "## 3. Methods"
+   ],
+   [
+    1349,
+    "## 3. Methods"
+   ]
+  ],
+  "ABSOLUTE": [
+   [
+    1259,
+    "## 3. Methods"
+   ]
+  ],
+  "NEGATIVE": [
+   [
+    1273,
+    "## 3. Methods"
+   ]
+  ],
+  "PER": [
+   [
+    1274,
+    "## 3. Methods"
+   ]
+  ],
+  "SIDE": [
+   [
+    1275,
+    "## 3. Methods"
+   ]
+  ],
+  "DUTY": [
+   [
+    1275,
+    "## 3. Methods"
+   ]
+  ],
+  "FRESH": [
+   [
+    1284,
+    "## 3. Methods"
+   ]
+  ],
+  "NETWORKS": [
+   [
+    1290,
+    "## 3. Methods"
+   ]
+  ],
+  "B27": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B29": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B30": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B31": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B32": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B33": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "B34": [
+   [
+    1302,
+    "## 3. Methods"
+   ]
+  ],
+  "C0A": [
+   [
+    1310,
+    "## 3. Methods"
+   ]
+  ],
+  "C0B": [
+   [
+    1313,
+    "## 3. Methods"
+   ]
+  ],
+  "PREVIOUS": [
+   [
+    1313,
+    "## 3. Methods"
+   ]
+  ],
+  "KEPT": [
+   [
+    1321,
+    "## 3. Methods"
+   ]
+  ],
+  "PLUS": [
+   [
+    1326,
+    "## 3. Methods"
+   ]
+  ],
+  "SUBSET": [
+   [
+    1330,
+    "## 3. Methods"
+   ]
+  ],
+  "FAILED": [
+   [
+    1331,
+    "## 3. Methods"
+   ]
+  ],
+  "WIN": [
+   [
+    1345,
+    "## 3. Methods"
+   ]
+  ],
+  "SEG": [
+   [
+    1350,
+    "## 3. Methods"
+   ]
+  ],
+  "UNRANKED": [
+   [
+    1362,
+    "## 3. Methods"
+   ]
+  ],
+  "NEXT": [
+   [
+    1363,
+    "## 3. Methods"
+   ]
+  ],
+  "MODEL": [
+   [
+    1370,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "UNIQUE": [
+   [
+    1381,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "SEEDS": [
+   [
+    1381,
+    "## 4. Limitations (honest, per card)"
+   ],
+   [
+    1424,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "EMG": [
+   [
+    1398,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "NAME": [
+   [
+    1402,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "OPERATING-POINT": [
+   [
+    1411,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "PROXIMITY": [
+   [
+    1411,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "SINGLE-BATCH": [
+   [
+    1438,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "DATA": [
+   [
+    1442,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "IMPLICIT": [
+   [
+    1442,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "ROWS": [
+   [
+    1444,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "ADMISSIBLE": [
+   [
+    1455,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "CARRIER": [
+   [
+    1457,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "TWIN": [
+   [
+    1458,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "RE-DERIVED": [
+   [
+    1461,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "SAME": [
+   [
+    1471,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "COSTS": [
+   [
+    1480,
+    "## 4. Limitations (honest, per card)"
+   ]
+  ],
+  "TBD": [
+   [
+    1573,
+    "## 6. Data & code"
+   ]
+  ],
+  "TODO": [
+   [
+    1581,
+    "## 7. Author/submit notes"
+   ]
+  ],
+  "L152": [
+   [
+    1581,
+    "## 7. Author/submit notes"
+   ],
+   [
+    1583,
+    "## 7. Author/submit notes"
+   ]
+  ],
+  "PLOS": [
+   [
+    1647,
+    "## References"
+   ],
+   [
+    1649,
+    "## References"
+   ]
+  ]
+ },
+ "headings": [
+  [
+   450,
+   "## Title (RE-SCOPED v3.8 \u2014 L168 sufficiency fold; alternates kept)"
+  ],
+  [
+   473,
+   "## Abstract (draft)"
+  ],
+  [
+   504,
+   "## 1. Introduction"
+  ],
+  [
+   644,
+   "## 2. Results"
+  ],
+  [
+   1195,
+   "## 3. Methods"
+  ],
+  [
+   1368,
+   "## 4. Limitations (honest, per card)"
+  ],
+  [
+   1486,
+   "## 5. Discussion"
+  ],
+  [
+   1563,
+   "## 6. Data & code"
+  ],
+  [
+   1576,
+   "## 7. Author/submit notes"
+  ],
+  [
+   1585,
+   "## References"
+  ],
+  [
+   1668,
+   "## Verification (this skeleton)"
+  ]
+ ]
+}

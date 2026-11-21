@@ -1,0 +1,27 @@
+[
+ {
+  "file": "l149_verify.py",
+  "line": 496,
+  "lit": "PARTIAL"
+ },
+ {
+  "file": "l149_verify.py",
+  "line": 605,
+  "lit": "fully RE-DERIVED, not\\n  frozen"
+ },
+ {
+  "file": "l149_verify.py",
+  "line": 1495,
+  "lit": "UNIT OF INFERENCE"
+ },
+ {
+  "file": "l149_verify.py",
+  "line": 1508,
+  "lit": "INTERMEDIATE"
+ },
+ {
+  "file": "l158_verify.py",
+  "line": 64,
+  "lit": "INTERMEDIATE"
+ }
+]

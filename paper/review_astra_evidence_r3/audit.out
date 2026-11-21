@@ -1,0 +1,28 @@
+paper/DRAFT.md d76fa7d62f1e01891e70b13f900c2e100a46915013282f8768f7a129a08ecea2
+paper/numbers.json 238bf2d37f510b4a56504ca37794d008bfde9c7c002cbbc3a727e8404647f44e
+paper/CLAIM-MAP.md 0c73ec3f603657a90aaa0ec488d673881139c2645bc75a68384d5048505bc772
+banc/l172/stats.json 3f48a4ff9564415643b513f5d540821b484678dedf942b577affc16f8e820134
+banc/l175/PREREG.md 7af87de7b1552896ce9ffba809afb9c83173caa64378d04c2e8f0d04bb2be749
+banc/l175/results_l175.json c45418ac396baa893fbcd3f4848eac666e6b8154178fca66b78d0372613a0741
+banc/l175/verdict.out a74bfe6d61aa784af21c9185373650c13cc766c95de4bda24abc3876ba8d72a4
+banc/l175/L175-FINDINGS.md d20a3e30d0a00b3354f411ff25d672d741481eed2d05846c169c9b122410f6f0
+canonical json cutng25 203 210 (0.9328056080047664, 0.9837612779532359)
+canonical json cutng25p 30 66 (0.3402412549805773, 0.5738498865661081)
+canonical json cutwA 72 258 (0.22788539662472923, 0.33673664408095666)
+canonical json cut58 1 258 (0.0006845316783493701, 0.02162461236248904)
+canonical json cutscr0 41 50 (0.6920394632569923, 0.9022980732976583)
+matched twin/base Counter({(False, False): 24, (True, False): 23, (False, True): 12, (True, True): 7}) p 0.0895310789346695
+intact means [(1110, np.float32(0.45416608)), (319, np.float32(0.0033131246))] active 27 60
+historic raw cut58 258 chopped/unchopped k [  1 186]
+historic raw cutwA 258 chopped/unchopped k [72  0]
+historic raw cutscr0 50 chopped/unchopped k [41  9]
+historic raw cutng25 210 chopped/unchopped k [203 132]
+historic raw cutng25p 66 chopped/unchopped k [30  0]
+unchopped notable [('cutwA', np.int64(0), np.float64(0.0), 'N'), ('sc25', np.int64(8), np.float64(0.51), 'I'), ('sc26', np.int64(0), np.float64(0.005), 'N'), ('dmA', np.int64(0), np.float64(0.004), 'N'), ('dmC', np.int64(0), np.float64(0.192), 'N')]
+branch D2
+window Counter({'N': 23, 'I': 10, 'S': 1}) A,H,silent [(0, 13), (0, 10), (0, 20)] rho 0.18701881503923706 0.5476190476190477
+rho gain -0.7231553463871115 -0.8330827067669173
+targeted sc25 matched B39 drive ratio 1.0 motor mass fraction 0.13002620102400225 gross motor drive 9.307668389918879 paired07 mean vs base 0.3506875
+targeted sc26 matched B39 drive ratio 0.0015581705426825194 motor mass fraction 0.01755588568651661 gross motor drive 0.0018406162412384032 paired07 mean vs base -0.02924999999999999
+targeted dmA matched B39 drive ratio 0.9934754322456364 motor mass fraction 0.01495765421045358 gross motor drive 1.0735472045396446 paired07 mean vs base -0.017687500000000002
+targeted dmC matched B39 drive ratio 1.0045487110499933 motor mass fraction 0.07885195143352816 gross motor drive 5.678034781626857 paired07 mean vs base -0.0411875

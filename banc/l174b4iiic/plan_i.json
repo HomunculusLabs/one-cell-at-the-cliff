@@ -1,0 +1,642 @@
+[
+ {
+  "line": 507,
+  "col": 22,
+  "old": "MATCHED",
+  "new": "matched",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "earing results, and state them up front:"
+ },
+ {
+  "line": 510,
+  "col": 50,
+  "old": "ONE",
+  "new": "one",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "ed], a non-monotone window rather than a"
+ },
+ {
+  "line": 510,
+  "col": 61,
+  "old": "IDENTITY",
+  "new": "identity",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "ed], a non-monotone window rather than a"
+ },
+ {
+  "line": 511,
+  "col": 44,
+  "old": "INTERMEDIATE",
+  "new": "intermediate",
+  "cls": "CLASS_LABEL_lowercase",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": " carried by ONE cell's IDENTITY, not its"
+ },
+ {
+  "line": 514,
+  "col": 0,
+  "old": "SUFFICIENT",
+  "new": "sufficient",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "72.pooled, l172.diffs]). That carrier is"
+ },
+ {
+  "line": 516,
+  "col": 46,
+  "old": "EDGE",
+  "new": "edge",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "reaches super (39/48 [l168.scr]) and six"
+ },
+ {
+  "line": 516,
+  "col": 51,
+  "old": "SET",
+  "new": "set",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "reaches super (39/48 [l168.scr]) and six"
+ },
+ {
+  "line": 518,
+  "col": 14,
+  "old": "ACTIVITY",
+  "new": "activity",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": " no longer covers for it (\u00a72.4). (3) The"
+ },
+ {
+  "line": 520,
+  "col": 41,
+  "old": "BAND-RELATIVE",
+  "new": "band-relative",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "ase (pooled 78 of 98, Wilson [.706,.864]"
+ },
+ {
+  "line": 521,
+  "col": 26,
+  "old": "STIMULUS-SET",
+  "new": "stimulus-set",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "are BAND-RELATIVE, and the sub-band line"
+ },
+ {
+  "line": 539,
+  "col": 59,
+  "old": "DOES",
+  "new": "does",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "That null-control form is the one our \u00a72"
+ },
+ {
+  "line": 540,
+  "col": 3,
+  "old": "WHICH",
+  "new": "which",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "estion has moved from DOES wiring matter"
+ },
+ {
+  "line": 558,
+  "col": 0,
+  "old": "ORDER",
+  "new": "order",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "cycles (duty \u2192 0.5) while joint temporal"
+ },
+ {
+  "line": 560,
+  "col": 31,
+  "old": "FLEXOR",
+  "new": "flexor",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "ver necessary. And their wet-lab motif's"
+ },
+ {
+  "line": 562,
+  "col": 48,
+  "old": "AMENDMENT",
+  "new": "Amendment",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": true,
+  "sec": "## 1. Introduction",
+  "prev": "t for flexor-first pools as rhythmogenic"
+ },
+ {
+  "line": 564,
+  "col": 55,
+  "old": "OFF",
+  "new": "off",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "ered deafferentation-speeds-the-CPG as a"
+ },
+ {
+  "line": 565,
+  "col": 15,
+  "old": "NOT",
+  "new": "Not",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": true,
+  "sec": "## 1. Introduction",
+  "prev": "lity (whole-run mech-OFF, fresh batch H,"
+ },
+ {
+  "line": 565,
+  "col": 19,
+  "old": "MET",
+  "new": "met",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "lity (whole-run mech-OFF, fresh batch H,"
+ },
+ {
+  "line": 568,
+  "col": 17,
+  "old": "ENTRAINER",
+  "new": "entrainer",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "r than speeding the rhythm \u2014 the sensory"
+ },
+ {
+  "line": 568,
+  "col": 48,
+  "old": "STRUCTURE",
+  "new": "structure",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "r than speeding the rhythm \u2014 the sensory"
+ },
+ {
+  "line": 579,
+  "col": 0,
+  "old": "SUFFICIENCY",
+  "new": "sufficiency",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "llowed. It certifies cost-indexed subset"
+ },
+ {
+  "line": 580,
+  "col": 62,
+  "old": "NECESSARY",
+  "new": "necessary",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "uron walking circuit of [4], and it does"
+ },
+ {
+  "line": 593,
+  "col": 51,
+  "old": "SUFFICIENCY",
+  "new": "sufficiency",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": ""
+ },
+ {
+  "line": 637,
+  "col": 14,
+  "old": "EMERGES",
+  "new": "emerges",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "w that already \u2014 but that an all-or-none"
+ },
+ {
+  "line": 637,
+  "col": 28,
+  "old": "UNCURATED",
+  "new": "uncurated",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "w that already \u2014 but that an all-or-none"
+ },
+ {
+  "line": 638,
+  "col": 0,
+  "old": "MASS-",
+  "new": "mass-",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 1. Introduction",
+  "prev": "TED bulk-extracted subnet and survives a"
+ },
+ {
+  "line": 1370,
+  "col": 71,
+  "old": "MODEL",
+  "new": "model",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1373,
+  "col": 21,
+  "old": "BAND-RELATIVE",
+  "new": "band-relative",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1373,
+  "col": 61,
+  "old": "STIMULUS-SET",
+  "new": "stimulus-set",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1378,
+  "col": 11,
+  "old": "BELOW",
+  "new": "below",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "ile the substrate's global spectral peak"
+ },
+ {
+  "line": 1381,
+  "col": 11,
+  "old": "UNIQUE",
+  "new": "unique",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "eline arm the global peak is sub-band in"
+ },
+ {
+  "line": 1381,
+  "col": 18,
+  "old": "SEEDS",
+  "new": "seeds",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "eline arm the global peak is sub-band in"
+ },
+ {
+  "line": 1402,
+  "col": 62,
+  "old": "NAME",
+  "new": "name",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "ns exists yet at single-cell resolution."
+ },
+ {
+  "line": 1411,
+  "col": 0,
+  "old": "OPERATING-POINT",
+  "new": "Operating-point",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": true,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1411,
+  "col": 16,
+  "old": "PROXIMITY",
+  "new": "proximity",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 0,
+  "old": "UNIT",
+  "new": "Unit",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": true,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 5,
+  "old": "OF",
+  "new": "of",
+  "cls": "<UNCLASSIFIED>",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 8,
+  "old": "INFERENCE",
+  "new": "inference",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 56,
+  "old": "NOISE",
+  "new": "noise",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 62,
+  "old": "SEEDS",
+  "new": "seeds",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1424,
+  "col": 71,
+  "old": "ONE",
+  "new": "one",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1425,
+  "col": 0,
+  "old": "FIXED",
+  "new": "fixed",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "in this paper is over NOISE SEEDS of ONE"
+ },
+ {
+  "line": 1425,
+  "col": 6,
+  "old": "NETWORK",
+  "new": "network",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "in this paper is over NOISE SEEDS of ONE"
+ },
+ {
+  "line": 1438,
+  "col": 23,
+  "old": "SINGLE-BATCH",
+  "new": "single-batch",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": " (eOutMot is the thinnest at 34, and the"
+ },
+ {
+  "line": 1442,
+  "col": 0,
+  "old": "DATA",
+  "new": "Data",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": true,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1442,
+  "col": 5,
+  "old": "FLOOR",
+  "new": "floor",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1442,
+  "col": 57,
+  "old": "IMPLICIT",
+  "new": "implicit",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ },
+ {
+  "line": 1444,
+  "col": 44,
+  "old": "ROWS",
+  "new": "rows",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "airs sum \u2265 3 (811,821 exactly at 3, zero"
+ },
+ {
+  "line": 1448,
+  "col": 44,
+  "old": "DETECTION",
+  "new": "detection",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "hase on this release's pair weights. The"
+ },
+ {
+  "line": 1455,
+  "col": 33,
+  "old": "ADMISSIBLE",
+  "new": "admissible",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "eness, and no result here should be read"
+ },
+ {
+  "line": 1457,
+  "col": 0,
+  "old": "CARRIER",
+  "new": "carrier",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": " edges, 647,953 \u2192 472,095 [l146.f4]) the"
+ },
+ {
+  "line": 1458,
+  "col": 41,
+  "old": "TWIN",
+  "new": "twin",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "1 (inside the 19\u201329 window), 69/80 edges"
+ },
+ {
+  "line": 1461,
+  "col": 9,
+  "old": "RE-DERIVED",
+  "new": "re-derived",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "a dependencies [l146.f4]. The floor read"
+ },
+ {
+  "line": 1463,
+  "col": 35,
+  "old": "SET",
+  "new": "set",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "ass ordering are all recomputed under f4"
+ },
+ {
+  "line": 1465,
+  "col": 64,
+  "old": "STATIC",
+  "new": "static",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "s (21 and 33), so the carrier's shift is"
+ },
+ {
+  "line": 1465,
+  "col": 71,
+  "old": "ONLY",
+  "new": "only",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "s (21 and 33), so the carrier's shift is"
+ },
+ {
+  "line": 1469,
+  "col": 49,
+  "old": "NOT",
+  "new": "not",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": " 20 plus the f4 mass-twin DNpe005-R; one"
+ },
+ {
+  "line": 1471,
+  "col": 37,
+  "old": "SAME",
+  "new": "same",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "3/.081/.082, upper bound .194) while the"
+ },
+ {
+  "line": 1472,
+  "col": 9,
+  "old": "SUPER",
+  "new": "super",
+  "cls": "CLASS_LABEL_lowercase",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "bstrate arms reproduce on the SAME seeds"
+ },
+ {
+  "line": 1472,
+  "col": 39,
+  "old": "PARTIAL",
+  "new": "partial",
+  "cls": "CLASS_LABEL_lowercase",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "bstrate arms reproduce on the SAME seeds"
+ },
+ {
+  "line": 1475,
+  "col": 16,
+  "old": "STATIC",
+  "new": "static",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "-4 robustness of the identity claim is a"
+ },
+ {
+  "line": 1478,
+  "col": 59,
+  "old": "LEFT",
+  "new": "left",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "st-hoc observation is reported without a"
+ },
+ {
+  "line": 1480,
+  "col": 0,
+  "old": "COSTS",
+  "new": "costs",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": "3 for base cutwA), where carrier removal"
+ },
+ {
+  "line": 1484,
+  "col": 24,
+  "old": "NOT",
+  "new": "not",
+  "cls": "STRIP_EMPHASIS",
+  "sent_init": false,
+  "sec": "## 4. Limitations (honest, per card)",
+  "prev": ""
+ }
+]
