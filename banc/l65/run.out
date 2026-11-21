@@ -1,0 +1,34 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+graph 80,635 nnz 1,830,698 | glut cells 10,061 | 0s
+  bisect it0: g 0.03162 -> af 0.0000 | 1s
+  bisect it1: g 0.5623 -> af 0.0009 | 1s
+  bisect it2: g 2.371 -> af 0.6494 | 1s
+  bisect it3: g 1.155 -> af 0.4443 | 1s
+  bisect it4: g 0.8058 -> af 0.1681 | 2s
+P1 op-point: g* 0.8058 af 0.1681 in_band True (male context 0.885) | 2s
+subnet: cord 20,521 + dn_into 728 = 21,249
+subnet edges 627,051 | syn 6,109,798 | 4s
+pair Ti: flex 101 ext 12
+pair Tr: flex 62 ext 48
+DNg100 in subnet: 2 | motor cells 728
+C0 anchors: {'Ti_flex': True, 'Ti_ext': True, 'Tr_flex': True, 'Tr_ext': True, 'dng100': True, 'same_structure': True, 'negB_gt_A': True}
+/home/t3rpz/critters/peabrain-lab/banc/l65_banc_oppoint.py:188: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(
+arms built (nnz 627,051) | 4s
+ARM A: g band [3.16e-02,1.00e-01] -> g* 5.62e-02
+/home/t3rpz/critters/peabrain-lab/banc/l65_banc_oppoint.py:291: RuntimeWarning: Mean of empty slice
+  Smean = {k: float(np.nanmean([x[k] for x in Ss])) for k in PAIRS}
+ARM A scan 36 rows | frozen (0.078728, 4.0, 0.2, 0.263) | 27s
+ARM B: g band [1.00e-01,1.00e-01] -> g* 1.00e-01
+ARM B scan 36 rows | frozen (0.14, 2.0, 0.2, 0.668) | 49s
+ARM A CONFIRM 60 s: S {'Ti': 0.2902581672317118, 'Tr': 0.2652661382011421} | rhythm 1407 @ 0.7 Hz | 54s
+ARM B CONFIRM 60 s: S {'Ti': 0.7195787507714315, 'Tr': 0.4990675987564937} | rhythm 828 @ 0.9 Hz | 59s
+ladder arm: B
+tier density draw 0: S {'Ti': 0.037952787338745554, 'Tr': 0.03139317454161872} swaps -1 | 64s
+tier density draw 1: S {'Ti': -0.023726159205130864, 'Tr': -0.07639668362409432} swaps -1 | 70s
+tier density draw 2: S {'Ti': 0.007752177231917077, 'Tr': 0.029052489096217812} swaps -1 | 75s
+tier degree draw 0: S {'Ti': -0.03299811866966721, 'Tr': 0.020893779719619338} swaps 4897093 | 89s
+tier degree draw 1: S {'Ti': 0.019257220491177684, 'Tr': -0.10362199684510388} swaps 4897515 | 104s
+tier degree draw 2: S {'Ti': -0.012531964010189507, 'Tr': -0.1971804192386831} swaps 4897292 | 118s
+done 118s -> l65/results_l65.json

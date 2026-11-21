@@ -1,0 +1,96 @@
+C0 PASS (A: all pins EXACT; B: 8 pools x 2 fields EXACT)
+2-hop join terms: 31672 e1: 12991 e2: 27117
+{
+ "label": "POST-HOC descriptive (PREREG ADDENDUM 1); gates nothing",
+ "A1_nt_hypergeom": {
+  "glutamate": {
+   "heavy": 19,
+   "pool_total": 44,
+   "hyper_mean": 6.05,
+   "sd": 2.19,
+   "z": 5.9
+  },
+  "gaba": {
+   "heavy": 17,
+   "pool_total": 152,
+   "hyper_mean": 20.9,
+   "sd": 3.63,
+   "z": -1.08
+  },
+  "acetylcholine": {
+   "heavy": 41,
+   "pool_total": 354,
+   "hyper_mean": 48.67,
+   "sd": 3.93,
+   "z": -1.95
+  }
+ },
+ "A2_family_2hop_Ti_fL_fR": [
+  {
+   "family": "DNg79",
+   "Ti_fL": 503.1,
+   "Ti_fR": 343.8
+  },
+  {
+   "family": "DNpe006",
+   "Ti_fL": 353.9,
+   "Ti_fR": -205.8
+  },
+  {
+   "family": "DNpe045",
+   "Ti_fL": 108.5,
+   "Ti_fR": -449.0
+  },
+  {
+   "family": "DNbe002",
+   "Ti_fL": 287.2,
+   "Ti_fR": 243.4
+  },
+  {
+   "family": "DNge103",
+   "Ti_fL": -263.2,
+   "Ti_fR": -201.9
+  },
+  {
+   "family": "DNg43",
+   "Ti_fL": 283.1,
+   "Ti_fR": 177.4
+  },
+  {
+   "family": "DNge025",
+   "Ti_fL": -16.5,
+   "Ti_fR": 435.5
+  },
+  {
+   "family": "DNp69",
+   "Ti_fL": 23.8,
+   "Ti_fR": -398.6
+  },
+  {
+   "family": "DNg72",
+   "Ti_fL": -280.5,
+   "Ti_fR": -134.8
+  },
+  {
+   "family": "DNge120",
+   "Ti_fL": -231.9,
+   "Ti_fR": -173.1
+  },
+  {
+   "family": "DNb07",
+   "Ti_fL": -156.4,
+   "Ti_fR": -246.4
+  },
+  {
+   "family": "DNp47",
+   "Ti_fL": 230.6,
+   "Ti_fR": 91.0
+  }
+ ],
+ "A3_concentration": {
+  "top5_share_of_heavy_TifL": 0.708,
+  "n_positive_cells": 41,
+  "n_heavy": 77
+ }
+}
+VERDICT P1: False | P2: True

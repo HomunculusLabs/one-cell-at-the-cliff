@@ -1,0 +1,14 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l34_probe.py:61: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l34_probe.py:63: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+v1 vs v2 base seed11 rhythm: {'ratio': 175.9385986328125, 'f': 1.3333333333333333} {'ratio': 175.9385986328125, 'f': 1.3333333333333333}
+seed 11: max|diff| 0.000e+00 corr 1.000000 first-div -1
+  my rerun dominant f 0.800 ratio 169
+  npz  base_0 dominant f 0.800 ratio 169
+seed 22: max|diff| 0.000e+00 corr 1.000000 first-div -1
+  my rerun dominant f 1.444 ratio 252
+  npz  base_1 dominant f 1.444 ratio 252
+seed 33: max|diff| 0.000e+00 corr 1.000000 first-div -1
+  my rerun dominant f 1.422 ratio 288
+  npz  base_2 dominant f 1.422 ratio 288

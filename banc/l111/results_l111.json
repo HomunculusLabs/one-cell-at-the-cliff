@@ -1,0 +1,117 @@
+{
+ "c0b_pass": true,
+ "c0b_fail": [],
+ "p0": {
+  "c0a_pass": true,
+  "c0a_max": 0.0
+ },
+ "p4": {
+  "af_range_ok": true,
+  "b65_band": true,
+  "af_mean": {
+   "full": 0.108169,
+   "b65": 0.10894,
+   "cut": 0.107931,
+   "cut19": 0.108691
+  },
+  "af_final_cut19": 0.10902554541826248,
+  "cut19_staircase": 3.056476513545181e-05
+ },
+ "table_b9": {
+  "full": {
+   "kL": 4,
+   "kR": 6,
+   "meanL": 0.407,
+   "meanR": 0.409,
+   "lbL": 0.10182067491213048,
+   "ubL": 0.4949831653550878,
+   "lbR": 0.18481232558863636,
+   "ubR": 0.6135895945449729
+  },
+  "b65": {
+   "kL": 16,
+   "kR": 16,
+   "meanL": 0.997,
+   "meanR": 0.998,
+   "lbL": 0.8063923194655636,
+   "ubL": 1.0000000000000002,
+   "lbR": 0.8063923194655636,
+   "ubR": 1.0000000000000002
+  },
+  "cut": {
+   "kL": 16,
+   "kR": 0,
+   "meanL": 0.853,
+   "meanR": 0.121,
+   "lbL": 0.8063923194655636,
+   "ubL": 1.0000000000000002,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365
+  },
+  "cut19": {
+   "kL": 14,
+   "kR": 0,
+   "meanL": 0.663,
+   "meanR": 0.045,
+   "lbL": 0.6397717273424132,
+   "ubL": 0.9650225122567595,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365
+  }
+ },
+ "tr_b9": {
+  "full": {
+   "kL": 0,
+   "kR": 2,
+   "meanL": 0.043,
+   "meanR": 0.364
+  },
+  "b65": {
+   "kL": 0,
+   "kR": 16,
+   "meanL": 0.159,
+   "meanR": 0.977
+  },
+  "cut": {
+   "kL": 0,
+   "kR": 3,
+   "meanL": 0.041,
+   "meanR": 0.35
+  },
+  "cut19": {
+   "kL": 0,
+   "kR": 1,
+   "meanL": 0.167,
+   "meanR": 0.201
+  }
+ },
+ "p1": {
+  "transmitter_carried": false,
+  "mass_placement_carried": false,
+  "kL": 14,
+  "meanL": 0.663,
+  "verdict": "MIXED (between registered bands)"
+ },
+ "p2": {
+  "kR": 0,
+  "meanR": 0.045,
+  "r_collapses_too": true,
+  "r_stays_closure_like": false,
+  "verdict": "R-collapses-too (19 carry BOTH side actions)"
+ },
+ "p3": {
+  "cut_kL": 16,
+  "b65_kL": 16,
+  "b65_kR": 16,
+  "pass": true
+ },
+ "p5": {
+  "mass_split": {
+   "glut19": 0.1103,
+   "other58": 0.3921
+  },
+  "note": "cord out-mass share of removed-19 vs kept-58 heavy (sums to heavy .5024); duty-form cells only per tick-136 amendment (2611.14498 LERS)"
+ },
+ "g_cut": 0.14510760426521305,
+ "g_cut19": 0.15096808075904844
+}

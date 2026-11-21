@@ -1,0 +1,12 @@
+cited keys with dot: 38; missing: []
+  xor sub-fields resolve OK (pair_delta, steps.24->25 quoted correctly)
+  sil1110 meanR/kR: 0.376 2, 3/16 OK
+  vol1110 meanR/kR: 0.486 7/16 OK
+  sil24 meanR/kR: 0.432 5/16 OK
+  cutwA meanR/kR: 0.377 4/16 OK
+  cutng25 meanR/kR: 0.745 14/16 OK
+  eOutInt meanR/kR: 0.781 15/16 OK
+  eIn meanR/kR: 0.793 15/16 OK
+  eOutMot meanR/kR: 0.525 9, 12/16 OK
+  eAll meanR/kR: 0.745 14, 15/16 OK
+L143 verify: ALL GREEN

@@ -1,0 +1,37 @@
+{
+ "n_new": 21809,
+ "sizes": {
+  "Ti_aL": 50,
+  "Ti_aR": 51,
+  "Ti_bL": 6,
+  "Ti_bR": 6,
+  "Tr_aL": 31,
+  "Tr_aR": 31,
+  "Tr_bL": 24,
+  "Tr_bR": 24,
+  "Ta_aL": 12,
+  "Ta_aR": 12,
+  "Ta_bL": 3,
+  "Ta_bR": 3,
+  "Sr_aL": 6,
+  "Sr_aR": 6,
+  "Sr_bL": 11,
+  "Sr_bR": 13,
+  "Pr_aL": 4,
+  "Pr_aR": 4,
+  "Pr_bL": 3,
+  "Pr_bR": 3
+ },
+ "eligible": {
+  "Ti": true,
+  "Tr": true,
+  "Ta": true,
+  "Sr": true,
+  "Pr": true
+ },
+ "unpaired": {
+  "long_tendon_muscle": 47,
+  "femur_reductor_muscle": 34
+ },
+ "min_side_pool": 3
+}

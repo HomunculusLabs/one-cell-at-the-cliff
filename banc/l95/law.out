@@ -1,0 +1,56 @@
+C0E metric certification: 120 c2 reads reproduced EXACTLY
+C0A/C0B bit-identity vs raw_l93: max|d| 0.0 (38th chain anchor)
+d74b seg0 u_max per seed: {11: -1.951, 22: -1.501, 33: -1.896} | census u_max -1.763
+fresh sweep table (amp, seed, h_seg0, k_open, fd_E, fd_Tr_fL, eps_E):
+   1.5 s11  h -0.451 k_open  None fd_E    -1 Tr_fL    -1 eps None
+   1.5 s22  h -0.001 k_open  1103 fd_E  1104 Tr_fL  1104 eps 0
+   1.5 s33  h -0.396 k_open  None fd_E    -1 Tr_fL    -1 eps None
+   1.8 s11  h -0.151 k_open  None fd_E    -1 Tr_fL    -1 eps None
+   1.8 s22  h  0.299 k_open  1100 fd_E  1101 Tr_fL  1101 eps 0
+   1.8 s33  h -0.096 k_open  None fd_E    -1 Tr_fL    -1 eps None
+   2.0 s11  h  0.049 k_open   439 fd_E   440 Tr_fL   441 eps 0
+   2.0 s22  h  0.499 k_open  1097 fd_E  1098 Tr_fL  1098 eps 0
+   2.0 s33  h  0.104 k_open    96 fd_E    97 Tr_fL    97 eps 0
+   3.0 s11  h  1.049 k_open     0 fd_E     1 Tr_fL     1 eps 0
+   3.0 s22  h  1.499 k_open    98 fd_E    99 Tr_fL    99 eps 0
+   3.0 s33  h  1.104 k_open    79 fd_E    80 Tr_fL    92 eps 0
+   5.0 s11  h  3.049 k_open     0 fd_E     1 Tr_fL     1 eps 0
+   5.0 s22  h  3.499 k_open     0 fd_E     1 Tr_fL     1 eps 0
+   5.0 s33  h  3.104 k_open     0 fd_E     1 Tr_fL    35 eps 0
+P1 monotone fd(2.0)>=fd(3.0)>=fd(5.0): {11: True, 22: True, 33: True} fds {11: [440, 1, 1], 22: [1098, 99, 1], 33: [97, 80, 1]}
+P2 eps (fd_E - (k_open+1)): min 0 | negatives [] | frac<=8 1.00 | all [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+P3 pin law amp 1.5: {11: {'max_net': -0.4314, 'all_dead': True}, 22: {'max_net': 0.0187, 'all_dead': False}, 33: {'max_net': -0.376, 'all_dead': True}}
+P4 pinned-classification disagreements: 0 | un-pinned cells 30 | Spearman(k_open+1, fd_Tr_fL) = 0.529
+P4 table (arm, seed, k_open, pred fd, meas fd_Tr_fL):
+  xl080_L_20   s11  n1   k_open     0 pred     1 meas     3
+  xl080_L_20   s22  n1   k_open     0 pred     1 meas     3
+  xl080_L_20   s33  n1   k_open     0 pred     1 meas    17
+  d74b_R_20    s11  n1   k_open   439 pred   440 meas   441
+  d74b_R_20    s22  n1   k_open  1097 pred  1098 meas  1098
+  d74b_R_20    s33  n1   k_open    96 pred    97 meas    97
+  d105_R_20    s11  n1   k_open     0 pred     1 meas     1
+  d105_R_20    s22  n1   k_open    10 pred    11 meas    11
+  d105_R_20    s33  n1   k_open     0 pred     1 meas    30
+  intr16_05    s11  n16  k_open     0 pred     1 meas     1
+  intr16_05    s22  n16  k_open     0 pred     1 meas     4
+  intr16_05    s33  n16  k_open     0 pred     1 meas    35
+  intr16_20    s11  n16  k_open     0 pred     1 meas     1
+  intr16_20    s22  n16  k_open     0 pred     1 meas     1
+  intr16_20    s33  n16  k_open     0 pred     1 meas     3
+  tidon_20     s11  n16  k_open     0 pred     1 meas     1
+  tidon_20     s22  n16  k_open     0 pred     1 meas     1
+  tidon_20     s33  n16  k_open     0 pred     1 meas     3
+  shamdn_20a   s11  n3   k_open     0 pred     1 meas     3
+  shamdn_20a   s22  n3   k_open     0 pred     1 meas     4
+  shamdn_20a   s33  n3   k_open     0 pred     1 meas    35
+  shamdn_20b   s11  n3   k_open     0 pred     1 meas     4
+  shamdn_20b   s22  n3   k_open     0 pred     1 meas     4
+  shamdn_20b   s33  n3   k_open     0 pred     1 meas    35
+  shamint_20a  s11  n16  k_open     0 pred     1 meas     3
+  shamint_20a  s22  n16  k_open     0 pred     1 meas     4
+  shamint_20a  s33  n16  k_open     0 pred     1 meas    35
+  shamint_20b  s11  n16  k_open     0 pred     1 meas     3
+  shamint_20b  s22  n16  k_open     0 pred     1 meas     3
+  shamint_20b  s33  n16  k_open     0 pred     1 meas    35
+F2 descriptive: Spearman(1/headroom, fd_E) fresh sweep = 0.719
+VERDICT: P1 True | P2 True (sharp True) | P3 False | P4 False (rho 0.529, disagree 0)

@@ -1,0 +1,24 @@
+substrate OK: 21,516 nodes / 2,977,920 edges (L32-L35 identical)
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:80: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:83: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  ).coalesce().to_sparse_csr()
+pairs: Ti flex 84/ext 12, Tr flex 57/ext 11
+DN cells in sub: 1,277 across 476 types | 7s
+  seed 11: af 0.185 census done | 8s
+  seed 22: af 0.191 census done | 9s
+  seed 33: af 0.181 census done | 10s
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:157: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  cen.drop(columns="_merge", inplace=True)
+C1 anchors: DNg100 u_max -15.78 (want < -1), DNg95 u_max +0.047 (want [-.15,+.02]) -> FAIL
+C2 vocabulary (atlas family types): family_types=76 freely_viable=36 viable_a015=48 viable_a08=63 buried=13 nonempty=True
+C3 picks: {'flex': 'DNge046', 'ext': 'MDN', 'jump': 'DNg110'}
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py", line 284, in <module>
+    m = run_pair(cells, amp, seed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py", line 242, in run_pair
+    tr[("c", pk, "e")][k] = Xc[e].mean()
+    ~~^^^^^^^^^^^^^^^^
+KeyError: ('c', 'Ti', 'e')

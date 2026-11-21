@@ -1,0 +1,20 @@
+{
+ "chars_pre": 14409,
+ "chars_post": 14052,
+ "char_delta": -357,
+ "char_delta_pct": -2.48,
+ "visible_chars_pre": 11676,
+ "visible_chars_post": 11821,
+ "visible_char_delta": 145,
+ "bullets_pre": 15,
+ "bullets_post": 0,
+ "numeric_tokens": 355,
+ "numeric_multiset_identical": true,
+ "citation_tokens": 45,
+ "citation_multiset_identical": true,
+ "literals_checked": 184,
+ "literals_verbatim": 184,
+ "literals_wrap_exempt": [],
+ "longest_sentence_words": 60,
+ "paragraphs": 24
+}

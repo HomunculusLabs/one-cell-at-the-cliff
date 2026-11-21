@@ -1,0 +1,22 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+extraction pins green: k-ladder + rank twins (1110/319)
+
+== closure (PRIMARY) ==
+  fam_mean 1110 0.002530 (rank 53/58)  vs 319 0.020684 (rank 21/58)
+  paired diff -0.018479  pos 2/56   family median 0.015440  range [0.0, 0.051136]
+  core(r1-19) 1110 0.000000 vs 319 0.022505 sign 0/19 |  band(r20-24) 0.000000 vs 0.000000 sign 0/5
+  twin-pair cos 0.000000   Z1 {'leg_i': False, 'leg_ii': False, 'leg_iii': False, 'FIRES': False}   Z2 core {'twin_gt': False, 'sign': '0/19'} band {'twin_gt': False, 'sign': '0/5'}
+  interconnect 1110 mass 0.0 edges 0 | 319 2.99573/2
+  in-deg 1110 (13, 28.211294224629135)  319 (3, 6.139884552226255)
+
+== full-graph (robustness) ==
+  fam_mean 1110 0.019354 (rank 28/58)  vs 319 0.012805 (rank 38/58)
+  paired diff +0.006666  pos 22/56   family median 0.019054  range [0.003954, 0.040258]
+  core(r1-19) 1110 0.011443 vs 319 0.008439 sign 6/19 |  band(r20-24) 0.002244 vs 0.022240 sign 1/5
+  twin-pair cos 0.000000   Z1 {'leg_i': True, 'leg_ii': False, 'leg_iii': True, 'FIRES': False}   Z2 core {'twin_gt': True, 'sign': '6/19'} band {'twin_gt': False, 'sign': '1/5'}
+  interconnect 1110 mass 0.0 edges 0 | 319 2.99573/2
+  in-deg 1110 (94, 213.38066090491154)  319 (105, 194.76489207008333)
+
+l137/static.json written
+VERDICT: Z1 closure=False full=False -> Z4: stays DYNAMIC (registered)

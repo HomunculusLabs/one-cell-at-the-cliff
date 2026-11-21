@@ -1,0 +1,947 @@
+{
+ "design": "L145 eOutMot middle-dose (PREREG l145/PREREG.md)",
+ "static": {
+  "design": "L145 static: motor-edge DOSE (top-5/bottom-5 by |vals|) + eMotIn combo on the cutwA node set. Zero rollouts, no RNG. PREREG l145/PREREG.md FIRST. Subset law pinned: top5|bot5 == eOutMot edge positions EXACT.",
+  "carrier": {
+   "gi": 1110,
+   "cell_type": "DNp33",
+   "side": "left",
+   "nt": "acetylcholine",
+   "ng_rank": 25
+  },
+  "motor_edges_ranked": [
+   {
+    "pos": 1643890,
+    "dst_gi": 4945,
+    "w": 3.583519,
+    "syn": 35,
+    "dst_type": "iii4"
+   },
+   {
+    "pos": 1643893,
+    "dst_gi": 8509,
+    "w": 3.465736,
+    "syn": 31,
+    "dst_type": "i2"
+   },
+   {
+    "pos": 1643917,
+    "dst_gi": 9770,
+    "w": 3.044522,
+    "syn": 20,
+    "dst_type": "iv1"
+   },
+   {
+    "pos": 1643928,
+    "dst_gi": 4947,
+    "w": 2.564949,
+    "syn": 12,
+    "dst_type": "DVM1a-c"
+   },
+   {
+    "pos": 1643929,
+    "dst_gi": 16630,
+    "w": 2.302585,
+    "syn": 9,
+    "dst_type": "hi1 MN"
+   },
+   {
+    "pos": 1643936,
+    "dst_gi": 9395,
+    "w": 2.197225,
+    "syn": 8,
+    "dst_type": "i1"
+   },
+   {
+    "pos": 1643937,
+    "dst_gi": 8506,
+    "w": 2.197225,
+    "syn": 8,
+    "dst_type": "DVM1a-c"
+   },
+   {
+    "pos": 1643940,
+    "dst_gi": 22572,
+    "w": 1.791759,
+    "syn": 5,
+    "dst_type": "DVM1a-c"
+   },
+   {
+    "pos": 1643942,
+    "dst_gi": 4946,
+    "w": 1.386294,
+    "syn": 3,
+    "dst_type": "DLM1-4"
+   },
+   {
+    "pos": 1643961,
+    "dst_gi": 4944,
+    "w": 1.386294,
+    "syn": 3,
+    "dst_type": "iv4"
+   }
+  ],
+  "rank_rule": "mass DESC, tiebreak global-pos ASC",
+  "mass_split": {
+   "mot_all": 0.000837,
+   "mot_top5": 0.000523,
+   "mot_bot5": 0.000313,
+   "eMotIn": 0.001824,
+   "top5_share_of_mot": 0.6255
+  },
+  "arm_edge_counts": {
+   "eOutMot": 10,
+   "eMotTop5": 5,
+   "eMotBot5": 5,
+   "eMotIn": 23
+  },
+  "arm_mass_frac_dn": {
+   "eOutMot": 0.000837,
+   "eMotTop5": 0.000523,
+   "eMotBot5": 0.000313,
+   "eMotIn": 0.001824
+  },
+  "arm_nnz": {
+   "eOutMot": 644167,
+   "eMotTop5": 644172,
+   "eMotBot5": 644172,
+   "eMotIn": 644154
+  },
+  "mass_note": "ladder convention (out-cord |vals| / dn out-cord total); eMotIn includes in-edge mass on the same denominator (disclosed, l142 form)."
+ },
+ "anchors": {
+  "g_cutwA": 0.14365819573402408,
+  "g_cutng25": 0.1454454553127289,
+  "g_cutwA_stored_exact": true,
+  "g_cutng25_stored_exact": true,
+  "g_eOutMot": 0.14284219264984138,
+  "g_eMotTop5": 0.1436134350299835,
+  "g_eMotBot5": 0.14367126345634465,
+  "g_eMotIn": 0.1451841366291046,
+  "g_emot_exact": true,
+  "e_band_ok": {
+   "eOutMot": true,
+   "eMotTop5": true,
+   "eMotBot5": true,
+   "eMotIn": true
+  },
+  "new_stairs": {
+   "cutwA": 2.0839273929595947e-05,
+   "cutng25": 3.1138459841414945e-05,
+   "eOutMot": 5.5382649103846715e-06,
+   "eMotTop5": 5.540748437254939e-06,
+   "eMotBot5": 3.614276647567749e-05,
+   "eMotIn": 2.0841757456466214e-05
+  },
+  "e_edges": {
+   "eOutMot": 10,
+   "eMotTop5": 5,
+   "eMotBot5": 5,
+   "eMotIn": 23
+  },
+  "K": 77,
+  "mass_split": {
+   "glut19": 0.1103,
+   "other58": 0.3921
+  },
+  "n_seeds": 18,
+  "fc142_max": 0.0,
+  "fc142_pass": true,
+  "c0a142_max": 0.0,
+  "c0a142_pass": true,
+  "c0a_pass": true
+ },
+ "p0": {
+  "c0a_pass": true,
+  "c0a_max": 0.0,
+  "g_cutwA_stored_exact": true,
+  "g_cutng25_stored_exact": true,
+  "g_emot_exact": true,
+  "fc142_pass": true,
+  "fc142_max": 0.0,
+  "pass": true
+ },
+ "p4": {
+  "af_range_ok": true,
+  "b65_band": true,
+  "af_mean": {
+   "full": 0.107908,
+   "b65": 0.107993,
+   "cutwA": 0.107838,
+   "cutng25": 0.109079,
+   "eOutMot": 0.107319,
+   "eMotTop5": 0.108056,
+   "eMotBot5": 0.107792,
+   "eMotIn": 0.108874
+  },
+  "e_band_ok": {
+   "eOutMot": true,
+   "eMotTop5": true,
+   "eMotBot5": true,
+   "eMotIn": true
+  },
+  "new_stairs": {
+   "cutwA": 2.0839273929595947e-05,
+   "cutng25": 3.1138459841414945e-05,
+   "eOutMot": 5.5382649103846715e-06,
+   "eMotTop5": 5.540748437254939e-06,
+   "eMotBot5": 3.614276647567749e-05,
+   "eMotIn": 2.0841757456466214e-05
+  }
+ },
+ "table": {
+  "Ti": {
+   "full": {
+    "kL": 3,
+    "kR": 8,
+    "meanL": 0.37,
+    "meanR": 0.465,
+    "lbL": 0.06591599071428139,
+    "ubL": 0.43008880961974144,
+    "lbR": 0.27999563610326017,
+    "ubR": 0.7200043638967398
+   },
+   "b65": {
+    "kL": 16,
+    "kR": 16,
+    "meanL": 1.0,
+    "meanR": 0.998,
+    "lbL": 0.8063923194655636,
+    "ubL": 1.0000000000000002,
+    "lbR": 0.8063923194655636,
+    "ubR": 1.0000000000000002
+   },
+   "cutwA": {
+    "kL": 0,
+    "kR": 5,
+    "meanL": 0.238,
+    "meanR": 0.431,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.14164643854782036,
+    "ubR": 0.5559564416525933
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 16,
+    "meanL": 0.113,
+    "meanR": 0.79,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.8063923194655636,
+    "ubR": 1.0000000000000002
+   },
+   "eOutMot": {
+    "kL": 1,
+    "kR": 12,
+    "meanL": 0.301,
+    "meanR": 0.632,
+    "lbL": 0.011119344764642517,
+    "ubL": 0.2832873757029894,
+    "lbR": 0.5050168346449122,
+    "ubR": 0.8981793250878696
+   },
+   "eMotTop5": {
+    "kL": 0,
+    "kR": 6,
+    "meanL": 0.235,
+    "meanR": 0.438,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.18481232558863636,
+    "ubR": 0.6135895945449729
+   },
+   "eMotBot5": {
+    "kL": 2,
+    "kR": 6,
+    "meanL": 0.259,
+    "meanR": 0.418,
+    "lbL": 0.03497748774324047,
+    "ubL": 0.3602282726575869,
+    "lbR": 0.18481232558863636,
+    "ubR": 0.6135895945449729
+   },
+   "eMotIn": {
+    "kL": 0,
+    "kR": 15,
+    "meanL": 0.124,
+    "meanR": 0.801,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.7167126242970107,
+    "ubR": 0.9888806552353575
+   }
+  },
+  "Tr": {
+   "full": {
+    "kL": 0,
+    "kR": 5,
+    "meanL": 0.027,
+    "meanR": 0.405,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.14164643854782036,
+    "ubR": 0.5559564416525933
+   },
+   "b65": {
+    "kL": 0,
+    "kR": 16,
+    "meanL": 0.169,
+    "meanR": 0.971,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.8063923194655636,
+    "ubR": 1.0000000000000002
+   },
+   "cutwA": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.01,
+    "meanR": 0.102,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.003,
+    "meanR": 0.007,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eOutMot": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.013,
+    "meanR": 0.163,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotTop5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.011,
+    "meanR": 0.09,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotBot5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.015,
+    "meanR": 0.069,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotIn": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.006,
+    "meanR": 0.027,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   }
+  },
+  "Ta": {
+   "full": {
+    "kL": 3,
+    "kR": 0,
+    "meanL": 0.358,
+    "meanR": 0.037,
+    "lbL": 0.06591599071428139,
+    "ubL": 0.43008880961974144,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "b65": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.059,
+    "meanR": 0.039,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutwA": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.036,
+    "meanR": 0.022,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.018,
+    "meanR": 0.016,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eOutMot": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.063,
+    "meanR": 0.01,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotTop5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.047,
+    "meanR": 0.021,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotBot5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.03,
+    "meanR": 0.01,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotIn": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.045,
+    "meanR": 0.02,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   }
+  },
+  "Sr": {
+   "full": {
+    "kL": 0,
+    "kR": 4,
+    "meanL": 0.143,
+    "meanR": 0.407,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.10182067491213048,
+    "ubR": 0.4949831653550878
+   },
+   "b65": {
+    "kL": 16,
+    "kR": 0,
+    "meanL": 0.831,
+    "meanR": 0.022,
+    "lbL": 0.8063923194655636,
+    "ubL": 1.0000000000000002,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutwA": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.114,
+    "meanR": 0.095,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.028,
+    "meanR": 0.024,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eOutMot": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.103,
+    "meanR": 0.11,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotTop5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.115,
+    "meanR": 0.101,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotBot5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.139,
+    "meanR": 0.075,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotIn": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.05,
+    "meanR": 0.074,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   }
+  },
+  "Pr": {
+   "full": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.011,
+    "meanR": 0.124,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "b65": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.004,
+    "meanR": 0.002,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutwA": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.013,
+    "meanR": 0.184,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 1,
+    "meanL": 0.016,
+    "meanR": 0.294,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.011119344764642517,
+    "ubR": 0.2832873757029894
+   },
+   "eOutMot": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.011,
+    "meanR": 0.161,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotTop5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.015,
+    "meanR": 0.235,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotBot5": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.008,
+    "meanR": 0.146,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   },
+   "eMotIn": {
+    "kL": 0,
+    "kR": 0,
+    "meanL": 0.016,
+    "meanR": 0.279,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "lbR": 0.0,
+    "ubR": 0.1936076805344365
+   }
+  }
+ },
+ "dose": {
+  "meanR": {
+   "0": 0.465,
+   "24": 0.431,
+   "bot5": 0.418,
+   "top5": 0.438,
+   "mot": 0.632,
+   "motIn": 0.801,
+   "25": 0.79
+  },
+  "kR": {
+   "0": 8,
+   "24": 5,
+   "bot5": 6,
+   "top5": 6,
+   "mot": 12,
+   "motIn": 15,
+   "25": 16
+  },
+  "meanL": {
+   "0": 0.37,
+   "24": 0.238,
+   "bot5": 0.259,
+   "top5": 0.235,
+   "mot": 0.301,
+   "motIn": 0.124,
+   "25": 0.113
+  },
+  "kL": {
+   "0": 3,
+   "24": 0,
+   "bot5": 2,
+   "top5": 0,
+   "mot": 1,
+   "motIn": 0,
+   "25": 0
+  },
+  "legs": {
+   "0": {
+    "mean_paired_dR_vs_full": 0.0,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.034,
+    "n_down_vs_wA": 1,
+    "n_up_vs_wA": 1
+   },
+   "24": {
+    "mean_paired_dR_vs_full": -0.034,
+    "n_down_vs_full": 1,
+    "mean_paired_dR_vs_wA": 0.0,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 0
+   },
+   "bot5": {
+    "mean_paired_dR_vs_full": -0.047,
+    "n_down_vs_full": 4,
+    "mean_paired_dR_vs_wA": -0.013,
+    "n_down_vs_wA": 5,
+    "n_up_vs_wA": 3
+   },
+   "top5": {
+    "mean_paired_dR_vs_full": -0.026,
+    "n_down_vs_full": 4,
+    "mean_paired_dR_vs_wA": 0.007,
+    "n_down_vs_wA": 4,
+    "n_up_vs_wA": 2
+   },
+   "mot": {
+    "mean_paired_dR_vs_full": 0.167,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.201,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 8
+   },
+   "motIn": {
+    "mean_paired_dR_vs_full": 0.336,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.37,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 14
+   },
+   "25": {
+    "mean_paired_dR_vs_full": 0.326,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.36,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 15
+   }
+  },
+  "m0": 0.465
+ },
+ "classes": {
+  "0": {
+   "arm": "full",
+   "meanR": 0.465,
+   "kR": 8,
+   "meanL": 0.37,
+   "kL": 3,
+   "kill": false,
+   "restore": false,
+   "super": false,
+   "partial": true,
+   "legs": {
+    "mean_paired_dR_vs_full": 0.0,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.034,
+    "n_down_vs_wA": 1,
+    "n_up_vs_wA": 1
+   },
+   "mass": null
+  },
+  "24": {
+   "arm": "cutwA",
+   "meanR": 0.431,
+   "kR": 5,
+   "meanL": 0.238,
+   "kL": 0,
+   "kill": false,
+   "restore": false,
+   "super": false,
+   "partial": true,
+   "legs": {
+    "mean_paired_dR_vs_full": -0.034,
+    "n_down_vs_full": 1,
+    "mean_paired_dR_vs_wA": 0.0,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 0
+   },
+   "mass": null
+  },
+  "bot5": {
+   "arm": "eMotBot5",
+   "meanR": 0.418,
+   "kR": 6,
+   "meanL": 0.259,
+   "kL": 2,
+   "kill": false,
+   "restore": false,
+   "super": false,
+   "partial": true,
+   "legs": {
+    "mean_paired_dR_vs_full": -0.047,
+    "n_down_vs_full": 4,
+    "mean_paired_dR_vs_wA": -0.013,
+    "n_down_vs_wA": 5,
+    "n_up_vs_wA": 3
+   },
+   "mass": 0.000313
+  },
+  "top5": {
+   "arm": "eMotTop5",
+   "meanR": 0.438,
+   "kR": 6,
+   "meanL": 0.235,
+   "kL": 0,
+   "kill": false,
+   "restore": false,
+   "super": false,
+   "partial": true,
+   "legs": {
+    "mean_paired_dR_vs_full": -0.026,
+    "n_down_vs_full": 4,
+    "mean_paired_dR_vs_wA": 0.007,
+    "n_down_vs_wA": 4,
+    "n_up_vs_wA": 2
+   },
+   "mass": 0.000523
+  },
+  "mot": {
+   "arm": "eOutMot",
+   "meanR": 0.632,
+   "kR": 12,
+   "meanL": 0.301,
+   "kL": 1,
+   "kill": false,
+   "restore": true,
+   "super": true,
+   "partial": false,
+   "legs": {
+    "mean_paired_dR_vs_full": 0.167,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.201,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 8
+   },
+   "mass": 0.000837
+  },
+  "motIn": {
+   "arm": "eMotIn",
+   "meanR": 0.801,
+   "kR": 15,
+   "meanL": 0.124,
+   "kL": 0,
+   "kill": false,
+   "restore": true,
+   "super": true,
+   "partial": false,
+   "legs": {
+    "mean_paired_dR_vs_full": 0.336,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.37,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 14
+   },
+   "mass": 0.001824
+  },
+  "25": {
+   "arm": "cutng25",
+   "meanR": 0.79,
+   "kR": 16,
+   "meanL": 0.113,
+   "kL": 0,
+   "kill": false,
+   "restore": true,
+   "super": true,
+   "partial": false,
+   "legs": {
+    "mean_paired_dR_vs_full": 0.326,
+    "n_down_vs_full": 0,
+    "mean_paired_dR_vs_wA": 0.36,
+    "n_down_vs_wA": 0,
+    "n_up_vs_wA": 15
+   },
+   "mass": null
+  }
+ },
+ "hypotheses": {
+  "H_REPLIC": {
+   "arm": "eOutMot",
+   "b31_class": "SUPER",
+   "meanR": 0.632,
+   "kR": 12,
+   "middle_replicates": false,
+   "note": "B31 lands in a class band \u2014 middle was batch-drawn (L88/L90); pooled read carries the verdict"
+  },
+  "H_DOSE": {
+   "order_sign_count": 8,
+   "order_pass": false,
+   "mean_dR_top5": 0.007,
+   "mean_dR_bot5": -0.013,
+   "mean_dR_mot": 0.201,
+   "proportionality_half_mass": false,
+   "fires": false,
+   "note": "ordering fails / proportionality fails \u2014 within-sheet re-draw at the 5-edge scale (L115/L118 class)"
+  },
+  "H_COMBO": {
+   "arm": "eMotIn",
+   "b31_class": "SUPER",
+   "meanR": 0.801,
+   "kR": 15,
+   "super_predicted": true,
+   "note": "motor+in combo supers (eIn redundancy confirmed on fresh batch)"
+  },
+  "P3": {
+   "flipping_arms": [
+    "mot",
+    "motIn",
+    "25"
+   ],
+   "tiL_dead": {
+    "mot": {
+     "meanL": 0.301,
+     "kL": 1
+    },
+    "motIn": {
+     "meanL": 0.124,
+     "kL": 0
+    },
+    "25": {
+     "meanL": 0.113,
+     "kL": 0
+    }
+   },
+   "note": "Ti_L dies with every flipping arm (crossed law holds)"
+  }
+ },
+ "pooled": {
+  "eOutMot_B29_B31": {
+   "kR": 21,
+   "n": 32,
+   "lbR": 0.4831108797896222,
+   "ubR": 0.7958956207556682,
+   "kL": 3,
+   "lbL": 0.0324015512983662,
+   "ubL": 0.24218154728387864,
+   "meanR": 0.578,
+   "meanL": 0.276
+  },
+  "cutng25_6batch": {
+   "kR": 93,
+   "n": 96,
+   "lbR": 0.9121132067546303,
+   "ubR": 0.9893159296287989,
+   "kL": 0,
+   "lbL": 3.335957940936178e-18,
+   "ubL": 0.038475587857675686,
+   "meanR": 0.759,
+   "meanL": 0.131
+  },
+  "cutwA_7batch": {
+   "kR": 34,
+   "n": 112,
+   "lbR": 0.22610155594126596,
+   "ubR": 0.3940689732636048,
+   "kL": 7,
+   "lbL": 0.030601922337250242,
+   "ubL": 0.12341425634632563,
+   "meanR": 0.413,
+   "meanL": 0.257
+  }
+ },
+ "disclosures": {
+  "full_class_batch_drawn": {
+   "meanR": 0.465,
+   "kR": 8,
+   "note": "class labels read vs m0/paired legs, not bare bands (L109)"
+  },
+  "new_arms_single_batch": "eMotTop5/eMotBot5/eMotIn: B31 only, disclosed",
+  "eOutMot_pooled": "B29+B31 n=32 (recomputed from stored raws)",
+  "tie_break": "two syn-8 ties broken by global position (PREREG)",
+  "no_renorm_arm": "lineage build has no in-degree renorm",
+  "masses": {
+   "eOutMot": 0.000837,
+   "eMotTop5": 0.000523,
+   "eMotBot5": 0.000313,
+   "eMotIn": 0.001824
+  },
+  "motor_targets": {
+   "top5": [
+    "iii4",
+    "i2",
+    "iv1",
+    "DVM1a-c",
+    "hi1 MN"
+   ],
+   "bot5": [
+    "i1",
+    "DVM1a-c",
+    "DVM1a-c",
+    "DLM1-4",
+    "iv4"
+   ]
+  }
+ }
+}

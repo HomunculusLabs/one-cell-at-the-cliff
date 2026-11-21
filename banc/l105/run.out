@@ -1,0 +1,56 @@
+subnet 21,809 edges 647,953 | mech 4848 | pools 384 cells | 3s
+ANCH seed 11 done (3 arms) | 17s
+ANCH seed 22 done (3 arms) | 28s
+ANCH seed 33 done (3 arms) | 40s
+B4 seed 801 done (3 arms) | 52s
+B4 seed 802 done (3 arms) | 65s
+B4 seed 803 done (3 arms) | 76s
+B4 seed 804 done (3 arms) | 89s
+B4 seed 805 done (3 arms) | 100s
+B4 seed 806 done (3 arms) | 112s
+B4 seed 807 done (3 arms) | 123s
+B4 seed 808 done (3 arms) | 134s
+B4 seed 809 done (3 arms) | 145s
+B4 seed 810 done (3 arms) | 156s
+B4 seed 811 done (3 arms) | 166s
+B4 seed 812 done (3 arms) | 177s
+B4 seed 813 done (3 arms) | 188s
+B4 seed 814 done (3 arms) | 199s
+B4 seed 815 done (3 arms) | 209s
+B4 seed 816 done (3 arms) | 219s
+B5 seed 901 done (3 arms) | 230s
+B5 seed 902 done (3 arms) | 241s
+B5 seed 903 done (3 arms) | 252s
+B5 seed 904 done (3 arms) | 262s
+B5 seed 905 done (3 arms) | 273s
+B5 seed 906 done (3 arms) | 284s
+B5 seed 907 done (3 arms) | 294s
+B5 seed 908 done (3 arms) | 305s
+B5 seed 909 done (3 arms) | 316s
+B5 seed 910 done (3 arms) | 326s
+B5 seed 911 done (3 arms) | 336s
+B5 seed 912 done (3 arms) | 347s
+B5 seed 913 done (3 arms) | 358s
+B5 seed 914 done (3 arms) | 368s
+B5 seed 915 done (3 arms) | 379s
+B5 seed 916 done (3 arms) | 390s
+B6 seed 1001 done (3 arms) | 401s
+B6 seed 1002 done (3 arms) | 413s
+B6 seed 1003 done (3 arms) | 424s
+B6 seed 1004 done (3 arms) | 435s
+B6 seed 1005 done (3 arms) | 447s
+B6 seed 1006 done (3 arms) | 459s
+B6 seed 1007 done (3 arms) | 470s
+B6 seed 1008 done (3 arms) | 481s
+B6 seed 1009 done (3 arms) | 492s
+B6 seed 1010 done (3 arms) | 503s
+B6 seed 1011 done (3 arms) | 513s
+B6 seed 1012 done (3 arms) | 525s
+B6 seed 1013 done (3 arms) | 535s
+B6 seed 1014 done (3 arms) | 546s
+B6 seed 1015 done (3 arms) | 556s
+B6 seed 1016 done (3 arms) | 567s
+rollouts done 567s
+raw_l105.npz checkpointed BEFORE analysis
+C0A True (max 0.0e+00) | C1 True | C0D free!=cfn True | freenod-vs-free {'11': 0.0, '22': 0.03062833473086357, '33': 0.0} | done 569s
+EXIT=0

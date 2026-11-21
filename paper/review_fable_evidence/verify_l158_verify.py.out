@@ -1,0 +1,5 @@
+(1) 14 abstract citations all resolve OK
+(2) four results stated (abstract + §1 map); k/n literals cross-anchored to body (20/64 disclosed abstract-only); U-law endpoints Wilson-recomputed vs stored l135 pooled bounds
+(3) band-honesty abstract numbers independently recomputed from l154/l156/l157 stored jsons (census, Wilson, median, carrier subset)
+(4) numeric vocabulary frozen: 71 tokens subset of the v3.6 allowlist; band set present
+L158 verify: ALL GREEN

@@ -1,0 +1,12 @@
+traces: 518 unique seeds: 449
+seeds appearing in >1 file: {'801': 28, '901': 27, '1401': 2, '1402': 2, '1403': 2, '1404': 2, '1405': 2, '1406': 2, '1407': 2, '1408': 2, '1409': 2, '1410': 2, '1411': 2, '1412': 2, '1413': 2, '1414': 2, '1415': 2, '1416': 2}
+seeds with non-0.1 peak (count of files): {'901': 27}
+full traces: 500 unique seeds: 433 dups: {'801': 27, '901': 26, '1401': 2, '1402': 2, '1403': 2, '1404': 2, '1405': 2, '1406': 2, '1407': 2, '1408': 2, '1409': 2, '1410': 2, '1411': 2, '1412': 2, '1413': 2, '1414': 2, '1415': 2, '1416': 2}
+full arm unique-seed below-band: 348 433 (0.7636814052508324, 0.8383676784373323)
+b65 unique-seed n: 449 wilson lb for n/n: 0.9915169895647404
+example keys: ['mm_b65_801', 'xm_b65_801', 'mm_off_801', 'xm_off_801', 'mm_b65_901', 'xm_b65_901'] n keys 832
+arms in l154: ['b65', 'off']
+arm b65: n=18 median frac power @0.1Hz=0.196 | median corr(mm, chop envelope)=+0.552 (min +0.513, max +0.618) | peak bins [(0.1, 17), (0.0167, 1)]
+     xm (mech sensory mean) corr with chop envelope: median +0.621
+arm off: n=18 median frac power @0.1Hz=0.022 | median corr(mm, chop envelope)=-0.025 (min -0.212, max +0.110) | peak bins [(0.05, 2), (0.3667, 2), (0.0167, 2), (0.3, 1)]
+     xm (mech sensory mean) corr with chop envelope: median -0.009

@@ -1,0 +1,18 @@
+C0B certification: PASS
+ANCHORS {'c0a': True, 'c0a_max': 0.0, 'c0b': True, 'fd_echo_law': True, 'fd_hop_mm': [2001, 2002], 'fd_hopfb_mm': [6], 'c2': True, 'c2_min': 0.022530630230903625, 'c1': True, 'pins_exact': True}
+--- Ti ---
+cfn      k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.073, 0.517, 0.2] | seg1 [0.003, 0.0, 0.003] | L [0.378, 0.381, 0.352] R [0.425, 0.486, 0.486]
+cfn_fb   k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.093, 0.157, 0.003] | seg1 [0.0, 0.0, 0.0] | L [0.39, 0.348, 0.335] R [0.449, 0.409, 0.454]
+csham    k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.123, 0.187, 0.133] | seg1 [0.0, 0.002, 0.006] | L [0.285, 0.325, 0.344] R [0.27, 0.294, 0.302]
+cfh      k/batch [0, 0, 1] pooled 1/48 lb 0.0037 G2a False | anchor [0.15, 0.34, 0.077] | seg1 [0.001, 0.0, 0.001] | L [0.411, 0.41, 0.379] R [0.458, 0.519, 0.494]
+cfh_fb   k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.293, 0.227, 0.073] | seg1 [0.004, 0.0, 0.005] | L [0.401, 0.386, 0.412] R [0.482, 0.455, 0.364]
+--- Tr ---
+cfn      k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.027, 0.003, 0.037] | seg1 [0.005, 0.003, 0.002] | L [0.032, 0.051, 0.056] R [0.372, 0.421, 0.451]
+cfn_fb   k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.007, 0.0, 0.027] | seg1 [0.003, 0.002, 0.007] | L [0.019, 0.058, 0.064] R [0.413, 0.421, 0.39]
+csham    k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.0, 0.037, 0.037] | seg1 [0.0, 0.004, 0.001] | L [0.03, 0.048, 0.032] R [0.451, 0.515, 0.449]
+cfh      k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.027, 0.0, 0.037] | seg1 [0.008, 0.0, 0.011] | L [0.045, 0.04, 0.036] R [0.457, 0.437, 0.489]
+cfh_fb   k/batch [0, 0, 0] pooled 0/48 lb 0.0 G2a False | anchor [0.007, 0.0, 0.06] | seg1 [0.016, 0.0, 0.005] | L [0.025, 0.042, 0.03] R [0.389, 0.447, 0.39]
+LIFTS {'fb_Ti': -0.007, 'fb_Tr': -0.006, 'sham_Ti': -0.077, 'sham_Tr': -0.005, 'sham_share': None}
+HOP {'dm_min': 0.0225, 'dm_max': 0.0464, 'duty_deltas': {'Ti': {'L': 0.03, 'R': 0.025}, 'Tr': {'L': -0.006, 'R': 0.046}}, 'k_Ti': [0, 0, 1], 'k_Tr': [0, 0, 0]}
+BUDGET {'cfn_fb': 0.037, 'cfh_fb': 0.0374} | lock {'cfn': 48, 'cfn_fb': 48, 'csham': 48, 'cfh': 48, 'cfh_fb': 48}
+VERDICT Ti base COLLAPSES (l65-rule was load-bearing FOR the robustness): k 0/48 lb 0.0 (l65 was 48/48 .9259) | Tr split PERSISTS (L [0.032, 0.051, 0.056] R [0.372, 0.421, 0.451]; l65 L .16-.17 / R .95-.98) | echo fb-vs-cfn Ti -0.007 Tr -0.006 sham share None | hop lands (dm min 0.023) duty dL/dR Ti {'L': 0.03, 'R': 0.025} Tr {'L': -0.006, 'R': 0.046}

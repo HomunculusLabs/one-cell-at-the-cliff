@@ -1,0 +1,21 @@
+{
+ "sheet": {
+  "size": 9094,
+  "edges": 311620,
+  "premotor_intrinsic": 8366,
+  "motor": 728
+ },
+ "recip_pairs": 18338,
+ "connected": 293282,
+ "fraction": 0.062527,
+ "er_fraction": 0.00188778,
+ "over_rep": 33.1,
+ "fL": 0.0682,
+ "fL_den": 89566,
+ "fR": 0.0638,
+ "fR_den": 88861,
+ "f_cross": 0.0551,
+ "cross_den": 111271,
+ "LI_recip": 0.0329,
+ "z": 0.93
+}

@@ -1,0 +1,49 @@
+{
+ "g_cutwA": 0.14365819573402408,
+ "g_cutng25": 0.1454454553127289,
+ "g_cutwA_stored_exact": true,
+ "g_cutng25_stored_exact": true,
+ "g_eOutInt": 0.1455211400985718,
+ "g_eOutMot": 0.14284219264984138,
+ "g_eOutAll": 0.1454361426830292,
+ "g_eIn": 0.14522001743316648,
+ "g_eAll": 0.1454454553127289,
+ "e_band_ok": {
+  "eOutInt": true,
+  "eOutMot": true,
+  "eOutAll": true,
+  "eIn": true,
+  "eAll": true
+ },
+ "new_stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "cutng25": 3.1138459841414945e-05,
+  "eOutInt": 5.540748437254939e-06,
+  "eOutMot": 5.5382649103846715e-06,
+  "eOutAll": 5.540748437254939e-06,
+  "eIn": 5.540748437254939e-06,
+  "eAll": 3.614276647567749e-05
+ },
+ "e_edges": {
+  "eOutInt": 70,
+  "eOutMot": 10,
+  "eOutAll": 80,
+  "eIn": 13,
+  "eAll": 93
+ },
+ "K": 77,
+ "mass_split": {
+  "glut19": 0.1103,
+  "other58": 0.3921
+ },
+ "n_seeds": 18,
+ "g_eall_vs_g25": {
+  "g_eAll": 0.1454454553127289,
+  "g_cutng25": 0.1454454553127289,
+  "equal": true
+ },
+ "a_eall_max": 0.0,
+ "c0a142_max": 0.0,
+ "c0a142_pass": true,
+ "c0a_pass": true
+}

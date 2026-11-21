@@ -1,0 +1,9 @@
+rows in weights file: 25568639 | weight min 1 max 2591
+weight histogram head: {1: 10295463, 2: 4760434, 3: 2619921, 4: 1656395, 5: 1143226, 6: 831853}
+duplicate (pre,post) pairs: 0
+labeled cells 166700 | DN 1314 | cord 20239 | in-graph edges 25560079
+floor>=1: edges 25,560,079 | DN into 1277 proj 1305 | dn_new (pure-projection) 28 | heavy K 9 | DNp33 [{"side": "R", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 37}, {"side": "L", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 33}]
+floor>=2: edges 15,268,644 | DN into 1106 proj 1305 | dn_new (pure-projection) 199 | heavy K 46 | DNp33 [{"side": "R", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 16}, {"side": "L", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 10}]
+floor>=3: edges 10,510,014 | DN into 963 proj 1305 | dn_new (pure-projection) 342 | heavy K 52 | DNp33 [{"side": "R", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 6}, {"side": "L", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 2}]
+floor>=4: edges 7,890,959 | DN into 845 proj 1303 | dn_new (pure-projection) 458 | heavy K 59 | DNp33 [{"side": "R", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 1}, {"side": "L", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 1}]
+floor>=5: edges 6,235,088 | DN into 760 proj 1301 | dn_new (pure-projection) 541 | heavy K 70 | DNp33 [{"side": "R", "dn_into": false, "dn_proj": true, "in_dn_new": true, "n_in_cord_edges": 0}, {"side": "L", "dn_into": true, "dn_proj": true, "in_dn_new": false, "n_in_cord_edges": 1}]

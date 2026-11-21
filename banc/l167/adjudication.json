@@ -1,0 +1,415 @@
+{
+ "I1": {
+  "cutscr0_pooled": [
+   39,
+   48
+  ],
+  "draft_mentions": [],
+  "kL": [
+   12,
+   10,
+   13
+  ],
+  "lb": 0.6806013285071529,
+  "ledger_keys": [],
+  "per_batch": {
+   "l125": {
+    "kL": 12,
+    "kR": 12,
+    "meanL": 0.61,
+    "meanR": 0.622
+   },
+   "l127": {
+    "kL": 10,
+    "kR": 12,
+    "meanL": 0.578,
+    "meanR": 0.611
+   },
+   "l128": {
+    "kL": 13,
+    "kR": 15,
+    "meanL": 0.66,
+    "meanR": 0.62
+   }
+  },
+  "ub": 0.8980860904515235
+ },
+ "I10": {
+  "bit_identity_in_results": true,
+  "has_two_factor_phrase": true,
+  "intact_full_kR_same_batch": 7,
+  "s24_chars": 8487,
+  "sil24_kR": 5
+ },
+ "I11": {
+  "abstract_chars": 3964,
+  "bullet_lines": 37,
+  "distinct_caps_tokens": 81,
+  "has_update_equation": false,
+  "numeric_cite_markers": 1
+ },
+ "I12": {
+  "draft_has_371": true,
+  "draft_says_non_monotone": true,
+  "fig1_batch_label": [
+   "B17-B26"
+  ],
+  "fig1_has_334": true,
+  "fig1_says_monotone": true,
+  "fig_scripts_found": [
+   "fig_l160.py",
+   "l136_fig.py",
+   "l152_fig2.py"
+  ]
+ },
+ "I2": {
+  "applies_floor": false,
+  "banc_release_floor": 3,
+  "floor_filters_found": [],
+  "our_male_K": 9,
+  "our_male_dn_new": 28
+ },
+ "I3": {
+  "chop_500_of_900": true,
+  "methods_chars": 1824,
+  "methods_mentions_chopped_drive": false,
+  "methods_states_drive_waveform": false,
+  "mid_segment_full_on": true
+ },
+ "I4": {
+  "g_cutwA_stored": [
+   0.1436581957
+  ],
+  "pct_vs_cutwA": {
+   "g_cutk5": [
+    -2.672
+   ],
+   "g_cutng25": [
+    1.244
+   ],
+   "g_cutwA": [
+    0.0
+   ],
+   "g_eAll": [
+    1.244
+   ],
+   "g_eIn": [
+    1.087
+   ],
+   "g_eMotBot5": [
+    0.009
+   ],
+   "g_eMotIn": [
+    1.062
+   ],
+   "g_eMotTop5": [
+    -0.031
+   ],
+   "g_eOutAll": [
+    1.238
+   ],
+   "g_eOutInt": [
+    1.297
+   ],
+   "g_eOutMot": [
+    -0.568
+   ],
+   "g_se0": [
+    1.244
+   ],
+   "g_sil1110": [
+    6.59
+   ],
+   "g_sil1110_wA": [
+    0.0
+   ],
+   "g_silW": [
+    0.0
+   ]
+  },
+  "silW_unchanged": true
+ },
+ "I5": {
+  "gain_spread_full": [
+   0.1531,
+   0.175,
+   0.1487,
+   0.1491,
+   0.1614,
+   0.1617
+  ],
+  "n_clear_p05": 3,
+  "n_sets": 6,
+  "per_set": {
+   "0": {
+    "carrier": 14,
+    "fisher_p": 0.11339,
+    "twin": 9
+   },
+   "1": {
+    "carrier": 16,
+    "fisher_p": 0.22581,
+    "twin": 13
+   },
+   "2": {
+    "carrier": 16,
+    "fisher_p": 7e-05,
+    "twin": 5
+   },
+   "3": {
+    "carrier": 13,
+    "fisher_p": 0.02901,
+    "twin": 6
+   },
+   "4": {
+    "carrier": 14,
+    "fisher_p": 0.0,
+    "twin": 0
+   },
+   "5": {
+    "carrier": 13,
+    "fisher_p": 1.0,
+    "twin": 13
+   }
+  },
+  "sustain_cutng25_frac": 1.0
+ },
+ "I6": {
+  "cohort_defined_once_before_loop": 1,
+  "cohort_redefined_inside_floor_loop": 0,
+  "f4": {
+   "K": 73,
+   "carrier_eq3": 11,
+   "carrier_rank": 21,
+   "closure_edges_base": 647953,
+   "closure_edges_f4": 472095,
+   "d4a": true,
+   "d4b": false,
+   "f2f3_deleted": {
+    "all_f2": 0,
+    "all_f3": 0
+   },
+   "jaccard_heavy": 0.9231,
+   "n_glut": 18,
+   "n_ng": 55,
+   "out80_f4": 69,
+   "twin_rank": 33
+  },
+  "membership_frozen": true
+ },
+ "I7": {
+  "b65_traces": 518,
+  "b65_unique_seeds": 449,
+  "base": [
+   43,
+   144
+  ],
+  "claim_inside_spread": false,
+  "dups": {
+   "1401": 2,
+   "1402": 2,
+   "1403": 2,
+   "1404": 2,
+   "1405": 2,
+   "1406": 2,
+   "1407": 2,
+   "1408": 2,
+   "1409": 2,
+   "1410": 2,
+   "1411": 2,
+   "1412": 2,
+   "1413": 2,
+   "1414": 2,
+   "1415": 2,
+   "1416": 2,
+   "801": 28,
+   "901": 27
+  },
+  "sham_spread": 0.075,
+  "sil_dR": -0.088,
+  "twin": [
+   12,
+   32
+  ],
+  "twin_vs_base_fisher_p": 0.4058
+ },
+ "I8": {
+  "abstract_chars": 3964,
+  "abstract_has_20/64": true,
+  "abstract_has_47/48": true,
+  "body_has_124/128": true,
+  "body_has_43/144": true,
+  "kill_to_super_phrase": true,
+  "plus_256_unkeyed": true,
+  "rank_25_and_34_58": true,
+  "ratio_12x_claimed": true,
+  "ratio_recomputed": 9.72
+ },
+ "I9": {
+  "pairs_moving_outside_Ti": [
+   "Tr",
+   "Sr"
+  ],
+  "per_pair": {
+   "Pr": {
+    "cutng25": [
+     0,
+     0
+    ],
+    "cutwA": [
+     0,
+     0
+    ],
+    "full": [
+     0,
+     0
+    ]
+   },
+   "Sr": {
+    "cutng25": [
+     0,
+     0
+    ],
+    "cutwA": [
+     0,
+     0
+    ],
+    "full": [
+     0,
+     4
+    ]
+   },
+   "Ta": {
+    "cutng25": [
+     0,
+     0
+    ],
+    "cutwA": [
+     0,
+     0
+    ],
+    "full": [
+     2,
+     0
+    ]
+   },
+   "Ti": {
+    "cutng25": [
+     0,
+     15
+    ],
+    "cutwA": [
+     1,
+     5
+    ],
+    "full": [
+     3,
+     4
+    ]
+   },
+   "Tr": {
+    "cutng25": [
+     0,
+     0
+    ],
+    "cutwA": [
+     0,
+     0
+    ],
+    "full": [
+     0,
+     6
+    ]
+   }
+  }
+ },
+ "cert": {
+  "fisher_selftest_disjoint": 0.028571,
+  "fisher_selftest_sym": 1.0,
+  "wilson_fullprec_vs_l150": 0.9224023687386392,
+  "wilson_vs_ledger_cutng25": [
+   0.891,
+   0.9963
+  ]
+ },
+ "summary": {
+  "n_issues": 12,
+  "rows": [
+   {
+    "artifact": "banc/l125,l127,l128/results_*.json:table.Ti.cutscr0",
+    "finding": "zero scramble arms in DRAFT (0 mentions) or ledger (0 keys); our own stored cutscr0 = 39/48 right-side [0.681,0.898] over 3 batches, kL [12, 10, 13] also high => sufficiency, not uniqueness, and not the crossed state",
+    "issue": 1,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "banc/l138_static.py + numbers.json:l146.release.min",
+    "finding": "our male extraction applies NO synapse floor (floor filters found in l138 code: none) while the BANC release carries an implicit floor of 3 (l146.release.min) -- so our 28-cell/K=9 male cohort is an UNMATCHED-floor comparison; the reviewer's matched-floor numbers (342/K=52) are REVIEWER-REPORTED and need our own reproduction before any draft claim",
+    "issue": 2,
+    "verdict": "CONFIRMED (methodological)"
+   },
+   {
+    "artifact": "banc/l135_run.py:AMPA block + banc/l162/static.json",
+    "finding": "the drive IS chopped in code (500 of every 900 steps in the 0.7-Hz segments, mid segment full-on: True) and our Methods section never states it (chopped-drive mention in Methods: False; drive waveform stated at all: False); INDEPENDENT CONVERGENCE with our own L162: the .100 Hz line is evoked/echo-locked (off-arm lock collapses) => the draft's free-running-slow-oscillation wording is dead",
+    "issue": 3,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "banc/l1*/results_l1*.json:g_* (scanned)",
+    "finding": "re-derived from our stored gains vs g_cutwA=0.1436581957: flip arms {'g_cutng25': [1.244], 'g_eAll': [1.244], 'g_eIn': [1.087], 'g_eMotIn': [1.062], 'g_eOutAll': [1.238], 'g_eOutInt': [1.297]} vs non-flip arms {'g_eMotBot5': [0.009], 'g_eMotTop5': [-0.031], 'g_eOutMot': [-0.568]} -- the +~1.1-1.3%/+-0.1% split the reviewer describes IS in our artifacts; BUT silW flips at g_cutwA UNCHANGED (True) and eOutMot is negative-and-intermediate, so gain cannot be the whole mechanism. No gain-swap control exists => the confound is real and untested; card seeded",
+    "issue": 4,
+    "verdict": "CONFIRMED (direction) / PARTIAL (attribution)"
+   },
+   {
+    "artifact": "banc/l139/results_l139.json + numbers.json:sustain.*,gains.full.spread",
+    "finding": "re-derived carrier-vs-twin per jitter set from our own l139 table: {'0': {'carrier': 14, 'twin': 9, 'fisher_p': 0.11339}, '1': {'carrier': 16, 'twin': 13, 'fisher_p': 0.22581}, '2': {'carrier': 16, 'twin': 5, 'fisher_p': 7e-05}, '3': {'carrier': 13, 'twin': 6, 'fisher_p': 0.02901}, '4': {'carrier': 14, 'twin': 0, 'fisher_p': 0.0}, '5': {'carrier': 13, 'twin': 13, 'fisher_p': 1.0}} -> contrast clear (p<.05) in 3/6 sets, even though cutng25 stays SUPER 100%; and the +-8% gain span ([0.1531, 0.175, 0.1487, 0.1491, 0.1614, 0.1617]) is the UNTREATED arm's, not the lesioned arms' => the robustness sentence must be re-scoped to endpoints-only",
+    "issue": 5,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "banc/l146_static.py + numbers.json:l146.f4",
+    "finding": "our l146 floor arm reports carrier rank 21 / twin 33 / heavy Jaccard 0.9231 with cohort membership FROZEN at the floor-3 cohort (verified in code: cohort array defined 1x before the floor loop, redefined 0x inside it) -- the draft never says the robustness is conditional on frozen membership; the reviewer's re-derived-at-floor-4 collapse (rank 46, Jaccard .35) is their computation and needs ours before it enters the draft",
+    "issue": 6,
+    "verdict": "CONFIRMED (scope) / REVIEWER-REPORTED (the floor-4 re-derived numbers)"
+   },
+   {
+    "artifact": "numbers.json:pooled.cutng25p,l150.pooled,l137.g1/g3 + banc/l156/static.json:rows",
+    "finding": "re-derived on our ledger: twin 12/32 vs base 43/144 gives Fisher p=0.406 (not a demonstrated null, just underpowered); the draft's \"-0.088 inside the 0.075 sham spread\" is FALSE on its face (|-0.088| > 0.075: inside=False); and our own l156 rows are 518 traces from 449 UNIQUE seeds (18 seeds repeat across files) => the 518/518 census is pseudo-replicated and must say so",
+    "issue": 7,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "paper/DRAFT.md + numbers.json:l142.h2a.mass",
+    "finding": "grep of our own DRAFT: abstract still quotes the superseded pools (20/64 True, 47/48 True) while the body carries 43/144 / 124/128; the mass ratio prints as 12x but recomputes to 9.72x from .0544/0.005599; kill->super phrase present True for a PARTIAL->SUPER step => these are ledger-vs-prose drifts the value-equality gates cannot see",
+    "issue": 8,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "banc/l135/results_l135.json:table",
+    "finding": "our own B26 table: only the tibia pair moves across cohort arms (pairs outside Ti with any k>2: ['Tr', 'Sr']) => the claim's readout scope is ONE antagonist pair of five and the draft must say so",
+    "issue": 9,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "paper/DRAFT.md \u00a72.4 + numbers.json:l137.sil24",
+    "finding": "our \u00a72.4 presents two bit-identities as findings (True) though both are true by construction, and sil24 kR=5 is not distinguishable from the intact comparator in the same batch => rebuild \u00a72.4 on silW (the unchanged-gain arm) and demote the identities to Methods",
+    "issue": 10,
+    "verdict": "CONFIRMED (editorial)"
+   },
+   {
+    "artifact": "paper/DRAFT.md (counted)",
+    "finding": "measured on our DRAFT: 37 bullet lines, 81 distinct all-caps tokens, 1 numeric citation markers in text, abstract 3964 chars (arXiv cap 1920), update equation present: False => still a skeleton; Methods lacks the model equation, drive waveform and class definitions",
+    "issue": 11,
+    "verdict": "CONFIRMED"
+   },
+   {
+    "artifact": "banc/l136/l136_fig.py, paper/l152_fig2.py, banc/l160/fig_l160.py",
+    "finding": "from our own figure sources: Fig 1 panel-A text says 'monotone' (True) while the draft argues NON-monotone (True); batch label in script ['B17-B26']; the +.334 annotation (True) conflicts with the text's +.371 (True) => figures carry stale pools/labels and need a print redraw pass. Reviewer had NO vision (6/7 calls failed), so contrast/point-size findings stay analytic",
+    "issue": 12,
+    "verdict": "CONFIRMED (analytic)"
+   }
+  ],
+  "verdict_counts": {
+   "CONFIRMED": 12
+  }
+ }
+}

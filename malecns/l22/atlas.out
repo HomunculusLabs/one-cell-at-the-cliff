@@ -1,0 +1,99 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+block-source DN types 449 | >=2-cell atlas rows 443
+DN types 449 | motor types 185 | block 23,616 edges | 1s
+  null draw 30/300 | 8s
+  null draw 60/300 | 16s
+  null draw 90/300 | 24s
+  null draw 120/300 | 31s
+  null draw 150/300 | 39s
+  null draw 180/300 | 47s
+  null draw 210/300 | 55s
+  null draw 240/300 | 63s
+  null draw 270/300 | 71s
+  null draw 300/300 | 79s
+cell z: 40594/83065 cells floored by binomial SE (draw std 0 / never-hit)
+
+=== ATLAS: 391 DN types (>=5 edges) | purity: pure 36 / mixed 145 / diffuse 210 | enriched (top1 share>=.10, z>=+5): 365 ===
+
+--- top 25 by top1_z ---
+dn_type  cells  edges  purity      top1_type  top1_share  top1_z                   top2_type  top2_share
+  DNd04      2      6    pure         MNad55       0.801  51.330                        MN2V       0.112
+  DNp43      2      6    pure         MNad55       0.679  47.623                      MNad15       0.139
+DNge064      2     63 diffuse          MN12D       0.146  44.929                       MN11D       0.100
+   pMP2      2     15   mixed         MNad29       0.450  39.735                      MNad33       0.148
+DNge103      2      7   mixed         MNhl01       0.294  36.489         Sternotrochanter MN       0.240
+DNge096      2     19    pure           MN3L       0.664  36.072                         MN5       0.126
+  DNg03     12    100   mixed         MNhl87       0.401  35.921                      MNhl88       0.313
+  DNg07     16     90   mixed         GNG652       0.348  31.657                      GNG649       0.149
+  DNg06     12     53   mixed         ps2 MN       0.372  31.154                      ps1 MN       0.159
+  DNp02      2     16   mixed           TTMn       0.435  30.849 Sternal anterior rotator MN       0.127
+  DNp06      2     20   mixed           TTMn       0.369  30.455                      GNG651       0.177
+DNge094     13     41    pure           CvN7       0.516  30.203                      GNG652       0.291
+DNge051      2     84 diffuse           MN3L       0.236  29.226                Ti flexor MN       0.129
+  DNp62      2     13 diffuse         MNad64       0.205  28.760                      MNad21       0.192
+DNpe023      2     11   mixed         MNxm03       0.285  27.700                      GNG133       0.264
+DNge107      2     50 diffuse          b1 MN       0.176  27.697                      hg2 MN       0.142
+  DNp33      2     44   mixed         hi1 MN       0.320  25.568                      MNad28       0.117
+  DNp10      2    132   mixed  ltm2-femur MN       0.294  25.314               ltm1-tibia MN       0.220
+  DNp13      2     71   mixed         MNad53       0.258  25.097                      GNG133       0.124
+  DNp46      2     16    pure         MNad56       0.551  25.014                Ti flexor MN       0.106
+ DNg110      6    160   mixed       DLMn c-f       0.326  24.500                  DVMn 2a, b       0.172
+DNg12_b     10     95   mixed       ADNM2 MN       0.275  24.131                      MNnm03       0.134
+  DNp49      2     37 diffuse        iii1 MN       0.197  23.950                      MNad26       0.168
+DNge009      7     39    pure Fe reductor MN       0.595  23.521              Ti extensor MN       0.149
+  DNg44      2     13   mixed         MNxm02       0.459  23.150                                   0.121
+
+--- ANCHORS (per-type family z, draw-pooled) ---
+  DNp01: jump share 1.000 z +6.3
+  DNp02: jump share 0.435 z +4.2
+  DNp03: jump share 0.446 z +15.1
+  DNp04: jump share 0.000 z -0.3
+  DNg105: flex share 0.527 z +19.5
+  DNg95: flex share 0.801 z +18.4
+  DNg35: flex share 0.591 z +16.3
+  DNg108: flex share 0.424 z +17.5
+--- ANCHORS (L14-form CLASS-pooled, the +16.7/+21.0 form) ---
+  DNp01-04 -> jump: share 0.491 z +15.9 (L14 anchor PASS >=15)
+  DNc01/02 -> jump: share 0.000 z -1.2 (L14 anchor below 15)
+  DNg105+95 -> flex: share 0.429 z +10.3 (L14 anchor below 15)
+  => anchor gate (DNp01-04 CLASS jump z>=15 [L14 form] AND per-type DNg105 flex z>=15 [L20 form]): PASS
+  DNc01 top targets: MNad25 0.14 z+3.9; MNx04 0.14 z+5.9
+  DNc02 top targets: MNml78 0.30 z+11.6; MNad03 0.13 z+2.4
+
+--- jump-family enriched channels (w>=.10, z>=+5): 22 ---
+dn_type  cells  edges  w_jump  z_jump  top1_type
+ DNg110      6    160   0.765  34.785   DLMn c-f
+DNg02_a     10    220   0.441  21.659     tp2 MN
+DNpe037      2     41   0.847  19.201 DVMn 3a, b
+  DNg82      4    191   0.318  14.185   DLMn c-f
+DNge030      2     60   0.497  13.271   DLMn c-f
+DNg01_b      2     59   0.393  10.449   DLMn c-f
+DNg02_c      4     98   0.458  14.001  DVMn 1a-c
+DNge175      2     42   0.481  10.439   DLMn c-f
+
+--- flex-family enriched channels (w>=.10, z>=+5): 39 ---
+dn_type  cells  edges  w_flex  z_flex         top1_type
+ DNg105      2    243   0.527  19.484      Ti flexor MN
+DNg12_e      6     85   0.357   9.306      Tr flexor MN
+DNge050      2    130   0.312   6.750 Acc. tr flexor MN
+DNge035      2    192   0.389  13.383      Ti flexor MN
+  DNg69      2    111   0.436   9.296 Acc. ti flexor MN
+DNge079      2    211   0.519  18.142      Ti flexor MN
+  DNg95      2     84   0.801  18.408 Acc. ti flexor MN
+  DNg93      2    453   0.380  14.912 Acc. ti flexor MN
+
+--- ext-family enriched channels (w>=.10, z>=+5): 12 ---
+dn_type  cells  edges  w_ext  z_ext      top1_type
+  DNg79      4    158  0.272 15.395 Ti extensor MN
+DNge037      2    141  0.248 16.645 Tr extensor MN
+DNg12_e      6     85  0.130  5.248   Tr flexor MN
+  DNg15      2     62  0.146  5.582    Tergotr. MN
+DNge035      2    192  0.116  6.653   Ti flexor MN
+  DNb05      2    105  0.329 17.461 Tr extensor MN
+DNge024      4     34  0.273  7.221 Fe reductor MN
+DNpe002      2     18  0.281  5.636 Tr extensor MN
+
+wrote l22/atlas.csv (391 rows) + results_l22.json | 79s

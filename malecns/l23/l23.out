@@ -1,0 +1,51 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+pools: {'TTMn': 2, 'extensor': 23, 'MNml78': 6, 'MNad25': 4, 'MNx04': 2, 'MNad03': 6}
+leg edges 118 | neck edges 60 (both x200, L13b substrate)
+/home/t3rpz/critters/peabrain-lab/malecns/l23_route_composition.py:128: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  pool_pk = {p: float(np.abs(d[mi]).max()) for p, mi in POOLS.items()}
+noise    |dm| 0.00287 |dm_int| 0.00264 t_pk [4, 16, 0] sat 0.000
+soloA    |dm| 0.00949 |dm_int| 0.00595 t_pk [22, 22, 24] sat 0.000
+soloB    |dm| 0.00458 |dm_int| 0.00312 t_pk [25, 18, 25] sat 0.000
+joint    |dm| 0.01044 |dm_int| 0.00646 t_pk [23, 22, 24] sat 0.000
+jClampA  |dm| 0.00464 |dm_int| 0.00310 t_pk [23, 26, 25] sat 0.000
+jClampB  |dm| 0.00952 |dm_int| 0.00596 t_pk [22, 22, 24] sat 0.000
+killA    |dm| 0.00351 |dm_int| 0.00261 t_pk [4, 18, 25] sat 0.000
+SNR TTMn     :     26.4x
+SNR extensor :      6.8x
+SNR MNml78   :     20.8x
+SNR MNad25   :      5.2x
+SNR MNx04    :     12.2x
+SNR MNad03   :      5.4x
+cos soloA  ~soloA   [dm    ]: +0.981
+cos soloA  ~soloA   [dm_int]: +0.974
+cos soloB  ~soloB   [dm    ]: +0.781
+cos soloB  ~soloB   [dm_int]: +0.736
+cos soloA  ~soloB   [dm    ]: -0.002
+cos soloA  ~soloB   [dm_int]: +0.016
+cos joint  ~soloA   [dm    ]: +0.953
+cos joint  ~soloA   [dm_int]: +0.948
+cos joint  ~soloB   [dm    ]: +0.192
+cos joint  ~soloB   [dm_int]: +0.194
+cos joint  ~killA   [dm    ]: +0.053
+cos joint  ~killA   [dm_int]: +0.079
+cos jClampA~soloB   [dm    ]: +0.765
+cos jClampA~soloB   [dm_int]: +0.736
+cos jClampB~soloA   [dm    ]: +0.981
+cos jClampB~soloA   [dm_int]: +0.974
+cos jClampA~soloA   [dm    ]: +0.036
+cos jClampA~soloA   [dm_int]: +0.056
+cos jClampB~soloB   [dm    ]: -0.007
+cos jClampB~soloB   [dm_int]: +0.009
+SUPERPOS [dm]: cos(dJ, dA+dB) +0.987 resid 0.163 |dJ|/|dS| 0.982
+SUPERPOS [dm_int]: cos(dJ, dA+dB) +0.983 resid 0.185 |dJ|/|dS| 0.960
+POOL TTMn     : joint/solo  1.00  leak(other solo) 0.01172 (solo 0.30001)
+POOL extensor : joint/solo  1.01  leak(other solo) 0.01101 (solo 0.07512)
+POOL MNml78   : joint/solo  1.01  leak(other solo) 0.00694 (solo 0.13757)
+POOL MNad25   : joint/solo  1.01  leak(other solo) 0.00726 (solo 0.03862)
+POOL MNx04    : joint/solo  1.03  leak(other solo) 0.00662 (solo 0.06324)
+POOL MNad03   : joint/solo  1.01  leak(other solo) 0.00600 (solo 0.03049)
+
+done 142s -> l23/results_l23.json

@@ -1,0 +1,470 @@
+[
+ {
+  "sec": "Title (RE-SCOPED v3.8 \u2014 L168 sufficiency f",
+  "i": 403,
+  "j": 425,
+  "chars": 1332,
+  "lane": 3,
+  "batch": 0,
+  "caps": 7,
+  "lane_set": [
+   "L168"
+  ],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "L168",
+    3
+   ],
+   [
+    "RE-SCOPED",
+    1
+   ],
+   [
+    "UNIQUENESS",
+    1
+   ],
+   [
+    "RETIRED",
+    1
+   ],
+   [
+    "BANC",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "Abstract (draft)",
+  "i": 426,
+  "j": 456,
+  "chars": 1938,
+  "lane": 0,
+  "batch": 0,
+  "caps": 1,
+  "lane_set": [],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "BANC",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "1. Introduction",
+  "i": 457,
+  "j": 596,
+  "chars": 9027,
+  "lane": 0,
+  "batch": 1,
+  "caps": 35,
+  "lane_set": [],
+  "batch_set": [
+   "B34"
+  ],
+  "caps_top": [
+   [
+    "CPG",
+    3
+   ],
+   [
+    "SUFFICIENCY",
+    2
+   ],
+   [
+    "MATCHED",
+    1
+   ],
+   [
+    "ONE",
+    1
+   ],
+   [
+    "IDENTITY",
+    1
+   ],
+   [
+    "XOR",
+    1
+   ],
+   [
+    "INTERMEDIATE",
+    1
+   ],
+   [
+    "SUFFICIENT",
+    1
+   ],
+   [
+    "EDGE",
+    1
+   ],
+   [
+    "SET",
+    1
+   ],
+   [
+    "ACTIVITY",
+    1
+   ],
+   [
+    "BAND-RELATIVE",
+    1
+   ],
+   [
+    "STIMULUS-SET",
+    1
+   ],
+   [
+    "DOES",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "2. Results",
+  "i": 597,
+  "j": 1147,
+  "chars": 33682,
+  "lane": 13,
+  "batch": 19,
+  "caps": 178,
+  "lane_set": [
+   "L138",
+   "L139",
+   "L156",
+   "L157",
+   "L162",
+   "L168",
+   "L169",
+   "L170",
+   "L171",
+   "L172"
+  ],
+  "batch_set": [
+   "B1",
+   "B26",
+   "B27",
+   "B29",
+   "B30",
+   "B31",
+   "B32",
+   "B33",
+   "B35",
+   "B37",
+   "B38",
+   "B4"
+  ],
+  "caps_top": [
+   [
+    "SUPER",
+    22
+   ],
+   [
+    "XOR",
+    9
+   ],
+   [
+    "PARTIAL",
+    8
+   ],
+   [
+    "NOT",
+    5
+   ],
+   [
+    "B30",
+    4
+   ],
+   [
+    "BANC",
+    4
+   ],
+   [
+    "DN-",
+    3
+   ],
+   [
+    "RNG",
+    3
+   ],
+   [
+    "BOTH",
+    3
+   ],
+   [
+    "ONLY",
+    3
+   ],
+   [
+    "LOWER",
+    3
+   ],
+   [
+    "LEFT",
+    2
+   ],
+   [
+    "INTERMEDIATE",
+    2
+   ],
+   [
+    "SET",
+    2
+   ]
+  ]
+ },
+ {
+  "sec": "3. Methods",
+  "i": 1148,
+  "j": 1311,
+  "chars": 9280,
+  "lane": 0,
+  "batch": 0,
+  "caps": 51,
+  "lane_set": [],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "RMAX",
+    3
+   ],
+   [
+    "TAU",
+    2
+   ],
+   [
+    "NOISE",
+    2
+   ],
+   [
+    "SETTLE",
+    2
+   ],
+   [
+    "BEFORE",
+    2
+   ],
+   [
+    "BIT-IDENTICAL",
+    2
+   ],
+   [
+    "BANC",
+    1
+   ],
+   [
+    "DVN",
+    1
+   ],
+   [
+    "SUMMING",
+    1
+   ],
+   [
+    "COO",
+    1
+   ],
+   [
+    "AFTER",
+    1
+   ],
+   [
+    "INSIDE",
+    1
+   ],
+   [
+    "CONSTANT",
+    1
+   ],
+   [
+    "CHOPPED",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "4. Limitations (honest, per card)",
+  "i": 1312,
+  "j": 1429,
+  "chars": 7540,
+  "lane": 0,
+  "batch": 2,
+  "caps": 46,
+  "lane_set": [],
+  "batch_set": [
+   "B33",
+   "B34"
+  ],
+  "caps_top": [
+   [
+    "BANC",
+    4
+   ],
+   [
+    "SEEDS",
+    2
+   ],
+   [
+    "XOR",
+    2
+   ],
+   [
+    "STATIC",
+    2
+   ],
+   [
+    "NOT",
+    2
+   ],
+   [
+    "MODEL",
+    1
+   ],
+   [
+    "BAND-RELATIVE",
+    1
+   ],
+   [
+    "STIMULUS-SET",
+    1
+   ],
+   [
+    "BELOW",
+    1
+   ],
+   [
+    "UNIQUE",
+    1
+   ],
+   [
+    "B33",
+    1
+   ],
+   [
+    "B34",
+    1
+   ],
+   [
+    "EMG",
+    1
+   ],
+   [
+    "NAME",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "5. Discussion",
+  "i": 1430,
+  "j": 1506,
+  "chars": 4992,
+  "lane": 0,
+  "batch": 0,
+  "caps": 0,
+  "lane_set": [],
+  "batch_set": [],
+  "caps_top": []
+ },
+ {
+  "sec": "6. Data & code",
+  "i": 1507,
+  "j": 1518,
+  "chars": 574,
+  "lane": 0,
+  "batch": 0,
+  "caps": 4,
+  "lane_set": [],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "BANC",
+    1
+   ],
+   [
+    "DVN",
+    1
+   ],
+   [
+    "PREREG",
+    1
+   ],
+   [
+    "TBD",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "7. Author/submit notes",
+  "i": 1519,
+  "j": 1527,
+  "chars": 403,
+  "lane": 2,
+  "batch": 0,
+  "caps": 3,
+  "lane_set": [
+   "L152"
+  ],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "L152",
+    2
+   ],
+   [
+    "TODO",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "References",
+  "i": 1528,
+  "j": 1610,
+  "chars": 7790,
+  "lane": 1,
+  "batch": 0,
+  "caps": 9,
+  "lane_set": [
+   "L152"
+  ],
+  "batch_set": [],
+  "caps_top": [
+   [
+    "API",
+    4
+   ],
+   [
+    "PLOS",
+    2
+   ],
+   [
+    "L152",
+    1
+   ],
+   [
+    "BANC",
+    1
+   ],
+   [
+    "DVN",
+    1
+   ]
+  ]
+ },
+ {
+  "sec": "Verification (this skeleton)",
+  "i": 1611,
+  "j": 1617,
+  "chars": 280,
+  "lane": 0,
+  "batch": 0,
+  "caps": 0,
+  "lane_set": [],
+  "batch_set": [],
+  "caps_top": []
+ }
+]

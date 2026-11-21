@@ -1,0 +1,27 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+leg edges 118 (w sum 0.27) | neck edges 60 (w sum 0.07)
+pc200|looming          |dm| 0.00949 dpeak 0.0401 turn -0.0073 mbase 0.0339
+pc200|odor             |dm| 0.00458 dpeak 0.0350 turn -0.0014 mbase 0.0339
+pc200|loom_clampLeg    |dm| 0.00351 dpeak 0.0317 turn -0.0017 mbase 0.0315
+pc200|odor_clampNeck   |dm| 0.00354 dpeak 0.0334 turn -0.0021 mbase 0.0333
+  @ 200 looming         ~looming         : +0.971
+  @ 200 odor            ~odor            : +0.672
+  @ 200 looming         ~odor            : -0.002
+  @ 200 loom_clampLeg   ~loom_clampLeg   : +0.018
+  @ 200 odor_clampNeck  ~odor_clampNeck  : +0.008
+  @200 looming top motor: [('TTMn', 0.3879), ('TTMn', 0.3735), ('GNG651', 0.1901), ('GNG651', 0.1486), ('GNG650', 0.1333), ('DLMn c-f', 0.1094)]
+pc2000|looming         |dm| 0.04026 dpeak 0.0984 turn -0.0127 mbase 0.0614
+pc2000|odor            |dm| 0.01390 dpeak 0.0701 turn -0.0149 mbase 0.0614
+pc2000|loom_clampLeg   |dm| 0.00391 dpeak 0.0376 turn -0.0007 mbase 0.0371
+pc2000|odor_clampNeck  |dm| 0.00356 dpeak 0.0555 turn -0.0021 mbase 0.0551
+  @2000 looming         ~looming         : +0.998
+  @2000 odor            ~odor            : +0.981
+  @2000 looming         ~odor            : -0.044
+  @2000 loom_clampLeg   ~loom_clampLeg   : +0.137
+  @2000 odor_clampNeck  ~odor_clampNeck  : -0.082
+  @2000 looming top motor: [('Ti extensor MN', 0.7964), ('Sternal anterior rotator MN', 0.7209), ('i1 MN', 0.674), ('i1 MN', 0.6715), ('MNwm36', 0.6344), ('DVMn 3a, b', 0.6298)]
+
+done 201s -> l13/results_l13b.json

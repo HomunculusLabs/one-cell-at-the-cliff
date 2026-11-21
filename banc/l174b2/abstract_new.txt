@@ -1,0 +1,28 @@
+Connectome-constrained models can ask which cells matter, not just
+whether wiring does. We run a female Drosophila brain-and-nerve-cord
+connectome (BANC v626) as a rate model, every arm gain-bisected to a
+matched operating point before perturbation. Removing ever larger
+descending-neuron cohorts from a bulk-extracted cord subnet drives
+right-side tibia antagonist structure through a non-monotone, all-or-none
+window: small removals kill it (5 of 178 seeds survive at k=19) and
+slightly larger ones super-raise it (188 of 194 at k=29). Mass-twin
+controls decompose that step: on two cells whose removal masses differ by
+3.9e-04, identity carries it, not mass. Removing DNp33-L converts kill to
+super; its mass twin lands intermediate, not neutral (30 of 66; +.175
+above the untreated cut, 95% CI .047 to .305, p = .008; the carrier
+-.512). The carrier is sufficient, not unique, and its sufficiency is
+set-dependent: of seven carrier-free cohorts mass-matched to the same
+window, exactly one supers (39 of 48), raising both sides rather than the
+carrier's crossed signature. Silencing it alone completes the
+flip on the cut base (78 of 98), which rides its 93 incident edges:
+either subset suffices, at 9.72× below any mass-only band, and static
+anatomy does not predict it. Across a five-set gain-jitter ensemble the
+endpoint holds (5 of 5) while the transition interior re-draws (0 of 5),
+and the male connectome admits no such ladder: the claim is
+cohort-relative, gain-robust at its endpoints. We hold frequency claims
+band-relative, ours first: the sub-band line at .100 Hz sits where the
+drive envelope's spectrum peaks, so no endogenous antagonist clock is
+needed, and the identity contrast survives the unchopped segment (12 of
+16 against 0 of 16) and a 0.3-Hz high-pass (15 of 16 against 1 of 16). We
+release the preregistration and bit-identity anchor protocol that made
+each step falsifiable in advance.

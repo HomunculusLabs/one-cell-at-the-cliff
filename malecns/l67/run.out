@@ -1,0 +1,35 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l67_sidesplit.py:90: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l67_sidesplit.py:92: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 (L 1789 R 1798 unkn 1) | antag 68 (L 34 R 34) | 7s
+seed 11 done 24s
+seed 22 done 41s
+seed 33 done 57s
+seed 101 done 75s
+seed 102 done 92s
+seed 103 done 110s
+seed 104 done 127s
+seed 105 done 143s
+seed 106 done 159s
+seed 107 done 175s
+seed 108 done 190s
+seed 109 done 206s
+seed 110 done 222s
+seed 111 done 238s
+seed 112 done 254s
+seed 113 done 270s
+runs done 270s
+C0 bi==l66 pass True (80 keys) | C0s side-prefix True | C1 True
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l67_sidesplit.py", line 384, in <module>
+    blocks = {a: arm_block(a) for a in ARMS}
+                 ^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l67_sidesplit.py", line 381, in arm_block
+    dm_min=round(min(dm[f"{a}_{s}"] for s in SEEDS), 5))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l67_sidesplit.py", line 381, in <genexpr>
+    dm_min=round(min(dm[f"{a}_{s}"] for s in SEEDS), 5))
+                     ~~^^^^^^^^^^^^
+KeyError: 'bi_11'
+EXIT 1

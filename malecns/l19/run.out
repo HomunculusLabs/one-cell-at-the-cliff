@@ -1,0 +1,25 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+motor 815 | loom 949 | olf 2639 | legDN 8 | neckDN 4 | TTMn 2 | pools flex 141 / ext 23
+amplified x200: leg 118 + neck 60 DN->motor edges
+loom           af 0.1641 mbase 0.0339 turn -0.0069 | leads Ti [0, -2, -13] Tr [-20, -81, -41] | 41s
+loom_clampDNp  af 0.1638 mbase 0.0314 turn -0.0033 | leads Ti [63, 158, -180] Tr [145, -81, -41] | 83s
+odor           af 0.1641 mbase 0.0339 turn -0.0027 | leads Ti [63, 9, -180] Tr [145, -81, -41] | 130s
+loom_homog     af 0.1641 mbase 0.0339 turn -0.0073 | leads Ti [2, 24, 0] Tr [-17, -60, -75] | 166s
+loom_lit5rev   af 0.1641 mbase 0.0339 turn -0.0094 | leads Ti [8, 25, 10] Tr [-17, -59, -121] | 204s
+shuf0          leads Ti [-108, -1, -12] Tr [-37, -77, -60] | 242s
+shuf1          leads Ti [-12, 0, -202] Tr [-47, -81, -37] | 279s
+shuf2          leads Ti [-33, -5, -13] Tr [-18, -63, -127] | 316s
+shuf3          leads Ti [-34, 0, -7] Tr [-16, -155, 76] | 351s
+shuf4          leads Ti [-38, 9, -13] Tr [-21, -169, -122] | 387s
+
+L11 DN port: self-cos +0.889 cross loom~odor +0.093 | loading DNp01-04 0.189 vs DNc01/02 0.002
+L13b motor peak: loom self +0.976 | odor self +0.711 | cross -0.008 | clampDNp self +0.025 (vs chain +0.062)
+L17/18 phasing: chain lit5x leads Ti [0, -2, -13] Tr [-20, -81, -41] | null(5x draw) max|lead| Ti 71.3 Tr 104.0 | clears null {'Ti': False, 'Tr': False}
+L14/15 anatomy: top-6 time-integrated mass 0.0722 vs chance 0.0074 | top cells TTMn, TTMn, GNG651, GNG651, GNG650, GNG650
+L18B jump timing: TTMn t_pk [22, 23, 23] vs leg pools [23, 29, 26] -> jump-first
+
+done 387s -> l19/results_l19.json
+EXIT=0

@@ -1,0 +1,37 @@
+{
+ "i10_row": "| 10 | CONFIRMED (editorial) | \u00a72.4 (3.4k chars) presents two bit-identities as findings though both hold by construction; sil24 kR=5 is not separable from its intact comparator => rebuild \u00a72.4 on silW and demote the identities to Methods | paper/DRAFT.md \u00a72.4 + numbers.json:l137.sil24 |",
+ "char_quote_is_measurement_not_target": true,
+ "i10a_first_para_head": "**The clean arm (silW): the flip without a gain change, without an edge",
+ "i10a_rebuilt_on_silW": true,
+ "i10b_identities_in_3_8_only": true,
+ "i10b_detail": {
+  "BIT-IDENTICAL to cutng25": {
+   "in_3.8": true,
+   "in_2.4": false
+  },
+  "BIT-IDENTICAL to eAll": {
+   "in_3.8": true,
+   "in_2.4": false
+  }
+ },
+ "i10c_sil24_disclosed": true,
+ "sil24_cells": {
+  "kR": 5,
+  "meanR": 0.432,
+  "intact_full_kR": 6,
+  "cutwA_b26_kR": 5
+ },
+ "P1": {
+  "chars": 9937,
+  "table_chars": 1417,
+  "prose_numeric_tokens": 236,
+  "table_tokens": 56,
+  "prose_tokens_in_table": 106
+ },
+ "P2": {
+  "gate_literals_in_2_4": 101,
+  "exclusive_to_2_4": 62
+ },
+ "P3_bullets_1_2": 42,
+ "branch": "S1_editorial_only"
+}

@@ -1,0 +1,66 @@
+sub nodes 21,516 | edges 2,977,920 | 8s
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:94: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:96: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+DNg95 cells 2 | DN pool 1277
+ctrl seed 11: f 0.800 (flx 2.134) ratio 169 S(Tr) +0.48 R 0.46 af 0.185
+ctrl seed 22: f 1.444 (flx 2.054) ratio 252 S(Tr) +0.46 R 0.46 af 0.191
+ctrl seed 33: f 1.424 (flx 3.465) ratio 288 S(Tr) +0.49 R 0.48 af 0.181
+seed 11: period 125 steps (1.25 s)
+seed 22: period 69 steps (0.69 s)
+seed 33: period 70 steps (0.70 s)
+C1 pairing: pre-volley traces bit-identical 3/3
+dng95 A0.05 phi  0: dphi -0 +17 +0 | S_post +0.45 +0.40 +0.45 | ampr 1.00 0.69 1.00 | dm 0.0e+00 1.9e-02 0.0e+00 | 44s
+dng95 A0.05 phi 45: dphi +14 +17 +1 | S_post +0.55 +0.40 +0.38 | ampr 1.00 0.69 1.00 | dm 1.9e-02 1.9e-02 1.7e-02 | 55s
+dng95 A0.05 phi 90: dphi +0 -4 -11 | S_post +0.49 +0.37 +0.41 | ampr 1.00 1.10 1.03 | dm 0.0e+00 1.5e-02 1.5e-02 | 65s
+dng95 A0.05 phi135: dphi +0 -4 -12 | S_post +0.48 +0.37 +0.41 | ampr 1.00 1.10 1.18 | dm 0.0e+00 1.5e-02 1.6e-02 | 74s
+dng95 A0.05 phi180: dphi +8 -0 +0 | S_post +0.51 +0.47 +0.43 | ampr 0.38 1.00 1.00 | dm 1.8e-02 0.0e+00 0.0e+00 | 85s
+dng95 A0.05 phi225: dphi -21 -10 -0 | S_post +0.55 +0.46 +0.47 | ampr 1.20 1.29 1.07 | dm 2.0e-02 1.9e-02 1.6e-02 | 95s
+dng95 A0.05 phi270: dphi +19 +26 -14 | S_post +0.50 +0.46 +0.45 | ampr 0.48 1.64 1.15 | dm 2.0e-02 2.2e-02 2.2e-02 | 106s
+dng95 A0.05 phi315: dphi +12 +4 +2 | S_post +0.48 +0.42 +0.44 | ampr 1.63 0.69 1.00 | dm 1.6e-02 1.6e-02 1.8e-02 | 119s
+dng95 A0.15 phi  0: dphi -10 -25 -1 | S_post +0.49 +0.45 +0.45 | ampr 0.83 1.01 1.03 | dm 1.4e-02 2.0e-02 1.4e-02 | 132s
+dng95 A0.15 phi 45: dphi +25 -25 -9 | S_post +0.54 +0.45 +0.51 | ampr 1.15 1.01 0.92 | dm 2.8e-02 2.0e-02 1.5e-02 | 146s
+dng95 A0.15 phi 90: dphi +47 -21 +3 | S_post +0.42 +0.43 +0.41 | ampr 0.97 1.25 1.12 | dm 2.3e-02 1.8e-02 1.9e-02 | 159s
+dng95 A0.15 phi135: dphi +21 -16 -5 | S_post +0.48 +0.44 +0.37 | ampr 0.28 1.04 1.09 | dm 2.2e-02 1.6e-02 2.1e-02 | 172s
+dng95 A0.15 phi180: dphi -4 -7 -1 | S_post +0.48 +0.46 +0.38 | ampr 0.82 1.13 0.99 | dm 2.2e-02 1.9e-02 1.7e-02 | 185s
+dng95 A0.15 phi225: dphi +19 -9 -2 | S_post +0.50 +0.45 +0.45 | ampr 1.66 0.81 1.09 | dm 2.2e-02 1.5e-02 1.9e-02 | 198s
+dng95 A0.15 phi270: dphi +21 +42 -6 | S_post +0.49 +0.43 +0.41 | ampr 0.26 1.55 0.89 | dm 1.9e-02 1.8e-02 1.8e-02 | 210s
+dng95 A0.15 phi315: dphi +10 +1 -2 | S_post +0.45 +0.47 +0.45 | ampr 2.21 1.83 0.83 | dm 1.4e-02 2.0e-02 1.9e-02 | 223s
+dng100pulse A0.05 phi  0: dphi -0 -0 +0 | S_post +0.45 +0.46 +0.45 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 235s
+dng100pulse A0.05 phi 45: dphi +0 -0 -0 | S_post +0.49 +0.46 +0.46 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 247s
+dng100pulse A0.05 phi 90: dphi +0 -0 +0 | S_post +0.49 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 260s
+dng100pulse A0.05 phi135: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 273s
+dng100pulse A0.05 phi180: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 286s
+dng100pulse A0.05 phi225: dphi -0 -0 +0 | S_post +0.46 +0.48 +0.44 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 298s
+dng100pulse A0.05 phi270: dphi +0 -0 +0 | S_post +0.49 +0.47 +0.45 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 311s
+dng100pulse A0.05 phi315: dphi -0 -0 +0 | S_post +0.43 +0.46 +0.48 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 324s
+dng100pulse A0.15 phi  0: dphi -0 -0 +0 | S_post +0.45 +0.46 +0.45 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 336s
+dng100pulse A0.15 phi 45: dphi +0 -0 -0 | S_post +0.49 +0.46 +0.46 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 348s
+dng100pulse A0.15 phi 90: dphi +0 -0 +0 | S_post +0.49 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 361s
+dng100pulse A0.15 phi135: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 374s
+dng100pulse A0.15 phi180: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 386s
+dng100pulse A0.15 phi225: dphi -0 -0 +0 | S_post +0.46 +0.48 +0.44 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 399s
+dng100pulse A0.15 phi270: dphi +0 -0 +0 | S_post +0.49 +0.47 +0.45 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 411s
+dng100pulse A0.15 phi315: dphi -0 -0 +0 | S_post +0.43 +0.46 +0.48 | ampr 1.00 1.00 1.00 | dm 0.0e+00 0.0e+00 0.0e+00 | 422s
+dng95 dur100 phi  0: dphi +119 -22 +14
+dng95 dur100 phi180: dphi -82 -3 -5
+sham0 (phi 235): dphi +0 -7 -19
+sham1 (phi 107): dphi +8 -34 -16
+sham2 (phi 348): dphi +74 -7 +13
+sham3 (phi 331): dphi -12 -35 +15
+sham4 (phi 229): dphi +26 -13 +8
+PRC dng95 A0.05: amplitude 45.0 deg @ bin 11 deg | per-seed +14 +17 +1
+PRC dng95 A0.15: amplitude 270.0 deg @ bin 19 deg | per-seed +21 +42 -6
+PRC dng100pulse A0.05: amplitude 180.0 deg @ bin 0 deg | per-seed +0 -0 +0
+PRC dng100pulse A0.15: amplitude 180.0 deg @ bin 0 deg | per-seed +0 -0 +0
+sham |mean dphi| per seed: 19.0 19.2 0.1 | single max 73.6 deg
+C3 dng95_A0.05: amp>=10 True | 3xsham False | sign 3/3 True -> FAIL
+C3 dng95_A0.15: amp>=10 True | 3xsham True | sign 3/3 False -> FAIL
+C3 dng100pulse_A0.05: amp>=10 True | 3xsham True | sign 3/3 False -> FAIL
+C3 dng100pulse_A0.15: amp>=10 True | 3xsham True | sign 3/3 False -> FAIL
+C4 dng95: dose mono True (45.0 -> 270.0 deg) | early  | late 
+C4 dng100pulse: dose mono True (180.0 -> 180.0 deg) | early  | late 
+C4 dur (dphi dur25 vs dur100): {"0": {"dur100": [119, -22, 14], "dur25": [-10, -25, -1]}, "180": {"dur100": [-82, -3, -5], "dur25": [-4, -7, -1]}}
+VERDICT {"C0_substrate": true, "C1_pairing": true, "C2_survival": false, "C2_failures": [["dng95", 11, 0.0], ["dng95", 22, 0.0], ["dng95", 11, 0.0], ["dng95", 22, 0.0], ["dng95", 11, 45.0], ["dng95", 22, 45.0], ["dng95", 11, 90.0], ["dng95", 22, 90.0], ["dng95", 11, 135.0], ["dng95", 22, 135.0], ["dng95", 11, 180.0], ["dng95", 22, 225.0], ["dng95", 22, 270.0], ["dng95", 11, 315.0], ["dng95", 22, 315.0], ["dng95", 11, 0.0], ["dng95", 22, 0.0], ["dng95", 11, 45.0], ["dng95", 22, 45.0], ["dng95", 11, 90.0], ["dng95", 22, 90.0], ["dng95", 22, 135.0], ["dng95", 11, 180.0], ["dng95", 22, 180.0], ["dng95", 11, 225.0], ["dng95", 22, 225.0], ["dng95", 11, 270.0], ["dng95", 22, 270.0], ["dng95", 11, 315.0], ["dng95", 22, 315.0], ["dng100pulse", 11, 0.0], ["dng100pulse", 11, 45.0], ["dng100pulse", 11, 90.0], ["dng100pulse", 11, 135.0], ["dng100pulse", 11, 180.0], ["dng100pulse", 11, 225.0], ["dng100pulse", 22, 225.0], ["dng100pulse", 11, 270.0], ["dng100pulse", 22, 270.0], ["dng100pulse", 11, 315.0], ["dng100pulse", 11, 0.0], ["dng100pulse", 11, 45.0], ["dng100pulse", 11, 90.0], ["dng100pulse", 11, 135.0], ["dng100pulse", 11, 180.0], ["dng100pulse", 11, 225.0], ["dng100pulse", 22, 225.0], ["dng100pulse", 11, 270.0], ["dng100pulse", 22, 270.0], ["dng100pulse", 11, 315.0], ["dng95_dur100", 11, 0.0], ["dng95_dur100", 22, 0.0], ["dng95_dur100", 11, 180.0]], "C3": {"dng95_A0.05": false, "dng95_A0.15": false, "dng100pulse_A0.05": false, "dng100pulse_A0.15": false}, "C3_detail": {"dng95_A0.05": {"prc_
+done 515s -> l35/results_l35.json

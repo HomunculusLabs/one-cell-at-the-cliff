@@ -1,0 +1,711 @@
+{
+ "keys": [
+  "l154.band",
+  "l171.envelope",
+  "l171.panel"
+ ],
+ "literals": {
+  " exact": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_span": 2,
+   "verifiers": [
+    "l161_verify.py"
+   ]
+  },
+  " of ": {
+   "multiline": false,
+   "n_elsewhere": 185,
+   "n_span": 5,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " only": {
+   "multiline": false,
+   "n_elsewhere": 30,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " vs ": {
+   "multiline": false,
+   "n_elsewhere": 32,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "### 2.8 The slow line": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.8 The slow line is stimulus-set": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**Re-attribution (branch A1 fired).**": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**Robustness panel (branch B2_preserved).**": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**What the envelope cannot explain": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**What this does and does not license.**": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "+.306 vs +.355": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".111 Hz is NOT the dominant envelope line": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".json": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0/16": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "1/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "11/16": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "11/16 seeds [l154.band]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "12/16": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "15/16": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_span": 3,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "16/16": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "5/16": {
+   "multiline": false,
+   "n_elsewhere": 19,
+   "n_span": 4,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "500-on/400-off chop's own 9-s cycle": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "7, 16, 47 and 56 s": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "B2_preserved": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.envelope]": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.panel]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "banc": {
+   "multiline": false,
+   "n_elsewhere": 23,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py",
+    "l174_verify.py"
+   ]
+  },
+  "banc/": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "below": {
+   "multiline": false,
+   "n_elsewhere": 19,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "bin 6 of a 60-s window = .100 Hz exactly": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "branch": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "branch A1 fired": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier": {
+   "multiline": false,
+   "n_elsewhere": 105,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "census": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "closure": {
+   "multiline": false,
+   "n_elsewhere": 16,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng25": {
+   "multiline": false,
+   "n_elsewhere": 27,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng25p": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "degenerate": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "drive envelope": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "fast": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "floor": {
+   "multiline": false,
+   "n_elsewhere": 38,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gain": {
+   "multiline": false,
+   "n_elsewhere": 135,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gains": {
+   "multiline": false,
+   "n_elsewhere": 53,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "i.e.": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l154.band": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l171.envelope": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l171.panel": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "license": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 3,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "mass": {
+   "multiline": false,
+   "n_elsewhere": 82,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "mass-twin": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "mean": {
+   "multiline": false,
+   "n_elsewhere": 38,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR": {
+   "multiline": false,
+   "n_elsewhere": 21,
+   "n_span": 3,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "panel": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "published": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "report": {
+   "multiline": false,
+   "n_elsewhere": 25,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seed": {
+   "multiline": false,
+   "n_elsewhere": 63,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seeds": {
+   "multiline": false,
+   "n_elsewhere": 40,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "survive": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "therefore": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "vector strength": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "verdict": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "while": {
+   "multiline": false,
+   "n_elsewhere": 28,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "window": {
+   "multiline": false,
+   "n_elsewhere": 30,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 15/16, meanR .754 | 5/16, .399 | +.355 |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| UNCHOPPED 1.4-Hz segment | 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "\u0394k 14 vs 10": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  }
+ },
+ "nums": [
+  "0",
+  "0",
+  "0.3",
+  "0.7",
+  "0.7",
+  "0.7",
+  "000",
+  "000",
+  "07",
+  "07",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1.0",
+  "1.4",
+  "1.4",
+  "10",
+  "10",
+  "100",
+  "100",
+  "11",
+  "111",
+  "12",
+  "12",
+  "14",
+  "15",
+  "15",
+  "15",
+  "154",
+  "156",
+  "157",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "162",
+  "162",
+  "162",
+  "17",
+  "171",
+  "171",
+  "171",
+  "171",
+  "2",
+  "2",
+  "2.8",
+  "25",
+  "25",
+  "26",
+  "3",
+  "3",
+  "306",
+  "306",
+  "355",
+  "355",
+  "370",
+  "399",
+  "4",
+  "4",
+  "4",
+  "400",
+  "47",
+  "5",
+  "500",
+  "56",
+  "6",
+  "60",
+  "628",
+  "628",
+  "676",
+  "7",
+  "754",
+  "9",
+  "95",
+  "98"
+ ],
+ "report": {
+  "citation_key_tokens": 3,
+  "literals_in_span": 69,
+  "literals_multiline": 0,
+  "longest_sentence_words": 70,
+  "numeric_tokens": 87,
+  "paragraphs": 8,
+  "sentences_over_60w": 1,
+  "span_chars": 3408,
+  "span_lines": 57
+ },
+ "sentences_desc": [
+  [
+   70,
+   "**What the envelope cannot explain (mandatory disclosure, registered pre-run).** Sub-band peaks persist with the mechanosensory drive OFF in 11/16 seeds [l154.band], so the envelope accounts for the line's POSITION \u2014 and, with L162's evoked phase lock (carrier median self-PLV .98 on both stored batches, banc/l162/addendum3.json:e_axis; its drive-dependence is recorded in the lane log and is not re-derived here), for its PHASE \u2014 but not for the existence of sub-band power."
+  ],
+  [
+   56,
+   "It does NOT license the fast segment as a replacement readout: the registered duty metric is defined on the 0.7-Hz segments, the prior-law expectation for continuous fast drive was structure TOXICITY (the registered B4 degenerate branch, which did not fire here), and a window swapped after the fact is a robustness panel, never a primary result."
+  ],
+  [
+   38,
+   "Its dominant non-DC line is bin 6 of a 60-s window = .100 Hz exactly, 1.0 of the envelope's peak amplitude and a local maximum against its neighbours \u2014 the same frequency as the measured slow line [l171.envelope]."
+  ],
+  [
+   37,
+   "ZERO rollouts: every number below re-scores STORED traces from the batch that first rolled the XOR pair (B26, n = 16 seeds), and the published cells are reproduced EXACTLY before any new window or filter is read."
+  ],
+  [
+   37,
+   "The fast-segment re-score is the cleanest read in the whole lineage: the mass-twin arm sits at absolute floor (meanR .000, 0/16) while the carrier-cut arm keeps 12/16, every one of the 16 seeds moving the same way."
+  ],
+  [
+   33,
+   "The high-pass re-score is where \"cleaner\" becomes metric-dependent and we report both directions: its mean-duty contrast is SMALLER than published (+.306 vs +.355) while its seed separation is LARGER (\u0394k 14 vs 10)."
+  ],
+  [
+   32,
+   "The mechanism is gap ALIGNMENT, not the chop period: the continuous 1.4-Hz segment overrides two of the six possible gaps, leaving four whose centres sit at 7, 16, 47 and 56 s."
+  ],
+  [
+   31,
+   "Those four are near-phase-aligned at a 10-s period (vector strength .95) and badly aligned at the 500-on/400-off chop's own 9-s cycle (.17, i.e. .111 Hz is NOT the dominant envelope line)."
+  ]
+ ]
+}

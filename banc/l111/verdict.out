@@ -1,0 +1,16 @@
+C0B certification (stored l109, pooled + per-batch): PASS
+P0 anchors vs raw_l109: PASS (max 0.0e+00)
+P4 {"af_range_ok": true, "b65_band": true, "af_mean": {"full": 0.108169, "b65": 0.10894, "cut": 0.107931, "cut19": 0.108691}, "af_final_cut19": 0.10902554541826248, "cut19_staircase": 3.056476513545181e-05}
+full   Ti  kL  4/16 meanL 0.407 [0.102,0.495] | kR  6/16 meanR 0.409 [0.185,0.614]
+b65    Ti  kL 16/16 meanL 0.997 [0.806,1.000] | kR 16/16 meanR 0.998 [0.806,1.000]
+cut    Ti  kL 16/16 meanL 0.853 [0.806,1.000] | kR  0/16 meanR 0.121 [0.000,0.194]
+cut19  Ti  kL 14/16 meanL 0.663 [0.640,0.965] | kR  0/16 meanR 0.045 [0.000,0.194]
+full   Tr  kL  0/16 meanL 0.043 | kR  2/16 meanR 0.364
+b65    Tr  kL  0/16 meanL 0.159 | kR 16/16 meanR 0.977
+cut    Tr  kL  0/16 meanL 0.041 | kR  3/16 meanR 0.350
+cut19  Tr  kL  0/16 meanL 0.167 | kR  1/16 meanR 0.201
+P1 {"transmitter_carried": false, "mass_placement_carried": false, "kL": 14, "meanL": 0.663, "verdict": "MIXED (between registered bands)"}
+P2 {"kR": 0, "meanR": 0.045, "r_collapses_too": true, "r_stays_closure_like": false, "verdict": "R-collapses-too (19 carry BOTH side actions)"}
+P3 {"cut_kL": 16, "b65_kL": 16, "b65_kR": 16, "pass": true}
+P5 {"mass_split": {"glut19": 0.1103, "other58": 0.3921}, "note": "cord out-mass share of removed-19 vs kept-58 heavy (sums to heavy .5024); duty-form cells only per tick-136 amendment (2611.14498 LERS)"}
+results_l111.json written

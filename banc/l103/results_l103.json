@@ -1,0 +1,215 @@
+{
+ "meta": {
+  "pools": [
+   "LT",
+   "FR"
+  ],
+  "cell": "S_LR contralateral homologue",
+  "n_pool": 48,
+  "substrate": "closure l92"
+ },
+ "anchors": {
+  "c0a": true,
+  "c0a_max": 0.0,
+  "c1": true,
+  "c0b": true,
+  "c0b_fails": [],
+  "lock": 48
+ },
+ "tables": {
+  "LT": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.12,
+     "seg1_mean": 0.108,
+     "alive07L_mean": 0.25,
+     "alive07R_mean": 0.007
+    },
+    "B5": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.072,
+     "seg1_mean": 0.101,
+     "alive07L_mean": 0.233,
+     "alive07R_mean": 0.003
+    },
+    "B6": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.09,
+     "seg1_mean": 0.107,
+     "alive07L_mean": 0.257,
+     "alive07R_mean": 0.001
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "p_hat": 0.0,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "sustain_frac": 0.0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.108,
+    0.101,
+    0.107
+   ],
+   "alive": {
+    "kL": 0,
+    "lbL": 0.0,
+    "g2aL": false,
+    "kR": 0,
+    "lbR": 0.0,
+    "g2aR": false,
+    "spreadL": [
+     0.25,
+     0.233,
+     0.257
+    ],
+    "spreadR": [
+     0.007,
+     0.003,
+     0.001
+    ]
+   },
+   "flyhack": {
+    "real_mean": 0.094,
+    "shift500_mean": 0.144,
+    "margin": -0.05,
+    "secondary_pass": false,
+    "extra_shifts": {
+     "100": 0.125,
+     "300": 0.067,
+     "700": 0.123,
+     "900": 0.081
+    }
+   },
+   "nan_seed_count": 0,
+   "sizes": {
+    "L": 23,
+    "R": 24
+   }
+  },
+  "FR": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.092,
+     "seg1_mean": 0.002,
+     "alive07L_mean": 0.212,
+     "alive07R_mean": 0.0
+    },
+    "B5": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.104,
+     "seg1_mean": 0.0,
+     "alive07L_mean": 0.207,
+     "alive07R_mean": 0.001
+    },
+    "B6": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.099,
+     "seg1_mean": 0.0,
+     "alive07L_mean": 0.208,
+     "alive07R_mean": 0.002
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "p_hat": 0.0,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "sustain_frac": 0.0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.002,
+    0.0,
+    0.0
+   ],
+   "alive": {
+    "kL": 0,
+    "lbL": 0.0,
+    "g2aL": false,
+    "kR": 0,
+    "lbR": 0.0,
+    "g2aR": false,
+    "spreadL": [
+     0.212,
+     0.207,
+     0.208
+    ],
+    "spreadR": [
+     0.0,
+     0.001,
+     0.002
+    ]
+   },
+   "flyhack": {
+    "real_mean": 0.098,
+    "shift500_mean": 0.102,
+    "margin": -0.004,
+    "secondary_pass": false,
+    "extra_shifts": {
+     "100": 0.173,
+     "300": 0.128,
+     "700": 0.139,
+     "900": 0.049
+    }
+   },
+   "nan_seed_count": 0,
+   "sizes": {
+    "L": 17,
+    "R": 17
+   }
+  }
+ },
+ "clears": [],
+ "verdict": "motor vocabulary COMPLETE under the registered LR cell: no unpaired pool clears G2a-multi \u2014 no robust base anywhere but l65's Ti; closure endgame closed as a base substrate (caveat: unpaired cell = contralateral-homologue anticorrelation, a definitional port from the paired-pool cell)"
+}

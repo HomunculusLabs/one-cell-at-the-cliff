@@ -1,0 +1,278 @@
+{
+ "design": "L137 static Zhang arm: shared-in-neighbor overlap of twins 1110/319 vs ng-58. Zero rollouts, no RNG. PREREG l137/PREREG.md registered first.",
+ "closure": {
+  "label": "closure (PRIMARY)",
+  "fam_mean_1110": 0.00253,
+  "fam_mean_319": 0.020684,
+  "paired_mean_diff": -0.018479,
+  "paired_n_pos": 2,
+  "paired_n": 56,
+  "rank_1110": 53,
+  "rank_319": 21,
+  "core_mean_1110": 0.0,
+  "core_mean_319": 0.022505,
+  "core_sign": [
+   0,
+   19
+  ],
+  "band_mean_1110": 0.0,
+  "band_mean_319": 0.0,
+  "band_sign": [
+   0,
+   5
+  ],
+  "twin_pair_cos": 0.0,
+  "fam_mean_range": [
+   0.0,
+   0.051136
+  ],
+  "fam_mean_median": 0.01544,
+  "top_partners_1110": [
+   {
+    "rank": 39,
+    "gi": 826,
+    "cos": 0.08078
+   },
+   {
+    "rank": 49,
+    "gi": 643,
+    "cos": 0.06342
+   },
+   {
+    "rank": 7,
+    "gi": 32285,
+    "cos": 0.0
+   },
+   {
+    "rank": 29,
+    "gi": 32271,
+    "cos": 0.0
+   },
+   {
+    "rank": 1,
+    "gi": 32160,
+    "cos": 0.0
+   }
+  ],
+  "top_partners_319": [
+   {
+    "rank": 46,
+    "gi": 1022,
+    "cos": 0.75142
+   },
+   {
+    "rank": 7,
+    "gi": 32285,
+    "cos": 0.37105
+   },
+   {
+    "rank": 9,
+    "gi": 902,
+    "cos": 0.05654
+   },
+   {
+    "rank": 29,
+    "gi": 32271,
+    "cos": 0.0
+   },
+   {
+    "rank": 1,
+    "gi": 32160,
+    "cos": 0.0
+   }
+  ],
+  "in_degree": {
+   "1110": [
+    13,
+    28.211294224629135
+   ],
+   "319": [
+    3,
+    6.139884552226255
+   ]
+  },
+  "interconnect": {
+   "1110": {
+    "mass": 0.0,
+    "edges": 0,
+    "n_partners": 0,
+    "top": []
+   },
+   "319": {
+    "mass": 2.99573,
+    "edges": 2,
+    "n_partners": 2,
+    "top": [
+     {
+      "rank": 1,
+      "gi": 32160,
+      "mass": 1.6094,
+      "n_out": 1,
+      "n_in": 0
+     },
+     {
+      "rank": 21,
+      "gi": 80,
+      "mass": 1.3863,
+      "n_out": 0,
+      "n_in": 1
+     }
+    ]
+   }
+  },
+  "Z1": {
+   "leg_i": false,
+   "leg_ii": false,
+   "leg_iii": false,
+   "FIRES": false
+  },
+  "Z2": {
+   "core": {
+    "twin_gt": false,
+    "sign": "0/19"
+   },
+   "band": {
+    "twin_gt": false,
+    "sign": "0/5"
+   }
+  }
+ },
+ "full_graph": {
+  "label": "full-graph (robustness)",
+  "fam_mean_1110": 0.019354,
+  "fam_mean_319": 0.012805,
+  "paired_mean_diff": 0.006666,
+  "paired_n_pos": 22,
+  "paired_n": 56,
+  "rank_1110": 28,
+  "rank_319": 38,
+  "core_mean_1110": 0.011443,
+  "core_mean_319": 0.008439,
+  "core_sign": [
+   6,
+   19
+  ],
+  "band_mean_1110": 0.002244,
+  "band_mean_319": 0.02224,
+  "band_sign": [
+   1,
+   5
+  ],
+  "twin_pair_cos": 0.0,
+  "fam_mean_range": [
+   0.003954,
+   0.040258
+  ],
+  "fam_mean_median": 0.019054,
+  "top_partners_1110": [
+   {
+    "rank": 49,
+    "gi": 643,
+    "cos": 0.20563
+   },
+   {
+    "rank": 48,
+    "gi": 32005,
+    "cos": 0.14062
+   },
+   {
+    "rank": 40,
+    "gi": 559,
+    "cos": 0.0889
+   },
+   {
+    "rank": 55,
+    "gi": 1673,
+    "cos": 0.08713
+   },
+   {
+    "rank": 39,
+    "gi": 826,
+    "cos": 0.0817
+   }
+  ],
+  "top_partners_319": [
+   {
+    "rank": 32,
+    "gi": 549,
+    "cos": 0.14817
+   },
+   {
+    "rank": 46,
+    "gi": 1022,
+    "cos": 0.13146
+   },
+   {
+    "rank": 45,
+    "gi": 618,
+    "cos": 0.1036
+   },
+   {
+    "rank": 21,
+    "gi": 80,
+    "cos": 0.06565
+   },
+   {
+    "rank": 7,
+    "gi": 32285,
+    "cos": 0.06353
+   }
+  ],
+  "in_degree": {
+   "1110": [
+    94,
+    213.38066090491154
+   ],
+   "319": [
+    105,
+    194.76489207008333
+   ]
+  },
+  "interconnect": {
+   "1110": {
+    "mass": 0.0,
+    "edges": 0,
+    "n_partners": 0,
+    "top": []
+   },
+   "319": {
+    "mass": 2.99573,
+    "edges": 2,
+    "n_partners": 2,
+    "top": [
+     {
+      "rank": 1,
+      "gi": 32160,
+      "mass": 1.6094,
+      "n_out": 1,
+      "n_in": 0
+     },
+     {
+      "rank": 21,
+      "gi": 80,
+      "mass": 1.3863,
+      "n_out": 0,
+      "n_in": 1
+     }
+    ]
+   }
+  },
+  "Z1": {
+   "leg_i": true,
+   "leg_ii": false,
+   "leg_iii": true,
+   "FIRES": false
+  },
+  "Z2": {
+   "core": {
+    "twin_gt": true,
+    "sign": "6/19"
+   },
+   "band": {
+    "twin_gt": false,
+    "sign": "1/5"
+   }
+  }
+ },
+ "prereg_else_branch": "Z4: if Z1 fails on BOTH substrates, the mechanism hunt stays dynamic (l137_run card)."
+}

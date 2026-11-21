@@ -1,0 +1,23 @@
+A1 substrate OK: n=21,516 edges=2,977,920 | 8s
+pools: Ti:fL=43 Ti:fR=41 Ti:eL=6 Ti:eR=6 Tr:fL=29 Tr:fR=28 Tr:eL=5 Tr:eR=6
+--- M1 pool input asymmetry ---
+Ti_f: n 43/41 | mass 62069/49429 | LI +0.1134 z 0.78
+Ti_e: n 6/6 | mass 48522/41510 | LI +0.0779 z 0.49
+Tr_f: n 29/28 | mass 59690/69623 | LI -0.0768 z -0.56
+Tr_e: n 5/6 | mass 19746/11008 | LI +0.2841 z 1.29
+--- M2 DNg100 side loading ---
+cell 6 side L: massL 2543 massR 9184 pools {'fR': 27, 'eR': 14}
+cell 9 side R: massL 9853 massR 2848 pools {'fL': 59, 'eL': 8}
+DNg100 pooled LI +0.0149 z 0.23 (massL 12396 / massR 12032)
+--- M3 reciprocity ---
+sheet: intrinsic 10826 + motor 708 = 11,534 nodes, 1,647,168 edges | recip 201,919/1,445,249 = 0.1397 (ER 6.23e-03, over-rep 22.4x)
+per-side: fL 0.1523 (n=414737) fR 0.1438 (n=392124) cross 0.1257 (n=596748)
+LI_recip +0.0287 z 2.5557719059285993
+intrinsic-only: 10,826 nodes 1,480,337 edges recip 0.1523 over-rep 24.0x fL 0.1666 fR 0.1581
+--- M4 stored-trace handedness (l66 hynohop open) ---
+open SL 0.326 SR 0.153 | h +0.173 sd 0.208 range [-0.155,+0.520] | h>0 on 12/16
+A2 PASS: M4 recompute matches l66 stored open means (.326/.153)
+checkpointed l70/raw_l70.npz + results_l70.json | 10s
+G1 wiring-carried (L-enriched, z>=+3): False (best |z| 2.56)
+G3 reciprocity over-ER: True (22.4x)
+G2 state-texture fallback read: h>0 on 12/16 (>=13 = biased coin)

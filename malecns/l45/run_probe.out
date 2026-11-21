@@ -1,0 +1,14 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l45_probe.py:76: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l45_probe.py:78: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub 21,516 | arms ['base', 'c_E1', 'c_I2E3', 'c_E1I2E3', 'c_E1X464']
+seed 11 done 39s
+seed 22 done 70s
+seed 33 done 100s
+base {11: {'r_pre': 82.3, 'f_pre': 0.833, 'r_dur': 534.9, 'f_dur': 1.312, 'S_dur': 0.487}, 22: {'r_pre': 125.7, 'f_pre': 1.5, 'r_dur': 318.4, 'f_dur': 1.458, 'S_dur': 0.487}, 33: {'r_pre': 95.9, 'f_pre': 1.5, 'r_dur': 217.8, 'f_dur': 1.438, 'S_dur': 0.483}}
+c_E1 {11: {'r_pre': 82.3, 'f_pre': 0.833, 'r_dur': 557.3, 'f_dur': 0.896, 'S_dur': -0.384}, 22: {'r_pre': 125.7, 'f_pre': 1.5, 'r_dur': 363.3, 'f_dur': 0.562, 'S_dur': 0.466}, 33: {'r_pre': 95.9, 'f_pre': 1.5, 'r_dur': 659.4, 'f_dur': 1.083, 'S_dur': -0.443}}
+c_I2E3 {11: {'r_pre': 82.3, 'f_pre': 0.833, 'r_dur': 228.4, 'f_dur': 1.312, 'S_dur': 0.508}, 22: {'r_pre': 125.7, 'f_pre': 1.5, 'r_dur': 183.1, 'f_dur': 1.458, 'S_dur': 0.481}, 33: {'r_pre': 95.9, 'f_pre': 1.5, 'r_dur': 356.6, 'f_dur': 1.438, 'S_dur': 0.436}}
+c_E1I2E3 {11: {'r_pre': 82.3, 'f_pre': 0.833, 'r_dur': 1004.3, 'f_dur': 0.896, 'S_dur': -0.35}, 22: {'r_pre': 125.7, 'f_pre': 1.5, 'r_dur': 318.7, 'f_dur': 0.896, 'S_dur': -0.049}, 33: {'r_pre': 95.9, 'f_pre': 1.5, 'r_dur': 379.8, 'f_dur': 1.083, 'S_dur': -0.516}}
+c_E1X464 {11: {'r_pre': 82.3, 'f_pre': 0.833, 'r_dur': 1484.5, 'f_dur': 1.25, 'S_dur': 0.472}, 22: {'r_pre': 125.7, 'f_pre': 1.5, 'r_dur': 998.7, 'f_dur': 1.479, 'S_dur': 0.633}, 33: {'r_pre': 95.9, 'f_pre': 1.5, 'r_dur': 1080.9, 'f_dur': 1.458, 'S_dur': 0.446}}
+done 100s

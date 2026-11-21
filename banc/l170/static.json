@@ -1,0 +1,497 @@
+{
+ "design": "L170 static: MaleCNS closure-mirror extraction at MATCHED synapse floor (BANC's implicit pair-level floor 3). Head block is l138_static.py VERBATIM. Zero rollouts, no RNG. PREREG l170/PREREG.md registered FIRST.",
+ "precheck": {
+  "rows": 25568639,
+  "w_min": 1.0,
+  "w_max": 2591.0,
+  "hist": {
+   "ge1": 25568639,
+   "ge2": 15273176,
+   "ge3": 10512742,
+   "ge4": 7892821,
+   "ge5": 6236426,
+   "ge10": 2749558,
+   "eq1": 10295463,
+   "eq2": 4760434,
+   "eq3": 2619921,
+   "eq4": 1656395,
+   "eq5": 1143226
+  },
+  "n_pairs": 25568639,
+  "dup_pairs": 0,
+  "frac_ge3": 0.411158,
+  "frac_ge4": 0.308691
+ },
+ "ladder": {
+  "1": {
+   "floor": 1,
+   "edges_kept": 25560079,
+   "s1": {
+    "n_keep_old": 21516,
+    "n_keep_new": 21544,
+    "dn_new": 28,
+    "added_edges": 1942,
+    "added_dn_out_edges": 787,
+    "dn_new_glut": 0,
+    "dn_new_ng": 9,
+    "heavy_K": 9,
+    "heavy_mass_share": 0.5187
+   },
+   "window": {
+    "r1_19": null,
+    "r20_29": null,
+    "r30_rest": null,
+    "n_ng": 9
+   },
+   "dnp33": [
+    {
+     "gi": 616,
+     "bodyId": 10664,
+     "somaSide": "R",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 222,
+     "in_cord_edges": 37,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    },
+    {
+     "gi": 1342,
+     "bodyId": 11438,
+     "somaSide": "L",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 224,
+     "in_cord_edges": 33,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    }
+   ],
+   "pins": {
+    "ng_top10": [
+     "DNpe037",
+     "DNge086",
+     "DNpe012_a",
+     "DNpe057",
+     "DNpe057",
+     "DNge085",
+     "DNge085",
+     "DNg09_a",
+     "DNge115"
+    ],
+    "ng_mass_list": [
+     0.132965,
+     0.061026,
+     0.055926,
+     0.052849,
+     0.052487,
+     0.04425,
+     0.043361,
+     0.038994,
+     0.036829
+    ]
+   },
+   "dn_total": 1314,
+   "dn_into": 1277,
+   "dn_proj": 1305
+  },
+  "2": {
+   "floor": 2,
+   "edges_kept": 15268644,
+   "s1": {
+    "n_keep_old": 21345,
+    "n_keep_new": 21544,
+    "dn_new": 199,
+    "added_edges": 13221,
+    "added_dn_out_edges": 7480,
+    "dn_new_glut": 4,
+    "dn_new_ng": 42,
+    "heavy_K": 46,
+    "heavy_mass_share": 0.5063
+   },
+   "window": {
+    "r1_19": 0.2578,
+    "r20_29": 0.0882,
+    "r30_rest": 0.1012,
+    "n_ng": 42
+   },
+   "dnp33": [
+    {
+     "gi": 616,
+     "bodyId": 10664,
+     "somaSide": "R",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 169,
+     "in_cord_edges": 16,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    },
+    {
+     "gi": 1342,
+     "bodyId": 11438,
+     "somaSide": "L",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 180,
+     "in_cord_edges": 10,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    }
+   ],
+   "pins": {
+    "ng_top10": [
+     "DNg79",
+     "DNg38",
+     "DNpe028",
+     "DNb03",
+     "DNg08",
+     "DNb03",
+     "DNg08",
+     "DNpe001",
+     "DNge183",
+     "DNge017"
+    ],
+    "ng_mass_list": [
+     0.03825,
+     0.033401,
+     0.013382,
+     0.012328,
+     0.011569,
+     0.011559,
+     0.011428,
+     0.011236,
+     0.011211,
+     0.011041,
+     0.010845,
+     0.010659,
+     0.010478,
+     0.010342,
+     0.010227,
+     0.01017,
+     0.01013,
+     0.009895,
+     0.009638,
+     0.009485,
+     0.009343,
+     0.009271,
+     0.008897,
+     0.008744,
+     0.008649,
+     0.008547,
+     0.008512,
+     0.008378,
+     0.008368,
+     0.008361,
+     0.008328,
+     0.008274,
+     0.008239,
+     0.008073,
+     0.007789,
+     0.007781,
+     0.007721,
+     0.007564,
+     0.007344,
+     0.007329
+    ],
+    "rank25": {
+     "gi": 14357,
+     "bodyId": 25876,
+     "type": "DNge108",
+     "somaSide": "L",
+     "mass_share": 0.008649
+    },
+    "rank26": {
+     "gi": 9825,
+     "bodyId": 20821,
+     "type": "DNg08",
+     "somaSide": "R",
+     "mass_share": 0.008547
+    },
+    "twin_gap": 0.00010247
+   },
+   "dn_total": 1314,
+   "dn_into": 1106,
+   "dn_proj": 1305
+  },
+  "3": {
+   "floor": 3,
+   "edges_kept": 10510014,
+   "s1": {
+    "n_keep_old": 21202,
+    "n_keep_new": 21544,
+    "dn_new": 342,
+    "added_edges": 22876,
+    "added_dn_out_edges": 14730,
+    "dn_new_glut": 9,
+    "dn_new_ng": 43,
+    "heavy_K": 52,
+    "heavy_mass_share": 0.5015
+   },
+   "window": {
+    "r1_19": 0.2818,
+    "r20_29": 0.0667,
+    "r30_rest": 0.067,
+    "n_ng": 43
+   },
+   "dnp33": [
+    {
+     "gi": 616,
+     "bodyId": 10664,
+     "somaSide": "R",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 137,
+     "in_cord_edges": 6,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    },
+    {
+     "gi": 1342,
+     "bodyId": 11438,
+     "somaSide": "L",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 153,
+     "in_cord_edges": 2,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    }
+   ],
+   "pins": {
+    "ng_top10": [
+     "DNge073",
+     "DNpe053",
+     "DNp43",
+     "DNge032",
+     "DNp14",
+     "DNp64",
+     "DNp64",
+     "DNg79",
+     "DNg79",
+     "DNpe050"
+    ],
+    "ng_mass_list": [
+     0.033948,
+     0.019323,
+     0.019116,
+     0.018638,
+     0.016862,
+     0.014838,
+     0.014357,
+     0.013978,
+     0.01364,
+     0.013102,
+     0.013089,
+     0.012746,
+     0.012675,
+     0.01257,
+     0.011722,
+     0.011551,
+     0.010016,
+     0.009838,
+     0.009813,
+     0.008843,
+     0.008549,
+     0.00729,
+     0.006998,
+     0.006449,
+     0.006233,
+     0.005789,
+     0.005781,
+     0.005445,
+     0.005333,
+     0.005231,
+     0.005154,
+     0.005083,
+     0.005071,
+     0.005016,
+     0.004991,
+     0.004753,
+     0.004672,
+     0.004644,
+     0.004534,
+     0.004525
+    ],
+    "rank25": {
+     "gi": 1405,
+     "bodyId": 11505,
+     "type": "DNp54",
+     "somaSide": "R",
+     "mass_share": 0.006233
+    },
+    "rank26": {
+     "gi": 5056,
+     "bodyId": 15491,
+     "type": "DNpe028",
+     "somaSide": "L",
+     "mass_share": 0.005789
+    },
+    "twin_gap": 0.00044325
+   },
+   "dn_total": 1314,
+   "dn_into": 963,
+   "dn_proj": 1305
+  },
+  "4": {
+   "floor": 4,
+   "edges_kept": 7890959,
+   "s1": {
+    "n_keep_old": 21084,
+    "n_keep_new": 21542,
+    "dn_new": 458,
+    "added_edges": 30886,
+    "added_dn_out_edges": 21194,
+    "dn_new_glut": 8,
+    "dn_new_ng": 51,
+    "heavy_K": 59,
+    "heavy_mass_share": 0.5004
+   },
+   "window": {
+    "r1_19": 0.2352,
+    "r20_29": 0.0786,
+    "r30_rest": 0.1307,
+    "n_ng": 51
+   },
+   "dnp33": [
+    {
+     "gi": 616,
+     "bodyId": 10664,
+     "somaSide": "R",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 121,
+     "in_cord_edges": 1,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    },
+    {
+     "gi": 1342,
+     "bodyId": 11438,
+     "somaSide": "L",
+     "dn_into": true,
+     "dn_proj": true,
+     "out_cord_edges": 139,
+     "in_cord_edges": 1,
+     "in_cohort": false,
+     "ng_rank": null,
+     "mass": 0.0,
+     "mass_share": 0.0
+    }
+   ],
+   "pins": {
+    "ng_top10": [
+     "DNge073",
+     "DNge073",
+     "DNge050",
+     "DNpe021",
+     "DNg102",
+     "DNpe006",
+     "DNg102",
+     "DNpe045",
+     "DNpe053",
+     "nan"
+    ],
+    "ng_mass_list": [
+     0.021721,
+     0.018779,
+     0.014464,
+     0.014462,
+     0.013904,
+     0.013242,
+     0.013055,
+     0.012959,
+     0.011058,
+     0.010974,
+     0.010819,
+     0.010518,
+     0.010457,
+     0.010416,
+     0.010262,
+     0.009695,
+     0.009626,
+     0.009386,
+     0.009374,
+     0.009299,
+     0.009155,
+     0.008183,
+     0.007925,
+     0.007911,
+     0.007443,
+     0.00722,
+     0.0072,
+     0.007177,
+     0.00712,
+     0.007057,
+     0.007047,
+     0.00688,
+     0.006877,
+     0.00684,
+     0.006805,
+     0.00668,
+     0.006663,
+     0.006529,
+     0.006435,
+     0.005834
+    ],
+    "rank25": {
+     "gi": 1610,
+     "bodyId": 11724,
+     "type": "DNp64",
+     "somaSide": "R",
+     "mass_share": 0.007443
+    },
+    "rank26": {
+     "gi": 4641,
+     "bodyId": 15024,
+     "type": "DNp21",
+     "somaSide": "R",
+     "mass_share": 0.00722
+    },
+    "twin_gap": 0.00022283
+   },
+   "dn_total": 1314,
+   "dn_into": 845,
+   "dn_proj": 1303
+  }
+ },
+ "banc_window": {
+  "r1_19": 0.1946,
+  "r20_29": 0.0642,
+  "r30_58": 0.1333
+ },
+ "banc_K": 77,
+ "verdict": {
+  "branch": "M1_floor_changes_cohort",
+  "rel_change": 11.2143,
+  "dn_new_1": 28,
+  "dn_new_3": 342,
+  "K_1": 9,
+  "K_3": 52,
+  "M1": true,
+  "M2": false,
+  "M3_dnp33_pure": false,
+  "P1": true,
+  "P2": true,
+  "P4_window_computable": true
+ },
+ "reviewer_reported": {
+  "pure_proj": 342,
+  "K": 52,
+  "note": "REVIEWER-REPORTED (L167 I2), BARRED from the draft; stored only for the lane log comparison"
+ }
+}

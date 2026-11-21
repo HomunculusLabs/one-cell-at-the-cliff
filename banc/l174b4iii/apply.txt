@@ -1,0 +1,27 @@
+ADDENDUM 1: identifier digit runs removed = ['138', '139', '152', '156', '157', '162', '162', '168', '169', '169', '170', '171', '172', '172', '2'] | added = []
+content-word count pre/post: 14714 14697
+T11 non-owned caps unchanged: 296 occ / 167 distinct; owned class ['L138', 'L139', 'L156', 'L157', 'L162', "L162'", 'L168', 'L169', 'L170', 'L171', 'L172', 'LANE-RESEARCH'] -> 0
+{
+ "raw_pre": 104690,
+ "raw_post": 104589,
+ "raw_delta": -101,
+ "vis_pre": 87478,
+ "vis_post": 87391,
+ "vis_delta": -87,
+ "lane_pre": 13,
+ "lane_post": 0,
+ "n_edits": 13,
+ "caps_occ_15": 310,
+ "caps_distinct_15": 179,
+ "lines_pre": 1617,
+ "lines_post": 1618,
+ "prose_over78_new": [],
+ "grew_past78": [],
+ "s28_heading_len": [
+  109,
+  84
+ ]
+}
+dropped content words: ['logged', 'LANE-RESEARCH.md', 'L139', 'L138', 'stages', 'a–d', 'L162', "L162's"]
+
+APPLIED.

@@ -1,0 +1,37 @@
+{
+ "g_cut": 0.14510760426521305,
+ "g_cut19": 0.15096808075904844,
+ "g_cut58": 0.15417299151420596,
+ "g_cut58_stored_exact": true,
+ "g_cutk5_stored_exact": true,
+ "g_cutk3_stored_exact": true,
+ "g_cutk4a": 0.15516637802124023,
+ "g_cutk4b": 0.14764956235885618,
+ "g_cutk3": 0.17404209494590758,
+ "new_stairs": {
+  "cutk4a": 0.000304296612739563,
+  "cutk4b": 5.9701502323150635e-05
+ },
+ "new_band_ok": true,
+ "af_final": 0.10853426406780879,
+ "af_final19": 0.10902554541826248,
+ "af_final58": 0.10905245939890544,
+ "af_finalk5": 0.10904726882775624,
+ "af_finalk3": 0.10851753254731496,
+ "K": 77,
+ "mass_split": {
+  "glut19": 0.1103,
+  "other58": 0.3921
+ },
+ "n_seeds": 18,
+ "new_mass": {
+  "cutk3": 0.0268,
+  "cutk4a": 0.0347,
+  "cutk4b": 0.0346,
+  "cutk5": 0.0425
+ },
+ "c0a_max": 0.0,
+ "c0a119_max": 0.0,
+ "c0a119_pass": true,
+ "c0a_pass": true
+}

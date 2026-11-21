@@ -1,0 +1,19 @@
+sub nodes 21,516 | edges 2,977,920 | 5s
+/home/t3rpz/critters/peabrain-lab/malecns/l33_steering.py:82: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l33_steering.py:84: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+pair Ti: fL 43 fR 41 eL 6 eR 6
+pair Tr: fL 29 fR 28 eL 5 eR 6
+rand null pairs: [[1129, 1268], [11186, 129]] | 6s
+   base amp 0.0000: turn_Ti +0.139 +0.132 +0.132 turn_Tr +0.062 +0.085 +0.082 | S_Tr pool +0.48 +0.46 +0.49 | rhy 176@1.33 317@1.43 591@1.43 | 16s
+ Lx0.25 amp 0.0125: turn_Ti +0.290 +0.133 +0.135 turn_Tr +0.099 +0.076 +0.080 | S_Tr pool +0.73 +0.47 +0.43 | rhy 702@1.35 393@1.43 356@1.45 | 27s
+  Lx0.5 amp 0.0250: turn_Ti +0.306 +0.127 +0.128 turn_Tr +0.105 +0.107 +0.087 | S_Tr pool +0.72 +0.50 +0.46 | rhy 516@1.35 509@1.42 655@1.45 | 38s
+  Lx1.0 amp 0.0500: turn_Ti +0.142 +0.128 +0.132 turn_Tr +0.048 +0.092 +0.076 | S_Tr pool +0.49 +0.48 +0.47 | rhy 163@1.33 904@1.42 517@1.45 | 48s
+  Lx2.0 amp 0.1000: turn_Ti +0.132 +0.133 +0.141 turn_Tr +0.073 +0.084 +0.074 | S_Tr pool +0.52 +0.45 +0.47 | rhy 388@1.30 318@1.43 532@1.45 | 58s
+  Lx4.0 amp 0.2000: turn_Ti +0.133 +0.130 +0.135 turn_Tr +0.050 +0.087 +0.079 | S_Tr pool +0.51 +0.52 +0.47 | rhy 179@1.27 223@1.42 629@1.45 | 71s
+  Rx1.0 amp 0.0500: turn_Ti +0.136 +0.133 +0.133 turn_Tr +0.063 +0.090 +0.081 | S_Tr pool +0.54 +0.48 +0.48 | rhy 296@1.32 670@1.43 224@1.45 | 82s
+  Rx4.0 amp 0.2000: turn_Ti +0.148 +0.143 -0.035 turn_Tr +0.026 +0.056 +0.497 | S_Tr pool +0.53 +0.53 +0.46 | rhy 308@1.32 274@1.42 3064@1.45 | 95s
+  rand0 amp 0.2000: turn_Ti +0.125 +0.126 +0.126 turn_Tr +0.063 +0.095 +0.083 | S_Tr pool +0.50 +0.46 +0.44 | rhy 500@1.32 376@1.42 472@1.45 | 106s
+  rand1 amp 0.2000: turn_Ti +0.203 +0.128 +0.132 turn_Tr +0.170 +0.095 +0.073 | S_Tr pool +0.80 +0.47 +0.46 | rhy 711@1.35 297@1.42 639@1.45 | 116s
+done 116s -> l33/results_l33.json

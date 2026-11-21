@@ -1,0 +1,168 @@
+{
+ "subs": [
+  {
+   "line": 545,
+   "tok": "B34",
+   "new": "H"
+  },
+  {
+   "line": 719,
+   "tok": "B30",
+   "new": "batch D"
+  },
+  {
+   "line": 720,
+   "tok": "B33",
+   "new": "batch G"
+  },
+  {
+   "line": 742,
+   "tok": "B30",
+   "new": "batch D"
+  },
+  {
+   "line": 772,
+   "tok": "B29",
+   "new": "batch C"
+  },
+  {
+   "line": 796,
+   "tok": "B30",
+   "new": "batch D"
+  },
+  {
+   "line": 827,
+   "tok": "B27",
+   "new": "batch B"
+  },
+  {
+   "line": 827,
+   "tok": "B30",
+   "new": "batch D"
+  },
+  {
+   "line": 827,
+   "tok": "B29",
+   "new": "batch C"
+  },
+  {
+   "line": 828,
+   "tok": "B31",
+   "new": "batch E"
+  },
+  {
+   "line": 828,
+   "tok": "B32",
+   "new": "batch F"
+  },
+  {
+   "line": 829,
+   "tok": "B33",
+   "new": "G"
+  },
+  {
+   "line": 916,
+   "tok": "B35",
+   "new": "batch J"
+  },
+  {
+   "line": 944,
+   "tok": "B37",
+   "new": "K"
+  },
+  {
+   "line": 994,
+   "tok": "B38",
+   "new": "L"
+  },
+  {
+   "line": 997,
+   "tok": "B38",
+   "new": "batch L"
+  },
+  {
+   "line": 1047,
+   "tok": "B26",
+   "new": "batch A"
+  },
+  {
+   "line": 1362,
+   "tok": "B33",
+   "new": "G"
+  },
+  {
+   "line": 1362,
+   "tok": "B34",
+   "new": "H"
+  }
+ ],
+ "other": {
+  "ARTEFACT_KEY": 6,
+  "BRANCH": 4,
+  "OUT_BANNER": 10,
+  "OUT_SEC7": 0
+ },
+ "gates": {
+  "G1_strong_form": true,
+  "G2_measurement_multiset": true,
+  "G3_citation_keys": true,
+  "G4_idruns_body_minus19_plus11": true,
+  "G5_zero_residue": true,
+  "G6_banner_unchanged": true,
+  "G7_sec7_unchanged": true,
+  "G8_artefact_keys": true,
+  "G9_branch_labels": true,
+  "G10_house_width": true,
+  "G11_bijection": true,
+  "G12_labels_in_body": true,
+  "G13_inserted_batch_words": true,
+  "G14_no_new_numeric_cite": true
+ },
+ "map": {
+  "B26": "A",
+  "B27": "B",
+  "B29": "C",
+  "B30": "D",
+  "B31": "E",
+  "B32": "F",
+  "B33": "G",
+  "B34": "H",
+  "B35": "J",
+  "B37": "K",
+  "B38": "L"
+ },
+ "raw_delta": 630,
+ "body_delta": 40,
+ "reflow": {
+  "771-780": [
+   "**Where the channel lives: the edge decomposition** (edge cuts on the cutwA",
+   "PARTIAL base, fresh batch C, n=16/arm, paired-noise fork). All 80 of the",
+   "carrier's out-edges live in the window \u2014 70 onto the vnc_intrinsic sheet",
+   "(.005599 removal mass), 10 onto motor pools (.000837) \u2014 plus 13 in-edges, all",
+   "from other DNs. Cutting ONLY the 70 intrinsic out-edges completes the flip (\u0394R",
+   "vs base +.404 [l142.h2a]) at .0056 removed mass, 9.72\u00d7 below the .0544",
+   "any-geometry scattered band: identity beats mass at cell scale. Cutting ONLY",
+   "the 13 in-edges carries it independently (\u0394R +.417 [l142.h3]) \u2014 two redundant",
+   "channels, one per side of the cell \u2014 while the 10 motor out-edges alone land",
+   "between classes [l142.h2b]."
+  ],
+  "827-831": [
+   "(Batches: clamp arms batch B with a batch D replication; edge ladder batch C;",
+   "dose halves and combo batch E; eAll re-pin and se0 batch F; silW rebase and",
+   "the halves' second batch G \u2014 all n=16/arm, within-batch class comparisons,",
+   "paired \u0394R legs, single-batch arms disclosed, pooled cells at [l142.pooled,",
+   "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled].)"
+  ]
+ },
+ "mapblock": [
+  "",
+  "**Batch labels.** The eleven seed batches this manuscript cites are labelled",
+  "A, B, C, D, E, F, G, H, J, K and L in the order they were run (I and O are",
+  "skipped so that a label cannot be read as a digit); the labels map one-to-one",
+  "onto the internal run codes, which the stored artefact keys retain verbatim:",
+  "A = B26, B = B27, C = B29, D = B30, E = B31, F = B32, G = B33, H = B34,",
+  "J = B35, K = B37, L = B38. Gaps in the internal codes are batches this",
+  "manuscript does not cite, and a label never renames the batch it points at, so",
+  "every pooled cell stays traceable to the batches it unions."
+ ]
+}

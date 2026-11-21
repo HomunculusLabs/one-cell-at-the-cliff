@@ -1,0 +1,385 @@
+{
+ "meta": {
+  "win": 6000,
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "volley_at": {
+   "hop4k": 4000,
+   "v43": 4300,
+   "v46": 4600,
+   "v49": 4900
+  },
+  "hop_amp": 0.5,
+  "hop_vw": 40,
+  "ent_amp": 0.3,
+  "drive_on": 4800,
+  "nodes": 21516,
+  "edges": 2977920
+ },
+ "C0": {
+  "nohop_vs_l55": 0.0,
+  "nohop_tr_vs_l55": 0.0,
+  "hop4k_vs_l55": 0.0,
+  "hop4k_tr_vs_l55": 0.0,
+  "first_div": {
+   "hop4k": [
+    4000,
+    4000,
+    4000
+   ],
+   "v43": [
+    4300,
+    4300,
+    4300
+   ],
+   "v46": [
+    4600,
+    4600,
+    4600
+   ],
+   "v49": [
+    4900,
+    4900,
+    4900
+   ]
+  }
+ },
+ "C0_pass": true,
+ "C1": {
+  "af_ok": true,
+  "volley_max": {
+   "hop4k": [
+    1.0103,
+    1.014,
+    1.0112
+   ],
+   "v43": [
+    1.0103,
+    0.9927,
+    0.9819
+   ],
+   "v46": [
+    0.9594,
+    0.9842,
+    1.0057
+   ],
+   "v49": [
+    0.4863,
+    0.4913,
+    0.4834
+   ]
+  },
+  "pass_": true
+ },
+ "seg2": {
+  "nohop": [
+   0.507,
+   0.147,
+   0.66
+  ],
+  "hop4k": [
+   0.487,
+   0.627,
+   0.507
+  ],
+  "v43": [
+   0.653,
+   0.187,
+   0.36
+  ],
+  "v46": [
+   0.56,
+   0.113,
+   0.34
+  ],
+  "v49": [
+   0.5,
+   0.147,
+   0.567
+  ]
+ },
+ "rows": {
+  "nohop|11": {
+   "seg2_duty": 0.507,
+   "seg2_label": "slow|++",
+   "SL": 0.252,
+   "SR": 0.889,
+   "f": 0.667
+  },
+  "nohop|22": {
+   "seg2_duty": 0.147,
+   "seg2_label": "slow|0+",
+   "SL": 0.129,
+   "SR": 0.368,
+   "f": 0.667
+  },
+  "nohop|33": {
+   "seg2_duty": 0.66,
+   "seg2_label": "slow|++",
+   "SL": 0.435,
+   "SR": 0.452,
+   "f": 0.667
+  },
+  "hop4k|11": {
+   "seg2_duty": 0.487,
+   "seg2_label": "slow|++",
+   "SL": 0.402,
+   "SR": 0.679,
+   "f": 0.667
+  },
+  "hop4k|22": {
+   "seg2_duty": 0.627,
+   "seg2_label": "slow|++",
+   "SL": 0.307,
+   "SR": 0.709,
+   "f": 0.667
+  },
+  "hop4k|33": {
+   "seg2_duty": 0.507,
+   "seg2_label": "slow|++",
+   "SL": 0.326,
+   "SR": 0.45,
+   "f": 0.667
+  },
+  "v43|11": {
+   "seg2_duty": 0.653,
+   "seg2_label": "slow|++",
+   "SL": 0.353,
+   "SR": 0.655,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 1.0,
+   "post_duty": 0.628,
+   "pre_SL": 0.3,
+   "pre_SR": 0.67,
+   "post_SL": 0.344,
+   "post_SR": 0.662
+  },
+  "v43|22": {
+   "seg2_duty": 0.187,
+   "seg2_label": "slow|++",
+   "SL": 0.175,
+   "SR": 0.595,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.56,
+   "post_duty": 0.179,
+   "pre_SL": 0.253,
+   "pre_SR": 0.712,
+   "post_SL": 0.166,
+   "post_SR": 0.661
+  },
+  "v43|33": {
+   "seg2_duty": 0.36,
+   "seg2_label": "slow|++",
+   "SL": 0.442,
+   "SR": 0.764,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.48,
+   "post_duty": 0.385,
+   "pre_SL": 0.241,
+   "pre_SR": 0.551,
+   "post_SL": 0.463,
+   "post_SR": 0.757
+  },
+  "v46|11": {
+   "seg2_duty": 0.56,
+   "seg2_label": "slow|++",
+   "SL": 0.414,
+   "SR": 0.781,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.455,
+   "post_duty": 0.667,
+   "pre_SL": 0.177,
+   "pre_SR": 0.681,
+   "post_SL": 0.428,
+   "post_SR": 0.665
+  },
+  "v46|22": {
+   "seg2_duty": 0.113,
+   "seg2_label": "slow|++",
+   "SL": 0.171,
+   "SR": 0.504,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.255,
+   "post_duty": 0.095,
+   "pre_SL": 0.196,
+   "pre_SR": 0.702,
+   "post_SL": 0.174,
+   "post_SR": 0.521
+  },
+  "v46|33": {
+   "seg2_duty": 0.34,
+   "seg2_label": "slow|++",
+   "SL": 0.34,
+   "SR": 0.704,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.764,
+   "post_duty": 0.31,
+   "pre_SL": 0.385,
+   "pre_SR": 0.426,
+   "post_SL": 0.205,
+   "post_SR": 0.752
+  },
+  "v49|11": {
+   "seg2_duty": 0.5,
+   "seg2_label": "slow|++",
+   "SL": 0.333,
+   "SR": 0.63,
+   "f": 0.667,
+   "pre_label": "slow|0+",
+   "post_label": "slow|++",
+   "pre_duty": 0.376,
+   "post_duty": 0.698,
+   "pre_SL": 0.15,
+   "pre_SR": 0.89,
+   "post_SL": 0.377,
+   "post_SR": 0.527
+  },
+  "v49|22": {
+   "seg2_duty": 0.147,
+   "seg2_label": "slow|0+",
+   "SL": 0.095,
+   "SR": 0.436,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|0+",
+   "pre_duty": 0.259,
+   "post_duty": 0.146,
+   "pre_SL": 0.206,
+   "pre_SR": 0.647,
+   "post_SL": 0.035,
+   "post_SR": 0.573
+  },
+  "v49|33": {
+   "seg2_duty": 0.567,
+   "seg2_label": "slow|++",
+   "SL": 0.41,
+   "SR": 0.736,
+   "f": 0.667,
+   "pre_label": "slow|++",
+   "post_label": "slow|++",
+   "pre_duty": 0.518,
+   "post_duty": 0.646,
+   "pre_SL": 0.485,
+   "pre_SR": 0.408,
+   "post_SL": 0.294,
+   "post_SR": 0.792
+  }
+ },
+ "pooled": {
+  "nohop": 0.496,
+  "hop4k": 0.53,
+  "v43": 0.484,
+  "v46": 0.463,
+  "v49": 0.485
+ },
+ "P1a": {
+  "diff": 0.203,
+  "per_seed": [
+   0.073,
+   -0.514,
+   -0.167
+  ],
+  "pass_": false
+ },
+ "P1b": {
+  "redraw": [
+   "v49|11: slow|0+->slow|++",
+   "v49|22: slow|++->slow|0+"
+  ],
+  "absorbed": [
+   "v43|11: slow|++",
+   "v43|22: slow|++",
+   "v43|33: slow|++",
+   "v46|11: slow|++",
+   "v46|22: slow|++",
+   "v46|33: slow|++",
+   "v49|33: slow|++"
+  ],
+  "n_redraw": 2,
+  "pass_": true
+ },
+ "P1c": {
+  "volley_signs": {
+   "L+": 11,
+   "L0": 1,
+   "L-": 0,
+   "R+": 12,
+   "R0": 0,
+   "R-": 0
+  },
+  "ref_signs": {
+   "L+": 5,
+   "L0": 1,
+   "L-": 0,
+   "R+": 6,
+   "R0": 0,
+   "R-": 0
+  },
+  "chi2_vs_ref": {
+   "L": 0.6,
+   "R": 0.0
+  },
+  "l45b_free_census": {
+   "L+": 11,
+   "L0": 4,
+   "L-": 1,
+   "R+": 0,
+   "R0": 8,
+   "R-": 9
+  },
+  "note": "n=12 volley / n=6 ref cells; descriptive only; free-cord marginals confounded by chopped-0.7 drive"
+ },
+ "P2_misses": {
+  "nohop|22": {
+   "duty": 0.147,
+   "SL": 0.129,
+   "SR": 0.368,
+   "label": "slow|0+"
+  },
+  "v43|22": {
+   "duty": 0.187,
+   "SL": 0.175,
+   "SR": 0.595,
+   "label": "slow|++"
+  },
+  "v46|22": {
+   "duty": 0.113,
+   "SL": 0.171,
+   "SR": 0.504,
+   "label": "slow|++"
+  },
+  "v49|22": {
+   "duty": 0.147,
+   "SL": 0.095,
+   "SR": 0.436,
+   "label": "slow|0+"
+  }
+ },
+ "P3": {
+  "volley_means": {
+   "hop4k": 0.54,
+   "v43": 0.4,
+   "v46": 0.338,
+   "v49": 0.405
+  },
+  "grand": 0.421,
+  "nohop": 0.438,
+  "pass_": true
+ },
+ "verdict": "MIXED: re-draw happens mid-seg2 (2 cells) but placement matters (v46 vs hop4k mean diff 0.203)"
+}

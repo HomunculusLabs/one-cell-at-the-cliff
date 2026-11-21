@@ -1,0 +1,203 @@
+{
+ "gi": 1110,
+ "root_626": 720575941639588127,
+ "annotation": {
+  "pt_root_id": "720575941639588127",
+  "super_class": "descending",
+  "cell_class": "descending_neuron",
+  "cell_sub_class": null,
+  "cell_type": "DNp33",
+  "side": "left",
+  "nerve": null,
+  "region": "neck_connective",
+  "peripheral_target_type": null,
+  "body_part_effector": null,
+  "cell_function": null,
+  "cell_function_detailed": null,
+  "other_names": null,
+  "neurotransmitter_predicted": "acetylcholine",
+  "neurotransmitter_verified": null,
+  "fafb_783_match_id": "720575940604103084",
+  "manc_121_match_id": "12064",
+  "hemilineage": "putative_primary",
+  "flow": "intrinsic"
+ },
+ "nt_join": "acetylcholine",
+ "twins": [
+  {
+   "gi": 928,
+   "root": 720575941451941498,
+   "side": "right",
+   "in_graph": true,
+   "in_closure": true,
+   "in_heavy77": false,
+   "in_ng58": false,
+   "cell_mass": null,
+   "heavy_rank": null
+  },
+  {
+   "gi": 1110,
+   "root": 720575941639588127,
+   "side": "left",
+   "in_graph": true,
+   "in_closure": true,
+   "in_heavy77": true,
+   "in_ng58": true,
+   "cell_mass": 183.96376182027785,
+   "heavy_rank": 31
+  }
+ ],
+ "wiring": {
+  "out_edges": 80,
+  "out_mass": 183.96376182027785,
+  "tiers": {
+   "motor_other": {
+    "n": 10,
+    "mass": 23.92010907557512
+   },
+   "intrinsic": {
+    "n": 70,
+    "mass": 160.04365274470274
+   },
+   "vnc_sensory": {
+    "n": 0,
+    "mass": 0.0
+   },
+   "antagonist_pools_direct": {
+    "n": 0,
+    "mass": 0.0
+   }
+  },
+  "dst_super_class": {
+   "ventral_nerve_cord_intrinsic": {
+    "n": 70,
+    "mass_share": 0.87
+   },
+   "motor": {
+    "n": 10,
+    "mass_share": 0.13
+   }
+  },
+  "pool_direct": {},
+  "top_targets": [
+   {
+    "gi": 68391,
+    "cell_type": "IN03B069",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.738
+   },
+   {
+    "gi": 68338,
+    "cell_type": "IN11B012",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.689
+   },
+   {
+    "gi": 67430,
+    "cell_type": "IN11B017",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.689
+   },
+   {
+    "gi": 68414,
+    "cell_type": "IN19B008",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.664
+   },
+   {
+    "gi": 68376,
+    "cell_type": "IN11B022",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.611
+   },
+   {
+    "gi": 4945,
+    "cell_type": "iii4",
+    "tier": "motor_other",
+    "side": "left",
+    "mass": 3.584
+   },
+   {
+    "gi": 8509,
+    "cell_type": "i2",
+    "tier": "motor_other",
+    "side": "left",
+    "mass": 3.466
+   },
+   {
+    "gi": 68513,
+    "cell_type": "IN03B069",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.296
+   },
+   {
+    "gi": 65601,
+    "cell_type": "IN11B017",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.258
+   },
+   {
+    "gi": 68679,
+    "cell_type": "IN12A061",
+    "tier": "intrinsic",
+    "side": "left",
+    "mass": 3.258
+   }
+  ],
+  "cpg_family_hits": {},
+  "in_edges": 13,
+  "in_by_class": {
+   "descending_neuron": 13
+  }
+ },
+ "ng58_profile": {
+  "rank_out_n": 39,
+  "rank_out_mass": 34,
+  "rank_intr": 20,
+  "rank_pool": 27,
+  "rank_motor": 9,
+  "medians": {
+   "out_n": 93.5,
+   "out_mass": 194.7430681781928,
+   "intr_share": 0.838634979213663,
+   "pool_direct": 0.0,
+   "motor_share": 0.017032913323380604
+  }
+ },
+ "malecns": {
+  "cells": 2,
+  "edges": 44,
+  "purity": "mixed",
+  "top1": [
+   "hi1 MN",
+   0.3195788013693798,
+   25.568358448279604
+  ],
+  "top2": [
+   "MNad28",
+   0.11666645122232439,
+   9.822117966991401
+  ],
+  "top3": [
+   "DVMn 1a-c",
+   0.10643145380258343,
+   3.5180954934587283
+  ],
+  "w_flex": 0.0,
+  "w_ext": 0.0,
+  "w_jump": 0.1707587302861649,
+  "male_nt": null
+ },
+ "v783": {
+  "match_id": "720575940604103084",
+  "in_live_brain": true
+ },
+ "design": "L134 static characterization of gi 1110 (rank-25 ng cell, the L131 X1 carrier). Zero rollouts, no RNG."
+}

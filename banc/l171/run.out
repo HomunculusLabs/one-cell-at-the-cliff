@@ -1,0 +1,18 @@
+[A] envelope: bin width 0.016667 Hz | chop 0.111111 Hz = bin 6.6667 | dominant non-DC bin 6 (0.1000 Hz)
+[A] top5 bins [6, 1, 7, 5, 2] -> [0.1, 0.0167, 0.1167, 0.0833, 0.0333] Hz
+[A] bin6 (.100 Hz) amp 115.1658 vs bin5 46.7819 / bin7 53.6005 | local max True | rank 1 | 1.000 of dominant
+[A] gap centers [np.float64(7.0), np.float64(16.0), np.float64(47.0), np.float64(56.0)] s | 4-gap vector strength at .100 Hz 0.951 vs at the 9-s chop line 0.174
+[A] BRANCH A1_envelope_line
+[P4] filter self-test: .05 Hz attenuation x337301960595563, 1.4 Hz rel err 2.22e-15
+[P5] windows: q07 300 points, q14 150, overlap 0
+[P6] npz seeds [801, 901, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016] -> B26 batch [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016] (n=16), anchors [801, 901] excluded (stored k=0 Wilson ub identifies n=16)
+[P1/P2 CERT] cutng25 q07 reproduced EXACT: kR 15/16 meanR 0.754 kL 0 meanL 0.123 Wilson [0.7167,0.9889]
+[P1/P2 CERT] cutng25p q07 reproduced EXACT: kR 5/16 meanR 0.399 kL 2 meanL 0.301 Wilson [0.1416,0.5560]
+[CERT] published q07 contrast meanR +0.355, d_kR 10
+[fast_seg_1p4] cutng25: kR 12/16 meanR 0.628 [0.505,0.898] | kL 0 meanL 0.0
+[fast_seg_1p4] cutng25p: kR 0/16 meanR 0.0 [0.000,0.194] | kL 0 meanL 0.019
+[fast_seg_1p4] contrast {'d_meanR': 0.628, 'd_kR': 12, 'paired_up': 16, 'paired_down': 0, 'paired_tie': 0, 'paired_mean': 0.628} degenerate=False ordering=True cleaner=True
+[highpass_0p3] cutng25: kR 15/16 meanR 0.676 [0.717,0.989] | kL 0 meanL 0.149
+[highpass_0p3] cutng25p: kR 1/16 meanR 0.37 [0.011,0.283] | kL 1 meanL 0.312
+[highpass_0p3] contrast {'d_meanR': 0.306, 'd_kR': 14, 'paired_up': 15, 'paired_down': 1, 'paired_tie': 0, 'paired_mean': 0.306} degenerate=False ordering=True cleaner=False
+[B] live re-scores ['fast_seg_1p4', 'highpass_0p3'] -> BRANCH B2_preserved

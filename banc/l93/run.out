@@ -1,0 +1,6 @@
+subnet ok n 21809 arms 11 | volley window [0,2000) | 3s
+seed 11 done af 0.10564 | 25s
+seed 22 done af 0.10734 | 49s
+seed 33 done af 0.11161 | 72s
+raw_l93.npz checkpointed BEFORE analysis
+C0 max|d| 0.000e+00 | C1 af-equal True | 72s done

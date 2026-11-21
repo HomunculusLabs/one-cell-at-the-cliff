@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="600" font-family="DejaVu Sans, sans-serif">
+<rect width="1560" height="600" fill="#1b1d24"/>
+<text x="40" y="42" fill="#e8e6e3" font-size="25" font-weight="bold">L45a pruning screen: no 6- or 36-cell core owns the rhythm&#8217;s existence &#8212; but E1&#8594;X464 owns its structure</text>
+<text x="40" y="68" fill="#9aa0ae" font-size="14">Pugliese-style type silencing (X=0 clamp, 50 s) on the frozen intrinsic regime; 3 seeds, one shared noise stream; effect = max(|dS|, |df|, log-ratio-drop) vs the random-type bar (0.09)</text>
+<text x="50" y="96" fill="#e8e6e3" font-size="16" font-weight="bold">A. perturbation effect (median of 3 seeds)</text>
+<rect x="90" y="110" width="420" height="400" fill="none" stroke="#33363f"/>
+<text x="56" y="310" fill="#9aa0ae" font-size="13" transform="rotate(-90 56 310)" text-anchor="middle">effect</text>
+<line x1="90" y1="510.0" x2="510" y2="510.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="86" y="514.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="90" y1="410.0" x2="510" y2="410.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="86" y="414.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="90" y1="310.0" x2="510" y2="310.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="86" y="314.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="90" y1="210.0" x2="510" y2="210.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="86" y="214.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="90" y1="110.0" x2="510" y2="110.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="86" y="114.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<rect x="90" y="110" width="420" height="359.7" fill="#4a5568" fill-opacity="0.18"/>
+<line x1="90" y1="469.7" x2="510" y2="469.7" stroke="#e0c555" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="94" y="463.7" fill="#e0c555" font-size="12">random-type bar (0.09) &#8212; below = indistinguishable from noise</text>
+<rect x="97.8" y="151.0" width="16.8" height="353.0" fill="#e07a5f" rx="2"/>
+<text x="106.2" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 106.2 518.0)">E1 IN17A001</text>
+<text x="106.2" y="146.0" fill="#e8e6e3" font-size="11" text-anchor="middle">0.90</text>
+<rect x="130.1" y="162.8" width="16.8" height="341.2" fill="#e07a5f" rx="2"/>
+<text x="138.5" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 138.5 518.0)">E1+E2+I1</text>
+<text x="138.5" y="157.8" fill="#e8e6e3" font-size="11" text-anchor="middle">0.87</text>
+<rect x="162.4" y="307.8" width="16.8" height="196.2" fill="#e07a5f" rx="2"/>
+<text x="170.8" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 170.8 518.0)">X464 INXXX464</text>
+<text x="170.8" y="302.8" fill="#e8e6e3" font-size="11" text-anchor="middle">0.50</text>
+<rect x="194.7" y="340.9" width="16.8" height="163.1" fill="#e07a5f" rx="2"/>
+<text x="203.1" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 203.1 518.0)">E1@T1</text>
+<text x="203.1" y="335.9" fill="#e8e6e3" font-size="11" text-anchor="middle">0.41</text>
+<rect x="227.0" y="351.9" width="16.8" height="152.1" fill="#e07a5f" rx="2"/>
+<text x="235.4" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 235.4 518.0)">core@T1</text>
+<text x="235.4" y="346.9" fill="#e8e6e3" font-size="11" text-anchor="middle">0.39</text>
+<rect x="259.3" y="474.5" width="16.8" height="29.5" fill="#6da28b" rx="2"/>
+<text x="267.7" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 267.7 518.0)">E2 INXXX466</text>
+<rect x="291.6" y="481.1" width="16.8" height="22.9" fill="#6da28b" rx="2"/>
+<text x="300.0" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 300.0 518.0)">ALL 36</text>
+<rect x="323.9" y="486.7" width="16.8" height="17.3" fill="#6da28b" rx="2"/>
+<text x="332.3" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 332.3 518.0)">I1 IN16B036</text>
+<rect x="356.2" y="487.8" width="16.8" height="16.2" fill="#6da28b" rx="2"/>
+<text x="364.6" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 364.6 518.0)">E3 IN19B012</text>
+<rect x="388.5" y="495.7" width="16.8" height="8.3" fill="#6da28b" rx="2"/>
+<text x="396.9" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 396.9 518.0)">I2 IN19A007</text>
+<rect x="420.8" y="486.3" width="16.8" height="17.7" fill="#5f87a8" rx="2"/>
+<text x="429.2" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 429.2 518.0)">rnd1</text>
+<rect x="453.1" y="478.8" width="16.8" height="25.2" fill="#5f87a8" rx="2"/>
+<text x="461.5" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 461.5 518.0)">rnd2</text>
+<rect x="485.4" y="487.8" width="16.8" height="16.2" fill="#5f87a8" rx="2"/>
+<text x="493.8" y="518.0" fill="#9aa0ae" font-size="10.5" text-anchor="middle" transform="rotate(-38 493.8 518.0)">rnd3</text>
+<text x="560" y="96" fill="#e8e6e3" font-size="16" font-weight="bold">B. antagonist structure S(Tr) while clamped</text>
+<rect x="600" y="110" width="420" height="400" fill="none" stroke="#33363f"/>
+<text x="566" y="310" fill="#9aa0ae" font-size="13" transform="rotate(-90 566 310)" text-anchor="middle">S(Tr)</text>
+<line x1="600" y1="435.0" x2="1020" y2="435.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="439.0" fill="#9aa0ae" font-size="12" text-anchor="end">-0.50</text>
+<line x1="600" y1="310.0" x2="1020" y2="310.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="314.0" fill="#9aa0ae" font-size="12" text-anchor="end">+0.00</text>
+<line x1="600" y1="247.5" x2="1020" y2="247.5" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="251.5" fill="#9aa0ae" font-size="12" text-anchor="end">+0.25</text>
+<line x1="600" y1="185.0" x2="1020" y2="185.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="189.0" fill="#9aa0ae" font-size="12" text-anchor="end">+0.50</text>
+<line x1="600" y1="307.0" x2="1020" y2="307.0" stroke="#e05555" stroke-width="1"/>
+<rect x="600" y="183.9" width="420" height="14.8" fill="#7fd4ff" fill-opacity="0.15"/>
+<text x="1016" y="178.9" fill="#7fd4ff" font-size="12" text-anchor="end">base free-run .45-.49</text>
+<circle cx="616.2" cy="401.8" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="616.2" cy="192.0" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="616.2" cy="416.1" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="608.2" y1="401.8" x2="624.2" y2="401.8" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="648.5" cy="247.4" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="648.5" cy="406.0" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="648.5" cy="401.3" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="640.5" y1="401.3" x2="656.5" y2="401.3" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="680.8" cy="310.0" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="680.8" cy="307.2" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="680.8" cy="310.9" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="672.8" y1="310.0" x2="688.8" y2="310.0" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="713.1" cy="289.3" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="713.1" cy="277.7" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="713.1" cy="297.1" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="705.1" y1="289.3" x2="721.1" y2="289.3" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="745.4" cy="282.4" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="745.4" cy="273.8" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="745.4" cy="294.4" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="737.4" y1="282.4" x2="753.4" y2="282.4" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="777.7" cy="151.1" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="777.7" cy="197.4" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="777.7" cy="169.6" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="769.7" y1="169.6" x2="785.7" y2="169.6" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="810.0" cy="173.0" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="810.0" cy="190.3" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="810.0" cy="225.7" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="802.0" y1="190.3" x2="818.0" y2="190.3" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="842.3" cy="184.9" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="842.3" cy="199.9" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="842.3" cy="198.9" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="834.3" y1="198.9" x2="850.3" y2="198.9" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="874.6" cy="186.8" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="874.6" cy="201.9" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="874.6" cy="198.2" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="866.6" y1="198.2" x2="882.6" y2="198.2" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="906.9" cy="188.3" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="906.9" cy="197.9" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="906.9" cy="191.3" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="898.9" y1="191.3" x2="914.9" y2="191.3" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="810" y="546" fill="#9aa0ae" font-size="13" text-anchor="middle">clamped type (seed dots 11/22/33, dash-coded; bar = median; rnd clouds omitted)</text>
+<text x="1060" y="96" fill="#e8e6e3" font-size="16" font-weight="bold">C. mediator probe: X464 clamp RESCUES the E1 clamp</text>
+<rect x="1100" y="110" width="410" height="400" fill="none" stroke="#33363f"/>
+<text x="1066" y="310" fill="#9aa0ae" font-size="13" transform="rotate(-90 1066 310)" text-anchor="middle">S(Tr)</text>
+<line x1="1100" y1="435.0" x2="1510" y2="435.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="439.0" fill="#9aa0ae" font-size="12" text-anchor="end">-0.50</text>
+<line x1="1100" y1="310.0" x2="1510" y2="310.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="314.0" fill="#9aa0ae" font-size="12" text-anchor="end">+0.00</text>
+<line x1="1100" y1="247.5" x2="1510" y2="247.5" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="251.5" fill="#9aa0ae" font-size="12" text-anchor="end">+0.25</text>
+<line x1="1100" y1="185.0" x2="1510" y2="185.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="189.0" fill="#9aa0ae" font-size="12" text-anchor="end">+0.50</text>
+<line x1="1100" y1="307.0" x2="1510" y2="307.0" stroke="#e05555" stroke-width="1"/>
+<circle cx="1141.0" cy="187.1" r="7" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="1141.0" cy="187.1" r="7" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1141.0" cy="188.1" r="7" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="1132.0" y1="187.1" x2="1150.0" y2="187.1" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="1141.0" y="528" fill="#9aa0ae" font-size="12" text-anchor="middle">base</text>
+<circle cx="1223.0" cy="401.6" r="7" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="1223.0" cy="192.2" r="7" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1223.0" cy="416.1" r="7" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="1214.0" y1="401.6" x2="1232.0" y2="401.6" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="1223.0" y="528" fill="#9aa0ae" font-size="12" text-anchor="middle">E1</text>
+<circle cx="1305.0" cy="181.9" r="7" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="1305.0" cy="188.6" r="7" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1305.0" cy="199.6" r="7" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="1296.0" y1="188.6" x2="1314.0" y2="188.6" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="1305.0" y="528" fill="#9aa0ae" font-size="12" text-anchor="middle">I2+E3</text>
+<circle cx="1387.0" cy="393.2" r="7" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="1387.0" cy="319.1" r="7" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1387.0" cy="434.1" r="7" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="1378.0" y1="393.2" x2="1396.0" y2="393.2" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="1387.0" y="528" fill="#9aa0ae" font-size="12" text-anchor="middle">E1+I2+E3</text>
+<circle cx="1469.0" cy="190.8" r="7" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="1469.0" cy="151.1" r="7" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1469.0" cy="197.2" r="7" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="1460.0" y1="190.8" x2="1478.0" y2="190.8" stroke="#e8e6e3" stroke-width="2.5"/>
+<text x="1469.0" y="528" fill="#9aa0ae" font-size="12" text-anchor="middle">E1+X464</text>
+<text x="1305" y="546" fill="#9aa0ae" font-size="13" text-anchor="middle">joint clamps (E1+X464 restores S AND f 1.25-1.48 Hz; E1+I2+E3 does not)</text>
+</svg>

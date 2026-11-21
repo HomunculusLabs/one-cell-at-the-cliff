@@ -1,0 +1,58 @@
+{
+ "mass_split": {
+  "glut19": 0.1103,
+  "other58": 0.3921
+ },
+ "k29_window_mass": 0.2588,
+ "rank_ids": {
+  "rank25": 1110,
+  "rank26": 319
+ },
+ "rank_mass": {
+  "rank25": 0.006435921140521805,
+  "rank26": 0.006044975663501844,
+  "pair_delta": 0.00039094547701996104
+ },
+ "design": "L133 wA-plus-319-alone XOR: cutng25p = wA + rank 26 (id 319) ONLY \u2014 NOT a prefix (skips rank 25 / 1110). If 25p PARTIALs -> clean identity XOR at mass-match (L120 cell-204 claim upgrades to mass-matched); if SUPERs -> flip position-thin, both cells complete. wA < 25p < 26. DNg100 in no drop. Deterministic, no RNG.",
+ "xor25p": {
+  "cutng25p": {
+   "drop_ids": [
+    80,
+    153,
+    227,
+    250,
+    253,
+    290,
+    292,
+    307,
+    319,
+    493,
+    546,
+    558,
+    585,
+    628,
+    724,
+    733,
+    743,
+    744,
+    800,
+    902,
+    3248,
+    32072,
+    32078,
+    32160,
+    32285
+   ],
+   "n": 21784,
+   "edges": 644072,
+   "mass_removed": 0.2346,
+   "mass_full": 0.2346189772969716,
+   "delta_vs_ng25": -0.000391
+  }
+ },
+ "edges_stored": {
+  "cut": 639164,
+  "n_cut": 21732,
+  "n_new": 21809
+ }
+}

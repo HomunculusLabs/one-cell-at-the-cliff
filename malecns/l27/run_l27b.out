@@ -1,0 +1,9 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+octC4_alone            TTM 0.0098 SNR 3.27x | ext 0.0016 | flex 0.0001 | DNp lift 0.0352 | 40s
+octC4_alone_clampDNp   TTM 0.0047 SNR 2.10x | ext 0.0015 | flex 0.0001 | DNp lift 0.0000 | 82s
+octALL4_alone          TTM 0.0098 SNR 3.27x | ext 0.0016 | flex 0.0001 | DNp lift 0.0352 | 127s
+octALL4_alone_clampDNp TTM 0.0047 SNR 2.10x | ext 0.0015 | flex 0.0001 | DNp lift 0.0000 | 169s
+wrote l27/results_l27b.json

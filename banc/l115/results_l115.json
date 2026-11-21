@@ -1,0 +1,244 @@
+{
+ "c0b_pass": true,
+ "c0b_fail": [],
+ "p0": {
+  "c0a_pass": true,
+  "c0a_max": 0.0,
+  "g_cut_stored_exact": true,
+  "g_cut19_stored_exact": true,
+  "pass": true
+ },
+ "p4": {
+  "af_range_ok": true,
+  "b65_band": true,
+  "af_mean": {
+   "full": 0.108109,
+   "b65": 0.109929,
+   "cut": 0.108992,
+   "cut19": 0.109514,
+   "cutR1": 0.108157,
+   "cutR2": 0.108054,
+   "cutR3": 0.108086
+  },
+  "staircases": {
+   "cutR1": 0.0007801428437232971,
+   "cutR2": 0.0002753237883249965,
+   "cutR3": 4.586080710093643e-05
+  }
+ },
+ "table_b11": {
+  "full": {
+   "kL": 1,
+   "kR": 6,
+   "meanL": 0.369,
+   "meanR": 0.424,
+   "lbL": 0.011119344764642517,
+   "ubL": 0.2832873757029894,
+   "lbR": 0.18481232558863636,
+   "ubR": 0.6135895945449729
+  },
+  "b65": {
+   "kL": 16,
+   "kR": 16,
+   "meanL": 0.997,
+   "meanR": 0.997,
+   "lbL": 0.8063923194655636,
+   "ubL": 1.0000000000000002,
+   "lbR": 0.8063923194655636,
+   "ubR": 1.0000000000000002
+  },
+  "cut": {
+   "kL": 16,
+   "kR": 0,
+   "meanL": 0.825,
+   "meanR": 0.122,
+   "lbL": 0.8063923194655636,
+   "ubL": 1.0000000000000002,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365
+  },
+  "cut19": {
+   "kL": 14,
+   "kR": 0,
+   "meanL": 0.74,
+   "meanR": 0.043,
+   "lbL": 0.6397717273424132,
+   "ubL": 0.9650225122567595,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365
+  },
+  "cutR1": {
+   "kL": 10,
+   "kR": 3,
+   "meanL": 0.525,
+   "meanR": 0.329,
+   "lbL": 0.38641040545502725,
+   "ubL": 0.8151876744113636,
+   "lbR": 0.06591599071428139,
+   "ubR": 0.43008880961974144
+  },
+  "cutR2": {
+   "kL": 15,
+   "kR": 13,
+   "meanL": 0.793,
+   "meanR": 0.629,
+   "lbL": 0.7167126242970107,
+   "ubL": 0.9888806552353575,
+   "lbR": 0.5699111903802586,
+   "ubR": 0.9340840092857186
+  },
+  "cutR3": {
+   "kL": 13,
+   "kR": 10,
+   "meanL": 0.64,
+   "meanR": 0.563,
+   "lbL": 0.5699111903802586,
+   "ubL": 0.9340840092857186,
+   "lbR": 0.38641040545502725,
+   "ubR": 0.8151876744113636
+  }
+ },
+ "tr_b11": {
+  "full": {
+   "kL": 0,
+   "kR": 6,
+   "meanL": 0.069,
+   "meanR": 0.454
+  },
+  "b65": {
+   "kL": 1,
+   "kR": 16,
+   "meanL": 0.187,
+   "meanR": 0.982
+  },
+  "cut": {
+   "kL": 0,
+   "kR": 0,
+   "meanL": 0.069,
+   "meanR": 0.377
+  },
+  "cut19": {
+   "kL": 0,
+   "kR": 1,
+   "meanL": 0.13,
+   "meanR": 0.262
+  },
+  "cutR1": {
+   "kL": 0,
+   "kR": 16,
+   "meanL": 0.08,
+   "meanR": 0.697
+  },
+  "cutR2": {
+   "kL": 0,
+   "kR": 4,
+   "meanL": 0.164,
+   "meanR": 0.431
+  },
+  "cutR3": {
+   "kL": 0,
+   "kR": 3,
+   "meanL": 0.155,
+   "meanR": 0.407
+  }
+ },
+ "p1": {
+  "draws": {
+   "cutR1": {
+    "kL": 10,
+    "meanL": 0.525,
+    "kR": 3,
+    "meanR": 0.329,
+    "flip": false,
+    "noflip": true,
+    "verdict": "NO-FLIP"
+   },
+   "cutR2": {
+    "kL": 15,
+    "meanL": 0.793,
+    "kR": 13,
+    "meanR": 0.629,
+    "flip": false,
+    "noflip": false,
+    "verdict": "MIXED"
+   },
+   "cutR3": {
+    "kL": 13,
+    "meanL": 0.64,
+    "kR": 10,
+    "meanR": 0.563,
+    "flip": false,
+    "noflip": false,
+    "verdict": "MIXED"
+   }
+  },
+  "n_flip": 0,
+  "n_noflip": 1,
+  "mass_threshold_law": false,
+  "subset_class_specific": false,
+  "verdict": "MIXED (disclosed)"
+ },
+ "p2": {
+  "cutR1": {
+   "kR": 3,
+   "meanR": 0.329,
+   "paired_leg": false
+  },
+  "cutR2": {
+   "kR": 13,
+   "meanR": 0.629,
+   "paired_leg": true
+  },
+  "cutR3": {
+   "kR": 10,
+   "meanR": 0.563,
+   "paired_leg": true
+  },
+  "full": {
+   "kR": 6,
+   "meanR": 0.424
+  }
+ },
+ "p3": {
+  "cut_kL": 16,
+  "b65_kL": 16,
+  "b65_kR": 16,
+  "cut19_kL": 14,
+  "pass": true
+ },
+ "p5": {
+  "rand_mass": [
+   0.1063,
+   0.1174,
+   0.1311
+  ],
+  "rand_glut": [
+   8,
+   7,
+   3
+  ],
+  "glut19_overlap": {
+   "cutR1": 8,
+   "cutR2": 7,
+   "cutR3": 3
+  },
+  "note": "removed heavy cord out-mass share, glut count, and cell overlap with the glut-19 set, per draw; duty-form cells only (tick-136 amendment, 2611.14498 LERS)"
+ },
+ "p6": {
+  "kL_B9": 14,
+  "kL_B10": 15,
+  "kL_B11": 14,
+  "kL48": 43,
+  "meanL48": 0.7,
+  "lb48": 0.7783257830561368,
+  "ub48": 0.954678280958187,
+  "gates": "NOTHING (L114 box closed MIXED; 3rd diagnostic batch, L88/L90 rule)"
+ },
+ "g_cut": 0.14510760426521305,
+ "g_cut19": 0.15096808075904844,
+ "g_cutR": {
+  "cutR1": 0.17009516477584835,
+  "cutR2": 0.15072651624679562,
+  "cutR3": 0.18191294193267818
+ }
+}

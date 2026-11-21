@@ -1,0 +1,268 @@
+{
+ "c0": "PASS (A pins + B pools EXACT vs l107/static.json)",
+ "sets": {
+  "heavy": 77,
+  "light": 483,
+  "dn_new": 560
+ },
+ "R1_twohop": {
+  "heavy_Ti": {
+   "SL": 2517.3194,
+   "SR": -151.832,
+   "S": 2365.4874,
+   "A_signed": 1.0,
+   "A_abs": -0.0033,
+   "absL": 6335.0708,
+   "absR": 6376.7028,
+   "z_signed_vs77of560": 1.33,
+   "z_abs_vs77of560": 0.96
+  },
+  "light_Ti": {
+   "SL": 623.2082,
+   "SR": 2226.9369,
+   "S": 2850.1451,
+   "A_signed": -0.5627,
+   "A_abs": -0.1866,
+   "absL": 4648.4517,
+   "absR": 6781.4092,
+   "z_signed_vs77of560": -1.13,
+   "z_abs_vs77of560": -0.94
+  },
+  "heavy_Tr": {
+   "SL": 1145.4618,
+   "SR": 21.363,
+   "S": 1166.8248,
+   "A_signed": 0.9634,
+   "A_abs": 0.1905,
+   "absL": 8944.7019,
+   "absR": 6082.1708,
+   "z_signed_vs77of560": 1.37,
+   "z_abs_vs77of560": 1.75
+  },
+  "light_Tr": {
+   "SL": 849.8375,
+   "SR": 1995.4333,
+   "S": 2845.2708,
+   "A_signed": -0.4026,
+   "A_abs": -0.1259,
+   "absL": 6831.631,
+   "absR": 8798.7947,
+   "z_signed_vs77of560": -0.48,
+   "z_abs_vs77of560": -1.48
+  },
+  "per_pool": {
+   "Ti_fL": {
+    "heavy": 1821.449,
+    "light": 394.038
+   },
+   "Ti_fR": {
+    "heavy": -389.045,
+    "light": 1960.656
+   },
+   "Ti_eL": {
+    "heavy": 695.87,
+    "light": 229.17
+   },
+   "Ti_eR": {
+    "heavy": 237.213,
+    "light": 266.281
+   },
+   "Tr_fL": {
+    "heavy": 1488.898,
+    "light": 1249.782
+   },
+   "Tr_fR": {
+    "heavy": -44.883,
+    "light": 1079.706
+   },
+   "Tr_eL": {
+    "heavy": -343.436,
+    "light": -399.944
+   },
+   "Tr_eR": {
+    "heavy": 66.246,
+    "light": 915.727
+   }
+  },
+  "null_mean_sd_A_signed": {
+   "Ti": [
+    0.1539,
+    0.6346
+   ],
+   "Tr": [
+    -0.0482,
+    0.7364
+   ]
+  }
+ },
+ "R2_signmix": {
+  "neg_mass_frac_heavy": 0.4211,
+  "neg_mass_frac_light": 0.29,
+  "z_heavy_vs_null": 0.73,
+  "null_mean_sd": [
+   0.3575,
+   0.0871
+  ],
+  "source_nt_counts": {
+   "heavy": {
+    "acetylcholine": 41,
+    "glutamate": 19,
+    "gaba": 17
+   },
+   "light": {
+    "acetylcholine": 313,
+    "gaba": 135,
+    "glutamate": 25,
+    "serotonin": 9,
+    "octopamine": 1
+   }
+  }
+ },
+ "R3_target_side": {
+  "heavy_side_asym_RminusL": -0.0333,
+  "light_side_asym_RminusL": -0.0086,
+  "z_heavy_vs_subset": -0.13,
+  "subset_null_mean_sd": [
+   -0.0231,
+   0.0802
+  ],
+  "z_heavy_vs_sideperm": -1.83,
+  "sideperm_null_mean_sd": [
+   -0.0159,
+   0.0095
+  ],
+  "unside_frac_heavy": 0.004,
+  "unside_frac_light": 0.005,
+  "massL_heavy": 7040.2,
+  "massR_heavy": 6586.6,
+  "massL_light": 6009.5,
+  "massR_light": 5907.0
+ },
+ "R5_gates": {
+  "dA_signed_Ti_heavy_minus_light": 1.5627,
+  "z_heavy": 1.33,
+  "z_light": -1.13,
+  "P1_profile_predicts": false,
+  "P2_predicted_unchanged_side": "R",
+  "P2_pass": true,
+  "note": "P1: heavy/light Ti asymmetry separates at |z|>=2 and |dA|>.05; P2: sign of dA names the side cut fails to restore (dyn: R)"
+ },
+ "R6_hops": {
+  "hop1_direct": {
+   "heavy": {
+    "L": 44.4,
+    "R": 34.865
+   },
+   "light": {
+    "L": 18.361,
+    "R": 13.483
+   }
+  },
+  "hop2_via_intrinsic": {
+   "heavy": {
+    "L": 6335.071,
+    "R": 6376.703
+   },
+   "light": {
+    "L": 4648.452,
+    "R": 6781.409
+   }
+  }
+ },
+ "addendum": {
+  "label": "POST-HOC descriptive (PREREG ADDENDUM 1); gates nothing",
+  "A1_nt_hypergeom": {
+   "glutamate": {
+    "heavy": 19,
+    "pool_total": 44,
+    "hyper_mean": 6.05,
+    "sd": 2.19,
+    "z": 5.9
+   },
+   "gaba": {
+    "heavy": 17,
+    "pool_total": 152,
+    "hyper_mean": 20.9,
+    "sd": 3.63,
+    "z": -1.08
+   },
+   "acetylcholine": {
+    "heavy": 41,
+    "pool_total": 354,
+    "hyper_mean": 48.67,
+    "sd": 3.93,
+    "z": -1.95
+   }
+  },
+  "A2_family_2hop_Ti_fL_fR": [
+   {
+    "family": "DNg79",
+    "Ti_fL": 503.1,
+    "Ti_fR": 343.8
+   },
+   {
+    "family": "DNpe006",
+    "Ti_fL": 353.9,
+    "Ti_fR": -205.8
+   },
+   {
+    "family": "DNpe045",
+    "Ti_fL": 108.5,
+    "Ti_fR": -449.0
+   },
+   {
+    "family": "DNbe002",
+    "Ti_fL": 287.2,
+    "Ti_fR": 243.4
+   },
+   {
+    "family": "DNge103",
+    "Ti_fL": -263.2,
+    "Ti_fR": -201.9
+   },
+   {
+    "family": "DNg43",
+    "Ti_fL": 283.1,
+    "Ti_fR": 177.4
+   },
+   {
+    "family": "DNge025",
+    "Ti_fL": -16.5,
+    "Ti_fR": 435.5
+   },
+   {
+    "family": "DNp69",
+    "Ti_fL": 23.8,
+    "Ti_fR": -398.6
+   },
+   {
+    "family": "DNg72",
+    "Ti_fL": -280.5,
+    "Ti_fR": -134.8
+   },
+   {
+    "family": "DNge120",
+    "Ti_fL": -231.9,
+    "Ti_fR": -173.1
+   },
+   {
+    "family": "DNb07",
+    "Ti_fL": -156.4,
+    "Ti_fR": -246.4
+   },
+   {
+    "family": "DNp47",
+    "Ti_fL": 230.6,
+    "Ti_fR": 91.0
+   }
+  ],
+  "A3_concentration": {
+   "top5_share_of_heavy_TifL": 0.708,
+   "n_positive_cells": 41,
+   "n_heavy": 77
+  }
+ },
+ "dynamic_pins": "results_l109.json Ti cut L .853 kL 32/32 / R .164 kR 0/32; b65 .997/.996; full .394/.440; Tr cut .077/.366",
+ "null_seed": 1100,
+ "ndraw": 1000
+}

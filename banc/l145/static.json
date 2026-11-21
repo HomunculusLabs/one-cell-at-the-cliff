@@ -1,0 +1,109 @@
+{
+ "design": "L145 static: motor-edge DOSE (top-5/bottom-5 by |vals|) + eMotIn combo on the cutwA node set. Zero rollouts, no RNG. PREREG l145/PREREG.md FIRST. Subset law pinned: top5|bot5 == eOutMot edge positions EXACT.",
+ "carrier": {
+  "gi": 1110,
+  "cell_type": "DNp33",
+  "side": "left",
+  "nt": "acetylcholine",
+  "ng_rank": 25
+ },
+ "motor_edges_ranked": [
+  {
+   "pos": 1643890,
+   "dst_gi": 4945,
+   "w": 3.583519,
+   "syn": 35,
+   "dst_type": "iii4"
+  },
+  {
+   "pos": 1643893,
+   "dst_gi": 8509,
+   "w": 3.465736,
+   "syn": 31,
+   "dst_type": "i2"
+  },
+  {
+   "pos": 1643917,
+   "dst_gi": 9770,
+   "w": 3.044522,
+   "syn": 20,
+   "dst_type": "iv1"
+  },
+  {
+   "pos": 1643928,
+   "dst_gi": 4947,
+   "w": 2.564949,
+   "syn": 12,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643929,
+   "dst_gi": 16630,
+   "w": 2.302585,
+   "syn": 9,
+   "dst_type": "hi1 MN"
+  },
+  {
+   "pos": 1643936,
+   "dst_gi": 9395,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "i1"
+  },
+  {
+   "pos": 1643937,
+   "dst_gi": 8506,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643940,
+   "dst_gi": 22572,
+   "w": 1.791759,
+   "syn": 5,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643942,
+   "dst_gi": 4946,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "DLM1-4"
+  },
+  {
+   "pos": 1643961,
+   "dst_gi": 4944,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "iv4"
+  }
+ ],
+ "rank_rule": "mass DESC, tiebreak global-pos ASC",
+ "mass_split": {
+  "mot_all": 0.000837,
+  "mot_top5": 0.000523,
+  "mot_bot5": 0.000313,
+  "eMotIn": 0.001824,
+  "top5_share_of_mot": 0.6255
+ },
+ "arm_edge_counts": {
+  "eOutMot": 10,
+  "eMotTop5": 5,
+  "eMotBot5": 5,
+  "eMotIn": 23
+ },
+ "arm_mass_frac_dn": {
+  "eOutMot": 0.000837,
+  "eMotTop5": 0.000523,
+  "eMotBot5": 0.000313,
+  "eMotIn": 0.001824
+ },
+ "arm_nnz": {
+  "eOutMot": 644167,
+  "eMotTop5": 644172,
+  "eMotBot5": 644172,
+  "eMotIn": 644154
+ },
+ "mass_note": "ladder convention (out-cord |vals| / dn out-cord total); eMotIn includes in-edge mass on the same denominator (disclosed, l142 form)."
+}

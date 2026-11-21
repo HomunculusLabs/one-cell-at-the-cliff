@@ -1,0 +1,27 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+=== 1. antagonist pools (tibia flexor vs extensor MNs) ===
+tibia flexor 101, tibia extensor 12
+  ext split: {'tibia_extensor_SETi': 6, 'tibia_extensor_FETi': 6}
+  flex split: {'accessory_tibia_flexor_B': 35, 'accessory_tibia_flexor_A': 25, 'tibia_flexor': 25, 'accessory_tibia_flexor_C': 6, 'tibia_flexor_Fast': 5}
+  flex by leg: {'hind_leg_motor_neuron': 35, 'middle_leg_motor_neuron': 33, 'front_leg_motor_neuron': 33}
+in-weight flex 0.32±0.13 / ext 0.44±0.08
+flexor in-weight from vnc_intrinsic: 92.8%
+
+=== 2. Pugliese triad cells ===
+  IN17A001: 4 cells, out-w 13.59, ->flexor w 0.158
+  INXXX466: 5 cells, out-w 8.46, ->flexor w 0.088
+  IN16B036: 6 cells, out-w 6.64, ->flexor w 0.013
+  IN19A007: 5 cells, out-w -21.46, ->flexor w -0.074
+  IN19B012: 4 cells, out-w 7.06, ->flexor w 0.274
+
+=== 3. DN command vocabulary (cell_type exact) ===
+  DNp01: 2  DNp02: 2  DNp03: 2  DNp04: 2  DNg100: 2  DNg95: 2  DNg105: 2  DNg88: 2  DNge046: 3  DNg35: 2  DNg110: 6
+descending w/ any cell_type: 1,295/1,313
+
+=== 4. cord sheet size ===
+  ventral_nerve_cord_intrinsic: 12,400
+  sensory: 12,463
+  motor: 831
+  ascending: 1,840
+  descending: 1,313

@@ -1,0 +1,47 @@
+B-cert vs results_l142.json Ti table {cutwA,cutng25}: PASS
+P0 anchors (C0A-144 + FC-142 + FC-137 + gains): PASS (C0A 0.0e+00 | FC142 0.0e+00 | FC137 0.0e+00)
+P4 {"af_range_ok": true, "b65_band": true}
+---- B30 per-side duty table ----
+Ti full        kL  3/16 meanL 0.382 | kR  6/16 meanR 0.428
+Ti b65         kL 16/16 meanL 0.999 | kR 16/16 meanR 0.996
+Ti cutwA       kL  1/16 meanL 0.231 | kR  5/16 meanR 0.433
+Ti cutng25     kL  0/16 meanL 0.103 | kR 16/16 meanR 0.714
+Ti sil1110     kL  4/16 meanL 0.446 | kR  3/16 meanR 0.392
+Ti sil1110_wA  kL  1/16 meanL 0.306 | kR 14/16 meanR 0.622
+Tr full        kL  0/16 meanL 0.049 | kR  2/16 meanR 0.338
+Tr b65         kL  0/16 meanL 0.200 | kR 16/16 meanR 0.960
+Tr cutwA       kL  0/16 meanL 0.005 | kR  0/16 meanR 0.053
+Tr cutng25     kL  0/16 meanL 0.000 | kR  0/16 meanR 0.016
+Tr sil1110     kL  0/16 meanL 0.036 | kR  1/16 meanR 0.279
+Tr sil1110_wA  kL  0/16 meanL 0.002 | kR  0/16 meanR 0.020
+Ta full        kL  1/16 meanL 0.259 | kR  0/16 meanR 0.008
+Ta b65         kL  0/16 meanL 0.071 | kR  0/16 meanR 0.061
+Ta cutwA       kL  0/16 meanL 0.024 | kR  0/16 meanR 0.011
+Ta cutng25     kL  0/16 meanL 0.026 | kR  0/16 meanR 0.041
+Ta sil1110     kL  3/16 meanL 0.346 | kR  0/16 meanR 0.023
+Ta sil1110_wA  kL  0/16 meanL 0.029 | kR  0/16 meanR 0.041
+Sr full        kL  0/16 meanL 0.118 | kR  4/16 meanR 0.318
+Sr b65         kL 15/16 meanL 0.858 | kR  0/16 meanR 0.021
+Sr cutwA       kL  0/16 meanL 0.130 | kR  0/16 meanR 0.083
+Sr cutng25     kL  0/16 meanL 0.070 | kR  0/16 meanR 0.024
+Sr sil1110     kL  0/16 meanL 0.119 | kR  6/16 meanR 0.473
+Sr sil1110_wA  kL  0/16 meanL 0.111 | kR  0/16 meanR 0.134
+Pr full        kL  0/16 meanL 0.023 | kR  0/16 meanR 0.116
+Pr b65         kL  0/16 meanL 0.011 | kR  0/16 meanR 0.002
+Pr cutwA       kL  0/16 meanL 0.031 | kR  0/16 meanR 0.164
+Pr cutng25     kL  0/16 meanL 0.034 | kR  0/16 meanR 0.275
+Pr sil1110     kL  0/16 meanL 0.004 | kR  0/16 meanR 0.206
+Pr sil1110_wA  kL  0/16 meanL 0.043 | kR  0/16 meanR 0.236
+Ti     0 (full       ): meanR 0.428 kR  6/16 | meanL 0.382 kL  3/16 | dR_full +0.000 dR_wA -0.004 n_up_wA  1/16 -> no-kill/PARTIAL
+Ti    24 (cutwA      ): meanR 0.433 kR  5/16 | meanL 0.231 kL  1/16 | dR_full +0.004 dR_wA +0.000 n_up_wA  0/16 -> no-kill/PARTIAL
+Ti  silF (sil1110    ): meanR 0.392 kR  3/16 | meanL 0.446 kL  4/16 | dR_full -0.036 dR_wA -0.040 n_up_wA  2/16 -> no-kill/PARTIAL
+Ti  silW (sil1110_wA ): meanR 0.622 kR 14/16 | meanL 0.306 kL  1/16 | dR_full +0.194 dR_wA +0.189 n_up_wA  6/16 -> no-kill/RESTORE/SUPER
+Ti    25 (cutng25    ): meanR 0.714 kR 16/16 | meanL 0.103 kL  0/16 | dR_full +0.285 dR_wA +0.281 n_up_wA 10/16 -> no-kill/RESTORE/SUPER
+H-ACT | H-ACT: sil1110_wA flips (substrate-gated activity carriage) — the wA-base flip needs only 1110's SILENCE
+P1 {"arm": "sil1110", "dR_vs_full": -0.036, "in_scale": true, "meanR": 0.392, "kR": 3, "note": "P1 replication leg (L141 B27: dR -.088, in full's band)"}
+P3 {"arm": "sil1110_wA", "Ti_meanL": 0.306, "Ti_kL": 1, "cutwA_Ti_meanL": 0.231, "cutwA_Ti_kL": 1, "note": "P3 descriptive: crossed-law Ti_L read on the clamp arm"}
+L141 B27 context (raw_l137): {"full": {"kL": 3, "kR": 6, "meanL": 0.362, "meanR": 0.464}, "sil1110": {"kL": 8, "kR": 2, "meanL": 0.484, "meanR": 0.376}, "paired_dR": -0.088}
+pooled cutng25 B24+B25+B26+B29+B30: {"kR": 77, "n": 80, "lbR": 0.8954527990995489, "ubR": 0.9871654310800887, "kL": 0, "lbL": 0.0, "ubL": 0.0458181295355271, "meanR": 0.753, "meanL": 0.135}
+pooled cutwA  B21+..+B30: {"kR": 29, "n": 96, "lbR": 0.2193115849906457, "ubR": 0.4000850018696843, "kL": 7, "lbL": 0.035767581310362735, "ubL": 0.14293031665140193, "meanR": 0.41, "meanL": 0.26}
+sanity b65 Ti kL/kR 16 16
+results_l144.json written

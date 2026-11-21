@@ -1,0 +1,13 @@
+/home/t3rpz/critters/peabrain-lab/banc/build_graph_banc.py:73: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/build_graph_banc.py:75: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  ).coalesce().to_sparse_csr()
+/home/t3rpz/critters/peabrain-lab/banc/build_graph_banc.py:79: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:208.)
+  "ids": torch.from_numpy(ids), "nt_ids": torch.from_numpy(nt_ids),
+80,635 labeled neurons
+transmitter mix: {'acetylcholine': 46030, 'gaba': 16687, 'glutamate': 10061, 'dopamine': 4407, 'serotonin': 1974, 'octopamine': 662, 'unknown': 316, 'histamine': 281, 'tyramine': 217}
+cls counts: {'other': 0, 'descending': 1313, 'motor': 831, 'sensory': 12985, 'vnc_intrinsic': 12400, 'cb_intrinsic': 20066, 'ascending': 1845, 'optic': 31195}
+2,579,119 neuropil rows after id filter
+1,830,698 unique edges, syn total 15,806,209
+saved banc_graph.pt: N=80,635 nnz=1,830,698
+rho (raw weights, unnormalized) = 0.2498

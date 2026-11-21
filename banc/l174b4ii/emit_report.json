@@ -1,0 +1,37 @@
+{
+ "applied": true,
+ "disc": {
+  "chars": 4993,
+  "longest_sentence": 52,
+  "numbers_quoted": [
+   "0",
+   "39",
+   "48",
+   "5",
+   "78",
+   "9.72\u00d7",
+   "98"
+  ],
+  "paragraphs": 7,
+  "sentences": 32,
+  "words": 828
+ },
+ "draft": {
+  "chars_post": 102745,
+  "chars_pre": 97752
+ },
+ "s28": {
+  "chars_post": 3408,
+  "chars_pre": 3408,
+  "citation_key_tokens": 3,
+  "literals_verbatim": 69,
+  "longest_post": 56,
+  "longest_pre": 70,
+  "numeric_tokens": 87,
+  "paragraphs": 8,
+  "raw_delta": 0,
+  "second_longest_pre": 56,
+  "splits": 1,
+  "visible_delta": 0
+ }
+}

@@ -1,0 +1,29 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l77_census.py:97: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l77_census.py:99: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 8s
+drive-on 48.0s all arms | tables asserted
+seed 11 done 23s
+seed 22 done 38s
+seed 33 done 54s
+seed 101 done 70s
+seed 102 done 85s
+seed 103 done 101s
+seed 104 done 116s
+seed 105 done 134s
+seed 106 done 150s
+seed 107 done 166s
+seed 108 done 181s
+seed 109 done 197s
+seed 110 done 213s
+seed 111 done 229s
+seed 112 done 245s
+seed 113 done 260s
+runs done 260s
+C0a True | C0b True | C0x l66-fb True | C0P False | C1 True | wired_dead 0
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l77_census.py", line 334, in <module>
+    f_seg = dom_freq(res[str(s)]["mm"][a][a0_:b0])[0]
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable

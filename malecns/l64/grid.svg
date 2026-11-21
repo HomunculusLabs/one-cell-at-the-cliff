@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" font-family="DejaVu Sans, sans-serif">
+<rect width="1200" height="560" fill="#16181d"/>
+<text x="24" y="34" fill="#e8e4da" font-size="19" font-weight="bold">L64 body-echo dose–phase map — off-window antagonist duty lift vs open (3 seeds: 11/22/33)</text>
+<text x="24" y="56" fill="#9aa0aa" font-size="13">delayed own-motor-mass echo onto leg mechanosensory; chop schedule; green = structure lift, red = loss; + / − = echo sign</text>
+<text x="283.0" y="82" fill="#c8cdd6" font-size="14" text-anchor="middle">delay 20ms</text>
+<text x="529.0" y="82" fill="#c8cdd6" font-size="14" text-anchor="middle">delay 50ms</text>
+<text x="775.0" y="82" fill="#c8cdd6" font-size="14" text-anchor="middle">delay 100ms</text>
+<text x="1021.0" y="82" fill="#c8cdd6" font-size="14" text-anchor="middle">delay 200ms</text>
+<text x="149" y="138.0" fill="#c8cdd6" font-size="14" text-anchor="end">gain .1</text>
+<rect x="165" y="96" width="116" height="74" rx="6" fill="rgb(155,160,143)" stroke="#e8e4da" stroke-width="1.5"/>
+<text x="171" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="223" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.114</text>
+<text x="223" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="285" y="96" width="116" height="74" rx="6" fill="rgb(165,144,150)" stroke="#2c3038" stroke-width="1"/>
+<text x="291" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="343" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.068</text>
+<text x="343" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="411" y="96" width="116" height="74" rx="6" fill="rgb(180,120,160)" stroke="#2c3038" stroke-width="1"/>
+<text x="417" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="469" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.000</text>
+<text x="469" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.002</text>
+<rect x="531" y="96" width="116" height="74" rx="6" fill="rgb(139,187,132)" stroke="#7de08b" stroke-width="3"/>
+<text x="537" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="589" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.190</text>
+<text x="589" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="657" y="96" width="116" height="74" rx="6" fill="rgb(142,182,135)" stroke="#e8e4da" stroke-width="1.5"/>
+<text x="663" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="715" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.174</text>
+<text x="715" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="777" y="96" width="116" height="74" rx="6" fill="rgb(155,160,143)" stroke="#e8e4da" stroke-width="1.5"/>
+<text x="783" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="835" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.114</text>
+<text x="835" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.000</text>
+<rect x="903" y="96" width="116" height="74" rx="6" fill="rgb(136,193,130)" stroke="#e8e4da" stroke-width="1.5"/>
+<text x="909" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="961" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.205</text>
+<text x="961" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.002</text>
+<rect x="1023" y="96" width="116" height="74" rx="6" fill="rgb(158,155,145)" stroke="#2c3038" stroke-width="1"/>
+<text x="1029" y="112" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="1081" y="136" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.099</text>
+<text x="1081" y="154" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<text x="149" y="222.0" fill="#c8cdd6" font-size="14" text-anchor="end">gain .25</text>
+<rect x="165" y="180" width="116" height="74" rx="6" fill="rgb(191,68,100)" stroke="#2c3038" stroke-width="1"/>
+<text x="171" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="223" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.181</text>
+<text x="223" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="285" y="180" width="116" height="74" rx="6" fill="rgb(152,166,141)" stroke="#e8e4da" stroke-width="1.5"/>
+<text x="291" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="343" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.129</text>
+<text x="343" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="411" y="180" width="116" height="74" rx="6" fill="rgb(170,83,106)" stroke="#2c3038" stroke-width="1"/>
+<text x="417" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="469" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.128</text>
+<text x="469" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="531" y="180" width="116" height="74" rx="6" fill="rgb(122,118,119)" stroke="#2c3038" stroke-width="1"/>
+<text x="537" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="589" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.007</text>
+<text x="589" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.000</text>
+<rect x="657" y="180" width="116" height="74" rx="6" fill="rgb(173,131,155)" stroke="#2c3038" stroke-width="1"/>
+<text x="663" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="715" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.031</text>
+<text x="715" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="777" y="180" width="116" height="74" rx="6" fill="rgb(170,136,153)" stroke="#2c3038" stroke-width="1"/>
+<text x="783" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="835" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.046</text>
+<text x="835" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="903" y="180" width="116" height="74" rx="6" fill="rgb(140,104,114)" stroke="#2c3038" stroke-width="1"/>
+<text x="909" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="961" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.053</text>
+<text x="961" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.002</text>
+<rect x="1023" y="180" width="116" height="74" rx="6" fill="rgb(178,122,158)" stroke="#2c3038" stroke-width="1"/>
+<text x="1029" y="196" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="1081" y="220" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">+0.008</text>
+<text x="1081" y="238" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<text x="149" y="306.0" fill="#c8cdd6" font-size="14" text-anchor="end">gain .5</text>
+<rect x="165" y="264" width="116" height="74" rx="6" fill="rgb(220,46,92)" stroke="#2c3038" stroke-width="1"/>
+<text x="171" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="223" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.257</text>
+<text x="223" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.002</text>
+<rect x="285" y="264" width="116" height="74" rx="6" fill="rgb(185,72,102)" stroke="#2c3038" stroke-width="1"/>
+<text x="291" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="343" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.166</text>
+<text x="343" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="411" y="264" width="116" height="74" rx="6" fill="rgb(203,59,97)" stroke="#2c3038" stroke-width="1"/>
+<text x="417" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="469" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.212</text>
+<text x="469" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="531" y="264" width="116" height="74" rx="6" fill="rgb(197,63,98)" stroke="#2c3038" stroke-width="1"/>
+<text x="537" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="589" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.197</text>
+<text x="589" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="657" y="264" width="116" height="74" rx="6" fill="rgb(218,48,93)" stroke="#2c3038" stroke-width="1"/>
+<text x="663" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="715" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.250</text>
+<text x="715" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.003</text>
+<rect x="777" y="264" width="116" height="74" rx="6" fill="rgb(134,109,115)" stroke="#2c3038" stroke-width="1"/>
+<text x="783" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="835" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.038</text>
+<text x="835" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.001</text>
+<rect x="903" y="264" width="116" height="74" rx="6" fill="rgb(188,70,101)" stroke="#2c3038" stroke-width="1"/>
+<text x="909" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo +</text>
+<text x="961" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.174</text>
+<text x="961" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.003</text>
+<rect x="1023" y="264" width="116" height="74" rx="6" fill="rgb(230,40,90)" stroke="#2c3038" stroke-width="1"/>
+<text x="1029" y="280" fill="#3a3f48" font-size="11" font-weight="bold">echo −</text>
+<text x="1081" y="304" fill="#101216" font-size="17" font-weight="bold" text-anchor="middle">-0.280</text>
+<text x="1081" y="322" fill="#3a3f48" font-size="11" text-anchor="middle">lock 0.004</text>
+<line x1="24" y1="354" x2="1176" y2="354" stroke="#2c3038" stroke-width="1"/>
+<text x="24" y="470" fill="#7de08b" font-size="14" font-weight="bold">CONTENT CELL  gain .1 · sign − · 50 ms:  fb +.190 (3/3 seeds)  vs  donor sham −.068  →  loop-content benefit, lock pristine (.0003–.0011)</text>
+<text x="24" y="492" fill="#d9a94e" font-size="14">PERTURBATION CELL  gain .1 · + · 200 ms:  fb +.205 vs sham +.160 → mass-carried (donor does it too; sham crashes one seed's lock .334)</text>
+<text x="24" y="514" fill="#e07b7b" font-size="14">gain .5 hurts EVERYWHERE (−.038..−.280, all signs/delays) — dose dominates phase; L63 point (g .5 / 100 ms / +) = −.250 reproduced</text>
+<text x="24" y="536" fill="#9aa0aa" font-size="12">open baseline off-duty .288 (.227/.250/.386) · seg2 lock open .0016 · no floor-buried cells (all dm ≥ .059)</text>
+<text x="24" y="552" fill="#9aa0aa" font-size="12">anchors C0/C0x/C0P/C1 all pass · g05_d10_p bit-identical to L63 fbh · grid 24 cells × 3 seeds, CPU 295 s</text>
+</svg>

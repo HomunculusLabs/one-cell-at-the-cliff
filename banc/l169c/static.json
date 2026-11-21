@@ -1,0 +1,337 @@
+{
+ "design": "L169 stage (c1): design pins + premise tests for the (c2) REW (degree-preserving carrier-edge rewire) and HOM (gi 928 deletion) rollout arms. PREREG l169c/PREREG.md. Masses |log1p(syn)*sign| on the l142 closure convention.",
+ "prereg": "l169c/PREREG.md",
+ "P1_carrier": {
+  "gi": 1110,
+  "out_edges": 80,
+  "in_edges": 13,
+  "incident": 93,
+  "out_mass": 183.96376182027785,
+  "ng_rank": 24
+ },
+ "P2_hom_identity": {
+  "identity": {
+   "pt_root_id": 720575941451941498,
+   "super_class": "descending",
+   "cell_type": "DNp33",
+   "side": "right",
+   "region": "neck_connective",
+   "nerve": null,
+   "peripheral_target_type": null,
+   "nt_predicted": "acetylcholine",
+   "gi": 928,
+   "is_glut_arm": false
+  },
+  "membership": {
+   "cord_mask": false,
+   "dn_all": true,
+   "dn_into": true,
+   "dn_proj": true,
+   "in_keep_old_l65": true,
+   "in_keep_new_closure": true,
+   "in_dn_new_g": false,
+   "in_heav_K": false,
+   "in_ng_desc": false,
+   "in_glut_desc": false,
+   "in_cut_window24": false,
+   "in_cut_window25": false,
+   "present_on_G1_cutwA": true,
+   "pure_proj": false
+  },
+  "carrier_membership": {
+   "dn_into": false,
+   "dn_proj": true,
+   "in_keep_old_l65": false,
+   "in_dn_new_g": true,
+   "pure_proj": true
+  }
+ },
+ "P3_footprint": {
+  "hom_G0": {
+   "out_edges": 88,
+   "in_edges": 13,
+   "out_mass": 200.05252830184696,
+   "in_mass": 27.231772644430755,
+   "tiers": {
+    "intrinsic": {
+     "edges": 77,
+     "mass": 171.02289134457098
+    },
+    "motor_other": {
+     "edges": 11,
+     "mass": 29.029636957275983
+    },
+    "vnc_sensory": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "intrinsic_share": 0.8548899271421606,
+   "n_dst": 88
+  },
+  "hom_G1": {
+   "out_edges": 88,
+   "in_edges": 13,
+   "out_mass": 200.05252830184696,
+   "in_mass": 27.231772644430755,
+   "tiers": {
+    "intrinsic": {
+     "edges": 77,
+     "mass": 171.02289134457098
+    },
+    "motor_other": {
+     "edges": 11,
+     "mass": 29.029636957275983
+    },
+    "vnc_sensory": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "intrinsic_share": 0.8548899271421606,
+   "n_dst": 88
+  },
+  "carrier_G0": {
+   "out_edges": 80,
+   "in_edges": 13,
+   "out_mass": 183.96376182027785,
+   "in_mass": 28.211294224629135,
+   "tiers": {
+    "intrinsic": {
+     "edges": 70,
+     "mass": 160.04365274470274
+    },
+    "motor_other": {
+     "edges": 10,
+     "mass": 23.92010907557512
+    },
+    "vnc_sensory": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "intrinsic_share": 0.8699737989759978,
+   "n_dst": 80
+  },
+  "carrier_G1": {
+   "out_edges": 80,
+   "in_edges": 13,
+   "out_mass": 183.96376182027785,
+   "in_mass": 28.211294224629135,
+   "tiers": {
+    "intrinsic": {
+     "edges": 70,
+     "mass": 160.04365274470274
+    },
+    "motor_other": {
+     "edges": 10,
+     "mass": 23.92010907557512
+    },
+    "vnc_sensory": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "intrinsic_share": 0.8699737989759978,
+   "n_dst": 80
+  }
+ },
+ "P4_overlap": {
+  "n_dst_carrier": 80,
+  "n_dst_hom": 88,
+  "n_shared": 6,
+  "jaccard": 0.037037037037037035,
+  "hom_dst_in_T70": 5,
+  "hom_dst_in_T10": 1,
+  "hom_mass_into_T70": 11.077207313691043,
+  "motor_sides_carrier": {
+   "left": {
+    "edges": 9,
+    "mass": 21.617523982581073
+   },
+   "right": {
+    "edges": 1,
+    "mass": 2.302585092994046
+   },
+   "unknown": {
+    "edges": 0,
+    "mass": 0.0
+   }
+  },
+  "motor_sides_hom": {
+   "left": {
+    "edges": 1,
+    "mass": 2.995732273553991
+   },
+   "right": {
+    "edges": 10,
+    "mass": 26.033904683721993
+   },
+   "unknown": {
+    "edges": 0,
+    "mass": 0.0
+   }
+  },
+  "pool_direct_mass": {
+   "Ti_fL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ti_eL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ti_fR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ti_eR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Tr_fL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Tr_eL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Tr_fR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Tr_eR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ta_aL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ta_bL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ta_aR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Ta_bR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Sr_aL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Sr_bL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Sr_aR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Sr_bR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Pr_aL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Pr_bL": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Pr_aR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   },
+   "Pr_bR": {
+    "carrier": 0.0,
+    "hom": 0.0
+   }
+  },
+  "pool_direct_nonzero": []
+ },
+ "P5_rewire_pool": {
+  "block_edges": 64408,
+  "partner_rows": 64328,
+  "partner_over_carrier": 804.1,
+  "chance_mass_share_T70": 0.007001381033343076,
+  "n_dn_present_G1": 1264
+ },
+ "P6_rewire_draws": {
+  "n_draws": 100,
+  "seed": 16943,
+  "med_relocated": 80.0,
+  "min_relocated": 80,
+  "med_moved": 80.0,
+  "med_mass_T70": 0.0,
+  "med_mass_T70_share": 0.0,
+  "med_mass_motor_share": 0.1090891270920994,
+  "med_n_dst": 80.0,
+  "carrier_n_dst": 80,
+  "per_draw_first5": [
+   {
+    "relocated": 80,
+    "moved": 80,
+    "mass_T70": 1.6094379124341003,
+    "mass_motor": 15.153202737244946,
+    "n_dst": 80
+   },
+   {
+    "relocated": 80,
+    "moved": 80,
+    "mass_T70": 0.0,
+    "mass_motor": 19.713543160279702,
+    "n_dst": 80
+   },
+   {
+    "relocated": 80,
+    "moved": 80,
+    "mass_T70": 0.0,
+    "mass_motor": 21.675883597766656,
+    "n_dst": 80
+   },
+   {
+    "relocated": 80,
+    "moved": 80,
+    "mass_T70": 2.1972245773362196,
+    "mass_motor": 21.59873357429981,
+    "n_dst": 80
+   },
+   {
+    "relocated": 80,
+    "moved": 80,
+    "mass_T70": 0.0,
+    "mass_motor": 15.86469905647309,
+    "n_dst": 80
+   }
+  ]
+ },
+ "P7_bisect_required": {
+  "REW": "fresh af-matched bisect required (edge count unchanged, per-target in-degree redistributed); stored g_cutwA may NOT be re-used",
+  "HOM": "fresh af-matched bisect required (node deletion removes edges)"
+ },
+ "rules": {
+  "C1_independent": true,
+  "C1_label": "C1_independent",
+  "C2_mirror": false,
+  "C2_label": "C2_nonequivalent",
+  "C2_legs": {
+   "same_class": false,
+   "edges_factor2": true,
+   "mass_factor2": true,
+   "intrinsic_share_20pp": true,
+   "edge_ratio": 1.1,
+   "mass_ratio": 1.0874561724677436
+  },
+  "C3_expressible": true,
+  "C3_nondegenerate": true,
+  "C3_admissible": true
+ },
+ "pins": "ALL GREEN"
+}

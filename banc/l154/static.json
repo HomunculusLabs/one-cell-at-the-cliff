@@ -1,0 +1,295 @@
+{
+ "banc_19A": 282,
+ "banc_19A_types": 90,
+ "banc_19B": 224,
+ "banc_19B_types": 62,
+ "banc_in19a007_nt": [
+  "gaba"
+ ],
+ "banc_manc": {
+  "IN12B003": 0,
+  "IN16B036": 0,
+  "IN17A001": 0,
+  "IN19A007": 0,
+  "IN19B012": 0,
+  "IN3A006": 0,
+  "IN9A002": 0,
+  "INXX464": 0,
+  "INXX466": 0,
+  "INXXX466": 0
+ },
+ "banc_pool_sizes": {
+  "extensor": 60,
+  "flexor": 163
+ },
+ "banc_proj": {
+  "IN12B003": {
+   "cells": 6,
+   "edges": 881,
+   "extensor_edges": 5,
+   "extensor_syn": 59,
+   "flexor_edges": 18,
+   "flexor_syn": 120
+  },
+  "IN16B036": {
+   "cells": 6,
+   "edges": 499,
+   "extensor_edges": 2,
+   "extensor_syn": 7,
+   "flexor_edges": 14,
+   "flexor_syn": 114
+  },
+  "IN17A001": {
+   "cells": 4,
+   "edges": 683,
+   "extensor_edges": 8,
+   "extensor_syn": 106,
+   "flexor_edges": 46,
+   "flexor_syn": 367
+  },
+  "IN19A007": {
+   "cells": 5,
+   "edges": 1127,
+   "extensor_edges": 11,
+   "extensor_syn": 332,
+   "flexor_edges": 100,
+   "flexor_syn": 2670
+  },
+  "IN19B012": {
+   "cells": 4,
+   "edges": 427,
+   "extensor_edges": 3,
+   "extensor_syn": 12,
+   "flexor_edges": 59,
+   "flexor_syn": 4733
+  },
+  "INXXX466": {
+   "cells": 5,
+   "edges": 569,
+   "extensor_edges": 28,
+   "extensor_syn": 528,
+   "flexor_edges": 44,
+   "flexor_syn": 1319
+  }
+ },
+ "banc_rm": {
+  "IN12B003": 6,
+  "IN16B036": 6,
+  "IN17A001": 4,
+  "IN19A007": 5,
+  "IN19B012": 4,
+  "IN3A006": 0,
+  "IN9A002": 0,
+  "INXX464": 0,
+  "INXX466": 0,
+  "INXXX466": 5
+ },
+ "male_19A_n_types": 116,
+ "male_19A_types": 545,
+ "male_19B_n_types": 72,
+ "male_19B_types": 309,
+ "male_join": {
+  "IN12B003": 6,
+  "IN16B036": 6,
+  "IN17A001": 6,
+  "IN19A007": 6,
+  "IN19B012": 6,
+  "IN3A006": 0,
+  "IN9A002": 0,
+  "INXX464": 0,
+  "INXX466": 0,
+  "INXXX466": 6
+ },
+ "male_nt": {
+  "IN12B003": {
+   "celltype": [
+    "gaba"
+   ],
+   "consensus": [
+    "gaba"
+   ],
+   "n": 6,
+   "predicted": [
+    "gaba"
+   ]
+  },
+  "IN16B036": {
+   "celltype": [
+    "glutamate"
+   ],
+   "consensus": [
+    "glutamate"
+   ],
+   "n": 6,
+   "predicted": [
+    "glutamate"
+   ]
+  },
+  "IN17A001": {
+   "celltype": [
+    "acetylcholine"
+   ],
+   "consensus": [
+    "acetylcholine"
+   ],
+   "n": 6,
+   "predicted": [
+    "acetylcholine"
+   ]
+  },
+  "IN19A007": {
+   "celltype": [
+    "gaba"
+   ],
+   "consensus": [
+    "gaba"
+   ],
+   "n": 6,
+   "predicted": [
+    "gaba"
+   ]
+  },
+  "IN19B012": {
+   "celltype": [
+    "acetylcholine"
+   ],
+   "consensus": [
+    "acetylcholine"
+   ],
+   "n": 6,
+   "predicted": [
+    "acetylcholine"
+   ]
+  },
+  "INXXX466": {
+   "celltype": [
+    "acetylcholine"
+   ],
+   "consensus": [
+    "acetylcholine"
+   ],
+   "n": 6,
+   "predicted": [
+    "acetylcholine"
+   ]
+  }
+ },
+ "male_profile": {
+  "IN12B003": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  },
+  "IN16B036": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  },
+  "IN17A001": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  },
+  "IN19A007": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  },
+  "IN19B012": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  },
+  "INXXX466": {
+   "n": 6,
+   "sides": {
+    "L": 3,
+    "R": 3
+   },
+   "sup": {
+    "vnc_intrinsic": 6
+   }
+  }
+ },
+ "male_proj": {
+  "IN12B003": {
+   "edges": 2273,
+   "extensor_edges": 8,
+   "extensor_mass": 85.0,
+   "flexor_edges": 20,
+   "flexor_mass": 173.0,
+   "ti_flexor_edges": 8,
+   "total_mass": 22747.0
+  },
+  "IN16B036": {
+   "edges": 1853,
+   "extensor_edges": 5,
+   "extensor_mass": 19.0,
+   "flexor_edges": 27,
+   "flexor_mass": 203.0,
+   "ti_flexor_edges": 6,
+   "total_mass": 25372.0
+  },
+  "IN17A001": {
+   "edges": 2297,
+   "extensor_edges": 8,
+   "extensor_mass": 48.0,
+   "flexor_edges": 30,
+   "flexor_mass": 129.0,
+   "ti_flexor_edges": 9,
+   "total_mass": 56481.0
+  },
+  "IN19A007": {
+   "edges": 2596,
+   "extensor_edges": 13,
+   "extensor_mass": 328.0,
+   "flexor_edges": 61,
+   "flexor_mass": 2001.0,
+   "ti_flexor_edges": 14,
+   "total_mass": 30769.0
+  },
+  "IN19B012": {
+   "edges": 1405,
+   "extensor_edges": 9,
+   "extensor_mass": 38.0,
+   "flexor_edges": 85,
+   "flexor_mass": 5121.0,
+   "ti_flexor_edges": 40,
+   "total_mass": 21287.0
+  },
+  "INXXX466": {
+   "edges": 1697,
+   "extensor_edges": 15,
+   "extensor_mass": 442.0,
+   "flexor_edges": 55,
+   "flexor_mass": 1528.0,
+   "ti_flexor_edges": 21,
+   "total_mass": 26816.0
+  }
+ }
+}

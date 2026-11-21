@@ -1,0 +1,1380 @@
+{
+ "keys": [
+  "12",
+  "36",
+  "36",
+  "37",
+  "l146.f4",
+  "l146.f4",
+  "l146.release",
+  "l154.band",
+  "l156.pooled",
+  "l157.pooled",
+  "l169b.forms",
+  "l169b.forms",
+  "l169b2.dyn",
+  "l169b2.lat_descriptive",
+  "l171.envelope",
+  "l172.census_unique",
+  "l172.census_unique",
+  "l172.pooled"
+ ],
+ "literals": {
+  " exact": {
+   "multiline": false,
+   "n_elsewhere": 19,
+   "n_span": 1,
+   "verifiers": [
+    "l161_verify.py"
+   ]
+  },
+  " of ": {
+   "multiline": false,
+   "n_elsewhere": 164,
+   "n_span": 21,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " only": {
+   "multiline": false,
+   "n_elsewhere": 26,
+   "n_span": 3,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " vs ": {
+   "multiline": false,
+   "n_elsewhere": 33,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "## 4. Limitations": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "- DATA FLOOR:": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "- Wet-lab predictions": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".10 \u2192 .20 Hz": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_span": 3,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".722 to .804": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".9231": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0/16": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "1/16": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "11+/5\u2212": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "11/16": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "13,000 neurons intrinsic to the": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "13,000 neurons intrinsic to the female": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "15% synaptic-amplitude reduction abolished intact": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "16/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "16/16 on-drive vs 11/16 mech-off": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "2,676,592": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "20 of 36 (lb .396)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "26 \u2192 33": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "27.1%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "348 of 433 unique seeds": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "348 of 433 unique seeds (lb .764)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "36 of 36": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "40.1%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "41.9%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "449 of 449 UNIQUE SEEDS": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "462,170": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "472,095": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "518 of 518 and 361 of 500 [l156.pooled]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "574,733": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "69/80": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "8 of 20": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "811,821": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "BANC": {
+   "multiline": false,
+   "n_elsewhere": 12,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "G2_no_transfer": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "K (77 \u2192 73)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Kopel-class caveat that does apply is about DETECTION rather than": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "NOISE": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "PARTIAL": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "STIMULUS-SET": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "SUPER": {
+   "multiline": false,
+   "n_elsewhere": 30,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "UNIT OF INFERENCE": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[37], which is the": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "[l157.pooled]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169b.forms]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169b2.dyn]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169b2.lat_descriptive]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.envelope]": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "a real slow oscillation": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "a real slow oscillation rather than": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "admissible": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "agree": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "antagonist-clock-wide": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "base": {
+   "multiline": false,
+   "n_elsewhere": 64,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "below": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "branch": {
+   "multiline": false,
+   "n_elsewhere": 23,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier": {
+   "multiline": false,
+   "n_elsewhere": 105,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "census": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 6,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "closure": {
+   "multiline": false,
+   "n_elsewhere": 12,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng25": {
+   "multiline": false,
+   "n_elsewhere": 28,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng25 SUPER 16/16 meanR .754": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutwA": {
+   "multiline": false,
+   "n_elsewhere": 27,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutwA PARTIAL 3/16 .371": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "descriptive, not claim-carrying": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "diff": {
+   "multiline": false,
+   "n_elsewhere": 34,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "drive envelope": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "drive envelope's": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "eOutMot": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "edges": {
+   "multiline": false,
+   "n_elsewhere": 40,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "equal": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "extra": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4ng": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4ng .289, paired \u2212.409, 16/16 seeds down": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4tw": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4tw .560, paired \u2212.139": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4wA": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "f4wA meanL .698, kL 16/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "five cells out, one in": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "floor": {
+   "multiline": false,
+   "n_elsewhere": 29,
+   "n_span": 10,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "forms": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "full": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "fully RE-DERIVED, not\n  frozen": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gain": {
+   "multiline": false,
+   "n_elsewhere": 129,
+   "n_span": 7,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gains": {
+   "multiline": false,
+   "n_elsewhere": 52,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "intrinsic": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "kR 0/16": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l146.f4": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l146.release": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l154.band": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l156.pooled": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l157.pooled": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l169b.forms": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169b2.dyn": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169b2.lat_descriptive": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l171.envelope": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l172.census_unique": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l172.pooled": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "label": {
+   "multiline": false,
+   "n_elsewhere": 17,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "ladder": {
+   "multiline": false,
+   "n_elsewhere": 17,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "lb \u2265 .56": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "left": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "linear detrend in every": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "mass": {
+   "multiline": false,
+   "n_elsewhere": 81,
+   "n_span": 3,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "mass-matched": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "mass-twin": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "may therefore partly reflect proximity to": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "mean": {
+   "multiline": false,
+   "n_elsewhere": 38,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanL": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "meanR .043/.081/.082": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "median .100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "membership": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "only 22% of": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "pooled": {
+   "multiline": false,
+   "n_elsewhere": 52,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "post-hoc": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rank 25 \u2192 21": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "ranks (21 and 33)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "re-ordering rather than\n  turnover": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "removes 69 and 67 repeat observations": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "report": {
+   "multiline": false,
+   "n_elsewhere": 21,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rewire": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rule": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rules": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seed": {
+   "multiline": false,
+   "n_elsewhere": 58,
+   "n_span": 9,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seeds": {
+   "multiline": false,
+   "n_elsewhere": 36,
+   "n_span": 7,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "stimulus-locked one": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "subset median .100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "survive": {
+   "multiline": false,
+   "n_elsewhere": 20,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "table": {
+   "multiline": false,
+   "n_elsewhere": 24,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "the unit of inference\n  is the simulation realization": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "they cannot bound attachment completeness": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "type": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "upper bound .194": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "window": {
+   "multiline": false,
+   "n_elsewhere": 32,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "\u2212.001 paired, 8 up / 8 down": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "\u2264 6 of 36": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  }
+ },
+ "long_sentences": [
+  [
+   107,
+   "The f4 bound is STATIC ONLY: the dynamic f4 arm has now been run (fresh per-arm af-matched bisects on the floor-4 graph, cut at the re-derived window \u2014 f4wA = first 20, f4ng = first 21 including the carrier, f4tw = first 20 plus the f4 mass-twin DNpe005-R; one batch, n = 16) and the registered R-side cliff does NOT transfer: all three f4 arms sit at kR 0/16 (meanR .043/.081/.082, upper bound .194) while the base-substrate arms reproduce on the SAME seeds (cutng25 SUPER 16/16 meanR .754, cutwA PARTIAL 3/16 .371), and the f4ng-vs-f4tw XOR leg is flat (\u2212.001 paired, 8 up / 8 down) [l169b2.dyn]."
+  ],
+  [
+   77,
+   "A census of every stored lineage trace quantifies the pattern: in the l65-baseline arm the global peak is sub-band in 449 of 449 UNIQUE SEEDS (Wilson lb .992) at a stable median .100 Hz that survives linear detrend in every case \u2014 a real slow oscillation rather than trend wander, but a stimulus-locked one (\u00a72.8) \u2014 while the intact closure is sub-band in 348 of 433 unique seeds (lb .764) with a less frequency-stable slow component [l172.census_unique]."
+  ],
+  [
+   72,
+   "A per-pool carrier census (two fresh batches, B33/B34) shows this line is not antagonist-clock-wide: the mm/xm aggregates carry it in 36 of 36 traces each, and a Tr/Ta/Sr subset of the antagonist pools in 8 of 20 (pooled Wilson lb \u2265 .56, subset median .100 Hz; strongest members 36/36), while the Ti pools stay at \u2264 6 of 36 and the strongest Pr pool reaches 20 of 36 (lb .396) [l157.pooled] (Fig."
+  ],
+  [
+   68,
+   "Under the strongest ADMISSIBLE floor (f4: keep pairs with \u2265 4 synapses, deleting 27.1% of closure edges, 647,953 \u2192 472,095 [l146.f4]) the CARRIER is robust \u2014 rank 25 \u2192 21 (inside the 19\u201329 window), 69/80 edges survive, heavy-cohort Jaccard .9231 \u2014 while the TWIN selection is floor-3-contingent (twin rank 26 \u2192 33, adjacency does not port): the identity claim and the twin-XOR selection have different data dependencies [l146.f4]."
+  ],
+  [
+   66,
+   "The Kopel-class caveat that does apply is about DETECTION rather than weight: in that preregistered screen, two of five criteria fail on BANC at a 2\u20133-synapse floor while the male and FlyWire volumes hold to thresholds of 10\u201315, and the stated cause is measurement \u2014 only 22% of BANC's detected synapses end on an identified neuron, against 41.9% and 40.1% in the other two volumes [12]."
+  ],
+  [
+   65,
+   "One post-hoc observation is reported without a claim: on the floored substrate the structure moves to the LEFT side (f4wA meanL .698, kL 16/16, versus .233 for base cutwA), where carrier removal COSTS structure (f4ng .289, paired \u2212.409, 16/16 seeds down) more than its mass-matched twin does (f4tw .560, paired \u2212.139) [l169b2.lat_descriptive]; a registered left-side test is queued and nothing in \u00a72 depends on it."
+  ],
+  [
+   65,
+   "- DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair-level synapse floor of 3 \u2014 all 2,676,592 pairs sum \u2265 3 (811,821 exactly at 3, zero below; the 574,733 one-synapse per-neuropil ROWS exist only as intra-pair breakdowns: 462,170 pairs contain such a row yet still sum \u2265 3) [l146.release] \u2014 so a single-synapse sensitivity critique has no purchase on this release's pair weights."
+  ]
+ ],
+ "nums": [
+  "-3",
+  "-4",
+  "-4",
+  "0",
+  "0.3",
+  "001",
+  "005",
+  "043",
+  "081",
+  "082,",
+  "10",
+  "10",
+  "10",
+  "100",
+  "100",
+  "100",
+  "11",
+  "11",
+  "12",
+  "13,000",
+  "139",
+  "146",
+  "146",
+  "146",
+  "15%",
+  "15,",
+  "154",
+  "156",
+  "157",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16,",
+  "169",
+  "169",
+  "169",
+  "169",
+  "171",
+  "172",
+  "172",
+  "172",
+  "178",
+  "19",
+  "194",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2,676,592",
+  "2.5",
+  "2.5",
+  "2.5",
+  "2.6",
+  "2.6",
+  "2.7",
+  "2.8",
+  "2.8",
+  "20",
+  "20",
+  "20",
+  "20",
+  "20,",
+  "21",
+  "21",
+  "21",
+  "22%",
+  "233",
+  "25",
+  "25",
+  "258",
+  "26",
+  "27.1%",
+  "289,",
+  "29",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3,",
+  "33",
+  "33",
+  "33,",
+  "34",
+  "34",
+  "34,",
+  "348",
+  "36",
+  "36",
+  "36",
+  "36",
+  "36",
+  "36",
+  "36",
+  "36",
+  "361",
+  "37",
+  "371",
+  "396",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "40.1%",
+  "409,",
+  "41.9%",
+  "433",
+  "449",
+  "449",
+  "462,170",
+  "472,095",
+  "5",
+  "500",
+  "518",
+  "518",
+  "56,",
+  "560,",
+  "574,733",
+  "6",
+  "626",
+  "626",
+  "647,953",
+  "65",
+  "67",
+  "69",
+  "69",
+  "698,",
+  "722",
+  "73",
+  "754,",
+  "764",
+  "77",
+  "8",
+  "8",
+  "8",
+  "80",
+  "804",
+  "811,821",
+  "9231",
+  "98",
+  "992"
+ ],
+ "report": {
+  "bullet_lines": 10,
+  "citation_key_tokens": 18,
+  "citation_keys_distinct": 14,
+  "literals_exclusive_to_span": 67,
+  "literals_in_span": 140,
+  "literals_multiline": 3,
+  "numeric_distinct": 91,
+  "numeric_tokens": 166,
+  "sentences_over_60w": 7,
+  "span_chars": 7769,
+  "span_lines": 117
+ }
+}

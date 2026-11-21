@@ -1,0 +1,33 @@
+substrate OK: 21,516 nodes / 2,977,920 edges (L32-L35 identical)
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:80: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:83: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  ).coalesce().to_sparse_csr()
+pairs: Ti flex 84/ext 12, Tr flex 57/ext 11
+DN cells in sub: 1,277 across 476 types | 7s
+  seed 11: af 0.185 census done | 8s
+  seed 22: af 0.191 census done | 9s
+  seed 33: af 0.181 census done | 10s
+/home/t3rpz/critters/peabrain-lab/malecns/l36_census.py:157: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  cen.drop(columns="_merge", inplace=True)
+C1 anchors: DNg100 u_max -15.78 (want < -1), DNg95 u_max +0.047 (want [-.15,+.10]) u_mean -0.422 (<0) frac_pos 0.011 (<.5) -> PASS
+C2 vocabulary (atlas family types): family_types=76 freely_viable=36 viable_a015=48 viable_a08=63 buried=13 nonempty=True
+C3 picks: {'flex': 'DNge046', 'ext': 'MDN', 'jump': 'DNg110'}
+  flex:DNge046 amp 0.2: dm ['1.0115', '1.0159', '1.0092'] | dS(Tr) ['-0.044', '+0.250', '-0.065'] | df(Ti) ['+1.178', '+0.111', '+1.489'] | 34s
+  flex:DNge046 amp 0.8: dm ['1.0129', '1.0156', '1.0108'] | dS(Tr) ['+0.057', '-0.043', '-0.053'] | df(Ti) ['+2.578', '-0.022', '+0.333'] | 57s
+  ext:MDN amp 0.2: dm ['0.0000', '0.0000', '0.0000'] | dS(Tr) ['+0.000', '+0.000', '+0.000'] | df(Ti) ['+0.000', '+0.000', '+0.000'] | 79s
+  ext:MDN amp 0.8: dm ['0.0000', '0.0000', '0.0000'] | dS(Tr) ['+0.000', '+0.000', '+0.000'] | df(Ti) ['+0.000', '+0.000', '+0.000'] | 101s
+  jump:DNg110 amp 0.2: dm ['1.0136', '1.0107', '1.0101'] | dS(Tr) ['+0.010', '-0.077', '-0.085'] | df(Ti) ['+1.422', '+0.133', '+1.533'] | 124s
+  jump:DNg110 amp 0.8: dm ['1.0139', '1.0136', '1.0144'] | dS(Tr) ['+0.238', '-0.144', '-0.055'] | df(Ti) ['+0.622', '-0.556', '+1.422'] | 147s
+  anchor:g100 amp 0.8: dm ['0.0000', '0.0000', '0.0000'] | dS(Tr) ['+0.000', '+0.000', '+0.000'] | df(Ti) ['+0.000', '+0.000', '+0.000'] | 169s
+  anchor:g95 amp 0.2: dm ['1.0133', '1.0094', '1.0117'] | dS(Tr) ['-0.008', '-0.011', '+0.130'] | df(Ti) ['+1.511', '-0.044', '+0.378'] | 193s
+  dynamic anchor anchor:g100: dm ['0.0000', '0.0000', '0.0000'] -> PASS
+  dynamic anchor anchor:g95: dm ['1.0133', '1.0094', '1.0117'] -> PASS
+  C3 flex:DNge046@0.2: dm 3/3 mod 3/3 -> PASS
+  C3 flex:DNge046@0.8: dm 3/3 mod 2/3 -> PASS
+  C3 ext:MDN@0.2: dm 0/3 mod 0/3 -> ABSORBED
+  C3 ext:MDN@0.8: dm 0/3 mod 0/3 -> ABSORBED
+  C3 jump:DNg110@0.2: dm 3/3 mod 3/3 -> PASS
+  C3 jump:DNg110@0.8: dm 3/3 mod 3/3 -> PASS
+WROTE l36/census_l36.csv (476 types) + results_l36.json | total 193s

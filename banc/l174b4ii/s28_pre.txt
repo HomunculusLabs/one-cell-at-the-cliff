@@ -1,0 +1,57 @@
+### 2.8 The slow line is stimulus-set, and the identity contrast does not ride on it (L156, L157, L162, L171)
+
+Preregistered as banc/l171/PREREG.md (attribution branches A1/A2/A3,
+robustness branches B1-B4 with the degenerate branch checked first per
+re-score). ZERO rollouts: every number below re-scores STORED traces
+from the batch that first rolled the XOR pair (B26, n = 16 seeds), and
+the published cells are reproduced EXACTLY before any new window or
+filter is read.
+
+**Re-attribution (branch A1 fired).** The drive envelope is rebuilt from the
+run script itself and FFT-ed on its own. Its dominant non-DC line is
+bin 6 of a 60-s window = .100 Hz exactly, 1.0 of the envelope's peak amplitude
+and a local maximum against its neighbours — the same frequency as the
+measured slow line [l171.envelope]. The mechanism is gap ALIGNMENT, not the
+chop period: the continuous 1.4-Hz segment overrides two of the six possible
+gaps, leaving four whose centres sit at 7, 16, 47 and 56 s. Those four are
+near-phase-aligned at a 10-s period (vector strength .95) and badly aligned at
+the 500-on/400-off chop's own 9-s cycle (.17, i.e.
+.111 Hz is NOT the dominant envelope line). A slow line at .100 Hz is
+therefore the expected read on this protocol whatever the substrate does.
+
+**What the envelope cannot explain (mandatory disclosure, registered
+pre-run).** Sub-band peaks persist with the mechanosensory drive OFF in
+11/16 seeds [l154.band], so the envelope accounts for the line's POSITION —
+and, with L162's evoked phase lock (carrier median self-PLV .98 on both stored
+batches, banc/l162/addendum3.json:e_axis; its drive-dependence is recorded in
+the lane log and is not re-derived here), for its PHASE — but not for the
+existence of sub-band power. The censuses stay in the manuscript as scope
+statements (§4), not as results.
+
+**Robustness panel (branch B2_preserved).** The published readout is
+measured only in the 0.7-Hz chopped segments, i.e. exactly where the envelope
+line lives. Re-scored where it cannot reach, the carrier-vs-twin ordering
+survives in both re-scores [l171.panel]:
+
+| window | carrier-cut (cutng25) | mass-twin (cutng25p) | Δ meanR | paired |
+|---|---|---|---|---|
+| published, 0.7-Hz chopped (q07) | 15/16, meanR .754 | 5/16, .399 | +.355 | — |
+| UNCHOPPED 1.4-Hz segment | 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |
+| 0.3-Hz high-pass, same q07 | 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |
+
+The fast-segment re-score is the cleanest read in the whole lineage: the
+mass-twin arm sits at absolute floor (meanR .000, 0/16) while the carrier-cut
+arm keeps 12/16, every one of the 16 seeds moving the same way. The high-pass
+re-score is where "cleaner" becomes metric-dependent and we report both
+directions: its mean-duty contrast is SMALLER than published (+.306 vs +.355)
+while its seed separation is LARGER (Δk 14 vs 10). We therefore register the
+verdict as PRESERVED rather than cleaner.
+
+**What this does and does not license.** It licenses dropping the slow line
+from the headline claims and keeping the identity result. It does NOT license
+the fast segment as a replacement readout: the registered duty metric is
+defined on the 0.7-Hz segments, the prior-law expectation for continuous fast
+drive was structure TOXICITY (the registered B4 degenerate branch, which did
+not fire here), and a window swapped after the fact is a robustness panel,
+never a primary result.
+

@@ -1,0 +1,269 @@
+{
+ "banc": {
+  "DNg100": [
+   {
+    "gi": 2,
+    "root": 720575941626500746,
+    "side": "left",
+    "out_cord_edges": 406,
+    "out_cord_syn": 5724.0,
+    "in_cord_edges": 8,
+    "in_cord_syn": 31.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 5,
+    "root": 720575941491992807,
+    "side": "right",
+    "out_cord_edges": 395,
+    "out_cord_syn": 6776.0,
+    "in_cord_edges": 3,
+    "in_cord_syn": 16.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   }
+  ],
+  "DNg97": [
+   {
+    "gi": 44,
+    "root": 720575941572713886,
+    "side": "right",
+    "out_cord_edges": 164,
+    "out_cord_syn": 2039.0,
+    "in_cord_edges": 12,
+    "in_cord_syn": 81.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 32125,
+    "root": 720575941519464046,
+    "side": "left",
+    "out_cord_edges": 186,
+    "out_cord_syn": 1819.0,
+    "in_cord_edges": 12,
+    "in_cord_syn": 79.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   }
+  ],
+  "BDN2": [],
+  "oDN1": [],
+  "DNp33": [
+   {
+    "gi": 928,
+    "root": 720575941451941498,
+    "side": "right",
+    "out_cord_edges": 88,
+    "out_cord_syn": 983.0,
+    "in_cord_edges": 1,
+    "in_cord_syn": 4.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 1110,
+    "root": 720575941639588127,
+    "side": "left",
+    "out_cord_edges": 80,
+    "out_cord_syn": 952.0,
+    "in_cord_edges": 0,
+    "in_cord_syn": 0.0,
+    "dn_into": false,
+    "dn_proj": true,
+    "pure_proj": true,
+    "in_l65": false,
+    "in_closure": true
+   }
+  ],
+  "dn_totals": {
+   "n_descending": 1313,
+   "n_dn_into": 728,
+   "n_dn_proj": 1287,
+   "n_dn_pure_proj": 560
+  }
+ },
+ "male": {
+  "DNg100": [
+   {
+    "gi": 36,
+    "side": "L",
+    "out_cord_edges": 940,
+    "out_cord_w": 10359.0,
+    "in_cord_edges": 182,
+    "in_cord_w": 297.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 46,
+    "side": "R",
+    "out_cord_edges": 939,
+    "out_cord_w": 11288.0,
+    "in_cord_edges": 169,
+    "in_cord_w": 253.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   }
+  ],
+  "DNg97": [
+   {
+    "gi": 3548,
+    "side": "L",
+    "out_cord_edges": 545,
+    "out_cord_w": 3844.0,
+    "in_cord_edges": 94,
+    "in_cord_w": 388.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 122339,
+    "side": "R",
+    "out_cord_edges": 559,
+    "out_cord_w": 4520.0,
+    "in_cord_edges": 100,
+    "in_cord_w": 412.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   }
+  ],
+  "BDN2": [],
+  "oDN1": [],
+  "DNp33": [
+   {
+    "gi": 616,
+    "side": "R",
+    "out_cord_edges": 222,
+    "out_cord_w": 1860.0,
+    "in_cord_edges": 37,
+    "in_cord_w": 60.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   },
+   {
+    "gi": 1342,
+    "side": "L",
+    "out_cord_edges": 224,
+    "out_cord_w": 2305.0,
+    "in_cord_edges": 33,
+    "in_cord_w": 48.0,
+    "dn_into": true,
+    "dn_proj": true,
+    "pure_proj": false,
+    "in_l65": true,
+    "in_closure": true
+   }
+  ],
+  "dn_totals": {
+   "n_descending": 1314,
+   "n_dn_into": 1277,
+   "n_dn_proj": 1305,
+   "n_dn_pure_proj": 28
+  }
+ },
+ "v783": {
+  "DNg100": [
+   {
+    "root": 720575940640978048,
+    "side": "left",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "nan"
+   },
+   {
+    "root": 720575940647228468,
+    "side": "right",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "nan"
+   }
+  ],
+  "DNg97": [
+   {
+    "root": 720575940620300308,
+    "side": "right",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "nan"
+   },
+   {
+    "root": 720575940626730883,
+    "side": "left",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "nan"
+   }
+  ],
+  "BDN2": [],
+  "oDN1": [],
+  "DNp33": [
+   {
+    "root": 720575940633165452,
+    "side": "right",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "SAD095"
+   },
+   {
+    "root": 720575940604103084,
+    "side": "left",
+    "super_class": "descending",
+    "in_brain_graph": true,
+    "top_nt": "acetylcholine",
+    "synonyms": "nan",
+    "hemibrain_type": "SAD095"
+   }
+  ]
+ },
+ "alias_scan_v783": {
+  "oDN1": 0,
+  "BDN2": 0
+ },
+ "rrn_bpn_scan": {
+  "v783": {},
+  "banc": {},
+  "male": {}
+ }
+}

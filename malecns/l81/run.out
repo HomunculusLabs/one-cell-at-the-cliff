@@ -1,0 +1,31 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l81_rehost.py:102: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l81_rehost.py:104: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | 13s
+drive-on 48.0s every arm (volley adds MASS not off-steps) | tables asserted
+seed 11 done 57s
+seed 22 done 98s
+seed 33 done 142s
+seed 101 done 185s
+seed 102 done 218s
+seed 103 done 254s
+seed 104 done 288s
+seed 105 done 323s
+seed 106 done 362s
+seed 107 done 399s
+seed 108 done 434s
+seed 109 done 466s
+seed 110 done 499s
+seed 111 done 534s
+seed 112 done 574s
+seed 113 done 609s
+runs done 609s
+raw_l81.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+C0a True | C0b True | C0P-1 True | C0P-2 True | C1 True | wired_dead 0 | first_div counts {2501: 64}
+P1 {"rehost2x": {"verdict": "HURT", "d_post_mean": -0.353, "d_early_mean": -0.08, "d_late_mean": -0.398, "k": 2, "k_twin": 9}, "rehost3x": {"verdict": "HURT", "d_post_mean": -0.223, "d_early_mean": 0.08, "d_late_mean": -0.247, "k": 7, "k_twin": 9}, "hyrehost2x": {"verdict": "HURT", "d_post_mean": -0.325, "d_early_mean": -0.112, "d_late_mean": -0.339, "k": 2, "k_twin": 8}, "hyrehost3x": {"verdict": "HURT", "d_post_mean": -0.274, "d_early_mean": 0.115, "d_late_mean": -0.225, "k": 5, "k_twin": 8}}
+P1b {"nohop": {"d30_minus_d20": [0.238, 0.212, 0.0, 0.0, 0.063, 0.025, 0.338, 0.263, 0.15, 0.275, 0.475, -0.062, 0.0, 0.0, 0.375, -0.263], "mean": 0.131, "n_pos": 10}, "hy": {"d30_minus_d20": [0.0, 0.35, 0.0, 0.025, 0.037, 0.025, -0.025, 0.0, 0.175, 0.125, -0.075, 0.25, -0.163, -0.274, 0.537, -0.175], "mean": 0.051, "n_pos": 8}}
+P2 {"hynohop": {"le01": 16, "mean": 0.0009, "vals": [0.0006, 0.0004, 0.0035, 0.0004, 0.0003, 0.0011, 0.0004, 0.0001, 0.0004, 0.0034, 0.0006, 0.0012, 0.0005, 0.0005, 0.0012, 0.0004], "straddle_mean": 0.0008}, "hybrid": {"le01": 16, "mean": 0.0009, "vals": [0.0047, 0.0004, 0.0009, 0.0004, 0.002, 0.0001, 0.0001, 0.0006, 0.0015, 0.0001, 0.0003, 0.0007, 0.0011, 0.0002, 0.0009, 0.0002], "straddle_mean": 0.0009}, "rehost2x": {"le01": 15, "mean": 0.0636, "vals": [1.0, 0.0014, 0.0002, 0.0022, 0.0002, 0.0027, 0.0012, 0.0006, 0.0004, 0.0016, 0.0007, 0.0001, 0.0019, 0.0019, 0.0021, 0.0008], "straddle_mean": 0.0044}, "rehost3x": {"le01": 13, "mean": 0.1193, "vals": [0.0082, 0.0007, 0.5, 0.0007, 0.0011, 0.0012, 0.8936, 0.0001, 0.0004, 0.0006, 0.0004, 0.0003, 0.0009, 0.5, 0.0001, 0.0005], "straddle_mean": 0.0106}, "hyrehost2x": {"le01": 16, "mean": 0.0008, "vals": [0.0015, 0.0002, 0.0001, 0.0003, 0.0026, 0.0008, 0.0008, 0.0013, 0.0003, 0.0001, 0.0003, 0.0001, 0.0006, 0.0006, 0.002, 0.0007], "straddle_mean": 0.0028}, "hyrehost3x": {"le01": 10, "mean": 0.1781, "vals": [0.0012, 0.0004, 0.317, 0.5022, 0.001, 0.0156, 0.0001, 0.5007, 0.0003, 0.0003, 0.0037, 0.0002, 0.0051, 0.5009, 0.0003, 1.0], "straddle_mean": 0.0078}}
+P4 {"rehost2x": {"n_miss": 14, "sl_owned": 10, "sr_owned": 0, "both": 4, "sl_share": 0.714}, "rehost3x": {"n_miss": 9, "sl_owned": 7, "sr_owned": 0, "both": 1, "sl_share": 0.875}, "hyrehost2x": {"n_miss": 14, "sl_owned": 10, "sr_owned": 3, "both": 1, "sl_share": 0.714}, "hyrehost3x": {"n_miss": 11, "sl_owned": 9, "sr_owned": 1, "both": 1, "sl_share": 0.818}}
+done 613s -> l81/results_l81.json
+EXIT 0

@@ -1,0 +1,35 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l69_dose.py:95: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l69_dose.py:97: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 (L 1789 R 1798) | antag 68 | 8s
+seed 11 done 46s
+seed 22 done 84s
+seed 33 done 124s
+seed 101 done 163s
+seed 102 done 202s
+seed 103 done 239s
+seed 104 done 276s
+seed 105 done 314s
+seed 106 done 356s
+seed 107 done 394s
+seed 108 done 431s
+seed 109 done 466s
+seed 110 done 503s
+seed 111 done 538s
+seed 112 done 575s
+seed 113 done 610s
+runs done 610s
+C0 anchors pass True (160 keys) | C0P True | C1 True | wired_dead 0
+C0O open-vs-l67json pass True
+ronly_g050: dSL +0.085 (pos 10/16) dSR +0.032 (pos 10/16 (0.625, 0.386, 0.815)) dutyR +0.031 lock_ok True cat False d_amp +3.2% dm 0.41128
+ronly_g100: dSL +0.102 (pos 11/16) dSR -0.019 (pos 8/16 (0.5, 0.28, 0.72)) dutyR +0.016 lock_ok True cat False d_amp +9.4% dm 0.39933
+ronly_g200: dSL +0.036 (pos 7/16) dSR +0.053 (pos 9/16 (0.562, 0.332, 0.769)) dutyR +0.041 lock_ok True cat False d_amp +3.0% dm 0.39951
+ronly_g400: dSL +0.073 (pos 8/16) dSR +0.019 (pos 9/16 (0.562, 0.332, 0.769)) dutyR +0.022 lock_ok True cat False d_amp -2.0% dm 0.41062
+lonly_g050: dSL +0.064 (pos 9/16) dSR -0.000 (pos 8/16 (0.5, 0.28, 0.72)) dutyR +0.003 lock_ok True cat False d_amp +2.0% dm 0.3826
+lonly_g100: dSL +0.171 (pos 13/16) dSR +0.056 (pos 8/16 (0.5, 0.28, 0.72)) dutyR +0.041 lock_ok True cat False d_amp +0.1% dm 0.40488
+lonly_g200: dSL +0.230 (pos 14/16) dSR -0.079 (pos 4/16 (0.25, 0.102, 0.495)) dutyR -0.096 lock_ok True cat False d_amp -6.3% dm 0.43395
+lonly_g400: dSL +0.107 (pos 12/16) dSR -0.124 (pos 6/16 (0.375, 0.185, 0.614)) dutyR -0.109 lock_ok True cat False d_amp -5.0% dm 0.40102
+P1 FAIL | P2 FLAT-FLOOR structural ceiling | P3 crossed-every-dose False | P4 True | landing amp_monotone False
+best r dose: ronly_g200 -> mirror lonly dSL +0.230 dSR -0.079
+VERDICT FLAT-FLOOR structural ceiling | done 611s

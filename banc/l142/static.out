@@ -1,0 +1,67 @@
+{
+ "design": "L142 static: 1110 (DNp33-L) edge footprint inside the cutwA window edge set. Zero rollouts, no RNG. PREREG l142/PREREG.md FIRST. Structural law: node-drop == incident-edge-drop (eAll CSR == cutng25 CSR, indices+values EXACT).",
+ "carrier": {
+  "gi": 1110,
+  "cell_type": "DNp33",
+  "side": "left",
+  "nt": "acetylcholine",
+  "ng_rank": 25
+ },
+ "twin": {
+  "gi": 319,
+  "cell_type": "DNpe025",
+  "side": "right",
+  "ng_rank": 26
+ },
+ "window": {
+  "n_wA": 21785,
+  "n_edges_wA": 644177,
+  "mass_removed_wA": 0.2286,
+  "mass_removed_ng25": 0.235
+ },
+ "out_edges": {
+  "n_out_wA": 80,
+  "n_out_intrinsic": 70,
+  "n_out_motor": 10,
+  "n_out_other": 0,
+  "other_tiers": [],
+  "mass_out_all": 0.006436,
+  "mass_out_intrinsic": 0.005599,
+  "mass_out_motor": 0.000837,
+  "raw_out_mass": 183.96376182027785
+ },
+ "in_edges": {
+  "n_in_wA": 13,
+  "mass_in_raw": 28.2113,
+  "mass_in_frac_dn": 0.000987,
+  "n_sources": 13,
+  "src_super_class": [
+   "descending"
+  ],
+  "src_ng_ranks": {}
+ },
+ "arm_edge_counts": {
+  "eOutInt": 70,
+  "eOutMot": 10,
+  "eOutAll": 80,
+  "eIn": 13,
+  "eAll": 93
+ },
+ "arm_mass_frac_dn": {
+  "eOutInt": 0.005599,
+  "eOutMot": 0.000837,
+  "eOutAll": 0.006436,
+  "eIn": 0.000987,
+  "eAll": 0.007423
+ },
+ "arm_nnz": {
+  "eOutInt": 644107,
+  "eOutMot": 644167,
+  "eOutAll": 644097,
+  "eIn": 644164,
+  "eAll": 644084
+ },
+ "eall_csr_identical_to_cutng25": true,
+ "mass_note": "out-arm fractions use the ladder convention (out-cord |vals| / dn out-cord total); eIn/eAll fractions include in-edge mass on the same denominator for comparability (disclosed)."
+}
+L142 STATIC DONE

@@ -1,0 +1,170 @@
+{
+ "DNge059": [
+  {
+   "bodyId": 10643,
+   "side": "R",
+   "u_max": 1.061,
+   "mean_X": 0.7551,
+   "cls": "free"
+  },
+  {
+   "bodyId": 11127,
+   "side": "L",
+   "u_max": 4.518,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  }
+ ],
+ "DNge046": [
+  {
+   "bodyId": 13445,
+   "side": "L",
+   "u_max": 2.66,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 83661,
+   "side": "R",
+   "u_max": 2.237,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 242405,
+   "side": "R",
+   "u_max": 2.122,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 513057,
+   "side": "L",
+   "u_max": 0.596,
+   "mean_X": 0.5449,
+   "cls": "free"
+  }
+ ],
+ "DNg110": [
+  {
+   "bodyId": 20923,
+   "side": "R",
+   "u_max": 0.505,
+   "mean_X": 0.4106,
+   "cls": "free"
+  },
+  {
+   "bodyId": 22692,
+   "side": "R",
+   "u_max": 1.13,
+   "mean_X": 0.9625,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 23341,
+   "side": "L",
+   "u_max": 0.793,
+   "mean_X": 0.7601,
+   "cls": "free"
+  },
+  {
+   "bodyId": 24184,
+   "side": "L",
+   "u_max": 1.64,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 28678,
+   "side": "R",
+   "u_max": 1.573,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 42178,
+   "side": "L",
+   "u_max": 0.752,
+   "mean_X": 0.7025,
+   "cls": "free"
+  }
+ ],
+ "MDN": [
+  {
+   "bodyId": 10763,
+   "side": "R",
+   "u_max": 3.928,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 11288,
+   "side": "L",
+   "u_max": 4.457,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 11332,
+   "side": "R",
+   "u_max": 4.186,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 12348,
+   "side": "L",
+   "u_max": 3.27,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  }
+ ],
+ "DNg88": [
+  {
+   "bodyId": 10544,
+   "side": "R",
+   "u_max": 10.784,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  },
+  {
+   "bodyId": 10885,
+   "side": "L",
+   "u_max": 8.37,
+   "mean_X": 1.0,
+   "cls": "pinned"
+  }
+ ],
+ "DNg100": [
+  {
+   "bodyId": 10045,
+   "side": "L",
+   "u_max": -15.781,
+   "mean_X": -0.0003,
+   "cls": "below-floor"
+  },
+  {
+   "bodyId": 10056,
+   "side": "R",
+   "u_max": -15.973,
+   "mean_X": 0.0001,
+   "cls": "below-floor"
+  }
+ ],
+ "DNg95": [
+  {
+   "bodyId": 13034,
+   "side": "R",
+   "u_max": 0.047,
+   "mean_X": 0.0005,
+   "cls": "free"
+  },
+  {
+   "bodyId": 13218,
+   "side": "L",
+   "u_max": -0.381,
+   "mean_X": -0.0002,
+   "cls": "below-floor"
+  }
+ ]
+}

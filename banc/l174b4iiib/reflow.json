@@ -1,0 +1,44 @@
+{
+ "771-780": {
+  "pre": [
+   "**Where the channel lives: the edge decomposition** (edge cuts on the cutwA",
+   "PARTIAL base, fresh B29, n=16/arm, paired-noise fork). All 80 of the carrier's",
+   "out-edges live in the window \u2014 70 onto the vnc_intrinsic sheet (.005599",
+   "removal mass), 10 onto motor pools (.000837) \u2014 plus 13 in-edges, all from",
+   "other DNs. Cutting ONLY the 70 intrinsic out-edges completes the flip (\u0394R vs",
+   "base +.404 [l142.h2a]) at .0056 removed mass,",
+   "9.72\u00d7 below the .0544 any-geometry scattered band: identity beats mass at cell",
+   "scale. Cutting ONLY the 13 in-edges carries it independently (\u0394R +.417",
+   "[l142.h3]) \u2014 two redundant channels, one per side of the cell \u2014 while the 10",
+   "motor out-edges alone land between classes [l142.h2b]."
+  ],
+  "post": [
+   "**Where the channel lives: the edge decomposition** (edge cuts on the cutwA",
+   "PARTIAL base, fresh batch C, n=16/arm, paired-noise fork). All 80 of the",
+   "carrier's out-edges live in the window \u2014 70 onto the vnc_intrinsic sheet",
+   "(.005599 removal mass), 10 onto motor pools (.000837) \u2014 plus 13 in-edges, all",
+   "from other DNs. Cutting ONLY the 70 intrinsic out-edges completes the flip (\u0394R",
+   "vs base +.404 [l142.h2a]) at .0056 removed mass, 9.72\u00d7 below the .0544",
+   "any-geometry scattered band: identity beats mass at cell scale. Cutting ONLY",
+   "the 13 in-edges carries it independently (\u0394R +.417 [l142.h3]) \u2014 two redundant",
+   "channels, one per side of the cell \u2014 while the 10 motor out-edges alone land",
+   "between classes [l142.h2b]."
+  ]
+ },
+ "827-831": {
+  "pre": [
+   "(Batches: clamp arms B27 with a B30 replication; edge ladder B29; dose halves",
+   "and combo B31; eAll re-pin and se0 B32; silW rebase and the halves' second",
+   "batch B33 \u2014 all n=16/arm, within-batch class comparisons, paired \u0394R legs,",
+   "single-batch arms disclosed, pooled cells at [l142.pooled,",
+   "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled].)"
+  ],
+  "post": [
+   "(Batches: clamp arms batch B with a batch D replication; edge ladder batch C;",
+   "dose halves and combo batch E; eAll re-pin and se0 batch F; silW rebase and",
+   "the halves' second batch G \u2014 all n=16/arm, within-batch class comparisons,",
+   "paired \u0394R legs, single-batch arms disclosed, pooled cells at [l142.pooled,",
+   "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled].)"
+  ]
+ }
+}

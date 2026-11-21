@@ -1,0 +1,9 @@
+sub nodes 21,516 | edges 2,977,920 | 7s
+/home/t3rpz/critters/peabrain-lab/malecns/l43_dose.py:92: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l43_dose.py:94: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+mech 3588 | 046L 2 | DNg88 2
+runs done 244s
+VERDICT {"C0_bitident": {"maxdiff": {"dose_prefix_stack_4000": 0.0, "entx_prefix_stack_4000": 0.0, "d10a8_stack_5000": 0.0, "ent_prefix_ent_4000": 0.0}, "pass_": true}, "C1_unpin": {"d10a4": false, "d10a8": true, "d10a12": true, "d20a4": false, "d20a8": true, "d20a12": true, "d30a4": false, "d30a8": true, "d30a12": true}, "C2_kill_dose": {"cells": {"d10a4": 0, "d10a8": 0, "d10a12": 0, "d20a4": 0, "d20a8": 0, "d20a12": 0, "d30a4": 0, "d30a8": 0, "d30a12": 0}, "exists": false, "minimal": null}, "C3_dose_order": {"d10": true, "d20": false, "d30": false}, "C4_rehost": {"entx_ok": false, "d30a12_killed": false, "verdict": "layered \u2014 see table"}, "C5_resurrection": {}}
+done 245s -> l43/results_l43.json

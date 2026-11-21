@@ -1,0 +1,206 @@
+{
+ "545": {
+  "old": "prediction and ran it at rate fidelity (whole-run mech-OFF, fresh batch B34,",
+  "new": "prediction and ran it at rate fidelity (whole-run mech-OFF, fresh batch H,",
+  "subs": [
+   [
+    72,
+    75,
+    "B34",
+    "H"
+   ]
+  ]
+ },
+ "719": {
+  "old": "SUPER: .622 with 14/16 seeds on B30 [l144.silw] and .659 with",
+  "new": "SUPER: .622 with 14/16 seeds on batch D [l144.silw] and .659 with",
+  "subs": [
+   [
+    32,
+    35,
+    "B30",
+    "batch D"
+   ]
+  ]
+ },
+ "720": {
+  "old": "14/16 on B33 [l150.h1], paired \u0394R against the base +.189",
+  "new": "14/16 on batch G [l150.h1], paired \u0394R against the base +.189",
+  "subs": [
+   [
+    9,
+    12,
+    "B33",
+    "batch G"
+   ]
+  ]
+ },
+ "742": {
+  "old": "\u2212.036 on B30 [l144.silf]); a tonic VOLLEY moves +.022 against the sham's",
+  "new": "\u2212.036 on batch D [l144.silf]); a tonic VOLLEY moves +.022 against the sham's",
+  "subs": [
+   [
+    9,
+    12,
+    "B30",
+    "batch D"
+   ]
+  ]
+ },
+ "772": {
+  "old": "PARTIAL base, fresh B29, n=16/arm, paired-noise fork). All 80 of the carrier's",
+  "new": "PARTIAL base, fresh batch C, n=16/arm, paired-noise fork). All 80 of the carrier's",
+  "subs": [
+   [
+    20,
+    23,
+    "B29",
+    "batch C"
+   ]
+  ]
+ },
+ "796": {
+  "old": "~.13 gap from silW (.622 on B30 [l144.silw]) to eAll (pooled .757",
+  "new": "~.13 gap from silW (.622 on batch D [l144.silw]) to eAll (pooled .757",
+  "subs": [
+   [
+    28,
+    31,
+    "B30",
+    "batch D"
+   ]
+  ]
+ },
+ "827": {
+  "old": "(Batches: clamp arms B27 with a B30 replication; edge ladder B29; dose halves",
+  "new": "(Batches: clamp arms batch B with a batch D replication; edge ladder batch C; dose halves",
+  "subs": [
+   [
+    21,
+    24,
+    "B27",
+    "batch B"
+   ],
+   [
+    32,
+    35,
+    "B30",
+    "batch D"
+   ],
+   [
+    61,
+    64,
+    "B29",
+    "batch C"
+   ]
+  ]
+ },
+ "828": {
+  "old": "and combo B31; eAll re-pin and se0 B32; silW rebase and the halves' second",
+  "new": "and combo batch E; eAll re-pin and se0 batch F; silW rebase and the halves' second",
+  "subs": [
+   [
+    10,
+    13,
+    "B31",
+    "batch E"
+   ],
+   [
+    35,
+    38,
+    "B32",
+    "batch F"
+   ]
+  ]
+ },
+ "829": {
+  "old": "batch B33 \u2014 all n=16/arm, within-batch class comparisons, paired \u0394R legs,",
+  "new": "batch G \u2014 all n=16/arm, within-batch class comparisons, paired \u0394R legs,",
+  "subs": [
+   [
+    6,
+    9,
+    "B33",
+    "G"
+   ]
+  ]
+ },
+ "916": {
+  "old": "The batch unions were re-pooled with B35 [l169.pooled]:",
+  "new": "The batch unions were re-pooled with batch J [l169.pooled]:",
+  "subs": [
+   [
+    37,
+    40,
+    "B35",
+    "batch J"
+   ]
+  ]
+ },
+ "944": {
+  "old": "Both arms were then run on a fresh batch (B37, n=16 each, paired noise,",
+  "new": "Both arms were then run on a fresh batch (K, n=16 each, paired noise,",
+  "subs": [
+   [
+    42,
+    45,
+    "B37",
+    "K"
+   ]
+  ]
+ },
+ "994": {
+  "old": "further fresh batch (B38, n=16, paired noise): each graph at its own",
+  "new": "further fresh batch (L, n=16, paired noise): each graph at its own",
+  "subs": [
+   [
+    21,
+    24,
+    "B38",
+    "L"
+   ]
+  ]
+ },
+ "997": {
+  "old": "The own-gain diagonal reproduces on B38 [l169d.grid]: cutng25 SUPER",
+  "new": "The own-gain diagonal reproduces on batch L [l169d.grid]: cutng25 SUPER",
+  "subs": [
+   [
+    36,
+    39,
+    "B38",
+    "batch L"
+   ]
+  ]
+ },
+ "1047": {
+  "old": "from the batch that first rolled the XOR pair (B26, n = 16 seeds), and",
+  "new": "from the batch that first rolled the XOR pair (batch A, n = 16 seeds), and",
+  "subs": [
+   [
+    47,
+    50,
+    "B26",
+    "batch A"
+   ]
+  ]
+ },
+ "1362": {
+  "old": "[l172.census_unique]. A per-pool carrier census (two fresh batches, B33/B34)",
+  "new": "[l172.census_unique]. A per-pool carrier census (two fresh batches, G/H)",
+  "subs": [
+   [
+    68,
+    71,
+    "B33",
+    "G"
+   ],
+   [
+    72,
+    75,
+    "B34",
+    "H"
+   ]
+  ]
+ }
+}

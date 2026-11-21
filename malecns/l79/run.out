@@ -1,0 +1,33 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l79_reprime.py:100: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l79_reprime.py:102: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | 6s
+drive-on 48.0s baselines / 46.0s reprime arms | tables asserted
+seed 11 done 21s
+seed 22 done 36s
+seed 33 done 51s
+seed 101 done 66s
+seed 102 done 81s
+seed 103 done 96s
+seed 104 done 110s
+seed 105 done 125s
+seed 106 done 140s
+seed 107 done 155s
+seed 108 done 170s
+seed 109 done 185s
+seed 110 done 200s
+seed 111 done 215s
+seed 112 done 230s
+seed 113 done 245s
+runs done 245s
+C0a True | C0b True | C0P-1 True | C0P-2 True | C1 True | wired_dead 0
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l79_reprime.py", line 425, in <module>
+    wpost_twin=dist_of(tw, "wpost"), wpost=dist_of(rp, "wpost"),
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l79_reprime.py", line 398, in dist_of
+    return dict(vals=[round(float(x), 3) for x in v],
+                            ^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'dict'
+EXIT 1

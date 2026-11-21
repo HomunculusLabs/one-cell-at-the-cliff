@@ -1,0 +1,584 @@
+{
+ "meta": {
+  "arms": [
+   "cfn",
+   "free",
+   "freenod"
+  ],
+  "n_pool": 48,
+  "substrate": "closure l92"
+ },
+ "anchors": {
+  "c0a": true,
+  "c0a_max": 0.0,
+  "c1": true,
+  "c0b": true,
+  "c0b_fails": [],
+  "c0d": true
+ },
+ "tables": {
+  "free": {
+   "pairs": {
+    "Ti": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.111,
+       "seg1_mean": 0.148
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.138,
+       "seg1_mean": 0.097
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.088,
+       "seg1_mean": 0.159
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Tr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.016,
+       "seg1_mean": 0.006
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.014,
+       "seg1_mean": 0.005
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.012,
+       "seg1_mean": 0.012
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Ta": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.001,
+       "seg1_mean": 0.0
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.001,
+       "seg1_mean": 0.001
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.0,
+       "seg1_mean": 0.0
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Sr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.118,
+       "seg1_mean": 0.145
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.123,
+       "seg1_mean": 0.099
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.098,
+       "seg1_mean": 0.158
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Pr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.008,
+       "seg1_mean": 0.0
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.0,
+       "seg1_mean": 0.0
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.002,
+       "seg1_mean": 0.001
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    }
+   },
+   "unpaired": {
+    "LT": {
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "flyhack": {
+      "real_mean": 0.142,
+      "shift500_mean": 0.081,
+      "margin": 0.061
+     }
+    },
+    "FR": {
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "flyhack": {
+      "real_mean": 0.035,
+      "shift500_mean": 0.043,
+      "margin": -0.008
+     }
+    }
+   },
+   "lock": 48
+  },
+  "freenod": {
+   "pairs": {
+    "Ti": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.108,
+       "seg1_mean": 0.119
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.128,
+       "seg1_mean": 0.105
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.117,
+       "seg1_mean": 0.176
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Tr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.014,
+       "seg1_mean": 0.014
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.02,
+       "seg1_mean": 0.008
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.011,
+       "seg1_mean": 0.023
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Ta": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.001,
+       "seg1_mean": 0.0
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.0,
+       "seg1_mean": 0.001
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.0,
+       "seg1_mean": 0.0
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Sr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.126,
+       "seg1_mean": 0.15
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.12,
+       "seg1_mean": 0.095
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.11,
+       "seg1_mean": 0.134
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    },
+    "Pr": {
+     "per_batch": {
+      "B4": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.006,
+       "seg1_mean": 0.001
+      },
+      "B5": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.0,
+       "seg1_mean": 0.0
+      },
+      "B6": {
+       "k": 0,
+       "wilson": [
+        0.0,
+        0.194
+       ],
+       "duty07_mean": 0.002,
+       "seg1_mean": 0.001
+      }
+     },
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "k_spread": [
+      0,
+      0,
+      0
+     ],
+     "nan_seed_count": 0
+    }
+   },
+   "unpaired": {
+    "LT": {
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "flyhack": {
+      "real_mean": 0.141,
+      "shift500_mean": 0.078,
+      "margin": 0.063
+     }
+    },
+    "FR": {
+     "pooled": {
+      "k": 0,
+      "n": 48,
+      "p_hat": 0.0,
+      "lb_full": 0.0,
+      "g2a_multi": false
+     },
+     "flyhack": {
+      "real_mean": 0.039,
+      "shift500_mean": 0.043,
+      "margin": -0.004
+     }
+    }
+   },
+   "lock": 48
+  }
+ },
+ "paired_delta_free_vs_cfn": {
+  "Ti": {
+   "mean": -0.047,
+   "up": 17,
+   "down": 30,
+   "same": 1
+  },
+  "Tr": {
+   "mean": -0.014,
+   "up": 10,
+   "down": 22,
+   "same": 16
+  },
+  "Ta": {
+   "mean": -0.003,
+   "up": 2,
+   "down": 9,
+   "same": 37
+  },
+  "Sr": {
+   "mean": 0.058,
+   "up": 37,
+   "down": 10,
+   "same": 1
+  },
+  "Pr": {
+   "mean": 0.003,
+   "up": 5,
+   "down": 1,
+   "same": 42
+  }
+ },
+ "p2_freenod_vs_free_maxd": 0.032970327883958817,
+ "p3": {
+  "best_cell": "pair:Tr",
+  "p_hat": 0.0,
+  "real_mean": 0.014,
+  "shift500_mean": 0.064,
+  "margin": -0.05
+ },
+ "free_robust": [],
+ "free_robust_lr": [],
+ "af_free": {
+  "11": 0.10624054074287415,
+  "22": 0.11238479614257812,
+  "33": 0.10234306752681732
+ },
+ "af_freenod": {
+  "11": 0.10624054074287415,
+  "22": 0.11041313409805298,
+  "33": 0.10234306752681732
+ },
+ "verdict": "P1 (expected): NO free-run self-ordering on the closure substrate \u2014 the l65 extraction rule owned the self-ordering, not the cord; L94's law now covers zero drive"
+}

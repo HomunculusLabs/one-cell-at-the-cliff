@@ -1,0 +1,332 @@
+{
+ "prereg": "l169d/PREREG.md",
+ "design": "L169 stage (d): the XOR-pair gain-swap 2x2. cutng25p = the twin-XOR graph (base window with the mass-twin gi 319 removed instead of the carrier gi 1110) at its OWN stored-form af-matched gain; p25gN = the cutng25p CSR by object identity at g_cutng25 (swapped UP); n25gP = the cutng25 CSR by object identity at g_cutng25p (swapped DOWN). Swap arms deliberately off the matched operating point (stage (a) convention). ONE fresh batch B38, n=16 per arm.",
+ "batch": "B38",
+ "seeds": [
+  3513,
+  3514,
+  3515,
+  3516,
+  3517,
+  3518,
+  3519,
+  3520,
+  3521,
+  3522,
+  3523,
+  3524,
+  3525,
+  3526,
+  3527,
+  3528
+ ],
+ "n_seeds": 16,
+ "cert": {
+  "fc169c2_pass": true,
+  "fc169c2_max": 0.0,
+  "ntd_pass": true,
+  "ntd_min": 0.01924740895628929,
+  "c0a150_pass": true,
+  "c0a150_max": 0.0,
+  "fc169b2_pass": true,
+  "fc169_pass": true,
+  "fc144_pass": true,
+  "fc145_pass": true,
+  "ntf4_pass": true,
+  "ntc2_pass": true,
+  "nt_pass": true,
+  "g_cutwA_exact": true,
+  "g_cutng25_exact": true,
+  "g_cutng25p_exact": true,
+  "g_emottop5_exact": true,
+  "g_emotbot5_exact": true,
+  "d_stair": 5.364418029785156e-07,
+  "d_band_ok": true,
+  "pafd_ok": false,
+  "pafd_nup": 15,
+  "pafd_ndn": 13,
+  "d_n": {
+   "cutng25p": 21784,
+   "p25gN": 21784,
+   "n25gP": 21784
+  },
+  "d_edges": {
+   "cutng25p": 644072,
+   "p25gN": 644072,
+   "n25gP": 644084
+  }
+ },
+ "cert0": true,
+ "cert_metric": {
+  "rew1": {
+   "mine": {
+    "kL": 3,
+    "kR": 16,
+    "meanL": 0.352,
+    "meanR": 0.724
+   },
+   "stored": {
+    "meanR": 0.724,
+    "kR": 16,
+    "meanL": 0.352,
+    "kL": 3
+   }
+  },
+  "rew2": {
+   "mine": {
+    "kL": 0,
+    "kR": 1,
+    "meanL": 0.24,
+    "meanR": 0.333
+   },
+   "stored": {
+    "meanR": 0.333,
+    "kR": 1,
+    "meanL": 0.24,
+    "kL": 0
+   }
+  },
+  "rew3": {
+   "mine": {
+    "kL": 0,
+    "kR": 3,
+    "meanL": 0.251,
+    "meanR": 0.302
+   },
+   "stored": {
+    "meanR": 0.302,
+    "kR": 3,
+    "meanL": 0.251,
+    "kL": 0
+   }
+  },
+  "hom": {
+   "mine": {
+    "kL": 2,
+    "kR": 2,
+    "meanL": 0.316,
+    "meanR": 0.301
+   },
+   "stored": {
+    "meanR": 0.301,
+    "kR": 2,
+    "meanL": 0.316,
+    "kL": 2
+   }
+  },
+  "cutwA": {
+   "mine": {
+    "kL": 0,
+    "kR": 5,
+    "meanL": 0.25,
+    "meanR": 0.452
+   },
+   "stored": {
+    "meanR": 0.452,
+    "kR": 5,
+    "meanL": 0.25,
+    "kL": 0
+   }
+  },
+  "cutng25": {
+   "mine": {
+    "kL": 0,
+    "kR": 15,
+    "meanL": 0.148,
+    "meanR": 0.786
+   },
+   "stored": {
+    "meanR": 0.786,
+    "kR": 15,
+    "meanL": 0.148,
+    "kL": 0
+   }
+  }
+ },
+ "gains": {
+  "cutng25": 0.1454454553127289,
+  "cutng25p": 0.1435265743732452,
+  "cutwA": 0.14365819573402408
+ },
+ "swap_gain_span_pct": 1.337,
+ "pafd": {
+  "cutng25p": {
+   "g": 0.1435265743732452,
+   "rollout_af_mean": 0.10929753445088863,
+   "rollout_af_maxoff": 0.0027690803011258397
+  },
+  "p25gN": {
+   "g": 0.1454454553127289,
+   "rollout_af_mean": 0.11029597418382764,
+   "rollout_af_maxoff": 0.004008521636327103
+  },
+  "n25gP": {
+   "g": 0.1435265743732452,
+   "rollout_af_mean": 0.10784291196614504,
+   "rollout_af_maxoff": 0.008018652598063156
+  }
+ },
+ "pafd_ok": false,
+ "pafd_nup": 15,
+ "pafd_ndn": 13,
+ "d_stair": 5.364418029785156e-07,
+ "d_band_ok": true,
+ "table": {
+  "cutng25": {
+   "arm": "cutng25",
+   "kL": 0,
+   "kR": 16,
+   "meanL": 0.17,
+   "meanR": 0.798,
+   "lbR": 0.8063923194655636,
+   "ubR": 1.0000000000000002,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1454454553127289,
+   "super": true,
+   "partial": false,
+   "notsuper": false
+  },
+  "cutng25p": {
+   "arm": "cutng25p",
+   "kL": 0,
+   "kR": 8,
+   "meanL": 0.191,
+   "meanR": 0.477,
+   "lbR": 0.27999563610326017,
+   "ubR": 0.7200043638967398,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1435265743732452,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "p25gN": {
+   "arm": "p25gN",
+   "kL": 0,
+   "kR": 1,
+   "meanL": 0.132,
+   "meanR": 0.324,
+   "lbR": 0.011119344764642517,
+   "ubR": 0.2832873757029894,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1454454553127289,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "n25gP": {
+   "arm": "n25gP",
+   "kL": 0,
+   "kR": 15,
+   "meanL": 0.253,
+   "meanR": 0.651,
+   "lbR": 0.7167126242970107,
+   "ubR": 0.9888806552353575,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1435265743732452,
+   "super": true,
+   "partial": false,
+   "notsuper": false
+  },
+  "full": {
+   "arm": "full",
+   "kL": 7,
+   "kR": 8,
+   "meanL": 0.415,
+   "meanR": 0.477,
+   "lbR": 0.27999563610326017,
+   "ubR": 0.7200043638967398,
+   "lbL": 0.2309865240549235,
+   "ubL": 0.668214436011881,
+   "g": 0.153125,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "cutwA": {
+   "arm": "cutwA",
+   "kL": 3,
+   "kR": 5,
+   "meanL": 0.291,
+   "meanR": 0.423,
+   "lbR": 0.14164643854782036,
+   "ubR": 0.5559564416525933,
+   "lbL": 0.06591599071428139,
+   "ubL": 0.43008880961974144,
+   "g": 0.14365819573402408,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  }
+ },
+ "legs": {
+  "p25gN_minus_cutng25p": {
+   "mean_paired_dR": -0.152,
+   "n_up": 4,
+   "n_down": 12
+  },
+  "n25gP_minus_cutng25": {
+   "mean_paired_dR": -0.147,
+   "n_up": 3,
+   "n_down": 13
+  },
+  "cutng25_minus_cutng25p": {
+   "mean_paired_dR": 0.321,
+   "n_up": 16,
+   "n_down": 0
+  },
+  "cutng25_minus_cutwA": {
+   "mean_paired_dR": 0.375,
+   "n_up": 15,
+   "n_down": 1
+  },
+  "cutng25p_minus_cutwA": {
+   "mean_paired_dR": 0.054,
+   "n_up": 9,
+   "n_down": 7
+  },
+  "p25gN_minus_cutng25": {
+   "mean_paired_dR": -0.474,
+   "n_up": 0,
+   "n_down": 16
+  },
+  "n25gP_minus_cutng25p": {
+   "mean_paired_dR": 0.174,
+   "n_up": 12,
+   "n_down": 4
+  }
+ },
+ "xbatch": {
+  "cutng25": {
+   "b38": {
+    "kR": 16,
+    "meanR": 0.798
+   },
+   "b25_stored": {
+    "kR": 15,
+    "meanR": 0.754
+   }
+  },
+  "cutng25p": {
+   "b38": {
+    "kR": 8,
+    "meanR": 0.477
+   },
+   "b25_stored": {
+    "kR": 5,
+    "meanR": 0.399
+   }
+  }
+ },
+ "xbatch_note": "cutng25p now rides a 3rd batch (B24/B25 stored + B38) \u2014 NOT the pooled 4-batch bar of the L88/L90 rule; any pooled statement from this stage is explicitly 3-batch",
+ "e0": false,
+ "e1": true,
+ "e2": false,
+ "branch": "E1_graph_tracking",
+ "xor_reproduced": true,
+ "scope": "Two-point gain probe: bounds the readout at the two bisected gains only; it cannot locate a threshold between them."
+}

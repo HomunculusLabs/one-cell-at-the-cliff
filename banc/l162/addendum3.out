@@ -1,0 +1,33 @@
+CERT-6 PLV_self separates pinned 1.0000 from free-running 4.47e-17: PASS
+
+E axis: E1_evoked_dichotomy_not_expressed — median carrier PLV_self 0.9838 / 0.9840 (control 0.6974 / 0.7486)
+F axis: F1_carrier_coherent (DESCRIPTIVE-STRONG) — clears-f 23/28 carrier vs 2/36 control; med MSC 0.696 vs 0.185; analytic floor 1/K=0.200; calibration_ok=True; both files same side: True
+  l154/raw_l154.npz: clears-f 23/28 (control 2/36) med 0.660 vs 0.190
+  l150/raw_l150.npz: clears-f 24/28 (control 2/36) med 0.719 vs 0.165
+
+per-channel PLV_self at .100 Hz (36 pooled b65 seeds) + evoked frac:
+  Ti_fL control plv_self pooled 0.9468 | l154 0.9509 l150 0.9427 | ev 0.833/0.831 | circ_sd 18.2 deg
+  Ti_fR control plv_self pooled 0.8828 | l154 0.8974 l150 0.8719 | ev 0.735/0.741 | circ_sd 26.7 deg
+  Ti_eL control plv_self pooled 0.7066 | l154 0.6974 l150 0.7486 | ev 0.460/0.481 | circ_sd 48.6 deg
+  Ti_eR control plv_self pooled 0.4833 | l154 0.4228 l150 0.5863 | ev 0.206/0.324 | circ_sd 75.2 deg
+  Tr_fL CARRIER plv_self pooled 0.9864 | l154 0.9888 l150 0.9870 | ev 0.967/0.940 | circ_sd 8.6 deg
+  Tr_fR control plv_self pooled 0.9289 | l154 0.9370 l150 0.9231 | ev 0.808/0.753 | circ_sd 20.7 deg
+  Tr_eL CARRIER plv_self pooled 0.9804 | l154 0.9801 l150 0.9809 | ev 0.938/0.922 | circ_sd 11.5 deg
+  Tr_eR CARRIER plv_self pooled 0.9966 | l154 0.9963 l150 0.9969 | ev 0.985/0.986 | circ_sd 4.9 deg
+  Ta_aL CARRIER plv_self pooled 0.9790 | l154 0.9813 l150 0.9769 | ev 0.916/0.931 | circ_sd 11.1 deg
+  Ta_aR CARRIER plv_self pooled 0.9875 | l154 0.9863 l150 0.9898 | ev 0.962/0.923 | circ_sd 9.5 deg
+  Ta_bL aggreg. plv_self pooled 0.4482 | l154 0.5253 l150 0.3890 | ev 0.261/0.183 | circ_sd 65.0 deg
+  Ta_bR CARRIER plv_self pooled 0.9973 | l154 0.9970 l150 0.9977 | ev 0.986/0.988 | circ_sd 4.4 deg
+  Pr_aL control plv_self pooled 0.1593 | l154 0.2325 l150 0.1899 | ev 0.047/0.020 | circ_sd 97.9 deg
+  Pr_aR control plv_self pooled 0.9325 | l154 0.9352 l150 0.9299 | ev 0.819/0.799 | circ_sd 21.0 deg
+  Pr_bL control plv_self pooled 0.0334 | l154 0.1004 l150 0.0795 | ev 0.039/0.038 | circ_sd 122.8 deg
+  Pr_bR aggreg. plv_self pooled 0.9859 | l154 0.9867 l150 0.9851 | ev 0.949/0.946 | circ_sd 9.4 deg
+  Sr_aL CARRIER plv_self pooled 0.9724 | l154 0.9783 l150 0.9709 | ev 0.925/0.893 | circ_sd 12.0 deg
+  Sr_aR control plv_self pooled 0.0148 | l154 0.3459 l150 0.3308 | ev 0.060/0.149 | circ_sd 83.5 deg
+  Sr_bL CARRIER plv_self pooled 0.9625 | l154 0.9557 l150 0.9709 | ev 0.867/0.900 | circ_sd 17.2 deg
+  Sr_bR aggreg. plv_self pooled 0.8772 | l154 0.8357 l150 0.9196 | ev 0.669/0.794 | circ_sd 34.3 deg
+  mm    aggreg. plv_self pooled 0.9938 | l154 0.9936 l150 0.9940 | ev 0.979/0.977 | circ_sd 6.5 deg
+  xm    aggreg. plv_self pooled 1.0000 | l154 1.0000 l150 1.0000 | ev 1.000/1.000 | circ_sd 0.2 deg
+
+off-arm (descriptive): carrier med PLV_self 0.1860, mm ev 0.072
+l162/addendum3.json written

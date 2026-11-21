@@ -1,0 +1,37 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+jitter set 4: n 1,830,698 mean 1.000005 std 0.009997 min 0.9519 max 1.0563
+/home/t3rpz/critters/peabrain-lab/banc/l139_run.py:310: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+graphs built 4s | K 77 n_cut 21,732 edges_cut 639,164
+J4 full bracket af(0.1)=0.07913 af(0.2)=0.11971 target 0.10906
+J4 g_full 0.161354 | af_final 0.108992 | |af-target| 6.44e-05 (staircase)
+J4 cutng23 bracket af(0.1)=0.07783 af(0.2)=0.12126 target 0.10906
+J4 g_cutng23 0.150031 | af_final 0.109046 | |af-target| 1.05e-05 (staircase)
+J4 cutwA bracket af(0.1)=0.07938 af(0.2)=0.12193 target 0.10906
+J4 g_cutwA 0.143686 | af_final 0.109051 | |af-target| 5.54e-06 (staircase)
+J4 cutng25 bracket af(0.1)=0.07903 af(0.2)=0.12226 target 0.10906
+J4 g_cutng25 0.145097 | af_final 0.109025 | |af-target| 3.11e-05 (staircase)
+J4 cutng25p bracket af(0.1)=0.07937 af(0.2)=0.12165 target 0.10906
+J4 g_cutng25p 0.143807 | af_final 0.109056 | |af-target| 5.34e-07 (staircase)
+J4 cutng29 bracket af(0.1)=0.07908 af(0.2)=0.12326 target 0.10906
+J4 g_cutng29 0.143498 | af_final 0.109045 | |af-target| 1.11e-05 (staircase)
+seed 3201 done af {'full': 0.10816635191440582, 'cutng23': 0.11098870635032654, 'cutwA': 0.10943309962749481, 'cutng25': 0.1098971739411354, 'cutng25p': 0.10934630781412125, 'cutng29': 0.10826446115970612} | 349s
+seed 3202 done af {'full': 0.10990875214338303, 'cutng23': 0.10855595022439957, 'cutwA': 0.11048886924982071, 'cutng25': 0.1085200160741806, 'cutng25p': 0.11053984612226486, 'cutng29': 0.10679522156715393} | 367s
+seed 3203 done af {'full': 0.10225136578083038, 'cutng23': 0.10731662809848785, 'cutwA': 0.11012164503335953, 'cutng25': 0.10815276950597763, 'cutng25p': 0.1098971739411354, 'cutng29': 0.10826446115970612} | 383s
+seed 3204 done af {'full': 0.1109633669257164, 'cutng23': 0.11158542335033417, 'cutwA': 0.10901996493339539, 'cutng25': 0.10980536043643951, 'cutng25p': 0.11040212959051132, 'cutng29': 0.10840220749378204} | 400s
+seed 3205 done af {'full': 0.11077995598316193, 'cutng23': 0.11140181869268417, 'cutwA': 0.10810190439224243, 'cutng25': 0.10943812131881714, 'cutng25p': 0.1078314334154129, 'cutng29': 0.10798898339271545} | 417s
+seed 3206 done af {'full': 0.10477326065301895, 'cutng23': 0.10846415162086487, 'cutwA': 0.10722974687814713, 'cutng25': 0.10911678522825241, 'cutng25p': 0.10672970861196518, 'cutng29': 0.1077134981751442} | 436s
+seed 3207 done af {'full': 0.10289330035448074, 'cutng23': 0.10956577956676483, 'cutwA': 0.10718384385108948, 'cutng25': 0.10870363563299179, 'cutng25p': 0.1085200160741806, 'cutng29': 0.10794306546449661} | 453s
+seed 3208 done af {'full': 0.10752441734075546, 'cutng23': 0.11098870635032654, 'cutwA': 0.11159054189920425, 'cutng25': 0.10971355438232422, 'cutng25p': 0.10980536043643951, 'cutng29': 0.11000918596982956} | 470s
+seed 3209 done af {'full': 0.10683662444353104, 'cutng23': 0.11195263266563416, 'cutwA': 0.110580675303936, 'cutng25': 0.10847411304712296, 'cutng25p': 0.1121465265750885, 'cutng29': 0.10932047665119171} | 488s
+seed 3210 done af {'full': 0.10697418451309204, 'cutng23': 0.1090608611702919, 'cutwA': 0.10796419531106949, 'cutng25': 0.10760191082954407, 'cutng25p': 0.10888725519180298, 'cutng29': 0.10743801295757294} | 505s
+seed 3211 done af {'full': 0.1092209666967392, 'cutng23': 0.10805103927850723, 'cutwA': 0.10397062450647354, 'cutng25': 0.11113661527633667, 'cutng25p': 0.11159566789865494, 'cutng29': 0.10716253519058228} | 522s
+seed 3212 done af {'full': 0.10642395168542862, 'cutng23': 0.10800514370203018, 'cutwA': 0.10929538309574127, 'cutng25': 0.11017260700464249, 'cutng25p': 0.10874953866004944, 'cutng29': 0.10798898339271545} | 539s
+seed 3213 done af {'full': 0.1118345633149147, 'cutng23': 0.10823464393615723, 'cutwA': 0.10938719660043716, 'cutng25': 0.10952992737293243, 'cutng25p': 0.10897906869649887, 'cutng29': 0.1097337007522583} | 556s
+seed 3214 done af {'full': 0.11362281441688538, 'cutng23': 0.10947397351264954, 'cutwA': 0.10424604266881943, 'cutng25': 0.1086118221282959, 'cutng25p': 0.10741829127073288, 'cutng29': 0.11023875325918198} | 577s
+seed 3215 done af {'full': 0.1067449226975441, 'cutng23': 0.10901496559381485, 'cutwA': 0.11044296622276306, 'cutng25': 0.10916268825531006, 'cutng25p': 0.10874953866004944, 'cutng29': 0.10881542414426804} | 595s
+seed 3216 done af {'full': 0.11036728322505951, 'cutng23': 0.10901496559381485, 'cutwA': 0.10690842568874359, 'cutng25': 0.10884135216474533, 'cutng25p': 0.10705104470252991, 'cutng29': 0.104958675801754} | 613s
+rollouts done 613s
+raw_l139_j4.npz checkpointed BEFORE anchors
+set 4 done 614s

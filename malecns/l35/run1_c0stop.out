@@ -1,0 +1,13 @@
+sub nodes 21,516 | edges 2,977,920 | 6s
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:92: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:94: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+DNg95 cells 2 | DN pool 1277
+ctrl seed 11: f 0.800 (flx 2.134) ratio 78 S(Tr) +0.48 af 0.185
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py", line 225, in <module>
+    assert S >= 0.40 and ratio >= 100, f"C0 S/ratio seed {s}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: C0 S/ratio seed 11
+exit 1

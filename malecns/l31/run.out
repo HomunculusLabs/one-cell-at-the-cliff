@@ -1,0 +1,71 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+CX 2950 | DN 1314 cells | 1s
+CX regions: {'EB': 350, 'ExR(out)': 26, 'FB': 1422, 'NO/PFN': 472, 'other': 570, 'PFL(out)': 50, 'PB': 60}
+direct CX->DN block: 914 edges, abs w 2 (net sign +2) | 1s
+null sanity: draws vary on 102/481 types, null mean total 1.67 vs obs 1.67 | 6s
+null 300 draws done | 6s
+/home/t3rpz/critters/peabrain-lab/malecns/l31_census.py:148: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wa = torch.sparse_coo_tensor(Wc.indices(), Wc.values().abs(),
+DN hop histogram: {1: 168, 2: 1126, 3: 20} | reachable 1314/1314 | 9s
+linearized 2-hop CX->DN abs mass total 4 (vs direct 2) | 10s
+== top relay types CX->x->DN (lin mass, class) ==
+        0.4761  PFL3  [CX/cb_intrinsic]
+        0.3797  ExR8  [CX/cb_intrinsic]
+        0.1905  PFL2  [CX/cb_intrinsic]
+        0.0726  LAL022  [/cb_intrinsic]
+        0.0649  DNp48  [/descending_neuron]
+        0.0511  SMP297  [/cb_intrinsic]
+        0.0451  LAL126  [/cb_intrinsic]
+        0.0445  LAL190  [/cb_intrinsic]
+        0.0429  WED082  [/cb_intrinsic]
+        0.0368  SMP110  [/cb_intrinsic]
+        0.0367  PS196_b  [/cb_intrinsic]
+        0.0337  LAL200  [/cb_intrinsic]
+        0.0319  DNg36_a  [/descending_neuron]
+        0.0317  SMP457  [/cb_intrinsic]
+        0.0280  DNa03  [/descending_neuron]
+        0.0271  CL008  [/cb_intrinsic]
+        0.0264  EPG  [CX/cb_intrinsic]
+        0.0248  LAL021  [/cb_intrinsic]
+        0.0248  DNb01  [/descending_neuron]
+        0.0235  LAL083  [/cb_intrinsic]
+
+== TOP 15 DN families by direct CX weight ==
+dn_type  cells  nL  nR  cx_w_direct      cx_z  cx_share_in  med_hop     org                  top1_motor   w_flex    w_ext   w_jump
+DNg36_a      4   2   2     0.180701 28.604188     0.045175      1.0    ipsi                        CvN5 0.000000 0.000000 0.000000
+DNpe015     11   6   5     0.159932 20.353841     0.014539      1.0    ipsi                      MNhl87 0.000000 0.000000 0.000000
+  DNp48      2   1   1     0.146781 -3.313133     0.073391      1.0    weak               MNad18,MNad27 0.000000 0.000000 0.003142
+  DNa03      2   1   1     0.131563  2.223156     0.065782      1.0    ipsi                      GNG649 0.000000 0.000000 0.000000
+DNpe016      2   1   1     0.112334  4.952354     0.056167      1.0                                          NaN      NaN      NaN
+  DNc02      2   1   1     0.102393 -2.318575     0.051197      1.0 crossed                      MNml78 0.007171 0.000000 0.000000
+DNbe006      2   1   1     0.085876  1.787841     0.042938      1.0                                          NaN      NaN      NaN
+  DNc01      2   1   1     0.071218 -2.155489     0.035609      1.0    ipsi                      MNad25 0.000000 0.000000 0.000000
+  DNb01      2   1   1     0.067209  1.660043     0.033605      1.0 crossed                      hg2 MN 0.000000 0.000000 0.004203
+    MDN      4   2   2     0.059102 -1.280754     0.014775      1.0 crossed Sternal anterior rotator MN 0.000000 0.280310 0.000000
+  DNb09      2   1   1     0.052397 -0.833350     0.026198      1.0 crossed               ltm2-femur MN 0.097554 0.000000 0.000000
+DNge115      8   4   4     0.044438  4.311065     0.005555      1.0 crossed                      GNG650 0.000000 0.000000 0.000000
+DNae002      2   1   1     0.042911 -0.117393     0.021455      1.0    ipsi                      MNnm03 0.012878 0.000000 0.000000
+  DNa02      2   1   1     0.038202 -1.013029     0.019101      1.0    ipsi              Fe reductor MN 0.027796 0.011835 0.000000
+  DNg97      2   1   1     0.031645 -0.711324     0.015823      1.0 crossed                Ti flexor MN 0.428702 0.006686 0.000000
+
+== top CX source types (abs w) ==
+        0.5007  PFL3  (PFL(out))
+        0.4969  ExR8  (ExR(out))
+        0.1993  PFL2  (PFL(out))
+        0.0267  EPG  (EB)
+        0.0241  FS3_a  (FB)
+        0.0231  Delta7  (FB)
+        0.0218  PFL1  (PFL(out))
+        0.0177  FS3_c  (FB)
+        0.0160  ExR5  (ExR(out))
+        0.0152  FS3_b  (FB)
+        0.0146  FS2  (FB)
+        0.0119  ExR3  (ExR(out))
+        0.0117  FB5G_a  (FB)
+        0.0103  FS1A_b  (FB)
+        0.0102  FB8C  (FB)
+
+done 10s -> l31/cx_dn.csv results_l31.json

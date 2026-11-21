@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" font-family="DejaVu Sans, sans-serif">
+<rect width="1000" height="660" fill="#14161c"/>
+<text x="78" y="34" fill="#e8e4da" font-size="21" font-weight="bold">L36 — DN drive-channel viability under the cord-rhythm regime</text>
+<text x="78" y="56" fill="#9aa3b2" font-size="13">u = W&#183;X&#183;g + BG at the attractor (g .01, beta 2) vs baseline activity X — tonic drive needs floor headroom (u_max&gt;0) AND ceiling headroom (X&lt;.95)</text>
+<circle cx="86" cy="88" r="6" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="100" y="92" fill="#c9d0dc" font-size="12.5">flex (Ti/Tr flexor)</text>
+<rect x="267.5" y="84.7" width="6.6000000000000005" height="6.6000000000000005" fill="#7fb8e0" stroke="#7fb8e0" stroke-width="2.2"/>
+<text x="284.8" y="92" fill="#c9d0dc" font-size="12.5">extensor</text>
+<polygon points="376.4,84.25 372.65,91.75 380.15,91.75" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<text x="390.4" y="92" fill="#c9d0dc" font-size="12.5">jump/flight MNs</text>
+<circle cx="532.4" cy="88" r="6" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="546.4" y="92" fill="#c9d0dc" font-size="12.5">viable-modulating (34)</text>
+<circle cx="746.0" cy="88" r="6" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<text x="760.0" y="92" fill="#c9d0dc" font-size="12.5">not (floor / ceiling / buried: 42)</text>
+<rect x="78" y="104" width="882" height="456" fill="#1a1d26" stroke="#3a3f4d" stroke-width="1"/>
+<rect x="78" y="104" width="252.0" height="456" fill="#3a2530" opacity="0.5"/>
+<rect x="330.0" y="104" width="630.0" height="46.01834862385323" fill="#3a3525" opacity="0.45"/>
+<line x1="330.0" y1="104" x2="330.0" y2="560" stroke="#c8746a" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="330.0" y1="150.01834862385323" x2="960" y2="150.01834862385323" stroke="#c8b06a" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="88" y="295.52" fill="#c8746a" font-size="12">relu floor</text>
+<text x="88" y="311.52" fill="#c8746a" font-size="12">absorbed</text>
+<text x="88" y="327.52" fill="#c8746a" font-size="12">(27 types, amp&#8804;.8)</text>
+<text x="340.0" y="142.01834862385323" fill="#c8b06a" font-size="12" text-anchor="start">clamp ceiling — X pinned at 1 (2 types: MDN, DNg88)</text>
+<line x1="78.0" y1="560" x2="78.0" y2="566" stroke="#8a92a3"/>
+<text x="78.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">-2</text>
+<line x1="204.0" y1="560" x2="204.0" y2="566" stroke="#8a92a3"/>
+<text x="204.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">-1</text>
+<line x1="330.0" y1="560" x2="330.0" y2="566" stroke="#8a92a3"/>
+<text x="330.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+0</text>
+<line x1="456.0" y1="560" x2="456.0" y2="566" stroke="#8a92a3"/>
+<text x="456.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+1</text>
+<line x1="582.0" y1="560" x2="582.0" y2="566" stroke="#8a92a3"/>
+<text x="582.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+2</text>
+<line x1="708.0" y1="560" x2="708.0" y2="566" stroke="#8a92a3"/>
+<text x="708.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+3</text>
+<line x1="834.0" y1="560" x2="834.0" y2="566" stroke="#8a92a3"/>
+<text x="834.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+4</text>
+<line x1="960.0" y1="560" x2="960.0" y2="566" stroke="#8a92a3"/>
+<text x="960.0" y="582" fill="#8a92a3" font-size="12" text-anchor="middle">+5</text>
+<line x1="72" y1="547.4495412844037" x2="78" y2="547.4495412844037" stroke="#8a92a3"/>
+<text x="68" y="551.4495412844037" fill="#8a92a3" font-size="12" text-anchor="end">0.00</text>
+<line x1="72" y1="442.86238532110093" x2="78" y2="442.86238532110093" stroke="#8a92a3"/>
+<text x="68" y="446.86238532110093" fill="#8a92a3" font-size="12" text-anchor="end">0.25</text>
+<line x1="72" y1="338.27522935779814" x2="78" y2="338.27522935779814" stroke="#8a92a3"/>
+<text x="68" y="342.27522935779814" fill="#8a92a3" font-size="12" text-anchor="end">0.50</text>
+<line x1="72" y1="233.68807339449543" x2="78" y2="233.68807339449543" stroke="#8a92a3"/>
+<text x="68" y="237.68807339449543" fill="#8a92a3" font-size="12" text-anchor="end">0.75</text>
+<line x1="72" y1="129.10091743119267" x2="78" y2="129.10091743119267" stroke="#8a92a3"/>
+<text x="68" y="133.10091743119267" fill="#8a92a3" font-size="12" text-anchor="end">1.00</text>
+<text x="519.0" y="620" fill="#c9d0dc" font-size="14" text-anchor="middle">u_max over 3 seeds x 6 s (clipped at -2; DNg100 sits at -15.8)</text>
+<text x="24" y="332.0" fill="#c9d0dc" font-size="14" transform="rotate(-90 24 332.0)" text-anchor="middle">baseline mean activity X</text>
+<circle cx="946.0" cy="129.10096730223495" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<text x="934.0" y="147.10096730223495" fill="#d8dce6" font-size="11.5" text-anchor="end">DNg88</text>
+<circle cx="899.2167062759399" cy="180.31736952558572" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="909.2167062759399" y="172.31736952558572" fill="#d8dce6" font-size="11.5" text-anchor="start">DNge059</text>
+<rect x="887.7837623596191" y="125.25096730223495" width="7.700000000000001" height="7.700000000000001" fill="none" stroke="#7fb8e0" stroke-width="1.6"/>
+<text x="877.6337623596191" y="151.10096730223495" fill="#d8dce6" font-size="11.5" text-anchor="end">MDN</text>
+<circle cx="781.448169708252" cy="234.9849740244927" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="791.448169708252" y="224.9849740244927" fill="#d8dce6" font-size="11.5" text-anchor="start">DNg105</text>
+<circle cx="665.1182842254639" cy="176.7020868993498" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="675.1182842254639" y="166.7020868993498" fill="#d8dce6" font-size="11.5" text-anchor="start">DNge046</text>
+<circle cx="630.3632497787476" cy="321.379278423407" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="556.1686878204346" cy="403.86680458962763" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="542.6082072257996" cy="344.2661201613941" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="542.4706206321716" cy="538.414569674826" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="536.6632947921753,205.90016927230616 532.2882947921753,214.65016927230616 541.0382947921753,214.65016927230616" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<text x="546.6632947921753" y="214.27516927230616" fill="#d8dce6" font-size="11.5" text-anchor="start">DNg110</text>
+<circle cx="517.0125195980072" cy="190.8830904457547" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="502.5989420413971" cy="539.0856771416834" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="464.2313883304596" cy="191.78263281755133" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="433.93063724040985,536.4987202878285 429.55563724040985,545.2487202878285 438.30563724040985,545.2487202878285" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<text x="443.93063724040985" y="552.8737202878285" fill="#d8dce6" font-size="11.5" text-anchor="start">DNp02</text>
+<circle cx="425.6818252801895" cy="536.3532617637259" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="395.5460053682327" cy="477.26872884740743" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="385.38205111026764" cy="446.63031640773613" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="370.98753440380096,478.8738625899458 366.61253440380096,487.6238625899458 375.36253440380096,487.6238625899458" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<rect x="362.9627951622009" y="475.0965060667078" width="7.700000000000001" height="7.700000000000001" fill="#7fb8e0" stroke="#7fb8e0" stroke-width="2.2"/>
+<circle cx="363.93569952249527" cy="532.4760338784736" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<circle cx="363.2529673576355" cy="530.5394719507633" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="360.09647592902184,448.5718798028584 355.72147592902184,457.3218798028584 364.47147592902184,457.3218798028584" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="356.9769834280014,491.03967591757896 352.6019834280014,499.78967591757896 361.3519834280014,499.78967591757896" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="356.8384636938572,482.3155743498868 352.4634636938572,491.0655743498868 361.2134636938572,491.0655743498868" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="352.54595160484314,505.3954944511251 348.17095160484314,514.1454944511252 356.92095160484314,514.1454944511252" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<rect x="346.7920370340347" y="501.95037761800717" width="7.700000000000001" height="7.700000000000001" fill="#7fb8e0" stroke="#7fb8e0" stroke-width="2.2"/>
+<polygon points="349.2748998105526,520.1573716380394 344.8998998105526,528.9073716380394 353.6498998105526,528.9073716380394" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="346.7802265584469,539.4908288733009 342.4052265584469,548.2408288733009 351.1552265584469,548.2408288733009" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="345.97940799593925,532.0123738744604 341.60440799593925,540.7623738744604 350.35440799593925,540.7623738744604" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="344.3648777604103,539.3330914680723 339.9898777604103,548.0830914680723 348.7398777604103,548.0830914680723" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="339.42642402648926,537.9516088490766 335.05142402648926,546.7016088490766 343.80142402648926,546.7016088490766" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<polygon points="337.7055692821741,542.6303417086262 333.3305692821741,551.3803417086262 342.0805692821741,551.3803417086262" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<circle cx="337.70201367884874" cy="541.7427101325553" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="336.304936632514,536.4555298496356 331.929936632514,545.2055298496356 340.679936632514,545.2055298496356" fill="#9fe0a8" stroke="#9fe0a8" stroke-width="2.2"/>
+<circle cx="335.97808304429054" cy="547.3950721272747" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<text x="347.97808304429054" y="541.3950721272747" fill="#d8dce6" font-size="11.5" text-anchor="start">DNg95</text>
+<circle cx="332.76449777930975" cy="544.9861770412194" r="7" fill="#e08fb8" stroke="#e08fb8" stroke-width="2.2"/>
+<polygon points="329.28912764042616,543.1140713960717 324.91412764042616,551.8640713960717 333.66412764042616,551.8640713960717" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<rect x="325.37183755412696" y="543.6263522886412" width="7.700000000000001" height="7.700000000000001" fill="none" stroke="#7fb8e0" stroke-width="1.6"/>
+<circle cx="329.16234585642815" cy="547.3745392462054" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<polygon points="328.6372947245836,543.176105934538 324.2622947245836,551.926105934538 333.0122947245836,551.926105934538" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<polygon points="324.38304655998945,543.1243744674457 320.00804655998945,551.8743744674457 328.75804655998945,551.8743744674457" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<polygon points="324.1594110801816,542.9762235475418 319.7844110801816,551.7262235475418 328.5344110801816,551.7262235475418" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<polygon points="322.4897748604417,543.0766330401517 318.1147748604417,551.8266330401517 326.8647748604417,551.8266330401517" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<polygon points="321.5095647275448,543.0357148438694 317.1345647275448,551.7857148438694 325.8845647275448,551.7857148438694" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<circle cx="321.49414256215096" cy="547.4070472516523" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<polygon points="316.1468700170517,543.0120523844257 311.7718700170517,551.7620523844257 320.5218700170517,551.7620523844257" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<circle cx="315.6875902712345" cy="547.5573174048645" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<rect x="310.9187773108482" y="543.5923749535311" width="7.700000000000001" height="7.700000000000001" fill="none" stroke="#7fb8e0" stroke-width="1.6"/>
+<circle cx="304.6593526303768" cy="547.4620342969502" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="299.8076978623867" cy="547.5050256679874" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<polygon points="296.97757655382156,543.0900605266702 292.60257655382156,551.8400605266702 301.35257655382156,551.8400605266702" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<rect x="291.06461879014967" y="543.6568717832585" width="7.700000000000001" height="7.700000000000001" fill="none" stroke="#7fb8e0" stroke-width="1.6"/>
+<circle cx="293.52250081300735" cy="547.5091526158726" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="292.76649928092957" cy="547.4259546567291" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="287.8167840242386" cy="547.4682396517796" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="285.97719419002533" cy="547.4216839562672" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="279.54472428560257" cy="547.4870788395503" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="271.36417615413666" cy="547.4329298663428" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="259.52995669841766" cy="547.3413615362147" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="259.0101317167282" cy="547.3849101153186" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="237.4062201976776" cy="547.5119115509833" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="236.33815920352936" cy="547.4287305411412" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="231.35530149936676" cy="547.5446184871407" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<polygon points="225.19571793079376,543.0329452681418 220.82071793079376,551.7829452681418 229.57071793079376,551.7829452681418" fill="none" stroke="#9fe0a8" stroke-width="1.6"/>
+<circle cx="201.70551824569702" cy="547.3752145680058" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="170.5517077445984" cy="547.5167710814435" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.354984597252" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.3259381046264" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.4867756247463" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.5381123017914" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.444854518827" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.4580683912468" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.4329095229028" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.4748817379228" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.4998286408371" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<circle cx="78.0" cy="547.3904966131984" r="7" fill="none" stroke="#e08fb8" stroke-width="1.6"/>
+<text x="88" y="490" fill="#c8746a" font-size="11.5">DNg100 u_max -15.8</text>
+<text x="88" y="506" fill="#c8746a" font-size="11.5">(buried; bit-identical at amp .8)</text>
+<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#c8746a"/></marker></defs>
+<path d="M 176 512 L 86 540" stroke="#c8746a" stroke-width="1.4" marker-end="url(#ar)" opacity="0.85"/>
+<text x="78" y="648" fill="#767e8d" font-size="11.5">76 atlas family types x L22/L24/L31 tables; spot-checks: DNge046/DNg110 tonic 0.2 shift rhythm f 0.8-2.0 &#8594; 2.2-3.4 Hz; MDN ceiling-pinned, bit-identical; anchors DNg100 (inert) / DNg95 (lands at 0.2) reproduced</text></svg>

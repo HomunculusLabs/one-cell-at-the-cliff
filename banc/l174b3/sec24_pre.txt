@@ -1,0 +1,158 @@
+### 2.4 Mechanism: the carrier's channel, isolated at an unchanged gain
+One activity arm isolates the carrier cleanly; the edge ladder then says
+where its channel lives.
+
+**The clean arm (silW): the flip without a gain change, without an edge
+touched.** On the cutwA PARTIAL base (cohort ranks 1–24 cut), clamping
+ONLY DNp33-L's activity — no edge removed, no cell deleted — flips the
+regime to SUPER: .622 with 14/16 seeds on B30 [l144.silw] and .659 with
+14/16 on B33 [l150.h1], paired ΔR against the base
++.189 (6/16 seeds up and 0 down) and +.281 (9/16 up and 0 down),
+canonical pooled 78 of 98, Wilson
+[.706,.864], difference from the untreated cut base +.517
+[+.410,+.602], Fisher p = 7e-19 [l172.pooled, l172.diffs]. This arm
+runs at a gain BIT-IDENTICAL to its own base's — g = .143658196 in both
+batches, exact float equality in the two stored jsons [l173b.gains] —
+so the flip cannot be an artefact of the active-fraction re-bisect. It
+is the only flip arm in the lineage with that property. Every
+edge-removal flip arm carries a small af-matched gain INCREASE (eOutInt
++1.297%, cutng25 and eAll +1.244%, eOutAll +1.238%, eIn +1.087%,
+eMotIn +1.062%), while the two arms that do not flip sit within ±0.03%
+(eMotTop5 −0.031%, eMotBot5 +0.009%) and the intermediate eOutMot sits
+at −0.568% [l173b.gains]. Across the edge ladder, identity and gain
+therefore CO-VARY, and that confound was untested until this pass:
+silW breaks the covariance from the activity side, and §2.7's graph ×
+gain 2×2 closes it from the wiring side (the carrier-intact graph does
+not flip at the higher gain; the carrier-cut graph stays SUPER at the
+lower one [l169.grid, l169d.grid]).
+
+**The same clamp is substrate-gated.** On the INTACT closure, clamping
+the identical cell does not move the readout detectably: paired ΔR
+−.088 against three random-cell clamp shams at .429/.502/.504 — n = 3
+shams is a spread of three numbers, not an interval, and |−.088|
+is LARGER than their .075 range, so this arm is reported as "no
+demonstrated effect", never as "inside the sham band" [l137.g1,
+l137.g3] (replicated −.036 on B30 [l144.silf]); a tonic VOLLEY of the
+same cell moves +.022 against the sham's +.077 [l137.g2]. The
+intervention is live on both substrates (clamp dm .0486 vs 0.0 for
+bit-identical dead arms [l137.g1]) and the carrier is visibly active in
+the operating regime (census x_mean .454 [l137.g1]), so absorption —
+not a dead channel — is what the intact subnet does. The carrier's
+firing is load-bearing exactly when its cohort's drive is gone: on the
+intact subnet the cohort makes it redundant; on the cut base it is the
+last pro-structure input its silence removes. (This amends the v2
+"activity carries nothing" reading: same cell, same machinery, only the
+substrate differs, and the verdict inverts.)
+
+**Cohort drive is activity-mediated too, with a disclosed limit.**
+Clamping the whole rank-1–24 cohort's ACTIVITY with its wiring intact
+lands in the same class as the k=24 CUT: PARTIAL .432 (5/16) with the
+Ti_L death .119 (0/16) [l137.sil24]. The class label matches the cut
+base (.383, 5/16) — but on that batch the untreated intact base is
+6/16, so sil24 is a class-label match with NO demonstrated separation
+from either comparator at n = 16, and it is reported as such.
+
+**Why the carrier is redundant on the intact base is not input
+overlap** (static decomposition, observation, [l151.sheet]): on the
+intact subnet the carrier is already the dominant single DN input into
+its 70-cell intrinsic sheet — the other 57 cohort cells combined
+deliver 0.33× its mass
+(share of DN-sheet input 14.5% intact vs 14.7% cut) — and its lever on
+the motor pools is cut-invariant: one left-side
+intermediary (IN06B033) carries the carrier's two-hop pathway into all
+five right-side antagonist pools at an unchanged DN-input mix, while
+the left flexor pool is unreachable through the sheet entirely (zero
+sheet→pool edges, two-hop share 0.100 into Ti_fR vs no pathway at all
+into Ti_fL [l151.crossed]) — the static mirror of the dynamic crossed
+law. The substrate gate therefore lives in the dynamics — which base's
+regime routes through the carrier's channel — not in a static
+redundancy differential [l151.verdict].
+
+**Where the channel lives: the edge decomposition** (edge cuts on the
+cutwA PARTIAL base, fresh B29, n=16/arm, paired-noise fork). Statics
+first: all 80 of the carrier's out-edges live in the window — 70 onto
+the vnc_intrinsic sheet (.005599 removal mass), 10 onto motor pools
+(.000837) — plus 13 in-edges, all from other DNs. Cutting ONLY the 70
+intrinsic out-edges completes the flip: .781, 15/16 SUPER, ΔR vs base
++.404 [l142.h2a] — at .0056 removed mass, 9.72× below the .0544
+any-geometry scattered band: identity beats mass at cell scale.
+Cutting ONLY the 13 IN-edges (out-edges intact) carries it
+independently: .793, 15/16 SUPER, ΔR +.417 [l142.h3] — two redundant
+channels, one on each side of the cell. The 10 motor out-edges alone
+land between classes (.525, 9/16 [l142.h2b]; the B31 re-roll and the
+dose decomposition close this below).
+
+The motor sheet closes the dose question as a THRESHOLD FOOTPRINT:
+dropping either 5-edge half moves nothing (heavy half +.007, light half
+−.013, both inside the .075 clamp/noise floor; per-seed order sign count
+8/16 = coin flip [l145.dose]) — and neither half alone flips on a second
+batch either: canonical pooled top5 31 of 98 [.233,.414] and bot5 25 of 98
+[.179,.350], neither distinguishable from the base (+.037 [−.064,+.147],
+Fisher p = .51; −.024 [−.119,+.083], p = .69) — while dropping all 10
+SUPERs (.632, 12/16 [l145.mot]; pooled 21 of 34 [.450,.761]
+[l172.pooled], strictly between the base (+.339 [+.162,+.491]) and the
+carrier (−.349 [−.517,−.202]) [l172.diffs]): the
+intermediate position is a re-draw RATE between endpoints, not graded
+mass — the §2.5 endpoints-vs-interior law recurring inside a single
+cell's footprint. The in-edge redundancy holds on the fresh batch
+(motor+in combo .801, 15/16 [l145.motin]).
+
+Two further grid cells are bitwise identities that hold BY
+CONSTRUCTION, so they are reported in Methods §3.8 as sanity checks
+rather than as findings here: removing all 93 incident edges equals
+removing the cell, and adding the carrier's silence on top of full edge
+removal equals full edge removal [l142.aeall, l148.seid]. What they
+leave as a RESULT is the margin: the ~.13 gap from silW (.622 on B30
+[l144.silw]) to eAll (pooled .757 [l148.pooled.eAll_B29_B32]) is
+settle-history carried by the edges, never window activity — activity
+silence is a strict subset of edge removal. eAll SUPER replicates on
+its second batch (.768, 15/16 [l148.eall]).
+
+**Clamp-vs-cut grid (closed: the v2 open cell ran and flipped):**
+
+| intervention (base) | level | Ti_R meanR | kR/n | class |
+|---|---|---|---|---|
+| sil1110 (intact) | activity clamp, carrier | .376 / .392 | 2, 3/16 | no demonstrated effect (both batches) |
+| vol1110 (intact) | tonic boost, carrier | .486 | 7/16 | noise |
+| sil24 (intact) | activity clamp, cohort 1–24 | .432 | 5/16 | PARTIAL = cut class (no separation) |
+| cutwA (wiring cut 1–24) | edges, cohort | .377 | 4/16 | PARTIAL |
+| sil1110 on cutwA base | activity clamp, carrier | .622 / .659 | 14, 14/16 | SUPER at UNCHANGED gain; pooled 78/98 [.706,.864] |
+| cutng25 (wiring cut +carrier) | node | .745 | 14/16 | SUPER |
+| eOutInt (cutwA base) | carrier's 70 intrinsic out-edges | .781 | 15/16 | SUPER |
+| eIn (cutwA base) | carrier's 13 in-edges | .793 | 15/16 | SUPER |
+| eOutMot (cutwA base) | carrier's 10 motor out-edges | .525 / .632 | 9, 12/16 | half-step→SUPER; pooled 21/34 [.450,.761] |
+| eMotTop5 (cutwA base) | 5 heavy motor edges | .438 / .460 | 6, 8/16 | no detected move; pooled 31/98 [.233,.414] |
+| eMotBot5 (cutwA base) | 5 light motor edges | .418 / .350 | 6, 2/16 | no detected move; pooled 25/98 [.179,.350] |
+| eMotIn (cutwA base) | 10 motor + 13 in-edges | .801 | 15/16 | SUPER |
+| eAll (cutwA base) | all 93 incident edges | .745 / .768 | 14, 15/16 | SUPER ≡ node-drop (§3.8); pooled 29/32 |
+| se0 (eAll + window clamp) | edges + carrier silence | .768 | 15/16 | ≡ eAll BIT-IDENTICAL (§3.8) |
+
+Fig. 2 (peabrain-figs/l152_clamp_cut_grid.png, +svg) renders this grid:
+dashed = the ACTIVITY family on the intact closure, solid = the WIRING family
+on the cutwA base, whiskers = Wilson 95% lower bounds, pooled batches where
+n>16. Every plotted value is asserted against numbers.json at draw time
+(l152_fig2.py), the substrate-gate arrow is drawn from the stored paired
+deltas (inert dR -.036 intact vs +.189 on the cut base), and se0 is drawn as
+an open twin of the eAll dot (bit-identical per l148.h_id). Vision QA was
+down at draw time; analytic QA (l152_qa.py: canvas bounds, label collisions,
+dot-vs-stored-meanR) substituted and is disclosed.
+
+(clamp arms: B27 with a B30 replication; edge ladder: B29; dose halves +
+combo: B31; eAll re-pin + se0: B32; silW rebase + halves second batch:
+B33 — all n=16/arm; class comparisons
+within batch, paired ΔR legs; single-batch arms disclosed, with pooled
+cells at [l142.pooled, l145.pooled.eOutMot_B29_B31,
+l148.pooled.eAll_B29_B32, l150.pooled].) The bottom cell — clamping the
+carrier's activity on the PARTIAL base — was the one open cell of the v2 grid; it flips, one-signed
+with substrate (no demonstrated effect on intact, SUPER on cut), and the
+se0 identity closes the last activity-vs-edges ambiguity bitwise.
+
+**Reading (interpretation, labeled):** the carrier's causal footprint is
+its EDGE SET, and its firing matters only where the cohort's drive no
+longer covers for it — one channel, reachable from either side of the
+cell, gated by which regime routes through it. That reading also
+explains the gain-ensemble split of §2.5: the carrier endpoint is
+decided by the PRESENCE of a fixed 93-edge set (jitter moves weights,
+not membership), while the transition interior is a mass balance near
+threshold that the ±8% af-matched re-gains do move.
+

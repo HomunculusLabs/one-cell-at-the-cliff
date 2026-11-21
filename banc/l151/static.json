@@ -1,0 +1,581 @@
+{
+ "design": "L151 substrate-gate statics (PREREG l151/PREREG.md). Masses |log1p(syn)*sign| subnet-internal; denominators are in-mass sums on the same convention, disclosed per metric.",
+ "carrier": {
+  "gi": 1110,
+  "type": "DNp33",
+  "side": "left",
+  "ng_rank": 25
+ },
+ "s1_sheet": {
+  "G0_closure": {
+   "D_sheet": 5332.938191959147,
+   "m1110": 160.04365274470274,
+   "m_ng58_others": 52.030840862299534,
+   "m_dn_rest": 893.7747849456905,
+   "m_intr_src": 3843.6204937537436,
+   "m_sens_src": 373.1357504654491,
+   "m_other_src": 10.332669187261843,
+   "share_1110_sheet": 0.030010408331004476,
+   "share_1110_of_DNsheet": 0.14472465267071818,
+   "redundancy_ratio": 0.3251040573617606,
+   "n_ng_others_present": 57,
+   "n_dn_present": 1288
+  },
+  "G1_cutwA": {
+   "D_sheet": 5317.764786514585,
+   "m1110": 160.04365274470274,
+   "m_ng58_others": 36.85743541773707,
+   "m_dn_rest": 893.7747849456905,
+   "m_intr_src": 3843.6204937537436,
+   "m_sens_src": 373.1357504654491,
+   "m_other_src": 10.332669187261843,
+   "share_1110_sheet": 0.03009603831116418,
+   "share_1110_of_DNsheet": 0.14673805178125168,
+   "redundancy_ratio": 0.23029613974464233,
+   "n_ng_others_present": 33,
+   "n_dn_present": 1264
+  },
+  "G2_eAll": {
+   "D_sheet": 5157.721133769882,
+   "m1110": 0.0,
+   "m_ng58_others": 36.85743541773707,
+   "m_dn_rest": 893.7747849456905,
+   "m_intr_src": 3843.6204937537436,
+   "m_sens_src": 373.1357504654491,
+   "m_other_src": 10.332669187261843,
+   "share_1110_sheet": 0.0,
+   "share_1110_of_DNsheet": 0.0,
+   "redundancy_ratio": null,
+   "n_ng_others_present": 33,
+   "n_dn_present": 1264
+  },
+  "signed_1110_out_G1": 183.96376182027785
+ },
+ "s2_pools": {
+  "G0_closure": {
+   "Ti_fL": {
+    "D_pool": 12906.12482292459,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ti_eL": {
+    "D_pool": 3255.4231789144796,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027383924110289458,
+    "twohop_1110": 16.744184141074093,
+    "twohop_dn_total": 235.5873620125148,
+    "twohop_share": 0.07107420363314995
+   },
+   "Ti_fR": {
+    "D_pool": 15557.116350930943,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.00014123598022744985,
+    "twohop_1110": 6.791714448108538,
+    "twohop_dn_total": 67.80725618030705,
+    "twohop_share": 0.10016205979561556
+   },
+   "Ti_eR": {
+    "D_pool": 4127.0504558619605,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.001127672268592489,
+    "twohop_1110": 9.266987553053172,
+    "twohop_dn_total": 157.7403582818119,
+    "twohop_share": 0.05874836125639568
+   },
+   "Tr_fL": {
+    "D_pool": 7256.875169566188,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0004379369571735279,
+    "twohop_1110": 6.18420720271818,
+    "twohop_dn_total": 73.19609978071142,
+    "twohop_share": 0.08448820662911656
+   },
+   "Tr_eL": {
+    "D_pool": 12253.120609668877,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0015875688296031769,
+    "twohop_1110": 37.85315254292521,
+    "twohop_dn_total": 448.0288321077956,
+    "twohop_share": 0.08448820662911656
+   },
+   "Tr_fR": {
+    "D_pool": 7875.656009648286,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0006301499994641767,
+    "twohop_1110": 15.340363441554729,
+    "twohop_dn_total": 153.15543103703456,
+    "twohop_share": 0.10016205979561554
+   },
+   "Tr_eR": {
+    "D_pool": 12244.47121555101,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aL": {
+    "D_pool": 703.2000928229163,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027672211208671486,
+    "twohop_1110": 3.7865663081964716,
+    "twohop_dn_total": 44.81769064904657,
+    "twohop_share": 0.08448820662911656
+   },
+   "Ta_bL": {
+    "D_pool": 604.5922350667386,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aR": {
+    "D_pool": 1431.51235523672,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0023522645946214317,
+    "twohop_1110": 10.408454363504617,
+    "twohop_dn_total": 103.91613735523671,
+    "twohop_share": 0.10016205979561554
+   },
+   "Ta_bR": {
+    "D_pool": 603.7589553630829,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aL": {
+    "D_pool": 3446.6906040110725,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0017757025860773458,
+    "twohop_1110": 14.674002302514314,
+    "twohop_dn_total": 169.2349835837557,
+    "twohop_share": 0.08670785432051073
+   },
+   "Sr_bL": {
+    "D_pool": 4372.598660786423,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aR": {
+    "D_pool": 2916.9015952844056,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_bR": {
+    "D_pool": 4819.798991499532,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.002918176336628232,
+    "twohop_1110": 43.47558432652343,
+    "twohop_dn_total": 434.05241880245876,
+    "twohop_share": 0.10016205979561554
+   },
+   "Pr_aL": {
+    "D_pool": 2011.1846163139353,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bL": {
+    "D_pool": 805.9317395324013,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_aR": {
+    "D_pool": 1709.7027847036743,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bR": {
+    "D_pool": 1191.9382183689936,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.007803489496037662,
+    "twohop_1110": 28.750643211759826,
+    "twohop_dn_total": 287.041253648603,
+    "twohop_share": 0.10016205979561556
+   }
+  },
+  "G1_cutwA": {
+   "Ti_fL": {
+    "D_pool": 12901.56047473312,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ti_eL": {
+    "D_pool": 3229.7471075943786,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027601622761315955,
+    "twohop_1110": 16.744184141074093,
+    "twohop_dn_total": 211.36108658335894,
+    "twohop_share": 0.07922075161394639
+   },
+   "Ti_fR": {
+    "D_pool": 15555.324591461715,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.00014125224867003234,
+    "twohop_1110": 6.791714448108538,
+    "twohop_dn_total": 67.80725618030705,
+    "twohop_share": 0.10016205979561556
+   },
+   "Ti_eR": {
+    "D_pool": 4100.528279205267,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0011349660417558486,
+    "twohop_1110": 9.266987553053172,
+    "twohop_dn_total": 152.62547795949348,
+    "twohop_share": 0.06071717302344903
+   },
+   "Tr_fL": {
+    "D_pool": 7251.597054906957,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0004382557119879466,
+    "twohop_1110": 6.18420720271818,
+    "twohop_dn_total": 62.3869114141506,
+    "twohop_share": 0.09912667677463317
+   },
+   "Tr_eL": {
+    "D_pool": 12253.120609668877,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0015875688296031769,
+    "twohop_1110": 37.85315254292521,
+    "twohop_dn_total": 381.86645386070234,
+    "twohop_share": 0.09912667677463316
+   },
+   "Tr_fR": {
+    "D_pool": 7873.864250179059,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0006302933950311688,
+    "twohop_1110": 15.340363441554729,
+    "twohop_dn_total": 153.15543103703456,
+    "twohop_share": 0.10016205979561554
+   },
+   "Tr_eR": {
+    "D_pool": 12244.47121555101,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aL": {
+    "D_pool": 703.2000928229163,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027672211208671486,
+    "twohop_1110": 3.7865663081964716,
+    "twohop_dn_total": 38.199266145129826,
+    "twohop_share": 0.09912667677463316
+   },
+   "Ta_bL": {
+    "D_pool": 604.5922350667386,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aR": {
+    "D_pool": 1429.7205957674917,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.002355212507922828,
+    "twohop_1110": 10.408454363504617,
+    "twohop_dn_total": 103.91613735523671,
+    "twohop_share": 0.10016205979561554
+   },
+   "Ta_bR": {
+    "D_pool": 602.372661001963,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aL": {
+    "D_pool": 3443.135255949583,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0017775361593406333,
+    "twohop_1110": 14.674002302514314,
+    "twohop_dn_total": 153.89266004114475,
+    "twohop_share": 0.09535219092704662
+   },
+   "Sr_bL": {
+    "D_pool": 4372.598660786423,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aR": {
+    "D_pool": 2915.515300923286,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_bR": {
+    "D_pool": 4819.798991499532,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.002918176336628232,
+    "twohop_1110": 43.47558432652343,
+    "twohop_dn_total": 434.05241880245876,
+    "twohop_share": 0.10016205979561554
+   },
+   "Pr_aL": {
+    "D_pool": 1992.0728705556273,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bL": {
+    "D_pool": 805.9317395324013,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_aR": {
+    "D_pool": 1692.5594219502736,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bR": {
+    "D_pool": 1191.9382183689936,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.007803489496037662,
+    "twohop_1110": 28.750643211759826,
+    "twohop_dn_total": 287.041253648603,
+    "twohop_share": 0.10016205979561556
+   }
+  },
+  "G2_eAll": {
+   "Ti_fL": {
+    "D_pool": 12901.56047473312,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ti_eL": {
+    "D_pool": 3229.7471075943786,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027601622761315955,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 194.61690244228487,
+    "twohop_share": 0.0
+   },
+   "Ti_fR": {
+    "D_pool": 15555.324591461715,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.00014125224867003234,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 61.015541732198514,
+    "twohop_share": 0.0
+   },
+   "Ti_eR": {
+    "D_pool": 4100.528279205267,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0011349660417558486,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 143.35849040644032,
+    "twohop_share": 0.0
+   },
+   "Tr_fL": {
+    "D_pool": 7251.597054906957,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0004382557119879466,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 56.20270421143243,
+    "twohop_share": 0.0
+   },
+   "Tr_eL": {
+    "D_pool": 12253.120609668877,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0015875688296031769,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 344.0133013177772,
+    "twohop_share": 0.0
+   },
+   "Tr_fR": {
+    "D_pool": 7873.864250179059,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0006302933950311688,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 137.81506759547983,
+    "twohop_share": 0.0
+   },
+   "Tr_eR": {
+    "D_pool": 12244.47121555101,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aL": {
+    "D_pool": 703.2000928229163,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0027672211208671486,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 34.412699836933356,
+    "twohop_share": 0.0
+   },
+   "Ta_bL": {
+    "D_pool": 604.5922350667386,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Ta_aR": {
+    "D_pool": 1429.7205957674917,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.002355212507922828,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 93.5076829917321,
+    "twohop_share": 0.0
+   },
+   "Ta_bR": {
+    "D_pool": 602.372661001963,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aL": {
+    "D_pool": 3443.135255949583,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0017775361593406333,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 139.21865773863044,
+    "twohop_share": 0.0
+   },
+   "Sr_bL": {
+    "D_pool": 4372.598660786423,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_aR": {
+    "D_pool": 2915.515300923286,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Sr_bR": {
+    "D_pool": 4819.798991499532,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.002918176336628232,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 390.57683447593524,
+    "twohop_share": 0.0
+   },
+   "Pr_aL": {
+    "D_pool": 1992.0728705556273,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bL": {
+    "D_pool": 805.9317395324013,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_aR": {
+    "D_pool": 1692.5594219502736,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.0,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 0.0,
+    "twohop_share": null
+   },
+   "Pr_bR": {
+    "D_pool": 1191.9382183689936,
+    "direct_1110": 0.0,
+    "sheet_to_pool_share": 0.007803489496037662,
+    "twohop_1110": 0.0,
+    "twohop_dn_total": 258.29061043684317,
+    "twohop_share": 0.0
+   }
+  }
+ },
+ "s3_motor": {
+  "G0_closure": {
+   "D_motor": 176096.9671862827,
+   "direct_1110_motor": 23.92010907557512,
+   "share_direct": 0.0001358348724442905,
+   "twohop_1110": 2423.0994838006286,
+   "twohop_dn_total": 23229.334610070073,
+   "twohop_share": 0.10431204872954901
+  },
+  "G1_cutwA": {
+   "D_motor": 175881.4708269948,
+   "direct_1110_motor": 23.92010907557512,
+   "share_direct": 0.0001360013022582922,
+   "twohop_1110": 2423.0994838006286,
+   "twohop_dn_total": 22813.489547641326,
+   "twohop_share": 0.10621345229718053
+  },
+  "G2_eAll": {
+   "D_motor": 175857.55071791922,
+   "direct_1110_motor": 0.0,
+   "share_direct": 0.0,
+   "twohop_1110": 0.0,
+   "twohop_dn_total": 20390.390063840692,
+   "twohop_share": 0.0
+  }
+ },
+ "pins": "ALL GREEN",
+ "verdict": {
+  "leg_share_ratio_G1_over_G0": 1.013911929124573,
+  "leg_redundancy_ratio_G0_over_G1": 1.4116782752947725,
+  "H_SUB_fires": false,
+  "label": "observation (card)"
+ },
+ "followup_named_intermediaries": {
+  "crossed_channel": "gi75494 IN06B033 left = single dominant sheet intermediary for ALL FIVE right-side pools (Ti_fR, Tr_fR, Ta_aR, Sr_bR, Pr_bR); its DN input mass 30.86 is CUT-INVARIANT (no ng-cohort input) -> 1110's lever on the R pools identical on both bases; shared twohop share .10016 G0==G1",
+  "ipsilateral_flexor": "Ti_fL: ZERO sheet->pool edges (twohop_dn_total 0.0) \u2014 the left flexor pool is unreachable through 1110's sheet (static crossed law)",
+  "only_cut_sensitive_sheet_cell": "gi70458 INXXX467 right (Ti_eL route): DN input 23.03 -> 19.63 under wA cut (-15%, the only sheet cell with cohort input); IN06B042 right unchanged 39.92",
+  "s1_note": "1110 is ALREADY the dominant single DN input into T70 on the intact closure (ng58-others combined 52.03 = 0.33x of 1110's 160.04; share-of-DN-sheet 14.47% G0 vs 14.67% G1) \u2014 H-SUB refuted, gate is dynamic"
+ }
+}

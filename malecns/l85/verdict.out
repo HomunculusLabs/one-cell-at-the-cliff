@@ -1,0 +1,20 @@
+le 0.719 (+0.111) | d07 bestfix 0.673 oracle 0.729 (+0.056)
+
+O4_K2000_hybrid: seg1 bestfix 0.402 oracle 0.565 (+0.163) | seg2 bestfix 0.533 oracle 0.599 (+0.066) | d07 bestfix 0.569 oracle 0.602 (+0.033)
+
+REALIZABILITY {"O2_glide300_minus_step_vs_SLexit": -0.05, "O2_glide300_minus_step_vs_mmexit": 0.35, "O2_glide400_minus_step_vs_SLexit": -0.5, "O2_glide400_minus_step_vs_mmexit": 0.226, "O3_fb07_minus_fb_seg1_vs_SLexit": 0.088, "O3_fb07_minus_fb_seg1_vs_mmexit": 0.206}
+
+written l85/derived.json
+
+VERDICT PASS — all anchors + certification + every PREREG-pinned value equal.
+GATE-L85: {
+ "G1_tracking": "seg1 block-err <= .01 on 16/16 census seeds",
+ "G2a_duty07": "k >= 15/16 AND Wilson lb >= .717",
+ "G2b_budget_tier": "k>=15 with echo ratio <= .0431 => BUDGET-DOMINANT (descriptive)",
+ "G3_duty_fast_separate": "seg1 duty mean >= .358 (= .292 + 0.8*(.375-.292))",
+ "G4_budget": "entrain on-steps <= 4800 AND echo ratio <= .127",
+ "union_G2a_AND_G3": "DEMOTED to diagnostic: no fixed arm clears; best branch-consistent oracle pick k=14 @ seg1 .401",
+ "degenerate_branch": "always-fb mimic passes G1/G2a/G4, fails G3 (non-vacuous)",
+ "training_go_no_go": "NO-GO on this branch library (realizability rho -.5..+.35, n=16); GO requires a grown mid-seg branch library + re-measure"
+}
+written l85/mass_table.json

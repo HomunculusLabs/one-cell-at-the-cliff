@@ -1,0 +1,29 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l45_census.py:87: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l45_census.py:89: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+channel d_DNg110: DNg110 n=6 sides=['L', 'R'] amp=0.25
+channel d_DNge046: DNge046 n=4 sides=['L', 'R'] amp=0.25
+channel d_DNg95: DNg95 n=2 sides=['L', 'R'] amp=0.25
+channel d_DNg88rel: DNg88 n=2 sides=['L', 'R'] amp=-8.0
+channel d_E1: IN17A001 n=6 sides=['L', 'R'] amp=0.25
+channel d_X464: INXXX464 n=6 sides=['L', 'R'] amp=0.25
+seed 11 done (45s, arms 7)
+seed 22 done (83s, arms 7)
+seed 33 done (121s, arms 7)
+seed 101 done (158s, arms 7)
+seed 102 done (196s, arms 7)
+seed 103 done (234s, arms 7)
+seed 104 done (271s, arms 7)
+seed 105 done (310s, arms 7)
+seed 106 done (318s, arms 1)
+seed 107 done (324s, arms 1)
+seed 108 done (331s, arms 1)
+seed 109 done (337s, arms 1)
+seed 110 done (343s, arms 1)
+seed 111 done (350s, arms 1)
+seed 112 done (357s, arms 1)
+seed 113 done (364s, arms 1)
+raw checkpointed (364s)
+VERDICT {"C0_anchor": {"anch_ok": "6/6", "r_med": 185.7, "SL_med": 0.193, "anchor_pass": true}, "C1_mechanics": {"af_ok": true, "prefix_bitident": false, "prefix_max": 0.07684935629367828}, "census_states": {"mid|+0": 5, "slow|+-": 1, "mid|00": 4, "mid|+-": 4, "mid|-0": 1, "mid|0-": 1}, "n_states": 6, "n_migrations": 10}
+done 366s -> l45/results_l45b.json

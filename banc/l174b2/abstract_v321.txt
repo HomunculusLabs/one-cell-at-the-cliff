@@ -1,0 +1,81 @@
+## Abstract (draft)
+
+Connectome-constrained simulations let us ask not just whether wiring matters,
+but WHICH cells matter. On a Drosophila brain-and-nerve-cord connectome (BANC
+v626) run as a certified rate model — every arm gain-bisected to a matched
+operating point before perturbation — removing progressively larger cohorts of
+non-glutamatergic descending neurons from a bulk-extracted cord subnet produces
+an all-or-none transition in antagonist muscle-structure. Right-side tibia
+flexor structure is killed by small removals (5 of 178 seeds survive at k=19)
+and super-raised by slightly larger ones (203 of 210 at k=25, 188 of 194 at
+k=29). The removal curve is a non-monotone U-law
+[k5: 0/226, 19: 5/178, 24: 72/258, 25: 203/210, 29: 188/194, 58: 1/258
+[l172.pooled]]. Every count here is the single canonical pooled count for
+that arm: the maximal unique-seed union over all admissible stored batches,
+with full-precision Wilson intervals and bootstrap intervals on mean duty
+(§2.9). Decomposing the
+k=24→25 step with MASS-TWIN controls — two cells whose removal masses differ by
+3.9e-04 [xor.pair_delta] — shows the flip is carried by one named cell's
+IDENTITY at fixed mass, DNp33-L (id 1110): removing it converts kill→super
+(paired ΔR +.256/+.317). Its near-identical twin DNpe025-R (id 319)
+lands INTERMEDIATE rather than neutral: pooled 30 of 66, Wilson [.340,.574].
+That is significantly above the untreated-cut base (difference +.175, 95% CI
+[+.047,+.305], Fisher p = .008) and far below the carrier (−.512,
+[−.628,−.388]) [l172.pooled, l172.diffs].
+That carrier is SUFFICIENT, not unique, and its sufficiency is SET-dependent.
+Of seven carrier-free cohorts mass-matched to the same window, exactly one
+reaches the super class (ranks 30–39, .2490 vs .2588 removed mass: 39/48
+pooled, Wilson [.681,.898] [l168.scr]). The rest pool from 0/32 to 17/32 at
+indistinguishable mass [l168.scr], and the one that does super raises BOTH
+sides — it never reproduces the carrier's crossed right-up/left-down
+signature. Static
+anatomy does not predict the carrier: DNp33-L has zero direct antagonist-pool
+edges and mid-pack projection mass. Under a five-set gain-jitter ensemble —
+the exact fragility critique raised against connectome silencing claims — the
+identity endpoint is robust (carrier SUPER 5/5 gain sets [sustain.cutng25])
+while the transition INTERIOR re-draws (wA partial 0/5 [sustain.cutwA]):
+endpoints are gain-robust, the middle is regime-dependent. The transition does
+not transfer across connectomes: the male MaleCNS extraction admits no such
+ladder (28 vs 560 added DNs [l138.male_s1]), bounding the claim to the
+extraction cohort — a connectome-simulation identity claim is
+cohort-relative, gain-robust at its endpoints, and unresolvable by static
+anatomy alone. Mechanistically, the transition decomposes into
+substrate-gated factors: clamping the whole cohort's ACTIVITY reproduces
+the cut (partial class [l137.sil24]). The carrier's own activity does not
+move the intact subnet detectably (−.088 against three random-cell shams
+spanning .429–.504; n = 3 shams is a spread of three numbers, not an
+interval [l137.g1, l137.g3]). Yet its SILENCE alone completes the flip on
+the cut base, replicated across six batches (paired ΔR +.189 [l144.silw]
+and +.281; pooled 78 of 98, Wilson [.706,.864], difference from the
+untreated-cut base +.517 [+.410,+.602] [l172.pooled, l172.diffs]). And the
+flip rides the carrier's 93 incident
+edges — the 70 intrinsic OR the 13 incoming edges each suffice at .0056
+removed mass, 9.72× below any mass-only band [l142.h2a, l142.h3] — with
+node-removal ≡ incident-edge-removal, and edge-removal + silence ≡
+edge-removal, both BIT-IDENTICAL (max|d| = 0.0 [l142.aeall,
+l148.seid]). Within the 10-edge motor sheet the effect is a threshold
+footprint: either 5-edge half stays indistinguishable from the base on the
+pooled union (31 of 98, difference +.037 [−.064,+.147]; 25 of 98, −.024
+[−.119,+.083] [l172.pooled, l172.diffs]),
+all 10 SUPER [l145.dose]. The whole
+construction is bounded by the release's implicit 3-synapse pair floor:
+the carrier survives the strongest admissible floor while the twin
+selection is floor-contingent [l146.f4]. Finally, we hold our frequency
+claims to a band-relative honesty rule, and we apply it to our own slow
+line first. The sub-band peak at .100 Hz that motivated the rule is
+exactly where the DRIVE ENVELOPE's own spectrum peaks [l171.envelope].
+The chopped stimulus leaves four off-gaps whose centres are
+phase-aligned at a 10-s period (gap vector strength .95, against .17
+for the chop's own 9-s cycle), so the stimulus fixes the line's
+position and no endogenous antagonist clock is needed to explain it.
+Sub-band power does survive with the drive off, and the per-pool census
+makes the line a partial carrier at best, so both are now reported as
+limitations rather than results (§2.8, §4). The identity result does
+not ride on that line: re-scored in the UNCHOPPED 1.4-Hz segment the
+carrier-cut arm holds 12/16 seeds against the mass-twin's 0/16 (paired
+16/16), and after a 0.3-Hz high-pass 15/16 against 1/16 [l171.panel].
+Every dominant-frequency statement on this substrate is therefore
+quoted relative to the band it was measured in.
+We release the preregistration + bit-identity anchor protocol
+that made each step falsifiable in advance.
+

@@ -1,0 +1,39 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+motor 815 (L 409/R 406) | DN 1314 | looming 949 | olf 2639
+engineered DN->motor edges: 23,616 (mean w 0.002, max 0.1)
+top DN classes into motor: [('DNge172', 480), ('DNg93', 453), ('DNg74_b', 415), ('DNg74_a', 312), ('DNg108', 311), ('DNge136', 306), ('DNg100', 248), ('DNg105', 243)]
+base       rho 0.8342 motor_base 0.0308 af 0.163
+eng20      rho 0.8342 motor_base 0.0666 af 0.166
+eng200     rho 0.8342 motor_base 0.3864 af 0.168
+edgecut200 rho 0.8343 motor_base 0.0290 af 0.163
+clamp sets: DNp01-04 8, DNc01/02 4
+base|looming         |dm| 0.00368 dpeak 0.0311 turn -0.0038 mbase 0.0309
+base|odor            |dm| 0.00354 dpeak 0.0310 turn -0.0007 mbase 0.0309
+eng20|looming        |dm| 0.00549 dpeak 0.0699 turn -0.0057 mbase 0.0671
+eng20|odor           |dm| 0.00415 dpeak 0.0681 turn -0.0045 mbase 0.0671
+eng200|looming       |dm| 0.02455 dpeak 0.4086 turn -0.0040 mbase 0.3886
+eng200|odor          |dm| 0.01101 dpeak 0.3946 turn -0.0041 mbase 0.3886
+clamp200|looming     |dm| 0.02000 dpeak 0.4029 turn -0.0043 mbase 0.3867
+clamp200|odor        |dm| 0.01069 dpeak 0.3938 turn -0.0044 mbase 0.3882
+edgecut200|looming   |dm| 0.00354 dpeak 0.0291 turn -0.0005 mbase 0.0290
+
+motor-VECTOR pairwise cos (3 seed pairs same-event = SELF; cross = loom vs odor):
+  base      looming~looming: +0.023
+  base      odor   ~odor   : +0.008
+  base      looming~odor   : +0.259
+  eng20     looming~looming: +0.566
+  eng20     odor   ~odor   : +0.097
+  eng20     looming~odor   : +0.250
+  eng200    looming~looming: +0.928
+  eng200    odor   ~odor   : +0.371
+  eng200    looming~odor   : +0.280
+  clamp200  looming~looming: +0.859
+  clamp200  odor   ~odor   : +0.300
+  clamp200  looming~odor   : +0.353
+  edgecut200 looming~looming: +0.008
+eng200|looming top motor cells: [('TTMn', 0.5159), ('TTMn', 0.4368), ('ltm2-femur MN', 0.2667), ('ltm2-femur MN', 0.2578), ('iii1 MN', 0.2563), ('iii1 MN', 0.239), (nan, 0.2323), ('i1 MN', 0.192)]
+
+done in 276s -> l13/results_l13.json

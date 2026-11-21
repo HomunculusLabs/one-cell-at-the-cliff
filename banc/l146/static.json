@@ -1,0 +1,659 @@
+{
+ "S0_release": {
+  "below3": 0,
+  "eq3": 811821,
+  "min": 3,
+  "n_pairs": 2676592,
+  "n_rows": 3777046,
+  "note": "L149 addendum, re-derived from dv_11842997 raw rows (pre/post pairs summed over per-neuropil breakdowns); pins the release-level floor census quoted by card L149(c).",
+  "pairs_containing_1syn_row": 462170,
+  "pairs_containing_1syn_row_sum_ge3": 462170,
+  "rows_s1": 574733,
+  "rows_s2": 419792
+ },
+ "S1_substrate": {
+  "all_in_graph_pairs": {
+   "eq3": 533658,
+   "max": 926,
+   "min": 3,
+   "n": 1830698,
+   "s1": 0,
+   "s2": 0,
+   "s3": 1830698
+  },
+  "closure": {
+   "eq3": 175858,
+   "max": 926,
+   "min": 3,
+   "n": 647953,
+   "s1": 0,
+   "s2": 0,
+   "s3": 647953
+  },
+  "deleted": {
+   "all_f2": 0,
+   "all_f3": 0,
+   "closure_f2": 0,
+   "closure_f3": 0,
+   "wA_f2": 0,
+   "wA_f3": 0
+  },
+  "rows_pre_collapse": {
+   "eq3": 596423,
+   "max": 922,
+   "min": 1,
+   "n": 2579119,
+   "s1": 395996,
+   "s2": 284381,
+   "s3": 1898742
+  },
+  "wA_window": {
+   "eq3": 174921,
+   "max": 926,
+   "min": 3,
+   "n": 644177,
+   "s1": 0,
+   "s2": 0,
+   "s3": 644177
+  }
+ },
+ "S2_ng58": {
+  "in_": {
+   "eq3": 177,
+   "max": 170,
+   "min": 3,
+   "n": 535,
+   "s1": 0,
+   "s2": 0,
+   "s3": 535
+  },
+  "out": {
+   "eq3": 1503,
+   "max": 163,
+   "min": 3,
+   "n": 6251,
+   "s1": 0,
+   "s2": 0,
+   "s3": 6251
+  },
+  "per_cell": [
+   {
+    "gi": 80,
+    "in_n": 5,
+    "in_s1": 0,
+    "out_n": 113,
+    "out_s1": 0
+   },
+   {
+    "gi": 153,
+    "in_n": 6,
+    "in_s1": 0,
+    "out_n": 131,
+    "out_s1": 0
+   },
+   {
+    "gi": 227,
+    "in_n": 5,
+    "in_s1": 0,
+    "out_n": 113,
+    "out_s1": 0
+   },
+   {
+    "gi": 228,
+    "in_n": 9,
+    "in_s1": 0,
+    "out_n": 113,
+    "out_s1": 0
+   },
+   {
+    "gi": 250,
+    "in_n": 14,
+    "in_s1": 0,
+    "out_n": 223,
+    "out_s1": 0
+   },
+   {
+    "gi": 253,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 127,
+    "out_s1": 0
+   },
+   {
+    "gi": 262,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 89,
+    "out_s1": 0
+   },
+   {
+    "gi": 290,
+    "in_n": 4,
+    "in_s1": 0,
+    "out_n": 133,
+    "out_s1": 0
+   },
+   {
+    "gi": 292,
+    "in_n": 6,
+    "in_s1": 0,
+    "out_n": 159,
+    "out_s1": 0
+   },
+   {
+    "gi": 307,
+    "in_n": 15,
+    "in_s1": 0,
+    "out_n": 146,
+    "out_s1": 0
+   },
+   {
+    "gi": 319,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 104,
+    "out_s1": 0
+   },
+   {
+    "gi": 354,
+    "in_n": 34,
+    "in_s1": 0,
+    "out_n": 113,
+    "out_s1": 0
+   },
+   {
+    "gi": 456,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 93,
+    "out_s1": 0
+   },
+   {
+    "gi": 493,
+    "in_n": 2,
+    "in_s1": 0,
+    "out_n": 199,
+    "out_s1": 0
+   },
+   {
+    "gi": 546,
+    "in_n": 6,
+    "in_s1": 0,
+    "out_n": 127,
+    "out_s1": 0
+   },
+   {
+    "gi": 549,
+    "in_n": 2,
+    "in_s1": 0,
+    "out_n": 92,
+    "out_s1": 0
+   },
+   {
+    "gi": 558,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 99,
+    "out_s1": 0
+   },
+   {
+    "gi": 559,
+    "in_n": 14,
+    "in_s1": 0,
+    "out_n": 102,
+    "out_s1": 0
+   },
+   {
+    "gi": 585,
+    "in_n": 15,
+    "in_s1": 0,
+    "out_n": 90,
+    "out_s1": 0
+   },
+   {
+    "gi": 618,
+    "in_n": 1,
+    "in_s1": 0,
+    "out_n": 88,
+    "out_s1": 0
+   },
+   {
+    "gi": 628,
+    "in_n": 11,
+    "in_s1": 0,
+    "out_n": 106,
+    "out_s1": 0
+   },
+   {
+    "gi": 643,
+    "in_n": 17,
+    "in_s1": 0,
+    "out_n": 91,
+    "out_s1": 0
+   },
+   {
+    "gi": 651,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 59,
+    "out_s1": 0
+   },
+   {
+    "gi": 692,
+    "in_n": 15,
+    "in_s1": 0,
+    "out_n": 69,
+    "out_s1": 0
+   },
+   {
+    "gi": 707,
+    "in_n": 9,
+    "in_s1": 0,
+    "out_n": 98,
+    "out_s1": 0
+   },
+   {
+    "gi": 722,
+    "in_n": 12,
+    "in_s1": 0,
+    "out_n": 74,
+    "out_s1": 0
+   },
+   {
+    "gi": 724,
+    "in_n": 13,
+    "in_s1": 0,
+    "out_n": 102,
+    "out_s1": 0
+   },
+   {
+    "gi": 725,
+    "in_n": 1,
+    "in_s1": 0,
+    "out_n": 79,
+    "out_s1": 0
+   },
+   {
+    "gi": 733,
+    "in_n": 15,
+    "in_s1": 0,
+    "out_n": 154,
+    "out_s1": 0
+   },
+   {
+    "gi": 736,
+    "in_n": 28,
+    "in_s1": 0,
+    "out_n": 58,
+    "out_s1": 0
+   },
+   {
+    "gi": 743,
+    "in_n": 5,
+    "in_s1": 0,
+    "out_n": 126,
+    "out_s1": 0
+   },
+   {
+    "gi": 744,
+    "in_n": 2,
+    "in_s1": 0,
+    "out_n": 204,
+    "out_s1": 0
+   },
+   {
+    "gi": 779,
+    "in_n": 3,
+    "in_s1": 0,
+    "out_n": 75,
+    "out_s1": 0
+   },
+   {
+    "gi": 800,
+    "in_n": 11,
+    "in_s1": 0,
+    "out_n": 115,
+    "out_s1": 0
+   },
+   {
+    "gi": 808,
+    "in_n": 14,
+    "in_s1": 0,
+    "out_n": 85,
+    "out_s1": 0
+   },
+   {
+    "gi": 826,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 74,
+    "out_s1": 0
+   },
+   {
+    "gi": 890,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 84,
+    "out_s1": 0
+   },
+   {
+    "gi": 902,
+    "in_n": 13,
+    "in_s1": 0,
+    "out_n": 152,
+    "out_s1": 0
+   },
+   {
+    "gi": 924,
+    "in_n": 20,
+    "in_s1": 0,
+    "out_n": 76,
+    "out_s1": 0
+   },
+   {
+    "gi": 1022,
+    "in_n": 2,
+    "in_s1": 0,
+    "out_n": 75,
+    "out_s1": 0
+   },
+   {
+    "gi": 1038,
+    "in_n": 16,
+    "in_s1": 0,
+    "out_n": 65,
+    "out_s1": 0
+   },
+   {
+    "gi": 1060,
+    "in_n": 10,
+    "in_s1": 0,
+    "out_n": 50,
+    "out_s1": 0
+   },
+   {
+    "gi": 1110,
+    "in_n": 13,
+    "in_s1": 0,
+    "out_n": 80,
+    "out_s1": 0
+   },
+   {
+    "gi": 1224,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 74,
+    "out_s1": 0
+   },
+   {
+    "gi": 1266,
+    "in_n": 6,
+    "in_s1": 0,
+    "out_n": 88,
+    "out_s1": 0
+   },
+   {
+    "gi": 1489,
+    "in_n": 4,
+    "in_s1": 0,
+    "out_n": 54,
+    "out_s1": 0
+   },
+   {
+    "gi": 1509,
+    "in_n": 10,
+    "in_s1": 0,
+    "out_n": 66,
+    "out_s1": 0
+   },
+   {
+    "gi": 1543,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 59,
+    "out_s1": 0
+   },
+   {
+    "gi": 1557,
+    "in_n": 1,
+    "in_s1": 0,
+    "out_n": 67,
+    "out_s1": 0
+   },
+   {
+    "gi": 1673,
+    "in_n": 5,
+    "in_s1": 0,
+    "out_n": 60,
+    "out_s1": 0
+   },
+   {
+    "gi": 3248,
+    "in_n": 25,
+    "in_s1": 0,
+    "out_n": 204,
+    "out_s1": 0
+   },
+   {
+    "gi": 32005,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 78,
+    "out_s1": 0
+   },
+   {
+    "gi": 32072,
+    "in_n": 8,
+    "in_s1": 0,
+    "out_n": 102,
+    "out_s1": 0
+   },
+   {
+    "gi": 32078,
+    "in_n": 8,
+    "in_s1": 0,
+    "out_n": 206,
+    "out_s1": 0
+   },
+   {
+    "gi": 32097,
+    "in_n": 9,
+    "in_s1": 0,
+    "out_n": 59,
+    "out_s1": 0
+   },
+   {
+    "gi": 32160,
+    "in_n": 19,
+    "in_s1": 0,
+    "out_n": 244,
+    "out_s1": 0
+   },
+   {
+    "gi": 32271,
+    "in_n": 8,
+    "in_s1": 0,
+    "out_n": 94,
+    "out_s1": 0
+   },
+   {
+    "gi": 32285,
+    "in_n": 7,
+    "in_s1": 0,
+    "out_n": 191,
+    "out_s1": 0
+   }
+  ],
+  "per_cell_share_out_s1": 0.0
+ },
+ "S3_carrier": {
+  "in13": {
+   "eq3": 1,
+   "max": 30,
+   "min": 3,
+   "n": 13,
+   "s1": 0,
+   "s2": 0,
+   "s3": 13
+  },
+  "out80": {
+   "eq3": 11,
+   "max": 41,
+   "min": 3,
+   "n": 80,
+   "s1": 0,
+   "s2": 0,
+   "s3": 80
+  },
+  "out_int70": {
+   "eq3": 9,
+   "max": 41,
+   "min": 3,
+   "n": 70,
+   "s1": 0,
+   "s2": 0,
+   "s3": 70
+  },
+  "out_mot10": {
+   "eq3": 2,
+   "max": 35,
+   "min": 3,
+   "n": 10,
+   "s1": 0,
+   "s2": 0,
+   "s3": 10
+  },
+  "survive": {
+   "in13_f2": 13,
+   "in13_f3": 13,
+   "out80_f2": 80,
+   "out80_f3": 80,
+   "out_int70_f2": 70,
+   "out_int70_f3": 70,
+   "out_mot10_f2": 10,
+   "out_mot10_f3": 10
+  }
+ },
+ "S4_ladder": {
+  "base": {
+   "K": 77,
+   "carrier_rank": 25,
+   "closure_edges": 647953,
+   "floor": 1,
+   "heav_f_ids": [
+    80,
+    153,
+    204,
+    227,
+    228
+   ],
+   "jaccard_heavy": 1.0,
+   "n_glut": 19,
+   "n_ng": 58,
+   "prefix_mass_removed": {
+    "ng19": 0.1946,
+    "ng24": 0.2286,
+    "ng25": 0.235,
+    "ng29": 0.2588
+   },
+   "twin_rank": 26,
+   "wA_edges": 644177
+  },
+  "f2": {
+   "K": 77,
+   "carrier_rank": 25,
+   "closure_edges": 647953,
+   "floor": 2,
+   "heav_f_ids": [
+    80,
+    153,
+    204,
+    227,
+    228
+   ],
+   "jaccard_heavy": 1.0,
+   "n_glut": 19,
+   "n_ng": 58,
+   "prefix_mass_removed": {
+    "ng19": 0.1946,
+    "ng24": 0.2286,
+    "ng25": 0.235,
+    "ng29": 0.2588
+   },
+   "twin_rank": 26,
+   "wA_edges": 644177
+  },
+  "f3": {
+   "K": 77,
+   "carrier_rank": 25,
+   "closure_edges": 647953,
+   "floor": 3,
+   "heav_f_ids": [
+    80,
+    153,
+    204,
+    227,
+    228
+   ],
+   "jaccard_heavy": 1.0,
+   "n_glut": 19,
+   "n_ng": 58,
+   "prefix_mass_removed": {
+    "ng19": 0.1946,
+    "ng24": 0.2286,
+    "ng25": 0.235,
+    "ng29": 0.2588
+   },
+   "twin_rank": 26,
+   "wA_edges": 644177
+  },
+  "f4": {
+   "K": 73,
+   "carrier_rank": 21,
+   "closure_edges": 472095,
+   "floor": 4,
+   "heav_f_ids": [
+    80,
+    122,
+    153,
+    204,
+    227
+   ],
+   "jaccard_heavy": 0.9231,
+   "n_glut": 18,
+   "n_ng": 55,
+   "prefix_mass_removed": {
+    "ng19": 0.1988,
+    "ng24": 0.2342,
+    "ng25": 0.2405,
+    "ng29": 0.2649
+   },
+   "twin_rank": 33,
+   "wA_edges": 469256
+  }
+ },
+ "carrier": {
+  "cell_type": "DNp33",
+  "gi": 1110,
+  "ng_rank": 25,
+  "nt": "acetylcholine",
+  "side": "left"
+ },
+ "convention": "floors act on PAIR-LEVEL SUMMED syn_count (post-collapse, L62 form); per-ROW pre-collapse distribution is secondary descriptor S1.rows_pre_collapse; weights log1p(summed).",
+ "decision": "D1_survives",
+ "decision_addendum": "D4a_robust_to_strongest_admissible_floor",
+ "decision_detail": {
+  "d1": true,
+  "d2": false,
+  "d4a": true,
+  "d4b": false,
+  "f2_carrier_rank": 25,
+  "f2_twin_rank": 26,
+  "f4_carrier_rank": 21,
+  "f4_twin_rank": 33,
+  "out80_f2": 80,
+  "out80_f3": 80,
+  "out80_f4": 69
+ },
+ "design": "L146 static: synapse-floor robustness census of the identity cliff (f2 keep>=2, f3 keep>=3, f4 keep>=4; pair-level summed syn). PREREG l146/PREREG.md FIRST + ADDENDUM A (f2/f3 VACUOUS-BY-RELEASE disclosed BEFORE f4 computed). Zero rollouts, no RNG."
+}

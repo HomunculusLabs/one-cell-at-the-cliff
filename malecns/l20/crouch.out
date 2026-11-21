@@ -1,0 +1,15 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+amplified: DNp01-04->motor 118 edges | DNg105/DNg95/DNge079/DNg74_b/DNg35/DNg108->flexor 378 edges x200 | crouch cells 12 | 1s
+SNR gate flex : crouch    25.1x | clamp-DNg   1.5x
+SNR gate ext  : crouch     6.3x | clamp-DNg   4.2x
+SNR gate TTMn : crouch     7.3x | clamp-DNg   7.4x
+FLEX SNR GATE: PASS (L19 rule — no phasing claim if undriven) | 91s
+theta tail noise 0.00091 | crouch-only trough -0.0788 (peak +0.0027) | stroke-only peak +0.0307 (trough -0.0013) | 182s
+two-phase DEL= 30: trough -0.0788 @  23.0 | peak +0.0027 @ 267.3 | TTMn t_pk [55, 55, 55] | BIPHASIC False | 227s
+two-phase DEL= 60: trough -0.0788 @  23.0 | peak +0.0211 @  80.0 | TTMn t_pk [85, 85, 85] | BIPHASIC True | 272s
+two-phase DEL=100: trough -0.0788 @  23.0 | peak +0.0288 @ 120.0 | TTMn t_pk [125, 125, 125] | BIPHASIC True | 318s
+
+figure arm DEL=60 saved -> l20/two_phase.npz | done 363s -> l20/results_l20.json

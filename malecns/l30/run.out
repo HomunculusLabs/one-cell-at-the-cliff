@@ -1,0 +1,45 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+S1 intr(Ta)->motor(Tb) weight mass:
+ [[43.6  6.   3.8]
+ [ 5.6 43.   9.4]
+ [ 1.4  3.8 36.4]]
+S2 intr(Ta)->intr(Tb)  weight mass:
+ [[430.2  57.7  -0.9]
+ [  1.7 460.4 122.8]
+ [ 15.9 -30.1 343.1]]
+cross-share S1 0.1963  S2 0.1193
+per-cell z S1:
+ [[17.1 -6.8 -6.6]
+ [-8.1 14.4 -6.3]
+ [-8.2 -8.5 13.3]]
+per-cell z S2:
+ [[ 23.3  -6.3  -9.7]
+ [-12.1  13.6  -3.3]
+ [ -8.3 -11.6  16.7]]
+label-perm null (500 draws): S1 cross 0.6656+-0.0172 z -27.3 | S2 cross 0.6606+-0.0043 z -124.8
+S3 2-hop intr(Ta)->sheet->motor(Tb) mass:
+ [[ 7.8  1.1  0.7]
+ [ 0.7  5.3  2.4]
+ [ 0.3 -0.1  4.6]]
+label-perm S3 cross 0.6736+-0.0263 z -17.3
+MS block: 1831323 intr->intr edges
+MS draw 0: 2500000 swaps | 2-hop cross 0.6383
+MS draw 1: 2500000 swaps | 2-hop cross 0.6408
+MS draw 2: 2500000 swaps | 2-hop cross 0.6460
+MS-rewire null: S3 cross 0.6417+-0.0032 z -131.9
+S4 T1L: n=87 | intr T1 0.567 T2 0.076 T3 0.015 | sens 0.057 DN 0.114
+S4 T1R: n=86 | intr T1 0.583 T2 0.072 T3 0.021 | sens 0.049 DN 0.125
+S4 T2L: n=87 | intr T1 0.080 T2 0.552 T3 0.050 | sens 0.088 DN 0.087
+S4 T2R: n=88 | intr T1 0.074 T2 0.552 T3 0.049 | sens 0.094 DN 0.089
+S4 T3L: n=77 | intr T1 0.061 T2 0.134 T3 0.533 | sens 0.065 DN 0.042
+S4 T3R: n=75 | intr T1 0.049 T2 0.135 T3 0.507 | sens 0.093 DN 0.052
+S4 abd: n=315 | intr T1 0.014 T2 0.025 T3 0.062 | sens 0.061 DN 0.188
+volley sets: T1pmi 2681 | T3pmi 2711 | rnd 2681
+arm T1v: T1L snr  579.7x t_pk  30.0 | T1R snr  732.7x t_pk  30.0 | T2L snr  128.5x t_pk  29.7 | T2R snr   95.9x t_pk  29.7 | T3L snr   89.2x t_pk  28.7 | T3R snr   71.2x t_pk  30.0 | abd snr   38.5x t_pk  27.0
+arm T3v: T1L snr   18.0x t_pk  27.0 | T1R snr   29.5x t_pk  25.7 | T2L snr   69.7x t_pk  29.0 | T2R snr   54.4x t_pk  27.7 | T3L snr  665.7x t_pk  30.0 | T3R snr  575.5x t_pk  30.0 | abd snr  164.2x t_pk  30.0
+arm rnd: T1L snr  150.7x t_pk  29.7 | T1R snr  226.9x t_pk  29.3 | T2L snr  262.1x t_pk  29.7 | T2R snr  153.2x t_pk  29.7 | T3L snr  211.7x t_pk  29.3 | T3R snr  188.1x t_pk  30.0 | abd snr  243.3x t_pk  30.0
+DONE 314s af0 0.163 -> l30/results_l30.json
+EXIT 0

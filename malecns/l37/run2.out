@@ -1,0 +1,23 @@
+sub nodes 21,516 | edges 2,977,920 | 8s
+/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py:94: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py:96: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+chan DNge059: L-cells 1 R-cells 1 | w(L->flexL) +538.0 w(L->flexR) +0.0 w(R->flexL) +0.0 w(R->flexR) +164.0 | pred turn shift (drive L) +1
+chan DNg105: L-cells 1 R-cells 1 | w(L->flexL) +0.0 w(L->flexR) -1401.0 w(R->flexL) -1577.0 w(R->flexR) +0.0 | pred turn shift (drive L) +1
+chan DNge046: L-cells 2 R-cells 2 | w(L->flexL) +0.0 w(L->flexR) -1.0 w(R->flexL) -1.0 w(R->flexR) +0.0 | pred turn shift (drive L) +1
+rand null pairs: [[1204, 239], [979, 1078]] | 8s
+          base: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 33s
+DNge059_Lx0.05: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 61s
+ DNge059_Lx0.2: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 90s
+ DNge059_Lx0.8: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 129s
+ DNg105_Lx0.05: dm 1.0095 first_div [53, 483, 77] | turn_Tif base +0.139/+0.132/+0.132 steer +0.133/+0.132/+0.136 | S_Tr +0.47/+0.45/+0.48 | f 1.31Hz df_side -1.36 | 161s
+  DNg105_Lx0.2: dm 1.0071 first_div [53, 483, 77] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.134/+0.140 | S_Tr +0.49/+0.49/+0.47 | f 1.31Hz df_side -1.24 | 196s
+  DNg105_Lx0.8: dm 1.0109 first_div [53, 483, 77] | turn_Tif base +0.139/+0.132/+0.132 steer +0.138/+0.133/+0.148 | S_Tr +0.50/+0.47/+0.43 | f 1.33Hz df_side -1.38 | 225s
+DNge046_Lx0.05: dm 1.0107 first_div [0, 0, 0] | turn_Tif base +0.139/+0.132/+0.132 steer +0.131/+0.130/+0.137 | S_Tr +0.52/+0.44/+0.44 | f 1.33Hz df_side -1.24 | 252s
+ DNge046_Lx0.2: dm 1.0092 first_div [0, 0, 0] | turn_Tif base +0.139/+0.132/+0.132 steer +0.133/+0.087/+0.136 | S_Tr +0.44/+0.71/+0.43 | f 1.33Hz df_side -1.20 | 277s
+ DNge046_Lx0.8: dm 1.0108 first_div [0, 0, 0] | turn_Tif base +0.139/+0.132/+0.132 steer +0.128/+0.125/+0.136 | S_Tr +0.54/+0.42/+0.45 | f 1.31Hz df_side -1.16 | 301s
+ DNge059_Rx0.8: dm 1.0097 first_div [0, 0, 0] | turn_Tif base +0.139/+0.132/+0.132 steer +0.125/+0.122/+0.131 | S_Tr +0.44/+0.38/+0.45 | f 1.33Hz df_side -1.29 | 325s
+  DNg105_Rx0.8: dm 1.0113 first_div [0, 0, 76] | turn_Tif base +0.139/+0.132/+0.132 steer +0.089/+0.190/+0.055 | S_Tr +0.38/+0.86/+0.85 | f 1.36Hz df_side -1.36 | 349s
+ DNge046_Rx0.8: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 373s
+         rand0: dm 1.0143 first_div [0, 0, 0] | turn_Tif base +0.139/+0.132/+0.132 steer -0.032/-0.037/-0.096 | S_Tr -0.22/-0.20/-0.01 | f 0.84Hz df_side +0.33 | 397s

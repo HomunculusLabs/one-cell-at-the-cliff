@@ -1,0 +1,20 @@
+UserWarning: Sparse CSR beta + weights_only validation scan (torch) — benign.
+cord mechano sensory: 3588 | motor 815
+pair Ti: flexor 84 | extensor 12
+pair Tr: flexor 57 | extensor 11
+pool-union 164 cells (flex 141 / ext 23) | fast:slow multiset 23:141
+homog: Ti lead -0.3 [0, -1, 0] sc=False | Tr lead +0.0 [-1, 1, 0] sc=False | Ti half f/e 32/33 | xc -0.035 | st-cos 0.850 | 41s
+A1_fastext: Ti lead -6.3 [-7, -6, -6] sc=True | Tr lead -5.3 [-6, -5, -5] sc=True | Ti half f/e 48/29 | xc -0.075 | st-cos 0.849 | 80s
+A2_fastflex: Ti lead +6.3 [6, 7, 6] sc=True | Tr lead +6.3 [6, 7, 6] sc=True | Ti half f/e 29/47 | xc -0.119 | st-cos 0.810 | 119s
+shuf0: Ti lead +3.7 [3, 4, 4] sc=True | Tr lead +0.7 [2, -3, 3] sc=False | st-cos 0.839 | 160s
+shuf1: Ti lead +0.7 [0, 0, 2] sc=False | Tr lead -2.0 [-2, -1, -3] sc=True | st-cos 0.838 | 198s
+shuf2: Ti lead -1.3 [-1, -1, -2] sc=True | Tr lead +0.7 [4, 1, -3] sc=False | st-cos 0.833 | 235s
+shuf3: Ti lead -3.0 [-3, -2, -4] sc=True | Tr lead +0.7 [-1, 0, 3] sc=False | st-cos 0.836 | 272s
+shuf4: Ti lead +0.3 [-1, 1, 1] sc=False | Tr lead -0.3 [5, -3, -3] sc=False | st-cos 0.835 | 311s
+
+NULL: Ti max|lead| 3.7 sc 3/5 | Tr max|lead| 2.0 sc 1/5
+A1/A2 sign-opposite: {'Ti': True, 'Tr': True} | assignments clear null max: {'Ti': True, 'Tr': True}
+
+done 311s -> l17/results_l17.json
+[note: tee could not open l17/run.out before the script created the dir;
+ this file is the captured stdout written post-run. exit 1 was tee's.]

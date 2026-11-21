@@ -1,0 +1,16 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l58_headroom.py:93: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l58_headroom.py:95: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | 8s
+drive-on: nohop 48.0s | off200 54.0s | off300 52.0s | off500 44.0s | off700 44.0s | min5seg 34.0s | fast2 48.0s | seg2off 36.0s | seg2a2 48.0s
+runs done 132s
+raw_l58.npz checkpointed
+C0 pass=True | C1 af_ok=True
+l56 arms present: ['hop4k', 'nohop', 'v43', 'v46', 'v49']
+l50 free sigs available: False
+family rows: nohop off200 off300 off500 off700 min5seg fast2 seg2off seg2a2 allw duty58 hybrid(2hops) hop2k(entry) hop4k(exit) cond(l55) l56:v43 l56:v46 l56:v49
+VERDICT {"tracking": "cells with fast lock <=.01 3/3 at <=48s: nohop,off700,fast2,seg2off,seg2a2,hybrid(2hops),hop2k(entry),hop4k(exit),cond(l55),l56:v43,l56:v46,l56:v49", "structure": "best duty07 mean 0.732 (off200), min-seed 0.56", "pooled": "GATE-IS-THE-BUG (gas owns it)", "drive_floor_s": 44.0, "closed_loop_gap": 0.058, "SL_sep_rank_corr": 0.5}
+GATES {"H1_tracking": true, "H2_structure": true, "H3_pooled": true, "H4_drive_floor": null}
+PREDS {"P1_slack_in_schedules": false, "P1b_duty_not_gap_limited": false, "P2_gas_owns_pooled": true, "P3_fast2": true, "P4_seg2": false, "P5_oracle": false, "P6_free_cell": null}
+done 135s -> l58/results_l58.json

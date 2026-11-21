@@ -1,0 +1,27 @@
+{
+ "chars_pre": 15472,
+ "chars_post": 15384,
+ "char_delta": -88,
+ "char_delta_pct": -0.57,
+ "visible_chars_pre": 12680,
+ "visible_chars_post": 12728,
+ "visible_char_delta": 48,
+ "bullets_pre": 27,
+ "bullets_post": 16,
+ "sev_byte_identical": true,
+ "numeric_tokens": 411,
+ "numeric_multiset_identical": true,
+ "citation_tokens": 37,
+ "citation_multiset_identical": true,
+ "literals_checked": 232,
+ "literals_verbatim": 229,
+ "literals_wrap_exempt": [
+  "0.1946 / 0.0642 /\n  0.1333",
+  "agrees to\n  within .0025",
+  "from 37/33 to 6/2 but never\n  reach zero"
+ ],
+ "dedash_blocks": 8,
+ "reauthored_blocks": 3,
+ "longest_sentence_words": 70,
+ "paragraphs": 26
+}

@@ -1,0 +1,31 @@
+---- CERT-0 (run-side anchors) ----
+  fc169_pass             True
+  fc169_max              0.0
+  ntf4_pass              True
+  ntf4_min               0.02873804420232773
+  c0a150_pass            True
+  fc144_pass             True
+  fc145_pass             True
+  g_cutwA_exact          True
+  g_cutng25_exact        True
+  g_emottop5_exact       True
+  g_emotbot5_exact       True
+  paf4_ok                True
+CERT-0 (CERT-1 chain + CERT-2 subset + C0-NT): GREEN
+CERT-METRIC GREEN: helper copy reproduces l169 stored B35 cells (cutwA / wAgN / n25gW, 4 fields each) EXACTLY
+
+---- B36 Ti per-side duty (n=16) ----
+f4wA      g 0.150514525 | meanR 0.043 kR  0/16 [0.000,0.194] | meanL 0.698 kL 16/16 | SUPER False PARTIAL False NOTSUPER True
+f4ng      g 0.162309861 | meanR 0.081 kR  0/16 [0.000,0.194] | meanL 0.289 kL  2/16 | SUPER False PARTIAL False NOTSUPER True
+f4tw      g 0.152618986 | meanR 0.082 kR  0/16 [0.000,0.194] | meanL 0.560 kL 10/16 | SUPER False PARTIAL False NOTSUPER True
+full      g 0.153125000 | meanR 0.475 kR  6/16 [0.185,0.614] | meanL 0.407 kL  3/16 | SUPER False PARTIAL True NOTSUPER True
+cutwA     g 0.143658196 | meanR 0.371 kR  3/16 [0.066,0.430] | meanL 0.233 kL  0/16 | SUPER False PARTIAL True NOTSUPER True
+cutng25   g 0.145445455 | meanR 0.754 kR 16/16 [0.806,1.000] | meanL 0.106 kL  0/16 | SUPER True PARTIAL False NOTSUPER False
+paired f4ng vs f4wA: dR +0.038 up 9/16 down 7/16
+paired f4tw vs f4wA: dR +0.038 up 12/16 down 2/16
+paired f4ng vs f4tw (the XOR leg): dR -0.001 up 8/16 down 8/16
+
+BRANCH: G2_no_transfer (vacuous-XOR guard fired: False)
+  legs: f4ng super False | f4wA notsuper True | f4tw notsuper True
+
+wrote l169b2/results_l169b2.json

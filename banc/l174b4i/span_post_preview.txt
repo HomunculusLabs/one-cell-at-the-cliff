@@ -1,0 +1,118 @@
+## 4. Limitations (honest, per card)
+
+Rate fidelity: no spikes, no per-cell kinetics; the claim is about the MODEL
+class, stated as such — not about the fly's motor system.
+
+Frequency claims are BAND-RELATIVE, and the sub-band line is STIMULUS-SET
+(§2.8): the drive envelope's own dominant spectral line is .100 Hz
+[l171.envelope], so the census numbers below describe where a stimulus-locked
+line sits, not an endogenous clock. The registered dominant-frequency read
+lives in the 0.3–10 Hz lock band, while the substrate's global spectral peak
+often sits BELOW it (16/16 on-drive vs 11/16 mech-off seeds; untruncated mean
+.10 → .20 Hz) [l154.band]. A census of every stored lineage trace quantifies
+the pattern. In the l65-baseline arm the global peak is sub-band in
+449 of 449 UNIQUE SEEDS (Wilson lb .992) at a stable median .100 Hz that
+survives linear detrend in every case — a real slow oscillation rather than
+trend wander, but a stimulus-locked one (§2.8). The intact closure is sub-band
+in 348 of 433 unique seeds (lb .764) with a less frequency-stable slow
+component [l172.census_unique]. The trace-level forms of these two censuses
+(518 of 518 and 361 of 500 [l156.pooled]) count the forward-chain anchor seeds
+once per batch; de-duplicating to unique seeds
+removes 69 and 67 repeat observations respectively, with zero disagreement
+between any repeat pair, and moves the closure rate from .722 to .804
+[l172.census_unique]. A per-pool carrier census (two fresh batches, B33/B34)
+shows this line is not antagonist-clock-wide. The mm/xm aggregates carry it in
+36 of 36 traces each, and a Tr/Ta/Sr subset of the antagonist pools in 8 of 20
+(pooled Wilson lb ≥ .56, subset median .100 Hz; strongest members 36/36). The
+Ti pools stay at ≤ 6 of 36 and the strongest Pr pool reaches
+20 of 36 (lb .396) [l157.pooled] (Fig. 3). The post-hoc untruncated sign read
+(11+/5−) is labeled descriptive, not claim-carrying.
+
+Readout is simulated motor-pool structure duty, not behavior or EMG.
+
+There is a single specimen per connectome (BANC v626 one female; MaleCNS one
+male); no replication across specimens exists yet at single-cell resolution.
+Our cross-connectome comparisons also join cell types by type NAME, a
+string-level operation whose conventions differ between specimens — our own
+cross-graph port found the winning sign arm flipping between the male and the
+female substrate. Connectome alignment by network topology alone now assigns
+types to about 13,000 neurons intrinsic to the female ventral nerve cord from
+two male references [37], which is the principled replacement for that string
+join; until §2.6's scope arm is redone that way it should be read as
+string-joined.
+
+OPERATING-POINT PROXIMITY carries a convergent disclosure from the nearest
+prior art: a 15% synaptic-amplitude reduction abolished intact wing-motor
+output in the steering model of [36], whose authors state that their lesion
+collapse may therefore partly reflect proximity to threshold. The same failure
+mode applies to any rate or spiking model pinned near a boundary, including
+ours. Our instrument for it is the five-set af-matched gain ensemble (§2.5),
+which re-bisects the gain per jitter set and reports the cliff endpoints
+separately from the transition interior; we claim that the fragility is
+measured here, not that it is absent.
+
+The transition interior is gain-regime-dependent (2.5) — we report the
+boundary rather than a universal curve.
+
+UNIT OF INFERENCE: every interval in this paper is over NOISE SEEDS of ONE
+FIXED NETWORK — one graph, one bisected gain, one drive protocol; the seed
+sets the noise stream and the initial state, nothing else. They are therefore
+not statements about variability across connectomes, specimens, extraction
+cohorts or gains. The only places where the network itself varies are the
+five-set gain ensemble (§2.5), the cross-connectome scope arm (§2.6) and the
+rewire draws (§2.7), each reported separately and never pooled with the seed
+intervals. The same discipline is applied independently in [36], where
+the unit of inference is the simulation realization rather than its twenty
+gust trajectories.
+
+Arm depth is unequal by construction: an arm's canonical count unions every
+admissible batch that ran it, so the dose-curve arms reach 178–258 seeds while
+the mechanism arms reach 34–98 (eOutMot is the thinnest at 34, and the
+motor+in combo remains SINGLE-BATCH at n=16) [l172.pooled]. Comparisons
+between arms of very different depth are reported as differences with
+intervals rather than as class labels.
+
+DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair-level
+synapse floor of 3 — all 2,676,592 pairs sum ≥ 3 (811,821 exactly at 3, zero
+below; the 574,733 one-synapse per-neuropil ROWS exist only as intra-pair
+breakdowns: 462,170 pairs contain such a row yet still sum ≥ 3)
+[l146.release]. A single-synapse sensitivity critique therefore has no
+purchase on this release's pair weights. The
+Kopel-class caveat that does apply is about DETECTION rather than weight. In
+that preregistered screen, two of five criteria fail on BANC at a 2–3-synapse
+floor while the male and FlyWire volumes hold to thresholds of 10–15. The
+stated cause is measurement — only 22% of BANC's detected synapses end on an
+identified neuron, against 41.9% and 40.1% in the other two volumes [12]. Our
+floor arms bound weight sensitivity;
+they cannot bound attachment completeness, and no result here should be read
+as doing so. Under the strongest ADMISSIBLE floor (f4: keep pairs with ≥ 4
+synapses, deleting 27.1% of closure edges, 647,953 → 472,095 [l146.f4]) the
+CARRIER is robust — rank 25 → 21 (inside the 19–29 window), 69/80 edges
+survive, heavy-cohort Jaccard .9231. The TWIN selection is floor-3-contingent
+(twin rank 26 → 33, adjacency does not port), so the identity claim and the
+twin-XOR selection have different data dependencies [l146.f4]. The floor read
+is fully RE-DERIVED, not frozen: K (77 → 73), heavy-cohort membership
+(five cells out, one in) and the mass ordering are all recomputed under f4
+[l169b.forms]. Freezing the cohort SET and re-ordering alone already
+reproduces both ranks (21 and 33), so the carrier's shift is
+re-ordering rather than turnover [l169b.forms]. The f4 bound is STATIC ONLY:
+the dynamic f4 arm has now been run (fresh per-arm af-matched bisects on the
+floor-4 graph, cut at the re-derived window — f4wA = first 20, f4ng = first 21
+including the carrier, f4tw = first 20 plus the f4 mass-twin DNpe005-R; one
+batch, n = 16). The registered R-side cliff does NOT transfer: all three f4
+arms sit at kR 0/16 (meanR .043/.081/.082, upper bound .194) while the
+base-substrate arms reproduce on the SAME seeds
+(cutng25 SUPER 16/16 meanR .754, cutwA PARTIAL 3/16 .371). The f4ng-vs-f4tw
+XOR leg is flat (−.001 paired, 8 up / 8 down) [l169b2.dyn]. Registered branch
+G2_no_transfer: the floor-4 robustness of the identity claim is a
+property of the STATIC ladder, not of the dynamics on the floored substrate —
+consistent with our substrate-rule law that structure results do not port
+between extraction rules. One post-hoc observation is reported without a
+claim: on the floored substrate the structure moves to the LEFT side
+(f4wA meanL .698, kL 16/16, versus .233 for base cutwA), where carrier removal
+COSTS structure (f4ng .289, paired −.409, 16/16 seeds down) more than its
+mass-matched twin does (f4tw .560, paired −.139) [l169b2.lat_descriptive]. A
+registered left-side test is queued and nothing in §2 depends on it.
+
+Wet-lab predictions are NOT derived here.
+

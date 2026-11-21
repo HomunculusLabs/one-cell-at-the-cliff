@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="900" font-family="DejaVu Sans, sans-serif">
+<rect width="1560" height="900" fill="#1b1d24"/>
+<text x="40" y="40" fill="#e8e6e3" font-size="24" font-weight="bold">L55 hop scheduling: no policy owns the pooled gate &#8212; the attractor lottery does</text>
+<text x="40" y="64" fill="#9aa0ae" font-size="13">2x2 hop factorial (+ conditional policy) on the hybrid AMPA schedule; hops = DNge046_L volley .5 for 40 steps; duty = both S sides &#8805; .25 (rolling 5 s); seeds 11/22/33; drive-on 48 s every arm</text>
+<text x="60" y="104" fill="#e8e6e3" font-size="16" font-weight="bold">A &#8226; pooled duty (gate .5 dashed; square = mean)</text>
+<rect x="120" y="120" width="610" height="284" fill="none" stroke="#33363f"/>
+<line x1="120" y1="404.0" x2="730" y2="404.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="408.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="120" y1="333.0" x2="730" y2="333.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="337.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="120" y1="262.0" x2="730" y2="262.0" stroke="#33363f" stroke-dasharray="5 3"/>
+<text x="114" y="266.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="120" y1="191.0" x2="730" y2="191.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="195.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="120" y1="120.0" x2="730" y2="120.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="124.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<text x="74" y="262.0" fill="#9aa0ae" font-size="13" transform="rotate(-90 74 262.0)">pooled bilateral duty</text>
+<circle cx="120.0" cy="258.9" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="120.0" cy="272.2" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="120.0" cy="258.3" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<rect x="113.0" y="256.1" width="14" height="14" fill="none" stroke="#8fd9d9" stroke-width="2.5"/>
+<text x="133.0" y="267.1" fill="#8fd9d9" font-size="12">0.496</text>
+<circle cx="272.5" cy="258.9" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="272.5" cy="272.2" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="272.5" cy="258.3" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<rect x="265.5" y="256.1" width="14" height="14" fill="none" stroke="#c9c9c9" stroke-width="2.5"/>
+<text x="285.5" y="267.1" fill="#c9c9c9" font-size="12">0.496</text>
+<circle cx="425.0" cy="232.5" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="425.0" cy="224.2" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="425.0" cy="299.2" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<rect x="418.0" y="245.0" width="14" height="14" fill="none" stroke="#8fd98f" stroke-width="2.5"/>
+<text x="438.0" y="256.0" fill="#8fd98f" font-size="12">0.535</text>
+<circle cx="577.5" cy="260.9" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="577.5" cy="226.8" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="577.5" cy="272.8" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<rect x="570.5" y="246.5" width="14" height="14" fill="none" stroke="#d98fc6" stroke-width="2.5"/>
+<text x="590.5" y="257.5" fill="#d98fc6" font-size="12">0.530</text>
+<circle cx="730.0" cy="265.1" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="730.0" cy="238.7" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="730.0" cy="295.5" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<rect x="723.0" y="259.4" width="14" height="14" fill="none" stroke="#ff8f8f" stroke-width="2.5"/>
+<text x="743.0" y="270.4" fill="#ff8f8f" font-size="12">0.484</text>
+<text x="120.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">no hop</text>
+<line x1="148.0" y1="128" x2="244.5" y2="128" stroke="#33363f"/>
+<text x="272.5" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">cond (never fired ≡ no hop)</text>
+<line x1="300.5" y1="128" x2="397.0" y2="128" stroke="#33363f"/>
+<text x="425.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">entry hop</text>
+<line x1="453.0" y1="128" x2="549.5" y2="128" stroke="#33363f"/>
+<text x="577.5" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">exit hop</text>
+<line x1="605.5" y1="128" x2="702.0" y2="128" stroke="#33363f"/>
+<text x="730.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">both hops</text>
+<text x="120" y="470" fill="#9aa0ae" font-size="13">seeds at &#8805; .5: no 2/3 | cond 2/3 | entry 2/3 | exit 2/3 | both 1/3 &#8212; each single-hop policy drops exactly one seed, never the same one; both-hops drops two</text>
+<text x="820" y="104" fill="#e8e6e3" font-size="16" font-weight="bold">B &#8226; fast-window (1.4 Hz) duty &#8212; entry hop alone sets it</text>
+<rect x="880" y="120" width="610" height="284" fill="none" stroke="#33363f"/>
+<line x1="880" y1="404.0" x2="1490" y2="404.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="874" y="408.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="880" y1="333.0" x2="1490" y2="333.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="874" y="337.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="880" y1="262.0" x2="1490" y2="262.0" stroke="#33363f" stroke-dasharray="5 3"/>
+<text x="874" y="266.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="880" y1="191.0" x2="1490" y2="191.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="874" y="195.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="880" y1="120.0" x2="1490" y2="120.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="874" y="124.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<text x="834" y="262.0" fill="#9aa0ae" font-size="13" transform="rotate(-90 834 262.0)">fast-window duty</text>
+<circle cx="880.0" cy="341.5" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="880.0" cy="176.8" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="880.0" cy="343.5" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<rect x="873.0" y="280.3" width="14" height="14" fill="none" stroke="#8fd9d9" stroke-width="2.5"/>
+<text x="893.0" y="291.3" fill="#8fd9d9" font-size="12">0.411</text>
+<circle cx="1032.5" cy="341.5" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="1032.5" cy="176.8" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="1032.5" cy="343.5" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<rect x="1025.5" y="280.3" width="14" height="14" fill="none" stroke="#c9c9c9" stroke-width="2.5"/>
+<text x="1045.5" y="291.3" fill="#c9c9c9" font-size="12">0.411</text>
+<circle cx="1185.0" cy="366.2" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="1185.0" cy="225.9" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="1185.0" cy="404.0" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<rect x="1178.0" y="325.1" width="14" height="14" fill="none" stroke="#8fd98f" stroke-width="2.5"/>
+<text x="1198.0" y="336.1" fill="#8fd98f" font-size="12">0.253</text>
+<circle cx="1337.5" cy="341.5" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="1337.5" cy="176.8" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="1337.5" cy="343.5" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<rect x="1330.5" y="280.3" width="14" height="14" fill="none" stroke="#d98fc6" stroke-width="2.5"/>
+<text x="1350.5" y="291.3" fill="#d98fc6" font-size="12">0.411</text>
+<circle cx="1490.0" cy="366.2" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="1490.0" cy="225.9" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="1490.0" cy="404.0" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<rect x="1483.0" y="325.1" width="14" height="14" fill="none" stroke="#ff8f8f" stroke-width="2.5"/>
+<text x="1503.0" y="336.1" fill="#ff8f8f" font-size="12">0.253</text>
+<text x="880.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">no hop</text>
+<line x1="908.0" y1="128" x2="1004.5" y2="128" stroke="#33363f"/>
+<text x="1032.5" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">cond (never fired ≡ no hop)</text>
+<line x1="1060.5" y1="128" x2="1157.0" y2="128" stroke="#33363f"/>
+<text x="1185.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">entry hop</text>
+<line x1="1213.0" y1="128" x2="1309.5" y2="128" stroke="#33363f"/>
+<text x="1337.5" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">exit hop</text>
+<line x1="1365.5" y1="128" x2="1462.0" y2="128" stroke="#33363f"/>
+<text x="1490.0" y="426" fill="#9aa0ae" font-size="12" text-anchor="middle">both hops</text>
+<text x="60" y="524" fill="#e8e6e3" font-size="16" font-weight="bold">C &#8226; seg2 (0.7 Hz) duty &#8212; any hop re-rolls the downstream lottery</text>
+<rect x="120" y="540" width="610" height="284" fill="none" stroke="#33363f"/>
+<line x1="120" y1="824.0" x2="730" y2="824.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="828.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="120" y1="753.0" x2="730" y2="753.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="757.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="120" y1="682.0" x2="730" y2="682.0" stroke="#33363f" stroke-dasharray="5 3"/>
+<text x="114" y="686.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="120" y1="611.0" x2="730" y2="611.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="615.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="120" y1="540.0" x2="730" y2="540.0" stroke="#33363f" stroke-dasharray="2 4"/>
+<text x="114" y="544.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<text x="74" y="682.0" fill="#9aa0ae" font-size="13" transform="rotate(-90 74 682.0)">seg2 duty</text>
+<circle cx="120.0" cy="680.0" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="120.0" cy="782.3" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<circle cx="120.0" cy="636.6" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd9d9" stroke-width="2"/>
+<rect x="113.0" y="692.6" width="14" height="14" fill="none" stroke="#8fd9d9" stroke-width="2.5"/>
+<text x="133.0" y="703.6" fill="#8fd9d9" font-size="12">0.438</text>
+<circle cx="272.5" cy="680.0" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="272.5" cy="782.3" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<circle cx="272.5" cy="636.6" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#c9c9c9" stroke-width="2"/>
+<rect x="265.5" y="692.6" width="14" height="14" fill="none" stroke="#c9c9c9" stroke-width="2.5"/>
+<text x="285.5" y="703.6" fill="#c9c9c9" font-size="12">0.438</text>
+<circle cx="425.0" cy="576.1" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="425.0" cy="589.1" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<circle cx="425.0" cy="699.0" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#8fd98f" stroke-width="2"/>
+<rect x="418.0" y="614.4" width="14" height="14" fill="none" stroke="#8fd98f" stroke-width="2.5"/>
+<text x="438.0" y="625.4" fill="#8fd98f" font-size="12">0.713</text>
+<circle cx="577.5" cy="685.7" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="577.5" cy="645.9" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<circle cx="577.5" cy="680.0" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#d98fc6" stroke-width="2"/>
+<rect x="570.5" y="663.5" width="14" height="14" fill="none" stroke="#d98fc6" stroke-width="2.5"/>
+<text x="590.5" y="674.5" fill="#d98fc6" font-size="12">0.540</text>
+<circle cx="730.0" cy="674.3" r="6" fill="#7fd4ff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="730.0" cy="632.9" r="6" fill="#ffb37f" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<circle cx="730.0" cy="687.7" r="6" fill="#b39dff" fill-opacity="0.75" stroke="#ff8f8f" stroke-width="2"/>
+<rect x="723.0" y="658.0" width="14" height="14" fill="none" stroke="#ff8f8f" stroke-width="2.5"/>
+<text x="743.0" y="669.0" fill="#ff8f8f" font-size="12">0.560</text>
+<text x="120.0" y="846" fill="#9aa0ae" font-size="12" text-anchor="middle">no hop</text>
+<line x1="148.0" y1="548" x2="244.5" y2="548" stroke="#33363f"/>
+<text x="272.5" y="846" fill="#9aa0ae" font-size="12" text-anchor="middle">cond (never fired ≡ no hop)</text>
+<line x1="300.5" y1="548" x2="397.0" y2="548" stroke="#33363f"/>
+<text x="425.0" y="846" fill="#9aa0ae" font-size="12" text-anchor="middle">entry hop</text>
+<line x1="453.0" y1="548" x2="549.5" y2="548" stroke="#33363f"/>
+<text x="577.5" y="846" fill="#9aa0ae" font-size="12" text-anchor="middle">exit hop</text>
+<line x1="605.5" y1="548" x2="702.0" y2="548" stroke="#33363f"/>
+<text x="730.0" y="846" fill="#9aa0ae" font-size="12" text-anchor="middle">both hops</text>
+<text x="820" y="524" fill="#e8e6e3" font-size="16" font-weight="bold">D &#8226; gate matrix + conditional record</text>
+<text x="828" y="613" fill="#8fd9d9" font-size="14">no hop</text>
+<rect x="1028" y="580" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1103.5" y="608.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.511 PASS</text>
+<text x="1103.5" y="570" fill="#9aa0ae" font-size="12" text-anchor="middle">seed 11</text>
+<rect x="1191" y="580" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1266.5" y="608.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.464 MISS</text>
+<text x="1266.5" y="570" fill="#9aa0ae" font-size="12" text-anchor="middle">seed 22</text>
+<rect x="1354" y="580" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1429.5" y="608.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.513 PASS</text>
+<text x="1429.5" y="570" fill="#9aa0ae" font-size="12" text-anchor="middle">seed 33</text>
+<text x="828" y="665" fill="#c9c9c9" font-size="14">cond (never fired)</text>
+<rect x="1028" y="632" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1103.5" y="660.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.511 PASS</text>
+<rect x="1191" y="632" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1266.5" y="660.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.464 MISS</text>
+<rect x="1354" y="632" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1429.5" y="660.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.513 PASS</text>
+<text x="828" y="717" fill="#8fd98f" font-size="14">entry hop</text>
+<rect x="1028" y="684" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1103.5" y="712.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.604 PASS</text>
+<rect x="1191" y="684" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1266.5" y="712.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.633 PASS</text>
+<rect x="1354" y="684" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1429.5" y="712.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.369 MISS</text>
+<text x="828" y="769" fill="#d98fc6" font-size="14">exit hop</text>
+<rect x="1028" y="736" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1103.5" y="764.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.504 PASS</text>
+<rect x="1191" y="736" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1266.5" y="764.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.624 PASS</text>
+<rect x="1354" y="736" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1429.5" y="764.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.462 MISS</text>
+<text x="828" y="821" fill="#ff8f8f" font-size="14">both hops</text>
+<rect x="1028" y="788" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1103.5" y="816.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.489 MISS</text>
+<rect x="1191" y="788" width="151" height="42" fill="#3f7d4f" fill-opacity="0.32" stroke="#3f7d4f" stroke-width="1.5"/>
+<text x="1266.5" y="816.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.582 PASS</text>
+<rect x="1354" y="788" width="151" height="42" fill="#8d4444" fill-opacity="0.32" stroke="#8d4444" stroke-width="1.5"/>
+<text x="1429.5" y="816.0" fill="#e8e6e3" font-size="17" text-anchor="middle" font-weight="bold">0.382 MISS</text>
+<text x="828" y="858" fill="#9aa0ae" font-size="13">cond decision @ k=3000 (10 s into fast seg): in-flight lock err s11 0.001, s22 0.0002, s33 0.0002 vs THR .05 &#8212; never fires</text>
+<text x="828" y="876" fill="#9aa0ae" font-size="13">nothing to trigger on: the miss is structural, never tracking (ratios 1278/2975/1468 = razor-locked)</text>
+</svg>

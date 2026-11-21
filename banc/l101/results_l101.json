@@ -1,0 +1,446 @@
+{
+ "meta": {
+  "pairs": [
+   "Ti",
+   "Tr",
+   "Ta",
+   "Sr",
+   "Pr"
+  ],
+  "n_pool": 48,
+  "substrate": "closure l92"
+ },
+ "anchors": {
+  "c0a": true,
+  "c0a_max": 0.0,
+  "c1": true,
+  "c0b": true,
+  "c0b_fails": [],
+  "lock": 48
+ },
+ "tables": {
+  "Ti": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 3,
+     "kR": 5,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.135,
+     "seg1_mean": 0.003,
+     "duty07L_mean": 0.378,
+     "duty07R_mean": 0.425
+    },
+    "B5": {
+     "k": 0,
+     "kL": 5,
+     "kR": 9,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.179,
+     "seg1_mean": 0.0,
+     "duty07L_mean": 0.381,
+     "duty07R_mean": 0.486
+    },
+    "B6": {
+     "k": 0,
+     "kL": 2,
+     "kR": 8,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.164,
+     "seg1_mean": 0.003,
+     "duty07L_mean": 0.352,
+     "duty07R_mean": 0.486
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "side": {
+    "kL": 10,
+    "lbL": 0.1173,
+    "g2aL": false,
+    "kR": 22,
+    "lbR": 0.3258,
+    "g2aR": false
+   },
+   "nan_seed_count": 0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.003,
+    0.0,
+    0.003
+   ],
+   "dutyL_spread": [
+    0.378,
+    0.381,
+    0.352
+   ],
+   "dutyR_spread": [
+    0.425,
+    0.486,
+    0.486
+   ],
+   "sizes": {
+    "aL": 50,
+    "aR": 51,
+    "bL": 6,
+    "bR": 6
+   }
+  },
+  "Tr": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 0,
+     "kR": 3,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.017,
+     "seg1_mean": 0.005,
+     "duty07L_mean": 0.032,
+     "duty07R_mean": 0.372
+    },
+    "B5": {
+     "k": 0,
+     "kL": 0,
+     "kR": 5,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.034,
+     "seg1_mean": 0.003,
+     "duty07L_mean": 0.051,
+     "duty07R_mean": 0.421
+    },
+    "B6": {
+     "k": 0,
+     "kL": 0,
+     "kR": 5,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.034,
+     "seg1_mean": 0.002,
+     "duty07L_mean": 0.056,
+     "duty07R_mean": 0.451
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "side": {
+    "kL": 0,
+    "lbL": 0.0,
+    "g2aL": false,
+    "kR": 13,
+    "lbR": 0.1657,
+    "g2aR": false
+   },
+   "nan_seed_count": 0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.005,
+    0.003,
+    0.002
+   ],
+   "dutyL_spread": [
+    0.032,
+    0.051,
+    0.056
+   ],
+   "dutyR_spread": [
+    0.372,
+    0.421,
+    0.451
+   ],
+   "sizes": {
+    "aL": 31,
+    "aR": 31,
+    "bL": 24,
+    "bR": 24
+   }
+  },
+  "Ta": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 2,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.004,
+     "seg1_mean": 0.002,
+     "duty07L_mean": 0.355,
+     "duty07R_mean": 0.007
+    },
+    "B5": {
+     "k": 0,
+     "kL": 2,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.006,
+     "seg1_mean": 0.004,
+     "duty07L_mean": 0.34,
+     "duty07R_mean": 0.009
+    },
+    "B6": {
+     "k": 0,
+     "kL": 3,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.003,
+     "seg1_mean": 0.001,
+     "duty07L_mean": 0.396,
+     "duty07R_mean": 0.006
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "side": {
+    "kL": 7,
+    "lbL": 0.0725,
+    "g2aL": false,
+    "kR": 0,
+    "lbR": 0.0,
+    "g2aR": false
+   },
+   "nan_seed_count": 0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.002,
+    0.004,
+    0.001
+   ],
+   "dutyL_spread": [
+    0.355,
+    0.34,
+    0.396
+   ],
+   "dutyR_spread": [
+    0.007,
+    0.009,
+    0.006
+   ],
+   "sizes": {
+    "aL": 12,
+    "aR": 12,
+    "bL": 3,
+    "bR": 3
+   }
+  },
+  "Sr": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 0,
+     "kR": 4,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.061,
+     "seg1_mean": 0.058,
+     "duty07L_mean": 0.138,
+     "duty07R_mean": 0.387
+    },
+    "B5": {
+     "k": 0,
+     "kL": 0,
+     "kR": 4,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.055,
+     "seg1_mean": 0.042,
+     "duty07L_mean": 0.142,
+     "duty07R_mean": 0.428
+    },
+    "B6": {
+     "k": 0,
+     "kL": 0,
+     "kR": 2,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.051,
+     "seg1_mean": 0.065,
+     "duty07L_mean": 0.15,
+     "duty07R_mean": 0.359
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "side": {
+    "kL": 0,
+    "lbL": 0.0,
+    "g2aL": false,
+    "kR": 10,
+    "lbR": 0.1173,
+    "g2aR": false
+   },
+   "nan_seed_count": 0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.058,
+    0.042,
+    0.065
+   ],
+   "dutyL_spread": [
+    0.138,
+    0.142,
+    0.15
+   ],
+   "dutyR_spread": [
+    0.387,
+    0.428,
+    0.359
+   ],
+   "sizes": {
+    "aL": 6,
+    "aR": 6,
+    "bL": 11,
+    "bR": 13
+   }
+  },
+  "Pr": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.0,
+     "seg1_mean": 0.0,
+     "duty07L_mean": 0.034,
+     "duty07R_mean": 0.097
+    },
+    "B5": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.0,
+     "seg1_mean": 0.009,
+     "duty07L_mean": 0.004,
+     "duty07R_mean": 0.113
+    },
+    "B6": {
+     "k": 0,
+     "kL": 0,
+     "kR": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.0,
+     "seg1_mean": 0.0,
+     "duty07L_mean": 0.015,
+     "duty07R_mean": 0.072
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false
+   },
+   "side": {
+    "kL": 0,
+    "lbL": 0.0,
+    "g2aL": false,
+    "kR": 0,
+    "lbR": 0.0,
+    "g2aR": false
+   },
+   "nan_seed_count": 0,
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.0,
+    0.009,
+    0.0
+   ],
+   "dutyL_spread": [
+    0.034,
+    0.004,
+    0.015
+   ],
+   "dutyR_spread": [
+    0.097,
+    0.113,
+    0.072
+   ],
+   "sizes": {
+    "aL": 4,
+    "aR": 4,
+    "bL": 3,
+    "bR": 3
+   }
+  }
+ },
+ "robust": [],
+ "robust_side": [],
+ "verdict": "vocabulary robust base pair: NONE \u2014 closure claim now vocabulary-wide | side-cell clears: none | lock 48/48"
+}

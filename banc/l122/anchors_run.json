@@ -1,0 +1,41 @@
+{
+ "g_cut": 0.14510760426521305,
+ "g_cut19": 0.15096808075904844,
+ "g_cut58": 0.15417299151420596,
+ "g_cut58_stored_exact": true,
+ "g_cutk5_stored_exact": true,
+ "g_cutng19": 0.15025991678237915,
+ "g_cutng29": 0.1442639136314392,
+ "g_cutng39": 0.1462542486190796,
+ "new_stairs": {
+  "cutng19": 0.00047419220209121704,
+  "cutng29": 1.1116266250610352e-05,
+  "cutng39": 0.00020601103703181411
+ },
+ "new_band_ok": true,
+ "af_final": 0.10853426406780879,
+ "af_final19": 0.10902554541826248,
+ "af_final58": 0.10905245939890544,
+ "af_finalk5": 0.10904726882775624,
+ "K": 77,
+ "mass_split": {
+  "glut19": 0.1103,
+  "other58": 0.3921
+ },
+ "n_seeds": 18,
+ "new_mass": {
+  "cutk5": 0.0425,
+  "cutng19": 0.1946,
+  "cutng29": 0.2588,
+  "cutng39": 0.3132
+ },
+ "c0a_max": 0.0,
+ "c0a120_max": 0.0,
+ "c0a120_pass": true,
+ "c0a121_max": 0.0,
+ "c0a121_pass": true,
+ "g_cutng19_stored_exact": true,
+ "g_cutng29_stored_exact": true,
+ "g_cutng39_stored_exact": true,
+ "c0a_pass": true
+}

@@ -1,0 +1,10 @@
+ANCHORS {'c0a': True, 'c0d_bits': True, 'c0d_cells': True, 'c0e': True, 'c1': True, 'c0b': True}
+hynohop      k/batch [11, 8, 7, 13] pooled 39/64 lb 0.4869 G2a-multi False | seg1 [0.375, 0.365, 0.387, 0.41] | lock [16, 15, 16, 16]
+hynohop_fb   k/batch [15, 12, 13, 11] pooled 51/64 lb 0.6829 G2a-multi False | seg1 [0.292, 0.434, 0.506, 0.41] | lock [16, 16, 16, 15]
+hybrid       k/batch [13, 9, 7, 10] pooled 39/64 lb 0.4869 G2a-multi False | seg1 [0.402, 0.436, 0.376, 0.3] | lock [16, 15, 16, 15]
+hybrid_fb    k/batch [13, 13, 15, 11] pooled 52/64 lb 0.7003 G2a-multi False | seg1 [0.298, 0.386, 0.52, 0.489] | lock [16, 16, 16, 16]
+BUDGET {"hynohop_fb": {"per_batch": {"B0": 0.127, "B1": 0.1288, "B2": 0.129, "B3": 0.1275}, "pooled_ratio": 0.1281}, "hybrid_fb": {"per_batch": {"B0": 0.1283, "B1": 0.1277, "B2": 0.1291, "B3": 0.1283}, "pooled_ratio": 0.1283}}
+hy_on2500 n32: {'k': 22, 'n': 32, 'lb_full': 0.5143, 'g2a_multi_32': False, 'note': 'n=32 descriptive (B0+B1 only), not a full re-base'}
+C4b primary: {"fb": "hynohop_fb", "base": "hynohop", "lb_fb": 0.6829, "lb_base": 0.4869, "k_fb": 51, "k_base": 39, "mean_delta_per_batch": {"B0": 0.127, "B1": 0.069, "B2": 0.102, "B3": -0.05}, "pos_batches": 3, "outcome": "COLLAPSED"}
+C4b secondary: {"fb": "hybrid_fb", "base": "hybrid", "lb_fb": 0.7003, "lb_base": 0.4869, "k_fb": 52, "k_base": 39, "mean_delta_per_batch": {"B0": 0.08, "B1": 0.024, "B2": 0.123, "B3": 0.059}, "pos_batches": 4, "outcome": "COLLAPSED"}
+VERDICT G2a-multi (pooled lb>=.717, n=64): clears NONE | C4b COLLAPSED (fb k 51/64 lb 0.6829 vs base 39/64 lb 0.4869, delta+ 3/4 batches) | secondary hybrid_fb COLLAPSED

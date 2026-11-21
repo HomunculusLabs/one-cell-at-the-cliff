@@ -1,0 +1,30 @@
+twin (reported pool B25+B26) vs cutwA 9-batch              12/32=0.375 (0.229, 0.547) vs 43/144=0.299 (0.23, 0.378) diff +0.076 Fisher p=0.406
+twin incl. un-jittered B28 vs cutwA all 12 batches         21/48=0.438 (0.307, 0.577) vs 55/192=0.286 (0.227, 0.354) diff +0.151 Fisher p=0.0561
+twin vs cutwA, same three batches (B25,B26,B28)            21/48=0.438 (0.307, 0.577) vs 14/48=0.292 (0.182, 0.432) diff +0.146 Fisher p=0.203
+carrier (8-batch) vs twin (B25+B26)                        124/128=0.969 (0.922, 0.988) vs 12/32=0.375 (0.229, 0.547) diff +0.594 Fisher p=1.18e-13
+carrier incl. B28 vs twin incl. B28                        138/144=0.958 (0.912, 0.981) vs 21/48=0.438 (0.307, 0.577) diff +0.521 Fisher p=1.85e-14
+eMotTop5 pooled vs cutwA 9-batch                           14/32=0.438 (0.282, 0.607) vs 43/144=0.299 (0.23, 0.378) diff +0.139 Fisher p=0.146
+eMotBot5 pooled vs cutwA 9-batch                           8/32=0.250 (0.133, 0.421) vs 43/144=0.299 (0.23, 0.378) diff -0.049 Fisher p=0.67
+eOutMot (all 10) pooled vs eMotTop5 pooled                 21/32=0.656 (0.483, 0.796) vs 14/32=0.438 (0.282, 0.607) diff +0.219 Fisher p=0.131
+eOutMot (all 10) pooled vs eMotBot5 pooled                 21/32=0.656 (0.483, 0.796) vs 8/32=0.250 (0.133, 0.421) diff +0.406 Fisher p=0.00231
+eOutMot (all 10) pooled vs cutwA 9-batch                   21/32=0.656 (0.483, 0.796) vs 43/144=0.299 (0.23, 0.378) diff +0.358 Fisher p=0.000225
+eOutMot (all 10) pooled vs carrier 8-batch                 21/32=0.656 (0.483, 0.796) vs 124/128=0.969 (0.922, 0.988) diff -0.312 Fisher p=3.25e-06
+silW pooled vs cutng25 same batches B30+B33                28/32=0.875 (0.719, 0.95) vs 32/32=1.000 (0.893, 1.0) diff -0.125 Fisher p=0.113
+silW pooled vs cutwA same batches B30+B33                  28/32=0.875 (0.719, 0.95) vs 10/32=0.312 (0.18, 0.486) diff +0.562 Fisher p=8.19e-06
+rank-24 step: cutng23 (5 batches) vs cutwA all             0/80=0.000 (0.0, 0.046) vs 55/192=0.286 (0.227, 0.354) diff -0.286 Fisher p=3.61e-10
+full baseline (B16-B26) vs cutwA all 12                    66/176=0.375 (0.307, 0.448) vs 55/192=0.286 (0.227, 0.354) diff +0.089 Fisher p=0.0763
+Wilson 5/5: (0.566, 1.0)
+Wilson 4/5: (0.376, 0.964)
+Wilson 0/5: (0.0, 0.434)
+Wilson 0/64: (0.0, 0.057)
+Wilson 449/449: (0.992, 1.0)
+Wilson 518/518: (0.993, 1.0)
+Wilson 348/433: (0.764, 0.838)
+Wilson 361/500: (0.681, 0.759)
+Wilson 26/36: (0.56, 0.842)
+Wilson 24/34: (0.538, 0.832)
+Wilson 26/34: (0.6, 0.876)
+Wilson 25/34: (0.569, 0.854)
+motor-edge dose rates (0, bot5, top5, all10): [0.299, 0.25, 0.438, 0.656]
+ratio band/eOutInt mass: 9.72 | extra beyond k19: wA 0.034 ng25 0.0404 25p 0.04
+re-matched gain relative to cutwA (0.143658): {'cutng25': '+1.24%', 'cutng25p': '-0.09%', 'eOutInt': '+1.30%', 'eOutMot': '-0.57%', 'eOutAll': '+1.24%', 'eIn': '+1.09%', 'eAll': '+1.24%', 'eMotTop5': '-0.03%', 'eMotBot5': '+0.01%', 'eMotIn': '+1.06%', 'cutng23': '+2.30%', 'cutng29': '+0.42%', 'cutng19': '+4.60%', 'cut58': '+7.32%', 'cutk5': '-2.67%', 'full': '+6.59%'}

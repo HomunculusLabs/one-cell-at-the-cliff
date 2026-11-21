@@ -1,0 +1,4 @@
+BANC l92 pins: n_old 21249 n_new 21809 dn_new 560
+male DNp33 gi 616 side R: dn_into True dn_proj True | OUT->cord 222 edges (w sum 1860) | IN<-cord 37 edges
+male DNp33 gi 1342 side L: dn_into True dn_proj True | OUT->cord 224 edges (w sum 2305) | IN<-cord 33 edges
+male DNs total 1314, dn_into 1277 (97.2%), dn_proj 1305, pure-proj (proj and not into) 28

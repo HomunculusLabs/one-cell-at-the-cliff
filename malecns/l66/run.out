@@ -1,0 +1,38 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l66_census.py:97: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l66_census.py:99: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 7s
+donors 11<-22 22<-33 33<-101 101<-102 102<-103 103<-104 104<-105 105<-106 106<-107 107<-108 108<-109 109<-110 110<-111 111<-112 112<-113 113<-11
+seed 11 done 48s
+seed 22 done 89s
+seed 33 done 130s
+seed 101 done 172s
+seed 102 done 216s
+seed 103 done 258s
+seed 104 done 299s
+seed 105 done 340s
+seed 106 done 382s
+seed 107 done 424s
+seed 108 done 465s
+seed 109 done 507s
+seed 110 done 548s
+seed 111 done 589s
+seed 112 done 631s
+seed 113 done 676s
+runs done 676s
+C0 pass True (19th chain) | C0x l64-fb pass True | C1 True
+C0v (max |recomputed - l64 stored|): fb_off 0.0 open_off 0.0 | fb dm_min 0.38191
+G1 True (pos 14/16 (0.875, 0.64, 0.965), lift fb 0.186 sham -0.001)
+G2 POINT carry 2/8 | P3 misses 2 sl_marginal 0 | wired_dead 0 | C0P False
+fb off [0.432, 0.477, 0.523, 0.591, 0.409, 0.523, 0.432, 0.227, 0.523, 0.659, 0.409, 0.341, 0.318, 0.273, 0.636, 0.477] mean 0.453
+open off [0.227, 0.25, 0.386, 0.159, 0.182, 0.432, 0.182, 0.159, 0.318, 0.318, 0.25, 0.159, 0.568, 0.273, 0.295, 0.114] mean 0.267
+n005_d03_m: lift +0.148 pos 11/16 lock_ok True dm 0.36617
+n005_d04_m: lift +0.107 pos 9/16 lock_ok True dm 0.37899
+n005_d06_m: lift +0.158 pos 13/16 lock_ok True dm 0.38564
+n005_d08_m: lift +0.108 pos 10/16 lock_ok True dm 0.37311
+n015_d03_m: lift +0.061 pos 7/16 lock_ok True dm 0.42065
+n015_d04_m: lift +0.009 pos 7/16 lock_ok True dm 0.40036
+n015_d06_m: lift +0.116 pos 10/16 lock_ok True dm 0.40688
+n015_d08_m: lift -0.019 pos 7/16 lock_ok True dm 0.37918
+done 677s

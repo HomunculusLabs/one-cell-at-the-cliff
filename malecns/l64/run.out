@@ -1,0 +1,39 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l64_grid.py:100: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l64_grid.py:102: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 7s
+drive-on 48s | arms 25
+seed 11 done 102s
+seed 22 done 195s
+seed 33 done 289s
+runs done 289s
+C0 pass True (18th chain) | C0x l63-fbh pass True | C0P pass True | C1 True
+analysis done 295s
+P1 winners ['g01_d02_p', 'g01_d05_m', 'g01_d10_p', 'g01_d10_m', 'g01_d20_p', 'g025_d02_m'] | P2 closed False
+open off-duty [0.227, 0.25, 0.386] mean 0.288 | e2_med 0.0016
+g01_d02_p: lift +0.114 e2 0.001 dm 0.1088
+g025_d02_p: lift -0.181 e2 0.001 dm 0.1096
+g05_d02_p: lift -0.257 e2 0.002 dm 0.1399
+g01_d02_m: lift +0.068 e2 0.001 dm 0.0873
+g025_d02_m: lift +0.129 e2 0.001 dm 0.1213
+g05_d02_m: lift -0.166 e2 0.001 dm 0.0635
+g01_d05_p: lift +0.000 e2 0.002 dm 0.0643
+g025_d05_p: lift -0.128 e2 0.001 dm 0.1052
+g05_d05_p: lift -0.212 e2 0.001 dm 0.1372
+g01_d05_m: lift +0.190 e2 0.001 dm 0.0793
+g025_d05_m: lift -0.007 e2 0.000 dm 0.0696
+g05_d05_m: lift -0.197 e2 0.001 dm 0.0590
+g01_d10_p: lift +0.174 e2 0.001 dm 0.0810
+g025_d10_p: lift +0.031 e2 0.001 dm 0.1197
+g05_d10_p: lift -0.250 e2 0.003 dm 0.1345
+g01_d10_m: lift +0.114 e2 0.000 dm 0.1159
+g025_d10_m: lift +0.046 e2 0.001 dm 0.0718
+g05_d10_m: lift -0.038 e2 0.001 dm 0.0632
+g01_d20_p: lift +0.205 e2 0.002 dm 0.0694
+g025_d20_p: lift -0.053 e2 0.002 dm 0.1107
+g05_d20_p: lift -0.174 e2 0.003 dm 0.1134
+g01_d20_m: lift +0.099 e2 0.001 dm 0.0677
+g025_d20_m: lift +0.008 e2 0.001 dm 0.1071
+g05_d20_m: lift -0.280 e2 0.004 dm 0.0592
+done 295s

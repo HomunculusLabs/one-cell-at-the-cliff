@@ -1,0 +1,17 @@
+CERT-1 PASS: 24 stored side-bounds == n=16 Wilson on stored k (<1e-9)
+CERT-2 PASS: 4 pooled rows reproduce stored l128 pooled_scr (k, p_hat, lb, ub <1e-12 + per-batch decomposition)
+CERT-3 PASS: stored 2-batch scr0 pool 24/32 == our 3-batch prefix
+CERT-4 PASS: masses consistent across files; k29 window mass 0.2588
+
+arm       mass    extra   nb    kR/n          WilsonR    kL/n          WilsonL
+cutscr0   0.249   0.0544   3  39/48  [0.681,0.898]   35/48  [0.590,0.834]
+cutscr1   0.2422  0.0476   2   0/32  [0.000,0.107]    0/32  [0.000,0.107]
+cutscr2   0.2409  0.0463   2  12/32  [0.229,0.547]   23/32  [0.546,0.844]
+cutscr3   0.2388  0.0442   2  17/32  [0.364,0.691]   12/32  [0.229,0.547]
+cutcl40   0.2396  0.045    1   0/16  [0.000,0.194]   11/16  [0.444,0.858]
+cutscrL1  0.2406  0.046    1  10/16  [0.386,0.815]    0/16  [0.000,0.194]
+cutscrL2  0.2386  0.0439   1   4/16  [0.102,0.495]    9/16  [0.332,0.769]
+full(base) -       -        3  16/48  [0.217,0.475]   15/48  [0.199,0.453]
+
+VERDICT: rule D3; scr0 super-right True; supers ['cutscr0']; kills ['cutcl40', 'cutscr1', 'cutscrL2']; heterogeneous True; scr0 both sides above base band True
+mass: scr0 0.249 vs k29 window 0.2588 (gap 0.0098)

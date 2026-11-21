@@ -1,0 +1,314 @@
+[
+ {
+  "line": 49,
+  "tok": "B35",
+  "num": 35,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> (\u00a72.7, new rollouts on fresh batch B35): each graph run at the other"
+ },
+ {
+  "line": 64,
+  "tok": "B36",
+  "num": 36,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> per-arm bisects, B36 n=16, preregistered as banc/l169b2/PRER"
+ },
+ {
+  "line": 85,
+  "tok": "B37",
+  "num": 37,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> any rollout; fresh B37 n=16 per arm, fresh per-arm bisects). R"
+ },
+ {
+  "line": 96,
+  "tok": "B38",
+  "num": 38,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> precedence before any rollout; fresh B38 n=16 per arm). Registered"
+ },
+ {
+  "line": 133,
+  "tok": "B2",
+  "num": 2,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> B2_preserved) with the registered metric-d"
+ },
+ {
+  "line": 134,
+  "tok": "B26",
+  "num": 26,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> rollouts: the published B26 cells were reproduced EXACTLY from the"
+ },
+ {
+  "line": 281,
+  "tok": "B1",
+  "num": 1,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> (b3b-ii) and (b3b-iii)). Branch B1_format_only: the conversion is proved"
+ },
+ {
+  "line": 304,
+  "tok": "B1",
+  "num": 1,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> B1_format_only again, on the same proof: t"
+ },
+ {
+  "line": 325,
+  "tok": "B1",
+  "num": 1,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> bullet list at all. Branch B1_format_only on the same proof: \u00a72.7's"
+ },
+ {
+  "line": 351,
+  "tok": "B1",
+  "num": 1,
+  "cls": "OUT_BANNER",
+  "sec": "BANNER",
+  "ctx": "> list at all. Branch B1_format_only on the inherited proof: \u00a74'"
+ },
+ {
+  "line": 545,
+  "tok": "B34",
+  "num": 34,
+  "cls": "BATCH",
+  "sec": "1. Introduction",
+  "ctx": "nd ran it at rate fidelity (whole-run mech-OFF, fresh batch B34,"
+ },
+ {
+  "line": 719,
+  "tok": "B30",
+  "num": 30,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "SUPER: .622 with 14/16 seeds on B30 [l144.silw] and .659 with"
+ },
+ {
+  "line": 720,
+  "tok": "B33",
+  "num": 33,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "14/16 on B33 [l150.h1], paired \u0394R against the base +"
+ },
+ {
+  "line": 742,
+  "tok": "B30",
+  "num": 30,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "\u2212.036 on B30 [l144.silf]); a tonic VOLLEY moves +.02"
+ },
+ {
+  "line": 772,
+  "tok": "B29",
+  "num": 29,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "PARTIAL base, fresh B29, n=16/arm, paired-noise fork). All 80 o"
+ },
+ {
+  "line": 796,
+  "tok": "B30",
+  "num": 30,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "~.13 gap from silW (.622 on B30 [l144.silw]) to eAll (pooled .757"
+ },
+ {
+  "line": 797,
+  "tok": "B29",
+  "num": 29,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "[l148.pooled.eAll_B29_B32]) is settle-history carried by the"
+ },
+ {
+  "line": 797,
+  "tok": "B32",
+  "num": 32,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "[l148.pooled.eAll_B29_B32]) is settle-history carried by the edge"
+ },
+ {
+  "line": 827,
+  "tok": "B27",
+  "num": 27,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "(Batches: clamp arms B27 with a B30 replication; edge ladder B29"
+ },
+ {
+  "line": 827,
+  "tok": "B30",
+  "num": 30,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "(Batches: clamp arms B27 with a B30 replication; edge ladder B29; dose halv"
+ },
+ {
+  "line": 827,
+  "tok": "B29",
+  "num": 29,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "Batches: clamp arms B27 with a B30 replication; edge ladder B29; dose halves"
+ },
+ {
+  "line": 828,
+  "tok": "B31",
+  "num": 31,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "and combo B31; eAll re-pin and se0 B32; silW rebase a"
+ },
+ {
+  "line": 828,
+  "tok": "B32",
+  "num": 32,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "and combo B31; eAll re-pin and se0 B32; silW rebase and the halves' second"
+ },
+ {
+  "line": 829,
+  "tok": "B33",
+  "num": 33,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "batch B33 \u2014 all n=16/arm, within-batch class comp"
+ },
+ {
+  "line": 831,
+  "tok": "B29",
+  "num": 29,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.poo"
+ },
+ {
+  "line": 831,
+  "tok": "B31",
+  "num": 31,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled]"
+ },
+ {
+  "line": 831,
+  "tok": "B29",
+  "num": 29,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled].)"
+ },
+ {
+  "line": 831,
+  "tok": "B32",
+  "num": 32,
+  "cls": "ARTEFACT_KEY",
+  "sec": "2. Results",
+  "ctx": "l145.pooled.eOutMot_B29_B31, l148.pooled.eAll_B29_B32, l150.pooled].)"
+ },
+ {
+  "line": 916,
+  "tok": "B35",
+  "num": 35,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "The batch unions were re-pooled with B35 [l169.pooled]:"
+ },
+ {
+  "line": 944,
+  "tok": "B37",
+  "num": 37,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "Both arms were then run on a fresh batch (B37, n=16 each, paired noise,"
+ },
+ {
+  "line": 994,
+  "tok": "B38",
+  "num": 38,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "further fresh batch (B38, n=16, paired noise): each graph at its"
+ },
+ {
+  "line": 997,
+  "tok": "B38",
+  "num": 38,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "The own-gain diagonal reproduces on B38 [l169d.grid]: cutng25 SUPER"
+ },
+ {
+  "line": 1045,
+  "tok": "B1",
+  "num": 1,
+  "cls": "BRANCH",
+  "sec": "2. Results",
+  "ctx": "robustness branches B1-B4 with the degenerate branch checked f"
+ },
+ {
+  "line": 1045,
+  "tok": "B4",
+  "num": 4,
+  "cls": "BRANCH",
+  "sec": "2. Results",
+  "ctx": "robustness branches B1-B4 with the degenerate branch checked firs"
+ },
+ {
+  "line": 1047,
+  "tok": "B26",
+  "num": 26,
+  "cls": "BATCH",
+  "sec": "2. Results",
+  "ctx": "from the batch that first rolled the XOR pair (B26, n = 16 seeds), and"
+ },
+ {
+  "line": 1072,
+  "tok": "B2",
+  "num": 2,
+  "cls": "BRANCH",
+  "sec": "2. Results",
+  "ctx": "**Robustness panel (branch B2_preserved).** The published readout is"
+ },
+ {
+  "line": 1095,
+  "tok": "B4",
+  "num": 4,
+  "cls": "BRANCH",
+  "sec": "2. Results",
+  "ctx": "drive was structure TOXICITY (the registered B4 degenerate branch, which did"
+ },
+ {
+  "line": 1362,
+  "tok": "B33",
+  "num": 33,
+  "cls": "BATCH",
+  "sec": "4. Limitations (honest",
+  "ctx": "nsus_unique]. A per-pool carrier census (two fresh batches, B33/B34)"
+ },
+ {
+  "line": 1362,
+  "tok": "B34",
+  "num": 34,
+  "cls": "BATCH",
+  "sec": "4. Limitations (honest",
+  "ctx": "_unique]. A per-pool carrier census (two fresh batches, B33/B34)"
+ }
+]

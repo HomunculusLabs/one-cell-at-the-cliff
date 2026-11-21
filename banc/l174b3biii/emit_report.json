@@ -1,0 +1,45 @@
+{
+ "chars_pre": 9424,
+ "chars_post": 9405,
+ "char_delta": -19,
+ "char_delta_pct": -0.2,
+ "visible_chars_pre": 7745,
+ "visible_chars_post": 7853,
+ "visible_char_delta": 108,
+ "bullets_pre": 16,
+ "bullets_post": 0,
+ "numeric_tokens": 248,
+ "numeric_multiset_identical": true,
+ "citation_tokens": 22,
+ "citation_multiset_identical": true,
+ "literals_checked": 166,
+ "literals_verbatim": 159,
+ "literals_wrap_exempt": [
+  "(.477, kR 8/16,\n  [.280,.720])",
+  "+.474 above the twin-removed\n  graph with 16 of 16 seeds up",
+  "at g_cutng25p it is +.174 with 12 of\n  16 up",
+  "differ per seed by up to\n  .46",
+  "follows the\n  GRAPH, not the gain",
+  "meanR\n  .798, kR 16/16, [.806,1.000]",
+  "meanR .651, kR 15/16,\n  [.717,.989], paired \u2212.147"
+ ],
+ "dedash_blocks": 3,
+ "reauthored_blocks": 13,
+ "full_body_reauthored": 1,
+ "longest_sentence_words": 52,
+ "top_sentences": [
+  [
+   52,
+   "The claim the title makes, however, rides the twin-XOR pair "
+  ],
+  [
+   50,
+   "The anchors hold [l169c2.cert]: all twelve inherited arms ar"
+  ],
+  [
+   49,
+   "Graph-wA at its own gain is PARTIAL (meanR .426, kR 4/16); g"
+  ]
+ ],
+ "paragraphs": 19
+}

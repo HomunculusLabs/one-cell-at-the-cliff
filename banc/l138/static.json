@@ -1,0 +1,144 @@
+{
+ "design": "L138 slice A static: MaleCNS closure-mirror ladder + DNp33 position + 3-graph triangulation. Zero rollouts, no RNG. PREREG l138/PREREG.md registered FIRST.",
+ "banc": {
+  "window_shares": {
+   "r1_19": 0.1946,
+   "r20_29": 0.0642,
+   "r30_58": 0.1333
+  },
+  "K": 77,
+  "dn33_cells": [
+   {
+    "gi": 928,
+    "side": "right"
+   },
+   {
+    "gi": 1110,
+    "side": "left"
+   }
+  ],
+  "fafb_match_1110": "720575940604103084",
+  "fafb_in_live_brain": true
+ },
+ "male_s1": {
+  "n_keep_old": 21516,
+  "n_keep_new": 21544,
+  "dn_new": 28,
+  "added_edges": 1942,
+  "added_dn_out_edges": 787,
+  "dn_new_glut": 0,
+  "dn_new_ng": 9,
+  "heavy_K": 9,
+  "heavy_mass_share": 0.5187
+ },
+ "male_s2_dnp33": [
+  {
+   "gi": 616,
+   "bodyId": 10664,
+   "somaSide": "R",
+   "nt": "acetylcholine",
+   "glut": false,
+   "in_heavy": false,
+   "heavy_rank": null,
+   "ng_rank": null,
+   "mass": 0.0,
+   "mass_share": 0.0
+  },
+  {
+   "gi": 1342,
+   "bodyId": 11438,
+   "somaSide": "L",
+   "nt": "acetylcholine",
+   "glut": false,
+   "in_heavy": false,
+   "heavy_rank": null,
+   "ng_rank": null,
+   "mass": 0.0,
+   "mass_share": 0.0
+  }
+ ],
+ "male_s3_window": {
+  "r1_19": null,
+  "r20_29": null,
+  "r30_rest": null,
+  "n_ng": 9
+ },
+ "male_ng_twins": [],
+ "male_ng_top10": [
+  "DNpe037",
+  "DNge086",
+  "DNpe012_a",
+  "DNpe057",
+  "DNpe057",
+  "DNge085",
+  "DNge085",
+  "DNg09_a",
+  "DNge115"
+ ],
+ "male_pools": {
+  "Ti_flex": 84,
+  "Ti_ext": 12,
+  "Tr_flex": 57,
+  "Tr_ext": 11
+ },
+ "v783": {
+  "n": 2,
+  "sides": [
+   "left",
+   "right"
+  ]
+ },
+ "posthoc_raw_rank": [
+  {
+   "gi": 616,
+   "raw_rank_of_dnnew": 29
+  },
+  {
+   "gi": 1342,
+   "raw_rank_of_dnnew": 29
+  }
+ ],
+ "male_ng_n": 9,
+ "male_ng_mass_list": [
+  0.132965,
+  0.061026,
+  0.055926,
+  0.052849,
+  0.052487,
+  0.04425,
+  0.043361,
+  0.038994,
+  0.036829
+ ],
+ "probe": {
+  "banc_dn_new_l92": 560,
+  "banc_n_old": 21249,
+  "banc_n_new": 21809,
+  "male_dn_total": 1314,
+  "male_dn_into": 1277,
+  "male_dn_into_frac": 0.972,
+  "male_dn_proj": 1305,
+  "male_pure_proj": 28,
+  "male_dnp33": [
+   {
+    "gi": 616,
+    "side": "R",
+    "dn_into": true,
+    "dn_proj": true,
+    "out_cord_edges": 222,
+    "out_cord_wsum": 1860,
+    "in_cord_edges": 37
+   },
+   {
+    "gi": 1342,
+    "side": "L",
+    "dn_into": true,
+    "dn_proj": true,
+    "out_cord_edges": 224,
+    "out_cord_wsum": 2305,
+    "in_cord_edges": 33
+   }
+  ],
+  "note": "male DNp33 is RECIPOCAL (in base substrate, not closure cohort): ladder mass 0 because its edges are OLD edges, not added ones"
+ }
+}

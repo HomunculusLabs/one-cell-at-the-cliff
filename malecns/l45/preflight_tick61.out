@@ -1,0 +1,47 @@
+labeled edges: 25,560,079
+
+DNg100 (2 cells, out-weight total 34,561): top targets
+    0.75% -> GNG667                       cb_intrinsic   nt=acetylcholine w=259
+    0.68% -> IN09A002                     vnc_intrinsic  nt=gaba         w=236
+    0.67% -> GNG667                       cb_intrinsic   nt=acetylcholine w=231
+    0.64% -> IN09A002                     vnc_intrinsic  nt=gaba         w=220
+    0.63% -> GNG506                       cb_intrinsic   nt=gaba         w=218
+    0.62% -> IN12B003                     vnc_intrinsic  nt=gaba         w=216
+    0.60% -> IN12B003                     vnc_intrinsic  nt=gaba         w=206
+    0.58% -> IN12B003                     vnc_intrinsic  nt=gaba         w=202
+    0.55% -> GNG506                       cb_intrinsic   nt=gaba         w=189
+    0.52% -> IN19A006                     vnc_intrinsic  nt=acetylcholine w=180
+    0.51% -> IN01A015                     vnc_intrinsic  nt=acetylcholine w=175
+    0.49% -> IN09A002                     vnc_intrinsic  nt=gaba         w=170
+
+DNb08 (4 cells, out-weight total 13,388): top targets
+    2.44% -> DNg16                        descending_neuron nt=acetylcholine w=327
+    2.02% -> DNg16                        descending_neuron nt=acetylcholine w=271
+    1.62% -> INXXX464                     vnc_intrinsic  nt=acetylcholine w=217
+    1.58% -> GNG011                       cb_intrinsic   nt=gaba         w=212
+    1.40% -> INXXX464                     vnc_intrinsic  nt=acetylcholine w=188
+    1.37% -> IN06A028                     vnc_intrinsic  nt=gaba         w=184
+    1.28% -> INXXX464                     vnc_intrinsic  nt=acetylcholine w=172
+    1.27% -> GNG590                       cb_intrinsic   nt=gaba         w=170
+    1.19% -> GNG590                       cb_intrinsic   nt=gaba         w=159
+    1.16% -> INXXX464                     vnc_intrinsic  nt=acetylcholine w=155
+    1.16% -> DNge050                      descending_neuron nt=acetylcholine w=155
+    1.15% -> IN03A006                     vnc_intrinsic  nt=acetylcholine w=154
+
+T1 intrinsic subgraph: 3380 cells, 287,061 edges
+cyclic E-E-I triads (real labels): 531,039
+label-shuffle null (5 draws): 262,148 +- 8,281  [252567, 276601, 265206, 259022, 257342]
+
+top-10 strongest triads (min-edge weight; * = direct DNg100 target, + = DNb08):
+   minw=     239  E1=INXXX464              *+ E2=IN17A001               I=IN26X001              
+   minw=     236  E1=INXXX464              *+ E2=IN17A001               I=IN26X001              
+   minw=     215  E1=IN17A001              *+ E2=INXXX466               I=IN19A007              
+   minw=     149  E1=INXXX464              *+ E2=IN19B012               I=IN19A007              
+   minw=     137  E1=INXXX464              *+ E2=IN17A001               I=IN19A004              
+   minw=     131  E1=INXXX464              *+ E2=IN17A001               I=IN19A004              
+   minw=     129  E1=IN17A001              *+ E2=INXXX466               I=IN19A007              
+   minw=     117  E1=IN17A001              *+ E2=IN07B001               I=IN19A011              
+   minw=     117  E1=INXXX464              *+ E2=IN19B012               I=IN19A007              
+   minw=     116  E1=IN17A001              *+ E2=IN07B001               I=IN19A011              
+
+DNg100-direct-target E1s among top-100 triads: 54/100

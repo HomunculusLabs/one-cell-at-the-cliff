@@ -1,0 +1,19 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+motor 815 | cord mechano 3588 | TTMn 2 | IFM(DLMn/DVMn, async -> base tau) 24 | leg pools flex 141 / ext 23
+homog: Ti lead -0.3 [0, -1, 0] sc=False | Tr lead +0.0 [-1, 1, 0] sc=False | half f/e 32/33 | af 0.1638 | 49s
+lit2x: Ti lead -1.7 [-2, -2, -1] sc=True | Tr lead -2.0 [-2, -2, -2] sc=True | half f/e 38/33 | af 0.1638 | 94s
+lit3x: Ti lead -3.7 [-3, -5, -3] sc=True | Tr lead -3.3 [-4, -3, -3] sc=True | half f/e 44/33 | af 0.1638 | 137s
+lit5x: Ti lead -5.7 [-5, -7, -5] sc=True | Tr lead -6.0 [-6, -6, -6] sc=True | half f/e 53/33 | af 0.1638 | 177s
+lit5rev: Ti lead +6.0 [5, 7, 6] sc=True | Tr lead +6.3 [5, 7, 7] sc=True | half f/e 32/52 | af 0.1638 | 216s
+shuf0: Ti lead -0.3 [1, -2, 0] sc=False | Tr lead +3.0 [3, 4, 2] sc=True | 256s
+shuf1: Ti lead +2.7 [3, 3, 2] sc=True | Tr lead +0.7 [-3, 3, 2] sc=False | 296s
+shuf2: Ti lead -0.7 [0, -3, 1] sc=False | Tr lead +0.3 [1, 1, -1] sc=False | 335s
+shuf3: Ti lead +2.7 [3, 4, 1] sc=True | Tr lead +2.0 [1, 3, 2] sc=True | 371s
+shuf4: Ti lead +1.0 [1, 3, -1] sc=False | Tr lead -0.3 [0, 0, -1] sc=False | 407s
+
+NULL(5x): Ti max|lead| 2.7 sc 2/5 | Tr max|lead| 3.0 sc 2/5
+lit5x clears null: {'Ti': True, 'Tr': True} | emergence: lit2x:-1.7/-2.0, lit3x:-3.7/-3.3, lit5x:-5.7/-6.0
+done 407s -> l18/results_l18_A.json

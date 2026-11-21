@@ -1,0 +1,50 @@
+B-cert vs results_l135 (B26) + l142 (B29 eAll/cutwA/cutng25) + l144 (B30 cutwA/cutng25/sil1110_wA) + l145 (B31 cutwA/cutng25) Ti tables: PASS
+P0 anchors (C0A-148 + stored gains + FC-142 + SE-ID@801/901): PASS (c0a 0.0e+00 | FC-142 0.0e+00 | SE-ID 0.0e+00)
+SE-ID all-B32: max|d| 0.0e+00 -> H-ID PASS (bit-identical)
+P4 {"af_range_ok": true, "b65_band": true, "e_band_ok": {"eAll": true}}
+---- B32 per-side duty table ----
+Ti full     kL  1/16 meanL 0.384 | kR  9/16 meanR 0.492
+Ti b65      kL 16/16 meanL 1.000 | kR 16/16 meanR 0.996
+Ti cutwA    kL  1/16 meanL 0.255 | kR  4/16 meanR 0.370
+Ti cutng25  kL  0/16 meanL 0.143 | kR 15/16 meanR 0.768
+Ti eAll     kL  0/16 meanL 0.143 | kR 15/16 meanR 0.768
+Ti se0      kL  0/16 meanL 0.143 | kR 15/16 meanR 0.768
+Tr full     kL  0/16 meanL 0.029 | kR  4/16 meanR 0.379
+Tr b65      kL  0/16 meanL 0.181 | kR 16/16 meanR 0.964
+Tr cutwA    kL  0/16 meanL 0.003 | kR  0/16 meanR 0.071
+Tr cutng25  kL  0/16 meanL 0.003 | kR  0/16 meanR 0.020
+Tr eAll     kL  0/16 meanL 0.003 | kR  0/16 meanR 0.020
+Tr se0      kL  0/16 meanL 0.003 | kR  0/16 meanR 0.020
+Ta full     kL  2/16 meanL 0.365 | kR  0/16 meanR 0.010
+Ta b65      kL  0/16 meanL 0.062 | kR  0/16 meanR 0.057
+Ta cutwA    kL  0/16 meanL 0.012 | kR  0/16 meanR 0.026
+Ta cutng25  kL  0/16 meanL 0.017 | kR  0/16 meanR 0.031
+Ta eAll     kL  0/16 meanL 0.017 | kR  0/16 meanR 0.031
+Ta se0      kL  0/16 meanL 0.017 | kR  0/16 meanR 0.031
+Sr full     kL  0/16 meanL 0.160 | kR  6/16 meanR 0.439
+Sr b65      kL 16/16 meanL 0.851 | kR  0/16 meanR 0.057
+Sr cutwA    kL  0/16 meanL 0.098 | kR  0/16 meanR 0.096
+Sr cutng25  kL  0/16 meanL 0.032 | kR  0/16 meanR 0.064
+Sr eAll     kL  0/16 meanL 0.032 | kR  0/16 meanR 0.064
+Sr se0      kL  0/16 meanL 0.032 | kR  0/16 meanR 0.064
+Pr full     kL  0/16 meanL 0.009 | kR  0/16 meanR 0.117
+Pr b65      kL  0/16 meanL 0.006 | kR  0/16 meanR 0.001
+Pr cutwA    kL  0/16 meanL 0.036 | kR  0/16 meanR 0.182
+Pr cutng25  kL  0/16 meanL 0.029 | kR  1/16 meanR 0.278
+Pr eAll     kL  0/16 meanL 0.029 | kR  1/16 meanR 0.278
+Pr se0      kL  0/16 meanL 0.029 | kR  1/16 meanR 0.278
+Ti     0 (full    ): meanR 0.492 kR  9/16 | meanL 0.384 kL  1/16 | dR_wA +0.121 n_up_wA  6/16 -> no-kill
+Ti    24 (cutwA   ): meanR 0.370 kR  4/16 | meanL 0.255 kL  1/16 | dR_wA +0.000 n_up_wA  0/16 -> no-kill/PARTIAL
+Ti  eAll (eAll    ): meanR 0.768 kR 15/16 | meanL 0.143 kL  0/16 | dR_wA +0.398 n_up_wA 15/16 -> no-kill/RESTORE/SUPER
+Ti   se0 (se0     ): meanR 0.768 kR 15/16 | meanL 0.143 kL  0/16 | dR_wA +0.398 n_up_wA 15/16 -> no-kill/RESTORE/SUPER
+Ti    25 (cutng25 ): meanR 0.768 kR 15/16 | meanL 0.143 kL  0/16 | dR_wA +0.398 n_up_wA 15/16 -> no-kill/RESTORE/SUPER
+H-ID {"arm": "se0", "n_seeds": 16, "n_keys": 23, "max_abs_diff": 0.0, "bit_identical": true, "note": "se0 == eAll on EVERY stored channel/seed: activity-silence is a strict SUBSET of edge-removal; the silW->eAll remainder is settle-history/edge-carried"}
+H-REPLIC {"arm": "eAll", "b32_class": "SUPER", "meanR": 0.768, "kR": 15, "super_replicates": true, "note": "endpoint SUPER replicates on the first fresh batch (.745/14 B29 -> fresh-batch read; pooled carries)"}
+H-GRID {"silW_b30": {"meanR": 0.622, "kR": 14, "batch": "B30 (l144, ctx)"}, "eAll_b29": {"meanR": 0.745, "kR": 14, "batch": "B29 (l142, ctx)"}, "eAll_b32": {"meanR": 0.768, "kR": 15}, "se0_b32": {"meanR": 0.768, "kR": 15}, "mean_paired_dR_eAll_vs_wA_B32": 0.398, "remainder_note": "silW(.622 B30) < eAll(.745 B29): the .09-.12 remainder is settle-history/edge-carried (se0==eAll bitwise), NOT window activity on top of the cut"}
+P3 {"flipping_arms": ["eAll", "se0", "25"], "tiL_dead": {"eAll": {"meanL": 0.143, "kL": 0}, "se0": {"meanL": 0.143, "kL": 0}, "25": {"meanL": 0.143, "kL": 0}}, "note": "Ti_L dies with every flipping arm (crossed law holds)"}
+pooled eAll B29+B32: {"kR": 29, "n": 32, "lbR": 0.7578184527161214, "ubR": 0.9675984487016337, "kL": 0, "lbL": 0.0, "ubL": 0.1071791982550706, "meanR": 0.757, "meanL": 0.129}
+pooled cutng25 B24+B25+B26+B29+B30+B31+B32: {"kR": 108, "n": 112, "lbR": 0.9117533615468005, "ubR": 0.9860253876053232, "kL": 0, "lbL": 3.35439541744953e-18, "ubL": 0.033161347066943875, "meanR": 0.76, "meanL": 0.133}
+pooled cutwA B21+B24+B25+B26+B29+B30+B31+B32: {"kR": 38, "n": 128, "lbR": 0.2245816608356667, "ubR": 0.38100522765044614, "kL": 8, "lbL": 0.032006925695061195, "ubL": 0.11848791104425867, "meanR": 0.407, "meanL": 0.256}
+watch: Tr_R wA 0.071 eAll 0.02
+sanity b65 Ti kL/kR 16 16
+L148 VERDICT WRITTEN

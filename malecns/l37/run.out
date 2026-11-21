@@ -1,0 +1,18 @@
+sub nodes 21,516 | edges 2,977,920 | 11s
+/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py:94: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py:96: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+chan DNge059: L-cells 1 R-cells 1 | w(L->flexL) +538.0 w(L->flexR) +0.0 w(R->flexL) +0.0 w(R->flexR) +164.0 | pred turn shift (drive L) +1
+chan DNg105: L-cells 1 R-cells 1 | w(L->flexL) +0.0 w(L->flexR) -1401.0 w(R->flexL) -1577.0 w(R->flexR) +0.0 | pred turn shift (drive L) +1
+chan DNge046: L-cells 2 R-cells 2 | w(L->flexL) +0.0 w(L->flexR) -1.0 w(R->flexL) -1.0 w(R->flexR) +0.0 | pred turn shift (drive L) +1
+rand null pairs: [[1204, 239], [979, 1078]] | 12s
+          base: dm 0.0000 first_div [None, None, None] | turn_Tif base +0.139/+0.132/+0.132 steer +0.139/+0.132/+0.132 | S_Tr +0.48/+0.46/+0.49 | f 0.80Hz df_side +1.33 | 51s
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py", line 248, in <module>
+    o = pair_run(cells, amp, s, base_ref=ref)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l37_steer.py", line 189, in pair_run
+    assert torch.equal(Xb, base_ref), "base lockstep broken"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: base lockstep broken

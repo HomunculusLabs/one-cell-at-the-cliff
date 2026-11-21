@@ -1,0 +1,13 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l52_toxic.py:87: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l52_toxic.py:89: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | 8s
+arm tables ok: f07a3 f07a2 f07a1 f14a3 f14a2 f14a1
+runs done 141s
+raw_l52.npz checkpointed
+C0 {"mm_s11": 0.08375605940818787, "mm_s22": 0.13476860523223877, "mm_s33": 0.12285515666007996, "SL_s11": 0.6470581771270224, "SR_s11": 0.8152289181217575, "SL_s22": 1.1211470135838955, "SR_s22": 0.7443341094103161, "SL_s33": 1.5573745471630094, "SR_s33": 1.3101365558399212} pass=False
+C0=False C1=True GC=False {'11': 0.355, '22': 0.203, '33': 0.257}
+G_TRANSIENT=False G_SELECTION=False verdict=MIXED (table delivered)
+sensitivity: {"f07a3": {"duty_early": 0.196, "duty_late": 0.348, "slope": 0.152, "err": {"11": 0.0, "22": 0.0, "33": 0.0}, "lock": {"11": "LOCKED", "22": "LOCKED", "33": "LOCKED"}, "verdict": "mixed", "knob": "SHIFTED"}, "f07a2": {"duty_early": 0.036, "duty_late": 0.0, "slope": -0.036, "err": {"11": 0.0, "22": 0.0, "33": 0.0}, "lock": {"11": "LOCKED", "22": "LOCKED", "33": "LOCKED"}, "verdict": "selection-like", "knob": "HOLDS"}, "f07a1": {"duty_early": 0.148, "duty_late": 0.027, "slope": -0.121, "err": {"11": 0.0, "22": 0.0, "33": 0.0}, "lock": {"11": "LOCKED", "22": "LOCKED", "33": "LOCKED"}, "verdict": "selection-like", "knob": "HOLDS"}, "f14a3": {"duty_early": 0.082, "duty_late": 0.001, "slope": -0.081, "err": {"11": 0.0, "22": 0.0, "33": 0.0}, "lock": {"11": "LOCKED", "22": "LOCKED", "33": "LOCKED"}, "verdict": "selection-like", "knob": "canonical"}, "f14a2": {"duty_early": 0.132, "duty_late": 0
+done 142s -> l52/results_l52.json

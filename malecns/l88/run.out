@@ -1,0 +1,49 @@
+C0E certification PASS (24 stored rules)
+phase1: 96 rules, census-clears 0 | winner hy_on2500 SL2500>=&/ANDSR2500< k=13 s1=0.495 | runner hy_on2500 SR2500<ANDmm2500>= k=12 s1=0.445
+phase1 selection checkpointed BEFORE any rollout (3s)
+/home/t3rpz/critters/peabrain-lab/malecns/l88_fresh.py:247: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l88_fresh.py:249: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 046L 2 | 10s
+phase2 arms ['hybrid', 'hy_on2500'] | drive-on 4800 asserted | echo arms ['hy_on2500']
+seed 11 done 20s
+seed 22 done 29s
+seed 33 done 38s
+seed 101 done 47s
+seed 102 done 57s
+seed 103 done 66s
+seed 104 done 75s
+seed 105 done 85s
+seed 106 done 94s
+seed 107 done 103s
+seed 108 done 112s
+seed 109 done 121s
+seed 110 done 132s
+seed 111 done 141s
+seed 112 done 150s
+seed 113 done 160s
+seed 501 done 169s
+seed 502 done 178s
+seed 503 done 187s
+seed 504 done 196s
+seed 505 done 206s
+seed 506 done 215s
+seed 507 done 224s
+seed 508 done 233s
+seed 509 done 243s
+seed 510 done 252s
+seed 511 done 262s
+seed 512 done 277s
+seed 513 done 287s
+seed 514 done 298s
+seed 515 done 307s
+seed 516 done 316s
+raw_l88.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+C0V PASS | C0F PASS fd set [2501] | C0M True (667.5) | C1 True | fresh-degenerate []
+census-cells certification True
+census online picks == phase1 winner picks: True
+census k=13 s1=0.495 | fresh k=8 wilson=[0.28, 0.72] s1=0.448 lock=15 ratio_max=0.082
+VERDICT NO-GO on fresh: G1=False G2a=False G3=True G4=True — 2-feature class closes; C4b/C4c stand; L80 final pending Bill
+done 320s -> l88/results_l88.json
+EXIT 0

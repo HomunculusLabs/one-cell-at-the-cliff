@@ -1,0 +1,22 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+oct all 101 (periph 50 / central 51) | loom 949 | motor 815 | TTMn 2 | flex 141 ext 23
+amplified x200: leg 118 + neck 60 DN->motor edges
+census octC: {'total_w': 16.71927, 'frac_dn': 0.04996, 'frac_vnc_intr': 0.0, 'frac_motor': 0.00011, 'edges_dnp': 9, 'w_dnp': 0.0029}
+census octP: {'total_w': 23.80324, 'frac_dn': 0.3322, 'frac_vnc_intr': 0.46657, 'frac_motor': 0.01077, 'edges_dnp': 0, 'w_dnp': 0.0}
+z octC vs rand51: dn +3.51 vnc_intr -2.57 motor -0.91 | rand mean dn 0.02035 sd 0.00844
+null draw 0 done 333s
+null draw 1 done 372s
+null draw 2 done 413s
+null draw 3 done 454s
+null draw 4 done 495s
+
+ANCHOR loom: TTM pk 0.3857 ext 0.0067 self-cos +0.976 SNR 137.2x af 0.1641
+amp 1.0: lo+oct TTM 0.3855 (x0.999 z-2.43) cos-vs-anchor +1.000 self +0.976 af 0.1641 | octALONE TTM 0.0098 SNR 3.26x (create-gesture check)
+amp 2.0: lo+oct TTM 0.3855 (x0.999 z-3.03) cos-vs-anchor +1.000 self +0.976 af 0.1641 | octALONE TTM 0.0098 SNR 3.27x (create-gesture check)
+amp 4.0: lo+oct TTM 0.3855 (x0.999 z-3.03) cos-vs-anchor +1.000 self +0.976 af 0.1641 | octALONE TTM 0.0098 SNR 3.27x (create-gesture check)
+rand51: ratios [1.0, 1.0, 1.0, 1.0, 0.999] mu 1.000 sd 0.000 | cos-vs-anchor +1.000
+
+wrote l27/results_l27.json + pool_traces.npz | total 495s

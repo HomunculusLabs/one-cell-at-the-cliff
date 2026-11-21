@@ -1,0 +1,10 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l68_probe.py:95: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(
+subnet 21,249 edges 627,051 | mech 4848 | pools [('Ti', [50, 51, 6, 6]), ('Tr', [31, 31, 24, 24])] | 3s
+drive-on 48.0 s both hyb arms | tables asserted
+l65conv lone rollouts done | 11s
+group rollouts done, raw checkpointed | 29s
+C0 l65_bitid 6.0e-08 | open {'11': {'ratio': 0.7, 'f': 775.334, 'S_Ti_L': 0.667, 'S_Ti_R': 0.697}, '22': {'ratio': 0.5, 'f': 644.251, 'S_Ti_L': 0.639, 'S_Ti_R': 0.684}, '33': {'ratio': 0.8, 'f': 941.925, 'S_Ti_L': 0.633, 'S_Ti_R': 0.651}} | dm 0.022
+done 29s -> l68/raw_l68.npz + scan_l68.json (analysis in l68_verdict.py)

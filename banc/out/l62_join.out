@@ -1,0 +1,67 @@
+connection cells: 112,885; pair-rows 3,777,046; unique pairs 2,676,592
+annotated cells: 114,461; conn cells covered by annotations: 112,390 (99.6%)
+edge rows with BOTH ends annotated: 3,768,638 (99.8%) of syn mass 22,190,026/22,243,310
+
+--- super_class distribution (annotated) ---
+                                   NaN   33,826
+                  optic_lobe_intrinsic   25,466
+               central_brain_intrinsic   19,878
+                               sensory   12,463
+          ventral_nerve_cord_intrinsic   12,400
+                     visual_projection    5,300
+                             ascending    1,840
+                            descending    1,313
+                                 motor      831
+                     sensory_ascending      509
+                    visual_centrifugal      429
+                  visceral_circulatory      188
+                    sensory_descending       13
+        ascending_visceral_circulatory        5
+
+--- NT join (root_626 -> annotations) ---
+NT joined 113,745/114,461 (99.4%)
+NT mix (annotated, joined):
+pt_root_id
+acetylcholine    66334
+gaba             20895
+glutamate        16392
+dopamine          5758
+serotonin         3019
+octopamine         744
+histamine          366
+tyramine           237
+
+--- motor / antagonist vocabulary (super_class==motor) ---
+motor cells: 831
+  cell_class: {'leg_motor_neuron': 390, 'abdomen_motor_neuron': 206, 'wing_motor_neuron': 60, 'neck_motor_neuron': 49, 'proboscis_motor_neuron': 35, 'haltere_motor_neuron': 31}
+  cell_sub_class: {'NaN': 309, 'front_leg_motor_neuron': 139, 'middle_leg_motor_neuron': 126, 'hind_leg_motor_neuron': 125, 'wing_power_motor_neuron': 24, 'wing_steering_motor_neuron': 24}
+  flexor-target MNs: 163; extensor-target: 60
+  TIBIA flexor MNs: 101; TIBIA extensor MNs: 12
+  tibia-flexor cell_type top: {'accessory_tibia_flexor_B': 35, 'accessory_tibia_flexor_A': 25, 'tibia_flexor': 25, 'accessory_tibia_flexor_C': 6}
+  tibia-extensor cell_type top: {'tibia_extensor_SETi': 6, 'tibia_extensor_FETi': 6}
+
+--- descending vocabulary ---
+descending cells: 1,313; classes: {'descending_neuron': 1313}
+  DNp/DNg-style type names: 658; sample types: ['DNp32', 'DNd02', 'DNg100', 'DNg100', 'DNd03', 'DNp30']
+
+--- Pugliese triad via MANC matches ---
+valid MANC matches: 21,716
+  IN17A001: 4 BANC cells
+  INXXX466: 5 BANC cells
+  IN16B036: 6 BANC cells
+  IN19A007: 5 BANC cells
+  IN19B012: 4 BANC cells
+  total triad cells: 24
+annotations w/ manc_121_match_id: 19,546; triad hits there: 0
+
+--- live-brain bridge: fafb_783_match_id ---
+annotated cells with v783 match id: 42,634 (37.2%) — direct join to the LIVE female brain
+
+--- region split ---
+region
+optic_lobe            56152
+central_brain         32930
+ventral_nerve_cord    21266
+neck_connective        3557
+NaN                     532
+brain                    24

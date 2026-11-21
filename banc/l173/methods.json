@@ -1,0 +1,100 @@
+{
+ "defs": {
+  "K": 77,
+  "K_mass_rule": 0.5,
+  "duty_bar": 0.25,
+  "mass_share": 0.5024,
+  "mass_split": {
+   "glut19": 0.1103,
+   "other58": 0.3921
+  },
+  "meas0": 500,
+  "n_glut": 19,
+  "n_nonglut": 58,
+  "notsuper_k": 8,
+  "notsuper_meanR": 0.5,
+  "partial_hi": 0.5,
+  "partial_k_hi": 8,
+  "partial_k_lo": 3,
+  "partial_lo": 0.35,
+  "pool_admissible": 38,
+  "pool_rejected": 11,
+  "s_window": 500,
+  "sample_stride": 10,
+  "seed_bar": 0.5,
+  "super_k": 12,
+  "super_meanR": 0.6,
+  "unit": "a noise seed of ONE fixed network (one graph, one bisected gain, one drive protocol); intervals describe seed-to-seed variability of that network, not variability across connectomes, cohorts or gains"
+ },
+ "gains_stored_form": {
+  "cutng25": 0.1454454553127289,
+  "cutng25p": 0.1435265743732452,
+  "cutng29": 0.1442639136314392,
+  "cutwA": 0.14365819573402408
+ },
+ "model": {
+  "AF_T": 0.109056,
+  "BETA": 2.0,
+  "BG": 0.02,
+  "D": 0.2,
+  "DT": 0.01,
+  "ENT_AMP": 0.1,
+  "NOISE": 0.01,
+  "RMAX": 1.0,
+  "SEG": 2000,
+  "SETTLE": 400,
+  "TAU": 0.05,
+  "WIN": 6000,
+  "af_threshold": 0.05,
+  "branch": "M1_equation_matches",
+  "cert1_shared": 15,
+  "eq_maxd": 0.0,
+  "equation": "x <- x + (DT/TAU) * ( clamp( relu(g*W x + I + s(t)*1_mech + BG) + noise, max=RMAX ) - x )"
+ },
+ "protocol": {
+  "bisect_anchors": [
+   11,
+   22,
+   33
+  ],
+  "bisect_bracket": [
+   0.12,
+   0.18
+  ],
+  "bisect_iters": 24,
+  "chop_off": 400,
+  "chop_on": 500,
+  "chop_period": 900,
+  "continuous_seg": [
+   2000,
+   4000
+  ],
+  "dng100_drive": 0.2,
+  "segb": [
+   [
+    0,
+    2000,
+    0.7
+   ],
+   [
+    2000,
+    4000,
+    1.4
+   ],
+   [
+    4000,
+    6000,
+    0.7
+   ]
+  ],
+  "win_s": 60.0
+ },
+ "sources": {
+  "pooling": "l172/stats.json",
+  "run": "l135_run.py",
+  "run_now": "l169d_run.py",
+  "static": "l131_static.py",
+  "verdict": "l169d_verdict.py",
+  "verdict_first": "l135_verdict.py"
+ }
+}

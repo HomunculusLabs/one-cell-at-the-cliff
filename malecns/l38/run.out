@@ -1,0 +1,52 @@
+substrate OK: 21,516 nodes / 2,977,920 edges (L32-L37 identical)
+/home/t3rpz/critters/peabrain-lab/malecns/l38_primitives.py:81: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l38_primitives.py:84: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  ).coalesce().to_sparse_csr()
+DN cells in sub: 1,277 / 476 types | sides L 636 R 631 other 10
+  census seed 11: af 0.185 | 9s
+  census seed 22: af 0.191 | 9s
+  census seed 33: af 0.181 | 10s
+C1 DNge059: u_max L +4.518 / R +1.061 -> FAIL (want ('buried-or-neg', 'pos'))
+C1 DNge046: u_max L +2.660 / R +2.237 -> FAIL (want ('pos', 'buried-or-neg'))
+/home/t3rpz/critters/peabrain-lab/malecns/l38_primitives.py:208: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  cen.drop(columns="_merge", inplace=True)
+C2 table: {'n_rows': 481, 'n_in_sub': 481, 'side_viable': {'flex': 18, 'ext': 2, 'jump': 14}, 'side_split_types': 107, 'gate': True}
+  DNge046_L@-0.8: n=2 dm [1.0112, 1.0123, 1.0157] df(Ti) [+1.422, +0.333, +2.556] S_Tr [+0.62, +0.57, +0.05] | 30s
+  DNge046_L@-0.4: n=2 dm [1.0106, 1.0107, 1.0143] df(Ti) [+1.422, +0.067, +0.156] S_Tr [+0.52, +0.48, +0.44] | 50s
+  DNge046_L@-0.2: n=2 dm [1.0111, 1.0123, 1.0130] df(Ti) [-0.244, -0.022, +0.178] S_Tr [+0.51, +0.43, +0.44] | 70s
+  DNge046_L@0.2: n=2 dm [1.0115, 1.0159, 1.0092] df(Ti) [+1.178, +0.111, +1.489] S_Tr [+0.45, +0.72, +0.44] | 90s
+  DNge046_L@0.4: n=2 dm [1.0129, 1.0117, 1.0144] df(Ti) [+2.689, +0.111, +0.244] S_Tr [+0.48, +0.46, +0.48] | 110s
+  DNge046_L@0.8: n=2 dm [1.0129, 1.0156, 1.0108] df(Ti) [+2.578, -0.022, +0.333] S_Tr [+0.55, +0.43, +0.45] | 131s
+  DNge046_R@-0.8: n=2 dm [1.0095, 1.0094, 1.0109] df(Ti) [-0.244, -0.022, +1.533] S_Tr [+0.50, +0.48, +0.47] | 154s
+  DNge046_R@-0.4: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 177s
+  DNge046_R@-0.2: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 201s
+  DNge046_R@0.2: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 225s
+  DNge046_R@0.4: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 261s
+  DNge046_R@0.8: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 340s
+  DNg110@-0.8: n=6 dm [1.0113, 1.0114, 1.0144] df(Ti) [+2.578, +1.378, +1.444] S_Tr [+0.48, +0.54, +0.53] | 372s
+  DNg110@-0.4: n=6 dm [1.0131, 1.0160, 1.0156] df(Ti) [+2.600, +0.756, -0.711] S_Tr [+0.48, +0.50, +0.62] | 395s
+  DNg110@-0.2: n=6 dm [1.0085, 1.0107, 1.0120] df(Ti) [+1.178, +0.156, +0.244] S_Tr [+0.51, +0.47, +0.50] | 419s
+  DNg110@0.2: n=6 dm [1.0136, 1.0107, 1.0101] df(Ti) [+1.422, +0.133, +1.533] S_Tr [+0.50, +0.40, +0.42] | 442s
+  DNg110@0.4: n=6 dm [1.0115, 1.0143, 1.0112] df(Ti) [+1.578, -1.267, +1.467] S_Tr [+0.52, +0.88, +0.45] | 467s
+  DNg110@0.8: n=6 dm [1.0139, 1.0136, 1.0144] df(Ti) [+0.622, -0.556, +1.422] S_Tr [+0.73, +0.33, +0.45] | 490s
+  MDN@-1.0: n=4 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 513s
+  MDN@-2.0: n=4 dm [1.0096, 1.0094, 1.0078] df(Ti) [-0.267, +1.444, +1.556] S_Tr [+0.49, +0.41, +0.45] | 537s
+  MDN@-4.0: n=4 dm [1.0127, 1.0136, 1.0176] df(Ti) [+0.489, -0.578, -1.333] S_Tr [+0.50, +0.51, +0.89] | 561s
+  MDN@-8.0: n=4 dm [1.0138, 1.0136, 1.0176] df(Ti) [+0.511, -0.578, +3.556] S_Tr [+0.48, +0.48, +0.91] | 584s
+  DNg88@-2.0: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 607s
+  DNg88@-4.0: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 632s
+  DNg88@-8.0: n=2 dm [1.0127, 1.0142, 1.0144] df(Ti) [+0.622, +1.622, -1.378] S_Tr [+0.12, +0.06, +0.10] | 655s
+  DNg88@-12.0: n=2 dm [1.0155, 1.0143, 1.0140] df(Ti) [+4.600, +3.578, +2.111] S_Tr [-0.27, +0.72, +0.33] | 678s
+  anchor:g100@0.8: n=2 dm [0.0000, 0.0000, 0.0000] df(Ti) [+0.000, +0.000, +0.000] S_Tr [+0.49, +0.47, +0.51] | 701s
+  anchor:g95@0.2: n=2 dm [1.0133, 1.0094, 1.0117] df(Ti) [+1.511, -0.044, +0.378] S_Tr [+0.48, +0.46, +0.64] | 724s
+C0 anchor:g100: dm ['0.0000', '0.0000', '0.0000'] -> PASS
+C0 anchor:g95: dm ['1.0133', '1.0094', '1.0117'] -> PASS
+C3 DNge046_L: lands True med df(Ti) ['+1.178', '+0.244', '+0.333'] mono False -> FAIL
+C3 DNge046_R: lands False med df(Ti) ['+0.000', '+0.000', '+0.000'] mono True -> FAIL
+C3 DNg110: lands True med df(Ti) ['+1.422', '+1.467', '+0.622'] mono False -> FAIL
+C4 MDN: u_max +4.5 hits [{'amp': -8.0, 'nslow': 1, 'nkill': 0, 'lands': True}] -> FAIL
+C4 DNg88: u_max +10.8 hits [{'amp': -12.0, 'nslow': 0, 'nkill': 1, 'lands': True}] -> FAIL
+C5 buried side R @-0.8: dm ['1.0095', '1.0094', '1.0109'] -> FAIL
+WROTE l38/primitives_viable.csv (481 rows) + results_l38.json | total 724s

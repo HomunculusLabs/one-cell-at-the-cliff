@@ -1,0 +1,10 @@
+===== fig1
+    (0.234, 266, 'Wilson bars contain .5 separation: 1110-alone flips kill→super; 319-alone i', (999, 399, 1466, 400), '#373c47')
+   n texts colliding with drawn marks: 1
+===== fig2
+    (0.158, 35, '+clamp ≡ bit-identical', (1140, 188, 1221, 188), '#363b46')
+   n texts colliding with drawn marks: 1
+===== fig3
+    (0.144, 93, 'showing threshold: pooled Wilson lb ≥ .5 (PREREG)', (305, 326, 332, 333), '#8ab070')
+    (0.036, 13, 'sub-band fraction (mm)', (1175, 210, 1185, 319), '#2c3d4d')
+   n texts colliding with drawn marks: 2

@@ -1,0 +1,6 @@
+pairs: 1830698 | min pair weight: 3.0 | pairs == 3: 533658 | ==4: 310536
+floor 3 (paper): DN-into 728 | dn_new 560 | K 77 (ng 58, glut 19) | closure edges 647,953 | carrier rank 25 twin 26
+floor 4 (A) FROZEN membership : dn_new 560 | K 73 (ng 55, glut 18) | closure edges 472,095 | carrier rank 21 twin 33 | heavy Jaccard 0.9231 | ng Jaccard 0.9153
+floor 4 (B) RE-DERIVED        : DN-into 588 | dn_new 688 | K 88 (ng 76, glut 12) | closure edges 472,020 | carrier rank 46 twin 72 | heavy Jaccard 0.3525 | ng Jaccard 0.3535 | of floor-3 ng58, still in ng ladder: 35 | first-24 overlap: 9/24
+floor 5 (A) FROZEN membership : dn_new 560 | K 70 (ng 52, glut 18) | closure edges 367,935 | carrier rank 16 twin 25 | heavy Jaccard 0.9091 | ng Jaccard 0.8966
+floor 5 (B) RE-DERIVED        : DN-into 496 | dn_new 767 | K 100 (ng 88, glut 12) | closure edges 367,809 | carrier rank 54 twin 76 | heavy Jaccard 0.2734 | ng Jaccard 0.2696 | of floor-3 ng58, still in ng ladder: 31 | first-24 overlap: 5/24

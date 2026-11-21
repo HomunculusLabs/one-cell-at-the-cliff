@@ -1,0 +1,15 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+BANC pins green: k-ladder + rank twins (1110/319) + K/mass_split
+
+== MALE side (closure mirror) ==
+S1: keep_old 21,516 keep_new 21,544 dn_new 28 added 1,942 (dn-out 787) | heavy K 9 (0 glut / 9 ng)
+S2: male DNp33: [{"gi": 616, "bodyId": 10664, "somaSide": "R", "nt": "acetylcholine", "glut": false, "in_heavy": false, "heavy_rank": null, "ng_rank": null, "mass": 0.0, "mass_share": 0.0}, {"gi": 1342, "bodyId": 11438, "somaSide": "L", "nt": "acetylcholine", "glut": false, "in_heavy": false, "heavy_rank": null, "ng_rank": null, "mass": 0.0, "mass_share": 0.0}]
+S3: window shares male {'r1_19': None, 'r20_29': None, 'r30_rest': None, 'n_ng': 9} vs BANC {'r1_19': 0.1946, 'r20_29': 0.0642, 'r30_58': 0.1333}
+male ng rank-25/26 cells (descriptive): []
+male ng top-10 types: ['DNpe037', 'DNge086', 'DNpe012_a', 'DNpe057', 'DNpe057', 'DNge085', 'DNge085', 'DNg09_a', 'DNge115']
+S5: male pools {'Ti_flex': 84, 'Ti_ext': 12, 'Tr_flex': 57, 'Tr_ext': 11} vs BANC {'Ti_fL': 50, 'Ti_eL': 6, 'Tr_fL': 31, 'Tr_eL': 24}
+S4: v783 'DNp33' rows {'n': 2, 'sides': ['left', 'right']} | BANC 1110 fafb match 720575940604103084 in live brain -> True
+post-hoc RAW-weight rank of DNp33 among dn_new: [{'gi': 616, 'raw_rank_of_dnnew': 29}, {'gi': 1342, 'raw_rank_of_dnnew': 29}]
+
+l138/static.json written

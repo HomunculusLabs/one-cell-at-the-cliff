@@ -1,0 +1,6 @@
+166700 labeled neurons
+transmitter mix: {'acetylcholine': 103720, 'glutamate': 29302, 'gaba': 22069, 'histamine': 7891, 'unclear': 2999, 'dopamine': 392, 'unknown': 178, 'octopamine': 101}
+25,560,079 edges after id filter
+graph: (166700, 166700) nnz: 25560079
+rho (power iteration, cpu): 0.8355
+saved male_graph.pt

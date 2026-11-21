@@ -1,0 +1,120 @@
+{
+ "n_old": 21249,
+ "n_new": 21809,
+ "n_cut": 21732,
+ "edges_old": 627051,
+ "edges_new": 647953,
+ "edges_cut": 639164,
+ "added_edges": 20902,
+ "added_categories": {
+  "dnnew->old": 17326,
+  "dnnew->dnnew": 1387,
+  "old->dnnew": 2189
+ },
+ "out_tiers_by_target": {
+  "motor_pools": {
+   "edges": 129,
+   "mass": 271.273
+  },
+  "motor_other": {
+   "edges": 1130,
+   "mass": 2593.815
+  },
+  "intrinsic": {
+   "edges": 12991,
+   "mass": 25669.907
+  },
+  "vnc_sensory": {
+   "edges": 29,
+   "mass": 48.911
+  },
+  "dn(old non-cord)": {
+   "edges": 3047,
+   "mass": 6529.566
+  }
+ },
+ "dnnew_families": {
+  "DNpe054": 21,
+  "DNge091": 19,
+  "DNg07": 18,
+  "DNg10": 15,
+  "DNg106": 13,
+  "DNg08_a": 13,
+  "DNp17": 13,
+  "DNge071": 13,
+  "DNg12_e": 11,
+  "DNge085": 11,
+  "DNg08_b": 9,
+  "": 9
+ },
+ "outmass_total": 28583.906,
+ "cut": {
+  "K": 77,
+  "mass_share": 0.5024,
+  "families": {
+   "DNpe055": 3,
+   "DNg79": 3,
+   "DNp43": 2,
+   "DNp14": 2,
+   "DNpe031": 2,
+   "DNp08": 2,
+   "DNpe025": 2,
+   "DNpe050": 2,
+   "DNpe006": 2,
+   "DNge084": 2,
+   "DNb07": 2,
+   "DNg24": 2
+  },
+  "n_cells": 77
+ },
+ "pool_direct_in": {
+  "Ti_fL": {
+   "added_edges": 16,
+   "added_mass": 29.946,
+   "old_in_mass": 12876.179
+  },
+  "Ti_fR": {
+   "added_edges": 9,
+   "added_mass": 14.804,
+   "old_in_mass": 15542.312
+  },
+  "Ti_eL": {
+   "added_edges": 13,
+   "added_mass": 32.815,
+   "old_in_mass": 3222.608
+  },
+  "Ti_eR": {
+   "added_edges": 14,
+   "added_mass": 33.543,
+   "old_in_mass": 4093.507
+  },
+  "Tr_fL": {
+   "added_edges": 10,
+   "added_mass": 18.822,
+   "old_in_mass": 7238.053
+  },
+  "Tr_fR": {
+   "added_edges": 14,
+   "added_mass": 24.379,
+   "old_in_mass": 7851.277
+  },
+  "Tr_eL": {
+   "added_edges": 28,
+   "added_mass": 63.27,
+   "old_in_mass": 12189.851
+  },
+  "Tr_eR": {
+   "added_edges": 25,
+   "added_mass": 53.693,
+   "old_in_mass": 12190.778
+  }
+ },
+ "af_target": 0.10905611018339793,
+ "pins": {
+  "n_old": 21249,
+  "n_new": 21809,
+  "edges_old": 627051,
+  "edges_new": 647953,
+  "dn_new": 560
+ }
+}

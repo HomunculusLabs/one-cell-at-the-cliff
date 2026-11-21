@@ -1,0 +1,205 @@
+{
+ "c0b_pass": true,
+ "c0b_fail": [],
+ "c0a": {
+  "passed": true,
+  "max": 0.0
+ },
+ "g_cut": 0.14510760426521305,
+ "af_final": 0.10853426406780879,
+ "K": 77,
+ "c1": {
+  "af_range_ok": true,
+  "b65_band": true,
+  "af_mean": {
+   "full": 0.110293,
+   "b65": 0.109196,
+   "h65": 0.112252,
+   "cut": 0.107192
+  }
+ },
+ "cut_bisect": {
+  "af_final": 0.10853426406780879,
+  "target": 0.10905611018339793,
+  "gap": 0.000522,
+  "gap_cells": 11.3,
+  "b4_mean": 0.107192,
+  "b4_minus_target": -0.001864,
+  "seed_spread_ref": "l94 cfn sd .0024"
+ },
+ "k_ti": {
+  "full": 0,
+  "b65": 16,
+  "h65": 16,
+  "cut": 0
+ },
+ "m_ti": {
+  "full": {
+   "duty07": 0.135,
+   "dL": 0.378,
+   "dR": 0.425,
+   "seg1": 0.003,
+   "seg2": 0.098
+  },
+  "b65": {
+   "duty07": 0.993,
+   "dL": 1.0,
+   "dR": 0.993,
+   "seg1": 1.0,
+   "seg2": 0.996
+  },
+  "h65": {
+   "duty07": 0.925,
+   "dL": 0.932,
+   "dR": 0.99,
+   "seg1": 0.988,
+   "seg2": 0.917
+  },
+  "cut": {
+   "duty07": 0.118,
+   "dL": 0.836,
+   "dR": 0.143,
+   "seg1": 0.106,
+   "seg2": 0.105
+  }
+ },
+ "m_tr": {
+  "full": {
+   "duty07": 0.017,
+   "dL": 0.032,
+   "dR": 0.372,
+   "seg1": 0.005,
+   "seg2": 0.015
+  },
+  "b65": {
+   "duty07": 0.146,
+   "dL": 0.15,
+   "dR": 0.961,
+   "seg1": 0.585,
+   "seg2": 0.155
+  },
+  "h65": {
+   "duty07": 0.231,
+   "dL": 0.232,
+   "dR": 0.996,
+   "seg1": 0.547,
+   "seg2": 0.25
+  },
+  "cut": {
+   "duty07": 0.018,
+   "dL": 0.055,
+   "dR": 0.345,
+   "seg1": 0.0,
+   "seg2": 0.009
+  }
+ },
+ "lock": {
+  "full": 16,
+  "b65": 16,
+  "h65": 16,
+  "cut": 16
+ },
+ "shift": {
+  "b65": {
+   "note": "k>=12 arm; shifted-grid read",
+   "mean": 0.993,
+   "k_orig": 16
+  },
+  "h65": {
+   "note": "k>=12 arm; shifted-grid read",
+   "mean": 0.925,
+   "k_orig": 16
+  }
+ },
+ "static": {
+  "added": {
+   "dnnew->old": 17326,
+   "dnnew->dnnew": 1387,
+   "old->dnnew": 2189
+  },
+  "out_tiers": {
+   "motor_pools": {
+    "edges": 129,
+    "mass": 271.273
+   },
+   "motor_other": {
+    "edges": 1130,
+    "mass": 2593.815
+   },
+   "intrinsic": {
+    "edges": 12991,
+    "mass": 25669.907
+   },
+   "vnc_sensory": {
+    "edges": 29,
+    "mass": 48.911
+   },
+   "dn(old non-cord)": {
+    "edges": 3047,
+    "mass": 6529.566
+   }
+  },
+  "pool_direct": {
+   "Ti_fL": {
+    "added_edges": 16,
+    "added_mass": 29.946,
+    "old_in_mass": 12876.179
+   },
+   "Ti_fR": {
+    "added_edges": 9,
+    "added_mass": 14.804,
+    "old_in_mass": 15542.312
+   },
+   "Ti_eL": {
+    "added_edges": 13,
+    "added_mass": 32.815,
+    "old_in_mass": 3222.608
+   },
+   "Ti_eR": {
+    "added_edges": 14,
+    "added_mass": 33.543,
+    "old_in_mass": 4093.507
+   },
+   "Tr_fL": {
+    "added_edges": 10,
+    "added_mass": 18.822,
+    "old_in_mass": 7238.053
+   },
+   "Tr_fR": {
+    "added_edges": 14,
+    "added_mass": 24.379,
+    "old_in_mass": 7851.277
+   },
+   "Tr_eL": {
+    "added_edges": 28,
+    "added_mass": 63.27,
+    "old_in_mass": 12189.851
+   },
+   "Tr_eR": {
+    "added_edges": 25,
+    "added_mass": 53.693,
+    "old_in_mass": 12190.778
+   }
+  },
+  "cut": {
+   "K": 77,
+   "mass_share": 0.5024,
+   "families": {
+    "DNpe055": 3,
+    "DNg79": 3,
+    "DNp43": 2,
+    "DNp14": 2,
+    "DNpe031": 2,
+    "DNp08": 2,
+    "DNpe025": 2,
+    "DNpe050": 2,
+    "DNpe006": 2,
+    "DNge084": 2,
+    "DNb07": 2,
+    "DNg24": 2
+   },
+   "n_cells": 77
+  }
+ },
+ "verdict": "k Ti B4/16: full 0 (stored 0) | b65 16 (l91 was 16/16 x3 batches) | h65 16 | cut 0 -> DISTRIBUTED membership: kill carried by the small-per-cell intrinsic-projecting bulk, not the top-77 nor the gain"
+}

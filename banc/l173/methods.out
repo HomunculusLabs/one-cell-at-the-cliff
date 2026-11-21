@@ -1,0 +1,77 @@
+/home/t3rpz/critters/peabrain-lab/banc/l173_methods.py:197: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  W = Wd.to_sparse_csr()
+CERT-1 OK: 15 constants identical in l135_run.py and l169d_run.py
+CERT-2 OK: AF_T 0.10905611018339793 + 4 stored-form gains equal to l135/anchors_run.json within 1e-12
+CERT-3 OK: K rule = first k with cum mass >= 0.5 -> K 77 = 19 glut + 58 non-glut, mass_split {'glut19': 0.1103, 'other58': 0.3921}, stored share 0.5024
+P1 OK: chop 500 on / 400 off (period 900), segment [2000,4000) continuous, phase-continuous sinusoid
+P2 OK: active = x > 0.05, af = mean over anchors [11, 22, 33] after SETTLE, bisect 24 iters on (0.12, 0.18) to AF_T 0.109056
+P3/P4 OK: S = -corr over 500 steps sampled every 10; duty = fraction of samples with S >= 0.25 inside the 0.7-Hz windows (first 500 steps dropped); seed counts at duty >= 0.5; SUPER (0.6, 12), PARTIAL (0.35, 0.5, 3, 8), NOT-SUPER (8, 0.5)
+S4 OK: pooling = maximal unique-seed union over 38 admissible trace files (11 rejected)
+E-TEST OK: max|d| 0.0e+00 -> branch M1_equation_matches (noise enters AFTER relu and INSIDE the clamp; clamp has NO lower bound, so x can sit slightly below 0 on a negative noise draw)
+
+wrote l173/methods.json
+{
+ "defs": {
+  "K": 77,
+  "K_mass_rule": 0.5,
+  "duty_bar": 0.25,
+  "mass_share": 0.5024,
+  "mass_split": {
+   "glut19": 0.1103,
+   "other58": 0.3921
+  },
+  "meas0": 500,
+  "n_glut": 19,
+  "n_nonglut": 58,
+  "notsuper_k": 8,
+  "notsuper_meanR": 0.5,
+  "partial_hi": 0.5,
+  "partial_k_hi": 8,
+  "partial_k_lo": 3,
+  "partial_lo": 0.35,
+  "pool_admissible": 38,
+  "pool_rejected": 11,
+  "s_window": 500,
+  "sample_stride": 10,
+  "seed_bar": 0.5,
+  "super_k": 12,
+  "super_meanR": 0.6,
+  "unit": "a noise seed of ONE fixed network (one graph, one bisected gain, one drive protocol); intervals describe seed-to-seed variability of that network, not variability across connectomes, cohorts or gains"
+ },
+ "gains_stored_form": {
+  "cutng25": 0.1454454553127289,
+  "cutng25p": 0.1435265743732452,
+  "cutng29": 0.1442639136314392,
+  "cutwA": 0.14365819573402408
+ },
+ "model": {
+  "AF_T": 0.109056,
+  "BETA": 2.0,
+  "BG": 0.02,
+  "D": 0.2,
+  "DT": 0.01,
+  "ENT_AMP": 0.1,
+  "NOISE": 0.01,
+  "RMAX": 1.0,
+  "SEG": 2000,
+  "SETTLE": 400,
+  "TAU": 0.05,
+  "WIN": 6000,
+  "af_threshold": 0.05,
+  "branch": "M1_equation_matches",
+  "cert1_shared": 15,
+  "eq_maxd": 0.0,
+  "equation": "x <- x + (DT/TAU) * ( clamp( relu(g*W x + I + s(t)*1_mech + BG) + noise, max=RMAX ) - x )"
+ },
+ "protocol": {
+  "bisect_anchors": [
+   11,
+   22,
+   33
+  ],
+  "bisect_bracket": [
+   0.12,
+   0.18
+  ],
+  "bisect_iters": 24,
+  "cho

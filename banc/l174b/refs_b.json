@@ -1,0 +1,63 @@
+{
+ "accepted": {
+  "habib2026": {
+   "abstract_head": "Focal neuronal loss after stroke, traumatic brain injury or spinal cord injury can disrupt circuits and result in persistent motor deficits. Which cells and connections must be restored to recover a specific behavior is difficult to establish experimentally. Here we use a connectome-constrained spiking model of the fruit-fly nervous system and decode motor-neuron output to simulate visually guided steering. After loss of 4,000 neurons, path straightness ranged from 0.04 to 0.95 depending on lesion location. At a fixed sensorimotor site, a 2,000-neuron lesion reduced simulated displacement to 6.5% of intact. Across 100 stochastic simulation realizations of the connectome, replacing 100 cells with their original connections increased displacement to 62.5% of intact when motor-control pathways were prioritized, compared with 10.1% after random selection of 100 cells and 48.5% after random s",
+   "accept": true,
+   "authors": "Habib, P.; Petr, M.; Rust, R.",
+   "category": "neuroscience",
+   "date": "2026-10-27",
+   "doi": "10.64898/2026.10.26.762043",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/10/27/2026.10.26.762043.source.xml",
+   "license": "cc_by",
+   "n_versions": 1,
+   "probe_title": "Focal neuronal loss and cell replacement in a connectome model of fly steering",
+   "published": "NA",
+   "server": "bioRxiv",
+   "source_url": "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.26.762043",
+   "surname_hits": [
+    "Habib",
+    "Petr",
+    "Rust"
+   ],
+   "title": "Focal neuronal loss and cell replacement in a connectome model of fly steering",
+   "title_overlap": 1.0,
+   "version": "1"
+  },
+  "matsliah2026vnc": {
+   "abstract_head": "There are now multiple Drosophila connectomes available, comprising both its brain and spinal cord - comparing these connectomes requires first classifying neurons into cell types. Existing approaches for cell typing typically require extensive manual curation. Here we present a new method that automatically aligns connectomes via network topology alone. Using two complete male ventral nerve cord (VNC) connectomes as references, we assign cell types to [~]13,000 neurons intrinsic to the female VNC, and automatically identify sex-specific and sexually dimorphic cell types. We not only provide a comprehensive census of cell types across male and female nerve cords, but we uncover connectivity differences that underlie differences in function. We focus on circuits underlying song production in males and oviposition behaviors in females, and investigate the counterparts of these circuits acr",
+   "accept": true,
+   "authors": "Matsliah, A.; Salmon, C. K.; Bates, A. S.; Yang, H. H.; Lee, D. D.; Saul, L. K.; Silverman, B.; Gager, J.; Yu, S.-C.; Willie, K. P.; Burke, A. T.; Willie, R.; Bland, D.; Sorek, M.; David, C.; Sterling, A. R.; The BANC-FlyWire Consortium,  ; Lee, W.-C. A.; Seung, H. S.; Murthy, M.",
+   "category": "neuroscience",
+   "date": "2026-06-27",
+   "doi": "10.64898/2026.06.14.732053",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/06/27/2026.06.14.732053.source.xml",
+   "license": "cc_by_nd",
+   "n_versions": 2,
+   "probe_title": "Uncovering Sex Differences in the Drosophila Ventral Nerve Cord Through Connectome Alignment",
+   "published": "NA",
+   "server": "bioRxiv",
+   "source_url": "https://api.biorxiv.org/details/biorxiv/10.64898/2026.06.14.732053",
+   "surname_hits": [
+    "Matsliah",
+    "Murthy",
+    "Seung"
+   ],
+   "title": "Uncovering Sex Differences in the Drosophila Ventral Nerve Cord Through Connectome Alignment",
+   "title_overlap": 1.0,
+   "version": "2"
+  }
+ },
+ "controls": {
+  "legacy_habib2026": {
+   "doi": "10.1101/2026.10.26.762043",
+   "n": 0,
+   "status": "no posts found"
+  },
+  "legacy_matsliah2026vnc": {
+   "doi": "10.1101/2026.06.14.732053",
+   "n": 0,
+   "status": "no posts found"
+  }
+ },
+ "rejected": {}
+}

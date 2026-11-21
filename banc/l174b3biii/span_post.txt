@@ -1,0 +1,156 @@
+### 2.7 Pre-posting controls: the gain swaps, the rewire and the deletion (L169 stages a–d)
+
+Every arm is re-gained to a matched active fraction, and the flip arms sit
++1.06–1.30% above `g_cutwA` while the non-flip arms sit at ±0.03%. So carrier
+removal and a slightly higher gain are confounded along the diagonal of the
+experiment above. The control is the off-diagonal: run each graph at the
+OTHER cell's bisected gain, on one fresh seed batch (n=16), paired noise.
+
+The 2x2 on Ti right-side duty divides along both axes [l169.grid]. Graph-wA at
+its own gain is PARTIAL (meanR .426, kR 4/16); graph-wA at the HIGHER cutng25
+gain (`wAgN`) does NOT flip (meanR .317, kR 2/16); graph-cutng25 at the LOWER
+cutwA gain (`n25gW`) stays SUPER (meanR .702, kR 15/16, [.717,.989]);
+graph-cutng25 at its own gain SUPER (meanR .753, kR 16/16).
+
+Paired on the same batch [l169.swap_legs], `n25gW` sits +.276 above cutwA
+(10/16 seeds up) while `wAgN` sits −.109 BELOW it (2/16 up). The whole
+confounded gain step, applied to the carrier-intact graph, moves the readout
+in the opposite direction to the confound hypothesis.
+Registered branch D1 fired [l169.branch]: the transition
+follows the GRAPH, not the gain. The gain difference is a real asymmetry in
+the design, but it is not the mechanism.
+
+The probe and its anchors are reported next. The swap arms are deliberately
+off their matched operating point, which is the test; the af offsets are
+±.0010–.0013 [l169.af]. The registered per-seed direction (wAgN above target,
+n25gW below) holds in the batch means but only on 15 of 18 seeds — the
+per-seed af spread is the size of the 1.24% gain step, and we report that
+rather than the mean alone. A swap arm bit-identical to its own-gain twin
+would have voided the run; the separation is 1.9e-2 at minimum [l169.nt].
+
+The batch unions were re-pooled with B35 [l169.pooled]:
+silW 42/48 (lb .753, three batches), cutng25 140/144 (lb .931, nine),
+cutwA 47/160 (ub .368, ten), eMotTop5 19/48, eMotBot5 13/48. These supersede
+the two-batch pooled figures quoted in §2.4; one pooled count per arm is the
+L172 statistics pass, not this subsection.
+
+Scope: one fresh batch per new cell, and a two-point gain probe cannot
+locate a threshold between .143658 and .145445. The floor-4 pre-posting
+control is reported in §4 (static bound plus a dynamic arm that does not
+transfer). Of the remaining controls, the carrier-edge rewire and the
+same-footprint different-class deletion are measured below, and the
+carrier-vs-twin pair at swapped gains closes the section.
+
+Design pins for the rewire and deletion arms are stored [l169c.design]. The
+contralateral DNp33 cell (gi 928) is a footprint mirror of the carrier but
+not a cohort mirror. It carries 88 closure out-edges against the carrier's
+80, and out-mass 200.05 against 183.96, with near-identical tier splits.
+It also receives cord input, so the pure-projector extraction rule never
+admits it to the ranked cohort and no cut window contains it. Its target
+cells are almost disjoint from the carrier's sheet (6 shared, Jaccard
+.037), while its direct motor edges mirror the side (10 right / 1 left
+against the carrier's 9 left / 1 right). We therefore label that arm a
+same-footprint, different-class deletion, not a homolog control. The
+degree-preserving rewire is admissible here: the partner pool is 804x the
+carrier's out-degree, the median draw relocates all 80 edges, and it
+returns no measurable mass to the carrier's own target sheet.
+
+**Displacement is not removal, and the class axis is specific (stage c2).**
+Both arms were then run on a fresh batch (B37, n=16 each, paired noise,
+fresh af-matched bisect per arm). The base arms reproduce on the same seeds
+— cutwA PARTIAL (meanR .452, kR 5/16) and cutng25 SUPER (.786, 15/16) — so
+the comparison is not vacuous [l169c2.base].
+
+On the rewire arm [l169c2.rew], three independent draws of the registered
+degree-preserving rewire SPLIT. One flips (`rew1` meanR .724, kR 16/16,
+paired +.272 over cutwA, 15/16 seeds up). Two do not (`rew2` .333, 1/16,
+paired −.119; `rew3` .302, 3/16, paired −.150). Both non-flip draws sit BELOW
+the carrier-intact base, with 15/16 and 12/16 seeds down. The draw pool is
+20 of 48 [.288,.557], straddling the same-batch cutwA interval [.142,.556] and
+far below cutng25's [.717,.989]. The registered reading [l169c2.branch] is
+that the 2-of-3 majority fires R2_mass_degree — displacing the carrier's mass
+is not equivalent to removing it. The pooled-straddle
+clause of R3_draw_lottery is also true, so we report the conjunction. A
+degree-preserving rewire is bracketed by the carrier-intact base rather than
+by carrier removal, and which way one draw lands is a lottery. Mis-aiming the
+same mass costs structure relative to aiming it correctly; it does not buy the
+flip.
+
+This is not a gain artifact [l169c2.gains]: the three draws' re-bisected gains
+are not ordered with their readouts. `rew3` carries the smallest gain step
+over g_cutwA (.144464) and reads .302; `rew1` the middle one
+(.145617) and reads .724; `rew2` the largest (.150060) and reads .333. The
+readout is non-monotone in gain, which is what the graph-tracking
+verdict of the 2x2 above predicts.
+
+On the deletion arm [l169c2.hom], deleting gi 928 — same footprint, different
+subnet class, 101 incident closure edges removed — does NOT flip the readout
+(meanR .301, kR 2/16, [.035,.360], paired −.150, 13/16 seeds down). Registered
+branch H1_specific fires. With the mass-matched twin and the carrier-free
+scramble cohorts of §2.2, the flip is not bought by matched mass, nor by
+matched footprint in a different class, nor reliably by displacing the
+carrier's own edges.
+
+The anchors hold [l169c2.cert]: all twelve inherited arms are bit-identical to
+the prior run at the anchor seeds (max 0.0), the four stored-form bisects
+re-land exactly, the in-run rewire draws reproduce the stored design artifact
+field-for-field, and every new arm separates from the base in its motor trace
+(min 1.9e-2). Coincidence disclosed: `rew3` and `hom` have nearly equal batch
+means (.302 / .301) but differ per seed by up to .46 — different arms, not a
+duplicated one.
+
+**The XOR pair at swapped gains: identity wins in both gain columns
+(stage d).** The 2x2 of §2.7's opening paragraph was run on the cutwA /
+cutng25 contrast. The claim the title makes, however, rides the twin-XOR
+pair — cutng25 (carrier gi 1110 removed) against cutng25p (the same window
+with the mass-twin gi 319 removed instead, a 3.9e-04 mass delta) — and
+those two arms sit at bisected gains 1.34% apart, with the twin arm at the
+LOWER gain [l169d.grid]. We therefore ran the fully crossed pair on a
+further fresh batch (B38, n=16, paired noise): each graph at its own
+af-matched gain and at the other arm's.
+
+The own-gain diagonal reproduces on B38 [l169d.grid]: cutng25 SUPER
+(meanR .798, kR 16/16, [.806,1.000]) and cutng25p NOT-SUPER
+(.477, kR 8/16, [.280,.720]), paired +.321 with 16 of 16 seeds up
+[l169d.legs]. The registered batch prediction holds: against the stored
+earlier batch the cells move only in level, not in class (cutng25
+15/16 → 16/16, cutng25p 5/16 → 8/16) [l169d.xbatch]. Off the diagonal
+[l169d.grid], the twin graph run at the carrier arm's HIGHER gain (`p25gN`)
+does not flip — meanR .324, kR 1/16, paired −.152 below its own-gain self
+(12/16 seeds down). The carrier graph run at the twin arm's LOWER gain
+(`n25gP`) stays SUPER — meanR .651, kR 15/16, [.717,.989], paired −.147 but
+still above the SUPER bar.
+
+Read at FIXED gain, the contrast is maximal [l169d.legs]: at g_cutng25 the
+carrier-removed graph is
++.474 above the twin-removed graph with 16 of 16 seeds up, and
+at g_cutng25p it is +.174 with 12 of 16 up. Neither gain column reverses the
+ordering; both columns put the carrier-removed graph on top. Registered branch
+E1_graph_tracking fired [l169d.branch], the strongest of the four branches:
+the twin arm does not reach SUPER when given the carrier arm's gain, and the
+carrier arm does not fall out of SUPER when given the twin arm's. Cell
+identity, not the matched-gain difference, carries the transition on BOTH
+sides of the pair.
+
+The boundaries are reported honestly. The twin arm sits AT the NOT-SUPER
+boundary on this batch (kR exactly 8 of 16, meanR .477 just under the .50 bar)
+— it is the weakest cell in the grid and is reported as a boundary read, not a
+clean negative. Raising a gain did not help either graph (both swap arms read
+below their own-gain selves), so the two-point probe bounds the readout at
+.143527 and .145445 and still cannot locate a threshold between them. The
+registered per-seed af direction (p25gN above target, n25gP below)
+holds on 15 and 13 of 18 seeds respectively and is reported PARTIAL
+[l169d.cert].
+
+The anchors hold [l169d.cert]. All sixteen inherited arms are bit-identical to
+the prior run at the anchor seeds (max 0.0), and the twin arm is additionally
+bit-identical to the much earlier run that first rolled it (max 0.0), which
+certifies the new arm's wiring for free. Its fresh bisect re-lands the stored
+gain exactly; staircase residual 5.4e-07; each swap arm separates from its
+own-gain self in the motor trace (min 1.9e-2).
+
+With stage (d) the four pre-posting controls of this section are complete:
+gain swap on the cutwA contrast (a), synapse-floor transfer (b, §4),
+edge rewire and same-footprint different-class deletion (c), and the XOR
+pair at swapped gains (d).
+

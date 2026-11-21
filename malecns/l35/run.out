@@ -1,0 +1,36 @@
+sub nodes 21,516 | edges 2,977,920 | 5s
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:94: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l35_phasereset.py:96: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+DNg95 cells 2 | DN pool 1277
+ctrl seed 11: f 0.800 (flx 2.134) ratio 169 S(Tr) +0.48 R 0.46 af 0.185
+ctrl seed 22: f 1.444 (flx 2.054) ratio 252 S(Tr) +0.46 R 0.46 af 0.191
+ctrl seed 33: f 1.424 (flx 3.465) ratio 288 S(Tr) +0.49 R 0.48 af 0.181
+seed 11: period 125 steps (1.25 s)
+seed 22: period 69 steps (0.69 s)
+seed 33: period 70 steps (0.70 s)
+C1 pairing: pre-volley traces bit-identical 3/3
+dng95 A0.05 phi  0: dphi -0 +17 +0 | S_post +0.45 +0.40 +0.45 | ampr 1.00 0.69 1.00 | 35s
+dng95 A0.05 phi 45: dphi +14 +17 +1 | S_post +0.55 +0.40 +0.38 | ampr 1.00 0.69 1.00 | 44s
+dng95 A0.05 phi 90: dphi +0 -4 -11 | S_post +0.49 +0.37 +0.41 | ampr 1.00 1.10 1.03 | 54s
+dng95 A0.05 phi135: dphi +0 -4 -12 | S_post +0.48 +0.37 +0.41 | ampr 1.00 1.10 1.18 | 64s
+dng95 A0.05 phi180: dphi +8 -0 +0 | S_post +0.51 +0.47 +0.43 | ampr 0.38 1.00 1.00 | 74s
+dng95 A0.05 phi225: dphi -21 -10 -0 | S_post +0.55 +0.46 +0.47 | ampr 1.20 1.29 1.07 | 84s
+dng95 A0.05 phi270: dphi +19 +26 -14 | S_post +0.50 +0.46 +0.45 | ampr 0.48 1.64 1.15 | 93s
+dng95 A0.05 phi315: dphi +12 +4 +2 | S_post +0.48 +0.42 +0.44 | ampr 1.63 0.69 1.00 | 103s
+dng95 A0.15 phi  0: dphi -10 -25 -1 | S_post +0.49 +0.45 +0.45 | ampr 0.83 1.01 1.03 | 112s
+dng95 A0.15 phi 45: dphi +25 -25 -9 | S_post +0.54 +0.45 +0.51 | ampr 1.15 1.01 0.92 | 122s
+dng95 A0.15 phi 90: dphi +47 -21 +3 | S_post +0.42 +0.43 +0.41 | ampr 0.97 1.25 1.12 | 132s
+dng95 A0.15 phi135: dphi +21 -16 -5 | S_post +0.48 +0.44 +0.37 | ampr 0.28 1.04 1.09 | 141s
+dng95 A0.15 phi180: dphi -4 -7 -1 | S_post +0.48 +0.46 +0.38 | ampr 0.82 1.13 0.99 | 151s
+dng95 A0.15 phi225: dphi +19 -9 -2 | S_post +0.50 +0.45 +0.45 | ampr 1.66 0.81 1.09 | 161s
+dng95 A0.15 phi270: dphi +21 +42 -6 | S_post +0.49 +0.43 +0.41 | ampr 0.26 1.55 0.89 | 170s
+dng95 A0.15 phi315: dphi +10 +1 -2 | S_post +0.45 +0.47 +0.45 | ampr 2.21 1.83 0.83 | 180s
+dng100pulse A0.05 phi  0: dphi -0 -0 +0 | S_post +0.45 +0.46 +0.45 | ampr 1.00 1.00 1.00 | 190s
+dng100pulse A0.05 phi 45: dphi +0 -0 -0 | S_post +0.49 +0.46 +0.46 | ampr 1.00 1.00 1.00 | 200s
+dng100pulse A0.05 phi 90: dphi +0 -0 +0 | S_post +0.49 +0.47 +0.43 | ampr 1.00 1.00 1.00 | 209s
+dng100pulse A0.05 phi135: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | 219s
+dng100pulse A0.05 phi180: dphi +0 -0 +0 | S_post +0.48 +0.47 +0.43 | ampr 1.00 1.00 1.00 | 229s
+dng100pulse A0.05 phi225: dphi -0 -0 +0 | S_post +0.46 +0.48 +0.44 | ampr 1.00 1.00 1.00 | 238s
+exit 143

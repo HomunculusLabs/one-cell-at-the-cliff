@@ -1,0 +1,32 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l83_glide.py:105: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l83_glide.py:107: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | 9s
+phase tables built | prefix exact-equal asserted | carrier offsets {"glide200": 1.863, "glide300": 5.947, "glide400": 3.7479, "hyglide300": 5.947}
+drive-on 48.0s every arm (glide replaces the step, adds no mass) | tables asserted
+seed 11 done 39s
+seed 22 done 69s
+seed 33 done 97s
+seed 101 done 123s
+seed 102 done 148s
+seed 103 done 174s
+seed 104 done 204s
+seed 105 done 232s
+seed 106 done 259s
+seed 107 done 285s
+seed 108 done 312s
+seed 109 done 338s
+seed 110 done 366s
+seed 111 done 394s
+seed 112 done 424s
+seed 113 done 451s
+runs done 451s
+raw_l83.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+C0a True | C0b True | C0P-1 True | C0P-2 True | C1 True | wired_dead 0 | first_div counts {2001: 64}
+C0T True
+P1 {"glide200": {"verdict": "HURT", "d_post_mean": -0.187, "d_early_mean": -0.158, "d_late_mean": -0.261, "k": 5, "k_twin": 9}, "glide300": {"verdict": "NULL/INCONCLUSIVE", "d_post_mean": -0.029, "d_early_mean": 0.013, "d_late_mean": -0.108, "k": 7, "k_twin": 9}, "glide400": {"verdict": "NULL/INCONCLUSIVE", "d_post_mean": 0.031, "d_early_mean": -0.05, "d_late_mean": 0.034, "k": 10, "k_twin": 9}, "hyglide300": {"verdict": "NULL/INCONCLUSIVE", "d_post_mean": -0.112, "d_early_mean": -0.119, "d_late_mean": -0.105, "k": 8, "k_twin": 8}}
+P1b {"glide300_minus_glide200": {"d": [0.075, 0.0, 0.013, 0.0, 0.025, 0.412, 0.0, 0.463, 0.0, -0.138, 0.688, 0.137, 0.588, -0.775, 0.162, 0.875], "mean": 0.158, "n_pos": 10}, "glide400_minus_glide300": {"d": [0.25, 1.0, 0.287, 0.0, 0.037, 0.213, 0.062, -0.012, 0.0, -0.212, 0.312, -0.725, -0.75, 0.463, -0.088, 0.125], "mean": 0.06, "n_pos": 9}}
+P2 {"hynohop": {"le01": 16, "mean": 0.0009, "vals": [0.0006, 0.0004, 0.0035, 0.0004, 0.0003, 0.0011, 0.0004, 0.0001, 0.0004, 0.0034, 0.0006, 0.0012, 0.0005, 0.0005, 0.0012, 0.0004], "straddle_mean": 0.0008, "f_glide_med": 1.4}, "hybrid": {"le01": 16, "mean": 0.0009, "vals": [0.0047, 0.0004, 0.0009, 0.0004, 0.002, 0.0001, 0.0001, 0.0006, 0.0015, 0.0001, 0.0003, 0.0007, 0.0011, 0.0002, 0.0009, 0.0002], "straddle_mean": 0.0009, "f_glide_med": 1.4}, "glide200": {"le01": 15, "mean": 0.0197, "vals": [0.2996, 0.0027, 0.0002, 0.0002, 0.0009, 0.003, 0.003, 0.001, 0.0005, 0.0004, 0.0006, 0.001, 0.0, 0.0002, 0.0009, 0.0007], "straddle_mean": 0.0009, "f_glide_med": 1.334}, "glide300": {"le01": 16, "mean": 0.0007, "vals": [0.0037, 0.0008, 0.0014, 0.0007, 0.001, 0.0004, 0.0, 0.0003, 0.0004, 0.0001, 0.0008, 0.0002, 0.0003, 0.0005, 0.0003, 0.0004], "straddle_mean": 0.0631, "f_glide_med": 1.031}, "glide400": {"le01": 16, "mean": 0.0006, "vals": [0.001, 0.0007, 0.0007, 0.0015, 0.0002, 0.0009, 0.001, 0.0002, 0.0005, 0.0006, 0.0003, 0.0017, 0.0003, 0.0003, 0.0002, 0.0002], "straddle_mean": 0.0014, "f_glide_med": 0.905}, "hyglide300": {"le01": 16, "mean": 0.0009, "vals": [0.0053, 0.0007, 0.0021, 0.0003, 0.0002, 0.0005, 0.0004, 0.0004, 0.0014, 0.0003, 0.0002, 0.001, 0.0004, 0.0005, 0.0001, 0.0001], "straddle_mean": 0.0012, "f_glide_med": 1.069}}
+P4 {"glide200": {"n_miss": 11, "sl_owned": 5, "sr_owned": 1, "both": 5, "sl_share": 0.455}, "glide300": {"n_miss": 9, "sl_owned": 5, "sr_owned": 1, "both": 3, "sl_share": 0.556}, "glide400": {"n_miss": 6, "sl_owned": 3, "sr_owned": 0, "both": 3, "sl_share": 0.5}, "hyglide300": {"n_miss": 8, "sl_owned": 3, "sr_owned": 0, "both": 5, "sl_share": 0.375}}
+done 455s -> l83/results_l83.json

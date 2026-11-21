@@ -1,0 +1,26 @@
+sub nodes 21,516 (cord 20,239 + dn_into 1,277) | raw edges in full graph 25,560,079
+sub edges 2,977,920 | weight max 1032 median 2.0
+pair Ti: flex 84 ext 12
+pair Tr: flex 57 ext 11
+DNg100: 2 cells (bilateral drive)
+/home/t3rpz/critters/peabrain-lab/malecns/l32_antagonism.py:116: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l32_antagonism.py:119: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return t.coalesce().to_sparse_csr()
+neg fraction: A 0.296 B 0.408 | 5s
+ARM A: g band [1.00e-03,1.00e-01] -> g* 1.00e-02 | 8s
+ARM B: g band [3.16e-03,1.00e-01] -> g* 1.78e-02 | 10s
+/home/t3rpz/critters/peabrain-lab/malecns/l32_antagonism.py:230: RuntimeWarning: Mean of empty slice
+  Smean = {k: float(np.nanmean([x[k] for x in Ss])) for k in PAIRS}
+ARM A scan: 60 settings | frozen (0.01, 2.0, 0.05) mean_S 0.323 rhythm 124.8 | 90s
+ARM B scan: 60 settings | frozen (0.017783, 1.0, 0.05) mean_S 0.274 rhythm 1091.0 | 175s
+ARM A CONFIRM 60s x3: S {'Ti': -0.06733223995261955, 'Tr': 0.49038792936130643} | rhythm 361 @ 1.4 Hz | 186s
+ARM B CONFIRM 60s x3: S {'Ti': 0.07912582353087448, 'Tr': -0.22303809278178277} | rhythm 5437 @ 1.2 Hz | 197s
+ladder arm: A
+tier density draw 0: S {'Ti': -0.15349703604843634, 'Tr': 0.032420023227593985} swaps -1 | 211s
+tier density draw 1: S {'Ti': 0.30120774550849266, 'Tr': -0.03148838984455518} swaps -1 | 224s
+tier degree draw 0: S {'Ti': -0.11466466215634193, 'Tr': 0.0546053482322948} swaps 22663012 | 290s
+tier degree draw 1: S {'Ti': -0.10743089117530942, 'Tr': 0.1777678457042721} swaps 22663346 | 353s
+tier legblock draw 0: S {'Ti': -0.02623842031820423, 'Tr': -0.019301829438656614} swaps 21556415 | 410s
+tier legblock draw 1: S {'Ti': -0.009328599749992067, 'Tr': -0.012525040619902767} swaps 21555942 | 468s
+done 468s -> l32/results_l32.json

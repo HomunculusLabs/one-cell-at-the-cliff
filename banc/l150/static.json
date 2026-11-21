@@ -1,0 +1,105 @@
+{
+ "design": "L150 ADDENDUM 1: corrected motor_edges_ranked (l145 zip bug). Zero rollouts, no RNG; ranking re-derived from unchanged data (mtimes 11-14).",
+ "defect": "l145_static.py zipped UNRANKED mot_pos with RANKED dst/w/syn columns (zip(mot_pos, mot_dst, mot_w, mot_cnt) should pair mot_ord); stored 'pos' column = ascending np.where(out_mot)[0].",
+ "scope": "l145 RUN arms unaffected (masks from mot_ord in l145_run.py, subset law asserted on masks); mass splits + top5_share (computed from masks) correct; dst_gi/syn columns were the ranked order and are reproduced here verbatim; consumed nowhere downstream (draft grep clean, 11-19).",
+ "top5_dsts": [
+  "iii4",
+  "i2",
+  "iv1",
+  "DVM1a-c",
+  "hi1 MN"
+ ],
+ "bot5_dsts": [
+  "i1",
+  "DVM1a-c",
+  "DVM1a-c",
+  "DLM1-4",
+  "iv4"
+ ],
+ "top5_pos": [
+  1643893,
+  1643929,
+  1643890,
+  1643942,
+  1643937
+ ],
+ "bot5_pos": [
+  1643928,
+  1643936,
+  1643940,
+  1643917,
+  1643961
+ ],
+ "motor_edges_ranked": [
+  {
+   "pos": 1643893,
+   "dst_gi": 4945,
+   "w": 3.583519,
+   "syn": 35,
+   "dst_type": "iii4"
+  },
+  {
+   "pos": 1643929,
+   "dst_gi": 8509,
+   "w": 3.465736,
+   "syn": 31,
+   "dst_type": "i2"
+  },
+  {
+   "pos": 1643890,
+   "dst_gi": 9770,
+   "w": 3.044522,
+   "syn": 20,
+   "dst_type": "iv1"
+  },
+  {
+   "pos": 1643942,
+   "dst_gi": 4947,
+   "w": 2.564949,
+   "syn": 12,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643937,
+   "dst_gi": 16630,
+   "w": 2.302585,
+   "syn": 9,
+   "dst_type": "hi1 MN"
+  },
+  {
+   "pos": 1643928,
+   "dst_gi": 9395,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "i1"
+  },
+  {
+   "pos": 1643936,
+   "dst_gi": 8506,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643940,
+   "dst_gi": 22572,
+   "w": 1.791759,
+   "syn": 5,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643917,
+   "dst_gi": 4946,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "DLM1-4"
+  },
+  {
+   "pos": 1643961,
+   "dst_gi": 4944,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "iv4"
+  }
+ ]
+}

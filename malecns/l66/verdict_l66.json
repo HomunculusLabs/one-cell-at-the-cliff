@@ -1,0 +1,63 @@
+{
+ "c0p_fixed_pass": true,
+ "n_viol": 0,
+ "fd_l64_match": true,
+ "prefix_exact": true,
+ "anchors_original": {
+  "c0_n": 15,
+  "c0_pass": true,
+  "c0x_n": 15,
+  "c0x_pass": true,
+  "c0p_ok": false,
+  "c1": true
+ },
+ "G1": {
+  "pos": 14,
+  "wilson": [
+   0.875,
+   0.64,
+   0.965
+  ],
+  "lift_fb": 0.186,
+  "lift_sham": -0.001,
+  "pass_G1": true
+ },
+ "G2": {
+  "carries": {
+   "n005_d03_m": true,
+   "n005_d04_m": false,
+   "n005_d06_m": true,
+   "n005_d08_m": false,
+   "n015_d03_m": false,
+   "n015_d04_m": false,
+   "n015_d06_m": false,
+   "n015_d08_m": false
+  },
+  "n_carry": 2,
+  "verdict": "POINT"
+ },
+ "P3": {
+  "n": 2,
+  "anatomy": [
+   {
+    "seed": 110,
+    "SL": 0.512,
+    "SR": 0.153,
+    "sl_marginal": false
+   },
+   {
+    "seed": 111,
+    "SL": 0.494,
+    "SR": 0.022,
+    "sl_marginal": false
+   }
+  ],
+  "pass_P3": false
+ },
+ "fb_mean_SL": 0.561,
+ "fb_mean_SR": 0.186,
+ "open_mean_SL": 0.326,
+ "open_mean_SR": 0.153,
+ "wired_dead": [],
+ "dm_min": 0.38191
+}

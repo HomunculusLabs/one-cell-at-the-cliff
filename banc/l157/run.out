@@ -1,0 +1,58 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+CERT analytic self-tests (0.7/1.4 Hz dom; phase 5.730 deg vs 5.730): PASS
+CERT-1 vs l154 stored (anchors/means/below {'b65': 16, 'off': 11}/signs): PASS
+CERT-2 mm rows == l156/static.json (3 file|arm combos, 7 fields): PASS
+
+claim class: C2_readout_only (same on both files: True); draft fold: YES
+  l154/raw_l154.npz: C2_readout_only pools_showing=6/20 pairs_both=2/10 extra={'mm': True, 'xm': True}
+  l150/raw_l150.npz: C2_readout_only pools_showing=7/20 pairs_both=3/10 extra={'mm': True, 'xm': True}
+
+pooled b65 (36 traces/ch): below/bin/lb/surv/medf  | slow_share mean
+  Ti_fL  4/36 bin  4 lb 0.044 surv  3 med 0.101 | 0.184
+  Ti_fR  0/36 bin  0 lb 0.000 surv  0 med nan | 0.063
+  Ti_eL  6/36 bin  4 lb 0.079 surv  5 med 0.275 | 0.174
+  Ti_eR  1/36 bin  1 lb 0.005 surv  1 med 0.217 | 0.109
+  Tr_fL 34/36 bin 34 lb 0.819 surv 32 med 0.101 | 0.280
+  Tr_fR  0/36 bin  0 lb 0.000 surv  0 med nan | 0.103
+  Tr_eL 36/36 bin 36 lb 0.904 surv 33 med 0.025 | 0.335
+  Tr_eR 26/36 bin 26 lb 0.560 surv 26 med 0.1 | 0.270
+  Ta_aL 32/36 bin 32 lb 0.747 surv 31 med 0.1 | 0.156
+  Ta_aR 36/36 bin 36 lb 0.904 surv 32 med 0.019 | 0.267
+  Ta_bL 11/36 bin 11 lb 0.180 surv  9 med 0.047 | 0.119
+  Ta_bR 36/36 bin 36 lb 0.904 surv 34 med 0.1 | 0.464
+  Pr_aL  3/36 bin  3 lb 0.029 surv  3 med 0.167 | 0.040
+  Pr_aR  0/36 bin  0 lb 0.000 surv  0 med nan | 0.092
+  Pr_bL  5/36 bin  5 lb 0.061 surv  4 med 0.167 | 0.039
+  Pr_bR 20/36 bin 20 lb 0.396 surv 19 med 0.1 | 0.197
+  Sr_aL 29/36 bin 29 lb 0.650 surv 27 med 0.101 | 0.302
+  Sr_aR  6/36 bin  6 lb 0.079 surv  6 med 0.118 | 0.039
+  Sr_bL 33/36 bin 33 lb 0.782 surv 30 med 0.1 | 0.264
+  Sr_bR 16/36 bin 13 lb 0.295 surv 13 med 0.1 | 0.194
+  mm    36/36 bin 36 lb 0.904 surv 36 med 0.1 | 0.375
+  xm    36/36 bin 36 lb 0.904 surv 36 med 0.1 | 0.268
+
+antagonist slow phase (b65): pair | file | circ_mean | antiphase/18
+  l154/raw_l154.npz | Ti_fL~Ti_eL:  -177.1 deg anti 6/18 bin 0.200
+  l154/raw_l154.npz | Ti_fR~Ti_eR:  +144.2 deg anti 9/18 bin 0.183
+  l154/raw_l154.npz | Tr_fL~Tr_eL:   +25.4 deg anti 0/18 bin 0.100
+  l154/raw_l154.npz | Tr_fR~Tr_eR:  +161.5 deg anti 13/18 bin 0.100
+  l154/raw_l154.npz | Ta_aL~Ta_bL:  -167.4 deg anti 5/18 bin 0.100
+  l154/raw_l154.npz | Ta_aR~Ta_bR:   -13.9 deg anti 0/18 bin 0.100
+  l154/raw_l154.npz | Pr_aL~Pr_bL:   -87.4 deg anti 4/18 bin 0.158
+  l154/raw_l154.npz | Pr_aR~Pr_bR:   -39.5 deg anti 0/18 bin 0.100
+  l154/raw_l154.npz | Sr_aL~Sr_bL:  +164.0 deg anti 15/18 bin 0.100
+  l154/raw_l154.npz | Sr_aR~Sr_bR:   -14.6 deg anti 2/18 bin 0.133
+  l150/raw_l150.npz | Ti_fL~Ti_eL:  -177.6 deg anti 7/18 bin 0.192
+  l150/raw_l150.npz | Ti_fR~Ti_eR:  -164.2 deg anti 8/18 bin 0.150
+  l150/raw_l150.npz | Tr_fL~Tr_eL:   +21.2 deg anti 0/18 bin 0.100
+  l150/raw_l150.npz | Tr_fR~Tr_eR:  +167.7 deg anti 12/18 bin 0.100
+  l150/raw_l150.npz | Ta_aL~Ta_bL:   -14.7 deg anti 4/18 bin 0.092
+  l150/raw_l150.npz | Ta_aR~Ta_bR:    -9.8 deg anti 0/18 bin 0.100
+  l150/raw_l150.npz | Pr_aL~Pr_bL:  -132.5 deg anti 7/18 bin 0.125
+  l150/raw_l150.npz | Pr_aR~Pr_bR:   -40.1 deg anti 0/18 bin 0.100
+  l150/raw_l150.npz | Sr_aL~Sr_bL:  +165.2 deg anti 16/18 bin 0.100
+  l150/raw_l150.npz | Sr_aR~Sr_bR:  +153.6 deg anti 5/18 bin 0.117
+l157/static.json written

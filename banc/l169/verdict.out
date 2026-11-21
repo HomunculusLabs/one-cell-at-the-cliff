@@ -1,0 +1,70 @@
+B-cert vs stored Ti tables l135(B26)+l142(B29)+l144(B30)+l145(B31)+l148(B32)+l150(B33): PASS
+P0 anchors (C0A-169 + stored gains x4 + FC-144 + FC-145 + swap-crossed + C0-NT): PASS (c0a 0.0e+00 | FC-144 0.0e+00 | FC-145 0.0e+00 | NT min 1.893e-02)
+P4 {"af_range_ok": true, "b65_band": true, "e_band_ok": {"eMotTop5": true, "eMotBot5": true}, "paf_ok": false}
+af (B35 mean) | cutwA 0.10909 | wAgN 0.11039 | cutng25 0.10954 | n25gW 0.10802 | target 0.10906
+---- B35 per-side duty table ----
+Ti full      kL  1/16 meanL 0.364 | kR  5/16 meanR 0.460
+Ti b65       kL 16/16 meanL 0.999 | kR 16/16 meanR 0.996
+Ti cutwA     kL  0/16 meanL 0.278 | kR  4/16 meanR 0.426
+Ti cutng25   kL  0/16 meanL 0.131 | kR 16/16 meanR 0.753
+Ti silW      kL  0/16 meanL 0.271 | kR 14/16 meanR 0.650
+Ti eMotTop5  kL  0/16 meanL 0.241 | kR  5/16 meanR 0.436
+Ti eMotBot5  kL  0/16 meanL 0.207 | kR  5/16 meanR 0.362
+Ti wAgN      kL  0/16 meanL 0.171 | kR  2/16 meanR 0.317
+Ti n25gW     kL  0/16 meanL 0.278 | kR 15/16 meanR 0.702
+Tr full      kL  0/16 meanL 0.044 | kR  3/16 meanR 0.410
+Tr b65       kL  0/16 meanL 0.155 | kR 16/16 meanR 0.965
+Tr cutwA     kL  0/16 meanL 0.004 | kR  0/16 meanR 0.046
+Tr cutng25   kL  0/16 meanL 0.002 | kR  0/16 meanR 0.009
+Tr silW      kL  0/16 meanL 0.001 | kR  0/16 meanR 0.023
+Tr eMotTop5  kL  0/16 meanL 0.002 | kR  0/16 meanR 0.083
+Tr eMotBot5  kL  0/16 meanL 0.002 | kR  0/16 meanR 0.047
+Tr wAgN      kL  0/16 meanL 0.001 | kR  0/16 meanR 0.012
+Tr n25gW     kL  0/16 meanL 0.006 | kR  0/16 meanR 0.024
+Ta full      kL  1/16 meanL 0.312 | kR  0/16 meanR 0.005
+Ta b65       kL  0/16 meanL 0.032 | kR  0/16 meanR 0.044
+Ta cutwA     kL  0/16 meanL 0.032 | kR  0/16 meanR 0.009
+Ta cutng25   kL  0/16 meanL 0.034 | kR  0/16 meanR 0.017
+Ta silW      kL  0/16 meanL 0.012 | kR  0/16 meanR 0.016
+Ta eMotTop5  kL  0/16 meanL 0.031 | kR  0/16 meanR 0.016
+Ta eMotBot5  kL  0/16 meanL 0.017 | kR  0/16 meanR 0.015
+Ta wAgN      kL  0/16 meanL 0.045 | kR  0/16 meanR 0.030
+Ta n25gW     kL  0/16 meanL 0.021 | kR  0/16 meanR 0.020
+Sr full      kL  0/16 meanL 0.191 | kR  6/16 meanR 0.490
+Sr b65       kL 16/16 meanL 0.879 | kR  0/16 meanR 0.036
+Sr cutwA     kL  0/16 meanL 0.116 | kR  0/16 meanR 0.076
+Sr cutng25   kL  0/16 meanL 0.045 | kR  0/16 meanR 0.034
+Sr silW      kL  0/16 meanL 0.087 | kR  0/16 meanR 0.091
+Sr eMotTop5  kL  0/16 meanL 0.130 | kR  0/16 meanR 0.119
+Sr eMotBot5  kL  0/16 meanL 0.133 | kR  0/16 meanR 0.111
+Sr wAgN      kL  0/16 meanL 0.121 | kR  0/16 meanR 0.150
+Sr n25gW     kL  0/16 meanL 0.074 | kR  0/16 meanR 0.087
+Pr full      kL  0/16 meanL 0.010 | kR  0/16 meanR 0.106
+Pr b65       kL  0/16 meanL 0.000 | kR  0/16 meanR 0.002
+Pr cutwA     kL  0/16 meanL 0.006 | kR  0/16 meanR 0.176
+Pr cutng25   kL  0/16 meanL 0.018 | kR  0/16 meanR 0.256
+Pr silW      kL  0/16 meanL 0.017 | kR  0/16 meanR 0.280
+Pr eMotTop5  kL  0/16 meanL 0.016 | kR  0/16 meanR 0.161
+Pr eMotBot5  kL  0/16 meanL 0.013 | kR  0/16 meanR 0.172
+Pr wAgN      kL  0/16 meanL 0.017 | kR  0/16 meanR 0.093
+Pr n25gW     kL  0/16 meanL 0.022 | kR  1/16 meanR 0.272
+Ti      0 (full     ): meanR 0.460 kR  5/16 | meanL 0.364 kL  1/16 | dR_wA +0.034 n_up_wA  3/16 | dR_ng25 -0.292 -> no-kill/PARTIAL
+Ti     24 (cutwA    ): meanR 0.426 kR  4/16 | meanL 0.278 kL  0/16 | dR_wA +0.000 n_up_wA  0/16 | dR_ng25 -0.327 -> no-kill/PARTIAL
+Ti   wAgN (wAgN     ): meanR 0.317 kR  2/16 | meanL 0.171 kL  0/16 | dR_wA -0.109 n_up_wA  2/16 | dR_ng25 -0.436 -> no-kill
+Ti  n25gW (n25gW    ): meanR 0.702 kR 15/16 | meanL 0.278 kL  0/16 | dR_wA +0.276 n_up_wA 10/16 | dR_ng25 -0.051 -> no-kill/RESTORE/SUPER
+Ti   silW (silW     ): meanR 0.650 kR 14/16 | meanL 0.271 kL  0/16 | dR_wA +0.224 n_up_wA  7/16 | dR_ng25 -0.103 -> no-kill/RESTORE/SUPER
+Ti   top5 (eMotTop5 ): meanR 0.436 kR  5/16 | meanL 0.241 kL  0/16 | dR_wA +0.009 n_up_wA  2/16 | dR_ng25 -0.317 -> no-kill/PARTIAL
+Ti   bot5 (eMotBot5 ): meanR 0.362 kR  5/16 | meanL 0.207 kL  0/16 | dR_wA -0.065 n_up_wA  2/16 | dR_ng25 -0.391 -> no-kill/PARTIAL
+Ti     25 (cutng25  ): meanR 0.753 kR 16/16 | meanL 0.131 kL  0/16 | dR_wA +0.327 n_up_wA 12/16 | dR_ng25 +0.000 -> no-kill/RESTORE/SUPER
+---- registered 2x2 (graph x gain) ----
+graph_wA__gain_wA        cutwA    g 0.143658196 | meanR 0.426 kR  4/16 [0.102,0.495] -> PARTIAL
+graph_wA__gain_ng25      wAgN     g 0.145445455 | meanR 0.317 kR  2/16 [0.035,0.360] -> NONE
+graph_ng25__gain_wA      n25gW    g 0.143658196 | meanR 0.702 kR 15/16 [0.717,0.989] -> SUPER
+graph_ng25__gain_ng25    cutng25  g 0.145445455 | meanR 0.753 kR 16/16 [0.806,1.000] -> SUPER
+BRANCH: D1_graph_tracking (D1 True / D2 False / D3 False)
+pooled silW B30+B33+B35: {"kR": 42, "n": 48, "lbR": 0.7529954171361317, "ubR": 0.9414294856142803, "kL": 1, "lbL": 0.003687110977510646, "ubL": 0.1089921799525186, "meanR": 0.644, "meanL": 0.286}
+pooled eMotTop5 3-batch: {"kR": 19, "n": 48, "lbR": 0.2702082786059137, "ubR": 0.5368959150745274, "kL": 1, "lbL": 0.003687110977510646, "ubL": 0.1089921799525186, "meanR": 0.445, "meanL": 0.236}
+pooled eMotBot5 3-batch: {"kR": 13, "n": 48, "lbR": 0.16565957627456437, "ubR": 0.4099696498224061, "kL": 2, "lbL": 0.011501893489386593, "ubL": 0.13975655870455442, "meanR": 0.377, "meanL": 0.223}
+pooled cutng25 9-batch: {"kR": 140, "n": 144, "lbR": 0.9307584606546527, "ubR": 0.9891458820435903, "kL": 0, "lbL": 0.0, "ubL": 0.025983637143036746, "meanR": 0.766, "meanL": 0.134}
+pooled cutwA 10-batch: {"kR": 47, "n": 160, "lbR": 0.22867473157702942, "ubR": 0.36849682393121663, "kL": 8, "lbL": 0.02555059647883454, "ubL": 0.09555097917552015, "meanR": 0.406, "meanL": 0.255}
+results_l169.json written | D1_graph_tracking

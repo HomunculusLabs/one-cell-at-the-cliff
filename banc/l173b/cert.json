@@ -1,0 +1,133 @@
+{
+ "branch": "B1_silW_gain_unchanged",
+ "cert1": {
+  "exact_equal": true,
+  "files_agreeing_on_base_gain": 5,
+  "g_cutwA": 0.14365819573402408,
+  "g_silW_B30": 0.14365819573402408,
+  "g_silW_B33": 0.14365819573402408
+ },
+ "cert2": {
+  "flip_arms": [
+   "cutng25",
+   "eAll",
+   "eIn",
+   "eMotIn",
+   "eOutAll",
+   "eOutInt"
+  ],
+  "flip_band": [
+   1.062,
+   1.297
+  ],
+  "g_base": 0.14365819573402408,
+  "nonflip_arms": [
+   "eMotBot5",
+   "eMotTop5"
+  ],
+  "pct": {
+   "cutng25": 1.244,
+   "eAll": 1.244,
+   "eIn": 1.087,
+   "eMotBot5": 0.009,
+   "eMotIn": 1.062,
+   "eMotTop5": -0.031,
+   "eOutAll": 1.238,
+   "eOutInt": 1.297,
+   "eOutMot": -0.568,
+   "silW": 0.0
+  },
+  "src": {
+   "cutng25": "l142:anchors.g_cutng25",
+   "eAll": "l142:anchors.g_eAll",
+   "eIn": "l142:anchors.g_eIn",
+   "eMotBot5": "l145:anchors.g_eMotBot5",
+   "eMotIn": "l145:anchors.g_eMotIn",
+   "eMotTop5": "l145:anchors.g_eMotTop5",
+   "eOutAll": "l142:anchors.g_eOutAll",
+   "eOutInt": "l142:anchors.g_eOutInt",
+   "eOutMot": "l145:anchors.g_eOutMot",
+   "silW": "l150:anchors.g_silW"
+  }
+ },
+ "cert3": {
+  "b30": [
+   0.622,
+   14,
+   0.189,
+   6,
+   0
+  ],
+  "b33": [
+   0.659,
+   14,
+   0.281,
+   9
+  ],
+  "diff_vs_base": {
+   "diff": 0.5168485999050783,
+   "fisher_p": 6.680120312042067e-19,
+   "hi": 0.6018831658494996,
+   "lo": 0.4097659849144107
+  },
+  "pooled": {
+   "kR": 78,
+   "lbR": 0.7056896702936686,
+   "meanR": 0.6435374149659864,
+   "n": 98,
+   "ubR": 0.8638229886139082
+  }
+ },
+ "cert4": {
+  "abs_dR_gt_spread": true,
+  "carrier_intact_dR": -0.088,
+  "dm_mm_max_intact_clamp": 0.048566,
+  "n_shams": 3,
+  "shams_kR": [
+   5,
+   8,
+   8
+  ],
+  "shams_meanR": [
+   0.429,
+   0.502,
+   0.504
+  ],
+  "spread_max_minus_min": 0.075
+ },
+ "cert5": {
+  "band": 0.0544,
+  "carrier_mass": 0.005599,
+  "ratio": 9.72,
+  "retired_literal": "12x"
+ },
+ "cert6": {
+  "class_label_match_no_separation": true,
+  "cut_base_comparator": [
+   5,
+   0.383
+  ],
+  "intact_base_same_batch": [
+   6,
+   0.464
+  ],
+  "kL_death": [
+   0,
+   0.119
+  ],
+  "sil24": [
+   5,
+   0.432
+  ]
+ },
+ "prereg": "banc/l173b/PREREG.md",
+ "relocate": {
+  "destination": "DRAFT.md section 3.8",
+  "eAll_vs_cutng25_max_abs": 0.0,
+  "g_eAll_eq_g_cutng25": true,
+  "se0_n_keys": 23,
+  "se0_n_seeds": 16,
+  "se0_vs_eAll_max_abs": 0.0
+ },
+ "rollouts": 0
+}

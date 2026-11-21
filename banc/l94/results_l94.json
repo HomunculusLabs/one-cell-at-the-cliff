@@ -1,0 +1,766 @@
+{
+ "meta": {
+  "batches": {
+   "B4": [
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816
+   ],
+   "B5": [
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916
+   ],
+   "B6": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016
+   ]
+  },
+  "arms": [
+   "cfn",
+   "cfn_fb",
+   "csham",
+   "cfh",
+   "cfh_fb"
+  ],
+  "n_pool": 48,
+  "substrate": "closure l92 (g* .153125)",
+  "hop_target": [
+   270,
+   302,
+   366
+  ]
+ },
+ "anchors": {
+  "c0a": true,
+  "c0a_max": 0.0,
+  "c0b": true,
+  "fd_echo_law": true,
+  "fd_hop_mm": [
+   2001,
+   2002
+  ],
+  "fd_hopfb_mm": [
+   6
+  ],
+  "c2": true,
+  "c2_min": 0.022530630230903625,
+  "c1": true,
+  "pins_exact": true
+ },
+ "cert91": {
+  "budget": {
+   "fn_fb": 0.2511,
+   "fh_fb": 0.2511
+  },
+  "fails": []
+ },
+ "anchor_pins_exact": true,
+ "table_Ti": {
+  "cfn": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.135,
+     "seg1_mean": 0.003,
+     "seg2_mean": 0.098,
+     "duty07L_mean": 0.378,
+     "duty07R_mean": 0.425
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.179,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.144,
+     "duty07L_mean": 0.381,
+     "duty07R_mean": 0.486
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.164,
+     "seg1_mean": 0.003,
+     "seg2_mean": 0.147,
+     "duty07L_mean": 0.352,
+     "duty07R_mean": 0.486
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.003,
+    0.0,
+    0.003
+   ],
+   "anchor": {
+    "11": 0.073,
+    "22": 0.517,
+    "33": 0.2
+   }
+  },
+  "cfn_fb": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.187,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.138,
+     "duty07L_mean": 0.39,
+     "duty07R_mean": 0.449
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.125,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.16,
+     "duty07L_mean": 0.348,
+     "duty07R_mean": 0.409
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.144,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.167,
+     "duty07L_mean": 0.335,
+     "duty07R_mean": 0.454
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "anchor": {
+    "11": 0.093,
+    "22": 0.157,
+    "33": 0.003
+   }
+  },
+  "csham": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.069,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.084,
+     "duty07L_mean": 0.285,
+     "duty07R_mean": 0.27
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.099,
+     "seg1_mean": 0.002,
+     "seg2_mean": 0.103,
+     "duty07L_mean": 0.325,
+     "duty07R_mean": 0.294
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.079,
+     "seg1_mean": 0.006,
+     "seg2_mean": 0.081,
+     "duty07L_mean": 0.344,
+     "duty07R_mean": 0.302
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.0,
+    0.002,
+    0.006
+   ],
+   "anchor": {
+    "11": 0.123,
+    "22": 0.187,
+    "33": 0.133
+   }
+  },
+  "cfh": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.175,
+     "seg1_mean": 0.001,
+     "seg2_mean": 0.178,
+     "duty07L_mean": 0.411,
+     "duty07R_mean": 0.458
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.185,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.157,
+     "duty07L_mean": 0.41,
+     "duty07R_mean": 0.519
+    },
+    "B6": {
+     "k": 1,
+     "wilson": [
+      0.011,
+      0.283
+     ],
+     "duty07_mean": 0.195,
+     "seg1_mean": 0.001,
+     "seg2_mean": 0.21,
+     "duty07L_mean": 0.379,
+     "duty07R_mean": 0.494
+    }
+   },
+   "pooled": {
+    "k": 1,
+    "n": 48,
+    "lb_full": 0.0037,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    1
+   ],
+   "seg1_spread": [
+    0.001,
+    0.0,
+    0.001
+   ],
+   "anchor": {
+    "11": 0.15,
+    "22": 0.34,
+    "33": 0.077
+   }
+  },
+  "cfh_fb": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.211,
+     "seg1_mean": 0.004,
+     "seg2_mean": 0.186,
+     "duty07L_mean": 0.401,
+     "duty07R_mean": 0.482
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.152,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.212,
+     "duty07L_mean": 0.386,
+     "duty07R_mean": 0.455
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.137,
+     "seg1_mean": 0.005,
+     "seg2_mean": 0.154,
+     "duty07L_mean": 0.412,
+     "duty07R_mean": 0.364
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.004,
+    0.0,
+    0.005
+   ],
+   "anchor": {
+    "11": 0.293,
+    "22": 0.227,
+    "33": 0.073
+   }
+  }
+ },
+ "table_Tr": {
+  "cfn": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.017,
+     "seg1_mean": 0.005,
+     "seg2_mean": 0.015,
+     "duty07L_mean": 0.032,
+     "duty07R_mean": 0.372
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.034,
+     "seg1_mean": 0.003,
+     "seg2_mean": 0.009,
+     "duty07L_mean": 0.051,
+     "duty07R_mean": 0.421
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.034,
+     "seg1_mean": 0.002,
+     "seg2_mean": 0.048,
+     "duty07L_mean": 0.056,
+     "duty07R_mean": 0.451
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.005,
+    0.003,
+    0.002
+   ],
+   "anchor": {
+    "11": 0.027,
+    "22": 0.003,
+    "33": 0.037
+   }
+  },
+  "cfn_fb": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.01,
+     "seg1_mean": 0.003,
+     "seg2_mean": 0.008,
+     "duty07L_mean": 0.019,
+     "duty07R_mean": 0.413
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.032,
+     "seg1_mean": 0.002,
+     "seg2_mean": 0.032,
+     "duty07L_mean": 0.058,
+     "duty07R_mean": 0.421
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.026,
+     "seg1_mean": 0.007,
+     "seg2_mean": 0.04,
+     "duty07L_mean": 0.064,
+     "duty07R_mean": 0.39
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.003,
+    0.002,
+    0.007
+   ],
+   "anchor": {
+    "11": 0.007,
+    "22": 0.0,
+    "33": 0.027
+   }
+  },
+  "csham": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.018,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.019,
+     "duty07L_mean": 0.03,
+     "duty07R_mean": 0.451
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.033,
+     "seg1_mean": 0.004,
+     "seg2_mean": 0.034,
+     "duty07L_mean": 0.048,
+     "duty07R_mean": 0.515
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.02,
+     "seg1_mean": 0.001,
+     "seg2_mean": 0.009,
+     "duty07L_mean": 0.032,
+     "duty07R_mean": 0.449
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.0,
+    0.004,
+    0.001
+   ],
+   "anchor": {
+    "11": 0.0,
+    "22": 0.037,
+    "33": 0.037
+   }
+  },
+  "cfh": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.036,
+     "seg1_mean": 0.008,
+     "seg2_mean": 0.053,
+     "duty07L_mean": 0.045,
+     "duty07R_mean": 0.457
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.031,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.003,
+     "duty07L_mean": 0.04,
+     "duty07R_mean": 0.437
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.026,
+     "seg1_mean": 0.011,
+     "seg2_mean": 0.032,
+     "duty07L_mean": 0.036,
+     "duty07R_mean": 0.489
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.008,
+    0.0,
+    0.011
+   ],
+   "anchor": {
+    "11": 0.027,
+    "22": 0.0,
+    "33": 0.037
+   }
+  },
+  "cfh_fb": {
+   "per_batch": {
+    "B4": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.013,
+     "seg1_mean": 0.016,
+     "seg2_mean": 0.015,
+     "duty07L_mean": 0.025,
+     "duty07R_mean": 0.389
+    },
+    "B5": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.03,
+     "seg1_mean": 0.0,
+     "seg2_mean": 0.027,
+     "duty07L_mean": 0.042,
+     "duty07R_mean": 0.447
+    },
+    "B6": {
+     "k": 0,
+     "wilson": [
+      0.0,
+      0.194
+     ],
+     "duty07_mean": 0.011,
+     "seg1_mean": 0.005,
+     "seg2_mean": 0.01,
+     "duty07L_mean": 0.03,
+     "duty07R_mean": 0.39
+    }
+   },
+   "pooled": {
+    "k": 0,
+    "n": 48,
+    "lb_full": 0.0,
+    "g2a_multi": false,
+    "k_min": 41
+   },
+   "k_spread": [
+    0,
+    0,
+    0
+   ],
+   "seg1_spread": [
+    0.016,
+    0.0,
+    0.005
+   ],
+   "anchor": {
+    "11": 0.007,
+    "22": 0.0,
+    "33": 0.06
+   }
+  }
+ },
+ "lifts": {
+  "fb_Ti": -0.007,
+  "fb_Tr": -0.006,
+  "sham_Ti": -0.077,
+  "sham_Tr": -0.005,
+  "sham_share": null
+ },
+ "hop": {
+  "dm_min": 0.0225,
+  "dm_max": 0.0464,
+  "duty_deltas": {
+   "Ti": {
+    "L": 0.03,
+    "R": 0.025
+   },
+   "Tr": {
+    "L": -0.006,
+    "R": 0.046
+   }
+  },
+  "k_Ti": [
+   0,
+   0,
+   1
+  ],
+  "k_Tr": [
+   0,
+   0,
+   0
+  ]
+ },
+ "budget": {
+  "cfn_fb": 0.037,
+  "cfh_fb": 0.0374
+ },
+ "lock_g1p": {
+  "cfn": 48,
+  "cfn_fb": 48,
+  "csham": 48,
+  "cfh": 48,
+  "cfh_fb": 48
+ },
+ "verdict": "Ti base COLLAPSES (l65-rule was load-bearing FOR the robustness): k 0/48 lb 0.0 (l65 was 48/48 .9259) | Tr split PERSISTS (L [0.032, 0.051, 0.056] R [0.372, 0.421, 0.451]; l65 L .16-.17 / R .95-.98) | echo fb-vs-cfn Ti -0.007 Tr -0.006 sham share None | hop lands (dm min 0.023) duty dL/dR Ti {'L': 0.03, 'R': 0.025} Tr {'L': -0.006, 'R': 0.046}"
+}

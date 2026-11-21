@@ -1,0 +1,10 @@
+(1) 43 cited keys all resolve OK
+(2) denominators: no stale /18 /20; n=16 proven by pooled arithmetic + Wilson bounds
+(3) grid table + prose quotes match stored jsons
+(4) release census + f4 ladder + new numbers.json keys ALL match sources
+(5) L151 statics fold: keys + prose quotes match sources
+(6) L153 fold: silW rebase + halves + pooled bases match l150 stored jsons
+(7) L155 fold: Sapkal negative quotes match l154 stored jsons (S07 means independently recomputed)
+(8) L156 fold: census quotes literal + pooled counts/Wilson/medians independently recomputed; ADDENDUM-1 bin-form cert == stored
+(9) L157 fold: carrier census literals + pooled counts/Wilson independently recomputed from table; subset Tr/Ta/Sr asserted
+L149 verify: ALL GREEN

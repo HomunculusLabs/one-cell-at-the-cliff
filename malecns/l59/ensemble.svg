@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="880" font-family="DejaVu Sans, sans-serif">
+<rect width="1560" height="880" fill="#1b1d24"/>
+<text x="40" y="40" fill="#e8e6e3" font-size="24" font-weight="bold">L59 spec ensemble (n=16 census seeds): the pooled gate is a FAIR COIN, the miss MIGRATES, S_L owns it</text>
+<text x="40" y="64" fill="#9aa0ae" font-size="13">l51 hybrid + l55 hynohop schedules verbatim; substrate l32 arm-A frozen; duty = both antagonist S &#8805; .25 over [seg+500, seg)</text>
+<text x="40" y="82" fill="#9aa0ae" font-size="13">anchors: seeds 11/22/33 bit-identical to l55 (0.0, mm + 4 antagonist traces) = 15th chain anchor; hop wiring fd=2000 on 16/16</text>
+<text x="60" y="126" fill="#e8e6e3" font-size="16" font-weight="bold">A &#183; pooled duty per seed: 8/16 &#8805; .5 in BOTH arms</text>
+<rect x="60" y="140" width="460" height="300" fill="none" stroke="#33363f"/>
+<line x1="60" y1="440.0" x2="520" y2="440.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="54" y="444.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="60" y1="365.0" x2="520" y2="365.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="54" y="369.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="60" y1="290.0" x2="520" y2="290.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="54" y="294.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="60" y1="215.0" x2="520" y2="215.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="54" y="219.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="60" y1="140.0" x2="520" y2="140.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="54" y="144.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<line x1="60" y1="290.0" x2="520" y2="290.0" stroke="#ff8f8f" stroke-dasharray="6 3"/>
+<text x="54" y="294.0" fill="#9aa0ae" font-size="12" text-anchor="end"></text>
+<text x="68" y="282.0" fill="#ff8f8f" font-size="12">pooled gate .5</text>
+<circle cx="130.0" cy="286.7" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="142.0" cy="300.8" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="154.0" cy="286.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="166.0" cy="298.1" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="178.0" cy="285.2" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="190.0" cy="357.2" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="202.0" cy="295.4" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="214.0" cy="251.9" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="226.0" cy="270.8" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="238.0" cy="293.3" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="250.0" cy="289.4" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="262.0" cy="299.9" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="274.0" cy="250.7" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="286.0" cy="329.9" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="298.0" cy="346.1" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="310.0" cy="249.2" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<text x="220" y="464" fill="#7fd4ff" font-size="13" text-anchor="middle">hynohop (mean 0.489)</text>
+<circle cx="340.0" cy="293.3" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="352.0" cy="265.4" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="364.0" cy="325.4" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="376.0" cy="324.8" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="388.0" cy="247.4" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="400.0" cy="255.2" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="412.0" cy="287.3" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="424.0" cy="296.0" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="436.0" cy="295.4" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="448.0" cy="309.2" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="460.0" cy="235.4" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="472.0" cy="338.0" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="484.0" cy="256.7" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="496.0" cy="265.4" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="508.0" cy="341.3" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="520.0" cy="239.9" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<text x="430" y="464" fill="#ffb0d4" font-size="13" text-anchor="middle">hybrid (mean 0.513)</text>
+<text x="60" y="486" fill="#9aa0ae" font-size="12">Wilson 95% CI [.28,.72] both arms &#8212; inconclusive-at-16, the gas owns the gate</text>
+<text x="60" y="502" fill="#9aa0ae" font-size="12">open circles = miss seeds; sets DIFFER (4/8 shared)</text>
+<text x="60" y="518" fill="#9aa0ae" font-size="12">s11/s33 miss only under hybrid = re-roll law at census n</text>
+<text x="14" y="290.0" fill="#9aa0ae" font-size="13" transform="rotate(-90 14 290.0)">pooled duty</text>
+<text x="600" y="126" fill="#e8e6e3" font-size="16" font-weight="bold">B &#183; fast-window (1.4 Hz) duty: wide, dead tail 4/16</text>
+<rect x="600" y="140" width="420" height="300" fill="none" stroke="#33363f"/>
+<line x1="600" y1="440.0" x2="1020" y2="440.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="594" y="444.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.00</text>
+<line x1="600" y1="365.0" x2="1020" y2="365.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="594" y="369.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<line x1="600" y1="290.0" x2="1020" y2="290.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="594" y="294.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.50</text>
+<line x1="600" y1="215.0" x2="1020" y2="215.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="594" y="219.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.75</text>
+<line x1="600" y1="140.0" x2="1020" y2="140.0" stroke="#33363f" stroke-dasharray=""/>
+<text x="594" y="144.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.00</text>
+<line x1="600" y1="365.0" x2="1020" y2="365.0" stroke="#ff8f8f" stroke-dasharray="6 3"/>
+<text x="594" y="369.0" fill="#9aa0ae" font-size="12" text-anchor="end"></text>
+<circle cx="680.0" cy="374.0" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="690.0" cy="200.0" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="700.0" cy="376.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="710.0" cy="334.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="720.0" cy="287.9" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="730.0" cy="413.9" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="740.0" cy="272.0" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="750.0" cy="304.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="760.0" cy="353.9" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="770.0" cy="376.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="780.0" cy="226.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="790.0" cy="440.0" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="800.0" cy="224.0" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<circle cx="810.0" cy="440.0" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="820.0" cy="440.0" r="6" fill="#7fd4ff" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="830.0" cy="178.1" r="6" fill="#7fd4ff" fill-opacity="1" stroke="#7fd4ff" stroke-width="1.5"/>
+<text x="755" y="464" fill="#7fd4ff" font-size="13" text-anchor="middle">hynohop</text>
+<circle cx="860.0" cy="400.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="870.0" cy="251.9" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="880.0" cy="440.0" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="890.0" cy="335.9" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="900.0" cy="290.0" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="910.0" cy="202.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="920.0" cy="172.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="930.0" cy="437.9" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="940.0" cy="370.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="950.0" cy="377.9" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="960.0" cy="226.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="970.0" cy="440.0" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="980.0" cy="317.9" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="990.0" cy="230.0" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<circle cx="1000.0" cy="440.0" r="6" fill="#ffb0d4" fill-opacity="0.3" stroke="#ff8f8f" stroke-width="1.5"/>
+<circle cx="1010.0" cy="178.1" r="6" fill="#ffb0d4" fill-opacity="1" stroke="#ffb0d4" stroke-width="1.5"/>
+<text x="935" y="464" fill="#ffb0d4" font-size="13" text-anchor="middle">hybrid</text>
+<text x="600" y="488" fill="#9aa0ae" font-size="12">P2 FAIL (marginal): &lt;.1 in 4/16 (registered &#8805;5); &lt;.25 in 7/16; mean .375/.402</text>
+<text x="600" y="506" fill="#9aa0ae" font-size="12">tracking is FREE everywhere: seg1 err &#8804; .01 on 16/16 both arms (P4, lock universal)</text>
+<text x="1100" y="126" fill="#e8e6e3" font-size="16" font-weight="bold">C &#183; failing segments: S_L owns the miss (P3)</text>
+<rect x="1100" y="140" width="420" height="300" fill="none" stroke="#33363f"/>
+<rect x="1190" y="170.0" width="70" height="147.9" fill="#7fd4ff" fill-opacity="0.75"/>
+<text x="1225" y="247.9" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">9</text>
+<rect x="1190" y="317.9" width="70" height="16.4" fill="#9dffb0" fill-opacity="0.75"/>
+<text x="1225" y="330.1" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">1</text>
+<rect x="1190" y="334.3" width="70" height="49.3" fill="#ff8f8f" fill-opacity="0.75"/>
+<text x="1225" y="362.9" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">3</text>
+<text x="1225" y="160" fill="#e8e6e3" font-size="13" text-anchor="middle">hynohop (14 segs)</text>
+<text x="1225" y="401.5714285714286" fill="#9aa0ae" font-size="12" text-anchor="middle">SL share 0.692</text>
+<rect x="1370" y="170.0" width="70" height="92.0" fill="#ffb0d4" fill-opacity="0.75"/>
+<text x="1405" y="220.0" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">6</text>
+<rect x="1370" y="262.0" width="70" height="30.7" fill="#9dffb0" fill-opacity="0.75"/>
+<text x="1405" y="281.3" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">2</text>
+<rect x="1370" y="292.7" width="70" height="46.0" fill="#ff8f8f" fill-opacity="0.75"/>
+<text x="1405" y="319.7" fill="#1b1d24" font-size="12" text-anchor="middle" font-weight="bold">3</text>
+<text x="1405" y="160" fill="#e8e6e3" font-size="13" text-anchor="middle">hybrid (15 segs)</text>
+<text x="1405" y="356.6666666666667" fill="#9aa0ae" font-size="12" text-anchor="middle">SL share 0.545</text>
+<rect x="1160" y="480" width="12" height="12" fill="#ffb0d4"/>
+<text x="1176" y="490" fill="#9aa0ae" font-size="12">S_L&lt;.25 (SR healthy)</text>
+<rect x="1310" y="480" width="12" height="12" fill="#9dffb0"/>
+<text x="1326" y="490" fill="#9aa0ae" font-size="12">S_R&lt;.25</text>
+<rect x="1460" y="480" width="12" height="12" fill="#ff8f8f"/>
+<text x="1476" y="490" fill="#9aa0ae" font-size="12">both &lt; .25</text>
+<text x="1100" y="526" fill="#9aa0ae" font-size="12">P5 entry join: seg0 S_L vs pooled rank corr +.612 (hynohop) &#8594; +.174 (hybrid)</text>
+<text x="1100" y="544" fill="#9aa0ae" font-size="12">&#8212; hops decorrelate entry state from outcome (re-roll law)</text>
+</svg>

@@ -1,0 +1,44 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+cord mechano sensory 3588 | motor 815
+pool Ti_flex: 84 cells
+pool Ti_ext: 12 cells
+pool Tr_flex: 57 cells
+pool Tr_ext: 11 cells
+pool all: 815 cells
+interior block 2,189,125 | non-block 23,370,954 | 2s
+real seed 11 f  0.5Hz dt 10ms | all depth 0.289 ph -111 snr2f    2.5 | Ti_flex 0.294 Ti_ext 0.374 | 45s
+real seed 11 f  1.0Hz dt 10ms | all depth 0.265 ph -131 snr2f    3.1 | Ti_flex 0.268 Ti_ext 0.340 | 70s
+real seed 11 f  2.0Hz dt 10ms | all depth 0.196 ph -166 snr2f    5.1 | Ti_flex 0.193 Ti_ext 0.244 | 86s
+real seed 11 f  5.0Hz dt 10ms | all depth 0.064 ph +140 snr2f    9.2 | Ti_flex 0.054 Ti_ext 0.072 | 96s
+real seed 11 f 10.0Hz dt 2ms | all depth 0.014 ph +115 snr2f    8.5 | Ti_flex 0.012 Ti_ext 0.012 | 112s
+real seed 11 f 20.0Hz dt 2ms | all depth 0.000 ph -56 snr2f    0.2 | Ti_flex 0.002 Ti_ext 0.003 | 123s
+real seed 22 f  0.5Hz dt 10ms | all depth 0.288 ph -111 snr2f    2.5 | Ti_flex 0.293 Ti_ext 0.370 | 167s
+real seed 22 f  1.0Hz dt 10ms | all depth 0.264 ph -131 snr2f    3.1 | Ti_flex 0.267 Ti_ext 0.338 | 192s
+real seed 22 f  2.0Hz dt 10ms | all depth 0.196 ph -166 snr2f    5.2 | Ti_flex 0.193 Ti_ext 0.245 | 209s
+real seed 22 f  5.0Hz dt 10ms | all depth 0.064 ph +140 snr2f    8.6 | Ti_flex 0.059 Ti_ext 0.076 | 222s
+real seed 22 f 10.0Hz dt 2ms | all depth 0.014 ph +114 snr2f    8.7 | Ti_flex 0.012 Ti_ext 0.014 | 240s
+real seed 22 f 20.0Hz dt 2ms | all depth 0.000 ph -76 snr2f    0.2 | Ti_flex 0.001 Ti_ext 0.002 | 252s
+5Hz@dt2ms all depth 0.057
+/home/t3rpz/critters/peabrain-lab/malecns/l29_transfer.py:118: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(torch.from_numpy(idx).long(),
+null draw 0: 16,642,179 swaps | 326s
+null draw 0 f  0.5Hz | all depth 0.347 ph -114 | 375s
+null draw 0 f  2.0Hz | all depth 0.223 ph -174 | 393s
+null draw 0 f 10.0Hz | all depth 0.011 ph +104 | 411s
+null draw 1: 16,645,061 swaps | 457s
+null draw 1 f  0.5Hz | all depth 0.350 ph -114 | 503s
+null draw 1 f  2.0Hz | all depth 0.225 ph -174 | 519s
+null draw 1 f 10.0Hz | all depth 0.011 ph +103 | 535s
+null draw 2: 16,643,409 swaps | 579s
+null draw 2 f  0.5Hz | all depth 0.351 ph -114 | 624s
+null draw 2 f  2.0Hz | all depth 0.226 ph -174 | 640s
+null draw 2 f 10.0Hz | all depth 0.011 ph +103 | 656s
+Ti_flex: depth@0.5 0.294 cutoff 5.0 n_fit 2.8 (rmse 0.001)
+Ti_ext: depth@0.5 0.372 cutoff 5.0 n_fit 2.7 (rmse 0.002)
+Tr_flex: depth@0.5 0.375 cutoff 5.0 n_fit 2.9 (rmse 0.046)
+Tr_ext: depth@0.5 0.309 cutoff 5.0 n_fit 2.8 (rmse 0.007)
+all: depth@0.5 0.288 cutoff 5.0 n_fit 3.2 (rmse 0.182)
+DONE 656s

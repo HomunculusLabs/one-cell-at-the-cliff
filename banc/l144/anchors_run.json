@@ -1,0 +1,18 @@
+{
+ "g_cutwA": 0.14365819573402408,
+ "g_cutng25": 0.1454454553127289,
+ "g_sil1110": 0.153125,
+ "g_sil1110_wA": 0.14365819573402408,
+ "g_cutwA_stored_exact": true,
+ "g_cutng25_stored_exact": true,
+ "clamp_sil1110": 486,
+ "clamp_sil1110_wA": 467,
+ "c0a144_max": 0.0,
+ "c0a144_pass": true,
+ "fc142_max": 0.0,
+ "fc142_pass": true,
+ "fc137_max": 0.0,
+ "fc137_pass": true,
+ "n_seeds": 18,
+ "c0a_pass": true
+}

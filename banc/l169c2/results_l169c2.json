@@ -1,0 +1,385 @@
+{
+ "prereg": "l169c2/PREREG.md",
+ "design": "L169 stage (c2): the REW + HOM rollout arms on the G1 cutwA base. rew1/rew2/rew3 = the cutwA node set and edge COUNT verbatim with the carrier's 80 closure out-edges degree-preservingly REWIRED (draws 0/1/2 of the registered default_rng(16943) stream, weights travelling with the source edge); hom = cutwA minus gi 928 (DNp33-R), a SAME-FOOTPRINT DIFFERENT-CLASS deletion (c1 rule C2 NONEQUIVALENT), never a homolog control. Fresh per-arm af-matched bisects. ONE batch, n=16 per arm.",
+ "batch": "B37",
+ "seeds": [
+  3481,
+  3482,
+  3483,
+  3484,
+  3485,
+  3486,
+  3487,
+  3488,
+  3489,
+  3490,
+  3491,
+  3492,
+  3493,
+  3494,
+  3495,
+  3496
+ ],
+ "n_seeds": 16,
+ "cert": {
+  "fc169b2_pass": true,
+  "fc169b2_max": 0.0,
+  "ntc2_pass": true,
+  "ntc2_min": 0.01852736994624138,
+  "fc169_pass": true,
+  "c0a150_pass": true,
+  "fc144_pass": true,
+  "fc145_pass": true,
+  "ntf4_pass": true,
+  "g_cutwA_exact": true,
+  "g_cutng25_exact": true,
+  "g_emottop5_exact": true,
+  "g_emotbot5_exact": true,
+  "pafc2_ok": true,
+  "c2_gains_distinct": true,
+  "hom_incident": 101,
+  "c2_n": {
+   "rew1": 21785,
+   "rew2": 21785,
+   "rew3": 21785,
+   "hom": 21784
+  },
+  "c2_edges": {
+   "rew1": 644177,
+   "rew2": 644177,
+   "rew3": 644177,
+   "hom": 644076
+  }
+ },
+ "cert0": true,
+ "cert_metric": {
+  "f4wA": {
+   "mine": {
+    "kL": 16,
+    "kR": 0,
+    "meanL": 0.698,
+    "meanR": 0.043
+   },
+   "stored": {
+    "meanR": 0.043,
+    "kR": 0,
+    "meanL": 0.698,
+    "kL": 16
+   }
+  },
+  "f4ng": {
+   "mine": {
+    "kL": 2,
+    "kR": 0,
+    "meanL": 0.289,
+    "meanR": 0.081
+   },
+   "stored": {
+    "meanR": 0.081,
+    "kR": 0,
+    "meanL": 0.289,
+    "kL": 2
+   }
+  },
+  "f4tw": {
+   "mine": {
+    "kL": 10,
+    "kR": 0,
+    "meanL": 0.56,
+    "meanR": 0.082
+   },
+   "stored": {
+    "meanR": 0.082,
+    "kR": 0,
+    "meanL": 0.56,
+    "kL": 10
+   }
+  },
+  "cutwA": {
+   "mine": {
+    "kL": 0,
+    "kR": 3,
+    "meanL": 0.233,
+    "meanR": 0.371
+   },
+   "stored": {
+    "meanR": 0.371,
+    "kR": 3,
+    "meanL": 0.233,
+    "kL": 0
+   }
+  }
+ },
+ "rew_draws_first5": [
+  {
+   "relocated": 80,
+   "moved": 80,
+   "mass_T70": 1.6094379124341003,
+   "mass_motor": 15.153202737244946,
+   "n_dst": 80
+  },
+  {
+   "relocated": 80,
+   "moved": 80,
+   "mass_T70": 0.0,
+   "mass_motor": 19.713543160279702,
+   "n_dst": 80
+  },
+  {
+   "relocated": 80,
+   "moved": 80,
+   "mass_T70": 0.0,
+   "mass_motor": 21.675883597766656,
+   "n_dst": 80
+  },
+  {
+   "relocated": 80,
+   "moved": 80,
+   "mass_T70": 2.1972245773362196,
+   "mass_motor": 21.59873357429981,
+   "n_dst": 80
+  },
+  {
+   "relocated": 80,
+   "moved": 80,
+   "mass_T70": 0.0,
+   "mass_motor": 15.86469905647309,
+   "n_dst": 80
+  }
+ ],
+ "rew_chance_T70": 0.007001381033343076,
+ "carrier_out_mass": 183.96376182027785,
+ "gains": {
+  "rew1": 0.1456173849105835,
+  "rew2": 0.150060406923294,
+  "rew3": 0.14446432113647462,
+  "hom": 0.1437306761741638
+ },
+ "c2_stairs": {
+  "rew1": 0.00058697909116745,
+  "rew2": 9.734680255255035e-05,
+  "rew3": 5.540748437254939e-06,
+  "hom": 5.364418029785156e-07
+ },
+ "c2_band_ok": {
+  "rew1": true,
+  "rew2": true,
+  "rew3": true,
+  "hom": true
+ },
+ "c2_n": {
+  "rew1": 21785,
+  "rew2": 21785,
+  "rew3": 21785,
+  "hom": 21784
+ },
+ "c2_edges": {
+  "rew1": 644177,
+  "rew2": 644177,
+  "rew3": 644177,
+  "hom": 644076
+ },
+ "pafc2": {
+  "rew1": {
+   "g": 0.1456173849105835,
+   "bisect_af": 0.10846913109223048,
+   "stair": 0.00058697909116745,
+   "rollout_af_mean": 0.10847773682326078,
+   "rollout_af_maxoff": 0.008298705021540329
+  },
+  "rew2": {
+   "g": 0.150060406923294,
+   "bisect_af": 0.10895876338084538,
+   "stair": 9.734680255255035e-05,
+   "rollout_af_mean": 0.1080674771219492,
+   "rollout_af_maxoff": 0.006554389993349716
+  },
+  "rew3": {
+   "g": 0.14446432113647462,
+   "bisect_af": 0.10905056943496068,
+   "stair": 5.540748437254939e-06,
+   "rollout_af_mean": 0.1073703239671886,
+   "rollout_af_maxoff": 0.007013420263926193
+  },
+  "hom": {
+   "g": 0.1437306761741638,
+   "bisect_af": 0.10905557374159495,
+   "stair": 5.364418029785156e-07,
+   "rollout_af_mean": 0.10837942967191339,
+   "rollout_af_maxoff": 0.00682511428991954
+  }
+ },
+ "table": {
+  "rew1": {
+   "arm": "rew1",
+   "kL": 3,
+   "kR": 16,
+   "meanL": 0.352,
+   "meanR": 0.724,
+   "lbR": 0.8063923194655636,
+   "ubR": 1.0000000000000002,
+   "lbL": 0.06591599071428139,
+   "ubL": 0.43008880961974144,
+   "g": 0.1456173849105835,
+   "n": 21785,
+   "edges": 644177,
+   "super": true,
+   "partial": false,
+   "notsuper": false
+  },
+  "rew2": {
+   "arm": "rew2",
+   "kL": 0,
+   "kR": 1,
+   "meanL": 0.24,
+   "meanR": 0.333,
+   "lbR": 0.011119344764642517,
+   "ubR": 0.2832873757029894,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.150060406923294,
+   "n": 21785,
+   "edges": 644177,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "rew3": {
+   "arm": "rew3",
+   "kL": 0,
+   "kR": 3,
+   "meanL": 0.251,
+   "meanR": 0.302,
+   "lbR": 0.06591599071428139,
+   "ubR": 0.43008880961974144,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.14446432113647462,
+   "n": 21785,
+   "edges": 644177,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "hom": {
+   "arm": "hom",
+   "kL": 2,
+   "kR": 2,
+   "meanL": 0.316,
+   "meanR": 0.301,
+   "lbR": 0.03497748774324047,
+   "ubR": 0.3602282726575869,
+   "lbL": 0.03497748774324047,
+   "ubL": 0.3602282726575869,
+   "g": 0.1437306761741638,
+   "n": 21784,
+   "edges": 644076,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "full": {
+   "arm": "full",
+   "kL": 7,
+   "kR": 5,
+   "meanL": 0.483,
+   "meanR": 0.431,
+   "lbR": 0.14164643854782036,
+   "ubR": 0.5559564416525933,
+   "lbL": 0.2309865240549235,
+   "ubL": 0.668214436011881,
+   "g": 0.153125,
+   "n": null,
+   "edges": null,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "cutwA": {
+   "arm": "cutwA",
+   "kL": 0,
+   "kR": 5,
+   "meanL": 0.25,
+   "meanR": 0.452,
+   "lbR": 0.14164643854782036,
+   "ubR": 0.5559564416525933,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.14365819573402408,
+   "n": null,
+   "edges": null,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "cutng25": {
+   "arm": "cutng25",
+   "kL": 0,
+   "kR": 15,
+   "meanL": 0.148,
+   "meanR": 0.786,
+   "lbR": 0.7167126242970107,
+   "ubR": 0.9888806552353575,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1454454553127289,
+   "n": null,
+   "edges": null,
+   "super": true,
+   "partial": false,
+   "notsuper": false
+  }
+ },
+ "legs": {
+  "rew1": {
+   "mean_paired_dR_vs_cutwA": 0.272,
+   "n_up": 15,
+   "n_down": 1,
+   "mean_paired_dR_vs_cutng25": -0.062
+  },
+  "rew2": {
+   "mean_paired_dR_vs_cutwA": -0.119,
+   "n_up": 1,
+   "n_down": 15,
+   "mean_paired_dR_vs_cutng25": -0.453
+  },
+  "rew3": {
+   "mean_paired_dR_vs_cutwA": -0.15,
+   "n_up": 4,
+   "n_down": 12,
+   "mean_paired_dR_vs_cutng25": -0.484
+  },
+  "hom": {
+   "mean_paired_dR_vs_cutwA": -0.15,
+   "n_up": 3,
+   "n_down": 13,
+   "mean_paired_dR_vs_cutng25": -0.484
+  }
+ },
+ "pooled_rew": {
+  "kR": 20,
+  "n": 48,
+  "lb": 0.2884966777841157,
+  "ub": 0.5571866771602373,
+  "kL": 3,
+  "meanR": 0.453,
+  "note": "draw pool (3 rewire draws x one batch), NOT a seed-batch pool; does not satisfy the L88/L90 multi-batch rule"
+ },
+ "base_bounds": {
+  "cutwA": [
+   0.14164643854782036,
+   0.5559564416525933
+  ],
+  "cutng25": [
+   0.7167126242970107,
+   0.9888806552353575
+  ]
+ },
+ "vacuous_base_guard": false,
+ "n_super_rew": 1,
+ "n_notsuper_rew": 2,
+ "r1": false,
+ "r2": true,
+ "rew_branch": "R2_mass_degree",
+ "hom_branch": "H1_specific"
+}

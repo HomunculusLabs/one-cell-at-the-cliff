@@ -1,0 +1,353 @@
+{
+ "c0e_certified": 120,
+ "c0a": 0.0,
+ "p1": {
+  "11": {
+   "fds": [
+    440,
+    1,
+    1
+   ],
+   "mono": true
+  },
+  "22": {
+   "fds": [
+    1098,
+    99,
+    1
+   ],
+   "mono": true
+  },
+  "33": {
+   "fds": [
+    97,
+    80,
+    1
+   ],
+   "mono": true
+  }
+ },
+ "p1_pass": true,
+ "p2": {
+  "min_eps": 0,
+  "any_negative": false,
+  "frac_le8": 1.0,
+  "eps_sorted": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "p2_pass": true,
+ "p2_sharp_pass": true,
+ "p3": {
+  "11": {
+   "max_net": -0.4314,
+   "all_dead": true
+  },
+  "22": {
+   "max_net": 0.0187,
+   "all_dead": false
+  },
+  "33": {
+   "max_net": -0.376,
+   "all_dead": true
+  }
+ },
+ "p3_pass": false,
+ "p4_disagree": 0,
+ "p4_rho": 0.5293,
+ "p4_pass": false,
+ "f2_rho": 0.719,
+ "u74b_seg0_max": {
+  "11": -1.9513922929763794,
+  "22": -1.501292109489441,
+  "33": -1.8960437774658203
+ },
+ "u74b_census": -1.763,
+ "addendum1": {
+  "note": "P4 re-read on earliest-pool fd (stored l93 pool traces, C0E-certified metric); registered fd_Tr_fL read failed rho .529 from pool-visibility lag on already-open cells, disclosed.",
+  "rows": [
+   {
+    "arm": "xl080_L_20",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "xl080_L_20",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "xl080_L_20",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d74b_R_20",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 439,
+    "fd_E": 440,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d74b_R_20",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 1097,
+    "fd_E": 1098,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d74b_R_20",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 96,
+    "fd_E": 97,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d105_R_20",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d105_R_20",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 10,
+    "fd_E": 11,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "d105_R_20",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_05",
+    "seed": 11,
+    "amp": 0.5,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_05",
+    "seed": 22,
+    "amp": 0.5,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_05",
+    "seed": 33,
+    "amp": 0.5,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_20",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_20",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "intr16_20",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "tidon_20",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "tidon_20",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "tidon_20",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamdn_20a",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 2,
+    "first_pool": "mm",
+    "eps": 1
+   },
+   {
+    "arm": "shamdn_20a",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 2,
+    "first_pool": "mm",
+    "eps": 1
+   },
+   {
+    "arm": "shamdn_20a",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 2,
+    "first_pool": "mm",
+    "eps": 1
+   },
+   {
+    "arm": "shamdn_20b",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamdn_20b",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamdn_20b",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20a",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20a",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20a",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20b",
+    "seed": 11,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20b",
+    "seed": 22,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   },
+   {
+    "arm": "shamint_20b",
+    "seed": 33,
+    "amp": 2.0,
+    "k_open": 0,
+    "fd_E": 1,
+    "first_pool": "mm",
+    "eps": 0
+   }
+  ],
+  "rho_E": 0.7977,
+  "eps_max": 1,
+  "eps_frac0": 0.9
+ }
+}

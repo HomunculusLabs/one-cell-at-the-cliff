@@ -1,0 +1,24 @@
+graphs built 5s | K 77 n_cut 21,732 edges_cut 639,164
+gains: b65=off=G65=0.14 stored constant (graph-identity, no bisect)
+seed 801 cached, skip
+seed 901 cached, skip
+seed 3401 cached, skip
+seed 3402 cached, skip
+seed 3403 cached, skip
+seed 3404 cached, skip
+seed 3405 cached, skip
+seed 3406 cached, skip
+seed 3407 cached, skip
+seed 3408 cached, skip
+seed 3409 cached, skip
+seed 3410 cached, skip
+seed 3411 cached, skip
+seed 3412 cached, skip
+seed 3413 cached, skip
+seed 3414 cached, skip
+seed 3415 cached, skip
+seed 3416 cached, skip
+rollouts done 5s
+raw_l154.npz checkpointed BEFORE analysis
+B34 absence across 34 stored npzs: PASS
+C0A-154 b65 (on) vs l150 STORED (22 keys x 2 seeds + af): PASS (max 0.0e+00) | done 6s

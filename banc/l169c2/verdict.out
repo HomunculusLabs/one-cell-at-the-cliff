@@ -1,0 +1,42 @@
+---- CERT-0 (run-side anchors) ----
+  fc169b2_pass           True
+  fc169b2_max            0.0
+  ntc2_pass              True
+  ntc2_min               0.01852736994624138
+  fc169_pass             True
+  c0a150_pass            True
+  fc144_pass             True
+  fc145_pass             True
+  ntf4_pass              True
+  g_cutwA_exact          True
+  g_cutng25_exact        True
+  g_emottop5_exact       True
+  g_emotbot5_exact       True
+  pafc2_ok               True
+  c2_gains_distinct      True
+  hom_incident           101
+  c2_n                   {'rew1': 21785, 'rew2': 21785, 'rew3': 21785, 'hom': 21784}
+  c2_edges               {'rew1': 644177, 'rew2': 644177, 'rew3': 644177, 'hom': 644076}
+CERT-0 (CERT-1 chain + CERT-2 subset + C0-NT(c2)): GREEN
+structural pins: hom 101 incident edges | rew edge counts identical
+CERT-METRIC GREEN: helper copy reproduces l169b2 stored B36 cells (f4wA / f4ng / f4tw / cutwA, 4 fields each) EXACTLY
+
+---- B37 Ti per-side duty (n=16) ----
+rew1      g 0.145617385 | meanR 0.724 kR 16/16 [0.806,1.000] | meanL 0.352 kL  3/16 | SUPER True PARTIAL False NOTSUPER False
+rew2      g 0.150060407 | meanR 0.333 kR  1/16 [0.011,0.283] | meanL 0.240 kL  0/16 | SUPER False PARTIAL False NOTSUPER True
+rew3      g 0.144464321 | meanR 0.302 kR  3/16 [0.066,0.430] | meanL 0.251 kL  0/16 | SUPER False PARTIAL False NOTSUPER True
+hom       g 0.143730676 | meanR 0.301 kR  2/16 [0.035,0.360] | meanL 0.316 kL  2/16 | SUPER False PARTIAL False NOTSUPER True
+full      g 0.153125000 | meanR 0.431 kR  5/16 [0.142,0.556] | meanL 0.483 kL  7/16 | SUPER False PARTIAL True NOTSUPER True
+cutwA     g 0.143658196 | meanR 0.452 kR  5/16 [0.142,0.556] | meanL 0.250 kL  0/16 | SUPER False PARTIAL True NOTSUPER True
+cutng25   g 0.145445455 | meanR 0.786 kR 15/16 [0.717,0.989] | meanL 0.148 kL  0/16 | SUPER True PARTIAL False NOTSUPER False
+paired rew1 vs cutwA: dR +0.272 up 15/16 down 1/16 | vs cutng25 -0.062
+paired rew2 vs cutwA: dR -0.119 up 1/16 down 15/16 | vs cutng25 -0.453
+paired rew3 vs cutwA: dR -0.150 up 4/16 down 12/16 | vs cutng25 -0.484
+paired hom vs cutwA: dR -0.150 up 3/16 down 13/16 | vs cutng25 -0.484
+
+REW draw-pool kR 20/48 [0.288,0.557] | same-batch cutwA 5/16 [0.142,0.556] | cutng25 15/16 [0.717,0.989]
+
+REW BRANCH: R2_mass_degree (super 1/3, notsuper 2/3, pooled lb 0.288 vs base ub 0.556; vacuous-base guard fired: False)
+HOM BRANCH: H1_specific (super False, notsuper True, meanR 0.301)
+
+wrote l169c2/results_l169c2.json

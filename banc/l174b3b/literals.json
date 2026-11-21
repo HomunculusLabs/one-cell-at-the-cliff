@@ -1,0 +1,1925 @@
+{
+ "keys": [
+  "1",
+  "10",
+  "13",
+  "2",
+  "2",
+  "23",
+  "26",
+  "29",
+  "3",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "36",
+  "36",
+  "4",
+  "5",
+  "6",
+  "6",
+  "7",
+  "7",
+  "9",
+  "l154.freq",
+  "l154.structure",
+  "l157.pooled",
+  "l168.base",
+  "l168.scr",
+  "l168.scr",
+  "l168.window_mass",
+  "l171.envelope",
+  "l171.panel",
+  "l172.census_unique",
+  "l172.diffs",
+  "l172.diffs",
+  "l172.pooled",
+  "l172.pooled",
+  "l172.pooled",
+  "l172.pooled",
+  "l172.pooled",
+  "n_runs_summed",
+  "subnet",
+  "xor",
+  "xor.steps"
+ ],
+ "literals": {
+  " exact": {
+   "multiline": false,
+   "n_elsewhere": 17,
+   "n_span": 3,
+   "verifiers": [
+    "l161_verify.py"
+   ]
+  },
+  " of ": {
+   "multiline": false,
+   "n_elsewhere": 147,
+   "n_span": 32,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " only": {
+   "multiline": false,
+   "n_elsewhere": 21,
+   "n_span": 6,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " vs ": {
+   "multiline": false,
+   "n_elsewhere": 28,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "## 1. Introduction": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py",
+    "l159_verify.py",
+    "l161_verify.py",
+    "l174_verify.py"
+   ]
+  },
+  "## 2. Results": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py",
+    "l159_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "### 2.2 ": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.3 ": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(1) at gain-certified MATCHED": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "(30 of 66": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "(\u2212.08 \u2192 +.04)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "+.175": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "+.371": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  ".047": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".305": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".454": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  ".70/.32 Hz on \u2192 .45/1.09 off": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".json": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "/results_": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0 of 20": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 5,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "0/32": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "1/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "10.1%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "10.1% [9.1-11.1]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "101.0%": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "11/16": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "1110": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "12/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "12/16 vs 0/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "12/32": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "15/16": {
+   "multiline": false,
+   "n_elsewhere": 17,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "15/16 vs 1/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "17/32": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "188 of 194": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "203 of 210": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "2490": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "2588": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "3.9e-04": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "30 of 66": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "30 of 66, [.340,.574]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "39/48": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "4/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "449 of 449 baseline traces": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "5 of 178": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "5 of 178 at k=19": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "5/16": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "57.4%": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "6+/10\u2212 of 16, p=.4545": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "6.7%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "6.7% [6.3-7.0]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "60.0%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "62.5%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "62.5% [60.9-64.0]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "72 of 258": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "78 of 98": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "78 of 98, Wilson": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "8 of 20": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "89 of their 100 matched cells copy their partners from a": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "9.72": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "9.72\u00d7 below any mass-only band": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "9.72\u00d7 below any mass-only band (\u00a72.2)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "ApproxBrain [6] is the closest formal neighbour": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "Duckophila [35]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "FlyHack [5] stress-tests a connectome-constrained visual": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "Focal neuronal loss and cell replacement in a connectome model of fly": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "IN12B003": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "INTERMEDIATE": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "LANE-RESEARCH.md": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "MATCH": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "STIMULUS-SET": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "SUFFICIENT route to the transition": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "SUPER": {
+   "multiline": false,
+   "n_elsewhere": 30,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Sapkal": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Scramble controls: sufficient, not unique": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Set-dependent, not mass-dependent": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Ti L +.61 / R +.72, Tr R +.76": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Walking-CPG field context (Sapkal et al. [34])": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "[.228,.337]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[.706,.864]": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[.933,.984]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l157.pooled]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l168.base]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l168.scr]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l168.window_mass]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.envelope]": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.panel]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "admissible": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "all-or-none": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "anchors": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "banc": {
+   "multiline": false,
+   "n_elsewhere": 23,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py",
+    "l174_verify.py"
+   ]
+  },
+  "banc/": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "base": {
+   "multiline": false,
+   "n_elsewhere": 58,
+   "n_span": 9,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "below": {
+   "multiline": false,
+   "n_elsewhere": 17,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "body": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "carrier": {
+   "multiline": false,
+   "n_elsewhere": 86,
+   "n_span": 21,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier-free": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "census": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "cert": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "compared against other subsets rather than against a cell of": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "controls": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 3,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "cutcl40": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscr0": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscr1": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscr2": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscr3": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscrL1": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutscrL2": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutwA": {
+   "multiline": false,
+   "n_elsewhere": 28,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "diff": {
+   "multiline": false,
+   "n_elsewhere": 32,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "diffs": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "do not reproduce the crossed state": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "drive envelope": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "drive envelope's": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "edges": {
+   "multiline": false,
+   "n_elsewhere": 39,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "excluded": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "extra": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "fast": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "four load-bearing results": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "full": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gain": {
+   "multiline": false,
+   "n_elsewhere": 123,
+   "n_span": 11,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gains": {
+   "multiline": false,
+   "n_elsewhere": 46,
+   "n_span": 7,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "individually NECESSARY": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "intrinsic": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "kills": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l125": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l127": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l128": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l154.freq": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l154.structure": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l157.pooled": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l168.base": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l168.scr": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l168.window_mass": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l171.envelope": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l171.panel": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l172.census_unique": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l172.diffs": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l172.pooled": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "label": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "ladder": {
+   "multiline": false,
+   "n_elsewhere": 16,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "leave 101.0%": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "leaves 57.4% of intact": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "left": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "license": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 2,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "mass": {
+   "multiline": false,
+   "n_elsewhere": 57,
+   "n_span": 27,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "mass-matched": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "mass-twin": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "matched on cell count and ours on removal mass": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "matched removal mass": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "mean": {
+   "multiline": false,
+   "n_elsewhere": 38,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR": {
+   "multiline": false,
+   "n_elsewhere": 23,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "necessity is": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "not unique": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "only 25 of 50 ensemble": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "ours is one cell against one mass twin": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "over 32 held-out parameter draws": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "panel": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "peabrain": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "peabrain-figs/": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_span": 1,
+   "verifiers": [
+    "l161_verify.py"
+   ]
+  },
+  "pooled": {
+   "multiline": false,
+   "n_elsewhere": 44,
+   "n_span": 13,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "right": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_span": 9,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rows": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "rule": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "scr0": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seed": {
+   "multiline": false,
+   "n_elsewhere": 60,
+   "n_span": 7,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seeds": {
+   "multiline": false,
+   "n_elsewhere": 39,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "set-dependent": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "seven carrier-free cohorts": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "statistics": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "steering [36] is the closest prior art to the identity half": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "steps": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "sufficient, not unique": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "super": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "survive": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "table": {
+   "multiline": false,
+   "n_elsewhere": 20,
+   "n_span": 5,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "target": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "their unit is a class": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "they remove and then add": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "type": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "type-dependent integration rather than as single-cell identity": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "unchopped": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "window": {
+   "multiline": false,
+   "n_elsewhere": 29,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  }
+ },
+ "nums": [
+  "-11",
+  "-11.1",
+  "-18",
+  "-61.6",
+  "-64.0",
+  "-7.0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0.3",
+  "0.5",
+  "0.50",
+  "000,.107",
+  "000,.107",
+  "000,.194",
+  "000,.194",
+  "003",
+  "00604",
+  "00644",
+  "008,",
+  "017",
+  "025",
+  "04",
+  "0439",
+  "0439",
+  "0442",
+  "0442",
+  "0450",
+  "0460",
+  "0460",
+  "0463",
+  "047,",
+  "047,",
+  "0476",
+  "0476,",
+  "0544",
+  "0544",
+  "07",
+  "08",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1,",
+  "1,000",
+  "1.00",
+  "1.09",
+  "10",
+  "10",
+  "10",
+  "10",
+  "10.1%",
+  "100",
+  "100",
+  "100",
+  "100",
+  "100",
+  "101",
+  "101.0%",
+  "102,.495",
+  "11",
+  "11",
+  "1110",
+  "1110",
+  "12",
+  "12",
+  "12",
+  "12",
+  "125,",
+  "126",
+  "127,",
+  "128",
+  "13",
+  "13%",
+  "134",
+  "136",
+  "137",
+  "14,",
+  "148",
+  "15",
+  "15",
+  "15",
+  "15,",
+  "154",
+  "154",
+  "157",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16,",
+  "16,",
+  "168",
+  "168",
+  "168",
+  "168",
+  "168",
+  "168",
+  "168",
+  "17",
+  "17",
+  "17",
+  "171",
+  "171",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "172",
+  "175",
+  "175,",
+  "178",
+  "18",
+  "188",
+  "19,",
+  "194",
+  "199,.453",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2,000",
+  "2.1",
+  "2.2",
+  "2.2",
+  "2.2",
+  "2.3",
+  "2.4",
+  "2.5",
+  "2.8",
+  "2.9",
+  "2.9",
+  "20",
+  "20",
+  "20,521",
+  "2026",
+  "203",
+  "203",
+  "210",
+  "210,",
+  "217,.475",
+  "228,.337",
+  "229,.547",
+  "229,.547",
+  "23",
+  "23",
+  "2386",
+  "2388",
+  "2396",
+  "24",
+  "24,",
+  "2406",
+  "2409",
+  "2422",
+  "2490",
+  "25",
+  "25",
+  "25",
+  "25",
+  "253",
+  "258",
+  "258",
+  "258,",
+  "2588",
+  "26",
+  "26",
+  "27,",
+  "28",
+  "29",
+  "29",
+  "29",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3.9e-04",
+  "30",
+  "30",
+  "30",
+  "30",
+  "30",
+  "305",
+  "305",
+  "31",
+  "319",
+  "319",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "32",
+  "33",
+  "33",
+  "33",
+  "33",
+  "332,.769",
+  "34",
+  "34",
+  "34,",
+  "340,.574",
+  "340,.574",
+  "35",
+  "35",
+  "35",
+  "36",
+  "36",
+  "364,.691",
+  "37",
+  "37",
+  "37",
+  "37",
+  "37",
+  "371",
+  "385,.425",
+  "386,.815",
+  "388",
+  "388",
+  "39",
+  "39",
+  "39",
+  "39",
+  "39,",
+  "4",
+  "4",
+  "4",
+  "4",
+  "40",
+  "40",
+  "40",
+  "40",
+  "40",
+  "404",
+  "444,.858",
+  "449",
+  "449",
+  "45",
+  "4545",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48",
+  "48,",
+  "49,",
+  "5",
+  "5",
+  "50",
+  "512",
+  "512",
+  "546,.844",
+  "57.4%",
+  "58",
+  "58",
+  "58",
+  "58",
+  "58.3",
+  "590,.834",
+  "6",
+  "6",
+  "6",
+  "6.3",
+  "6.7%",
+  "60.0%",
+  "60.9",
+  "61",
+  "62.5%",
+  "621,",
+  "628,",
+  "628,",
+  "65",
+  "66,",
+  "66,",
+  "681,",
+  "681,.898",
+  "688",
+  "7",
+  "7",
+  "70",
+  "706,.864",
+  "72",
+  "72,",
+  "728",
+  "742",
+  "749,.783",
+  "76",
+  "766",
+  "78",
+  "783",
+  "8",
+  "80",
+  "87%",
+  "872",
+  "89",
+  "9",
+  "9",
+  "9.1",
+  "9.72\u00d7",
+  "9.72\u00d7",
+  "91,1.00",
+  "933,.984",
+  "933,.984",
+  "95%",
+  "98,"
+ ],
+ "report": {
+  "bullet_lines": 15,
+  "citation_key_tokens": 45,
+  "citation_keys_distinct": 35,
+  "literals_exclusive_to_span": 73,
+  "literals_in_span": 184,
+  "literals_multiline": 0,
+  "numeric_distinct": 188,
+  "numeric_tokens": 355,
+  "span_chars": 14409,
+  "span_lines": 226
+ }
+}

@@ -1,0 +1,32 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l84_entry.py:100: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l84_entry.py:102: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | cpg core 30 | 8s
+drive-on steps {"base": 4800, "cont": 5600, "nod": 3600, "echo": 4800} | amp mass {"base": 667.5, "cont": 783.8, "nod": 483.8, "echo": 667.5}
+seed 11 done 25s
+seed 22 done 43s
+seed 33 done 60s
+seed 101 done 77s
+seed 102 done 94s
+seed 103 done 111s
+seed 104 done 128s
+seed 105 done 145s
+seed 106 done 163s
+seed 107 done 180s
+seed 108 done 197s
+seed 109 done 214s
+seed 110 done 231s
+seed 111 done 249s
+seed 112 done 266s
+seed 113 done 284s
+runs done 284s
+raw_l84.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+C0a True | C0x True | C0x2 True | C0P True | C1 True | C2 True | fd counts {1: 16, 501: 16, 6: 16} | c0x2 counts {2001: 16}
+P2 {"SL_exit": 0.603, "SR_exit": 0.501, "both_exit": 0.61, "mm_exit": 0.573, "cpg_exit": 0.299, "f0_exit": 0.516}
+P2 paired-within {"SL_exit": 0.727, "SR_exit": 0.523, "both_exit": 0.591, "mm_exit": 0.477, "cpg_exit": 0.341, "f0_exit": 0.5}
+P3 {"loso_auc": 0.682, "n": 64}
+P4 {"SL_exit": {"mean_rho": 0.212, "n_pos": 11, "n": 16}, "SR_exit": {"mean_rho": 0.084, "n_pos": 9, "n": 16}, "both_exit": {"mean_rho": 0.116, "n_pos": 8, "n": 16}, "mm_exit": {"mean_rho": -0.122, "n_pos": 8, "n": 16}, "cpg_exit": {"mean_rho": -0.27, "n_pos": 4, "n": 16}}
+E2 nod<base both_exit 13/16 | seed_locked False | var_all 2
+VERDICT PARTIAL | best both_exit auc 0.61 paired 0.591
+done 287s -> l84/results_l84.json

@@ -1,0 +1,55 @@
+---- CERT-0 (run-side anchors) ----
+  fc169c2_pass           True
+  fc169c2_max            0.0
+  ntd_pass               True
+  ntd_min                0.01924740895628929
+  c0a150_pass            True
+  c0a150_max             0.0
+  fc169b2_pass           True
+  fc169_pass             True
+  fc144_pass             True
+  fc145_pass             True
+  ntf4_pass              True
+  ntc2_pass              True
+  nt_pass                True
+  g_cutwA_exact          True
+  g_cutng25_exact        True
+  g_cutng25p_exact       True
+  g_emottop5_exact       True
+  g_emotbot5_exact       True
+  d_stair                5.364418029785156e-07
+  d_band_ok              True
+  pafd_ok                False
+  pafd_nup               15
+  pafd_ndn               13
+  d_n                    {'cutng25p': 21784, 'p25gN': 21784, 'n25gP': 21784}
+  d_edges                {'cutng25p': 644072, 'p25gN': 644072, 'n25gP': 644084}
+CERT-0 (CERT-1 FC-169C2 + CERT-2 C0A-150/5-arm + CERT-3 bisects + C0-NT(d)): GREEN
+structural pins: p25gN graph == cutng25p graph (n 21,784 | edges 644,072)
+CERT-METRIC GREEN: helper copy reproduces l169c2 stored B37 cells (rew1 / rew2 / rew3 / hom / cutwA / cutng25, 4 fields each) EXACTLY
+
+---- B38 Ti per-side duty (n=16) ----
+cutng25   g 0.145445455 | meanR 0.798 kR 16/16 [0.806,1.000] | meanL 0.170 kL  0/16 | SUPER True PARTIAL False NOTSUPER False
+cutng25p  g 0.143526574 | meanR 0.477 kR  8/16 [0.280,0.720] | meanL 0.191 kL  0/16 | SUPER False PARTIAL True NOTSUPER True
+p25gN     g 0.145445455 | meanR 0.324 kR  1/16 [0.011,0.283] | meanL 0.132 kL  0/16 | SUPER False PARTIAL False NOTSUPER True
+n25gP     g 0.143526574 | meanR 0.651 kR 15/16 [0.717,0.989] | meanL 0.253 kL  0/16 | SUPER True PARTIAL False NOTSUPER False
+full      g 0.153125000 | meanR 0.477 kR  8/16 [0.280,0.720] | meanL 0.415 kL  7/16 | SUPER False PARTIAL True NOTSUPER True
+cutwA     g 0.143658196 | meanR 0.423 kR  5/16 [0.142,0.556] | meanL 0.291 kL  3/16 | SUPER False PARTIAL True NOTSUPER True
+paired p25gN_minus_cutng25p: dR -0.152 up 4/16 down 12/16
+paired n25gP_minus_cutng25: dR -0.147 up 3/16 down 13/16
+paired cutng25_minus_cutng25p: dR +0.321 up 16/16 down 0/16
+paired cutng25_minus_cutwA: dR +0.375 up 15/16 down 1/16
+paired cutng25p_minus_cutwA: dR +0.054 up 9/16 down 7/16
+paired p25gN_minus_cutng25: dR -0.474 up 0/16 down 16/16
+paired n25gP_minus_cutng25p: dR +0.174 up 12/16 down 4/16
+P-batch cutng25: B38 kR 16/16 meanR 0.798 | stored B25 kR 15/16 meanR 0.754
+P-batch cutng25p: B38 kR 8/16 meanR 0.477 | stored B25 kR 5/16 meanR 0.399
+
+BRANCH: E1_graph_tracking
+  E0 (cutng25 not SUPER on B38): False
+  E1 (p25gN NOT-SUPER and n25gP SUPER): True
+  E2 (p25gN SUPER and n25gP NOT-SUPER): False
+  XOR contrast reproduced on B38 (cutng25 SUPER, cutng25p NOT-SUPER): True
+  gains | cutng25p 0.143526574 < cutwA 0.143658196 < cutng25 0.145445455 (swap span 1.34%)
+
+wrote l169d/results_l169d.json

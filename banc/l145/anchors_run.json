@@ -1,0 +1,42 @@
+{
+ "g_cutwA": 0.14365819573402408,
+ "g_cutng25": 0.1454454553127289,
+ "g_cutwA_stored_exact": true,
+ "g_cutng25_stored_exact": true,
+ "g_eOutMot": 0.14284219264984138,
+ "g_eMotTop5": 0.1436134350299835,
+ "g_eMotBot5": 0.14367126345634465,
+ "g_eMotIn": 0.1451841366291046,
+ "g_emot_exact": true,
+ "e_band_ok": {
+  "eOutMot": true,
+  "eMotTop5": true,
+  "eMotBot5": true,
+  "eMotIn": true
+ },
+ "new_stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "cutng25": 3.1138459841414945e-05,
+  "eOutMot": 5.5382649103846715e-06,
+  "eMotTop5": 5.540748437254939e-06,
+  "eMotBot5": 3.614276647567749e-05,
+  "eMotIn": 2.0841757456466214e-05
+ },
+ "e_edges": {
+  "eOutMot": 10,
+  "eMotTop5": 5,
+  "eMotBot5": 5,
+  "eMotIn": 23
+ },
+ "K": 77,
+ "mass_split": {
+  "glut19": 0.1103,
+  "other58": 0.3921
+ },
+ "n_seeds": 18,
+ "fc142_max": 0.0,
+ "fc142_pass": true,
+ "c0a142_max": 0.0,
+ "c0a142_pass": true,
+ "c0a_pass": true
+}

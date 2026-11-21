@@ -1,0 +1,419 @@
+{
+ "prereg": "l169b2/PREREG.md",
+ "design": "L169 stage (b2): the floor-4 DYNAMIC arm. Closure node set VERBATIM, edges filtered to pair-level summed syn_count >= 4 (the stored l146 ladder convention), cut at the f4-re-derived window: f4wA = ng4[:20] (carrier intact), f4ng = ng4[:21] (carrier DNp33-L gi 1110 at f4 rank 21), f4tw = ng4[:20] + the f4 mass-twin gi 290 (rank 22, mass gap 2.4e-05). Fresh per-arm af-matched bisects. ONE batch, n=16.",
+ "batch": "B36",
+ "seeds": [
+  3449,
+  3450,
+  3451,
+  3452,
+  3453,
+  3454,
+  3455,
+  3456,
+  3457,
+  3458,
+  3459,
+  3460,
+  3461,
+  3462,
+  3463,
+  3464
+ ],
+ "n_seeds": 16,
+ "cert": {
+  "fc169_pass": true,
+  "fc169_max": 0.0,
+  "ntf4_pass": true,
+  "ntf4_min": 0.02873804420232773,
+  "c0a150_pass": true,
+  "fc144_pass": true,
+  "fc145_pass": true,
+  "g_cutwA_exact": true,
+  "g_cutng25_exact": true,
+  "g_emottop5_exact": true,
+  "g_emotbot5_exact": true,
+  "paf4_ok": true
+ },
+ "cert0": true,
+ "cert_metric": {
+  "cutwA": {
+   "mine": {
+    "kL": 0,
+    "kR": 4,
+    "meanL": 0.278,
+    "meanR": 0.426
+   },
+   "stored": {
+    "meanR": 0.426,
+    "kR": 4,
+    "meanL": 0.278,
+    "kL": 0
+   }
+  },
+  "wAgN": {
+   "mine": {
+    "kL": 0,
+    "kR": 2,
+    "meanL": 0.171,
+    "meanR": 0.317
+   },
+   "stored": {
+    "meanR": 0.317,
+    "kR": 2,
+    "meanL": 0.171,
+    "kL": 0
+   }
+  },
+  "n25gW": {
+   "mine": {
+    "kL": 0,
+    "kR": 15,
+    "meanL": 0.278,
+    "meanR": 0.702
+   },
+   "stored": {
+    "meanR": 0.702,
+    "kR": 15,
+    "meanL": 0.278,
+    "kL": 0
+   }
+  }
+ },
+ "floor": 4,
+ "K4": 73,
+ "f4_twin_gi": 290,
+ "gains": {
+  "f4wA": 0.15051452517509462,
+  "f4ng": 0.16230986118316648,
+  "f4tw": 0.15261898636817928
+ },
+ "f4_stairs": {
+  "f4wA": 0.00010205060243606567,
+  "f4ng": 3.585467735926773e-05,
+  "f4tw": 5.257626374571833e-06
+ },
+ "f4_band_ok": {
+  "f4wA": true,
+  "f4ng": true,
+  "f4tw": true
+ },
+ "f4_n": {
+  "f4wA": 21789,
+  "f4ng": 21788,
+  "f4tw": 21788
+ },
+ "f4_edges": {
+  "f4wA": 469618,
+  "f4ng": 469537,
+  "f4tw": 469519
+ },
+ "paf4": {
+  "f4wA": {
+   "g": 0.15051452517509462,
+   "bisect_af": 0.10895405958096187,
+   "stair": 0.00010205060243606567,
+   "rollout_af_mean": 0.10889095393940806,
+   "rollout_af_maxoff": 0.004829208056132003
+  },
+  "f4ng": {
+   "g": 0.16230986118316648,
+   "bisect_af": 0.10902025550603867,
+   "stair": 3.585467735926773e-05,
+   "rollout_af_mean": 0.10988560132682323,
+   "rollout_af_maxoff": 0.004813907047112778
+  },
+  "f4tw": {
+   "g": 0.15261898636817928,
+   "bisect_af": 0.10905085255702336,
+   "stair": 5.257626374571833e-06,
+   "rollout_af_mean": 0.10971922567114234,
+   "rollout_af_maxoff": 0.004813907047112778
+  }
+ },
+ "table": {
+  "f4wA": {
+   "arm": "f4wA",
+   "kL": 16,
+   "kR": 0,
+   "meanL": 0.698,
+   "meanR": 0.043,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365,
+   "lbL": 0.8063923194655636,
+   "ubL": 1.0000000000000002,
+   "g": 0.15051452517509462,
+   "n": 21789,
+   "edges": 469618,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "f4ng": {
+   "arm": "f4ng",
+   "kL": 2,
+   "kR": 0,
+   "meanL": 0.289,
+   "meanR": 0.081,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365,
+   "lbL": 0.03497748774324047,
+   "ubL": 0.3602282726575869,
+   "g": 0.16230986118316648,
+   "n": 21788,
+   "edges": 469537,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "f4tw": {
+   "arm": "f4tw",
+   "kL": 10,
+   "kR": 0,
+   "meanL": 0.56,
+   "meanR": 0.082,
+   "lbR": 0.0,
+   "ubR": 0.1936076805344365,
+   "lbL": 0.38641040545502725,
+   "ubL": 0.8151876744113636,
+   "g": 0.15261898636817928,
+   "n": 21788,
+   "edges": 469519,
+   "super": false,
+   "partial": false,
+   "notsuper": true
+  },
+  "full": {
+   "arm": "full",
+   "kL": 3,
+   "kR": 6,
+   "meanL": 0.407,
+   "meanR": 0.475,
+   "lbR": 0.18481232558863636,
+   "ubR": 0.6135895945449729,
+   "lbL": 0.06591599071428139,
+   "ubL": 0.43008880961974144,
+   "g": 0.153125,
+   "n": null,
+   "edges": null,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "cutwA": {
+   "arm": "cutwA",
+   "kL": 0,
+   "kR": 3,
+   "meanL": 0.233,
+   "meanR": 0.371,
+   "lbR": 0.06591599071428139,
+   "ubR": 0.43008880961974144,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.14365819573402408,
+   "n": null,
+   "edges": null,
+   "super": false,
+   "partial": true,
+   "notsuper": true
+  },
+  "cutng25": {
+   "arm": "cutng25",
+   "kL": 0,
+   "kR": 16,
+   "meanL": 0.106,
+   "meanR": 0.754,
+   "lbR": 0.8063923194655636,
+   "ubR": 1.0000000000000002,
+   "lbL": 0.0,
+   "ubL": 0.1936076805344365,
+   "g": 0.1454454553127289,
+   "n": null,
+   "edges": null,
+   "super": true,
+   "partial": false,
+   "notsuper": false
+  }
+ },
+ "legs": {
+  "f4ng": {
+   "mean_paired_dR_vs_f4wA": 0.038,
+   "n_up": 9,
+   "n_down": 7
+  },
+  "f4tw": {
+   "mean_paired_dR_vs_f4wA": 0.038,
+   "n_up": 12,
+   "n_down": 2
+  },
+  "xor": {
+   "mean_paired_dR_ng_minus_tw": -0.001,
+   "n_up": 8,
+   "n_down": 8
+  }
+ },
+ "vacuous_xor_guard": false,
+ "g1": false,
+ "g2": true,
+ "g3": false,
+ "branch": "G2_no_transfer",
+ "addendum_L_descriptive": {
+  "label": "DESCRIPTIVE, post-hoc \u2014 the registered axis is R-side duty (branch G2_no_transfer). These L-side numbers are reported because an unreported loud side would misrepresent the substrate (L46/L107 per-side law); they carry NO registered claim and no branch depends on them.",
+  "rows": {
+   "f4wA": {
+    "meanL": 0.698,
+    "kL": 16,
+    "lbL": 0.8063923194655636,
+    "ubL": 1.0000000000000002,
+    "meanR": 0.043,
+    "kR": 0,
+    "perseedL": [
+     0.69,
+     0.66,
+     0.673,
+     0.823,
+     0.867,
+     0.767,
+     0.657,
+     0.607,
+     0.843,
+     0.913,
+     0.55,
+     0.593,
+     0.503,
+     0.627,
+     0.72,
+     0.68
+    ]
+   },
+   "f4ng": {
+    "meanL": 0.289,
+    "kL": 2,
+    "lbL": 0.03497748774324047,
+    "ubL": 0.3602282726575869,
+    "meanR": 0.081,
+    "kR": 0,
+    "perseedL": [
+     0.11,
+     0.187,
+     0.327,
+     0.373,
+     0.347,
+     0.127,
+     0.113,
+     0.063,
+     0.507,
+     0.407,
+     0.5,
+     0.437,
+     0.293,
+     0.13,
+     0.24,
+     0.47
+    ]
+   },
+   "f4tw": {
+    "meanL": 0.56,
+    "kL": 10,
+    "lbL": 0.38641040545502725,
+    "ubL": 0.8151876744113636,
+    "meanR": 0.082,
+    "kR": 0,
+    "perseedL": [
+     0.69,
+     0.64,
+     0.76,
+     0.463,
+     0.503,
+     0.577,
+     0.757,
+     0.633,
+     0.33,
+     0.353,
+     0.71,
+     0.417,
+     0.17,
+     0.76,
+     0.737,
+     0.453
+    ]
+   },
+   "cutwA": {
+    "meanL": 0.233,
+    "kL": 0,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "meanR": 0.371,
+    "kR": 3,
+    "perseedL": [
+     0.057,
+     0.293,
+     0.357,
+     0.177,
+     0.173,
+     0.44,
+     0.39,
+     0.193,
+     0.423,
+     0.137,
+     0.4,
+     0.14,
+     0.11,
+     0.193,
+     0.063,
+     0.18
+    ]
+   },
+   "cutng25": {
+    "meanL": 0.106,
+    "kL": 0,
+    "lbL": 0.0,
+    "ubL": 0.1936076805344365,
+    "meanR": 0.754,
+    "kR": 16,
+    "perseedL": [
+     0.02,
+     0.017,
+     0.147,
+     0.13,
+     0.223,
+     0.257,
+     0.043,
+     0.023,
+     0.03,
+     0.047,
+     0.173,
+     0.107,
+     0.017,
+     0.36,
+     0.047,
+     0.06
+    ]
+   }
+  },
+  "paired_legs": {
+   "f4ng_vs_f4wA": {
+    "mean_paired_dL": -0.409,
+    "n_up": 0,
+    "n_down": 16
+   },
+   "f4tw_vs_f4wA": {
+    "mean_paired_dL": -0.139,
+    "n_up": 6,
+    "n_down": 9
+   },
+   "f4ng_vs_f4tw": {
+    "mean_paired_dL": -0.27,
+    "n_up": 5,
+    "n_down": 11
+   }
+  },
+  "side_dominance": {
+   "f4wA": "L",
+   "f4ng": "L",
+   "f4tw": "L",
+   "cutwA": "R",
+   "cutng25": "R"
+  }
+ }
+}

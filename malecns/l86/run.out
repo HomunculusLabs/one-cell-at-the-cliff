@@ -1,0 +1,34 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l86_combo.py:103: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l86_combo.py:105: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 046L 2 | 7s
+drive-on 48.0s all arms | tables asserted
+seed 11 done 19s
+seed 22 done 33s
+seed 33 done 45s
+seed 101 done 58s
+seed 102 done 71s
+seed 103 done 84s
+seed 104 done 98s
+seed 105 done 111s
+seed 106 done 125s
+seed 107 done 139s
+seed 108 done 152s
+seed 109 done 165s
+seed 110 done 178s
+seed 111 done 190s
+seed 112 done 203s
+seed 113 done 215s
+runs done 215s
+raw_l86.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+A1 True | A2 True | A3 prefix True fd True | A4 fd True | degenerate False | C1 True | wired_dead 0
+first_div [6, 2001]
+budget {"hybrid_fb": {"echo_mass_mean": 85.6328, "echo_mass_min": 82.5299, "echo_mass_max": 88.4524, "entrain_mass": 667.5, "ratio_mean": 0.1283}, "hybrid_e0": {"echo_mass_mean": 28.7784, "echo_mass_min": 27.1244, "echo_mass_max": 29.562, "entrain_mass": 667.5, "ratio_mean": 0.0431}}
+A5 budget True | A6 certification True 
+A7 seg0 parity True
+segs means {"hybrid": [0.605, 0.402, 0.533], "hybrid_fb": [0.739, 0.298, 0.56], "hybrid_e0": [0.739, 0.251, 0.505]}
+d07 k {"hybrid": 13, "hybrid_fb": 13, "hybrid_e0": 14} wilson {"hybrid": [0.57, 0.934], "hybrid_fb": [0.57, 0.934], "hybrid_e0": [0.64, 0.965]}
+gates G1 True G2a False G2b False G3 False G4 True
+VERDICT E2 TAX LAW WINS (G2a FAIL too)
+done 218s -> l86/results_l86.json

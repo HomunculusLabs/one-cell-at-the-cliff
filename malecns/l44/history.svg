@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" font-family="DejaVu Sans, sans-serif">
+<rect width="1500" height="560" fill="#1b1d24"/>
+<text x="40" y="44" fill="#e8e6e3" font-size="25" font-weight="bold">L44 entrain-history protection: basin entry at 10-20 s; short pulses are a lottery</text>
+<text x="40" y="70" fill="#9aa0ae" font-size="14">0.7 Hz mech history for H s immediately before a fixed stop (DNg88 -8, 20 s); free-settled cord, one shared noise stream; seeds 11/22/33</text>
+<text x="60" y="86" fill="#e8e6e3" font-size="16" font-weight="bold">A. antagonist structure through the stop (S, rolling 5 s median)</text>
+<rect x="100" y="100" width="380" height="360" fill="none" stroke="#33363f"/>
+<text x="68" y="280" fill="#9aa0ae" font-size="13" transform="rotate(-90 68 280)" text-anchor="middle">S(Tr) during stop</text>
+<line x1="100" y1="392.5" x2="480" y2="392.5" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="96" y="396.5" fill="#9aa0ae" font-size="12" text-anchor="end">-0.50</text>
+<line x1="100" y1="280.0" x2="480" y2="280.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="96" y="284.0" fill="#9aa0ae" font-size="12" text-anchor="end">+0.00</text>
+<line x1="100" y1="223.8" x2="480" y2="223.8" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="96" y="227.8" fill="#9aa0ae" font-size="12" text-anchor="end">+0.25</text>
+<line x1="100" y1="167.5" x2="480" y2="167.5" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="96" y="171.5" fill="#9aa0ae" font-size="12" text-anchor="end">+0.50</text>
+<text x="100.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">0</text>
+<text x="273.7" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">5</text>
+<text x="332.5" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">10</text>
+<text x="395.1" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">20</text>
+<text x="460.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">40</text>
+<text x="290" y="498" fill="#9aa0ae" font-size="13" text-anchor="middle">entrain history H (s)</text>
+<rect x="100" y="100" width="380" height="123.8" fill="#2f6e4f" fill-opacity="0.18"/>
+<text x="476" y="217.8" fill="#7fc8a0" font-size="12" text-anchor="end">protected (S&#8805;.25)</text>
+<line x1="100" y1="280.0" x2="480" y2="280.0" stroke="#e05555" stroke-width="1"/>
+<line x1="100" y1="170.9" x2="480" y2="170.9" stroke="#7fd4ff" stroke-dasharray="5 4" stroke-width="2"/>
+<text x="106" y="164.9" fill="#7fd4ff" font-size="12">free-run band .45-.52 (L40 ctl)</text>
+<polyline points="100.0,246.2 273.7,197.7 332.5,291.9 395.1,175.8 460.0,156.2" fill="none" stroke="#e8e6e3" stroke-width="2.5"/>
+<circle cx="100.0" cy="244.2" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="273.7" cy="197.7" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="332.5" cy="331.1" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="395.1" cy="185.7" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="460.0" cy="147.2" r="6" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<circle cx="100.0" cy="246.2" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="273.7" cy="177.2" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="332.5" cy="291.9" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="395.1" cy="175.8" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="460.0" cy="191.8" r="6" fill="none" stroke="#ffb37f" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="100.0" cy="264.9" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<circle cx="273.7" cy="291.5" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<circle cx="332.5" cy="172.9" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<circle cx="395.1" cy="159.4" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<circle cx="460.0" cy="156.2" r="6" fill="none" stroke="#b39dff" stroke-width="2.5" stroke-dasharray="2 3"/>
+<text x="106" y="448" fill="#9aa0ae" font-size="12">median line; circles per seed (dashes distinguish seeds); h5/h10 inverted seeds sit below 0</text>
+<text x="560" y="86" fill="#e8e6e3" font-size="16" font-weight="bold">B. rhythm frequency late in stop (f_late)</text>
+<rect x="600" y="100" width="380" height="360" fill="none" stroke="#33363f"/>
+<text x="568" y="280" fill="#9aa0ae" font-size="13" transform="rotate(-90 568 280)" text-anchor="middle">f (Hz)</text>
+<line x1="600" y1="347.5" x2="980" y2="347.5" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="351.5" fill="#9aa0ae" font-size="12" text-anchor="end">0.7</text>
+<line x1="600" y1="280.0" x2="980" y2="280.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="284.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.0</text>
+<line x1="600" y1="190.0" x2="980" y2="190.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="596" y="194.0" fill="#9aa0ae" font-size="12" text-anchor="end">1.4</text>
+<text x="600.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">0</text>
+<text x="773.7" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">5</text>
+<text x="832.5" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">10</text>
+<text x="895.1" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">20</text>
+<text x="960.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">40</text>
+<text x="790" y="498" fill="#9aa0ae" font-size="13" text-anchor="middle">entrain history H (s)</text>
+<line x1="600" y1="347.5" x2="980" y2="347.5" stroke="#7fc8a0" stroke-dasharray="5 4" stroke-width="2"/>
+<text x="606" y="341.5" fill="#7fc8a0" font-size="12">entrain 0.7 Hz</text>
+<line x1="600" y1="190.0" x2="980" y2="190.0" stroke="#e0b255" stroke-dasharray="5 4" stroke-width="2"/>
+<text x="606" y="184.0" fill="#e0b255" font-size="12">intrinsic attractor 1.4 Hz</text>
+<polyline points="600.0,190.0 773.7,190.0 832.5,235.0 895.1,370.0 960.0,370.0" fill="none" stroke="#7fd4ff" stroke-width="2" stroke-dasharray="none" stroke-opacity="0.9"/>
+<polyline points="600.0,190.0 773.7,190.0 832.5,145.0 895.1,280.0 960.0,370.0" fill="none" stroke="#ffb37f" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.9"/>
+<polyline points="600.0,190.0 773.7,145.0 832.5,235.0 895.1,235.0 960.0,370.0" fill="none" stroke="#b39dff" stroke-width="2" stroke-dasharray="2 3" stroke-opacity="0.9"/>
+<text x="606" y="448" fill="#9aa0ae" font-size="12">history &#8805;20 s carries the 0.6-0.7 Hz memory THROUGH the stop (3/3 at 40 s)</text>
+<text x="1060" y="86" fill="#e8e6e3" font-size="16" font-weight="bold">C. named CPG core pool (mean X)</text>
+<rect x="1100" y="100" width="340" height="360" fill="none" stroke="#33363f"/>
+<text x="1068" y="280" fill="#9aa0ae" font-size="13" transform="rotate(-90 1068 280)" text-anchor="middle">mean X (core pool)</text>
+<line x1="1100" y1="370.0" x2="1440" y2="370.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="374.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.15</text>
+<line x1="1100" y1="280.0" x2="1440" y2="280.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="284.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.20</text>
+<line x1="1100" y1="190.0" x2="1440" y2="190.0" stroke="#33363f" stroke-dasharray="2 4" stroke-width="1"/>
+<text x="1096" y="194.0" fill="#9aa0ae" font-size="12" text-anchor="end">0.25</text>
+<text x="1100.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">0</text>
+<text x="1254.4" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">5</text>
+<text x="1306.6" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">10</text>
+<text x="1362.3" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">20</text>
+<text x="1420.0" y="482" fill="#9aa0ae" font-size="12" text-anchor="middle">40</text>
+<text x="1270" y="498" fill="#9aa0ae" font-size="13" text-anchor="middle">entrain history H (s)</text>
+<polyline points="1100.0,361.4 1254.4,228.2 1306.6,216.6 1362.3,213.8 1420.0,200.8" fill="none" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<polyline points="1100.0,343.4 1254.4,285.9 1306.6,287.7 1362.3,197.6 1420.0,210.9" fill="none" stroke="#e08b55" stroke-width="2.5" stroke-dasharray="6 4"/>
+<line x1="1120" y1="122" x2="1152" y2="122" stroke="#7fd4ff" stroke-width="2.5" stroke-dasharray="none"/>
+<text x="1158" y="126" fill="#7fd4ff" font-size="12">late history (pre-stop)</text>
+<line x1="1120" y1="142" x2="1152" y2="142" stroke="#e08b55" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="1158" y="146" fill="#e08b55" font-size="12">late stop</text>
+<text x="1106" y="448" fill="#9aa0ae" font-size="12">5 named CPG types x 6 cells (Pugliese core): recruited by entrainment,</text>
+<text x="1106" y="466" fill="#9aa0ae" font-size="12">never silenced by the stop (core ratio &#8805;5 in 15/15 protected pairs)</text>
+<text x="40" y="542" fill="#9aa0ae" font-size="12">L44 &#183; l44_history.py exit 0 (CPU 82 s) &#183; C1 pass (dm lands, prefix bit-identical, x88 un-pins) &#183; C0 ratio-anchor failed (disclosed): L40 kill was structural, see PREREG ADDENDUM 1</text>
+</svg>

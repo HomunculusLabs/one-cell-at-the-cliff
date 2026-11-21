@@ -1,0 +1,226 @@
+## 1. Introduction
+
+We report four load-bearing results, and state them up front:
+(1) at gain-certified MATCHED operating points, cohort removal collapses
+right-side antagonist structure then super-raises it — kill 5 of 178 at k=19,
+super 188 of 194 at k=29 [l172.pooled], a non-monotone window rather than a
+dose curve. (2) The transition step is carried by ONE cell's IDENTITY, not its
+removal mass (mass-twin XOR: the twin lands INTERMEDIATE at
+30 of 66, [.340,.574] — above the base by +.175 [+.047,+.305] and below the
+carrier by −.512 [−.628,−.388] [l172.pooled, l172.diffs]). That carrier is
+SUFFICIENT, not unique, and set-dependently so: of seven carrier-free cohorts
+mass-matched to the same window, one reaches super (39/48 [l168.scr]) and six
+do not. The carrier's causal footprint is its EDGE SET, and its own firing
+matters only where the cohort's drive no longer covers for it (§2.4). (3) The
+carrier's own ACTIVITY is substrate-gated: not detectably moving on the intact
+subnet, flip-completing on the cut base (pooled 78 of 98, Wilson [.706,.864]
+[l172.pooled]). (4) Frequency claims are BAND-RELATIVE, and the sub-band line
+that prompted the rule is STIMULUS-SET: the drive envelope's own spectrum
+peaks at .100 Hz [l171.envelope], exactly where the measured line sits. The
+identity contrast does not ride on it — re-scored in the unchopped fast
+segment (12/16 vs 0/16) and after a 0.3-Hz high-pass (15/16 vs 1/16), the
+carrier-vs-twin ordering is preserved [l171.panel]. The slow-line censuses
+themselves (sub-band in 449 of 449 baseline traces on unique seeds
+[l172.census_unique]; a Tr/Ta/Sr pool-subset carrier, 8 of 20 [l157.pooled])
+move to §2.8 and §4 as limitations.
+
+Connectome-constrained models now reproduce activity or behaviour in several
+systems — the fly visual lineage [1], the whole-brain sensorimotor model [2],
+an untrained brain-and-nerve-cord simulation [3], a frozen larval rate
+operator [7], and connectome-constrained recurrent fits whose predicted
+activity is compared against measurement [30]. Duckophila [35] is an
+independent whole-brain leaky-integrate-and-fire duck on FlyWire v783 [10]
+driving a MuJoCo body; its degree-preserving rewiring collapses startle to 0
+of 20 animals vs intact 1.00 [.91,1.00] with an input-null at 0.50 honestly
+disclosing the encoder's share. That null-control form is the one our §2
+mirrors at rate fidelity. The open question has moved from DOES wiring matter
+to WHICH wiring decisions matter — at what granularity (statistics vs exact
+placement vs individual cells).
+
+What a perturbation in a model can and cannot license is itself an old
+question, and we inherit its instruments rather than re-invent them.
+Degenerate parameter sets produce the same network output [29], and lesioning
+a system whose ground truth is known exposes how little a deficit alone
+licenses [26]. Contribution attribution handles interaction terms explicitly
+[27, 28]. From the bench side, acute manipulations carry off-target effects
+[24, 25], and even a clean genetic silencer acts on a circuit rather than on a
+function [23]. Network-control work on Caenorhabditis elegans predicted neuron
+function from wiring and tested single-cell ablations in the animal [31], and
+a signal-propagation atlas then measured how far wiring predicts functional
+connectivity [32]. Our twin control is the mass-matched member of that family.
+
+Walking-CPG field context (Sapkal et al. [34]) supplies three findings that
+bear on this one: per-leg CPG modules survive near-total deafferentation —
+substrate removal symmetricizes step-cycles (duty → 0.5) while joint temporal
+ORDER is conserved. FeCO proprioceptive input modulates frequency and
+strengthens coupling but is never necessary. And their wet-lab motif's
+IN12B003 strongly drives tibia-FLEXOR motor neurons that the modeling triad
+left non-rhythmic — field support for flexor-first pools as rhythmogenic
+substrate, the same pools our transition gates. AMENDMENT (their signed
+direction, tested): we preregistered deafferentation-speeds-the-CPG as a
+prediction and ran it at rate fidelity (whole-run mech-OFF, fresh batch B34,
+paired seeds): NOT MET — dominant-frequency deltas go 6+/10− of 16, p=.4545
+[l154.freq]. Removal re-draws the attractor per seed (anchor seeds
+.70/.32 Hz on → .45/1.09 off) rather than speeding the rhythm — the sensory
+sinusoid was the ENTRAINER, not a throttle. The STRUCTURE axis matches the
+field: antagonist antiphase S07 survives deafferentation on both live sides
+(Ti L +.61 / R +.72, Tr R +.76) and the dead left-Tr channel wakes
+(−.08 → +.04) [l154.structure] — alternation needs no sensory drive, the
+CPG-central claim.
+
+Nearest neighbours and the gap come from the targeted novelty sweep logged in
+LANE-RESEARCH.md 2026-11-18. There are four neighbours and one gap.
+
+(a) ApproxBrain [6] is the closest formal neighbour, and closer than an
+earlier draft of this paper allowed. It certifies cost-indexed subset
+SUFFICIENCY on the hand-curated 148-neuron walking circuit of [4], and it does
+report that the circuit's three interneurons are individually NECESSARY — not
+partner-substitutable — with a mean task distance of .017
+over 32 held-out parameter draws and no failing replicate. Single-cell
+necessity in a connectome-constrained model is therefore established prior
+art, and our contrast narrows to two things it does not do: the subset is
+curated and searched rather than emergent in a bulk-extracted subnet, and
+necessity is compared against other subsets rather than against a cell of
+matched removal mass.
+
+(b) The frozen larval rate operator [7] shows exact placement, rather than
+degree and weight statistics, governs specific response modes — a whole-graph
+claim, not a single-cell causal carrier.
+
+(c) Wet-lab single-neuron work anchors single-cell SUFFICIENCY in the animal:
+descending pathway anatomy and optogenetic activation screens [14, 18], the
+giant-fibre escape decision [33], a dedicated brain circuit for forward
+walking [13], and the premotor organisation that those commands act through
+[15, 16, 17]. In-model,
+FlyHack [5] stress-tests a connectome-constrained visual model and finds
+mechanistic conclusions swing with the comparison model, the intervention form
+and the trained solution — greedy cell-type sets meet its tuning criterion in
+only 25 of 50 ensemble members, and one attribution score falls from .872 to
+.126 when the same ground truth is scored against a different intervention
+form. That is the robustness critique our gain ensemble (§2.5) and batch
+pooling (§2.9) answer directly.
+
+(d) Focal neuronal loss and cell replacement in a connectome model of fly
+steering [36] is the closest prior art to the identity half of this paper. On
+the male central nervous system connectome [9], run as an untuned spiking
+model of the kind in [2], removing all 37 descending neurons inside a
+1,000-cell spatial mask leaves 57.4% of intact steering distance, while 37
+other cells drawn from the same mask leave 101.0%. After a 2,000-cell lesion,
+restoring 100 cells by motor-control priority recovers 62.5% [60.9-64.0] of
+intact displacement against 10.1% [9.1-11.1] for a random hundred. At the same
+100 intended positions, matched identities reach 60.0% [58.3-61.6] against
+6.7% [6.3-7.0] for non-target central-brain identities. Identity beating cell
+number in a connectome-constrained fly model is therefore prior art as well,
+and we scope their result as they do:
+89 of their 100 matched cells copy their partners from a reflected neuron of
+the same type, so the finding is strongest as
+type-dependent integration rather than as single-cell identity. Our contrast
+with it is four specific things, and "identity matters" is not one of them.
+First, matching currency: their controls are
+matched on cell count and ours on removal mass. Count-matching is the weaker
+control, because 37 cells drawn from a spatial mask carry only a fraction of
+37 descending neurons' out-mass, and our carrier sits
+9.72× below any mass-only band (§2.2). Second, resolution:
+their unit is a class — 37 descending neurons, 100-cell grafts, a cell type —
+while ours is one cell against one mass twin. Third, readout: theirs is a
+behavioural scalar decoded through a hand-built open-loop controller whose
+network is measured once per realization, ours an emergent structure statistic
+inside the network's own dynamics. Fourth, direction and substrate:
+they remove and then add cells on the male central nervous system, we remove
+on the female cord.
+
+The gap this paper fills, stated after both narrowings above:
+not that identity matters — [6] and [36] show that already — but that an
+all-or-none identity step EMERGES in an UNCURATED bulk-extracted subnet and
+survives a MASS-matched twin control, with the carrier's own removal mass
+9.72× below any band where mass alone reproduces the step. The supporting
+claims are the preregistered twin and scramble controls, replication across
+fresh seed batches with pooled intervals, and a gain ensemble that bounds
+operating-point proximity.
+
+## 2. Results
+
+### 2.1 The dose cliff (Fig 1 = peabrain-figs/l136_transition_law.png)
+
+The substrate is the l65 cord subnet, 20,521 cord + 728 DN-into cells, and the
+Ti flexor pool has n=101 [subnet]; 11 runs are summed [n_runs_summed]. The
+U-law is read with pooled Wilson intervals, and the k=24→25 step (+.371 meanR
+[xor.steps]) is the transition. The ladder is non-monotone: k=58 kills again
+(1 of 258 [l172.pooled]) — a WINDOW, not a monotone dose response. Its LEFT
+side is the opposite story (253 of 258), so k=58 kills the right pair, not the
+cord. Every arm's count in this paper is its single canonical pooled count
+(§2.9): the unique-seed union over all admissible batches.
+
+### 2.2 Identity, not mass: the twin XOR
+
+At the transition, rank 25 = id 1110 (DNp33-L — THE carrier; m .00644), rank
+26 = id 319 (DNpe025-R, the twin; m .00604), delta 3.9e-04 [xor]. 1110-alone ⇒
+SUPER (203 of 210 pooled, [.933,.984]); 319-alone ⇒ INTERMEDIATE
+(30 of 66, [.340,.574]) [l172.pooled]. The twin is not neutral and the
+question is not underpowered at the canonical pool: twin − base = +.175, 95%
+CI [+.047,+.305], Fisher p = .008, while twin − carrier = −.512 [−.628,−.388]
+[l172.diffs]. On the smaller two-batch pool the same contrast was
+indistinguishable from zero, so the earlier "neutral" label was a pooling
+artefact, not a measured null.
+
+Both READS of the flip ride the same cell (right-side super-raise AND
+left-side death) — crossed effect. The canonical pooled counts (unique seeds,
+all admissible batches) are: carrier cell 203 of 210, Wilson [.933,.984], mean
+duty .766 with bootstrap [.749,.783]; cutwA base 72 of 258, [.228,.337], mean
+duty .404 [.385,.425] [l172.pooled]. Carrier − base = +.688 [+.621,+.742]
+[l172.diffs].
+
+**Scramble controls: sufficient, not unique — and set-dependently so (L168).**
+The XOR above fixes mass and varies identity between TWO cells. The
+complementary control fixes mass and varies the whole REMOVED SET, with the
+carrier excluded: seven carrier-free cohorts drawn from ranks 30–58 of the
+same mass ladder, each mass-matched to the k=29 window (.2588 removed mass
+[l168.window_mass]). They do NOT behave alike, and that heterogeneity is the
+result:
+
+| arm | removed mass | extra | batches | right side | left side |
+|---|---|---|---|---|---|
+| cutscr0 (ranks 30–39, max-mass, deterministic) | .2490 | .0544 | 3 | 39/48 [.681,.898] | 35/48 [.590,.834] |
+| cutscr3 (scattered, pinned RNG) | .2388 | .0442 | 2 | 17/32 [.364,.691] | 12/32 [.229,.547] |
+| cutscr2 (scattered, pinned RNG) | .2409 | .0463 | 2 | 12/32 [.229,.547] | 23/32 [.546,.844] |
+| cutscrL1 (scattered, cl40-matched) | .2406 | .0460 | 1 | 10/16 [.386,.815] | 0/16 [.000,.194] |
+| cutscrL2 (scattered, cl40-matched) | .2386 | .0439 | 1 | 4/16 [.102,.495] | 9/16 [.332,.769] |
+| cutcl40 (ranks 40–49, contiguous) | .2396 | .0450 | 1 | 0/16 [.000,.194] | 11/16 [.444,.858] |
+| cutscr1 (scattered, pinned RNG) | .2422 | .0476 | 2 | 0/32 [.000,.107] | 0/32 [.000,.107] |
+| untreated base (`full`, same three batches) | — | — | 3 | 16/48 [.217,.475] | 15/48 [.199,.453] |
+
+All rows re-derived from the stored per-batch tables in
+`banc/l125,l127,l128/results_*.json:table.Ti` by `banc/l168/l168_pools.py`
+[l168.scr]; single-batch rows are DISCLOSED as such (cl40 / scrL1 / scrL2
+were run once).
+
+Three things follow, and they re-scope the headline claim:
+
+1. **Not unique.** One carrier-free mass-matched cohort — the heaviest,
+   cutscr0 — does reach the super class on the right (39/48, lb .681, three
+   batches). So removing DNp33-L is a SUFFICIENT route to the transition at
+   this window, not the only one. The manuscript's claim is accordingly
+   sufficiency-under-mass-control, never uniqueness.
+2. **Set-dependent, not mass-dependent.** The seven scramble sets span only
+   .0439–.0544 of extra removed mass yet span the entire outcome range. The
+   SECOND-heaviest set kills outright (cutscr1, .0476, 0/32) while two
+   LIGHTER sets sit well above it (cutscr3 .0442 at 17/32; cutscrL1 .0460 at
+   10/16), so the right-side outcome is not monotone — not even ordered — in
+   removed mass among carrier-free sets. That is the same conclusion the
+   two-cell XOR reaches one level down.
+3. **Scrambles do not reproduce the crossed state.** cutscr0 raises BOTH
+   sides above the untreated base band (right 39/48 vs 16/48; left 35/48 vs
+   15/48) [l168.base]. The carrier's signature is CROSSED — right-side
+   super-raise WITH left-side death (§2.2 above). So the one scramble that
+   matches the carrier on the claim axis still differs from it on the other
+   side: same class, different state.
+
+### 2.3 The carrier is not statically predictable
+
+The carrier cell DNp33-L is ACh, neck-connective class; 80 out-edges, 87%
+intrinsic / 13% motor, ZERO direct antagonist-pool edges, mid-pack
+removal-mass rank (34/58); the mass-twin carries the family's only
+interconnect edges — the carrier is an input-side isolate. (Sources:
+l134/static.json, l137 static tables; label as observation, not mechanism
+claim.)
+

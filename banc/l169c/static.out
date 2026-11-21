@@ -1,0 +1,22 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-1] l151 s1/s2/s3 re-derive EXACT: 415 scalar fields GREEN
+========================================================================
+P1 carrier gi 1110: out 80 in 13 incident 93 mass 183.96376 ng_rank 24
+P2 hom gi 928: DNp33 side right nt acetylcholine
+   membership: cord_mask=False dn_all=True dn_into=True dn_proj=True in_keep_old_l65=True in_keep_new_closure=True in_dn_new_g=False in_heav_K=False in_ng_desc=False in_glut_desc=False in_cut_window24=False in_cut_window25=False present_on_G1_cutwA=True pure_proj=False
+   carrier   : dn_into=False dn_proj=True in_keep_old_l65=False in_dn_new_g=True pure_proj=True
+P3 carrier_G1  out   80 (  183.96) in  13  intr   70 motor  10 sens   0  intr_share 0.870  ndst 80
+P3 hom_G1      out   88 (  200.05) in  13  intr   77 motor  11 sens   0  intr_share 0.855  ndst 88
+P3 hom_G0      out   88 (  200.05) in  13  intr   77 motor  11 sens   0  intr_share 0.855  ndst 88
+P4 dst overlap: carrier 80 / hom 88 / shared 6 / Jaccard 0.0370; hom dst in T70 5 T10 1
+   motor sides carrier {'left': {'edges': 9, 'mass': 21.617523982581073}, 'right': {'edges': 1, 'mass': 2.302585092994046}, 'unknown': {'edges': 0, 'mass': 0.0}}
+   motor sides hom     {'left': {'edges': 1, 'mass': 2.995732273553991}, 'right': {'edges': 10, 'mass': 26.033904683721993}, 'unknown': {'edges': 0, 'mass': 0.0}}
+   pools with direct mass: []
+P5 partner pool 64328 rows (804.1x carrier), DN->cord block 64408, chance T70 mass share 0.0070
+P6 draws(100): relocated med 80.0 min 80, T70 mass share med 0.0000, motor share med 0.1091, ndst med 80.0 (carrier 80)
+------------------------------------------------------------------------
+RULE C1 -> C1_independent (928 in cut window25=False)
+RULE C2 -> C2_nonequivalent  legs {'same_class': False, 'edges_factor2': True, 'mass_factor2': True, 'intrinsic_share_20pp': True, 'edge_ratio': 1.1, 'mass_ratio': 1.0874561724677436}
+RULE C3 -> expressible True nondegenerate True admissible True
+========================================================================
+written l169c/static.json (4s)

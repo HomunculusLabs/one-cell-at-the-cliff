@@ -1,0 +1,26 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+BANC pins green: k-ladder + rank twins (1110/319) + K/mass_split
+
+== MALE side (closure mirror) ==
+S1: keep_old 21,516 keep_new 21,544 dn_new 28 added 1,942 (dn-out 787) | heavy K 9 (0 glut / 9 ng)
+S2: male DNp33: [{"gi": 616, "bodyId": 10664, "somaSide": "R", "nt": "acetylcholine", "glut": false, "in_heavy": false, "heavy_rank": null, "ng_rank": null, "mass": 0.0, "mass_share": 0.0}, {"gi": 1342, "bodyId": 11438, "somaSide": "L", "nt": "acetylcholine", "glut": false, "in_heavy": false, "heavy_rank": null, "ng_rank": null, "mass": 0.0, "mass_share": 0.0}]
+S3: window shares male {'r1_19': None, 'r20_29': None, 'r30_rest': None, 'n_ng': 9} vs BANC {'r1_19': 0.1946, 'r20_29': 0.0642, 'r30_58': 0.1333}
+male ng rank-25/26 cells (descriptive): []
+male ng top-10 types: ['DNpe037', 'DNge086', 'DNpe012_a', 'DNpe057', 'DNpe057', 'DNge085', 'DNge085', 'DNg09_a', 'DNge115']
+S5: male pools {'Ti_flex': 84, 'Ti_ext': 12, 'Tr_flex': 57, 'Tr_ext': 11} vs BANC {'Ti_fL': 50, 'Ti_eL': 6, 'Tr_fL': 31, 'Tr_eL': 24}
+S4: v783 'DNp33' rows {'n': 2, 'sides': ['left', 'right']} | BANC 1110 fafb match 720575940604103084 in live brain -> True
+post-hoc RAW-weight rank of DNp33 among dn_new: [{'gi': 616, 'raw_rank_of_dnnew': 29}, {'gi': 1342, 'raw_rank_of_dnnew': 29}]
+
+== L170: matched synapse floor on the male side ==
+floor 1: edges  25,560,079 | dn_into 1,277 dn_proj 1,305 | dn_new   28 (glut   0 / ng    9) | K   9 share 0.5187 | n_ng    9 window None,None,None
+floor 2: edges  15,268,644 | dn_into 1,106 dn_proj 1,305 | dn_new  199 (glut   4 / ng   42) | K  46 share 0.5063 | n_ng   42 window 0.2578,0.0882,0.1012
+floor 3: edges  10,510,014 | dn_into   963 dn_proj 1,305 | dn_new  342 (glut   9 / ng   43) | K  52 share 0.5015 | n_ng   43 window 0.2818,0.0667,0.067
+floor 4: edges   7,890,959 | dn_into   845 dn_proj 1,303 | dn_new  458 (glut   8 / ng   51) | K  59 share 0.5004 | n_ng   51 window 0.2352,0.0786,0.1307
+CERT-1/2 GREEN: floor-1 arm reproduces the stored l138 male side EXACTLY
+
+BRANCH M1_floor_changes_cohort | rel change 11.2143 (dn_new 28 -> 342), K 9 -> 52
+P1 (dn_new rises) True | P2 (DNp33 in-edges fall) True | M3_dnp33_pure False ([None, None] ng ranks)
+P4 window computable at floor 3: True | BANC baseline {'r1_19': 0.1946, 'r20_29': 0.0642, 'r30_58': 0.1333}
+
+l170/static.json written

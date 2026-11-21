@@ -1,0 +1,11 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l43b_entx.py:75: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l43b_entx.py:77: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub ok | mech 3588 | 046L 2 | DNg88 2
+seed 11 done 17s
+seed 22 done 27s
+seed 33 done 37s
+ANCHOR entx-vs-l42stack[0,4000) max|d| = 0.0
+ENTX {"11": {"pre_ratio": 2575.0, "late_ratio": 972.0, "f_late": 0.8, "depth": 1.603, "kill_latency": 16, "min_x88": -0.008, "post_early_ratio": 1996.1, "f_post_early": 0.6, "post_last_ratio": 299.0, "f_post_last": 0.6, "resurrect_latency": 389, "S_med_during": 0.071, "S_med_after": 0.23}, "22": {"pre_ratio": 2607.9, "late_ratio": 1385.6, "f_late": 0.6, "depth": 1.359, "kill_latency": null, "min_x88": -0.007, "post_early_ratio": 1604.3, "f_post_early": 0.6, "post_last_ratio": 937.0, "f_post_last": 0.6, "resurrect_latency": 499, "S_med_during": 0.203, "S_med_after": 0.481}, "33": {"pre_ratio": 800.3, "late_ratio": 522.4, "f_late": 0.8, "depth": 2.415, "kill_latency": null, "min_x88": -0.007, "post_early_ratio": 464.2, "f_post_early": 0.6, "post_last_ratio": 155.3, "f_post_last": 0.6, "resurrect_latency": 269, "S_med_during": -0.118, "S_med_after": 0.47}}
+done 37s -> merged l43/results_l43.json + traces.npz

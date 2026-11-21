@@ -1,0 +1,6 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+subnet 21,249 edges 627,051 motor 728 | labeled L 10322 R 10753
+female sheet 9,094 nodes 311,620 edges | recip 18,338/293,282 = 0.0625 (ER 1.89e-03, over-rep 33.1x)
+per-side fL 0.0682 (n=89566) fR 0.0638 (n=88861) cross 0.0551 (n=111271) | LI +0.0329 z 0.93
+G4 female (0.0625) vs male (0.1397): ratio 0.45 -> FALSIFIED | 3s

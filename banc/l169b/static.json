@@ -1,0 +1,225 @@
+{
+ "design": "L169 stage (b1): is the published f4 floor robustness FROZEN-membership or fully RE-DERIVED? Static premise test for referee issue I6 + design pins for the (b2) dynamic f4 arm. PREREG l169b/PREREG.md FIRST. Zero rollouts, no RNG.",
+ "cert": {
+  "cert1_l146_census_identical": true,
+  "cert2_F1_ranks_by_construction": true,
+  "cert3_ladder4_eq_stored": true
+ },
+ "forms": {
+  "F0_base": {
+   "K": 77,
+   "carrier_rank": 25,
+   "closure_edges": 647953,
+   "floor": 1,
+   "heav_f_ids": [
+    80,
+    153,
+    204,
+    227,
+    228
+   ],
+   "jaccard_heavy": 1.0,
+   "n_glut": 19,
+   "n_ng": 58,
+   "prefix_mass_removed": {
+    "ng19": 0.1946,
+    "ng24": 0.2286,
+    "ng25": 0.235,
+    "ng29": 0.2588
+   },
+   "twin_rank": 26,
+   "wA_edges": 644177
+  },
+  "F1_frozen_all": {
+   "form": "F1_frozen_all",
+   "floor": 4,
+   "K": 77,
+   "n_glut": 19,
+   "n_ng": 58,
+   "jaccard_heavy": 1.0,
+   "carrier_rank": 25,
+   "twin_rank": 26,
+   "prefix_mass_removed": {
+    "ng19": 0.198,
+    "ng24": 0.2333,
+    "ng25": 0.2405,
+    "ng29": 0.264
+   }
+  },
+  "F2_frozen_set_reordered": {
+   "form": "F2_frozen_set_reordered",
+   "floor": 4,
+   "K": 77,
+   "n_glut": 19,
+   "n_ng": 58,
+   "jaccard_heavy": 1.0,
+   "carrier_rank": 21,
+   "twin_rank": 33,
+   "prefix_mass_removed": {
+    "ng19": 0.1988,
+    "ng24": 0.2342,
+    "ng25": 0.2405,
+    "ng29": 0.2649
+   }
+  },
+  "F3_fully_rederived": {
+   "floor": 4,
+   "K": 73,
+   "n_glut": 18,
+   "n_ng": 55,
+   "jaccard_heavy": 0.9231,
+   "carrier_rank": 21,
+   "twin_rank": 33,
+   "prefix_mass_removed": {
+    "ng19": 0.1988,
+    "ng24": 0.2342,
+    "ng25": 0.2405,
+    "ng29": 0.2649
+   },
+   "closure_edges": 472095,
+   "wA_edges": 469256,
+   "heav_f_ids": [
+    80,
+    122,
+    153,
+    204,
+    227
+   ],
+   "form": "F3_fully_rederived"
+  }
+ },
+ "code_audit": {
+  "ladder_body_assigns": {
+   "heav_f": true,
+   "ng_desc_f": true,
+   "K": true,
+   "outmass_f": true,
+   "cum": true,
+   "o": true
+  },
+  "cohort_rederived_inside_fn": true,
+  "module_level_heav_assignments": 1,
+  "note": "I6's heuristic counted cohort-array definition SITES before vs inside the floor loop; the per-floor cohort is re-derived inside the ladder() FUNCTION (called once per floor), which a before/inside-loop site count cannot see. Method note only."
+ },
+ "pins": {
+  "P1_carrier_footprint": {
+   "out80_f4": 69,
+   "out_int70_f4": 61,
+   "out_mot10_f4": 8,
+   "in13_f4": 12,
+   "out80_base": 80,
+   "in13_base": 13
+  },
+  "P2_cohort_turnover": {
+   "K_base": 77,
+   "K_f4": 73,
+   "left_n": 5,
+   "entered_n": 1,
+   "left": [
+    {
+     "gi": 262,
+     "name": "DNp64-L",
+     "glut": false
+    },
+    {
+     "gi": 1224,
+     "name": "DNp51-R",
+     "glut": false
+    },
+    {
+     "gi": 1334,
+     "name": "DNg41-R",
+     "glut": true
+    },
+    {
+     "gi": 1489,
+     "name": "DNpe004-L",
+     "glut": false
+    },
+    {
+     "gi": 1673,
+     "name": "DNge016-L",
+     "glut": false
+    }
+   ],
+   "entered": [
+    {
+     "gi": 122,
+     "name": "DNa06-R",
+     "glut": false
+    }
+   ],
+   "ng_left_n": 4,
+   "ng_entered_n": 1,
+   "jaccard_heavy": 0.9231
+  },
+  "P3_window_portability": {
+   "base_window_k": 24,
+   "base_window_overlap_f4": 23,
+   "f4_carrier_rank": 21,
+   "f4_xor_forms": {
+    "intact_k": 20,
+    "cut_k": 21
+   },
+   "f4_prefix_mass": {
+    "intact": 0.2061,
+    "cut": 0.2133
+   },
+   "base_prefix_mass": {
+    "intact": 0.2286,
+    "cut": 0.235
+   },
+   "note": "the wA/ng25 cut window is a POSITIONAL prefix of the ng ladder, so at f4 the XOR pair becomes cut-first-(rank-1) vs cut-first-rank over a re-derived ladder; a dynamic f4 arm cuts a different cell set unless the overlap is the full window."
+  },
+  "P4_twin_design": {
+   "carrier_mass_f4": 0.007186,
+   "nearest": [
+    {
+     "gi": 290,
+     "name": "DNpe005-R",
+     "rank": 22,
+     "mass": 0.007161,
+     "gap": 2.4e-05
+    },
+    {
+     "gi": 628,
+     "name": "DNpe055-L",
+     "rank": 20,
+     "mass": 0.007348,
+     "gap": 0.000162
+    },
+    {
+     "gi": 558,
+     "name": "DNg79-R",
+     "rank": 19,
+     "mass": 0.00738,
+     "gap": 0.000194
+    }
+   ],
+   "base_twin_gi": 319,
+   "base_twin_name": "DNpe025-R",
+   "base_twin_f4_rank": 33,
+   "base_twin_f4_mass": 0.005824,
+   "note": "base twin 319 sits at f4 rank 33, so the carrier-vs-twin XOR design does not port unmodified; a dynamic f4 arm must re-derive its mass-matched twin."
+  },
+  "P5_edge_budget": {
+   "closure_edges_base": 647953,
+   "closure_edges_f4": 472095,
+   "wA_edges_base": 644177,
+   "wA_edges_f4": 469256,
+   "deleted_share_closure": 0.2714,
+   "note": "a dynamic f4 arm needs a FRESH af-matched bisect on the f4 graph (L118-L131 criteria verbatim; never port a gain)."
+  }
+ },
+ "verdict": "E1_refuted_frozen_membership_premise",
+ "verdict_detail": {
+  "stored_is_F3": true,
+  "stored_is_F1": false,
+  "e1": true,
+  "e2": false,
+  "stored_carrier_rank": 21,
+  "F1_carrier_rank": 25,
+  "F2_carrier_rank": 21,
+  "stored_jaccard": 0.9231
+ }
+}

@@ -1,0 +1,29 @@
+CERT block: {"wilson_vs_ledger_cutng25": [0.891, 0.9963], "wilson_fullprec_vs_l150": 0.9224023687386392, "fisher_selftest_sym": 1.0, "fisher_selftest_disjoint": 0.028571} 
+
+[I1] CONFIRMED: zero scramble arms in DRAFT (0 mentions) or ledger (0 keys); our own stored cutscr0 = 39/48 right-side [0.681,0.898] over 3 batches, kL [12, 10, 13] also high => sufficiency, not uniqueness, and not the crossed state
+        artifact: banc/l125,l127,l128/results_*.json:table.Ti.cutscr0
+[I2] CONFIRMED (methodological): our male extraction applies NO synapse floor (floor filters found in l138 code: none) while the BANC release carries an implicit floor of 3 (l146.release.min) -- so our 28-cell/K=9 male cohort is an UNMATCHED-floor comparison; the reviewer's matched-floor numbers (342/K=52) are REVIEWER-REPORTED and need our own reproduction before any draft claim
+        artifact: banc/l138_static.py + numbers.json:l146.release.min
+[I3] CONFIRMED: the drive IS chopped in code (500 of every 900 steps in the 0.7-Hz segments, mid segment full-on: True) and our Methods section never states it (chopped-drive mention in Methods: False; drive waveform stated at all: False); INDEPENDENT CONVERGENCE with our own L162: the .100 Hz line is evoked/echo-locked (off-arm lock collapses) => the draft's free-running-slow-oscillation wording is dead
+        artifact: banc/l135_run.py:AMPA block + banc/l162/static.json
+[I4] CONFIRMED (direction) / PARTIAL (attribution): re-derived from our stored gains vs g_cutwA=0.1436581957: flip arms {'g_cutng25': [1.244], 'g_eAll': [1.244], 'g_eIn': [1.087], 'g_eMotIn': [1.062], 'g_eOutAll': [1.238], 'g_eOutInt': [1.297]} vs non-flip arms {'g_eMotBot5': [0.009], 'g_eMotTop5': [-0.031], 'g_eOutMot': [-0.568]} -- the +~1.1-1.3%/+-0.1% split the reviewer describes IS in our artifacts; BUT silW flips at g_cutwA UNCHANGED (True) and eOutMot is negative-and-intermediate, so gain cannot be the whole mechanism. No gain-swap control exists => the confound is real and untested; card seeded
+        artifact: banc/l1*/results_l1*.json:g_* (scanned)
+[I5] CONFIRMED: re-derived carrier-vs-twin per jitter set from our own l139 table: {'0': {'carrier': 14, 'twin': 9, 'fisher_p': 0.11339}, '1': {'carrier': 16, 'twin': 13, 'fisher_p': 0.22581}, '2': {'carrier': 16, 'twin': 5, 'fisher_p': 7e-05}, '3': {'carrier': 13, 'twin': 6, 'fisher_p': 0.02901}, '4': {'carrier': 14, 'twin': 0, 'fisher_p': 0.0}, '5': {'carrier': 13, 'twin': 13, 'fisher_p': 1.0}} -> contrast clear (p<.05) in 3/6 sets, even though cutng25 stays SUPER 100%; and the +-8% gain span ([0.1531, 0.175, 0.1487, 0.1491, 0.1614, 0.1617]) is the UNTREATED arm's, not the lesioned arms' => the robustness sentence must be re-scoped to endpoints-only
+        artifact: banc/l139/results_l139.json + numbers.json:sustain.*,gains.full.spread
+[I6] CONFIRMED (scope) / REVIEWER-REPORTED (the floor-4 re-derived numbers): our l146 floor arm reports carrier rank 21 / twin 33 / heavy Jaccard 0.9231 with cohort membership FROZEN at the floor-3 cohort (verified in code: cohort array defined 1x before the floor loop, redefined 0x inside it) -- the draft never says the robustness is conditional on frozen membership; the reviewer's re-derived-at-floor-4 collapse (rank 46, Jaccard .35) is their computation and needs ours before it enters the draft
+        artifact: banc/l146_static.py + numbers.json:l146.f4
+[I7] CONFIRMED: re-derived on our ledger: twin 12/32 vs base 43/144 gives Fisher p=0.406 (not a demonstrated null, just underpowered); the draft's "-0.088 inside the 0.075 sham spread" is FALSE on its face (|-0.088| > 0.075: inside=False); and our own l156 rows are 518 traces from 449 UNIQUE seeds (18 seeds repeat across files) => the 518/518 census is pseudo-replicated and must say so
+        artifact: numbers.json:pooled.cutng25p,l150.pooled,l137.g1/g3 + banc/l156/static.json:rows
+[I8] CONFIRMED: grep of our own DRAFT: abstract still quotes the superseded pools (20/64 True, 47/48 True) while the body carries 43/144 / 124/128; the mass ratio prints as 12x but recomputes to 9.72x from .0544/0.005599; kill->super phrase present True for a PARTIAL->SUPER step => these are ledger-vs-prose drifts the value-equality gates cannot see
+        artifact: paper/DRAFT.md + numbers.json:l142.h2a.mass
+[I9] CONFIRMED: our own B26 table: only the tibia pair moves across cohort arms (pairs outside Ti with any k>2: ['Tr', 'Sr']) => the claim's readout scope is ONE antagonist pair of five and the draft must say so
+        artifact: banc/l135/results_l135.json:table
+[I10] CONFIRMED (editorial): our §2.4 presents two bit-identities as findings (True) though both are true by construction, and sil24 kR=5 is not distinguishable from the intact comparator in the same batch => rebuild §2.4 on silW (the unchanged-gain arm) and demote the identities to Methods
+        artifact: paper/DRAFT.md §2.4 + numbers.json:l137.sil24
+[I11] CONFIRMED: measured on our DRAFT: 37 bullet lines, 81 distinct all-caps tokens, 1 numeric citation markers in text, abstract 3964 chars (arXiv cap 1920), update equation present: False => still a skeleton; Methods lacks the model equation, drive waveform and class definitions
+        artifact: paper/DRAFT.md (counted)
+[I12] CONFIRMED (analytic): from our own figure sources: Fig 1 panel-A text says 'monotone' (True) while the draft argues NON-monotone (True); batch label in script ['B17-B26']; the +.334 annotation (True) conflicts with the text's +.371 (True) => figures carry stale pools/labels and need a print redraw pass. Reviewer had NO vision (6/7 calls failed), so contrast/point-size findings stay analytic
+        artifact: banc/l136/l136_fig.py, paper/l152_fig2.py, banc/l160/fig_l160.py
+
+SUMMARY {"CONFIRMED": 12}
+wrote adjudication.json

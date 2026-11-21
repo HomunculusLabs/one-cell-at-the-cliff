@@ -1,0 +1,89 @@
+C0B certification (stored l113, Ti+Tr tables, ALL 5 stored arms): PASS
+B22-cert vs results_l127.json Ti table: PASS (all 9 shared arms)
+P0 anchors vs raw_l113 (5 stored arms, 801/901) + C0A-120..C0A-124 + C0A-126 retained + C0A-125 ALL-ARMS + NEW C0A-127 + 10 stored gains: PASS (max113 0.0e+00 max125 0.0e+00 max126 0.0e+00 max127 0.0e+00)
+scr STORED gains (band DISCLOSED): {'cutscr0': 0.15423982501029967, 'cutscr1': 0.16989078283309933, 'cutscr2': 0.1424216973781586, 'cutscr3': 0.16503094553947448} scr0 stored 0.15424 band_ok False stairs {'cutng19': '4.7e-04', 'cutng29': '1.1e-05', 'cutscr0': '2.6e-05', 'cutscr1': '4.7e-04', 'cutscr2': '1.5e-04', 'cutscr3': '1.0e-03'}
+P4 {"af_range_ok": true, "b65_band": true, "af_mean": {"full": 0.109207, "b65": 0.108273, "cut": 0.107255, "cut19": 0.110418, "cut58": 0.111095, "cutk5": 0.10533, "cutng19": 0.109663, "cutng29": 0.109079, "cutscr0": 0.110222, "cutscr1": 0.110959, "cutscr2": 0.107097, "cutscr3": 0.110801}}
+---- B23 per-side duty table ----
+Ti full     kL  7/16 meanL 0.438 | kR  6/16 meanR 0.426
+Ti b65      kL 16/16 meanL 0.995 | kR 16/16 meanR 0.992
+Ti cut      kL 16/16 meanL 0.861 | kR  0/16 meanR 0.168
+Ti cut19    kL 16/16 meanL 0.652 | kR  0/16 meanR 0.034
+Ti cut58    kL 15/16 meanL 0.772 | kR  0/16 meanR 0.212
+Ti cutk5    kL  2/16 meanL 0.261 | kR  0/16 meanR 0.040
+Ti cutng19  kL  2/16 meanL 0.298 | kR  0/16 meanR 0.246
+Ti cutng29  kL  0/16 meanL 0.185 | kR 16/16 meanR 0.779
+Ti cutscr0  kL 13/16 meanL 0.660 | kR 15/16 meanR 0.620
+Ti cutscr1  kL  0/16 meanL 0.099 | kR  0/16 meanR 0.022
+Ti cutscr2  kL 12/16 meanL 0.551 | kR  6/16 meanR 0.458
+Ti cutscr3  kL  4/16 meanL 0.397 | kR 11/16 meanR 0.557
+Tr full     kL  0/16 meanL 0.045 | kR  5/16 meanR 0.372
+Tr b65      kL  0/16 meanL 0.165 | kR 16/16 meanR 0.974
+Tr cut      kL  0/16 meanL 0.035 | kR  3/16 meanR 0.351
+Tr cut19    kL  0/16 meanL 0.126 | kR  2/16 meanR 0.320
+Tr cut58    kL  0/16 meanL 0.062 | kR  6/16 meanR 0.468
+Tr cutk5    kL  0/16 meanL 0.042 | kR  5/16 meanR 0.375
+Tr cutng19  kL  0/16 meanL 0.016 | kR  0/16 meanR 0.003
+Tr cutng29  kL  0/16 meanL 0.000 | kR  0/16 meanR 0.000
+Tr cutscr0  kL  0/16 meanL 0.159 | kR  0/16 meanR 0.142
+Tr cutscr1  kL  0/16 meanL 0.039 | kR  0/16 meanR 0.088
+Tr cutscr2  kL  0/16 meanL 0.133 | kR  1/16 meanR 0.230
+Tr cutscr3  kL  0/16 meanL 0.012 | kR  4/16 meanR 0.350
+Ta full     kL  0/16 meanL 0.292 | kR  0/16 meanR 0.001
+Ta b65      kL  0/16 meanL 0.058 | kR  0/16 meanR 0.044
+Ta cut      kL  0/16 meanL 0.156 | kR  0/16 meanR 0.030
+Ta cut19    kL  3/16 meanL 0.349 | kR  0/16 meanR 0.013
+Ta cut58    kL  0/16 meanL 0.150 | kR  0/16 meanR 0.085
+Ta cutk5    kL  0/16 meanL 0.102 | kR  0/16 meanR 0.071
+Ta cutng19  kL  0/16 meanL 0.076 | kR  0/16 meanR 0.037
+Ta cutng29  kL  0/16 meanL 0.025 | kR  0/16 meanR 0.045
+Ta cutscr0  kL  0/16 meanL 0.055 | kR  0/16 meanR 0.105
+Ta cutscr1  kL  0/16 meanL 0.021 | kR  0/16 meanR 0.043
+Ta cutscr2  kL  1/16 meanL 0.214 | kR  0/16 meanR 0.142
+Ta cutscr3  kL 12/16 meanL 0.631 | kR  0/16 meanR 0.060
+Sr full     kL  0/16 meanL 0.113 | kR  2/16 meanR 0.413
+Sr b65      kL 16/16 meanL 0.836 | kR  0/16 meanR 0.017
+Sr cut      kL 12/16 meanL 0.636 | kR 13/16 meanR 0.564
+Sr cut19    kL  7/16 meanL 0.477 | kR  0/16 meanR 0.119
+Sr cut58    kL 16/16 meanL 0.899 | kR  0/16 meanR 0.046
+Sr cutk5    kL  0/16 meanL 0.115 | kR  0/16 meanR 0.087
+Sr cutng19  kL  0/16 meanL 0.028 | kR  0/16 meanR 0.004
+Sr cutng29  kL  0/16 meanL 0.030 | kR  0/16 meanR 0.034
+Sr cutscr0  kL 13/16 meanL 0.684 | kR  0/16 meanR 0.018
+Sr cutscr1  kL  0/16 meanL 0.067 | kR  0/16 meanR 0.126
+Sr cutscr2  kL  4/16 meanL 0.437 | kR  0/16 meanR 0.090
+Sr cutscr3  kL  0/16 meanL 0.079 | kR  0/16 meanR 0.086
+Pr full     kL  0/16 meanL 0.030 | kR  0/16 meanR 0.078
+Pr b65      kL  0/16 meanL 0.003 | kR  0/16 meanR 0.003
+Pr cut      kL  0/16 meanL 0.011 | kR  0/16 meanR 0.179
+Pr cut19    kL  0/16 meanL 0.012 | kR  0/16 meanR 0.150
+Pr cut58    kL  0/16 meanL 0.019 | kR  0/16 meanR 0.239
+Pr cutk5    kL  0/16 meanL 0.011 | kR  0/16 meanR 0.012
+Pr cutng19  kL  0/16 meanL 0.018 | kR  0/16 meanR 0.023
+Pr cutng29  kL  0/16 meanL 0.023 | kR  1/16 meanR 0.254
+Pr cutscr0  kL  0/16 meanL 0.003 | kR  0/16 meanR 0.142
+Pr cutscr1  kL  0/16 meanL 0.005 | kR  0/16 meanR 0.015
+Pr cutscr2  kL  0/16 meanL 0.047 | kR  0/16 meanR 0.034
+Pr cutscr3  kL  0/16 meanL 0.017 | kR  0/16 meanR 0.084
+full-arm B23 band check (disclosure only): {'Ti': {'L': True, 'R': True}, 'Sr': {'L': True, 'R': True}}
+SCR cutscr0   (mass 0.2490 extra 0.0544): meanR 0.620 kR 15/16 | meanL 0.660 kL 13/16 | paired dR +0.194 n_down 0/16 -> no-kill/RESTORE/SUPER
+SCR cutscr1   (mass 0.2422 extra 0.0476): meanR 0.022 kR  0/16 | meanL 0.099 kL  0/16 | paired dR -0.404 n_down 14/16 -> KILL
+SCR cutscr2   (mass 0.2409 extra 0.0463): meanR 0.458 kR  6/16 | meanL 0.551 kL 12/16 | paired dR +0.032 n_down 3/16 -> no-kill/PARTIAL
+SCR cutscr3   (mass 0.2388 extra 0.0442): meanR 0.557 kR 11/16 | meanL 0.397 kL  4/16 | paired dR +0.131 n_down 1/16 -> no-kill
+CLASSIFICATION: H1A scr1 KILL replicates on B23 — pooled 2/2 batches; the scattered .0476 kill is draw-reliable, band edge is DRAW-STRUCTURED (scr2 at .0463 does not kill-reliably)
+S1: cutk5 KILLS on B23 — 11th consecutive batch (B12/B14/B15/B16/B17/B18/B19/B20/B21/B22/B23)
+S2: endpoint miss DISCLOSED (registered S2, never silent)
+POOLED Ti_R full     k 45/128 (B16 7/16 + B17 4/16 + B18 10/16 + B19 2/16 + B20 6/16 + B21 6/16 + B22 4/16 + B23 6/16) p_hat 0.352 Wilson [0.2743, 0.4375]
+POOLED Ti_R cutng19  k 4/128 (B16 0/16 + B17 0/16 + B18 1/16 + B19 1/16 + B20 1/16 + B21 0/16 + B22 1/16 + B23 0/16) p_hat 0.031 Wilson [0.0122, 0.0776]
+POOLED Ti_R cutng29  k 123/128 (B16 16/16 + B17 15/16 + B18 16/16 + B19 15/16 + B20 16/16 + B21 16/16 + B22 13/16 + B23 16/16) p_hat 0.961 Wilson [0.9118, 0.9832]
+POOLED Ti_R cutk5    k 0/128 (B16 0/16 + B17 0/16 + B18 0/16 + B19 0/16 + B20 0/16 + B21 0/16 + B22 0/16 + B23 0/16) p_hat 0.000 Wilson [0.0000, 0.0291]
+POOLED Ti_R cut58    k 1/128 (B16 0/16 + B17 0/16 + B18 1/16 + B19 0/16 + B20 0/16 + B21 0/16 + B22 0/16 + B23 0/16) p_hat 0.008 Wilson [0.0014, 0.0429]
+POOLED Ti_R cutscr0 k 39/48 (B20 12/16 + B22 12/16 + B23 15/16) p_hat 0.812 Wilson [0.6806, 0.8981]
+POOLED Ti_R cutscr1 k 0/32 (B20 0/16 + B23 0/16) p_hat 0.000 Wilson [0.0000, 0.1072]
+POOLED Ti_R cutscr2 k 12/32 (B20 6/16 + B23 6/16) p_hat 0.375 Wilson [0.2293, 0.5475]
+POOLED Ti_R cutscr3 k 17/32 (B20 6/16 + B23 11/16) p_hat 0.531 Wilson [0.3645, 0.6913]
+WATCH Ti_L: {'0': 0.438, '19': 0.298, '29': 0.185, '58': 0.772, 'k5': 0.261, 'scr0': 0.66, 'scr1': 0.099, 'scr2': 0.551, 'scr3': 0.397}
+WATCH Sr_R: {'0': 0.413, '19': 0.004, '29': 0.034, '58': 0.046, 'k5': 0.087, 'scr0': 0.018, 'scr1': 0.126, 'scr2': 0.09, 'scr3': 0.086}
+WATCH Tr_R: {'0': 0.372, '19': 0.003, '29': 0.0, '58': 0.468, 'k5': 0.375, 'scr0': 0.142, 'scr1': 0.088, 'scr2': 0.23, 'scr3': 0.35}
+sanity: {'cut_kL': 16, 'b65_kL': 16, 'b65_kR': 16, 'cut19_kL': 16, 'sr_b65_kL': 16, 'sr_b65_kR': 0} PASS
+results_l128.json written
+verdict exit 0

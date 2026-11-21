@@ -1,0 +1,31 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l82_hold.py:104: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l82_hold.py:106: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 9s
+drive-on 48.0s all arms | tables asserted
+seed 11 done 22s
+seed 22 done 35s
+seed 33 done 46s
+seed 101 done 59s
+seed 102 done 72s
+seed 103 done 85s
+seed 104 done 98s
+seed 105 done 110s
+seed 106 done 123s
+seed 107 done 135s
+seed 108 done 147s
+seed 109 done 158s
+seed 110 done 170s
+seed 111 done 183s
+seed 112 done 196s
+seed 113 done 209s
+runs done 209s
+C0a True | C0x l77+l66 True | C0P-1 prefix True | C0P-2 first_div True | degenerate False | C1 True | wired_dead 0
+first_div [6, 2001]
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/malecns/l82_hold.py", line 338, in <module>
+    f_seg = dom_freq(res[str(s)]["mm"][a][a0_:b0])[0]
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+EXIT=1

@@ -1,0 +1,36 @@
+{
+ "tokens": {
+  "LT": [
+   "long_tendon_muscle"
+  ],
+  "FR": [
+   "femur_reductor_muscle"
+  ]
+ },
+ "sizes": {
+  "LT_L": 23,
+  "LT_R": 24,
+  "LT_other": 0,
+  "FR_L": 17,
+  "FR_R": 17,
+  "FR_other": 0
+ },
+ "eligible": {
+  "LT": true,
+  "FR": true
+ },
+ "side_values": {
+  "LT": [
+   "left",
+   "right"
+  ],
+  "FR": [
+   "left",
+   "right"
+  ]
+ },
+ "total_in_subnet": {
+  "LT": 47,
+  "FR": 34
+ }
+}

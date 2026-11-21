@@ -1,0 +1,7 @@
+union cells 67 | d74b loc 18
+subnet ok n 21809 arms 6 | 3s
+seed 11 done af 0.10564 | 14s
+seed 22 done af 0.10734 | 25s
+seed 33 done af 0.11161 | 36s
+raw_l95.npz checkpointed BEFORE analysis
+C0 max|d| 0.000e+00 | 37s done

@@ -1,0 +1,56 @@
+{
+ "n_old": 21249,
+ "n_new": 21809,
+ "cord": 20521,
+ "dn_into": 728,
+ "dn_proj": 1287,
+ "dn_new": 560,
+ "edges_old": 627051,
+ "edges_new": 647953,
+ "blocks": {
+  "cord->cord": 560236,
+  "cord->DNi": 5322,
+  "cord->DNn": 0,
+  "DNi->cord": 53329,
+  "DNi->DNi": 8164,
+  "DNi->DNn": 2189,
+  "DNn->cord": 14279,
+  "DNn->DNi": 3047,
+  "DNn->DNn": 1387
+ },
+ "c0s_prefix_equal": true,
+ "c0s_vals_equal": true,
+ "pool_sizes": {
+  "Ti_fL": 50,
+  "Ti_fR": 51,
+  "Ti_eL": 6,
+  "Ti_eR": 6,
+  "Tr_fL": 31,
+  "Tr_fR": 31,
+  "Tr_eL": 24,
+  "Tr_eR": 24
+ },
+ "mech": 4848,
+ "motor": 728,
+ "dng100": 2,
+ "dn46_in_subnet": 3,
+ "dn46_pos": [
+  270,
+  302,
+  366
+ ],
+ "af_target": 0.10905611018339793,
+ "af_anchor": [
+  0.11073461920022964,
+  0.10715798288583755,
+  0.10927572846412659
+ ],
+ "dn_census_n": 1288
+}
+DNn by type: {'DNpe054': 21, 'DNge091': 19, 'DNg07': 18, 'DNg10': 15, 'DNp17': 13, 'DNg106': 13, 'DNg08_a': 13, 'DNge071': 13, 'DNg12_e': 11, 'DNge085': 11, 'DNg08_b': 9, '': 9}
+DNge046 cells in closure subnet:
+     loc  cls     type   side  out_cord    out_w         pool_reach
+270  270    1  DNge046   LEFT        16  32.4807                 {}
+300  302    0  DNge046  RIGHT        16  28.9212  {'Ti_fL': 1.3863}
+362  366    1  DNge046  RIGHT         5   8.8128                 {}
+static done 3s -> l92/static.json + dn_census.csv

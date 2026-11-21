@@ -1,0 +1,61 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l90_multibatch.py:99: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l90_multibatch.py:101: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 046L 2 | 7s
+drive-on 48.0s all arms | tables asserted
+B1 seed 501 done 24s
+B1 seed 502 done 40s
+B1 seed 503 done 57s
+B1 seed 504 done 73s
+B1 seed 505 done 89s
+B1 seed 506 done 106s
+B1 seed 507 done 122s
+B1 seed 508 done 139s
+B1 seed 509 done 156s
+B1 seed 510 done 172s
+B1 seed 511 done 188s
+B1 seed 512 done 205s
+B1 seed 513 done 221s
+B1 seed 514 done 238s
+B1 seed 515 done 254s
+B1 seed 516 done 270s
+B2 seed 601 done 288s
+B2 seed 602 done 304s
+B2 seed 603 done 320s
+B2 seed 604 done 337s
+B2 seed 605 done 354s
+B2 seed 606 done 370s
+B2 seed 607 done 387s
+B2 seed 608 done 403s
+B2 seed 609 done 420s
+B2 seed 610 done 437s
+B2 seed 611 done 454s
+B2 seed 612 done 471s
+B2 seed 613 done 487s
+B2 seed 614 done 504s
+B2 seed 615 done 520s
+B2 seed 616 done 536s
+B3 seed 701 done 553s
+B3 seed 702 done 569s
+B3 seed 703 done 586s
+B3 seed 704 done 602s
+B3 seed 705 done 619s
+B3 seed 706 done 635s
+B3 seed 707 done 652s
+B3 seed 708 done 668s
+B3 seed 709 done 685s
+B3 seed 710 done 703s
+B3 seed 711 done 719s
+B3 seed 712 done 736s
+B3 seed 713 done 753s
+B3 seed 714 done 770s
+B3 seed 715 done 790s
+B3 seed 716 done 808s
+B0a seed 11 done 825s
+B0a seed 22 done 841s
+B0a seed 33 done 858s
+runs done 858s
+raw_l90.npz checkpointed BEFORE analysis (crash => l90_verdict.py re-derives)
+C0A chain(census 3-seed x 4 trunks) True | C0D hybrid-B1 True | C0E fd==6 True (set [6]) | C1 True
+done 859s -> l90/raw_l90.npz + anchors_run.json

@@ -1,0 +1,116 @@
+{
+ "config": {
+  "DT": 0.01,
+  "EVENT": 20,
+  "POST": 220,
+  "T": 240,
+  "settle": 300,
+  "gain": 0.8846,
+  "g_path": 200.0,
+  "amp_ev": 8.0,
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "ndraw": 5,
+  "motor": 815,
+  "asc": 1846,
+  "volley": 155,
+  "tau_arm": "lit5x (jump arms) / homog (volley arms)",
+  "estimand": "dynamics P1-form (real-tuned gains re-applied); existence claims carried by static anatomy"
+ },
+ "static": {
+  "motor_out": {
+   "edges": 22885,
+   "abs_w": 54.09397888183594,
+   "unique_dst": 8494,
+   "dst_asc_direct_edges": 1024,
+   "dst_asc_direct_abs_w": 1.2212777137756348,
+   "frac_w_to_asc": 0.022576961666345596
+  },
+  "reach_asc_by_hop": [
+   524,
+   1320,
+   2,
+   0,
+   0,
+   0
+  ],
+  "asc_total_reachable": 1846,
+  "asc_in_provenance_abs_w_frac": {
+   "vnc_intrinsic": 0.43479999899864197,
+   "ascending_neuron": 0.19660000503063202,
+   "descending_neuron": 0.12880000472068787,
+   "vnc_sensory": 0.11680000275373459,
+   "cb_intrinsic": 0.0737999975681305,
+   "sensory_ascending": 0.03189999982714653,
+   "cb_sensory": 0.010900000110268593,
+   "visual_projection": 0.002199999988079071
+  },
+  "asc_out_recipients_abs_w_frac": {
+   "vnc_intrinsic": 0.34310001134872437,
+   "cb_intrinsic": 0.2637999951839447,
+   "vnc_sensory": 0.13079999387264252,
+   "ascending_neuron": 0.09099999815225601,
+   "cb_sensory": 0.061900001019239426,
+   "descending_neuron": 0.04659999907016754,
+   "sensory_ascending": 0.03099999949336052,
+   "vnc_motor": 0.010599999688565731
+  }
+ },
+ "dynamic": {
+  "jump": {
+   "snr_a": 6.895938236354932,
+   "asc_self": 0.20802094539006552
+  },
+  "jump_clampM": {
+   "snr_a": 6.833475623281747,
+   "asc_self": 0.20796703298886618,
+   "cos_vs_jump": 0.9999862909317017
+  },
+  "mnvolley": {
+   "snr_a": 2.9472698377602398,
+   "asc_self": 0.0003516852545241515
+  },
+  "mnv_null_self": [
+   0.0005232170224189758,
+   0.0003963746130466461,
+   0.0004028718297680219,
+   0.00040404917672276497,
+   0.00037768033022681874
+  ],
+  "mnv_null_snr": [
+   2.9526488799016413,
+   2.9445612104257584,
+   2.945212040172128,
+   2.9436006470437923,
+   2.944018693611755
+  ],
+  "mnv_top10_share": 0.02107572741806507,
+  "mnv_top10_names": [
+   "AN08B112",
+   "AN06B011",
+   "AN07B071_d",
+   "AN08B049",
+   "AN10B047",
+   "AN08B113",
+   "ANXXX254",
+   "AN05B054_b",
+   "AN05B009",
+   "AN08B026"
+  ],
+  "mnv_null_top10_share": [
+   0.02050209604203701,
+   0.021074717864394188,
+   0.021074628457427025,
+   0.021075204014778137,
+   0.02107406221330166
+  ]
+ },
+ "af": {
+  "jump": 0.16411117712656656,
+  "jump_clampM": 0.16379124422868094,
+  "mnvolley": 0.1638272355000178
+ }
+}

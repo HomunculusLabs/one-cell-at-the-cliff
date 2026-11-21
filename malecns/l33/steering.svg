@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="470" font-family="DejaVu Sans, sans-serif">
+<rect width="1060" height="470" fill="#14161a"/>
+<text x="530" y="30" fill="#e8e6e3" font-size="19" text-anchor="middle" font-weight="bold">L33: tonic DN bias does not steer the self-rhythmic cord (DNg100 sustained, g .01 beta 2 d .05)</text>
+<rect x="70" y="60" width="440.0" height="340" fill="#1b1e24" stroke="#3a3f47"/>
+<text x="290.0" y="452" fill="#b8b2aa" font-size="14" text-anchor="middle">bias amp (DNg95-L tonic)</text>
+<text x="22" y="240.0" fill="#b8b2aa" font-size="14" text-anchor="middle" transform="rotate(-90 22 240.0)">turn  (L-R)/(L+R)</text>
+<text x="290.0" y="52" fill="#e8e6e3" font-size="15" text-anchor="middle">A  turn (L-R flexor mass asym, Ti) vs DNg95-L bias amp</text>
+<line x1="70" y1="60" x2="510.0" y2="60" stroke="#2a2e35"/>
+<text x="62" y="65" fill="#8f8a83" font-size="12" text-anchor="end">0.35</text>
+<line x1="70" y1="128" x2="510.0" y2="128" stroke="#2a2e35"/>
+<text x="62" y="133" fill="#8f8a83" font-size="12" text-anchor="end">0.28</text>
+<line x1="70" y1="196" x2="510.0" y2="196" stroke="#2a2e35"/>
+<text x="62" y="201" fill="#8f8a83" font-size="12" text-anchor="end">0.21</text>
+<line x1="70" y1="264" x2="510.0" y2="264" stroke="#2a2e35"/>
+<text x="62" y="269" fill="#8f8a83" font-size="12" text-anchor="end">0.14</text>
+<line x1="70" y1="332" x2="510.0" y2="332" stroke="#2a2e35"/>
+<text x="62" y="337" fill="#8f8a83" font-size="12" text-anchor="end">0.07</text>
+<line x1="70" y1="400" x2="510.0" y2="400" stroke="#2a2e35"/>
+<text x="62" y="405" fill="#8f8a83" font-size="12" text-anchor="end">0.00</text>
+<line x1="70" y1="60" x2="70" y2="400" stroke="#2a2e35"/>
+<text x="70" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">0</text>
+<line x1="180" y1="60" x2="180" y2="400" stroke="#2a2e35"/>
+<text x="180" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.05</text>
+<line x1="290" y1="60" x2="290" y2="400" stroke="#2a2e35"/>
+<text x="290" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.1</text>
+<line x1="400" y1="60" x2="400" y2="400" stroke="#2a2e35"/>
+<text x="400" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.15</text>
+<line x1="510" y1="60" x2="510" y2="400" stroke="#2a2e35"/>
+<text x="510" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.2</text>
+<line x1="70" y1="400" x2="510.0" y2="400" stroke="#8f8a83"/>
+<polyline points="70,265 98,119 125,103 180,262 290,272 510,271" fill="none" stroke="#c0392b" stroke-width="2.2" />
+<circle cx="70" cy="265" r="4" fill="#c0392b"/>
+<circle cx="98" cy="119" r="4" fill="#c0392b"/>
+<circle cx="125" cy="103" r="4" fill="#c0392b"/>
+<circle cx="180" cy="262" r="4" fill="#c0392b"/>
+<circle cx="290" cy="272" r="4" fill="#c0392b"/>
+<circle cx="510" cy="271" r="4" fill="#c0392b"/>
+<polyline points="70,271 98,271 125,277 180,276 290,271 510,274" fill="none" stroke="#2471a3" stroke-width="2.2" stroke-dasharray='7 5'/>
+<circle cx="70" cy="271" r="4" fill="#2471a3"/>
+<circle cx="98" cy="271" r="4" fill="#2471a3"/>
+<circle cx="125" cy="277" r="4" fill="#2471a3"/>
+<circle cx="180" cy="276" r="4" fill="#2471a3"/>
+<circle cx="290" cy="271" r="4" fill="#2471a3"/>
+<circle cx="510" cy="274" r="4" fill="#2471a3"/>
+<polyline points="70,272 98,269 125,276 180,272 290,263 510,269" fill="none" stroke="#1e8449" stroke-width="2.2" stroke-dasharray='2 4'/>
+<circle cx="70" cy="272" r="4" fill="#1e8449"/>
+<circle cx="98" cy="269" r="4" fill="#1e8449"/>
+<circle cx="125" cy="276" r="4" fill="#1e8449"/>
+<circle cx="180" cy="272" r="4" fill="#1e8449"/>
+<circle cx="290" cy="263" r="4" fill="#1e8449"/>
+<circle cx="510" cy="269" r="4" fill="#1e8449"/>
+<circle cx="510" cy="279" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<circle cx="510" cy="278" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<circle cx="510" cy="277" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<circle cx="510" cy="203" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<circle cx="510" cy="276" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<circle cx="510" cy="272" r="6" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+<text x="504.0" y="78" fill="#b8b2aa" font-size="11" text-anchor="end">o = random DN pair (amp .2)</text>
+<rect x="550.0" y="60" width="440.0" height="340" fill="#1b1e24" stroke="#3a3f47"/>
+<text x="770.0" y="452" fill="#b8b2aa" font-size="14" text-anchor="middle">bias amp (DNg95-L tonic)</text>
+<text x="502.0" y="240.0" fill="#b8b2aa" font-size="14" text-anchor="middle" transform="rotate(-90 502.0 240.0)">S(Tr) per side</text>
+<text x="770.0" y="52" fill="#e8e6e3" font-size="15" text-anchor="middle">B  per-side antiphase S(Tr) — left-organized, metastable flip</text>
+<line x1="550.0" y1="60" x2="990.0" y2="60" stroke="#2a2e35"/>
+<text x="542.0" y="65" fill="#8f8a83" font-size="12" text-anchor="end">1.00</text>
+<line x1="550.0" y1="128" x2="990.0" y2="128" stroke="#2a2e35"/>
+<text x="542.0" y="133" fill="#8f8a83" font-size="12" text-anchor="end">0.80</text>
+<line x1="550.0" y1="196" x2="990.0" y2="196" stroke="#2a2e35"/>
+<text x="542.0" y="201" fill="#8f8a83" font-size="12" text-anchor="end">0.60</text>
+<line x1="550.0" y1="264" x2="990.0" y2="264" stroke="#2a2e35"/>
+<text x="542.0" y="269" fill="#8f8a83" font-size="12" text-anchor="end">0.40</text>
+<line x1="550.0" y1="332" x2="990.0" y2="332" stroke="#2a2e35"/>
+<text x="542.0" y="337" fill="#8f8a83" font-size="12" text-anchor="end">0.20</text>
+<line x1="550.0" y1="400" x2="990.0" y2="400" stroke="#2a2e35"/>
+<text x="542.0" y="405" fill="#8f8a83" font-size="12" text-anchor="end">0.00</text>
+<line x1="550" y1="60" x2="550" y2="400" stroke="#2a2e35"/>
+<text x="550" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">0</text>
+<line x1="660" y1="60" x2="660" y2="400" stroke="#2a2e35"/>
+<text x="660" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.05</text>
+<line x1="770" y1="60" x2="770" y2="400" stroke="#2a2e35"/>
+<text x="770" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.1</text>
+<line x1="880" y1="60" x2="880" y2="400" stroke="#2a2e35"/>
+<text x="880" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.15</text>
+<line x1="990" y1="60" x2="990" y2="400" stroke="#2a2e35"/>
+<text x="990" y="428" fill="#8f8a83" font-size="12" text-anchor="middle">.2</text>
+<polyline points="550,184 578,343 605,335 660,180 770,183 990,175" fill="none" stroke="#c0392b" stroke-width="2.6" opacity="1.0" />
+<polyline points="550,287 578,130 605,154 660,301 770,313 990,305" fill="none" stroke="#2471a3" stroke-width="2.6" opacity="1.0" stroke-dasharray='6 4'/>
+<polyline points="550,179 578,177 605,187 660,180 770,180 990,181" fill="none" stroke="#c0392b" stroke-width="1.1" opacity="0.45" />
+<polyline points="550,359 578,343 605,241 660,325 770,365 990,297" fill="none" stroke="#2471a3" stroke-width="1.1" opacity="0.45" stroke-dasharray='6 4'/>
+<polyline points="550,184 578,189 605,186 660,181 770,190 990,192" fill="none" stroke="#c0392b" stroke-width="1.1" opacity="0.45" />
+<polyline points="550,270 578,365 605,353 660,326 770,304 990,310" fill="none" stroke="#2471a3" stroke-width="1.1" opacity="0.45" stroke-dasharray='6 4'/>
+<line x1="558.0" y1="96" x2="584.0" y2="96" stroke="#c0392b" stroke-width="2.4" />
+<text x="590.0" y="100" fill="#b8b2aa" font-size="12">seed 11 L</text>
+<line x1="668.0" y1="96" x2="694.0" y2="96" stroke="#c0392b" stroke-width="2.4" stroke-dasharray='7 5'/>
+<text x="700.0" y="100" fill="#b8b2aa" font-size="12">seed 22 L</text>
+<line x1="778.0" y1="96" x2="804.0" y2="96" stroke="#c0392b" stroke-width="2.4" stroke-dasharray='2 4'/>
+<text x="810.0" y="100" fill="#b8b2aa" font-size="12">seed 33 L</text>
+<line x1="558.0" y1="118" x2="584.0" y2="118" stroke="#2471a3" stroke-width="2.4" />
+<text x="590.0" y="122" fill="#b8b2aa" font-size="12">seed 11 R</text>
+<line x1="668.0" y1="118" x2="694.0" y2="118" stroke="#2471a3" stroke-width="2.4" stroke-dasharray='7 5'/>
+<text x="700.0" y="122" fill="#b8b2aa" font-size="12">seed 22 R</text>
+<line x1="778.0" y1="118" x2="804.0" y2="118" stroke="#2471a3" stroke-width="2.4" stroke-dasharray='2 4'/>
+<text x="810.0" y="122" fill="#b8b2aa" font-size="12">seed 33 R</text>
+</svg>

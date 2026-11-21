@@ -1,0 +1,91 @@
+CERT-3 bin exactness: full fr[6]=np.float64(0.1) seg fr[2]=np.float64(0.1) K=5: PASS
+CERT-1 analytic: MSC sin-pair 1.0000 vs indep 0.1876; PLV fixed 1.0000 / uniform 3.46e-17: PASS
+loaded: seed grids [('l154', [801, 901, '..', 3416]), ('l150', [801, 901, '..', 3380])]
+CERT-2 pooled rows == l157/static.json (22 channels, 6 fields): PASS
+CERT-4 sets: CARRIER ['Tr_fL', 'Tr_eL', 'Tr_eR', 'Ta_aL', 'Ta_aR', 'Ta_bR', 'Sr_aL', 'Sr_bL'] | CONTROL(+Tr_fR, ADDENDUM 1) ['Ti_fL', 'Ti_fR', 'Ti_eL', 'Ti_eR', 'Tr_fR', 'Pr_aL', 'Pr_aR', 'Pr_bL', 'Sr_aR']: PASS
+
+COHERENCE class: D2_independent (same both files: True); pooled clears 0/28 carrier vs 2/36 control; draft fold: YES
+  l154/raw_l154.npz: D2_independent clears 0/28 (control 2/36) med matched MSC carrier 0.660 vs control 0.190
+  l150/raw_l150.npz: D2_independent clears 0/28 (control 2/36) med matched MSC carrier 0.719 vs control 0.165
+PHASE class: P1_phase_reproducible — locked 28/28 carrier, 10/36 control (PLV>=.5 & Rayleigh p<.01)
+
+pooled carrier pairs (36 matched / 612 shuffled): matched_med | shuffled_med | ratio | clears | PLV | p
+  Tr_fL ~Tr_eL  0.497 | 0.563 |  0.88 | . | 0.971 | 1.86e-15 |   -21.4 deg
+  Tr_fL ~Tr_eR  0.793 | 0.774 |  1.02 | . | 0.987 | 5.92e-16 |    -9.0 deg
+  Tr_fL ~Ta_aL  0.783 | 0.657 |  1.19 | . | 0.976 | 1.28e-15 |  -176.5 deg
+  Tr_fL ~Ta_aR  0.381 | 0.514 |  0.74 | . | 0.971 | 1.85e-15 |  +159.1 deg
+  Tr_fL ~Ta_bR  0.793 | 0.750 |  1.06 | . | 0.985 | 6.94e-16 |  +170.9 deg
+  Tr_fL ~Sr_aL  0.844 | 0.611 |  1.38 | . | 0.977 | 1.21e-15 |    +9.8 deg
+  Tr_fL ~Sr_bL  0.676 | 0.542 |  1.25 | . | 0.947 | 9.40e-15 |  -148.7 deg
+  Tr_eL ~Tr_eR  0.832 | 0.799 |  1.04 | . | 0.985 | 7.01e-16 |   +12.4 deg
+  Tr_eL ~Ta_aL  0.538 | 0.540 |  1.00 | . | 0.969 | 2.13e-15 |  -155.0 deg
+  Tr_eL ~Ta_aR  0.828 | 0.749 |  1.11 | . | 0.966 | 2.55e-15 |  -179.6 deg
+  Tr_eL ~Ta_bR  0.820 | 0.804 |  1.02 | . | 0.976 | 1.29e-15 |  -167.8 deg
+  Tr_eL ~Sr_aL  0.404 | 0.478 |  0.84 | . | 0.941 | 1.39e-14 |   +31.4 deg
+  Tr_eL ~Sr_bL  0.537 | 0.514 |  1.04 | . | 0.954 | 5.92e-15 |  -127.5 deg
+  Tr_eR ~Ta_aL  0.796 | 0.720 |  1.11 | . | 0.980 | 9.52e-16 |  -167.4 deg
+  Tr_eR ~Ta_aR  0.732 | 0.736 |  1.00 | . | 0.988 | 5.54e-16 |  +168.1 deg
+  Tr_eR ~Ta_bR  0.957 | 0.927 |  1.03 | . | 0.995 | 3.24e-16 |  +179.9 deg
+  Tr_eR ~Sr_aL  0.663 | 0.632 |  1.05 | . | 0.974 | 1.49e-15 |   +18.8 deg
+  Tr_eR ~Sr_bL  0.641 | 0.618 |  1.04 | . | 0.966 | 2.59e-15 |  -139.9 deg
+  Ta_aL ~Ta_aR  0.510 | 0.517 |  0.99 | . | 0.964 | 3.00e-15 |   -24.4 deg
+  Ta_aL ~Ta_bR  0.737 | 0.692 |  1.06 | . | 0.979 | 1.06e-15 |   -12.7 deg
+  Ta_aL ~Sr_aL  0.781 | 0.580 |  1.35 | . | 0.972 | 1.67e-15 |  -173.7 deg
+  Ta_aL ~Sr_bL  0.633 | 0.499 |  1.27 | . | 0.950 | 7.65e-15 |   +27.5 deg
+  Ta_aR ~Ta_bR  0.716 | 0.735 |  0.97 | . | 0.986 | 6.39e-16 |   +11.8 deg
+  Ta_aR ~Sr_aL  0.395 | 0.460 |  0.86 | . | 0.963 | 3.11e-15 |  -149.2 deg
+  Ta_aR ~Sr_bL  0.455 | 0.482 |  0.94 | . | 0.942 | 1.33e-14 |   +52.1 deg
+  Ta_bR ~Sr_aL  0.654 | 0.611 |  1.07 | . | 0.975 | 1.38e-15 |  -161.1 deg
+  Ta_bR ~Sr_bL  0.675 | 0.611 |  1.11 | . | 0.964 | 2.88e-15 |   +40.2 deg
+  Sr_aL ~Sr_bL  0.771 | 0.474 |  1.63 | . | 0.950 | 7.53e-15 |  -158.6 deg
+
+control (dead-pool) pairs, same instrument:
+  Ti_fL ~Ti_fR  0.425 | 0.290 |  1.47 | . | 0.902 | 1.86e-13
+  Ti_fL ~Ti_eL  0.694 | 0.308 |  2.25 | Y | 0.730 | 4.61e-09
+  Ti_fL ~Ti_eR  0.103 | 0.215 |  0.48 | . | 0.360 | 9.34e-03
+  Ti_fL ~Tr_fR  0.283 | 0.310 |  0.91 | . | 0.892 | 3.54e-13
+  Ti_fL ~Pr_aL  0.155 | 0.177 |  0.88 | . | 0.155 | 4.21e-01
+  Ti_fL ~Pr_aR  0.451 | 0.461 |  0.98 | . | 0.890 | 4.05e-13
+  Ti_fL ~Pr_bL  0.123 | 0.167 |  0.73 | . | 0.113 | 6.33e-01
+  Ti_fL ~Sr_aR  0.179 | 0.169 |  1.06 | . | 0.086 | 7.64e-01
+  Ti_fR ~Ti_eL  0.359 | 0.231 |  1.55 | . | 0.704 | 1.76e-08
+  Ti_fR ~Ti_eR  0.143 | 0.198 |  0.72 | . | 0.375 | 6.40e-03
+  Ti_fR ~Tr_fR  0.664 | 0.290 |  2.29 | Y | 0.903 | 1.73e-13
+  Ti_fR ~Pr_aL  0.146 | 0.183 |  0.79 | . | 0.141 | 4.89e-01
+  Ti_fR ~Pr_aR  0.371 | 0.329 |  1.13 | . | 0.824 | 2.43e-11
+  Ti_fR ~Pr_bL  0.259 | 0.156 |  1.66 | . | 0.197 | 2.46e-01
+  Ti_fR ~Sr_aR  0.122 | 0.157 |  0.78 | . | 0.040 | 9.44e-01
+  Ti_eL ~Ti_eR  0.188 | 0.170 |  1.10 | . | 0.204 | 2.24e-01
+  Ti_eL ~Tr_fR  0.314 | 0.246 |  1.28 | . | 0.657 | 1.81e-07
+  Ti_eL ~Pr_aL  0.143 | 0.146 |  0.98 | . | 0.077 | 8.10e-01
+  Ti_eL ~Pr_aR  0.282 | 0.287 |  0.98 | . | 0.703 | 1.88e-08
+  Ti_eL ~Pr_bL  0.160 | 0.157 |  1.02 | . | 0.171 | 3.49e-01
+  Ti_eL ~Sr_aR  0.192 | 0.160 |  1.19 | . | 0.023 | 9.81e-01
+  Ti_eR ~Tr_fR  0.184 | 0.156 |  1.18 | . | 0.423 | 1.61e-03
+  Ti_eR ~Pr_aL  0.160 | 0.174 |  0.92 | . | 0.149 | 4.51e-01
+  Ti_eR ~Pr_aR  0.256 | 0.295 |  0.87 | . | 0.387 | 4.56e-03
+  Ti_eR ~Pr_bL  0.129 | 0.148 |  0.87 | . | 0.092 | 7.38e-01
+  Ti_eR ~Sr_aR  0.137 | 0.161 |  0.85 | . | 0.078 | 8.04e-01
+  Tr_fR ~Pr_aL  0.168 | 0.191 |  0.88 | . | 0.098 | 7.09e-01
+  Tr_fR ~Pr_aR  0.369 | 0.288 |  1.28 | . | 0.898 | 2.48e-13
+  Tr_fR ~Pr_bL  0.219 | 0.155 |  1.41 | . | 0.066 | 8.54e-01
+  Tr_fR ~Sr_aR  0.106 | 0.154 |  0.69 | . | 0.055 | 8.98e-01
+  Pr_aL ~Pr_aR  0.208 | 0.195 |  1.07 | . | 0.158 | 4.07e-01
+  Pr_aL ~Pr_bL  0.210 | 0.182 |  1.15 | . | 0.094 | 7.29e-01
+  Pr_aL ~Sr_aR  0.142 | 0.160 |  0.89 | . | 0.179 | 3.17e-01
+  Pr_aR ~Pr_bL  0.142 | 0.143 |  0.99 | . | 0.101 | 6.95e-01
+  Pr_aR ~Sr_aR  0.155 | 0.144 |  1.08 | . | 0.093 | 7.33e-01
+  Pr_bL ~Sr_aR  0.186 | 0.161 |  1.16 | . | 0.183 | 2.98e-01
+
+sanity (aggregates contain carrier mass by construction):
+  mm~Tr_fL  matched 0.786 shuffled 0.763
+  mm~Tr_eL  matched 0.718 shuffled 0.779
+  mm~Tr_eR  matched 0.906 shuffled 0.912
+  xm~Tr_fL  matched 0.805 shuffled 0.803
+  xm~Tr_eL  matched 0.824 shuffled 0.824
+  xm~Tr_eR  matched 0.967 shuffled 0.970
+
+I3 (descriptive): within-seed SD across carriers med 0.11206 Hz vs within-carrier SD across seeds med 0.14433 Hz (FBIN 0.01667)
+
+off-arm (l154, DESCRIPTIVE secondary): clears 3/28 carrier, 5/36 control; med matched 0.240 vs 0.216
+l162/static.json written

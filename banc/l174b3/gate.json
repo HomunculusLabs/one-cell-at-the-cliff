@@ -1,0 +1,49 @@
+{
+ "chars": {
+  "pre": 9937,
+  "new": 8562,
+  "delta": -1375,
+  "pct": -13.84
+ },
+ "table_unchanged": true,
+ "T3_literals": {
+  "total": 101,
+  "missing": []
+ },
+ "keys": {
+  "pre": 24,
+  "new": 24,
+  "lost": [],
+  "added": []
+ },
+ "T1_numbers": {
+  "pre": 143,
+  "new": 131,
+  "dropped": [
+   ".024",
+   ".037",
+   ".064",
+   ".083",
+   ".147",
+   ".162",
+   ".202",
+   ".339",
+   ".349",
+   ".491",
+   ".51",
+   ".69"
+  ],
+  "orphans": []
+ },
+ "T2_added_numbers": [],
+ "T5_leads": {
+  "pre": 7,
+  "new": 7,
+  "lost": []
+ },
+ "G1p_certified_prose_chars": 1258,
+ "G1p_dedup_violations": [],
+ "G1p_reduction_pct": -13.84,
+ "fail": [],
+ "verdict": "PASS"
+}

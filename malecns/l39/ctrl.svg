@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="992" font-family="DejaVu Sans" font-size="12">
+<rect width="940" height="992" fill="#111318"/>
+<text x="56" y="24" fill="#c0caf5" font-size="15">seed 11 — attractor 0.80 Hz</text>
+<line x1="56" y1="231.7" x2="926" y2="231.7" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="235.7" fill="#6b7280" text-anchor="end" font-size="11">0.5</text>
+<line x1="56" y1="195.8" x2="926" y2="195.8" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="199.8" fill="#6b7280" text-anchor="end" font-size="11">1.0</text>
+<line x1="56" y1="159.9" x2="926" y2="159.9" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="163.9" fill="#6b7280" text-anchor="end" font-size="11">1.5</text>
+<line x1="56" y1="124.1" x2="926" y2="124.1" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="128.1" fill="#6b7280" text-anchor="end" font-size="11">2.0</text>
+<line x1="56" y1="88.2" x2="926" y2="88.2" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="92.2" fill="#6b7280" text-anchor="end" font-size="11">2.5</text>
+<line x1="56" y1="52.3" x2="926" y2="52.3" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="56.3" fill="#6b7280" text-anchor="end" font-size="11">3.0</text>
+<rect x="636.0" y="38" width="290.0" height="208" fill="#e06c9f" opacity="0.07"/>
+<polyline points="56.0,217.3 346.0,217.3 346.0,167.1 636.0,167.1 636.0,217.3 926.0,217.3" fill="none" stroke="#e0af68" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="346.0" y1="38" x2="346.0" y2="246" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<line x1="636.0" y1="38" x2="636.0" y2="246" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<polyline points="92.2,194.6 164.8,124.3 237.2,238.8 309.8,154.6 382.2,169.2 454.8,213.5 527.2,179.8 599.8,211.4 672.2,212.3 744.8,182.2 817.2,201.5 889.8,123.2" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="2 3"/>
+<polyline points="92.2,209.3 164.8,167.1 237.2,225.0 309.8,222.2 382.2,226.2 454.8,225.5 527.2,167.1 599.8,167.8 672.2,238.8 744.8,238.8 817.2,224.9 889.8,238.8" fill="none" stroke="#7aa2f7" stroke-width="2" stroke-dasharray=""/>
+<polyline points="92.2,209.3 164.8,167.1 237.2,225.0 309.8,222.2 382.2,231.6 454.8,227.2 527.2,238.8 599.8,167.0 672.2,212.9 744.8,224.4 817.2,219.7 889.8,209.8" fill="none" stroke="#9ece6a" stroke-width="2" stroke-dasharray="1 3"/>
+<polyline points="92.2,209.3 164.8,167.1 237.2,225.0 309.8,222.2 382.2,238.8 454.8,167.0 527.2,167.1 599.8,167.2 672.2,213.9 744.8,238.8 817.2,209.5 889.8,238.8" fill="none" stroke="#e06c9f" stroke-width="3" stroke-dasharray="7 3"/>
+<line x1="56" y1="246" x2="926" y2="246" stroke="#4b5563" stroke-width="1"/>
+<text x="56.0" y="262" fill="#6b7280" text-anchor="middle" font-size="11">0s</text>
+<text x="346.0" y="262" fill="#6b7280" text-anchor="middle" font-size="11">20s</text>
+<text x="636.0" y="262" fill="#6b7280" text-anchor="middle" font-size="11">40s</text>
+<text x="926.0" y="262" fill="#6b7280" text-anchor="middle" font-size="11">60s</text>
+<text x="56" y="324" fill="#c0caf5" font-size="15">seed 22 — attractor 1.44 Hz</text>
+<line x1="56" y1="531.7" x2="926" y2="531.7" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="535.7" fill="#6b7280" text-anchor="end" font-size="11">0.5</text>
+<line x1="56" y1="495.8" x2="926" y2="495.8" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="499.8" fill="#6b7280" text-anchor="end" font-size="11">1.0</text>
+<line x1="56" y1="459.9" x2="926" y2="459.9" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="463.9" fill="#6b7280" text-anchor="end" font-size="11">1.5</text>
+<line x1="56" y1="424.1" x2="926" y2="424.1" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="428.1" fill="#6b7280" text-anchor="end" font-size="11">2.0</text>
+<line x1="56" y1="388.2" x2="926" y2="388.2" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="392.2" fill="#6b7280" text-anchor="end" font-size="11">2.5</text>
+<line x1="56" y1="352.3" x2="926" y2="352.3" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="356.3" fill="#6b7280" text-anchor="end" font-size="11">3.0</text>
+<polyline points="56.0,517.3 346.0,517.3 346.0,467.1 636.0,467.1 636.0,517.3 926.0,517.3" fill="none" stroke="#e0af68" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="346.0" y1="338" x2="346.0" y2="546" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<line x1="636.0" y1="338" x2="636.0" y2="546" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<polyline points="92.2,466.0 164.8,467.9 237.2,462.1 309.8,468.4 382.2,469.6 454.8,467.7 527.2,467.3 599.8,463.8 672.2,467.0 744.8,466.9 817.2,538.8 889.8,464.5" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="2 3"/>
+<polyline points="92.2,514.0 164.8,513.8 237.2,538.8 309.8,519.6 382.2,467.1 454.8,467.2 527.2,538.8 599.8,467.1 672.2,518.4 744.8,512.1 817.2,520.9 889.8,512.4" fill="none" stroke="#7aa2f7" stroke-width="2" stroke-dasharray=""/>
+<polyline points="92.2,514.0 164.8,513.8 237.2,538.8 309.8,519.6 382.2,467.2 454.8,467.2 527.2,467.1 599.8,467.1 672.2,525.9 744.8,523.4 817.2,510.9 889.8,515.9" fill="none" stroke="#9ece6a" stroke-width="2" stroke-dasharray="1 3"/>
+<polyline points="92.2,514.0 164.8,513.8 237.2,538.8 309.8,519.6 382.2,467.2 454.8,467.0 527.2,467.3 599.8,467.1 672.2,518.8 744.8,521.1 817.2,518.9 889.8,524.7" fill="none" stroke="#e06c9f" stroke-width="3" stroke-dasharray="7 3"/>
+<line x1="56" y1="546" x2="926" y2="546" stroke="#4b5563" stroke-width="1"/>
+<text x="56.0" y="562" fill="#6b7280" text-anchor="middle" font-size="11">0s</text>
+<text x="346.0" y="562" fill="#6b7280" text-anchor="middle" font-size="11">20s</text>
+<text x="636.0" y="562" fill="#6b7280" text-anchor="middle" font-size="11">40s</text>
+<text x="926.0" y="562" fill="#6b7280" text-anchor="middle" font-size="11">60s</text>
+<text x="56" y="624" fill="#c0caf5" font-size="15">seed 33 — attractor 1.42 Hz</text>
+<line x1="56" y1="831.7" x2="926" y2="831.7" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="835.7" fill="#6b7280" text-anchor="end" font-size="11">0.5</text>
+<line x1="56" y1="795.8" x2="926" y2="795.8" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="799.8" fill="#6b7280" text-anchor="end" font-size="11">1.0</text>
+<line x1="56" y1="759.9" x2="926" y2="759.9" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="763.9" fill="#6b7280" text-anchor="end" font-size="11">1.5</text>
+<line x1="56" y1="724.1" x2="926" y2="724.1" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="728.1" fill="#6b7280" text-anchor="end" font-size="11">2.0</text>
+<line x1="56" y1="688.2" x2="926" y2="688.2" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="692.2" fill="#6b7280" text-anchor="end" font-size="11">2.5</text>
+<line x1="56" y1="652.3" x2="926" y2="652.3" stroke="#2a2e3a" stroke-width="1"/>
+<text x="48" y="656.3" fill="#6b7280" text-anchor="end" font-size="11">3.0</text>
+<rect x="346.0" y="638" width="290.0" height="208" fill="#e06c9f" opacity="0.07"/>
+<rect x="636.0" y="638" width="290.0" height="208" fill="#e06c9f" opacity="0.07"/>
+<polyline points="56.0,817.3 346.0,817.3 346.0,767.1 636.0,767.1 636.0,817.3 926.0,817.3" fill="none" stroke="#e0af68" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="346.0" y1="638" x2="346.0" y2="846" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<line x1="636.0" y1="638" x2="636.0" y2="846" stroke="#e06c9f" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+<polyline points="92.2,838.8 164.8,767.0 237.2,825.3 309.8,826.8 382.2,838.8 454.8,838.8 527.2,766.9 599.8,753.1 672.2,767.1 744.8,763.6 817.2,772.0 889.8,780.9" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="2 3"/>
+<polyline points="92.2,825.7 164.8,838.8 237.2,822.3 309.8,822.7 382.2,838.8 454.8,767.1 527.2,767.2 599.8,768.6 672.2,812.4 744.8,810.3 817.2,812.6 889.8,838.8" fill="none" stroke="#7aa2f7" stroke-width="2" stroke-dasharray=""/>
+<polyline points="92.2,825.7 164.8,838.8 237.2,822.3 309.8,822.7 382.2,838.8 454.8,767.1 527.2,767.1 599.8,767.0 672.2,822.5 744.8,817.3 817.2,824.6 889.8,811.7" fill="none" stroke="#9ece6a" stroke-width="2" stroke-dasharray="1 3"/>
+<polyline points="92.2,825.7 164.8,838.8 237.2,822.3 309.8,822.7 382.2,767.2 454.8,767.1 527.2,767.2 599.8,767.2 672.2,816.6 744.8,838.8 817.2,816.1 889.8,822.4" fill="none" stroke="#e06c9f" stroke-width="3" stroke-dasharray="7 3"/>
+<line x1="56" y1="846" x2="926" y2="846" stroke="#4b5563" stroke-width="1"/>
+<text x="56.0" y="862" fill="#6b7280" text-anchor="middle" font-size="11">0s</text>
+<text x="346.0" y="862" fill="#6b7280" text-anchor="middle" font-size="11">20s</text>
+<text x="636.0" y="862" fill="#6b7280" text-anchor="middle" font-size="11">40s</text>
+<text x="926.0" y="862" fill="#6b7280" text-anchor="middle" font-size="11">60s</text>
+<text x="14" y="974" fill="#8a8f98" font-size="11" transform="rotate(-90 14 974)">gait frequency (Hz)</text>
+<rect x="64" y="906" width="440" height="68" fill="#111318" opacity="0.92" stroke="#2a2e3a"/>
+<text x="72" y="922" fill="#e0af68" font-size="11">dashed gold = target 0.7→1.4→0.7 Hz; pink dotted verticals = hop volleys; pink shade = S(Tr)&lt;0.25 segment</text>
+<line x1="72" y1="938" x2="104" y2="938" stroke="#8a8f98" stroke-width="2.5" stroke-dasharray="2 3"/>
+<text x="110" y="942" fill="#c0caf5" font-size="11">free-run</text>
+<line x1="72" y1="951" x2="104" y2="951" stroke="#7aa2f7" stroke-width="2.5" stroke-dasharray=""/>
+<text x="110" y="955" fill="#c0caf5" font-size="11">entrain only (A=.3)</text>
+<line x1="72" y1="964" x2="104" y2="964" stroke="#e06c9f" stroke-width="2.5" stroke-dasharray="7 3"/>
+<text x="110" y="968" fill="#c0caf5" font-size="11">entrain + DNge046-L hop</text>
+<line x1="72" y1="977" x2="104" y2="977" stroke="#9ece6a" stroke-width="2.5" stroke-dasharray="1 3"/>
+<text x="110" y="981" fill="#c0caf5" font-size="11">entrain + DNg110 hop</text>
+</svg>

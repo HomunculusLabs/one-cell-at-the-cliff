@@ -1,0 +1,56 @@
+subnet 21,809 edges 647,953 | mech 4848 | antag 110 | hop46 [np.int64(270), np.int64(302), np.int64(366)] | 3s
+ANCH seed 11 done af 0.10564 | 13s
+ANCH seed 22 done af 0.10734 | 22s
+ANCH seed 33 done af 0.11161 | 32s
+B4 seed 801 done af 0.10748 | 42s
+B4 seed 802 done af 0.10885 | 51s
+B4 seed 803 done af 0.11128 | 62s
+B4 seed 804 done af 0.11165 | 71s
+B4 seed 805 done af 0.11106 | 81s
+B4 seed 806 done af 0.11124 | 91s
+B4 seed 807 done af 0.11037 | 100s
+B4 seed 808 done af 0.10826 | 110s
+B4 seed 809 done af 0.11211 | 120s
+B4 seed 810 done af 0.10872 | 130s
+B4 seed 811 done af 0.11573 | 139s
+B4 seed 812 done af 0.10991 | 149s
+B4 seed 813 done af 0.10711 | 159s
+B4 seed 814 done af 0.11073 | 169s
+B4 seed 815 done af 0.11202 | 178s
+B4 seed 816 done af 0.10817 | 188s
+B5 seed 901 done af 0.10959 | 198s
+B5 seed 902 done af 0.10615 | 208s
+B5 seed 903 done af 0.11018 | 218s
+B5 seed 904 done af 0.10592 | 228s
+B5 seed 905 done af 0.11633 | 237s
+B5 seed 906 done af 0.10995 | 247s
+B5 seed 907 done af 0.10610 | 257s
+B5 seed 908 done af 0.10684 | 267s
+B5 seed 909 done af 0.10422 | 277s
+B5 seed 910 done af 0.11138 | 286s
+B5 seed 911 done af 0.10807 | 296s
+B5 seed 912 done af 0.10858 | 306s
+B5 seed 913 done af 0.10862 | 316s
+B5 seed 914 done af 0.10840 | 326s
+B5 seed 915 done af 0.10950 | 336s
+B5 seed 916 done af 0.10950 | 347s
+B6 seed 1001 done af 0.10890 | 357s
+B6 seed 1002 done af 0.10895 | 368s
+B6 seed 1003 done af 0.11202 | 379s
+B6 seed 1004 done af 0.10826 | 391s
+B6 seed 1005 done af 0.11174 | 402s
+B6 seed 1006 done af 0.11335 | 413s
+B6 seed 1007 done af 0.10716 | 425s
+B6 seed 1008 done af 0.11358 | 436s
+B6 seed 1009 done af 0.11353 | 447s
+B6 seed 1010 done af 0.10977 | 458s
+B6 seed 1011 done af 0.10688 | 468s
+B6 seed 1012 done af 0.11138 | 478s
+B6 seed 1013 done af 0.10349 | 489s
+B6 seed 1014 done af 0.10775 | 499s
+B6 seed 1015 done af 0.10991 | 509s
+B6 seed 1016 done af 0.10468 | 519s
+rollouts done 519s
+raw_l94.npz checkpointed BEFORE analysis
+C0A True (max 0.0e+00) | fd_echo True | fd_hop [2001, 2002] | fd_hopfb [6] | C2 True (min 2.3e-02) | C1 True
+done 520s -> l94/raw_l94.npz + anchors_run.json

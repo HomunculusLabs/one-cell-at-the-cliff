@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="960" height="560" fill="#282c34"/>
+<text x="24" y="34" fill="#abb2bf" font-size="19" font-weight="bold">One-sided antagonist structure is joint-heterogeneous &#8212; and survives zero drive</text>
+<text x="24" y="54" fill="#5c6370" font-size="12.5">BANC female cord, L92 closure substrate &#183; per-side means over 48 seeds (3 batches); whiskers = batch min/max &#183; from stored L101/L103/L105 artifacts</text>
+<text x="70" y="82" fill="#abb2bf" font-size="14.5" font-weight="bold">A &#183; antagonist pairs &#8212; structure duty per side (S &#8805; 0.25)</text>
+<line x1="70.0" y1="96" x2="70.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="446.0" x2="420" y2="446.0" stroke="#3e4451" stroke-width="1"/>
+<text x="70.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">0.0</text>
+<text x="60" y="450.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.0</text>
+<line x1="140.0" y1="96" x2="140.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="376.0" x2="420" y2="376.0" stroke="#3e4451" stroke-width="1"/>
+<text x="140.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">0.2</text>
+<text x="60" y="380.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.2</text>
+<line x1="210.0" y1="96" x2="210.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="306.0" x2="420" y2="306.0" stroke="#3e4451" stroke-width="1"/>
+<text x="210.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">0.4</text>
+<text x="60" y="310.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.4</text>
+<line x1="280.0" y1="96" x2="280.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="236.0" x2="420" y2="236.0" stroke="#3e4451" stroke-width="1"/>
+<text x="280.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">0.6</text>
+<text x="60" y="240.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.6</text>
+<line x1="350.0" y1="96" x2="350.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="166.0" x2="420" y2="166.0" stroke="#3e4451" stroke-width="1"/>
+<text x="350.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">0.8</text>
+<text x="60" y="170.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.8</text>
+<line x1="420.0" y1="96" x2="420.0" y2="446" stroke="#3e4451" stroke-width="1"/>
+<line x1="70" y1="96.0" x2="420" y2="96.0" stroke="#3e4451" stroke-width="1"/>
+<text x="420.0" y="464" fill="#5c6370" font-size="11.5" text-anchor="middle">1.0</text>
+<text x="60" y="100.0" fill="#5c6370" font-size="11.5" text-anchor="end">1.0</text>
+<rect x="70" y="96" width="350" height="350" fill="none" stroke="#5c6370" stroke-width="1.2"/>
+<text x="245.0" y="484" fill="#abb2bf" font-size="12.5" text-anchor="middle">RIGHT side duty</text>
+<text x="12" y="271.0" fill="#abb2bf" font-size="12.5" text-anchor="middle" transform="rotate(-90 12 271.0)">LEFT side duty</text>
+<line x1="70.0" y1="96.0" x2="420.0" y2="446.0" stroke="#5c6370" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="414.0" y="462.0" fill="#5c6370" font-size="11" text-anchor="end">symmetric (L=R)</text>
+<line x1="233.1" y1="282.9" x2="199.8" y2="316.1" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="218.8" y1="282.9" x2="240.1" y2="282.9" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="233.1" y1="322.8" x2="233.1" y2="312.6" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="233.1" cy="282.9" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="199.8" cy="316.1" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="245.1" y="278.9" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">Ti</text>
+<text x="245.1" y="290.9" fill="#5c6370" font-size="10.5" text-anchor="start">flips side when free</text>
+<text x="187.8" y="304.1" fill="#61afef" font-size="10.5" text-anchor="end">Ti</text>
+<line x1="214.9" y1="301.1" x2="123.5" y2="392.4" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="200.2" y1="301.1" x2="227.8" y2="301.1" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="214.9" y1="434.8" x2="214.9" y2="426.4" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="214.9" cy="301.1" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="123.5" cy="392.4" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="226.9" y="303.1" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">Tr</text>
+<text x="226.9" y="315.1" fill="#5c6370" font-size="10.5" text-anchor="start">R>>L</text>
+<text x="135.6" y="384.4" fill="#61afef" font-size="10.5" text-anchor="start">Tr</text>
+<line x1="72.5" y1="443.6" x2="72.1" y2="443.9" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="72.1" y1="443.6" x2="73.2" y2="443.6" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="72.5" y1="327.0" x2="72.5" y2="307.4" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="72.5" cy="443.6" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="72.1" cy="443.9" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="86.5" y="437.6" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">Ta</text>
+<text x="86.5" y="449.6" fill="#5c6370" font-size="10.5" text-anchor="start">L>>R (inverted)</text>
+<text x="84.1" y="441.9" fill="#61afef" font-size="10.5" text-anchor="start">Ta</text>
+<line x1="206.8" y1="309.1" x2="234.5" y2="281.5" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="195.6" y1="309.1" x2="219.8" y2="309.1" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="206.8" y1="397.7" x2="206.8" y2="393.5" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="206.8" cy="309.1" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="234.5" cy="281.5" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="194.8" y="327.1" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="end">Sr</text>
+<text x="194.8" y="339.1" fill="#5c6370" font-size="10.5" text-anchor="end">R>L</text>
+<text x="248.5" y="279.5" fill="#61afef" font-size="10.5" text-anchor="start">Sr</text>
+<line x1="102.9" y1="413.1" x2="96.6" y2="419.4" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="95.2" y1="413.1" x2="109.6" y2="413.1" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="102.9" y1="444.6" x2="102.9" y2="434.1" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="102.9" cy="413.1" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="96.6" cy="419.4" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="118.9" y="403.1" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">Pr</text>
+<text x="118.9" y="415.1" fill="#5c6370" font-size="10.5" text-anchor="start">dead</text>
+<text x="540" y="82" fill="#abb2bf" font-size="14.5" font-weight="bold">B &#183; unpaired pools &#8212; activity per side (alive &#8805; 0.05)</text>
+<line x1="540.0" y1="96" x2="540.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="396.0" x2="840" y2="396.0" stroke="#3e4451" stroke-width="1"/>
+<text x="540.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.0</text>
+<text x="530" y="400.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.0</text>
+<line x1="600.0" y1="96" x2="600.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="336.0" x2="840" y2="336.0" stroke="#3e4451" stroke-width="1"/>
+<text x="600.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.1</text>
+<text x="530" y="340.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.1</text>
+<line x1="660.0" y1="96" x2="660.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="276.0" x2="840" y2="276.0" stroke="#3e4451" stroke-width="1"/>
+<text x="660.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.2</text>
+<text x="530" y="280.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.2</text>
+<line x1="720.0" y1="96" x2="720.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="216.0" x2="840" y2="216.0" stroke="#3e4451" stroke-width="1"/>
+<text x="720.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.4</text>
+<text x="530" y="220.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.4</text>
+<line x1="780.0" y1="96" x2="780.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="156.0" x2="840" y2="156.0" stroke="#3e4451" stroke-width="1"/>
+<text x="780.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.5</text>
+<text x="530" y="160.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.5</text>
+<line x1="840.0" y1="96" x2="840.0" y2="396" stroke="#3e4451" stroke-width="1"/>
+<line x1="540" y1="96.0" x2="840" y2="96.0" stroke="#3e4451" stroke-width="1"/>
+<text x="840.0" y="414" fill="#5c6370" font-size="11.5" text-anchor="middle">0.6</text>
+<text x="530" y="100.0" fill="#5c6370" font-size="11.5" text-anchor="end">0.6</text>
+<rect x="540" y="96" width="300" height="300" fill="none" stroke="#5c6370" stroke-width="1.2"/>
+<text x="690.0" y="434" fill="#abb2bf" font-size="12.5" text-anchor="middle">RIGHT side alive</text>
+<text x="482" y="246.0" fill="#abb2bf" font-size="12.5" text-anchor="middle" transform="rotate(-90 482 246.0)">LEFT side alive</text>
+<line x1="540.0" y1="96.0" x2="840.0" y2="396.0" stroke="#5c6370" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="834.0" y="412.0" fill="#5c6370" font-size="11" text-anchor="end">symmetric (L=R)</text>
+<line x1="542.0" y1="394.0" x2="545.0" y2="391.0" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="540.5" y1="394.0" x2="543.5" y2="394.0" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="542.0" y1="279.5" x2="542.0" y2="267.5" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="542.0" cy="394.0" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="545.0" cy="391.0" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="556.0" y="386.0" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">LT</text>
+<text x="556.0" y="398.0" fill="#5c6370" font-size="10.5" text-anchor="start">L-only</text>
+<text x="559.0" y="385.0" fill="#61afef" font-size="10.5" text-anchor="start">LT</text>
+<line x1="540.5" y1="395.5" x2="540.0" y2="396.0" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>
+<line x1="540.0" y1="395.5" x2="541.0" y2="395.5" stroke="#e06c75" stroke-width="1.2"/>
+<line x1="540.5" y1="292.5" x2="540.5" y2="290.0" stroke="#e06c75" stroke-width="1.2"/>
+<circle cx="540.5" cy="395.5" r="5.5" fill="#e06c75" stroke="#ffffff" stroke-width="0.6"/>
+<circle cx="540.0" cy="396.0" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="554.5" y="411.5" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="start">FR</text>
+<text x="554.5" y="423.5" fill="#5c6370" font-size="10.5" text-anchor="start">L-only</text>
+<circle cx="348" cy="118" r="5.5" fill="#e06c75"/>
+<text x="360" y="122" fill="#abb2bf" font-size="11.5">base (entrainment trunk)</text>
+<circle cx="348" cy="138" r="5" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="360" y="142" fill="#abb2bf" font-size="11.5">free-run (zero drive)</text>
+<line x1="344" y1="158" x2="355" y2="158" stroke="#61afef" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="360" y="162" fill="#abb2bf" font-size="11.5">same pool, arm &#8594; arm</text>
+<text x="70" y="504" fill="#5c6370" font-size="11.5">Ti is the exception: its dominant side flips R&#8594;L when drive is removed (attractor re-roll class); Tr/Ta/Sr keep their side, magnitudes shrink.</text>
+<text x="24" y="530" fill="#5c6370" font-size="11">Pooled both-sides robustness is 0/48 everywhere (L101/L103/L105) &#8212; this scatter shows the one-sided structure those gates cannot see.</text>
+<text x="24" y="548" fill="#5c6370" font-size="11">Axes differ between panels (structure duty vs activity) &#8212; disclosed &#183; peabrain lane L106 &#183; figure_data.json (C0B-certified extraction)</text>
+</svg>

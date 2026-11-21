@@ -1,0 +1,55 @@
+subnet 21,809 edges 647,953 | mech 4848 | pools 81 cells (+2 cert pools) | 3s
+ANCH seed 11 done af 0.10564 | 6s
+ANCH seed 22 done af 0.10734 | 9s
+ANCH seed 33 done af 0.11161 | 12s
+B4 seed 801 done af 0.10748 | 15s
+B4 seed 802 done af 0.10885 | 17s
+B4 seed 803 done af 0.11128 | 20s
+B4 seed 804 done af 0.11165 | 23s
+B4 seed 805 done af 0.11106 | 26s
+B4 seed 806 done af 0.11124 | 29s
+B4 seed 807 done af 0.11037 | 32s
+B4 seed 808 done af 0.10826 | 34s
+B4 seed 809 done af 0.11211 | 37s
+B4 seed 810 done af 0.10872 | 40s
+B4 seed 811 done af 0.11573 | 43s
+B4 seed 812 done af 0.10991 | 46s
+B4 seed 813 done af 0.10711 | 48s
+B4 seed 814 done af 0.11073 | 51s
+B4 seed 815 done af 0.11202 | 54s
+B4 seed 816 done af 0.10817 | 56s
+B5 seed 901 done af 0.10959 | 59s
+B5 seed 902 done af 0.10615 | 62s
+B5 seed 903 done af 0.11018 | 65s
+B5 seed 904 done af 0.10592 | 68s
+B5 seed 905 done af 0.11633 | 71s
+B5 seed 906 done af 0.10995 | 74s
+B5 seed 907 done af 0.10610 | 76s
+B5 seed 908 done af 0.10684 | 79s
+B5 seed 909 done af 0.10422 | 82s
+B5 seed 910 done af 0.11138 | 84s
+B5 seed 911 done af 0.10807 | 87s
+B5 seed 912 done af 0.10858 | 90s
+B5 seed 913 done af 0.10862 | 92s
+B5 seed 914 done af 0.10840 | 95s
+B5 seed 915 done af 0.10950 | 98s
+B5 seed 916 done af 0.10950 | 101s
+B6 seed 1001 done af 0.10890 | 103s
+B6 seed 1002 done af 0.10895 | 106s
+B6 seed 1003 done af 0.11202 | 109s
+B6 seed 1004 done af 0.10826 | 111s
+B6 seed 1005 done af 0.11174 | 114s
+B6 seed 1006 done af 0.11335 | 117s
+B6 seed 1007 done af 0.10716 | 120s
+B6 seed 1008 done af 0.11358 | 123s
+B6 seed 1009 done af 0.11353 | 126s
+B6 seed 1010 done af 0.10977 | 128s
+B6 seed 1011 done af 0.10688 | 131s
+B6 seed 1012 done af 0.11138 | 134s
+B6 seed 1013 done af 0.10349 | 136s
+B6 seed 1014 done af 0.10775 | 139s
+B6 seed 1015 done af 0.10991 | 142s
+B6 seed 1016 done af 0.10468 | 144s
+rollouts done 144s
+raw_l103.npz checkpointed BEFORE analysis
+C0A True (max 0.0e+00) | C1 True | done 145s

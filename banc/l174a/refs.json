@@ -1,0 +1,1570 @@
+{
+ "accepted": {
+  "azevedo2024": {
+   "authors": [
+    [
+     "Anthony",
+     "Azevedo"
+    ],
+    [
+     "Ellen",
+     "Lesser"
+    ],
+    [
+     "Jasper S.",
+     "Phelps"
+    ],
+    [
+     "Brandon",
+     "Mark"
+    ],
+    [
+     "Leila",
+     "Elabbady"
+    ],
+    [
+     "Sumiya",
+     "Kuroda"
+    ],
+    [
+     "Anne",
+     "Sustar"
+    ],
+    [
+     "Anthony",
+     "Moussa"
+    ],
+    [
+     "Avinash",
+     "Khandelwal"
+    ],
+    [
+     "Chris J.",
+     "Dallmann"
+    ],
+    [
+     "Sweta",
+     "Agrawal"
+    ],
+    [
+     "Su-Yee J.",
+     "Lee"
+    ],
+    [
+     "Brandon",
+     "Pratt"
+    ],
+    [
+     "Andrew",
+     "Cook"
+    ],
+    [
+     "Kyobi",
+     "Skutt-Kakaria"
+    ],
+    [
+     "Stephan",
+     "Gerhard"
+    ],
+    [
+     "Ran",
+     "Lu"
+    ],
+    [
+     "Nico",
+     "Kemnitz"
+    ],
+    [
+     "Kisuk",
+     "Lee"
+    ],
+    [
+     "Akhilesh",
+     "Halageri"
+    ],
+    [
+     "Manuel",
+     "Castro"
+    ],
+    [
+     "Dodam",
+     "Ih"
+    ],
+    [
+     "Jay",
+     "Gager"
+    ],
+    [
+     "Marwan",
+     "Tammam"
+    ],
+    [
+     "Sven",
+     "Dorkenwald"
+    ],
+    [
+     "Forrest",
+     "Collman"
+    ],
+    [
+     "Casey",
+     "Schneider-Mizell"
+    ],
+    [
+     "Derrick",
+     "Brittain"
+    ],
+    [
+     "Chris S.",
+     "Jordan"
+    ],
+    [
+     "Michael",
+     "Dickinson"
+    ],
+    [
+     "Alexandra",
+     "Pacureanu"
+    ],
+    [
+     "H. Sebastian",
+     "Seung"
+    ],
+    [
+     "Thomas",
+     "Macrina"
+    ],
+    [
+     "Wei-Chung Allen",
+     "Lee"
+    ],
+    [
+     "John C.",
+     "Tuthill"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/s41586-024-07389-x",
+   "match_score": 1.0,
+   "pages": "360-368",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Azevedo connectomic reconstruction of a female Drosophila ventral nerve cord Nature",
+   "title": "Connectomic reconstruction of a female Drosophila ventral nerve cord",
+   "type": "journal-article",
+   "volume": "631",
+   "year": 2024
+  },
+  "beiran2024": {
+   "authors": [
+    [
+     "Manuel",
+     "Beiran"
+    ],
+    [
+     "Ashok",
+     "Litwin-Kumar"
+    ]
+   ],
+   "container": "Nature Neuroscience",
+   "doi": "10.1038/s41593-025-02080-4",
+   "match_score": 1.0,
+   "pages": "2561-2574",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Beiran Litwin-Kumar prediction of neural activity in connectome-constrained recurrent networks",
+   "title": "Prediction of neural activity in connectome-constrained recurrent networks",
+   "type": "journal-article",
+   "volume": "28",
+   "year": 2025
+  },
+  "braun2024": {
+   "authors": [
+    [
+     "Jonas",
+     "Braun"
+    ],
+    [
+     "Femke",
+     "Hurtak"
+    ],
+    [
+     "Sibo",
+     "Wang-Chen"
+    ],
+    [
+     "Pavan",
+     "Ramdya"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/s41586-024-07523-9",
+   "match_score": 1.0,
+   "pages": "686-694",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Braun Ramdya descending networks transform command signals into population motor control Nature",
+   "title": "Descending networks transform command signals into population motor control",
+   "type": "journal-article",
+   "volume": "630",
+   "year": 2024
+  },
+  "cande2018": {
+   "authors": [
+    [
+     "Jessica",
+     "Cande"
+    ],
+    [
+     "Shigehiro",
+     "Namiki"
+    ],
+    [
+     "Jirui",
+     "Qiu"
+    ],
+    [
+     "Wyatt",
+     "Korff"
+    ],
+    [
+     "Gwyneth M",
+     "Card"
+    ],
+    [
+     "Joshua W",
+     "Shaevitz"
+    ],
+    [
+     "David L",
+     "Stern"
+    ],
+    [
+     "Gordon J",
+     "Berman"
+    ]
+   ],
+   "container": "eLife",
+   "doi": "10.7554/elife.34275",
+   "match_score": 1.0,
+   "pages": "",
+   "publisher": "eLife Sciences Publications, Ltd",
+   "query": "Cande optogenetic dissection of descending behavioral control in Drosophila eLife",
+   "title": "Optogenetic dissection of descending behavioral control in Drosophila",
+   "type": "journal-article",
+   "volume": "7",
+   "year": 2018
+  },
+  "cheong2024": {
+   "authors": [
+    [
+     "Han SJ",
+     "Cheong"
+    ],
+    [
+     "Katharina",
+     "Eichler"
+    ],
+    [
+     "Tomke",
+     "St\u00fcrner"
+    ],
+    [
+     "Samuel K",
+     "Asinof"
+    ],
+    [
+     "Andrew S",
+     "Champion"
+    ],
+    [
+     "Elizabeth C",
+     "Marin"
+    ],
+    [
+     "Tess B",
+     "Oram"
+    ],
+    [
+     "Marissa",
+     "Sumathipala"
+    ],
+    [
+     "Lalanti",
+     "Venkatasubramanian"
+    ],
+    [
+     "Shigehiro",
+     "Namiki"
+    ],
+    [
+     "Igor",
+     "Siwanowicz"
+    ],
+    [
+     "Marta",
+     "Costa"
+    ],
+    [
+     "Stuart",
+     "Berg"
+    ],
+    [
+     "Gregory SXE",
+     "Jefferis"
+    ],
+    [
+     "Gwyneth M",
+     "Card"
+    ]
+   ],
+   "container": "",
+   "doi": "10.7554/elife.96084.1",
+   "match_score": 1.0,
+   "pages": "",
+   "publisher": "eLife Sciences Publications, Ltd",
+   "query": "Cheong Tuthill premotor circuits Drosophila male adult nerve cord connectome descending input behavior [round2: assessment records filtered]",
+   "title": "Transforming descending input into behavior: The organization of premotor circuits in the Drosophila Male Adult Nerve Cord connectome",
+   "type": "posted-content",
+   "volume": "",
+   "year": 2024
+  },
+  "dallmann2026": {
+   "authors_raw": "Dallmann, C. J.; Iqbal, F. M.; Liebscher, S.; Erginkaya, M.; Liessem, S.; Sauer, E. L.; Soyka, H.; Cascino-Milani, F.; Goldammer, J.; Ito, K.; Ache, J. M.",
+   "container": "bioRxiv",
+   "date": "2026-01-04",
+   "doi": "10.64898/2026.01.04.697356",
+   "match_score": 1.0,
+   "query": "bioRxiv details API 10.64898/2026.01.04.697356",
+   "title": "A dedicated brain circuit controls forward walking in Drosophila",
+   "type": "posted-content",
+   "version": "1",
+   "year": "2026"
+  },
+  "duckophila2026": {
+   "created": "2026-11-01",
+   "description": "A fruit fly's connectome driving a microduck: the FlyWire whole-brain model in closed loop with Pollen Robotics' / Hugging Face's open-source microduck",
+   "license": "Apache-2.0",
+   "match_score": 1.0,
+   "query": "GitHub search api: duckophila",
+   "repo": "first-it-consulting/duckophila",
+   "url": "https://github.com/first-it-consulting/duckophila"
+  },
+  "eckstein2024": {
+   "authors": [
+    [
+     "Nils",
+     "Eckstein"
+    ],
+    [
+     "Alexander Shakeel",
+     "Bates"
+    ],
+    [
+     "Andrew",
+     "Champion"
+    ],
+    [
+     "Michelle",
+     "Du"
+    ],
+    [
+     "Yijie",
+     "Yin"
+    ],
+    [
+     "Philipp",
+     "Schlegel"
+    ],
+    [
+     "Alicia Kun-Yang",
+     "Lu"
+    ],
+    [
+     "Thomson",
+     "Rymer"
+    ],
+    [
+     "Samantha",
+     "Finley-May"
+    ],
+    [
+     "Tyler",
+     "Paterson"
+    ],
+    [
+     "Ruchi",
+     "Parekh"
+    ],
+    [
+     "Sven",
+     "Dorkenwald"
+    ],
+    [
+     "Arie",
+     "Matsliah"
+    ],
+    [
+     "Szi-Chieh",
+     "Yu"
+    ],
+    [
+     "Claire",
+     "McKellar"
+    ],
+    [
+     "Amy",
+     "Sterling"
+    ],
+    [
+     "Katharina",
+     "Eichler"
+    ],
+    [
+     "Marta",
+     "Costa"
+    ],
+    [
+     "Sebastian",
+     "Seung"
+    ],
+    [
+     "Mala",
+     "Murthy"
+    ],
+    [
+     "Volker",
+     "Hartenstein"
+    ],
+    [
+     "Gregory S.X.E.",
+     "Jefferis"
+    ],
+    [
+     "Jan",
+     "Funke"
+    ]
+   ],
+   "container": "Cell",
+   "doi": "10.1016/j.cell.2024.03.016",
+   "match_score": 1.0,
+   "pages": "2574-2594.e23",
+   "publisher": "Elsevier BV",
+   "query": "Eckstein neurotransmitter classification from electron microscopy images at synaptic sites Drosophila melanogaster Cell",
+   "title": "Neurotransmitter classification from electron microscopy images at synaptic sites in Drosophila melanogaster",
+   "type": "journal-article",
+   "volume": "187",
+   "year": 2024
+  },
+  "fakhar2022": {
+   "authors": [
+    [
+     "Kayson",
+     "Fakhar"
+    ],
+    [
+     "Claus C.",
+     "Hilgetag"
+    ]
+   ],
+   "container": "PLOS Computational Biology",
+   "doi": "10.1371/journal.pcbi.1010250",
+   "match_score": 1.0,
+   "pages": "e1010250",
+   "publisher": "Public Library of Science (PLoS)",
+   "query": "Fakhar Hilgetag systematic perturbation of an artificial neural network quantifying causal contributions brain",
+   "title": "Systematic perturbation of an artificial neural network: A step towards quantifying causal contributions in the brain",
+   "type": "journal-article",
+   "volume": "18",
+   "year": 2022
+  },
+  "jonas2017": {
+   "authors": [
+    [
+     "Eric",
+     "Jonas"
+    ],
+    [
+     "Konrad Paul",
+     "Kording"
+    ]
+   ],
+   "container": "PLOS Computational Biology",
+   "doi": "10.1371/journal.pcbi.1005268",
+   "match_score": 1.0,
+   "pages": "e1005268",
+   "publisher": "Public Library of Science (PLoS)",
+   "query": "Jonas Kording could a neuroscientist understand a microprocessor PLoS Computational Biology",
+   "title": "Could a Neuroscientist Understand a Microprocessor?",
+   "type": "journal-article",
+   "volume": "13",
+   "year": 2017
+  },
+  "keinan2004": {
+   "authors": [
+    [
+     "Alon",
+     "Keinan"
+    ],
+    [
+     "Ben",
+     "Sandbank"
+    ],
+    [
+     "Claus C.",
+     "Hilgetag"
+    ],
+    [
+     "Isaac",
+     "Meilijson"
+    ],
+    [
+     "Eytan",
+     "Ruppin"
+    ]
+   ],
+   "container": "Neural Computation",
+   "doi": "10.1162/0899766041336387",
+   "match_score": 1.0,
+   "pages": "1887-1915",
+   "publisher": "MIT Press - Journals",
+   "query": "Keinan fair attribution of functional contribution in artificial and biological networks Neural Computation",
+   "title": "Fair Attribution of Functional Contribution in Artificial and Biological Networks",
+   "type": "journal-article",
+   "volume": "16",
+   "year": 2004
+  },
+  "lesser2024": {
+   "authors": [
+    [
+     "Ellen",
+     "Lesser"
+    ],
+    [
+     "Anthony W.",
+     "Azevedo"
+    ],
+    [
+     "Jasper S.",
+     "Phelps"
+    ],
+    [
+     "Leila",
+     "Elabbady"
+    ],
+    [
+     "Andrew",
+     "Cook"
+    ],
+    [
+     "Durafshan Sakeena",
+     "Syed"
+    ],
+    [
+     "Brandon",
+     "Mark"
+    ],
+    [
+     "Sumiya",
+     "Kuroda"
+    ],
+    [
+     "Anne",
+     "Sustar"
+    ],
+    [
+     "Anthony",
+     "Moussa"
+    ],
+    [
+     "Chris J.",
+     "Dallmann"
+    ],
+    [
+     "Sweta",
+     "Agrawal"
+    ],
+    [
+     "Su-Yee J.",
+     "Lee"
+    ],
+    [
+     "Brandon",
+     "Pratt"
+    ],
+    [
+     "Kyobi",
+     "Skutt-Kakaria"
+    ],
+    [
+     "Stephan",
+     "Gerhard"
+    ],
+    [
+     "Ran",
+     "Lu"
+    ],
+    [
+     "Nico",
+     "Kemnitz"
+    ],
+    [
+     "Kisuk",
+     "Lee"
+    ],
+    [
+     "Akhilesh",
+     "Halageri"
+    ],
+    [
+     "Manuel",
+     "Castro"
+    ],
+    [
+     "Dodam",
+     "Ih"
+    ],
+    [
+     "Jay",
+     "Gager"
+    ],
+    [
+     "Marwan",
+     "Tammam"
+    ],
+    [
+     "Sven",
+     "Dorkenwald"
+    ],
+    [
+     "Forrest",
+     "Collman"
+    ],
+    [
+     "Casey",
+     "Schneider-Mizell"
+    ],
+    [
+     "Derrick",
+     "Brittain"
+    ],
+    [
+     "Chris S.",
+     "Jordan"
+    ],
+    [
+     "Thomas",
+     "Macrina"
+    ],
+    [
+     "Michael",
+     "Dickinson"
+    ],
+    [
+     "Wei-Chung Allen",
+     "Lee"
+    ],
+    [
+     "John C.",
+     "Tuthill"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/s41586-024-07600-z",
+   "match_score": 1.0,
+   "pages": "369-377",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Lesser synaptic architecture of leg and wing premotor control networks in Drosophila Nature",
+   "title": "Synaptic architecture of leg and wing premotor control networks in Drosophila",
+   "type": "journal-article",
+   "volume": "631",
+   "year": 2024
+  },
+  "liuwilson2013": {
+   "authors": [
+    [
+     "Wendy\u00a0W.",
+     "Liu"
+    ],
+    [
+     "Rachel\u00a0I.",
+     "Wilson"
+    ]
+   ],
+   "container": "Current Biology",
+   "doi": "10.1016/j.cub.2013.05.016",
+   "match_score": 1.0,
+   "pages": "1202-1208",
+   "publisher": "Elsevier BV",
+   "query": "Liu Wilson transient and specific inactivation of Drosophila neurons in vivo native ligand-gated ion channel Current Biology",
+   "title": "Transient and Specific Inactivation of Drosophila Neurons In\u00a0Vivo Using a Native Ligand-Gated Ion Channel",
+   "type": "journal-article",
+   "volume": "23",
+   "year": 2013
+  },
+  "namiki2018": {
+   "authors": [
+    [
+     "Shigehiro",
+     "Namiki"
+    ],
+    [
+     "Michael H",
+     "Dickinson"
+    ],
+    [
+     "Allan M",
+     "Wong"
+    ],
+    [
+     "Wyatt",
+     "Korff"
+    ],
+    [
+     "Gwyneth M",
+     "Card"
+    ]
+   ],
+   "container": "eLife",
+   "doi": "10.7554/elife.34272",
+   "match_score": 1.0,
+   "pages": "",
+   "publisher": "eLife Sciences Publications, Ltd",
+   "query": "Namiki functional organization of descending sensory-motor pathways in Drosophila eLife",
+   "title": "The functional organization of descending sensory-motor pathways in Drosophila",
+   "type": "journal-article",
+   "volume": "7",
+   "year": 2018
+  },
+  "otchy2015": {
+   "authors": [
+    [
+     "Timothy M.",
+     "Otchy"
+    ],
+    [
+     "Steffen B. E.",
+     "Wolff"
+    ],
+    [
+     "Juliana Y.",
+     "Rhee"
+    ],
+    [
+     "Cengiz",
+     "Pehlevan"
+    ],
+    [
+     "Risa",
+     "Kawai"
+    ],
+    [
+     "Alexandre",
+     "Kempf"
+    ],
+    [
+     "Sharon M. H.",
+     "Gobes"
+    ],
+    [
+     "Bence P.",
+     "\u00d6lveczky"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/nature16442",
+   "match_score": 1.0,
+   "pages": "358-363",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Otchy acute off-target effects of neural circuit manipulations Nature",
+   "title": "Acute off-target effects of neural circuit manipulations",
+   "type": "journal-article",
+   "volume": "528",
+   "year": 2015
+  },
+  "prinz2004": {
+   "authors": [
+    [
+     "Astrid A",
+     "Prinz"
+    ],
+    [
+     "Dirk",
+     "Bucher"
+    ],
+    [
+     "Eve",
+     "Marder"
+    ]
+   ],
+   "container": "Nature Neuroscience",
+   "doi": "10.1038/nn1352",
+   "match_score": 1.0,
+   "pages": "1345-1352",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Prinz Bucher Marder similar network activity from disparate circuit parameters Nature Neuroscience",
+   "title": "Similar network activity from disparate circuit parameters",
+   "type": "journal-article",
+   "volume": "7",
+   "year": 2004
+  },
+  "randi2023": {
+   "authors": [
+    [
+     "Francesco",
+     "Randi"
+    ],
+    [
+     "Anuj K.",
+     "Sharma"
+    ],
+    [
+     "Sophie",
+     "Dvali"
+    ],
+    [
+     "Andrew M.",
+     "Leifer"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/s41586-023-06683-4",
+   "match_score": 1.0,
+   "pages": "406-414",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Randi Leifer neural signal propagation atlas of Caenorhabditis elegans Nature",
+   "title": "Neural signal propagation atlas of Caenorhabditis elegans",
+   "type": "journal-article",
+   "volume": "623",
+   "year": 2023
+  },
+  "sapkal2026": {
+   "authors_raw": "Sapkal, N.; Kumar, D. S.; Sunke, S.; Mancini, N.; Pitchford, J.; Murakami, K.; Bidaye, S. S.",
+   "container": "bioRxiv",
+   "date": "2026-05-05",
+   "doi": "10.64898/2026.04.29.721658",
+   "match_score": 1.0,
+   "query": "bioRxiv details API 10.64898/2026.04.29.721658",
+   "title": "Central versus peripheral neural control of a coordinated walking pattern in Drosophila.",
+   "type": "posted-content",
+   "version": "2",
+   "year": "2026"
+  },
+  "sturner2025": {
+   "authors": [
+    [
+     "Tomke",
+     "St\u00fcrner"
+    ],
+    [
+     "Paul",
+     "Brooks"
+    ],
+    [
+     "Laia Serratosa",
+     "Capdevila"
+    ],
+    [
+     "Billy J.",
+     "Morris"
+    ],
+    [
+     "Alexandre",
+     "Javier"
+    ],
+    [
+     "Siqi",
+     "Fang"
+    ],
+    [
+     "Marina",
+     "Gkantia"
+    ],
+    [
+     "Sebastian",
+     "Cachero"
+    ],
+    [
+     "Isabella R.",
+     "Beckett"
+    ],
+    [
+     "Andrew S.",
+     "Champion"
+    ],
+    [
+     "Ilina",
+     "Moitra"
+    ],
+    [
+     "Alana",
+     "Richards"
+    ],
+    [
+     "Finja",
+     "Klemm"
+    ],
+    [
+     "Leonie",
+     "Kugel"
+    ],
+    [
+     "Shigehiro",
+     "Namiki"
+    ],
+    [
+     "Han S.J.",
+     "Cheong"
+    ],
+    [
+     "Julie",
+     "Kovalyak"
+    ],
+    [
+     "Emily",
+     "Tenshaw"
+    ],
+    [
+     "Ruchi",
+     "Parekh"
+    ],
+    [
+     "Philipp",
+     "Schlegel"
+    ],
+    [
+     "Jasper S.",
+     "Phelps"
+    ],
+    [
+     "Brandon",
+     "Mark"
+    ],
+    [
+     "Sven",
+     "Dorkenwald"
+    ],
+    [
+     "Alexander S.",
+     "Bates"
+    ],
+    [
+     "Arie",
+     "Matsliah"
+    ],
+    [
+     "Szi-chieh",
+     "Yu"
+    ],
+    [
+     "Claire E.",
+     "McKellar"
+    ],
+    [
+     "Amy",
+     "Sterling"
+    ],
+    [
+     "Sebastian",
+     "Seung"
+    ],
+    [
+     "Mala",
+     "Murthy"
+    ],
+    [
+     "John",
+     "Tuthill"
+    ],
+    [
+     "Wei-Chung A.",
+     "Lee"
+    ],
+    [
+     "Gwyneth M.",
+     "Card"
+    ],
+    [
+     "Marta",
+     "Costa"
+    ],
+    [
+     "Gregory S.X.E.",
+     "Jefferis"
+    ],
+    [
+     "Katharina",
+     "Eichler"
+    ]
+   ],
+   "container": "",
+   "doi": "10.1101/2024.06.04.596633",
+   "match_score": 1.0,
+   "pages": "",
+   "publisher": "openRxiv",
+   "query": "Sturner comparative connectomics descending ascending neurons Drosophila nervous system",
+   "title": "Comparative connectomics of the descending and ascending neurons of the\n                  <i>Drosophila</i>\n                  nervous system: stereotypy and sexual dimorphism",
+   "type": "posted-content",
+   "volume": "",
+   "year": 2024
+  },
+  "takemura2024": {
+   "authors": [
+    [
+     "Shin-ya",
+     "Takemura"
+    ],
+    [
+     "Kenneth J",
+     "Hayworth"
+    ],
+    [
+     "Gary B",
+     "Huang"
+    ],
+    [
+     "Michal",
+     "Januszewski"
+    ],
+    [
+     "Zhiyuan",
+     "Lu"
+    ],
+    [
+     "Elizabeth C",
+     "Marin"
+    ],
+    [
+     "Stephan",
+     "Preibisch"
+    ],
+    [
+     "C Shan",
+     "Xu"
+    ],
+    [
+     "John",
+     "Bogovic"
+    ],
+    [
+     "Andrew S",
+     "Champion"
+    ],
+    [
+     "Han SJ",
+     "Cheong"
+    ],
+    [
+     "Marta",
+     "Costa"
+    ],
+    [
+     "Katharina",
+     "Eichler"
+    ],
+    [
+     "William",
+     "Katz"
+    ],
+    [
+     "Christopher",
+     "Knecht"
+    ],
+    [
+     "Feng",
+     "Li"
+    ],
+    [
+     "Billy J",
+     "Morris"
+    ],
+    [
+     "Christopher",
+     "Ordish"
+    ],
+    [
+     "Patricia K",
+     "Rivlin"
+    ],
+    [
+     "Philipp",
+     "Schlegel"
+    ],
+    [
+     "Kazunori",
+     "Shinomiya"
+    ],
+    [
+     "Tomke",
+     "St\u00fcrner"
+    ],
+    [
+     "Ting",
+     "Zhao"
+    ],
+    [
+     "Griffin",
+     "Badalamente"
+    ],
+    [
+     "Dennis",
+     "Bailey"
+    ],
+    [
+     "Paul",
+     "Brooks"
+    ],
+    [
+     "Brandon S",
+     "Canino"
+    ],
+    [
+     "Jody",
+     "Clements"
+    ],
+    [
+     "Michael",
+     "Cook"
+    ],
+    [
+     "Octave",
+     "Duclos"
+    ],
+    [
+     "Christopher R",
+     "Dunne"
+    ],
+    [
+     "Kelli",
+     "Fairbanks"
+    ],
+    [
+     "Siqi",
+     "Fang"
+    ],
+    [
+     "Samantha",
+     "Finley-May"
+    ],
+    [
+     "Audrey",
+     "Francis"
+    ],
+    [
+     "Reed",
+     "George"
+    ],
+    [
+     "Marina",
+     "Gkantia"
+    ],
+    [
+     "Kyle",
+     "Harrington"
+    ],
+    [
+     "Gary Patrick",
+     "Hopkins"
+    ],
+    [
+     "Joseph",
+     "Hsu"
+    ],
+    [
+     "Philip M",
+     "Hubbard"
+    ],
+    [
+     "Alexandre",
+     "Javier"
+    ],
+    [
+     "Dagmar",
+     "Kainmueller"
+    ],
+    [
+     "Wyatt",
+     "Korff"
+    ],
+    [
+     "Julie",
+     "Kovalyak"
+    ],
+    [
+     "Dominik",
+     "Krzemi\u0144ski"
+    ],
+    [
+     "Shirley A",
+     "Lauchie"
+    ],
+    [
+     "Alanna",
+     "Lohff"
+    ],
+    [
+     "Charli",
+     "Maldonado"
+    ],
+    [
+     "Emily A",
+     "Manley"
+    ],
+    [
+     "Caroline",
+     "Mooney"
+    ],
+    [
+     "Erika",
+     "Neace"
+    ],
+    [
+     "Matthew",
+     "Nichols"
+    ],
+    [
+     "Omotara",
+     "Ogundeyi"
+    ],
+    [
+     "Nneoma",
+     "Okeoma"
+    ],
+    [
+     "Tyler",
+     "Paterson"
+    ],
+    [
+     "Elliott",
+     "Phillips"
+    ],
+    [
+     "Emily M",
+     "Phillips"
+    ],
+    [
+     "Caitlin",
+     "Ribeiro"
+    ],
+    [
+     "Sean M",
+     "Ryan"
+    ],
+    [
+     "Jon Thomson",
+     "Rymer"
+    ],
+    [
+     "Anne K",
+     "Scott"
+    ],
+    [
+     "Ashley L",
+     "Scott"
+    ],
+    [
+     "David",
+     "Shepherd"
+    ],
+    [
+     "Aya",
+     "Shinomiya"
+    ],
+    [
+     "Claire",
+     "Smith"
+    ],
+    [
+     "Natalie",
+     "Smith"
+    ],
+    [
+     "Alia",
+     "Suleiman"
+    ],
+    [
+     "Satoko",
+     "Takemura"
+    ],
+    [
+     "Iris",
+     "Talebi"
+    ],
+    [
+     "Imaan FM",
+     "Tamimi"
+    ],
+    [
+     "Eric T",
+     "Trautman"
+    ],
+    [
+     "Lowell",
+     "Umayam"
+    ],
+    [
+     "John J",
+     "Walsh"
+    ],
+    [
+     "Tansy",
+     "Yang"
+    ],
+    [
+     "Gerald M",
+     "Rubin"
+    ],
+    [
+     "Louis K",
+     "Scheffer"
+    ],
+    [
+     "Jan",
+     "Funke"
+    ],
+    [
+     "Stephan",
+     "Saalfeld"
+    ],
+    [
+     "Harald F",
+     "Hess"
+    ],
+    [
+     "Stephen M",
+     "Plaza"
+    ],
+    [
+     "Gwyneth M",
+     "Card"
+    ],
+    [
+     "Gregory SXE",
+     "Jefferis"
+    ],
+    [
+     "Stuart",
+     "Berg"
+    ]
+   ],
+   "container": "",
+   "doi": "10.7554/elife.97769.1",
+   "match_score": 1.0,
+   "pages": "",
+   "query": "crossref author=Takemura title=connectome male Drosophila ventral nerve cord",
+   "title": "A Connectome of the Male Drosophila Ventral Nerve Cord",
+   "type": "posted-content",
+   "volume": "",
+   "year": 2024
+  },
+  "vonreyn2014": {
+   "authors": [
+    [
+     "Catherine R",
+     "von Reyn"
+    ],
+    [
+     "Patrick",
+     "Breads"
+    ],
+    [
+     "Martin Y",
+     "Peek"
+    ],
+    [
+     "Grace Zhiyu",
+     "Zheng"
+    ],
+    [
+     "W Ryan",
+     "Williamson"
+    ],
+    [
+     "Alyson L",
+     "Yee"
+    ],
+    [
+     "Anthony",
+     "Leonardo"
+    ],
+    [
+     "Gwyneth M",
+     "Card"
+    ]
+   ],
+   "container": "Nature Neuroscience",
+   "doi": "10.1038/nn.3741",
+   "match_score": 1.0,
+   "pages": "962-970",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "von Reyn Card a spike-timing mechanism for action selection Nature Neuroscience",
+   "title": "A spike-timing mechanism for action selection",
+   "type": "journal-article",
+   "volume": "17",
+   "year": 2014
+  },
+  "wolff2018": {
+   "authors": [
+    [
+     "Steffen BE",
+     "Wolff"
+    ],
+    [
+     "Bence P",
+     "\u00d6lveczky"
+    ]
+   ],
+   "container": "Current Opinion in Neurobiology",
+   "doi": "10.1016/j.conb.2018.01.004",
+   "match_score": 1.0,
+   "pages": "84-94",
+   "publisher": "Elsevier BV",
+   "query": "Wolff Olveczky the promise and perils of causal circuit manipulations Current Opinion in Neurobiology",
+   "title": "The promise and perils of causal circuit manipulations",
+   "type": "journal-article",
+   "volume": "49",
+   "year": 2018
+  },
+  "yan2017": {
+   "authors": [
+    [
+     "Gang",
+     "Yan"
+    ],
+    [
+     "Petra E.",
+     "V\u00e9rtes"
+    ],
+    [
+     "Emma K.",
+     "Towlson"
+    ],
+    [
+     "Yee Lian",
+     "Chew"
+    ],
+    [
+     "Denise S.",
+     "Walker"
+    ],
+    [
+     "William R.",
+     "Schafer"
+    ],
+    [
+     "Albert-L\u00e1szl\u00f3",
+     "Barab\u00e1si"
+    ]
+   ],
+   "container": "Nature",
+   "doi": "10.1038/nature24056",
+   "match_score": 1.0,
+   "pages": "519-523",
+   "publisher": "Springer Science and Business Media LLC",
+   "query": "Yan network control principles predict neuron function Caenorhabditis elegans connectome Nature",
+   "title": "Network control principles predict neuron function in the Caenorhabditis elegans connectome",
+   "type": "journal-article",
+   "volume": "550",
+   "year": 2017
+  }
+ },
+ "cert1": {
+  "annotations2024": {
+   "local_title": "Whole-brain annotation and multi-connectome cell typing of Drosophila",
+   "remote_title": "Whole-brain annotation and multi-connectome cell typing of Drosophila",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-024-07686-5",
+   "status": "MATCH"
+  },
+  "approxbrain2026": {
+   "local_title": "ApproxBrain: Certified Sufficiency Frontiers in Connectome-Constrained Neural Systems",
+   "remote_title": "ApproxBrain: Certified Sufficiency Frontiers in Connectome-Constrained Neural Systems",
+   "score": 1.0,
+   "source": "arxiv:2611.06929",
+   "status": "MATCH"
+  },
+  "banc2026": {
+   "local_title": "Distributed control circuits across a brain-and-cord connectome",
+   "remote_title": "Distributed control circuits across a brain-and-cord connectome",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-026-10735-w",
+   "status": "MATCH"
+  },
+  "dallmann2026": {
+   "local_title": "A dedicated brain circuit controls forward walking in Drosophila",
+   "remote_title": "A dedicated brain circuit controls forward walking in Drosophila",
+   "score": 1.0,
+   "source": "biorxiv-api:10.64898/2026.01.04.697356",
+   "status": "MATCH"
+  },
+  "flyhack2026": {
+   "local_title": "FlyHack: Stress-Testing Mechanistic Claims in a Connectome-Constrained Visual Model",
+   "remote_title": "FlyHack: Stress-Testing Mechanistic Claims in a Connectome-Constrained Visual Model",
+   "score": 1.0,
+   "source": "arxiv:2610.13018",
+   "status": "MATCH"
+  },
+  "flyvis2024": {
+   "local_title": "Connectome-constrained networks predict neural activity across the fly visual system",
+   "remote_title": "Connectome-constrained networks predict neural activity across the fly visual system",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-024-07939-3",
+   "status": "MATCH"
+  },
+  "flywire2024": {
+   "local_title": "Neuronal wiring diagram of an adult brain",
+   "remote_title": "Neuronal wiring diagram of an adult brain",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-024-07558-y",
+   "status": "MATCH"
+  },
+  "kopel2026": {
+   "local_title": "Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes",
+   "remote_title": "Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes",
+   "score": 1.0,
+   "source": "arxiv:2611.23320",
+   "status": "MATCH"
+  },
+  "larvaloperator2026": {
+   "local_title": "A frozen rate operator from the complete larval connectome: degree and weight govern the gross response, exact wiring governs input routing and mushroom-body modes",
+   "remote_title": "A frozen rate operator from the complete larval connectome: degree and weight govern the gross response, exact wiring governs input routing and mushroom-body modes",
+   "score": 1.0,
+   "source": "arxiv:2606.17745",
+   "status": "MATCH"
+  },
+  "malecns2026": {
+   "local_title": "Sexual dimorphism in the complete Drosophila male central nervous system connectome",
+   "remote_title": "Sexual dimorphism in the complete Drosophila male central nervous system connectome",
+   "score": 1.0,
+   "source": "crossref:10.1016/j.cell.2026.08.015",
+   "status": "MATCH"
+  },
+  "minnick2026": {
+   "local_title": "Sensorimotor behaviour from an untrained brain-and-nerve-cord connectome",
+   "remote_title": "Sensorimotor behavior from an untrained brain-and-nerve-cord connectome",
+   "score": 0.889,
+   "source": "arxiv:2610.33881",
+   "status": "MATCH"
+  },
+  "pugliese2026": {
+   "local_title": "Connectome simulations identify a central pattern generator for fly walking",
+   "remote_title": "Connectome simulations identify a central pattern generator for fly walking",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-026-11195-y",
+   "status": "MATCH"
+  },
+  "sapkal2026": {
+   "local_title": "Central pattern generators for walking in Drosophila",
+   "remote_title": "Central versus peripheral neural control of a coordinated walking pattern in Drosophila.",
+   "score": 0.667,
+   "source": "biorxiv-api:10.64898/2026.04.29.721658",
+   "status": "DIFFERS"
+  },
+  "shiu2024": {
+   "local_title": "A Drosophila computational brain model reveals sensorimotor processing",
+   "remote_title": "A Drosophila computational brain model reveals sensorimotor processing",
+   "score": 1.0,
+   "source": "crossref:10.1038/s41586-024-07763-9",
+   "status": "MATCH"
+  }
+ },
+ "notes": [],
+ "rejected": {}
+}

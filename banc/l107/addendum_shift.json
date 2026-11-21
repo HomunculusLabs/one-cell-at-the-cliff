@@ -1,0 +1,26 @@
+{
+ "l107:b65": {
+  "duty07_shifted": 0.992,
+  "k_shifted": 16,
+  "dL": 1.0,
+  "dR": 0.992
+ },
+ "l107:h65": {
+  "duty07_shifted": 0.918,
+  "k_shifted": 16,
+  "dL": 0.927,
+  "dR": 0.989
+ },
+ "l107:cut": {
+  "duty07_shifted": 0.12,
+  "k_shifted": 0,
+  "dL": 0.844,
+  "dR": 0.144
+ },
+ "l94cfn:cfn": {
+  "duty07_shifted": 0.128,
+  "k_shifted": 0,
+  "dL": 0.376,
+  "dR": 0.422
+ }
+}

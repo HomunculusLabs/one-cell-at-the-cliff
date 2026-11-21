@@ -1,0 +1,68 @@
+C0B certification (stored l113, Ti+Tr tables, ALL 5 stored arms): PASS
+P0 anchors vs raw_l113 (stored arms, seeds 801/901) + l117 k5 gain: PASS (max 0.0e+00)
+fresh gains: {'cutk1': 0.166175, 'cutk2': 0.147846, 'cutk3': 0.174042, 'cutr5': 0.159249} cutk5 0.13982 band_ok False stairs {'cutk1': '1.4e-05', 'cutk2': '7.0e-05', 'cutk3': '5.4e-04', 'cutr5': '3.1e-04'}
+P4 {"af_range_ok": true, "b65_band": true, "af_mean": {"full": 0.107923, "b65": 0.108923, "cut": 0.108541, "cut19": 0.110811, "cut58": 0.111503, "cutk1": 0.108974, "cutk2": 0.107199, "cutk3": 0.109967, "cutk5": 0.105574, "cutr5": 0.108773}}
+---- B14 per-side duty table ----
+Ti full   kL  4/16 meanL 0.357 | kR  4/16 meanR 0.431
+Ti b65    kL 16/16 meanL 0.999 | kR 16/16 meanR 0.998
+Ti cut    kL 16/16 meanL 0.833 | kR  0/16 meanR 0.175
+Ti cut19  kL 16/16 meanL 0.758 | kR  0/16 meanR 0.030
+Ti cut58  kL 16/16 meanL 0.817 | kR  0/16 meanR 0.200
+Ti cutk1  kL 12/16 meanL 0.553 | kR  5/16 meanR 0.393
+Ti cutk2  kL  0/16 meanL 0.271 | kR  6/16 meanR 0.437
+Ti cutk3  kL  7/16 meanL 0.475 | kR  8/16 meanR 0.508
+Ti cutk5  kL  1/16 meanL 0.238 | kR  0/16 meanR 0.061
+Ti cutr5  kL  3/16 meanL 0.408 | kR  6/16 meanR 0.415
+Tr full   kL  0/16 meanL 0.067 | kR  2/16 meanR 0.354
+Tr b65    kL  0/16 meanL 0.172 | kR 16/16 meanR 0.978
+Tr cut    kL  0/16 meanL 0.048 | kR  2/16 meanR 0.327
+Tr cut19  kL  0/16 meanL 0.111 | kR  0/16 meanR 0.239
+Tr cut58  kL  0/16 meanL 0.046 | kR  4/16 meanR 0.431
+Tr cutk1  kL  0/16 meanL 0.013 | kR  7/16 meanR 0.507
+Tr cutk2  kL  0/16 meanL 0.065 | kR  4/16 meanR 0.401
+Tr cutk3  kL  0/16 meanL 0.039 | kR 13/16 meanR 0.583
+Tr cutk5  kL  0/16 meanL 0.019 | kR  2/16 meanR 0.417
+Tr cutr5  kL  0/16 meanL 0.041 | kR  8/16 meanR 0.475
+Ta full   kL  5/16 meanL 0.394 | kR  0/16 meanR 0.002
+Ta b65    kL  0/16 meanL 0.041 | kR  0/16 meanR 0.053
+Ta cut    kL  0/16 meanL 0.117 | kR  0/16 meanR 0.050
+Ta cut19  kL  2/16 meanL 0.320 | kR  0/16 meanR 0.022
+Ta cut58  kL  0/16 meanL 0.177 | kR  0/16 meanR 0.067
+Ta cutk1  kL  0/16 meanL 0.248 | kR  0/16 meanR 0.138
+Ta cutk2  kL  0/16 meanL 0.035 | kR  0/16 meanR 0.025
+Ta cutk3  kL  0/16 meanL 0.055 | kR  0/16 meanR 0.168
+Ta cutk5  kL  0/16 meanL 0.128 | kR  0/16 meanR 0.091
+Ta cutr5  kL  7/16 meanL 0.470 | kR  0/16 meanR 0.084
+Sr full   kL  0/16 meanL 0.121 | kR  2/16 meanR 0.358
+Sr b65    kL 16/16 meanL 0.844 | kR  0/16 meanR 0.037
+Sr cut    kL 15/16 meanL 0.662 | kR 10/16 meanR 0.517
+Sr cut19  kL  6/16 meanL 0.472 | kR  1/16 meanR 0.175
+Sr cut58  kL 15/16 meanL 0.899 | kR  0/16 meanR 0.050
+Sr cutk1  kL  3/16 meanL 0.361 | kR  7/16 meanR 0.481
+Sr cutk2  kL  2/16 meanL 0.229 | kR  0/16 meanR 0.203
+Sr cutk3  kL  0/16 meanL 0.171 | kR  7/16 meanR 0.421
+Sr cutk5  kL  0/16 meanL 0.185 | kR  0/16 meanR 0.070
+Sr cutr5  kL  0/16 meanL 0.178 | kR  1/16 meanR 0.327
+Pr full   kL  0/16 meanL 0.024 | kR  0/16 meanR 0.131
+Pr b65    kL  0/16 meanL 0.008 | kR  0/16 meanR 0.002
+Pr cut    kL  0/16 meanL 0.015 | kR  0/16 meanR 0.129
+Pr cut19  kL  0/16 meanL 0.012 | kR  0/16 meanR 0.167
+Pr cut58  kL  0/16 meanL 0.012 | kR  0/16 meanR 0.263
+Pr cutk1  kL  0/16 meanL 0.032 | kR  0/16 meanR 0.011
+Pr cutk2  kL  0/16 meanL 0.026 | kR  0/16 meanR 0.033
+Pr cutk3  kL  0/16 meanL 0.020 | kR  0/16 meanR 0.073
+Pr cutk5  kL  0/16 meanL 0.020 | kR  0/16 meanR 0.014
+Pr cutr5  kL  0/16 meanL 0.014 | kR  0/16 meanR 0.133
+full-arm B14 band check (disclosure only): {'Ti': {'L': True, 'R': True}, 'Sr': {'L': True, 'R': True}}
+Ti k= 0 (full  ): meanR 0.431 kR  4/16 | meanL 0.357 kL  4/16 | paired dR +0.000 n_down 0/16 -> no-kill
+Ti k= 1 (cutk1 ): meanR 0.393 kR  5/16 | meanL 0.553 kL 12/16 | paired dR -0.039 n_down 2/16 -> no-kill
+Ti k= 2 (cutk2 ): meanR 0.437 kR  6/16 | meanL 0.271 kL  0/16 | paired dR +0.005 n_down 1/16 -> no-kill
+Ti k= 3 (cutk3 ): meanR 0.508 kR  8/16 | meanL 0.475 kL  7/16 | paired dR +0.077 n_down 2/16 -> no-kill
+Ti k= 5 (cutk5 ): meanR 0.061 kR  0/16 | meanL 0.238 kL  1/16 | paired dR -0.370 n_down 13/16 -> KILL
+Ti k=19 (cut19 ): meanR 0.030 kR  0/16 | meanL 0.758 kL 16/16 | paired dR -0.402 n_down 14/16 -> KILL
+P1 k* = 5: STEP AT k=5 (.0425 mass)
+l117 B12 cross-batch context (no gate): {'Ti_meanR': {'0': 0.473, '5': 0.023, '10': 0.104, '15': 0.074, '19': 0.018}, 'Ti_kR': {'0': 7, '5': 0, '10': 0, '15': 0, '19': 0}}
+P2 cutr5: meanR 0.415 kR  6/16 paired dR -0.016 n_down 3/16 -> PLACEMENT: random-5 (.0231, zero heaviest-5 overlap) does NOT kill — the HEAVIEST-5's specific cells carry the R-kill
+Sr_R watch (no gate): {'0': 0.358, '1': 0.481, '2': 0.203, '3': 0.421, '5': 0.07, '19': 0.175} kR {'0': 2, '1': 7, '2': 0, '3': 7, '5': 0, '19': 1}
+sanity: {'cut_kL': 16, 'b65_kL': 16, 'b65_kR': 16, 'cut19_kL': 16, 'sr_b65_kL': 16, 'sr_b65_kR': 0} PASS
+results_l119.json written

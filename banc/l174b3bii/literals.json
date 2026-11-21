@@ -1,0 +1,2693 @@
+{
+ "editable": [
+  " exact",
+  " of ",
+  " only",
+  " vs ",
+  "### 2.5 ",
+  "### 2.6 Scope boundary",
+  "### 2.8 The slow line is stimulus-set",
+  "(3.9e-04 [xor])",
+  "+.306 vs +.355",
+  ".100 Hz",
+  ".111 Hz is NOT the dominant envelope line",
+  ".json",
+  "0.1946 / 0.0642 /\n  0.1333",
+  "0.2818 / 0.0667 / 0.0670",
+  "0/16",
+  "1/16",
+  "11/16",
+  "11/16 seeds [l154.band]",
+  "12/16",
+  "15/16",
+  "16/16",
+  "3.9e-04",
+  "342 cells / 43 ng with K = 52",
+  "5/16",
+  "500-on/400-off chop's own 9-s cycle",
+  "7, 16, 47 and 56 s",
+  "B2_preserved",
+  "BANC",
+  "DNp54",
+  "DNp54-R and DNpe028-L",
+  "DNpe028",
+  "MATCH",
+  "PARTIAL",
+  "SUPER",
+  "UNMATCHED-FLOOR",
+  "UNTESTED AT MATCHED FLOOR",
+  "[l170.matched]",
+  "[l170.pins]",
+  "[l171.envelope]",
+  "[l171.panel]",
+  "against BANC's K = 77",
+  "agree",
+  "agrees to\n  within .0025",
+  "banc",
+  "banc/",
+  "base",
+  "below",
+  "bin 6 of a 60-s window = .100 Hz exactly",
+  "branch",
+  "branch A1 fired",
+  "carrier",
+  "census",
+  "closure",
+  "cutng23",
+  "cutng25",
+  "cutng25p",
+  "cutng29",
+  "cutwA",
+  "degenerate",
+  "dn_new",
+  "dn_new = 28 cells / 9 ng with K = 9",
+  "dnp33",
+  "drive envelope",
+  "extra",
+  "fast",
+  "floor",
+  "from 37/33 to 6/2 but never\n  reach zero",
+  "full",
+  "gain",
+  "gains",
+  "implicit pair-level floor of 3",
+  "l146.release",
+  "l154.band",
+  "l171.envelope",
+  "l171.panel",
+  "ladder",
+  "ladder mass exactly 0.0",
+  "license",
+  "male_s1",
+  "mass",
+  "mass-matched",
+  "mass-matched to 4.4e-04",
+  "mass-twin",
+  "mean",
+  "meanR",
+  "note",
+  "panel",
+  "pins",
+  "published",
+  "report",
+  "seed",
+  "seeds",
+  "spread",
+  "status",
+  "survive",
+  "table",
+  "vector strength",
+  "verdict",
+  "window",
+  "| 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |",
+  "| 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |",
+  "| 15/16, meanR .754 | 5/16, .399 | +.355 |",
+  "\u0394k 14 vs 10"
+ ],
+ "keys": [
+  "gains.full.spread",
+  "jitter_note",
+  "l138.banc",
+  "l138.male_s1",
+  "l146.release",
+  "l154.band",
+  "l169.af",
+  "l169.branch",
+  "l169.grid",
+  "l169.nt",
+  "l169.pooled",
+  "l169.swap_legs",
+  "l169c.design",
+  "l169c2.base",
+  "l169c2.branch",
+  "l169c2.cert",
+  "l169c2.gains",
+  "l169c2.hom",
+  "l169c2.rew",
+  "l169d.branch",
+  "l169d.cert",
+  "l169d.cert",
+  "l169d.grid",
+  "l169d.grid",
+  "l169d.grid",
+  "l169d.legs",
+  "l169d.legs",
+  "l169d.xbatch",
+  "l170.matched",
+  "l170.matched",
+  "l170.pins",
+  "l171.envelope",
+  "l171.panel",
+  "sustain.cutng23",
+  "sustain.cutng25",
+  "sustain.cutng29",
+  "xor"
+ ],
+ "literals": {
+  " exact": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_in_sev": 3,
+   "n_span": 6,
+   "verifiers": [
+    "l161_verify.py"
+   ]
+  },
+  " of ": {
+   "multiline": false,
+   "n_elsewhere": 154,
+   "n_in_sev": 18,
+   "n_span": 26,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " only": {
+   "multiline": false,
+   "n_elsewhere": 23,
+   "n_in_sev": 2,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  " vs ": {
+   "multiline": false,
+   "n_elsewhere": 31,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "### 2.5 ": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.6 Scope boundary": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.7 ": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.7 Pre-posting controls": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "### 2.8 The slow line is stimulus-set": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(.145617) and reads .724": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(.150060) and reads .333": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(.477, kR 8/16,\n  [.280,.720])": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(.786, 15/16)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "(3.9e-04 [xor])": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**Displacement is not removal": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "**The XOR pair at swapped gains": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "+.276 above cutwA": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "+.306 vs +.355": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "+.474 above the twin-removed\n  graph with 16 of 16 seeds up": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".100 Hz": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_in_sev": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  ".111 Hz is NOT the dominant envelope line": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".143527 and .145445": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".144464) and reads .302": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  ".json": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0.1946 / 0.0642 /\n  0.1333": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0.2818 / 0.0667 / 0.0670": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "0/16": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_in_sev": 1,
+   "n_span": 3,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "1.34% apart": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "1/16": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 2,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "10 right / 1 left": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "101 incident closure edges removed": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "11/16": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "11/16 seeds [l154.band]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "1110": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "12/16": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 2,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "15 of 18 seeds": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "15/16": {
+   "multiline": false,
+   "n_elsewhere": 9,
+   "n_in_sev": 6,
+   "n_span": 9,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "15/16 \u2192 16/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "16/16": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_in_sev": 4,
+   "n_span": 5,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "2, 3/16": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "20 of 48 [.288,.557]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "200.05 against 183.96": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "3.9e-04": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "3.9e-04 mass delta": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "342 cells / 43 ng with K = 52": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "4/16": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "5/16": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_in_sev": 8,
+   "n_span": 12,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "5/16 \u2192 8/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "500-on/400-off chop's own 9-s cycle": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "6 shared, Jaccard\n.037": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "7, 16, 47 and 56 s": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "7/16": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "8/16": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "804x the": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "88 closure out-edges": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "B2_preserved": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "BANC": {
+   "multiline": false,
+   "n_elsewhere": 12,
+   "n_in_sev": 0,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "DNp54": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "DNp54-R and DNpe028-L": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "DNpe028": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Design pins for the rewire and deletion arms": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "E1_graph_tracking": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "H1_specific": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "MATCH": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "PARTIAL": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_in_sev": 3,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "R2_mass_degree": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "R3_draw_lottery": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "Registered branch D1 fired": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "SUPER": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_in_sev": 10,
+   "n_span": 13,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "UNMATCHED-FLOOR": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "UNTESTED AT MATCHED FLOOR": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[.142,.556]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[.717,.989]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.af]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.branch]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.grid]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.nt]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.pooled]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169.swap_legs]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c.design]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.base]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.branch]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.cert]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.gains]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.hom]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169c2.rew]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169d.branch]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169d.cert]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169d.grid]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169d.legs]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l169d.xbatch]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l170.matched]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l170.pins]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.envelope]": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "[l171.panel]": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "`rew2` .333, 1/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "`rew3` .302, 3/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "admissible": {
+   "multiline": false,
+   "n_elsewhere": 8,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "against BANC's K = 77": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "agree": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "agrees to\n  within .0025": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "anchors": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "at g_cutng25p it is +.174 with 12 of\n  16 up": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "banc": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py",
+    "l174_verify.py"
+   ]
+  },
+  "banc/": {
+   "multiline": false,
+   "n_elsewhere": 22,
+   "n_in_sev": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "base": {
+   "multiline": false,
+   "n_elsewhere": 59,
+   "n_in_sev": 5,
+   "n_span": 8,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "below": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_in_sev": 6,
+   "n_span": 7,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "bin 6 of a 60-s window = .100 Hz exactly": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "branch": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_in_sev": 7,
+   "n_span": 13,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "branch A1 fired": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier": {
+   "multiline": false,
+   "n_elsewhere": 81,
+   "n_in_sev": 23,
+   "n_span": 27,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier's\n80": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier's 9 left / 1 right": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "carrier-free": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "census": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py"
+   ]
+  },
+  "cert": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_in_sev": 4,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "closure": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_in_sev": 2,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "controls": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "cutng23": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutng25": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_in_sev": 15,
+   "n_span": 19,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng25 140/144 (lb .931, nine)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "cutng25p": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 4,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutng29": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutwA": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_in_sev": 10,
+   "n_span": 11,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "cutwA 47/160 (ub .368, ten)": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "degenerate": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "diff": {
+   "multiline": false,
+   "n_elsewhere": 29,
+   "n_in_sev": 9,
+   "n_span": 9,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "differ per seed by up to\n  .46": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "dn_new": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "dn_new = 28 cells / 9 ng with K = 9": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "dnp33": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "drive envelope": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "eMotBot5": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "eMotTop5": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "edges": {
+   "multiline": false,
+   "n_elsewhere": 37,
+   "n_in_sev": 5,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "equal": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "extra": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_in_sev": 1,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "fast": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "floor": {
+   "multiline": false,
+   "n_elsewhere": 24,
+   "n_in_sev": 2,
+   "n_span": 15,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "follows the\n  GRAPH, not the gain": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "from 37/33 to 6/2 but never\n  reach zero": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "full": {
+   "multiline": false,
+   "n_elsewhere": 6,
+   "n_in_sev": 1,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "g_cutng25": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "g_cutwA": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gain": {
+   "multiline": false,
+   "n_elsewhere": 83,
+   "n_in_sev": 44,
+   "n_span": 51,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gains": {
+   "multiline": false,
+   "n_elsewhere": 36,
+   "n_in_sev": 11,
+   "n_span": 17,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "gi 928": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "holds on 15 and 13 of 18 seeds": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "implicit pair-level floor of 3": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "kR exactly 8 of 16, meanR .477 just under the .50 bar": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l146.release": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l154.band": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.af": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.branch": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.grid": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.nt": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.pooled": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169.swap_legs": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l169c.design": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "l171.envelope": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "l171.panel": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py",
+    "l161_verify.py"
+   ]
+  },
+  "label": {
+   "multiline": false,
+   "n_elsewhere": 16,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "ladder": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_in_sev": 0,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "ladder mass exactly 0.0": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "left": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "legs": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "license": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "male_s1": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "mass": {
+   "multiline": false,
+   "n_elsewhere": 69,
+   "n_in_sev": 9,
+   "n_span": 15,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "mass-matched": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_in_sev": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "mass-matched to 4.4e-04": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "mass-twin": {
+   "multiline": false,
+   "n_elsewhere": 7,
+   "n_in_sev": 1,
+   "n_span": 4,
+   "verifiers": [
+    "l158_verify.py"
+   ]
+  },
+  "mean": {
+   "multiline": false,
+   "n_elsewhere": 24,
+   "n_in_sev": 14,
+   "n_span": 18,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR": {
+   "multiline": false,
+   "n_elsewhere": 10,
+   "n_in_sev": 11,
+   "n_span": 14,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "meanR\n  .798, kR 16/16, [.806,1.000]": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .301, kR 2/16, [.035,.360]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .317, kR 2/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .324, kR 1/16, paired \u2212.152": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .426, kR 4/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .452, kR 5/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .651, kR 15/16,\n  [.717,.989], paired \u2212.147": {
+   "multiline": true,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .702, kR 15/16, [.717,.989]": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .724, kR 16/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "meanR .753, kR 16/16": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "min 1.9e-2": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "n25gP": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "n25gW": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "non-monotone in gain": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "note": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "p25gN": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "paired +.272 over cutwA, 15/16 seeds up": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "paired +.321 with 16 of 16 seeds up": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "paired \u2212.150": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "panel": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "pins": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 1,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "pooled": {
+   "multiline": false,
+   "n_elsewhere": 52,
+   "n_in_sev": 5,
+   "n_span": 5,
+   "verifiers": [
+    "l149_verify.py",
+    "l158_verify.py"
+   ]
+  },
+  "probe": {
+   "multiline": false,
+   "n_elsewhere": 2,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "published": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "relocates all 80 edges": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "report": {
+   "multiline": false,
+   "n_elsewhere": 18,
+   "n_in_sev": 5,
+   "n_span": 6,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "returns no measurable mass": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rew1": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rew2": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 2,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rew3": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rewire": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 8,
+   "n_span": 8,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "right": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "rule": {
+   "multiline": false,
+   "n_elsewhere": 14,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "same-footprint, different-class deletion, not a homolog control": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seed": {
+   "multiline": false,
+   "n_elsewhere": 45,
+   "n_in_sev": 17,
+   "n_span": 22,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "seeds": {
+   "multiline": false,
+   "n_elsewhere": 27,
+   "n_in_sev": 12,
+   "n_span": 16,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "silW": {
+   "multiline": false,
+   "n_elsewhere": 11,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "silW 42/48 (lb .753, three": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "spread": {
+   "multiline": false,
+   "n_elsewhere": 3,
+   "n_in_sev": 1,
+   "n_span": 4,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "staircase residual 5.4e-07": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "statistics": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "status": {
+   "multiline": false,
+   "n_elsewhere": 1,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "super": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "supers": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "survive": {
+   "multiline": false,
+   "n_elsewhere": 15,
+   "n_in_sev": 0,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "table": {
+   "multiline": false,
+   "n_elsewhere": 24,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l143_verify.py",
+    "l149_verify.py"
+   ]
+  },
+  "target": {
+   "multiline": false,
+   "n_elsewhere": 13,
+   "n_in_sev": 4,
+   "n_span": 4,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "title": {
+   "multiline": false,
+   "n_elsewhere": 4,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l174_verify.py"
+   ]
+  },
+  "vector strength": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "verdict": {
+   "multiline": false,
+   "n_elsewhere": 5,
+   "n_in_sev": 1,
+   "n_span": 2,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "wAgN": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 3,
+   "n_span": 3,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "window": {
+   "multiline": false,
+   "n_elsewhere": 25,
+   "n_in_sev": 2,
+   "n_span": 9,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "xbatch": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "| 15/16, meanR .754 | 5/16, .399 | +.355 |": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "\u0394k 14 vs 10": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 0,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  },
+  "\u2212.109 BELOW it": {
+   "multiline": false,
+   "n_elsewhere": 0,
+   "n_in_sev": 1,
+   "n_span": 1,
+   "verifiers": [
+    "l149_verify.py"
+   ]
+  }
+ },
+ "nums": [
+  "+1.06",
+  "-20",
+  "-3",
+  "-3",
+  "-4",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0.0",
+  "0.0",
+  "0.0",
+  "0.0",
+  "0.03%",
+  "0.0642",
+  "0.0667",
+  "0.0670",
+  "0.1333",
+  "0.1946",
+  "0.2818",
+  "0.3",
+  "0.7",
+  "0.7",
+  "0.7",
+  "000",
+  "000,",
+  "0010",
+  "0013",
+  "0025",
+  "028",
+  "035,.360",
+  "037",
+  "07",
+  "07",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+  "1%",
+  "1.0",
+  "1.24%",
+  "1.30%",
+  "1.34%",
+  "1.4",
+  "1.4",
+  "1.9e-2",
+  "1.9e-2",
+  "1.9e-2",
+  "10",
+  "10",
+  "10",
+  "10",
+  "10",
+  "100",
+  "100",
+  "101",
+  "109",
+  "11",
+  "111",
+  "1110",
+  "119",
+  "12",
+  "12",
+  "12",
+  "12",
+  "12",
+  "13",
+  "13",
+  "13",
+  "138",
+  "138",
+  "138",
+  "138,",
+  "139",
+  "14",
+  "140",
+  "142,.556",
+  "143527",
+  "143658",
+  "144",
+  "144464",
+  "145445",
+  "145445",
+  "145617",
+  "146",
+  "147",
+  "1487",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "15",
+  "150",
+  "150,",
+  "150060",
+  "152",
+  "154",
+  "156,",
+  "157,",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "16,",
+  "160",
+  "162",
+  "162",
+  "162,",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "169",
+  "17,",
+  "170",
+  "170",
+  "170",
+  "170",
+  "170",
+  "171",
+  "171",
+  "171",
+  "171",
+  "172",
+  "174",
+  "1750",
+  "18",
+  "18",
+  "183.96",
+  "19",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2",
+  "2.2",
+  "2.4",
+  "2.5",
+  "2.6",
+  "2.7",
+  "2.7",
+  "2.8",
+  "20",
+  "200.05",
+  "23",
+  "23",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "25",
+  "26",
+  "26,",
+  "272",
+  "276",
+  "28",
+  "280,.720",
+  "288,.557",
+  "29",
+  "29",
+  "29",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3",
+  "3,",
+  "3.9e-04",
+  "3.9e-04",
+  "301",
+  "301,",
+  "302",
+  "302",
+  "302,",
+  "306",
+  "306",
+  "317,",
+  "319",
+  "321",
+  "324,",
+  "33",
+  "33",
+  "33",
+  "33",
+  "333",
+  "333,",
+  "342",
+  "35",
+  "355",
+  "355",
+  "368,",
+  "37",
+  "37,",
+  "370",
+  "38",
+  "38,",
+  "399",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4",
+  "4.4e-04",
+  "400",
+  "42",
+  "426,",
+  "43",
+  "452,",
+  "46",
+  "47",
+  "47",
+  "474",
+  "477",
+  "477,",
+  "48",
+  "48",
+  "48",
+  "48,",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5",
+  "5.4e-07",
+  "50",
+  "500",
+  "52,",
+  "54",
+  "56",
+  "6",
+  "6",
+  "6",
+  "60",
+  "628",
+  "628",
+  "651,",
+  "676",
+  "7,",
+  "702,",
+  "717,.989",
+  "717,.989",
+  "717,.989",
+  "724",
+  "724,",
+  "753,",
+  "753,",
+  "754",
+  "77",
+  "786,",
+  "798,",
+  "8",
+  "8",
+  "8",
+  "8%",
+  "8,7,6,4,9,4",
+  "80",
+  "80,",
+  "804",
+  "806,1.000",
+  "88",
+  "9",
+  "9",
+  "9",
+  "9",
+  "9",
+  "928",
+  "928",
+  "931,",
+  "95",
+  "98"
+ ],
+ "report": {
+  "bullet_lines": 27,
+  "bullet_lines_editable": 11,
+  "bullet_lines_sev": 16,
+  "citation_key_tokens": 37,
+  "citation_keys_distinct": 32,
+  "literals_exclusive_to_span": 125,
+  "literals_in_span": 232,
+  "literals_multiline": 12,
+  "literals_multiline_editable": 3,
+  "literals_touching_editable_text": 103,
+  "numeric_distinct": 173,
+  "numeric_tokens": 411,
+  "span_chars": 15472,
+  "span_lines": 247
+ }
+}

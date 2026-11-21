@@ -1,0 +1,8 @@
+C0B certification (stored l94 cfn B4): PASS
+C0A True | C1 {'af_range_ok': True, 'b65_band': True, 'af_mean': {'full': 0.110293, 'b65': 0.109196, 'h65': 0.112252, 'cut': 0.107192}}
+CUT-BISECT {'af_final': 0.10853426406780879, 'target': 0.10905611018339793, 'gap': 0.000522, 'gap_cells': 11.3, 'b4_mean': 0.107192, 'b4_minus_target': -0.001864, 'seed_spread_ref': 'l94 cfn sd .0024'}
+full  k_Ti  0/16 | duty07 0.135 L 0.378 R 0.425 | seg1 0.003 seg2 0.098 | Tr L 0.032 R 0.372 | af 0.11029 | lock 16/16
+b65   k_Ti 16/16 | duty07 0.993 L 1.000 R 0.993 | seg1 1.000 seg2 0.996 | Tr L 0.150 R 0.961 | af 0.10920 | lock 16/16
+h65   k_Ti 16/16 | duty07 0.925 L 0.932 R 0.990 | seg1 0.988 seg2 0.917 | Tr L 0.232 R 0.996 | af 0.11225 | lock 16/16
+cut   k_Ti  0/16 | duty07 0.118 L 0.836 R 0.143 | seg1 0.106 seg2 0.105 | Tr L 0.055 R 0.345 | af 0.10719 | lock 16/16
+VERDICT: k Ti B4/16: full 0 (stored 0) | b65 16 (l91 was 16/16 x3 batches) | h65 16 | cut 0 -> DISTRIBUTED membership: kill carried by the small-per-cell intrinsic-projecting bulk, not the top-77 nor the gain

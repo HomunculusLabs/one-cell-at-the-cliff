@@ -1,0 +1,127 @@
+{
+ "chars_pre": 7769,
+ "chars_post": 7541,
+ "char_delta": -228,
+ "char_delta_pct": -2.93,
+ "visible_chars_pre": 6348,
+ "visible_chars_post": 6334,
+ "visible_char_delta": -14,
+ "bullets_pre": 10,
+ "bullets_post": 0,
+ "numeric_tokens": 166,
+ "numeric_multiset_identical": true,
+ "citation_tokens": 18,
+ "citation_multiset_identical": true,
+ "literals_checked": 140,
+ "literals_verbatim": 135,
+ "literals_wrap_exempt": [
+  "fully RE-DERIVED, not\n  frozen",
+  "re-ordering rather than\n  turnover",
+  "the unit of inference\n  is the simulation realization"
+ ],
+ "literals_marker_exempt": [
+  "- DATA FLOOR:",
+  "- Wet-lab predictions"
+ ],
+ "dedash_blocks": 8,
+ "reauthored_blocks": 2,
+ "sentence_splits": 11,
+ "conn_words_inserted": 2,
+ "conn_words_removed": 7,
+ "split_report": [
+  {
+   "old": "n = 16) and the registered R-side cliff does NOT transfer",
+   "conn_removed": [
+    "and"
+   ],
+   "conn_inserted": []
+  },
+  {
+   "old": "cutwA PARTIAL 3/16 .371), and the f4ng-vs-f4tw XOR leg is flat",
+   "conn_removed": [
+    "and"
+   ],
+   "conn_inserted": []
+  },
+  {
+   "old": "quantifies the pattern: in the l65-baseline arm",
+   "conn_removed": [],
+   "conn_inserted": []
+  },
+  {
+   "old": "but a stimulus-locked one (\u00a72.8) \u2014 while the intact closure is sub-band",
+   "conn_removed": [
+    "while"
+   ],
+   "conn_inserted": []
+  },
+  {
+   "old": "is not antagonist-clock-wide: the mm/xm aggregates carry it",
+   "conn_removed": [],
+   "conn_inserted": []
+  },
+  {
+   "old": "strongest members 36/36), while the Ti pools stay",
+   "conn_removed": [
+    "while"
+   ],
+   "conn_inserted": []
+  },
+  {
+   "old": "heavy-cohort Jaccard .9231 \u2014 while the TWIN selection is floor-3-conting",
+   "conn_removed": [
+    "while"
+   ],
+   "conn_inserted": [
+    "so"
+   ]
+  },
+  {
+   "old": "rather than weight: in that preregistered screen",
+   "conn_removed": [],
+   "conn_inserted": []
+  },
+  {
+   "old": "thresholds of 10\u201315, and the stated cause is measurement",
+   "conn_removed": [
+    "and"
+   ],
+   "conn_inserted": []
+  },
+  {
+   "old": "[l169b2.lat_descriptive]; a registered left-side test is queued",
+   "conn_removed": [],
+   "conn_inserted": []
+  },
+  {
+   "old": "[l146.release] \u2014 so a single-synapse sensitivity critique has no purchas",
+   "conn_removed": [
+    "so"
+   ],
+   "conn_inserted": [
+    "therefore"
+   ]
+  }
+ ],
+ "sentences_over_60w_pre": 7,
+ "longest_sentence_words": 53,
+ "top_sentences": [
+  [
+   53,
+   "The f4 bound is STATIC ONLY: the dynamic f4 arm has now been run (fres"
+  ],
+  [
+   52,
+   "One post-hoc observation is reported without a claim: on the floored s"
+  ],
+  [
+   51,
+   "The trace-level forms of these two censuses (518 of 518 and 361 of 500"
+  ],
+  [
+   50,
+   "DATA FLOOR: the BANC v626 connections release carries an IMPLICIT pair"
+  ]
+ ],
+ "paragraphs": 11
+}

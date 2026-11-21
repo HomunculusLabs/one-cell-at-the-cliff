@@ -1,0 +1,11 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+/home/t3rpz/critters/peabrain-lab/malecns/l21_tau.py:109: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wt = torch.sparse_coo_tensor(Wt.indices(), Wt.values().abs(),
+motor 815 | intrinsic 13161 | SHALLOW interior: d1 10826 / d2 2316 / d3+ 0 / never-reach 18 | null k=f(d2) 0.176 | cord mech 3588 | loom 949 | TTMn 2 | leg 164
+asc5: TTMn t_pk [172, 164, 233] (344-466 ms) | leg t_pk [21, 29, 24] | fast 2316 | af 0.1485 | 44s
+all5: TTMn t_pk [172, 246, 233] (344-466 ms) | leg t_pk [21, 29, 24] | fast 2316 | af 0.1485 | 83s
+wrote l21/results_l21_a3.json + traces
+done 83s

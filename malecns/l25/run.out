@@ -1,0 +1,14 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+== static sign/pass over L20 crouch classes ==
+DNg95     cells 2 edges   84 w_sum +0.403 (+0.403/0.000) flex_w +0.322 flex_edges 45
+DNge079   cells 2 edges  211 w_sum -1.276 (+0.000/-1.276) flex_w -0.662 flex_edges 63
+DNg74_b   cells 2 edges  415 w_sum -2.331 (+0.000/-2.331) flex_w -0.961 flex_edges 90
+DNg35     cells 2 edges  110 w_sum +0.526 (+0.526/0.000) flex_w +0.311 flex_edges 36
+DNg108    cells 2 edges  311 w_sum -1.457 (+0.000/-1.457) flex_w -0.618 flex_edges 71
+  overlap DNg35 vs DNg95: flex-profile cos +0.896 flex_w +0.311
+ROUTE A = DNg95, ROUTE B = DNg35 (profile-overlap pick)
+amplified edges: G84+110=194 | G_HI 194 (x200/x2000)
+pools: {'flexL': 72, 'flexR': 69}

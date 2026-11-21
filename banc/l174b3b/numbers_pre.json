@@ -1,0 +1,2585 @@
+{
+ "dose_l135": {
+  "src": "l136/plot_data.json:dose_l135",
+  "v": {
+   "kL": {
+    "0": 3,
+    "19": 1,
+    "23": 1,
+    "24": 1,
+    "25": 0,
+    "25p": 2,
+    "26": 0,
+    "29": 0,
+    "58": 16,
+    "k5": 1
+   },
+   "kR": {
+    "0": 4,
+    "19": 0,
+    "23": 0,
+    "24": 5,
+    "25": 15,
+    "25p": 5,
+    "26": 16,
+    "29": 15,
+    "58": 0,
+    "k5": 0
+   },
+   "legs": {
+    "0": {
+     "mean_paired_dR": 0.0,
+     "n_down": 0,
+     "n_up": 0
+    },
+    "19": {
+     "mean_paired_dR": -0.24,
+     "n_down": 9,
+     "n_up": 0
+    },
+    "23": {
+     "mean_paired_dR": -0.348,
+     "n_down": 15,
+     "n_up": 0
+    },
+    "24": {
+     "mean_paired_dR": -0.054,
+     "n_down": 6,
+     "n_up": 1
+    },
+    "25": {
+     "mean_paired_dR": 0.317,
+     "n_down": 0,
+     "n_up": 13
+    },
+    "25p": {
+     "mean_paired_dR": -0.038,
+     "n_down": 3,
+     "n_up": 1
+    },
+    "26": {
+     "mean_paired_dR": 0.406,
+     "n_down": 0,
+     "n_up": 14
+    },
+    "29": {
+     "mean_paired_dR": 0.364,
+     "n_down": 0,
+     "n_up": 14
+    },
+    "58": {
+     "mean_paired_dR": -0.154,
+     "n_down": 5,
+     "n_up": 0
+    },
+    "k5": {
+     "mean_paired_dR": -0.403,
+     "n_down": 15,
+     "n_up": 0
+    }
+   },
+   "meanL": {
+    "0": 0.362,
+    "19": 0.325,
+    "23": 0.209,
+    "24": 0.245,
+    "25": 0.123,
+    "25p": 0.301,
+    "26": 0.092,
+    "29": 0.202,
+    "58": 0.852,
+    "k5": 0.288
+   },
+   "meanR": {
+    "0": 0.437,
+    "19": 0.196,
+    "23": 0.089,
+    "24": 0.383,
+    "25": 0.754,
+    "25p": 0.399,
+    "26": 0.843,
+    "29": 0.801,
+    "58": 0.282,
+    "k5": 0.034
+   }
+  }
+ },
+ "full_kR_sets": {
+  "src": "l139/results_l139.json:full_kR",
+  "v": {
+   "0": 8,
+   "1": 7,
+   "2": 6,
+   "3": 4,
+   "4": 9,
+   "5": 4
+  }
+ },
+ "gains.full.spread": {
+  "src": "l139/results_l139.json:gains.*.full",
+  "v": [
+   0.1531,
+   0.175,
+   0.1487,
+   0.1491,
+   0.1614,
+   0.1617
+  ]
+ },
+ "jitter_note": {
+  "src": "l139/results_l139.json:jitter_note",
+  "v": "1% iid multiplicative on base edge table, default_rng(2001..2005), post-log1p signed vals"
+ },
+ "l135.pooled": {
+  "src": "l135/results_l135.json:pooled",
+  "v": {
+   "cut58": {
+    "k": null,
+    "lb": 0.001,
+    "n": null,
+    "ub": 0.0315
+   },
+   "cutk5": {
+    "k": null,
+    "lb": 0.0,
+    "n": null,
+    "ub": 0.0214
+   },
+   "cutng19": {
+    "k": null,
+    "lb": 0.0122,
+    "n": null,
+    "ub": 0.0648
+   },
+   "cutng29": {
+    "k": null,
+    "lb": 0.9276,
+    "n": null,
+    "ub": 0.9843
+   },
+   "full": {
+    "k": null,
+    "lb": 0.3069,
+    "n": null,
+    "ub": 0.4485
+   }
+  }
+ },
+ "l137.g1": {
+  "src": "l137/results_l137.json:g1+dm+census",
+  "v": {
+   "b_wiring": true,
+   "census_x_mean": 0.454,
+   "dm_mm_max": 0.0486,
+   "sil1110": {
+    "in_full_band": true,
+    "kR": 2,
+    "meanR": 0.376,
+    "paired_dR": -0.088
+   }
+  }
+ },
+ "l137.g2": {
+  "src": "l137/results_l137.json:g2",
+  "v": {
+   "direction": -0.055,
+   "vol1110_dR": 0.022,
+   "volrand_dR": 0.077
+  }
+ },
+ "l137.g3": {
+  "src": "l137/results_l137.json:g3",
+  "v": {
+   "silrand_meanR": [
+    0.429,
+    0.502,
+    0.504
+   ],
+   "spread": 0.075
+  }
+ },
+ "l137.pooled_full": {
+  "src": "l137/results_l137.json:pooled_full",
+  "v": {
+   "k": 72,
+   "lb": 0.3096,
+   "n": 192,
+   "p_hat": 0.375,
+   "ub": 0.4453
+  }
+ },
+ "l137.sil24": {
+  "src": "l137/results_l137.json:sil24",
+  "v": {
+   "cutwA_l135_b26": {
+    "kR": 5,
+    "meanR": 0.383
+   },
+   "dR": -0.032,
+   "kL": 0,
+   "kR": 5,
+   "meanL": 0.119,
+   "meanR": 0.432,
+   "partial": true
+  }
+ },
+ "l137.vol1110": {
+  "src": "l137/results_l137.json:table.Ti.vol1110",
+  "v": {
+   "kL": 3,
+   "kR": 7,
+   "meanL": 0.354,
+   "meanR": 0.486
+  }
+ },
+ "l138.banc": {
+  "src": "l138/static.json:banc",
+  "v": {
+   "K": 77,
+   "dn33_cells": [
+    {
+     "gi": 928,
+     "side": "right"
+    },
+    {
+     "gi": 1110,
+     "side": "left"
+    }
+   ],
+   "fafb_in_live_brain": true,
+   "fafb_match_1110": "720575940604103084",
+   "window_shares": {
+    "r1_19": 0.1946,
+    "r20_29": 0.0642,
+    "r30_58": 0.1333
+   }
+  }
+ },
+ "l138.male_s1": {
+  "src": "l138/static.json:male_s1",
+  "v": {
+   "added_dn_out_edges": 787,
+   "added_edges": 1942,
+   "dn_new": 28,
+   "dn_new_glut": 0,
+   "dn_new_ng": 9,
+   "heavy_K": 9,
+   "heavy_mass_share": 0.5187,
+   "n_keep_new": 21544,
+   "n_keep_old": 21516
+  }
+ },
+ "l138.male_s2_dnp33": {
+  "src": "l138/static.json:male_s2_dnp33",
+  "v": [
+   {
+    "bodyId": 10664,
+    "gi": 616,
+    "glut": false,
+    "heavy_rank": null,
+    "in_heavy": false,
+    "mass": 0.0,
+    "mass_share": 0.0,
+    "ng_rank": null,
+    "nt": "acetylcholine",
+    "somaSide": "R"
+   },
+   {
+    "bodyId": 11438,
+    "gi": 1342,
+    "glut": false,
+    "heavy_rank": null,
+    "in_heavy": false,
+    "mass": 0.0,
+    "mass_share": 0.0,
+    "ng_rank": null,
+    "nt": "acetylcholine",
+    "somaSide": "L"
+   }
+  ]
+ },
+ "l142.aeall": {
+  "src": "l142/results_l142.json:anchors",
+  "v": {
+   "a_eall_max": 0.0,
+   "e_edges": {
+    "eAll": 93,
+    "eIn": 13,
+    "eOutAll": 80,
+    "eOutInt": 70,
+    "eOutMot": 10
+   },
+   "g_cutng25": 0.1454454553127289,
+   "g_eAll": 0.1454454553127289,
+   "gains_equal": true
+  }
+ },
+ "l142.h2a": {
+  "src": "l142/results_l142.json:hypotheses.H2a",
+  "v": {
+   "arm": "eOutInt",
+   "dR_vs_wA": 0.404,
+   "fires": true,
+   "kR": 15,
+   "mass": 0.005599,
+   "meanR": 0.781,
+   "note": "H2a intrinsic-sheet carrier at .0056 << .0544 band \u2014 identity beats mass at cell scale"
+  }
+ },
+ "l142.h2b": {
+  "src": "l142/results_l142.json:hypotheses.H2b",
+  "v": {
+   "arm": "eOutMot",
+   "dR_vs_wA": 0.148,
+   "fires": false,
+   "kR": 9,
+   "mass": 0.000837,
+   "meanR": 0.525
+  }
+ },
+ "l142.h3": {
+  "src": "l142/results_l142.json:hypotheses.H3",
+  "v": {
+   "arm": "eIn",
+   "dR_vs_wA": 0.417,
+   "in_partial": false,
+   "kR": 15,
+   "meanR": 0.793,
+   "note": "H3 counter: eIn MOVES the readout \u2014 in-edges are not inert"
+  }
+ },
+ "l142.pooled": {
+  "src": "l142/results_l142.json:pooled",
+  "v": {
+   "cutng25_B24_B25_B26_B29": {
+    "kL": 0,
+    "kR": 61,
+    "lbL": 0.0,
+    "lbR": 0.8710034625990631,
+    "meanL": 0.142,
+    "meanR": 0.762,
+    "n": 64,
+    "ubL": 0.05662405979280534,
+    "ubR": 0.983930983213707
+   },
+   "cutwA_B21_B24_B25_B26_B29": {
+    "kL": 6,
+    "kR": 24,
+    "lbL": 0.03482524929300514,
+    "lbR": 0.21064571260081338,
+    "meanL": 0.265,
+    "meanR": 0.405,
+    "n": 80,
+    "ubL": 0.15412016081219287,
+    "ubR": 0.40768153921339734
+   }
+  }
+ },
+ "l142.ti": {
+  "src": "l142/results_l142.json:table.Ti",
+  "v": {
+   "b65": {
+    "kL": 16,
+    "kR": 16,
+    "meanL": 0.995,
+    "meanR": 0.996
+   },
+   "cutng25": {
+    "kL": 0,
+    "kR": 14,
+    "meanL": 0.115,
+    "meanR": 0.745
+   },
+   "cutwA": {
+    "kL": 1,
+    "kR": 4,
+    "meanL": 0.241,
+    "meanR": 0.377
+   },
+   "eAll": {
+    "kL": 0,
+    "kR": 14,
+    "meanL": 0.115,
+    "meanR": 0.745
+   },
+   "eIn": {
+    "kL": 0,
+    "kR": 15,
+    "meanL": 0.105,
+    "meanR": 0.793
+   },
+   "eOutAll": {
+    "kL": 0,
+    "kR": 14,
+    "meanL": 0.1,
+    "meanR": 0.766
+   },
+   "eOutInt": {
+    "kL": 0,
+    "kR": 15,
+    "meanL": 0.082,
+    "meanR": 0.781
+   },
+   "eOutMot": {
+    "kL": 2,
+    "kR": 9,
+    "meanL": 0.25,
+    "meanR": 0.525
+   },
+   "full": {
+    "kL": 0,
+    "kR": 8,
+    "meanL": 0.341,
+    "meanR": 0.44
+   }
+  }
+ },
+ "l142.window": {
+  "src": "l142/results_l142.json:static.window",
+  "v": {
+   "n_edges": 644177,
+   "n_wA": 21785
+  }
+ },
+ "l144.silf": {
+  "src": "l144/results_l144.json:classes.silF",
+  "v": {
+   "dR_vs_full": -0.036,
+   "kR": 3,
+   "meanR": 0.392
+  }
+ },
+ "l144.silw": {
+  "src": "l144/results_l144.json:classes.silW",
+  "v": {
+   "dR_vs_wA": 0.189,
+   "kR": 14,
+   "meanR": 0.622,
+   "n_down": 0,
+   "n_up": 6
+  }
+ },
+ "l145.dose": {
+  "src": "l145/results_l145.json:hypotheses.H_DOSE+table.Ti",
+  "v": {
+   "bot5": {
+    "kR": 6,
+    "meanR": 0.418
+   },
+   "bot5_dR": -0.013,
+   "order_sign_count": 8,
+   "top5": {
+    "kR": 6,
+    "meanR": 0.438
+   },
+   "top5_dR": 0.007
+  }
+ },
+ "l145.mot": {
+  "src": "l145/results_l145.json:hypotheses.H_REPLIC+classes.mot",
+  "v": {
+   "dR_vs_wA": 0.201,
+   "kR": 12,
+   "meanR": 0.632,
+   "n_up": 8
+  }
+ },
+ "l145.motin": {
+  "src": "l145/results_l145.json:hypotheses.H_COMBO",
+  "v": {
+   "kR": 15,
+   "meanR": 0.801
+  }
+ },
+ "l145.pooled": {
+  "src": "l145/results_l145.json:pooled",
+  "v": {
+   "cutng25_6batch": {
+    "kL": 0,
+    "kR": 93,
+    "lbL": 3.335957940936178e-18,
+    "lbR": 0.9121132067546303,
+    "meanL": 0.131,
+    "meanR": 0.759,
+    "n": 96,
+    "ubL": 0.038475587857675686,
+    "ubR": 0.9893159296287989
+   },
+   "cutwA_7batch": {
+    "kL": 7,
+    "kR": 34,
+    "lbL": 0.030601922337250242,
+    "lbR": 0.22610155594126596,
+    "meanL": 0.257,
+    "meanR": 0.413,
+    "n": 112,
+    "ubL": 0.12341425634632563,
+    "ubR": 0.3940689732636048
+   },
+   "eOutMot_B29_B31": {
+    "kL": 3,
+    "kR": 21,
+    "lbL": 0.0324015512983662,
+    "lbR": 0.4831108797896222,
+    "meanL": 0.276,
+    "meanR": 0.578,
+    "n": 32,
+    "ubL": 0.24218154728387864,
+    "ubR": 0.7958956207556682
+   }
+  }
+ },
+ "l146.f4": {
+  "src": "l146/static.json:S4_ladder.f4+decision_detail+S3_carrier",
+  "v": {
+   "K": 73,
+   "carrier_eq3": 11,
+   "carrier_rank": 21,
+   "closure_edges_base": 647953,
+   "closure_edges_f4": 472095,
+   "d4a": true,
+   "d4b": false,
+   "f2f3_deleted": {
+    "all_f2": 0,
+    "all_f3": 0
+   },
+   "jaccard_heavy": 0.9231,
+   "n_glut": 18,
+   "n_ng": 55,
+   "out80_f4": 69,
+   "twin_rank": 33
+  }
+ },
+ "l146.release": {
+  "src": "l146/static.json:S0_release",
+  "v": {
+   "below3": 0,
+   "eq3": 811821,
+   "min": 3,
+   "n_pairs": 2676592,
+   "n_rows": 3777046,
+   "note": "L149 addendum, re-derived from dv_11842997 raw rows (pre/post pairs summed over per-neuropil breakdowns); pins the release-level floor census quoted by card L149(c).",
+   "pairs_containing_1syn_row": 462170,
+   "pairs_containing_1syn_row_sum_ge3": 462170,
+   "rows_s1": 574733,
+   "rows_s2": 419792
+  }
+ },
+ "l148.eall": {
+  "src": "l148/results_l148.json:classes.eAll",
+  "v": {
+   "dR_vs_wA": 0.398,
+   "kR": 15,
+   "meanR": 0.768,
+   "n_up": 15
+  }
+ },
+ "l148.h_id": {
+  "src": "l148/results_l148.json:hypotheses.H_ID",
+  "v": {
+   "bit_identical": true,
+   "max_abs_diff": 0.0,
+   "n_keys": 23,
+   "n_seeds": 16
+  }
+ },
+ "l148.pooled": {
+  "src": "l148/results_l148.json:pooled",
+  "v": {
+   "cutng25_7batch": {
+    "kL": 0,
+    "kR": 108,
+    "lbL": 3.35439541744953e-18,
+    "lbR": 0.9117533615468005,
+    "meanL": 0.133,
+    "meanR": 0.76,
+    "n": 112,
+    "ubL": 0.033161347066943875,
+    "ubR": 0.9860253876053232
+   },
+   "cutwA_8batch": {
+    "kL": 8,
+    "kR": 38,
+    "lbL": 0.032006925695061195,
+    "lbR": 0.2245816608356667,
+    "meanL": 0.256,
+    "meanR": 0.407,
+    "n": 128,
+    "ubL": 0.11848791104425867,
+    "ubR": 0.38100522765044614
+   },
+   "eAll_B29_B32": {
+    "kL": 0,
+    "kR": 29,
+    "lbL": 0.0,
+    "lbR": 0.7578184527161214,
+    "meanL": 0.129,
+    "meanR": 0.757,
+    "n": 32,
+    "ubL": 0.1071791982550706,
+    "ubR": 0.9675984487016337
+   }
+  }
+ },
+ "l148.seid": {
+  "src": "l148/results_l148.json:seid_all_max",
+  "v": 0.0
+ },
+ "l150.h1": {
+  "src": "l150/results_l150.json:hypotheses.H1_silW",
+  "v": {
+   "b30_dR": 0.189,
+   "b30_meanR": 0.622,
+   "b33_class": "SUPER",
+   "kR": 14,
+   "meanR": 0.659,
+   "n_up_vs_wA": 9,
+   "paired_dR_vs_wA": 0.281
+  }
+ },
+ "l150.pooled": {
+  "src": "l150/results_l150.json:pooled",
+  "v": {
+   "cutng25_8batch": {
+    "kL": 0,
+    "kR": 124,
+    "lbL": 0.0,
+    "lbR": 0.9224023687386392,
+    "meanL": 0.134,
+    "meanR": 0.767,
+    "n": 128,
+    "ubL": 0.029136956273508416,
+    "ubR": 0.9877817347549466
+   },
+   "cutwA_9batch": {
+    "kL": 8,
+    "kR": 43,
+    "lbL": 0.02841660788874845,
+    "lbR": 0.22988812468674297,
+    "meanL": 0.252,
+    "meanR": 0.404,
+    "n": 144,
+    "ubL": 0.10579106957172865,
+    "ubR": 0.3777997291625357
+   },
+   "eMotBot5_B31_B33": {
+    "kL": 2,
+    "kR": 8,
+    "lbL": 0.017310567031640967,
+    "lbR": 0.1325240091850904,
+    "meanL": 0.231,
+    "meanR": 0.384,
+    "n": 32,
+    "ubL": 0.20147123144154583,
+    "ubR": 0.42106558994244486
+   },
+   "eMotTop5_B31_B33": {
+    "kL": 1,
+    "kR": 14,
+    "lbL": 0.005537860164003125,
+    "lbR": 0.28165331115040365,
+    "meanL": 0.233,
+    "meanR": 0.449,
+    "n": 32,
+    "ubL": 0.15744263820012558,
+    "ubR": 0.6067440886314801
+   },
+   "silW_B30_B33": {
+    "batches": "B30(l144 sil1110_wA)+B33(l150 silW)",
+    "kL": 1,
+    "kR": 28,
+    "lbL": 0.005537860164003125,
+    "lbR": 0.7193169451834978,
+    "meanL": 0.294,
+    "meanR": 0.641,
+    "n": 32,
+    "ubL": 0.15744263820012558,
+    "ubR": 0.9502986561251993
+   }
+  }
+ },
+ "l151.crossed": {
+  "src": "l151/static.json:s2_pools+followup_named_intermediaries",
+  "v": {
+   "intermediary": "gi75494 IN06B033 left, cut-invariant dn_in 30.86, carries all five R-side pools",
+   "pools_R_shared": [
+    "Ti_fR",
+    "Tr_fR",
+    "Ta_aR",
+    "Sr_bR",
+    "Pr_bR"
+   ],
+   "ti_fL_sheet_edges": "zero (no T70->Ti_fL edge exists)",
+   "ti_fL_twohop_dn_total": 0.0,
+   "ti_fR_twohop_share": 0.10016
+  }
+ },
+ "l151.sheet": {
+  "src": "l151/static.json:s1_sheet",
+  "v": {
+   "m1110": 160.04365274470274,
+   "ng58_others_G0": 52.030840862299534,
+   "ng58_others_G1": 36.85743541773707,
+   "redundancy_ratio_G0": 0.325,
+   "redundancy_ratio_G1": 0.23,
+   "share_1110_of_DNsheet_G0": 0.1447,
+   "share_1110_of_DNsheet_G1": 0.1467
+  }
+ },
+ "l151.verdict": {
+  "src": "l151/static.json:verdict",
+  "v": {
+   "H_SUB_fires": false,
+   "label": "observation (card)",
+   "leg_redundancy_ratio_G0_over_G1": 1.4116782752947725,
+   "leg_share_ratio_G1_over_G0": 1.013911929124573
+  }
+ },
+ "l154.band": {
+  "src": "l154/results_l154.json:band census + posthoc label",
+  "v": {
+   "below_band_off": 11,
+   "below_band_on": 16,
+   "dom_full_off": 0.2031,
+   "dom_full_on": 0.1002,
+   "posthoc": "11+/5- (DESCRIPTIVE, post-hoc, NOT the registered claim-carrier; registered form = band 0.3-10)"
+  }
+ },
+ "l154.freq": {
+  "src": "l154/results_l154.json:sign test + anchors",
+  "v": {
+   "anchor_801_off": 0.4492,
+   "anchor_801_on": 0.6997,
+   "anchor_901_off": 1.089,
+   "anchor_901_on": 0.3159,
+   "direction_met": false,
+   "n_neg": 10,
+   "n_pos": 6,
+   "p": 0.4545
+  }
+ },
+ "l154.structure": {
+  "src": "l154/results_l154.json:duty07 tables (recomputed means)",
+  "v": {
+   "S07_off": {
+    "Ti_L": 0.6061,
+    "Ti_R": 0.715,
+    "Tr_L": 0.0429,
+    "Tr_R": 0.762
+   },
+   "S07_on": {
+    "Ti_L": 0.7202,
+    "Ti_R": 0.6677,
+    "Tr_L": -0.0831,
+    "Tr_R": 0.6045
+   },
+   "duty_asym_Ti_off": 0.0473,
+   "duty_asym_Ti_on": 0.0129
+  }
+ },
+ "l156.pooled": {
+  "src": "banc/l156/static.json:pooled + rows (PREREG ADDENDUM 1: stored l154 census = un-interpolated bin argmax; seed 3401 bin 0.3 vs interp .298253)",
+  "v": {
+   "b65": {
+    "agree": 414,
+    "below": 518,
+    "files": 28,
+    "lb": 0.9926,
+    "med_f_below": 0.1,
+    "n": 518,
+    "survive": 518
+   },
+   "boundary_seed": 3401,
+   "cert_bin_below_l154_B34": {
+    "off": 11,
+    "on": 16
+   },
+   "full": {
+    "agree": 80,
+    "below": 361,
+    "files": 27,
+    "lb": 0.6812,
+    "med_f_below": 0.1175,
+    "n": 500,
+    "survive": 331
+   }
+  }
+ },
+ "l157.pooled": {
+  "src": "banc/l157/static.json:pooled (PREREG + ADDENDUM 1: l150 seed pin 3365-3380 re-derived from npz; per-pool carrier census B33+B34)",
+  "v": {
+   "claim_class": "C2_readout_only",
+   "files": 2,
+   "mm": {
+    "below": 36,
+    "lb": 0.9036,
+    "n": 36
+   },
+   "n_pools_lb_ge_05": 8,
+   "n_pools_lb_ge_056": 8,
+   "pools": {
+    "Pr_aL": {
+     "below": 3,
+     "lb": 0.0287
+    },
+    "Pr_aR": {
+     "below": 0,
+     "lb": 0.0
+    },
+    "Pr_bL": {
+     "below": 5,
+     "lb": 0.0608
+    },
+    "Pr_bR": {
+     "below": 20,
+     "lb": 0.3958
+    },
+    "Sr_aL": {
+     "below": 29,
+     "lb": 0.6497
+    },
+    "Sr_aR": {
+     "below": 6,
+     "lb": 0.0787
+    },
+    "Sr_bL": {
+     "below": 33,
+     "lb": 0.7817
+    },
+    "Sr_bR": {
+     "below": 16,
+     "lb": 0.2954
+    },
+    "Ta_aL": {
+     "below": 32,
+     "lb": 0.7469
+    },
+    "Ta_aR": {
+     "below": 36,
+     "lb": 0.9036
+    },
+    "Ta_bL": {
+     "below": 11,
+     "lb": 0.18
+    },
+    "Ta_bR": {
+     "below": 36,
+     "lb": 0.9036
+    },
+    "Ti_eL": {
+     "below": 6,
+     "lb": 0.0787
+    },
+    "Ti_eR": {
+     "below": 1,
+     "lb": 0.0049
+    },
+    "Ti_fL": {
+     "below": 4,
+     "lb": 0.0441
+    },
+    "Ti_fR": {
+     "below": 0,
+     "lb": 0.0
+    },
+    "Tr_eL": {
+     "below": 36,
+     "lb": 0.9036
+    },
+    "Tr_eR": {
+     "below": 26,
+     "lb": 0.5601
+    },
+    "Tr_fL": {
+     "below": 34,
+     "lb": 0.8186
+    },
+    "Tr_fR": {
+     "below": 0,
+     "lb": 0.0
+    }
+   },
+   "pr_max_below": 20,
+   "pr_max_lb": 0.3958,
+   "strong_med": 0.1002,
+   "ti_max_below": 6,
+   "xm": {
+    "below": 36,
+    "lb": 0.9036,
+    "n": 36
+   }
+  }
+ },
+ "l168.base": {
+  "src": "banc/l168/static.json:base_full_48 (untreated `full` arm, same 3 batches)",
+  "v": {
+   "kL": 15,
+   "kR": 16,
+   "lbL": 0.1995,
+   "lbR": 0.2168,
+   "n": 48,
+   "ubL": 0.4533,
+   "ubR": 0.4746
+  }
+ },
+ "l168.scr": {
+  "src": "banc/l168/static.json:pool+mass+extra_mass (l168_pools.py, re-derived from l125/l127/l128 results_*.json:table.Ti; CERT-1..4 green)",
+  "v": {
+   "cutcl40": {
+    "extra": 0.045,
+    "kL": 11,
+    "kR": 0,
+    "lbL": 0.444,
+    "lbR": 0.0,
+    "mass": 0.2396,
+    "n": 16,
+    "n_batches": 1,
+    "ubL": 0.8584,
+    "ubR": 0.1936
+   },
+   "cutscr0": {
+    "extra": 0.0544,
+    "kL": 35,
+    "kR": 39,
+    "lbL": 0.59,
+    "lbR": 0.6806,
+    "mass": 0.249,
+    "n": 48,
+    "n_batches": 3,
+    "ubL": 0.8343,
+    "ubR": 0.8981
+   },
+   "cutscr1": {
+    "extra": 0.0476,
+    "kL": 0,
+    "kR": 0,
+    "lbL": 0.0,
+    "lbR": 0.0,
+    "mass": 0.2422,
+    "n": 32,
+    "n_batches": 2,
+    "ubL": 0.1072,
+    "ubR": 0.1072
+   },
+   "cutscr2": {
+    "extra": 0.0463,
+    "kL": 23,
+    "kR": 12,
+    "lbL": 0.5463,
+    "lbR": 0.2293,
+    "mass": 0.2409,
+    "n": 32,
+    "n_batches": 2,
+    "ubL": 0.8444,
+    "ubR": 0.5475
+   },
+   "cutscr3": {
+    "extra": 0.0442,
+    "kL": 12,
+    "kR": 17,
+    "lbL": 0.2293,
+    "lbR": 0.3645,
+    "mass": 0.2388,
+    "n": 32,
+    "n_batches": 2,
+    "ubL": 0.5475,
+    "ubR": 0.6913
+   },
+   "cutscrL1": {
+    "extra": 0.046,
+    "kL": 0,
+    "kR": 10,
+    "lbL": 0.0,
+    "lbR": 0.3864,
+    "mass": 0.2406,
+    "n": 16,
+    "n_batches": 1,
+    "ubL": 0.1936,
+    "ubR": 0.8152
+   },
+   "cutscrL2": {
+    "extra": 0.0439,
+    "kL": 9,
+    "kR": 4,
+    "lbL": 0.3318,
+    "lbR": 0.1018,
+    "mass": 0.2386,
+    "n": 16,
+    "n_batches": 1,
+    "ubL": 0.769,
+    "ubR": 0.495
+   }
+  }
+ },
+ "l168.verdict": {
+  "src": "banc/l168/static.json:verdict (PREREG decision rule D1/D2/D3)",
+  "v": {
+   "heterogeneous": true,
+   "kills": [
+    "cutcl40",
+    "cutscr1",
+    "cutscrL2"
+   ],
+   "rule": "D3",
+   "scr0_both_sides_above_base": true,
+   "scr0_super_right": true,
+   "supers": [
+    "cutscr0"
+   ]
+  }
+ },
+ "l168.window_mass": {
+  "src": "banc/l168/static.json:window_mass_k29 + mass.cutscr0 + gap",
+  "v": {
+   "gap": 0.0098,
+   "k29": 0.2588,
+   "scr0": 0.249
+  }
+ },
+ "l169.af": {
+  "src": "banc/l169/results_l169.json:p4.af_mean/af_mismatch + paf (P-af direction)",
+  "v": {
+   "mean": {
+    "cutng25": 0.109536,
+    "cutwA": 0.109092,
+    "n25gW": 0.108018,
+    "wAgN": 0.110394
+   },
+   "mismatch": {
+    "cutng25": 0.00048,
+    "cutwA": 3.6e-05,
+    "n25gW": 0.001038,
+    "wAgN": 0.001338
+   },
+   "paf_n": 18,
+   "paf_per_seed_ok": 15,
+   "target": 0.10905611018339793
+  }
+ },
+ "l169.branch": {
+  "src": "banc/l169/results_l169.json:branch (PREREG D1/D2/D3)",
+  "v": "D1_graph_tracking"
+ },
+ "l169.grid": {
+  "src": "banc/l169/results_l169.json:grid (graph x gain 2x2, B35 n=16 each)",
+  "v": {
+   "graph_ng25__gain_ng25": {
+    "arm": "cutng25",
+    "cls": "SUPER",
+    "gain": 0.1454454553127289,
+    "kR": 16,
+    "lbR": 0.8064,
+    "meanR": 0.753,
+    "ubR": 1.0
+   },
+   "graph_ng25__gain_wA": {
+    "arm": "n25gW",
+    "cls": "SUPER",
+    "gain": 0.14365819573402408,
+    "kR": 15,
+    "lbR": 0.7167,
+    "meanR": 0.702,
+    "ubR": 0.9889
+   },
+   "graph_wA__gain_ng25": {
+    "arm": "wAgN",
+    "cls": "NONE",
+    "gain": 0.1454454553127289,
+    "kR": 2,
+    "lbR": 0.035,
+    "meanR": 0.317,
+    "ubR": 0.3602
+   },
+   "graph_wA__gain_wA": {
+    "arm": "cutwA",
+    "cls": "PARTIAL",
+    "gain": 0.14365819573402408,
+    "kR": 4,
+    "lbR": 0.1018,
+    "meanR": 0.426,
+    "ubR": 0.495
+   }
+  }
+ },
+ "l169.nt": {
+  "src": "banc/l169/results_l169.json:nt (C0-NT swap-vs-own-gain mm separation)",
+  "v": {
+   "min": 0.0189,
+   "n": 4
+  }
+ },
+ "l169.pooled": {
+  "src": "banc/l169/results_l169.json:pooled (batch unions incl B35)",
+  "v": {
+   "cutng25": {
+    "kR": 140,
+    "lbR": 0.9308,
+    "meanR": 0.766,
+    "n": 144,
+    "ubR": 0.9891
+   },
+   "cutwA": {
+    "kR": 47,
+    "lbR": 0.2287,
+    "meanR": 0.406,
+    "n": 160,
+    "ubR": 0.3685
+   },
+   "eMotBot5": {
+    "kR": 13,
+    "lbR": 0.1657,
+    "meanR": 0.377,
+    "n": 48,
+    "ubR": 0.41
+   },
+   "eMotTop5": {
+    "kR": 19,
+    "lbR": 0.2702,
+    "meanR": 0.445,
+    "n": 48,
+    "ubR": 0.5369
+   },
+   "silW": {
+    "kR": 42,
+    "lbR": 0.753,
+    "meanR": 0.644,
+    "n": 48,
+    "ubR": 0.9414
+   }
+  }
+ },
+ "l169.swap_legs": {
+  "src": "banc/l169/results_l169.json:cls.{wAgN,n25gW}.legs (paired, same batch)",
+  "v": {
+   "n25gW": {
+    "dR_vs_ng25": -0.051,
+    "dR_vs_wA": 0.276,
+    "n_up_vs_wA": 10
+   },
+   "wAgN": {
+    "dR_vs_ng25": -0.436,
+    "dR_vs_wA": -0.109,
+    "n_up_vs_wA": 2
+   }
+  }
+ },
+ "l169b.forms": {
+  "src": "banc/l169b/static.json:forms + pins.P2_cohort_turnover (l169b_static.py, additive transform of l146_static.py; CERT-1/2/3 green)",
+  "v": {
+   "F1_frozen_all": {
+    "K": 77,
+    "carrier_rank": 25,
+    "twin_rank": 26
+   },
+   "F2_frozen_set_reordered": {
+    "K": 77,
+    "carrier_rank": 21,
+    "twin_rank": 33
+   },
+   "F3_fully_rederived": {
+    "K": 73,
+    "carrier_rank": 21,
+    "twin_rank": 33
+   },
+   "turnover": {
+    "K_base": 77,
+    "K_f4": 73,
+    "entered_n": 1,
+    "jaccard_heavy": 0.9231,
+    "left_n": 5
+   }
+  }
+ },
+ "l169b.scope": {
+  "src": "banc/l169b/static.json:verdict + code_audit + pins.P3/P4 (PREREG l169b/PREREG.md rule E1/E2/E3); dynamic_f4_run flipped False->True by L169 stage (b2) \u2014 the ONLY pre-existing key this fold changes",
+  "v": {
+   "cohort_rederived_inside_fn": true,
+   "dynamic_f4_run": true,
+   "f4_twin": {
+    "gap": 2.4e-05,
+    "name": "DNpe005-R",
+    "rank": 22
+   },
+   "f4_xor": {
+    "cut_k": 21,
+    "intact_k": 20
+   },
+   "verdict": "E1_refuted_frozen_membership_premise",
+   "window_overlap_f4": 23
+  }
+ },
+ "l169b2.dyn": {
+  "src": "banc/l169b2/results_l169b2.json:branch + table + legs + cert (PREREG l169b2/PREREG.md, branches G1-G4 registered pre-run; CERT-0 + CERT-METRIC green)",
+  "v": {
+   "K4": 73,
+   "base_same_batch": {
+    "cutng25": {
+     "kR": 16,
+     "meanR": 0.754
+    },
+    "cutwA": {
+     "kR": 3,
+     "meanR": 0.371
+    },
+    "full": {
+     "kR": 6,
+     "meanR": 0.475
+    }
+   },
+   "batch": "B36",
+   "branch": "G2_no_transfer",
+   "f4ng": {
+    "kR": 0,
+    "meanR": 0.081,
+    "ubR": 0.1936076805344365
+   },
+   "f4tw": {
+    "kR": 0,
+    "meanR": 0.082,
+    "ubR": 0.1936076805344365
+   },
+   "f4wA": {
+    "kR": 0,
+    "meanR": 0.043,
+    "ubR": 0.1936076805344365
+   },
+   "fc169_max": 0.0,
+   "floor": 4,
+   "gains": {
+    "f4ng": 0.162309861,
+    "f4tw": 0.152618986,
+    "f4wA": 0.150514525
+   },
+   "n": 16,
+   "ntf4_min": 0.02873804420232773,
+   "stairs": {
+    "f4ng": 3.585467735926773e-05,
+    "f4tw": 5.257626374571833e-06,
+    "f4wA": 0.00010205060243606567
+   },
+   "xor_leg": {
+    "mean_paired_dR_ng_minus_tw": -0.001,
+    "n_down": 8,
+    "n_up": 8
+   }
+  }
+ },
+ "l169b2.lat_descriptive": {
+  "src": "banc/l169b2/results_l169b2.json:addendum_L_descriptive rows + paired_legs (l169b2_addendum.py; post-hoc, carries no registered claim)",
+  "v": {
+   "kL": {
+    "cutng25": 0,
+    "cutwA": 0,
+    "f4ng": 2,
+    "f4tw": 10,
+    "f4wA": 16
+   },
+   "label": "DESCRIPTIVE post-hoc (registered axis is R-side)",
+   "meanL": {
+    "cutng25": 0.106,
+    "cutwA": 0.233,
+    "f4ng": 0.289,
+    "f4tw": 0.56,
+    "f4wA": 0.698
+   },
+   "paired": {
+    "f4ng_vs_f4tw": {
+     "mean_paired_dL": -0.27,
+     "n_down": 11,
+     "n_up": 5
+    },
+    "f4ng_vs_f4wA": {
+     "mean_paired_dL": -0.409,
+     "n_down": 16,
+     "n_up": 0
+    },
+    "f4tw_vs_f4wA": {
+     "mean_paired_dL": -0.139,
+     "n_down": 9,
+     "n_up": 6
+    }
+   },
+   "side_dominance": {
+    "cutng25": "R",
+    "cutwA": "R",
+    "f4ng": "L",
+    "f4tw": "L",
+    "f4wA": "L"
+   }
+  }
+ },
+ "l169c.design": {
+  "src": "banc/l169c/static.json:rules + P3_footprint + P4_overlap + P5/P6 (PREREG l169c/PREREG.md, rules C1-C3 registered pre-computation; CERT-1 re-derives l151 s1/s2/s3 EXACT)",
+  "v": {
+   "carrier": {
+    "out_edges": 80,
+    "out_mass": 183.96
+   },
+   "hom": {
+    "gi": 928,
+    "in_cut_window25": false,
+    "out_edges": 88,
+    "out_mass": 200.05,
+    "pure_proj": false
+   },
+   "overlap": {
+    "jaccard": 0.037,
+    "shared": 6
+   },
+   "rewire": {
+    "med_mass_T70_share": 0.0,
+    "med_relocated": 80.0,
+    "partner_over_carrier": 804.1
+   },
+   "rules": "C1_independent/C2_nonequivalent/C3_admissible"
+  }
+ },
+ "l169c2.base": {
+  "src": "banc/l169c2/results_l169c2.json:table (same-batch base reproduction)",
+  "v": {
+   "batch": "B37",
+   "cutng25": {
+    "g": 0.145445455,
+    "kL": 0,
+    "kR": 15,
+    "lbR": 0.7167,
+    "meanL": 0.148,
+    "meanR": 0.786,
+    "notsuper": false,
+    "super": true,
+    "ubR": 0.9889
+   },
+   "cutwA": {
+    "g": 0.143658196,
+    "kL": 0,
+    "kR": 5,
+    "lbR": 0.1416,
+    "meanL": 0.25,
+    "meanR": 0.452,
+    "notsuper": true,
+    "super": false,
+    "ubR": 0.556
+   },
+   "full": {
+    "g": 0.153125,
+    "kL": 7,
+    "kR": 5,
+    "lbR": 0.1416,
+    "meanL": 0.483,
+    "meanR": 0.431,
+    "notsuper": true,
+    "super": false,
+    "ubR": 0.556
+   },
+   "n": 16,
+   "vacuous_base_guard": false
+  }
+ },
+ "l169c2.branch": {
+  "src": "banc/l169c2/results_l169c2.json:rew_branch/hom_branch (PREREG l169c2/PREREG.md, R1-R3 + H1-H2 registered pre-run)",
+  "v": {
+   "hom": "H1_specific",
+   "n_notsuper_rew": 2,
+   "n_super_rew": 1,
+   "r1": false,
+   "r2": true,
+   "rew": "R2_mass_degree"
+  }
+ },
+ "l169c2.cert": {
+  "src": "banc/l169c2/results_l169c2.json:cert + c2_stairs + rew_draws_first5 (CERT-1 forward chain, CERT-REW vs l169c static, C0-NT(c2))",
+  "v": {
+   "cert0": true,
+   "fc169b2_max": 0.0,
+   "gains_distinct": true,
+   "ntc2_min": 0.0185,
+   "rew_draws_first5": [
+    {
+     "mass_T70": 1.6094379124341003,
+     "mass_motor": 15.153202737244946,
+     "moved": 80,
+     "n_dst": 80,
+     "relocated": 80
+    },
+    {
+     "mass_T70": 0.0,
+     "mass_motor": 19.713543160279702,
+     "moved": 80,
+     "n_dst": 80,
+     "relocated": 80
+    },
+    {
+     "mass_T70": 0.0,
+     "mass_motor": 21.675883597766656,
+     "moved": 80,
+     "n_dst": 80,
+     "relocated": 80
+    },
+    {
+     "mass_T70": 2.1972245773362196,
+     "mass_motor": 21.59873357429981,
+     "moved": 80,
+     "n_dst": 80,
+     "relocated": 80
+    },
+    {
+     "mass_T70": 0.0,
+     "mass_motor": 15.86469905647309,
+     "moved": 80,
+     "n_dst": 80,
+     "relocated": 80
+    }
+   ],
+   "stairs": {
+    "hom": 5.364418029785156e-07,
+    "rew1": 0.00058697909116745,
+    "rew2": 9.734680255255035e-05,
+    "rew3": 5.540748437254939e-06
+   }
+  }
+ },
+ "l169c2.gains": {
+  "src": "banc/l169c2/results_l169c2.json:gains (fresh af-matched bisect per arm)",
+  "v": {
+   "hom": 0.143730676,
+   "rew1": 0.145617385,
+   "rew2": 0.150060407,
+   "rew3": 0.144464321
+  }
+ },
+ "l169c2.hom": {
+  "src": "banc/l169c2/results_l169c2.json:table.hom + legs.hom + cert (same-footprint different-class deletion)",
+  "v": {
+   "cell": {
+    "g": 0.143730676,
+    "kL": 2,
+    "kR": 2,
+    "lbR": 0.035,
+    "meanL": 0.316,
+    "meanR": 0.301,
+    "notsuper": true,
+    "super": false,
+    "ubR": 0.3602
+   },
+   "edges": 644076,
+   "incident": 101,
+   "leg": {
+    "mean_paired_dR_vs_cutng25": -0.484,
+    "mean_paired_dR_vs_cutwA": -0.15,
+    "n_down": 13,
+    "n_up": 3
+   },
+   "n": 21784
+  }
+ },
+ "l169c2.rew": {
+  "src": "banc/l169c2/results_l169c2.json:table + legs + pooled_rew (3 registered rewire draws, one batch each)",
+  "v": {
+   "base_bounds": {
+    "cutng25": [
+     0.7167,
+     0.9889
+    ],
+    "cutwA": [
+     0.1416,
+     0.556
+    ]
+   },
+   "legs": {
+    "rew1": {
+     "mean_paired_dR_vs_cutng25": -0.062,
+     "mean_paired_dR_vs_cutwA": 0.272,
+     "n_down": 1,
+     "n_up": 15
+    },
+    "rew2": {
+     "mean_paired_dR_vs_cutng25": -0.453,
+     "mean_paired_dR_vs_cutwA": -0.119,
+     "n_down": 15,
+     "n_up": 1
+    },
+    "rew3": {
+     "mean_paired_dR_vs_cutng25": -0.484,
+     "mean_paired_dR_vs_cutwA": -0.15,
+     "n_down": 12,
+     "n_up": 4
+    }
+   },
+   "pooled": {
+    "kR": 20,
+    "lb": 0.2885,
+    "n": 48,
+    "note": "draw pool (3 rewire draws x one batch), NOT a seed-batch pool; does not satisfy the L88/L90 multi-batch rule",
+    "ub": 0.5572
+   },
+   "rew1": {
+    "g": 0.145617385,
+    "kL": 3,
+    "kR": 16,
+    "lbR": 0.8064,
+    "meanL": 0.352,
+    "meanR": 0.724,
+    "notsuper": false,
+    "super": true,
+    "ubR": 1.0
+   },
+   "rew2": {
+    "g": 0.150060407,
+    "kL": 0,
+    "kR": 1,
+    "lbR": 0.0111,
+    "meanL": 0.24,
+    "meanR": 0.333,
+    "notsuper": true,
+    "super": false,
+    "ubR": 0.2833
+   },
+   "rew3": {
+    "g": 0.144464321,
+    "kL": 0,
+    "kR": 3,
+    "lbR": 0.0659,
+    "meanL": 0.251,
+    "meanR": 0.302,
+    "notsuper": true,
+    "super": false,
+    "ubR": 0.4301
+   }
+  }
+ },
+ "l169d.branch": {
+  "src": "banc/l169d/results_l169d.json:branch (PREREG l169d/PREREG.md, E0-E3 registered pre-run with precedence)",
+  "v": {
+   "branch": "E1_graph_tracking",
+   "e0": false,
+   "e1": true,
+   "e2": false,
+   "xor_reproduced": true
+  }
+ },
+ "l169d.cert": {
+  "src": "banc/l169d/results_l169d.json:cert (CERT-1 FC-169C2 16 arms, CERT-2 C0A-150 extended to cutng25p vs raw_l135, CERT-3 stored bisects, C0-NT(d), P-af direction)",
+  "v": {
+   "c0a150_max": 0.0,
+   "cert0": true,
+   "d_stair": 5.364418029785156e-07,
+   "fc169c2_max": 0.0,
+   "g_cutng25p_exact": true,
+   "ntd_min": 0.0192,
+   "pafd_ndn": 13,
+   "pafd_nup": 15,
+   "pafd_ok": false
+  }
+ },
+ "l169d.grid": {
+  "src": "banc/l169d/results_l169d.json:table (XOR pair x {own gain, other arm's gain}, fresh batch B38, paired noise)",
+  "v": {
+   "batch": "B38",
+   "cutng25": {
+    "g": 0.145445455,
+    "kL": 0,
+    "kR": 16,
+    "lbR": 0.8064,
+    "meanL": 0.17,
+    "meanR": 0.798,
+    "notsuper": false,
+    "partial": false,
+    "super": true,
+    "ubR": 1.0
+   },
+   "cutng25p": {
+    "g": 0.143526574,
+    "kL": 0,
+    "kR": 8,
+    "lbR": 0.28,
+    "meanL": 0.191,
+    "meanR": 0.477,
+    "notsuper": true,
+    "partial": true,
+    "super": false,
+    "ubR": 0.72
+   },
+   "cutwA": {
+    "g": 0.143658196,
+    "kL": 3,
+    "kR": 5,
+    "lbR": 0.1416,
+    "meanL": 0.291,
+    "meanR": 0.423,
+    "notsuper": true,
+    "partial": true,
+    "super": false,
+    "ubR": 0.556
+   },
+   "full": {
+    "g": 0.153125,
+    "kL": 7,
+    "kR": 8,
+    "lbR": 0.28,
+    "meanL": 0.415,
+    "meanR": 0.477,
+    "notsuper": true,
+    "partial": true,
+    "super": false,
+    "ubR": 0.72
+   },
+   "n": 16,
+   "n25gP": {
+    "g": 0.143526574,
+    "kL": 0,
+    "kR": 15,
+    "lbR": 0.7167,
+    "meanL": 0.253,
+    "meanR": 0.651,
+    "notsuper": false,
+    "partial": false,
+    "super": true,
+    "ubR": 0.9889
+   },
+   "p25gN": {
+    "g": 0.145445455,
+    "kL": 0,
+    "kR": 1,
+    "lbR": 0.0111,
+    "meanL": 0.132,
+    "meanR": 0.324,
+    "notsuper": true,
+    "partial": false,
+    "super": false,
+    "ubR": 0.2833
+   },
+   "swap_gain_span_pct": 1.337
+  }
+ },
+ "l169d.legs": {
+  "src": "banc/l169d/results_l169d.json:legs (paired per-seed dR within B38)",
+  "v": {
+   "cutng25_minus_cutng25p": {
+    "mean_paired_dR": 0.321,
+    "n_down": 0,
+    "n_up": 16
+   },
+   "cutng25_minus_cutwA": {
+    "mean_paired_dR": 0.375,
+    "n_down": 1,
+    "n_up": 15
+   },
+   "cutng25p_minus_cutwA": {
+    "mean_paired_dR": 0.054,
+    "n_down": 7,
+    "n_up": 9
+   },
+   "n25gP_minus_cutng25": {
+    "mean_paired_dR": -0.147,
+    "n_down": 13,
+    "n_up": 3
+   },
+   "n25gP_minus_cutng25p": {
+    "mean_paired_dR": 0.174,
+    "n_down": 4,
+    "n_up": 12
+   },
+   "p25gN_minus_cutng25": {
+    "mean_paired_dR": -0.474,
+    "n_down": 16,
+    "n_up": 0
+   },
+   "p25gN_minus_cutng25p": {
+    "mean_paired_dR": -0.152,
+    "n_down": 12,
+    "n_up": 4
+   }
+  }
+ },
+ "l169d.xbatch": {
+  "src": "banc/l169d/results_l169d.json:xbatch (B38 vs the stored B25 cells of l135/results_l135.json:table.Ti)",
+  "v": {
+   "note": "cutng25p now rides a 3rd batch (B24/B25 stored + B38) \u2014 NOT the pooled 4-batch bar of the L88/L90 rule; any pooled statement from this stage is explicitly 3-batch",
+   "xbatch": {
+    "cutng25": {
+     "b25_stored": {
+      "kR": 15,
+      "meanR": 0.754
+     },
+     "b38": {
+      "kR": 16,
+      "meanR": 0.798
+     }
+    },
+    "cutng25p": {
+     "b25_stored": {
+      "kR": 5,
+      "meanR": 0.399
+     },
+     "b38": {
+      "kR": 8,
+      "meanR": 0.477
+     }
+    }
+   }
+  }
+ },
+ "l170.matched": {
+  "src": "banc/l170/static.json:ladder + verdict + precheck (PREREG banc/l170/PREREG.md, M1/M2/M3 registered pre-run; floor-1 arm CERT-equal to the stored l138 male side)",
+  "v": {
+   "M3_dnp33_pure": false,
+   "P1": true,
+   "P2": true,
+   "banc_K": 77,
+   "banc_window": {
+    "r1_19": 0.1946,
+    "r20_29": 0.0642,
+    "r30_58": 0.1333
+   },
+   "branch": "M1_floor_changes_cohort",
+   "dnp33_in_cord": {
+    "floor1": [
+     37,
+     33
+    ],
+    "floor3": [
+     6,
+     2
+    ],
+    "in_cohort_floor3": [
+     false,
+     false
+    ]
+   },
+   "dup_pairs": 0,
+   "floor1": {
+    "K": 9,
+    "dn_into": 1277,
+    "dn_new": 28,
+    "dn_new_ng": 9,
+    "edges": 25560079,
+    "window": {
+     "n_ng": 9,
+     "r1_19": null,
+     "r20_29": null,
+     "r30_rest": null
+    }
+   },
+   "floor3": {
+    "K": 52,
+    "dn_into": 963,
+    "dn_new": 342,
+    "dn_new_ng": 43,
+    "edges": 10510014,
+    "window": {
+     "n_ng": 43,
+     "r1_19": 0.2818,
+     "r20_29": 0.0667,
+     "r30_rest": 0.067
+    }
+   },
+   "rel_change": 11.2143,
+   "release_floor": 1.0
+  }
+ },
+ "l170.pins": {
+  "src": "banc/l170/static.json:ladder.3.pins + the floor ladder 1-4 (design pins for a future dynamic walk; NOT a dynamic result)",
+  "v": {
+   "ladder_K": {
+    "1": 9,
+    "2": 46,
+    "3": 52,
+    "4": 59
+   },
+   "ladder_dn_new": {
+    "1": 28,
+    "2": 199,
+    "3": 342,
+    "4": 458
+   },
+   "ng_top10": [
+    "DNge073",
+    "DNpe053",
+    "DNp43",
+    "DNge032",
+    "DNp14",
+    "DNp64",
+    "DNp64",
+    "DNg79",
+    "DNg79",
+    "DNpe050"
+   ],
+   "rank25": {
+    "bodyId": 11505,
+    "gi": 1405,
+    "mass_share": 0.006233,
+    "somaSide": "R",
+    "type": "DNp54"
+   },
+   "rank26": {
+    "bodyId": 15491,
+    "gi": 5056,
+    "mass_share": 0.005789,
+    "somaSide": "L",
+    "type": "DNpe028"
+   },
+   "twin_gap": 0.00044325
+  }
+ },
+ "l171.envelope": {
+  "src": "banc/l171/results.json:envelope (the drive envelope AMPA rebuilt from banc/l135_run.py and FFT-ed on its own; PREREG banc/l171/PREREG.md branch A1 registered pre-run)",
+  "v": {
+   "bin6_local_max": true,
+   "bin6_rank": 1,
+   "bin_hz": 0.016666666666666666,
+   "branch": "A1_envelope_line",
+   "chop_bin_exact": 6.666666666666666,
+   "chop_fundamental_hz": 0.1111111111111111,
+   "dom_bin": 6,
+   "dom_hz": 0.1,
+   "gap_centers_s": [
+    7.0,
+    16.0,
+    47.0,
+    56.0
+   ],
+   "n_off_gaps": 4,
+   "top5_hz": [
+    0.1,
+    0.016666666666666666,
+    0.11666666666666667,
+    0.08333333333333333,
+    0.03333333333333333
+   ],
+   "vs_bin6": 0.9510565162951535,
+   "vs_chop": 0.17364817766693158
+  }
+ },
+ "l171.panel": {
+  "src": "banc/l171/results.json:panel (stored B26 traces re-scored; the published q07 cells reproduced EXACT first, CERT P1/P2)",
+  "v": {
+   "branch": "B2_preserved",
+   "fast_seg": {
+    "d_kR": 12,
+    "d_meanR": 0.628,
+    "kR": 12,
+    "meanR": 0.628,
+    "paired_down": 0,
+    "paired_up": 16,
+    "twin_kR": 0,
+    "twin_meanR": 0.0
+   },
+   "highpass": {
+    "d_kR": 14,
+    "d_meanR": 0.306,
+    "kR": 15,
+    "meanR": 0.676,
+    "paired_down": 1,
+    "paired_up": 15,
+    "twin_kR": 1,
+    "twin_meanR": 0.37
+   },
+   "n": 16,
+   "published": {
+    "d_kR": 10,
+    "d_meanR": 0.355,
+    "kR": 15,
+    "meanR": 0.754,
+    "twin_kR": 5,
+    "twin_meanR": 0.399
+   },
+   "seeds": [
+    3001,
+    3016
+   ]
+  }
+ },
+ "l172.census_unique": {
+  "src": "banc/l172/stats.json:census_unique (the l156 slow-line census de-duplicated to unique seeds; forward-chain anchor re-rolls are repeat observations of the same seed, 0 inconsistencies)",
+  "v": {
+   "b65": {
+    "below": 449,
+    "dupes": 69,
+    "lb": 0.9915169895647404,
+    "n": 449
+   },
+   "closure": {
+    "below": 348,
+    "dupes": 67,
+    "lb": 0.7636814052508324,
+    "n": 433
+   },
+   "dup_inconsistent": 0,
+   "trace_forms": {
+    "b65": [
+     518,
+     518
+    ],
+    "full": [
+     361,
+     500
+    ]
+   }
+  }
+ },
+ "l172.diffs": {
+  "src": "banc/l172/stats.json:diffs (Newcombe hybrid-score CI for the difference of two independent proportions + two-sided Fisher exact, computed on the canonical pooled counts)",
+  "v": {
+   "base_vs_full": {
+    "contains_zero": false,
+    "diff": -0.124,
+    "fisher_p": 0.0008308930676034131,
+    "hi": -0.053,
+    "ka": 72,
+    "kb": 207,
+    "lo": -0.191,
+    "na": 258,
+    "nb": 513
+   },
+   "carrier_vs_base": {
+    "contains_zero": false,
+    "diff": 0.688,
+    "fisher_p": 3.3732008003891098e-59,
+    "hi": 0.742,
+    "ka": 203,
+    "kb": 72,
+    "lo": 0.621,
+    "na": 210,
+    "nb": 258
+   },
+   "carrier_vs_twin": {
+    "contains_zero": false,
+    "diff": 0.512,
+    "fisher_p": 3.8473696951941576e-20,
+    "hi": 0.628,
+    "ka": 203,
+    "kb": 30,
+    "lo": 0.388,
+    "na": 210,
+    "nb": 66
+   },
+   "cutng23_vs_base": {
+    "contains_zero": false,
+    "diff": -0.279,
+    "fisher_p": 1.7383346063193697e-10,
+    "hi": -0.211,
+    "ka": 0,
+    "kb": 72,
+    "lo": -0.337,
+    "na": 82,
+    "nb": 258
+   },
+   "eMotBot5_vs_base": {
+    "contains_zero": true,
+    "diff": -0.024,
+    "fisher_p": 0.6910552425338888,
+    "hi": 0.083,
+    "ka": 25,
+    "kb": 72,
+    "lo": -0.119,
+    "na": 98,
+    "nb": 258
+   },
+   "eMotTop5_vs_base": {
+    "contains_zero": true,
+    "diff": 0.037,
+    "fisher_p": 0.5141231509215821,
+    "hi": 0.147,
+    "ka": 31,
+    "kb": 72,
+    "lo": -0.064,
+    "na": 98,
+    "nb": 258
+   },
+   "eOutMot_vs_base": {
+    "contains_zero": false,
+    "diff": 0.339,
+    "fisher_p": 0.00014436021469303102,
+    "hi": 0.491,
+    "ka": 21,
+    "kb": 72,
+    "lo": 0.162,
+    "na": 34,
+    "nb": 258
+   },
+   "eOutMot_vs_carrier": {
+    "contains_zero": false,
+    "diff": -0.349,
+    "fisher_p": 3.057072573659685e-08,
+    "hi": -0.202,
+    "ka": 21,
+    "kb": 203,
+    "lo": -0.517,
+    "na": 34,
+    "nb": 210
+   },
+   "left_carrier_vs_base": {
+    "contains_zero": false,
+    "diff": -0.05,
+    "fisher_p": 0.00040215589064010915,
+    "hi": -0.023,
+    "ka": 0,
+    "kb": 13,
+    "lo": -0.084,
+    "na": 210,
+    "nb": 258
+   },
+   "scr0_vs_base": {
+    "contains_zero": false,
+    "diff": 0.541,
+    "fisher_p": 8.448992620893316e-13,
+    "hi": 0.638,
+    "ka": 41,
+    "kb": 72,
+    "lo": 0.401,
+    "na": 50,
+    "nb": 258
+   },
+   "silW_vs_base": {
+    "contains_zero": false,
+    "diff": 0.517,
+    "fisher_p": 6.680120312042067e-19,
+    "hi": 0.602,
+    "ka": 78,
+    "kb": 72,
+    "lo": 0.41,
+    "na": 98,
+    "nb": 258
+   },
+   "silW_vs_carrier": {
+    "contains_zero": false,
+    "diff": -0.171,
+    "fisher_p": 2.863207810928677e-06,
+    "hi": -0.095,
+    "ka": 78,
+    "kb": 203,
+    "lo": -0.263,
+    "na": 98,
+    "nb": 210
+   },
+   "twin_vs_base": {
+    "contains_zero": false,
+    "diff": 0.175,
+    "fisher_p": 0.007600199540832347,
+    "hi": 0.305,
+    "ka": 30,
+    "kb": 72,
+    "lo": 0.047,
+    "na": 66,
+    "nb": 258
+   }
+  }
+ },
+ "l172.meta": {
+  "src": "banc/l172/stats.json:admissibility+sham+unit (unit of inference = a noise seed of ONE fixed network)",
+  "v": {
+   "branch": "S1_counts_stable",
+   "dup_inconsistent": 0,
+   "n_admissible": 38,
+   "n_recurring_seeds": 18,
+   "n_rejected": 11,
+   "sham_n": 3,
+   "sham_spread": 0.07500000000000001,
+   "unit": "a noise seed of ONE fixed network (one graph, one bisected gain, one drive protocol); intervals describe seed-to-seed variability of that network, not variability across connectomes, cohorts or gains"
+  }
+ },
+ "l172.pooled": {
+  "src": "banc/l172/stats.json:pooled (canonical unique-seed union per arm; CERT-1 l156 census cells + CERT-2/3 four stored per-batch duty cells reproduced EXACTLY before any pooled number was read)",
+  "v": {
+   "b65": {
+    "bootR": [
+     0.994,
+     0.996
+    ],
+    "dup_seeds": 77,
+    "kL": 513,
+    "kR": 513,
+    "lbR": 0.9925674329039715,
+    "meanR": 0.995,
+    "n": 513,
+    "n_files": 31,
+    "ubR": 1.0
+   },
+   "cut58": {
+    "bootR": [
+     0.207,
+     0.234
+    ],
+    "dup_seeds": 48,
+    "kL": 253,
+    "kR": 1,
+    "lbR": 0.0006845316783493666,
+    "meanR": 0.22,
+    "n": 258,
+    "n_files": 16,
+    "ubR": 0.021624612362489047
+   },
+   "cutk5": {
+    "bootR": [
+     0.025,
+     0.039
+    ],
+    "dup_seeds": 26,
+    "kL": 8,
+    "kR": 0,
+    "lbR": 0.0,
+    "meanR": 0.032,
+    "n": 226,
+    "n_files": 14,
+    "ubR": 0.016713515657290345
+   },
+   "cutng19": {
+    "bootR": [
+     0.201,
+     0.239
+    ],
+    "dup_seeds": 20,
+    "kL": 25,
+    "kR": 5,
+    "lbR": 0.01205673449074178,
+    "meanR": 0.22,
+    "n": 178,
+    "n_files": 11,
+    "ubR": 0.06406154409358579
+   },
+   "cutng23": {
+    "bootR": [
+     0.066,
+     0.103
+    ],
+    "dup_seeds": 8,
+    "kL": 3,
+    "kR": 0,
+    "lbR": 0.0,
+    "meanR": 0.084,
+    "n": 82,
+    "n_files": 5,
+    "ubR": 0.04475062369010032
+   },
+   "cutng25": {
+    "bootR": [
+     0.749,
+     0.783
+    ],
+    "dup_seeds": 24,
+    "kL": 0,
+    "kR": 203,
+    "lbR": 0.9328056080047664,
+    "meanR": 0.766,
+    "n": 210,
+    "n_files": 13,
+    "ubR": 0.9837612779532359
+   },
+   "cutng25p": {
+    "bootR": [
+     0.421,
+     0.496
+    ],
+    "dup_seeds": 6,
+    "kL": 3,
+    "kR": 30,
+    "lbR": 0.34024125498057733,
+    "meanR": 0.459,
+    "n": 66,
+    "n_files": 4,
+    "ubR": 0.5738498865661081
+   },
+   "cutng29": {
+    "bootR": [
+     0.751,
+     0.785
+    ],
+    "dup_seeds": 22,
+    "kL": 0,
+    "kR": 188,
+    "lbR": 0.934178557472189,
+    "meanR": 0.768,
+    "n": 194,
+    "n_files": 12,
+    "ubR": 0.9857499604677671
+   },
+   "cutscr0": {
+    "bootR": [
+     0.577,
+     0.666
+    ],
+    "dup_seeds": 4,
+    "kL": 37,
+    "kR": 41,
+    "lbR": 0.6920394632569922,
+    "meanR": 0.623,
+    "n": 50,
+    "n_files": 3,
+    "ubR": 0.9022980732976582
+   },
+   "cutwA": {
+    "bootR": [
+     0.385,
+     0.425
+    ],
+    "dup_seeds": 30,
+    "kL": 13,
+    "kR": 72,
+    "lbR": 0.22788539662472923,
+    "meanR": 0.404,
+    "n": 258,
+    "n_files": 16,
+    "ubR": 0.33673664408095666
+   },
+   "eMotBot5": {
+    "bootR": [
+     0.339,
+     0.405
+    ],
+    "dup_seeds": 10,
+    "kL": 3,
+    "kR": 25,
+    "lbR": 0.1791746140210953,
+    "meanR": 0.372,
+    "n": 98,
+    "n_files": 6,
+    "ubR": 0.34950456481401354
+   },
+   "eMotTop5": {
+    "bootR": [
+     0.376,
+     0.448
+    ],
+    "dup_seeds": 10,
+    "kL": 1,
+    "kR": 31,
+    "lbR": 0.23267060128922795,
+    "meanR": 0.412,
+    "n": 98,
+    "n_files": 6,
+    "ubR": 0.4138387828371038
+   },
+   "eOutMot": {
+    "bootR": [
+     0.517,
+     0.619
+    ],
+    "dup_seeds": 2,
+    "kL": 3,
+    "kR": 21,
+    "lbR": 0.450410173444307,
+    "meanR": 0.569,
+    "n": 34,
+    "n_files": 2,
+    "ubR": 0.7609981667549109
+   },
+   "full": {
+    "bootR": [
+     0.443,
+     0.47
+    ],
+    "dup_seeds": 77,
+    "kL": 124,
+    "kR": 207,
+    "lbR": 0.3619240017791821,
+    "meanR": 0.457,
+    "n": 513,
+    "n_files": 31,
+    "ubR": 0.44652789713408664
+   },
+   "silW": {
+    "bootR": [
+     0.611,
+     0.676
+    ],
+    "dup_seeds": 10,
+    "kL": 2,
+    "kR": 78,
+    "lbR": 0.7056896702936686,
+    "meanR": 0.644,
+    "n": 98,
+    "n_files": 6,
+    "ubR": 0.8638229886139082
+   }
+  }
+ },
+ "l173.defs": {
+  "src": "banc/l173/methods.json:defs (cohort/ladder rule parsed from banc/l131_static.py + duty and class criteria parsed from banc/l169d_verdict.py, both re-asserted against stored pins)",
+  "v": {
+   "K": 77,
+   "duty_bar": 0.25,
+   "mass_share": 0.5024,
+   "n_glut": 19,
+   "n_nonglut": 58,
+   "notsuper_k": 8,
+   "partial_hi": 0.5,
+   "partial_lo": 0.35,
+   "s_window": 500,
+   "sample_stride": 10,
+   "seed_bar": 0.5,
+   "super_k": 12,
+   "super_meanR": 0.6
+  }
+ },
+ "l173.model": {
+  "src": "banc/l173/methods.json:model (every constant parsed by ast from banc/l135_run.py and asserted identical in banc/l169d_run.py; the equation certified against the run script's own three update lines by a deterministic 7-node probe, max|d| = 0.0)",
+  "v": {
+   "AF_T": 0.109056,
+   "BETA": 2.0,
+   "BG": 0.02,
+   "DT": 0.01,
+   "NOISE": 0.01,
+   "RMAX": 1.0,
+   "SEG": 2000,
+   "SETTLE": 400,
+   "TAU": 0.05,
+   "WIN": 6000,
+   "af_threshold": 0.05,
+   "branch": "M1_equation_matches",
+   "eq_maxd": 0.0,
+   "equation": "x <- x + (DT/TAU) * ( clamp( relu(g*W x + I + s(t)*1_mech + BG) + noise, max=RMAX ) - x )"
+  }
+ },
+ "l173.protocol": {
+  "src": "banc/l173/methods.json:protocol (chop geometry + the DNg100 tonic drive + the gain-bisect schedule, parsed from banc/l135_run.py)",
+  "v": {
+   "bisect_bracket": [
+    0.12,
+    0.18
+   ],
+   "bisect_iters": 24,
+   "chop_off": 400,
+   "chop_on": 500,
+   "chop_period": 900,
+   "dng100_drive": 0.2,
+   "win_s": 60.0
+  }
+ },
+ "l173b.gains": {
+  "src": "banc/l173b/cert.json:cert1+cert2+cert4+cert5 (every gain read from a stored anchors.g_* field; percent deltas re-derived at full precision; silW == its base gain as EXACT float equality in both batches; the mass ratio .0544/.005599 recomputed, retiring the printed 12x)",
+  "v": {
+   "branch": "B1_silW_gain_unchanged",
+   "carrier_intact_dR": -0.088,
+   "flip_arms": [
+    "cutng25",
+    "eAll",
+    "eIn",
+    "eMotIn",
+    "eOutAll",
+    "eOutInt"
+   ],
+   "flip_band": [
+    1.062,
+    1.297
+   ],
+   "g_base": 0.14365819573402408,
+   "mass_ratio": 9.72,
+   "nonflip_arms": [
+    "eMotBot5",
+    "eMotTop5"
+   ],
+   "pct": {
+    "cutng25": 1.244,
+    "eAll": 1.244,
+    "eIn": 1.087,
+    "eMotBot5": 0.009,
+    "eMotIn": 1.062,
+    "eMotTop5": -0.031,
+    "eOutAll": 1.238,
+    "eOutInt": 1.297,
+    "eOutMot": -0.568,
+    "silW": 0.0
+   },
+   "sham_spread": 0.075,
+   "silW_exact_equal": true
+  }
+ },
+ "n_runs_summed": {
+  "src": "l136/plot_data.json:pooled.full.mean_R_runs (count)",
+  "v": 11
+ },
+ "pooled.cut58": {
+  "src": "l136/plot_data.json:pooled.cut58",
+  "v": {
+   "k": 1,
+   "lb": 0.001,
+   "n": 176,
+   "p_hat": 0.0057,
+   "ub": 0.0315
+  }
+ },
+ "pooled.cutk5": {
+  "src": "l136/plot_data.json:pooled.cutk5",
+  "v": {
+   "k": 0,
+   "lb": 0.0,
+   "n": 176,
+   "p_hat": 0.0,
+   "ub": 0.0214
+  }
+ },
+ "pooled.cutng19": {
+  "src": "l136/plot_data.json:pooled.cutng19",
+  "v": {
+   "k": 5,
+   "lb": 0.0122,
+   "n": 176,
+   "p_hat": 0.0284,
+   "ub": 0.0648
+  }
+ },
+ "pooled.cutng23": {
+  "src": "l136/plot_data.json:pooled.cutng23",
+  "v": {
+   "k": 0,
+   "lb": 0.0,
+   "n": 64,
+   "p_hat": 0.0,
+   "ub": 0.0566
+  }
+ },
+ "pooled.cutng25": {
+  "src": "l136/plot_data.json:pooled.cutng25",
+  "v": {
+   "k": 47,
+   "lb": 0.891,
+   "n": 48,
+   "p_hat": 0.9792,
+   "ub": 0.9963
+  }
+ },
+ "pooled.cutng25p": {
+  "src": "l136/plot_data.json:pooled.cutng25p",
+  "v": {
+   "k": 12,
+   "lb": 0.2293,
+   "n": 32,
+   "p_hat": 0.375,
+   "ub": 0.5475
+  }
+ },
+ "pooled.cutng26": {
+  "src": "l136/plot_data.json:pooled.cutng26",
+  "v": {
+   "k": 63,
+   "lb": 0.9167,
+   "n": 64,
+   "p_hat": 0.9844,
+   "ub": 0.9972
+  }
+ },
+ "pooled.cutng29": {
+  "src": "l136/plot_data.json:pooled.cutng29",
+  "v": {
+   "k": 170,
+   "lb": 0.9276,
+   "n": 176,
+   "p_hat": 0.9659,
+   "ub": 0.9843
+  }
+ },
+ "pooled.cutwA": {
+  "src": "l136/plot_data.json:pooled.cutwA",
+  "v": {
+   "k": 20,
+   "lb": 0.2123,
+   "n": 64,
+   "p_hat": 0.3125,
+   "ub": 0.4339
+  }
+ },
+ "pooled.full": {
+  "src": "l136/plot_data.json:pooled.full",
+  "v": {
+   "k": 66,
+   "lb": 0.3069,
+   "n": 176,
+   "p_hat": 0.375,
+   "ub": 0.4485
+  }
+ },
+ "subnet": {
+  "src": "l136/plot_data.json:banc_subnet",
+  "v": "l65 cord subnet (20,521 cord + 728 DN-into), Ti flexor pool n=101"
+ },
+ "sustain.cutng23": {
+  "src": "l139/results_l139.json:sustain.cutng23",
+  "v": {
+   "classes": {
+    "1": "KILL",
+    "2": "KILL",
+    "3": "KILL",
+    "4": "KILL",
+    "5": "OTHER"
+   },
+   "frac": 0.8,
+   "n": 4,
+   "prior": "KILL"
+  }
+ },
+ "sustain.cutng25": {
+  "src": "l139/results_l139.json:sustain.cutng25",
+  "v": {
+   "classes": {
+    "1": "SUPER",
+    "2": "SUPER",
+    "3": "SUPER",
+    "4": "SUPER",
+    "5": "SUPER"
+   },
+   "frac": 1.0,
+   "n": 5,
+   "prior": "SUPER"
+  }
+ },
+ "sustain.cutng25p": {
+  "src": "l139/results_l139.json:sustain.cutng25p",
+  "v": {
+   "classes": {
+    "1": "OTHER",
+    "2": "PARTIAL",
+    "3": "PARTIAL",
+    "4": "KILL",
+    "5": "SUPER"
+   },
+   "frac": 0.0,
+   "n": 0,
+   "prior": "NEUTRAL-INT"
+  }
+ },
+ "sustain.cutng29": {
+  "src": "l139/results_l139.json:sustain.cutng29",
+  "v": {
+   "classes": {
+    "1": "SUPER",
+    "2": "SUPER",
+    "3": "SUPER",
+    "4": "NEUTRAL-INT",
+    "5": "SUPER"
+   },
+   "frac": 0.8,
+   "n": 4,
+   "prior": "SUPER"
+  }
+ },
+ "sustain.cutwA": {
+  "src": "l139/results_l139.json:sustain.cutwA",
+  "v": {
+   "classes": {
+    "1": "NEUTRAL-INT",
+    "2": "OTHER",
+    "3": "OTHER",
+    "4": "KILL",
+    "5": "SUPER"
+   },
+   "frac": 0.0,
+   "n": 0,
+   "prior": "PARTIAL"
+  }
+ },
+ "xor": {
+  "src": "l136/plot_data.json:xor",
+  "v": {
+   "m25": 0.006435921140521805,
+   "m26": 0.006044975663501844,
+   "pair_delta": 0.00039094547701996104,
+   "rank25_id": 1110,
+   "rank26_id": 319,
+   "steps": {
+    "24->25": 0.371,
+    "24->25p": 0.016,
+    "25p->26": 0.444
+   }
+  }
+ }
+}

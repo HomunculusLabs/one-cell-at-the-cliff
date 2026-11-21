@@ -1,0 +1,14 @@
+subnets old 21249/627051 new 21809/647953 | dn 1288 | hop46n [np.int64(270), np.int64(366)] | 3s
+bisect bracket af(0.05)=0.04396 af(0.6)=0.15425 target 0.10906
+  bisect it0 g=0.325000 af=0.13734
+  bisect it1 g=0.187500 af=0.11660
+  bisect it2 g=0.118750 af=0.09039
+  bisect it3 g=0.153125 af=0.10820
+g_new 0.153125 (old 0.14) af 0.10820 target 0.10906 | 5s
+seed 11 done af old 0.1101 new 0.1056 | 13s
+seed 22 done af old 0.1136 new 0.1073 | 22s
+seed 33 done af old 0.1125 new 0.1116 | 31s
+bisect consistency OK: mean af_c 0.10820 == af_final
+raw_l92.npz checkpointed BEFORE analysis
+C0A branch gain-decomp max 4.995e-01 | C0C max 6.154e-01 | C2 lands .5:3/3 2.0:3/3 | fd_min 2001 | C1 True
+done 31s -> l92/raw_l92.npz + anchors_run.json

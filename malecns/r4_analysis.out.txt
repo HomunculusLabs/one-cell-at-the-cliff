@@ -1,0 +1,14 @@
+annotations: 211577 bodies, superclass non-null: 166700
+edges (significant-only): 25,568,639  total synapses: 124,039,080
+edge superclass join rate (both ends labeled): 100.0%
+DN -> MOTOR (direct): 23,720 edges, 340,376 synapses, 799 distinct targets, median wt 4
+DN -> efferent: 2,385 edges, 28,675 synapses, 94 distinct targets, median wt 3
+DN -> vnc_intrinsic: 247,230 edges, 1,725,403 synapses, 12,790 distinct targets, median wt 2
+DN -> ascending (vnc->brain): 65,528 edges, 443,244 synapses, 2,155 distinct targets, median wt 2
+vnc_intrinsic -> MOTOR: 155,042 edges, 2,214,497 synapses, 708 distinct targets, median wt 4
+vnc_intrinsic -> vnc_sensory (reflex arc present?): 72,677 edges, 365,860 synapses, 6,190 distinct targets, median wt 2
+vnc_sensory -> vnc_intrinsic: 357,802 edges, 1,967,987 synapses, 11,555 distinct targets, median wt 2
+motor population: 815; reached directly by a DN: 799 (98.0%)
+per-motor direct DN synapses: median 174, p90 1202, max 4695
+
+port check: need pre/post/syn-count/per-pre-NT -> body_pre/body_post/weight OK; per-body consensus_nt OK (body-neurotransmitters feather)

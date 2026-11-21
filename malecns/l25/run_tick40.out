@@ -1,0 +1,49 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+== static sign/pass over L20 crouch classes ==
+DNg95     cells 2 edges   84 w_sum +0.403 (+0.403/0.000) flex_w +0.322 flex_edges 45
+DNge079   cells 2 edges  211 w_sum -1.276 (+0.000/-1.276) flex_w -0.662 flex_edges 63
+DNg74_b   cells 2 edges  415 w_sum -2.331 (+0.000/-2.331) flex_w -0.961 flex_edges 90
+DNg35     cells 2 edges  110 w_sum +0.526 (+0.526/0.000) flex_w +0.311 flex_edges 36
+DNg108    cells 2 edges  311 w_sum -1.457 (+0.000/-1.457) flex_w -0.618 flex_edges 71
+  overlap DNg35 vs DNg95: flex-profile cos +0.896 flex_w +0.311
+ROUTE A = DNg95, ROUTE B = DNg35 (profile-overlap pick)
+amplified edges: G84+110=194 | G_HI 194 (x200/x2000)
+pools: {'flexL': 72, 'flexR': 69}
+noise     flexL_pk +0.0040 flexR_pk +0.0028 sat 0.000 lvlL 0.064 clipL 0.000
+soloA     flexL_pk +0.2264 flexR_pk +0.2049 sat 0.000 lvlL 0.286 clipL 0.017
+soloB     flexL_pk +0.2086 flexR_pk +0.1916 sat 0.000 lvlL 0.268 clipL 0.019
+joint     flexL_pk +0.3439 flexR_pk +0.3265 sat 0.000 lvlL 0.404 clipL 0.040
+jClampA   flexL_pk +0.2127 flexR_pk +0.1944 sat 0.000 lvlL 0.256 clipL 0.019
+stag10    flexL_pk +0.3307 flexR_pk +0.3050 sat 0.006 lvlL 0.390 clipL 0.040
+stag20    flexL_pk +0.2686 flexR_pk +0.2313 sat 0.009 lvlL 0.328 clipL 0.037
+stag30    flexL_pk +0.2264 flexR_pk +0.2049 sat 0.000 lvlL 0.286 clipL 0.037
+stag60    flexL_pk +0.2264 flexR_pk +0.2049 sat 0.000 lvlL 0.286 clipL 0.037
+stag100   flexL_pk +0.2264 flexR_pk +0.2049 sat 0.000 lvlL 0.286 clipL 0.037
+hi_soloA  flexL_pk +0.1373 flexR_pk +0.1542 sat 0.055 lvlL 0.430 clipL 0.159
+hi_soloB  flexL_pk +0.0711 flexR_pk +0.1100 sat 0.072 lvlL 0.364 clipL 0.150
+hi_joint  flexL_pk +0.1569 flexR_pk +0.2052 sat 0.101 lvlL 0.450 clipL 0.176
+SNR flexL:    56.8x
+SNR flexR:    57.4x
+
+== shared-pool mass ratio joint/(soloA+soloB) ==
+  flexL    : 0.790  (seeds [0.79  0.792 0.79 ])
+  flexL_hi : 0.754  (seeds [0.765 0.761 0.735])
+  flexR    : 0.824  (seeds [0.824 0.822 0.824])
+  flexR_hi : 0.777  (seeds [0.795 0.76  0.776])
+COS[dm] dJoint vs dA+dB: +0.966 resid 0.290
+COS[dm_int] dJoint vs dA+dB: +0.975 resid 0.254
+
+== stagger: B-window peak / solo-B peak (rescue) ==
+  DEL= 10: flexL 1.58  flexR 1.59
+  DEL= 20: flexL 1.29  flexR 1.21
+  DEL= 30: flexL 1.02  flexR 1.01
+  DEL= 60: flexL 1.00  flexR 1.00
+  DEL=100: flexL 1.00  flexR 1.00
+
+G=200 sat joint 0.000 | G=2000 sat soloA 0.055 soloB 0.072 joint 0.101
+clamp: cos(jClampA, soloB) +0.999
+
+done 456s -> l25/results_l25.json

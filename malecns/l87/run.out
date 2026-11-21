@@ -1,0 +1,37 @@
+/home/t3rpz/critters/peabrain-lab/malecns/l87_branch.py:117: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  Wc = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/malecns/l87_branch.py:119: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  torch.from_numpy(Wa_vals.astype(np.float32)), (n, n)).coalesce().to_sparse_csr()
+sub nodes 21,516 | edges 2,977,920 | mech 3588 | antag 68 | 046L 2 | 8s
+drive-on 48.0s all arms | tables asserted
+seed 11 done 60s
+seed 22 done 111s
+seed 33 done 162s
+seed 101 done 210s
+seed 102 done 259s
+seed 103 done 308s
+seed 104 done 355s
+seed 105 done 400s
+seed 106 done 447s
+seed 107 done 493s
+seed 108 done 542s
+seed 109 done 591s
+seed 110 done 636s
+seed 111 done 682s
+seed 112 done 727s
+seed 113 done 772s
+runs done 772s
+raw_l87.npz checkpointed BEFORE analysis (crash => verdict re-derives)
+A1-A4 chain True | A5 prefix True fd True | degenerate [] | C1 True
+first_div set [2501, 3001, 3501]
+A7 budget True | fb masses 84.7558/85.6328 | latch ratios nh_on2500=0.0753 nh_on3000=0.065 nh_on3500=0.0534 nh_off2500=0.0535 nh_off3000=0.0637 nh_off3500=0.074 hy_on2500=0.075 hy_off2500=0.0536
+A6 certification True 
+R1 gates {"hynohop": {"g1": true, "g2a": false, "g3": true, "g4": true}, "hynohop_fb": {"g1": true, "g2a": true, "g3": false, "g4": true}, "hybrid": {"g1": true, "g2a": false, "g3": true, "g4": true}, "hybrid_fb": {"g1": true, "g2a": false, "g3": false, "g4": false}, "nh_on2500": {"g1": true, "g2a": false, "g3": true, "g4": true}, "nh_on3000": {"g1": true, "g2a": false, "g3": false, "g4": true}, "nh_on3500": {"g1": true, "g2a": false, "g3": true, "g4": true}, "nh_off2500": {"g1": false, "g2a": true, "g3": false, "g4": true}, "nh_off3000": {"g1": true, "g2a": false, "g3": true, "g4": true}, "nh_off3500": {"g1": true, "g2a": false, "g3": false, "g4": true}, "hy_on2500": {"g1": true, "g2a": false, "g3": false, "g4": true}, "hy_off2500": {"g1": true, "g2a": false, "g3": false, "g4": true}}
+E1 pareto movers []
+O_MID {"P1": {"k": 16, "wilson": [0.806, 1.0], "seg1_mean": 0.41, "picks": ["hy_on2500", "nh_off3000", "hy_off2500", "hynohop_fb", "hynohop_fb", "hybrid_fb", "nh_off3000", "nh_on2500", "nh_on3000", "hynohop_fb", "hybrid", "hy_off2500", "nh_on3000", "nh_on3500", "hynohop_fb", "nh_off3500"], "clears": true}, "P2": {"k": 16, "wilson": [0.806, 1.0], "seg1_mean": 0.765, "picks": ["hy_on2500", "hybrid", "nh_off3000", "nh_off3000", "hynohop", "hybrid", "nh_off3000", "nh_on3500", "nh_off3000", "hy_on2500", "nh_on3000", "hy_off2500", "nh_on3500", "hybrid_fb", "hy_off2500", "hynohop"], "clears": true}}
+O_ALL {"P1": {"k": 16, "wilson": [0.806, 1.0], "seg1_mean": 0.41, "picks": ["hy_on2500", "nh_off3000", "hy_off2500", "hynohop_fb", "hynohop_fb", "hynohop_fb07", "hynohop_fb07", "glide400", "glide300", "hynohop_fb", "hybrid", "hy_off2500", "glide300", "glide400", "hynohop_fb", "nh_off3500"], "clears": true}, "P2": {"k": 16, "wilson": [0.806, 1.0], "seg1_mean": 0.78, "picks": ["hy_on2500", "hybrid", "nh_off3000", "nh_off3000", "hynohop", "nod", "nh_off3000", "glide300", "nh_off3000", "hy_on2500", "nh_on3000", "hy_off2500", "nh_on3500", "hybrid_fb", "hynohop_fb07", "glide300"], "clears": true}}
+GO1 True | realizability {"nh_on2500_ds1_vs_SL2500": 0.221, "nh_on2500_dd07_vs_SL2500": 0.735, "nh_on2500_ds1_vs_SR2500": -0.535, "nh_on2500_dd07_vs_SR2500": 0.365, "nh_on2500_ds1_vs_mm2500": -0.288, "nh_on2500_dd07_vs_mm2500": 0.259, "nh_off2500_ds1_vs_SL2500": 0.203, "nh_off2500_dd07_vs_SL2500": 0.103, "nh_off2500_ds1_vs_SR2500": -0.312, "nh_off2500_dd07_vs_SR2500": -0.115, "nh_off2500_ds1_vs_mm2500": 0.271, "nh_off2500_dd07_vs_mm2500": 0.162, "hy_on2500_ds1_vs_SL2500": 0.341, "hy_on2500_dd07_vs_SL2500": 0.432, "hy_on2500_ds1_vs_SR2500": -0.35, "hy_on2500_dd07_vs_SR2500": -0.209, "hy_on2500_ds1_vs_mm2500": -0.071, "hy_on2500_dd07_vs_mm2500": -0.379, "hy_off2500_ds1_vs_SL2500": -0.068, "hy_off2500_dd07_vs_SL2500": 0.429, "hy_off2500_ds1_vs_SR2500": -0.038, "hy_off2500_dd07_vs_SR2500": -0.309, "hy_off2500_ds1_vs_mm2500": 0.265, "hy_off2500_dd07_vs_mm2500": 0.05}
+best rules [{"fork": "nh_off2500", "feature": "SR2500", "direction": "<=", "k": 15, "wilson": [0.717, 0.989], "seg1_mean": 0.329, "picks": ["hynohop_fb", "nh_off2500", "nh_off2500", "hynohop_fb", "nh_off2500", "hynohop_fb", "nh_off2500", "nh_off2500", "hynohop_fb", "hynohop_fb", "hynohop_fb", "nh_off2500", "nh_off2500", "hynohop_fb", "hynohop_fb", "nh_off2500"], "clears": false}, {"fork": "hy_off2500", "feature": "SL2500", "direction": ">=", "k": 15, "wilson": [0.717, 0.989], "seg1_mean": 0.316, "picks": ["hy_off2500", "hybrid_fb", "hybrid_fb", "hy_off2500", "hybrid_fb", "hybrid_fb", "hy_off2500", "hybrid_fb", "hybrid_fb", "hy_off2500", "hybrid_fb", "hy_off2500", "hy_off2500", "hy_off2500", "hy_off2500", "hybrid_fb"], "clears": false}, {"fork": "hy_off2500", "feature": "SR2500", "direction": "<=", "k": 15, "wilson": [0.717, 0.989], "seg1_mean": 0.305, "picks": ["hybrid_fb", "hy_off2500", "hy_off2500", "hybrid_fb", "hy_off2500", "hybrid_fb", "hy_off2500", "hy_off2500", "hybrid_fb", "hybrid_fb", "hybrid_fb", "hy_off2500", "hy_off2500", "hybrid_fb", "hybrid_fb", "hy_off2500"], "clears": false}, {"fork": "nh_off2500", "feature": "mm2500", "direction": ">=", "k": 15, "wilson": [0.717, 0.989], "seg1_mean": 0.299, "picks": ["nh_off2500", "hynohop_fb", "nh_off2500", "nh_off2500", "hynohop_fb", "hynohop_fb", "nh_off2500", "hynohop_fb", "nh_off2500", "hynohop_fb", "hynohop_fb", "nh_off2500", "hynohop_fb", "hynohop_fb", "nh_off2500", "nh_off2500"], "clears": false}]
+GO2 False
+VERDICT NO-GO: oracle-only mass (GO1 yes, GO2 no) — mid-seg branches not realizable; C4b echo lever stands, C4c stays diagnostic
+done 780s -> l87/results_l87.json

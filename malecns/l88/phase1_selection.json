@@ -1,0 +1,182 @@
+{
+ "winner": {
+  "idx": 50,
+  "fork": "hy_on2500",
+  "base": "hybrid",
+  "f1": "SL2500",
+  "c1": ">=",
+  "f2": "SR2500",
+  "c2": "<",
+  "comb": "AND",
+  "thr1": 0.06,
+  "thr2": 0.7424999999999999,
+  "k": 13,
+  "wilson": [
+   0.57,
+   0.934
+  ],
+  "seg1_mean": 0.495,
+  "n_lock": 16,
+  "census_clears": false,
+  "picks": [
+   "hy_on2500",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hy_on2500",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid"
+  ]
+ },
+ "runner": {
+  "idx": 68,
+  "fork": "hy_on2500",
+  "base": "hybrid",
+  "f1": "SR2500",
+  "c1": "<",
+  "f2": "mm2500",
+  "c2": ">=",
+  "comb": "AND",
+  "thr1": 0.7424999999999999,
+  "thr2": 0.213885,
+  "k": 12,
+  "wilson": [
+   0.505,
+   0.898
+  ],
+  "seg1_mean": 0.445,
+  "n_lock": 16,
+  "census_clears": false,
+  "picks": [
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hy_on2500",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hybrid",
+   "hy_on2500",
+   "hy_on2500"
+  ]
+ },
+ "n_rules": 96,
+ "n_census_clear": 0,
+ "top5": [
+  {
+   "idx": 50,
+   "fork": "hy_on2500",
+   "base": "hybrid",
+   "f1": "SL2500",
+   "c1": ">=",
+   "f2": "SR2500",
+   "c2": "<",
+   "comb": "AND",
+   "thr1": 0.06,
+   "thr2": 0.7424999999999999,
+   "k": 13,
+   "wilson": [
+    0.57,
+    0.934
+   ],
+   "seg1_mean": 0.495,
+   "n_lock": 16,
+   "census_clears": false
+  },
+  {
+   "idx": 68,
+   "fork": "hy_on2500",
+   "base": "hybrid",
+   "f1": "SR2500",
+   "c1": "<",
+   "f2": "mm2500",
+   "c2": ">=",
+   "comb": "AND",
+   "thr1": 0.7424999999999999,
+   "thr2": 0.213885,
+   "k": 12,
+   "wilson": [
+    0.505,
+    0.898
+   ],
+   "seg1_mean": 0.445,
+   "n_lock": 16,
+   "census_clears": false
+  },
+  {
+   "idx": 2,
+   "fork": "nh_on2500",
+   "base": "hynohop",
+   "f1": "SL2500",
+   "c1": ">=",
+   "f2": "SR2500",
+   "c2": "<",
+   "comb": "AND",
+   "thr1": 0.08299999999999999,
+   "thr2": 0.7545,
+   "k": 11,
+   "wilson": [
+    0.444,
+    0.858
+   ],
+   "seg1_mean": 0.442,
+   "n_lock": 16,
+   "census_clears": false
+  },
+  {
+   "idx": 22,
+   "fork": "nh_on2500",
+   "base": "hynohop",
+   "f1": "SR2500",
+   "c1": "<",
+   "f2": "mm2500",
+   "c2": "<",
+   "comb": "AND",
+   "thr1": 0.7545,
+   "thr2": 0.216285,
+   "k": 9,
+   "wilson": [
+    0.332,
+    0.769
+   ],
+   "seg1_mean": 0.442,
+   "n_lock": 16,
+   "census_clears": false
+  },
+  {
+   "idx": 7,
+   "fork": "nh_on2500",
+   "base": "hynohop",
+   "f1": "SL2500",
+   "c1": "<",
+   "f2": "SR2500",
+   "c2": "<",
+   "comb": "OR",
+   "thr1": 0.08299999999999999,
+   "thr2": 0.7545,
+   "k": 9,
+   "wilson": [
+    0.332,
+    0.769
+   ],
+   "seg1_mean": 0.433,
+   "n_lock": 16,
+   "census_clears": false
+  }
+ ]
+}

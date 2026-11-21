@@ -1,0 +1,71 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+extraction pins green: k-ladder + rank twins (1110/319)
+
+== A. annotation row gi 1110 ==
+  pt_root_id                   720575941639588127
+  super_class                  descending
+  cell_class                   descending_neuron
+  cell_sub_class               None
+  cell_type                    DNp33
+  side                         left
+  nerve                        None
+  region                       neck_connective
+  peripheral_target_type       None
+  body_part_effector           None
+  cell_function                None
+  cell_function_detailed       None
+  other_names                  None
+  neurotransmitter_predicted   acetylcholine
+  neurotransmitter_verified    None
+  fafb_783_match_id            720575940604103084
+  manc_121_match_id            12064
+  hemilineage                  putative_primary
+  flow                         intrinsic
+  nt_join(dv_11837016)         acetylcholine
+
+== B. BANC 'DNp33' cells ==
+  gi    928 root 720575941451941498 side  right  closure True  heavy77 False ng58 False  mass None  heavy_rank None
+  gi   1110 root 720575941639588127 side   left  closure True  heavy77 True  ng58 True   mass 183.96376182027785  heavy_rank 31
+antagonist pools: Ti/Tr keys == l92 pins EXACT; 5-pair union cells = 304
+
+== C. closure wiring profile gi 1110 ==
+  out-edges (closure): 80  total |mass| 183.9638
+  tier motor_other                n   10  mass 23.9201
+  tier intrinsic                  n   70  mass 160.0437
+  tier vnc_sensory                n    0  mass 0.0000
+  tier antagonist_pools_direct    n    0  mass 0.0000
+  dst super_class mass shares: {'ventral_nerve_cord_intrinsic': {'n': 70, 'mass_share': 0.87}, 'motor': {'n': 10, 'mass_share': 0.13}}
+  per-pool direct hits: NONE
+  top-10 |w| targets:
+    IN03B069         left intrinsic    3.738
+    IN11B012         left intrinsic    3.689
+    IN11B017         left intrinsic    3.689
+    IN19B008         left intrinsic    3.664
+    IN11B022         left intrinsic    3.611
+    iii4             left motor_other  3.584
+    i2               left motor_other  3.466
+    IN03B069         left intrinsic    3.296
+    IN11B017         left intrinsic    3.258
+    IN12A061         left intrinsic    3.258
+  motor-edge target types (top-10 window): ['i2', 'iii4']
+  walking-CPG family direct hits (all 80 edges): NONE
+  ladder(added-edges) mass pinned: 0.006436
+  in-edges: 13  by src cell_class: {'descending_neuron': 13}
+
+== C2. 1110 vs the ng-58 (rank / 58; group medians) ==
+  out_n        1110   80.0000  rank 39  median   93.5000
+  out_mass     1110  183.9638  rank 34  median  194.7431
+  intr_share   1110    0.8700  rank 20  median    0.8386
+  pool_direct  1110    0.0000  rank 27  median    0.0000
+  motor_share  1110    0.1300  rank  9  median    0.0170
+
+== D. MaleCNS 'DNp33' join ==
+  atlas: cells 2 edges 44 purity mixed
+  top1 hi1 MN share 0.3196 z +25.6 | top2 MNad28 0.1167 z +9.8 | top3 DVMn 1a-c 0.1064 z +3.5
+  family weights: flex 0.000 (z -1.3)  ext 0.000 (z -0.8)  jump 0.171 (z +2.4)
+  annotations: 2 cells, somaSide ['L', 'R']
+
+== E. v783 cross-join: fafb match 720575940604103084 in live brain_graph.pt -> True ==
+
+l134/static.json written

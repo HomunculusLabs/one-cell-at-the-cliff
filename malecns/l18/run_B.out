@@ -1,0 +1,16 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/serialization.py:2263: UserWarning: Validating sparse tensor invariants because weights_only=True; this is an O(nnz) scan per sparse tensor and may be slow for large checkpoints.
+  torch._utils._validate_loaded_sparse_tensors(weights_only=weights_only)
+motor 815 | cord mechano 3588 | TTMn 2 | IFM(DLMn/DVMn, async -> base tau) 24 | leg pools flex 141 / ext 23
+homog: jump-lead vs Ti +6.7 [-30, 10, 40] sc=False | vs Tr +11.0 [-21, 13, 41] sc=False | ttm half 69 vs leg 110 | pair lead Ti [1, 1, 8] | af 0.1488 | 38s
+lit: jump-lead vs Ti +137.7 [116, 113, 184] sc=True | vs Tr +142.0 [125, 116, 185] sc=True | ttm half 191 vs leg 110 | pair lead Ti [1, 1, 8] | af 0.1488 | 75s
+shuf0: jump-lead vs Ti +3.3 sc=False | vs Tr +9.7 sc=False | 115s
+shuf1: jump-lead vs Ti +6.3 sc=False | vs Tr +11.0 sc=False | 153s
+shuf2: jump-lead vs Ti +8.0 sc=False | vs Tr +8.7 sc=False | 191s
+shuf3: jump-lead vs Ti +5.7 sc=False | vs Tr +11.7 sc=False | 228s
+shuf4: jump-lead vs Ti +7.0 sc=False | vs Tr +11.0 sc=False | 266s
+
+NULL: Ti max|lead| 8.0 sc 0/5 | Tr max|lead| 11.7 sc 0/5
+lit (TTMn 4ms twitch tau) clears null: {'Ti': True, 'Tr': True}
+done 266s -> l18/results_l18_B.json

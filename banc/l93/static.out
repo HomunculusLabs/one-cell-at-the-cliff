@@ -1,0 +1,91 @@
+{
+ "Tr_fL": {
+  "total_abs_w": 7256.9,
+  "share": {
+   "sensory": 0.0501,
+   "intrinsic": 0.8405,
+   "motor": 0.0113,
+   "DNi": 0.0955,
+   "DNn": 0.0026
+  }
+ },
+ "Tr_eL": {
+  "total_abs_w": 12253.1,
+  "share": {
+   "sensory": 0.044,
+   "intrinsic": 0.8814,
+   "motor": 0.013,
+   "DNi": 0.0565,
+   "DNn": 0.0052
+  }
+ },
+ "Tr_fR": {
+  "total_abs_w": 7875.7,
+  "share": {
+   "sensory": 0.0469,
+   "intrinsic": 0.8317,
+   "motor": 0.0119,
+   "DNi": 0.1064,
+   "DNn": 0.0031
+  }
+ },
+ "Tr_eR": {
+  "total_abs_w": 12244.5,
+  "share": {
+   "sensory": 0.0518,
+   "intrinsic": 0.8725,
+   "motor": 0.0136,
+   "DNi": 0.0577,
+   "DNn": 0.0044
+  }
+ },
+ "Ti_fL": {
+  "total_abs_w": 12906.1,
+  "share": {
+   "sensory": 0.0409,
+   "intrinsic": 0.8672,
+   "motor": 0.0114,
+   "DNi": 0.0783,
+   "DNn": 0.0023
+  }
+ },
+ "Ti_eL": {
+  "total_abs_w": 3255.4,
+  "share": {
+   "sensory": 0.0497,
+   "intrinsic": 0.8503,
+   "motor": 0.0143,
+   "DNi": 0.0757,
+   "DNn": 0.0101
+  }
+ }
+}
+
+BASE (l92 cfn stored) Tr cells per seed:
+  11 {'duty07_L': 0.057, 'duty07_R': 0.557, 'SL_med': 0.013, 'SR_med': 0.303, 'fL_std': 0.0177, 'eL_std': 0.009, 'fR_std': 0.0162}
+  22 {'duty07_L': 0.047, 'duty07_R': 0.46, 'SL_med': -0.103, 'SR_med': 0.232, 'fL_std': 0.0205, 'eL_std': 0.0072, 'fR_std': 0.0211}
+  33 {'duty07_L': 0.037, 'duty07_R': 0.257, 'SL_med': -0.141, 'SR_med': -0.027, 'fL_std': 0.0226, 'eL_std': 0.0148, 'fR_std': 0.0177}
+
+Top DN joint-L candidates (type-side):
+     DNg105 RIGHT jointL  140.52 (fL  70.28 eL  70.24) n 1 viable 0/1 u_max [-0.658] x [-0.0]
+    DNxl080 LEFT  jointL  126.59 (fL  61.51 eL  65.08) n 1 viable 0/1 u_max [-0.019] x [0.0]
+    DNg74_b RIGHT jointL  121.79 (fL  73.93 eL  47.87) n 1 viable 0/1 u_max [-1.763] x [-0.0]
+     DNg108 RIGHT jointL  117.81 (fL  60.29 eL  57.52) n 1 viable 0/1 u_max [-2.353] x [-0.0]
+      DNg93 RIGHT jointL  110.60 (fL  51.09 eL  59.51) n 1 viable 0/1 u_max [-0.197] x [-0.0]
+    DNge035 RIGHT jointL   82.60 (fL  28.11 eL  54.49) n 1 viable 0/1 u_max [-0.12] x [-0.0]
+    DNg74_a RIGHT jointL   65.67 (fL  32.06 eL  33.61) n 1 viable 0/1 u_max [-4.986] x [0.0]
+    DNge049 RIGHT jointL   32.17 (fL  12.04 eL  20.13) n 1 viable 0/1 u_max [-0.385] x [0.0]
+     DNg100 RIGHT jointL   31.51 (fL  10.28 eL  21.23) n 1 viable 0/1 u_max [-0.456] x [-0.0]
+      DNg15 RIGHT jointL   27.37 (fL   3.00 eL  24.38) n 1 viable 1/1 u_max [0.177] x [0.006]
+
+Intrinsic premotor (both-pool excitatory) top-16:
+  loc  21040 IN18B011                           fL   27.89 eL   31.22
+  loc  14845 IN12A001                           fL   54.38 eL   23.65
+  loc  16545 IN18B011                           fL   17.12 eL   46.24
+  loc  14279 INXXX466                           fL   14.75 eL   12.26
+  loc  13945 IN04B085                           fL   16.69 eL   11.60
+  loc  18618 IN19B003                           fL   18.55 eL   10.81
+  loc  14110 IN20A.22A009                       fL   10.76 eL   10.69
+  loc  19609 IN19B003                           fL    9.41 eL   13.89
+int cand 1-hop share: {'Tr_fL': 0.0364, 'Tr_eL': 0.0203}
+static done 3s -> l93/static.json

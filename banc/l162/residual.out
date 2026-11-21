@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l162b_residual.py", line 74, in <module>
+    assert ra >= 2.0, ("CERT-5 shared branch", ra)
+           ^^^^^^^^^
+AssertionError: ('CERT-5 shared branch', 1.0)
