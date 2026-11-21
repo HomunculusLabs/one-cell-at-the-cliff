@@ -1,0 +1,52 @@
+parsed geometry: PX0=170 PX1=1200 PYT=112 PYB=576 XDOM=(1e-4,1.6) YLO=0.1 YHI=0.85
+========================================================================
+[1d-fig] FIG 4 INVERSE GEOMETRY CHECK (pixels -> data)
+========================================================================
+source: paper/figures/fig4_scatter.svg
+declared header: data-n-arms="36" data-y="meanR" data-x="x_mean log10 floor 1e-4"
+
+circle-type markers with data-arm: 33 distinct arms, 37 markers total
+
+arm           px       py |  x̄ from px   stored x̄ | meanR from px   stored  verdict
+-------------------------------------------------------------------------------------
+sc25      1049.6    168.9 |     0.38926     0.38911 |        0.7580    0.758  OK
+sc26    NOT FOUND as a circle marker
+sc27       809.6    269.1 |     0.04080     0.04081 |        0.5961    0.596  OK
+sc40       791.0    263.6 |     0.03425     0.03425 |        0.6050    0.605  OK
+dmA     NOT FOUND as a circle marker
+dmC     NOT FOUND as a circle marker
+sc41      1149.3    454.1 |     0.99353     0.99348 |        0.2970    0.297  OK
+sc50      1150.0    312.4 |     1.00008     1.00000 |        0.5261    0.526  OK
+sc33       914.8    470.8 |     0.10965     0.10961 |        0.2700    0.270  OK
+
+markers disagreeing with stored data: 0
+
+plotted SUPER threshold data-v=0.6  (registered super_meanR_min=0.6)  OK
+plotted base band [0.14164643854782036,0.5559564416525933]  stored base Wilson [0.141646,0.555956]  OK
+plotted base line data-v=0.408  stored base meanR=0.408  OK
+
+========================================================================
+[1d-fig] CAPTION ARITHMETIC CHECKS
+========================================================================
+cells delivering MORE drive than the carrier: 7  ratio range x1.46-x4.16
+  fig4 caption says: 'seven cells are driven harder than the carrier (1.5-4.2x)'
+  draft §2.1 says:   '7 that deliver more drive than the carrier (x1.46 to x4.16)'
+  none of them super? confirmed none
+
+  x̄ > 0.0   : 26 of 34 window cells active
+  x̄ > 0.001 : 22 of 34 window cells active
+  x̄ > 0.01  : 21 of 34 window cells active
+  x̄ > 0.05  : 14 of 34 window cells active
+  x̄ > 0.1   : 12 of 34 window cells active
+  stored 'active' flag:  14 of 34   (draft §2.1 says 14)
+  cells with 0 < x̄ <= 0.05 (where the two rules can differ): [('sc26', 0.0004989635102295628, False), ('sc27', 0.0408094214896361, False), ('sc30', 0.019426348929603893, False), ('sc32', 4.25745383836329e-06, False), ('sc38', 0.024323273450136185, False), ('sc40', 0.03425384188691775, False), ('sc44', 8.398796004864077e-05, False), ('sc45', 0.019988127673665684, False), ('sc46', 0.00041455514534997445, False), ('sc48', 0.007485806941986084, False), ('sc52', 0.020064228524764378, False), ('sc56', 0.017075999329487484, False)]
+
+========================================================================
+[1d-fig] FIG 5 ROW CHECK vs threepanel.csv
+========================================================================
+threepanel.csv arms: 37   (fig5 caption says 'all 37 arms of the B39 scan')
+fig5 svg distinct data-arm values: 0
+arms in csv but not in svg: ['cutwA', 'dmA', 'dmC', 'sc25', 'sc26', 'sc27', 'sc28', 'sc29', 'sc30', 'sc31', 'sc32', 'sc33', 'sc34', 'sc35', 'sc36', 'sc37', 'sc38', 'sc39', 'sc40', 'sc41', 'sc42', 'sc43', 'sc44', 'sc45', 'sc46', 'sc47', 'sc48', 'sc49', 'sc50', 'sc51', 'sc52', 'sc53', 'sc54', 'sc55', 'sc56', 'sc57', 'sc58']
+arms in svg but not in csv: none
+
+DONE

@@ -1,0 +1,701 @@
+Query: Referee dispatch (owner request, ROUND 4, fresh family, final pre-human 
+gate). Read /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_BRIEF.md and 
+execute it completely. Pin shas first; write report to paper/review_opus_r4.md +
+evidence dir.
+
+────────────────────────────────────────
+✿ Miso
+I'll start by reading the brief, nya~ ♪
+────────────────────────────────────────
+
+📖 Read review_opus_r4_BRIEF.md
+
+────────────────────────────────────────
+✿ Miso
+Got the brief. Pinning hashes first, then I'll work through the five tasks.
+────────────────────────────────────────
+
+✗ Exec import subprocess, os [This code is not allowed in an unattended session — it did not run.]
+📚 Skill peabrain-flybrain
+
+────────────────────────────────────────
+✿ Miso
+execute_code is blocked in this unattended session — switching to terminal tools.
+────────────────────────────────────────
+
+💻 $ mkdir -p paper/review_opus_r4_evidence + 4 commands
+
+────────────────────────────────────────
+✿ Miso
+Other dispatches are running concurrently (figures polish at 14:21) — pinning now is critical.
+────────────────────────────────────────
+
+💻 $ E=paper/review_opus_r4_evidence + 12 commands
+
+────────────────────────────────────────
+✿ Miso
+Pins locked, snapshot verified identical. Now surveying the object and artifacts.
+────────────────────────────────────────
+
+💻 $ wc -l paper/DRAFT.md + 2 commands
+💻 $ ls -la + 4 commands
+📖 Read DRAFT.md L534-1093
+💻 $ echo "=== threepanel.csv ===" + 4 commands
+
+────────────────────────────────────────
+✿ Miso
+Draft §2.1–2.4 read. Continuing, and starting recompute in parallel.
+────────────────────────────────────────
+
+📖 Read DRAFT.md L1094-1653
+💻 $ ls banc/l175/ banc/l184/ banc/l185/ banc/l187/ + 2 commands
+
+────────────────────────────────────────
+✿ Miso
+Now the independent recompute — my own code, stored artifacts only.
+────────────────────────────────────────
+
+💻 $ ls banc/l172/ 2>/dev/null + 2 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/10_recompute.py
+│ paper/review_opus_r4_evidence/10_recompute.py
+│ @@ -0,0 +1,187 @@
+│ +#!/usr/bin/env python3
+│ +"""Referee round-4 (opus) independent recompute. CPU, stored artifacts only.
+│ +Written from scratch by the referee; does not import any lab helper."""
+│ +import json, csv, math, hashlib, os, sys
+│ +
+│ +ROOT = "/home/t3rpz/critters/peabrain-lab"
+│ +def sha(p):
+│ +    h = hashlib.sha256()
+│ +    with open(p, "rb") as f:
+│ +        for b in iter(lambda: f.read(1 << 20), b""):
+│ +            h.update(b)
+│ +    return h.hexdigest()
+│ +
+│ +# ---- my own Wilson score interval (no scipy) --------------------------------
+│ +def wilson(k, n, z=1.959963984540054):
+│ +    if n == 0:
+│ +        return (float("nan"), float("nan"))
+│ +    p = k / n
+│ +    d = 1.0 + z * z / n
+│ +    c = p + z * z / (2 * n)
+│ +    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+│ +    return ((c - half) / d, (c + half) / d)
+│ +
+│ +print("=" * 72)
+│ +print("REFEREE R4 RECOMPUTE — independent code")
+│ +print("=" * 72)
+│ +
+│ +# =============================================================== TASK 1a
+│ +# carrier / twin / base pooled counts, recomputed from PER-SEED records,
+│ +# not from the lab's own 'pooled' summary block.
+│ +s = json.load(open(f"{ROOT}/banc/l172/stats.json"))
+│ +print("\n[1a] POOLED COUNTS recomputed from l172 per_seed records")
+│ +print("     source:", f"banc/l172/stats.json sha={sha(ROOT+'/banc/l172/stats.json')[:16]}")
+│ +per = s["per_seed"]
+│ +print("     per_seed container:", type(per).__name__,
+│ +      (list(per.keys())[:8] if isinstance(per, dict) else len(per)))
+│ +
+│ +def recount(arm):
+│ +    """Recount structured seeds for an arm from its per-seed duty records,
+│ +    deduplicating by seed (the canonical unique-seed union rule, §2.14)."""
+│ +    rows = per[arm] if isinstance(per, dict) else [r for r in per if r.get("arm") == arm]
+│ +    if isinstance(rows, dict):
+│ +        rows = rows.get("seeds", rows)
+│ +    best = {}
+│ +    for r in rows:
+│ +        if isinstance(r, dict):
+│ +            sd = r.get("seed", r.get("s"))
+│ +            dv = r.get("dutyR", r.get("duty", r.get("R")))
+│ +        else:
+│ +            sd, dv = r[0], r[1]
+│ +        best[sd] = dv
+│ +    k = sum(1 for v in best.values() if v >= 0.50)
+│ +    n = len(best)
+│ +    mean = sum(best.values()) / n if n else float("nan")
+│ +    return k, n, mean, best
+│ +
+│ +for arm, label in [("cutng25", "carrier removed (k=25)"),
+│ +                   ("cutng25p", "k=24 + mass twin"),
+│ +                   ("cutwA", "base, 24-cell cut"),
+│ +                   ("silW", "carrier activity clamp on cut base"),
+│ +                   ("cutscr0", "heaviest carrier-free cohort")]:
+│ +    try:
+│ +        k, n, m, _ = recount(arm)
+│ +        lo, hi = wilson(k, n)
+│ +        claimed = s["pooled"].get(arm, {})
+│ +        print(f"     {arm:10s} {label:38s} k/n={k}/{n}  mean={m:.3f}  "
+│ +              f"Wilson[{lo:.3f},{hi:.3f}]")
+│ +        print(f"       lab 'pooled' block says: {json.dumps(claimed)[:150]}")
+│ +    except Exception as e:
+│ +        print(f"     {arm}: RECOUNT FAILED {type(e).__name__}: {e}")
+│ +
+│ +# =============================================================== TASK 1b
+│ +# three rows of the L175 scan table, recomputed from raw per-seed dutyR.
+│ +print("\n[1b] L175 TABLE 1 ROWS recomputed from results_l175.json per-seed dutyR")
+│ +L = json.load(open(f"{ROOT}/banc/l175/results_l175.json"))
+│ +print("     source sha=", sha(ROOT + "/banc/l175/results_l175.json")[:16])
+│ +bands = L["bands"]
+│ +print("     registered bands:", json.dumps(bands))
+│ … omitted 109 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 paper/review_opus_r4_evidence/10_recompute.py | tee paper/review_opus_r4_evidence/11_recompute_out.txt
+
+────────────────────────────────────────
+✿ Miso
+All L175 rows and correlations reproduce exactly. Fixing the pooled-count recount against the actual per-seed schema.
+────────────────────────────────────────
+
+💻 $ python3 -c " import json s=json.load(open('banc/l172/stats.json')) per=s['per_seed'] print('arms:',list(per.keys())) cw=per['cutwA'] print('type',type(cw).__name__, len(cw)) import itertools if isinstance(cw,dict): for k,v in itertools.islice(cw.items(),6): print(' ',repr(k),type(v).__name__,repr(v)[:120]) print() print('pooled keys:',list(s['pooled'].keys())) print('pooled cutwA:',json.dumps(s['pooled']['cutwA'])[:400]) print() print('pooled_seed_sets type:',type(s['pooled_seed_sets']).__name__, list(s['pooled_seed_sets'].keys())[:10] if isinstance(s['pooled_seed_sets'],dict) else '') "
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/10_recompute.py
+│ paper/review_opus_r4_evidence/10_recompute.py
+│ @@ -38,34 +38,34 @@
+│  def recount(arm):
+│      """Recount structured seeds for an arm from its per-seed duty records,
+│      deduplicating by seed (the canonical unique-seed union rule, §2.14)."""
+│ -    rows = per[arm] if isinstance(per, dict) else [r for r in per if r.get("arm") == arm]
+│ -    if isinstance(rows, dict):
+│ -        rows = rows.get("seeds", rows)
+│ -    best = {}
+│ -    for r in rows:
+│ -        if isinstance(r, dict):
+│ -            sd = r.get("seed", r.get("s"))
+│ -            dv = r.get("dutyR", r.get("duty", r.get("R")))
+│ -        else:
+│ -            sd, dv = r[0], r[1]
+│ -        best[sd] = dv
+│ +    rec = per[arm]
+│ +    seeds, duty = rec["seeds"], rec["dutyR"]
+│ +    assert len(seeds) == len(duty), f"{arm}: seed/duty length mismatch"
+│ +    best = dict(zip(seeds, duty))          # dedupe by seed id
+│ +    dups = len(seeds) - len(best)
+│      k = sum(1 for v in best.values() if v >= 0.50)
+│      n = len(best)
+│      mean = sum(best.values()) / n if n else float("nan")
+│ -    return k, n, mean, best
+│ +    return k, n, mean, dups
+│
+│  for arm, label in [("cutng25", "carrier removed (k=25)"),
+│                     ("cutng25p", "k=24 + mass twin"),
+│                     ("cutwA", "base, 24-cell cut"),
+│                     ("silW", "carrier activity clamp on cut base"),
+│ -                   ("cutscr0", "heaviest carrier-free cohort")]:
+│ +                   ("cutscr0", "heaviest carrier-free cohort"),
+│ +                   ("cut58", "k=58, largest cut"),
+│ +                   ("cutng29", "k=29")]:
+│      try:
+│ -        k, n, m, _ = recount(arm)
+│ +        k, n, m, dups = recount(arm)
+│          lo, hi = wilson(k, n)
+│ -        claimed = s["pooled"].get(arm, {})
+│ -        print(f"     {arm:10s} {label:38s} k/n={k}/{n}  mean={m:.3f}  "
+│ -              f"Wilson[{lo:.3f},{hi:.3f}]")
+│ -        print(f"       lab 'pooled' block says: {json.dumps(claimed)[:150]}")
+│ +        c = s["pooled"].get(arm, {})
+│ +        agree = (k == c.get("kR") and n == c.get("n")
+│ +                 and abs(m - c.get("meanR", -9)) < 1e-6
+│ +                 and abs(lo - c.get("lbR", -9)) < 1e-6)
+│ +        print(f"     {'OK ' if agree else 'DIFF'} {arm:9s} {label:36s} "
+│ +              f"mine k/n={k}/{n} mean={m:.4f} Wilson[{lo:.4f},{hi:.4f}] dup-seeds={dups}")
+│ +        print(f"          stored: kR={c.get('kR')}/{c.get('n')} meanR={c.get('meanR'):.4f} "
+│ +              f"lbR={c.get('lbR'):.4f} ubR={c.get('ubR'):.4f}")
+│      except Exception as e:
+│          print(f"     {arm}: RECOUNT FAILED {type(e).__name__}: {e}")
+│
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/10_recompute.py
+│ paper/review_opus_r4_evidence/10_recompute.py
+│ @@ -179,9 +179,11 @@
+│  bad = []
+│  for arm, r in tp.items():
+│      if arm in index:
+│ -        if int(r["chopped_k"]) != index[arm]["kR"] or abs(float(r["chopped_mean"]) - index[arm]["meanR"]) > 5e-4:
+│ +        # stored meanR in l175 is rounded to 3dp; compare at that tolerance
+│ +        if int(r["chopped_k"]) != index[arm]["kR"] or \
+│ +           abs(round(float(r["chopped_mean"]), 3) - index[arm]["meanR"]) > 1e-9:
+│              bad.append((arm, r["chopped_k"], index[arm]["kR"],
+│                          float(r["chopped_mean"]), index[arm]["meanR"]))
+│ -print("     disagreements:", bad if bad else "NONE across all 37 shared arms")
+│ +print("     disagreements beyond 3dp rounding:", bad if bad else "NONE across all 37 shared arms")
+│
+│  print("\nDONE")
+💻 $ python3 paper/review_opus_r4_evidence/10_recompute.py | tee paper/review_opus_r4_evidence/11_recompute_out.txt
+
+────────────────────────────────────────
+✿ Miso
+All seven pooled counts, eight table rows, five correlations and both Wilson bounds reproduce exactly. Now the figure spot check.
+────────────────────────────────────────
+
+💻 $ echo "=== fig4_caption ===" + 4 commands
+💻 $ python3 -c " import json s=json.load(open('banc/l172/stats.json')) p=s['pooled'] for a in ['b65','full','cutk5','cutng19','cutng23','cutwA','cutng25p','cutng25','cutng29','cut58','cutscr0']: c=p.get(a,{}) print(f\"{a:10s} kR={c.get('kR')}/{c.get('n')} meanR={c.get('meanR'):.4f}\") print() print('census_unique:',json.dumps(s['census_unique'])[:300]) print() print('unit_of_inference:',json.dumps(s['unit_of_inference'])[:400]) "  0.1s
+💻 $ echo "=== running fig4_verify.py ===" + 1 command  0.1s
+💻 $ python3 -c " import json L=json.load(open('banc/l175/results_l175.json')) w=L['window'] for thr in [0.0,0.001,0.01,0.05,0.1]: print(f'x_mean > {thr}: {sum(1 for a in w if a[\"x_mean\"]>thr)} of 34') print() print('stored active flag count:', sum(1 for a in w if a['active'])) print() print('arms with 0 < x_mean <= 0.05:') for a in w: if 0 < a['x_mean'] <= 0.05: print(' ',a['arm'],a['cell_type'],f\"x={a['x_mean']:.6f}\",'active_flag=',a['active']) print() print('x_mean of the 20 'silent' arms (stored active=False):') for a in w: if not a['active']: print(' ',a['arm'],f\"x={a['x_mean']:.2e}\") "  0.1s
+
+────────────────────────────────────────
+✿ Miso
+fig4_verify passes (247 checks) — but that's their verifier. Doing my own independent SVG-geometry check.
+────────────────────────────────────────
+
+💻 $ grep -n 'AXIS\|xlim\|ylim\|def px\|X0\|Y0\|log10\|FLOOR\|floor' fig4_scatter.py
+💻 $ sed -n '80,100p' fig4_scatter.py + 2 commands
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/12_figcheck.py
+│ paper/review_opus_r4_evidence/12_figcheck.py
+│ @@ -0,0 +1,128 @@
+│ +#!/usr/bin/env python3
+│ +"""Referee R4 figure spot check: invert the SVG pixel geometry back to data
+│ +values and compare against the stored results files. Independent of the lab's
+│ +own fig4_verify.py (which asserts forward, from data to pixels)."""
+│ +import json, re, math, csv
+│ +
+│ +ROOT = "/home/t3rpz/critters/peabrain-lab"
+│ +svg = open(f"{ROOT}/paper/figures/fig4_scatter.svg").read()
+│ +L = json.load(open(f"{ROOT}/banc/l175/results_l175.json"))
+│ +
+│ +# geometry read off fig4_scatter.py lines 82-86 (the generator's own constants)
+│ +PX0, PX1, PYT, PYB = 170, 1200, 112, 576
+│ +XDOM = (math.log10(1e-4), math.log10(1.25))
+│ +YLO, YHI = 0.10, 0.85
+│ +inv_x = lambda px: 10 ** (XDOM[0] + (px - PX0) / (PX1 - PX0) * (XDOM[1] - XDOM[0]))
+│ +inv_y = lambda py: YLO + (PYB - py) / (PYB - PYT) * (YHI - YLO)
+│ +
+│ +index = {L["base"]["arm"]: L["base"]}
+│ +for w in L["window"]:
+│ +    index[w["arm"]] = w
+│ +for t in L["twins"].values():
+│ +    index[t["arm"]] = t
+│ +
+│ +print("=" * 72)
+│ +print("[1d-fig] FIG 4 INVERSE GEOMETRY CHECK (pixels -> data)")
+│ +print("=" * 72)
+│ +print("source: paper/figures/fig4_scatter.svg")
+│ +print("declared header:", re.search(r'data-n-arms="[^"]*" data-y="[^"]*" data-x="[^"]*"', svg).group(0))
+│ +print()
+│ +
+│ +# markers carry data-arm plus cx/cy (circle) or a transform-free points list
+│ +pat = re.compile(r'<(circle|rect|polygon|path)[^>]*data-arm="([^"]+)"[^>]*>')
+│ +found = {}
+│ +for m in re.finditer(r'<[^>]*data-arm="([^"]+)"[^>]*>', svg):
+│ +    tag = m.group(0)
+│ +    arm = m.group(1)
+│ +    cx = re.search(r'\bcx="([-\d.]+)"', tag)
+│ +    cy = re.search(r'\bcy="([-\d.]+)"', tag)
+│ +    if cx and cy:
+│ +        found.setdefault(arm, []).append((float(cx.group(1)), float(cy.group(1)), tag))
+│ +
+│ +print(f"circle-type markers with data-arm: {len(found)} distinct arms, "
+│ +      f"{sum(len(v) for v in found.values())} markers total")
+│ +print()
+│ +hdr = f"{'arm':7s} {'px':>8s} {'py':>8s} | {'x̄ from px':>11s} {'stored x̄':>11s} | {'meanR from px':>13s} {'stored':>8s}  verdict"
+│ +print(hdr)
+│ +print("-" * len(hdr))
+│ +bad = 0
+│ +for arm in ["sc25", "sc26", "sc27", "sc40", "dmA", "dmC", "sc41", "sc50", "sc33"]:
+│ +    if arm not in found:
+│ +        print(f"{arm:7s} NOT FOUND as a circle marker")
+│ +        continue
+│ +    # the b39 (primary) marker is the one whose y inverts to the stored meanR
+│ +    a = index[arm]
+│ +    best = None
+│ +    for (px, py, tag) in found[arm]:
+│ +        dv, mv = inv_x(px), inv_y(py)
+│ +        err = abs(mv - a["meanR"])
+│ +        if best is None or err < best[0]:
+│ +            best = (err, px, py, dv, mv)
+│ +    err, px, py, dv, mv = best
+│ +    # x̄ is floored at 1e-4 in the plot
+│ +    xs = max(a["x_mean"], 1e-4)
+│ +    okx = abs(math.log10(dv) - math.log10(xs)) < 0.01
+│ +    oky = abs(mv - a["meanR"]) < 0.002
+│ +    if not (okx and oky):
+│ +        bad += 1
+│ +    print(f"{arm:7s} {px:8.1f} {py:8.1f} | {dv:11.5f} {xs:11.5f} | "
+│ +          f"{mv:13.4f} {a['meanR']:8.3f}  {'OK' if okx and oky else 'MISMATCH'}")
+│ +
+│ +print(f"\nmarkers disagreeing with stored data: {bad}")
+│ +
+│ +# the plotted threshold and base band must match the registered band / Wilson CI
+│ +th = re.search(r'id="super-threshold" data-v="([\d.]+)"', svg)
+│ +bb = re.search(r'id="base-band" data-lo="([\d.]+)" data-hi="([\d.]+)"', svg)
+│ +bl = re.search(r'id="base-line" data-v="([\d.]+)"', svg)
+│ +print(f"\nplotted SUPER threshold data-v={th.group(1)}  "
+│ +      f"(registered super_meanR_min={L['bands']['super_meanR_min']})  "
+│ … omitted 50 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 paper/review_opus_r4_evidence/12_figcheck.py | tee paper/review_opus_r4_evidence/13_figcheck_out.txt  0.5s
+
+────────────────────────────────────────
+✿ Miso
+Two real findings surfacing. Let me confirm them.
+────────────────────────────────────────
+
+💻 $ echo "=== verify scripts present ===" + 10 commands
+💻 $ python3 -c " import json,math L=json.load(open('banc/l175/results_l175.json')) W=L['window'] sil=[w for w in W if not w['active']] def spear(x,y): def rk(v): o=sorted(range(len(v)),key=lambda i:v[i]); r=[0.0]*len(v); i=0 while i<len(o): j=i while j+1<len(o) and v[o[j+1]]==v[o[i]]: j+=1 a=(i+j)/2.0+1 for t in range(i,j+1): r[o[t]]=a i=j+1 return r rx,ry=rk(x),rk(y); n=len(x); mx=sum(rx)/n; my=sum(ry)/n num=sum((a-mx)*(b-my) for a,b in zip(rx,ry)) den=math.sqrt(sum((a-mx)**2 for a in rx)*sum((b-my)**2 for b in ry)) return num/den print('--- the 20 \"silent\" cells, sorted by x_mean (rate) ---') for w in sorted(sil,key=lambda z:-z['x_mean']): print(f\" {w['arm']:6s} rank{w['rank']:3d} x={w['x_mean']:.5f} drive_ratio={w['drive_ratio_to_carrier']:.4f} kR={w['kR']:2d} meanR={w['meanR']:.3f} gain={w['gain_delta_vs_wA']*100:+.2f}%\") print() print('Spearman rho(x_mean, meanR) among the 20 silent:', round(spear([w['x_mean'] for w in sil],[w['meanR'] for w in sil]),3)) print('Spearman rho(drive, meanR) among the 20 silent:', round(spear([w['drive_ratio_to_carrier'] for w in sil],[w['meanR'] for w in sil]),3)) print() nz=[w for w in sil if w['x_mean']>0.005] print(f'of the 20 \"silent\", {len(nz)} have x_mean > 0.005 (not numerically zero):') print(' arms:',[w['arm'] for w in nz]) print(' their kR:',[w['kR'] for w in nz]) tz=[w for w in sil if w['x_mean']<=0.005] print(f'the other {len(tz)} truly near-zero: kR range {min(w[\"kR\"] for w in tz)}-{max(w[\"kR\"] for w in tz)}, meanR {min(w[\"meanR\"] for w in tz):.3f}-{max(w[\"meanR\"] for w in tz):.3f}') print(f'the {len(nz)} subthreshold-active: kR range {min(w[\"kR\"] for w in nz)}-{max(w[\"kR\"] for w in nz)}, meanR {min(w[\"meanR\"] for w in nz):.3f}-{max(w[\"meanR\"] for w in nz):.3f}') "  0.2s
+💻 $ python3 -c " import json L=json.load(open('banc/l175/results_l175.json')) W=L['window']; B=L['base'] print('base gain g =',B['gain']) print() print('arm rank gain abs_delta rel% draft-Table1-says') draft={'sc25':'+1.24','sc26':'-0.09','sc27':'-0.28','sc40':'-1.13','sc47':'+10.28','sc41':'-0.04','sc30':'-0.53'} for a in W: if a['arm'] in draft: rel=a['gain_delta_vs_wA']/B['gain']*100 print(f\"{a['arm']:6s} {a['rank']:3d} {a['gain']:.9f} {a['gain_delta_vs_wA']:+.7f} {rel:+7.3f}% {draft[a['arm']]}%\") print() sil=[a for a in W if not a['active']] rels=[abs(a['gain_delta_vs_wA']/B['gain']*100) for a in sil] print(f'silent set: max |rel gain shift| = {max(rels):.3f}% (draft says \"at most 1.13%\")') act=[a for a in W if a['active']] print(f'active set: max |rel gain shift| = {max(abs(a[\"gain_delta_vs_wA\"]/B[\"gain\"]*100) for a in act):.3f}%') "  0.1s
+📖 Read DRAFT.md L1654-2213
+📖 Read DRAFT.md L2214-2553
+📖 Read review_claudeai_fable_20261121.md
+💻 $ for f in review_fable.md review_fable_r2.md review_astra_r3.md + 3 commands
+📖 Read review_fable.md L25-144
+📖 Read review_astra_r3.md
+📖 Read review_fable_r2.md L68-157
+📖 Read review_fable_r2.md L230-309
+💻 $ echo "=== jitter/sustain artifacts ===" + 5 commands  0.2s
+💻 $ python3 -c " import json d=json.load(open('banc/l139/results_l139.json')) print('top keys:',list(d.keys())) import re for k in d: if 'table' in k or 'kR' in k or 'arms' in k or 'sets' in k: print(' ',k,'->',json.dumps(d[k])[:600]) "
+
+────────────────────────────────────────
+✿ Miso
+Let me quantify the jitter-ensemble and the remaining round-1/2 residuals properly.
+────────────────────────────────────────
+
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/20_openitems.py
+│ paper/review_opus_r4_evidence/20_openitems.py
+│ @@ -0,0 +1,160 @@
+│ +#!/usr/bin/env python3
+│ +"""Referee R4: checks on the items rounds 1-3 left open, plus my own fresh
+│ +probes. Stored artifacts only, no rollouts."""
+│ +import json, math, re, csv
+│ +ROOT = "/home/t3rpz/critters/peabrain-lab"
+│ +
+│ +def wilson(k, n, z=1.959963984540054):
+│ +    if n == 0: return (float("nan"),) * 2
+│ +    p = k / n; d = 1 + z * z / n; c = p + z * z / (2 * n)
+│ +    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+│ +    return ((c - h) / d, (c + h) / d)
+│ +
+│ +def newcombe(k1, n1, k2, n2):
+│ +    """Newcombe hybrid-score interval for p1 - p2."""
+│ +    l1, u1 = wilson(k1, n1); l2, u2 = wilson(k2, n2)
+│ +    d = k1 / n1 - k2 / n2
+│ +    lo = d - math.sqrt((k1 / n1 - l1) ** 2 + (u2 - k2 / n2) ** 2)
+│ +    hi = d + math.sqrt((u1 - k1 / n1) ** 2 + (k2 / n2 - l2) ** 2)
+│ +    return d, lo, hi
+│ +
+│ +print("#" * 72)
+│ +print("# A. THE 1% WEIGHT-JITTER ENSEMBLE, PER SET (round-1 major 5, round-2 N5)")
+│ +print("#" * 72)
+│ +J = json.load(open(f"{ROOT}/banc/l139/results_l139.json"))
+│ +sets = J["sets"]
+│ +arms = ["full", "cutwA", "cutng25", "cutng25p", "cutng29", "cutng23"]
+│ +print("source: banc/l139/results_l139.json:sets   (kR of 16 per arm per set)")
+│ +print()
+│ +print(f"{'set':>4} " + " ".join(f"{a:>10}" for a in arms) + "   carrier-vs-base   carrier-vs-twin")
+│ +for s in sorted(sets, key=int):
+│ +    row = sets[s]
+│ +    cells = []
+│ +    for a in arms:
+│ +        v = row.get(a)
+│ +        cells.append(f"{v['kR']:>2}/16 {v['cls'][:4]:<4}" if v else f"{'-':>10}")
+│ +    c = row["cutng25"]["kR"]; b = row["cutwA"]["kR"]; t = row["cutng25p"]["kR"]
+│ +    print(f"{s:>4} " + " ".join(f"{x:>10}" for x in cells) +
+│ +          f"   {c-b:+3d} seeds       {c-t:+3d} seeds")
+│ +print()
+│ +print("Registered-class summary the draft §2.10 gives:")
+│ +for a in ["cutng25", "cutng23", "cutng29", "cutwA", "cutng25p"]:
+│ +    su = J["sustain"][a]
+│ +    print(f"  {a:9s} {su['prior']:12s} -> {su['n']}/5 sustained  classes={su['classes']}")
+│ +print()
+│ +print("WHAT §2.10 DOES NOT SAY (my reading):")
+│ +for s in sorted(sets, key=int):
+│ +    row = sets[s]
+│ +    b, t, c = row["cutwA"], row["cutng25p"], row["cutng25"]
+│ +    if b["cls"] == "SUPER" or t["cls"] == "SUPER" or c["kR"] - t["kR"] <= 3:
+│ +        print(f"  set {s}: base {b['kR']}/16 {b['cls']}, twin {t['kR']}/16 {t['cls']}, "
+│ +              f"carrier {c['kR']}/16 {c['cls']}  <-- title contrast degraded or absent")
+│ +print(f"  base kR across sets: {[sets[s]['cutwA']['kR'] for s in sorted(sets,key=int)]}"
+│ +      f"  (draft §2.10 quotes only 'wA PARTIAL 0/5')")
+│ +print(f"  twin kR across sets: {[sets[s]['cutng25p']['kR'] for s in sorted(sets,key=int)]}")
+│ +print(f"  carrier kR across sets: {[sets[s]['cutng25']['kR'] for s in sorted(sets,key=int)]}")
+│ +
+│ +print()
+│ +print("#" * 72)
+│ +print("# B. TABLE 4: is the continuous ladder really monotone? (fresh major)")
+│ +print("#" * 72)
+│ +# Table 4 continuous column as printed in the draft
+│ +t4 = [("b65", 513, 513), ("full", 0, 513), ("cutk5", 0, 226), ("cutng19", 0, 178),
+│ +      ("cutng23", 0, 82), ("cutwA", 0, 258), ("cutng25p", 0, 66),
+│ +      ("cutng25", 132, 210), ("cutng29", 108, 194), ("cut58", 186, 258),
+│ +      ("cutscr0", 9, 50)]
+│ +print(f"{'arm':10s} {'k/n':>9} {'prop':>6} {'Wilson 95%':>18}   draft Table 4 interval")
+│ +draftiv = {"b65": "[.993,1.000]", "full": "[.000,.007]", "cutk5": "[.000,.017]",
+│ +           "cutng19": "[.000,.021]", "cutng23": "[.000,.045]", "cutwA": "[.000,.015]",
+│ +           "cutng25p": "[.000,.055]", "cutng25": "[.561,.691]", "cutng29": "[.486,.625]",
+│ +           "cut58": "[.663,.772]", "cutscr0": "[.098,.308]"}
+│ +for a, k, n in t4:
+│ +    lo, hi = wilson(k, n)
+│ +    print(f"{a:10s} {k:>4}/{n:<4} {k/n:>6.3f}   [{lo:.3f},{hi:.3f}]   {draftiv[a]}")
+│ +print()
+│ +print("the draft claims the window (non-monotonicity) is CHOPPED-SPECIFIC.")
+│ +print("but in the CONTINUOUS column the ladder is also non-monotone:")
+│ +d, lo, hi = newcombe(132, 210, 108, 194)
+│ +print(f"  k=25 (132/210=.629) vs k=29 (108/194=.557): difference {d:+.3f} [{lo:+.3f},{hi:+.3f}]"
+│ … omitted 82 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 paper/review_opus_r4_evidence/20_openitems.py | tee paper/review_opus_r4_evidence/21_openitems_out.txt
+💻 $ echo "=== Fig references in DRAFT.md ===" + 12 commands
+✗ $ echo "=== other antagonist pairs disclosed? ===" + 15 commands  60.2s [exit 124]
+💻 $ echo "=== peabrain-figs location ===" + 9 commands  0.1s
+💻 $ for d in critters/peabrain-figs critters/peabrain/peabrain-figs peabrain-figs critters/peabrain-lab/peabrain-figs + 3 commands
+💻 $ timeout 50 find . -maxdepth 4 -name '*l136*' -o -maxdepth 4 -name '*l152*' -o -maxdepth 4 -name '*transition_law*' -o -maxdepth 4 -name '*clamp_cut*' 2>/dev/null + 1 command
+
+────────────────────────────────────────
+✿ Miso
+Re-pinning to check for drift, then writing the report.
+────────────────────────────────────────
+
+💻 $ E=paper/review_opus_r4_evidence + 8 commands
+
+────────────────────────────────────────
+✿ Miso
+Fig 5 changed mid-review — I must disclose that. Checking whether my fig5 findings still hold.
+────────────────────────────────────────
+
+💻 $ E=paper/review_opus_r4_evidence + 20 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4.md
+│ paper/review_opus_r4.md
+│ @@ -0,0 +1,604 @@
+│ +# Referee report — ROUND 4 (opus family, fresh), final pre-human gate
+│ +
+│ +**Reviewer vantage:** computational neuroscientist who builds
+│ +connectome-constrained rate models of the fly nerve cord. CPU only, no
+│ +rollouts, stored artifacts only. I imported no lab analysis function; Wilson,
+│ +Newcombe and Spearman are my own implementations
+│ +(`review_opus_r4_evidence/10_recompute.py`).
+│ +
+│ +**Decision: NEEDS MINOR REVISION.** The arithmetic is clean — cleaner than any
+│ +paper I have refereed. Every number I checked reproduces exactly. The remaining
+│ +distance to a human referee is not statistical, it is framing and packaging: one
+│ +adverse robustness number that three rounds have asked for and that is still not
+│ +printed, one yardstick that was never calibrated, and a figure layer that does
+│ +not resolve.
+│ +
+│ +---
+│ +
+│ +## 0. Pins and a disclosed drift
+│ +
+│ +Pinned at start (`00_pins.txt`, 2026-11-21T14:22:18-05:00), re-pinned at end
+│ +(`99_repins.txt`). `DRAFT.md` snapshot in `01_DRAFT_snapshot.md`.
+│ +
+│ +| file | sha256 (start) | status |
+│ +|---|---|---|
+│ +| paper/DRAFT.md | `c60fc1859d94ac46…` | unchanged |
+│ +| paper/numbers.json | `464e5261317f6fd3…` | unchanged |
+│ +| paper/CLAIM-MAP.md | `a0460e3da4ba0e88…` | unchanged |
+│ +| paper/references.bib | `828d257469ebb984…` | unchanged |
+│ +| figures/fig4_scatter.{png,svg,py} | `a0f1e0ca…`, `c01602e6…`, `be041f96…` | unchanged |
+│ +| figures/fig4_caption.md, fig4_verify.py | `bc1cd445…`, `5d2093ca…` | unchanged |
+│ +| figures/fig5_caption.md | `86f44f1c…` | unchanged |
+│ +
+│ +**DRIFT, disclosed:** `fig5_threepanel.png`, `.svg` and `.py` were rewritten at
+│ +**2026-11-21T14:26:24-05:00**, four minutes into this review, by a concurrent
+│ +figures-polish dispatch.
+│ +
+│ +- png `8f170637…` → `9d838cc0…`; svg `1879006c…` → `029933a0…`; py `df9affcf…` → `0913a093…`
+│ +
+│ +I reviewed the **new** fig5 files. My fig5 findings (§3.F) hold against the new
+│ +versions. Note also that `fig5_caption.md` (14:18:35) now **predates its own
+│ +render by 8 minutes** and was not regenerated with it; I cannot confirm
+│ +caption/render agreement, because no-vision is a rule of this dispatch and fig5
+│ +carries no machine-readable data attributes to check instead.
+│ +
+│ +---
+│ +
+│ +## 1. Recompute with my own code — everything reproduces
+│ +
+│ +`10_recompute.py` / `11_recompute_out.txt`, `12_figcheck.py` /
+│ +`13_figcheck_out.txt`.
+│ +
+│ +**Pooled counts, recomputed from `l172/stats.json:per_seed` by deduplicating on
+│ +seed id (the canonical §2.14 rule), not from the lab's `pooled` block.** My
+│ +Wilson score intervals, my dedupe:
+│ +
+│ +| arm | mine | stored | agree |
+│ +|---|---|---|---|
+│ +| cutng25 (carrier) | 203/210, mean .7663, [.9328,.9838] | identical | ✓ |
+│ +| cutng25p (mass twin) | 30/66, .4585, [.3402,.5738] | identical | ✓ |
+│ +| cutwA (base) | 72/258, .4045, [.2279,.3367] | identical | ✓ |
+│ +| silW (clamp) | 78/98, .6435, [.7057,.8638] | identical | ✓ |
+│ +| cutscr0 | 41/50, .6233, [.6920,.9023] | identical | ✓ |
+│ +| cut58 | 1/258, .2201, [.0007,.0216] | identical | ✓ |
+│ +| cutng29 | 188/194, .7679, [.9342,.9857] | identical | ✓ |
+│ +
+│ +Zero duplicate seed ids in any arm. The §2.14 dedupe rule is real, not asserted.
+│ +
+│ +**L175 table rows, recomputed from the raw per-seed `dutyR` arrays** (eight rows,
+│ +not the three asked for) — `cutwA, sc25, sc26, sc27, sc40, dmA, dmC, sc47`: k,
+│ +mean duty and registered class all reproduce, including the two Wilson bounds
+│ +the draft quotes in prose (carrier 16/16 → lower .8064, draft says .806; s2t
+│ +2/16 → upper .3602, draft says .360).
+│ +
+│ +**Descriptive statistics, my own tie-corrected Spearman:** ρ(gain, meanR) = −.592
+│ +all 34 / **−.723** over the 33 non-carriers / **−.833** over the 20 low-rate arms;
+│ +ρ(drive, meanR) = **+.187** active / **+.548** active-excitatory. All four
+│ +draft-quoted values exact. Class census 1 super / 10 intermediate / 23 not-super
+│ +reproduces under my own re-implementation of the band rule. Silent-null width
+│ … omitted 526 diff line(s) across 1 additional file(s)/section(s)
+💻 $ ls -la paper/review_opus_r4.md paper/review_opus_r4_evidence/ + 4 commands  0.1s
+
+────────────────────────────────────────
+✿ Miso
+fig4 also changed at 14:34, after my re-pin. Amending the drift disclosure.
+────────────────────────────────────────
+
+💻 $ E=paper/review_opus_r4_evidence + 16 commands  0.1s
+💻 $ grep -n 'PX0, PX1\|XDOM\|YLO, YHI\|^W, H' fig4_scatter.py
+
+────────────────────────────────────────
+✿ Miso
+The polish only widened the x-domain (1.25→1.6). Let me parse the constants from source rather than hardcode, and re-verify.
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4_evidence/12_figcheck.py
+│ paper/review_opus_r4_evidence/12_figcheck.py
+│ @@ -8,10 +8,16 @@
+│  svg = open(f"{ROOT}/paper/figures/fig4_scatter.svg").read()
+│  L = json.load(open(f"{ROOT}/banc/l175/results_l175.json"))
+│
+│ -# geometry read off fig4_scatter.py lines 82-86 (the generator's own constants)
+│ -PX0, PX1, PYT, PYB = 170, 1200, 112, 576
+│ -XDOM = (math.log10(1e-4), math.log10(1.25))
+│ -YLO, YHI = 0.10, 0.85
+│ +# geometry PARSED from fig4_scatter.py so this check cannot go stale when the
+│ +# figure is re-polished (it was, mid-review: XDOM upper went 1.25 -> 1.6)
+│ +gen = open(f"{ROOT}/paper/figures/fig4_scatter.py").read()
+│ +PX0, PX1, PYT, PYB = [int(v) for v in re.search(
+│ +    r'PX0, PX1, PYT, PYB = *(\d+), *(\d+), *(\d+), *(\d+)', gen).groups()]
+│ +xd = re.search(r'XDOM = \(math\.log10\(([^)]+)\), math\.log10\(([^)]+)\)\)', gen).groups()
+│ +XDOM = (math.log10(float(xd[0])), math.log10(float(xd[1])))
+│ +YLO, YHI = [float(v) for v in re.search(r'YLO, YHI = *([\d.]+), *([\d.]+)', gen).groups()]
+│ +print(f"parsed geometry: PX0={PX0} PX1={PX1} PYT={PYT} PYB={PYB} "
+│ +      f"XDOM=({xd[0]},{xd[1]}) YLO={YLO} YHI={YHI}")
+│  inv_x = lambda px: 10 ** (XDOM[0] + (px - PX0) / (PX1 - PX0) * (XDOM[1] - XDOM[0]))
+│  inv_y = lambda py: YLO + (PYB - py) / (PYB - PYT) * (YHI - YLO)
+│
+💻 $ python3 paper/review_opus_r4_evidence/12_figcheck.py | tee paper/review_opus_r4_evidence/13_figcheck_out.txt | sed -n '1,30p' + 4 commands  0.1s
+
+────────────────────────────────────────
+✿ Miso
+fig4's new render is also honest (0 mismatches). Updating the drift disclosure.
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4.md
+│ paper/review_opus_r4.md
+│ @@ -17,30 +17,57 @@
+│
+│  ## 0. Pins and a disclosed drift
+│
+│ -Pinned at start (`00_pins.txt`, 2026-11-21T14:22:18-05:00), re-pinned at end
+│ +Pinned at start (`00_pins.txt`, 2026-11-21T14:22:18-05:00), re-pinned twice
+│  (`99_repins.txt`). `DRAFT.md` snapshot in `01_DRAFT_snapshot.md`.
+│
+│ -| file | sha256 (start) | status |
+│ +**The claim-bearing objects never moved.** Byte-identical from 14:22 to the end
+│ +of this review:
+│ +
+│ +| file | sha256 | status |
+│  |---|---|---|
+│ -| paper/DRAFT.md | `c60fc1859d94ac46…` | unchanged |
+│ -| paper/numbers.json | `464e5261317f6fd3…` | unchanged |
+│ -| paper/CLAIM-MAP.md | `a0460e3da4ba0e88…` | unchanged |
+│ -| paper/references.bib | `828d257469ebb984…` | unchanged |
+│ -| figures/fig4_scatter.{png,svg,py} | `a0f1e0ca…`, `c01602e6…`, `be041f96…` | unchanged |
+│ -| figures/fig4_caption.md, fig4_verify.py | `bc1cd445…`, `5d2093ca…` | unchanged |
+│ +| paper/DRAFT.md | `c60fc1859d94ac46…` | **unchanged** |
+│ +| paper/numbers.json | `464e5261317f6fd3…` | **unchanged** |
+│ +| paper/CLAIM-MAP.md | `a0460e3da4ba0e88…` | **unchanged** |
+│ +| paper/references.bib | `828d257469ebb984…` | **unchanged** |
+│ +| figures/fig4_caption.md | `bc1cd445…` | unchanged |
+│  | figures/fig5_caption.md | `86f44f1c…` | unchanged |
+│
+│ -**DRIFT, disclosed:** `fig5_threepanel.png`, `.svg` and `.py` were rewritten at
+│ -**2026-11-21T14:26:24-05:00**, four minutes into this review, by a concurrent
+│ -figures-polish dispatch.
+│ -
+│ -- png `8f170637…` → `9d838cc0…`; svg `1879006c…` → `029933a0…`; py `df9affcf…` → `0913a093…`
+│ -
+│ -I reviewed the **new** fig5 files. My fig5 findings (§3.F) hold against the new
+│ -versions. Note also that `fig5_caption.md` (14:18:35) now **predates its own
+│ -render by 8 minutes** and was not regenerated with it; I cannot confirm
+│ -caption/render agreement, because no-vision is a rule of this dispatch and fig5
+│ -carries no machine-readable data attributes to check instead.
+│ +**DRIFT, disclosed — both figures were re-rendered under me by a concurrent
+│ +figures-polish dispatch.** I was reviewing a moving target in the figure layer
+│ +and not in the text layer.
+│ +
+│ +| object | start sha256 | end sha256 | moved at |
+│ +|---|---|---|---|
+│ +| fig5_threepanel.png | `8f170637…` | `9d838cc0…` | 14:26:24 |
+│ +| fig5_threepanel.svg | `1879006c…` | `029933a0…` | 14:26:24 |
+│ +| fig5_threepanel.py | `df9affcf…` | `0913a093…` | 14:26:19 |
+│ +| fig4_scatter.png | `a0f1e0ca…` | re-rendered | 14:34 |
+│ +| fig4_scatter.svg | `c01602e6…` | re-rendered | 14:34 |
+│ +| fig4_scatter.py | `be041f96…` | re-rendered | 14:34 |
+│ +| fig4_verify.py | `5d2093ca…` | re-rendered | 14:34 |
+│ +
+│ +Handling, so that nothing below rests on a stale read:
+│ +
+│ +- **I re-ran every figure check against the final files.** The fig4 change was a
+│ +  single constant — the x-domain upper bound went `log10(1.25)` → `log10(1.6)`
+│ +  to stop the s2t diamond clipping at x≈1. My first inverse-geometry pass
+│ +  hard-coded the old constant and threw six false mismatches; I rewrote
+│ +  `12_figcheck.py` to **parse the geometry out of the generator source** instead,
+│ +  so the check cannot go stale again. On the final files it reports **0
+│ +  disagreements**, and the lab's own `fig4_verify.py` still passes 247 checks.
+│ +  **Fig 4 is honest in both renders.**
+│ +- **Every fig5 finding in M3 holds against the new file**, re-checked after the
+│ +  rewrite: still zero `data-*` attributes, still no `fig5_verify.py`, and the
+│ +  three carrier values its caption quotes (.758 / .510 / .622) still appear
+│ +  nowhere as text in the SVG.
+│ +- `fig5_caption.md` (14:18:35) now **predates its own render by ~8 minutes** and
+│ +  was not regenerated with it. I cannot confirm caption/render agreement:
+│ +  no-vision is a rule of this dispatch, and fig5 carries no machine-readable
+│ +  attributes to check instead. That is a direct cost of M3 and the reason M3
+│ +  asks for a verifier rather than a prettier picture.
+│ +
+│ +No recompute, delta-check or major below depends on a figure file. M3 is the one
+│ +finding that does, and it is stated against the final versions.
+│
+│  ---
+│
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/review_opus_r4.md
+│ paper/review_opus_r4.md
+│ @@ -279,10 +279,13 @@
+│    carries 54 `data-arm` attributes plus `data-v`/`data-lo`/`data-hi` on the
+│    threshold and band, and `fig4_verify.py` runs 247 assertions. The current
+│    `fig5_threepanel.svg` carries **zero** `data-*` attributes and there is **no
+│ -  `fig5_verify.py`**. The three carrier values the caption quotes (.758 / .510 /
+│ -  .622) do not appear as text in the SVG either. So the one figure carrying the
+│ -  three-readout dissociation — the backbone of §2.4's mechanism claim — is the
+│ -  one figure no one can check without eyes, and this dispatch has no eyes.
+│ +  `fig5_verify.py`** — still true after the 14:26 rewrite. The three carrier
+│ +  values the caption quotes (.758 / .510 / .622) do not appear as text in the SVG
+│ +  either. So the one figure carrying the three-readout dissociation — the
+│ +  backbone of §2.4's mechanism claim — is the one figure no one can check
+│ +  without eyes, and this dispatch has no eyes. The mid-review re-render
+│ +  demonstrated the cost: the caption is now older than the picture it describes
+│ +  and nothing in the repo can tell you whether they still agree.
+│  - Round 2 marked Fig 2 UNRESOLVED because its printed labels (43/144, 124/128,
+│    21/32 …) disagreed with the canonicalised table (72/258, 203/210, 21/34 …).
+│    `paper/fig_l152.png` has not been touched since 2026-11-19 21:43. §2.9 still
+💻 $ wc -c paper/review_opus_r4.md + 7 commands
+
+────────────────────────────────────────
+✿ Miso
+Round 4 done, nya~ ★ Report at paper/review_opus_r4.md, evidence in paper/review_opus_r4_evidence/.
+
+Verdict: needs-minor. Pins held — DRAFT/numbers/CLAIM-MAP/references byte-identical start to finish. Disclosed drift: both figures were re-rendered under me at 14:26 and 14:34 by the concurrent polish dispatch; I re-ran every figure check against the final files (fig4's x-domain went 1.25→1.6, which threw six false mismatches until I reparsed geometry from source — 0 disagreements after).
+
+Recompute, my own code: 7 pooled arms, 8 L175 rows, 5 Spearmans, both quoted Wilson bounds, threepanel rows, all 11 Table 4 intervals — every value exact. Cross-artifact: l175 vs l184 chopped column agrees on all 37 arms. Fig4 inverse geometry honest. Zero duplicate seeds. The arithmetic layer is unbreakable; four families have now failed.Delta-check: 21 resolved, 3 partial, 2 cosmetic-only, 1 unresolved.
+
+Fresh majors:
+- M1 — in jitter set 5 the base reaches SUPER with the carrier present (15/16), the twin too (13/16), carrier lowest (13/16): the title contrast reverses by 2 seeds. §2.10 prints only class-sustain fractions. Rounds 1 and 2 both asked; the repo is public. Highest rejection risk.
+- M2 — the SUPER band was frozen on the damaged closure. b65 (pre-projector) is 513/513 at .995; closure 0/513 continuous. Adding the projectors is +1.000 [+.989,+1.000], the paper's largest effect. So .766 is partial rescue, not a transition — and deleting any low-rate window cell averages +.044 (14/20 above base), so the "null" isn't centred on no-effect.
+- M3 — peabrain-figs/ doesn't exist; Figs 1–3 are broken paths. Figs 4–5 are never cited in the draft. Fig 5 has no verifier and zero data attributes.
+- Plus M4 ("silent" ≠ silent for 8 of 20; the two near-super arms are the two least silent), M5 (60% ratio really spans 17%–142%; gain alone predicts 37%), M6, M7, M8.
+
+Prior art likely missed: Brody "Correlations without synchrony" + Perkel 1967 — §2.3 is the shift predictor; Bartos & Nusbaum MCN1 (single cell reconfigures motor timing, 1990s); Keinan 2006 Shapley (theorem for "no single currency suffices"); Váša 2015, Aerts 2016, Young 2000; Rayshubskiy, Bidaye.
+
+Shared blind spot: all four families audited the numbers against the band; none audited the band.
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-d7a666204ebb3b10cbe35da26981156daa65d2350c7a388e12d5f4fa66040142 -p maple
+
+Session:        local-d7a666204ebb3b10cbe35da26981156daa65d2350c7a388e12d5f4fa66040142
+Duration:       15m 31s
+Messages:       104 (1 user, 102 tool calls)

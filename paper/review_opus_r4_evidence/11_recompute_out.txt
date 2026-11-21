@@ -1,0 +1,56 @@
+========================================================================
+REFEREE R4 RECOMPUTE — independent code
+========================================================================
+
+[1a] POOLED COUNTS recomputed from l172 per_seed records
+     source: banc/l172/stats.json sha=3f48a4ff95644156
+     per_seed container: dict ['full', 'b65', 'cutwA', 'cutng25', 'cutng25p', 'cutng19', 'cutng23', 'cutng29']
+     OK  cutng25   carrier removed (k=25)               mine k/n=203/210 mean=0.7663 Wilson[0.9328,0.9838] dup-seeds=0
+          stored: kR=203/210 meanR=0.7663 lbR=0.9328 ubR=0.9838
+     OK  cutng25p  k=24 + mass twin                     mine k/n=30/66 mean=0.4585 Wilson[0.3402,0.5738] dup-seeds=0
+          stored: kR=30/66 meanR=0.4585 lbR=0.3402 ubR=0.5738
+     OK  cutwA     base, 24-cell cut                    mine k/n=72/258 mean=0.4045 Wilson[0.2279,0.3367] dup-seeds=0
+          stored: kR=72/258 meanR=0.4045 lbR=0.2279 ubR=0.3367
+     OK  silW      carrier activity clamp on cut base   mine k/n=78/98 mean=0.6435 Wilson[0.7057,0.8638] dup-seeds=0
+          stored: kR=78/98 meanR=0.6435 lbR=0.7057 ubR=0.8638
+     OK  cutscr0   heaviest carrier-free cohort         mine k/n=41/50 mean=0.6233 Wilson[0.6920,0.9023] dup-seeds=0
+          stored: kR=41/50 meanR=0.6233 lbR=0.6920 ubR=0.9023
+     OK  cut58     k=58, largest cut                    mine k/n=1/258 mean=0.2201 Wilson[0.0007,0.0216] dup-seeds=0
+          stored: kR=1/258 meanR=0.2201 lbR=0.0007 ubR=0.0216
+     OK  cutng29   k=29                                 mine k/n=188/194 mean=0.7679 Wilson[0.9342,0.9857] dup-seeds=0
+          stored: kR=188/194 meanR=0.7679 lbR=0.9342 ubR=0.9857
+
+[1b] L175 TABLE 1 ROWS recomputed from results_l175.json per-seed dutyR
+     source sha= c45418ac396baa89
+     registered bands: {"n": 16, "super_kR_min": 12, "super_meanR_min": 0.6, "not_kR_max": 8, "not_meanR_max": 0.5}
+     OK  cutwA   mine k= 5/16 mean=0.4076 cls=not-super    | stored kR=5 meanR=0.408 cls=NOT-SUPER/PARTIAL | Wilson[0.142,0.556]
+     OK  sc25    mine k=16/16 mean=0.7582 cls=super        | stored kR=16 meanR=0.758 cls=SUPER | Wilson[0.806,1.000]
+     OK  sc26    mine k= 2/16 mean=0.3783 cls=not-super    | stored kR=2 meanR=0.378 cls=NOT-SUPER | Wilson[0.035,0.360]
+     OK  sc27    mine k=11/16 mean=0.5961 cls=intermediate | stored kR=11 meanR=0.596 cls=INTERMEDIATE | Wilson[0.444,0.858]
+     OK  sc40    mine k=11/16 mean=0.6051 cls=intermediate | stored kR=11 meanR=0.605 cls=INTERMEDIATE | Wilson[0.444,0.858]
+     OK  dmA     mine k= 5/16 mean=0.3899 cls=not-super    | stored kR=5 meanR=0.39 cls=NOT-SUPER/PARTIAL | Wilson[0.142,0.556]
+     OK  dmC     mine k= 2/16 mean=0.3664 cls=not-super    | stored kR=2 meanR=0.366 cls=NOT-SUPER | Wilson[0.035,0.360]
+     OK  sc47    mine k= 2/16 mean=0.2974 cls=not-super    | stored kR=2 meanR=0.297 cls=NOT-SUPER | Wilson[0.035,0.360]
+     carrier 16/16 Wilson = [0.8064,1.0000]   (draft §2.1 quotes lower bound .806)
+     s2t twin 2/16 Wilson = [0.0350,0.3602]   (draft §2.2 quotes upper bound .360)
+
+[1c] DESCRIPTIVE CORRELATIONS (my own Spearman)
+     gain-vs-duty, all 34 window arms:      rho=-0.592   (stored descriptive: -0.592)
+     gain-vs-duty, 33 NON-carrier arms:     rho=-0.723   (draft §2.1 quotes -.723)
+     gain-vs-duty, 20 silent arms:            rho=-0.833   (draft §2.1 quotes -.833)
+     drive-vs-duty, 14 active arms:           rho=+0.187   (draft §2.1 quotes +.187)
+     drive-vs-duty, 8 active excitatory:     rho=+0.548   (draft §2.1 quotes +.548)
+     silent-cell null: k range 2-11, mean-duty range 0.340-0.605   (draft: 2-11 seeds, .340-.605)
+     class census of 34 window arms (my rule): {'super': 1, 'not-super': 23, 'intermediate': 10}   (draft: 1 super, 10 intermediate, 23 not-super)
+     n_active=14 n_active_exc=8 n_silent=20   (stored branch_inputs: active=14, exc=8, silent=20)
+
+[1d] THREEPANEL ROW CHECK (banc/l184/threepanel.csv)
+     source sha= 0536d15c5d55ba01
+     sc25   chopped 16/16 0.758 | fast 8/16 0.510 | cross 193/240 0.622   || draft Table 1: 16/16 .758 | 8/16 .510 | 193/240 .622
+     cutwA  chopped 5/16 0.408 | fast 0/16 0.000 | cross 0/240 0.097   || draft Table 1: 5/16 .408 | 0/16 .000 | 0/240 .097
+     dmA    chopped 5/16 0.390 | fast 0/16 0.004 | cross 36/240 0.376   || draft Table 1: 5/16 .390 | 0/16 .004 | 36/240 .376
+
+     cross-artifact consistency, chopped column, l175 vs l184:
+     disagreements beyond 3dp rounding: [('sc56', '5', 5, 0.40750000000000003, 0.407)]
+
+DONE

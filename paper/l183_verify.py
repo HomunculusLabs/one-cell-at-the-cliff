@@ -21,6 +21,15 @@
  (6) cited-field statements about other papers trace to the stored, verified
      prior-art digest.
 
+L190b FOLLOW-UP (2026-11-21, stage 7; receipt in LANE-LOG and
+banc/l190b_worklog.md).  The single-edge cut (banc/l190) enters as four more
+declared edits and six l190.* keys.  Sections (1)-(4) and (6) are unchanged
+and now run over the stage-7 ledger; section (5) GAINS the L190 re-derivation
+(every table cell recomputed from the stored per-seed rows, the registered
+branch rules re-applied, each sentence-level reading of the new text proved);
+the four finalization pins at the end of (5) are re-pinned to the stage-7
+state with the retired values kept beside them.  Nothing was removed.
+
 Run: python3 paper/l183_verify.py     (stdlib only; zero rollouts)
 """
 import csv, hashlib, json, math, os, re, sys
@@ -334,12 +343,136 @@ SUB = nums['l92.substrate']['v']
 ck(all(SUB[k] == s92[k] for k in SUB) and SUB['n_new'] - SUB['n_old']
    == SUB['dn_new'] and SUB['cord'] + SUB['dn_into'] == SUB['n_old'],
    '(5) l92.substrate / closure arithmetic')
-NUMBERS_SHA = '592f7680796ef43f662bb910c0a57893f752a4ee654ed24d2f8c523a84b9782a'
+# ---- L190b follow-up fold (stage 7): the single-edge cut and its sham ------
+r190 = json.load(open(os.path.join(B, 'l190', 'results_l190.json')))
+sel190 = json.load(open(os.path.join(B, 'l190', 'selection.json')))
+pre190 = open(os.path.join(B, 'l190', 'PREREG.md')).read()
+EAn, EMn = nums['l190.arms']['v'], nums['l190.meta']['v']
+ESn = nums['l190.selection']['v']
+ck(r190['status'] == 'FINAL' and r190['controls_pass'] is True
+   and EMn['controls_pass'] is True, '(5) l190 run not final / controls')
+ck(nums['l190.summary']['v'] == r190['summary'] and ESn == r190['selection']
+   == sel190['edges'] and nums['l190.gain']['v'] == r190['gain'],
+   '(5) l190.summary / selection / gain are not the stored dicts verbatim')
+_T15 = 2.131449546                      # two-sided 95% t quantile, 15 df
+_sd190 = [str(x) for x in r190['seeds']]
+ck(sorted(EAn) == ['base', 'carrier', 'edge', 'sham']
+   and sorted(d['code'] for d in EAn.values()) == sorted(r190['summary']),
+   '(5) l190 arm set')
+for _lab, _d in EAn.items():
+    _Rv = [r190['rows'][x][_d['code']]['R'] for x in _sd190]
+    _Mv = [r190['rows'][x][_d['code']]['mid'] for x in _sd190]
+    _Dv = [r190['rows'][x][_d['code']]['R'] - r190['rows'][x]['cutwA']['R']
+           for x in _sd190]
+    _dm = sum(_Dv) / len(_Dv)
+    _hf = _T15 * (sum((x - _dm) ** 2 for x in _Dv) / (len(_Dv) - 1)) ** .5 \
+        / len(_Dv) ** .5
+    ck(_d['n'] == len(_Rv) == 16 and _d['kR'] == sum(x >= .5 for x in _Rv)
+       and near(_d['meanR'], sum(_Rv) / 16, 1e-9)
+       and _d['kmid'] == sum(x >= .5 for x in _Mv)
+       and near(_d['meanmid'], sum(_Mv) / 16, 1e-9),
+       '(5) l190.arms.%s: counts / means != the stored per-seed rows' % _lab)
+    ck(near(_d['vs_base']['mean'], _dm, 1e-9)
+       and near(_d['vs_base']['ci95'][0], _dm - _hf, 1e-6)
+       and near(_d['vs_base']['ci95'][1], _dm + _hf, 1e-6)
+       and _d['vs_base']['n_up'] == sum(x > 0 for x in _Dv),
+       '(5) l190.arms.%s: paired contrast != recomputed from the rows' % _lab)
+    ck(near(_d['gain_delta_pct'], (r190['gain'][_d['code']]
+                                   / r190['gain']['cutwA'] - 1) * 100, 6e-4),
+       '(5) l190.arms.%s: gain shift' % _lab)
+# the registered rules (banc/l190/PREREG.md), re-applied here to the recounts
+_BDn = nums['l175.bands']['v']
+ck('mean\u2265.60 and k\u226512' in pre190
+   and (_BDn['super_meanR_min'], _BDn['super_kR_min']) == (0.6, 12)
+   and 'middle-segment R duty \u2265.25' in pre190
+   and EMn['fingerprint_min_meanmid'] == 0.25
+   and 'absolute paired mean shift <.10' in pre190,
+   '(5) l190 registered bars are not the ones the text applies')
+_sup = lambda d: d['meanR'] >= .60 and d['kR'] >= 12
+_fp = lambda d: d['meanmid'] >= .25
+ck(all(_sup(d) == d['super'] and _fp(d) == d['fingerprint'] for d in EAn.values())
+   and not _sup(EAn['base']) and _sup(EAn['carrier']) and _fp(EAn['carrier']),
+   '(5) l190 super / fingerprint flags, or the two controls')
+_e, _s = EAn['edge'], EAn['sham']
+ck(_sup(_e) and not _fp(_e) and _e['vs_base']['mean'] >= .10
+   and _e['vs_base']['ci95'][0] > 0 and EMn['branch_edge'] == 'B3-partial',
+   '(5) the edge cut is not the registered partial branch')
+ck(not _sup(_s) and not _fp(_s) and abs(_s['vs_base']['mean']) < .10
+   and EMn['branch_sham'] == 'B2-edge-inert'
+   and _s['vs_base']['ci95'][0] < 0 < _s['vs_base']['ci95'][1],
+   '(5) the sham is not base-like by the registered rule')
+ck(near(EMn['edge_share_of_carrier'], _e['vs_base']['mean']
+        / EAn['carrier']['vs_base']['mean'], 6e-4)
+   and _e['vs_base']['mean'] < EAn['carrier']['vs_base']['mean'],
+   '(5) l190 edge share of the carrier shift')
+# sentence-level readings of the stage-7 text
+ck(_e['kR'] == A['rsilW']['kR'] == A['pp']['kR'] == _BDn['super_kR_min'],
+   '(5) "three of them sit on a band edge" (edge cut, clamp, double removal)')
+ck(_e['kmid'] == _s['kmid'] == EAn['base']['kmid'] == 0 and _e['meanmid'] == 0
+   and max(_e['meanmid'], _s['meanmid'], EAn['base']['meanmid'],
+           max(_m14[a] for a in _present), r187['base']['mean14'])
+   < min(EAn['carrier']['meanmid'], min(_m14[a] for a in _absent)),
+   '(5) "no graph that keeps the carrier shows the signature in either batch"')
+_Cn = nums['l187.contrasts']['v']
+ck(_Cn['occ_minus_rcut']['ci95'][0] > 0
+   and _Cn['occF_minus_rcutF']['ci95'][0] < 0 < _Cn['occF_minus_rcutF']['ci95'][1]
+   and max(_Cn['occ_minus_rcut']['mean'], _Cn['occF_minus_rcutF']['mean'])
+   < A['sc25F']['vs_base']['mean'],
+   '(5) "a smaller chopped increment, resolved at re-matched gains and not at '
+   'the base gain"')
+ck(_e['gain_delta_pct'] < 0 and R2['slope_meanR_per_0p1pct'] < 0
+   and abs(_s['gain_delta_pct']) < .01,
+   '(5) the gain caveat: the edge arm re-bisects DOWN and a lower gain raises '
+   'the base duty')
+_rl = nums['l187.relay']['v']
+ck(ESn['E-edge']['source'] == S['sc25']['gi']
+   and ESn['E-edge']['target'] == ESn['E-sham']['target'] == _rl['cell']['gi']
+   and ESn['E-edge']['syn'] == _rl['carrier_to_relay']['syn']
+   and abs(ESn['E-sham']['syn'] - ESn['E-edge']['syn']) == 1
+   and ESn['E-edge']['effective_weight'] > 0 < ESn['E-sham']['effective_weight']
+   and ESn['E-sham']['DN'] is True
+   and ESn['E-sham']['source'] not in {v.get('gi') for v in S.values()}
+   and EMn['n_sham_candidates'] == len(sel190['candidates']) == 1
+   and sel190['candidates'][0][3:] == [ESn['E-sham']['source'],
+                                       ESn['E-sham']['syn']],
+   '(5) the edge / sham description (carrier -> relay, count-matched '
+   'excitatory descending-neuron source outside the scan window, sole '
+   'candidate)')
+_prior_seeds = (set(r175['seeds']) | set(r185['seeds']) | set(r186['seeds'])
+                | set(r187['seeds']))
+ck(r190['seeds'] == list(range(EMn['seed_lo'], EMn['seed_hi'] + 1))
+   and len(r190['seeds']) == EMn['n_seeds'] == 16
+   and _prior_seeds.isdisjoint(r190['seeds']),
+   '(5) batch R is not a fresh 16-seed block')
+ck(open(os.path.join(B, 'l190', 'PREREG.sha256')).read().split()[0]
+   == r190['prereg'] == hashlib.sha256(open(os.path.join(
+       B, 'l190', 'PREREG.md'), 'rb').read()).hexdigest()
+   and r190['prereg'].startswith(EMn['prereg_sha256']),
+   '(5) l190 preregistration hash')
+_c190 = nums['l190.certs']['v']
+ck(_c190['c0a135_max'] == 0.0 == _c190['c0a175_max']
+   and r190['anchors']['c0a135_pass'] and r190['anchors']['c0a175_pass']
+   and _c190['g_cutwA_stored_exact'] is True, '(5) l190 anchor certificates')
+print('(5) L190 (stage 7): 4 arms x 16 seeds recounted from the stored rows '
+      '(edge %d/16 %.3f, %+.3f [%+.3f, %+.3f]; sham %d/16 %.3f); registered '
+      'branch rules re-applied (edge = partial, sham = base-like); edge share '
+      '%.3f; sole sham candidate; seeds %d-%d fresh; prereg hash == file'
+      % (_e['kR'], _e['meanR'], _e['vs_base']['mean'], *_e['vs_base']['ci95'],
+         _s['kR'], _s['meanR'], EMn['edge_share_of_carrier'],
+         EMn['seed_lo'], EMn['seed_hi']))
+# L190b PIN UPDATE (2026-11-21; receipt in LANE-LOG).  OLD (stage 6, the master
+# fold's finalization): numbers.json 592f7680796e..., l183_text.py
+# d1d8e0735bf1..., l183_fold.py 698922e3b836..., built body e62c81f6f5cc....
+# NEW: the stage-7 values below.  REASON: the owner-directed follow-up adds
+# six l190.* keys (every pre-existing key byte-identical: l174 (7)), four
+# declared edits and one table builder.  The pins are re-set, not loosened:
+# same four files, same whole-file equality.
+NUMBERS_SHA = '464e5261317f6fd30250455d91d0bde1d9fb70fc5461934f555e9cf7b1a1e2ea'
 # the ledger and the built body are pinned too: a later stage that edits
 # either has to re-pin here deliberately (and say why in the lane log)
-LEDGER_SHA = {'l183_text.py': 'd1d8e0735bf176947d04daa8d7fd702dc87cde6d3ad2d608a2a05ec55824d028',
-              'l183_fold.py': '698922e3b836f49936e8445fc16da38c7652e9b71025ac049ddb6db9bb0850e9'}
-BODY_SHA = 'e62c81f6f5ccf8efd95df6e8de314d287257663f41b2b1e1239695ff12434d23'
+LEDGER_SHA = {'l183_text.py': '0af399b5aa46f6f34c0bf2d5b40bb0b52b58a4c462a4d2425c5df5e108a231b7',
+              'l183_fold.py': '360e61c23c651843b565aa45df7ed4ab462f7d6081d29d0bbb72e3ee3c884cdd'}
+BODY_SHA = '8c8db0d49dd6f00c117d634bc4bacae4a5f3e94f714eab92338c89b1452db944'
 for _f, _want in LEDGER_SHA.items():
     _got = hashlib.sha256(open(os.path.join(HERE, _f), 'rb').read()).hexdigest()
     ck(_got == _want, '(5) %s moved since the fold was finalized (%s)'

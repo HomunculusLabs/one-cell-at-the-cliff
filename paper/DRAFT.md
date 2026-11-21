@@ -522,6 +522,14 @@
 > more. NOT in this fold: the single-edge cut that landed while it ran, the
 > cross-seed panel for the cohort pools, new figures, and the deferred
 > all-caps pass over the old Results and Methods text.
+> Stage 7 (follow-up fold, owner-directed, same day): the single-edge cut
+> that stage 6 lists as not folded is now in 2.4 as Table 3b (base, carrier
+> removed, carrier-to-relay edge cut, count-matched sham; one fresh batch,
+> R), with the double-dissociation reading stated in its limited sense and
+> its limits (one batch, re-bisected gains only, one eligible sham edge).
+> 3.7 gains the batch label, and section 4 names the two new single-batch
+> arms and drops its "is not reported here" marker. Six l190.* keys entered
+> numbers.json first.
 
 ## Title
 
@@ -1148,12 +1156,61 @@ change downstream is the rate of one further interneuron, which rises from .20
 on the base to .43 with the relay removed and .35 with the carrier removed
 [l187.g74914_rate].
 
-Three limits bound this subsection. Every new arm is one batch, and two of
+The relay arms remove all of the relay's outputs and its response to all of
+its inputs, not the carrier's share alone. A further fresh batch (batch R, 16
+seeds) therefore cut only the carrier's edge onto the relay, an excitatory
+edge of 21 synapses, and left both cells and every other edge in place. Its
+control is a sham cut of a count-matched edge onto the same relay: 22 synapses
+from another excitatory descending neuron outside the scan window, the only
+candidate the registered selection rule admitted. Both edited graphs were
+re-bisected, and the base and the carrier-removed graph were re-run on the
+same seeds.
+
+| manipulation (arm code) | synapses cut | gain shift | chopped 0.7 Hz | vs base [95% CI] | continuous 1.4 Hz | registered reading |
+|---|---|---|---|---|---|---|
+| none: the base (`cutwA`) | — | 0 | 5/16 .402 | — | 0/16 .000 | reference |
+| carrier removed (`sc25`) | the whole cell | +1.244% | 15/16 .772 | +.370 [+.257, +.483] | 8/16 .488 | super, signature |
+| carrier-to-relay edge cut (`E-edge`) | 21 | −0.358% | 12/16 .624 | +.223 [+.082, +.364] | 0/16 .000 | super, no signature |
+| sham edge cut (`E-sham`) | 22 | −0.001% | 5/16 .421 | +.020 [−.094, +.133] | 0/16 .002 | not-super, no signature |
+
+Table 3b [l190.arms, l190.summary, l190.selection, l190.gain]. The four arms
+share their seeds, and each runs at its own re-matched gain. The contrast
+column is the paired mean difference in chopped duty from the base with its
+95% interval over seeds, and the 1.4-Hz column is the continuous segment of
+Table 3.
+
+**Cutting the one edge raises the chopped duty and leaves the 1.4-Hz panel at
+zero.** The edge cut gives 12 of 16 structured seeds at mean .624, +.223
+[+.082, +.364] above the base. That meets the registered super band at its
+count floor of 12 seeds. The point ratio to the carrier's shift on the same
+seeds (+.370) is 60%, and that ratio has no interval. The edge cut's 1.4-Hz
+duty is .000 against .488 for carrier removal, so by the registered rule it
+reproduces carrier removal in part and is not a copy of it. The sham reads 5
+of 16 at .421, +.020 [−.094, +.133] from the base. That is base-like by the
+registered rule, which describes the point estimate and is not a test of
+equivalence [l190.arms, l190.meta].
+
+**The two readouts dissociate in both directions.** Removing the relay, or
+only the edge that links the carrier to it, raises the chopped duty and leaves
+the 1.4-Hz panel at the base's level. Removing the carrier with the relay
+already gone adds the whole 1.4-Hz signature and a smaller chopped increment,
+which is resolved at re-matched gains and not at the base's gain. Read
+together this is a double dissociation in a limited sense. The chopped
+component is reproduced in substantial part by cutting one bottleneck edge,
+about 60% of the carrier's shift by point ratio. The 1.4-Hz signature appears
+only when the whole carrier is removed: no graph that keeps the carrier shows
+it in either batch, the edge cut included. The statement compares two readouts
+across two batches, and it does not show that the edge is a necessary route.
+
+Four limits bound this subsection. Every new arm is one batch, and three of
 them sit on a band edge. No relay-matched twin was run, so nothing here says
 how often removing an active inhibitory cord interneuron lifts this readout.
-And the relay arms remove all of the relay's outputs and its response to all
-of its inputs, not the carrier's share alone; a cut of the single
-carrier-to-relay edge is not reported here.
+The edge and sham arms exist only at re-bisected gains, −0.358% for the edge
+cut and −0.001% for the sham. On the base a lower gain raises the duty by
+itself (−.0228 per +0.1%, §2.2), so without a fixed-gain form the deletion is
+not separated from its gain adjustment. And the sham is the one eligible edge,
+so it shows that this edge differs from that one, not from large edges onto
+the relay in general.
 
 ### 2.5 Which clock the timing follows is unresolved
 
@@ -1981,11 +2038,12 @@ J = B35, K = B37, L = B38. Gaps in the internal codes are batches this
 manuscript does not cite, and a label never renames the batch it points at, so
 every pooled cell stays traceable to the batches it unions.
 
-Four further batches carry the single-cell experiments of §2.1 to §2.5 and
+Five further batches carry the single-cell experiments of §2.1 to §2.5 and
 continue the same labelling scheme: M = B39 (the scan), N = B40 (the
 replication, the gain-only null and the signed-current twin), P = B41 (the
-relay arms) and Q, the gate-jitter batch, which has no internal run code and
-is identified by its seeds (18601 to 18616).
+relay arms), Q, the gate-jitter batch, and R, the single-edge batch of §2.4.
+Neither Q nor R has an internal run code: Q is identified by its seeds (18601
+to 18616) and R by its own (3641 to 3656).
 
 **Paired inference.** Where two arms ran on the same seeds and the claim is
 about one of them against the other, the primary test is paired: the exact
@@ -2189,16 +2247,19 @@ one batch of 16 seeds each. The silent-cell null is wide enough (2 to 11
 structured seeds of 16) that an individual label can move on a second batch,
 as the rank-27 cell's did (§2.2). The carrier, the mass twin, both drive
 twins, the two edge-of-band cells and the base are the only single-cell arms
-with a second batch; the relay, push-pull and occlusion arms and the
-signed-current twin have one. Statements about those arms are statements about
-a batch mean.
+with a second batch; the relay, push-pull and occlusion arms, the single-edge
+cut and its sham, and the signed-current twin have one. Statements about those
+arms are statements about a batch mean.
 
 No relay-matched twin: the downstream interneuron of §2.4 reaches the super
 band on the chopped readout when removed, and nothing here says how often
 removing an active inhibitory cord interneuron does the same. The identity
 statement is scoped to descending window cells and their twins, and the
-chopped classifier alone is not specific to the carrier. A cut of the single
-carrier-to-relay edge is not reported here.
+chopped classifier alone is not specific to the carrier. The cut of the single
+carrier-to-relay edge (§2.4) has a count-matched sham, but it is one batch at
+re-bisected gains with one eligible sham edge and no fixed-gain form. It does
+not separate the deletion from its gain adjustment, and it does not show that
+the edge is a necessary route.
 
 One readout family: every result is a statistic of one antagonist pair on one
 side, right-tibia flexor against extensor pool means (51 and 6 motor neurons),

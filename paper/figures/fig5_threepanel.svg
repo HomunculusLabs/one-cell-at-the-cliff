@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1330" height="830" viewBox="0 0 1330 830">
+<rect width="1330" height="830" fill="#282c34"/>
+<rect x="124" y="64" width="1190" height="750" fill="#21252b" rx="6"/>
+<text x="30" y="34" fill="#abb2bf" font-size="19" font-weight="bold">Fig. 5 — three readouts per arm: the honesty panel</text>
+<text x="30" y="56" fill="#5c6370" font-size="13">Right-Ti mean duty, all 37 B39 arms · one row per arm, three readouts per row · rows sorted by chopped-gate duty (high → low)</text>
+<text x="30" y="76" fill="#5c6370" font-size="13">chopped = 5-s-on/4-s-off gate at 0.7 Hz (16 matched seeds) · fast = continuous 1.4-Hz middle segment · cross = chopped, flex/ext from different seeds (240 ordered pairs, nonindependent)</text>
+<line x1="140.0" y1="102" x2="140.0" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="140.0" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.0</text>
+<line x1="266.2" y1="102" x2="266.2" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="266.2" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.1</text>
+<line x1="392.5" y1="102" x2="392.5" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="392.5" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.2</text>
+<line x1="518.8" y1="102" x2="518.8" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="518.8" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.3</text>
+<line x1="645.0" y1="102" x2="645.0" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="645.0" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.4</text>
+<line x1="771.2" y1="102" x2="771.2" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="771.2" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.5</text>
+<line x1="897.5" y1="102" x2="897.5" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="897.5" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.6</text>
+<line x1="1023.7" y1="102" x2="1023.7" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="1023.7" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.7</text>
+<line x1="1150.0" y1="102" x2="1150.0" y2="750" stroke="#3e4451" stroke-width="1"/>
+<text x="1150.0" y="766" fill="#5c6370" font-size="13" text-anchor="middle">0.8</text>
+<text x="645" y="784" fill="#abb2bf" font-size="14" text-anchor="middle">mean duty — fraction of 500-sample windows with r(flex, ext) ≤ −0.25</text>
+<text x="1180" y="100" fill="#5c6370" font-size="11" text-anchor="middle">k·chop</text>
+<text x="1216" y="100" fill="#5c6370" font-size="11" text-anchor="middle">k·1.4</text>
+<text x="1262" y="100" fill="#5c6370" font-size="11" text-anchor="middle">k·cross</text>
+<rect x="136" y="104.2" width="1018" height="15.5" fill="#98c379" opacity="0.08"/>
+<text x="122" y="116.0" fill="#98c379" font-size="13" font-weight="bold" text-anchor="end">sc25 · DNp33-L</text>
+<line x1="783.9" y1="112.0" x2="1097.1" y2="112.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc25 ch" cx="1097.1" cy="112.0" r="6" stroke="#abb2bf" stroke-width="1" fill="#98c379"/>
+<circle class="dot sc25 fa" cx="783.9" cy="112.0" r="6" stroke="#abb2bf" stroke-width="1" fill="#61afef"/>
+<circle class="dot sc25 xr" cx="924.9" cy="112.0" r="6" stroke="#abb2bf" stroke-width="1" fill="#e5c07b"/>
+<text x="1180" y="116.0" fill="#5c6370" font-size="11" text-anchor="middle">16</text>
+<text x="1216" y="116.0" fill="#5c6370" font-size="11" text-anchor="middle">8</text>
+<text x="1262" y="116.0" fill="#5c6370" font-size="11" text-anchor="middle">193</text>
+<rect x="136" y="121.8" width="1018" height="15.5" fill="#61afef" opacity="0.08"/>
+<text x="122" y="133.5" fill="#61afef" font-size="13" font-weight="bold" text-anchor="end">sc40 · DNge084</text>
+<line x1="140.0" y1="129.5" x2="904.1" y2="129.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc40 ch" cx="904.1" cy="129.5" r="5" fill="#98c379"/>
+<circle class="dot sc40 fa" cx="140.0" cy="129.5" r="5" fill="#61afef"/>
+<circle class="dot sc40 xr" cx="466.2" cy="129.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="133.5" fill="#5c6370" font-size="11" text-anchor="middle">11</text>
+<text x="1216" y="133.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="133.5" fill="#5c6370" font-size="11" text-anchor="middle">15</text>
+<rect x="136" y="139.2" width="1018" height="15.5" fill="#61afef" opacity="0.08"/>
+<text x="122" y="151.0" fill="#61afef" font-size="13" font-weight="bold" text-anchor="end">sc27 · DNpe055</text>
+<line x1="140.0" y1="147.0" x2="892.5" y2="147.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc27 ch" cx="892.5" cy="147.0" r="5" fill="#98c379"/>
+<circle class="dot sc27 fa" cx="140.0" cy="147.0" r="5" fill="#61afef"/>
+<circle class="dot sc27 xr" cx="353.7" cy="147.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="151.0" fill="#5c6370" font-size="11" text-anchor="middle">11</text>
+<text x="1216" y="151.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="151.0" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<text x="122" y="168.5" fill="#abb2bf" font-size="13" text-anchor="end">sc39</text>
+<line x1="140.0" y1="164.5" x2="830.4" y2="164.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc39 ch" cx="830.4" cy="164.5" r="5" fill="#98c379"/>
+<circle class="dot sc39 fa" cx="140.0" cy="164.5" r="5" fill="#61afef"/>
+<circle class="dot sc39 xr" cx="352.1" cy="164.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="168.5" fill="#5c6370" font-size="11" text-anchor="middle">11</text>
+<text x="1216" y="168.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="168.5" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="122" y="186.0" fill="#abb2bf" font-size="13" text-anchor="end">sc30</text>
+<line x1="140.0" y1="182.0" x2="810.2" y2="182.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc30 ch" cx="810.2" cy="182.0" r="5" fill="#98c379"/>
+<circle class="dot sc30 fa" cx="140.0" cy="182.0" r="5" fill="#61afef"/>
+<circle class="dot sc30 xr" cx="359.1" cy="182.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="186.0" fill="#5c6370" font-size="11" text-anchor="middle">10</text>
+<text x="1216" y="186.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="186.0" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="122" y="203.5" fill="#abb2bf" font-size="13" text-anchor="end">sc50</text>
+<line x1="140.0" y1="199.5" x2="804.4" y2="199.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc50 ch" cx="804.4" cy="199.5" r="5" fill="#98c379"/>
+<circle class="dot sc50 fa" cx="140.0" cy="199.5" r="5" fill="#61afef"/>
+<circle class="dot sc50 xr" cx="401.5" cy="199.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="203.5" fill="#5c6370" font-size="11" text-anchor="middle">9</text>
+<text x="1216" y="203.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="203.5" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="122" y="221.0" fill="#abb2bf" font-size="13" text-anchor="end">sc52</text>
+<line x1="140.0" y1="217.0" x2="779.4" y2="217.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc52 ch" cx="779.4" cy="217.0" r="5" fill="#98c379"/>
+<circle class="dot sc52 fa" cx="140.0" cy="217.0" r="5" fill="#61afef"/>
+<circle class="dot sc52 xr" cx="324.6" cy="217.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="221.0" fill="#5c6370" font-size="11" text-anchor="middle">8</text>
+<text x="1216" y="221.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="221.0" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="122" y="238.5" fill="#abb2bf" font-size="13" text-anchor="end">sc48</text>
+<line x1="140.0" y1="234.5" x2="767.3" y2="234.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc48 ch" cx="767.3" cy="234.5" r="5" fill="#98c379"/>
+<circle class="dot sc48 fa" cx="140.0" cy="234.5" r="5" fill="#61afef"/>
+<circle class="dot sc48 xr" cx="314.2" cy="234.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="238.5" fill="#5c6370" font-size="11" text-anchor="middle">9</text>
+<text x="1216" y="238.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="238.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="256.0" fill="#abb2bf" font-size="13" text-anchor="end">sc44</text>
+<line x1="140.0" y1="252.0" x2="757.8" y2="252.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc44 ch" cx="757.8" cy="252.0" r="5" fill="#98c379"/>
+<circle class="dot sc44 fa" cx="140.0" cy="252.0" r="5" fill="#61afef"/>
+<circle class="dot sc44 xr" cx="293.2" cy="252.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="256.0" fill="#5c6370" font-size="11" text-anchor="middle">11</text>
+<text x="1216" y="256.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="256.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="273.5" fill="#abb2bf" font-size="13" text-anchor="end">sc46</text>
+<line x1="140.0" y1="269.5" x2="752.8" y2="269.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc46 ch" cx="752.8" cy="269.5" r="5" fill="#98c379"/>
+<circle class="dot sc46 fa" cx="140.0" cy="269.5" r="5" fill="#61afef"/>
+<circle class="dot sc46 xr" cx="268.6" cy="269.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="273.5" fill="#5c6370" font-size="11" text-anchor="middle">9</text>
+<text x="1216" y="273.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="273.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="291.0" fill="#abb2bf" font-size="13" text-anchor="end">sc53</text>
+<line x1="140.0" y1="287.0" x2="749.4" y2="287.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc53 ch" cx="749.4" cy="287.0" r="5" fill="#98c379"/>
+<circle class="dot sc53 fa" cx="140.0" cy="287.0" r="5" fill="#61afef"/>
+<circle class="dot sc53 xr" cx="350.2" cy="287.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="291.0" fill="#5c6370" font-size="11" text-anchor="middle">9</text>
+<text x="1216" y="291.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="291.0" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="122" y="308.5" fill="#abb2bf" font-size="13" text-anchor="end">sc55</text>
+<line x1="140.0" y1="304.5" x2="741.3" y2="304.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc55 ch" cx="741.3" cy="304.5" r="5" fill="#98c379"/>
+<circle class="dot sc55 fa" cx="140.0" cy="304.5" r="5" fill="#61afef"/>
+<circle class="dot sc55 xr" cx="279.2" cy="304.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="308.5" fill="#5c6370" font-size="11" text-anchor="middle">7</text>
+<text x="1216" y="308.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="308.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="326.0" fill="#abb2bf" font-size="13" text-anchor="end">sc57</text>
+<line x1="140.0" y1="322.0" x2="731.3" y2="322.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc57 ch" cx="731.3" cy="322.0" r="5" fill="#98c379"/>
+<circle class="dot sc57 fa" cx="140.0" cy="322.0" r="5" fill="#61afef"/>
+<circle class="dot sc57 xr" cx="309.8" cy="322.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="326.0" fill="#5c6370" font-size="11" text-anchor="middle">6</text>
+<text x="1216" y="326.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="326.0" fill="#5c6370" font-size="11" text-anchor="middle">1</text>
+<text x="122" y="343.5" fill="#abb2bf" font-size="13" text-anchor="end">sc45</text>
+<line x1="140.0" y1="339.5" x2="723.4" y2="339.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc45 ch" cx="723.4" cy="339.5" r="5" fill="#98c379"/>
+<circle class="dot sc45 fa" cx="140.0" cy="339.5" r="5" fill="#61afef"/>
+<circle class="dot sc45 xr" cx="280.6" cy="339.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="343.5" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<text x="1216" y="343.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="343.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="361.0" fill="#abb2bf" font-size="13" text-anchor="end">sc28</text>
+<line x1="140.0" y1="357.0" x2="696.6" y2="357.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc28 ch" cx="696.6" cy="357.0" r="5" fill="#98c379"/>
+<circle class="dot sc28 fa" cx="140.0" cy="357.0" r="5" fill="#61afef"/>
+<circle class="dot sc28 xr" cx="308.3" cy="357.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="361.0" fill="#5c6370" font-size="11" text-anchor="middle">6</text>
+<text x="1216" y="361.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="361.0" fill="#5c6370" font-size="11" text-anchor="middle">1</text>
+<text x="122" y="378.5" fill="#abb2bf" font-size="13" text-anchor="end">sc31</text>
+<line x1="140.0" y1="374.5" x2="689.2" y2="374.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc31 ch" cx="689.2" cy="374.5" r="5" fill="#98c379"/>
+<circle class="dot sc31 fa" cx="140.0" cy="374.5" r="5" fill="#61afef"/>
+<circle class="dot sc31 xr" cx="392.5" cy="374.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="378.5" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<text x="1216" y="378.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="378.5" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="122" y="396.0" fill="#abb2bf" font-size="13" text-anchor="end">sc29</text>
+<line x1="140.0" y1="392.0" x2="672.6" y2="392.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc29 ch" cx="672.6" cy="392.0" r="5" fill="#98c379"/>
+<circle class="dot sc29 fa" cx="140.0" cy="392.0" r="5" fill="#61afef"/>
+<circle class="dot sc29 xr" cx="248.9" cy="392.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="396.0" fill="#5c6370" font-size="11" text-anchor="middle">7</text>
+<text x="1216" y="396.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="396.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="413.5" fill="#abb2bf" font-size="13" text-anchor="end">sc32</text>
+<line x1="140.0" y1="409.5" x2="662.6" y2="409.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc32 ch" cx="662.6" cy="409.5" r="5" fill="#98c379"/>
+<circle class="dot sc32 fa" cx="140.0" cy="409.5" r="5" fill="#61afef"/>
+<circle class="dot sc32 xr" cx="285.6" cy="409.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="413.5" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="1216" y="413.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="413.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="431.0" fill="#abb2bf" font-size="13" text-anchor="end">sc43</text>
+<line x1="140.0" y1="427.0" x2="660.8" y2="427.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc43 ch" cx="660.8" cy="427.0" r="5" fill="#98c379"/>
+<circle class="dot sc43 fa" cx="140.0" cy="427.0" r="5" fill="#61afef"/>
+<circle class="dot sc43 xr" cx="275.2" cy="427.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="431.0" fill="#5c6370" font-size="11" text-anchor="middle">6</text>
+<text x="1216" y="431.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="431.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<rect x="136" y="436.8" width="1018" height="15.5" fill="#d19a66" opacity="0.08"/>
+<text x="122" y="448.5" fill="#d19a66" font-size="13" font-weight="bold" text-anchor="end">cutwA (base)</text>
+<line x1="140.0" y1="444.5" x2="654.7" y2="444.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot cutwA ch" cx="654.7" cy="444.5" r="5" fill="#98c379"/>
+<circle class="dot cutwA fa" cx="140.0" cy="444.5" r="5" fill="#61afef"/>
+<circle class="dot cutwA xr" cx="262.6" cy="444.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="448.5" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="1216" y="448.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="448.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="466.0" fill="#abb2bf" font-size="13" text-anchor="end">sc56</text>
+<line x1="140.0" y1="462.0" x2="654.5" y2="462.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc56 ch" cx="654.5" cy="462.0" r="5" fill="#98c379"/>
+<circle class="dot sc56 fa" cx="140.0" cy="462.0" r="5" fill="#61afef"/>
+<circle class="dot sc56 xr" cx="309.7" cy="462.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="466.0" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="1216" y="466.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="466.0" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="122" y="483.5" fill="#abb2bf" font-size="13" text-anchor="end">sc54</text>
+<line x1="141.6" y1="479.5" x2="646.1" y2="479.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc54 ch" cx="646.1" cy="479.5" r="5" fill="#98c379"/>
+<circle class="dot sc54 fa" cx="141.6" cy="479.5" r="5" fill="#61afef"/>
+<circle class="dot sc54 xr" cx="368.8" cy="479.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="483.5" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1216" y="483.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="483.5" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<rect x="136" y="489.2" width="1018" height="15.5" fill="#c678dd" opacity="0.08"/>
+<text x="122" y="501.0" fill="#c678dd" font-size="13" font-weight="bold" text-anchor="end">dmA · DNge046</text>
+<line x1="145.3" y1="497.0" x2="632.1" y2="497.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot dmA ch" cx="632.1" cy="497.0" r="5" fill="#98c379"/>
+<circle class="dot dmA fa" cx="145.3" cy="497.0" r="5" fill="#61afef"/>
+<circle class="dot dmA xr" cx="614.5" cy="497.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="501.0" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="1216" y="501.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="501.0" fill="#5c6370" font-size="11" text-anchor="middle">36</text>
+<text x="122" y="518.5" fill="#abb2bf" font-size="13" text-anchor="end">sc42</text>
+<line x1="143.2" y1="514.5" x2="618.4" y2="514.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc42 ch" cx="618.4" cy="514.5" r="5" fill="#98c379"/>
+<circle class="dot sc42 fa" cx="143.2" cy="514.5" r="5" fill="#61afef"/>
+<circle class="dot sc42 xr" cx="253.7" cy="514.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="518.5" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1216" y="518.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="518.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<rect x="136" y="524.2" width="1018" height="15.5" fill="#c678dd" opacity="0.08"/>
+<text x="122" y="536.0" fill="#c678dd" font-size="13" font-weight="bold" text-anchor="end">sc26 · DNpe025</text>
+<line x1="145.8" y1="532.0" x2="617.6" y2="532.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc26 ch" cx="617.6" cy="532.0" r="5" fill="#98c379"/>
+<circle class="dot sc26 fa" cx="145.8" cy="532.0" r="5" fill="#61afef"/>
+<circle class="dot sc26 xr" cx="267.1" cy="532.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="536.0" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="1216" y="536.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="536.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="553.5" fill="#abb2bf" font-size="13" text-anchor="end">sc51</text>
+<line x1="140.0" y1="549.5" x2="605.3" y2="549.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc51 ch" cx="605.3" cy="549.5" r="5" fill="#98c379"/>
+<circle class="dot sc51 fa" cx="140.0" cy="549.5" r="5" fill="#61afef"/>
+<circle class="dot sc51 xr" cx="270.9" cy="549.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="553.5" fill="#5c6370" font-size="11" text-anchor="middle">5</text>
+<text x="1216" y="553.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="553.5" fill="#5c6370" font-size="11" text-anchor="middle">1</text>
+<text x="122" y="571.0" fill="#abb2bf" font-size="13" text-anchor="end">sc37</text>
+<line x1="178.9" y1="567.0" x2="604.5" y2="567.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc37 ch" cx="604.5" cy="567.0" r="5" fill="#98c379"/>
+<circle class="dot sc37 fa" cx="178.9" cy="567.0" r="5" fill="#61afef"/>
+<circle class="dot sc37 xr" cx="213.6" cy="567.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="571.0" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<text x="1216" y="571.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="571.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<rect x="136" y="576.8" width="1018" height="15.5" fill="#c678dd" opacity="0.08"/>
+<text x="122" y="588.5" fill="#c678dd" font-size="13" font-weight="bold" text-anchor="end">dmC · DNpe019</text>
+<line x1="382.0" y1="584.5" x2="602.4" y2="584.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot dmC ch" cx="602.4" cy="584.5" r="5" fill="#98c379"/>
+<circle class="dot dmC fa" cx="382.0" cy="584.5" r="5" fill="#61afef"/>
+<circle class="dot dmC xr" cx="501.8" cy="584.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="588.5" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="1216" y="588.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="588.5" fill="#5c6370" font-size="11" text-anchor="middle">19</text>
+<text x="122" y="606.0" fill="#abb2bf" font-size="13" text-anchor="end">sc35</text>
+<line x1="146.8" y1="602.0" x2="595.3" y2="602.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc35 ch" cx="595.3" cy="602.0" r="5" fill="#98c379"/>
+<circle class="dot sc35 fa" cx="146.8" cy="602.0" r="5" fill="#61afef"/>
+<circle class="dot sc35 xr" cx="296.7" cy="602.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="606.0" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="1216" y="606.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="606.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="623.5" fill="#abb2bf" font-size="13" text-anchor="end">sc36</text>
+<line x1="141.1" y1="619.5" x2="587.7" y2="619.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc36 ch" cx="587.7" cy="619.5" r="5" fill="#98c379"/>
+<circle class="dot sc36 fa" cx="141.1" cy="619.5" r="5" fill="#61afef"/>
+<circle class="dot sc36 xr" cx="280.2" cy="619.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="623.5" fill="#5c6370" font-size="11" text-anchor="middle">4</text>
+<text x="1216" y="623.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="623.5" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="122" y="641.0" fill="#abb2bf" font-size="13" text-anchor="end">sc38</text>
+<line x1="140.0" y1="637.0" x2="569.5" y2="637.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc38 ch" cx="569.5" cy="637.0" r="5" fill="#98c379"/>
+<circle class="dot sc38 fa" cx="140.0" cy="637.0" r="5" fill="#61afef"/>
+<circle class="dot sc38 xr" cx="239.5" cy="637.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="641.0" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1216" y="641.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="641.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="658.5" fill="#abb2bf" font-size="13" text-anchor="end">sc58</text>
+<line x1="144.2" y1="654.5" x2="539.3" y2="654.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc58 ch" cx="539.3" cy="654.5" r="5" fill="#98c379"/>
+<circle class="dot sc58 fa" cx="144.2" cy="654.5" r="5" fill="#61afef"/>
+<circle class="dot sc58 xr" cx="250.0" cy="654.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="658.5" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1216" y="658.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="658.5" fill="#5c6370" font-size="11" text-anchor="middle">1</text>
+<text x="122" y="676.0" fill="#abb2bf" font-size="13" text-anchor="end">sc49</text>
+<line x1="140.0" y1="672.0" x2="531.6" y2="672.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc49 ch" cx="531.6" cy="672.0" r="5" fill="#98c379"/>
+<circle class="dot sc49 fa" cx="140.0" cy="672.0" r="5" fill="#61afef"/>
+<circle class="dot sc49 xr" cx="303.7" cy="672.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="676.0" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="1216" y="676.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="676.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="693.5" fill="#abb2bf" font-size="13" text-anchor="end">sc47</text>
+<line x1="291.9" y1="689.5" x2="530.8" y2="689.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc47 ch" cx="515.6" cy="689.5" r="5" fill="#98c379"/>
+<circle class="dot sc47 fa" cx="530.8" cy="689.5" r="5" fill="#61afef"/>
+<circle class="dot sc47 xr" cx="291.9" cy="689.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="693.5" fill="#5c6370" font-size="11" text-anchor="middle">2</text>
+<text x="1216" y="693.5" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1262" y="693.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="711.0" fill="#abb2bf" font-size="13" text-anchor="end">sc41</text>
+<line x1="140.0" y1="707.0" x2="514.8" y2="707.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc41 ch" cx="514.8" cy="707.0" r="5" fill="#98c379"/>
+<circle class="dot sc41 fa" cx="140.0" cy="707.0" r="5" fill="#61afef"/>
+<circle class="dot sc41 xr" cx="215.9" cy="707.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="711.0" fill="#5c6370" font-size="11" text-anchor="middle">3</text>
+<text x="1216" y="711.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="711.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="122" y="728.5" fill="#abb2bf" font-size="13" text-anchor="end">sc33</text>
+<line x1="246.6" y1="724.5" x2="480.6" y2="724.5" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc33 ch" cx="480.6" cy="724.5" r="5" fill="#98c379"/>
+<circle class="dot sc33 fa" cx="277.8" cy="724.5" r="5" fill="#61afef"/>
+<circle class="dot sc33 xr" cx="246.6" cy="724.5" r="5" fill="#e5c07b"/>
+<text x="1180" y="728.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1216" y="728.5" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="728.5" fill="#5c6370" font-size="11" text-anchor="middle">1</text>
+<text x="122" y="746.0" fill="#abb2bf" font-size="13" text-anchor="end">sc34</text>
+<line x1="140.0" y1="742.0" x2="405.1" y2="742.0" stroke="#5c6370" stroke-width="1" opacity="0.55"/>
+<circle class="dot sc34 ch" cx="405.1" cy="742.0" r="5" fill="#98c379"/>
+<circle class="dot sc34 fa" cx="140.0" cy="742.0" r="5" fill="#61afef"/>
+<circle class="dot sc34 xr" cx="241.6" cy="742.0" r="5" fill="#e5c07b"/>
+<text x="1180" y="746.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1216" y="746.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="1262" y="746.0" fill="#5c6370" font-size="11" text-anchor="middle">0</text>
+<text x="620.0" y="689.5" fill="#e5c07b" font-size="12">dmA / dmC: chopped duty low, cross-seed duty high —</text>
+<text x="620.0" y="704.5" fill="#e5c07b" font-size="12">shared timing between seeds, not per-run gating (L184 Q3)</text>
+<circle cx="36" cy="802" r="6" fill="#98c379"/><text x="48" y="806" fill="#abb2bf" font-size="13">chopped gate 0.7 Hz (matched, 16 seeds)</text>
+<circle cx="340" cy="802" r="6" fill="#61afef"/><text x="352" y="806" fill="#abb2bf" font-size="13">continuous 1.4 Hz (middle segment)</text>
+<circle cx="620" cy="802" r="6" fill="#e5c07b"/><text x="632" y="806" fill="#abb2bf" font-size="13">cross-seed, chopped (240 ordered pairs)</text>
+<text x="1300" y="806" fill="#5c6370" font-size="11.5" text-anchor="end">asserted vs threepanel.csv + results_l175.json at draw time · L184</text>
+<text x="36" y="822" fill="#5c6370" font-size="11.5">row labels: green = carrier (DNp33-L) · purple = twins (mass sc26, drive dmA/dmC) · blue = boundary cells (sc27, sc40 — sc40 shares leading relay GI 75494) · orange = k=24 base · k columns: runs/pairs with duty ≥ .5 (16 seeds; cross 240) · no values missing</text>
+</svg>

@@ -1,0 +1,518 @@
+Query: Letter dispatch (owner request, response-to-reviewers). Read 
+/home/t3rpz/critters/peabrain-lab/paper/RESPONSE-BRIEF.md and execute it 
+completely. Section pointers + artifact paths for every fix; referees credited 
+where right.
+📖 Read RESPONSE-BRIEF.md  0.7s
+🔎 Find *  0.7s
+💻 $ wc -lc paper/review_fable.md paper/review_fable_r2.md paper/review_claudeai_fable_20261121.md paper/review_astra_r3.md paper/DRAFT.md paper/numbers.json paper/CLAIM-MAP.md /home/t3rpz/critters/peabrain/LANE-LOG.md paper/response_dispatch.log paper/review_*evidence*/NOTES.md LAB-INTENT.md + 6 commands
+📖 Read response_dispatch.log
+📖 Read review_fable.md
+📖 Read review_fable_r2.md
+📖 Read review_claudeai_fable_20261121.md
+📖 Read review_astra_r3.md
+💻 $ awk '{printf "%d\t%d\t%s\n", NR, length($0), substr($0,1,170)}' LANE-LOG.md | awk -F'\t' '$1>=395' + 2 commands
+💻 $ awk 'NR>=409 && NR<=441 && !/^tick 21[45] \|/ {print NR": "$0"\n"}' LANE-LOG.md | fold -w 4000  0.2s
+💻 $ sha256sum DRAFT.md numbers.json CLAIM-MAP.md references.bib + 3 commands
+📖 Read DRAFT.md L534-1253
+📖 Read DRAFT.md L1252-1871
+📖 Read DRAFT.md L1872-2543
+💻 $ python3 - <<'EOF' import json d=json.load(open('numbers.json')) print(type(d), len(d)) for k,v in d.items(): s=json.dumps(v) print(f"{k}\t{len(s)}\t{s[:150]}") EOF
+💻 $ for p in 'kill to super|converts kill|kill→super' '34/58' 'NEUTRAL' 'BROADER family' 'brain-and-nerve-cord|brain-and-cord|brain\+cord' '\binert\b' 'other four|four other antagonist|antagonist pairs' 'private tree' '13 entries' 'WORKING DRAFT' 'k=19 prefix|k = 19 prefix|prefix' '16/13/10|per-set|3 of 5|three of five|two of five' 'mass-only band' 'Erickson|DNa10|Li, Ping|745055' 'Honey|Luccioli|Soloperto|Boes|Prinz' 'NOT derived|not derived' 'two-factor' 'Fig\. ?[0-9]|Fig [0-9]|Figure' 'gate-jitter|relay-matched' 'all-or-none' 'intermediate, not neutral|not neutral' 'one-cell-at-the-cliff|github' 'ceiling' 'endogenous' + 3 commands  0.1s
+💻 $ ls -d */one-cell-at-the-cliff */*/one-cell-at-the-cliff */*/*/one-cell-at-the-cliff 2>/dev/null + 3 commands  26.9s
+💻 $ grep -nE 'second opinion|independent re|rebuil|web referee|reimplement|8 seeds|56' paper/DRAFT.md | awk -F: '$1>=534' | cut -c1-200 + 11 commands  0.7s
+💻 $ grep -nE 'claude\.ai|second opinion|Alstott' paper/DRAFT.md | cut -c1-220 + 4 commands
+💻 $ ls banc/l167 banc/l175 | tr '\n' ' ' + 3 commands
+💻 $ wc -c banc/l167/ADJUDICATION.md + 2 commands
+💻 $ cat paper/review_astra_evidence_r3/NOTES.md + 3 commands
+💻 $ grep -nE "write_text|open\([^)]*['\"](w|a|wb)['\"]|\.dump\(|savez|to_csv|os\.remove|unlink|shutil" l143_verify.py l149_verify.py l158_verify.py l159_verify.py l161_verify.py l174_verify.py l183_verify.py | cut -c1-200
+💻 $ sed -n 392,402p paper/l158_verify.py + 8 commands  15.4s
+💻 $ python3 - <<'EOF' import json d=json.load(open('numbers.json')) for k in ['l172.paired_twin','l175.census','l175.meta','l175.null','l175.branch','l175.certs','l184.q3_ratios','l184.design','l185.r2','l185.r3','l185.certs','l185.branches','l185.meta','l186.contrasts','l186.means','l186.power','l186.branch','l187.certs','l187.meta','l187.branches','l187.sc25_pooled','l190.meta','l190.certs','l190.selection','l183.ladder_fast_meta','l92.substrate','l135.weights','l172.meta','l168.window_mass','l169b2.dyn','l170.matched','l171.panel','l173b.gains','l137.g1','xor','l169.branch','l169d.branch','l172.census_unique']: print(k, json.dumps(d[k])[:1500]) + 1 command  0.1s
+💻 $ S=/home/t3rpz/.hermes/profiles/maple/cache/scratch + 10 commands  0.2s
+💻 $ S=/home/t3rpz/.hermes/profiles/maple/cache/scratch + 8 commands  1.2s
+💻 $ for f in paper/DRAFT.md paper/numbers.json paper/CLAIM-MAP.md + 6 commands  1.8s
+💻 $ curl -sL --max-time 40 "https://raw.githubusercontent.com/HomunculusLabs/one-cell-at-the-cliff/0861ad9/paper/DRAFT.md" + 5 commands  0.3s
+💻 $ grep -n 'L169(b1)\|L169 (b1)\|correction' banc/l167/ADJUDICATION.md + 3 commands  0.1s
+💻 $ cat figures/BRIEF_figs.md | cut -c1-1500 + 3 commands  0.1s
+💻 $ S=/home/t3rpz/.hermes/profiles/maple/cache/scratch/letter_gates + 9 commands
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -0,0 +1,844 @@
+│ +# Response to referees
+│ +
+│ +**Manuscript:** Removing DNp33-L selectively raises right-tibia antagonist duty
+│ +in a perturbed fly connectome model
+│ +
+│ +**Date:** 2026-11-21. **Status of this letter:** drafted for owner review; not
+│ +yet in the public repository.
+│ +
+│ +This letter answers three referee rounds and one independent second opinion:
+│ +
+│ +| round | referee | report | verdict |
+│ +|---|---|---|---|
+│ +| 1 | fable 5.2 | `paper/review_fable.md` | major revision, 12 majors |
+│ +| 2 | fable 5.2 | `paper/review_fable_r2.md` | major revision, 7 new majors |
+│ +| second opinion | claude.ai fable 5.2, own rebuild | `paper/review_claudeai_fable_20261121.md` | do not send yet |
+│ +| 3 | gpt-6.2-astra, different model family | `paper/review_astra_r3.md` | major revision |
+│ +
+│ +The short version. The referees were right about the central control, the
+│ +title, the Methods, the readout and the novelty claim. The title has been
+│ +replaced with the one the third referee proposed. The mass twin the old title
+│ +was built on is silent in the model, and the draft now says so. The identity
+│ +statement rests on a single-cell scan with delivered-drive and signed-current
+│ +comparators that the second referee specified and the third audited. What is
+│ +still open is listed at the end of each section and collected in the closing
+│ +section. Nothing in this letter should be read as "addressed" unless it carries
+│ +a section pointer and an artifact.
+│ +
+│ +## How to read this letter
+│ +
+│ +- **Section pointers** (§) refer to `paper/DRAFT.md` at sha256 `c60fc1859d94…`
+│ +  (2,542 lines). That state is local. The public repository head, commit
+│ +  `0861ad9`, carries the previous stage (sha256 `6ec995bfef95…`, 2,481 lines).
+│ +  From the title onward the two differ only by the single-edge-cut fold: Table
+│ +  3b and its sentences in §2.4, the batch label in §3.7 and two sentences in
+│ +  §4. Every other pointer below resolves in the public commit.
+│ +- **Bracketed keys** such as [l175.scan] are keys of `paper/numbers.json`
+│ +  (151 keys, sha256 `464e5261317f…`). Every number of ours in this letter is
+│ +  quoted from that ledger as the draft prints it.
+│ +- **Referee figures.** A number marked "(referee's figure)" is quoted from that
+│ +  referee's report. It is not in our ledger and the draft does not rest on it.
+│ +- **Artifact paths** are relative to the repository root.
+│ +- **Status words:** resolved, partial, open. They are our own assessment of the
+│ +  current draft, not a referee's.
+│ +
+│ +---
+│ +
+│ +## Round 1 (fable 5.2): the twelve majors
+│ +
+│ +Our adjudication of this report is `banc/l167/ADJUDICATION.md` (with
+│ +`adjudication.json` and `PREREG.md`). It confirmed all twelve issues at least
+│ +in direction from our own artifacts and refuted none. One component of issue 6
+│ +was later corrected, as described there and below.
+│ +
+│ +### 1. Unreported scramble arms; the uniqueness claim. Resolved.
+│ +
+│ +You were right. The carrier-free cohorts existed in our tree and were absent
+│ +from the draft and the ledger.
+│ +
+│ +- §2.7 now reports all seven carrier-free cohorts on both sides with the
+│ +  untreated base. One reaches the high class on the right: 39/48 on its own
+│ +  fresh batches and 41 of 50 on the canonical pool, each count labelled
+│ +  [l168.scr, l172.pooled]. It raises both sides, where the carrier's signature
+│ +  is crossed [l168.base].
+│ +- The abstract and §5 say "sufficient, not unique", and set-dependent.
+│ +- §2.6, Table 4 adds what round 2 found: in the continuously driven segment
+│ +  that cohort falls from 41 to 9 of 50 [l183.ladder_fast].
+│ +- Artifacts: `banc/l168/l168_pools.py`, `banc/l168/static.json`,
+│ +  `banc/l168/PREREG.md`.
+│ +- Still owed (round 2, N7): §2.7 does not say which base the cohort family is
+│ +  cut from, and it prints each cohort's extra mass without stating how far
+│ +  short of the window it falls in units of the carrier's own mass.
+│ +
+│ +### 2. The male "non-transfer" was a floor artifact. Resolved as a scoping correction; the experiment is open.
+│ +
+│ +You were right. Our male extraction applied no synapse floor, and the female
+│ +release carries an implicit pair-level floor of 3 [l146.release].
+│ +
+│ +- §2.11 re-runs the extraction at the matched floor and reproduces your
+│ … omitted 766 diff line(s) across 1 additional file(s)/section(s)
+✗ $ mkdir -p /home/t3rpz/.hermes/profiles/maple/cache/scratch/letter + 1 command  1.0s [Blocked: command or referenced script cannot ...]
+✍️ Write /home/t3rpz/.hermes/profiles/maple/cache/scratch/letter/check.py
+│ profiles/maple/cache/scratch/letter/check.py
+│ @@ -0,0 +1,73 @@
+│ +import json, re, os
+│ +R = '/home/t3rpz/critters/peabrain-lab/'
+│ +L = open(R + 'paper/RESPONSE-LETTER.md').read()
+│ +D = open(R + 'paper/DRAFT.md').read()
+│ +body = D[D.index('## Title'):]
+│ +N = json.load(open(R + 'paper/numbers.json'))
+│ +norm = lambda s: ' '.join(s.split())
+│ +bodyn = norm(body)
+│ +
+│ +# 1 ledger keys
+│ +keys = set()
+│ +for grp in re.findall(r'\[([a-z0-9_.,\s\-A-Z>]+?)\]', L):
+│ +    for k in grp.split(','):
+│ +        k = k.strip()
+│ +        if re.fullmatch(r'[a-z][a-z0-9_]*(\.[A-Za-z0-9_]+)+|xor|subnet', k):
+│ +            keys.add(k)
+│ +print('KEYS', len(keys), 'missing:', [k for k in keys if k not in N])
+│ +
+│ +# 2 paths
+│ +paths = set(re.findall(r'`([^`\s]+)`', L))
+│ +skip = {'v0.1-lineage', 'locked.py', 'locked.csv', 'b39-arms.csv',
+│ +        'adjudication.json', 'PREREG.md', 'l149_verify.py', 'l158_verify.py',
+│ +        'l159_verify.py', 'l161_verify.py', 'l174_verify.py', 'l183_verify.py',
+│ +        'raw_l135.npz', 'raw_l169.npz', 'raw_l169c2.npz', 'raw_l169d.npz',
+│ +        'l184', 'l185', 'l186', 'l187', 'l190'}
+│ +miss = []
+│ +for p in sorted(paths):
+│ +    if p.endswith('…') or re.fullmatch(r'[0-9a-f]{7,16}', p) or p in skip:
+│ +        continue
+│ +    q = p.rstrip('/')
+│ +    ok = os.path.exists(R + q) or (q == 'LANE-LOG.md' and os.path.exists('/home/t3rpz/critters/peabrain/LANE-LOG.md'))
+│ +    if not ok:
+│ +        miss.append(p)
+│ +print('PATHS', len(paths), 'missing:', miss)
+│ +for p in ['paper/review_astra_evidence_r3/locked.py', 'paper/review_astra_evidence_r3/locked.csv',
+│ +          'paper/review_astra_evidence_r3/b39-arms.csv', 'banc/l167/adjudication.json',
+│ +          'banc/l167/PREREG.md', 'paper/l149_verify.py', 'paper/l161_verify.py', 'paper/l183_verify.py',
+│ +          'banc/l135/raw_l135.npz', 'banc/l175', 'banc/l184', 'banc/l185', 'banc/l186', 'banc/l187', 'banc/l190']:
+│ +    if not os.path.exists(R + p):
+│ +        print('  MISSING explicit', p)
+│ +
+│ +# 3 quoted strings must be verbatim in the draft body
+│ +qs = re.findall(r'"([^"]{12,})"', norm(L))
+│ +nq = 0
+│ +for q in qs:
+│ +    parts = [x.strip() for x in q.split('…')]
+│ +    if not all(norm(x) in bodyn for x in parts if x):
+│ +        nq += 1
+│ +        print('QUOTE not in draft body:', q[:120])
+│ +print('QUOTES', len(qs), 'unmatched', nq)
+│ +
+│ +# 4 section pointers
+│ +secs = set(re.findall(r'§(\d(?:\.\d+)?)', L))
+│ +heads = set(re.findall(r'^#{2,3} (\d(?:\.\d+)?)[. ]', body, re.M))
+│ +print('SECS', sorted(secs), 'bad:', sorted(secs - heads))
+│ +
+│ +# 5 numbers
+│ +srcs = {'draft': bodyn, 'ledger': json.dumps(N)}
+│ +for f in ['review_fable.md', 'review_fable_r2.md', 'review_claudeai_fable_20261121.md', 'review_astra_r3.md']:
+│ +    srcs[f] = open(R + 'paper/' + f).read()
+│ +toks = re.findall(r'(?<![\w.])[+\-−]?\d[\d,]*(?:\.\d+)?%?|(?<![\w])[+\-−]?\.\d+', L)
+│ +seen = {}
+│ +for t in toks:
+│ +    u = t.replace('−', '-').lstrip('+-').rstrip('%').rstrip(',')
+│ +    if u in seen:
+│ +        continue
+│ +    cands = {u, u.replace(',', '')}
+│ +    if u.startswith('.'):
+│ +        cands.add('0' + u)
+│ +    seen[u] = [k for k, v in srcs.items() if any(c in v for c in cands)]
+│ +print('NUM tokens', len(seen))
+│ +print('not found anywhere:', [u for u, w in seen.items() if not w])
+│ +print('only in referee reports:', [u for u, w in seen.items() if w and 'draft' not in w and 'ledger' not in w])
+💻 $ python3 /home/t3rpz/.hermes/profiles/maple/cache/scratch/letter/check.py
+💻 $ cat <<'EOF' import re R='/home/t3rpz/critters/peabrain-lab/' norm=lambda s:' '.join(s.split()) L=norm(open(R+'paper/RESPONSE-LETTER.md').read()) D=open(R+'paper/DRAFT.md').read() full=norm(D) + 3 commands  0.2s
+💻 $ diff <(sed -n '/^## Title/,$p' pub_DRAFT.md) <(sed -n '/^## Title/,$p' /home/t3rpz/critters/peabrain-lab/paper/DRAFT.md) | sed -n '/^1459c/,$p' | cut -c1-170 + 2 commands
+✗ Exec from hermes_tools import read_file [This code is not allowed in an unattended session — it did not run.]
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -30,9 +30,10 @@
+│  - **Section pointers** (§) refer to `paper/DRAFT.md` at sha256 `c60fc1859d94…`
+│    (2,542 lines). That state is local. The public repository head, commit
+│    `0861ad9`, carries the previous stage (sha256 `6ec995bfef95…`, 2,481 lines).
+│ -  From the title onward the two differ only by the single-edge-cut fold: Table
+│ -  3b and its sentences in §2.4, the batch label in §3.7 and two sentences in
+│ -  §4. Every other pointer below resolves in the public commit.
+│ +  From the title onward the two differ only by the single-edge-cut fold (Table
+│ +  3b and its sentences in §2.4, the batch label in §3.7, two sentences in §4)
+│ +  and by one name redacted in §7 of the public copy. Every other pointer below
+│ +  resolves in the public commit.
+│  - **Bracketed keys** such as [l175.scan] are keys of `paper/numbers.json`
+│    (151 keys, sha256 `464e5261317f…`). Every number of ours in this letter is
+│    quoted from that ledger as the draft prints it.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -78,8 +78,8 @@
+│
+│  - §2.11 re-runs the extraction at the matched floor and reproduces your
+│    figures: 342 cells and K = 52, against K = 77 for the female graph
+│ -  [l170.matched]. Its stated status is "untested at matched floor, not 'no
+│ -  ladder'".
+│ +  [l170.matched]. It states the status, in capitals, as untested at a matched
+│ +  floor and not as "no ladder".
+│  - The abstract makes no male claim. §5 says the male connectome is "untested
+│    at a matched floor, not shown to lack the ladder". Round 2 caught two
+│    leftover sentences that contradicted §2.11; both are gone.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -262,11 +262,12 @@
+│  table and that it still says "inert".
+│
+│  Two new figures were commissioned today (`paper/figures/BRIEF_figs.md`): a
+│ -scatter of the scan and a three-readout panel. Files for both exist in
+│ -`paper/figures/` as this letter is written. They are not referenced from the
+│ -draft, no referee has seen them, and no visual check has been run on them. The
+│ -light-background redraw of Figures 1 to 3 from the canonical pools has not
+│ -started.
+│ +scatter of the scan (`paper/figures/fig4_scatter.svg`) and a three-readout
+│ +panel (`paper/figures/fig5_threepanel.svg`), each with a caption file beside
+│ +it. They landed while this letter was being written. They are not referenced
+│ +from the draft, no referee has seen them, and no visual check has been run on
+│ +them. The light-background redraw of Figures 1 to 3 from the canonical pools
+│ +has not started.
+│
+│  **Round-1 tally, our assessment:** resolved 1, 2, 3, 4, 6, 7, 10; partial 5,
+│  8, 9, 11; open 12.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -587,8 +587,8 @@
+│  branch in which the flip follows the cell and not its delivered drive stands
+│  [l175.verdict]. Each limit you attached to it is now in §2.1:
+│
+│ -- the classifier is one-directional and coarse, and "0 of 13 in the high
+│ -  class" is not "0 of 13 affected" (ranks 33 and 34 read 0 of 16);
+│ +- the classifier is one-directional and coarse, and none of 13 in the high
+│ +  class does not mean none of 13 affected (ranks 33 and 34 read 0 of 16);
+│  - the silent-cell null is wide: 2 to 11 structured seeds of 16, mean duty .340
+│    to .605 [l175.null];
+│  - across the 33 non-carrier arms the readout falls as the re-bisected gain
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -791,8 +791,8 @@
+│  | scan (§2.1) | 322 | 1,728 | [l175.certs] |
+│  | replication (§2.2) | 368 and 300 | 2,185 | [l185.certs] |
+│  | relay arms (§2.4) | 322 and 48 | 2,375 | [l187.certs] |
+│ -| gate jitter (§2.5) | 92 | one worker | [l186.power] |
+│ -| edge cut (§2.4) | 92 and 50 | one worker | [l190.certs] |
+│ +| gate jitter (§2.5) | 92 | — | [l186.power] |
+│ +| edge cut (§2.4) | 92 and 50 | — | [l190.certs] |
+│
+│  **Public repository.** github.com/HomunculusLabs/one-cell-at-the-cliff
+│
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -807,8 +807,8 @@
+│
+│  At `0861ad9` the tree holds the results, registrations and scripts of every
+│  experiment cited in this letter (`banc/l175`, `l184`, `l185`, `l186`, `l187`,
+│ -`l190`), all four referee documents with their evidence directories, and the
+│ -prior-art dig. Every claim of fix above resolves at that commit, with these
+│ +`l190`), all four referee documents, the three evidence directories of rounds
+│ +1 to 3, and the prior-art dig. Every claim of fix above resolves at that commit, with these
+│  exceptions:
+│
+│  - Table 3b and its sentences (the single-edge cut) are in the local draft
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -453,9 +453,10 @@
+│    several earlier stages are re-analyses of stored data.
+│  - **Base-arm homogeneity.** You asked whether any batch was discarded or
+│    re-run on the base arm's value. The draft does not answer, and this letter
+│ -  will not improvise an answer. Four later batches read 5, 3, 6 and 5 of 16 on
+│ -  the base [l175.scan, l185.base, l187.base, l190.arms], still inside the 3 to
+│ -  6 range you flagged. The pattern continues and is unexplained.
+│ +  will not improvise an answer. The four later batches whose base count is in
+│ +  the draft read 5, 3, 6 and 5 of 16 [l175.scan, l185.base, l187.base,
+│ +  l190.arms], still inside the 3 to 6 range you flagged. The pattern continues
+│ +  and is unexplained.
+│  - **Related work.** Li et al. (bioRxiv, 2026) and Erickson et al. (Current
+│    Biology, 2026) are not yet cited. Reference 8 still lacks volume and pages.
+│  - **Prose.** §2.1 to §2.5 name arms in words and give each code once per
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -530,7 +530,7 @@
+│  | seeds per arm | 8 | 16 | 16, fresh batch |
+│  | cells removed | 56: 13 silent cohort cells, the carrier, 35 other active cells, and 7 barely active ones left out of the table | 34 window cells and 2 drive twins | carrier, mass twin, 2 drive twins, 2 edge-of-band cells, 1 signed-current twin |
+│  | selection fixed before the run | not stated | yes, with hash | yes, with hash |
+│ -| base | 3/16 | 5/16, .408 | 3/16, .370 |
+│ +| base | 3/16, in its 16-seed reproduction | 5/16, .408 | 3/16, .370 |
+│  | carrier | .72, 8/8 | 16/16, .758 | 15/16 .770 re-matched; 15/16 .683 at the base's gain |
+│  | mass twin | .36 | 2/16, .378 | 4/16 .424; 4/16 .390 |
+│  | silent-cell null | .42 ± .05; all 13 within .34 to .49 | 20 cells: 2 to 11 of 16, mean .340 to .605 | gain-only null: 8 to 2 of 16 over a 1% gain span |
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -835,7 +835,8 @@
+│  7. Citations owed: Honey & Sporns, Luccioli et al., Soloperto et al., Boes et
+│     al., Prinz et al. (2003), Li et al., Erickson et al.; the weight-noise
+│     benchmark of [4]; volume and pages for [8]; author lists for [38] to [45].
+│ -8. Figures: redraw 1 to 3; review and caption the two new ones.
+│ +8. Figures: redraw 1 to 3; check the two new ones by eye and bring them and
+│ +   their captions into the draft.
+│  9. Manuscript form: the changelog banner, the "WORKING DRAFT" heading,
+│     all-caps emphasis and arm codes in §2.6 to §3.
+│  10. Public state: push the stage with Table 3b, this letter and the figures;
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -809,8 +809,8 @@
+│  At `0861ad9` the tree holds the results, registrations and scripts of every
+│  experiment cited in this letter (`banc/l175`, `l184`, `l185`, `l186`, `l187`,
+│  `l190`), all four referee documents, the three evidence directories of rounds
+│ -1 to 3, and the prior-art dig. Every claim of fix above resolves at that commit, with these
+│ -exceptions:
+│ +1 to 3, and the prior-art dig. Every claim of fix above resolves at that
+│ +commit, with these exceptions:
+│
+│  - Table 3b and its sentences (the single-edge cut) are in the local draft
+│    only, with a ledger of 151 keys against the public 145.
+💻 $ python3 check.py | grep -vE '^QUOTE not' + 6 commands  0.2s
+💻 $ ls banc/l137/results_l137.json banc/l137/raw_l137.npz banc/l172/stats.out paper/review_fable_evidence_r2/p5_unchopped_and_envelope.py paper/review_fable_evidence_r2/out_p5_unchopped.txt paper/review_fable_evidence_r2/p1_duty_from_raw.py paper/review_fable_evidence_r2/snap1/DRAFT.md.a1848d89 paper/review_fable_evidence_r2/out_p2_stats.txt paper/review_fable_evidence_r2/p2_stats_recompute.py + 4 commands
+
+────────────────────────────────────────
+✿ Miso
+Adding a per-claim "how we verified it" line to each of the seven round-2 items, as the brief asks.
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -298,6 +298,12 @@
+│  Our own lab book called the cell "the SILENT twin" and the draft did not. That
+│  failure is ours.
+│
+│ +- Verified by: reading the stored census (`banc/l137/raw_l137.npz`) by cell
+│ +  id, which reproduced both of your rates; finding the phrase in
+│ +  `LAB-INTENT.md` and the label "near-vacuous" on the twin's clamp arm in
+│ +  `banc/l137/results_l137.json`. Your figures are intact-network rates. The
+│ +  third referee pointed out that the rate on the cut base is the one that
+│ +  matters, and that is the one the ledger now carries.
+│  - The experiment you specified was run: each of the 34 window cells removed
+│    one at a time from the 24-cell base, 16 seeds per arm, with a census of each
+│    cell's rate on that base, plus two delivered-drive twins chosen by a rule
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -329,6 +329,11 @@
+│
+│  You were right: we had taken up the half that helped.
+│
+│ +- Verified by: re-running your
+│ +  `paper/review_fable_evidence_r2/p5_unchopped_and_envelope.py`, whose output
+│ +  was identical to your stored `out_p5_unchopped.txt` for every arm, and
+│ +  auditing the duty implementation in `p1_duty_from_raw.py` against our
+│ +  convention.
+│  - §2.6, Table 4 re-scores the whole cohort ladder in the continuous segment on
+│    the canonical pools. It uses your stored per-seed rows
+│    (`paper/review_fable_evidence_r2/out_duty_rows.json`), admitted only because
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -361,6 +361,10 @@
+│
+│  You were right on all four legs.
+│
+│ +- Verified by: reading the weight construction in `banc/l135_run.py` and the
+│ +  header of `banc/build_graph_banc.py` against the Methods sentence in the
+│ +  snapshot you reviewed. The run code and the draft disagreed, and the code is
+│ +  what ran.
+│  - Weights. §3.1 withdraws the sentence in so many words: "An earlier draft
+│    stated that weights were in-degree normalized. That sentence described no
+│    code that was run and is withdrawn." The weight is the natural logarithm of
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -391,6 +391,8 @@
+│
+│  You were right.
+│
+│ +- Verified by: reading the three lines you cited in the stored snapshot
+│ +  (`paper/review_fable_evidence_r2/snap1/DRAFT.md.a1848d89`).
+│  - Male ladder: fixed (round 1, item 2).
+│  - "9.72× below any band in which mass alone reproduces the step": withdrawn
+│    from the abstract, §1 and §5. It survives only in §2.9 as a ratio of two
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -412,6 +412,8 @@
+│  McNemar p is .0895 and the paired mean duty difference is +.048
+│  [l172.paired_twin].
+│
+│ +- Verified by: re-running your `p2_stats_recompute.py` to identical output,
+│ +  then deriving the same table in our own extractor from the per-seed rows.
+│  - §3.7 makes the paired test primary wherever two arms share seeds, and says
+│    pooled-margin tests "are not used to claim an effect of a deletion".
+│  - §2.7 says the twin-versus-base difference "is therefore not resolved on
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -428,6 +428,9 @@
+│
+│  You were right.
+│
+│ +- Verified by: our own `banc/l172/stats.out`, which already read 41/50 for
+│ +  that arm while the abstract printed the other pool; and the pool-rate block
+│ +  of your re-run `out_p2_stats.txt`.
+│  - Both scramble counts now appear with labels: 39/48 on the cohort's own fresh
+│    batches, 41 of 50 on the canonical pool (§1, §2.7). The abstract uses the
+│    canonical one.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -442,9 +442,9 @@
+│
+│  ### 7. The rate-ceiling cells. Confirmed; folded.
+│
+│ -§3.1 says some deafferented descending neurons are silent and some sit near
+│ -the ceiling, and gives the two window cells with mean rates 1.000 and .994 on
+│ -the base [l175.scan].
+│ +Verified in the same stored census as item 1. §3.1 says some deafferented
+│ +descending neurons are silent and some sit near the ceiling, and gives the two
+│ +window cells with mean rates 1.000 and .994 on the base [l175.scan].
+│
+│  ### 8. N5, seed-level certainty and network-level fragility. Right; partial.
+│
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -601,7 +601,7 @@
+│  You reproduced the historical pools from raw traces and upheld the round-2
+│  adjudication, with the refinement recorded above (re-runs and checks, not
+│  seven replications). Your reminder that these are "intervals for noise seeds
+│ -on a specified model" is the wording of §2.14 and §4.
+│ +on a specified model" is the position of §2.14 and §4.
+│
+│  ### 2. The scan decision (D2), independently confirmed
+│
+💻 $ python3 check.py | grep -vE '^QUOTE not' + 5 commands  0.2s
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -412,7 +412,8 @@
+│  McNemar p is .0895 and the paired mean duty difference is +.048
+│  [l172.paired_twin].
+│
+│ -- Verified by: re-running your `p2_stats_recompute.py` to identical output,
+│ +- Verified by: re-running your
+│ +  `paper/review_fable_evidence_r2/p2_stats_recompute.py` to identical output,
+│    then deriving the same table in our own extractor from the per-seed rows.
+│  - §3.7 makes the paired test primary wherever two arms share seeds, and says
+│    pooled-margin tests "are not used to claim an effect of a deletion".
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -431,7 +431,7 @@
+│
+│  - Verified by: our own `banc/l172/stats.out`, which already read 41/50 for
+│    that arm while the abstract printed the other pool; and the pool-rate block
+│ -  of your re-run `out_p2_stats.txt`.
+│ +  of your re-run `paper/review_fable_evidence_r2/out_p2_stats.txt`.
+│  - Both scramble counts now appear with labels: 39/48 on the cohort's own fresh
+│    batches, 41 of 50 on the canonical pool (§1, §2.7). The abstract uses the
+│    canonical one.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md
+│ paper/RESPONSE-LETTER.md
+│ @@ -332,8 +332,8 @@
+│  - Verified by: re-running your
+│    `paper/review_fable_evidence_r2/p5_unchopped_and_envelope.py`, whose output
+│    was identical to your stored `out_p5_unchopped.txt` for every arm, and
+│ -  auditing the duty implementation in `p1_duty_from_raw.py` against our
+│ -  convention.
+│ +  auditing the duty implementation in `p1_duty_from_raw.py` (same directory)
+│ +  against our convention.
+│  - §2.6, Table 4 re-scores the whole cohort ladder in the continuous segment on
+│    the canonical pools. It uses your stored per-seed rows
+│    (`paper/review_fable_evidence_r2/out_duty_rows.json`), admitted only because
+
+────────────────────────────────────────
+✿ Miso
+Now the one LAB-INTENT append (atomic >>, since the figures agent is appending to the same file concurrently), then a final integrity check.
+────────────────────────────────────────
+
+✍️ Write /home/t3rpz/.hermes/profiles/maple/cache/scratch/letter/labintent_append.txt
+│ profiles/maple/cache/scratch/letter/labintent_append.txt
+│ @@ -0,0 +1,3 @@
+│ +
+│ +
+│ +Response letter dispatch (2026-11-21 ~14:3x, owner-directed) — paper/RESPONSE-LETTER.md drafted: four reviewer sections (round 1 fable, round 2 fable, claude.ai second opinion, round 3 astra) + closing. Every fix carries a section pointer into DRAFT.md sha c60fc1859d94 and an artifact path; numbers quoted from numbers.json sha 464e5261317f as the draft prints them; referee figures marked as such. Mechanical check (scratch, not kept): 55 ledger keys all present, every cited path exists, 29 section pointers all resolve, every quoted draft sentence verbatim in the body. Seven gates re-run 14:10 EST on that state, all exit 0. Round-1 tally as assessed for the letter: resolved 1/2/3/4/6/7/10, partial 5/8/9/11, open 12. Found while writing, NOT fixed (out of scope: letter-only writes): (1) public README at 0861ad9 still carries the retired title and retired claims; (2) raw traces of L175/L185/L186/L187/L190 are not public (release has four anchor npz only), so the second opinion's "traces not in the repo" was closer to right than our provenance note; (3) stale old-title sentences in the renumbered lineage sections (sec 1 result 2, 1(c), 2.6 opening, 2.7, 2.8 rank 34/58, 2.9, 2.10 BROADER/NEUTRAL, 2.12 "the claim the title makes", 2.14(a), sec 6 "private tree", sec 7) — all pass the gates; (4) astra's prior art (Honey & Sporns, Luccioli, Soloperto, Boes, Prinz 2003) and round-2's Li / Erickson not yet cited; (5) stage-7 draft, this letter and figures 4/5 are local only. No draft, ledger, gate or figure file touched; no rollouts.
+💻 $ python3 /home/t3rpz/.hermes/profiles/maple/cache/scratch/letter/check.py | grep -E 'KEYS|PATHS|SECS|not found' | cut -c1-200 + 9 commands  0.1s
+
+────────────────────────────────────────
+✿ Miso
+Letter's done, Chief ♪ — /home/t3rpz/critters/peabrain-lab/paper/RESPONSE-LETTER.md (871 lines, four reviewer sections plus closing).Checked: all 55 ledger keys, every cited path and section pointer resolve, and quoted draft sentences are verbatim. All seven gates exit 0 on the current draft; draft, ledger and gate files are untouched. One LAB-INTENT append made.
+
+Round-1 tally as I assessed it: resolved 1/2/3/4/6/7/10, partial 5/8/9/11, open 12 (figures).Things the letter admits that you should know (none fixed, letter-only scope):- The public README still shows the retired title and claims.
+- Raw traces for today's experiments aren't public, so the second opinion was closer to right than our note.
+- Stale old-title sentences survive in §2.6–§2.14, §6 and §7, and pass every gate.
+- Astra's five prior-art papers, plus Li and Erickson, are still uncited.- The Table 3b draft, this letter and figures 4/5 are local only.
+
+Your call: whether §2.1 cites the second opinion's scan (｡•̀ᴗ-)✧
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-b2d9d1797112161cbf16b815a69acd8d3ef5eed38fe1f1db18053d482da38b1c -p maple
+
+Session:        local-b2d9d1797112161cbf16b815a69acd8d3ef5eed38fe1f1db18053d482da38b1c
+Duration:       14m 30s
+Messages:       106 (1 user, 104 tool calls)

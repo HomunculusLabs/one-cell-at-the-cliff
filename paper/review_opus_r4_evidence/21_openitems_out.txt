@@ -1,0 +1,124 @@
+########################################################################
+# A. THE 1% WEIGHT-JITTER ENSEMBLE, PER SET (round-1 major 5, round-2 N5)
+########################################################################
+source: banc/l139/results_l139.json:sets   (kR of 16 per arm per set)
+
+ set       full      cutwA    cutng25   cutng25p    cutng29    cutng23   carrier-vs-base   carrier-vs-twin
+   0  8/16 REF   3/16 PART 14/16 SUPE  9/16 NEUT 16/16 SUPE  0/16 KILL   +11 seeds        +5 seeds
+   1  7/16 REF  10/16 NEUT 16/16 SUPE 13/16 OTHE 15/16 SUPE  1/16 KILL    +6 seeds        +3 seeds
+   2  6/16 REF   0/16 OTHE 16/16 SUPE  5/16 PART 13/16 SUPE  0/16 KILL   +16 seeds       +11 seeds
+   3  4/16 REF   3/16 OTHE 13/16 SUPE  6/16 PART 15/16 SUPE  1/16 KILL   +10 seeds        +7 seeds
+   4  9/16 REF   1/16 KILL 14/16 SUPE  0/16 KILL  9/16 NEUT  0/16 KILL   +13 seeds       +14 seeds
+   5  4/16 REF  15/16 SUPE 13/16 SUPE 13/16 SUPE 13/16 SUPE  0/16 OTHE    -2 seeds        +0 seeds
+
+Registered-class summary the draft §2.10 gives:
+  cutng25   SUPER        -> 5/5 sustained  classes={'1': 'SUPER', '2': 'SUPER', '3': 'SUPER', '4': 'SUPER', '5': 'SUPER'}
+  cutng23   KILL         -> 4/5 sustained  classes={'1': 'KILL', '2': 'KILL', '3': 'KILL', '4': 'KILL', '5': 'OTHER'}
+  cutng29   SUPER        -> 4/5 sustained  classes={'1': 'SUPER', '2': 'SUPER', '3': 'SUPER', '4': 'NEUTRAL-INT', '5': 'SUPER'}
+  cutwA     PARTIAL      -> 0/5 sustained  classes={'1': 'NEUTRAL-INT', '2': 'OTHER', '3': 'OTHER', '4': 'KILL', '5': 'SUPER'}
+  cutng25p  NEUTRAL-INT  -> 0/5 sustained  classes={'1': 'OTHER', '2': 'PARTIAL', '3': 'PARTIAL', '4': 'KILL', '5': 'SUPER'}
+
+WHAT §2.10 DOES NOT SAY (my reading):
+  set 1: base 10/16 NEUTRAL-INT, twin 13/16 OTHER, carrier 16/16 SUPER  <-- title contrast degraded or absent
+  set 5: base 15/16 SUPER, twin 13/16 SUPER, carrier 13/16 SUPER  <-- title contrast degraded or absent
+  base kR across sets: [3, 10, 0, 3, 1, 15]  (draft §2.10 quotes only 'wA PARTIAL 0/5')
+  twin kR across sets: [9, 13, 5, 6, 0, 13]
+  carrier kR across sets: [14, 16, 16, 13, 14, 13]
+
+########################################################################
+# B. TABLE 4: is the continuous ladder really monotone? (fresh major)
+########################################################################
+arm              k/n   prop         Wilson 95%   draft Table 4 interval
+b65         513/513   1.000   [0.993,1.000]   [.993,1.000]
+full          0/513   0.000   [0.000,0.007]   [.000,.007]
+cutk5         0/226   0.000   [0.000,0.017]   [.000,.017]
+cutng19       0/178   0.000   [0.000,0.021]   [.000,.021]
+cutng23       0/82    0.000   [-0.000,0.045]   [.000,.045]
+cutwA         0/258   0.000   [0.000,0.015]   [.000,.015]
+cutng25p      0/66    0.000   [0.000,0.055]   [.000,.055]
+cutng25     132/210   0.629   [0.561,0.691]   [.561,.691]
+cutng29     108/194   0.557   [0.486,0.625]   [.486,.625]
+cut58       186/258   0.721   [0.663,0.772]   [.663,.772]
+cutscr0       9/50    0.180   [0.098,0.308]   [.098,.308]
+
+the draft claims the window (non-monotonicity) is CHOPPED-SPECIFIC.
+but in the CONTINUOUS column the ladder is also non-monotone:
+  k=25 (132/210=.629) vs k=29 (108/194=.557): difference +0.072 [-0.024,+0.166]  -> NOT resolved, so non-monotone but not demonstrably so
+  k=58 (186/258=.721) vs k=29 (108/194=.557): difference +0.164 [+0.075,+0.251]  -> resolved rise
+  b65 (513/513) vs closure (0/513):          difference +1.000 [+0.989,+1.000]  -> the biggest effect in the paper is ADDING the projectors
+
+########################################################################
+# C. HOW MANY ACTIVE CELLS MOVE THE READOUT AT ALL? (second-opinion follow-up)
+########################################################################
+base = 5/16, meanR 0.408. The 14 active window cells, by paired dR_vs_wA:
+  sc34   rank 34 DNp53     sign+1 drive x0.85  kR= 0/16 meanR=0.210  dR_vs_base=-0.198  up/dn=0/9
+  sc33   rank 33 DNp44     sign+1 drive x0.27  kR= 0/16 meanR=0.270  dR_vs_base=-0.138  up/dn=0/5
+  sc41   rank 41 DNge043   sign-1 drive x4.16  kR= 3/16 meanR=0.297  dR_vs_base=-0.111  up/dn=2/6
+  sc47   rank 47 DNge101   sign-1 drive x1.52  kR= 2/16 meanR=0.297  dR_vs_base=-0.110  up/dn=1/5
+  sc49   rank 49 DNge084   sign-1 drive x0.34  kR= 2/16 meanR=0.310  dR_vs_base=-0.097  up/dn=2/5
+  sc58   rank 58 DNpe004   sign+1 drive x0.57  kR= 3/16 meanR=0.316  dR_vs_base=-0.091  up/dn=2/7
+  sc35   rank 35 DNg56     sign-1 drive x2.01  kR= 2/16 meanR=0.361  dR_vs_base=-0.047  up/dn=4/5
+  sc37   rank 37 DNp44     sign+1 drive x0.78  kR= 4/16 meanR=0.368  dR_vs_base=-0.040  up/dn=3/5
+  sc54   rank 54 DNp64     sign+1 drive x0.22  kR= 3/16 meanR=0.401  dR_vs_base=-0.007  up/dn=2/3
+  sc31   rank 31 DNge141   sign-1 drive x1.65  kR= 4/16 meanR=0.435  dR_vs_base=+0.027  up/dn=3/1
+  sc53   rank 53 DNp15     sign+1 drive x1.46  kR= 9/16 meanR=0.483  dR_vs_base=+0.075  up/dn=4/1
+  sc50   rank 50 DNge006   sign+1 drive x1.86  kR= 9/16 meanR=0.526  dR_vs_base=+0.119  up/dn=7/0
+  sc39   rank 39 DNg56     sign-1 drive x1.49  kR=11/16 meanR=0.547  dR_vs_base=+0.139  up/dn=6/0
+  sc25   rank 25 DNp33     sign+1 drive x1.00  kR=16/16 meanR=0.758  dR_vs_base=+0.351  up/dn=12/0
+
+  active cells moving duty UP   by >.05: 4  ['sc25', 'sc39', 'sc50', 'sc53']
+  active cells moving duty DOWN by >.05: 6  ['sc33', 'sc34', 'sc41', 'sc47', 'sc49', 'sc58']
+  the draft §2.1 mentions only ranks 33 and 34 as opposite-direction movers
+  SILENT cells moving UP by >.05: 10/20  ['sc27', 'sc30', 'sc40', 'sc44', 'sc45', 'sc46', 'sc48', 'sc52', 'sc55', 'sc57']
+  SILENT cells moving DN by >.05: 2/20  ['sc36', 'sc38']
+
+########################################################################
+# D. THE 'SILENT' LABEL (fresh major)
+########################################################################
+§2.1: 'Removing any one of the 20 silent cells, which deliver essentially nothing'
+§3.4: 'A cell counts as active when x > 0.05' -- so 'silent' here means x <= 0.05,
+      which is the OPERATING-POINT bar, not a statement about delivered drive.
+
+8 of the 20 'silent' cells fire well above numerical zero:
+  sc27   rank 27 x̄=0.0408 (10.5% of carrier's rate) drive x0.115  kR=11/16 meanR=0.596
+  sc40   rank 40 x̄=0.0343 ( 8.8% of carrier's rate) drive x0.194  kR=11/16 meanR=0.605
+  sc38   rank 38 x̄=0.0243 ( 6.3% of carrier's rate) drive x0.065  kR= 3/16 meanR=0.340
+  sc52   rank 52 x̄=0.0201 ( 5.2% of carrier's rate) drive x0.076  kR= 8/16 meanR=0.506
+  sc45   rank 45 x̄=0.0200 ( 5.1% of carrier's rate) drive x0.050  kR= 4/16 meanR=0.462
+  sc30   rank 30 x̄=0.0194 ( 5.0% of carrier's rate) drive x0.099  kR=10/16 meanR=0.531
+  sc56   rank 56 x̄=0.0171 ( 4.4% of carrier's rate) drive x0.060  kR= 5/16 meanR=0.407
+  sc48   rank 48 x̄=0.0075 ( 1.9% of carrier's rate) drive x0.032  kR= 9/16 meanR=0.497
+
+the two 'edge-of-band' arms the draft singles out (ranks 27 and 40) are the TOP TWO
+of this subgroup by rate -- i.e. the arms closest to the SUPER band inside the
+'silent-cell null' are the least silent members of it.
+
+  12 genuinely near-zero cells: kR 2-11, meanR 0.355-0.489
+  8 sub-threshold-active cells: kR 3-11, meanR 0.340-0.605
+  -> the quoted null width (2-11 seeds, .340-.605) is set at its TOP by the
+     sub-threshold-active members, not by inert deletions.
+
+########################################################################
+# E. EDGE-CUT 60% AND THE 'DOUBLE DISSOCIATION IN A LIMITED SENSE'
+########################################################################
+§2.4 Table 3b point estimates, as printed in the draft:
+  base      5/16 .402      --
+  sc25     15/16 .772   +.370 [+.257,+.483]   1.4Hz 8/16 .488
+  E-edge   12/16 .624   +.223 [+.082,+.364]   1.4Hz 0/16 .000
+  E-sham    5/16 .421   +.020 [-.094,+.133]   1.4Hz 0/16 .002
+
+the draft's '60%' = .223/.370 point ratio, 'and that ratio has no interval'.
+a referee CAN put an interval on it from the printed CIs, pessimistically:
+  ratio of point estimates           = 0.603
+  lo/hi bound from the two CIs       = 0.170 .. 1.416   (i.e. 17% to >100%)
+  -> '60%' is one draw inside a range that spans 'a sixth of it' to 'all of it'.
+     The draft says the ratio has no interval but then uses 60% twice as a
+     quantitative mechanism statement ('about 60% of the carrier's shift').
+
+the dissociation's second leg (1.4 Hz appears only with the whole carrier gone):
+  E-edge 0/16 vs sc25 8/16 on shared seeds -> that leg is clean on this batch.
+  but both legs are ONE batch of 16 at RE-BISECTED gains only (no fixed-gain form),
+  and the edge arm's gain is -0.358%, which by §2.2's own slope (-.0228/+0.1%)
+  predicts a duty rise of +0.082 from gain ALONE -- against an
+  observed +.223. So gain could account for 37% of the edge-cut effect.
+  The draft states this risk in prose but does not do the subtraction.

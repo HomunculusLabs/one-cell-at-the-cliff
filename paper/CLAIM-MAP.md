@@ -15,6 +15,7 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 | §2.2 replication, gain-only null, signed-current twin (Table 2) | the contrast replicates at fixed and re-matched gain; neither edge-of-band cell promotes; the base moves between 8 and 2 of 16 on gain alone; the signed-current twin does not flip | l185.base l185.r1 l185.r2 l185.r3 l185.meta l185.certs l185.branches l187.sc40_pooled | B45 |
 | §2.3 shared timing, not rate | cross-seed pairing, pool rates, harmonic amplitudes, template subtraction, anatomy of the carrier's outputs | l184.threepanel l184.q1 l184.q1_twins l184.q3 l184.q3_ratios l184.sens l184.anatomy l184.design | B44 |
 | §2.4 the downstream interneuron (Table 3) | relay cut / clamp, push-pull, occlusion: neither registered pole; the 1.4-Hz panel separates carrier-absent from carrier-present arms | l187.base l187.arms l187.contrasts l187.fast l187.relay l187.relay_rate l187.g74914_rate l187.gain_slopes l187.meta l187.certs l187.branches l187.sc25_pooled | B47 |
+| §2.4 the single-edge cut (Table 3b) + §3.7 batch R + §4 (L190b follow-up fold) | cutting only the carrier-to-relay edge (21 synapses) reaches the registered super band on the chopped readout (12/16, about 60% of the carrier's paired shift by point ratio) with zero 1.4-Hz signature; the count-matched sham edge (22 synapses, sole eligible candidate) is base-like; double dissociation stated in its limited sense; one batch, re-bisected gains only, no fixed-gain form | l190.arms l190.summary l190.selection l190.gain l190.meta l190.certs l187.contrasts l185.r2 l175.bands | B49, B47 |
 | §2.5 which clock (gate-jitter) | UNRESOLVED and underpowered by construction (window overlap) | l186.means l186.contrasts l186.branch l186.power l186.phase | B46 |
 | §2.6 Table 4 + §2.7 paired twin + §3.1 substrate and weights | the ladder in the continuous segment; paired McNemar on the twin's own seeds; the deafferented closure; signed log1p weights with the glutamate override | l183.ladder_fast l183.ladder_fast_meta l172.paired_twin l92.substrate l135.weights | B48 |
 
@@ -1351,6 +1352,37 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
   `paper/review_claudeai_fable_20261121.md`, `paper/priorart_terra_20261121.md`
 - gate: `paper/l183_verify.py` (fold replay from the stored pre-image
   `banc/l174b4iiic/draft_post_preview.md`) and `paper/l174_verify.py` (7)
+
+### B49 — L190: the single-edge cut carrier -> relay and its count-matched sham (one fresh batch, seeds 3641-3656)
+
+- claim: removing only the carrier's 21-synapse edge onto the relay, with
+  both cells and every other edge in place, gives 12 of 16 structured seeds
+  at mean .624 (+.223 [+.082, +.364] above the base on the same seeds), which
+  meets the registered super band at its count floor, and leaves the
+  continuous 1.4-Hz duty at .000 (carrier removal: .488) — the registered
+  partial branch, not a copy of carrier removal; the count-matched sham edge
+  onto the same relay (22 synapses, the sole candidate the registered rule
+  admitted) reads 5 of 16 at .421, base-like by the registered rule (a point
+  estimate, not an equivalence test)
+- claim (reading, stated in its limited sense): with the relay arms of B47
+  the two readouts dissociate — the chopped component is reproduced in
+  substantial part by one bottleneck edge (point ratio .602 of the carrier's
+  paired shift, no interval), the 1.4-Hz signature appears only when the
+  whole carrier is removed
+- NOT claimed: a necessary route; a separation of the deletion from its gain
+  adjustment (both edited graphs were re-bisected, edge -0.358%, and no
+  fixed-gain form was run); specificity beyond the one eligible sham edge;
+  replication (one batch)
+- keys: l190.arms l190.summary l190.selection l190.gain l190.meta l190.certs
+- prereg: `banc/l190/PREREG.md` (+ `banc/l190/PREREG.sha256`)
+- artifacts: `banc/l190/results_l190.json`, `banc/l190/selection.json`,
+  `banc/l190/L190-FINDINGS.md`
+- fold: stage 7 of the declared ledger `paper/l183_text.py` (edits E30-E33)
+  and the table builder in `paper/l183_fold.py`; brief
+  `banc/l190b_BRIEF_fold.md`, worklog `banc/l190b_worklog.md`
+- gate: `paper/l183_verify.py` (5) recounts all four arms from the stored
+  per-seed rows, re-applies the registered branch rules and proves each
+  sentence-level reading; `paper/l174_verify.py` (7) pins the added key set
 
 ## How to re-verify the whole package
 

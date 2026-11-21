@@ -9033,3 +9033,104 @@ L190/L191/L192 carded as ideas 96.
 Duck lesion dispatch (offline): 4/8 intact hides, 0/8 with the looming pool clamped; no decision flips across 91 single-cell clamps. Scope and evidence: ducklesion/DUCK-FINDINGS.md.
 
 L190 single-edge cut — B3-partial. Removing 1110→75494 on the rematched k=24 base raised chopped right-tibia duty (+.223 paired, 95% CI +.082 to +.364), without the carrier-cut 1.4-Hz signature. Matched sham 48→75494 was base-like. Anchors exact; n=16 each. Evidence: banc/l190/L190-FINDINGS.md and results_l190.json. No fixed-gain inference.
+
+Fig. 5 delivered (BRIEF_figs.md): paper/figures/fig5_threepanel.{py,svg,png} + fig5_caption.md. Grouped dot plot, all 37 arms x three readouts (chopped 0.7-Hz gate / continuous 1.4 Hz / cross-seed) straight from banc/l184/threepanel.csv, rows sorted by chopped duty, carrier/twins/boundary/base rows highlighted per results_l175.json identities. Generator asserts every drawn value against the stored csv before drawing, then re-parses the emitted SVG and re-derives all 111 dot positions, row order and k-columns; PNG rendered with rsvg-convert (1330x830, dims checked). No values missing; no recomputation; no Figure-4 files touched. Evidence: paper/figures/fig5_threepanel.py self-verification output.
+
+## L176 stage (a) — the field's composite antiphase metric, run on our stored traces (tick 217, 2026-11-21, ZERO rollouts)
+
+INTENT: Guba et al. (arXiv 2611.22639v1) report that a composite antiphase
+score beats phase-only PLV (AUC .766 vs .741) with essentially all the
+discriminative weight on AMPLITUDE BALANCE (w_amp ~ .963) plus an
+envelope-peak gate. Our structure metric S = -corr(flexor, extensor) has
+NEITHER term. So: do our published rank orderings and our carrier-vs-twin
+identity claim survive a field-standard instrument? Stored traces only,
+no rollouts, PREREG first (banc/l176/PREREG.md).
+
+WHAT THE SOURCE ACTUALLY PUBLISHES (read off arxiv.org/html/2611.22639v1
+this tick, NOT the digest — the card's "fix the weights to their published
+values" turned out to be unexecutable as written): only w_amp ~ .963 is
+published. w_plv, w_ph, alpha, the formulas for A and Ph, and the
+peak-detection rule are NOT. The field-standard instrument is
+UNDER-SPECIFIED in its own paper. Every missing piece therefore became a
+DECLARED CONVENTION pinned in the PREREG before computing, with a
+sensitivity ladder (4 weight splits x 4 alphas x 2 bands) reported, never
+selected from. METHOD LAW: before registering "we fix the parameters to
+their published values", open the source and check that the published set
+is complete; if it is not, the honest form is a declared reconstruction
+plus a ladder, and the under-specification is itself a reportable fact.
+
+CERT (L85 rule, ran first, halt-on-mismatch): my re-implementation of the
+stored metric reproduced 176/176 stored kL/kR/meanL/meanR values across
+l135 (13 table arms) and l169 (9), pairs Ti+Tr, 16-seed batches, including
+the rounding path (round per seed to 3, mean of rounded, round to 3).
+Zero failures. Input npz mtimes asserted unchanged at the end.
+
+FINDING 1 — THE PUBLISHED GATE IS NOT TRANSPORTABLE. g(P) = exp(-alpha *
+max(0, P-2)) penalises more than 2 envelope peaks per window. On our
+substrate P > 2 in >= 94.7% of windows for EVERY one of 176 arm/pair/band/
+side cells, with Pmean 9.3-28.1 peaks per 500-step (5 s) window at the
+declared 25%-of-range prominence floor, so g <= .094 and the published-form
+composite collapses to <= .0021 for every arm — a near-constant annihilator
+that carries no information. Their gate was calibrated on clean
+half-center CPG bursts (~2 per window); a 20k-cell cord's pool envelope is
+not that. ADDENDUM 1 (registered in-run) reads the PREREG's alpha = 0 rung,
+which is EXACT rather than a re-estimate: with the gate off the composite
+is LINEAR in (PLV, A, Ph), so the window-mean composite equals the same
+combination of the stored window-mean components (checked against the
+stored alpha-0 primary means, max err 8.7e-05 = the 4-dp storage bound).
+
+FINDING 2 — THE 1-10 Hz BAND DOES NOT EAT OUR 0.7-Hz SUBSTRATE. Predicted
+(Q1) that the published band would truncate the 0.7-Hz segment fundamental
+and attenuate everything; the band-floor diagnostic is 0.0000 on all 176
+cells. Pool activity carries ample 1-10 Hz power even when the drive
+fundamental sits below the band, so the band is a RATIO lever (it moves
+magnitudes and ranks: l169 Ti_R gate-off rho +.25 published-band vs +.32
+substrate-band) and not a kill. Q1 SCORED WRONG, disclosed; this is the
+L108 lesson in its other direction — an inherited band can be harmless to
+detection while still being wrong for location.
+
+FINDING 3 (PRIMARY CELL) — THE IDENTITY AXIS SURVIVES. Carrier cutwA vs
+its mass-matched twin silW, paired within seed on l169's 16-seed batch,
+gate off, primary weights: 6 of 8 pool-side cells have jackknife CIs
+excluding 0, and ALL 6 of those AGREE IN SIGN with the stored duty delta
+(Ti_L +.021 15/16 seeds; Ti_R -.049 3/16; Tr_R +.183 15-16/16; both bands).
+The carrier and its mass twin are separable under an instrument built from
+amplitude balance, not just under our correlation metric.
+
+FINDING 4 (SECONDARY CELL) — THE LADDER ORDERING DOES NOT, AND THE TERM
+DECOMPOSITION SAYS WHY. Spearman of arm-level composite vs stored duty,
+gate off, primary weights: Ti_L +.75/+.85 (survives), Ti_R +.21/+.35
+(does not), Tr_L -.72/-.49 (INVERTS), Tr_R +.01/+.35. Per-term rho shows
+the inversion is carried by their DOMINANT term: A-only rho -.73 on Tr_L,
+while the phase terms track our S well (Ph-only +.90 to +.995 on the right
+sides, PLV-only +.80/+.87 on Ti_L). Mechanically sensible: our duty counts
+how often the two pools anti-correlate, and an arm can anti-correlate
+cleanly while being grossly amplitude-UNBALANCED (cutng23, duty .089, has
+the HIGHEST amplitude balance .332 of all 13 l135 arms). The registered
+OPPOSITE BRANCH therefore fires in its partial form: the draft gains a
+metric-sensitivity paragraph — the identity claim is instrument-robust,
+the dose/ladder ORDERING is instrument-specific and side/joint-dependent.
+The degenerate branch did NOT fire (A_range .11-.41 across arms, > .05).
+
+PREDICTIONS: Q1 WRONG (band-floor 0.0, disclosed above). Q2 CORRECT (not
+degenerate; amplitude balance carries real across-arm variance). Q3
+CORRECT in both halves (identity sign survives; rank rho positive but
+< .9 on Ti) with one unanticipated extra: it goes NEGATIVE on Tr_L, which
+Q3 did not predict and which is the run's most interesting number.
+Q4 CORRECT and then some (P > 2 is the rule, not the exception).
+
+SCOPE / WHAT IS NOT DONE: l169b2's results table is ARM-keyed rather than
+pair-keyed, so its floor-4 twin pair (f4wA vs f4tw) needs its own CERT
+reader — deferred to stage (b1), not skipped, and declared here so the
+primary cell is not read as covering it. The l65 Ti/Tr reads use a
+different segment/window convention (stage b2) and the male L32
+replication is stage (b3). No draft edit this tick: the L190b manuscript
+child owned paper/DRAFT.md (mtime 14:01) while this ran.
+
+ARTIFACTS: banc/l176/{PREREG.md, comp.py, addendum.py, results_l176a.json,
+results_l176a_addendum.json, run.out}.
+
+Fig. 4 delivered (BRIEF_figs.md): paper/figures/fig4_scatter.{py,svg,png} + fig4_caption.md + fig4_verify.py. The 36-arm scatter (34 L175 window cells sc25–sc58 + dmA/dmC twins) straight from banc/l175/results_l175.json, with L185 fresh-batch overlays for the six key arms and the signed-current s2t (gi 1508) from results_l185.json. X = per-cell x_mean on the k=24 cutwA base (log10, floor 1e-4), Y = meanR; carrier DNp33-L highlighted, four twin families as distinct shapes, cutwA Wilson-95% base band, SUPER threshold dashed at 0.60, and the "7 cells with drive > carrier: none flip" annotation (checked: exactly 7 such cells, 0 SUPER). Generator asserts every drawn value against the stored files before drawing (base Wilson band recomputed, dev < 1e-12; b39 values cross-checked L175 vs L185); fig4_verify.py independently re-parses the emitted SVG and re-derives all 44 marker vertex sets, ties, band edges, ticks and texts from the stored JSONs — 252 checks, all pass. PNG via rsvg-convert (1260x700, dims checked). No Figure-5 files touched (sha256-pinned in the verifier). Evidence: paper/figures/fig4_verify.py output.
+
+
+Response letter dispatch (2026-11-21 ~14:3x, owner-directed) — paper/RESPONSE-LETTER.md drafted: four reviewer sections (round 1 fable, round 2 fable, claude.ai second opinion, round 3 astra) + closing. Every fix carries a section pointer into DRAFT.md sha c60fc1859d94 and an artifact path; numbers quoted from numbers.json sha 464e5261317f as the draft prints them; referee figures marked as such. Mechanical check (scratch, not kept): 55 ledger keys all present, every cited path exists, 29 section pointers all resolve, every quoted draft sentence verbatim in the body. Seven gates re-run 14:10 EST on that state, all exit 0. Round-1 tally as assessed for the letter: resolved 1/2/3/4/6/7/10, partial 5/8/9/11, open 12. Found while writing, NOT fixed (out of scope: letter-only writes): (1) public README at 0861ad9 still carries the retired title and retired claims; (2) raw traces of L175/L185/L186/L187/L190 are not public (release has four anchor npz only), so the second opinion's "traces not in the repo" was closer to right than our provenance note; (3) stale old-title sentences in the renumbered lineage sections (sec 1 result 2, 1(c), 2.6 opening, 2.7, 2.8 rank 34/58, 2.9, 2.10 BROADER/NEUTRAL, 2.12 "the claim the title makes", 2.14(a), sec 6 "private tree", sec 7) — all pass the gates; (4) astra's prior art (Honey & Sporns, Luccioli, Soloperto, Boes, Prinz 2003) and round-2's Li / Erickson not yet cited; (5) stage-7 draft, this letter and figures 4/5 are local only. No draft, ledger, gate or figure file touched; no rollouts.

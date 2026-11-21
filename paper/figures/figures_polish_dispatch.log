@@ -1,0 +1,14 @@
+Query: Polish dispatch (owner request). Read 
+/home/t3rpz/critters/peabrain-lab/paper/figures/BRIEF_polish.md and execute it 
+completely. Numbers frozen; verify scripts stay green.
+📚 Skill peabrain-flybrain
+📖 Read BRIEF_polish.md
+✗ $ git status --short + 1 command [exit 128]
+💻 $ pwd + 4 commands
+
+────────────────────────────────────────
+**Verifying two figures**
+∴ Thought for 0s
+────────────────────────────────────────
+  🔀 [set 1] delegating 2 tasks
+  ✓ [set 1 · 2/2] Implement fig5 portion of /home/t3rpz/cr  (394.36s)

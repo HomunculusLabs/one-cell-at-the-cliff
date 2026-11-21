@@ -10,11 +10,16 @@ Stages follow banc/l183_BRIEF_manuscript.md:
     cite: the bidirectional citation gate forbids either half alone)
   5 Limitations + Discussion (the wet-lab prediction)
   6 references audit (no body text; gate + bib only)
+  7 follow-up fold (L190b, owner-directed): the single-edge cut and its
+    sham enter 2.4 (Table 3b); 3.7 gains the batch label; section 4 drops
+    the two "is not reported here" markers.  Stage-7 edits anchor on text
+    that earlier stages RENDERED, so a moved upstream number breaks the
+    anchor loudly instead of leaving a stale copy.
 
 CURRENT_STAGE is the stage the live draft has reached; l183_verify replays
 the ledger up to it.
 """
-CURRENT_STAGE = 6
+CURRENT_STAGE = 7
 
 EDITS = []
 
@@ -1177,6 +1182,129 @@ rep('E26-verification', 5,
     wrap=False)
 
 
+# =========================================================== STAGE 7 =======
+# L190b follow-up fold (owner-directed, brief banc/l190b_BRIEF_fold.md): the
+# single-edge cut banc/l190 landed while the master fold ran and stage 6 left
+# it out.  Every `old` below is text an EARLIER stage rendered (whole
+# paragraphs, so the 78-column wrap stays deterministic); every new number is
+# a placeholder on the l190.* keys that entered numbers.json first.
+rep('E30-edge-cut', 7,
+    '''Three limits bound this subsection. Every new arm is one batch, and two of
+them sit on a band edge. No relay-matched twin was run, so nothing here says
+how often removing an active inhibitory cord interneuron lifts this readout.
+And the relay arms remove all of the relay's outputs and its response to all
+of its inputs, not the carrier's share alone; a cut of the single
+carrier-to-relay edge is not reported here.''',
+    '''The relay arms remove all of the relay's outputs and its response to all of
+its inputs, not the carrier's share alone. A further fresh batch (batch R,
+{{EM.n_seeds|i}} seeds) therefore cut only the carrier's edge onto the relay,
+an excitatory edge of {{ES.E-edge.syn|i}} synapses, and left both cells and
+every other edge in place. Its control is a sham cut of a count-matched edge
+onto the same relay: {{ES.E-sham.syn|i}} synapses from another excitatory
+descending neuron outside the scan window, the only candidate the registered
+selection rule admitted. Both edited graphs were re-bisected, and the base
+and the carrier-removed graph were re-run on the same seeds.
+
+{{TABLE:edge}}
+
+Table 3b [l190.arms, l190.summary, l190.selection, l190.gain]. The four arms
+share their seeds, and each runs at its own re-matched gain. The contrast
+column is the paired mean difference in chopped duty from the base with its
+95% interval over seeds, and the 1.4-Hz column is the continuous segment of
+Table 3.
+
+**Cutting the one edge raises the chopped duty and leaves the 1.4-Hz panel
+at zero.** The edge cut gives {{kn:EA.edge}} structured seeds at mean
+{{EA.edge.meanR|f3}}, {{ci:EA.edge.vs_base}} above the base. That meets the
+registered super band at its count floor of {{BD.super_kR_min|i}} seeds. The
+point ratio to the carrier's shift on the same seeds
+({{EA.carrier.vs_base.mean|s3}}) is {{EM.edge_share_of_carrier|pc0}}%, and
+that ratio has no interval. The edge cut's 1.4-Hz duty is
+{{EA.edge.meanmid|f3}} against {{EA.carrier.meanmid|f3}} for carrier
+removal, so by the registered rule it reproduces carrier removal in part and
+is not a copy of it. The sham reads {{kn:EA.sham}} at {{EA.sham.meanR|f3}},
+{{ci:EA.sham.vs_base}} from the base. That is base-like by the registered
+rule, which describes the point estimate and is not a test of equivalence
+[l190.arms, l190.meta].
+
+**The two readouts dissociate in both directions.** Removing the relay, or
+only the edge that links the carrier to it, raises the chopped duty and
+leaves the 1.4-Hz panel at the base's level. Removing the carrier with the
+relay already gone adds the whole 1.4-Hz signature and a smaller chopped
+increment, which is resolved at re-matched gains and not at the base's gain.
+Read together this is a double dissociation in a limited sense. The chopped
+component is reproduced in substantial part by cutting one bottleneck edge,
+about {{EM.edge_share_of_carrier|pc0}}% of the carrier's shift by point
+ratio. The 1.4-Hz signature appears only when the whole carrier is removed:
+no graph that keeps the carrier shows it in either batch, the edge cut
+included. The statement compares two readouts across two batches, and it
+does not show that the edge is a necessary route.
+
+Four limits bound this subsection. Every new arm is one batch, and three of
+them sit on a band edge. No relay-matched twin was run, so nothing here says
+how often removing an active inhibitory cord interneuron lifts this readout.
+The edge and sham arms exist only at re-bisected gains,
+{{EA.edge.gain_delta_pct|sp3}}% for the edge cut and
+{{EA.sham.gain_delta_pct|sp3}}% for the sham. On the base a lower gain
+raises the duty by itself ({{R2.slope_meanR_per_0p1pct|s4}} per +0.1%,
+§2.2), so without a fixed-gain form the deletion is not separated from its
+gain adjustment. And the sham is the one eligible edge, so it shows that
+this edge differs from that one, not from large edges onto the relay in
+general.''',
+    'fold the single-edge cut + count-matched sham into 2.4 (Table 3b), state '
+    'the double dissociation with its limits, remove the "is not reported '
+    'here" marker; "two of them sit on a band edge" becomes three (the edge '
+    'cut sits on the count floor), checked in l183_verify (5)',
+    wrap=True)
+
+rep('E31-batch-label', 7,
+    '''Four further batches carry the single-cell experiments of §2.1 to §2.5 and
+continue the same labelling scheme: M = B39 (the scan), N = B40 (the
+replication, the gain-only null and the signed-current twin), P = B41 (the
+relay arms) and Q, the gate-jitter batch, which has no internal run code and
+is identified by its seeds (18601 to 18616).''',
+    '''Five further batches carry the single-cell experiments of §2.1 to §2.5 and
+continue the same labelling scheme: M = B39 (the scan), N = B40 (the
+replication, the gain-only null and the signed-current twin), P = B41 (the
+relay arms), Q, the gate-jitter batch, and R, the single-edge batch of §2.4.
+Neither Q nor R has an internal run code: Q is identified by its seeds
+(18601 to 18616) and R by its own ({{EM.seed_lo|i}} to {{EM.seed_hi|i}}).''',
+    'the single-edge batch gets the next label in the declared scheme (R) '
+    'and, like Q, is identified by its seed range (it has no internal run '
+    'code); "Four further batches" becomes five',
+    wrap=True)
+
+rep('E32-limits-single-batch', 7,
+    '''Single-batch classes: the scan's class labels for the non-carrier arms rest on
+one batch of 16 seeds each. The silent-cell null is wide enough (2 to 11
+structured seeds of 16) that an individual label can move on a second batch,
+as the rank-27 cell's did (§2.2). The carrier, the mass twin, both drive
+twins, the two edge-of-band cells and the base are the only single-cell arms
+with a second batch; the relay, push-pull and occlusion arms and the
+signed-current twin have one. Statements about those arms are statements about
+a batch mean.''',
+    '''Single-batch classes: the scan's class labels for the non-carrier arms rest on one batch of 16 seeds each. The silent-cell null is wide enough (2 to 11 structured seeds of 16) that an individual label can move on a second batch, as the rank-27 cell's did (§2.2). The carrier, the mass twin, both drive twins, the two edge-of-band cells and the base are the only single-cell arms with a second batch; the relay, push-pull and occlusion arms, the single-edge cut and its sham, and the signed-current twin have one. Statements about those arms are statements about a batch mean.''',
+    'the single-edge cut and its sham are single-batch arms; the list of '
+    'such arms in section 4 must name them',
+    wrap=True)
+
+rep('E33-limits-edge', 7,
+    '''No relay-matched twin: the downstream interneuron of §2.4 reaches the super
+band on the chopped readout when removed, and nothing here says how often
+removing an active inhibitory cord interneuron does the same. The identity
+statement is scoped to descending window cells and their twins, and the
+chopped classifier alone is not specific to the carrier. A cut of the single
+carrier-to-relay edge is not reported here.''',
+    '''No relay-matched twin: the downstream interneuron of §2.4 reaches the super band on the chopped readout when removed, and nothing here says how often removing an active inhibitory cord interneuron does the same. The identity statement is scoped to descending window cells and their twins, and the chopped classifier alone is not specific to the carrier. The cut of the single
+carrier-to-relay edge (§2.4) has a count-matched sham, but it is one batch at
+re-bisected gains with one eligible sham edge and no fixed-gain form. It does
+not separate the deletion from its gain adjustment, and it does not show that
+the edge is a necessary route.''',
+    'section 4 said the single-edge cut "is not reported here"; it is now '
+    'reported, so the sentence states what that arm does not establish',
+    wrap=True)
+
+
 # ------------------------------------------------------------------ banner
 # Appended to the changelog banner (the banner is outside the replayed body;
 # l183_verify requires the old banner as an exact prefix and this entry after
@@ -1242,5 +1370,14 @@ STAGE_NOTES = {
 > more. NOT in this fold: the single-edge cut that landed while it ran, the
 > cross-seed panel for the cohort pools, new figures, and the deferred
 > all-caps pass over the old Results and Methods text.
+''',
+    7: '''> Stage 7 (follow-up fold, owner-directed, same day): the single-edge cut
+> that stage 6 lists as not folded is now in 2.4 as Table 3b (base, carrier
+> removed, carrier-to-relay edge cut, count-matched sham; one fresh batch,
+> R), with the double-dissociation reading stated in its limited sense and
+> its limits (one batch, re-bisected gains only, one eligible sham edge).
+> 3.7 gains the batch label, and section 4 names the two new single-batch
+> arms and drops its "is not reported here" marker. Six l190.* keys entered
+> numbers.json first.
 ''',
 }

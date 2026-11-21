@@ -1,0 +1,38 @@
+# RE-PIN at end of review
+2026-11-21T14:32:19-05:00
+
+c60fc1859d94ac4696138c8bd1b9bc97d867567d100ee53ba87bb3e9fa32707e  paper/DRAFT.md
+464e5261317f6fd30250455d91d0bde1d9fb70fc5461934f555e9cf7b1a1e2ea  paper/numbers.json
+a0460e3da4ba0e88225e8ca8a689b01669dc3c5063cdce198408af68b5b683c1  paper/CLAIM-MAP.md
+828d257469ebb9842d1fc8bf5028882f9b216fbad987a0d1cf91291a99b11b9d  paper/references.bib
+a0f1e0ca895a3a14786b356c760059708369f3786166010da04e965a6edd255d  paper/figures/fig4_scatter.png
+c01602e6756410c75f2637555c2c04cebb25b785dbb6a920eb60c903002fe929  paper/figures/fig4_scatter.svg
+be041f9682e4e5f0b8680d51658832828a6a34a2467ac4f5613fe49304e3ed9f  paper/figures/fig4_scatter.py
+bc1cd445b3623d2e26369c7caa91cdcb6e9fde1d07b084cb8c79cd61e59477ed  paper/figures/fig4_caption.md
+5d2093ca8c32932f11deffd79328730a9a99cbff4be58d605c9d6c9e309512f3  paper/figures/fig4_verify.py
+9d838cc09035adc65cebd53c357081b4ca89814449a47e3a9e13d647ef2586aa  paper/figures/fig5_threepanel.png
+029933a00ef69f40952fd0475d78ee8ed0eeaaba04225418035a4aecba876d4c  paper/figures/fig5_threepanel.svg
+0913a093e0da15c17458b029df2571a420f9c4ed3057366a3cee68cd9160675c  paper/figures/fig5_threepanel.py
+86f44f1c88cd840f81821d130d81026968ed358dd9201d14a347ecaf34df2188  paper/figures/fig5_caption.md
+
+## DRIFT DISCLOSURE
+fig5_threepanel.{png,svg,py} were REWRITTEN at 2026-11-21T14:32 by a concurrent
+figures-polish dispatch, i.e. DURING this review (review started 14:22:18).
+DRAFT.md, numbers.json, CLAIM-MAP.md, references.bib and all fig4_* files are
+byte-identical from start to end of review.
+
+## SECOND RE-PIN (fig4 also moved after the first re-pin)
+2026-11-21T14:36:14-05:00
+c60fc1859d94ac4696138c8bd1b9bc97d867567d100ee53ba87bb3e9fa32707e  paper/DRAFT.md
+464e5261317f6fd30250455d91d0bde1d9fb70fc5461934f555e9cf7b1a1e2ea  paper/numbers.json
+a0460e3da4ba0e88225e8ca8a689b01669dc3c5063cdce198408af68b5b683c1  paper/CLAIM-MAP.md
+828d257469ebb9842d1fc8bf5028882f9b216fbad987a0d1cf91291a99b11b9d  paper/references.bib
+826c97b9d99b86b3db3acfb45c429f4add379af2d326807eb852950a5bdd4567  paper/figures/fig4_scatter.png
+6e9b4261f225dd8b44dc3668d39e64635c163782c8d87c13c29a038b5ab8d4c6  paper/figures/fig4_scatter.svg
+b228d7fc65904f86a62c92834ff8d8b7cd7d64ff057ca58b055f41f00d86cbe6  paper/figures/fig4_scatter.py
+8e516bf7b5fc556d5b7e60b05f470e28a6ffa3aa32a3b0f1a9a2ad332c944aa4  paper/figures/fig4_verify.py
+bc1cd445b3623d2e26369c7caa91cdcb6e9fde1d07b084cb8c79cd61e59477ed  paper/figures/fig4_caption.md
+9d838cc09035adc65cebd53c357081b4ca89814449a47e3a9e13d647ef2586aa  paper/figures/fig5_threepanel.png
+029933a00ef69f40952fd0475d78ee8ed0eeaaba04225418035a4aecba876d4c  paper/figures/fig5_threepanel.svg
+0913a093e0da15c17458b029df2571a420f9c4ed3057366a3cee68cd9160675c  paper/figures/fig5_threepanel.py
+86f44f1c88cd840f81821d130d81026968ed358dd9201d14a347ecaf34df2188  paper/figures/fig5_caption.md

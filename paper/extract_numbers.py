@@ -1197,6 +1197,87 @@ put('l183.ladder_fast_meta', dict(
     '../paper/review_fable_evidence_r2/out_duty_rows.json:n_windows_q07 / '
     'n_windows_q14 / rows (count)')
 
+# ---- L190b fold (additive block; every key above is byte-identical): the
+# single-edge cut carrier -> relay and its count-matched sham (banc/l190, one
+# fresh batch, n = 16, same seeds in all four arms).  l190.summary /
+# l190.selection / l190.gain are the stored dicts VERBATIM (walkable
+# provenance).  l190.arms is the display form: every count, mean, paired
+# difference and interval in it is RECOMPUTED here from the stored per-seed
+# rows and asserted equal to the stored summary, or this block refuses.
+# Means and intervals are stored at FULL precision: a 4-dp pre-round turns the
+# sham's +.0195000...02 into .0195 and then prints it as +.019, not +.020.
+_r190 = json.load(open(f'{B}/l190/results_l190.json'))
+assert _r190['status'] == 'FINAL' and _r190['controls_pass'] is True
+_sel190 = json.load(open(f'{B}/l190/selection.json'))
+assert _sel190['edges'] == _r190['selection'] and _sel190['seeds'] == _r190['seeds']
+assert _sel190['prereg'] == _r190['prereg'] == open(
+    f'{B}/l190/PREREG.sha256').read().split()[0]
+put('l190.summary', dict(_r190['summary']), 'banc/l190/results_l190.json:summary')
+put('l190.selection', dict(_r190['selection']),
+    'banc/l190/results_l190.json:selection')
+put('l190.gain', dict(_r190['gain']), 'banc/l190/results_l190.json:gain')
+_T15_190 = 2.131449546          # two-sided 95% t, 15 df (as banc/l190/final.py)
+_seeds190 = [str(s) for s in _r190['seeds']]
+_n190 = len(_seeds190)
+assert _n190 == 16 and set(_seeds190) == set(_r190['rows'])
+_arms190 = {}
+for _lab, _code in (('base', 'cutwA'), ('carrier', 'sc25'),
+                    ('edge', 'E-edge'), ('sham', 'E-sham')):
+    _R = [_r190['rows'][s][_code]['R'] for s in _seeds190]
+    _M = [_r190['rows'][s][_code]['mid'] for s in _seeds190]
+    _D = [_r190['rows'][s][_code]['R'] - _r190['rows'][s]['cutwA']['R']
+          for s in _seeds190]
+    _dm = sum(_D) / _n190
+    _sd = (sum((x - _dm) ** 2 for x in _D) / (_n190 - 1)) ** .5
+    _half = _T15_190 * _sd / _n190 ** .5
+    _s = _r190['summary'][_code]
+    assert sum(1 for x in _R if x >= .5) == _s['kR'], ('l190 kR', _code)
+    assert abs(sum(_R) / _n190 - _s['meanR']) < 1e-9, ('l190 meanR', _code)
+    assert abs(sum(_M) / _n190 - _s['mid']) < 1e-9, ('l190 mid', _code)
+    assert abs(_dm - _s['delta']) < 1e-9 and abs(_dm - _half - _s['CI'][0]) < 1e-6 \
+        and abs(_dm + _half - _s['CI'][1]) < 1e-6, ('l190 paired', _code)
+    _arms190[_lab] = dict(
+        code=_code, n=_n190, kR=_s['kR'], meanR=_s['meanR'],
+        kmid=sum(1 for x in _M if x >= .5), meanmid=_s['mid'],
+        vs_base=dict(mean=_s['delta'], ci95=list(_s['CI']),
+                     n_up=sum(1 for x in _D if x > 0),
+                     n_dn=sum(1 for x in _D if x < 0)),
+        super=_s['SUPER'], fingerprint=_s['fingerprint'],
+        gain_delta_pct=round((_r190['gain'][_code] / _r190['gain']['cutwA'] - 1)
+                             * 100, 3))
+put('l190.arms', _arms190,
+    'banc/l190/results_l190.json:rows + summary + gain (arms re-keyed base / '
+    'carrier / edge / sham; kR, means, the paired difference from the base '
+    'and its t interval RECOMPUTED from the per-seed rows and asserted equal '
+    'to the stored summary; kmid = seeds with continuous-segment duty >= .5 '
+    'and gain_delta_pct = gain / base gain - 1, both DERIVED here)')
+put('l190.meta', dict(
+    n_seeds=_n190, seed_lo=_r190['seeds'][0], seed_hi=_r190['seeds'][-1],
+    prereg_sha256=_r190['prereg'][:16],
+    branch_edge=_r190['summary']['E-edge']['branch'],
+    branch_sham=_r190['summary']['E-sham']['branch'],
+    controls_pass=_r190['controls_pass'],
+    n_sham_candidates=len(_sel190['candidates']),
+    edge_share_of_carrier=round(_r190['summary']['E-edge']['delta']
+                                / _r190['summary']['sc25']['delta'], 3),
+    fingerprint_min_meanmid=0.25),
+    'banc/l190/results_l190.json:seeds + prereg + summary.*.branch + '
+    'controls_pass; banc/l190/selection.json:candidates (count); '
+    'edge_share_of_carrier = edge paired shift / carrier paired shift, a '
+    'point ratio DERIVED here; fingerprint_min_meanmid is the registered bar '
+    'in banc/l190/PREREG.md (asserted present there)')
+assert 'middle-segment R duty \u2265.25' in open(f'{B}/l190/PREREG.md').read()
+assert _r190['seeds'] == list(range(_r190['seeds'][0], _r190['seeds'][0] + 16))
+_an190 = _r190['anchors']
+put('l190.certs', dict(
+    c0a135_checks=_an190['c0a135_checks'], c0a135_max=_an190['c0a135_max'],
+    c0a175_checks=_an190['c0a175_checks'], c0a175_max=_an190['c0a175_max'],
+    g_cutwA_stored_exact=_an190['g_cutwA_stored_exact'],
+    trace_arrays_verified=_r190['trace_arrays_verified'],
+    archives_scanned=_sel190['archives']),
+    'banc/l190/results_l190.json:anchors + trace_arrays_verified; '
+    'banc/l190/selection.json:archives')
+
 json.dump(OUT, open(os.path.join(os.path.dirname(
     os.path.abspath(__file__)), 'numbers.json'), 'w'), indent=1, sort_keys=True)
 

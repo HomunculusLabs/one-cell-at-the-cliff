@@ -43,6 +43,8 @@ ALIAS = {
     'PT': 'l172.paired_twin', 'P': 'l172.pooled',
     'SUB': 'l92.substrate', 'W': 'l135.weights', 'D': 'l173.defs',
     'LF': 'l183.ladder_fast',
+    'EA': 'l190.arms', 'EM': 'l190.meta', 'ES': 'l190.selection',
+    'ESM': 'l190.summary',
 }
 MINUS = '\u2212'
 CLS = {'SUPER': 'super', 'INTERMEDIATE': 'intermediate',
@@ -281,8 +283,39 @@ def table_ladder(nums):
     return '\n'.join(rows)
 
 
+def table_edge(nums):
+    """the single-edge cut and its count-matched sham: one batch, the same
+    seeds in all four arms, every arm at its own re-matched gain."""
+    EA = resolve(nums, 'EA'); ES = resolve(nums, 'ES'); SM = resolve(nums, 'ESM')
+    rows = ['| manipulation (arm code) | synapses cut | gain shift | '
+            'chopped 0.7 Hz | vs base [95% CI] | continuous 1.4 Hz | '
+            'registered reading |',
+            '|---|---|---|---|---|---|---|']
+    assert sorted(d['code'] for d in EA.values()) == sorted(SM), 'edge arms'
+    for lab, name in (('base', 'none: the base'),
+                      ('carrier', 'carrier removed'),
+                      ('edge', 'carrier-to-relay edge cut'),
+                      ('sham', 'sham edge cut')):
+        d = EA[lab]; s = SM[d['code']]
+        assert (d['kR'], d['meanR'], d['meanmid'], d['super'], d['fingerprint']) \
+            == (s['kR'], s['meanR'], s['mid'], s['SUPER'], s['fingerprint']), lab
+        base = lab == 'base'
+        syn = (str(ES[d['code']]['syn']) if d['code'] in ES
+               else '—' if base else 'the whole cell')
+        reading = 'reference' if base else '%s, %s' % (
+            CLS['SUPER'] if d['super'] else CLS['NOT-SUPER'],
+            'signature' if d['fingerprint'] else 'no signature')
+        rows.append(
+            f"| {name} (`{d['code']}`) | {syn} | "
+            f"{'0' if base else fmt(d['gain_delta_pct'], 'sp3') + '%'} | "
+            f"{d['kR']}/{d['n']} {fmt(d['meanR'], 'f3')} | "
+            f"{'—' if base else _ci(d['vs_base'])} | "
+            f"{d['kmid']}/{d['n']} {fmt(d['meanmid'], 'f3')} | {reading} |")
+    return '\n'.join(rows)
+
+
 TABLES = {'scan': table_scan, 'rep': table_rep, 'null': table_null,
-          'relay': table_relay, 'ladder': table_ladder}
+          'relay': table_relay, 'ladder': table_ladder, 'edge': table_edge}
 
 # ---------------------------------------------------------------- renumber
 # old Results subsection -> new (the scan block takes 2.1-2.5).

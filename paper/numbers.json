@@ -5225,6 +5225,209 @@
    }
   }
  },
+ "l190.arms": {
+  "src": "banc/l190/results_l190.json:rows + summary + gain (arms re-keyed base / carrier / edge / sham; kR, means, the paired difference from the base and its t interval RECOMPUTED from the per-seed rows and asserted equal to the stored summary; kmid = seeds with continuous-segment duty >= .5 and gain_delta_pct = gain / base gain - 1, both DERIVED here)",
+  "v": {
+   "base": {
+    "code": "cutwA",
+    "fingerprint": false,
+    "gain_delta_pct": 0.0,
+    "kR": 5,
+    "kmid": 0,
+    "meanR": 0.4015625,
+    "meanmid": 0.0,
+    "n": 16,
+    "super": false,
+    "vs_base": {
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "mean": 0.0,
+     "n_dn": 0,
+     "n_up": 0
+    }
+   },
+   "carrier": {
+    "code": "sc25",
+    "fingerprint": true,
+    "gain_delta_pct": 1.244,
+    "kR": 15,
+    "kmid": 8,
+    "meanR": 0.7716875,
+    "meanmid": 0.4883125,
+    "n": 16,
+    "super": true,
+    "vs_base": {
+     "ci95": [
+      0.2571865173507102,
+      0.4830634826492899
+     ],
+     "mean": 0.37012500000000004,
+     "n_dn": 1,
+     "n_up": 15
+    }
+   },
+   "edge": {
+    "code": "E-edge",
+    "fingerprint": false,
+    "gain_delta_pct": -0.358,
+    "kR": 12,
+    "kmid": 0,
+    "meanR": 0.624375,
+    "meanmid": 0.0,
+    "n": 16,
+    "super": true,
+    "vs_base": {
+     "ci95": [
+      0.08152279223339307,
+      0.36410220776660696
+     ],
+     "mean": 0.22281250000000002,
+     "n_dn": 4,
+     "n_up": 12
+    }
+   },
+   "sham": {
+    "code": "E-sham",
+    "fingerprint": false,
+    "gain_delta_pct": -0.001,
+    "kR": 5,
+    "kmid": 0,
+    "meanR": 0.4210625,
+    "meanmid": 0.002125,
+    "n": 16,
+    "super": false,
+    "vs_base": {
+     "ci95": [
+      -0.09390333192147292,
+      0.13290333192147297
+     ],
+     "mean": 0.01950000000000002,
+     "n_dn": 8,
+     "n_up": 8
+    }
+   }
+  }
+ },
+ "l190.certs": {
+  "src": "banc/l190/results_l190.json:anchors + trace_arrays_verified; banc/l190/selection.json:archives",
+  "v": {
+   "archives_scanned": 240,
+   "c0a135_checks": 92,
+   "c0a135_max": 0.0,
+   "c0a175_checks": 50,
+   "c0a175_max": 0.0,
+   "g_cutwA_stored_exact": true,
+   "trace_arrays_verified": 261
+  }
+ },
+ "l190.gain": {
+  "src": "banc/l190/results_l190.json:gain",
+  "v": {
+   "E-edge": 0.14314373373985292,
+   "E-sham": 0.14365692973136904,
+   "cutwA": 0.14365819573402408,
+   "sc25": 0.1454454553127289
+  }
+ },
+ "l190.meta": {
+  "src": "banc/l190/results_l190.json:seeds + prereg + summary.*.branch + controls_pass; banc/l190/selection.json:candidates (count); edge_share_of_carrier = edge paired shift / carrier paired shift, a point ratio DERIVED here; fingerprint_min_meanmid is the registered bar in banc/l190/PREREG.md (asserted present there)",
+  "v": {
+   "branch_edge": "B3-partial",
+   "branch_sham": "B2-edge-inert",
+   "controls_pass": true,
+   "edge_share_of_carrier": 0.602,
+   "fingerprint_min_meanmid": 0.25,
+   "n_seeds": 16,
+   "n_sham_candidates": 1,
+   "prereg_sha256": "48e882a264434dd0",
+   "seed_hi": 3656,
+   "seed_lo": 3641
+  }
+ },
+ "l190.selection": {
+  "src": "banc/l190/results_l190.json:selection",
+  "v": {
+   "E-edge": {
+    "DN": true,
+    "edges_after": 644176,
+    "effective_weight": 3.0910425186157227,
+    "source": 1110,
+    "syn": 21,
+    "target": 75494
+   },
+   "E-sham": {
+    "DN": true,
+    "edges_after": 644176,
+    "effective_weight": 3.1354942321777344,
+    "source": 48,
+    "syn": 22,
+    "target": 75494
+   }
+  }
+ },
+ "l190.summary": {
+  "src": "banc/l190/results_l190.json:summary",
+  "v": {
+   "E-edge": {
+    "CI": [
+     0.08152279223339307,
+     0.36410220776660696
+    ],
+    "SUPER": true,
+    "branch": "B3-partial",
+    "delta": 0.22281250000000002,
+    "fingerprint": false,
+    "kR": 12,
+    "meanL": 0.281125,
+    "meanR": 0.624375,
+    "mid": 0.0
+   },
+   "E-sham": {
+    "CI": [
+     -0.09390333192147292,
+     0.13290333192147297
+    ],
+    "SUPER": false,
+    "branch": "B2-edge-inert",
+    "delta": 0.01950000000000002,
+    "fingerprint": false,
+    "kR": 5,
+    "meanL": 0.24531250000000002,
+    "meanR": 0.4210625,
+    "mid": 0.002125
+   },
+   "cutwA": {
+    "CI": [
+     0.0,
+     0.0
+    ],
+    "SUPER": false,
+    "branch": null,
+    "delta": 0.0,
+    "fingerprint": false,
+    "kR": 5,
+    "meanL": 0.259375,
+    "meanR": 0.4015625,
+    "mid": 0.0
+   },
+   "sc25": {
+    "CI": [
+     0.2571865173507102,
+     0.4830634826492899
+    ],
+    "SUPER": true,
+    "branch": null,
+    "delta": 0.37012500000000004,
+    "fingerprint": true,
+    "kR": 15,
+    "meanL": 0.1599375,
+    "meanR": 0.7716875,
+    "mid": 0.4883125
+   }
+  }
+ },
  "l92.substrate": {
   "src": "banc/l92/static.json:(top-level fields n_old n_new cord dn_into dn_proj dn_new edges_old edges_new; asserted equal at run time by banc/l135_run.py)",
   "v": {
