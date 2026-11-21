@@ -1,0 +1,505 @@
+{
+ "rule": "argmin |log(drive_cand/drive_relay)| over POOL_T; tie-break smaller |log(mass_cand/mass_relay)| (mass = raw out|w| onto the k=24-base closure), then gi; drive = x_mean (stored 3-seed census of the k=24 base, the stored L175 census_k24 file) x |Wb| column abs-sum (PREREG l198)",
+ "pool": "in k=24 base & super_class == relay's (ventral_nerve_cord_intrinsic) & not in any prior arm & not motor & not DNg100",
+ "census_seeds": [
+  801,
+  901,
+  3561
+ ],
+ "pool_n": 12385,
+ "pool_n_positive_drive": 9006,
+ "pool_n_active": 2069,
+ "prior_arm_cells_n": 83,
+ "relay": {
+  "gi": 75494,
+  "delivered_drive": 86.50302154591569,
+  "out_w_raw": 131.48856491722785,
+  "out_w_eff": 262.9771298344557,
+  "x_mean": 0.3289374311765035,
+  "out_edges": 51,
+  "eff_sign": -1.0
+ },
+ "pick": {
+  "gi": 73008,
+  "root_id": "720575941528978123",
+  "super_class": "ventral_nerve_cord_intrinsic",
+  "cell_type": "IN17B003",
+  "side": "right",
+  "eff_sign": -1.0,
+  "is_glut": false,
+  "in_dn_new": false,
+  "is_mech": false,
+  "lineage_mass_share": 0.0,
+  "out_w_raw": 297.1084387077231,
+  "out_w_eff": 594.2168774154462,
+  "out_w_motor": 0.0,
+  "out_edges": 151,
+  "loc_wA": 18949,
+  "x_mean": 0.14555743833382925,
+  "x_mean_seeds": [
+   0.1453801989555359,
+   0.14632079005241394,
+   0.1449713259935379
+  ],
+  "delivered_drive": 86.49268649131939,
+  "drive_ratio": 0.9998805237734868,
+  "abs_log_drive_ratio": 0.00011948336436609672,
+  "mass_ratio": 2.2595762520851386,
+  "abs_log_mass_ratio": 0.8151772966266726,
+  "in_edges": 44,
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "edge_from_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_from_relay": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_relay": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_74914": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  }
+ },
+ "runners_up": [
+  {
+   "gi": 67561,
+   "root_id": "720575941405787310",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN21A049",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 90.2632432631798,
+   "out_w_eff": 180.5264865263596,
+   "out_w_motor": 33.89990530194368,
+   "out_edges": 43,
+   "loc_wA": 13512,
+   "x_mean": 0.47874218225479126,
+   "x_mean_seeds": [
+    0.4810355603694916,
+    0.4813387989997864,
+    0.4738521873950958
+   ],
+   "delivered_drive": 86.42564411441957,
+   "drive_ratio": 0.99910549446582,
+   "abs_log_drive_ratio": 0.0008949058429921311,
+   "mass_ratio": 0.6864721910989035,
+   "abs_log_mass_ratio": 0.37618956282634214,
+   "in_edges": 23,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 5,
+     "syn": 64,
+     "w_eff_sum": -25.724904203795813,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_74914": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   }
+  },
+  {
+   "gi": 70994,
+   "root_id": "720575941663099516",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN07B031",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 143.90336282196483,
+   "out_w_eff": 287.80672564392967,
+   "out_w_motor": 33.183010061373906,
+   "out_edges": 61,
+   "loc_wA": 16939,
+   "x_mean": 0.2994140883286794,
+   "x_mean_seeds": [
+    0.29607027769088745,
+    0.29811063408851624,
+    0.3040613532066345
+   ],
+   "delivered_drive": 86.17338837353955,
+   "drive_ratio": 0.9961893449906699,
+   "abs_log_drive_ratio": 0.0038179340529637122,
+   "mass_ratio": 1.0944173199589797,
+   "abs_log_mass_ratio": 0.09022209374682921,
+   "in_edges": 52,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_74914": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   }
+  },
+  {
+   "gi": 64787,
+   "root_id": "720575941461393040",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN02A030",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 170.3713906256687,
+   "out_w_eff": 340.7427812513374,
+   "out_w_motor": 24.4280816303587,
+   "out_edges": 90,
+   "loc_wA": 10745,
+   "x_mean": 0.25276300807793933,
+   "x_mean_seeds": [
+    0.2599380910396576,
+    0.25676849484443665,
+    0.24158243834972382
+   ],
+   "delivered_drive": 86.12717036993132,
+   "drive_ratio": 0.9956550514737238,
+   "abs_log_drive_ratio": 0.004354415246684653,
+   "mass_ratio": 1.2957126023309908,
+   "abs_log_mass_ratio": 0.2590608158776064,
+   "in_edges": 14,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_74914": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   }
+  },
+  {
+   "gi": 67353,
+   "root_id": "720575941450876794",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN02A026",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 195.62460489911882,
+   "out_w_eff": 391.24920979823764,
+   "out_w_motor": 18.781388122686625,
+   "out_edges": 96,
+   "loc_wA": 13307,
+   "x_mean": 0.2195205638806025,
+   "x_mean_seeds": [
+    0.21725082397460938,
+    0.21747885644435883,
+    0.22383201122283936
+   ],
+   "delivered_drive": 85.88724715274928,
+   "drive_ratio": 0.9928814695468232,
+   "abs_log_drive_ratio": 0.007143988076938004,
+   "mass_ratio": 1.4877689555914209,
+   "abs_log_mass_ratio": 0.3972776525750302,
+   "in_edges": 91,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_74914": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   }
+  },
+  {
+   "gi": 71153,
+   "root_id": "720575941543397737",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN06B066",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 83.07003302652882,
+   "out_w_eff": 166.14006605305764,
+   "out_w_motor": 41.718736990279666,
+   "out_edges": 40,
+   "loc_wA": 17098,
+   "x_mean": 0.5246434211730957,
+   "x_mean_seeds": [
+    0.5276501178741455,
+    0.5302937626838684,
+    0.5159863829612732
+   ],
+   "delivered_drive": 87.16429264800026,
+   "drive_ratio": 1.0076444855944549,
+   "abs_log_drive_ratio": 0.007615414575777242,
+   "mass_ratio": 0.6317662154030008,
+   "abs_log_mass_ratio": 0.4592358656067492,
+   "in_edges": 28,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_relay": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_74914": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   }
+  }
+ ],
+ "prereg_sha256_at_selection": "c9fff8791fff11614ef5a4f09ad612ac0c9a6efde2768065741cd1aa1bfbf7b6"
+}

@@ -1,0 +1,6 @@
+B2-CERT 97 checks, 0 fail, max_err 0.000e+00
+FLOOR off-floor cells: ['A|Ti', 'A|Tr', 'B|Ti', 'B|Tr']
+  components done: slide
+  components done: whole
+  components done: whole
+WROTE results_l176b2.json; mtime_unchanged = True

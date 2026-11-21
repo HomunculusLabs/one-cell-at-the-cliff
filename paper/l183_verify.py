@@ -47,6 +47,21 @@ figure layer resolves (every cited figure file exists under paper/, Figs 1-5
 are each cited, the three legacy figures are byte-identical to their lab
 originals, and both figure verifiers exit 0).  Nothing was removed.
 
+RESIDUE FOLD (2026-11-21 evening, stage 9; receipt in LANE-LOG and
+banc/residue_worklog.md).  Sixteen more declared edits and NO new key: the
+yardstick calibration carried into the abstract and the Discussion (two
+edits, every number a placeholder on l197.reference), entries 38-45 with full
+author lists (two edits; audited against stored primary records by
+l174_verify (9)), and twelve formatting edits over 2.6-2.12 and section 3.
+Sections (1)-(4), (6) and (7) are unchanged and run over the stage-9 ledger;
+no class was added to section (3).  Section (5) GAINS the stage-9 block: the
+yardstick readings re-derived, and for every formatting edit a proof that it
+is de-emphasis only (the citation keys are identical, no digit run is added,
+and the only digit runs removed are the declared repeats of a cell id or of
+an arm code's digits).  Two of the four finalization pins move (the text
+ledger and the built body); numbers.json and l183_fold.py are unchanged and
+keep their stage-8 pins.  Nothing was removed.
+
 Run: python3 paper/l183_verify.py     (stdlib only; zero rollouts)
 """
 import csv, hashlib, json, math, os, re, sys
@@ -711,6 +726,82 @@ print('(5) L197 (stage 8): Table 5 = 6 networks x 3 arms == the stored cells, '
          REFn['fast_diff']['diff'], *REFn['fast_diff']['ci95'],
          _car_ref['chopped_mean'], REFn['base']['chopped_mean'],
          _Rr['chopped_mean']))
+# ---- residue fold (stage 9): the calibration echo and the formatting pass ---
+import collections as _col9
+if STAGE >= 9:
+    _e9 = {e['id']: e for e in TXT.EDITS if e['stage'] == 9}
+    _fmt9 = sorted(k for k in _e9 if '-fmt-' in k)
+    ck(len(_e9) == 16 and len(_fmt9) == 12 and all(e['kind'] == 'rep'
+                                                   for e in _e9.values()),
+       '(5) stage 9 is not the sixteen declared replacements')
+    _abs9 = re.sub(r'\s+', ' ', F.render(_e9['E60-abstract-yardstick']['new'], nums))
+    _dis9 = re.sub(r'\s+', ' ', F.render(_e9['E61-discussion-yardstick']['new'], nums))
+    _R9, _B9, _C9 = REFn['reference'], REFn['base'], REFn['carrier']
+    # "without the descending neurons that receive no cord input the model
+    # scores k of n" / "Before they are added the network is structured in
+    # every seed": the reference pool IS the network before the pure
+    # projectors, and it is structured in every seed on both readouts
+    ck(_R9['code'] == 'b65' and _R9['chopped_k'] == _R9['fast_k'] == _R9['n']
+       and SUB['n_new'] - SUB['n_old'] == SUB['dn_new'] > 0
+       and 'receive no cord input the model scores %d of %d' % (_R9['chopped_k'], _R9['n']) in _abs9
+       and 'structured in every seed (%d of %d' % (_R9['chopped_k'], _R9['n']) in _dis9,
+       '(5) stage 9: "the model scores k of n" / "structured in every seed"')
+    # "a partial rescue toward that level ..., not a transition beyond it":
+    # the carrier-removed pool lies strictly between the base and the
+    # reference, on the canonical pooled seeds both sentences name
+    ck(_C9['code'] == 'cutng25' and _B9['code'] == 'cutwA'
+       and _B9['chopped_mean'] < _C9['chopped_mean'] < _R9['chopped_mean']
+       and _C9['chopped_k'] < _C9['n']
+       and all(x in t for t in (_abs9, _dis9)
+               for x in ('partial rescue', 'not a transition beyond it'))
+       and 'pooled mean duty %s against %s' % (F.fmt(_C9['chopped_mean'], 'f3'),
+                                              F.fmt(_R9['chopped_mean'], 'f3')) in _abs9
+       and 'between the base (%s)' % F.fmt(_B9['chopped_mean'], 'f3') in _dis9,
+       '(5) stage 9: the partial-rescue reading is not what the pools say')
+    ck('flip' not in _abs9 and 'transition' not in
+       _abs9.replace('not a transition beyond it', ''),
+       '(5) stage 9: the abstract still words the result as a flip or a '
+       'transition')
+    ck(_abs9 in re.sub(r'\s+', ' ', body) and _dis9.split('(\u00a72.1). ', 1)[1].strip()
+       in re.sub(r'\s+', ' ', body[body.index('## 5. Discussion'):
+                                   body.index('## 6. Data & code')]),
+       '(5) stage 9: the calibration sentences are not in the abstract and '
+       'in the Discussion of the built body')
+    # the formatting edits are de-emphasis only
+    _DIG9 = lambda t: _col9.Counter(x.rstrip(',') for x in _DIG.findall(t))
+    _KEY9 = lambda t: sorted(re.findall(r'\[[a-z][a-z0-9_.]*(?:,\s+[a-z][a-z0-9_.]*)*\]',
+                                       re.sub(r'\s+', ' ', t)))
+    _REMOVED9 = {   # the only digit runs a formatting edit may drop, and why
+        'E71-fmt-twin-ranks': {'1110': 1, '319': 1},   # each cell id was printed twice
+        'E77-fmt-sustain': {'25': 1},                  # the bare code "25p"
+        'E78-fmt-gain-grid': {'25': 3},                # the code "cutng25", three times
+    }
+    _NOTATION9 = {'XOR', 'NOISE', 'DN', 'CI'}          # terms and symbols, not emphasis
+    _caps_gone = 0
+    for _id in _fmt9:
+        _o, _n = _e9[_id]['old'], F.render(_e9[_id]['new'], nums)
+        _do, _dn = _DIG9(_o), _DIG9(_n)
+        ck(not (_dn - _do) and dict(_do - _dn) == _REMOVED9.get(_id, {}),
+           '(5) %s: a formatting edit moved a number (added %s, removed %s)'
+           % (_id, dict(_dn - _do), dict(_do - _dn)))
+        ck(_KEY9(_o) == _KEY9(_n), '(5) %s: a formatting edit moved a ledger key' % _id)
+        _co = set(re.findall(r'\b[A-Z]{2,}(?:[- ][A-Z]{2,})*\b', _o))
+        _cn = set(re.findall(r'\b[A-Z]{2,}(?:[- ][A-Z]{2,})*\b', _n))
+        ck(_cn <= _NOTATION9 and _cn <= _co and len(_co - _cn) >= 1,
+           '(5) %s: capitalised emphasis left in, or none removed: %s'
+           % (_id, sorted(_cn - _NOTATION9)))
+        _caps_gone += len(_co - _cn)
+    ck(re.findall(r'(?m)^### (2\.\d+|3\.\d+) ', body) ==
+       re.findall(r'(?m)^### (2\.\d+|3\.\d+) ', F.build_body(nums, upto=8)),
+       '(5) stage 9 renumbered or restructured a Results / Methods subsection')
+    print('(5) residue fold (stage 9): yardstick reading re-derived for the '
+          'abstract and the Discussion (reference %d of %d, carrier %.3f between '
+          'base %.3f and reference %.3f); %d formatting edits are de-emphasis '
+          'only (%d capitalised tokens gone, keys identical, no digit run '
+          'added, removed runs == the declared code / id repeats); subsection '
+          'headings unchanged' % (_R9['chopped_k'], _R9['n'], _C9['chopped_mean'],
+                                  _B9['chopped_mean'], _R9['chopped_mean'],
+                                  len(_fmt9), _caps_gone))
 # L190b PIN UPDATE (2026-11-21; receipt in LANE-LOG).  OLD (stage 6, the master
 # fold's finalization): numbers.json 592f7680796e..., l183_text.py
 # d1d8e0735bf1..., l183_fold.py 698922e3b836..., built body e62c81f6f5cc....
@@ -725,12 +816,20 @@ print('(5) L197 (stage 8): Table 5 = 6 networks x 3 arms == the stored cells, '
 # owner-directed fourth-round repairs add five keys (every pre-existing key
 # byte-identical: l174 (7)), eleven declared edits and one table builder.
 # The pins are re-set, not loosened: same four files, same whole-file equality.
+# RESIDUE-FOLD PIN UPDATE (2026-11-21 evening; receipt in LANE-LOG +
+# banc/residue_worklog.md).  OLD (stage 8, the L197 repairs): l183_text.py
+# 22ec57a34935180b..., built body 1863b3cd1325e52a....  NEW: the stage-9
+# values below.  REASON: the owner-directed residue fold adds sixteen declared
+# edits (no key, no table builder).  UNCHANGED and still pinned at their
+# stage-8 values: numbers.json c8f0c4205e73... and l183_fold.py
+# b5feccb4d589....  The pins are re-set, not loosened: same four files, same
+# whole-file equality.
 NUMBERS_SHA = 'c8f0c4205e732c9bfee006c05a1201877b80af25f7405c95aa65e6a27b7a3962'
 # the ledger and the built body are pinned too: a later stage that edits
 # either has to re-pin here deliberately (and say why in the lane log)
-LEDGER_SHA = {'l183_text.py': '22ec57a34935180b944b5602c1f8373968740547b15ec1b8e1d52dd5b682faca',
+LEDGER_SHA = {'l183_text.py': '270e80883dac87b706b88540ef7bd27d6c814d442a03f1ed7c032e2f85f3e7f4',
               'l183_fold.py': 'b5feccb4d58986ea2635d8a4f0fd7727feafa09ec6b60a42cc89a6511d43c277'}
-BODY_SHA = '1863b3cd1325e52ab3bf4ec6771e49c7f4dac040ee5e5d111d0b2670aa59c87a'
+BODY_SHA = '9e8c64cb4d7e751d1e148e0713dd24789b69791815e4612f84122c9d176555ba'
 for _f, _want in LEDGER_SHA.items():
     _got = hashlib.sha256(open(os.path.join(HERE, _f), 'rb').read()).hexdigest()
     ck(_got == _want, '(5) %s moved since the fold was finalized (%s)'

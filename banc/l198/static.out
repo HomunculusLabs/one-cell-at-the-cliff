@@ -1,0 +1,5 @@
+[static0 18:44:57] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[static0 18:44:57] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[static0 18:44:58] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[static0 18:44:59] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[static0 18:44:59] static.json + selection.json written | fresh 3673..3688 absent from 242 npz | pool 12385 | pick gi 73008 drive ratio 0.99988 | 9s

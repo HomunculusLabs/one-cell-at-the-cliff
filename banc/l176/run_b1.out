@@ -1,0 +1,8 @@
+  cert f4wA: {'kL': 16, 'kR': 0, 'meanL': 0.698, 'meanR': 0.043} (20 checks, 0 fail)
+  cert f4ng: {'kL': 2, 'kR': 0, 'meanL': 0.289, 'meanR': 0.081} (40 checks, 0 fail)
+  cert f4tw: {'kL': 10, 'kR': 0, 'meanL': 0.56, 'meanR': 0.082} (60 checks, 0 fail)
+  cert full: {'kL': 3, 'kR': 6, 'meanL': 0.407, 'meanR': 0.475} (64 checks, 0 fail)
+  cert cutwA: {'kL': 0, 'kR': 3, 'meanL': 0.233, 'meanR': 0.371} (84 checks, 0 fail)
+  cert cutng25: {'kL': 0, 'kR': 16, 'meanL': 0.106, 'meanR': 0.754} (104 checks, 0 fail)
+B1-CERT 104 checks, 0 fail
+WROTE results_l176b1.json; mtime_unchanged = True

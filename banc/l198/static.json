@@ -1,0 +1,264 @@
+{
+ "design": "L198 static pins (zero rollouts): fresh-batch absence, stored-census twin selection, twin graphs + CERT-SUB, stored gains.",
+ "src": "banc l187 relay_run.py transform (l198 build_twin.py)",
+ "fresh_batch": [
+  3673,
+  3688
+ ],
+ "anchors_bit": [
+  801,
+  901
+ ],
+ "anchor_175": [
+  3545
+ ],
+ "anchor_187": [
+  3609
+ ],
+ "npz_scanned_for_seed_absence": 242,
+ "seed_absence": "PASS",
+ "cert_sub": {
+  "tw": {
+   "removed": [
+    73008
+   ],
+   "n": 21784,
+   "edges": 643982,
+   "edges_removed": 195
+  },
+  "ru1": {
+   "removed": [
+    67561
+   ],
+   "n": 21784,
+   "edges": 644111,
+   "edges_removed": 66
+  },
+  "ru2": {
+   "removed": [
+    70994
+   ],
+   "n": 21784,
+   "edges": 644064,
+   "edges_removed": 113
+  },
+  "ru3": {
+   "removed": [
+    64787
+   ],
+   "n": 21784,
+   "edges": 644073,
+   "edges_removed": 104
+  },
+  "ru4": {
+   "removed": [
+    67353
+   ],
+   "n": 21784,
+   "edges": 643990,
+   "edges_removed": 187
+  },
+  "ru5": {
+   "removed": [
+    71153
+   ],
+   "n": 21784,
+   "edges": 644109,
+   "edges_removed": 68
+  },
+  "sc25": {
+   "removed": [
+    1110
+   ],
+   "n": 21784,
+   "edges": 644084,
+   "edges_removed": 93
+  },
+  "rcut": {
+   "removed": [
+    75494
+   ],
+   "n": 21784,
+   "edges": 644068,
+   "edges_removed": 109
+  }
+ },
+ "twins": {
+  "tw": 73008,
+  "ru1": 67561,
+  "ru2": 70994,
+  "ru3": 64787,
+  "ru4": 67353,
+  "ru5": 71153
+ },
+ "track": [
+  1110,
+  319,
+  707,
+  354,
+  32271,
+  1266,
+  228,
+  549,
+  725,
+  890,
+  808,
+  924,
+  779,
+  456,
+  826,
+  559,
+  692,
+  32097,
+  1509,
+  722,
+  618,
+  1022,
+  1038,
+  32005,
+  643,
+  736,
+  1543,
+  1557,
+  1060,
+  262,
+  1673,
+  651,
+  1224,
+  1489,
+  511,
+  1480,
+  75494,
+  74914,
+  71392,
+  74468,
+  64322,
+  74934,
+  71248,
+  73413,
+  65443,
+  66994,
+  69186,
+  69410,
+  72158,
+  73008,
+  67561,
+  70994,
+  64787,
+  67353,
+  71153
+ ],
+ "ctr_cells": [
+  1110,
+  75494,
+  559,
+  74914,
+  73008
+ ],
+ "relay": {
+  "cell": {
+   "gi": 75494,
+   "root_id": "720575941482680061",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN06B033",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 131.48856491722785,
+   "out_w_eff": 262.9771298344557,
+   "out_w_motor": 42.31830497865507,
+   "out_edges": 51
+  },
+  "loc_wA": 21435,
+  "census_x_mean_3seed": 0.3289374311765035,
+  "census_x_mean_seeds": [
+   0.32385745644569397,
+   0.3295610547065735,
+   0.33339378237724304
+  ],
+  "census_delivered_drive": 86.50302154591569,
+  "carrier_delivered_drive": 71.58302185726956,
+  "in_edges": 58,
+  "out_edges": 51,
+  "carrier_to_relay": {
+   "syn": 21,
+   "w": 3.091042453358316
+  },
+  "sc40_to_relay": {
+   "syn": 17,
+   "w_eff": -5.780743515792329
+  },
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 1,
+    "syn": 8,
+    "w_eff_sum": -4.394449154672439,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "sc40_census_x_mean": 0.03425384188691775,
+  "carrier_census_x_mean": 0.3891147971153259
+ },
+ "pool_n": 12385,
+ "class_counts_in_base": {
+  "ventral_nerve_cord_intrinsic": 12386,
+  "sensory": 7407,
+  "descending": 1264,
+  "motor": 728
+ },
+ "arm_n": {
+  "sc25": 21784,
+  "sc25F": 21784,
+  "rcut": 21784,
+  "rcutF": 21784,
+  "tw": 21784,
+  "twF": 21784,
+  "ru1": 21784,
+  "ru2": 21784,
+  "ru3": 21784,
+  "ru4": 21784,
+  "ru5": 21784
+ },
+ "arm_edges": {
+  "sc25": 644084,
+  "sc25F": 644084,
+  "rcut": 644068,
+  "rcutF": 644068,
+  "tw": 643982,
+  "twF": 643982,
+  "ru1": 644111,
+  "ru2": 644064,
+  "ru3": 644073,
+  "ru4": 643990,
+  "ru5": 644109
+ },
+ "g_stored": {
+  "cutwA": 0.14365819573402408,
+  "sc25": 0.1454454553127289,
+  "rcut": 0.14347783327102664
+ },
+ "n_wA": 21785,
+ "edges_wA": 644177,
+ "used_cells_n": 78
+}

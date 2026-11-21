@@ -126,7 +126,6 @@ A("all 37 arms" in CAP and "(of 16)" in CAP and "(of 240)" in CAP, "caption coun
 A(f"({f3('sc25', 'chopped_mean')} / {f3('sc25', 'fast_mean')} / {f3('sc25', 'cross_mean')})" in CAP, "caption: carrier triple")
 A(f"dmA {f3('dmA', 'chopped_mean')}, dmC {f3('dmC', 'chopped_mean')}" in CAP, "caption: drive twins, chopped")
 A(f"({f3('dmA', 'cross_mean')}, {f3('dmC', 'cross_mean')})" in CAP, "caption: drive twins, cross-seed")
-A(f"sc47 {f3('sc47', 'fast_mean')}, sc33 {f3('sc33', 'fast_mean')}" in CAP, "caption: the two quoted 1.4-Hz exceptions")
 A(f"cutwA {f3('cutwA', 'chopped_mean')}" in CAP, "caption: base")
 A("0\u20130.8 scale" in CAP and "high to low" in CAP, "caption: axis and sort order as drawn")
 hi_all = [a for a in src if all(float(src[a][c]) >= 0.5 for c in COLS.values())]
@@ -134,15 +133,23 @@ A(hi_all == ["sc25"], f"caption reading: the carrier is the only arm at or above
 A(all(float(src[a]["chopped_mean"]) < 0.5 and float(src[a]["cross_mean"]) > float(src["cutwA"]["cross_mean"]) + 0.15
       for a in ("dmA", "dmC")), "caption reading: drive twins low chopped, high cross-seed")
 A(by175["sc40"]["gi"] == 559 and by175["sc27"]["gi"] == 707, "caption: boundary cells are the stored ranks 27 and 40")
-# NOT asserted (reported for the owner): the caption lists two exceptions to
-# "collapses toward zero in the 1.4-Hz column".  Count them from the data.
+# RESIDUE-FOLD PIN UPDATE (2026-11-21 evening; receipt in LANE-LOG and
+# banc/residue_worklog.md).  OLD: one assert that the caption quotes "sc47
+# 0.310, sc33 0.109", plus a NOTE (not a failure) that the stored data holds a
+# third exception the caption did not name, dmC 0.192 -- the L197 brief froze
+# caption content.  NEW: the owner-directed residue fold added dmC to the
+# caption's list, and the list is now ASSERTED COMPLETE: it must name every
+# non-carrier arm whose 1.4-Hz mean duty is at least .05, in descending order,
+# with the stored values, and nothing else.  Strictly stronger than the old
+# pair of substrings: an omitted or an invented exception both fail.
 exc = sorted((a for a in src if a != "sc25" and float(src[a]["fast_mean"]) >= 0.05),
              key=lambda a: -float(src[a]["fast_mean"]))
-unlisted = [a for a in exc if f"{a} {f3(a, 'fast_mean')}" not in CAP]
-if unlisted:
-    notes.append("caption gap (not a figure error; captions are frozen by the L197 brief): arms with "
-                 "1.4-Hz mean duty >= .05 that the caption's exception list does not name: "
-                 + ", ".join(f"{a} {f3(a, 'fast_mean')}" for a in unlisted))
+want_exc = "(exceptions " + ", ".join(f"{a} {f3(a, 'fast_mean')}" for a in exc) + ")"
+A(want_exc in CAP, f"caption: the 1.4-Hz exception list is not exactly {want_exc}")
+A(CAP.count("(exceptions ") == 1, "caption: more than one exception list")
+A(exc == ["sc47", "dmC", "sc33"], f"the stored 1.4-Hz exceptions changed: {exc}")
+nxt = max(float(src[a]["fast_mean"]) for a in src if a != "sc25" and a not in exc)
+A(nxt < 0.05, f"an unlisted arm reads {nxt:.3f} in the 1.4-Hz column")
 
 # --- PNG: magic, dimensions == the SVG canvas, non-trivial size
 png = open(f"{HERE}/fig5_threepanel.png", "rb").read()

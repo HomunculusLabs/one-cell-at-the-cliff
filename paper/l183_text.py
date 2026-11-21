@@ -20,11 +20,15 @@ Stages follow banc/l183_BRIEF_manuscript.md:
     not hold; the yardstick calibration and the centre of the silent-cell
     null in 2.1, with two section-4 lines; the figure layer (Figs 1-3
     re-pointed at paper/figures/, Figs 4 and 5 cited).
+  9 residue fold (owner-directed): the yardstick calibration carried into
+    the abstract and the Discussion; entries 38-45 completed with full author
+    lists from stored primary records (entry 42 corrected); a bounded
+    lowercase pass over twelve passages of 2.6-2.12 and section 3.
 
 CURRENT_STAGE is the stage the live draft has reached; l183_verify replays
 the ledger up to it.
 """
-CURRENT_STAGE = 8
+CURRENT_STAGE = 9
 
 EDITS = []
 
@@ -1559,6 +1563,333 @@ rep('E50-fig1-verification', 8,
     'M3: the Verification list repeated the broken Fig 1 path')
 
 
+# =========================================================== STAGE 9 =======
+# Residue fold (owner-directed, 2026-11-21 evening; banc/residue_BRIEF.md,
+# banc/residue_worklog.md).  Produced by banc/residue/build_stage9.py: every
+# old side is cut from the stage-8 body, every new side is that text with the
+# listed fragments replaced, and new measurements are placeholders.
+rep('E60-abstract-yardstick', 9,
+    '''Connectome-constrained models can ask which cells matter, not just whether
+wiring does. We run the nerve-cord subnetwork of a female Drosophila
+connectome (BANC v626) as a rate model in which descending neurons have lost
+their brain input, every arm gain-bisected to a matched operating point. On a
+base with 24 heavy descending neurons already removed, we delete each of the
+next 34 one at a time and score right-tibia flexor-extensor antiphase duty.
+Only DNp33-L lifts it into the registered high class (16 of 16 seeds; base 5
+of 16). Matched controls stay low: a mass twin, silent on this base (2 of 16);
+two delivered-drive twins, one of the carrier's class and sign (5 and 2 of
+16); and a signed-current twin (2 of 16). The contrast replicates on a second
+batch (31 of 32 pooled) and holds at the base's own gain (15 of 16); a
+gain-only null moves the base between 8 and 2 of 16 with no cell removed. The
+flip is a change in shared timing, not rate: antiphase survives pairing flexor
+and extensor traces from different runs (193 of 240 pairs), and in the
+continuously driven 1.4-Hz segment the carrier-removed network keeps it (8 of
+16) while the base and all three scan twins score 0. The carrier is
+sufficient, not unique, and set-dependent: of seven carrier-free cohorts
+mass-matched to the same window exactly one reaches the class (41 of 50), a
+downstream interneuron does so alone on the chopped readout (13 of 16), and
+the effect is absent at a stricter synapse floor. Which clock the timing
+follows is unresolved. The claim concerns one perturbed model graph, not the
+fly; we state a sign-specific prediction for unilateral DNp33 silencing.''',
+    '''Connectome-constrained models can ask which cells matter, not just whether wiring does. We run the nerve-cord subnetwork of a female Drosophila connectome (BANC v626) as a rate model in which descending neurons have lost their brain input, every arm gain-bisected to a matched operating point. On a base with 24 heavy descending neurons already removed, we delete each of the next {{NL.n_window|i}} one at a time and score right-tibia flexor-extensor antiphase duty. Only DNp33-L lifts it into the registered high class ({{kn:S.sc25}} seeds; base {{kn:S.cutwA}}). That class is a yardstick set on a degraded network: without the descending neurons that receive no cord input the model scores {{REF.reference.chopped_k|i}} of {{REF.reference.n|i}}, so the lift is a partial rescue toward that level (pooled mean duty {{REF.carrier.chopped_mean|f3}} against {{REF.reference.chopped_mean|f3}}), not a transition beyond it. Matched controls stay low: a mass twin, silent on this base ({{kn:S.sc26}}); two delivered-drive twins, one of the carrier's class and sign ({{S.dmA.kR|i}} and {{kn:S.dmC}}); and a signed-current twin ({{kn:R3}}). The contrast replicates on a second batch ({{kn:R1.sc25.pooled_b39_b40_rematched}} pooled) and holds at the base's own gain ({{kn:R1.sc25.fixed}}); a gain-only null moves the base between {{R2.kR_max|i}} and {{R2.kR_min|i}} of {{B5.n|i}} with no cell removed. The rise is a change in shared timing, not rate: antiphase survives pairing flexor and extensor traces from different runs ({{TP.sc25.cross_k|i}} of {{DS.n_cross_pairs|i}} pairs), and in the continuously driven 1.4-Hz segment the carrier-removed network keeps it ({{TP.sc25.fast_k|i}} of {{DS.n_seeds|i}}) while the base and all three scan twins score {{TP.cutwA.fast_k|i}}. The carrier is sufficient, not unique, and set-dependent: of seven carrier-free cohorts mass-matched to the same window exactly one reaches the class ({{P.cutscr0.kR|i}} of {{P.cutscr0.n|i}}), a downstream interneuron does so alone on the chopped readout ({{kn:A.rcut}}), and the effect is absent at a stricter synapse floor. Which clock the timing follows is unresolved. The claim concerns one perturbed model graph, not the fly; we state a sign-specific prediction for unilateral DNp33 silencing.''',
+    'residue fold item 2 (fourth-round M2, abstract): the high class is a yardstick registered on the degraded closure; state the network before the pure projectors are added and read the lift as a partial rescue toward that level, not a transition; "flip" retired from the abstract',
+    wrap=True)
+
+rep('E61-discussion-yardstick', 9,
+    '''member of one descending type (§2.1).
+
+''',
+    '''member of one descending type (§2.1).
+
+The size of that move needs a yardstick that the band does not supply. The high class was registered on the closure, a network that the added projectors had already degraded (§3.1). Before they are added the network is structured in every seed ({{REF.reference.chopped_k|i}} of {{REF.reference.n|i}}, mean duty {{REF.reference.chopped_mean|f3}}), and adding them is the largest effect in this paper (§2.1). Removing the carrier undoes part of that loss: on its pooled seeds the carrier-removed network reads {{REF.carrier.chopped_mean|f3}}, between the base ({{REF.base.chopped_mean|f3}}) and the network before the projectors. The result is a partial rescue toward the pre-projector level, not a transition beyond it. Every count in this paper, the controls' negative results included, is in units of a band set on the degraded network (§4).
+
+''',
+    'residue fold item 2 (fourth-round M2, Discussion): the calibration of section 2.1 and the section-4 yardstick card, carried into the Discussion where the headline move is first restated',
+    wrap='tail')
+
+rep('E62-refs-preamble', 9,
+    '''Entries 38-45 were added on 2026-11-21 from the third-family prior-art dig
+(paper/priorart_terra_20261121.md), each of whose items had its abstract or
+author summary fetched and read; only the fields that file records are used
+(first author, year, title, venue, identifier), so author lists are held at
+the first author until the primary records are pulled programmatically.
+''',
+    '''Entries 38-45 were added on 2026-11-21 from the third-family prior-art dig
+(paper/priorart_terra_20261121.md), each of whose items had its abstract or
+author summary fetched and read. Their author lists were completed the same
+day from primary records pulled programmatically (the Crossref works API,
+checked against the publisher or PubMed Central page, Europe PMC or the
+bioRxiv details API) and stored under banc/residue/raw/. That pull corrected
+entry 42, which the dig had recorded under another first author; its title is
+the publisher's. Venue, year and identifier are as the dig recorded them.
+''',
+    'residue fold item 3: the preamble said author lists were held at the first author until the primary records were pulled; they are pulled',
+    wrap=False)
+
+rep('E25b9-refs-authors', 9,
+    '''38. Chalfie et al. The neural circuit for touch sensitivity in Caenorhabditis
+    elegans. Journal of Neuroscience (1985).
+    doi:10.1523/JNEUROSCI.05-04-00956.1985
+39. Rakowski et al. Synaptic polarity of the interneuron circuit controlling
+    C. elegans locomotion. Frontiers in Computational Neuroscience (2013).
+    doi:10.3389/fncom.2013.00128
+40. Fouad et al. Distributed rhythm generators underlie Caenorhabditis elegans
+    forward locomotion. eLife (2018). doi:10.7554/eLife.29913
+41. Alstott et al. Modeling the Impact of Lesions in the Human Brain. PLOS
+    Computational Biology (2009). doi:10.1371/journal.pcbi.1000408
+42. Rangaraju et al. The role of acute lesion topography in initial ischemic
+    stroke severity and long-term functional outcomes. Stroke (2015).
+    doi:10.1161/STROKEAHA.115.009643
+43. Laredo et al. Prognostic Significance of Infarct Size and Location: The
+    Case of Insular Stroke. Scientific Reports (2018).
+    doi:10.1038/s41598-018-27883-3
+44. Zung et al. An updated catalogue of split-GAL4 driver lines for descending
+    neurons in Drosophila melanogaster. bioRxiv (2025).
+    doi:10.1101/2025.02.22.639679
+45. Stürner et al. Comparative connectomics of Drosophila descending and
+    ascending neurons. Nature (2025). doi:10.1038/s41586-025-08925-z (see also
+    entry 15, a preprint by the same first author on the same subject).
+''',
+    '''38. Chalfie, M., Sulston, J. E., White, J. G., Southgate, E., Thomson, J. N.,
+    Brenner, S. The neural circuit for touch sensitivity in Caenorhabditis
+    elegans. Journal of Neuroscience (1985).
+    doi:10.1523/JNEUROSCI.05-04-00956.1985
+39. Rakowski, F., Srinivasan, J., Sternberg, P. W., Karbowski, J. Synaptic
+    polarity of the interneuron circuit controlling C. elegans locomotion.
+    Frontiers in Computational Neuroscience (2013).
+    doi:10.3389/fncom.2013.00128
+40. Fouad, A. D., Teng, S., Mark, J. R., Liu, A., Alvarez-Illera, P., Ji, H.,
+    Du, A., Bhirgoo, P. D., Cornblath, E., Guan, S. A., Fang-Yen, C.
+    Distributed rhythm generators underlie Caenorhabditis elegans forward
+    locomotion. eLife (2018). doi:10.7554/eLife.29913
+41. Alstott, J., Breakspear, M., Hagmann, P., Cammoun, L., Sporns, O. Modeling
+    the Impact of Lesions in the Human Brain. PLOS Computational Biology
+    (2009). doi:10.1371/journal.pcbi.1000408
+42. Wu, O., Cloonan, L., Mocking, S. J. T., Bouts, M. J. R. J., Copen, W. A.,
+    Cougo-Pinto, P. T., Fitzpatrick, K., Kanakis, A., Schaefer, P. W., Rosand,
+    J., Furie, K. L., Rost, N. S. Role of Acute Lesion Topography in Initial
+    Ischemic Stroke Severity and Long-Term Functional Outcomes. Stroke (2015).
+    doi:10.1161/STROKEAHA.115.009643
+43. Laredo, C., Zhao, Y., Rudilosso, S., Renú, A., Pariente, J. C., Chamorro,
+    Á., Urra, X. Prognostic Significance of Infarct Size and Location: The
+    Case of Insular Stroke. Scientific Reports (2018).
+    doi:10.1038/s41598-018-27883-3
+44. Zung, J. L., Namiki, S., Meissner, G. W., Cheong, H. S. J., Costa, M.,
+    Eichler, K., Stürner, T., Jefferis, G. S. X. E., Managan, C., FlyLight
+    Project Team, Korff, W., Card, G. M. An updated catalogue of split-GAL4
+    driver lines for descending neurons in Drosophila melanogaster. bioRxiv
+    (2025). doi:10.1101/2025.02.22.639679 (third posted version).
+45. Stürner, T., Brooks, P., Serratosa Capdevila, L., Morris, B. J., Javier,
+    A., Fang, S., Gkantia, M., Cachero, S., Beckett, I. R., Marin, E. C.,
+    Schlegel, P., Champion, A. S., Moitra, I., Richards, A., Klemm, F., Kugel,
+    L., Namiki, S., Cheong, H. S. J., Kovalyak, J., Tenshaw, E., Parekh, R.,
+    Phelps, J. S., Mark, B., Dorkenwald, S., Bates, A. S., Matsliah, A., Yu,
+    S. C., McKellar, C. E., Sterling, A., Seung, H. S., Murthy, M., Tuthill,
+    J. C., Lee, W. C. A., Card, G. M., Costa, M., Jefferis, G. S. X. E.,
+    Eichler, K. Comparative connectomics of Drosophila descending and
+    ascending neurons. Nature (2025). doi:10.1038/s41586-025-08925-z (see also
+    entry 15, a preprint by the same first author on the same subject).
+''',
+    "residue fold item 3: entries 38-45 with full author lists, generated by banc/residue/residue_refs_build.py from the stored Crossref records and cross-checked against a second stored source each; entry 42 is Wu et al., not Rangaraju et al. (both primary records), and carries the publisher's title; entry 44 lists the latest posted version's authors",
+    wrap=False)
+
+rep('E70-fmt-window', 9,
+    '''The substrate is the l65 cord subnet, 20,521 cord + 728 DN-into cells, and the
+Ti flexor pool has n=101 [subnet]; 11 runs are summed [n_runs_summed]. The
+U-law is read with pooled Wilson intervals, and the k=24→25 step (+.371 meanR
+[xor.steps]) is the transition. The ladder is non-monotone: k=58 kills again
+(1 of 258 [l172.pooled]) — a WINDOW, not a monotone dose response. Its LEFT
+side is the opposite story (253 of 258), so k=58 kills the right pair, not the
+cord. Every arm's count in this paper is its single canonical pooled count
+(§2.14): the unique-seed union over all admissible batches.''',
+    '''The substrate is the l65 cord subnet, 20,521 cord + 728 DN-into cells, and the Ti flexor pool has n=101 [subnet]; 11 runs are summed [n_runs_summed]. The U-law is read with pooled Wilson intervals, and the k=24→25 step (+.371 meanR [xor.steps]) is the transition. The ladder is non-monotone: k=58 kills again (1 of 258 [l172.pooled]), so the structured range is a window in k, not a monotone dose response. On the left side the same cut reads the opposite way (253 of 258), so k=58 kills the right pair, not the cord. Every arm's count in this paper is its single canonical pooled count (§2.14): the unique-seed union over all admissible batches.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.6, capitals used as emphasis (WINDOW, LEFT)',
+    wrap=True)
+
+rep('E71-fmt-twin-ranks', 9,
+    '''At the transition, rank 25 = id 1110 (DNp33-L — THE carrier; m .00644), rank
+26 = id 319 (DNpe025-R, the twin; m .00604), delta 3.9e-04 [xor]. 1110-alone ⇒
+SUPER (203 of 210 pooled, [.933,.984]); 319-alone ⇒ INTERMEDIATE
+(30 of 66, [.340,.574]) [l172.pooled]. The twin is not neutral and the
+question is not underpowered at the canonical pool: twin − base = +.175, 95%
+CI [+.047,+.305], Fisher p = .008, while twin − carrier = −.512 [−.628,−.388]
+[l172.diffs]. On the smaller two-batch pool the same contrast was
+indistinguishable from zero, so the earlier "neutral" label was a pooling
+artefact, not a measured null.''',
+    '''At the transition, rank 25 is the carrier, DNp33-L (id 1110; removal mass .00644), and rank 26 is the mass twin, DNpe025-R (id 319; removal mass .00604). The two masses differ by 3.9e-04 [xor]. Removing only the carrier of the pair gives the super class (203 of 210 pooled, [.933,.984]), and removing only the twin gives an intermediate reading (30 of 66, [.340,.574]) [l172.pooled]. The twin is not neutral and the question is not underpowered at the canonical pool: twin − base = +.175, 95% CI [+.047,+.305], Fisher p = .008, while twin − carrier = −.512 [−.628,−.388] [l172.diffs]. On the smaller two-batch pool the same contrast was indistinguishable from zero, so the earlier "neutral" label was a pooling artefact, not a measured null.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.7, equation-style shorthand and cell ids used as subjects',
+    wrap=True)
+
+rep('E72-fmt-crossed', 9,
+    '''Both READS of the flip ride the same cell (right-side super-raise AND
+left-side death) — crossed effect. The canonical pooled counts (unique seeds,
+all admissible batches) are: carrier cell 203 of 210, Wilson [.933,.984], mean
+duty .766 with bootstrap [.749,.783]; cutwA base 72 of 258, [.228,.337], mean
+duty .404 [.385,.425] [l172.pooled]. Carrier − base = +.688 [+.621,+.742]
+[l172.diffs].''',
+    '''Both readings of the flip ride the same cell: the right side rises into the super class and the left side dies, a crossed effect. The canonical pooled counts (unique seeds, all admissible batches) are: carrier cell 203 of 210, Wilson [.933,.984], mean duty .766 with bootstrap [.749,.783]; the base (`cutwA`) 72 of 258, [.228,.337], mean duty .404 [.385,.425] [l172.pooled]. Carrier − base = +.688 [+.621,+.742] [l172.diffs].''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.7, capitals as emphasis and a bare arm code as a noun',
+    wrap=True)
+
+rep('E73-fmt-scramble-lead', 9,
+    '''**Scramble controls: sufficient, not unique — and set-dependently so.**
+The XOR above fixes mass and varies identity between TWO cells. The
+complementary control fixes mass and varies the whole REMOVED SET, with the
+carrier excluded: seven carrier-free cohorts drawn from ranks 30–58 of the
+same mass ladder, each mass-matched to the k=29 window (.2588 removed mass
+[l168.window_mass]). They do NOT behave alike, and that heterogeneity is the
+result:''',
+    '''**Scramble controls: sufficient, not unique — and set-dependently so.** The XOR above fixes mass and varies identity between two cells. The complementary control fixes mass and varies the whole removed set, with the carrier excluded: seven carrier-free cohorts drawn from ranks 30–58 of the same mass ladder, each mass-matched to the k=29 window (.2588 removed mass [l168.window_mass]). They do not behave alike, and that heterogeneity is the result:''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.7, capitals as emphasis',
+    wrap=True)
+
+rep('E74-fmt-scramble-list', 9,
+    '''1. **Not unique.** One carrier-free mass-matched cohort — the heaviest,
+   cutscr0 — does reach the super class on the right (39/48, lb .681, three
+   batches). So removing DNp33-L is a SUFFICIENT route to the transition at
+   this window, not the only one. The manuscript's claim is accordingly
+   sufficiency-under-mass-control, never uniqueness.
+2. **Set-dependent, not mass-dependent.** The seven scramble sets span only
+   .0439–.0544 of extra removed mass yet span the entire outcome range. The
+   SECOND-heaviest set kills outright (cutscr1, .0476, 0/32) while two
+   LIGHTER sets sit well above it (cutscr3 .0442 at 17/32; cutscrL1 .0460 at
+   10/16), so the right-side outcome is not monotone — not even ordered — in
+   removed mass among carrier-free sets. That is the same conclusion the
+   two-cell XOR reaches one level down.
+3. **Scrambles do not reproduce the crossed state.** cutscr0 raises BOTH
+   sides above the untreated base band (right 39/48 vs 16/48; left 35/48 vs
+   15/48) [l168.base]. The carrier's signature is CROSSED — right-side
+   super-raise WITH left-side death (§2.7 above). So the one scramble that
+   matches the carrier on the claim axis still differs from it on the other
+   side: same class, different state.''',
+    '''1. **Not unique.** One carrier-free mass-matched cohort — the heaviest,
+   cutscr0 — does reach the super class on the right (39/48, lb .681, three
+   batches). So removing DNp33-L is a sufficient route to the transition at
+   this window, not the only one. The manuscript's claim is accordingly
+   sufficiency-under-mass-control, never uniqueness.
+2. **Set-dependent, not mass-dependent.** The seven scramble sets span only
+   .0439–.0544 of extra removed mass yet span the entire outcome range. The
+   second-heaviest set kills outright (cutscr1, .0476, 0/32) while two
+   lighter sets sit well above it (cutscr3 .0442 at 17/32; cutscrL1 .0460 at
+   10/16), so the right-side outcome is not monotone — not even ordered — in
+   removed mass among carrier-free sets. That is the same conclusion the
+   two-cell XOR reaches one level down.
+3. **Scrambles do not reproduce the crossed state.** cutscr0 raises both
+   sides above the untreated base band (right 39/48 vs 16/48; left 35/48 vs
+   15/48) [l168.base]. The carrier's signature is crossed — right-side
+   super-raise with left-side death (§2.7 above). So the one scramble that
+   matches the carrier on the claim axis still differs from it on the other
+   side: same class, different state.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.7 list, six capitalised emphasis words (case only; the list layout is untouched)',
+    wrap=False)
+
+rep('E75-fmt-static', 9,
+    '''The carrier cell DNp33-L is ACh, neck-connective class; 80 out-edges, 87%
+intrinsic / 13% motor, ZERO direct antagonist-pool edges, mid-pack
+removal-mass rank (34/58); the mass-twin carries the family's only
+interconnect edges — the carrier is an input-side isolate. (Sources:
+l134/static.json, l137 static tables; label as observation, not mechanism
+claim.)''',
+    '''The carrier cell DNp33-L is cholinergic and belongs to the neck-connective class. It has 80 out-edges, 87% onto intrinsic cells and 13% onto motor cells, and no direct antagonist-pool edges. Its removal-mass rank is mid-pack (34/58). The mass twin carries the family's only interconnect edges; the carrier is an input-side isolate. (Sources: l134/static.json, l137 static tables; these are observations, not a mechanism claim.)''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.8, a telegraphic list with a capitalised ZERO, written as sentences',
+    wrap=True)
+
+rep('E76-fmt-clean-arm', 9,
+    '''**The clean arm (silW): the flip without a gain change, without an edge
+touched.** On the cutwA PARTIAL base (cohort ranks 1–24 cut), clamping ONLY
+DNp33-L's activity — no edge removed, no cell deleted — flips the regime to
+SUPER: .622 with 14/16 seeds on batch D [l144.silw] and .659 with
+14/16 on batch G [l150.h1], paired ΔR against the base +.189
+(6/16 seeds up and 0 down) and +.281 (9/16 up and 0 down),
+canonical pooled 78 of 98, Wilson
+[.706,.864], against the untreated cut base +.517
+[+.410,+.602], Fisher p = 7e-19 [l172.pooled, l172.diffs]. Its gain is
+BIT-IDENTICAL to its own base's — g = .143658196 in both batches, exact float
+equality in the two stored jsons [l173b.gains] — so the flip is no artefact of
+the active-fraction re-bisect, and it is the lineage's only flip arm with that
+property. Every edge-removal flip arm carries a small af-matched gain INCREASE
+(eOutInt +1.297%, cutng25 and eAll +1.244%, eOutAll +1.238%, eIn +1.087%,
+eMotIn +1.062%), the two non-flip arms sit within ±0.03% (eMotTop5 −0.031%,
+eMotBot5 +0.009%), and eOutMot sits at −0.568% [l173b.gains]. Identity and
+gain therefore CO-VARY across the edge ladder, a confound untested until this
+pass: silW breaks it from the activity side, §2.12's graph × gain 2×2 from the
+wiring side [l169.grid, l169d.grid].''',
+    '''**The clean arm (silW): the flip without a gain change, without an edge touched.** The base here is the cut base (`cutwA`, cohort ranks 1–24 cut), which sits in the partial class. Clamping only DNp33-L's activity on it, with no edge removed and no cell deleted, moves the readout into the super class: .622 with 14/16 seeds on batch D [l144.silw] and .659 with 14/16 on batch G [l150.h1]. The paired ΔR against the base is +.189 (6/16 seeds up and 0 down) and +.281 (9/16 up and 0 down). The canonical pooled count is 78 of 98, Wilson [.706,.864], and its difference from the untreated cut base is +.517 [+.410,+.602], Fisher p = 7e-19 [l172.pooled, l172.diffs]. The clamp arm's gain is bit-identical to its own base's — g = .143658196 in both batches, exact float equality in the two stored jsons [l173b.gains] — so the flip is no artefact of the active-fraction re-bisect, and it is the lineage's only flip arm with that property. Every edge-removal flip arm carries a small gain increase from the active-fraction re-bisect (eOutInt +1.297%, cutng25 and eAll +1.244%, eOutAll +1.238%, eIn +1.087%, eMotIn +1.062%), the two non-flip arms sit within ±0.03% (eMotTop5 −0.031%, eMotBot5 +0.009%), and eOutMot sits at −0.568% [l173b.gains]. Identity and gain therefore co-vary across the edge ladder, a confound untested until this pass. The clamp arm breaks it from the activity side, and §2.12's graph × gain 2×2 breaks it from the wiring side [l169.grid, l169d.grid].''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.9, five capitalised emphasis words, class labels used as verbs and one sentence of more than 60 words, split',
+    wrap=True)
+
+rep('E77-fmt-sustain', 9,
+    '''The robustness ensemble is 5 af-matched 1% edge-jitter gain sets plus base,
+with the same seeds paired [jitter_note]; re-gains spanned g_full .1487–.1750
+(±8%) [gains.full.spread] — a BROADER family than the critique demanded.
+Across those sets the carrier reads SUPER 5/5 [sustain.cutng25]; ng23 KILL 4/5
+[sustain.cutng23]; ng29 SUPER 4/5 [sustain.cutng29]; wA PARTIAL 0/5 and 25p
+NEUTRAL 0/5 [sustain.cutwA, sustain.cutng25p] — the interior re-draws across
+gains (wA hit KILL in one set, SUPER in another).''',
+    '''The robustness ensemble is 5 af-matched 1% edge-jitter gain sets plus base, with the same seeds paired [jitter_note]; re-gains spanned g_full .1487–.1750 (±8%) [gains.full.spread], a broader family than the critique demanded. Across those sets the carrier-removed arm keeps its super class in 5/5 [sustain.cutng25]. The k = 23 rung keeps its kill class in 4/5 [sustain.cutng23] and the k = 29 rung its super class in 4/5 [sustain.cutng29]. The base keeps its partial class in 0/5 and the mass-twin arm its neutral class in 0/5 [sustain.cutwA, sustain.cutng25p]. The interior thus re-draws across gains: the base reads kill in one set and super in another.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.10, five bare arm codes with capitalised class labels, named in words',
+    wrap=True)
+
+rep('E78-fmt-gain-grid', 9,
+    '''The 2x2 on Ti right-side duty divides along both axes [l169.grid]. Graph-wA at
+its own gain is PARTIAL (meanR .426, kR 4/16); graph-wA at the HIGHER cutng25
+gain (`wAgN`) does NOT flip (meanR .317, kR 2/16); graph-cutng25 at the LOWER
+cutwA gain (`n25gW`) stays SUPER (meanR .702, kR 15/16, [.717,.989]);
+graph-cutng25 at its own gain SUPER (meanR .753, kR 16/16).''',
+    '''The 2x2 on Ti right-side duty divides along both axes [l169.grid]. The base graph at its own gain is in the partial class (meanR .426, kR 4/16). Run at the higher gain of the carrier-removed graph, it does not flip (`wAgN`: meanR .317, kR 2/16). The carrier-removed graph run at the lower gain of the base stays in the super class (`n25gW`: meanR .702, kR 15/16, [.717,.989]), as it does at its own gain (meanR .753, kR 16/16).''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 2.12, four graph-at-gain cells written as arm codes with capitalised labels (PARTIAL, HIGHER, NOT, LOWER, SUPER)',
+    wrap=True)
+
+rep('E79-fmt-update-rule', 9,
+    '''[l173.model]. Three details matter for replication and are easy to get
+wrong from prose. The noise enters AFTER the rectifier and INSIDE the
+clamp. The clamp has NO lower bound, so a cell may sit marginally below
+zero on a negative noise draw. And `I` is a CONSTANT per-cell input
+vector that is zero everywhere except on the DNg100 population, which
+carries a tonic drive D = 0.2 [l173.protocol] — a term the earlier
+drafts never stated. Noise is drawn i.i.d. per cell per step at scale
+NOISE, from one generator pair shared across all arms of a run, so arms
+differ only in their graph and gain.''',
+    '''[l173.model]. Three details matter for replication and are easy to get wrong from prose. The noise enters after the rectifier and inside the clamp. The clamp has no lower bound, so a cell may sit marginally below zero on a negative noise draw. And `I` is a constant per-cell input vector that is zero everywhere except on the DNg100 population, which carries a tonic drive D = 0.2 [l173.protocol] — a term the earlier drafts never stated. Noise is drawn i.i.d. per cell per step at scale NOISE, from one generator pair shared across all arms of a run, so arms differ only in their graph and gain.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 3.2, capitals as emphasis (the symbol NOISE is notation and stays)',
+    wrap=True)
+
+rep('E80-fmt-readout-defs', 9,
+    '''For an antagonist pair (flexor vs extensor pool means) the structure
+statistic S is the NEGATIVE Pearson correlation of the two pool traces
+over a sliding 500-step window, sampled every 10 steps and computed PER
+SIDE — a pooled bilateral S can hide a sign-inverted side. DUTY is the
+fraction of samples with S ≥ .25 inside the 0.7-Hz measurement windows,
+dropping the first 500 steps of each segment. A seed counts as
+structured when its duty ≥ .50. Class criteria were frozen in
+preregistrations before each run: SUPER = meanR ≥ .60 and kR ≥ 12 of
+16; PARTIAL = .35 ≤ meanR ≤ .50 with 3 ≤ kR ≤ 8; NOT-SUPER (the
+control form) = kR ≤ 8 and meanR ≤ .50 [l173.defs].''',
+    '''For an antagonist pair (flexor vs extensor pool means) the structure statistic S is the negative Pearson correlation of the two pool traces over a sliding 500-step window, sampled every 10 steps and computed per side, because a pooled bilateral S can hide a sign-inverted side. Duty is the fraction of samples with S ≥ .25 inside the 0.7-Hz measurement windows, dropping the first 500 steps of each segment. A seed counts as structured when its duty ≥ .50. Class criteria were frozen in preregistrations before each run: the super class requires meanR ≥ .60 and kR ≥ 12 of 16; the partial class requires .35 ≤ meanR ≤ .50 with 3 ≤ kR ≤ 8; and the not-super class (the control form) requires kR ≤ 8 and meanR ≤ .50 [l173.defs].''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 3.6, capitals as emphasis and class labels defined with an equals sign',
+    wrap=True)
+
+rep('E81-fmt-identities', 9,
+    '''Two grid cells of §2.9 are identities that hold BY CONSTRUCTION and
+are recorded here as construction-level sanity checks rather than as
+results. (i) eAll (all 93 edges incident on the carrier removed, cell
+KEPT) is BIT-IDENTICAL to cutng25 (cell removed): the af-matched
+bisect lands on the same gain to 16 digits (.1454454553127289) and
+max|Δ| = 0.0 over motor mass, X-motor and 22 pool traces × 2 anchor
+seeds × 6000 steps [l142.aeall] — node-drop ≡ incident-edge-drop,
+exactly, so a cell's causal footprint in this model IS its edge set.
+(ii) se0 (the eAll graph PLUS a window clamp holding the carrier's
+activity at 0) is BIT-IDENTICAL to eAll on every stored channel and
+seed (23 keys × 16 seeds, max|Δ| = 0.0 [l148.seid, l148.h_id]): with
+its incident edges gone the cell has no channel its activity could act
+through, so activity silence is a strict SUBSET of edge removal. Both
+are expected; they are reported because a rate model that FAILED either
+would have a wiring bug, and they are the cheapest such probe in the
+lineage.''',
+    '''Two grid cells of §2.9 are identities that hold by construction and are recorded here as construction-level sanity checks rather than as results. (i) eAll (all 93 edges incident on the carrier removed, cell kept) is bit-identical to cutng25 (cell removed): the af-matched bisect lands on the same gain to 16 digits (.1454454553127289) and max|Δ| = 0.0 over motor mass, X-motor and 22 pool traces × 2 anchor seeds × 6000 steps [l142.aeall]. Node-drop is thus exactly incident-edge-drop, so a cell's causal footprint in this model is its edge set. (ii) se0 (the eAll graph plus a window clamp holding the carrier's activity at 0) is bit-identical to eAll on every stored channel and seed (23 keys × 16 seeds, max|Δ| = 0.0 [l148.seid, l148.h_id]). With its incident edges gone the cell has no channel its activity could act through, so activity silence is a strict subset of edge removal. Both are expected; they are reported because a rate model that failed either would have a wiring bug, and they are the cheapest such probe in the lineage.''',
+    'residue fold item 5 (L174 lowercase house style, bounded): section 3.8, seven capitalised emphasis words and one sentence of more than 60 words, split',
+    wrap=True)
+
 # ------------------------------------------------------------------ banner
 # Appended to the changelog banner (the banner is outside the replayed body;
 # l183_verify requires the old banner as an exact prefix and this entry after
@@ -1646,5 +1977,17 @@ STAGE_NOTES = {
 > section 4 gains a yardstick card and names set 5. Figs 1-3 are re-pointed
 > at paper/figures/, Figs 4 and 5 are cited, and paper/figures/fig5_verify.py
 > is new. Five keys entered numbers.json first.
+''',
+    9: '''> Stage 9 (residue fold, owner-directed, same day): the abstract and the
+> Discussion now carry the yardstick calibration of 2.1 (the high class was
+> registered on the degraded closure; the network before the pure projectors
+> are added is structured in every seed, so the lift is a partial rescue
+> toward that level and not a transition beyond it; "flip" leaves the
+> abstract). Entries 38-45 carry full author lists copied programmatically
+> from stored primary records (banc/residue/raw/), which corrected entry 42:
+> its first author is Wu, not the surname the prior-art dig recorded, and
+> its title is the publisher's. Twelve passages of 2.6-2.12 and section 3
+> are rewritten from capitalised emphasis and bare arm codes into prose, with
+> no number added and no section renumbered. No key entered numbers.json.
 ''',
 }

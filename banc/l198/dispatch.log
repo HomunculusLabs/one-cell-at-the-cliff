@@ -1,0 +1,293 @@
+Query: Experiment dispatch (owner request, L198 relay-matched twin then 
+gate-jitter v2, chained). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l198/BRIEF_relaytwin.md and execute it 
+completely. PREREG first; C0A anchors mandatory.
+📖 Read BRIEF_relaytwin.md  0.1s
+📚 Skill peabrain-flybrain
+✗ $ ls + 5 commands [exit 2]
+💻 $ grep -n "^#\|L18[0-9]\|L19[0-9]\|C0A\|PREREG\|key-scan\|LAB-INTENT" /home/t3rpz/.hermes/profiles/maple/cache/spillover/toolu_01BYKgmWBipJESN8WvRJbDYC.txt | cut -c1-260
+✗ $ cat banc/l198/dispatch.log + 9 commands  60.3s [exit 124]
+📖 Read toolu_01BYKgmWBipJESN8WvRJbDYC.txt L1125-1194
+💻 $ cat banc/l187/L187-FINDINGS.md + 6 commands
+💻 $ grep -n "L197\|L198\|gate-jitter\|jitter" LANE.md | cut -c1-300 + 2 commands
+📖 Read LANE.md L6855-7014
+💻 $ ls -la l186 l185 + 2 commands
+💻 $ ls -la l186 + 7 commands
+💻 $ cat l187/PREREG.md + 5 commands
+💻 $ cat l187/arms_block.py.txt
+💻 $ cat l187/gains_block.py.txt l187/tail_block.py.txt + 2 commands  0.2s
+💻 $ grep -n "^def \|^# ----\|^# ====\|^if MODE\|^for seed\|^SEEDS\|^USED\|^WIN_CELLS\|^WIN_RANKS\|^ANCH\|^OUT\|^FRESH\|^B4\|^B39\|^_fresh\|^N_NPZ\|^GI_\|^G_CUT\|^AF_T\|^CLAMP\|^TRACK\|^ALL_ARMS\|^ARMS\|^MY_\|^PLAN\|^BIS\|^def cell_info" l187/relay_run.py
+💻 $ sed -n 1,97p l187/relay_run.py + 2 commands
+💻 $ sed -n 1177,1200p l187/relay_run.py + 6 commands
+💻 $ sed -n 1,130p l187/verdict_l187.py + 6 commands  0.4s
+💻 $ python3 - <<'E' import json s=json.load(open('l185/selection_s2.json')) + 10 commands  0.6s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l198/twin_block.py.txt
+│ banc/l198/twin_block.py.txt
+│ @@ -0,0 +1,173 @@
+│ +# ======================= L198 TWIN BLOCK (additive) =======================
+│ +# Relay-matched cord-interneuron twin. Selection is ZERO-ROLLOUT, from the
+│ +# STORED 3-seed census of the k=24 base (l175/census_k24.npz), by the rule
+│ +# frozen in l198/PREREG.md BEFORE this block was first executed.
+│ +# Everything above (the L187 arms block: sc25 / rcut graphs, aliases, certs)
+│ +# is VERBATIM; arms this card does not roll (sc40, pp, occ, rsil*) are built
+│ +# but never stepped.
+│ +GI_DOWN = 74914
+│ +REL_CLASS = RELAY_INFO["cell"]["super_class"]
+│ +assert REL_CLASS == "ventral_nerve_cord_intrinsic", REL_CLASS
+│ +_sc_ser = _ann1["super_class"].astype(str)
+│ +is_cord_g = np.zeros(Nall, bool)
+│ +is_cord_g[_sc_ser.index[(_sc_ser == REL_CLASS).to_numpy()].to_numpy()] = True
+│ +assert is_cord_g[GI_RELAY]
+│ +# --- prior-arm cells: every cell removed / clamped / edge-cut in any stored arm
+│ +PRIOR = set(USED) | set(int(x) for x in ng_desc) | set(DM.values())
+│ +PRIOR |= {GI_RELAY, GI_SC40, GI_CARRIER}
+│ +_s185 = json.load(open("l185/static.json"))
+│ +PRIOR |= set(int(v) for v in _s185["r1_cells"].values())
+│ +_sel185 = json.load(open("l185/selection_s2.json"))
+│ +PRIOR.add(int(_sel185["pick"]["gi"]))
+│ +assert R185["R3"]["arm"]["gi"] == _sel185["pick"]["gi"]
+│ +_sel190 = json.load(open("l190/selection.json"))
+│ +for _e in _sel190["edges"].values():
+│ +    PRIOR |= {int(_e["source"]), int(_e["target"])}
+│ +is_prior_g = np.zeros(Nall, bool)
+│ +is_prior_g[sorted(PRIOR)] = True
+│ +POOL_T = in_wA & is_cord_g & ~is_prior_g & ~is_motor_g & ~is_dng100_g
+│ +assert not POOL_T[GI_RELAY]
+│ +# --- stored census (L175 census mode, seeds 801 / 901 / 3561) ---
+│ +_xbar = _cen["x_mean_3seed"].astype(np.float64)
+│ +_drv = _cen["delivered_drive"].astype(np.float64)
+│ +assert [int(x) for x in _cen["seeds"]] == [801, 901, 3561]
+│ +assert float(_cen["g_cutwA"]) == G_CUTWA_STORED
+│ +assert np.array_equal(_drv, _xbar * OW_EFF[gi_wA]), "census drive != x_mean x out|w| (STOP)"
+│ +D_REL = float(_drv[RELAY_LOC])
+│ +M_REL = float(OW_RAW[GI_RELAY])
+│ +assert D_REL == RELAY_INFO["census_delivered_drive"] and D_REL > 0
+│ +
+│ +
+│ +def _edge(src_gi, dst_gi):
+│ +    m = emask_wA & (src_all == src_gi) & (dst_all == dst_gi)
+│ +    return dict(n=int(m.sum()), syn=int(w_syn[m].sum()),
+│ +                w_eff=float((vals_all[m] * np.where(vals_all[m] < 0, BETA, 1.0)).sum()))
+│ +
+│ +
+│ +def select_twin():
+│ +    cand = np.where(POOL_T[gi_wA])[0]               # local idx on the base
+│ +    d = _drv[cand]
+│ +    with np.errstate(divide="ignore", invalid="ignore"):
+│ +        score = np.where(d > 0, np.abs(np.log(d / D_REL)), np.inf)
+│ +        tie = np.where(OW_RAW[gi_wA[cand]] > 0,
+│ +                       np.abs(np.log(OW_RAW[gi_wA[cand]] / M_REL)), np.inf)
+│ +    o = np.lexsort((gi_wA[cand], tie, score))       # score, then tie, then gi
+│ +    rows = []
+│ +    for j in o[:6]:
+│ +        g = int(gi_wA[cand[j]])
+│ +        ci = cell_info(g)
+│ +        ci.update(loc_wA=int(cand[j]), x_mean=float(_xbar[cand[j]]),
+│ +                  x_mean_seeds=[float(v) for v in _cen["x_mean"][:, cand[j]]],
+│ +                  delivered_drive=float(d[j]), drive_ratio=float(d[j] / D_REL),
+│ +                  abs_log_drive_ratio=float(score[j]),
+│ +                  mass_ratio=float(OW_RAW[g] / M_REL),
+│ +                  abs_log_mass_ratio=float(tie[j]),
+│ +                  in_edges=int((emask_wA & (dst_all == g)).sum()),
+│ +                  direct_onto={pk: _direct_onto(g, pk) for pk in _pool_gi},
+│ +                  edge_from_carrier=_edge(GI_CARRIER, g), edge_to_carrier=_edge(g, GI_CARRIER),
+│ +                  edge_from_relay=_edge(GI_RELAY, g), edge_to_relay=_edge(g, GI_RELAY),
+│ +                  edge_to_74914=_edge(g, GI_DOWN))
+│ +        rows.append(ci)
+│ +    return dict(
+│ +        rule="argmin |log(drive_cand/drive_relay)| over POOL_T; tie-break smaller "
+│ +             "|log(mass_cand/mass_relay)| (mass = raw out|w| onto the k=24-base "
+│ +             "closure), then gi; drive = x_mean (stored 3-seed census of the k=24 "
+│ +             "base, l175/census_k24.npz) x |Wb| column abs-sum (PREREG l198)",
+│ +        pool="in k=24 base & super_class == relay's (ventral_nerve_cord_intrinsic) "
+│ +             "& not in any prior arm & not motor & not DNg100",
+│ +        census_seeds=[801, 901, 3561], pool_n=int(len(cand)),
+│ … omitted 95 diff line(s) across 1 additional file(s)/section(s)
+✗ $ python3 - <<'E' p='twin_block.py.txt' + 7 commands  3.6s [exit 1]
+💻 $ sed -i 's|"base, l175/census_k24.npz) x \|Wb\| column abs-sum (PREREG l198)",|"base, the stored L175 census_k24 file) x \|Wb\| column abs-sum (PREREG l198)",|' l198/twin_block.py.txt + 5 commands  1.6s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l198/PREREG.md
+│ banc/l198/PREREG.md
+│ @@ -0,0 +1,179 @@
+│ +# PREREG — L198: the relay-matched cord-interneuron twin (closes L187's caveat)
+│ +
+│ +Registered 2026-11-21 ~18:50 EST. Owner-directed (`BRIEF_relaytwin.md`);
+│ +experimenter = Miso session (claude-fable-5-2). TWO-STAGE freeze:
+│ +
+│ +- **Stage 1 (this text, frozen BEFORE the selection code is ever executed):**
+│ +  selection rule, pool, arms, readout, bands, branches, predictions. At this
+│ +  point nothing under `banc/l198/` has been run except the builder (text
+│ +  transform, no graph, no census read). The stored census
+│ +  (`l175/census_k24.npz`) has NOT been opened by me for any cell other than the
+│ +  relay / carrier pins already printed in `l187/static.json`.
+│ +- **Stage 2 (`SELECTION.md` + `selection.json` + `FREEZE.json`, written by the
+│ +  zero-rollout static pass and frozen BEFORE any rollout):** the picked cell
+│ +  and the five runners-up, with covariates. Workers assert both shas.
+│ +
+│ +## Question
+│ +
+│ +L187: removing relay GI 75494 (IN06B033-L, inhibitory VNC interneuron) alone
+│ +lifts the chopped 0.7-Hz right-tibia duty into SUPER (rcut 13/16 .697; fixed
+│ +gain 13/16 .630) WITHOUT the carrier's continuous 1.4-Hz middle-segment
+│ +signature (.020 vs .530). L187's caveat: no matched twin for a cord
+│ +interneuron exists, so "the relay does it" is not shown to be special to this
+│ +cell. Does a drive-matched cord interneuron do the same?
+│ +
+│ +## Selection rule (brief's rule, the L175 `select()` form re-pointed at the relay)
+│ +
+│ +- **Census:** the STORED 3-seed census of the k=24 base (L175 census mode,
+│ +  seeds 801 / 901 / 3561, g_cutwA) — zero new rollouts.
+│ +  drive(c) = x_mean_3seed(c) × out|w|(c), out|w| = model-true |Wb| column
+│ +  abs-sum on the k=24 closure (`OW_EFF`; inhibitory edges × BETA). Relay
+│ +  reference: 86.503 (x̄ .3289 × 262.977), stored.
+│ +- **Pool `POOL_T`:** in the k=24 base ∧ annotation `super_class` equal to the
+│ +  relay's (`ventral_nerve_cord_intrinsic` = "cord interneuron") ∧ not motor ∧
+│ +  not DNg100 ∧ NOT in any prior arm. Prior-arm set, derived from stored
+│ +  files (never memory): the lineage `USED` set (78 cells, every `_drop` /
+│ +  `silrand_ids` / `clamp_id` key of every `l*/raw_l*.npz`) ∪ all 58 ng-ladder
+│ +  cells (covers the L175 window scan) ∪ L175 twins dmA / dmC ∪ L185's cells
+│ +  (`r1_cells` + its S2 pick) ∪ L187's cells {75494, 559, 1110} ∪ both
+│ +  endpoints of L190's two cut edges.
+│ +- **Pick:** argmin |log(drive_c / drive_relay)|; tie-break smaller
+│ +  |log(mass_c / mass_relay)| with mass = raw out|w| onto the closure; then
+│ +  lowest GI. Cells with zero drive are inadmissible (score = inf).
+│ +  **Top-5 runners-up** registered in the same order.
+│ +- No sign, side, degree, type or adjacency filter is applied: the brief's rule
+│ +  is drive within class. Sign, cell type, side, in/out degree, mass ratio,
+│ +  direct edges onto the four Ti pools, and direct edges to / from the carrier,
+│ +  the relay and gi 74914 are RECORDED for all six and reported as covariates
+│ +  (the L198 lane card's out-degree / out-mass / direct-current matching is a
+│ +  different rule; it is reported, not optimised). If the pick is excitatory
+│ +  or is wired directly to the relay, that is stated in the findings as a limit
+│ +  on "matched", not repaired by re-selection.
+│ +
+│ +## Machinery (inherited; nothing lineage-side edited)
+│ +
+│ +`twin_run.py` = count-asserted additive transform (`build_twin.py`, 9 rep
+│ +sites) of the certified L187 harness `l187/relay_run.py` (sha256
+│ +b7c486bf3250…, itself a transform of `l175/scan_run.py`). VERBATIM:
+│ +extraction, ladder, `build()/wb()/pools_for()`, `add_arm()/gen_init()`, the
+│ +whole L187 arms block, `settle_states`, `bisect_vec`, the rollout step loop,
+│ +store keys, per-seed atomic checkpoints. REPLACED: env names, seed list,
+│ +output dir, the static dump (→ `twin_block.py.txt`: selection + six
+│ +`add_arm()` graphs + the L187 CERT-SUB loop on them), the gains + anchors
+│ +block, the tail. Constants unchanged. Readout `verdict_l198.py` = the
+│ +`l150_verdict.py` helper block (lines 1-71 of `l187/verdict_l187.py`, sha
+│ +5c8323f2755f1d0c) + `duty14_seeds` (lines 117-125) VERBATIM + an L198 tail,
+│ +written before any rollout.
+│ +
+│ +## Seeds
+│ +
+│ +FRESH **B43 = 3673..3688, n = 16 for every arm** (next slot of the lineage's
+│ +32-step grid after L190's 3641..3656). Verified absent from all 242 npz in the
+│ +lab by the any-key-endswith scan (pre-registration scan, zero rollouts);
+│ +re-asserted in-script by every process. Non-sample anchor seeds rolled FIRST:
+│ +801, 901, 3545, 3609.
+│ +
+│ +## Arms (all on the k=24 = cutwA base; 6 workers × 2 threads)
+│ +
+│ +| arm | graph | gain | role |
+│ … omitted 101 diff line(s) across 1 additional file(s)/section(s)
+💻 $ (sha256sum l198/PREREG.md l198/twin_run.py l198/build_twin.py l198/twin_block.py.txt l198/gains_block.py.txt l198/tail_block.py.txt + 9 commands  11.5s
+💻 $ python3 - <<'E' import json r=json.load(open('l187/results_l187.json')) print({k:(v if not isinstance(v,(list,dict)) else type(v).__name__) for k,v in r['arms']['rcut'].items()}) print({k:(v if not isinstance(v,(list,dict)) else type(v).__name__) for k,v in r['base'].items()}) print(r['arms']['rcut'].get('fast'), r['base'].get('fast')) E grep -n "def duty14_seeds\|return np.array(R)" l187/verdict_l187.py + 2 commands  0.4s
+✗ $ cat <<'E' # ======================= L198 verdict tail (additive) ======================= # Helpers ABOVE = l187/verdict_l187.py lines 1-71 (the l150 block) + lines # 118-125 (duty14_seeds) VERBATIM (sliced by l198/build_verdict.py). Reads # stored files only + 23 commands [Foreground command uses shell-level backgroun...]
+💻 $ ls l198/
+
+────────────────────────────────────────
+✿ Miso
+Nothing ran. Re-sending the file-writing part without the launch.
+────────────────────────────────────────
+
+💻 $ cat <<'E' # ======================= L198 verdict tail (additive) ======================= # Helpers ABOVE = l187/verdict_l187.py lines 2-71 (the l150 block) + lines # 118-125 (duty14_seeds) VERBATIM (sliced by l198/build_verdict.py). Reads # stored files only + 21 commands  5.4s
+💻 $ exec l198/run_all.sh
+💻 $ cat l186/worker.out | cut -c1-220 + 2 commands  0.2s
+💻 $ grep -n "tone\|rho\|rot" l186/t216_verify.py + 1 command  0.1s
+💻 $ sed -n 100,165p l186/t216_verify.py + 3 commands  0.1s
+💻 $ mkdir -p /home/t3rpz/critters/peabrain-lab/banc/l197b + 1 command  2.1s
+💻 $ sed -i 's| v = y\[idx\].astype(np.float64)| v = y[..., idx].astype(np.float64)|' l197b/gj.py + 5 commands  1.1s
+💻 $ python3 - <<'E' import json p=json.load(open('l197b/pilot.json')) f=lambda d: f"{d['value']:+.3f} [{d['ci95'][0]:+.3f},{d['ci95'][1]:+.3f}]" for nm,blk in (('v1 W500',p['v1']),('W150',p['pilot']['150']),('W250',p['pilot']['250'])): print(nm,'| A',f(blk['A']),'T',f(blk['T']),'D',f(blk['D'])) print(' T_on',f(blk['T_on']),'share',round(blk['T_on']['window_share'],3),'means',{k:round(v,3) for k,v in blk['T_on']['means'].items()},'| T_off',f(blk['T_off']),'means',{k:round(v,3) for k,v in blk['T_off']['means'].items()}) print(' A_in',f(blk['A_inphase']),'A_anti',f(blk['A_antiphase']),'diff',f(blk['A_in_minus_anti'])) print(' tone',blk.get('tone_instrument', p['cert_v1']['tone_instrument_v1'])) print(' overlap',blk['overlap']) E grep -c "done af" l198/run.out + 2 commands  0.4s
+💻 $ python3 - <<'E' p='l197b/gj.py' + 7 commands  4.0s
+💻 $ sha256sum l186/run.py + 4 commands  2.7s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l197b/PREREG.md
+│ banc/l197b/PREREG.md
+│ @@ -0,0 +1,200 @@
+│ +# PREREG — L197b: gate-jitter v2, the discriminator with POWER
+│ +
+│ +Registered 2026-11-21 ~19:00 EST, BEFORE any v2 rollout (no settle, no bisect,
+│ +no trace exists under `banc/l197b/`). Owner-directed (`banc/l198/BRIEF_relaytwin.md`,
+│ +second job of the chain; runs only after L198 is FINAL). Implements the lane's
+│ +L197 card. Experimenter = Miso session (claude-fable-5-2).
+│ +
+│ +What exists at registration: this text; `gj.py` (shared readout); `pilot.py` +
+│ +`pilot.json` (ZERO rollouts, stored v1 data only); `schedule.py` +
+│ +`schedule.json` (every gate schedule drawn, zero rollouts); `build_v2.py` →
+│ +`run_v2.py`; `analyze_v2.py`; `run_all.sh`.
+│ +
+│ +## Question (unchanged from L186)
+│ +
+│ +The carrier-removal (sc25 − cutwA) rise in cross-seed right-tibia antagonist
+│ +duty lives in SHARED timing. Is that timing locked to the displaced external
+│ +gate (aligned clock) or to elapsed time (elapsed clock)? v1 (L186) came out
+│ +E3 with D = −.015 [−.156, +.126]: an interval too wide to resolve a ±.10
+│ +difference, from a readout whose two clocks shared 62% of their samples.
+│ +
+│ +## What was looked at before registering (disclosed; all zero-rollout)
+│ +
+│ +1. **CERT-V1.** `gj.analyse` with v1's parameters reproduces
+│ +   `l186/results_l186.json` to 1e-12 (A / T / D values and intervals, six
+│ +   means, four ordered-pair matrices).
+│ +2. **Pilot on v1's 16 stored seeds** (old data, already adjudicated; used for
+│ +   the power analysis the brief asks for, and it informs my predictions):
+│ +   short window W = 150 → A +.083, T +.135, D −.052, jackknife SE(D) .0435.
+│ +3. **A v1-data observation I did not expect, which changes what the fresh
+│ +   batch should be asked.** Split by each pair-SEGMENT's own tone rotation,
+│ +   v1's aligned elevation is +.579 [+.445, +.713] for in-phase pair-segments
+│ +   and −.068 [−.208, +.072] for antiphase ones (difference +.647 [+.435,
+│ +   +.859]); at W = 150, +.303 vs −.163. Tick 216's tone instrument read
+│ +   "not predictive" (rho +.148 / −.110) because it averaged the two outer
+│ +   segments' INDEPENDENT lags into one pair-level rotation. This is post hoc
+│ +   on seen data — it is registered below as a prediction for the fresh batch,
+│ +   not claimed.
+│ +
+│ +## Design: two registered design arms (the card's option iii)
+│ +
+│ +Both graph arms (cutwA base, sc25 = carrier removed) see the SAME schedule per
+│ +seed; gains = the stored-form bisects, which must equal the stored floats.
+│ +Per seed and outer (0.7-Hz) segment ONE pulse is displaced; boundary pulses
+│ +[0,500) and [1800,2000) and the 1.4-Hz middle segment are untouched; the tone
+│ +runs on elapsed time exactly as before (the jitter moves the gate, it does not
+│ +reset the tone). Onsets: independent integers, PCG64
+│ +`SeedSequence([197, arm code, seed])`, first then last outer segment.
+│ +
+│ +| | **S — short window** (card ii) | **W — wide jitter** (card i, AMENDED) |
+│ +|---|---|---|
+│ +| pulse | 500 steps (v1's) | **250 steps** |
+│ +| onset | 900 ± 300 → U{600..1200} (v1's law) | U{525..1525} (band 1000) |
+│ +| on-steps per outer segment | 1200 (v1's) | 950 |
+│ +| correlation window | **150 steps** (≈ one 0.7-Hz period) | 250 steps |
+│ +| window starts rel. to the flexor seed's onset | −75..+425 step 10 (51) | −125..+125 step 10 (26) |
+│ +| seeds | 19001..19096 | 19201..19296 |
+│ +
+│ +Window-start rule in both arms = v1's: at least half of every window lies
+│ +inside the displaced pulse; no window leaves its 2000-step segment.
+│ +
+│ +**Amendment to the card, and why.** The card's (i) asks for "jitter ≥ 1000
+│ +steps" with the 500-step window and says "REFUSE to roll if mean overlap
+│ +exceeds .25". Those two conflict: with a 500-step window a 1000-step band
+│ +gives mean overlap .417 (W/2J − W²/12J²), and passing .25 needs a band of
+│ +≥ 1824 steps, which cannot fit a 500-step pulse inside a 2000-step segment
+│ +(1300 steps free between the boundary pulses). The card names the two ways
+│ +out ("widen the outer segment or shorten the pulse, and disclose which"):
+│ +I SHORTEN THE PULSE to 250 steps and the window with it, keeping the card's
+│ +1000-step band. Widening the segment would change WIN and with it every
+│ +stored-trace anchor. Costs, disclosed: 950 instead of 1200 on-steps per outer
+│ +segment, pulses as close as 25 steps to a boundary pulse (v1: 100), and a
+│ +pulse of 1.75 tone periods — so arm W also tests whether the elevation
+│ +survives a shorter pulse at all.
+│ +
+│ +**Overlap gate (card's verify, computed from the DRAWN schedule, before
+│ +freeze):** S mean overlap **.2277**, W **.2302** (≤ .25 both; 56% of
+│ +pair-segments fully disjoint in each; median |lag| 174 / 289 steps).
+│ +`run_v2.py` asserts the stored gate flag and re-derives every seed's onsets.
+│ … omitted 122 diff line(s) across 1 additional file(s)/section(s)
+💻 $ cat <<'E' """L197b analysis: reads the six workers' stored raws, certifies, applies the registered readout (gj.py) per design arm, writes results_l197b.json and L197b-FINDINGS.md. Run from banc/. Written BEFORE any rollout (PREREG).""" import hashlib, json, os, sys import numpy as np sys.path.insert(0, "l197b") import gj OUT = "l197b" NW = 6 frz = json.load(open(f"{OUT}/FREEZE.json")) sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest() assert sha(f"{OUT}/PREREG.md") == frz["prereg_sha256"], "PREREG changed after freeze" assert sha(f"{OUT}/schedule.json") == frz["schedule_sha256"] assert sha(f"{OUT}/gj.py") == frz["files"]["gj.py"], "readout changed after freeze" SCHED = json.load(open(f"{OUT}/schedule.json")) assert SCHED["gate"]["pass"] is True G_CUTWA, G_SC25 = 0.14365819573402408, 0.1454454553127289 # ---- CERT-V1 (readout reproduces stored v1) ---- R1 = json.load(open("l186/results_l186.json")) v1 = gj.analyse(np.load("l186/raw.npz"), R1["seeds"], {int(k): v for k, v in R1["onsets"].items()}, 500, np.arange(-250, 251, 10)) for k in "ATD": assert abs(v1[k]["value"] - R1["contrasts"][k]["value"]) assert np.allclose(v1[k]["ci95"], R1["contrasts"][k]["ci95"], atol=1e-12) print("CERT-V1 PASS (gj.analyse == results_l186.json)") # ---- workers ---- anch, gains, secs = {}, {}, {} store = {} for w in range(NW): for nm in ("done", "anchors", "gains"): assert os.path.exists(f"{OUT}/{nm}_w{w}.json"), f"worker {w} incomplete ({nm}) — no read" anch[w] = json.load(open(f"{OUT}/anchors_w{w}.json")) gj_ = json.load(open(f"{OUT}/gains_w{w}.json")) dn = json.load(open(f"{OUT}/done_w{w}.json")) assert anch[w]["c0a_pass"] and anch[w]["c0a_max"] == 0.0 and anch[w]["n_checks"] == 92, w assert gj_["gain"] == {"cutwA": G_CUTWA, "sc25": G_SC25} and all(gj_["stored_exact"].values()), w assert dn["prereg_sha256"] == frz["prereg_sha256"] gains[w], secs[w] = gj_, dn["secs"] z = np.load(f"{OUT}/raw_w{w}.npz") mine = SCHED["arms"]["S"]["seeds"][w::NW] + SCHED["arms"]["W"]["seeds"][w::NW] assert dn["seeds"] == [801, 901] + mine for s in mine: for k in ("gate_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}", "GI1110_cutwA_{s}", "GI1110_sc25_{s}"): key = k.format(s=s) assert key not in store store[key] = z[key] for s in (801, 901): # anchors unjittered t = np.arange(6000) canon = (t // 2000 == 1) | (((t % 2000) % 900 & (t % 2000 assert np.array_equal(z[f"gate_{s}"], canon), ("anchor gate not canonical", w, s) n_c0a = sum(anch[w]["n_checks"] for w in range(NW)) print(f"C0A: {n_c0a} checks across {NW} workers, max 0.0 | gains == stored EXACT in every worker") res = dict(design="L197b gate-jitter v2 (PREREG l197b/PREREG.md)", status="FINAL", prereg_sha256=frz["prereg_sha256"], schedule_sha256=frz["schedule_sha256"], certs=dict(c0a_checks=n_c0a, c0a_max=0.0, gains_stored_exact=True, cert_v1="PASS", worker_secs=secs), gains=dict(cutwA=G_CUTWA, sc25=G_SC25), arms={}) KEEP = ("A", "T", "D", "T_on", "T_off", "A_inphase", "A_antiphase", "A_in_minus_anti", "means", "tone_instrument", "rot_bin_share", "n", "W", "n_offsets") for arm in ("S", "W"): d = gj.DESIGN[arm] seeds = SCHED["arms"][arm]["seeds"] onsets = {s: SCHED["arms"][arm]["onsets"][str(s)] for s in seeds} for s in seeds: # the gate actually applied == the registered schedule g = store[f"gate_{s}"] assert np.array_equal(g, gj.expected_gate(arm, onsets[s])), (arm, s) assert list(g.reshape(3, -1).sum(1)) == [700 + d["pulse"], 2000, 700 + d["pulse"]] for k in ("Ti_fR", "Ti_eR"): for a in ("cutwA", "sc25"): y = store[f"{k}_{a}_{s}"] assert y.shape == (6000,) and np.isfinite(y).all() assert np.isfinite(store[f"GI1110_cutwA_{s}"]).all() and np.isnan(store[f"GI1110_sc25_{s}"]).all() ov = gj.overlap_stats(onsets, seeds, d["W"]) assert abs(ov["mean_overlap"] - SCHED["arms"][arm]["overlap"]["mean_overlap"]) and ov["mean_overlap"] <= .25 a_ = gj.analyse(store, seeds, onsets, d["W"], gj.starts_of(arm)) r = {k: a_[k] for k in KEEP} A, T, D = (a_[k]["value"] for k in "ATD") lo, hi = a_["D"]["ci95"] hw = (hi - lo) / 2 r["overlap"] = ov r["half_width_D"] = hw r["R0_no_elevation"] = bool(A and T r["clock"] = ("E1_external" if D >= .10 and lo else "E2_elapsed" if D <= -.10 and hi else "E3_equal_resolved" if lo and hi else "E3_unresolved") r["underpowered_again"] = bool(hw r["clock_status"] = ("NOT READ (UNDERPOWERED_AGAIN)" if r["underpowered_again"] else "DESCRIPTIVE (R0: no elevation at this resolution)" if r["R0_no_elevation"] else "READ") toff, din, aan, ain = a_["T_off"], a_["A_in_minus_anti"], a_["A_antiphase"], a_["A_inphase"] r["mechanism"] = ("M_internal" if toff["value"] >= .15 and toff["ci95"][0] else "M_tone" if din["value"] >= .15 and din["ci95"][0] and aan["value"] else "M_gate" if ain["value"] >= .15 and aan["value"] >= .15 and ain["ci95"][0] and aan["ci95"][0] else "M_unassigned") ti = a_["tone_instrument"] r["tone_control_verbatim_not_predictive"] = bool(all(abs(ti[g]["rho_rot"]) for g in ti)) r["pair_matrices_sha256"] = hashlib.sha256(json.dumps(a_["pair_matrices"]).encode()).hexdigest() np.savez_compressed(f"{OUT}/pairmat_{arm}.npz", **{f"{g}_{c}": np.array(a_["pair_matrices"][g][c]) for g in a_["pair_matrices"] for c in ("aligned", "elapsed")}) res["arms"][arm] = r votes = [res["arms"][a]["clock"] for a in ("S", "W") if not res["arms"][a]["R0_no_elevation"] and not res["arms"][a]["underpowered_again"]] if len(votes) == 2 and votes[0] == votes[1]: res["verdict"] = {"E1_external": "E1", "E2_elapsed": "E2", "E3_equal_resolved": "E3_EQUAL_POWERED", "E3_unresolved": "E3_UNRESOLVED_BOTH"}[votes[0]] elif len(votes) == 1: only = [a for a in ("S", "W") if not res["arms"][a]["R0_no_elevation"] and not res["arms"][a]["underpowered_again"]][0] res["verdict"] = f"{votes[0]} (arm {only} alone; the other arm does not vote)" elif len(votes) == 0: res["verdict"] = "NO_VOTE (R0 / underpowered in both arms)" else: res["verdict"] = "ARM_DEPENDENT" res["mechanism_verdict"] = {a: res["arms"][a]["mechanism"] for a in ("S", "W")} S, Wd = res["arms"]["S"], res["arms"]["W"] ti = S["tone_instrument"] res["predictions"] = dict( P1_certs_complete=dict(correct=True), P2_S=dict(got=[S["R0_no_elevation"], S["clock"], S["D"]["value"]], R0_correct=bool(S["R0_no_elevation"]), class_correct=bool(S["clock"] == "E3_equal_resolved"), D_in_minus10_0=bool(-.10 P3_W=dict(got=[Wd["A"]["value"], Wd["clock"], Wd["D"]["value"]], A_ge_10=bool(Wd["A"]["value"] >= .10), modal_class_correct=bool(Wd["clock"] == "E3_equal_resolved"), D_positive=bool(Wd["D"]["value"] P4_M_tone_both=dict(got=res["mechanism_verdict"], correct=bool(all(v == "M_tone" for v in res["mechanism_verdict"].values()))), P5_no_M_internal=dict(got=[S["T_off"]["ci95"], Wd["T_off"]["ci95"]], correct=bool(S["T_off"]["ci95"][1] and Wd["T_off"]["ci95"][1] and "M_internal" not in res["mechanism_verdict"].values())), P6_instrument=dict(got=[ti["sc25"]["rho_rot"], ti["cutwA"]["rho_rot"], ti["sc25"]["rho_rot_segment_aligned"]], correct=bool(S["tone_control_verbatim_not_predictive"] and ti["sc25"]["rho_rot_segment_aligned"] P7_halfwidth=dict(got=[S["half_width_D"], Wd["half_width_D"]], correct=bool(S["half_width_D"] <= .06 and Wd["half_width_D"] <= .06))) tmp = f"{OUT}/results_l197b.json.tmp" json.dump(res, open(tmp, "w"), indent=1, allow_nan=False) os.replace(tmp, f"{OUT}/results_l197b.json") f3 = lambda d: f"{d['value']:+.3f} [{d['ci95'][0]:+.3f}, {d['ci95'][1]:+.3f}]" L = [f"L197b gate-jitter v2 — verdict {res['verdict']} | mechanism {res['mechanism_verdict']}", f"n = 96 seeds per design arm; C0A {n_c0a} checks max 0.0; gains == stored EXACT; CERT-V1 PASS; PREREG {frz['prereg_sha256'][:16]}"] for arm in ("S", "W"): r = res["arms"][arm] d = gj.DESIGN[arm] L += [f"[{arm}] pulse {d['pulse']}, window {d['W']}, mean overlap {r['overlap']['mean_overlap']:.3f} | clock {r['clock']} ({r['clock_status']})", " duty aligned / elapsed / same-seed: " + " ; ".join(f"{g} {m['aligned']:.3f} / {m['elapsed']:.3f} / {m['same']:.3f}" for g, m in r["means"].items()), f" A {f3(r['A'])} | T {f3(r['T'])} | D {f3(r['D'])} (half-width {r['half_width_D']:.3f})", f" T_on {f3(r['T_on'])} (share {r['T_on']['window_share']:.2f}) | T_off {f3(r['T_off'])}", f" A_inphase {f3(r['A_inphase'])} | A_antiphase {f3(r['A_antiphase'])} | in - anti {f3(r['A_in_minus_anti'])} -> {r['mechanism']}", " tone control: " + " ; ".join(f"{g} verbatim rho {v['rho_rot']:+.3f}, segment-level rho(aligned) {v['rho_rot_segment_aligned']:+.3f}" for g, v in r["tone_instrument"].items())] L.append("predictions: " + json.dumps({k: {kk: vv for kk, vv in v.items() if kk != 'got'} for k, v in res["predictions"].items()})) open(f"{OUT}/verdict.out", "w").write("\n".join(L) + "\n") print("\n".join(L)) print("L197b VERDICT WRITTEN (FINAL)") E cat <<'E' #!/usr/bin/env bash # L197b orchestrator: refuses to start while any L198 process is alive or L198 # is not FINAL (chain order + the 6-worker CPU cap). 6 workers x 2 threads. cd /home/t3rpz/critters/peabrain-lab/banc + 31 commands  3.1s
+💻 $ python3 - <<'E' import json,hashlib,time,glob sha=lambda p: hashlib.sha256(open(p,'rb').read()).hexdigest() assert not glob.glob('l197b/raw_w*.npz') and not glob.glob('l197b/gains_w*.json') files=['PREREG.md','schedule.json','gj.py','pilot.py','pilot.json','schedule.py','build_v2.py','run_v2.py','analyze_v2.py','run_all.sh'] frz=dict(prereg_sha256=sha('l197b/PREREG.md'),schedule_sha256=sha('l197b/schedule.json'),files={f:sha('l197b/'+f) for f in files}, src_l186_run=sha('l186/run.py'),frozen=time.strftime('%F %T %Z')+' before any v2 rollout (no raw/gains file exists under l197b)') json.dump(frz,open('l197b/FREEZE.json','w'),indent=1) open('l197b/PREREG.sha256','w').write(''.join(f"{v} {k}\n" for k,v in frz['files'].items())+f"frozen {frz['frozen']}\n") print(open('l197b/PREREG.sha256').read()) E grep -c "done af" l198/run.out + 1 command  2.8s

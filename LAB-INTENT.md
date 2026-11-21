@@ -9139,3 +9139,333 @@ Response letter dispatch (2026-11-21 ~14:3x, owner-directed) — paper/RESPONSE-
 ### 2026-11-21 — Figure 4/5 publication polish
 
 Adjusted Fig. 4 label placement, x-axis headroom, and floor-stack annotation; increased Fig. 5 type and row-label clearance, and improved secondary-text contrast and footer margin. Regenerated SVG/PNG from stored data. Fig. 4 verifier: 247 checks, all pass; Fig. 5 self-check: 37 rows × 3 dots, all pass. Baseline comparisons confirmed Fig. 4 plotted values against stored JSON within rendering precision and Fig. 5 dot positions, connector lines, bands, and k counts unchanged. Captions unchanged.
+
+## L176 stage (b1) — the l169b2 arm-keyed CERT reader + the floor-4 twin (tick 218, 2026-11-21)
+
+ZERO rollouts, `l169b2/raw_l169b2.npz` read-only (mtime asserted unchanged).
+Registered in `banc/l176/PREREG.md` ADDENDUM 2 before any number was computed.
+Metric functions IMPORTED from stage (a)'s `comp.py` — no second transcription.
+
+**Why the stage existed.** Stage (a)'s loop keyed on `table[pair]`, and
+l169b2's table is keyed by ARM, so the whole run was silently skipped: (a)'s
+176 CERT checks are exactly (13 l135 + 9 l169) arms x 2 pairs x 4 fields. The
+floor-4 twin pair had no composite read at all. Pair identity for the arm-keyed
+table was derived from the STORED artifact (l169b2/PREREG.md line 54: "duty_07
+per side on the Ti antagonist pair"), never from the lane text — **Ti only**,
+and Tr carries no stored value so it is excluded from every registered cell
+rather than computed uncertified.
+
+**B1-CERT: 104/104 exact, 0 fail** — 6 arms x {kL,kR,meanL,meanR} = 24, plus
+the stronger per-seed anchor `addendum_L_descriptive.rows[arm].perseedL` =
+5 arms x 16 = 80. The 5-arm count (no `full` row) was asserted up front, L110
+subset-compare rule. Qb1 PASS.
+
+**IDENTITY axis survives (floor-4 twin).** At the readable alpha=0 rung
+(ADDENDUM 1; see gate note below) the carrier f4wA beats its floor-4 mass twin
+f4tw on the loud (L) side in both bands: paired mean **+.0614** (pub 1-10 Hz,
+k 14/16, CI [+.0323,+.0906]) and **+.1029** (0.3-10 Hz, k 15/16,
+CI [+.0642,+.1416]), both CI-excluding 0 and both AGREEING IN SIGN with the
+stored duty delta (.698 vs .560). Qb2 PASS on the side that carries signal.
+
+**NEW RULE — the composite is unsafe on a FLOORED axis.** l169b2's registered
+axis was R-side duty, and it came out dead (f4wA .043 vs f4tw .082, branch
+G2_no_transfer). There the borrowed instrument reports a CONFIDENT separation
+with the WRONG SIGN on the published band (+.0720, k 14/16,
+CI [+.0434,+.1006] — carrier above twin while duty puts the twin above), and
+no separation on the wider band (+.029, CI [-.017,+.075]). Mechanism: the
+amplitude-balance term has no silence floor, so a near-silent but balanced pool
+pair scores high (A .5025 vs .4288 on pub|R). Read the composite only where our
+duty metric is off the floor.
+
+**RANK axis, side-split, same term carries both directions.** alpha=0 rho vs
+stored duty: L **+.8286** (pub) / **+.9429** (sub) — the composite ordering
+tracks duty — and R **-.7143 / -.7714**, inverted, again on the floored side.
+Per-term rho (alpha-free): A +.83/+.94 on L and -.71/-.77 on R; PH +.49/+.94;
+PLV mixed (-.37..+.89). So stage (a)'s "the amplitude term carries the
+inversion" replicates on a second run, and (b1) adds the mechanism: the
+inversion marks a floored axis, not a disagreement about phase.
+
+**XOR leg (registered descriptive).** The stored non-separation
+(`legs.xor.mean_paired_dR_ng_minus_tw` -0.001, 8/8 split, vacuous_xor_guard
+false) does NOT survive the composite: at alpha=0 it separates f4ng from f4tw
+on both sides (L -.1488, CI [-.189,-.1085], 1/16; R -.0777, CI [-.1244,-.031],
+3/16). On L that separation AGREES with the stored L-side duty ordering
+(.289 vs .560); on R it is amplitude-driven on a floored axis. Per ADDENDUM 2,
+this is reported as an instrument finding and does NOT revive the XOR selection
+claim.
+
+**Gate + band, second replication.** g(P) annihilates again: frac(P>2)
+.9998-1.0000 in every cell, so the alpha=1 composite sits at ~1e-4 and the
+alpha=0 rung is the only readable one. Band-floor fraction **0.0000** in every
+cell — the 1-10 Hz band does not eat our 0.7-Hz substrate (Q1/band prediction
+scored wrong twice now, disclosed). Degenerate branch does not fire
+(A_range .28-.41). The other half of Qb3 — "rank weaker than identity" — is
+scored **WRONG** here: at alpha=0 the rank axis is strong (|rho| .71-.94).
+
+**Artifact-hygiene note on stage (a) (no verdict changes).**
+`results_l176a.json["secondary"]` is the alpha=1 rung read off 4-decimal
+summary values; 50/176 of those composite means are exactly 0.0000 at 4 dp and
+all 16 rank cells contain ties (as few as 3 distinct values among 9 arms), so
+that table must never be cited. Checked against the stored jsons (L44 rule):
+the stage-(a) bracket quoted `results_l176a_addendum.json["rank_gate_off"]`
+(.8516/.7527, .3462/.2143, -.7309/-.7225/-.4937) — the correct, tie-free
+table. (b1)'s own full-precision recompute confirms rounding moves the alpha=1
+rho by up to .15 while leaving the alpha=0 rho bit-stable.
+
+Artifacts: `banc/l176/{comp_b1.py, comp_b1b.py, results_l176b1.json,
+results_l176b1_prec.json, run_b1.out}`, PREREG ADDENDUM 2. CPU-only, ~9 s per
+pass. No npz rewritten, no live change, no draft edit.
+
+
+## L176 (b2) — the field composite on the FEMALE CORD: its amplitude term is ANTI-correlated with antiphase (tick 219, 2026-11-21)
+
+Stage (b2) of the L176 card: re-read l65 (the female BANC cord L32 replication)
+under the Guba 2611.22639 composite. ZERO rollouts; `banc/l65/raw_l65.npz`
+read-only, mtime unchanged. PREREG ADDENDUM 3 written first. No draft edit (the
+manuscript is in the owner-handoff state).
+
+### Why l65 needed its own reader
+Four convention breaks from the l135/l169/l169b2 lineage, each registered: no
+L/R sides (pools are bilateral), no drive segments (one sustained DNg100 drive),
+ONE whole-window S (`-corr(flex,ext)` over steps 1500-5999) rather than a
+sliding trace, and an arm axis that is WIRING (glut-sign arms A/B + a density/
+degree rewiring ladder), not identity. Component arithmetic was IMPORTED from
+`l176/comp.py` and the l65 window installed by rebinding `comp.TSQ` — the
+component math is byte-identical to the certified stage-(a) code.
+
+### B2-CERT: 97/97 EXACT, max_err 0.0e+00
+96 per-seed values (8 arms x 3 seeds x 2 pairs x {S, depth}) plus the aggregate
+`ladder_real_S` 0.7195787507714315, all reproduced from the stored traces with
+l65's own metric code copied verbatim. Qb2-1 CORRECT.
+
+### FLOOR REPORT FIRST (the (b1) rule, and it fired)
+All SIX rewiring draws are FLOORED on both pairs (depth .0066-.0261, below
+l65's own 0.03 readability bar); only the two real arms are off-floor (A .106 /
+.125, B .278 / .080). So the registered PRIMARY cell — real wiring vs the
+ladder — is UNINTERPRETABLE-BY-RULE under the composite, exactly as (b1)'s rule
+demands. L65's wiring verdict is NOT weakened by what follows: our depth bar
+already declared those arms unreadable. The field instrument has no such bar.
+
+### What the instrument actually reports (the finding)
+On the only readable rung (alpha=0; see the gate below) the composite INVERTS
+every ordering l65 published, on the loud pair and on all seeds:
+
+* WIRING: real B|Ti composite .148 vs degree draws .602 / .821 / .709 — the
+  scrambled cord scores up to 5.5x the real cord, paired 0/3 seeds for all six
+  draws (gaps -.398 to -.758), against a stored S gap of +.728.
+* NT-SIGN ARMS (both off-floor, so this comparison IS licensed): B > A inverts
+  on Ti (-.536 slide / -.559 whole, 0/3 seeds) against stored dS +.429; on Tr it
+  survives only in the published band (+.049, 3/3) and dies in the substrate
+  band (-.003, 1/3).
+* RANK across all 8 arms: rho -.19 (Ti) and -.45 to -.55 (Tr) — negative, not
+  merely weak.
+
+### The mechanism, measured term by term
+Per-term Spearman against stored S over the 8 arms names one carrier:
+
+| term | Ti pub / sub | Tr pub / sub |
+|------|--------------|--------------|
+| composite (a=0) | -.19 / -.19 | -.52 / -.55 |
+| A (amplitude balance, w .963) | -.19 / -.19 | -.64 / -.55 |
+| PLV (w .0185) | +.79 / +.64 | +.83 / +.55 |
+| Ph (w .0185) | +.83 / +.74 | +.83 / **+.98** |
+
+The PHASE terms track our metric nearly perfectly; the AMPLITUDE term is
+anti-correlated; and the published weighting gives amplitude .963 of the vote,
+so the composite inherits the amplitude term's sign. Two distinct ways amplitude
+balance misleads on this substrate, both measured:
+
+1. SILENT POOLS ARE PERFECTLY BALANCED. A floored draw's band-limited envelopes
+   are broadband noise of equal size in both pools (degree1|Ti A .841), so the
+   dominant term reads near-maximal balance where our S reads .019.
+2. REAL ANTIPHASE HERE COMES WITH UNEQUAL POOL MEANS. The winning arm B|Ti runs
+   flex .074 vs ext .239 over the measurement window, so A .124 — the strongest
+   antiphase in the whole run is the most amplitude-UNbalanced cell.
+
+### Branches and predictions
+* Gate: Pmean 14.7-27.1 envelope peaks per window, frac(P>2) = 1.0000 on every
+  one of the 64 cells, so g <= e^-12.7 and alpha=1 annihilates every composite
+  to 0.0000 — THIRD consecutive instance; alpha=0 is again the only readable
+  rung (reported, never selected).
+* Band-floor fraction 0.0000 again (THIRD instance; the C3 band prediction is
+  now wrong three times and is disclosed each time).
+* DEGENERATE branch does not fire, emphatically: A_range .50-.81 across arms.
+* Qb2-2 WRONG, and in the stronger direction: I predicted the gap would shrink
+  but survive in sign; it inverts on 18/18 arm-seed comparisons.
+* Qb2-3 WRONG on Ti, half-right on Tr (published band only).
+* Qb2-4 CORRECT on both halves.
+
+### METHOD LAW (inheritable, the keeper)
+A COMPOSITE METRIC IS ONLY AS GOOD AS ITS DOMINANT TERM'S SIGN ON YOUR
+SUBSTRATE. Stage (a) found the amplitude term carried an inversion on one
+pair; (b1) found it manufactures confident wrong-sign separations on a floored
+axis; (b2) shows the same term is NEGATIVELY rank-correlated with antiphase
+across a whole rewiring ladder while the instrument's own minority phase terms
+reach rho +.98. So: decompose a field composite per term BEFORE adopting or
+rejecting it, report the per-term ranks beside the composite, and treat the
+published weight as a hypothesis about the author's substrate, not a constant of
+nature. Corollary for our draft: the honest claim is that our antiphase
+orderings survive the composite's PHASE content and fail its AMPLITUDE content,
+with the floor rule naming which comparisons the instrument may even attempt.
+
+Artifacts: `banc/l176/{comp_b2.py, results_l176b2.json, results_l176b2_terms.json,
+run_b2.out}`, PREREG ADDENDUM 3. CPU-only, ~4 min. No npz rewritten, no live
+change, no draft edit.
+
+## L176 (b3) — the Guba composite on the MALE cord: the card's substrate had no traces, and the amplitude-sign law replicates on a third connectome
+
+Tick 220 (2026-11-21, cron). ZERO rollouts, zero RNG, no graph build, CPU only.
+PREREG ADDENDUM 4 written FIRST.
+
+FEASIBILITY FINDING (L125 class, applied to our own card): the card named
+"the male L32 replication", and `malecns/l32/` stores NO traces at all — PREREG.md,
+scan_l32.json, results_l32.json, run.out and nothing else. L32 saved only SCALAR
+metrics (per-arm S(Ti)/S(Tr), depth, rhythm, af), so a composite that needs
+per-pool TIME SERIES cannot be computed on it at zero rollout cost. Registered
+amendment with a DETERMINISTIC closest-achievable substrate: `malecns/l50` —
+male graph, L32-descended self-rhythmic regime (g .01 / beta 2.0 / d .05,
+21,516 nodes / 2,977,920 edges), FOUR per-side antagonist pool traces stored
+(fL/fR/eL/eR), stored per-side S + duty from its own code (so a CERT exists),
+and — checked before registering — a window convention BIT-COMPATIBLE with
+comp.py's (WIN 6000, DT .01, SEGB [(0,2000,.7),(2000,4000,1.4),(4000,6000,.7)],
+MEAS0 500, TS arange(499,6000,10)), so unlike (b2) no TSQ rebinding was needed
+for the primary. Pair = Tr only (l50_traj.py reads PAIRS["Tr"]); Ti excluded,
+not computed uncertified ((b1) rule). Arm axis = DRIVE SCHEDULE (free, ent,
+allw, duty58, min5), so (b3) has no identity cell — its licensed cells are
+ORDERING and the two registered l50 findings.
+
+B3-CERT 150/150 EXACT, max_err 0.0e+00 (5 arms x 3 seeds x 3 segs x {SL, SR,
+duty} + 15 duty_all), l50's S_of / s_arrays / wmed copied verbatim, component
+arithmetic IMPORTED from comp.py.
+
+FLOOR REPORT FIRST, and this time it does NOT fire: depth .1207-.6525 on all 90
+cells, 0/90 below the .03 bar. (b3) is therefore the FIRST stage of L176 whose
+registered PRIMARY is fully licensed — (b2)'s ladder was uninterpretable by rule
+and (b1) had a dead side. Whatever the instrument says here, it says on healthy
+oscillations.
+
+WHAT IT SAYS — (b2)'s method law REPLICATES ON THE MALE GRAPH, now on a licensed
+substrate. The composite inherits the sign of its dominant amplitude term:
+  * seg2 (0.7 Hz) LEFT side is the clean exemplar — Spearman(composite, stored S)
+    = -1.000 while Spearman(Ph, S) = +1.000 and Spearman(PLV, S) = +0.900. Arm by
+    arm: free S .652 (the best structure) -> composite .2565 (the LOWEST), allw
+    S -.110 (inverted, the worst) -> composite .4952 (the HIGHEST). A perfect
+    rank inversion against a perfect rank from the instrument's own 1.85%-weight
+    phase term.
+  * seg1 L -0.900/-1.000 (A -0.900/-1.000, PLV +1.000, Ph +0.900/+1.000);
+    seg0 L -0.359/-0.667; the R side is mixed-to-positive (seg0 R +0.359/+0.872,
+    seg1 R +0.700, seg2 R -0.300/-0.100). Composite rho tracks A's rho in
+    12/12 cells.
+REGISTERED l50 FINDINGS re-asked of the instrument:
+  * P-A (chop > continuous; stored mean duty_all duty58 .576 vs allw .285 /
+    ent .307) is NOT reproduced: duty58 > allw on 0/3 seeds in three of four
+    side-band cells (1/3 in the fourth) and duty58 > ent on 0/3 everywhere.
+  * P-B (fast-segment continuous drive is structure-TOXIC; stored seg1 duty
+    allw .022 vs free .538) reproduces on the RIGHT side 3/3 both bands and
+    INVERTS on the LEFT 0/3 both bands — and the mechanism is the predicted one:
+    on the left the healthy free cord is amplitude-UNBALANCED (A .249-.264) while
+    the broken allw cord is more balanced (A .270-.456), so the instrument
+    prefers the broken one; on the right free is balanced (A .775-.857) and the
+    ordering survives. Qb3-3 predicted a reversal and got half of it (reversed L,
+    correct R).
+BRANCH M3_inverts (primary rho range [-1.000, +0.872] over the 0.7-Hz segments,
+neither registered finding reproducing in all cells). c0 range .8451, so the
+degenerate branch does NOT fire.
+
+GATE annihilates a FOURTH time: frac(P>2) .96-1.00 on all 180 cells, alpha=1
+composite range [0.000000, 0.032753] -> alpha=0 is again the only readable rung.
+BAND FLOOR: first partial failure of that pre-registered prediction in four
+stages, and it is a single cell — 1/180 nonzero (min5|seed 11|seg1|R, .5067) and
+PUBLISHED-band-only (pub_1_10 mean .0056, sub_03_10 exactly 0.0000 on all 90
+cells). So the published 1-10 Hz band CAN eat a male cell's amplitude, but it ate
+exactly one; the band stays a ratio lever, with its first location casualty named
+(diagnostic file results_l176b3_floor.json, no verdict depends on it).
+
+PREDICTIONS: Qb3-1 CORRECT, Qb3-2 CORRECT (A inverts, phase terms track — now on
+all three graphs), Qb3-3 HALF (reversed on L, held on R), Qb3-4 WRONG for the
+first time and disclosed (1 of 180 cells, published band only).
+
+METHOD LAW (strengthening (b2)'s): the amplitude-sign law is not an artefact of a
+floored or unreadable substrate — it reproduces on fully off-floor male
+oscillations, where the dominant term ranks the arms EXACTLY BACKWARDS
+(rho -1.000) against the minority phase terms' EXACTLY FORWARD rank (+1.000) on
+the same cells. A published composite weighting is a hypothesis about the
+author's substrate; decompose per term, and report the per-term ranks beside the
+composite always.
+
+Artifacts: banc/l176/{PREREG.md ADDENDUM 4, comp_b3.py, floor_b3.py,
+results_l176b3.json, results_l176b3_terms.json, results_l176b3_floor.json,
+run_b3.out}. Input mtimes asserted unchanged (mtimes_unchanged True).
+
+## L180 — floor-sensitivity of the BANC-side cohort rule (tick 221, 2026-11-21)
+
+Static, zero rollouts, zero RNG, 4.0 s CPU. PREREG banc/l180/PREREG.md written
+FIRST; extraction copied VERBATIM from l92_static.py up to the keep rule.
+C0S-180 CERT 30/30 EXACT (n_old/n_new/cord/dn_into/dn_proj/dn_new, both edge
+counts, all 9 blocks, 8 pool sizes, mech/motor/DNg100/DNge046 positions)
+reproduced from the release before any counterfactual number was read; the
+same 30/30 landed on both executions of the script = a free determinism check.
+
+THE ANSWER IS A SPLIT, and the split is the finding: **the BANC closure
+substrate is floor-ROBUST while the cohort LABEL is floor-FRAGILE.**
+
+- SUBSTRATE: n_new 21,809 -> 21,797 (floor 4) -> 21,784 (floor 5) = -0.06% /
+  -0.115%. Cells essentially never leave the subnet under a higher release
+  floor.
+- LABEL: 140 of the 728 cord-innervated DNs (19.2%) lose dn_into status at ONE
+  rung above the release floor. 211 of 728 (29.0%) hold that status on exactly
+  ONE collapsed cord->DN pair and 109 (15.0%) on a single 3-SYNAPSE pair — the
+  smallest weight the v626 release can represent (L146 floor re-verified here:
+  min syn 3.0 on all 1,830,698 pairs AND on the 5,322 cord->DN pairs, so
+  rungs 1-2 are vacuous-by-dataset and the ladder legitimately starts at 3).
+- MECHANISM, named not guessed: the DISQUALIFYING edge class is 12.703x
+  SPARSER than the admitting one (5,322 cord->DN pairs vs 67,608 DN->cord), so
+  the mirror census on the 560 dn_new cells' own admission is robust — 13 of
+  560 single-pair (2.3%), 10 at maxsyn 3, median 14 out-pairs vs the dn_into
+  side's median 3 in-pairs. The rule's asymmetry is a property of the data,
+  not of the anatomy.
+- ONE-SIDED ERROR: migration into the dropped set (138 cells at floor 4, 223
+  at 5, 273 at 6, 421 at 10) exceeds eviction from it (10, 16, 30, 95) by an
+  order of magnitude, so the l65 rule's dropped cohort is an UNDERESTIMATE at
+  the release floor and never an overestimate. Ladder (regime A global floor):
+  dn_new 560 -> 688 -> 767 -> 803 -> 886; regime B (cord->DN-only floor, the
+  isolated disqualification margin) 560 -> 699 -> 791 -> 843 -> 1,013.
+- DIFFUSE, not family-concentrated: the 140 evicted cells span 106 cell types
+  (max 4 cells of any one type, of 357 types in the 728) — unlike L170's male
+  side, which had DNp33 as an exemplar. The nearest BANC exemplar is
+  structural rather than modal: DNp25 LEFT (gi 32175) is the ONLY cell in the
+  whole closure that is dn_into WITHOUT being a projector, and it holds that
+  status on a single 3-synapse pair (in_pairs 1, totsyn 3) — so at floor 4 the
+  overlap |dn_into & dn_proj| becomes exactly dn_into (588) and the one pure
+  receiver is gone. Arithmetic closes on every rung: cord 20,521 + dn_into +
+  dn_new == n_new, and |dn_proj| - |overlap| == dn_new (560 = 1,287 - 727).
+- MALE CONTRAST, scoped honestly: L170's male ladder moved the cohort 11.2143x
+  over floors 1->3; BANC's admissible span 3->5 moves it 0.3696x (regime A;
+  0.4125x regime B) and the ONE rung-matched comparison (BANC 3->4 +22.86% vs
+  male 2->3 +71.86%) also favours BANC. But the spans are NOT comparable and
+  the text must say so: BANC's baseline already sits at the male ladder's TOP
+  rung, which is part of why it looks stabler.
+
+PREDICTIONS: Q1 CORRECT (BANC's rung-matched step is a third of the male's).
+Q2 **WRONG and disclosed** — I registered "<25% single-pair" and measured
+29.0%; dn_into membership IS predominantly-enough single-edge to matter, and
+this is the run's load-bearing number. Q3 CORRECT (regime B rises monotonically
+by construction, verified 560/699/791/843/1,013). Q4 SPLIT: cond1 (movement
+below the male's 11.2x) PASSED at 0.37x, cond2 (<10% of dn_into evicted)
+FAILED at 19.2%, so the registered AND-gate fires B_FRAGILE.
+
+METHOD LESSON (L109 class, now with a self-inflicted instance): my own Q4
+gate ANDed two conditions about DIFFERENT OBJECTS — subnet movement and label
+eviction — so a single branch label ("fragile") cannot carry the result. The
+measurement separates them cleanly and the draft sentence must report BOTH
+axes with the failing condition named. Register one object per gate cell.
+
+Owed draft fold (NOT written — manuscript is in owner-handoff state): a §4
+sentence pair carrying substrate-robust / label-fragile with the 12.7x
+sparsity mechanism, the one-sided migration direction, and the span caveat on
+the male comparison. Recorded on the LANE.md card so it cannot be lost.
+
+Artifacts: banc/l180/{PREREG.md, results_l180.json, census_dn_into.csv,
+census_dn_new.csv, run.out}; code banc/l180_static.py. mtimes_unchanged True
+on all six inputs (connections release, annotations, NT predictions,
+banc_graph.pt, l92/static.json, l170/static.json).

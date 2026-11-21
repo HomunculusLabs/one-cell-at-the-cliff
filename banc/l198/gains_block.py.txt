@@ -1,0 +1,199 @@
+assert ANCH == [11, 22, 33]
+assert MODE == "work"
+assert os.path.exists(PREREG_PATH), "PREREG first (STOP)"
+_FRZ = json.load(open(f"{OUT}/FREEZE.json"))
+assert prereg_sha() == _FRZ["prereg_sha256"], "PREREG changed after freeze (STOP)"
+assert hashlib.sha256(open(SEL_PATH, "rb").read()).hexdigest() == \
+    _FRZ["selection_sha256"], "selection.json changed after freeze (STOP)"
+# Fixed worker plan (PREREG): cutwA rides in EVERY worker.
+PLAN = {0: ["sc25", "sc25F"], 1: ["rcut", "rcutF"], 2: ["tw", "twF"],
+        3: ["ru1", "ru2"], 4: ["ru3", "ru4"], 5: ["ru5"]}
+assert NW == 6 and WID in PLAN
+assert sorted(sum(PLAN.values(), [])) == sorted(ALL_ARMS)
+MY_ARMS = PLAN[WID]
+MY_CERT = []
+RAW_PATH, XM_PATH = f"{OUT}/raw_w{WID}.npz", f"{OUT}/xm_w{WID}.npz"
+GAINS_PATH = f"{OUT}/gains_w{WID}.json"
+log(f"worker {WID}/{NW} arms: cutwA + {MY_ARMS}")
+REMATCH = ["sc25", "rcut", "tw", "ru1", "ru2", "ru3", "ru4", "ru5"]
+FIXED = ["sc25F", "rcutF", "twF"]
+assert sorted(REMATCH + FIXED) == sorted(ALL_ARMS)
+# Bisected IN THIS PROCESS (stored-form, vectorized): cutwA + this worker's
+# rematched arms. cutwA / sc25 / rcut must reproduce the stored floats EXACTLY
+# (l123 lineage pin, L175, L187 gains_w2.json).
+BIS = ["cutwA"] + [a for a in MY_ARMS if a in REMATCH]
+STORED_G = {"cutwA": G_CUTWA_STORED, "sc25": G175["sc25"], "rcut": G187_RCUT}
+new_stairs, af_final = {}, {}
+if os.path.exists(GAINS_PATH):
+    _gj = json.load(open(GAINS_PATH))
+    assert sorted(_gj["gain"]) == sorted(["cutwA"] + MY_ARMS), "gains file arm drift"
+    for _a in BIS:
+        GAIN[_a] = float(_gj["gain"][_a])
+    new_stairs, af_final = _gj["stairs"], _gj["af_final"]
+    log(f"gains loaded from {GAINS_PATH} (resume)")
+else:
+    _lo, _afd = bisect_vec(BIS)
+    for _a in BIS:
+        GAIN[_a] = _lo[_a]
+        af_final[_a] = _afd[_a]
+        new_stairs[_a] = abs(_afd[_a] - AF_T)
+        log(f"g_{_a} {_lo[_a]!r} | af_final {_afd[_a]:.6f} | "
+            f"|af-target| {abs(_afd[_a] - AF_T):.2e}"
+            + ("" if 0.14 <= _lo[_a] <= 0.16 else " [OUTSIDE .14-.16 — DISCLOSED]"))
+for _a in BIS:
+    if _a in STORED_G:
+        assert GAIN[_a] == STORED_G[_a], (_a, GAIN[_a], STORED_G[_a],
+                                         "stored-form bisect drift (VOID)")
+        log(f"g_{_a} == stored EXACT ({STORED_G[_a]!r})")
+GAIN_SRC = {a: "bisect (this process) == stored EXACT" for a in BIS if a in STORED_G}
+for _a in BIS:
+    if _a not in STORED_G:
+        GAIN_SRC[_a] = "bisect (this process), fresh"
+for _a in MY_ARMS:
+    if _a in FIXED:
+        GAIN[_a] = G_CUTWA_STORED
+        GAIN_SRC[_a] = "fixed base gain g_cutwA (stored float)"
+assert all(GAIN[a] is not None for a in ["cutwA"] + MY_ARMS)
+if os.path.exists(GAINS_PATH):   # resume: every gain must equal the file's
+    _gf = json.load(open(GAINS_PATH))["gain"]
+    assert all(float(_gf[a]) == GAIN[a] for a in ["cutwA"] + MY_ARMS), \
+        "gains file value drift (VOID)"
+atomic_json(GAINS_PATH, dict(gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+                             cert_gain={}, source=GAIN_SRC, bisected=BIS,
+                             stairs=new_stairs, af_final=af_final,
+                             stored_exact={a: bool(GAIN[a] == STORED_G[a])
+                                           for a in BIS if a in STORED_G}))
+log(f"bisects done {time.time()-t0:.0f}s")
+A187 = ("sc25", "sc25F", "rcut", "rcutF")       # arms with stored L187 raws
+W187 = {"cutwA": 0, "sc25": 0, "sc25F": 0, "rcut": 2, "rcutF": 2}
+
+
+def arms_for(seed):
+    if seed in ANCH_BIT or seed in ANCH_175:   # vs raw_l135 / stored L175 raws
+        return ["cutwA"] + [a for a in MY_ARMS if a == "sc25"]
+    if seed in ANCH_187:                       # vs stored L187 raws
+        return ["cutwA"] + [a for a in MY_ARMS if a in A187]
+    return ["cutwA"] + MY_ARMS
+
+
+_poolkeys = []
+for _pk, (_ag, _bg) in (("Ti", ("f", "e")), ("Tr", ("f", "e")),
+                        ("Ta", ("a", "b")), ("Sr", ("a", "b")),
+                        ("Pr", ("a", "b"))):
+    for _c in (_ag, _bg):
+        for _s in ("L", "R"):
+            _poolkeys.append(f"{_pk}_{_c}{_s}")
+C0A_KEYS = ["mm", "xm"] + _poolkeys
+assert len(C0A_KEYS) == 22
+ANCH_PATH = f"{OUT}/anchors_w{WID}.json"
+ANCH_STATE = (json.load(open(ANCH_PATH)) if os.path.exists(ANCH_PATH) else
+              dict(c0a135_pass=None, c0a175_pass=None, c0a187_pass=None))
+
+
+def _void(msg):
+    atomic_json(ANCH_PATH, ANCH_STATE)
+    log(msg + " -> VOID, stopping before any fresh seed")
+    sys.exit(3)
+
+
+def post_seed(seed):
+    """In-run anchors, all evaluated BEFORE a fresh seed is rolled.
+    (a) at 901: cutwA (+ sc25) vs raw_l135 — C0A, L175/L187 form VERBATIM.
+    (d) at 3545: cutwA (+ sc25) vs the stored L175 raws (L187 form VERBATIM).
+    (e) at 3609: cutwA (+ sc25 / sc25F / rcut / rcutF) vs the stored L187 raws
+        — the relay-cut arm itself must reproduce bit-for-bit.
+    Any failure = VOID before a single fresh seed is rolled."""
+    if seed == 901:
+        z135c = np.load("l135/raw_l135.npz")
+        pairs = [("cutwA", "cutwA")] + [(a, l) for a, l in (("sc25", "cutng25"),)
+                                        if a in MY_ARMS]
+        c0a = {}
+        for a, lin in pairs:
+            for s in (801, 901):
+                for key in C0A_KEYS:
+                    assert f"{key}_{lin}_{s}" in z135c.files, "C0A coverage miss"
+                    c0a[f"{a}~{lin}_{key}_{s}"] = float(np.abs(
+                        store[f"{key}_{a}_{s}"] - z135c[f"{key}_{lin}_{s}"][:WIN]).max())
+                c0a[f"{a}~{lin}_af_{s}"] = abs(float(store[f"af_{a}_{s}"])
+                                              - float(z135c[f"af_{lin}_{s}"]))
+        mx = max(c0a.values())
+        ok = bool(all(v == 0.0 for v in c0a.values()))
+        ANCH_STATE.update(c0a135_pass=ok, c0a135_max=mx, c0a135_checks=len(c0a),
+                          c0a135_pairs=pairs, g_cutwA=GAIN["cutwA"],
+                          g_cutwA_stored_exact=bool(GAIN["cutwA"] == G_CUTWA_STORED))
+        atomic_json(ANCH_PATH, ANCH_STATE)
+        log(f"C0A-198a {pairs} x 22 keys + af x 2 seeds vs raw_l135: "
+            f"{'PASS' if ok else 'FAIL'} (max {mx:.1e}, {len(c0a)} checks)")
+        if not ok:
+            _void("C0A-198a FAIL")
+    if seed == ANCH_175[0]:
+        if not ANCH_STATE.get("c0a135_pass"):
+            _void("C0A-198a not PASS at the L175 anchor")
+        arms175 = ["cutwA"] + [a for a in MY_ARMS if a == "sc25"]
+        c0b = {}
+        for a in arms175:
+            _w = 0 if a == "cutwA" else W175[a]
+            zr = np.load(f"l175/raw_w{_w}.npz")
+            zx = np.load(f"l175/xm_w{_w}.npz")
+            for key in C0A_KEYS:
+                c0b[f"{a}_{key}"] = float(np.abs(
+                    store[f"{key}_{a}_{seed}"] - zr[f"{key}_{a}_{seed}"]).max())
+            c0b[f"{a}_af"] = abs(float(store[f"af_{a}_{seed}"])
+                                 - float(zr[f"af_{a}_{seed}"]))
+            c0b[f"{a}_xmean"] = float(np.abs(
+                XM[f"xmean_{a}_{seed}"] - zx[f"xmean_{a}_{seed}"]).max())
+            _mine = store[f"xwin_{a}_{seed}"][:N_TRACK_175]
+            _thr = zr[f"xwin_{a}_{seed}"]
+            assert _thr.shape == (N_TRACK_175,)
+            c0b[f"{a}_xwin"] = (0.0 if np.array_equal(_mine, _thr, equal_nan=True)
+                                else 1.0)
+        mx = max(c0b.values())
+        ok = bool(all(v == 0.0 for v in c0b.values()))
+        ANCH_STATE.update(c0a175_pass=ok, c0a175_max=mx, c0a175_checks=len(c0b),
+                          c0a175_arms=arms175, c0a175_seed=int(seed))
+        atomic_json(ANCH_PATH, ANCH_STATE)
+        log(f"C0A-198b {arms175} x (22 keys + af + xmean + xwin) @ {seed} vs "
+            f"stored L175 raws: {'PASS' if ok else 'FAIL'} (max {mx:.1e}, "
+            f"{len(c0b)} checks)")
+        if not ok:
+            _void("C0A-198b FAIL")
+    if seed == ANCH_187[0]:
+        if not (ANCH_STATE.get("c0a135_pass") and ANCH_STATE.get("c0a175_pass")):
+            _void("earlier anchors not PASS at the L187 anchor")
+        arms187 = ["cutwA"] + [a for a in MY_ARMS if a in A187]
+        c0c = {}
+        for a in arms187:
+            zr = np.load(f"l187/raw_w{W187[a]}.npz")
+            zx = np.load(f"l187/xm_w{W187[a]}.npz")
+            for key in C0A_KEYS:
+                c0c[f"{a}_{key}"] = float(np.abs(
+                    store[f"{key}_{a}_{seed}"] - zr[f"{key}_{a}_{seed}"]).max())
+            c0c[f"{a}_af"] = abs(float(store[f"af_{a}_{seed}"])
+                                 - float(zr[f"af_{a}_{seed}"]))
+            c0c[f"{a}_xmean"] = float(np.abs(
+                XM[f"xmean_{a}_{seed}"] - zx[f"xmean_{a}_{seed}"]).max())
+            _mine = store[f"xwin_{a}_{seed}"][:N_TRACK_187]
+            _thr = zr[f"xwin_{a}_{seed}"]
+            assert _thr.shape == (N_TRACK_187,)
+            c0c[f"{a}_xwin"] = (0.0 if np.array_equal(_mine, _thr, equal_nan=True)
+                                else 1.0)
+            for _cg in (GI_CARRIER, GI_RELAY, GI_SC40):
+                if f"c{_cg}_{a}_{seed}" in zr.files:
+                    c0c[f"{a}_c{_cg}"] = float(np.abs(
+                        store[f"c{_cg}_{a}_{seed}"] - zr[f"c{_cg}_{a}_{seed}"]).max())
+        mx = max(c0c.values())
+        ok = bool(all(v == 0.0 for v in c0c.values()))
+        ANCH_STATE.update(c0a187_pass=ok, c0a187_max=mx, c0a187_checks=len(c0c),
+                          c0a187_arms=arms187, c0a187_seed=int(seed))
+        atomic_json(ANCH_PATH, ANCH_STATE)
+        log(f"C0A-198c {arms187} x (22 keys + af + xmean + xwin + cell traces) @ "
+            f"{seed} vs stored L187 raws: {'PASS' if ok else 'FAIL'} "
+            f"(max {mx:.1e}, {len(c0c)} checks)")
+        if not ok:
+            _void("C0A-198c FAIL")
+    if seed in FRESH:
+        if not (ANCH_STATE.get("c0a135_pass") and ANCH_STATE.get("c0a175_pass")
+                and ANCH_STATE.get("c0a187_pass")):
+            _void("fresh seed reached without all three anchors PASS")
+
+

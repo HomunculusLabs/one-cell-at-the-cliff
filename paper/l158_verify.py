@@ -458,6 +458,14 @@ if _st183 >= 1:
         ('exactly one reaches the class (41 of 50)', 'l172.pooled.cutscr0.n', 50),
         ('alone on the chopped readout (13 of 16)', 'l187.arms.rcut.kR', 13),
         ('alone on the chopped readout (13 of 16)', 'l187.arms.rcut.n', 16),
+        # RESIDUE-FOLD ADDITION (2026-11-21 evening; receipt in LANE-LOG and
+        # banc/residue_worklog.md): the yardstick sentence, traced BY VALUE
+        ('the model scores 513 of 513', 'l197.reference.reference.chopped_k', 513),
+        ('the model scores 513 of 513', 'l197.reference.reference.n', 513),
+        ('(pooled mean duty .766 against .995)',
+         'l197.reference.carrier.chopped_mean', 0.766),
+        ('(pooled mean duty .766 against .995)',
+         'l197.reference.reference.chopped_mean', 0.995),
     ]
     for _claim, _key, _exp in TRACE183:
         assert _claim in L_flat, f'(13) traced claim missing: {_claim!r}'
@@ -495,12 +503,35 @@ if _st183 >= 1:
               '1.4-Hz', 'sufficient, not unique', 'set-dependent',
               'carrier-free', 'mass-matched', 'downstream interneuron',
               'stricter synapse floor', 'unresolved',
-              'one perturbed model graph, not the fly'):
+              'one perturbed model graph, not the fly',
+              # RESIDUE-FOLD ADDITION: the calibration may not be dropped
+              'yardstick set on a degraded network',
+              'receive no cord input',
+              'partial rescue toward that level',
+              'not a transition beyond it'):
         assert p in L_flat, f'(14) abstract missing required statement: {p}'
+    # RESIDUE-FOLD ADDITION: the yardstick reading, re-derived.  The network
+    # without the pure projectors is structured in every seed on both
+    # readouts, and the carrier-removed pool sits strictly between the base
+    # and that network, so "partial rescue ... not a transition beyond it" is
+    # a statement about stored numbers and not a choice of words.
+    _ref = _resolve('l197.reference')
+    assert _ref['reference']['chopped_k'] == _ref['reference']['n'] \
+        == _ref['reference']['fast_k'] and _ref['reference']['code'] == 'b65' \
+        and _ref['carrier']['code'] == 'cutng25' \
+        and _ref['base']['chopped_mean'] < _ref['carrier']['chopped_mean'] \
+        < _ref['reference']['chopped_mean'] \
+        and _ref['carrier']['chopped_k'] < _ref['carrier']['n'], \
+        '(14) the abstract yardstick reading is not what the stored pools say'
+    assert _resolve('l92.substrate.dn_new') == _resolve('l92.substrate.n_new') \
+        - _resolve('l92.substrate.n_old') > 0, \
+        '(14) the closure does not add descending neurons to the baseline network'
     for bad in ('all-or-none', 'kill', 'supers', 'mass-only band', '9.72',
                 'identity carries it', 'identity, not mass', ' male',
                 '.008', '39 of 48', '39/48', 'regime transition',
-                'a real slow oscillation', 'antagonist clock, not'):
+                'a real slow oscillation', 'antagonist clock, not',
+                # RESIDUE-FOLD ADDITION: the abstract's own transition word
+                'The flip is'):
         assert bad not in L_flat, f'(14) retired abstract claim returned: {bad}'
     assert 'selectively' in L_title and 'perturbed' in L_title \
         and 'model' in L_title, '(14) the adopted title lost its scope words'
@@ -516,7 +547,8 @@ if _st183 >= 1:
     assert not (FORBIDDEN_L172 & L_toks), '(14) superseded per-batch counts'
     assert '12\u00d7 below' not in _live183[_live183.index('## Title'):], \
         '(14) the retired 12x mass ratio returned'
-    print('(14) claim-set contract: 19 required statements present, 14 '
+    print('(14) claim-set contract: 23 required statements present (19 + the '
+          'four yardstick statements, re-derived from l197.reference), 15 '
           'retired claims gone, the adopted title keeps its three scope '
           'words, no affirmative uniqueness claim in title / abstract / '
           'section 1, no superseded per-batch count')
@@ -546,7 +578,13 @@ if _st183 >= 1:
 
     # (16) the new byte pin (successor of (10); the stored (b2) pin keeps
     # certifying the pre-image above)
-    ABSTRACT_PIN_L183 = 'b278e1421a77adf28d42547ca44a217c896c17df4b5b03fb595ffde94dafafb3'
+    # RESIDUE-FOLD PIN UPDATE (2026-11-21 evening; receipt in LANE-LOG and
+    # banc/residue_worklog.md).  OLD: b278e1421a77adf2... (the stage-1
+    # abstract, unchanged through stage 8).  NEW: the stage-9 abstract, which
+    # gains the yardstick sentence (fourth-round M2) and says "rise" where it
+    # said "flip".  Same whole-block byte pin; (12)-(15) above run on the new
+    # text with four more traces and four more required statements.
+    ABSTRACT_PIN_L183 = '614879fe645151d603659f9bc19d5efd733293f2c1e84b09868424310c32e43a'
     _sha183 = hashlib.sha256(L_abs.encode()).hexdigest()
     assert ABSTRACT_PIN_L183 is None or _sha183 == ABSTRACT_PIN_L183, \
         f'(16) the live abstract moved since the L183 pin ({_sha183[:12]})'

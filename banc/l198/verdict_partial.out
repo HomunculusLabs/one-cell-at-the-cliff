@@ -1,0 +1,3 @@
+CERT-METRIC vs results_l187 (B41: cutwA / sc25 / sc25F / rcut / rcutF, chopped k + mean and 1.4-Hz k + mean): PASS
+CERT-X cutwA identical across 6 workers on 9 seeds: PASS (990 checks, max 0.0)
+only 5 complete fresh seeds — no branch read

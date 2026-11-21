@@ -1,0 +1,421 @@
+{
+ "cert": {
+  "n": 30,
+  "n_fail": 0,
+  "checks": [
+   {
+    "name": "n_old",
+    "got": 21249,
+    "want": 21249,
+    "ok": true
+   },
+   {
+    "name": "n_new",
+    "got": 21809,
+    "want": 21809,
+    "ok": true
+   },
+   {
+    "name": "cord",
+    "got": 20521,
+    "want": 20521,
+    "ok": true
+   },
+   {
+    "name": "dn_into",
+    "got": 728,
+    "want": 728,
+    "ok": true
+   },
+   {
+    "name": "dn_proj",
+    "got": 1287,
+    "want": 1287,
+    "ok": true
+   },
+   {
+    "name": "dn_new",
+    "got": 560,
+    "want": 560,
+    "ok": true
+   },
+   {
+    "name": "edges_old",
+    "got": 627051,
+    "want": 627051,
+    "ok": true
+   },
+   {
+    "name": "edges_new",
+    "got": 647953,
+    "want": 647953,
+    "ok": true
+   },
+   {
+    "name": "block_cord->cord",
+    "got": 560236,
+    "want": 560236,
+    "ok": true
+   },
+   {
+    "name": "block_cord->DNi",
+    "got": 5322,
+    "want": 5322,
+    "ok": true
+   },
+   {
+    "name": "block_cord->DNn",
+    "got": 0,
+    "want": 0,
+    "ok": true
+   },
+   {
+    "name": "block_DNi->cord",
+    "got": 53329,
+    "want": 53329,
+    "ok": true
+   },
+   {
+    "name": "block_DNi->DNi",
+    "got": 8164,
+    "want": 8164,
+    "ok": true
+   },
+   {
+    "name": "block_DNi->DNn",
+    "got": 2189,
+    "want": 2189,
+    "ok": true
+   },
+   {
+    "name": "block_DNn->cord",
+    "got": 14279,
+    "want": 14279,
+    "ok": true
+   },
+   {
+    "name": "block_DNn->DNi",
+    "got": 3047,
+    "want": 3047,
+    "ok": true
+   },
+   {
+    "name": "block_DNn->DNn",
+    "got": 1387,
+    "want": 1387,
+    "ok": true
+   },
+   {
+    "name": "pool_Ti_fL",
+    "got": 50,
+    "want": 50,
+    "ok": true
+   },
+   {
+    "name": "pool_Ti_fR",
+    "got": 51,
+    "want": 51,
+    "ok": true
+   },
+   {
+    "name": "pool_Ti_eL",
+    "got": 6,
+    "want": 6,
+    "ok": true
+   },
+   {
+    "name": "pool_Ti_eR",
+    "got": 6,
+    "want": 6,
+    "ok": true
+   },
+   {
+    "name": "pool_Tr_fL",
+    "got": 31,
+    "want": 31,
+    "ok": true
+   },
+   {
+    "name": "pool_Tr_fR",
+    "got": 31,
+    "want": 31,
+    "ok": true
+   },
+   {
+    "name": "pool_Tr_eL",
+    "got": 24,
+    "want": 24,
+    "ok": true
+   },
+   {
+    "name": "pool_Tr_eR",
+    "got": 24,
+    "want": 24,
+    "ok": true
+   },
+   {
+    "name": "mech",
+    "got": 4848,
+    "want": 4848,
+    "ok": true
+   },
+   {
+    "name": "motor",
+    "got": 728,
+    "want": 728,
+    "ok": true
+   },
+   {
+    "name": "dng100",
+    "got": 2,
+    "want": 2,
+    "ok": true
+   },
+   {
+    "name": "dn46_in_subnet",
+    "got": 3,
+    "want": 3,
+    "ok": true
+   },
+   {
+    "name": "dn46_pos",
+    "got": [
+     270,
+     302,
+     366
+    ],
+    "want": [
+     270,
+     302,
+     366
+    ],
+    "ok": true
+   }
+  ]
+ },
+ "floor_report": {
+  "pairs_total": 1830698,
+  "min_syn_all": 3.0,
+  "min_syn_cord_to_dn": 3.0,
+  "n_cord_to_dn": 5322,
+  "n_dn_to_cord": 67608,
+  "hist_all_capped12": {
+   "3": 533658,
+   "4": 310536,
+   "5": 201369,
+   "6": 140084,
+   "7": 102861,
+   "8": 78985,
+   "9": 61492,
+   "10": 49637,
+   "11": 40762,
+   "12": 311314
+  },
+  "hist_cord_to_dn_capped12": {
+   "3": 1776,
+   "4": 937,
+   "5": 574,
+   "6": 416,
+   "7": 294,
+   "8": 214,
+   "9": 132,
+   "10": 144,
+   "11": 92,
+   "12": 743
+  },
+  "l146_floor3_holds": true
+ },
+ "m1_dn_into": {
+  "n_cells": 728,
+  "single_pair": 211,
+  "single_pair_frac": 0.2898,
+  "maxsyn_eq3": 140,
+  "maxsyn_le4": 232,
+  "maxsyn_le5": 284,
+  "maxsyn_le9": 454,
+  "inpair_q25_med_q75_max": [
+   1.0,
+   3.0,
+   6.0,
+   190.0
+  ],
+  "maxsyn_q25_med_q75_max": [
+   4.0,
+   7.0,
+   15.0,
+   114.0
+  ],
+  "totsyn_q25_med_q75_max": [
+   6.0,
+   15.0,
+   41.25,
+   1102.0
+  ],
+  "single_and_3syn": 109
+ },
+ "m2_dn_new": {
+  "n_cells": 560,
+  "single_pair": 13,
+  "single_pair_frac": 0.0232,
+  "maxsyn_eq3": 10,
+  "maxsyn_le4": 16,
+  "maxsyn_le5": 30,
+  "outpair_q25_med_q75_max": [
+   8.0,
+   14.0,
+   29.0,
+   234.0
+  ],
+  "maxsyn_q25_med_q75_max": [
+   11.0,
+   19.0,
+   37.0,
+   304.0
+  ],
+  "single_and_3syn": 3
+ },
+ "ladder": {
+  "3": {
+   "floor": 3,
+   "edges_kept_global": 1830698,
+   "A": {
+    "dn_into": 728,
+    "dn_proj": 1287,
+    "dn_new": 560,
+    "n_new": 21809,
+    "n_old": 21249,
+    "edges_new": 647953,
+    "edges_old": 627051,
+    "migration_in": 0,
+    "eviction": 0,
+    "stay": 560
+   },
+   "B": {
+    "dn_into": 728,
+    "dn_proj": 1287,
+    "dn_new": 560,
+    "evicted_from_dn_into": 0
+   }
+  },
+  "4": {
+   "floor": 4,
+   "edges_kept_global": 1297040,
+   "A": {
+    "dn_into": 588,
+    "dn_proj": 1273,
+    "dn_new": 688,
+    "n_new": 21797,
+    "n_old": 21109,
+    "edges_new": 472020,
+    "edges_old": 448472,
+    "migration_in": 138,
+    "eviction": 10,
+    "stay": 550
+   },
+   "B": {
+    "dn_into": 588,
+    "dn_proj": 1287,
+    "dn_new": 699,
+    "evicted_from_dn_into": 140
+   }
+  },
+  "5": {
+   "floor": 5,
+   "edges_kept_global": 986504,
+   "A": {
+    "dn_into": 496,
+    "dn_proj": 1261,
+    "dn_new": 767,
+    "n_new": 21784,
+    "n_old": 21017,
+    "edges_new": 367809,
+    "edges_old": 345362,
+    "migration_in": 223,
+    "eviction": 16,
+    "stay": 544
+   },
+   "B": {
+    "dn_into": 496,
+    "dn_proj": 1287,
+    "dn_new": 791,
+    "evicted_from_dn_into": 232
+   }
+  },
+  "6": {
+   "floor": 6,
+   "edges_kept_global": 785135,
+   "A": {
+    "dn_into": 444,
+    "dn_proj": 1240,
+    "dn_new": 803,
+    "n_new": 21768,
+    "n_old": 20965,
+    "edges_new": 298671,
+    "edges_old": 278096,
+    "migration_in": 273,
+    "eviction": 30,
+    "stay": 530
+   },
+   "B": {
+    "dn_into": 444,
+    "dn_proj": 1287,
+    "dn_new": 843,
+    "evicted_from_dn_into": 284
+   }
+  },
+  "10": {
+   "floor": 10,
+   "edges_kept_global": 401713,
+   "A": {
+    "dn_into": 274,
+    "dn_proj": 1156,
+    "dn_new": 886,
+    "n_new": 21681,
+    "n_old": 20795,
+    "edges_new": 161570,
+    "edges_old": 146464,
+    "migration_in": 421,
+    "eviction": 95,
+    "stay": 465
+   },
+   "B": {
+    "dn_into": 274,
+    "dn_proj": 1287,
+    "dn_new": 1013,
+    "evicted_from_dn_into": 454
+   }
+  }
+ },
+ "m5": {
+  "banc_A_3": 560,
+  "banc_A_4": 688,
+  "banc_A_5": 767,
+  "banc_rel_change_3to5_A": 0.3696,
+  "banc_step_3to4_A": 0.2286,
+  "banc_rel_change_3to5_B": 0.4125,
+  "banc_step_3to4_B": 0.2482,
+  "male_dn_new_1": 28,
+  "male_dn_new_3": 342,
+  "male_rel_change_1to3": 11.2143,
+  "male_dn_new_2": 199,
+  "male_step_2to3": 0.7186,
+  "span_note": "male span is floors 1->3; BANC's admissible span is 3->5 because the v626 release's own pair floor is 3 (L146) \u2014 the spans are NOT rung-matched; the rung-matched comparison is BANC 3->4 against male 2->3"
+ },
+ "verdict": {
+  "branch": "B_FRAGILE",
+  "Q1_banc_step_smaller": true,
+  "Q2_not_single_edge": false,
+  "Q3_B_rises": true,
+  "Q4_cond1_move_lt_male": true,
+  "Q4_cond2_evict_lt_10pct": false,
+  "dn_into_evicted_frac_f4": 0.1923,
+  "dn_new_evicted_frac_f4": 0.0179,
+  "vacuous_f4": false,
+  "subnet_n_new_change_3to5": -0.00115,
+  "cohort_relabel_frac_f4": 0.1923,
+  "single_3syn_frac_of_dn_into": 0.1497,
+  "sparsity_ratio_dc_over_cd": 12.703
+ },
+ "mtimes_unchanged": true,
+ "wall_s": 4.0
+}

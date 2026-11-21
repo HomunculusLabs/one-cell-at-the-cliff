@@ -427,29 +427,148 @@ for m in re.finditer(r"^(\d+)\. (.+?) \((\d{4})\), \u201c(.+?),\u201d (.+?)\. "
     PREC[(m.group(2).split()[0], m.group(3))] = dict(
         title=m.group(4), venue=m.group(5).replace(" preprint", "").split(",")[0],
         doi=m.group(6))
-ORDER_C = [("chalfie1985", "Chalfie", "1985"), ("rakowski2013", "Rakowski", "2013"),
-           ("fouad2018", "Fouad", "2018"), ("alstott2009", "Alstott", "2009"),
-           ("rangaraju2015", "Rangaraju", "2015"), ("laredo2018", "Laredo", "2018"),
-           ("zung2025", "Zung", "2025"), ("sturner2025nature", "St\u00fcrner", "2025")]
-n_c = 0
+# RESIDUE-FOLD PIN UPDATE (2026-11-21 evening; receipt in LANE-LOG and
+# banc/residue_worklog.md).
+# OLD: each of entries 38-45 had to START WITH "<digest surname> et al." and
+#   its bib author had to be "<digest surname> and others" -- author lists
+#   held at the first author "by declaration", because the digest records no
+#   more; the bib title had to be the digest's title verbatim.
+# WHY IT MOVES: the owner-directed residue fold pulled the primary records
+#   (Crossref works API, stored raw under banc/residue/raw/, with one
+#   independent second stored source per entry) and completed the lists.
+#   The pull also showed that the digest's surname for entry 42 is WRONG:
+#   both primary records give Wu as first author of that DOI, and the surname
+#   the digest carries appears nowhere on the stored landing page.
+# NEW (stronger, nothing dropped): the title-overlap, venue, year and DOI
+#   checks against the digest are unchanged; the author field is now checked
+#   IN FULL against the stored primary record, re-derived here (never typed),
+#   in the list and in references.bib; the second stored source must agree on
+#   the family-name sequence; the digest's first author must equal the
+#   primary record's EXCEPT for the one declared correction, which is itself
+#   asserted (so it can neither spread nor silently revert); "et al." and
+#   "and others" are asserted GONE from these entries.
+import html as _html, unicodedata as _ud
+RES = os.path.join(LAB, "banc", "residue")
+ORDER_C = [("chalfie1985", "chalfie1985", "Chalfie", "1985"),
+           ("rakowski2013", "rakowski2013", "Rakowski", "2013"),
+           ("fouad2018", "fouad2018", "Fouad", "2018"),
+           ("alstott2009", "alstott2009", "Alstott", "2009"),
+           # (bib key, stored-record key, digest surname, year): the stored
+           # record keeps the digest's key; the bib key carries the real name
+           ("wu2015stroke", "rangaraju2015", "Rangaraju", "2015"),
+           ("laredo2018", "laredo2018", "Laredo", "2018"),
+           ("zung2025", "zung2025", "Zung", "2025"),
+           ("sturner2025nature", "sturner2025nature", "St\u00fcrner", "2025")]
+DIGEST_SURNAME_WRONG = {"rangaraju2015": "Wu"}   # the one declared correction
+
+
+def _fold(x):
+    x = _ud.normalize("NFKD", x)
+    return "".join(c for c in x if not _ud.combining(c)).casefold()
+
+
+def _clean(x):
+    return " ".join(_html.unescape(re.sub(r"<[^>]+>", "", x or "")).split()).rstrip(".")
+
+
+def _initials(given):
+    out = []
+    for q in (q for q in re.split(r"[\s.\-]+", given or "") if q):
+        if q.isalpha() and q.isupper() and 2 <= len(q) <= 3:
+            out += [c + "." for c in q]
+        else:
+            out.append(q[0].upper() + ".")
+    return " ".join(out)
+
+
+def _primary(rkey):
+    m = json.load(open(os.path.join(RES, "raw", "crossref_%s.json" % rkey)))["message"]
+    au = [(" ".join(a.get("given", "").split()), _clean(a["family"]))
+          if "family" in a else ("", _clean(a["name"])) for a in m["author"]]
+    return m, au
+
+
+def _second(rkey):
+    """family-name-bearing author strings from a stored source that is not
+    Crossref (landing-page meta tags; Europe PMC; bioRxiv details API)."""
+    if rkey == "zung2025":
+        c = json.load(open(os.path.join(RES, "raw", "biorxiv_zung2025.json")))["collection"]
+        last = max(c, key=lambda x: int(x["version"]))
+        return [x.strip(" ,") for x in last["authors"].split(";")], int(last["version"])
+    t = open(os.path.join(RES, "raw", "page_%s.html" % rkey), encoding="utf-8",
+             errors="replace").read()
+    names = [_html.unescape(x).strip() for x in re.findall(
+        r'<meta[^>]+name="citation_author"[^>]+content="([^"]*)"', t)]
+    if not names:
+        e = json.load(open(os.path.join(RES, "raw", "europepmc_%s.json" % rkey)))
+        names = ["%s %s" % (a.get("firstName", ""), a.get("lastName", a.get("collectiveName", "")))
+                 for a in e["resultList"]["result"][0]["authorList"]["author"]]
+    return names, None
+
+
+n_c = n_auth = 0
 if STAGE183 >= 4:
     ck(N == 37 + len(ORDER_C), "the list has %d entries, expected %d" % (N, 37 + len(ORDER_C)))
-    for i, (key, sn, yr) in enumerate(ORDER_C):
+    for i, (key, rkey, sn, yr) in enumerate(ORDER_C):
         n = 38 + i
         rec = PREC.get((sn, yr))
         seg = segs.get(n, "")
         if not ck(rec is not None, "%s %s is not in the verified digest" % (sn, yr)):
             continue
-        ck(seg.startswith("%d. %s et al." % (n, sn)), "entry %d is not %s et al." % (n, sn))
+        m, au = _primary(rkey)
+        fam = [f for _, f in au]
+        ptitle = _clean(m["title"][0])
+        # --- unchanged digest checks: year, DOI, venue, title overlap
         ck(("(%s)" % yr) in seg, "entry %d year not from the digest" % n)
         ck(("doi:" + rec["doi"]) in seg, "entry %d DOI not copied from the digest" % n)
         ck(rec["venue"] in seg, "entry %d venue %r not from the digest" % (n, rec["venue"]))
         ov = len(toks(rec["title"]) & toks(seg)) / max(1, len(toks(rec["title"])))
         ck(ov >= 0.9, "entry %d title does not match the digest (%.2f)" % (n, ov))
-        ck(("@article{%s," % key) in BIB and rec["doi"] in BIB and rec["title"] in BIB,
-           "bib entry %s missing, or its DOI / title not from the digest" % key)
-        ck("%s and others" % sn in BIB, "bib entry %s author not held at first author" % key)
+        # --- the primary record is the record of the digest's identifier
+        ck(m["DOI"].lower() == rec["doi"].lower()
+           and str(m["issued"]["date-parts"][0][0]) == yr,
+           "entry %d: stored Crossref record is not the digest's DOI / year" % n)
+        # --- the author field, in full, from the primary record
+        lst = ", ".join("%s, %s" % (f, _initials(g)) if g else f for g, f in au)
+        ck(seg.startswith("%d. %s. %s. " % (n, lst.rstrip("."), ptitle)),
+           "entry %d does not open with the primary record's full author list "
+           "and title" % n)
+        ck("et al." not in seg, "entry %d still abbreviates its author list" % n)
+        bauth = " and ".join("%s, %s" % (f, g) if g else "{%s}" % f for g, f in au)
+        bseg = BIB[BIB.index("@article{%s," % key):] if ("@article{%s," % key) in BIB else ""
+        bseg = bseg[:bseg.index("\n}\n") + 3] if "\n}\n" in bseg else bseg
+        ck(bseg and ("author       = {%s}," % bauth) in bseg
+           and ("title        = {%s}," % ptitle) in bseg and rec["doi"] in bseg
+           and "and others" not in bseg,
+           "bib entry %s missing, or its author list / title / DOI is not the "
+           "primary record's" % key)
+        tov = len(toks(rec["title"]) & toks(ptitle)) / max(1, len(toks(rec["title"])))
+        ck(tov >= 0.9, "entry %d: primary title departs from the digest title" % n)
+        # --- an independent stored source agrees on the family-name sequence
+        names2, ver = _second(rkey)
+        ck(len(names2) == len(fam) and all(_fold(f) in _fold(x)
+                                           for f, x in zip(fam, names2)),
+           "entry %d: the second stored source disagrees on the author sequence" % n)
+        # --- the digest's first author, and the one declared correction
+        if rkey in DIGEST_SURNAME_WRONG:
+            page = open(os.path.join(RES, "raw", "page_%s.html" % rkey),
+                        encoding="utf-8", errors="replace").read()
+            ck(fam[0] == DIGEST_SURNAME_WRONG[rkey] and _fold(sn) != _fold(fam[0])
+               and sn not in page and sn not in json.dumps(m)
+               and sn not in seg and ("@article{%s," % rkey) not in BIB,
+               "entry %d: the declared first-author correction no longer holds" % n)
+        else:
+            ck(_fold(fam[0]) == _fold(sn),
+               "entry %d: primary first author %r != digest %r (undeclared)"
+               % (n, fam[0], sn))
+        if rkey == "zung2025":
+            ck(ver == 3 and "(third posted version)" in seg,
+               "entry %d: the list names a posted version the stored bioRxiv "
+               "record does not show as latest" % n)
         n_c += 1
+        n_auth += len(fam)
+    ck("held at the first author" not in _ws(refsec_body),
+       "the list preamble still says author lists are held at the first author")
     # the two statements the digest corrects must be worded as it words them
     ck("equally sized 50-node lesions" in _ws(PRIOR) and "50 nodes each" in _ws(body),
        "the equal-size lesion detail is not stated as the digest verifies it")
@@ -462,8 +581,10 @@ if STAGE183 >= 4:
        "entry 45 must point at entry 15 without asserting an unverified relation")
     print("(9) entries 38-%d: %d of %d parsed from the verified prior-art digest and "
           "matched in the list and in references.bib (title, venue, year, DOI); "
-          "authors held at first author by declaration"
-          % (37 + len(ORDER_C), n_c, len(ORDER_C)))
+          "%d authors in full from the stored Crossref records, each sequence "
+          "confirmed by a second stored source; %d declared first-author "
+          "correction against the digest (entry 42)"
+          % (37 + len(ORDER_C), n_c, len(ORDER_C), n_auth, len(DIGEST_SURNAME_WRONG)))
 else:
     ck(N == 37, "entries beyond 37 before the fold's related-work stage")
     print("(9) entries 38-45 not yet folded (stage %d); %d digest records parsed"

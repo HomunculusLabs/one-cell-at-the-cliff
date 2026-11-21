@@ -1,0 +1,8 @@
+c9fff8791fff11614ef5a4f09ad612ac0c9a6efde2768065741cd1aa1bfbf7b6  l198/PREREG.md
+c382f0c4adf0b817cf4257f986739ad15f6a82a13c5d33723bdb78848e5dd6f5  l198/twin_run.py
+8ceefaecb2f8b7231d86f3491271d3ce27ccee5119b75532fc8b784842462de7  l198/build_twin.py
+78bf415ff9f38c09dbdd8860cbab11f4cb1e729bfa44d6dcf3600db5d58d61ac  l198/twin_block.py.txt
+0ade451d40c9ef1c80f5657e9b59d84bc0b941c37bb209bd2e7ec58946ccb7c3  l198/gains_block.py.txt
+5c646c58bc6b1b6e9c84bb71d7457d131d324d5ce7c0a78b619d8d980128116a  l198/tail_block.py.txt
+stage-1 frozen 2026-11-21 18:44:49 EST before the selection code was first executed
+stage-2: selection.json 5c144ebc60d062b85f41d6bc2b87eaf27c369012ae92b60eec28ea6162921ec2 | verdict_l198.py d504d7151a87d4a726749d923637a2f814999fea717af74ab4fe15729c7b34ee | FREEZE.json written 2026-11-21 18:47:56 EST before any rollout (no raw_w*.npz exists)

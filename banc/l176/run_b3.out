@@ -1,0 +1,36 @@
+=== B3-CERT: reproduce l50's stored per-side S / duty from raw traces ===
+  checks 150  fail 0  max_err 0.000e+00  worst None
+  B3-CERT PASS (exact)
+
+=== FLOOR report (D5: depth = max ptp over the segment span, bar 0.03) ===
+  cells 90  depth range [0.1207, 0.6525]  floored(<0.03) 0/90
+  mean depth by arm: {'free': 0.4145, 'ent': 0.4928, 'allw': 0.458, 'duty58': 0.4575, 'min5': 0.4364}
+  floored cells: [] 
+
+=== composite cells (alpha 0 primary readable rung; alpha 1 reported) ===
+  cells 180  frac(P>2) range [0.9600, 1.0000]  band-floor range [0.0000, 0.5067]
+  alpha=1 composite range [0.000000, 0.032753]  (gate annihilation check, Qb3-1)
+
+=== PRIMARY ordering (Spearman over 5 schedule arms) ===
+  seg0 L pub_1_10   rho(comp,S)=-0.359 rho(comp,duty)=-0.154  terms A=-0.359 PLV=+0.667 Ph=+0.359
+  seg0 L sub_03_10  rho(comp,S)=-0.667 rho(comp,duty)=-0.564  terms A=-0.667 PLV=+0.667 Ph=+0.154
+  seg0 R pub_1_10   rho(comp,S)=+0.359 rho(comp,duty)=+0.359  terms A=+0.359 PLV=-0.872 Ph=+0.359
+  seg0 R sub_03_10  rho(comp,S)=+0.872 rho(comp,duty)=+0.051  terms A=+0.872 PLV=+0.872 Ph=+0.667
+  seg2 L pub_1_10   rho(comp,S)=-1.000 rho(comp,duty)=+0.200  terms A=-1.000 PLV=+0.400 Ph=+1.000
+  seg2 L sub_03_10  rho(comp,S)=-1.000 rho(comp,duty)=+0.200  terms A=-1.000 PLV=+0.900 Ph=+1.000
+  seg2 R pub_1_10   rho(comp,S)=-0.300 rho(comp,duty)=-0.700  terms A=-0.300 PLV=+0.700 Ph=-0.300
+  seg2 R sub_03_10  rho(comp,S)=-0.100 rho(comp,duty)=-0.900  terms A=-0.100 PLV=+0.000 Ph=+0.300
+  seg1 L pub_1_10   rho(comp,S)=-0.900 rho(comp,duty)=-0.600  terms A=-0.900 PLV=+1.000 Ph=+0.900
+  seg1 L sub_03_10  rho(comp,S)=-1.000 rho(comp,duty)=-0.700  terms A=-1.000 PLV=+1.000 Ph=+1.000
+  seg1 R pub_1_10   rho(comp,S)=+0.700 rho(comp,duty)=+0.800  terms A=+0.700 PLV=+0.600 Ph=-0.100
+  seg1 R sub_03_10  rho(comp,S)=+0.700 rho(comp,duty)=+0.800  terms A=+0.700 PLV=+0.700 Ph=+0.900
+
+=== registered findings re-asked of the instrument ===
+  L pub_1_10   P-A duty58>allw 0/3 (d [-0.0428, -0.0728, -0.1733])  duty58>ent 0/3  | P-B allw<free seg1 0/3 (d [0.0493, 0.0158, 0.2127], A allw 0.3749 vs free 0.2664)
+  L sub_03_10  P-A duty58>allw 0/3 (d [-0.068, -0.072, -0.1839])  duty58>ent 0/3  | P-B allw<free seg1 0/3 (d [0.0935, 0.0106, 0.1833], A allw 0.3685 vs free 0.2541)
+  R pub_1_10   P-A duty58>allw 1/3 (d [0.0147, -0.0653, -0.0527])  duty58>ent 0/3  | P-B allw<free seg1 3/3 (d [-0.4446, -0.6414, -0.5095], A allw 0.2967 vs free 0.8426)
+  R sub_03_10  P-A duty58>allw 0/3 (d [-0.1164, -0.0641, -0.0925])  duty58>ent 0/3  | P-B allw<free seg1 3/3 (d [-0.2256, -0.4282, -0.4977], A allw 0.4187 vs free 0.8171)
+
+BRANCH M3_inverts   rho(0.7-Hz segs) range [-1.000, +0.872]   P-A all-cells False   P-B all-cells False   c0 range 0.8451   degenerate=no
+
+mtimes_unchanged True  -> results_l176b3.json

@@ -1,0 +1,20 @@
+{
+ "prereg_sha256": "c9fff8791fff11614ef5a4f09ad612ac0c9a6efde2768065741cd1aa1bfbf7b6",
+ "selection_sha256": "5c144ebc60d062b85f41d6bc2b87eaf27c369012ae92b60eec28ea6162921ec2",
+ "files": {
+  "PREREG.md": "c9fff8791fff11614ef5a4f09ad612ac0c9a6efde2768065741cd1aa1bfbf7b6",
+  "selection.json": "5c144ebc60d062b85f41d6bc2b87eaf27c369012ae92b60eec28ea6162921ec2",
+  "SELECTION.md": "69ce3d542a60024d9196a2d9fae4ff8278ee3dbbc7a4d8aee62f3561c64df5bd",
+  "static.json": "13ad3053e25284a89c5854f67b68ce3d89dc5005edab6bddbd87785bdbf4b070",
+  "twin_run.py": "c382f0c4adf0b817cf4257f986739ad15f6a82a13c5d33723bdb78848e5dd6f5",
+  "build_twin.py": "8ceefaecb2f8b7231d86f3491271d3ce27ccee5119b75532fc8b784842462de7",
+  "twin_block.py.txt": "78bf415ff9f38c09dbdd8860cbab11f4cb1e729bfa44d6dcf3600db5d58d61ac",
+  "gains_block.py.txt": "0ade451d40c9ef1c80f5657e9b59d84bc0b941c37bb209bd2e7ec58946ccb7c3",
+  "tail_block.py.txt": "5c646c58bc6b1b6e9c84bb71d7457d131d324d5ce7c0a78b619d8d980128116a",
+  "verdict_l198.py": "d504d7151a87d4a726749d923637a2f814999fea717af74ab4fe15729c7b34ee",
+  "verdict_tail.py.txt": "0c4d98cd3cc69d079a5199e231d44f9f69798a6d55caa564bf3f6c32da2758bb",
+  "build_verdict.py": "d28d1b543351ab1b5bebd0f317018c1659978a850173e45ecbc89b67c14ba767",
+  "run_all.sh": "87d49fd5b9aea4c3512d7e22380bf2ea1bb337cf1de6509ff72a558d1b6fc8db"
+ },
+ "frozen": "2026-11-21 18:47:56 EST before any rollout (no raw_w*.npz exists)"
+}

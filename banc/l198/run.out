@@ -1,0 +1,165 @@
+--- L198 rollouts: 6 workers x 2 threads, launched 2026-11-21 18:48:01 | PREREG sha c9fff8791fff1161 ---
+[work0 18:48:10] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work0 18:48:10] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work0 18:48:10] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work0 18:48:11] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work0 18:48:11] graphs built 8s | K 77 n_cut 21,732 edges_cut 639,164
+[work0 18:48:11] worker 0/6 arms: cutwA + ['sc25', 'sc25F']
+[work0 18:48:17] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work0 18:48:17] sc25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+[work1 18:48:21] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work1 18:48:21] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work1 18:48:22] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work1 18:48:23] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work1 18:48:23] graphs built 10s | K 77 n_cut 21,732 edges_cut 639,164
+[work1 18:48:23] worker 1/6 arms: cutwA + ['rcut', 'rcutF']
+[work1 18:48:29] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work1 18:48:29] rcut bracket af(0.12)=0.09069 af(0.18)=0.12024 target 0.10906
+[work2 18:48:33] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work2 18:48:33] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work2 18:48:34] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work2 18:48:36] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work2 18:48:36] graphs built 13s | K 77 n_cut 21,732 edges_cut 639,164
+[work2 18:48:36] worker 2/6 arms: cutwA + ['tw', 'twF']
+[work2 18:48:43] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work2 18:48:43] tw bracket af(0.12)=0.09014 af(0.18)=0.11655 target 0.10906
+[work3 18:48:57] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work3 18:48:58] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work3 18:48:58] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work3 18:49:01] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work3 18:49:01] graphs built 23s | K 77 n_cut 21,732 edges_cut 639,164
+[work3 18:49:01] worker 3/6 arms: cutwA + ['ru1', 'ru2']
+[work4 18:49:04] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work4 18:49:04] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work4 18:49:05] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work4 18:49:08] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work4 18:49:08] graphs built 23s | K 77 n_cut 21,732 edges_cut 639,164
+[work4 18:49:08] worker 4/6 arms: cutwA + ['ru3', 'ru4']
+[work3 18:49:13] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work3 18:49:13] ru1 bracket af(0.12)=0.09045 af(0.18)=0.12062 target 0.10906
+[work3 18:49:13] ru2 bracket af(0.12)=0.09385 af(0.18)=0.11593 target 0.10906
+[work5 18:49:17] CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS
+[work5 18:49:18] CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS
+[work5 18:49:18] CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps restricted EXACT: PASS {'sc25': {'removed': [1110], 'n': 21784, 'edges': 644084, 'edges_removed': 93}, 'sc40': {'removed': [559], 'n': 21784, 'edges': 644062, 'edges_removed': 115}, 'rcut': {'removed': [75494], 'n': 21784, 'edges': 644068, 'edges_removed': 109}, 'pp': {'removed': [559, 1110], 'n': 21783, 'edges': 643969, 'edges_removed': 208}, 'occ': {'removed': [1110, 75494], 'n': 21783, 'edges': 643976, 'edges_removed': 201}}
+[work4 18:49:21] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work4 18:49:21] ru3 bracket af(0.12)=0.09051 af(0.18)=0.12385 target 0.10906
+[work4 18:49:21] ru4 bracket af(0.12)=0.09049 af(0.18)=0.12029 target 0.10906
+[work5 18:49:22] CERT-SUB static (6 twin graphs == base minus the cell, maps restricted EXACT): PASS | twins {'tw': 73008, 'ru1': 67561, 'ru2': 70994, 'ru3': 64787, 'ru4': 67353, 'ru5': 71153}
+[work5 18:49:22] graphs built 26s | K 77 n_cut 21,732 edges_cut 639,164
+[work5 18:49:22] worker 5/6 arms: cutwA + ['ru5']
+[work5 18:49:33] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work5 18:49:33] ru5 bracket af(0.12)=0.09059 af(0.18)=0.11850 target 0.10906
+[work0 18:50:06] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work0 18:50:06] g_sc25 0.1454454553127289 | af_final 0.109025 | |af-target| 3.11e-05
+[work0 18:50:06] g_cutwA == stored EXACT (0.14365819573402408)
+[work0 18:50:06] g_sc25 == stored EXACT (0.1454454553127289)
+[work0 18:50:06] bisects done 123s
+[work1 18:50:25] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work1 18:50:25] g_rcut 0.14347783327102664 | af_final 0.109056 | |af-target| 5.34e-07
+[work1 18:50:25] g_cutwA == stored EXACT (0.14365819573402408)
+[work1 18:50:25] g_rcut == stored EXACT (0.14347783327102664)
+[work1 18:50:25] bisects done 132s
+[work0 18:50:42] seed 801 done af {'cutwA': 0.1126004159450531, 'sc25': 0.10916268825531006} | 159s
+[work1 18:50:45] seed 801 done af {'cutwA': 0.1126004159450531} | 152s
+[work2 18:50:50] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work2 18:50:50] g_tw 0.1430821323394775 | af_final 0.109056 | |af-target| 5.34e-07
+[work2 18:50:50] g_cutwA == stored EXACT (0.14365819573402408)
+[work2 18:50:50] bisects done 146s
+[work1 18:51:04] C0A-198a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work1 18:51:04] seed 901 done af {'cutwA': 0.10938719660043716} | 171s
+[work2 18:51:13] seed 801 done af {'cutwA': 0.1126004159450531} | 170s
+[work0 18:51:17] C0A-198a [('cutwA', 'cutwA'), ('sc25', 'cutng25')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 92 checks)
+[work0 18:51:17] seed 901 done af {'cutwA': 0.10938719660043716, 'sc25': 0.10755600780248642} | 194s
+[work1 18:51:28] C0A-198b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work1 18:51:28] seed 3545 done af {'cutwA': 0.10879044979810715} | 195s
+[work2 18:51:35] C0A-198a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work2 18:51:35] seed 901 done af {'cutwA': 0.10938719660043716} | 192s
+[work5 18:51:46] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work5 18:51:46] g_ru5 0.14365652918815616 | af_final 0.109025 | |af-target| 3.11e-05
+[work5 18:51:46] g_cutwA == stored EXACT (0.14365819573402408)
+[work5 18:51:46] bisects done 171s
+[work0 18:51:54] C0A-198b ['cutwA', 'sc25'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 50 checks)
+[work0 18:51:54] seed 3545 done af {'cutwA': 0.10879044979810715, 'sc25': 0.10925450176000595} | 231s
+[work2 18:51:58] C0A-198b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work2 18:51:58] seed 3545 done af {'cutwA': 0.10879044979810715} | 215s
+[work5 18:52:07] seed 801 done af {'cutwA': 0.1126004159450531} | 192s
+[work3 18:52:13] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work3 18:52:13] g_ru1 0.1451053977012634 | af_final 0.109056 | |af-target| 5.36e-07
+[work3 18:52:13] g_ru2 0.14322753667831417 | af_final 0.109056 | |af-target| 5.34e-07
+[work3 18:52:13] g_cutwA == stored EXACT (0.14365819573402408)
+[work3 18:52:13] bisects done 215s
+[work1 18:52:13] C0A-198c ['cutwA', 'rcut', 'rcutF'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 82 checks)
+[work1 18:52:13] seed 3609 done af {'cutwA': 0.1086527407169342, 'rcut': 0.10994307696819305, 'rcutF': 0.10874953866004944} | 240s
+[work4 18:52:19] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work4 18:52:19] g_ru3 0.14362413167953486 | af_final 0.109040 | |af-target| 1.58e-05
+[work4 18:52:19] g_ru4 0.14245631217956542 | af_final 0.109025 | |af-target| 3.11e-05
+[work4 18:52:19] g_cutwA == stored EXACT (0.14365819573402408)
+[work4 18:52:19] bisects done 214s
+[work2 18:52:20] C0A-198c ['cutwA'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 28 checks)
+[work2 18:52:20] seed 3609 done af {'cutwA': 0.1086527407169342} | 237s
+[work5 18:52:27] C0A-198a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work5 18:52:27] seed 901 done af {'cutwA': 0.10938719660043716} | 212s
+[work3 18:52:32] seed 801 done af {'cutwA': 0.1126004159450531} | 235s
+[work0 18:52:38] C0A-198c ['cutwA', 'sc25', 'sc25F'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 82 checks)
+[work0 18:52:38] seed 3609 done af {'cutwA': 0.1086527407169342, 'sc25': 0.10966764390468597, 'sc25F': 0.10842820256948471} | 275s
+[work4 18:52:40] seed 801 done af {'cutwA': 0.1126004159450531} | 235s
+[work5 18:52:47] C0A-198b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work5 18:52:47] seed 3545 done af {'cutwA': 0.10879044979810715} | 232s
+[work3 18:52:54] C0A-198a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work3 18:52:54] seed 901 done af {'cutwA': 0.10938719660043716} | 256s
+[work1 18:52:55] seed 3673 done af {'cutwA': 0.11117741465568542, 'rcut': 0.10787734389305115, 'rcutF': 0.10829048603773117} | 282s
+[work4 18:53:02] C0A-198a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work4 18:53:02] seed 901 done af {'cutwA': 0.10938719660043716} | 257s
+[work2 18:53:03] seed 3673 done af {'cutwA': 0.11117741465568542, 'tw': 0.10847411304712296, 'twF': 0.11104480177164078} | 280s
+[work5 18:53:09] C0A-198c ['cutwA'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 28 checks)
+[work5 18:53:09] seed 3609 done af {'cutwA': 0.1086527407169342} | 254s
+[work3 18:53:16] C0A-198b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work3 18:53:16] seed 3545 done af {'cutwA': 0.10879044979810715} | 278s
+[work4 18:53:23] C0A-198b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work4 18:53:23] seed 3545 done af {'cutwA': 0.10879044979810715} | 278s
+[work0 18:53:24] seed 3673 done af {'cutwA': 0.11117741465568542, 'sc25': 0.10907087475061417, 'sc25F': 0.10838229954242706} | 321s
+[work3 18:53:37] C0A-198c ['cutwA'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 28 checks)
+[work3 18:53:37] seed 3609 done af {'cutwA': 0.1086527407169342} | 299s
+[work1 18:53:39] seed 3674 done af {'cutwA': 0.10975442081689835, 'rcut': 0.11081527918577194, 'rcutF': 0.11081527918577194} | 326s
+[work5 18:53:45] seed 3673 done af {'cutwA': 0.11117741465568542, 'ru5': 0.1107693687081337} | 290s
+[work4 18:53:45] C0A-198c ['cutwA'] x (22 keys + af + xmean + xwin + cell traces) @ 3609 vs stored L187 raws: PASS (max 0.0e+00, 28 checks)
+[work4 18:53:45] seed 3609 done af {'cutwA': 0.1086527407169342} | 300s
+[work2 18:53:49] seed 3674 done af {'cutwA': 0.10975442081689835, 'tw': 0.10342453420162201, 'twF': 0.1078314334154129} | 325s
+[work0 18:54:12] seed 3674 done af {'cutwA': 0.10975442081689835, 'sc25': 0.10943812131881714, 'sc25F': 0.10925450176000595} | 369s
+[work5 18:54:22] seed 3674 done af {'cutwA': 0.10975442081689835, 'ru5': 0.11058574914932251} | 326s
+[work3 18:54:24] seed 3673 done af {'cutwA': 0.11117741465568542, 'ru1': 0.11109071224927902, 'ru2': 0.10810686647891998} | 347s
+[work1 18:54:25] seed 3675 done af {'cutwA': 0.11044296622276306, 'rcut': 0.1092085912823677, 'rcutF': 0.11012669652700424} | 372s
+[work4 18:54:36] seed 3673 done af {'cutwA': 0.11117741465568542, 'ru3': 0.11288101226091385, 'ru4': 0.10985126346349716} | 351s
+[work2 18:54:38] seed 3675 done af {'cutwA': 0.11044296622276306, 'tw': 0.11182519048452377, 'twF': 0.11035622656345367} | 375s
+[work5 18:54:59] seed 3675 done af {'cutwA': 0.11044296622276306, 'ru5': 0.1106775626540184} | 364s
+[work0 18:55:02] seed 3675 done af {'cutwA': 0.11044296622276306, 'sc25': 0.1056738868355751, 'sc25F': 0.10709695518016815} | 419s
+[work3 18:55:14] seed 3674 done af {'cutwA': 0.10975442081689835, 'ru1': 0.11031031608581543, 'ru2': 0.11196290701627731} | 396s
+[work1 18:55:15] seed 3676 done af {'cutwA': 0.11103970557451248, 'rcut': 0.11141204833984375, 'rcutF': 0.11242195963859558} | 422s
+[work2 18:55:23] seed 3676 done af {'cutwA': 0.11103970557451248, 'tw': 0.1107693687081337, 'twF': 0.11035622656345367} | 420s
+[work4 18:55:24] seed 3674 done af {'cutwA': 0.10975442081689835, 'ru3': 0.11109071224927902, 'ru4': 0.11288101226091385} | 399s
+[work5 18:55:34] seed 3676 done af {'cutwA': 0.11103970557451248, 'ru5': 0.11063165962696075} | 399s
+[work0 18:55:50] seed 3676 done af {'cutwA': 0.11103970557451248, 'sc25': 0.10943812131881714, 'sc25F': 0.10728057473897934} | 467s
+[work1 18:56:01] seed 3677 done af {'cutwA': 0.11168234795331955, 'rcut': 0.11109071224927902, 'rcutF': 0.11113661527633667} | 468s
+[work3 18:56:05] seed 3675 done af {'cutwA': 0.11044296622276306, 'ru1': 0.10994307696819305, 'ru2': 0.10480169206857681} | 447s
+[work5 18:56:11] seed 3677 done af {'cutwA': 0.11168234795331955, 'ru5': 0.11154976487159729} | 436s
+[work4 18:56:16] seed 3675 done af {'cutwA': 0.11044296622276306, 'ru3': 0.1093004047870636, 'ru4': 0.10751009732484818} | 450s
+[work2 18:56:16] seed 3677 done af {'cutwA': 0.11168234795331955, 'tw': 0.10806096345186234, 'twF': 0.11099889874458313} | 472s
+[work0 18:56:40] seed 3677 done af {'cutwA': 0.11168234795331955, 'sc25': 0.11040212959051132, 'sc25F': 0.1092085912823677} | 517s
+[work5 18:56:47] seed 3678 done af {'cutwA': 0.10406243056058884, 'ru5': 0.10388358682394028} | 471s
+[work1 18:56:52] seed 3678 done af {'cutwA': 0.10406243056058884, 'rcut': 0.10324090719223022, 'rcutF': 0.10337862372398376} | 519s
+[work3 18:56:53] seed 3676 done af {'cutwA': 0.11103970557451248, 'ru1': 0.11026441305875778, 'ru2': 0.11086118221282959} | 496s
+[work2 18:57:04] seed 3678 done af {'cutwA': 0.10406243056058884, 'tw': 0.10874953866004944, 'twF': 0.10879544913768768} | 521s
+[work4 18:57:07] seed 3676 done af {'cutwA': 0.11103970557451248, 'ru3': 0.1107693687081337, 'ru4': 0.11017260700464249} | 502s
+[work0 18:57:25] seed 3678 done af {'cutwA': 0.10406243056058884, 'sc25': 0.10801506042480469, 'sc25F': 0.10672970861196518} | 562s
+[work5 18:57:26] seed 3679 done af {'cutwA': 0.11002983897924423, 'ru5': 0.10980536043643951} | 511s
+[work1 18:57:39] seed 3679 done af {'cutwA': 0.11002983897924423, 'rcut': 0.10916268825531006, 'rcutF': 0.10897906869649887} | 566s
+[work3 18:57:42] seed 3677 done af {'cutwA': 0.11168234795331955, 'ru1': 0.11081527918577194, 'ru2': 0.10530664771795273} | 545s
+[work2 18:57:52] seed 3679 done af {'cutwA': 0.11002983897924423, 'tw': 0.10617884993553162, 'twF': 0.10287366807460785} | 569s
+[work4 18:57:56] seed 3677 done af {'cutwA': 0.11168234795331955, 'ru3': 0.11233015358448029, 'ru4': 0.10737238079309464} | 551s
+[work5 18:58:05] seed 3680 done af {'cutwA': 0.11416111886501312, 'ru5': 0.11311054229736328} | 550s
+[work0 18:58:14] seed 3679 done af {'cutwA': 0.11002983897924423, 'sc25': 0.1079232469201088, 'sc25F': 0.10829048603773117} | 611s
+[work1 18:58:33] seed 3680 done af {'cutwA': 0.11416111886501312, 'rcut': 0.11311054229736328, 'rcutF': 0.11177928745746613} | 620s
+[work3 18:58:34] seed 3678 done af {'cutwA': 0.10406243056058884, 'ru1': 0.1107693687081337, 'ru2': 0.10544436424970627} | 596s
+[work5 18:58:41] seed 3681 done af {'cutwA': 0.11030525714159012, 'ru5': 0.1098971739411354} | 586s
+[work4 18:58:43] seed 3678 done af {'cutwA': 0.10406243056058884, 'ru3': 0.10411310940980911, 'ru4': 0.10907087475061417} | 598s
+[work2 18:58:46] seed 3680 done af {'cutwA': 0.11416111886501312, 'tw': 0.11063165962696075, 'twF': 0.11113661527633667} | 623s

@@ -1,0 +1,177 @@
+# ======================= L198 TWIN BLOCK (additive) =======================
+# Relay-matched cord-interneuron twin. Selection is ZERO-ROLLOUT, from the
+# STORED 3-seed census of the k=24 base (l175/census_k24.npz), by the rule
+# frozen in l198/PREREG.md BEFORE this block was first executed.
+# Everything above (the L187 arms block: sc25 / rcut graphs, aliases, certs)
+# is VERBATIM; arms this card does not roll (sc40, pp, occ, rsil*) are built
+# but never stepped.
+GI_DOWN = 74914
+REL_CLASS = RELAY_INFO["cell"]["super_class"]
+assert REL_CLASS == "ventral_nerve_cord_intrinsic", REL_CLASS
+_sc_ser = _ann1["super_class"].astype(str)
+is_cord_g = np.zeros(Nall, bool)
+is_cord_g[_sc_ser.index[(_sc_ser == REL_CLASS).to_numpy()].to_numpy()] = True
+assert is_cord_g[GI_RELAY]
+# --- prior-arm cells: every cell removed / clamped / edge-cut in any stored arm
+PRIOR = set(USED) | set(int(x) for x in ng_desc) | set(DM.values())
+PRIOR |= {GI_RELAY, GI_SC40, GI_CARRIER}
+_s185 = json.load(open("l185/static.json"))
+PRIOR |= set(int(v) for v in _s185["r1_cells"].values())
+_sel185 = json.load(open("l185/selection_s2.json"))
+PRIOR.add(int(_sel185["pick"]["gi"]))
+assert R185["R3"]["arm"]["gi"] == _sel185["pick"]["gi"]
+_sel190 = json.load(open("l190/selection.json"))
+for _e in _sel190["edges"].values():
+    PRIOR |= {int(_e["source"]), int(_e["target"])}
+is_prior_g = np.zeros(Nall, bool)
+is_prior_g[sorted(PRIOR)] = True
+POOL_T = in_wA & is_cord_g & ~is_prior_g & ~is_motor_g & ~is_dng100_g
+assert not POOL_T[GI_RELAY]
+# --- stored census (L175 census mode, seeds 801 / 901 / 3561) ---
+_xbar = _cen["x_mean_3seed"].astype(np.float64)
+_drv = _cen["delivered_drive"].astype(np.float64)
+assert [int(x) for x in _cen["seeds"]] == [801, 901, 3561]
+assert float(_cen["g_cutwA"]) == G_CUTWA_STORED
+assert np.allclose(_drv, _xbar * OW_EFF[gi_wA], rtol=1e-12, atol=0), "census drive != x_mean x out|w| (STOP)"
+D_REL = float(_drv[RELAY_LOC])
+M_REL = float(OW_RAW[GI_RELAY])
+assert D_REL == RELAY_INFO["census_delivered_drive"] and D_REL > 0
+
+
+def _edge(src_gi, dst_gi):
+    m = emask_wA & (src_all == src_gi) & (dst_all == dst_gi)
+    return dict(n=int(m.sum()), syn=int(w_syn[m].sum()),
+                w_eff=float((vals_all[m] * np.where(vals_all[m] < 0, BETA, 1.0)).sum()))
+
+
+def select_twin():
+    cand = np.where(POOL_T[gi_wA])[0]               # local idx on the base
+    d = _drv[cand]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        score = np.where(d > 0, np.abs(np.log(d / D_REL)), np.inf)
+        tie = np.where(OW_RAW[gi_wA[cand]] > 0,
+                       np.abs(np.log(OW_RAW[gi_wA[cand]] / M_REL)), np.inf)
+    o = np.lexsort((gi_wA[cand], tie, score))       # score, then tie, then gi
+    rows = []
+    for j in o[:6]:
+        g = int(gi_wA[cand[j]])
+        ci = cell_info(g)
+        ci.update(loc_wA=int(cand[j]), x_mean=float(_xbar[cand[j]]),
+                  x_mean_seeds=[float(v) for v in _cen["x_mean"][:, cand[j]]],
+                  delivered_drive=float(d[j]), drive_ratio=float(d[j] / D_REL),
+                  abs_log_drive_ratio=float(score[j]),
+                  mass_ratio=float(OW_RAW[g] / M_REL),
+                  abs_log_mass_ratio=float(tie[j]),
+                  in_edges=int((emask_wA & (dst_all == g)).sum()),
+                  direct_onto={pk: _direct_onto(g, pk) for pk in _pool_gi},
+                  edge_from_carrier=_edge(GI_CARRIER, g), edge_to_carrier=_edge(g, GI_CARRIER),
+                  edge_from_relay=_edge(GI_RELAY, g), edge_to_relay=_edge(g, GI_RELAY),
+                  edge_to_74914=_edge(g, GI_DOWN))
+        rows.append(ci)
+    return dict(
+        rule="argmin |log(drive_cand/drive_relay)| over POOL_T; tie-break smaller "
+             "|log(mass_cand/mass_relay)| (mass = raw out|w| onto the k=24-base "
+             "closure), then gi; drive = x_mean (stored 3-seed census of the k=24 "
+             "base, the stored L175 census_k24 file) x |Wb| column abs-sum (PREREG l198)",
+        pool="in k=24 base & super_class == relay's (ventral_nerve_cord_intrinsic) "
+             "& not in any prior arm & not motor & not DNg100",
+        census_seeds=[801, 901, 3561], pool_n=int(len(cand)),
+        pool_n_positive_drive=int((d > 0).sum()),
+        pool_n_active=int((_xbar[cand] > 0.05).sum()),
+        prior_arm_cells_n=len(PRIOR),
+        relay=dict(gi=GI_RELAY, delivered_drive=D_REL, out_w_raw=M_REL,
+                   out_w_eff=float(OW_EFF[GI_RELAY]), x_mean=float(_xbar[RELAY_LOC]),
+                   out_edges=int(OW_N[GI_RELAY]), eff_sign=float(EFF_SIGN[GI_RELAY])),
+        pick=rows[0], runners_up=rows[1:6])
+
+
+SEL = select_twin()
+SEL_PATH = f"{OUT}/selection.json"
+TW_NAMES = ["tw", "ru1", "ru2", "ru3", "ru4", "ru5"]
+TW_GI = [int(SEL["pick"]["gi"])] + [int(r["gi"]) for r in SEL["runners_up"]]
+assert len(set(TW_GI)) == 6 and all(np.isfinite(r["abs_log_drive_ratio"])
+                                    for r in [SEL["pick"]] + SEL["runners_up"])
+if MODE == "static":
+    assert os.path.exists(PREREG_PATH), "PREREG (selection rule) first (STOP)"
+    if os.path.exists(SEL_PATH):     # idempotent re-run: must reproduce the frozen picks
+        _frz = json.load(open(SEL_PATH))
+        assert [int(_frz["pick"]["gi"])] + [int(r["gi"]) for r in _frz["runners_up"]] \
+            == TW_GI, "selection drift vs frozen selection.json (STOP)"
+    else:
+        SEL["prereg_sha256_at_selection"] = prereg_sha()
+        atomic_json(SEL_PATH, SEL)
+else:
+    _frz = json.load(open(SEL_PATH))
+    assert [int(_frz["pick"]["gi"])] + [int(r["gi"]) for r in _frz["runners_up"]] == TW_GI, \
+        "selection drift vs frozen selection.json (STOP)"
+for _n, _g in zip(TW_NAMES, TW_GI):
+    add_arm(_n, _g)
+add_alias("twF", "tw")
+assert WB["twF"] is WB["tw"]
+# CERT-SUB for the six new graphs (L187 loop VERBATIM, new arm names)
+for _nm in TW_NAMES:
+    _g = GEN[_nm]
+    _ex = [int(x) for x in np.setdiff1d(_g["drop"], cutk_drop["cutwA"])]
+    assert _ex == [TW_GI[TW_NAMES.index(_nm)]], (_nm, _ex)
+    _gi_a = np.where(_g["loc"] >= 0)[0]
+    assert len(_gi_a) == _g["n"] == n_cutk["cutwA"] - len(_ex)
+    assert np.array_equal(_g["loc"][_gi_a], np.arange(_g["n"]))
+    _d, _s, _v = _coo_gi(WB[_nm], _gi_a)
+    _kp = ~np.isin(_base_coo[0], _ex) & ~np.isin(_base_coo[1], _ex)
+    assert np.array_equal(_d, _base_coo[0][_kp]), _nm
+    assert np.array_equal(_s, _base_coo[1][_kp]), _nm
+    assert np.array_equal(_v, _base_coo[2][_kp]), _nm
+    _bl = loc_wA[_gi_a]
+    assert (_bl >= 0).all()
+    assert torch.equal(gen_init(_nm, _X0o_t, _X0n_t), _base_init[_bl]), _nm
+    assert np.array_equal(_g["pos_in_new"], wA_pos_in_new[_bl]), _nm
+    for _pk in POOLS["cutwA"]:
+        assert np.array_equal(_gi_a[POOLS[_nm][_pk]],
+                              gi_wA[POOLS["cutwA"][_pk]]), (_nm, _pk)
+    assert np.array_equal(_gi_a[mech[_nm]], gi_wA[mech["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[motor[_nm]], gi_wA[motor["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[dng100[_nm]], gi_wA[dng100["cutwA"]]), _nm
+    CERT_SUB[_nm] = dict(removed=_ex, n=_g["n"], edges=_g["edges"],
+                         edges_removed=int((~_kp).sum()))
+log(f"CERT-SUB static (6 twin graphs == base minus the cell, maps restricted "
+    f"EXACT): PASS | twins {dict(zip(TW_NAMES, TW_GI))}")
+# tracked cells: L187 layout first (49), then relay target 74914 is already in
+# CHAIN; append the six twin cells.
+N_TRACK_187 = len(TRACK)
+assert N_TRACK_187 == 49 and GI_DOWN in TRACK
+TRACK = TRACK + [g for g in TW_GI if g not in TRACK]
+assert len(set(TRACK)) == len(TRACK)
+CTR_CELLS = [GI_CARRIER, GI_RELAY, GI_SC40, GI_DOWN, TW_GI[0]]
+CTR_LOC = {}
+for _a in ["cutwA"] + GEN_ARMS:
+    _l = LOC_OF(_a)
+    CTR_LOC[_a] = [(g, int(_l[g])) for g in CTR_CELLS if _l[g] >= 0]
+assert [g for g, _ in CTR_LOC["cutwA"]] == CTR_CELLS
+assert TW_GI[0] not in [g for g, _ in CTR_LOC["tw"]]
+ALL_ARMS = ["sc25", "sc25F", "rcut", "rcutF", "tw", "twF", "ru1", "ru2", "ru3",
+            "ru4", "ru5"]
+assert all(a in GEN for a in ALL_ARMS)
+G187_RCUT = float(json.load(open("l187/gains_w2.json"))["gain"]["rcut"])
+assert json.load(open("l187/results_l187.json"))["status"] == "FINAL"
+
+if MODE == "static":
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L198 static pins (zero rollouts): fresh-batch absence, stored-"
+               "census twin selection, twin graphs + CERT-SUB, stored gains.",
+        src="banc l187 relay_run.py transform (l198 build_twin.py)",
+        fresh_batch=[B43[0], B43[-1]], anchors_bit=ANCH_BIT, anchor_175=ANCH_175,
+        anchor_187=ANCH_187, npz_scanned_for_seed_absence=N_NPZ_SCANNED,
+        seed_absence="PASS", cert_sub={k: CERT_SUB[k] for k in TW_NAMES + ["sc25", "rcut"]},
+        twins=dict(zip(TW_NAMES, TW_GI)), track=TRACK, ctr_cells=CTR_CELLS,
+        relay=RELAY_INFO, pool_n=SEL["pool_n"],
+        class_counts_in_base={str(k): int(v) for k, v in
+                              _sc_ser[_sc_ser.index.isin(gi_wA)].value_counts().items()},
+        arm_n={a: N_OF[a] for a in ALL_ARMS},
+        arm_edges={a: GEN[a]["edges"] for a in ALL_ARMS},
+        g_stored=dict(cutwA=G_CUTWA_STORED, sc25=G175["sc25"], rcut=G187_RCUT),
+        n_wA=n_cutk["cutwA"], edges_wA=cutk_pins["cutwA"]["edges"],
+        used_cells_n=len(USED)))
+    log(f"static.json + selection.json written | fresh {B43[0]}..{B43[-1]} absent "
+        f"from {N_NPZ_SCANNED} npz | pool {SEL['pool_n']} | pick gi {TW_GI[0]} "
+        f"drive ratio {SEL['pick']['drive_ratio']:.5f} | {time.time()-t0:.0f}s")
+    sys.exit(0)

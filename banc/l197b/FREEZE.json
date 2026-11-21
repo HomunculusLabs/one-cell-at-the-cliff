@@ -1,0 +1,18 @@
+{
+ "prereg_sha256": "86a2a99515383ed6e663cdc0a7aa49ccf4b5e2b2e1ea6e1df73dc66e01778bb6",
+ "schedule_sha256": "1db63b40f370f4a8defa9f8a03c4459a6a7d98bb50223c578b5c7be7807a810c",
+ "files": {
+  "PREREG.md": "86a2a99515383ed6e663cdc0a7aa49ccf4b5e2b2e1ea6e1df73dc66e01778bb6",
+  "schedule.json": "1db63b40f370f4a8defa9f8a03c4459a6a7d98bb50223c578b5c7be7807a810c",
+  "gj.py": "e91af27d0ffb60b5cce317e96e444b4e3c9bce9b412b7d4d52972305ae59d6b9",
+  "pilot.py": "046277e143184466f0770bae6a12c871dcbcb7d6ce506951d3021cbecdc59139",
+  "pilot.json": "e933bb18c2941e17c3d7a60ce43046f2a28ddff886287a6ca9ce7b28331618d5",
+  "schedule.py": "83923e8b7e3f0a592dd35c0f3772c59a95117c53df0a5d92cac5c683eef7a09c",
+  "build_v2.py": "8a29efaa5709ecf6755d39024d01e3ab8e5336799eae9d52536af678ecdafa4b",
+  "run_v2.py": "92673b08c07307218017916d5da0e246369158ca398cc02fb2842cbb5dbc45e9",
+  "analyze_v2.py": "604c8709a7cd895258ed5782e4e9bc4f668f7e14c6723643a4fb85a1b1d0cd88",
+  "run_all.sh": "60fbedf14f2b256f20daa491b241250bf3c3be24e1319c473034ebf56071776c"
+ },
+ "src_l186_run": "0f283b58c67ffccab539e7654da69fdb46925992cff27715712dd7ad25934dcb",
+ "frozen": "2026-11-21 18:56:01 EST before any v2 rollout (no raw/gains file exists under l197b)"
+}

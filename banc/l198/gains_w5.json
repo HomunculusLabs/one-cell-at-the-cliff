@@ -1,0 +1,26 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "ru5": 0.14365652918815616
+ },
+ "cert_gain": {},
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "ru5": "bisect (this process), fresh"
+ },
+ "bisected": [
+  "cutwA",
+  "ru5"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "ru5": 3.113597631454468e-05
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "ru5": 0.10902497420708339
+ },
+ "stored_exact": {
+  "cutwA": true
+ }
+}
