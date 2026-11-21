@@ -79,14 +79,15 @@ python3 paper/l174_verify.py   # -> L174 VERIFY: ALL GREEN
 These re-derive, from the stored `results_*.json` files in `banc/`, every
 statistic the draft quotes: Wilson bounds recomputed, pooled unions
 re-counted, abstract numeric vocabulary frozen against the ledger. If a
-number in `DRAFT.md` ever drifts from its artifact, a gate fails.
+number in `DRAFT.md` ever drifts from its artifact, a gate fails. **All
+six gates pass from a plain clone — no release assets needed.**
 
-Two gates additionally require the **raw anchor traces** (bit-identity
-anchors used to prove a re-run reproduces a stored rollout exactly). Those
-files exceed GitHub's in-tree size limit and ship as release assets:
+The **raw anchor traces** (release assets; they exceed GitHub's in-tree
+size limit) serve the L1 ladder below: they are the stored rollout traces
+that a re-run must reproduce **bit-identically** where the design promises
+it. Place them at these exact relative paths after downloading:
 
 ```bash
-# download the release assets, then place them at these exact relative paths:
 #   raw_l135.npz   -> banc/l135/raw_l135.npz
 #   raw_l169.npz   -> banc/l169/raw_l169.npz
 #   raw_l169c2.npz -> banc/l169c2/raw_l169c2.npz
