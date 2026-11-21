@@ -3279,7 +3279,8 @@ assert _amd29['n_distinct'] == 179 and _amd29['counts_after']['KEEP_MAPPING'] ==
 assert sum(_amd29['counts_after'].values()) == 179, '(29) amended partition incomplete'
 
 # --- deltas and house width -------------------------------------------------
-assert len(draft) - len(_pre29) == 630 == _rep29['raw_delta'], '(29) raw delta pin'
+# measured title-onward: the banner's own v3.30 entry is not manuscript text
+assert len(_nb29) - len(_pb29) == 630 == _rep29['raw_delta'], '(29) raw delta pin'
 assert _rep29['body_delta'] == 40, '(29) body-only raw delta pin'
 assert len(_MBJ29) == 589, '(29) mapping block size pin'
 for _x in _MB29 + sum(_rep29['reflow'].values(), []):

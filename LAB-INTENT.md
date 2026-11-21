@@ -8768,3 +8768,94 @@ re-point for the five heading edits).
 
 Evidence: banc/l174b4iii/. Gate: l149_verify.py section (28). CLAIM-MAP B40,
 DRAFT v3.29. Zero rollouts, zero RNG, numbers.json byte-identical.
+
+## L174 (b4-iii-b) — the batch-code relabel and the §3.7 mapping (tick 214, 2026-11-21)
+
+Branch R1_relabel_only. PREREG banc/l174b4iiib/PREREG.md first, inheriting the
+(b3b)/(b4-i)/(b4-ii)/(b4-iii-a) contract (T3 literals verbatim modulo declared
+exceptions, T4' declared sparse edits against an EXACT frozen pre-image, T5 six
+verifies green, T7-STRONG, T10 zero residue, T8 born-clean for new text) plus
+four new instruments: T1' RELABEL-ONLY, T12 BIJECTION + MAPPING, T13 ARTEFACT
+KEYS ARE NAMES, T14 DECLARED REFLOW. Zero rollouts, zero RNG, no graph build;
+the only compute is string arithmetic over the stored draft and the six stored
+verifier sources.
+
+PREMISE FINDING (registered, read not assumed). The `B<n>` shape covers TWO
+semantic classes and the frozen caps partition had conflated them: DEFER_BATCH
+held `B1-B4`, which is a PREREGISTERED BRANCH range, not a batch. A third class
+fell out of the same read: six occurrences live INSIDE stored artefact keys
+(`l145.pooled.eOutMot_B29_B31`, `l148.pooled.eAll_B29_B32`) and those are
+FILENAMES — relabeling them would break correspondence with the npz/json on
+disk. So the census is 39 occurrences = 19 BATCH prose (11 distinct) / 6
+ARTEFACT_KEY / 4 BRANCH / 10 banner (stage (b4-iv)) / 0 in §7, and the partition
+is AMENDED rather than applied (DEFER_BATCH -> KEEP_MAPPING 11 + DEFER_BRANCH 1,
+still 179 distinct tokens), which also tells (b4-iii-c) to KEEP the codes where
+this stage leaves them.
+
+DESIGN, with the reason registered BEFORE the edit: labels are LETTERS
+(A,B,C,D,E,F,G,H,J,K,L — I and O skipped so a label cannot read as a digit),
+assigned in the internal codes' own RUN ORDER. Two reasons, both gate-level
+rather than aesthetic: a letter adds no digit run, so the measurement multiset
+stays identical with NO new exclusion class (the (b4-iii-a) ADDENDUM-1 lesson
+says never loosen a measurement gate to pass a strip), and the labels sit beside
+seed counts ("fresh batch K, n=16") where a numeric label invites a misread.
+Monotone-in-run-order makes the draft's own "fresh batch X" claims readable in
+sequence. The substitution rule is ONE rule: bare letter when the preceding text
+ends in batch/batches or a label separator, else `batch <letter>`; the prettier
+alternative (bare letters inside the "(Batches: ...)" parenthetical) needs a
+second rule and is disclosed, not taken.
+
+MEASURED: 19 substitutions (6 bare, 13 prefixed); both multisets IDENTICAL with
+the 19 removed identifier runs and the 11 entered mapping rows asserted BY NAME;
+pre-image + the declared edits == the live draft BYTE FOR BYTE from the title
+onward; two paragraphs re-wrapped with their line counts unchanged; body-only raw
+delta +40, mapping block 589 chars, title-onward +630; zero residue in §1-§6 +
+the References preamble outside the mapping block; §7 byte-unchanged.
+
+FOUR TRANSFERABLE THINGS.
+(1) A RELABEL IS NOT A STRIP, AND THE SHAPE IS NOT THE CLASS. One regex shape
+    (`B<n>`) carried batches, branch labels and filename fragments; the card's
+    word for the job ("strip the batch codes") would have destroyed a
+    disclosure in one class and a stored correspondence in another. Classify by
+    SYNTACTIC POSITION (preceding `_` or `.` = inside a key; following `_` = a
+    branch label) before touching anything.
+(2) A LABEL-SCHEME CHOICE CAN BE MADE BY THE GATE. Picking letters over numbers
+    was not taste: it is the only choice that leaves an inherited measurement
+    gate untouched. When two surface forms are equally readable, prefer the one
+    your existing gates can still prove.
+(3) READ BOTH SIDES OF A COUNTER DIFFERENCE SEPARATELY. The mapping block
+    re-introduces the eleven codes it documents, and a whole-draft
+    Counter(pre) - Counter(post) silently CANCELLED eleven of the nineteen
+    removals (the first gate run reported 9 instead of 19). Measure removals on
+    the body with the declared new block excised, and the additions on the block
+    alone.
+(4) THE DECOMPOSITION LADDER KEEPS GROWING, AND THAT IS THE POINT. Six inherited
+    pins in §(22)-§(27) were re-pointed through this stage's own frozen pre-tick
+    draft as a second intermediate, so (b3b-i)'s +145, (b3b-ii)'s +48,
+    (b3b-iii)'s +108, (b4-i)'s -14 and (b4-iii-a)'s -25/-51/-15/21 all survive
+    VERBATIM with the relabel's cost split out; §(28)'s whole-draft strong form
+    was re-pointed from the LIVE draft onto that artifact (strictly stronger: it
+    now survives every later stage) with its live-only properties re-asserted on
+    live bytes in §(29). A stage that supersedes a predecessor's freeze
+    re-points it at stored artifacts; it never loosens or deletes it.
+
+PREDICTIONS: Q1 CORRECT (six verifies green with exactly five verifier literal
+re-points and no other verifier edit); Q2 CORRECT (measurement multiset
+identical with ZERO named removals needed — the first stage in this lineage that
+needs no removed-run disclosure); Q3 CORRECT (l159 untouched and green); Q4
+CORRECT (exactly one partition class amended, 179 still covered); Q5 CORRECT
+(the "(Batches: ...)" parenthetical survives as content — it carries which ARM
+ran in which batch, which the mapping does not — and this stage deletes nothing).
+
+VERIFIED: CERT-1 all six verifies green on the PRE-edit draft (raw/cert1_*.txt);
+CERT-2 numbers.json copied first (sha 238bf2d37f51) and byte-identical at the
+end; CERT-3 the whole draft frozen as draft_pre.md with emit.py asserting the
+live draft equals the freeze before splicing and refusing a second run; CERT-4
+the transform PARSED not typed (every occurrence classified by rule, every batch
+token mapped, the class census asserted); DRY RUN CLEAN before the apply, after
+two pre-PREREG catches in the planning scripts (the artefact-key detector missed
+a bracket opening on an earlier line, so two filename fragments were about to be
+relabeled; and the label-separator clause was evaluated against the OLD text, so
+`batches, G/batch H` would have shipped); l149_verify section (29) makes it
+permanent; all six verifies green after; DRAFT v3.30; CLAIM-MAP B41 + its
+§-table row.

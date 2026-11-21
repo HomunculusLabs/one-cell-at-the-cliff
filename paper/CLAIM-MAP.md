@@ -61,6 +61,7 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 | §2.5/§2.6/§2.8 prose (v3.25) | 11 more bullet lines converted to prose under the same FORMAT-ONLY contract: both token multisets identical (411 numeric, 37 keys), 229/232 verifier literals verbatim with three declared wrap-fragile ones normalized, §2.7 proven BYTE-IDENTICAL inside the same edit span, the robustness-panel table still a table | — (sources: `banc/l174b3bii/span_pre.txt`, `banc/l174b3bii/sev_pre.txt`, `banc/l174b3bii/literals.json`) | B36 |
 | §2.7 prose (v3.26) | the last 16 bullet lines in §1-§2 converted to prose under the same FORMAT-ONLY contract: both token multisets identical (248 numeric, 22 keys), 159/166 verifier literals verbatim with seven declared wrap-fragile ones normalized, the two non-bullet "Design pins" literals still BYTE-exact (the raw-passthrough proof), the longest sentence cut 67 -> 52 words under a new §2.7-scoped 60-word gate | — (sources: `banc/l174b3biii/span_pre.txt`, `banc/l174b3biii/literals.json`) | B37 |
 | §4 prose (v3.27) | §4's 10 bullet lines converted to prose and its seven >60-word sentences split at their own clause boundaries, so §1-§4 carries no list item: both token multisets identical (166 numeric, 18 keys), the section's CONTENT-WORD SEQUENCE identical under all thirteen declared edits, 135/140 verifier literals verbatim (three wrap-fragile, two bullet-MARKER slice locators re-pointed at the line-start prose form), longest sentence 107 -> 53 words under a new §4-scoped gate, §2.8's 70-word sentence disclosed and deferred | — (sources: `banc/l174b4i/span_pre.txt`, `banc/l174b4i/literals.json`, `banc/l174b4i/emit_report.json`) | B38 |
+| batch-code relabel + the §3.7 mapping (v3.30) | the `B<n>` shape splits into three classes the frozen partition had conflated: 19 prose batch codes (11 distinct) now carry the reader-facing labels A-L assigned in RUN ORDER with I and O skipped, 6 occurrences inside stored artefact keys stay byte-exact because they are filenames, and 4 preregistered BRANCH labels are declared out of scope; §3.7 Methods gains the bijective mapping as the one declared home of the internal codes; a letter scheme adds no digit run, so the measurement multiset is identical with no removed-run disclosure needed and every removed identifier run is a declared relabel; pre-image + the declared edits == the live draft byte for byte from the title onward | — (sources: `banc/l174b4iiib/draft_pre.md`, `banc/l174b4iiib/classify.json`, `banc/l174b4iiib/emit_report.json`, `banc/l174b4iiib/caps_partition_amend.json`) | B41 |
 | lane-ID strip + the §6/§7 premise finding (v3.29) | §1-§6 and the References preamble carry no lane identifier and no internal-artefact reference: 13 declared edits (five subsection-heading parentheticals, §2.2's bold lead, one deleted stage pointer, one re-pointed §2.9 cross-reference, the log/script-tree renames, the sweep date's file citation) with pre-image + the 13 edits reproducing the live draft byte for byte, the measurement multiset and citation keys identical, and the 15 removed identifier digit runs asserted by name; §6 stays a data-availability list and §7 stays out of manuscript scope by registered premise; the all-caps judgement is frozen as a partition of 179 distinct tokens (18 keep / 23 defer / 138 strip) with zero applied | — (sources: `banc/l174b4iii/draft_pre.md`, `banc/l174b4iii/caps_partition.json`, `banc/l174b4iii/census.json`, `banc/l174b4iii/emit_report.json`) | B40 |
 | §5 Discussion (v3.28) | the manuscript's Discussion, authored as §5 between §4 and the renumbered data note (§6) / author notes (§7): 825 words over 7 paragraphs, born clean (no list item, lane ID, batch code, all-caps token, provenance key or NEW numeric value — every number it quotes appears verbatim elsewhere in the draft), both §1 novelty narrowings restated, carrier stated as sufficient-not-only, robustness reported as the endpoints/interior split, under its own 60-word rule at 52; and §2.8's inherited 70-word sentence CLOSED by one declared content-preserving split that is byte- and visible-neutral (70 -> 56 words, all 69 literals verbatim, zero exceptions) | — (sources: `banc/l174b4ii/s28_pre.txt`, `banc/l174b4ii/s28_post.txt`, `banc/l174b4ii/disc.txt`, `banc/l174b4ii/literals.json`, `banc/l174b4ii/emit_report.json`) | B39 |
 
@@ -1163,6 +1164,55 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
   never loosened and never deleted: the +145/+48/+108 visible-char
   measurements of (b3b-i)/(b3b-ii)/(b3b-iii) survive VERBATIM by decomposing
   each span's delta against this stage's own frozen pre-tick draft
+- zero rollouts, zero RNG, no measured value changed, numbers.json
+  byte-identical
+
+### B41 — L174 stage (b4-iii-b): the batch-code relabel and the §3.7 mapping
+
+- claim: the manuscript body no longer quotes internal batch codes, yet the
+  disclosure they carried (which paired comparison ran within which batch) is
+  preserved exactly, by a bijective reader-facing label scheme plus one
+  declared mapping block in Methods
+- prereg: `banc/l174b4iiib/PREREG.md` (T1' relabel-only with both multisets
+  identical, T12 bijection + mapping, T13 artefact keys are FILENAMES and stay
+  byte-exact, T14 declared reflow; branches R3_literal_lost >
+  R2_measurement_moved > R1_relabel_only)
+- premise finding (registered, read not assumed): the `B<n>` shape covers TWO
+  semantic classes and tick 213's frozen partition conflated them — `B1-B4` is
+  a PREREGISTERED BRANCH range, not a batch — so the partition is AMENDED
+  (DEFER_BATCH -> KEEP_MAPPING 11 + DEFER_BRANCH 1, still 179 distinct tokens)
+  rather than applied, and (b4-iii-c) must KEEP the codes inside the mapping
+  block
+- design choice, with its reason registered: labels are LETTERS, not numbers,
+  because a letter adds no digit run (so the measurement gate needs no new
+  exclusion class — the (b4-iii-a) ADDENDUM-1 lesson) and because the labels
+  sit beside seed counts where a numeric label invites a misread; I and O are
+  skipped; the order is the internal codes' own run order, which keeps the
+  draft's "fresh batch X" claims monotone in the label
+- scripts: `banc/l174b4iiib/census.py`, `classify.py` (the three-class
+  classification, purely syntactic), `harvest.py` (verifier literals at risk,
+  tested in BOTH overlap directions), `plan.py`, `reflow.py`, `emit.py` (19
+  declared substitutions, 2 declared reflows, 1 mapping insertion, 14 gates;
+  refuses to run twice), `sec29.py`
+- artifacts: `draft_pre.md`, `draft_post.md`, `classify.json`, `plan.json`,
+  `reflow.json`, `literals.json`, `emit_report.json`,
+  `caps_partition_amend.json`, `raw/cert1_*.txt`
+- measured: 39 `B<n>` occurrences classified as 19 BATCH prose / 6
+  ARTEFACT_KEY / 4 BRANCH / 10 banner / 0 §7; 19 substitutions (6 bare, 13
+  `batch <letter>`); measurement multiset and citation keys IDENTICAL; the 19
+  removed identifier runs and the 11 entered mapping rows asserted BY NAME;
+  body-only raw delta +40, mapping block 589 chars, title-onward +630; both
+  re-wrapped paragraphs keep their line counts; five verifier literals
+  re-pointed with their measurements still attached
+- gate: `l149_verify.py` section (29) re-derives the whole transform from the
+  frozen pre-image by the stage's own parsed rule (never from emit.py's
+  report), proves the T7 strong form byte for byte from the title onward,
+  scans the LIVE draft for residue, re-reads the §(28) lane-ID property on
+  live bytes, and pins the bijection, the amendment and every delta; §(22)
+  through §(27) are RE-POINTED through this stage's declared edits and its own
+  frozen pre-tick draft, so (b3b-i)'s +145, (b3b-ii)'s +48, (b3b-iii)'s +108,
+  (b4-i)'s -14 and (b4-iii-a)'s -25/-51/-15/21 all survive VERBATIM with the
+  relabel's cost split out
 - zero rollouts, zero RNG, no measured value changed, numbers.json
   byte-identical
 

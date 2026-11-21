@@ -148,13 +148,11 @@ Draft v3.8+ (2026-11-21). One external model-referee round adjudicated
 (12/12 issues confirmed-in-direction and addressed); a second round is in
 flight. Submission to a preprint server is the owner's call, not ours.
 
-**Snapshot note (2026-11-21):** this tree was snapshotted while the
-manuscript's identifier-relabel pass was mid-flight; `paper/l149_verify.py`
-was red at snapshot time for exactly that reason (identifier relabel counts
-— a prose edit, not a numbers/artifact mismatch) and goes green at the next
-checkpoint, which will be pushed as a follow-up commit. The other five
-gates pass from this tree as-is. `MANIFEST.sha256` pins exactly what
-shipped.
+**Snapshot note (2026-11-21):** the initial push was taken while the
+manuscript's identifier-relabel pass was mid-flight (one gate, `l149`,
+transiently red at that instant — a prose edit, not a numbers/artifact
+mismatch). This commit is the follow-up snapshot from the next green
+checkpoint: all six verification gates pass from this tree.
 
 ## License
 
