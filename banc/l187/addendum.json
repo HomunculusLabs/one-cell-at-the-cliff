@@ -1,0 +1,282 @@
+{
+ "note": "POST HOC / DESCRIPTIVE (not registered contrasts)",
+ "fast_1p4Hz_paired": [
+  {
+   "a": "sc25",
+   "b": "cutwA",
+   "mean_a": 0.53,
+   "mean_b": 0.001,
+   "diff": 0.529,
+   "ci95": [
+    0.404,
+    0.654
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "sc25F",
+   "b": "cutwA",
+   "mean_a": 0.432,
+   "mean_b": 0.001,
+   "diff": 0.431,
+   "ci95": [
+    0.326,
+    0.537
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "rcut",
+   "b": "cutwA",
+   "mean_a": 0.02,
+   "mean_b": 0.001,
+   "diff": 0.019,
+   "ci95": [
+    -0.007,
+    0.044
+   ],
+   "n_pos": 3,
+   "n_neg": 1
+  },
+  {
+   "a": "rcutF",
+   "b": "cutwA",
+   "mean_a": 0.042,
+   "mean_b": 0.001,
+   "diff": 0.041,
+   "ci95": [
+    -0.013,
+    0.095
+   ],
+   "n_pos": 3,
+   "n_neg": 1
+  },
+  {
+   "a": "rsilW",
+   "b": "cutwA",
+   "mean_a": 0.057,
+   "mean_b": 0.001,
+   "diff": 0.056,
+   "ci95": [
+    0.011,
+    0.101
+   ],
+   "n_pos": 7,
+   "n_neg": 1
+  },
+  {
+   "a": "pp",
+   "b": "cutwA",
+   "mean_a": 0.242,
+   "mean_b": 0.001,
+   "diff": 0.241,
+   "ci95": [
+    0.109,
+    0.372
+   ],
+   "n_pos": 13,
+   "n_neg": 0
+  },
+  {
+   "a": "ppF",
+   "b": "cutwA",
+   "mean_a": 0.435,
+   "mean_b": 0.001,
+   "diff": 0.434,
+   "ci95": [
+    0.325,
+    0.544
+   ],
+   "n_pos": 15,
+   "n_neg": 1
+  },
+  {
+   "a": "occ",
+   "b": "cutwA",
+   "mean_a": 0.729,
+   "mean_b": 0.001,
+   "diff": 0.728,
+   "ci95": [
+    0.64,
+    0.816
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "occF",
+   "b": "cutwA",
+   "mean_a": 0.595,
+   "mean_b": 0.001,
+   "diff": 0.594,
+   "ci95": [
+    0.495,
+    0.694
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "occ",
+   "b": "sc25",
+   "mean_a": 0.729,
+   "mean_b": 0.53,
+   "diff": 0.199,
+   "ci95": [
+    0.056,
+    0.342
+   ],
+   "n_pos": 12,
+   "n_neg": 4
+  },
+  {
+   "a": "occF",
+   "b": "sc25F",
+   "mean_a": 0.595,
+   "mean_b": 0.432,
+   "diff": 0.163,
+   "ci95": [
+    0.016,
+    0.31
+   ],
+   "n_pos": 12,
+   "n_neg": 4
+  },
+  {
+   "a": "occ",
+   "b": "rcut",
+   "mean_a": 0.729,
+   "mean_b": 0.02,
+   "diff": 0.709,
+   "ci95": [
+    0.617,
+    0.801
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "occF",
+   "b": "rcutF",
+   "mean_a": 0.595,
+   "mean_b": 0.042,
+   "diff": 0.553,
+   "ci95": [
+    0.453,
+    0.653
+   ],
+   "n_pos": 16,
+   "n_neg": 0
+  },
+  {
+   "a": "pp",
+   "b": "sc25",
+   "mean_a": 0.242,
+   "mean_b": 0.53,
+   "diff": -0.288,
+   "ci95": [
+    -0.457,
+    -0.119
+   ],
+   "n_pos": 2,
+   "n_neg": 14
+  },
+  {
+   "a": "ppF",
+   "b": "sc25F",
+   "mean_a": 0.435,
+   "mean_b": 0.432,
+   "diff": 0.003,
+   "ci95": [
+    -0.143,
+    0.149
+   ],
+   "n_pos": 6,
+   "n_neg": 10
+  }
+ ],
+ "gain_form_slopes": [
+  {
+   "graph": "sc25",
+   "carrier_present": false,
+   "rematch_shift_pct": 1.244,
+   "rematched_minus_fixed": 0.094,
+   "ci95": [
+    0.007,
+    0.182
+   ],
+   "slope_per_0p1pct": 0.0076
+  },
+  {
+   "graph": "pp",
+   "carrier_present": false,
+   "rematch_shift_pct": -0.809,
+   "rematched_minus_fixed": -0.187,
+   "ci95": [
+    -0.287,
+    -0.086
+   ],
+   "slope_per_0p1pct": 0.0231
+  },
+  {
+   "graph": "occ",
+   "carrier_present": false,
+   "rematch_shift_pct": 1.066,
+   "rematched_minus_fixed": 0.109,
+   "ci95": [
+    0.026,
+    0.192
+   ],
+   "slope_per_0p1pct": 0.0102
+  },
+  {
+   "graph": "sc40",
+   "carrier_present": true,
+   "rematch_shift_pct": -1.131,
+   "rematched_minus_fixed": 0.238,
+   "ci95": [
+    0.116,
+    0.36
+   ],
+   "slope_per_0p1pct": -0.021
+  },
+  {
+   "graph": "rcut",
+   "carrier_present": true,
+   "rematch_shift_pct": -0.126,
+   "rematched_minus_fixed": 0.067,
+   "ci95": [
+    -0.086,
+    0.22
+   ],
+   "slope_per_0p1pct": -0.0534
+  }
+ ],
+ "base_graph_gain_null_slope_b40": -0.0227925,
+ "relay_rate": {
+  "base": 0.3202,
+  "sc25": 0.1382,
+  "sc25F": 0.1331,
+  "sc40": 0.348,
+  "sc40F": 0.3548,
+  "pp": 0.165,
+  "ppF": 0.1547
+ },
+ "g74914_rate": {
+  "sc25": 0.353,
+  "sc25F": 0.349,
+  "sc40": 0.1548,
+  "sc40F": 0.1815,
+  "rcut": 0.4315,
+  "rcutF": 0.4365,
+  "rsilW": 0.4357,
+  "rsilF": 0.4315,
+  "pp": 0.3154,
+  "ppF": 0.3303,
+  "occ": 0.4917,
+  "occF": 0.4786,
+  "cutwA": 0.2004
+ }
+}

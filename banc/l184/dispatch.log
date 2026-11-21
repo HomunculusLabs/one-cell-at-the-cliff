@@ -1,0 +1,291 @@
+Query: Experiment dispatch (owner request, L184 mechanism analysis, ZERO 
+rollouts). Read /home/t3rpz/critters/peabrain-lab/banc/l184/BRIEF_mechanism.md 
+and execute it completely: PREREG-analysis first, then Q1-Q4. Write findings to 
+banc/l184/L184-FINDINGS.md.
+📖 Read BRIEF_mechanism.md  0.1s
+📚 Skill peabrain-flybrain  0.1s
+💻 $ pwd + 1 command
+📖 Read locked.py  0.1s
+📖 Read audit.py  0.1s
+🔎 Grep CHOP|chop|1\.4|0\.7|census_k|xm_|seeds|DT  0.1s
+📖 Read scan_run.py L1225-1314
+📖 Read scan_run.py L881-916
+✍️ Write banc/l184/PREREG-analysis.md
+│ banc/l184/PREREG-analysis.md
+│ @@ -0,0 +1,3 @@
+│ +# L184 Q1 — before computing
+│ +Use FINAL L175 B39 seeds 3545–3560, all 37 arms, one seed as a paired unit. No new simulation. Primary endpoints: stored right Ti flexor/extensor rates. Mechanosensory pool is not the carrier. Inspect carrier storage; test phase only with individual time series if present (otherwise explicitly not identifiable).
+│ +Use 10 ms samples [500,2000), [2500,4000), [4500,6000), schedule phase advanced before each sample as scan_run.py. Outer 0.7 Hz is the sinusoid, not the gate: 500 on/400 off reset at each 2000-sample block; middle 1.4 Hz continuous. Regress each seed/pool on segment intercepts, gate state (outer only), gated sin and cos at the exact segment frequency. Pool the outer blocks with common coefficients. Report harmonic sqrt(bsin²+bcos²), signed gate on-minus-off coefficient; no frequency search. These are in rate units, not duty. Compare sc25 minus cutwA, sc26, dmA, dmC, separately by pool/window; paired seed bootstrap percentile 95% intervals (10000 resamples, fixed RNG 184); descriptive, not multiplicity-adjusted. Interpret a consistent increase in chopped harmonic amplitudes or gate contrast magnitude in both pools against controls alongside increased cross-seed duty as evidence for raised penetration; mixed signs only partial support. If carrier time traces exist apply same regression and report phase consistency across seeds. Cross-seed duty captures shared timing, not exclusively that regressor.
+✗ Delegate 3x: Execute Q2 fully: anatomica... | Execute Q1 per already writ... | Execute Q3 + Q4 per banc/l1... [Delegation budget for this one-shot run is ex...]
+📖 Read l131_static.py
+💻 $ python - <<'PY' from pathlib import Path import numpy as np,json,sys print(sys.executable) for p in ['banc/l175/raw_w0.npz','banc/l175/xm_w0.npz','banc/l175/raw_census.npz','banc/l135/raw_l135.npz','banc/l175/census_k24.npz']: z=np.load(p) + 2 commands  0.3s
+🔎 Grep Wc_|W_wA|WA|WwA|Ti_|sign|cutwA|wA_idx  0.3s
+📖 Read scan_run.py L288-319
+📖 Read scan_run.py L445-504
+📖 Read scan_run.py L1313-1347
+💻 $ python - <<'PY' from pathlib import Path import importlib.util as u,numpy as n print({p:bool(u.find_spec(p)) for p in ['pandas','torch','scipy']}) + 4 commands  0.3s
+💻 $ python - <<'PY' import json s=json.load(open('banc/l175/selection.json')) + 6 commands  2.7s
+
+────────────────────────────────────────
+**Implementing residual diagnostic**
+∴ Thought for 25s
+────────────────────────────────────────
+
+✍️ Write banc/l184/traces.py
+│ banc/l184/traces.py
+│ @@ -0,0 +1,44 @@
+│ +"""Offline Q1/Q3/Q4; run with OPENBLAS_NUM_THREADS=1 python banc/l184/traces.py."""
+│ +from pathlib import Path
+│ +import json,csv,numpy as np
+│ +P=Path(__file__).resolve().parent; L=P.parent/'l175'; R=P.parents[1]/'paper/review_astra_evidence_r3'; J=json.loads((L/'results_l175.json').read_bytes()); seeds=J['seeds']; assert seeds==list(range(3545,3561)) and J['status']=='FINAL'
+│ +def save(name,rows):
+│ + with (P/name).open('w') as f:
+│ +  w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader();w.writerows(rows)
+│ +k=np.arange(6000); b=k//2000; gate=(k%2000%900<500)|(b==1); phase=np.cumsum(.02*np.pi*np.where(b==1,1.4,.7)); tmask=k%2000>=500; ends=k[499::10]; boot=np.random.default_rng(184).integers(0,16,(10000,16)); cmp=['cutwA','sc26','dmA','dmC']; coef={}; tab=[]; sr=[]; q1=[]; q3=[]; prev={r['arm']:r for r in csv.DictReader((R/'b39-arms.csv').open())}; by={r['arm']:r for r in [J['base'],*J['window'],*J['twins'].values()]}; order=list(by); maps={}
+│ +for path in sorted(L.glob('raw_w*.npz')):
+│ + with np.load(path) as z:
+│ +  for a in {key.split('_')[2] for key in z.files if key.startswith('Ti_fR_')}:maps.setdefault(a,path)
+│ +assert len(order)==len(maps)==37
+│ +for a in order:
+│ + with np.load(maps[a]) as z: X=np.array([[z[f'Ti_{p}R_{a}_{i}'] for i in seeds] for p in 'fe'],dtype=float)
+│ + Y=[];valid=[]
+│ + for x in X:
+│ +  v=np.lib.stride_tricks.sliding_window_view(x,500,axis=-1)[:,::10];v=v-v.mean(-1,keepdims=True);norm=np.linalg.norm(v,axis=-1);valid.append(norm.T>np.sqrt(500)*1e-6);Y.append((v/np.maximum(norm[...,None],1e-100)).transpose(1,0,2).copy())
+│ + corr=Y[0]@Y[1].transpose(0,2,1); ok=(corr<=-.25)&valid[0][:,:,None]&valid[1][:,None,:]; ix=~np.eye(16,dtype=bool); row={'arm':a}
+│ + for label,outer in [('chopped',True),('fast',False)]:
+│ +  mask=tmask&((b!=1)==outer); g=gate[mask]; design=np.column_stack([*([b[mask]==0,b[mask]==2,g] if outer else [np.ones(mask.sum())]),g*np.sin(phase[mask]),g*np.cos(phase[mask])]); C=np.linalg.lstsq(design,X[:,:,mask].reshape(32,-1).T,rcond=None)[0].T.reshape(2,16,-1)
+│ +  for i,p in enumerate('fe'):
+│ +   A=np.hypot(C[i,:,-1],C[i,:,-2]); metrics={'amp':A,'sin':C[i,:,-2],'cos':C[i,:,-1]};
+│ +   if outer:metrics.update(gate=C[i,:,2],abs_gate=abs(C[i,:,2]))
+│ +   for n,vals in metrics.items():
+│ +    coef[a,label,p,n]=vals;q1.append(dict(arm=a,segment=label,pool=p,metric=n,mean=vals.mean()));sr.extend(dict(arm=a,segment=label,pool=p,metric=n,seed=s,value=v) for s,v in zip(seeds,vals))
+│ +  d=ok[mask[ends]].mean(0); same=d.diagonal();cross=d[ix]; row[label+'_k']=sum(same>=.5);row[label+'_mean']=same.mean()
+│ +  if outer:
+│ +   assert np.array_equal(np.round(same,3),by[a]['dutyR']);row['cross_k']=sum(cross>=.5);row['cross_mean']=cross.mean(); q3.append(dict(arm=a,flex=X[0][:,mask].mean(),ext=X[1][:,mask].mean(),mean_neg_r_same=-corr[mask[ends]].diagonal(axis1=1,axis2=2).mean(),same=same.mean(),cross=cross.mean(),residual=same.mean()-cross.mean()))
+│ +  assert row[label+'_k']==int(prev[a]['kR'+('07' if outer else '14')]);assert abs(same.mean()-float(prev[a]['meanR'+('07' if outer else '14')]))<.001
+│ + tab.append(row)
+│ +for row in q3:
+│ + for n in ['flex','ext','mean_neg_r_same','same','cross','residual']:row['delta_'+n]=row[n]-q3[0][n]
+│ + assert abs(row['delta_cross']+row['delta_residual']-row['delta_same'])<1e-12
+│ +old=list(csv.DictReader((R/'locked.csv').open()));
+│ +for d in old:
+│ + if d['segment']=='chopped':
+│ +  r=next(x for x in tab if x['arm']==d['arm']);assert abs(r['cross_mean']-float(d['cross_mean']))<.000051 and r['cross_k']==int(d['cross_k'])
+│ +contr=[]
+│ +for (a,l,p,n),v in coef.items():
+│ + if a=='sc25' and n not in ('sin','cos'):
+│ +  for c in cmp:
+│ +   delta=v-coef[c,l,p,n];lo,hi=np.quantile(delta[boot].mean(1),[.025,.975]);contr.append(dict(ref=c,segment=l,pool=p,metric=n,sc25_minus_ref=delta.mean(),lo=lo,hi=hi))
+│ +save('threepanel.csv',tab);save('q3.csv',q3);save('q1.csv',q1);save('q1-seeds.csv',sr);save('q1-contrasts.csv',contr)
+│ +print('Verified',len(tab),'arms;',len(sr),'seed metrics')
+💻 $ OPENBLAS_NUM_THREADS=1 python banc/l184/traces.py
+💻 $ python - <<'PY' import glob,json print(json.load(open('banc/l175/selection.json'))['carrier']) + 4 commands  1.1s
+
+────────────────────────────────────────
+**Checking raw carrier history**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔎 Grep carrier_trace|x_carrier|carrier_ts|carrier.*time.series|census_x.*zeros|tr_carrier  0.1s
+💻 $ python - <<'PY' import json s=json.load(open('banc/l142/static.json')) + 4 commands  0.2s
+
+────────────────────────────────────────
+**Inspecting historical census_x**
+∴ Thought for 1s
+────────────────────────────────────────
+
+💻 $ python - <<'PY' import numpy as n z=n.load('banc/l137/raw_l137.npz') + 2 commands  0.2s
+🔎 Grep census_|CENSUS
+🔎 Grep cen_x|cen_u|CEN_ARM|cen_loc
+🔎 Grep cen_x\[|x1110\[|carrier_x\[
+💻 $ python - <<'PY' import csv,pathlib p=pathlib.Path('banc/l184') + 2 commands  0.2s
+
+────────────────────────────────────────
+**Checking the L178 plan**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔎 Grep L178|linearized contribution
+📖 Read l137_run.py L681-735
+💻 $ python - <<'PY' import csv for r in csv.DictReader(open('banc/l184/q1-contrasts.csv')): if r['segment']=='chopped' and r['metric'] in ('abs_gate','amp'): print(r['pool'],r['ref'],r['metric'],*[round(float(r[x])*1000,2) for x in ['sc25_minus_ref','lo','hi']]) + 1 command
+
+────────────────────────────────────────
+**Enumerating signed path overlaps**
+∴ Thought for 21s
+────────────────────────────────────────
+
+✍️ Write banc/l184/anatomy.py
+│ banc/l184/anatomy.py
+│ @@ -0,0 +1,32 @@
+│ +"""Offline static Q2. Run with ../peabrain/.venv/bin/python from lab root."""
+│ +from pathlib import Path
+│ +import numpy as np,pandas as pd,torch,json,itertools
+│ +from collections import defaultdict, Counter
+│ +P=Path(__file__).resolve().parent;B=P.parent;L=B/'l175';z=np.load(L/'census_k24.npz');gi=z['gi'];gi_set=set(gi);gain=float(z['g_cutwA']);x=dict(zip(gi,z['x_mean_3seed']));g=torch.load(B/'banc_graph.pt',weights_only=False,map_location='cpu');ids=g['ids'].numpy();assert np.array_equal(ids[gi],z['root_id']);idx={int(ids[i]):i for i in gi};sig=dict(zip(gi,z['eff_sign']));ann=pd.read_csv(B/'data/dv_11845666',sep='\t',low_memory=False).set_index('pt_root_id').loc[ids[gi]].fillna('');ann.index=gi
+│ +# Use grouped synapses, not normalized graph.pt values (scan_run.py build/wb).
+│ +c=pd.read_csv(B/'data/dv_11842997',compression='gzip',usecols=['pre_root_id','post_root_id','syn_count']); c=c[c.pre_root_id.isin(idx)&c.post_root_id.isin(idx)].groupby(['pre_root_id','post_root_id']).syn_count.sum();src=np.array([idx[v] for v in c.index.get_level_values(0)]);dst=np.array([idx[v] for v in c.index.get_level_values(1)]); syn=c.to_numpy(); eff=np.log1p(syn)*np.array([sig[i] for i in src]);eff=np.where(eff<0,2*eff,eff);assert len(src)==644177; assert np.allclose(np.bincount(src,weights=abs(eff),minlength=len(ids))[gi],z['out_w_eff']); assert np.array_equal(gi,z['gi']);
+│ +lookup=defaultdict(dict); adj=defaultdict(set)
+│ +for i,j,v in zip(src,dst,eff):lookup[i][j]=gain*v;adj[i].add(j)
+│ +mot=ann.super_class=='motor';pools={t:set(ann.index[mot&(ann.side=='right')&ann.peripheral_target_type.str.contains('tibia')&ann.peripheral_target_type.str.contains(t)]) for t in ('flexor','extensor')};pool={i:t for t,nodes in pools.items() for i in nodes};assert sum(map(len,pools.values()))==len(pool);pre=set(src[np.isin(dst,list(pool))]); target=lambda j: ('right-Ti '+pool[j] if j in pool else 'other motor' if mot[j] else 'direct right-Ti premotor' if j in pre else ann.at[j,'super_class']); C=1110; ed=[]
+│ +for n in np.flatnonzero((src==C)|(dst==C)):
+│ + i,j=src[n],dst[n];other=j if i==C else i;ed.append(dict(direction='out' if i==C else 'in',src=i,dst=j,syn=int(syn[n]),effective_weight=eff[n],partner_type=ann.at[other,'cell_type'],partner_side=ann.at[other,'side'],partner_super=ann.at[other,'super_class'],target_class=target(j) if i==C else 'input',peripheral_target=ann.at[other,'peripheral_target_type']))
+│ +assert len(ed)==93;pd.DataFrame(ed).to_csv(P/'edges.csv',index=False); labels={'sc25':C,'sc26':319,'sc27':707,'sc40':559,'dmA':511,'dmC':1480}; terminals={i:adj[i]&pool.keys() for i in gi};tops=[];summary=[];overlap=[]
+│ +for a,start in labels.items():
+│ + hits=[]
+│ + def walk(path,w):
+│ +  i=path[-1];opts=terminals[i] if len(path)==4 else adj[i];
+│ +  for j in opts:
+│ +   if j in path:continue
+│ +   path2=(*path,j);w2=w*lookup[i][j];
+│ +   if j in pool:
+│ +    sens=all(.05<x[k]<.95 for k in path2[1:]);hits.append((pool[j],len(path),w2/len(pools[pool[j]]),path2,sens));continue
+│ +   if len(path)<4 and (len(path)<3 or j in pre):walk(path2,w2)
+│ + walk((start,),1.); O=adj[start];shared=O&adj[C];overlap.append(dict(arm=a,gi=start,out=len(O),shared=len(shared),jaccard=len(shared)/len(O|adj[C]),direct_premotor=len((O-set(ann.index[mot]))&pre),shared_premotor=len((shared-set(ann.index[mot]))&pre),shared_gi=';'.join(map(str,sorted(shared)))))
+│ + for mode in ['unit','interior_proxy']:
+│ +  for t in pools:
+│ +   h=[r for r in hits if r[0]==t and (mode=='unit' or r[4])];h.sort(key=lambda r:(-abs(r[2]),r[3]));
+│ +   for rank,(_,l,w,path,_) in enumerate(h[:10],1):tops.append(dict(arm=a,mode=mode,pool=t,rank=rank,hops=l,score=w,path='>'.join(map(str,path)),types='>'.join(str(ann.at[k,'cell_type']) for k in path)))
+│ +   for l in range(1,5):
+│ +    scores=[r[2] for r in h if r[1]==l];summary.append(dict(arm=a,mode=mode,pool=t,hops=l,count=len(scores),signed_sum=sum(scores),absolute_sum=sum(map(abs,scores))))
+│ +for name,rows in [('top_paths',tops),('path_totals',summary),('overlap',overlap)]:pd.DataFrame(rows).to_csv(P/(name+'.csv'),index=False)
+│ +print('pool sizes', {k:len(v) for k,v in pools.items()},'incident classes',Counter(r['target_class'] for r in ed));print(pd.DataFrame(overlap).to_string(index=False));print(pd.DataFrame(tops).query("arm=='sc25' and rank<=2").to_string(index=False))
+💻 $ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ../peabrain/.venv/bin/python banc/l184/anatomy.py >banc/l184/anatomy.out  0.1s
+🔎 Grep L178.{0,100}(path|linear)|linear.{0,120}L178
+💻 $ python - <<'PY' import csv,numpy as np for a in ['cutwA','sc25','sc26','dmA','dmC']: d={(r['segment'],r['pool'],r['metric']):float(r['mean']) for r in csv.DictReader(open('banc/l184/q1.csv')) if r['arm']==a} + 3 commands  0.3s
+
+────────────────────────────────────────
+**Checking phase-offset controls**
+∴ Thought for 10s
+────────────────────────────────────────
+
+✍️ Write banc/l184/sensitivity.py
+│ banc/l184/sensitivity.py
+│ @@ -0,0 +1,19 @@
+│ +"""Post-registration sensitivity: subtract fitted chopped time templates, not a causal mediation test. Historical individual trace is not B39."""
+│ +import numpy as np,csv,json
+│ +from pathlib import Path
+│ +P=Path(__file__).resolve().parent;B=P.parent;L=B/'l175';s=json.loads((L/'results_l175.json').read_text())['seeds'];k=np.arange(6000);b=k//2000;gate=((k%2000)%900<500)|(b==1);phi=np.cumsum(.02*np.pi*np.where(b==1,1.4,.7));ends=k[499::10];mask=(b!=1)&(k%2000>=500); D=np.column_stack((b==0,b==2,gate,gate*np.sin(phi),gate*np.cos(phi)));rows=[]
+│ +for arm in ['cutwA','sc25','sc26','dmA','dmC','sc27','sc40']:
+│ + for p in sorted(L.glob('raw_w*.npz')):
+│ +  with np.load(p) as z:
+│ +   if f'Ti_fR_{arm}_{s[0]}' not in z:continue
+│ +   X=np.array([[z[f'Ti_{t}R_{arm}_{i}'] for i in s] for t in 'fe'],float);break
+│ + C=np.linalg.lstsq(D[mask],X[:,:,mask].reshape(32,-1).T,rcond=None)[0]
+│ + for label,cols in [('original',[]),('minus_gate',[2]),('minus_tone',[3,4]),('minus_both',[2,3,4])]:
+│ +  x=X-(D[:,cols]@C[cols]).T.reshape(2,16,6000);v=np.lib.stride_tricks.sliding_window_view(x,500,axis=-1)[:,:,::10][:,:,mask[ends]];v-=0 if False else 0 # no-op removed below
+│ +  y=v-v.mean(-1,keepdims=True);n=np.linalg.norm(y,axis=-1);y=(y/np.maximum(n[...,None],1e-100)).transpose(0,2,1,3).copy(); n=n.transpose(0,2,1)>np.sqrt(500)*1e-6; d=((y[0]@y[1].transpose(0,2,1)<=-.25)&n[0][:,:,None]&n[1][:,None,:]).mean(0);rows.append(dict(arm=arm,template=label,same=d.diagonal().mean(),cross=d[~np.eye(16,dtype=bool)].mean()))
+│ +with (P/'sensitivity.csv').open('w') as f:w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
+│ +with np.load(B/'l137/raw_l137.npz') as z:y=z['census_x'][list(z['census_ids']).index(1110)]
+│ +for h,m,design in [('chopped',mask,D),('middle',(b==1)&(k%2000>=500),np.column_stack((k>=0,np.sin(phi),np.cos(phi))))]:
+│ + c=np.linalg.lstsq(design[m],y[m],rcond=None)[0];print('full only, seed 3101:',h,'harmonic',np.hypot(*c[-2:]),'angle atan2(cos,sin)',np.arctan2(c[-1],c[-2]),'coefficients',c)
+│ +for label in ['original','minus_gate','minus_tone','minus_both']:
+│ + a,b=[r for r in rows if r['template']==label][:2];print(label,'delta sc25-base',*[b[n]-a[n] for n in ['same','cross']]);
+🔧 Patch banc/l184/sensitivity.py
+│ banc/l184/sensitivity.py
+│ @@ -9,7 +9,7 @@
+│     X=np.array([[z[f'Ti_{t}R_{arm}_{i}'] for i in s] for t in 'fe'],float);break
+│   C=np.linalg.lstsq(D[mask],X[:,:,mask].reshape(32,-1).T,rcond=None)[0]
+│   for label,cols in [('original',[]),('minus_gate',[2]),('minus_tone',[3,4]),('minus_both',[2,3,4])]:
+│ -  x=X-(D[:,cols]@C[cols]).T.reshape(2,16,6000);v=np.lib.stride_tricks.sliding_window_view(x,500,axis=-1)[:,:,::10][:,:,mask[ends]];v-=0 if False else 0 # no-op removed below
+│ +  x=X-(D[:,cols]@C[cols]).T.reshape(2,16,6000);v=np.lib.stride_tricks.sliding_window_view(x,500,axis=-1)[:,:,::10][:,:,mask[ends]]
+│    y=v-v.mean(-1,keepdims=True);n=np.linalg.norm(y,axis=-1);y=(y/np.maximum(n[...,None],1e-100)).transpose(0,2,1,3).copy(); n=n.transpose(0,2,1)>np.sqrt(500)*1e-6; d=((y[0]@y[1].transpose(0,2,1)<=-.25)&n[0][:,:,None]&n[1][:,None,:]).mean(0);rows.append(dict(arm=arm,template=label,same=d.diagonal().mean(),cross=d[~np.eye(16,dtype=bool)].mean()))
+│  with (P/'sensitivity.csv').open('w') as f:w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
+│  with np.load(B/'l137/raw_l137.npz') as z:y=z['census_x'][list(z['census_ids']).index(1110)]
+💻 $ OPENBLAS_NUM_THREADS=1 python banc/l184/sensitivity.py >banc/l184/sensitivity.out  4.2s
+📖 Read anatomy.out
+💻 $ python - <<'PY' import csv from pathlib import Path p=Path('banc/l184/path_totals.csv') + 1 command  0.1s
+📖 Reading tool details · 1 tool
+⚙️ Proc poll proc_b635a63
+⚙️ Proc poll proc_19eea33
+🔧 Patch banc/l184/anatomy.py
+│ banc/l184/anatomy.py
+│ @@ -2,7 +2,7 @@
+│  from pathlib import Path
+│  import numpy as np,pandas as pd,torch,json,itertools
+│  from collections import defaultdict, Counter
+│ -P=Path(__file__).resolve().parent;B=P.parent;L=B/'l175';z=np.load(L/'census_k24.npz');gi=z['gi'];gi_set=set(gi);gain=float(z['g_cutwA']);x=dict(zip(gi,z['x_mean_3seed']));g=torch.load(B/'banc_graph.pt',weights_only=False,map_location='cpu');ids=g['ids'].numpy();assert np.array_equal(ids[gi],z['root_id']);idx={int(ids[i]):i for i in gi};sig=dict(zip(gi,z['eff_sign']));ann=pd.read_csv(B/'data/dv_11845666',sep='\t',low_memory=False).set_index('pt_root_id').loc[ids[gi]].fillna('');ann.index=gi
+│ +P=Path(__file__).resolve().parent;B=P.parent;L=B/'l175';z=np.load(L/'census_k24.npz');gi=z['gi'];gi_set=set(gi);gain=float(z['g_cutwA']);x=dict(zip(gi,z['x_mean_3seed']));g=torch.load(B/'banc_graph.pt',weights_only=False,map_location='cpu');ids=g['ids'].numpy();assert np.array_equal(ids[gi],z['root_id']);idx={int(ids[i]):i for i in gi};sig=dict(zip(gi,z['eff_sign']));ann=pd.read_csv(B/'data/dv_11845666',sep='\t',low_memory=False).dropna(subset=['super_class']).set_index('pt_root_id').loc[ids[gi]].fillna('');ann.index=gi
+│  # Use grouped synapses, not normalized graph.pt values (scan_run.py build/wb).
+│  c=pd.read_csv(B/'data/dv_11842997',compression='gzip',usecols=['pre_root_id','post_root_id','syn_count']); c=c[c.pre_root_id.isin(idx)&c.post_root_id.isin(idx)].groupby(['pre_root_id','post_root_id']).syn_count.sum();src=np.array([idx[v] for v in c.index.get_level_values(0)]);dst=np.array([idx[v] for v in c.index.get_level_values(1)]); syn=c.to_numpy(); eff=np.log1p(syn)*np.array([sig[i] for i in src]);eff=np.where(eff<0,2*eff,eff);assert len(src)==644177; assert np.allclose(np.bincount(src,weights=abs(eff),minlength=len(ids))[gi],z['out_w_eff']); assert np.array_equal(gi,z['gi']);
+│  lookup=defaultdict(dict); adj=defaultdict(set)
+💻 $ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ../peabrain/.venv/bin/python banc/l184/anatomy.py  9.8s
+📖 Read sensitivity.out
+📖 Read anatomy.out
+💻 $ python - <<'PY' import csv p='banc/l184/' + 5 commands  0.1s
+
+────────────────────────────────────────
+**Checking queued L178 request**
+∴ Thought for 2s
+────────────────────────────────────────
+
+🔎 Grep L178|§L184
+💻 $ python - <<'PY' import csv for r in csv.DictReader(open('banc/l184/edges.csv')): if r['target_class']=='direct right-Ti premotor' or r['dst'] in ['75494','66994','69186']:print(r) for r in csv.DictReader(open('banc/l184/top_paths.csv')): if r['arm']=='sc40' and r['mode']=='unit' and r['rank']=='1':print(r) PY  0.2s
+
+────────────────────────────────────────
+**Validating sensitivity indexing**
+∴ Thought for 40s
+────────────────────────────────────────
+
+✍️ Write banc/l184/report.py
+│ banc/l184/report.py
+│ @@ -0,0 +1,30 @@
+│ +from pathlib import Path
+│ +import csv
+│ +P=Path(__file__).resolve().parent
+│ +def rows(f):return list(csv.DictReader((P/f).open()))
+│ +lines='''# L184 | DNp33-L loss changes shared timing, not overall rhythmic gain
+│ +Stored data only; CPU, zero rollouts. The chopped gate reaches the pools more strongly than in base, but a uniform, carrier-specific damping of drive transmission is not supported.
+│ +
+│ +## Methods (specified before results)
+│ +Q1: PREREG-analysis.md precedes computation. B39, 16 paired seeds; block intercepts, on/off gate and gated quadrature at 0.7 Hz (outer blocks) or continuous quadrature at 1.4 Hz (middle). Mean of seed amplitudes, not amplitude of the seed mean; paired percentile intervals in q1-contrasts.csv. Separate 5-s-on/4-s-off gate from the faster sinusoid.
+│ +Q2: reconstruct the 644,177 cutwA edges from grouped synapses, graph IDs and census signs; verify every outgoing effective mass. Rank all simple, first-pool-hit paths of 1–4 edges by absolute DC small-signal score: product of gain × signed log1p(synapses), inhibitory weights doubled, divided by endpoint pool size (51 flexors, 6 extensors). Unit slope at each recipient; sensitivity sets slopes to zero outside (.05,.95) census mean. No recurrent walks, delays or measured time-resolved slopes: these are candidate routes, not a dynamic transfer function.
+│ +Q3–4: duty is the fraction of 500-sample windows with r(flex,ext) ≤ −.25 and both SDs > 1e−6, not −r itself. Step 10 samples; use registered endpoints. Same = matched seed; cross = flex from i, ext from j≠i at identical times. Δsame = Δcross + Δ(same−cross); constant means cancel under centering. Post hoc sensitivity subtracts the Q1 fitted time-varying terms before recomputing duty.
+│ +
+│ +## Q1 | Gate contrast and drive-frequency amplitude give different answers
+│ +In 10⁻³ rate units, chopped harmonic amplitude (flex/ext) goes 2.38/33.24 → 4.60/23.51, base → sc25. Paired changes +2.22 [1.52,2.92] and −9.73 [−14.14,−5.36]; same directions against sc26, dmA and dmC. At 1.4 Hz: 3.09/32.84 → 3.97/15.16; extensor amplitude falls despite duty rising from 0 to .510.
+│ +Signed gate contrast (on−off, same units) separates the pools: −1.49/+7.00 → −3.24/+21.13. Absolute gate contrast increases in both vs base and mass twin sc26, but dmA matches sc25 in extensor and dmC exceeds sc25 in both. Gate penetration alone cannot explain the carrier-specific duty phenotype. All arm/pool estimates: q1.csv.
+│ +Carrier phase in B39 base/twins is not identifiable: xwin and xmean store whole-run cell means, xm a mechanosensory pool. Historical intact graph only (L137, seed 3101): individual carrier harmonic amplitude .0876/.0334 at .7/1.4 Hz, fitted angles −.505/−2.225 rad. A single different graph/seed cannot establish B39 entrainment.
+│ +
+│ +## Q2 | Indirect access to right tibia; only one boundary cell shares a leading relay
+│ +93 incident edges: 13 descending inputs, 80 outputs. None goes directly to a right-Ti motor. Of 70 intrinsic targets, 3 directly innervate right-Ti motors (GI 69410, 72158, 75494); 67 do not. The other 10 outputs go to other motors. See edges.csv for every partner, direction, count and sign.
+│ +Top unit-slope routes: 1110→75494→74914→74468→10375 (flex, −.0159) and 1110→75494→71392→64322→18563 (ext, −.1281). The census slope proxy retains the flex entry through 75494 but flips its leading score positive; ext enters via 65443. Rankings depend on operating state. top_paths.csv ranks up to ten per pool/model; path_totals.csv includes signed and absolute sums.
+│ +Shared carrier targets: sc27 0/98; sc40 3/102, including 75494. sc40’s leading paths share both downstream chains but have opposite signs: partial anatomical convergence, not a weaker same-sign copy. sc27 has a distinct entry route; downstream convergence is not excluded. sc26 0/103, dmA 0/56, dmC 2/58 (neither a shared direct premotor).
+│ +
+│ +## Q3 | Shared timing carries the net duty rise; mean shifts do not enter additively
+│ +Changes vs base, ordered Δmean flex / Δmean ext / Δsame duty / Δcross duty / Δsame-specific residual:
+│ +'''.splitlines();q={r['arm']:r for r in rows('q3.csv')};
+│ +for a in ['sc25','dmA','dmC','sc27','sc40']:
+│ + r=q[a];lines.append('    '+a+'  '+' / '.join(format(float(r['delta_'+n]),'+.5f' if n in ['flex','ext'] else '+.4f') for n in ['flex','ext','same','cross','residual']))
+│ +lines+=['Base mean rates .02600/.02621. Mean within-window −r rises .214 → .480 for sc25. The cross-seed increment is 150% of the net increment because the same-specific residual shrinks; 82% is the ratio of cross to same duty *in sc25*, not a fraction of the treatment effect. Neither is causal mediation.','Subtracting gate alone leaves Δsame +.357; tone alone +.210; both +.209 (40% attenuation vs +.350). Δcross after both is still +.407. The simple gate step is not necessary for the observed excess in this subtraction; delayed responses or other shared temporal structure can survive it.','Next experiment: cross carrier present/removed with independently jittered gate onset schedules, matched on-time, tone, gain and noise; record GI 1110 and both pools. Test whether cross-seed duty follows realigned gate transitions rather than common elapsed time, and whether carrier phase predicts the pool response. Not run.','','## Q4 | Right-Ti duty across B39','Each cell is mean duty (number with duty ≥ .5); matched columns out of 16 seeds, chopped cross out of 240 ordered, nonindependent pairs. threepanel.csv retains precision.','| Arm | Chopped | Continuous 1.4 Hz | Cross-seed, chopped |','|---|---:|---:|---:|'];
+│ +for r in rows('threepanel.csv'):lines.append('| '+r['arm']+' | '+' | '.join(f"{float(r[n+'_mean']):.3f} ({r[n+'_k']})" for n in ['chopped','fast','cross'])+' |');
+│ +assert len(lines)<=70 and len(rows('threepanel.csv'))==37;(P/'L184-FINDINGS.md').write_text('\n'.join(lines)+'\n');print(len(lines),'lines')
+💻 $ python banc/l184/report.py + 2 commands  0.2s
+
+────────────────────────────────────────
+**Auditing partially quantified effects**
+∴ Thought for 0s
+────────────────────────────────────────
+
+💻 $ python - <<'PY' from pathlib import Path import csv P=Path('banc/l184') + 12 commands  0.2s
+
+────────────────────────────────────────
+✿ Miso
+H-env is partly supported. Removing DNp33-L strengthened the on/off gate contrast in both right-tibia pools relative to base. But the 0.7-Hz oscillation grew in the flexor and shrank in the extensor. A drive-matched control also showed stronger gate contrast than the carrier deletion in both pools, without its duty increase. DNp33-L is not simply damping the whole drive.
+
+Shared timing accounts for more than the net duty increase: the cross-seed change was +0.525, offset by a −0.174 same-seed residual, yielding +0.350 net. That’s 150% on this decomposition, not a causal envelope fraction. Subtracting the fitted gate and sinusoid reduced the net increase by 40%; subtracting the gate alone did not reduce it. The carrier’s own phase in B39 remains unknown because only its whole-run mean was stored.
+
+The anatomical route is indirect. None of the carrier’s 80 outputs reaches a right-tibia motor directly; three interneuron targets do. Boundary cell sc40 shares the carrier’s leading relay, GI 75494, but enters with the opposite sign. sc27 shares no immediate targets.
+
+The most discriminating next experiment is to jitter gate timing independently across seeds at fixed gain and matched on-time, with and without the carrier, while recording GI 1110 and both pools. Does duty follow the shifted gate, or elapsed time?
+
+Zero rollouts. Verified all 37 table rows and all 93 incident edges.
+
+Findings: /home/t3rpz/critters/peabrain-lab/banc/l184/L184-FINDINGS.md
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-85085b6a8992c4ded99f6ea186393d7a1034d834a67650178904eed6b9d1206e -p maple
+
+Session:        local-85085b6a8992c4ded99f6ea186393d7a1034d834a67650178904eed6b9d1206e
+Duration:       6m 47s
+Messages:       86 (1 user, 84 tool calls)

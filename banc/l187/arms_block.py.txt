@@ -1,0 +1,350 @@
+# ======================= L187 ARMS BLOCK (additive) =======================
+# Relay silencing + push-pull on the k=24 (cutwA) base. A1 relay-silence
+# (window clamp, lineage silW form; + full-run clamp twin), A2 relay-cut,
+# A3 push-pull (carrier + sc40 removed together), A4 sc40 control; carrier
+# positive control (sc25), fixed-gain twins, occlusion arm (secondary).
+# Every graph arm goes through the lineage build()/wb()/pools_for() and the
+# L175 GEN field layout; nothing lineage-side is edited.
+SC = [f"sc{r}" for r in WIN_RANKS]
+SC_GI = dict(zip(SC, WIN_CELLS))
+PREREG_PATH = f"{OUT}/PREREG.md"
+
+
+def prereg_sha():
+    return hashlib.sha256(open(PREREG_PATH, "rb").read()).hexdigest()
+
+
+GI_RELAY = 75494
+GI_SC40 = 559
+assert SC_GI["sc25"] == GI_CARRIER == 1110 and SC_GI["sc40"] == GI_SC40
+# --- pins re-derived from stored L175 / L184 / L185 artifacts (never prose) ---
+S175 = json.load(open("l175/static.json"))
+SEL175 = json.load(open("l175/selection.json"))
+R175 = json.load(open("l175/results_l175.json"))
+R185 = json.load(open("l185/results_l185.json"))
+assert sorted(USED) == S175["used_cells"] and len(USED) == 78, len(USED)
+assert R175["status"] == "FINAL" and R175["branch"] == "D2_identity_carried"
+assert R185["status"] == "FINAL", R185["status"]
+DM = {"dmA": int(SEL175["dmA"]["pick"]["gi"]),
+      "dmC": int(SEL175["dmC"]["pick"]["gi"])}
+assert DM == {"dmA": 511, "dmC": 1480}, DM
+G175, W175 = {}, {}
+for _w in range(5):
+    _gj = json.load(open(f"l175/gains_w{_w}.json"))
+    assert _gj["gain"]["cutwA"] == G_CUTWA_STORED, _w
+    for _a, _g in _gj["gain"].items():
+        if _a in ("sc25", "sc40"):
+            assert _a not in G175
+            G175[_a], W175[_a] = float(_g), _w
+assert sorted(G175) == ["sc25", "sc40"], sorted(G175)
+assert G175["sc25"] == G_CUTNG25_STORED
+_rows175 = {r["arm"]: r for r in R175["window"]}
+for _a in ("sc25", "sc40"):
+    assert _rows175[_a]["gain"] == G175[_a] and _rows175[_a]["gi"] == SC_GI[_a], _a
+    assert R185["R1"][_a]["rematched"]["gain"] == G175[_a], _a
+    assert R185["R1"][_a]["fixed"]["gain"] == G_CUTWA_STORED, _a
+assert R175["base"]["gain"] == G_CUTWA_STORED == R185["base"]["gain"]
+# --- relay pins: admissibility + the L184 anatomy it was named from ---
+assert in_wA[GI_RELAY] and not is_motor_g[GI_RELAY] and not is_dng100_g[GI_RELAY]
+assert not is_ng58_g[GI_RELAY] and not in_new_cell[GI_RELAY] and GI_RELAY not in USED
+assert keep_old[GI_RELAY], "relay is a cord cell (old-closure member)"
+assert EFF_SIGN[GI_RELAY] == -1.0 and EFF_SIGN[GI_SC40] == -1.0
+assert EFF_SIGN[GI_CARRIER] == 1.0
+_e184 = pd.read_csv("l184/edges.csv")
+_r184 = _e184[(_e184.direction == "out") & (_e184.src == GI_CARRIER)
+              & (_e184.dst == GI_RELAY)]
+assert len(_r184) == 1 and int(_r184.syn.iloc[0]) == 21
+_ecr = emask_wA & (src_all == GI_CARRIER) & (dst_all == GI_RELAY)
+_e40r = emask_wA & (src_all == GI_SC40) & (dst_all == GI_RELAY)
+assert int(_ecr.sum()) == 1 and int(w_syn[_ecr][0]) == 21, "carrier->relay edge drift"
+assert int(_e40r.sum()) == 1, "sc40->relay edge missing (STOP)"
+_cen = np.load("l175/census_k24.npz")
+assert np.array_equal(_cen["gi"], gi_wA)
+RELAY_LOC = int(loc_wA[GI_RELAY])
+assert RELAY_LOC == 21435, RELAY_LOC
+_relay_in = emask_wA & (dst_all == GI_RELAY)
+_relay_out = emask_wA & (src_all == GI_RELAY)
+_pool_gi = {pk: gi_wA[POOLS["cutwA"][pk]] for pk in ("Ti_fR", "Ti_eR", "Ti_fL", "Ti_eL")}
+
+
+def _direct_onto(src_gi, pk):
+    m = emask_wA & (src_all == src_gi) & np.isin(dst_all, _pool_gi[pk])
+    v = vals_all[m] * np.where(vals_all[m] < 0, BETA, 1.0)
+    return dict(n_edges=int(m.sum()), syn=int(w_syn[m].sum()),
+                w_eff_sum=float(v.sum()), targets=int(len(_pool_gi[pk])))
+
+
+RELAY_INFO = dict(
+    cell=cell_info(GI_RELAY), loc_wA=RELAY_LOC,
+    census_x_mean_3seed=float(_cen["x_mean_3seed"][RELAY_LOC]),
+    census_x_mean_seeds=[float(v) for v in _cen["x_mean"][:, RELAY_LOC]],
+    census_delivered_drive=float(_cen["delivered_drive"][RELAY_LOC]),
+    carrier_delivered_drive=float(_cen["delivered_drive"][int(loc_wA[GI_CARRIER])]),
+    in_edges=int(_relay_in.sum()), out_edges=int(_relay_out.sum()),
+    carrier_to_relay=dict(syn=int(w_syn[_ecr][0]), w=float(vals_all[_ecr][0])),
+    sc40_to_relay=dict(syn=int(w_syn[_e40r][0]),
+                       w_eff=float(vals_all[_e40r][0] * BETA)),
+    direct_onto={pk: _direct_onto(GI_RELAY, pk) for pk in _pool_gi},
+    sc40_census_x_mean=float(_cen["x_mean_3seed"][int(loc_wA[GI_SC40])]),
+    carrier_census_x_mean=float(_cen["x_mean_3seed"][int(loc_wA[GI_CARRIER])]))
+assert RELAY_INFO["census_x_mean_3seed"] > 0.05, "relay silent on the base (STOP)"
+assert RELAY_INFO["out_edges"] == int(OW_N[GI_RELAY])
+
+
+def add_arm_multi(name, extras):
+    """wA + SEVERAL extra cells: add_arm()'s body with a k-cell drop (same
+    lineage build()/wb()/pools_for(), same GEN field layout). Certified
+    static: add_arm_multi(x, [g]) == add_arm(y, g) field-for-field."""
+    extras = [int(g) for g in extras]
+    assert len(set(extras)) == len(extras) >= 1, name
+    assert name not in GEN and name not in WB
+    for g in extras:
+        assert in_wA[g], (name, g, "cell absent from the k=24 base (STOP)")
+        assert not is_motor_g[g] and not is_dng100_g[g], (name, g)
+    drop = np.sort(np.concatenate([ng_desc[:24], np.array(extras)]))
+    assert len(set(int(x) for x in drop)) == 24 + len(extras)
+    keep = keep_new.copy()
+    keep[drop] = False
+    assert int(keep.sum()) == n_new_total - 24 - len(extras), name
+    W, loc = build(keep)
+    _inc = np.zeros(len(src_all), bool)
+    for g in extras:
+        _inc |= (src_all == g) | (dst_all == g)
+    assert W.values().numel() == cutk_pins["cutwA"]["edges"] - int(
+        _inc[emask_wA].sum()), name
+    gi_a = np.where(keep)[0]
+    old_mask = keep[gi_old]
+    kept_mask = keep[new_g]
+    GEN[name] = dict(
+        extra=extras, drop=drop, loc=loc, pos_in_new=loc_n[gi_a],
+        old_mask=old_mask, old_pos=loc[gi_old[old_mask]],
+        kept_mask=kept_mask, kept_new=loc[new_g[kept_mask]],
+        edges=int(W.values().numel()), n=int(keep.sum()))
+    POOLS[name] = pools_for(loc, keep)
+    for pk in POOLS["cutwA"]:
+        assert len(POOLS[name][pk]) == len(POOLS["cutwA"][pk]), (name, pk)
+    mech[name] = np.where(mech_mask[keep])[0]
+    _m = np.zeros(int(keep.sum()), bool)
+    _m[loc[mg_all[keep[mg_all]]]] = True
+    motor[name] = _m
+    dng100[name] = np.sort(loc[dng100_all[keep[dng100_all]]])
+    assert len(dng100[name]) == S92["dng100"], name
+    WB[name] = wb(W)
+    N_OF[name] = int(keep.sum())
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+def add_alias(name, src):
+    """GEN arm `src`'s graph + plumbing OBJECTS under a new arm name (the
+    only difference between the two arms is GAIN[name]). L185 form VERBATIM."""
+    assert name not in GEN and name not in WB and src in GEN, name
+    GEN[name] = GEN[src]
+    POOLS[name] = POOLS[src]
+    mech[name] = mech[src]
+    motor[name] = motor[src]
+    dng100[name] = dng100[src]
+    WB[name] = WB[src]
+    N_OF[name] = N_OF[src]
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+def add_base_alias(name):
+    """The k=24 base graph under a generic arm name: the lineage cutwA
+    plumbing objects VERBATIM in the GEN field layout (L185 form VERBATIM;
+    certified there in-run: g000 == cutwA bit-identical on 19 seeds)."""
+    assert name not in GEN and name not in WB, name
+    _om = keep_cutk["cutwA"][gi_old]
+    assert _om.all() and len(old_pos_in_wA) == len(gi_old)
+    GEN[name] = dict(
+        extra=None, drop=cutk_drop["cutwA"], loc=loc_wA,
+        pos_in_new=wA_pos_in_new, old_mask=_om, old_pos=old_pos_in_wA,
+        kept_mask=kept_new_mask_wA, kept_new=kept_new_cutwA,
+        edges=cutk_pins["cutwA"]["edges"], n=n_cutk["cutwA"])
+    POOLS[name] = POOLS["cutwA"]
+    mech[name] = mech["cutwA"]
+    motor[name] = motor["cutwA"]
+    dng100[name] = dng100["cutwA"]
+    WB[name] = Wb_wA
+    N_OF[name] = n_cutk["cutwA"]
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+def _drop_arm(name):
+    """Remove a cert-only arm from every registry."""
+    for _d in (GEN, POOLS, mech, motor, dng100, WB, N_OF, GAIN):
+        del _d[name]
+    GEN_ARMS.remove(name)
+
+
+# ---------------- graph arms ----------------
+add_arm("sc25", GI_CARRIER)                 # carrier removal (positive control)
+add_arm("sc40", GI_SC40)                    # A4
+add_arm("rcut", GI_RELAY)                   # A2 relay-cut
+add_arm_multi("pp", [GI_CARRIER, GI_SC40])  # A3 push-pull
+add_arm_multi("occ", [GI_CARRIER, GI_RELAY])  # secondary: carrier cut, relay absent
+
+
+# CERT-GEN (static, L175 form VERBATIM): generic plumbing for rank 25 is
+# IDENTICAL to the lineage's hand-written cutng25.
+def _cert_gen(name, lin, Wb_ref, pos_ref, oldpos_ref, mask_ref, kn_ref):
+    g = GEN[name]
+    assert torch.equal(WB[name].crow_indices(), Wb_ref.crow_indices())
+    assert torch.equal(WB[name].col_indices(), Wb_ref.col_indices())
+    assert torch.equal(WB[name].values(), Wb_ref.values())
+    assert np.array_equal(g["drop"], cutk_drop[lin])
+    assert np.array_equal(g["pos_in_new"], pos_ref)
+    assert g["old_mask"].all() and np.array_equal(g["old_pos"], oldpos_ref)
+    assert np.array_equal(g["kept_mask"], mask_ref)
+    assert np.array_equal(g["kept_new"], kn_ref)
+    assert sorted(POOLS[name]) == sorted(POOLS[lin])
+    for pk in POOLS[lin]:
+        assert np.array_equal(POOLS[name][pk], POOLS[lin][pk]), pk
+    assert np.array_equal(mech[name], mech[lin])
+    assert np.array_equal(motor[name], motor[lin])
+    assert np.array_equal(dng100[name], dng100[lin])
+    assert N_OF[name] == N_OF[lin] and g["edges"] == cutk_pins[lin]["edges"]
+
+
+_cert_gen("sc25", "cutng25", Wb_p25, p25_pos_in_new, old_pos_in_p25,
+          kept_new_mask_p25, kept_new_cutcutng25)
+log("CERT-GEN static: sc25 == cutng25 plumbing EXACT: PASS")
+
+# CERT-MULTI (static): the k-cell builder with ONE cell == add_arm().
+for _ref, _g in (("sc25", GI_CARRIER), ("rcut", GI_RELAY)):
+    add_arm_multi("_m1", [_g])
+    _a, _b = GEN["_m1"], GEN[_ref]
+    for _k in ("drop", "loc", "pos_in_new", "old_mask", "old_pos", "kept_mask",
+               "kept_new"):
+        assert np.array_equal(_a[_k], _b[_k]), (_ref, _k)
+    assert _a["edges"] == _b["edges"] and _a["n"] == _b["n"]
+    for _f in ("crow_indices", "col_indices", "values"):
+        assert torch.equal(getattr(WB["_m1"], _f)(), getattr(WB[_ref], _f)()), _f
+    for _pk in POOLS[_ref]:
+        assert np.array_equal(POOLS["_m1"][_pk], POOLS[_ref][_pk]), _pk
+    assert np.array_equal(mech["_m1"], mech[_ref])
+    assert np.array_equal(motor["_m1"], motor[_ref])
+    assert np.array_equal(dng100["_m1"], dng100[_ref])
+    _drop_arm("_m1")
+log("CERT-MULTI static: add_arm_multi([g]) == add_arm(g) for 1110 and 75494: PASS")
+
+
+# CERT-SUB (static): every graph arm's stepped matrix is EXACTLY the base
+# matrix with the removed cells' rows and columns deleted, and its init /
+# noise / pool / mech / motor / drive maps are the base's maps restricted to
+# the kept cells (covers the old-closure removal path the relay exercises).
+def _coo_gi(Wm, gi_of_loc):
+    crow = Wm.crow_indices().numpy()
+    col = Wm.col_indices().numpy()
+    row = np.repeat(np.arange(len(crow) - 1), np.diff(crow))
+    d, s_ = gi_of_loc[row], gi_of_loc[col]
+    o = np.lexsort((s_, d))
+    return d[o], s_[o], Wm.values().numpy()[o]
+
+
+_base_coo = _coo_gi(Wb_wA, gi_wA)
+_gtest = torch.Generator().manual_seed(187187)
+_X0o_t = torch.rand(n_old, 1, generator=_gtest)
+_X0n_t = torch.rand(n_add, 1, generator=_gtest)
+_base_init = torch.zeros(n_cutk["cutwA"], 1)
+_base_init[old_pos_in_wA] = _X0o_t
+_base_init[kept_new_cutwA] = _X0n_t[kept_new_mask_wA]
+CERT_SUB = {}
+for _nm in ("sc25", "sc40", "rcut", "pp", "occ"):
+    _g = GEN[_nm]
+    _ex = [int(x) for x in np.setdiff1d(_g["drop"], cutk_drop["cutwA"])]
+    _gi_a = np.where(_g["loc"] >= 0)[0]
+    assert len(_gi_a) == _g["n"] == n_cutk["cutwA"] - len(_ex)
+    assert np.array_equal(_g["loc"][_gi_a], np.arange(_g["n"]))
+    _d, _s, _v = _coo_gi(WB[_nm], _gi_a)
+    _kp = ~np.isin(_base_coo[0], _ex) & ~np.isin(_base_coo[1], _ex)
+    assert np.array_equal(_d, _base_coo[0][_kp]), _nm
+    assert np.array_equal(_s, _base_coo[1][_kp]), _nm
+    assert np.array_equal(_v, _base_coo[2][_kp]), _nm
+    _bl = loc_wA[_gi_a]                       # base-local index of each kept cell
+    assert (_bl >= 0).all()
+    assert torch.equal(gen_init(_nm, _X0o_t, _X0n_t), _base_init[_bl]), _nm
+    assert np.array_equal(_g["pos_in_new"], wA_pos_in_new[_bl]), _nm
+    for _pk in POOLS["cutwA"]:
+        assert np.array_equal(_gi_a[POOLS[_nm][_pk]],
+                              gi_wA[POOLS["cutwA"][_pk]]), (_nm, _pk)
+    assert np.array_equal(_gi_a[mech[_nm]], gi_wA[mech["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[motor[_nm]], gi_wA[motor["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[dng100[_nm]], gi_wA[dng100["cutwA"]]), _nm
+    CERT_SUB[_nm] = dict(removed=_ex, n=_g["n"], edges=_g["edges"],
+                         edges_removed=int((~_kp).sum()))
+log(f"CERT-SUB static: 5 graph arms == base minus removed rows/cols, maps "
+    f"restricted EXACT: PASS {CERT_SUB}")
+
+# ---------------- fixed-gain twins (same matrix objects) ----------------
+GRAPH_ARMS = ["sc25", "sc40", "rcut", "pp", "occ"]
+for _a in GRAPH_ARMS:
+    add_alias(_a + "F", _a)
+    assert WB[_a + "F"] is WB[_a]
+# ---------------- activity-clamp arms (base matrix VERBATIM) ----------------
+# rsilW : lineage silW form on the relay — clamp in the WINDOW only (the
+#         existing `if a in CLAMP` line of the rollout loop), settle unclamped.
+# rsilF : clamp from t=0 (init + settle + window), gain re-bisected UNDER it.
+# rsilFF: cert arm = rsilF's clamp at the base gain (vs rcutF, anchor seeds).
+# silWg : cert arm = generic alias + window clamp on the CARRIER (loc 467),
+#         must reproduce the lineage's stored l150 silW bit-for-bit.
+for _a in ("rsilW", "rsilF", "rsilFF", "silWg"):
+    add_base_alias(_a)
+    assert WB[_a] is Wb_wA
+CLAMP["rsilW"] = torch.tensor([RELAY_LOC])
+CLAMP["rsilF"] = torch.tensor([RELAY_LOC])
+CLAMP["rsilFF"] = torch.tensor([RELAY_LOC])
+CLAMP["silWg"] = torch.tensor([int(loc_wA[GI_CARRIER])])
+assert torch.equal(CLAMP["silWg"], CLAMP["silW"])
+CLAMPF = {"rsilF": CLAMP["rsilF"], "rsilFF": CLAMP["rsilFF"]}  # full-run clamp
+assert all(a in CLAMP for a in CLAMPF)
+
+# ---------------- tracked cells ----------------
+CHAIN = [GI_RELAY, 74914, 71392, 74468, 64322, 74934, 71248, 73413, 65443,
+         66994, 69186, 69410, 72158]
+assert all(in_wA[g] for g in CHAIN) and len(set(CHAIN)) == len(CHAIN)
+TRACK = WIN_CELLS + [DM["dmA"], DM["dmC"]] + CHAIN
+N_TRACK_175 = 36                    # L175 xwin layout = the first 36 entries
+assert len(set(TRACK)) == len(TRACK)
+CTR_CELLS = [GI_CARRIER, GI_RELAY, GI_SC40]     # per-step single-cell traces
+CTR_LOC = {}
+for _a in ["cutwA"] + GEN_ARMS:
+    _l = LOC_OF(_a)
+    CTR_LOC[_a] = [(g, int(_l[g])) for g in CTR_CELLS if _l[g] >= 0]
+assert [g for g, _ in CTR_LOC["cutwA"]] == CTR_CELLS
+assert [g for g, _ in CTR_LOC["rcut"]] == [GI_CARRIER, GI_SC40]
+assert [g for g, _ in CTR_LOC["pp"]] == [GI_RELAY]
+ALL_ARMS = ["sc25", "sc25F", "sc40", "sc40F", "rcut", "rcutF", "rsilW", "rsilF",
+            "pp", "ppF", "occ", "occF"]
+assert all(a in GEN for a in ALL_ARMS)
+
+if MODE == "static":
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L187 static pins (zero rollouts): fresh-batch absence, relay "
+               "admissibility + anatomy pins, arm graphs, generic-plumbing "
+               "certs, stored gains re-derived from L175/L185 files.",
+        src="banc l175 scan_run.py transform (l187 build_relay.py)",
+        fresh_batch=[B41[0], B41[-1]], anchors_bit=ANCH_BIT, anchor_175=ANCH_175,
+        npz_scanned_for_seed_absence=N_NPZ_SCANNED, seed_absence="PASS",
+        cert_gen_static="PASS", cert_multi_static="PASS", cert_sub_static="PASS",
+        cert_sub=CERT_SUB, relay=RELAY_INFO,
+        carrier=cell_info(GI_CARRIER), sc40=cell_info(GI_SC40),
+        chain=[cell_info(g) for g in CHAIN], track=TRACK,
+        arm_n={a: N_OF[a] for a in ALL_ARMS},
+        arm_edges={a: GEN[a]["edges"] for a in ALL_ARMS},
+        arm_removed={a: [int(x) for x in np.setdiff1d(GEN[a]["drop"],
+                                                      cutk_drop["cutwA"])]
+                     for a in ALL_ARMS},
+        clamp_loc={a: int(CLAMP[a][0]) for a in ("rsilW", "rsilF", "rsilFF",
+                                                 "silWg")},
+        clamp_full=sorted(CLAMPF),
+        g_stored=dict(cutwA=G_CUTWA_STORED, sc25=G175["sc25"], sc40=G175["sc40"]),
+        l175_worker_of=W175, n_wA=n_cutk["cutwA"],
+        edges_wA=cutk_pins["cutwA"]["edges"], used_cells_n=len(USED)))
+    log(f"static.json written | fresh {B41[0]}..{B41[-1]} absent from "
+        f"{N_NPZ_SCANNED} npz | relay loc {RELAY_LOC} x {RELAY_INFO['census_x_mean_3seed']:.4f} "
+        f"in {RELAY_INFO['in_edges']} out {RELAY_INFO['out_edges']} | "
+        f"{time.time()-t0:.0f}s")
+    sys.exit(0)

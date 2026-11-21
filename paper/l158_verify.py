@@ -13,7 +13,32 @@ future abstract edits."""
 import json, re, pathlib, statistics
 
 P = pathlib.Path.home() / 'critters/peabrain-lab'
-draft = (P / 'paper/DRAFT.md').read_text()
+# L183 PIN UPDATE (2026-11-21, master fold; receipt in LANE-LOG and
+# banc/l183_worklog.md).
+# OLD: sections (1)-(10) pin the v3.22 abstract: its result markers
+#   ('all-or-none', 'mass-twin', the 9.72x mass-only-band phrase, the
+#   scramble cell 39 of 48), a numeric vocabulary, 19 claim->key traces and a
+#   byte pin stored in banc/l174b2/abstract_pin_b2.txt.
+# WHY IT MOVES: three referee rounds required exactly those markers to go.
+#   The mass twin is silent on its base; "all-or-none" is not shown by a
+#   band crossing; the 9.72x ratio had no mass-only band to refer to; 39/48
+#   is a per-batch pool where the canonical count is 41/50; the pooled
+#   p = .008 borrows unpaired seeds.  The owner-directed fold replaces the
+#   abstract with one built on the single-cell scan and its control ladder.
+# NEW (re-point at stored artifacts, never loosen):
+#   (a) sections (1)-(10) run UNCHANGED against the abstract they certified,
+#       in the stored pre-image banc/l174b4iiic/draft_post_preview.md, whose
+#       abstract still hashes to the stored stage-(b2) pin;
+#   (b) sections (11)-(16) are the same contract re-cut for the LIVE
+#       abstract: length, no keys, no caps, no codes, every numeric token
+#       traced BY VALUE to numbers.json or declared, the sufficiency-not-
+#       uniqueness language, relocation of every dropped token, the retired
+#       markers asserted GONE, and a new byte pin.
+import sys as _sys183
+_sys183.path.insert(0, str(P / 'paper'))
+import l183_fold as _F183          # stdlib only; never writes a file
+_live183 = (P / 'paper/DRAFT.md').read_text()
+draft = _F183.pre_composite(_live183)
 nums = json.loads((P / 'paper/numbers.json').read_text())
 abstract = draft[draft.index('## Abstract'):draft.index('## 1. Introduction')]
 intro = draft[draft.index('## 1. Introduction'):draft.index('## 2. Results')]
@@ -376,5 +401,155 @@ if not _pin_f.exists():
 assert _pin_f.read_text().strip() == _sha, \
     f'(10) abstract moved since the stage-(b2) pin ({_sha[:12]})'
 print(f'(10) abstract pinned at {_sha[:16]}')
+
+
+# ============  L183 master fold: the abstract contract on the LIVE draft  ===
+_st183 = _F183.assert_bound(_live183, nums)
+L_title = _live183[_live183.index('## Title'):_live183.index('## Abstract')]
+L_abs = _live183[_live183.index('## Abstract'):_live183.index('## 1. Introduction')]
+L_intro = _live183[_live183.index('## 1. Introduction'):_live183.index('## 2. Results')]
+L_body = _live183[_live183.index('## 1. Introduction'):]
+L_flat = re.sub(r'\s+', ' ', L_abs)
+L_bflat = re.sub(r'\s+', ' ', L_body)
+L_abody = re.sub(r'\s+', ' ', L_abs.split('\n', 2)[2]).strip()
+L_toks = set(re.findall(r'\d+\.\d+|\d+/\d+|\d+', L_abs))
+print(f'(11) live body == declared_edits(stored pre-image) byte for byte '
+      f'(fold stage {_st183}); sections (1)-(10) above certify the stored '
+      f'pre-image abstract')
+
+if _st183 >= 1:
+    # (12) successors of (5), (6a), (7), (8): the shape contract, unchanged
+    assert len(L_abody) <= 1920, f'(12) abstract is {len(L_abody)} chars'
+    assert not re.findall(r'\[[a-z0-9_.]+\]', L_abs), '(12) inline keys'
+    _c = set(re.findall(r'\b[A-Z]{3,}(?:-[A-Z]+)*\b', L_abs))
+    assert _c <= {'BANC'}, f'(12) all-caps emphasis: {sorted(_c)}'
+    _codes = re.findall(r'\bcut[a-zA-Z]|\bsil[A-Z0-9]|\bscr\d|\bb65\b|\bB\d{2}\b'
+                        r'|\bL\d{2,3}\b|\bl1\d\d\b|\beMot|\beOut|\bsc\d\d\b'
+                        r'|\bdm[AC]\b|\brcut|\bocc\b', L_abs)
+    assert not _codes, f'(12) arm/lane/batch codes: {_codes}'
+    print(f'(12) shape: {len(L_abody)} <= 1,920 chars, zero inline keys, '
+          f'caps {sorted(_c)} only, zero arm / lane / batch codes (the code '
+          f'pattern is extended to the scan and relay arm names)')
+
+    # (13) successor of (6): claim -> numbers.json BY VALUE
+    TRACE183 = [
+        ('next 34 one at a time', 'l175.null.n_window', 34),
+        ('(16 of 16 seeds; base 5 of 16)', 'l175.scan.sc25.kR', 16),
+        ('(16 of 16 seeds; base 5 of 16)', 'l175.scan.sc25.n', 16),
+        ('(16 of 16 seeds; base 5 of 16)', 'l175.scan.cutwA.kR', 5),
+        ('silent on this base (2 of 16)', 'l175.scan.sc26.kR', 2),
+        ('class and sign (5 and 2 of 16)', 'l175.scan.dmA.kR', 5),
+        ('class and sign (5 and 2 of 16)', 'l175.scan.dmC.kR', 2),
+        ('a signed-current twin (2 of 16)', 'l185.r3.kR', 2),
+        ('a signed-current twin (2 of 16)', 'l185.r3.n', 16),
+        ('(31 of 32 pooled)', 'l185.r1.sc25.pooled_b39_b40_rematched.kR', 31),
+        ('(31 of 32 pooled)', 'l185.r1.sc25.pooled_b39_b40_rematched.n', 32),
+        ("holds at the base's own gain (15 of 16)", 'l185.r1.sc25.fixed.kR', 15),
+        ('between 8 and 2 of 16 with no cell removed', 'l185.r2.kR_max', 8),
+        ('between 8 and 2 of 16 with no cell removed', 'l185.r2.kR_min', 2),
+        ('(193 of 240 pairs)', 'l184.threepanel.sc25.cross_k', 193),
+        ('(193 of 240 pairs)', 'l184.design.n_cross_pairs', 240),
+        ('keeps it (8 of 16)', 'l184.threepanel.sc25.fast_k', 8),
+        ('all three scan twins score 0', 'l184.threepanel.cutwA.fast_k', 0),
+        ('all three scan twins score 0', 'l184.threepanel.sc26.fast_k', 0),
+        ('all three scan twins score 0', 'l184.threepanel.dmA.fast_k', 0),
+        ('all three scan twins score 0', 'l184.threepanel.dmC.fast_k', 0),
+        ('exactly one reaches the class (41 of 50)', 'l172.pooled.cutscr0.kR', 41),
+        ('exactly one reaches the class (41 of 50)', 'l172.pooled.cutscr0.n', 50),
+        ('alone on the chopped readout (13 of 16)', 'l187.arms.rcut.kR', 13),
+        ('alone on the chopped readout (13 of 16)', 'l187.arms.rcut.n', 16),
+    ]
+    for _claim, _key, _exp in TRACE183:
+        assert _claim in L_flat, f'(13) traced claim missing: {_claim!r}'
+        _got = _resolve(_key)
+        assert abs(_got - _exp) < 1e-9, f'(13) {_key} = {_got}, abstract says {_exp}'
+    # the gain-null extremes are read off the stored sweep, not asserted
+    _r2 = _resolve('l185.r2.kR')
+    assert (max(_r2), min(_r2)) == (8, 2) and len(_r2) == 5
+    # "seven carrier-free cohorts ... exactly one": recount from the stored
+    # scramble family (the pre-existing l168.scr key the old trace used)
+    _scr = _resolve('l168.scr')
+    _sup = [k for k, v in _scr.items() if isinstance(v, dict)
+            and v.get('n') and v['kR'] / v['n'] >= .75 and k != 'base']
+    assert len([k for k, v in _scr.items() if isinstance(v, dict)
+                and 'kR' in v and k != 'base']) == 7 and _sup == ['cutscr0'], \
+        ('(13) seven cohorts / exactly one', _sup)
+    EXEMPT183 = {'626': 'BANC release version', '33': 'cell name DNp33',
+                 '24': 'size of the base cut (arm definition, section 3.5)',
+                 '1.4': 'drive-segment frequency in Hz (protocol)'}
+    _cov = set(re.findall(r'\d+\.\d+|\d+/\d+|\d+',
+                          ' '.join(c for c, _, _ in TRACE183))) | set(EXEMPT183)
+    _untr = sorted(t for t in L_toks if t not in _cov)
+    assert not _untr, f'(13) abstract numbers with no trace or exemption: {_untr}'
+    print(f'(13) {len(TRACE183)} claim->numbers.json traces asserted by VALUE '
+          f'+ {len(EXEMPT183)} declared non-measurement tokens cover all '
+          f'{len(L_toks)} numeric tokens; "seven cohorts, exactly one" and the '
+          f'gain-null extremes recounted from the stored arrays')
+
+    # (14) the claim-set contract.  Required: what the fold must say.  GONE:
+    # what three referee rounds retired -- neither spelling may come back.
+    for p in ('matched operating point', 'lost their brain input',
+              'silent on this base', 'delivered-drive twins',
+              'class and sign', 'signed-current twin', 'second batch',
+              "base's own gain", 'gain-only null', 'shared timing, not rate',
+              '1.4-Hz', 'sufficient, not unique', 'set-dependent',
+              'carrier-free', 'mass-matched', 'downstream interneuron',
+              'stricter synapse floor', 'unresolved',
+              'one perturbed model graph, not the fly'):
+        assert p in L_flat, f'(14) abstract missing required statement: {p}'
+    for bad in ('all-or-none', 'kill', 'supers', 'mass-only band', '9.72',
+                'identity carries it', 'identity, not mass', ' male',
+                '.008', '39 of 48', '39/48', 'regime transition',
+                'a real slow oscillation', 'antagonist clock, not'):
+        assert bad not in L_flat, f'(14) retired abstract claim returned: {bad}'
+    assert 'selectively' in L_title and 'perturbed' in L_title \
+        and 'model' in L_title, '(14) the adopted title lost its scope words'
+    for bad in ('Identity, not mass', 'all-or-none transition in',
+                'Sufficient, not unique'):
+        assert bad not in L_title.split('Rationale:')[0], \
+            f'(14) a retired title returned: {bad}'
+    for scope in (L_title, L_abs, L_intro):
+        low = scope.lower()
+        for bad in ('the only cell', 'uniquely', 'unique carrier',
+                    'the unique cell'):
+            assert bad not in low, f'(14) affirmative uniqueness claim: {bad}'
+    assert not (FORBIDDEN_L172 & L_toks), '(14) superseded per-batch counts'
+    assert '12\u00d7 below' not in _live183[_live183.index('## Title'):], \
+        '(14) the retired 12x mass ratio returned'
+    print('(14) claim-set contract: 19 required statements present, 14 '
+          'retired claims gone, the adopted title keeps its three scope '
+          'words, no affirmative uniqueness claim in title / abstract / '
+          'section 1, no superseded per-batch count')
+
+    # (15) relocation: a re-cut may not become a deletion.  Every numeric
+    # token the previous abstract carried and this one drops has a body
+    # home, and every claim the old TRACE certified is located in the live
+    # body in a stated form (or is declared RETIRED with its reason).
+    _dropped = sorted(toks - L_toks)
+    _orph = [t for t in _dropped if t not in L_bflat]
+    assert not _orph, f'(15) dropped tokens with no body home: {_orph}'
+    BODY_HOME = {'5 of 178': 'l172.pooled.cutng19', '188 of 194':
+                 'l172.pooled.cutng29', '30 of 66': 'l172.pooled.cutng25p',
+                 '78 of 98': 'l172.pooled.silW', '39/48': 'l168.scr.cutscr0',
+                 '+.175': 'l172.diffs.twin_vs_base', '.100 Hz':
+                 'l171.envelope', '12/16': 'l171.panel', '15/16': 'l171.panel',
+                 '5/178': 'l172.pooled.cutng19', '188/194':
+                 'l172.pooled.cutng29', '72/258': 'l172.pooled.cutwA',
+                 '203/210': 'l172.pooled.cutng25', '1/258':
+                 'l172.pooled.cut58', '0/226': 'l172.pooled.cutk5',
+                 '30/66': 'l172.pooled.cutng25p'}
+    for _lit in BODY_HOME:
+        assert _lit in L_bflat, f'(15) relocated claim has no body home: {_lit}'
+    print(f'(15) relocation: {len(_dropped)} numeric tokens dropped from the '
+          f'abstract, all present in the live body; {len(BODY_HOME)} '
+          f'previously traced cells located there in stated form')
+
+    # (16) the new byte pin (successor of (10); the stored (b2) pin keeps
+    # certifying the pre-image above)
+    ABSTRACT_PIN_L183 = 'b278e1421a77adf28d42547ca44a217c896c17df4b5b03fb595ffde94dafafb3'
+    _sha183 = hashlib.sha256(L_abs.encode()).hexdigest()
+    assert ABSTRACT_PIN_L183 is None or _sha183 == ABSTRACT_PIN_L183, \
+        f'(16) the live abstract moved since the L183 pin ({_sha183[:12]})'
+    print(f'(16) live abstract pinned at {_sha183[:16]}')
 
 print('L158 verify: ALL GREEN')

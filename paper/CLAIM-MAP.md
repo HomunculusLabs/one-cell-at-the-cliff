@@ -10,11 +10,18 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 - peabrain-figs/... paths resolve under
   `~/.hermes/profiles/maple/playground/website/publish/`
   (the private miso/workshop repo's served tree — same place the digest lives)
+| Title + abstract (v3.32, master fold) | the measured contrast and its control ladder: one of 34 single-cell deletions lifts the readout; mass, delivered-drive, class-and-sign and signed-current comparators stay low; two batches; fixed gain; gain-only null; cross-seed and 1.4-Hz panels; sufficiency, not uniqueness | l175.scan l175.null l185.r1 l185.r2 l185.r3 l184.threepanel l184.design l172.pooled l187.arms | B43, B44, B45, B47 |
+| §2.1 the single-cell scan (Table 1) | 34 window cells + 2 drive twins, three readouts per arm; only the carrier reaches the super class; the mass twin is silent; the null is wide and covaries with gain | l175.scan l175.null l175.branch l175.census l175.meta l175.certs l175.bands l175.verdict l184.threepanel | B43, B44 |
+| §2.2 replication, gain-only null, signed-current twin (Table 2) | the contrast replicates at fixed and re-matched gain; neither edge-of-band cell promotes; the base moves between 8 and 2 of 16 on gain alone; the signed-current twin does not flip | l185.base l185.r1 l185.r2 l185.r3 l185.meta l185.certs l185.branches l187.sc40_pooled | B45 |
+| §2.3 shared timing, not rate | cross-seed pairing, pool rates, harmonic amplitudes, template subtraction, anatomy of the carrier's outputs | l184.threepanel l184.q1 l184.q1_twins l184.q3 l184.q3_ratios l184.sens l184.anatomy l184.design | B44 |
+| §2.4 the downstream interneuron (Table 3) | relay cut / clamp, push-pull, occlusion: neither registered pole; the 1.4-Hz panel separates carrier-absent from carrier-present arms | l187.base l187.arms l187.contrasts l187.fast l187.relay l187.relay_rate l187.g74914_rate l187.gain_slopes l187.meta l187.certs l187.branches l187.sc25_pooled | B47 |
+| §2.5 which clock (gate-jitter) | UNRESOLVED and underpowered by construction (window overlap) | l186.means l186.contrasts l186.branch l186.power l186.phase | B46 |
+| §2.6 Table 4 + §2.7 paired twin + §3.1 substrate and weights | the ladder in the continuous segment; paired McNemar on the twin's own seeds; the deafferented closure; signed log1p weights with the glutamate override | l183.ladder_fast l183.ladder_fast_meta l172.paired_twin l92.substrate l135.weights | B48 |
 
 ## Conventions
 
 - DRAFT quotes `value [key]`. `key` is either a top-level key of
-  `paper/numbers.json` (61 keys) or a dotted subkey walk into one
+  `paper/numbers.json` (145 keys) or a dotted subkey walk into one
   (resolver = paper/l149_verify.py §1). Multi-key brackets
   `[a, b]` split on commas.
 - `paper/numbers.json` is regenerated ONLY by `paper/extract_numbers.py`
@@ -61,6 +68,7 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 | §2.5/§2.6/§2.8 prose (v3.25) | 11 more bullet lines converted to prose under the same FORMAT-ONLY contract: both token multisets identical (411 numeric, 37 keys), 229/232 verifier literals verbatim with three declared wrap-fragile ones normalized, §2.7 proven BYTE-IDENTICAL inside the same edit span, the robustness-panel table still a table | — (sources: `banc/l174b3bii/span_pre.txt`, `banc/l174b3bii/sev_pre.txt`, `banc/l174b3bii/literals.json`) | B36 |
 | §2.7 prose (v3.26) | the last 16 bullet lines in §1-§2 converted to prose under the same FORMAT-ONLY contract: both token multisets identical (248 numeric, 22 keys), 159/166 verifier literals verbatim with seven declared wrap-fragile ones normalized, the two non-bullet "Design pins" literals still BYTE-exact (the raw-passthrough proof), the longest sentence cut 67 -> 52 words under a new §2.7-scoped 60-word gate | — (sources: `banc/l174b3biii/span_pre.txt`, `banc/l174b3biii/literals.json`) | B37 |
 | §4 prose (v3.27) | §4's 10 bullet lines converted to prose and its seven >60-word sentences split at their own clause boundaries, so §1-§4 carries no list item: both token multisets identical (166 numeric, 18 keys), the section's CONTENT-WORD SEQUENCE identical under all thirteen declared edits, 135/140 verifier literals verbatim (three wrap-fragile, two bullet-MARKER slice locators re-pointed at the line-start prose form), longest sentence 107 -> 53 words under a new §4-scoped gate, §2.8's 70-word sentence disclosed and deferred | — (sources: `banc/l174b4i/span_pre.txt`, `banc/l174b4i/literals.json`, `banc/l174b4i/emit_report.json`) | B38 |
+| all-caps de-emphasis of §1 + §4 (v3.31) | the two pure-prose sections carry no all-caps emphasis: 64 declared occurrences (26 in §1, 38 in §4) lowered to the house form §5 already uses, with the outcome-class labels becoming lowercase defined terms; PROVED CASE-ONLY over the whole draft (title-onward length identical, exactly 412 differing bytes, every one an uppercase letter replaced by its lowercase self), so the visible-character and byte deltas are exactly zero and both multisets are identical with no named removal and no named addition; §2 Results and everything from §5 onward byte-IDENTICAL; premise finding — §5 carries zero caps tokens and is the style reference, §3 Methods hosts MODEL SYMBOLS plus one position-split token so its slice is deferred | — (sources: `banc/l174b4iiic/draft_pre.md`, `banc/l174b4iiic/census.json`, `banc/l174b4iiic/scope.json`, `banc/l174b4iiic/plan_i.json`, `banc/l174b4iiic/emit_report.json`) | B42 |
 | batch-code relabel + the §3.7 mapping (v3.30) | the `B<n>` shape splits into three classes the frozen partition had conflated: 19 prose batch codes (11 distinct) now carry the reader-facing labels A-L assigned in RUN ORDER with I and O skipped, 6 occurrences inside stored artefact keys stay byte-exact because they are filenames, and 4 preregistered BRANCH labels are declared out of scope; §3.7 Methods gains the bijective mapping as the one declared home of the internal codes; a letter scheme adds no digit run, so the measurement multiset is identical with no removed-run disclosure needed and every removed identifier run is a declared relabel; pre-image + the declared edits == the live draft byte for byte from the title onward | — (sources: `banc/l174b4iiib/draft_pre.md`, `banc/l174b4iiib/classify.json`, `banc/l174b4iiib/emit_report.json`, `banc/l174b4iiib/caps_partition_amend.json`) | B41 |
 | lane-ID strip + the §6/§7 premise finding (v3.29) | §1-§6 and the References preamble carry no lane identifier and no internal-artefact reference: 13 declared edits (five subsection-heading parentheticals, §2.2's bold lead, one deleted stage pointer, one re-pointed §2.9 cross-reference, the log/script-tree renames, the sweep date's file citation) with pre-image + the 13 edits reproducing the live draft byte for byte, the measurement multiset and citation keys identical, and the 15 removed identifier digit runs asserted by name; §6 stays a data-availability list and §7 stays out of manuscript scope by registered premise; the all-caps judgement is frozen as a partition of 179 distinct tokens (18 keep / 23 defer / 138 strip) with zero applied | — (sources: `banc/l174b4iii/draft_pre.md`, `banc/l174b4iii/caps_partition.json`, `banc/l174b4iii/census.json`, `banc/l174b4iii/emit_report.json`) | B40 |
 | §5 Discussion (v3.28) | the manuscript's Discussion, authored as §5 between §4 and the renumbered data note (§6) / author notes (§7): 825 words over 7 paragraphs, born clean (no list item, lane ID, batch code, all-caps token, provenance key or NEW numeric value — every number it quotes appears verbatim elsewhere in the draft), both §1 novelty narrowings restated, carrier stated as sufficient-not-only, robustness reported as the endpoints/interior split, under its own 60-word rule at 52; and §2.8's inherited 70-word sentence CLOSED by one declared content-preserving split that is byte- and visible-neutral (70 -> 56 words, all 69 literals verbatim, zero exceptions) | — (sources: `banc/l174b4ii/s28_pre.txt`, `banc/l174b4ii/s28_post.txt`, `banc/l174b4ii/disc.txt`, `banc/l174b4ii/literals.json`, `banc/l174b4ii/emit_report.json`) | B39 |
@@ -1167,6 +1175,49 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 - zero rollouts, zero RNG, no measured value changed, numbers.json
   byte-identical
 
+### B42 — L174 stage (b4-iii-c-i): the all-caps de-emphasis of §1 and §4
+
+- claim: §1 Introduction and §4 Limitations read as journal prose rather than
+  as a lab log — no all-caps emphasis survives in either — and the edit is
+  proved to have changed nothing but letter case anywhere in the manuscript
+- prereg: `banc/l174b4iiic/PREREG.md` (T1'' de-emphasis-only with both
+  multisets identical, T15 CASE-ONLY as the stage's strongest gate, T10
+  zero-residue scoped to the two sections, T11' partition; branches
+  C3_literal_lost > C2_meaning_moved > C1_deemphasis_only)
+- premise finding (registered, read not assumed): a fresh live census after
+  the (b4-iii-b) relabel shows §5 Discussion carries ZERO all-caps tokens of
+  any class (stage (b4-ii) wrote it in the house form), so §5 is the style
+  reference rather than workload; §3 Methods is a different KIND of job
+  because four tokens there are MODEL SYMBOLS inside the state equation and
+  the parameter table and one token splits by POSITION inside §3 alone (a
+  licence name versus an emphasis phrase); and §2 Results is the bulk — so
+  the stage was sliced by kind, not by size
+- measured: 64 declared occurrences lowered (26 in §1, 38 in §4); title-onward
+  length identical with exactly 412 differing bytes, every one an uppercase
+  letter replaced by its lowercase self; visible-character and byte deltas
+  EXACTLY ZERO; measurement and citation-key multisets identical with no named
+  removal and no named addition (tick 213 needed 15 named removals, tick 214
+  needed 11 named mapping rows); §2 Results and everything from §5 onward
+  byte-IDENTICAL; KEEP survivors pinned (§1: CPG, CPG-, IN12B003, S07, XOR;
+  §4: BANC, BANC', EMG, XOR)
+- method contributions: a LITERAL HARVEST CANNOT SEE a gate whose pattern is
+  built by regex or taken from a token list — two such gates broke after the
+  harvest reported clean, and a second-order scan (`harvest2.py`) was needed
+  for the escape-sequence and section-SCOPED classes the first harvest missed
+  (the changelog banner quotes the edited prose, so a whole-draft presence
+  test passes while a §4-scoped gate fails); LINE-START IS NOT SENTENCE-START
+  in a hard-wrapped draft (the first rule capitalised seven mid-sentence wrap
+  openers, caught by reading the previous line); a global file-level string
+  replace cannot tell a literal quoting the LIVE draft from one quoting a
+  STORED PRE-IMAGE (one pre-image side was lowered and restored); and nested
+  literals must be re-pointed LONGEST FIRST or the short form rewrites the
+  long one's interior
+- gate: permanent as `l149_verify` section (30), with §(23)/§(26)/§(29)
+  re-pointed through this stage (case-insensitive literal images plus the
+  retired all-caps form asserted ABSENT — strictly stronger than either check
+  alone, and bounded by (30)'s whole-draft case-only proof)
+- scripts: `banc/l174b4iiic/{census.py,scope.py,plan_i.py,harvest.py,harvest2.py,emit.py,sec30.py}`
+
 ### B41 — L174 stage (b4-iii-b): the batch-code relabel and the §3.7 mapping
 
 - claim: the manuscript body no longer quotes internal batch codes, yet the
@@ -1216,6 +1267,91 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 - zero rollouts, zero RNG, no measured value changed, numbers.json
   byte-identical
 
+### B43 — L175: the single-cell scan on the k=24 base and the drive-matched twins (batch B39, n=16 per arm)
+
+- claim: of the 34 single-cell removals from ladder ranks 25-58 on the k=24
+  base, only the carrier (rank 25, DNp33-L) meets the registered super
+  criterion; neither delivered-drive twin does, and no other active window
+  cell does, including the seven that deliver more than the carrier
+- disclosed with it: the mass twin is silent on the cut base, the silent-cell
+  null is wide, and the null covaries with the re-bisected gain
+- keys: l175.scan l175.null l175.branch l175.verdict l175.bands l175.certs l175.census l175.meta
+- prereg: `banc/l175/PREREG.md` (branch order E0 > D1 > D2 > D3; branch
+  D2_identity_carried fired)
+- artifacts: `banc/l175/results_l175.json`, `banc/l175/L175-FINDINGS.md`,
+  `banc/l175/selection.json`, `banc/l175/static.json`
+- gate: `paper/l183_verify.py` re-derives every scan-table cell from the
+  stored json and replays the fold
+
+### B44 — L184: shared timing, not rhythmic gain (zero rollouts, stored scan batch)
+
+- claim: the carrier-removed arm keeps most of its chopped-window duty when
+  flexor and extensor traces are paired across DIFFERENT runs, and it is the
+  one scan arm with a substantial continuous 1.4-Hz duty; mean pool rates and
+  a uniform change in drive transmission do not account for the flip
+- keys: l184.threepanel l184.design l184.q3 l184.q3_ratios l184.q1 l184.q1_twins l184.sens l184.anatomy
+- prereg: `banc/l184/PREREG-analysis.md`
+- artifacts: `banc/l184/threepanel.csv`, `banc/l184/q3.csv`, `banc/l184/q1.csv`,
+  `banc/l184/q1-contrasts.csv`, `banc/l184/sensitivity.csv`,
+  `banc/l184/edges.csv`, `banc/l184/overlap.csv`, `banc/l184/L184-FINDINGS.md`
+
+### B45 — L185: fresh-batch replication, gain-only null, signed-current twin (batch B40)
+
+- claim: the carrier flip replicates on a fresh batch at the re-matched gain
+  AND at the base's own gain; every twin and the base stay below the super
+  band in both gain forms; a gain-only sweep of the base moves its duty with
+  no cell removed; a signed-current-matched twin does not flip
+- keys: l185.base l185.r1 l185.r2 l185.r3 l185.branches l185.certs l185.meta
+- prereg: `banc/l185/PREREG.md` (+ `banc/l185/PREREG.sha256`)
+- artifacts: `banc/l185/results_l185.json`, `banc/l185/L185-FINDINGS.md`,
+  `banc/l185/selection_s2.json`
+
+### B46 — L186: the gate-jitter discriminator (16 paired jitter schedules) — UNRESOLVED
+
+- claim: the deletion contrast survives re-alignment to the jittered gate, but
+  neither clock (gate-aligned vs elapsed time) wins by the registered margin;
+  the registered jitter is smaller than the readout window, so the run is
+  underpowered for the discrimination and the status is stated as unresolved
+- keys: l186.means l186.contrasts l186.phase l186.branch l186.power
+- prereg: `banc/l186/PREREG.md`
+- artifacts: `banc/l186/results_l186.json`, `banc/l186/L186-FINDINGS.md`,
+  `banc/l186/t216_power.json`, `banc/l186/t216_verify.json`
+
+### B47 — L187: relay silencing and cut, push-pull, occlusion (batch B41)
+
+- claim: neither registered pole — removing the downstream interneuron on the
+  carrier's route raises the chopped duty by itself but without the carrier's
+  1.4-Hz signature, the carrier's effect survives the relay's removal, the
+  opposite-sign input does not cancel it, and a relay clamped from t = 0 is the
+  relay-cut graph by construction
+- keys: l187.base l187.arms l187.contrasts l187.relay l187.branches l187.sc40_pooled l187.sc25_pooled l187.certs l187.fast l187.gain_slopes l187.relay_rate l187.g74914_rate l187.meta
+- prereg: `banc/l187/PREREG.md` (+ `banc/l187/PREREG.sha256`)
+- artifacts: `banc/l187/results_l187.json`, `banc/l187/addendum.json`,
+  `banc/l187/L187-FINDINGS.md`
+
+### B48 — L183 master fold: paired twin inference, substrate census, parsed weight rule
+
+- claim: on the 66 seeds the mass twin ran on, the twin-vs-base contrast is
+  not resolved by the paired exact test (the pooled-margin p = .008 is kept as
+  a pooled statement only); the simulated network is the deafferented closure
+  defined by the census; edge weights are signed log1p synapse counts with
+  the glutamate override and the inhibitory scale, as parsed from source
+- claim (Table 4): the cohort ladder re-scored in the continuously driven
+  1.4-Hz segment on its canonical pools is no longer a window — the closure,
+  the base and the cuts below it show no structured seed, carrier removal
+  keeps 132 of 210, the k = 58 cut is the strongest cut arm and the heaviest
+  carrier-free cohort drops out of the class; the chopped column of the same
+  stored rows reproduces l172.pooled exactly for all eleven arms
+- keys: l172.paired_twin l92.substrate l135.weights l183.ladder_fast l183.ladder_fast_meta
+- artifacts: `banc/l172/stats.json`, `banc/l92/static.json`,
+  `banc/l135_run.py`, `banc/build_graph_banc.py`,
+  `paper/review_fable_evidence_r2/out_duty_rows.json` (+ its script
+  `paper/review_fable_evidence_r2/p1_duty_from_raw.py`)
+- referee inputs: `paper/review_fable_r2.md`, `paper/review_astra_r3.md`,
+  `paper/review_claudeai_fable_20261121.md`, `paper/priorart_terra_20261121.md`
+- gate: `paper/l183_verify.py` (fold replay from the stored pre-image
+  `banc/l174b4iiic/draft_post_preview.md`) and `paper/l174_verify.py` (7)
+
 ## How to re-verify the whole package
 
 ```
@@ -1226,4 +1362,15 @@ python3 paper/l143_verify.py   # mechanism table + numbers.json == sources
 python3 paper/l158_verify.py   # abstract numeric vocabulary freeze
 python3 paper/l159_verify.py   # sentence-length gate
 python3 paper/l174_verify.py   # references + bidirectional citation gate
+python3 paper/l183_verify.py   # master fold: byte replay of the declared edit
+                               # ledger from the stored pre-image, no
+                               # hand-typed number, added keys re-derived
 ```
+
+Since the master fold (v3.32) the draft body is built, not typed:
+`python3 paper/l183_emit.py` writes `DRAFT.md` as the pinned changelog banner
+plus `l183_fold.build_body(numbers.json)`, i.e. the stored pre-image
+`banc/l174b4iiic/draft_post_preview.md` under the declared renumber and the
+declared edit ledger `paper/l183_text.py`. To change the manuscript, change
+the ledger (or `extract_numbers.py`) and re-emit; a hand edit of `DRAFT.md`
+fails the replay in l183, l149 (31), l158 (11) and l174 (8d).

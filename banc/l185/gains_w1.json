@@ -1,0 +1,30 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "sc26": 0.1435265743732452,
+  "sc26F": 0.14365819573402408,
+  "gM25": 0.14329905024468903
+ },
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "sc26": "bisect (this process) == stored EXACT",
+  "sc26F": "fixed base gain g_cutwA (stored float)",
+  "gM25": "g_cutwA * (1 + -0.0025)"
+ },
+ "bisected": [
+  "cutwA",
+  "sc26"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "sc26": 5.364418029785156e-07
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "sc26": 0.10905557374159495
+ },
+ "stored_exact": {
+  "cutwA": true,
+  "sc26": true
+ }
+}

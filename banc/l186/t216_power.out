@@ -1,0 +1,22 @@
+{
+ "frac_pairs_disjoint": 0.020833333333333332,
+ "frac_pairs_overlap_ge_half": 0.7041666666666667,
+ "jitter_band_steps": 600,
+ "max_abs_lag_steps": 520.0,
+ "mean_abs_lag_in_tone_periods": 1.3279875,
+ "mean_abs_lag_steps": 189.7125,
+ "mean_window_overlap": 0.6209083333333333,
+ "median_abs_lag_steps": 177.0,
+ "median_window_overlap": 0.646,
+ "n_pair_segments": 480,
+ "needed_jitter_for_disjoint_windows": 1000,
+ "tone_period_steps": 142.85714285714286,
+ "window_steps": 500
+}
+
+mean |lag| 190 steps = 1.33 tone periods, but only 0.38 of one correlation window
+=> aligned and elapsed windows share 62% of their samples on average; 70% of pair-segments share half or more, 2% are disjoint
+=> the alignment contrast D is attenuated by construction: the registered
+   +-300-step jitter is SMALLER than the 500-step readout window, so the two
+   clocks are not independent views.  A decisive rerun needs either
+   jitter >= 1000 steps (disjoint windows) or a window shorter than the jitter.

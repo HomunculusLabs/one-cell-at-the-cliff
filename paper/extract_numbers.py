@@ -701,6 +701,502 @@ put('l173b.gains', dict(
     'mass ratio .0544/.005599 recomputed, retiring the printed 12x)')
 
 
+# ---- L183 master fold (additive block; every pre-existing key above is ----
+# ---- byte-identical): the single-cell scan (l175), the timing analysis ----
+# ---- (l184), the replication / gain null / signed-current twin (l185), ----
+# ---- the gate-jitter discriminator (l186), the relay / push-pull arms  ----
+# ---- (l187), the paired twin inference (l172 per-seed), the substrate  ----
+# ---- census (l92) and the weight rule PARSED from the run source.      ----
+import csv as _csv183, re as _re183, math as _m183
+
+def _rank183(xs):
+    order = sorted(range(len(xs)), key=lambda i: xs[i])
+    r = [0.0] * len(xs); i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and xs[order[j + 1]] == xs[order[i]]:
+            j += 1
+        for k in range(i, j + 1):
+            r[order[k]] = (i + j) / 2 + 1
+        i = j + 1
+    return r
+
+def _spear183(a, b):
+    ra, rb = _rank183(a), _rank183(b)
+    ma, mb = sum(ra) / len(ra), sum(rb) / len(rb)
+    num = sum((x - ma) * (y - mb) for x, y in zip(ra, rb))
+    den = (sum((x - ma) ** 2 for x in ra) * sum((y - mb) ** 2 for y in rb)) ** .5
+    return num / den
+
+_r175 = json.load(open(f'{B}/l175/results_l175.json'))
+assert _r175['status'] == 'FINAL'
+_gb175 = _r175['base']['gain']
+def _arm175(a):
+    d = dict(kR=a['kR'], kL=a['kL'], n=a['n'], meanR=a['meanR'],
+             meanL=a['meanL'], lbR=a['lbR'], ubR=a['ubR'], cls=a['cls'],
+             gain_pct=round(100 * a['gain_delta_vs_wA'] / _gb175, 2))
+    if a.get('gi') is not None:
+        d.update(rank=a['rank'], gi=a['gi'], cell_type=a['cell_type'],
+                 side=a['side'], sign=a['eff_sign'],
+                 x_mean=round(a['x_mean'], 4), out_mass=round(a['out_mass'], 5),
+                 drive_ratio=round(a['drive_ratio_to_carrier'], 3),
+                 active=a['active'])
+    return d
+_scan175 = {'cutwA': _arm175(_r175['base'])}
+for _a in _r175['window']:
+    _scan175[_a['arm']] = _arm175(_a)
+for _k in ('dmA', 'dmC'):
+    _scan175[_k] = _arm175(_r175['twins'][_k])
+put('l175.scan', _scan175,
+    'banc/l175/results_l175.json:base + window[34] + twins (re-keyed by arm '
+    'name; gain_pct = 100 x gain_delta_vs_wA / base gain; x_mean, out_mass '
+    'and drive_ratio rounded for display, counts and duties as stored)')
+_win175 = [a for a in _r175['window']]
+_nc175 = [a for a in _win175 if a['arm'] != 'sc25']
+_sil175 = [a for a in _nc175 if not a['active']]
+_act175 = [a for a in _nc175 if a['active']]
+_over175 = [a for a in _act175 if a['drive_ratio_to_carrier'] > 1.0]
+_gp175 = lambda a: 100 * a['gain_delta_vs_wA'] / _gb175
+put('l175.null', dict(
+    n_window=len(_win175), n_noncarrier=len(_nc175),
+    n_silent=len(_sil175), n_active_other=len(_act175),
+    silent_kR_min=min(a['kR'] for a in _sil175),
+    silent_kR_max=max(a['kR'] for a in _sil175),
+    silent_meanR_min=min(a['meanR'] for a in _sil175),
+    silent_meanR_max=max(a['meanR'] for a in _sil175),
+    n_super=sum(a['cls'] == 'SUPER' for a in _win175),
+    n_intermediate=sum(a['cls'] == 'INTERMEDIATE' for a in _win175),
+    n_not=sum(a['cls'].startswith('NOT-SUPER') for a in _win175),
+    active_other_super=sum(a['cls'] == 'SUPER' for a in _act175),
+    n_overdrive=len(_over175),
+    overdrive_min=round(min(a['drive_ratio_to_carrier'] for a in _over175), 2),
+    overdrive_max=round(max(a['drive_ratio_to_carrier'] for a in _over175), 2),
+    overdrive_super=sum(a['cls'] == 'SUPER' for a in _over175),
+    rho_gain_meanR_noncarrier=round(_spear183(
+        [_gp175(a) for a in _nc175], [a['meanR'] for a in _nc175]), 3),
+    rho_gain_meanR_silent=round(_spear183(
+        [_gp175(a) for a in _sil175], [a['meanR'] for a in _sil175]), 3),
+    silent_gain_abs_max=round(max(abs(_gp175(a)) for a in _sil175), 2),
+    max_gain_arm=max(_nc175, key=_gp175)['arm'],
+    max_gain_pct=round(max(_gp175(a) for a in _nc175), 2)),
+    'banc/l175/results_l175.json:window (DERIVED here from the stored per-arm '
+    'rows: the silent-cell null range, the class counts, the cells delivering '
+    'more than the carrier, and Spearman(re-bisected gain shift, meanR) with '
+    'average ranks over the 33 non-carrier arms and over the silent subset)')
+_bi175 = _r175['branch_inputs']
+put('l175.branch', dict(
+    controls_ok=_bi175['controls_ok'], n_window=_bi175['n_window'],
+    n_active=_bi175['n_active'], n_active_exc=_bi175['n_active_exc'],
+    n_active_inh=_bi175['n_active_inh'], A_n=_bi175['A_n'],
+    F_A_frac=_bi175['F_A_frac'], H_n=_bi175['H_n'],
+    F_H_frac=_bi175['F_H_frac'], silent_n=_bi175['silent_n'],
+    rho_all_drive_meanR=round(_bi175['rho_all_drive_meanR'], 3),
+    rho_exc_drive_meanR=round(_bi175['rho_exc_drive_meanR'], 3)),
+    'banc/l175/results_l175.json:branch_inputs')
+put('l175.verdict', _r175['branch'], 'banc/l175/results_l175.json:branch')
+put('l175.bands', dict(_r175['bands']), 'banc/l175/results_l175.json:bands')
+put('l175.certs', dict(
+    c0a175_checks=_r175['certs']['c0a175_checks'],
+    c0a175_max=_r175['certs']['c0a175_max'],
+    cert_x_checks=_r175['certs']['cert_x_checks'],
+    cert_x_max=_r175['certs']['cert_x_max'],
+    cert_g_stored_exact=_r175['certs']['cert_g_stored_exact']),
+    'banc/l175/results_l175.json:certs')
+_sel175 = _r175['selection']
+put('l175.census', dict(
+    carrier=dict(gi=_sel175['carrier']['gi'],
+                 out_edges=_sel175['carrier']['out_edges'],
+                 x_mean=round(_sel175['carrier']['x_mean'], 4),
+                 delivered_drive=round(_sel175['carrier']['delivered_drive'], 3)),
+    mass_twin_319=dict(gi=_sel175['mass_twin_319']['gi'],
+                       out_edges=_sel175['mass_twin_319']['out_edges'],
+                       x_mean=round(_sel175['mass_twin_319']['x_mean'], 4),
+                       delivered_drive=round(
+                           _sel175['mass_twin_319']['delivered_drive'], 3)),
+    dmA=dict(pool_n=_sel175['dmA']['pool_n']),
+    dmC=dict(pool_n=_sel175['dmC']['pool_n'])),
+    'banc/l175/results_l175.json:selection')
+put('l175.meta', dict(
+    n_seeds=len(_r175['seeds']), seed_lo=min(_r175['seeds']),
+    seed_hi=max(_r175['seeds']), n_arms=len(_scan175),
+    twin_drive_ratio=round(_sel175['mass_twin_319']['delivered_drive']
+                           / _sel175['carrier']['delivered_drive'], 4),
+    prereg_sha256=_r175['prereg_sha256'][:16], status=_r175['status']),
+    'banc/l175/results_l175.json:seeds + selection + prereg_sha256 (batch '
+    'size, seed range, arm count and the mass twin\'s delivered-drive ratio '
+    'derived from the stored fields)')
+
+# -- L184: zero-rollout analysis of the stored scan batch (csv artifacts) --
+_tp184 = {r['arm']: r for r in _csv183.DictReader(open(f'{B}/l184/threepanel.csv'))}
+put('l184.threepanel', {a: dict(
+    chopped_k=int(r['chopped_k']), chopped_mean=round(float(r['chopped_mean']), 3),
+    fast_k=int(r['fast_k']), fast_mean=round(float(r['fast_mean']), 3),
+    cross_k=int(r['cross_k']), cross_mean=round(float(r['cross_mean']), 3))
+    for a, r in _tp184.items()},
+    'banc/l184/threepanel.csv:one row per arm (chopped 0.7-Hz duty, the '
+    'continuous 1.4-Hz segment, and the cross-seed chopped pairing; k = '
+    'seeds or ordered pairs with duty >= .5)')
+_n184 = len(_r175['seeds'])     # l184 re-scores the stored scan batch
+put('l184.design', dict(n_seeds=_n184, n_cross_pairs=_n184 * (_n184 - 1),
+                        n_arms=len(_tp184)),
+    'banc/l184/threepanel.csv:row count (seed count read from the scan batch '
+    'it re-scores, banc/l175/results_l175.json seeds; cross pairs = ordered '
+    'i != j pairs of those seeds)')
+_q3184 = {r['arm']: r for r in _csv183.DictReader(open(f'{B}/l184/q3.csv'))}
+put('l184.q3', {a: {k: round(float(_q3184[a][k]), 5) for k in (
+    'flex', 'ext', 'mean_neg_r_same', 'same', 'cross', 'residual',
+    'delta_flex', 'delta_ext', 'delta_same', 'delta_cross', 'delta_residual')}
+    for a in ('cutwA', 'sc25', 'sc26', 'sc27', 'sc40', 'dmA', 'dmC')},
+    'banc/l184/q3.csv:rows cutwA sc25 sc26 sc27 sc40 dmA dmC (same-seed vs '
+    'cross-seed duty decomposition; deltas are arm minus base)')
+put('l184.q3_ratios', dict(
+    cross_over_same_increment=round(float(_q3184['sc25']['delta_cross'])
+                                    / float(_q3184['sc25']['delta_same']), 3),
+    cross_over_same_level=round(float(_q3184['sc25']['cross'])
+                                / float(_q3184['sc25']['same']), 3)),
+    'banc/l184/q3.csv:rows sc25 (two ratios DERIVED here: delta_cross / '
+    'delta_same, and cross / same within the carrier-removed arm)')
+_q1184 = {(r['arm'], r['segment'], r['pool'], r['metric']): float(r['mean'])
+          for r in _csv183.DictReader(open(f'{B}/l184/q1.csv'))}
+_q1c184 = {(r['ref'], r['segment'], r['pool'], r['metric']): r
+           for r in _csv183.DictReader(open(f'{B}/l184/q1-contrasts.csv'))}
+def _q1cell(seg, pool, metric):
+    c = _q1c184[('cutwA', seg, pool, metric)]
+    return dict(base=round(_q1184[('cutwA', seg, pool, metric)], 8),
+                sc25=round(_q1184[('sc25', seg, pool, metric)], 8),
+                diff=round(float(c['sc25_minus_ref']), 8),
+                lo=round(float(c['lo']), 8), hi=round(float(c['hi']), 8))
+put('l184.q1', dict(
+    chopped=dict(f=dict(amp=_q1cell('chopped', 'f', 'amp'),
+                        gate=_q1cell('chopped', 'f', 'gate')),
+                 e=dict(amp=_q1cell('chopped', 'e', 'amp'),
+                        gate=_q1cell('chopped', 'e', 'gate'))),
+    fast=dict(f=dict(amp=_q1cell('fast', 'f', 'amp')),
+              e=dict(amp=_q1cell('fast', 'e', 'amp')))),
+    'banc/l184/q1.csv:arm means + banc/l184/q1-contrasts.csv rows ref=cutwA '
+    '(drive-frequency harmonic amplitude and signed on-off gate contrast per '
+    'pool, rate units; paired percentile intervals as stored)')
+put('l184.q1_twins', {a: dict(
+    f_abs_gate=round(_q1184[(a, 'chopped', 'f', 'abs_gate')], 8),
+    e_abs_gate=round(_q1184[(a, 'chopped', 'e', 'abs_gate')], 8))
+    for a in ('cutwA', 'sc25', 'sc26', 'dmA', 'dmC')},
+    'banc/l184/q1.csv:rows metric=abs_gate segment=chopped (absolute on-off '
+    'gate contrast per pool for the base, the carrier-removed arm and the '
+    'three scan twins)')
+_sn184 = {(r['arm'], r['template']): r
+          for r in _csv183.DictReader(open(f'{B}/l184/sensitivity.csv'))}
+put('l184.sens', {t: dict(
+    d_same=round(float(_sn184[('sc25', t)]['same'])
+                 - float(_sn184[('cutwA', t)]['same']), 4),
+    d_cross=round(float(_sn184[('sc25', t)]['cross'])
+                  - float(_sn184[('cutwA', t)]['cross']), 4))
+    for t in ('original', 'minus_gate', 'minus_tone', 'minus_both')},
+    'banc/l184/sensitivity.csv:rows sc25 and cutwA (carrier-minus-base duty '
+    'after subtracting the fitted gate and/or tone template, DERIVED as the '
+    'difference of the two stored rows)')
+_ed184 = list(_csv183.DictReader(open(f'{B}/l184/edges.csv')))
+_ov184 = {r['arm']: r for r in _csv183.DictReader(open(f'{B}/l184/overlap.csv'))}
+put('l184.anatomy', dict(
+    n_incident=len(_ed184),
+    n_in=sum(r['direction'] == 'in' for r in _ed184),
+    n_out=sum(r['direction'] == 'out' for r in _ed184),
+    n_out_premotor=sum(r['target_class'] == 'direct right-Ti premotor'
+                       for r in _ed184),
+    n_out_intrinsic_other=sum(r['target_class'] == 'ventral_nerve_cord_intrinsic'
+                              for r in _ed184),
+    n_out_other_motor=sum(r['target_class'] == 'other motor' for r in _ed184),
+    n_out_intrinsic=sum(r['target_class'] in ('direct right-Ti premotor',
+                                              'ventral_nerve_cord_intrinsic')
+                        for r in _ed184),
+    overlap={a: dict(gi=int(r['gi']), out=int(r['out']), shared=int(r['shared']),
+                     direct_premotor=int(r['direct_premotor']),
+                     shared_premotor=int(r['shared_premotor']))
+             for a, r in _ov184.items()}),
+    'banc/l184/edges.csv:all 93 incident edges by direction and target class '
+    '+ banc/l184/overlap.csv (targets shared with the carrier, per comparator)')
+
+# -- L185: fresh-batch replication, gain-only null, signed-current twin ----
+_r185 = json.load(open(f'{B}/l185/results_l185.json'))
+assert _r185['status'] == 'FINAL'
+def _cell185(c):
+    return dict(kR=c['kR'], kL=c['kL'], n=c['n'], meanR=c['meanR'],
+                lbR=c['lbR'], ubR=c['ubR'], cls=c['cls'],
+                gain_delta_pct=round(c['gain_delta_pct'], 3))
+put('l185.base', _cell185(_r185['base']), 'banc/l185/results_l185.json:base')
+put('l185.r1', {a: dict(
+    gi=v['gi'], rematched=_cell185(v['rematched']), fixed=_cell185(v['fixed']),
+    fixed_minus_rematched={k: v['fixed_minus_rematched'][k]
+                           for k in ('mean', 't', 'n_up', 'n_dn')},
+    fixed_vs_base_same_gain={k: v['fixed_vs_base_same_gain'][k]
+                             for k in ('mean', 't', 'n_up', 'n_dn')},
+    pooled_b39_b40_rematched=dict(v['pooled_b39_b40_rematched']))
+    for a, v in _r185['R1'].items()},
+    'banc/l185/results_l185.json:R1')
+_R2 = _r185['R2']
+put('l185.r2', dict(
+    deltas_pct=_R2['deltas_pct'], kR=_R2['kR'],
+    meanR=[round(x, 3) for x in _R2['meanR']],
+    slope_meanR_per_0p1pct=round(_R2['slope_meanR_per_0p1pct'], 4),
+    slope_se=round(_R2['slope_se'], 4),
+    slope_ci95=[round(x, 4) for x in _R2['slope_ci95']],
+    slope_kRfrac_per_0p1pct=_R2['slope_kRfrac_per_0p1pct'],
+    n_seeds_negative_slope=_R2['n_seeds_negative_slope'],
+    label=_R2['label'], gain_alone_super=len(_R2['gain_alone_super']),
+    kR_max=max(_R2['kR']), kR_min=min(_R2['kR']),
+    span_pct=max(_R2['deltas_pct']) - min(_R2['deltas_pct']),
+    scan_comparison=dict(
+        within_half_pct=dict(_R2['scan_comparison']['within_half_pct']),
+        silent_within_half_pct=dict(
+            _R2['scan_comparison']['silent_within_half_pct']))),
+    'banc/l185/results_l185.json:R2 (gain-only null on the base graph; '
+    'meanR, slope, se and ci rounded for display; gain_alone_super is the '
+    'LENGTH of the stored empty list; kR_max, kR_min and span_pct derived '
+    'from the stored lists)')
+_s2 = _r185['R3']['arm']
+put('l185.r3', dict(
+    gi=_s2['gi'], cell_type=_s2['cell_type'], side=_s2['side'],
+    eff_sign=_s2['eff_sign'], x_mean=round(_s2['x_mean'], 3),
+    dist_rel=round(_s2['dist_rel'], 4), drive_ratio=round(_s2['drive_ratio'], 2),
+    J=[round(x, 6) for x in _s2['J']],
+    carrier_J=[round(x, 6) for x in _s2['carrier_J']],
+    kR=_s2['kR'], kL=_s2['kL'], n=_s2['n'], meanR=_s2['meanR'],
+    lbR=_s2['lbR'], ubR=_s2['ubR'], dR_vs_wA=_s2['dR_vs_wA'],
+    gain_delta_pct=round(_s2['gain_delta_pct'], 3), cls=_s2['cls'],
+    pool_n=_r185['R3']['selection']['pool_S_active_n']),
+    'banc/l185/results_l185.json:R3.arm + R3.selection.pool_S_active_n (the '
+    'signed-current-matched twin; J = registered relayed current onto the '
+    'right-tibia flexor and extensor pools)')
+put('l185.branches', {k: _r185['branches'][k] for k in
+                      ('R1', 'gain_form', 'R2', 'R3', 'D2_hardened')},
+    'banc/l185/results_l185.json:branches')
+put('l185.certs', {k: _r185['certs'][k] for k in (
+    'c0a_vs_raw_l135_checks', 'c0a_vs_l175_raw_checks', 'c0a_max',
+    'cert_x_checks', 'cert_x_max', 'cert_g_stored_exact')},
+    'banc/l185/results_l185.json:certs')
+put('l185.meta', dict(
+    n_seeds=len(_r185['seeds']), seed_lo=min(_r185['seeds']),
+    seed_hi=max(_r185['seeds']), prereg_sha256=_r185['prereg_sha256'][:16]),
+    'banc/l185/results_l185.json:seeds + prereg_sha256 (seed range derived)')
+
+# -- L186: gate-jitter discriminator (16 paired jitter schedules) ----------
+_r186 = json.load(open(f'{B}/l186/results_l186.json'))
+assert _r186['status'] == 'FINAL'
+put('l186.means', {a: {k: round(v, 3) for k, v in d.items()}
+                   for a, d in _r186['means'].items()},
+    'banc/l186/results_l186.json:means')
+put('l186.contrasts', {k: dict(value=round(v['value'], 3),
+                               ci95=[round(x, 3) for x in v['ci95']])
+                       for k, v in _r186['contrasts'].items()},
+    'banc/l186/results_l186.json:contrasts')
+put('l186.phase', {k: dict(n=v['n'], degrees=round(v['degrees'], 1),
+                           R=round(v['R'], 2))
+                   for k, v in _r186['phase'].items()},
+    'banc/l186/results_l186.json:phase (pool peak relative to the carrier, '
+    'degrees and resultant length rounded for display)')
+put('l186.branch', _r186['branch'], 'banc/l186/results_l186.json:branch')
+_p186 = json.load(open(f'{B}/l186/t216_power.json'))
+put('l186.power', dict(
+    jitter_band_steps=_p186['jitter_band_steps'],
+    window_steps=_p186['window_steps'],
+    mean_window_overlap=round(_p186['mean_window_overlap'], 2),
+    frac_pairs_overlap_ge_half=round(_p186['frac_pairs_overlap_ge_half'], 2),
+    frac_pairs_disjoint=round(_p186['frac_pairs_disjoint'], 2),
+    needed_jitter_for_disjoint_windows=_p186[
+        'needed_jitter_for_disjoint_windows'],
+    n_seeds=len(_r186['seeds']), n_anchor_checks=_r186['anchors']['n_checks'],
+    c0a_max=_r186['anchors']['c0a_max']),
+    'banc/l186/t216_power.json:(whole file, the power adjudication of the '
+    'registered +-300-step jitter against the 500-step readout window) + '
+    'banc/l186/results_l186.json seeds and anchors')
+
+# -- L187: relay silencing / cut, push-pull, occlusion (B41, n = 16) -------
+_r187 = json.load(open(f'{B}/l187/results_l187.json'))
+assert _r187['status'] == 'FINAL'
+def _cell187(c):
+    return dict(kR=c['kR'], kL=c['kL'], n=c['n'], meanR=c['meanR'],
+                lbR=c['lbR'], ubR=c['ubR'], cls=c['cls'],
+                gain_delta_pct=round(c['gain_delta_pct'], 3),
+                k14=c['k14'], mean14=c['mean14'],
+                x_relay=c['x_relay'], x_74914=c['x_74914'],
+                vs_base=dict(mean=round(c['vs_base']['mean'], 3),
+                             ci95=[round(x, 3) for x in c['vs_base']['ci95']]))
+put('l187.base', _cell187(_r187['base']), 'banc/l187/results_l187.json:base')
+put('l187.arms', {a: _cell187(c) for a, c in _r187['arms'].items()},
+    'banc/l187/results_l187.json:arms')
+put('l187.contrasts', {k: dict(mean=round(v['mean'], 3),
+                               ci95=[round(x, 3) for x in v['ci95']],
+                               n_up=v['n_up'], n_dn=v['n_dn'])
+                       for k, v in _r187['contrasts'].items()},
+    'banc/l187/results_l187.json:contrasts')
+_rl187 = _r187['relay']
+put('l187.relay', dict(
+    cell=dict(gi=_rl187['cell']['gi'], cell_type=_rl187['cell']['cell_type'],
+              side=_rl187['cell']['side'], eff_sign=_rl187['cell']['eff_sign'],
+              super_class=_rl187['cell']['super_class']),
+    in_edges=_rl187['in_edges'], out_edges=_rl187['out_edges'],
+    carrier_to_relay=dict(syn=_rl187['carrier_to_relay']['syn']),
+    sc40_to_relay=dict(syn=_rl187['sc40_to_relay']['syn']),
+    pool_sizes={k: v['targets'] for k, v in _rl187['direct_onto'].items()},
+    census_x_mean_3seed=round(_rl187['census_x_mean_3seed'], 3),
+    sc40_census_x_mean=round(_rl187['sc40_census_x_mean'], 3)),
+    'banc/l187/results_l187.json:relay (pool_sizes re-keyed from '
+    'direct_onto.*.targets, the motor-neuron count of each tibia pool)')
+put('l187.branches', {k: _r187['branches'][k] for k in (
+    'header', 'A1', 'A2', 'A2_fixed', 'A2_gain_form', 'relay', 'A3',
+    'A3_fixed', 'A4')}, 'banc/l187/results_l187.json:branches')
+put('l187.sc40_pooled', {f: {k: _r187['sc40_pooled'][f][k]
+                             for k in ('kR', 'n', 'meanR', 'cls')}
+                         for f in ('rematched', 'fixed')},
+    'banc/l187/results_l187.json:sc40_pooled')
+put('l187.sc25_pooled', {f: dict(_r187['sc25_pooled'][f])
+                         for f in ('rematched', 'fixed')},
+    'banc/l187/results_l187.json:sc25_pooled')
+_cs187 = _r187['certs']
+put('l187.certs', dict(
+    c0a_vs_raw_l135_checks=_cs187['c0a_vs_raw_l135_checks'],
+    c0a_max=_cs187['c0a_max'], fc150_checks=_cs187['fc150_checks'],
+    fc150_max=_cs187['fc150_max'], cert_silcut_pass=_cs187['cert_silcut_pass'],
+    cert_x_checks=_cs187['cert_x_checks'], cert_x_max=_cs187['cert_x_max']),
+    'banc/l187/results_l187.json:certs')
+_ad187 = json.load(open(f'{B}/l187/addendum.json'))
+put('l187.fast', {f"{r['a']}_minus_{r['b']}": dict(
+    mean_a=r['mean_a'], mean_b=r['mean_b'], diff=r['diff'], ci95=r['ci95'],
+    n_pos=r['n_pos'], n_neg=r['n_neg'])
+    for r in _ad187['fast_1p4Hz_paired']},
+    'banc/l187/addendum.json:fast_1p4Hz_paired (list re-keyed as a_minus_b; '
+    'post hoc and descriptive by the addendum\'s own note)')
+put('l187.gain_slopes', {r['graph']: dict(
+    carrier_present=r['carrier_present'],
+    rematch_shift_pct=r['rematch_shift_pct'],
+    rematched_minus_fixed=r['rematched_minus_fixed'], ci95=r['ci95'],
+    slope_per_0p1pct=r['slope_per_0p1pct'])
+    for r in _ad187['gain_form_slopes']},
+    'banc/l187/addendum.json:gain_form_slopes (list re-keyed by graph; post '
+    'hoc and descriptive by the addendum\'s own note)')
+put('l187.relay_rate', dict(_ad187['relay_rate']),
+    'banc/l187/addendum.json:relay_rate')
+put('l187.g74914_rate', dict(_ad187['g74914_rate']),
+    'banc/l187/addendum.json:g74914_rate')
+put('l187.meta', dict(
+    n_seeds=len(_r187['seeds']), seed_lo=min(_r187['seeds']),
+    seed_hi=max(_r187['seeds']), prereg_sha256=_r187['prereg_sha256'][:16],
+    silcut_anchor_seeds=len(_cs187['cert_silcut']),
+    silcut_max=max(max(v['head_max'], v['full_max'])
+                   for v in _cs187['cert_silcut'].values())),
+    'banc/l187/results_l187.json:seeds + certs.cert_silcut (seed range and '
+    'the construction-identity certificate: relay clamped from t = 0 versus '
+    'relay cut, maximum absolute trace difference over the anchor seeds)')
+
+# -- paired twin inference on the twin's own seeds (referee N6 / r3) -------
+_ps172 = _l172['per_seed']
+_tw = dict(zip(_ps172['cutng25p']['seeds'], _ps172['cutng25p']['dutyR']))
+_bs = dict(zip(_ps172['cutwA']['seeds'], _ps172['cutwA']['dutyR']))
+_cm = sorted(set(_tw) & set(_bs))
+assert len(_cm) == len(_tw) == 66
+_bp = sum(_tw[s] >= .5 and _bs[s] >= .5 for s in _cm)
+_bn = sum(_tw[s] < .5 and _bs[s] < .5 for s in _cm)
+_to = sum(_tw[s] >= .5 and _bs[s] < .5 for s in _cm)
+_bo = sum(_tw[s] < .5 and _bs[s] >= .5 for s in _cm)
+_nd = _to + _bo
+_pmc = min(1.0, 2 * sum(_m183.comb(_nd, i) for i in range(min(_to, _bo) + 1))
+           / 2 ** _nd)
+put('l172.paired_twin', dict(
+    n=len(_cm), both_pos=_bp, both_neg=_bn, twin_only=_to, base_only=_bo,
+    twin_k=_bp + _to, base_k=_bp + _bo, mcnemar_p=round(_pmc, 4),
+    mean_duty_diff=round(sum(_tw[s] - _bs[s] for s in _cm) / len(_cm), 3)),
+    'banc/l172/stats.json:per_seed (cutng25p vs cutwA on the 66 seeds the '
+    'twin ran on; duty >= .5 seed bar; exact two-sided McNemar on the '
+    'discordant pairs, DERIVED here)')
+
+# -- substrate census + the weight rule, the latter PARSED from source -----
+_s92 = json.load(open(f'{B}/l92/static.json'))
+put('l92.substrate', {k: _s92[k] for k in (
+    'n_old', 'n_new', 'cord', 'dn_into', 'dn_proj', 'dn_new', 'edges_old',
+    'edges_new')},
+    'banc/l92/static.json:(top-level fields n_old n_new cord dn_into dn_proj '
+    'dn_new edges_old edges_new; asserted equal at run time by '
+    'banc/l135_run.py)')
+_bg183 = open(f'{B}/build_graph_banc.py').read()
+_rs183 = open(f'{B}/l135_run.py').read()
+_nt183 = {m.group(1): float(m.group(3)) for m in _re183.finditer(
+    r'"(\w+)": \("(\w+)", ([-0-9.]+)\)', _bg183)}
+_dflt183 = float(_re183.search(r'NT_CLASS\.get\(n, \("unk", ([0-9.]+)\)\)',
+                               _bg183).group(1))
+for _need in ('gsign_b2 = np.where(is_glut[gsrc], -np.abs(gsign_a2), gsign_a2)',
+              'vals = (np.log1p(gcount) * gsign_b2).astype(np.float32)',
+              'vals[neg] *= BETA', '.clamp(max=RMAX) - X[a])',
+              'X0o = (BG + NOISE * torch.randn(n_old, 1, generator=gen))'
+              '.clamp(0, 1)',
+              'cord_cls = np.isin(sup, ["sensory", '
+              '"ventral_nerve_cord_intrinsic", "motor"])',
+              'keep_new = cord_mask | dn_into | dn_proj'):
+    assert _need in _rs183, ('l135 source line drifted', _need)
+put('l135.weights', dict(
+    signs=_nt183, default_sign=_dflt183, weight_is_signed_log1p_count=True,
+    glut_forced_negative=True, beta_on_negatives=True, upper_clamp_only=True,
+    init_clip_0_1=True, cord_classes=['sensory', 'ventral_nerve_cord_intrinsic',
+                                      'motor'],
+    closure_is_cord_plus_dn_into_plus_dn_proj=True),
+    'banc/l135_run.py:build() + wb() + the update and init lines (each '
+    'asserted present verbatim in the source) with the per-transmitter sign '
+    'table parsed from banc/build_graph_banc.py NT_CLASS')
+
+# ---- L183 (late add): the cohort ladder re-scored in the continuously driven
+# 1.4-Hz segment.  Source: the per-seed duty rows the second-round referee
+# derived from the raw traces (stored with their script,
+# paper/review_fable_evidence_r2/p1_duty_from_raw.py), pooled HERE by the
+# canonical rule of L172 (admissible files only, first occurrence of each
+# seed).  Tie to our own pools: the chopped column of the same rows must
+# reproduce l172.pooled kR/n EXACTLY for every arm, or this block refuses.
+_r2rows = json.load(open(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    'review_fable_evidence_r2', 'out_duty_rows.json')))
+_adm183 = set(_l172['admissibility']['admissible'])
+_Z183 = 1.959963984540054
+
+
+def _wil183(k, n):
+    ph = k / n
+    den = 1 + _Z183 * _Z183 / n
+    c = (ph + _Z183 * _Z183 / (2 * n)) / den
+    h = _Z183 * ((ph * (1 - ph) / n + _Z183 * _Z183 / (4 * n * n)) ** .5) / den
+    return round(max(0.0, c - h), 3), round(min(1.0, c + h), 3)
+
+
+_lad183 = {}
+for _arm in ('b65', 'full', 'cutk5', 'cutng19', 'cutng23', 'cutwA', 'cutng25p', 'cutng25',
+             'cutng29', 'cut58', 'cutscr0'):
+    _seen = {}
+    for _r in _r2rows['rows']:
+        if _r['arm'] == _arm and _r['file'] in _adm183 and _r['seed'] not in _seen:
+            _seen[_r['seed']] = _r
+    _v = list(_seen.values())
+    _n = len(_v)
+    _k07 = sum(1 for x in _v if x['duty07R'] >= .5)
+    _k14 = sum(1 for x in _v if x['duty14R'] >= .5)
+    _pool = OUT['l172.pooled']['v'][_arm]
+    assert (_k07, _n) == (_pool['kR'], _pool['n']), \
+        ('referee rows do not reproduce the canonical pool', _arm, _k07, _n)
+    _lo, _hi = _wil183(_k14, _n)
+    _lad183[_arm] = dict(
+        n=_n, chopped_k=_k07,
+        chopped_mean=round(sum(x['duty07R'] for x in _v) / _n, 3),
+        fast_k=_k14, fast_mean=round(sum(x['duty14R'] for x in _v) / _n, 3),
+        fast_lb=_lo, fast_ub=_hi,
+        fast_kL=sum(1 for x in _v if x['duty14L'] >= .5))
+put('l183.ladder_fast', _lad183,
+    '../paper/review_fable_evidence_r2/out_duty_rows.json:rows (per-seed duty '
+    'rows derived from the raw traces by the stored script '
+    'p1_duty_from_raw.py; pooled HERE by the L172 canonical rule; the chopped '
+    'column is asserted equal to l172.pooled kR/n for all eleven arms; '
+    'continuous-segment counts and Wilson bounds DERIVED here)')
+put('l183.ladder_fast_meta', dict(
+    n_windows_chopped=_r2rows['n_windows_q07'],
+    n_windows_fast=_r2rows['n_windows_q14'], n_rows=len(_r2rows['rows']),
+    n_arms=len(_lad183)),
+    '../paper/review_fable_evidence_r2/out_duty_rows.json:n_windows_q07 / '
+    'n_windows_q14 / rows (count)')
+
 json.dump(OUT, open(os.path.join(os.path.dirname(
     os.path.abspath(__file__)), 'numbers.json'), 'w'), indent=1, sort_keys=True)
 

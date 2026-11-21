@@ -187,14 +187,54 @@ for s in FIELD:
 print("(6) %d cited field numbers traced to LANE-RESEARCH digests" % len(FIELD))
 
 # ------------------------------------------------------------------ (7)
-pre = os.path.join(L174A, "numbers_pretick.json")
-if os.path.exists(pre):
-    h1 = hashlib.sha256(open(pre, "rb").read()).hexdigest()
-    h2 = hashlib.sha256(open(os.path.join(HERE, "numbers.json"), "rb").read()).hexdigest()
-    ck(h1 == h2, "numbers.json changed during a reference pass (%s vs %s)" % (h1[:12], h2[:12]))
-    print("(7) numbers.json byte-identical to the pre-tick copy (sha %s)" % h1[:12])
-else:
-    fails.append("pre-tick numbers.json copy missing")
+# L183 PIN UPDATE (2026-11-21, master fold; receipt in LANE-LOG + banc/l183_worklog.md).
+# OLD: sha256(numbers.json) == sha256(pre-tick copy) = 238bf2d37f51...; a whole-file
+# equality, written when a reference pass had no business adding a measurement.
+# NEW: the master fold legitimately ADDS measured keys (the scan, its replication,
+# the timing analysis, the relay arms, the gate-jitter run, the paired twin test,
+# the substrate census and the parsed weight rule), so whole-file equality is
+# replaced by the same guarantee stated per key, plus two things the old form
+# could not say: (a) EVERY pre-tick key is byte-identical under canonical JSON
+# (a reference or prose pass still may not move a measured value); (b) the set
+# of added keys equals the DECLARED set below EXACTLY, so nothing enters
+# undeclared; (c) the post-fold file is itself pinned by hash in
+# l183_verify.py, where each added key is also re-derived from its source.
+L183_ADDED = {
+    "l135.weights", "l172.paired_twin", "l175.branch", "l175.census",
+    "l175.bands", "l175.certs", "l175.meta", "l175.null", "l175.scan", "l175.verdict",
+    "l184.anatomy", "l184.design", "l184.q1", "l184.q1_twins", "l184.q3", "l184.q3_ratios",
+    "l184.sens", "l184.threepanel", "l185.base", "l185.branches",
+    "l185.certs", "l185.meta", "l185.r1", "l185.r2", "l185.r3",
+    "l186.branch", "l186.contrasts", "l186.means", "l186.phase",
+    "l186.power", "l187.arms", "l187.base", "l187.branches", "l187.certs",
+    "l187.contrasts", "l187.fast", "l187.g74914_rate", "l187.gain_slopes",
+    "l187.meta", "l187.relay", "l187.relay_rate", "l187.sc25_pooled",
+    "l187.sc40_pooled", "l92.substrate",
+    "l183.ladder_fast", "l183.ladder_fast_meta"}
+
+
+def _numbers_guard(pre_path, label):
+    if not os.path.exists(pre_path):
+        fails.append("pre-tick numbers.json copy missing (%s)" % label)
+        return
+    old = json.load(open(pre_path))
+    assert hashlib.sha256(open(pre_path, "rb").read()).hexdigest().startswith(
+        "238bf2d37f51"), "the stored pre-tick copy itself moved"
+    new = json.load(open(os.path.join(HERE, "numbers.json")))
+    moved = sorted(k for k in old if json.dumps(old[k], sort_keys=True)
+                   != json.dumps(new.get(k), sort_keys=True))
+    ck(not moved, "%s: pre-tick numbers.json keys moved: %s" % (label, moved[:6]))
+    added = set(new) - set(old)
+    ck(added == L183_ADDED, "%s: added keys differ from the declared L183 set: "
+       "undeclared %s, missing %s" % (label, sorted(added - L183_ADDED)[:6],
+                                      sorted(L183_ADDED - added)[:6]))
+    return len(old), len(added)
+
+
+_g7 = _numbers_guard(os.path.join(L174A, "numbers_pretick.json"), "(7)")
+if _g7:
+    print("(7) numbers.json: all %d pre-tick keys byte-identical per key; the %d "
+          "added keys are exactly the declared L183 set" % _g7)
 
 # ------------------------------------------------------------------ (8)
 # stage (b1): the tick-204 novelty narrowing + entries 36/37.
@@ -243,9 +283,53 @@ REQUIRED_B = [
     "13,000 neurons intrinsic to the female",
     "[37], which is the",
 ]
+# L183 PIN UPDATE (2026-11-21, master fold; receipt in LANE-LOG and
+# banc/l183_worklog.md).  OLD: all 21 strings required verbatim in the LIVE
+# body.  The fold renumbers the Results subsections (old 2.2 -> 2.7) and, at
+# its related-work stage, withdraws three of the 21 on referee instruction:
+#   "9.72x below any mass-only band" -- round 2 showed there is no mass-only
+#       band for the ratio to refer to (a carrier-free cohort reaches the
+#       class), so the phrase is replaced by the multi-currency statement;
+#   "ours is one cell against one mass twin" -- the comparison is now a
+#       ladder of single-cell comparators, and the mass twin is silent.
+# NEW, never looser: (i) all 21 are still required VERBATIM in the body they
+# were written for, the stored hash-pinned pre-image; (ii) in the LIVE body
+# the other 19 are required under the declared renumber, and each withdrawn
+# string must be GONE and its declared successor PRESENT, so neither the old
+# nor a third wording can stand.  The live body is bound to the pre-image by
+# byte replay in (8d).
+sys.path.insert(0, HERE)
+import l183_fold as F183   # noqa: E402  (stdlib only; never writes a file)
+import l183_text as T183   # noqa: E402
+_pre_body = F183.pre_body()
 for s in REQUIRED_B:
-    ck(s in body or _ws(s) in _ws(body),
-       "stage (b1) required text missing: %r" % s[:52])
+    ck(s in _pre_body or _ws(s) in _ws(_pre_body),
+       "stage (b1) required text missing from the stored pre-image: %r" % s[:52])
+_st = T183.CURRENT_STAGE
+WITHDRAWN_B = {
+    "9.72\u00d7 below any mass-only band (\u00a72.2)":
+        "No single currency suffices",
+    "ours is one cell against one mass twin":
+        "ours is one cell against single-cell comparators",
+    # the gap paragraph it sat in claimed an "all-or-none identity step" that
+    # "survives a mass-matched twin control"; the concession is KEPT, in a
+    # stronger and separately cited form
+    "not that identity matters":
+        "That identity matters is prior art [6, 36]",
+}
+n_live = 0
+for s in REQUIRED_B:
+    if s in WITHDRAWN_B and _st >= 4:
+        gone = s.replace("(\u00a72.2)", "").strip()
+        ck(gone not in body and _ws(gone) not in _ws(body),
+           "withdrawn stage-(b1) wording still in the live body: %r" % s[:52])
+        ck(_ws(WITHDRAWN_B[s]) in _ws(body),
+           "declared successor of %r missing" % s[:40])
+        continue
+    live_s = s.replace("(\u00a72.2)", "(\u00a72.7)") if _st >= 2 else s
+    ck(live_s in body or _ws(live_s) in _ws(body),
+       "stage (b1) required text missing from the live body: %r" % s[:52])
+    n_live += 1
 GONE_B = [
     "The gap this paper fills: an emergent, all-or-none transition",
     "decomposed into IDENTITY vs MASS by",
@@ -257,8 +341,10 @@ for s in GONE_B:
 probe = REQUIRED_B[2]
 ck(probe not in body.replace(probe, "", 1),
    "the required-text predicate is not content-sensitive")
-print("(8b) %d narrowing texts present, %d superseded gone, predicate "
-      "sensitivity self-test OK" % (len(REQUIRED_B), len(GONE_B)))
+print("(8b) %d narrowing texts present in the stored pre-image; in the live body "
+      "%d required (under the declared renumber) and %d withdrawn-with-successor; "
+      "%d superseded gone; predicate sensitivity self-test OK"
+      % (len(REQUIRED_B), n_live, len(REQUIRED_B) - n_live, len(GONE_B)))
 
 FIELD_B = ["57.4%", "101.0%", "62.5%", "10.1%", "60.0%", "6.7%",
            "15% synaptic-amplitude reduction abolished intact wing-motor output",
@@ -272,17 +358,92 @@ print("(8c) %d stage-(b1) field numbers traced to LANE-RESEARCH digests" % len(F
 # abstract 5,322 -> 1,916 chars under its own contract (l158_verify sections
 # 5-10).  The pin's job is unchanged: a LATER prose stage cannot drift the
 # abstract without deliberately re-pinning here.
-abst = DRAFT[DRAFT.index("## Abstract"):DRAFT.index("## 1. Introduction")]
+# L183 PIN UPDATE (2026-11-21, master fold; receipt in LANE-LOG and
+# banc/l183_worklog.md).  OLD: the LIVE abstract must hash to the stored
+# stage-(b2) pin 20be2db8d67f...  The owner-directed fold replaces the
+# abstract (three referee rounds retired its headline wording), so the pin
+# is re-pointed, not dropped: (i) the stored pin must still match the
+# abstract of the stored pre-image banc/l174b4iiic/draft_post_preview.md,
+# and (ii) the live draft must equal declared_edits(that pre-image) byte for
+# byte.  A later prose stage therefore still cannot drift the abstract: it
+# would have to add a declared edit to the ledger, and l158_verify (16)
+# carries the new byte pin.
+PRE183 = F183.pre_composite(DRAFT)
+abst = PRE183[PRE183.index("## Abstract"):PRE183.index("## 1. Introduction")]
 pin = open(os.path.join(L174B, "abstract_pin_b2.txt")).read().strip()
 ck(hashlib.sha256(abst.encode()).hexdigest() == pin,
-   "the Abstract block moved since the stage-(b2) pin (%s)" % pin[:12])
+   "the stored pre-image Abstract no longer matches the stage-(b2) pin (%s)"
+   % pin[:12])
+try:
+    STAGE183 = F183.assert_bound(DRAFT)
+except AssertionError as _e:
+    STAGE183 = -1
+    ck(False, "(8d) %s" % _e)
 pre_b = os.path.join(L174B, "numbers_pretick.json")
-ck(hashlib.sha256(open(pre_b, "rb").read()).hexdigest() ==
-   hashlib.sha256(open(os.path.join(HERE, "numbers.json"), "rb").read()).hexdigest(),
-   "numbers.json moved during stage (b1)")
-print("(8d) Abstract block byte-identical to the stage-(b1) pin; numbers.json "
-      "unchanged")
+# L183 PIN UPDATE: same re-statement as section (7) -- per-key identity of every
+# pre-tick key plus the exact declared added set, instead of whole-file equality.
+_numbers_guard(pre_b, "(8d)")
+print("(8d) stored pre-image Abstract == the stage-(b2) pin and the live draft == "
+      "declared_edits(pre-image) at fold stage %d; numbers.json pre-tick keys "
+      "unchanged" % STAGE183)
 
+
+# ------------------------------------------------------------------ (9)
+# L183 master fold, references: entries 38-45.  The source of truth is the
+# stored, verified prior-art digest paper/priorart_terra_20261121.md (each
+# item's abstract or author summary was fetched and read there).  Records are
+# PARSED from that file -- title, venue and DOI are never typed here -- and
+# the draft list and references.bib must both carry them.  Author lists are
+# held at the first author by declaration: the digest records nothing more,
+# and no citation field may be written from memory.
+PRIOR = open(os.path.join(HERE, "priorart_terra_20261121.md")).read()
+PREC = {}
+for m in re.finditer(r"^(\d+)\. (.+?) \((\d{4})\), \u201c(.+?),\u201d (.+?)\. "
+                     r"https://doi\.org/(\S+)", PRIOR, re.M):
+    PREC[(m.group(2).split()[0], m.group(3))] = dict(
+        title=m.group(4), venue=m.group(5).replace(" preprint", "").split(",")[0],
+        doi=m.group(6))
+ORDER_C = [("chalfie1985", "Chalfie", "1985"), ("rakowski2013", "Rakowski", "2013"),
+           ("fouad2018", "Fouad", "2018"), ("alstott2009", "Alstott", "2009"),
+           ("rangaraju2015", "Rangaraju", "2015"), ("laredo2018", "Laredo", "2018"),
+           ("zung2025", "Zung", "2025"), ("sturner2025nature", "St\u00fcrner", "2025")]
+n_c = 0
+if STAGE183 >= 4:
+    ck(N == 37 + len(ORDER_C), "the list has %d entries, expected %d" % (N, 37 + len(ORDER_C)))
+    for i, (key, sn, yr) in enumerate(ORDER_C):
+        n = 38 + i
+        rec = PREC.get((sn, yr))
+        seg = segs.get(n, "")
+        if not ck(rec is not None, "%s %s is not in the verified digest" % (sn, yr)):
+            continue
+        ck(seg.startswith("%d. %s et al." % (n, sn)), "entry %d is not %s et al." % (n, sn))
+        ck(("(%s)" % yr) in seg, "entry %d year not from the digest" % n)
+        ck(("doi:" + rec["doi"]) in seg, "entry %d DOI not copied from the digest" % n)
+        ck(rec["venue"] in seg, "entry %d venue %r not from the digest" % (n, rec["venue"]))
+        ov = len(toks(rec["title"]) & toks(seg)) / max(1, len(toks(rec["title"])))
+        ck(ov >= 0.9, "entry %d title does not match the digest (%.2f)" % (n, ov))
+        ck(("@article{%s," % key) in BIB and rec["doi"] in BIB and rec["title"] in BIB,
+           "bib entry %s missing, or its DOI / title not from the digest" % key)
+        ck("%s and others" % sn in BIB, "bib entry %s author not held at first author" % key)
+        n_c += 1
+    # the two statements the digest corrects must be worded as it words them
+    ck("equally sized 50-node lesions" in _ws(PRIOR) and "50 nodes each" in _ws(body),
+       "the equal-size lesion detail is not stated as the digest verifies it")
+    ck("no mass control" not in _ws(body) and "no size control" not in _ws(body),
+       "the draft denies a size control the cited study has")
+    # the digest does not say that entry 45 is the journal version of entry 15,
+    # so the list may not say it either
+    ck("see also entry 15" in _ws(refsec_body)
+       and "journal version of entry 15" not in _ws(refsec_body),
+       "entry 45 must point at entry 15 without asserting an unverified relation")
+    print("(9) entries 38-%d: %d of %d parsed from the verified prior-art digest and "
+          "matched in the list and in references.bib (title, venue, year, DOI); "
+          "authors held at first author by declaration"
+          % (37 + len(ORDER_C), n_c, len(ORDER_C)))
+else:
+    ck(N == 37, "entries beyond 37 before the fold's related-work stage")
+    print("(9) entries 38-45 not yet folded (stage %d); %d digest records parsed"
+          % (STAGE183, len(PREC)))
 
 print()
 if fails:

@@ -1,0 +1,9 @@
+log(f"rollouts done {time.time()-t0:.0f}s")
+assert MODE == "work"
+_as = json.load(open(ANCH_PATH))
+assert _as["c0a135_pass"] and _as["c0a175_pass"] and _as["alias_max"] == 0.0
+atomic_json(f"{OUT}/done_w{WID}.json", dict(
+    wid=WID, nw=NW, arms=["cutwA"] + MY_ARMS, seeds=SEEDS,
+    gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+    track=TRACK, s2=S2, prereg_sha256=prereg_sha(), secs=time.time() - t0))
+log(f"worker {WID} DONE {time.time()-t0:.0f}s")

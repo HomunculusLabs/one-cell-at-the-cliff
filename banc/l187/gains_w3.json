@@ -1,0 +1,36 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "rsilW": 0.14365819573402408,
+  "rsilF": 0.14347783327102664
+ },
+ "cert_gain": {
+  "silWg": 0.14365819573402408,
+  "rsilFF": 0.14365819573402408,
+  "rcutF": 0.14365819573402408
+ },
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "rsilW": "bisect (this process) == stored EXACT",
+  "rsilF": "bisect (this process), fresh, full-run clamp in the settle"
+ },
+ "bisected": [
+  "cutwA",
+  "rsilW",
+  "rsilF"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "rsilW": 2.0839273929595947e-05,
+  "rsilF": 5.540748437254939e-06
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "rsilW": 0.10903527090946834,
+  "rsilF": 0.10905056943496068
+ },
+ "stored_exact": {
+  "cutwA": true,
+  "rsilW": true
+ }
+}

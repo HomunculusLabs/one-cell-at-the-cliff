@@ -1,0 +1,1 @@
+[select0 11:57:46] SELECT s2t: pool_S 20999 active 4751 | carrier J (f -0.002139, e +0.000000) norm 0.002139 | pick gi 1508 descending/DNg19/right x 0.9968 J (f -0.002145, e +0.000000) dist_rel 0.0028730962295365815 drive ratio 1.403 sign +1 | degenerate False

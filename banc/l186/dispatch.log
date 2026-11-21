@@ -1,0 +1,229 @@
+Query: Experiment dispatch (owner request, L186 gate-jitter discriminator — your
+own L184 design). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l186/BRIEF_gatejitter.md and execute it 
+completely. Poll until L187 is done before launching workers; PREREG while 
+waiting.
+📖 Read BRIEF_gatejitter.md  0.1s
+📚 Skill peabrain-flybrain  0.1s
+💻 $ pwd + 2 commands  0.2s
+📖 Read traces.py
+📖 Read scan_run.py L1-240
+📖 Read PREREG.md  0.1s
+📖 Read scan_run.py L895-1397
+💻 $ python - <<'PY' from pathlib import Path from zipfile import ZipFile import re p=Path('banc') + 7 commands  1.1s
+
+────────────────────────────────────────
+**Designing onset windows**
+∴ Thought for 29s
+────────────────────────────────────────
+
+✍️ Write banc/l186/PREREG.md
+│ banc/l186/PREREG.md
+│ @@ -0,0 +1,14 @@
+│ +L186 — registered before bisect, anchor or fresh rollout; L187 dispatch still live.
+│ +Question: does the sc25-minus-cutwA increase in shared right-tibia antagonist duty follow a displaced gate edge, or the original clock?
+│ +
+│ +Fresh paired seeds 18601..18616: all 118 banc/**/*.npz ZIP member names scanned for numeric tokens; zero hits. Repeat excluding own outputs at launch; collision = STOP. Anchors 801/901 excluded. Transform L175 scan_run, cutwA + sc25 (GI 1110 absent), individual L175 24-step AF bisects, exact stored gains required. Unjittered C0A both arms both anchors vs L135: all 22 traces + AF exactly equal, before fresh rolls. Same canonical torch noise mapped across graphs; no independent arm RNG. Gain matched to its own stored reference, not numerically equal across graphs.
+│ +
+│ +In each 2000-step outer segment, shift the entire middle 500-step pulse from onset 900 by an independent integer Uniform[-300,300] steps (PCG64 SeedSequence([186,seed]), first and last outer segments in order). Boundary pulses and 1.4-Hz middle segment unchanged. No overlap, clipping or wrapping; same 1200 on-steps per outer segment. Tone phase runs on elapsed time exactly as before. Jitter is of the gate, not a tone reset. Record actual gate, post-update GI 1110 (structurally missing = NaN on sc25), right Ti flexor and extensor, DT=.01, all 6000 steps, even for anchors.
+│ +
+│ +Primary: use only the displaced middle onset in each chopped segment. For each ordered distinct seed pair i,j, 500-step Pearson windows starting at offset -250..+250 inclusive in steps of 10 from flex seed i's actual onset. In aligned coordinates take ext seed j's window at its own onset + same offset. In elapsed coordinates take ext at the SAME absolute time as flex. This keeps flex samples identical, preserves native time, uses no interpolation, no crossing segment boundaries. Duty = fraction r<=-.25, SD>1e-6 in both (flat counts as false). Equal weight over offsets, segments, ordered pairs. Same-seed diagonal is a wiring check (identical between clocks). Report both arms and contrasts A (aligned sc25 minus base), T (elapsed sc25 minus base), D=A-T. Survival: A>=.15; |A|<.15 small; A<=-.15 reversed. Independent seed units; delete-one-paired-seed jackknife normal 95% intervals for A,T,D (not 240 independent observations).
+│ +
+│ +E1 external if A>=.15 and D>=.10 and CI(D) excludes zero above; E2 elapsed if T>=.15 and D<=-.10 and CI excludes zero below; else E3 mixed/unresolved (report numeric split, not causal percentages). E2 is a candidate internal rhythm ONLY: elapsed sinusoidal tone remains a rival; require independent batch before stronger interpretation. No branch on failed cert, missing seeds, or invalid schedule.
+│ +
+│ +Carrier/pool phase secondary: each seed, jointly across two displaced on-pulses fit intercept by segment + sin/cos of actual elapsed tone phase, to each post-update trace. Report circular mean pool-minus-carrier peak phase (positive = later), resultant R; R>=.7 concentrated, otherwise dispersed; omit fits amplitude <=1e-6. No GI phase assigned to deleted cell. This measures relative tone phase during gate-on, not a synaptic latency.
+│ +
+│ +No workers until L187 verdict FINAL marker and dispatch gone. Hard stop 5400 s from gate clearance; <=6 CPU workers. Outputs only l186 + one LAB-INTENT append; no lane, draft or pings.
+💻 $ python - <<'PY' from pathlib import Path s=Path('banc/l175/scan_run.py').read_text().splitlines() + 6 commands  1.4s
+💻 $ python - <<'PY' from pathlib import Path for f in ['banc/l175/work_w0.err','banc/l175/run.out','banc/l185/verdict.out','banc/l187/dispatch.log','LAB-INTENT.md']: p=Path(f) + 2 commands  3.1s
+
+────────────────────────────────────────
+**Checking the gate**
+∴ Thought for 9s
+────────────────────────────────────────
+
+✍️ Write banc/l186/build.py
+│ banc/l186/build.py
+│ @@ -0,0 +1,36 @@
+│ +"""Generate L186 by slicing the hash-pinned L175 harness (1-based inclusive)."""
+│ +from pathlib import Path
+│ +from hashlib import sha256
+│ +p=Path(__file__).resolve().parent
+│ +src=(p.parent/'l175/scan_run.py').read_bytes();assert sha256(src).hexdigest()=='bbfea4e07ff414dc4992b0d17ca4d890ecba58a13482ebe9a7cdf8bbf9488a20'
+│ +lines=src.decode().splitlines(True)
+│ +def L(a,b):return ''.join(lines[a-1:b])
+│ +s=L(19,65)+'''B39=list(range(18601,18617)); SEEDS=ANCH_BIT+B39
+│ +'''+L(70,636)+'OUT="l186"\n'+L(638,682)+'''from pathlib import Path
+│ +nfiles=0
+│ +for archive in Path('.').rglob('*.npz'):
+│ +    if archive.parts[0]==OUT: continue
+│ +    with zipfile.ZipFile(archive) as z:
+│ +        assert all(not (set(map(int,re.findall(r'\\d+',k))) & set(B39)) for k in z.namelist()),archive
+│ +    nfiles+=1
+│ +log('fresh keyscan PASS',nfiles)
+│ +'''+L(714,718)+L(743,808)+'''add_arm('sc25',1110)
+│ +if True:
+│ +'''+L(818,837)+'''TRACK=[1110]; DM={}
+│ +assert LOC_OF('sc25')[1110]<0
+│ +'''+L(890,1063)+'''MY_ARMS=['sc25']
+│ +RAW_PATH,XM_PATH=OUT+'/raw.npz',OUT+'/xm.npz'; GAINS_PATH=OUT+'/gains.json'
+│ +'''+L(1074,1121)+'''ANCH_PATH=OUT+'/anchors.json'
+│ +'''+L(1126,1165)+'''    AMPA=canonical.copy()
+│ +    if seed not in ANCH_BIT:
+│ +        for b,j in zip((0,4000),np.random.default_rng(np.random.SeedSequence([186,seed])).integers(-300,301,2)):
+│ +            AMPA[b+900:b+1400]=0
+│ +            AMPA[b+900+j:b+1400+j]=ENT_AMP
+│ +    store[f'gate_{seed}']=AMPA>0
+│ +    carrier=np.empty(WIN,np.float32)
+│ +'''+L(1166,1300)+'''        carrier[k]=X['cutwA'][loc_wA[1110],0].item()
+│ +'''+L(1301,1306)+'''    store[f'GI1110_cutwA_{seed}']=carrier
+│ +    store[f'GI1110_sc25_{seed}']=np.full(WIN,np.nan,np.float32)
+│ +'''+L(1307,1324)
+│ +s=s.replace('for seed in SEEDS:', 'canonical=AMPA.copy()\nfor seed in SEEDS:'); assert 'AMPA = np.zeros' in s and 'ST = json.load' in s
+│ +compile(s,'run.py','exec');(p/'run.py').write_text(s)
+💻 $ python -B banc/l186/build.py + 4 commands  0.5s
+
+────────────────────────────────────────
+**Implementing the launcher**
+∴ Thought for 28s
+────────────────────────────────────────
+
+✍️ Write banc/l186/analyze.py
+│ banc/l186/analyze.py
+│ @@ -0,0 +1,41 @@
+│ +from pathlib import Path
+│ +import numpy as np,json
+│ +p=Path(__file__).resolve().parent
+│ +seeds=list(range(18601,18617)); arms=['cutwA','sc25']; t=np.arange(6000); phase=np.cumsum(2*np.pi*.01*np.where(t//2000==1,1.4,.7)); offsets=np.arange(-250,251,10); W=offsets[:,None]+np.arange(500); raw=np.load(p/'raw.npz'); anc=json.loads((p/'anchors.json').read_text());gain=json.loads((p/'gains.json').read_text()); assert anc['c0a_pass'] and anc['n_checks']==92 and anc['c0a_max']==0 and all(gain['stored_exact'].values())
+│ +onsets={}; phasefits={}; matrices={}; phases={}
+│ +for s in [801,901,*seeds]:
+│ + g=raw[f'gate_{s}'];j=np.zeros(2,int) if s<1000 else np.random.default_rng([186,s]).integers(-300,301,2); ons=np.array([900,4900])+j; expected=(t//2000==1)|((t%2000<500)|(t%2000>=1800));
+│ + for o in ons:expected[o:o+500]=True
+│ + assert np.array_equal(g,expected) and list(g.reshape(3,-1).sum(1))==[1200,2000,1200];onsets[s]=ons.tolist();ph={};ii=np.concatenate([np.arange(o,o+500) for o in ons]);X=np.column_stack([ii<2000,ii>=4000,np.sin(phase[ii]),np.cos(phase[ii])]);
+│ + for a in arms:
+│ +  for k in ['GI1110','Ti_fR','Ti_eR']:
+│ +   y=raw[f'{k}_{a}_{s}'];assert y.shape==(6000,)
+│ +   if a=='sc25' and k=='GI1110': assert np.isnan(y).all();continue
+│ +   assert np.isfinite(y).all();cs,cc=np.linalg.lstsq(X,y[ii],rcond=None)[0][-2:];ph[k+'_'+a]=dict(peak=float(np.arctan2(cs,cc)),amp=float(np.hypot(cs,cc)))
+│ + phasefits[s]=ph
+│ +for k in ['Ti_fR','Ti_eR']:
+│ + d=[]
+│ + for s in seeds:
+│ +  ph=phasefits[s]; f=ph[k+'_cutwA'];c=ph['GI1110_cutwA'];
+│ +  if min(f['amp'],c['amp'])>1e-6:d.append(f['peak']-c['peak'])
+│ + z=np.mean(np.exp(1j*np.array(d))) if d else None;phases[k]=dict(n=len(d),degrees=float(np.angle(z,deg=True)) if d else None,R=float(abs(z)) if d else None)
+│ +def unit(y,idx):
+│ + v=y[idx].astype(float);v-=v.mean(-1,keepdims=True);n=np.linalg.norm(v,axis=-1);return v/np.maximum(n[:,None],1e-99),n>np.sqrt(500)*1e-6
+│ +for a in arms:
+│ + f=[raw[f'Ti_fR_{a}_{s}'] for s in seeds];e=[raw[f'Ti_eR_{a}_{s}'] for s in seeds];mat=np.zeros((2,16,16));
+│ + for seg in range(2):
+│ +  for i,s in enumerate(seeds):
+│ +   idx=W+onsets[s][seg];v,ok=unit(f[i],idx)
+│ +   for j,q in enumerate(seeds):
+│ +    for clock,pos in enumerate([W+onsets[q][seg],idx]):
+│ +     w,ok2=unit(e[j],pos);mat[clock,i,j]+=np.mean(ok&ok2&((v*w).sum(-1)<=-.25))*.5
+│ + assert np.array_equal(mat[0].diagonal(),mat[1].diagonal());matrices[a]=mat
+│ +h=matrices['sc25']-matrices['cutwA'];h=np.array([*h,h[0]-h[1]]);mask=~np.eye(16,dtype=bool);est=h[:,mask].mean(1);jk=[]
+│ +for i in range(16):
+│ + m=mask.copy();m[i]=False;m[:,i]=False;jk.append(h[:,m].mean(1))
+│ +se=np.sqrt(15/16*((jk-np.mean(jk,0))**2).sum(0));lo=est-1.96*se;hi=est+1.96*se;A,T,D=est
+│ +branch='E1-external' if A>=.15 and D>=.10 and lo[2]>0 else 'E2-elapsed' if T>=.15 and D<=-.10 and hi[2]<0 else 'E3-mixed/unresolved';surv='survives' if A>=.15 else 'reversed' if A<=-.15 else 'small'
+│ +means={a:{'aligned':float(m[0,mask].mean()),'elapsed':float(m[1,mask].mean()),'same':float(m[0].diagonal().mean())} for a,m in matrices.items()};stats={k:dict(value=float(x),ci95=[float(l),float(u)]) for k,x,l,u in zip('ATD',est,lo,hi)}
+│ +obj=dict(status='FINAL',branch=branch,survival=surv,means=means,contrasts=stats,phase=phases,phase_fits=phasefits,gains=gain,anchors=anc,seeds=seeds,onsets=onsets,ordered_pair_duties={a:m.tolist() for a,m in matrices.items()},clock_order=['aligned','elapsed']);text=json.dumps(obj,indent=1,allow_nan=False);(p/'results_l186.json').write_text(text+'\n');assert json.loads((p/'results_l186.json').read_text())['status']=='FINAL'
+│ +lines=['L186 gate-jitter discriminator — '+branch,'16 paired jitter schedules; anchor seeds 801/901 excluded.','Re-bisected gains: '+str(gain['gain'])+'; C0A: 92 exact, max difference 0.','Duty: aligned / elapsed / same-seed']+[f"  {a}: {v['aligned']:.3f} / {v['elapsed']:.3f} / {v['same']:.3f}" for a,v in means.items()]+['Deletion contrasts, seed-jackknife 95% intervals:']+[f'  {k} = {x:+.3f} [{l:+.3f}, {u:+.3f}]' for k,x,l,u in zip(['aligned','elapsed','aligned minus elapsed'],est,lo,hi)]+['Aligned deletion elevation: '+surv+'.',{'E1-external':'The deletion effect preferentially followed the displaced drive gate.','E2-elapsed':'Elapsed time was favored. The carrier tone kept elapsed phase; this does not establish an internal oscillator. Requires a second batch.','E3-mixed/unresolved':'Neither clock won by the registered margin and uncertainty rule; this is not evidence for two independent rhythms.'}[branch],'Carrier-present tone phase: pool peak relative to GI 1110 (positive = later).']+[f"  {k}: {v['degrees']} deg, R={v['R']}, n={v['n']} ({'concentrated' if v['n'] and v['R']>=.7 else 'dispersed or unavailable'})." for k,v in phases.items()]+['Deleted GI is structurally missing, not zero. Phase is not a causal transmission delay.','Inference is about the movable pulse in the 0.7-Hz segments, at graph-specific AF-matched gains; not whole-segment duty.']
+│ +assert len(lines)<=60;(p/'L186-FINDINGS.md').write_text('\n'.join(lines)+'\n');print('\n'.join(lines))
+
+────────────────────────────────────────
+**Creating worker sequencer**
+∴ Thought for 10s
+────────────────────────────────────────
+
+✍️ Write banc/l186/sequence.py
+│ banc/l186/sequence.py
+│ @@ -0,0 +1,28 @@
+│ +"""Foreground sequencer. Never launch on dispatch exit alone."""
+│ +import os,sys,re,time,json,subprocess
+│ +from pathlib import Path
+│ +p=Path(__file__).resolve().parent;b=p.parent;v=b/'l187/verdict.out'
+│ +def dispatch():
+│ + found=[]
+│ + for d in Path('/proc').glob('[0-9]*'):
+│ +  try:cmd=(d/'cmdline').read_bytes().split(b'\0');stat=(d/'stat').read_text().split();pid=int(d.name)
+│ +  except (FileNotFoundError,ProcessLookupError,PermissionError):continue
+│ +  if stat[2]=='Z':continue
+│ +  if (pid,stat[21]) in [(781933,'84471464'),(782155,'84471493')] or any(x.startswith(b'Experiment dispatch (owner request, L187') for x in cmd):found.append(pid)
+│ + return found
+│ +while True:
+│ + ids=dispatch();marker=v.exists() and bool(re.search(r'^.*\bFINAL\b.*$',v.read_text(),re.M));print(time.strftime('%FT%T%z'),'L187 FINAL:',marker,'dispatch:',ids,flush=True)
+│ + if not ids:
+│ +  if marker:break
+│ +  sys.exit('STOP: L187 dispatch exited without FINAL')
+│ + time.sleep(15)
+│ +start=time.monotonic(); deadline=start+5380
+│ +(p/'gate_clear.json').write_text(json.dumps(dict(time=time.time(),marker=[x for x in v.read_text().splitlines() if 'FINAL' in x][-1],dispatch=ids)))
+│ +env=dict(os.environ,L175_MODE='work',L175_THREADS='2',OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',PYTHONDONTWRITEBYTECODE='1',CUDA_VISIBLE_DEVICES='');py='/home/t3rpz/critters/peabrain/.venv/bin/python'
+│ +for script,out in [('run.py','worker.out'),('analyze.py','verdict.out')]:
+│ + with (p/out).open('w') as f:subprocess.run([py,'-B',str(p/script)],env=env,cwd=b,stdout=f,stderr=subprocess.STDOUT,check=True,timeout=deadline-time.monotonic())
+│ +r=json.loads((p/'results_l186.json').read_text());assert r['status']=='FINAL' and len(r['seeds'])==16 and r['anchors']['c0a_pass'] and len((p/'L186-FINDINGS.md').read_text().splitlines())<=60
+│ +line=f"\nL186 gate-jitter: {r['branch']}; aligned/elapsed deletion contrasts {r['contrasts']['A']['value']:+.3f}/{r['contrasts']['T']['value']:+.3f}, 16 paired seeds; C0A exact. banc/l186/L186-FINDINGS.md and results_l186.json.\n"
+│ +intent=b.parent/'LAB-INTENT.md';assert line not in intent.read_text();
+│ +with intent.open('a') as f:f.write(line)
+│ +assert line in intent.read_text();print((p/'L186-FINDINGS.md').read_text(),flush=True)
+
+────────────────────────────────────────
+**Waiting on foreground work**
+∴ Thought for 0s
+────────────────────────────────────────
+
+💻 $ python -Bu banc/l186/sequence.py
+📖 Reading tool details · 1 tool
+⚙️ Proc wait proc_4cc651f  180.0s
+
+────────────────────────────────────────
+**Verifying generated anchors**
+∴ Thought for 0s
+────────────────────────────────────────
+
+💻 $ python - <<'PY' from pathlib import Path p=Path('banc/l186/run.py') + 5 commands  1.5s
+
+────────────────────────────────────────
+**Running 600-second wait**
+∴ Thought for 0s
+────────────────────────────────────────
+
+💻 $ command -v ruff + 3 commands  0.8s
+
+────────────────────────────────────────
+**Waiting for input**The preregistration is in place. L187 is still active, so no
+ L186 worker has started. The comparison keeps the tone on elapsed time and moves
+ only the gate; an elapsed-time win would not, by itself, establish an internal rhythm
+.
+∴ Thought for 3s
+────────────────────────────────────────
+
+💻 $ python - <<'PY' import time from pathlib import Path p=Path('banc/l186') + 4 commands  580.5s
+💻 $ python - <<'PY' import time from pathlib import Path p=Path('banc/l186') + 4 commands  570.7s
+💻 $ python - <<'PY' from pathlib import Path import time p=Path('banc/l186') + 2 commands  115.3s
+💻 $ python - <<'PY' from pathlib import Path import time,json p=Path('banc/l186') + 4 commands  186.4s
+
+────────────────────────────────────────
+✿ Miso
+L186 completed. The preregistered verdict is E3: removing GI 1110 increased shared flexor–extensor duty, but the experiment did not resolve which clock that increase follows.
+
+Across 16 paired seeds, the deletion increased cross-seed duty by 0.275 when traces were aligned to the jittered gate and by 0.290 when compared at the same elapsed time. The aligned-minus-elapsed difference was −0.015 (95% seed-jackknife interval: −0.156 to +0.126). The deletion effect survived realignment; neither clock won by the preregistered margin. This is not evidence for an internal oscillator.
+
+With GI 1110 present, the right flexor and extensor tone-response peaks led the carrier peak by about 100° and 90°, respectively. Those are phase relationships, not transmission delays.
+
+The preregistration was written while L187 was active. L186 launched only after the FINAL marker appeared and the dispatch exited. Both re-bisected gains matched exactly, and all 92 anchor comparisons had zero difference.
+
+Findings, results_l186.json, raw.npz with GI traces and applied gates, and runnable scripts are in:
+  
+/home/t3rpz/critters/peabrain-lab/banc/l186/
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-0c8c19b17b5d28884478d5219217531a98da2aef7fd23655b5bc36d2a7250981 -p maple
+
+Session:        local-0c8c19b17b5d28884478d5219217531a98da2aef7fd23655b5bc36d2a7250981
+Duration:       31m 18s
+Messages:       47 (1 user, 45 tool calls)

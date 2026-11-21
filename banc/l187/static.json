@@ -1,0 +1,510 @@
+{
+ "design": "L187 static pins (zero rollouts): fresh-batch absence, relay admissibility + anatomy pins, arm graphs, generic-plumbing certs, stored gains re-derived from L175/L185 files.",
+ "src": "banc l175 scan_run.py transform (l187 build_relay.py)",
+ "fresh_batch": [
+  3609,
+  3624
+ ],
+ "anchors_bit": [
+  801,
+  901
+ ],
+ "anchor_175": [
+  3545
+ ],
+ "npz_scanned_for_seed_absence": 225,
+ "seed_absence": "PASS",
+ "cert_gen_static": "PASS",
+ "cert_multi_static": "PASS",
+ "cert_sub_static": "PASS",
+ "cert_sub": {
+  "sc25": {
+   "removed": [
+    1110
+   ],
+   "n": 21784,
+   "edges": 644084,
+   "edges_removed": 93
+  },
+  "sc40": {
+   "removed": [
+    559
+   ],
+   "n": 21784,
+   "edges": 644062,
+   "edges_removed": 115
+  },
+  "rcut": {
+   "removed": [
+    75494
+   ],
+   "n": 21784,
+   "edges": 644068,
+   "edges_removed": 109
+  },
+  "pp": {
+   "removed": [
+    559,
+    1110
+   ],
+   "n": 21783,
+   "edges": 643969,
+   "edges_removed": 208
+  },
+  "occ": {
+   "removed": [
+    1110,
+    75494
+   ],
+   "n": 21783,
+   "edges": 643976,
+   "edges_removed": 201
+  }
+ },
+ "relay": {
+  "cell": {
+   "gi": 75494,
+   "root_id": "720575941482680061",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN06B033",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 131.48856491722785,
+   "out_w_eff": 262.9771298344557,
+   "out_w_motor": 42.31830497865507,
+   "out_edges": 51
+  },
+  "loc_wA": 21435,
+  "census_x_mean_3seed": 0.3289374311765035,
+  "census_x_mean_seeds": [
+   0.32385745644569397,
+   0.3295610547065735,
+   0.33339378237724304
+  ],
+  "census_delivered_drive": 86.50302154591569,
+  "carrier_delivered_drive": 71.58302185726956,
+  "in_edges": 58,
+  "out_edges": 51,
+  "carrier_to_relay": {
+   "syn": 21,
+   "w": 3.091042453358316
+  },
+  "sc40_to_relay": {
+   "syn": 17,
+   "w_eff": -5.780743515792329
+  },
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 1,
+    "syn": 8,
+    "w_eff_sum": -4.394449154672439,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "sc40_census_x_mean": 0.03425384188691775,
+  "carrier_census_x_mean": 0.3891147971153259
+ },
+ "carrier": {
+  "gi": 1110,
+  "root_id": "720575941639588127",
+  "super_class": "descending",
+  "cell_type": "DNp33",
+  "side": "left",
+  "eff_sign": 1.0,
+  "is_glut": false,
+  "in_dn_new": true,
+  "is_mech": false,
+  "lineage_mass_share": 0.006435921140521805,
+  "out_w_raw": 183.96376182027785,
+  "out_w_eff": 183.96376182027785,
+  "out_w_motor": 23.92010907557512,
+  "out_edges": 80
+ },
+ "sc40": {
+  "gi": 559,
+  "root_id": "720575941651815445",
+  "super_class": "descending",
+  "cell_type": "DNge084",
+  "side": "right",
+  "eff_sign": -1.0,
+  "is_glut": false,
+  "in_dn_new": true,
+  "is_mech": false,
+  "lineage_mass_share": 0.004921330836414906,
+  "out_w_raw": 202.88422582764596,
+  "out_w_eff": 405.7684516552919,
+  "out_w_motor": 6.20455776256869,
+  "out_edges": 102
+ },
+ "chain": [
+  {
+   "gi": 75494,
+   "root_id": "720575941482680061",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN06B033",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 131.48856491722785,
+   "out_w_eff": 262.9771298344557,
+   "out_w_motor": 42.31830497865507,
+   "out_edges": 51
+  },
+  {
+   "gi": 74914,
+   "root_id": "720575941527149240",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN03B035",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 94.55875059445002,
+   "out_w_eff": 189.11750118890004,
+   "out_w_motor": 17.269173879529728,
+   "out_edges": 46
+  },
+  {
+   "gi": 71392,
+   "root_id": "720575941524912461",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN03B019",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 176.02329558338008,
+   "out_w_eff": 352.04659116676015,
+   "out_w_motor": 40.89347075656981,
+   "out_edges": 83
+  },
+  {
+   "gi": 74468,
+   "root_id": "720575941668670631",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN19A015",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 239.71571437355493,
+   "out_w_eff": 479.43142874710986,
+   "out_w_motor": 89.58943688804858,
+   "out_edges": 95
+  },
+  {
+   "gi": 64322,
+   "root_id": "720575941563172776",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN19A005",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 266.442065192355,
+   "out_w_eff": 532.88413038471,
+   "out_w_motor": 72.37565431125999,
+   "out_edges": 106
+  },
+  {
+   "gi": 74934,
+   "root_id": "720575941623457162",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN03B035",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 98.86659607739271,
+   "out_w_eff": 197.73319215478543,
+   "out_w_motor": 23.118160248023386,
+   "out_edges": 48
+  },
+  {
+   "gi": 71248,
+   "root_id": "720575941496630400",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN08A006",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 197.77296463507207,
+   "out_w_eff": 395.54592927014414,
+   "out_w_motor": 43.549472285197915,
+   "out_edges": 81
+  },
+  {
+   "gi": 73413,
+   "root_id": "720575941458908230",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN21A016",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 155.23301018767975,
+   "out_w_eff": 310.4660203753595,
+   "out_w_motor": 55.12763419095349,
+   "out_edges": 63
+  },
+  {
+   "gi": 65443,
+   "root_id": "720575941579809013",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN17B004",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 522.2039892529278,
+   "out_w_eff": 1044.4079785058557,
+   "out_w_motor": 7.313220387090301,
+   "out_edges": 249
+  },
+  {
+   "gi": 66994,
+   "root_id": "720575941504563781",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN07B098",
+   "side": "left",
+   "eff_sign": 1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 15.63585748404424,
+   "out_w_eff": 15.63585748404424,
+   "out_w_motor": 9.595602772766826,
+   "out_edges": 7
+  },
+  {
+   "gi": 69186,
+   "root_id": "720575941642638792",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN03B080",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 36.815659172776265,
+   "out_w_eff": 73.63131834555253,
+   "out_w_motor": 14.240778293368617,
+   "out_edges": 18
+  },
+  {
+   "gi": 69410,
+   "root_id": "720575941457153094",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN19B037",
+   "side": "left",
+   "eff_sign": 1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 159.33793150360768,
+   "out_w_eff": 159.33793150360768,
+   "out_w_motor": 43.63187165232499,
+   "out_edges": 76
+  },
+  {
+   "gi": 72158,
+   "root_id": "720575941653563153",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN27X014",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 138.262597353719,
+   "out_w_eff": 276.525194707438,
+   "out_w_motor": 23.68874506732938,
+   "out_edges": 75
+  }
+ ],
+ "track": [
+  1110,
+  319,
+  707,
+  354,
+  32271,
+  1266,
+  228,
+  549,
+  725,
+  890,
+  808,
+  924,
+  779,
+  456,
+  826,
+  559,
+  692,
+  32097,
+  1509,
+  722,
+  618,
+  1022,
+  1038,
+  32005,
+  643,
+  736,
+  1543,
+  1557,
+  1060,
+  262,
+  1673,
+  651,
+  1224,
+  1489,
+  511,
+  1480,
+  75494,
+  74914,
+  71392,
+  74468,
+  64322,
+  74934,
+  71248,
+  73413,
+  65443,
+  66994,
+  69186,
+  69410,
+  72158
+ ],
+ "arm_n": {
+  "sc25": 21784,
+  "sc25F": 21784,
+  "sc40": 21784,
+  "sc40F": 21784,
+  "rcut": 21784,
+  "rcutF": 21784,
+  "rsilW": 21785,
+  "rsilF": 21785,
+  "pp": 21783,
+  "ppF": 21783,
+  "occ": 21783,
+  "occF": 21783
+ },
+ "arm_edges": {
+  "sc25": 644084,
+  "sc25F": 644084,
+  "sc40": 644062,
+  "sc40F": 644062,
+  "rcut": 644068,
+  "rcutF": 644068,
+  "rsilW": 644177,
+  "rsilF": 644177,
+  "pp": 643969,
+  "ppF": 643969,
+  "occ": 643976,
+  "occF": 643976
+ },
+ "arm_removed": {
+  "sc25": [
+   1110
+  ],
+  "sc25F": [
+   1110
+  ],
+  "sc40": [
+   559
+  ],
+  "sc40F": [
+   559
+  ],
+  "rcut": [
+   75494
+  ],
+  "rcutF": [
+   75494
+  ],
+  "rsilW": [],
+  "rsilF": [],
+  "pp": [
+   559,
+   1110
+  ],
+  "ppF": [
+   559,
+   1110
+  ],
+  "occ": [
+   1110,
+   75494
+  ],
+  "occF": [
+   1110,
+   75494
+  ]
+ },
+ "clamp_loc": {
+  "rsilW": 21435,
+  "rsilF": 21435,
+  "rsilFF": 21435,
+  "silWg": 467
+ },
+ "clamp_full": [
+  "rsilF",
+  "rsilFF"
+ ],
+ "g_stored": {
+  "cutwA": 0.14365819573402408,
+  "sc25": 0.1454454553127289,
+  "sc40": 0.14203338861465453
+ },
+ "l175_worker_of": {
+  "sc25": 0,
+  "sc40": 0
+ },
+ "n_wA": 21785,
+ "edges_wA": 644177,
+ "used_cells_n": 78
+}

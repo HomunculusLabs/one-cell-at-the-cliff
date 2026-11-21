@@ -8863,3 +8863,173 @@ permanent; all six verifies green after; DRAFT v3.30; CLAIM-MAP B41 + its
 ## L175 stage (b) — single-cell scan + drive-matched twin (2026-11-21, experiment dispatch)
 
 L175 stage (b), 2026-11-21 (owner-directed experiment, fable 5.2 as experimenter): single-cell scan of ng ranks 25-58 on the k=24 base + drive-matched twins, fresh batch 3545-3560, n=16 on all 37 arms -> registered branch D2_identity_carried: carrier 16/16 meanR 0.758 is the only SUPER; mass twin 2/16 (x_mean 0.0005 on the base); drive-matched twins dmA gi 511 5/16 0.390 and dmC gi 1480 2/16 0.366 (drive x1.003/x1.006); 0 of 13 other active cells SUPER; base 5/16; caveat: silent-cell removals span kR 2-11/16 and covary with the re-bisected gain, one batch. Verified: PREREG before any rollout (~/critters/peabrain-lab/banc/l175/PREREG.md); count-asserted transform of l150_run.py (~/critters/peabrain-lab/banc/l175/build_scan.py -> scan_run.py); g_cutwA/g_cutng25/g_cutng25p stored floats EXACT; 322 C0A bit-identity checks vs ~/critters/peabrain-lab/banc/l135/raw_l135.npz max 0.0; metric cert vs results_l135 EXACT; results ~/critters/peabrain-lab/banc/l175/results_l175.json, census ~/critters/peabrain-lab/banc/l175/census_k24.npz, write-up ~/critters/peabrain-lab/banc/l175/L175-FINDINGS.md. No DRAFT/numbers/LANE edit.
+
+## L174 (b4-iii-c-i) — the all-caps de-emphasis of §1 and §4 (tick 215, 2026-11-21)
+
+Stage (b4-iii-c) was sliced THREE ways, and the slice is by KIND rather than
+size. A fresh live census (`banc/l174b4iiic/census.py`) re-derived the
+all-caps distribution after the (b4-iii-b) relabel and produced three facts
+the card's one line did not anticipate:
+
+1. §5 Discussion carries ZERO all-caps tokens of any class. Stage (b4-ii)
+   wrote it in the lowercase house form, so §5 is this stage's STYLE
+   REFERENCE, not its workload — and §(30) now pins it caps-free so a later
+   stage cannot re-emphasise it.
+2. §3 Methods is a different KIND of job. Four tokens there are MODEL SYMBOLS
+   living inside the state equation and the parameter table (BG, DT, TAU,
+   WIN — and tick 213's partition classified TAU and WIN at TOKEN level as
+   NOTATION/STRIP), and one token splits by POSITION inside §3 alone: `CC BY
+   4.0` the licence name versus `BY CONSTRUCTION` the emphasis. §3 also hosts
+   the eleven KEEP_MAPPING codes, which must survive byte-exact. Deferred as
+   slice (c-ii).
+3. §2 Results is the bulk (89 strip + 36 class labels + 16 tokens needing
+   fresh judgement). Deferred as slice (c-iii).
+
+This slice therefore took §1 Introduction and §4 Limitations, where every
+owned occurrence is unambiguous de-emphasis. Branch C1_deemphasis_only.
+
+### Measured
+
+64 declared occurrences lowered (26 in §1, 38 in §4), with the five
+outcome-class labels becoming the lowercase defined terms §5 already uses.
+The edit is PROVED CASE-ONLY over the whole draft: title-onward length
+identical, exactly 412 differing bytes, every one an uppercase letter
+replaced by its lowercase self. Visible-character and byte deltas are
+therefore EXACTLY ZERO — a first for this lineage, whose earlier stages cost
++145/+48/+108/−14/−87/+40 — and both the measurement and citation-key
+multisets are identical with NO named removal and NO named addition (tick 213
+needed 15 named removed digit runs, tick 214 needed 11 named mapping rows).
+§2 Results and everything from §5 onward are byte-IDENTICAL. KEEP survivors
+are occurrence-pinned: §1 CPG, CPG-, IN12B003, S07, XOR; §4 BANC, BANC',
+EMG, XOR.
+
+### Four method contributions, all inheritable
+
+1. **A literal harvest cannot see a gate built from a regex or a token
+   list.** The first harvest found and re-pointed 16 broken verifier literals
+   and reported clean — then two gates broke anyway: an
+   `re.search(r'(?m)^DATA FLOOR:')` locator in l149 §(26)'s prose contract,
+   and an `INTERMEDIATE` entry inside l158's required §1-map token list.
+   Neither is a draft-quoting string literal in the harvest's sense. A strip
+   or de-emphasis stage must scan the verifier SOURCES for its owned tokens,
+   not only for their quoted literals.
+2. **A whole-draft presence test cannot see a section-scoped gate.** The
+   changelog banner QUOTES the edited prose, so `'UNIT OF INFERENCE'` stayed
+   present draft-wide while the §4-scoped gate that reads it (`_lim172 =
+   draft[draft.index('## 4. Limitations'):]`) failed. The second-order scan
+   (`harvest2.py`) tests presence inside the EDITED SECTION RANGES — and also
+   decodes escape sequences, a third blind spot: the first harvest's
+   `"[^"\n]*"` literal regex reads `'fully RE-DERIVED, not\n  frozen'` as a
+   two-character backslash-n that appears nowhere in the draft, so a real
+   breakage looked clean. The scan over-reports on short tokens (`'PARTIAL'`
+   used as a stored-artefact class name), so each hit is adjudicated by
+   reading its USE, never applied blindly.
+3. **Line-start is not sentence-start in a hard-wrapped draft.** The first
+   transform rule treated a token at column 0 as sentence-initial and
+   capitalised SEVEN mid-sentence wrap openers — "Fixed network" for a
+   sentence that began on the previous line, and the same for SUFFICIENT,
+   ORDER, SUFFICIENCY, MASS-, CARRIER, COSTS. The fixed rule reads the
+   PREVIOUS line's ending (blank, heading, `.` or `:`), and the fix was
+   applied by restoring the freeze and RE-RUNNING the parsed transform, never
+   by hand-editing the draft — the parsed-not-typed discipline is what made a
+   seven-site rule error a one-command repair.
+4. **A global file-level replace cannot tell a live-draft quote from a
+   stored-pre-image quote.** `emit.py`'s `str.replace` over l149_verify.py
+   lowered the PRE-IMAGE side of a `_SPL_B4` pair (`'cutwA PARTIAL 3/16
+   .371), and the f4ng-vs-f4tw'` quotes the (b4-i) stored span, which still
+   carries the uppercase form), and the gate caught it with
+   "split pre-image form not unique". Pre-image quotes must stay verbatim.
+   Related: nested literals must be re-pointed LONGEST FIRST, or replacing
+   the short form rewrites the long one's interior and the long form
+   "vanishes" (caught on the first dry run).
+
+### Gate
+
+Permanent as `l149_verify` section (30): T15 case-only over the whole draft
+(same length, 412 upper→lower byte differences, nothing else), the
+out-of-scope byte identities computed TITLE-RELATIVE — an own-catch, because
+the banner gains this stage's own entry and every absolute offset shifts —
+the KEEP survivor sets for both edited sections, §5's caps-free pin, the
+class labels in their house form, and both multisets. §(23), §(26) and §(29)
+are re-pointed THROUGH this stage: their frozen literal pins now accept
+case-insensitive images WITH the retired all-caps form asserted ABSENT, which
+is strictly stronger than either check alone and is bounded by §(30)'s
+whole-draft case-only proof. §(26) additionally pins §4's pre-strip caps
+census (39 distinct / 45 occurrences) and its 7 surviving KEEP occurrences,
+and declares that exactly ONE of its two bullet-marker locators was
+de-emphasised so the exemption cannot silently cover a second label.
+
+Six paper verifies green; `numbers.json` byte-identical (sha 238bf2d37f51).
+DRAFT v3.31, CLAIM-MAP B42. Evidence `banc/l174b4iiic/`.
+
+
+§L184 — Mechanism analysis (stored B39 traces + cutwA wiring; CPU only, zero rollouts). Preregistered harmonics/gate, audited all 37 arms and enumerated 93 incident edges. sc25 Δsame +.3504 = Δcross +.5246 plus residual −.1742; gate transmission vs base is not a general harmonic gain. B39 individual carrier phase was not stored. Report: banc/l184/L184-FINDINGS.md; numeric panels: banc/l184/threepanel.csv.
+
+§L185 — Replication + gain null + signed-current twin (2026-11-21, owner-directed experiment dispatch; CPU only, 6 workers, 17 min of rollouts). Fresh batch 3577-3592, n=16 on 19 arms + base, all on the k=24 base -> registered branches R1 REP_D2 / gain form GAIN_ROBUST / R2 GAIN_SENSITIVE_NEGATIVE / R3 S2_NO_FLIP (D2_hardened true): carrier gi 1110 15/16 meanR .770 SUPER at its L175 gain and 15/16 .683 SUPER at fixed base gain (pooled with B39 31/32); base 3/16; mass twin 4/16; drive twins dmA 5/16, dmC 2/16; boundary cells do not promote (sc27 4/16; sc40 12/16 .538 INTERMEDIATE, 3/16 at fixed gain = a gain artifact); gain-only null slope -0.0228 meanR per +0.1% gain (95% CI -.036..-.0095; base 8/16 at -0.5% vs 3/16 at +0.5%, no arm SUPER; R2 .36 of the L175 scan spread within +-.5%); signed-current twin gi 1508 (DNg19-R, dist_rel .003 to the carrier's gated <=2-path current onto right-Ti pools; L175's drive twins did not match it) 2/16 .345 NOT-SUPER. Caveats: R3 one batch + one gate definition; sc40 pooled 23/32 under its re-bisected gain; prediction P5 (contrast sign follows gain shift) wrong. Verified: PREREG before any rollout (~/critters/peabrain-lab/banc/l185/PREREG.md, sha f1f7150240e6, 13 pinned shas unchanged at the end: ~/critters/peabrain-lab/banc/l185/PREREG.sha256); count-asserted transform of the L175 harness (~/critters/peabrain-lab/banc/l185/build_rep.py -> rep_run.py); every worker re-bisected g_cutwA + its L175 arm == stored floats EXACT; C0A 368 checks vs ~/critters/peabrain-lab/banc/l135/raw_l135.npz + 300 checks vs the stored L175 raws (seed 3545) max 0.0; cutwA identical across workers (2185) and == generic alias g000 (437); metric reproduces results_l135 and results_l175 EXACT. Results ~/critters/peabrain-lab/banc/l185/results_l185.json, selection ~/critters/peabrain-lab/banc/l185/selection_s2.json, write-up ~/critters/peabrain-lab/banc/l185/L185-FINDINGS.md. No DRAFT/numbers/LANE edit.
+
+§L187 — Relay silencing + cut, push-pull, sc40 control (2026-11-21, owner-directed experiment dispatch, sequenced behind L185; CPU only, 6 workers x 2 threads, fresh B41 3609-3624, n=16 every arm). PREREG banc/l187/PREREG.md sha 98034281b435e961 frozen 12:28:05 before any rollout; L185 done-gate banc/l187/L185_DONE.txt. Harness = count-asserted transform of l175/scan_run.py (banc/l187/build_relay.py -> relay_run.py). Certs: C0A cutwA == raw_l135 EXACT in all 6 workers (322 checks) + vs L175 raws @3545 (200), stored gains EXACT, FC-150 clamp path == stored l150 silW, CERT-X 0.0. Branches: A1 relay window-clamp 12/16 .591 = A1_unresolved (meanR .009 under the bar; +.177 vs base); A2 relay cut 13/16 .697, fixed gain 13/16 .630 = R1_conduit label; relay summary MIXED; A3 push-pull R3_stack — fixed gain 16/16 .792 (+.076 above carrier removal), rematched 12/16 .605 (-.205, tracks its -0.81% re-bisect); A4 sc40 11/16 .567 INTERMEDIATE, fixed 2/16 .329. Base 6/16 .414; carrier 16/16 .810 (fixed 16/16 .715). Secondary occlusion arm (carrier + relay removed) 16/16 .839: with the relay gone the carrier's removal still adds +.142 chopped duty and the whole 1.4-Hz signature (.020 -> .729), so the relay is not the carrier's necessary conduit; relay removal alone raises chopped duty WITHOUT that signature (.02-.06 vs .43-.53). Construction identity: a relay clamped from t=0 is bit-identical to the relay-cut graph (max 0.0; same re-bisected float). Post hoc: gain sensitivity flips sign with the carrier (duty rises with gain in 3/3 carrier-absent graphs, falls in carrier-present ones). Caveats: one batch, two labels on the band edge, no relay-matched twin, single carrier->relay edge cut not run. No draft/lane edit. Report banc/l187/L187-FINDINGS.md; results banc/l187/results_l187.json; post hoc panels banc/l187/addendum.json.
+
+L186 gate-jitter: E3-mixed/unresolved; aligned/elapsed deletion contrasts +0.275/+0.290, 16 paired seeds; C0A exact. banc/l186/L186-FINDINGS.md and results_l186.json.
+
+## tick 216 — L186 adjudication: the discriminator whose power is computable from its own schedule (2026-11-21, zero rollouts)
+
+L186 (gate-jitter) landed at 12:49 un-adjudicated and un-journaled on the lane
+side. Tick 216 took it as the tick item under the L167 evidence rule (a child's
+number is a claim until it reproduces under my own code).
+
+VERIFICATION, 33 named checks green (banc/l186/t216_verify.{py,json,out}): every
+stored value in results_l186.json reproduces from the stored per-pair matrices
+under my own reader -- duty means to 4 decimals over 240 ordered pairs per arm
+per clock, the same-seed diagonal IDENTICAL between clocks (the registered
+wiring check), the delete-one-SEED jackknife re-derived at A +0.2752
+[+0.179,+0.371], T +0.2904 [+0.181,+0.400], D -0.0153 [-0.156,+0.126], C0A 92
+checks max |delta| 0.0 against raw_l135, g_cutwA exactly the lineage pin
+0.14365819573402408 (sc25 +1.244%), af matched .10904 vs .10902, seeds
+18601-18616 fresh with ZERO numeric-token collisions over every prior banc npz
+archive, anchors 801/901 left at the stored [900, 4900] schedule, and all 32
+displaced onsets inside the registered 900+-300 / 4900+-300 bands with the
+500-step pulse never crossing a segment edge.
+
+THE RESULT THAT STANDS: the carrier-removal duty elevation SURVIVES
+independently jittered gate onsets under BOTH clocks (A and T both above the
+registered .15 survival bar, both CIs excluding zero). The phenotype is not an
+artifact of one shared fixed gate schedule -- a robustness win for the draft.
+
+WHY NEITHER CLOCK WON (banc/l186/t216_power.{py,json,out}, zero rollouts, stored
+onsets only). The primary metric correlates 500-step windows; the registered
+jitter is +-300 steps. So the aligned and elapsed views of a pair differ by
+lag = onset_i - onset_j and OVERLAP by max(0, 1 - |lag|/500) of their samples:
+measured mean overlap 0.62, median 0.65, 70.4% of the 480 pair-segments share
+half or more, only 2.1% are disjoint, mean |lag| 190 steps = 1.33 tone periods
+but 0.38 of ONE window. D is attenuated by construction and E1/E2 were
+unreachable whatever the biology. The transferable rule: an ALIGNMENT
+discriminator's displacement must exceed its readout window, and that ratio is
+computable from the drawn schedule BEFORE any rollout -- so it should be a
+pre-run gate, not a post-hoc explanation.
+
+THE TONE CONFOUND IS CLEARED, which keeps the E3 informative rather than empty.
+The jitter spans 3.6 tone periods, so it genuinely had the range to break tone
+alignment; per-pair aligned-minus-elapsed duty does NOT track the relative
+tone-phase rotation it induces (rho +.148 carrier-removed, -.110 base = weak and
+sign-INCONSISTENT across arms; near-in-phase vs near-antiphase pair means
++.087/-.024 and +.017/+.053). The cross-seed structure is therefore not locked
+to the shared elapsed-time tone either -- which is the one rival E2's own PREREG
+flagged.
+
+Secondary phase block holds as filed: pool peaks sit near a quarter cycle before
+GI 1110 (Ti_fR -100.2 deg R .916, Ti_eR -90.4 deg R .754, n=16 both).
+
+BOARD RECONCILIATION the same tick: L184/L185/L186/L187/L188/L189 all completed
+in-session today but sat unchecked, so the first-unchecked pointer was stale for
+both engines. Each was verified against its own stored artifacts before
+check-off, and two of my own verification greps were WRONG in the direction that
+reads a perfect result as missing -- paper/ lives in peabrain-LAB not peabrain,
+and the digest headings carry "[lab, 2026-11-21]" WITH the comma. Verify a
+claim-checking pattern on a known-present line before believing its zero.
+Precedence re-pointed to L183 with the reason registered in the ideas-87 header;
+L190/L191/L192 carded as ideas 96.
+
+
+Duck lesion dispatch (offline): 4/8 intact hides, 0/8 with the looming pool clamped; no decision flips across 91 single-cell clamps. Scope and evidence: ducklesion/DUCK-FINDINGS.md.
+
+L190 single-edge cut — B3-partial. Removing 1110→75494 on the rematched k=24 base raised chopped right-tibia duty (+.223 paired, 95% CI +.082 to +.364), without the carrier-cut 1.4-Hz signature. Matched sham 48→75494 was base-like. Anchors exact; n=16 each. Evidence: banc/l190/L190-FINDINGS.md and results_l190.json. No fixed-gain inference.

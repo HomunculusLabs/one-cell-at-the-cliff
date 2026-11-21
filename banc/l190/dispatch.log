@@ -1,0 +1,218 @@
+Query: Experiment dispatch (owner request, L190 single-edge cut). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l190/BRIEF_edge.md and execute it 
+completely. PREREG first; CPU modest (L183 manuscript agent is concurrent).
+📖 Read BRIEF_edge.md  0.2s
+📚 Skill peabrain-flybrain  0.1s
+💻 $ pwd + 1 command
+📖 Read PREREG.md
+📖 Read arms_block.py.txt
+📖 Read tail_block.py.txt
+📖 Read run_all.sh
+💻 $ python -c "import os,sys,importlib.util as u; from pathlib import Path as P; print(sys.executable,[(m,bool(u.find_spec(m))) for m in ['torch','numpy','pandas','scipy']]); print(P('/home/t3rpz/critters/peabrain/.venv/bin/python').exists());print(P('banc/l187/relay_run.py').read_text()[:7400]); print([(d.name,len(list(d.glob('*')))) for d in P('banc').glob('l19*')])"
+✍️ Write banc/l190/PREREG.md
+│ banc/l190/PREREG.md
+│ @@ -0,0 +1,4 @@
+│ +L190 — frozen before sham selection, gain matching or rollouts.
+│ +On the k=24 cutwA graph delete exactly the positive 1110→75494 entry. Sham: restrict to another extant incoming edge, 20–22 synapses, source outside L175 WIN_CELLS. Rank by absolute count difference from 21, descending-neuron source preferred, then |log(syn/21)|, then lowest source GI. If no eligible edge, do not substitute a looser sham: report missing control and run the feasible arms. Report class and sign.
+│ +Use L187 dynamics, unjittered. Re-bisect both edited graphs (primary), retain base and sc25 references. Anchors first: stored cutwA and sc25 (cutng25) @801,901 exact on lineage traces and af; cutwA/sc25 @3545 vs L175. Anchor mismatch invalidates fresh read. Four window traces as in L187 (absent carrier in sc25 = structurally missing). Same 16 seeds each: first unused 16-seed block on grid starting 3641, stride 32, key-scan prior lab NPZs. Atomic results after each seed.
+│ +L187 chopped R SUPER = mean≥.60 and k≥12. Fingerprint = mean middle-segment R duty ≥.25 (rough midpoint of historical base/carrier). Compare paired chopped R to base with two-sided 95% t interval. B1: SUPER and fingerprint; B2: no fingerprint and absolute paired mean shift <.10 (descriptive base-like, not equivalence); B3: no fingerprint, shift ≥.10 and CI excludes zero upwards; else unresolved. B1 first. If base SUPER or sc25 lacks SUPER+fingerprint, branches descriptive only. Sham classified identically; a comparable response limits specificity. Report estimates even if not classifiable. No independent replication or mechanistic necessity claim. One CPU worker, modest threads, wall cap 1h. Only L190 tree + one intent append.
+💻 $ sha256sum banc/l190/PREREG.md + 4 commands  2.6s
+📖 Read relay_run.py L1380-1766  0.2s
+🔎 Grep N_NPZ|OUT =|PREREG|B41|glob\.glob|PLAN|NW ==|bisect_vec  0.2s
+📖 Read verdict_l187.py  0.2s
+💻 $ python -c "from pathlib import Path as P;x=P('banc/l187/relay_run.py').read_text().splitlines();print('\n'.join(x[647:731]+x[1357:1381]));print(P('banc/l187/verdict_l187.py').read_text().splitlines()[117:130]);print(P('banc/l187/run.out').read_text()[-1700:]); print(P('LAB-INTENT.md').read_text()[-700:])" + 4 commands  1.5s
+
+────────────────────────────────────────
+**Proceeding with runtime setup**
+∴ Thought for 17s
+────────────────────────────────────────
+
+✍️ Write banc/l190/build.py
+│ banc/l190/build.py
+│ @@ -0,0 +1,43 @@
+│ +# Run from banc/. Keep audited lineage step, bisect, RNG and anchor functions verbatim.
+│ +from pathlib import Path as P
+│ +from hashlib import sha256
+│ +p=P('l187/relay_run.py'); assert sha256(p.read_bytes()).hexdigest()=='b7c486bf32505e95b57405db719c5ebe1389c3f3e65e925f4119791451b94327'
+│ +s=p.read_text().splitlines(True)
+│ +def lines(a,b): return ''.join(s[a-1:b])
+│ +h=lines(31,76)+'''from pathlib import Path
+│ +assert hashlib.sha256(Path('l190/PREREG.md').read_bytes()).hexdigest()==Path('l190/PREREG.sha256').read_text().split()[0]
+│ +seen=set(); archives=0
+│ +for p in sorted(Path('..').rglob('*.npz')):
+│ +    if 'l190' in p.parts: continue
+│ +    with zipfile.ZipFile(p) as z:
+│ +        seen.update(int(m[1]) for k in z.namelist() if (m:=re.search(r'_(\\d+)\\.npy$',k)))
+│ +    archives+=1
+│ +start=3641
+│ +while seen.intersection(range(start,start+16)): start+=32
+│ +B41=list(range(start,start+16))
+│ +'''+lines(78,711)+lines(731,1007)
+│ +# preserve definitions up to graph arms, plus base/sc25 certification
+│ +h=h[:h.index('# ---------------- graph arms')]+'''add_arm('sc25',GI_CARRIER)
+│ +'''+lines(1018,1038) if False else h.split('# ---------------- graph arms')[0]+'''add_arm('sc25',GI_CARRIER)
+│ +'''
+│ +h+='''cand=[]
+│ +for i in np.flatnonzero(_relay_in & (w_syn>=20) & (w_syn<=22)):
+│ +    g,n=int(src_all[i]),int(w_syn[i]);
+│ +    if g not in WIN_CELLS: cand.append((abs(n-21),not bool(dn_all[g]),abs(math.log(n/21)),g,n))
+│ +cand.sort(); picks={'E-edge':1110}
+│ +if cand: picks['E-sham']=cand[0][3]
+│ +info={}
+│ +for a,g in picks.items():
+│ +    add_base_alias(a); base=Wb_wA; row=int(loc_wA[75494]); col=int(loc_wA[g]); cr=base.crow_indices(); ci=base.col_indices(); val=base.values(); lo,hi=map(int,cr[row:row+2]); hits=torch.where(ci[lo:hi]==col)[0]; assert len(hits)==1
+│ +    j=lo+int(hits[0]); keep=torch.arange(len(ci))!=j; newcr=cr.clone(); newcr[row+1:]-=1
+│ +    WB[a]=torch.sparse_csr_tensor(newcr,ci[keep],val[keep],size=base.shape); w=WB[a]; assert torch.equal(w.col_indices(),ci[keep]) and torch.equal(w.values(),val[keep]) and torch.equal(cr[1:]-cr[:-1]-(w.crow_indices()[1:]-w.crow_indices()[:-1]),(torch.arange(len(cr)-1)==row).to(cr.dtype)); assert val[j]!=0
+│ +    GEN[a]['edges']-=1; info[a]=dict(source=g,target=75494,syn=int(w_syn[_relay_in & (src_all==g)].item()),effective_weight=float(val[j]),DN=bool(dn_all[g]),edges_after=GEN[a]['edges'])
+│ +atomic_json(f'{OUT}/selection.json',dict(candidates=cand,edges=info,seeds=B41,archives=archives,prereg=prereg_sha()))
+│ +CLAMPF={}
+│ +'''+lines(1131,1141).replace('GI_SC40]     #','GI_SC40, 74914]     #')
+│ +h+=lines(1176,1359)+'''MY_ARMS=['sc25']+list(picks); MY_CERT=[]; FIXED=[]; BIS=['cutwA']+MY_ARMS
+│ +RAW_PATH, XM_PATH=f'{OUT}/raw_w0.npz',f'{OUT}/xm_w0.npz'
+│ +GAINS_PATH=f'{OUT}/gains_w0.json'
+│ +'''+lines(1380,1751)+'''    exec(compile(Path('l190/checkpoint.py').read_text(),'checkpoint.py','exec'))
+│ +'''+lines(1752,1765)
+│ +h=h.replace('OUT = "l187"','OUT = "l190"').replace('L187_', 'L190_');P('l190/edge_run.py').write_text(h)
+💻 $ python -B l190/build.py + 1 command  0.1s
+💻 $ pwd + 1 command
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l190/build.py
+│ banc/l190/build.py
+│ @@ -4,7 +4,7 @@
+│  p=P('l187/relay_run.py'); assert sha256(p.read_bytes()).hexdigest()=='b7c486bf32505e95b57405db719c5ebe1389c3f3e65e925f4119791451b94327'
+│  s=p.read_text().splitlines(True)
+│  def lines(a,b): return ''.join(s[a-1:b])
+│ -h=lines(31,76)+'''from pathlib import Path
+│ +h=lines(26,76)+'''from pathlib import Path
+│  assert hashlib.sha256(Path('l190/PREREG.md').read_bytes()).hexdigest()==Path('l190/PREREG.sha256').read_text().split()[0]
+│  seen=set(); archives=0
+│  for p in sorted(Path('..').rglob('*.npz')):
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l190/checkpoint.py
+│ banc/l190/checkpoint.py
+│ @@ -0,0 +1,11 @@
+│ +# Isolate metric namespace from the simulation. Atomic seed-level summary.
+│ +if 'metrics190' not in globals():
+│ +    metrics190={}; vs=Path('l187/verdict_l187.py').read_text().splitlines(True)
+│ +    exec(''.join(vs[:71]+vs[117:125]),metrics190)
+│ +    rows190={}
+│ +if seed in FRESH:
+│ +    row={}
+│ +    for arm in ARMS:
+│ +        left,right=metrics190['duty_seeds'](store,arm,[seed],'Ti'); mid=metrics190['duty14_seeds'](store,arm,[seed]); row[arm]=dict(L=float(left[0]),R=float(right[0]),mid=float(mid[0]))
+│ +    rows190[str(seed)]=row
+│ +atomic_json(f'{OUT}/results_l190.json',dict(status='RAW_COMPLETE' if len(rows190)==16 else 'PARTIAL',seeds=FRESH,rows=rows190,anchors=ANCH_STATE,selection=info,prereg=prereg_sha(),gain={a:GAIN[a] for a in BIS}))
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l190/build.py
+│ banc/l190/build.py
+│ @@ -35,7 +35,7 @@
+│  atomic_json(f'{OUT}/selection.json',dict(candidates=cand,edges=info,seeds=B41,archives=archives,prereg=prereg_sha()))
+│  CLAMPF={}
+│  '''+lines(1131,1141).replace('GI_SC40]     #','GI_SC40, 74914]     #')
+│ -h+=lines(1176,1359)+'''MY_ARMS=['sc25']+list(picks); MY_CERT=[]; FIXED=[]; BIS=['cutwA']+MY_ARMS
+│ +h+=lines(1177,1359)+'''MY_ARMS=['sc25']+list(picks); MY_CERT=[]; FIXED=[]; BIS=['cutwA']+MY_ARMS
+│  RAW_PATH, XM_PATH=f'{OUT}/raw_w0.npz',f'{OUT}/xm_w0.npz'
+│  GAINS_PATH=f'{OUT}/gains_w0.json'
+│  '''+lines(1380,1751)+'''    exec(compile(Path('l190/checkpoint.py').read_text(),'checkpoint.py','exec'))
+💻 $ python -B l190/build.py + 1 command  0.1s
+💻 $ python -c "from pathlib import Path as P;print(P('l190/run.log').read_text()[-900:]);x=P('l187/verdict_l187.py').read_text().splitlines();print(list(enumerate(x[117:129],118)));print([a for a in P('l190/edge_run.py').read_text().splitlines() if 'l187/' in a and not a.startswith('#')][:20])"
+📖 Reading tool details · 1 tool
+💻 $ python -c "from pathlib import Path as P;print(P('l190/run.log').read_text()[-1200:]);print(P('l190/selection.json').read_text() if P('l190/selection.json').exists() else '-')"
+
+────────────────────────────────────────
+**Creating final verification script**
+∴ Thought for 15s
+────────────────────────────────────────
+
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l190/final.py
+│ banc/l190/final.py
+│ @@ -0,0 +1,18 @@
+│ +# Run from banc/ after edge_run.py. Re-read persisted raw arrays, not simulator memory.
+│ +from pathlib import Path
+│ +import json,os,hashlib,numpy as np
+│ +out=Path('l190'); read=lambda n:json.loads((out/n).read_text()); r=read('results_l190.json'); done=read('done_w0.json'); st=read('selection.json'); arms=done['arms']; seeds=r['seeds']; assert done['seeds']==[801,901,3545]+seeds and len(seeds)==len(r['rows'])==16 and set(arms)=={'E-edge','E-sham','sc25','cutwA'}; assert r['prereg']==done['prereg_sha256']==hashlib.sha256((out/'PREREG.md').read_bytes()).hexdigest(); an=r['anchors']; assert an['c0a135_pass'] and an['c0a175_pass'] and an['c0a135_max']==an['c0a175_max']==0
+│ +v=Path('l187/verdict_l187.py').read_text().splitlines(True); m={};exec(''.join(v[:71]+v[117:125]),m);z=np.load(out/'raw_w0.npz'); trace_count=0
+│ +for s in done['seeds']:
+│ +    for a in (arms if s in seeds else ['cutwA','sc25']):
+│ +        for g in [1110,75494,559,74914]:
+│ +            key=f'c{g}_{a}_{s}';
+│ +            if a=='sc25' and g==1110: assert key not in z;continue
+│ +            x=z[key];assert x.shape==(6000,) and x.dtype==np.float32 and np.isfinite(x).all();trace_count+=1
+│ +        if s in seeds:
+│ +            l,d=m['duty_seeds'](z,a,[s],'Ti');f=m['duty14_seeds'](z,a,[s]);assert r['rows'][str(s)][a]==dict(L=l[0],R=d[0],mid=f[0])
+│ +vec=lambda a,k:np.array([r['rows'][str(s)][a][k] for s in seeds]); tab={}
+│ +for a in arms:
+│ +    right=vec(a,'R');d=right-vec('cutwA','R');delta=float(d.mean());half=2.131449546*d.std(ddof=1)/4;lo,hi=delta-half,delta+half;kr=int((right>=.5).sum());mean=float(right.mean());mid=float(vec(a,'mid').mean());sup=mean>=.6 and kr>=12;fp=mid>=.25
+│ +    tab[a]=dict(kR=kr,meanR=mean,meanL=float(vec(a,'L').mean()),mid=mid,delta=delta,CI=[lo,hi],SUPER=bool(sup),fingerprint=bool(fp),branch=('B1-edge-carries' if sup and fp else 'B2-edge-inert' if not fp and abs(delta)<.10 else 'B3-partial' if not fp and delta>=.10 and lo>0 else 'unresolved') if a.startswith('E-') else None)
+│ +r.update(summary=tab,controls_pass=not tab['cutwA']['SUPER'] and tab['sc25']['SUPER'] and tab['sc25']['fingerprint'],trace_arrays_verified=trace_count,worker_seconds=done['secs'],status='FINAL');tmp=out/'results_l190.json.tmp';tmp.write_text(json.dumps(r,indent=1)+'\n');os.replace(tmp,out/'results_l190.json');print(json.dumps({k:r[k] for k in ['summary','gain','controls_pass','trace_arrays_verified','worker_seconds']},indent=1))
+💻 $ python -c "from pathlib import Path as P;print(P('l190/run.log').read_text()[-1600:])"
+
+────────────────────────────────────────
+The preregistration is frozen. The sham rule picked GI 48→75494: 22 excitatory syn
+apses, versus 21 on the carrier edge. I verified that each edit removes just its intended
+ matrix entry. One two-thread worker is running the gain matches and stored anchors
+ before the fresh seeds.
+∴ Thought for 2s
+────────────────────────────────────────
+
+⚙️ Proc wait proc_8025824  180.0s
+💻 $ python -c "from pathlib import Path as P;print(P('l190/run.log').read_text()[-2000:])"
+
+────────────────────────────────────────
+**Patching builder conditional**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l190/build.py
+│ banc/l190/build.py
+│ @@ -16,10 +16,8 @@
+│  while seen.intersection(range(start,start+16)): start+=32
+│  B41=list(range(start,start+16))
+│  '''+lines(78,711)+lines(731,1007)
+│ -# preserve definitions up to graph arms, plus base/sc25 certification
+│ -h=h[:h.index('# ---------------- graph arms')]+'''add_arm('sc25',GI_CARRIER)
+│ -'''+lines(1018,1038) if False else h.split('# ---------------- graph arms')[0]+'''add_arm('sc25',GI_CARRIER)
+│ -'''
+│ +# The generic sc25 path is checked against stored lineage rollouts.
+│ +h+="add_arm('sc25',GI_CARRIER)\n"
+│  h+='''cand=[]
+│  for i in np.flatnonzero(_relay_in & (w_syn>=20) & (w_syn<=22)):
+│      g,n=int(src_all[i]),int(w_syn[i]);
+⚙️ Proc wait proc_8025824  180.0s
+⚙️ Proc wait proc_8025824  82.2s
+💻 $ OPENBLAS_NUM_THREADS=1 /home/t3rpz/critters/peabrain/.venv/bin/python -B l190/final.py + 1 command  2.9s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l190/L190-FINDINGS.md
+│ banc/l190/L190-FINDINGS.md
+│ @@ -0,0 +1,13 @@
+│ +L190 — single-edge cut: B3-partial on the rematched k=24 graph
+│ +
+│ +Removing only 1110→75494 (21 excitatory synapses) reproduced the chopped right-tibia duty rise, but none of the continuous 1.4-Hz carrier-removal signature. The count-matched excitatory DN sham (48→75494, 22 synapses; sole eligible candidate) was base-like by the preregistered rule.
+│ +
+│ +Arm           kR/16   chopped meanR   paired Δ vs base [95% CI]    middle meanR
+│ +Base           5/16       .402             reference                   .000
+│ +Carrier cut   15/16       .772            +.370 [+.257,+.483]           .488
+│ +Edge cut      12/16       .624            +.223 [+.082,+.364]           .000
+│ +Sham cut       5/16       .421            +.020 [−.094,+.133]           .002
+│ +
+│ +The base and carrier controls passed. The edge reached SUPER, but the missing fingerprint rules out B1. Sham B2 describes the point estimate, not statistical equivalence. Gains were re-bisected (edge .143144, sham .143657, base .143658); there is no fixed-gain twin separating deletion from gain adjustment. This is a single batch, not proof of a necessary route.
+│ +
+│ +PREREG frozen before selection; 240 prior archives key-scanned, fresh paired seeds 3641–3656. All 92 L135 and 50 L175 anchor checks exact. One worker, two threads, 505 s. Readback verified 261 finite 6000-point cell traces across fresh and anchor runs (1110 structurally absent in sc25) and recomputed all fresh duty scores from raw_w0.npz. Full-precision per-seed results in results_l190.json; whole-window mean vectors in xm_w0.npz.
+✗ $ python -c "from pathlib import Path as P; p=P('../LAB-INTENT.md'); s='L190 single-edge cut — B3-partial. Removing 1110→75494 on the rematched k=24 base raised chopped right-tibia duty (+.223 paired, 95% CI +.082 to +.364), without the carrier-cut 1.4-Hz signature. Matched sham 48→75494 was base-like. Anchors exact; n=16 each. Evidence: banc/l190/L190-FINDINGS.md and results_l190.json. No fixed-gain inference.'; assert s not in p.read_text(); f=p.open('a'); f.write('\n'+s+'\n');f.close(); assert p.read_text().count(s)==1;print('intent append verified');print(len(P('l190/L190-FINDINGS.md').read_text().splitlines()),'findings lines')" + 1 command [exit 1]
+💻 $ sha256sum -c banc/l190/PREREG.sha256
+
+────────────────────────────────────────
+✿ Miso
+L190 verdict: B3-partial. Cutting only 1110→75494 reproduced the rise in chopped right-tibia duty, but not the carrier cut’s 1.4-Hz signature.
+
+Across 16 paired fresh seeds, the edge cut raised mean chopped duty from 0.402 to 0.624 (paired change +0.223; 95% CI +0.082 to +0.364), meeting the registered SUPER threshold. Yet its mean 1.4-Hz duty was zero, versus 0.488 after removing the whole carrier. The matched sham, 48→75494, stayed close to base: chopped duty 0.421 and 1.4-Hz duty 0.002.
+
+The distinction is between the two responses: the single-edge cut reproduced one without the other. Gains were re-matched, so this run does not separate the deletion’s effect from its gain adjustment.
+
+Preregistration was frozen before sham selection. Both stored anchor sets reproduced exactly. All fresh duty scores were recomputed from the saved raws, and all 261 expected cell traces verified. The rollout used one two-thread worker for 505 seconds.
+
+Findings: /home/t3rpz/critters/peabrain-lab/banc/l190/L190-FINDINGS.md
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-a9fecc2af504064fb3d74e82a80cd1d9576ca3a375bc5ff627fa424a88fbf7f8 -p maple
+
+Session:        local-a9fecc2af504064fb3d74e82a80cd1d9576ca3a375bc5ff627fa424a88fbf7f8
+Duration:       11m 5s
+Messages:       64 (1 user, 62 tool calls)

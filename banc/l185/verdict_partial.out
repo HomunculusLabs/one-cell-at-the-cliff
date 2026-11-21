@@ -1,0 +1,28 @@
+CERT-METRIC vs results_l135 (B26: cutwA/cutng25/cutng25p): PASS
+CERT-METRIC-175 vs results_l175 (B39: base + 6 arms, kL/kR/means/dutyR): PASS
+CERT-G (cutwA x6 + 6 rematched arms re-bisected == stored EXACT; fixed/grid gains == registered floats) PASS
+C0A-185a vs raw_l135 (368 checks) + C0A-185b vs L175 raws (300 checks): max 0.0 PASS
+fresh seeds complete on all arms: m=16/16 | FINAL=True
+CERT-X cutwA identical across 6 workers (2185 checks) + CERT-ALIAS g000 == cutwA (437 checks): PASS
+---- L185 R1 (m=16) : rematched | fixed | fixed-rematched ----
+cell   gi    g_rem d%   kR meanR cls                 | kR meanR cls                 | dMean  t     up dn | B39 kR meanR | pooled
+cutwA  -     +0.000     3 0.370 NOT-SUPER/PARTIAL   | (same arm)
+sc25   1110  +1.244    15 0.770 SUPER               | 15 0.683 SUPER               | -0.088 -1.873  3  4 | 16 0.758 | 31/32 0.764 SUPER
+sc26   319   -0.092     4 0.424 NOT-SUPER/PARTIAL   |  4 0.390 NOT-SUPER/PARTIAL   | -0.034 -0.766  1  1 |  2 0.378 | 6/32 0.401 NOT-SUPER/PARTIAL
+sc27   707   -0.276     4 0.422 NOT-SUPER/PARTIAL   |  7 0.424 NOT-SUPER/PARTIAL   | +0.001  0.019  4  4 | 11 0.596 | 15/32 0.509 INTERMEDIATE
+sc40   559   -1.131    12 0.538 INTERMEDIATE        |  3 0.341 NOT-SUPER           | -0.198 -3.094  0  8 | 11 0.605 | 23/32 0.572 INTERMEDIATE
+dmA    511   +0.109     5 0.406 NOT-SUPER/PARTIAL   |  8 0.478 NOT-SUPER/PARTIAL   | +0.073  1.598  4  1 |  5 0.390 | 10/32 0.398 NOT-SUPER/PARTIAL
+dmC    1480  +3.314     2 0.382 NOT-SUPER           |  2 0.409 NOT-SUPER           | +0.027  0.531  4  2 |  2 0.366 | 4/32 0.374 NOT-SUPER
+---- L185 R2 gain-only null (m=16) ----
+gM50  d -0.50%  g 0.14293990  kR  8 meanR 0.470 kL 2 meanL 0.234 af 0.10759  NOT-SUPER/PARTIAL
+gM25  d -0.25%  g 0.14329905  kR  8 meanR 0.474 kL 1 meanL 0.253 af 0.10775  NOT-SUPER/PARTIAL
+g000  d +0.00%  g 0.14365820  kR  3 meanR 0.370 kL 0 meanL 0.234 af 0.10887  NOT-SUPER/PARTIAL
+gP25  d +0.25%  g 0.14401734  kR  2 meanR 0.311 kL 0 meanL 0.174 af 0.10910  NOT-SUPER
+gP50  d +0.50%  g 0.14437649  kR  3 meanR 0.266 kL 0 meanL 0.197 af 0.11004  NOT-SUPER
+slope meanR per +0.1% gain -0.0228 (se 0.00621982874228329, 95% CI [-0.03604695504980569, -0.009538044950194311]) | kR-frac slope -0.0400 | seeds with negative slope 13/16 | GAIN_SENSITIVE_NEGATIVE
+scan comparison {"note": "L175 non-carrier arms (B39); prediction = B39 base meanR + (B40 gain-null slope) x that arm's re-bisected gain shift", "within_half_pct": {"n": 25, "scan_slope_per_0p1pct": -0.0299, "r2_of_gain_null_line": 0.358, "sd_meanR": 0.084, "slope_ratio_null_over_scan": 0.763}, "silent_within_half_pct": {"n": 18, "scan_slope_per_0p1pct": -0.038, "r2_of_gain_null_line": 0.453, "sd_meanR": 0.0649, "slope_ratio_null_over_scan": 0.599}, "all_noncarrier_extrapolated": {"n": 35, "scan_slope_per_0p1pct": -0.0018, "r2_of_gain_null_line": -19.246, "sd_meanR": 0.0917, "slope_ratio_null_over_scan": 12.951}}
+---- L185 R3 signed twin (m=16) ----
+s2t gi 1508 descending/DNg19/right sign +1 x 0.9968 dist_rel 0.0028730962295365815 drive ratio 1.403 | gain 0.14321668982505795 (-0.307%) | kR 2 meanR 0.345 kL 0 dR_wA -0.025 | NOT-SUPER | MATCHED (dist_rel <= .10)
+BRANCHES {"R1": "REP_D2", "gain_form": "GAIN_ROBUST", "gain_form_other_fixed_super": [], "R2": "GAIN_SENSITIVE_NEGATIVE", "R3": "S2_NO_FLIP", "D2_hardened": true}
+PREDICTIONS {"P1_carrier_rematched_SUPER": true, "P2_twins_base_not_super": true, "P3_boundary_do_not_promote": true, "P4_carrier_fixed_SUPER": true, "P5_contrast_sign_follows_gain_shift": false, "P6_small_shift_arms_small_contrast": true, "P7_gain_null_slope": true, "P8_no_gain_null_arm_SUPER": true, "P9_signed_twin_not_SUPER": true}
+L185 VERDICT WRITTEN (FINAL)

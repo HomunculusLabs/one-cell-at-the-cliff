@@ -1,0 +1,50 @@
+{
+ "c0a135_pass": true,
+ "c0a175_pass": true,
+ "fc150_pass": true,
+ "silcut": {
+  "801": {
+   "head_max": 0.0,
+   "full_max": 0.0,
+   "carrier_trace_full_max": 0.0,
+   "relay_xmean_clamped": 0.0,
+   "af_sil": 0.11085609346628189,
+   "af_cut": 0.11086118221282959
+  },
+  "901": {
+   "head_max": 0.0,
+   "full_max": 0.0,
+   "carrier_trace_full_max": 0.0,
+   "relay_xmean_clamped": 0.0,
+   "af_sil": 0.10617396980524063,
+   "af_cut": 0.10617884993553162
+  },
+  "3545": {
+   "head_max": 0.0,
+   "full_max": 0.0,
+   "carrier_trace_full_max": 0.0,
+   "relay_xmean_clamped": 0.0,
+   "af_sil": 0.10819371044635773,
+   "af_cut": 0.10819867998361588
+  }
+ },
+ "silcut_pass": true,
+ "c0a135_max": 0.0,
+ "c0a135_checks": 46,
+ "c0a135_pairs": [
+  [
+   "cutwA",
+   "cutwA"
+  ]
+ ],
+ "g_cutwA": 0.14365819573402408,
+ "g_cutwA_stored_exact": true,
+ "fc150_max": 0.0,
+ "fc150_checks": 48,
+ "c0a175_max": 0.0,
+ "c0a175_checks": 25,
+ "c0a175_arms": [
+  "cutwA"
+ ],
+ "c0a175_seed": 3545
+}

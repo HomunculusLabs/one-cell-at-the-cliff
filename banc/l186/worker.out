@@ -1,0 +1,33 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l186/run.py:284: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+[work0 12:45:28] fresh keyscan PASS 130
+[work0 12:45:28] graphs built 5s | K 77 n_cut 21,732 edges_cut 639,164
+[work0 12:45:32] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work0 12:45:32] sc25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+[work0 12:46:19] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work0 12:46:19] g_sc25 0.1454454553127289 | af_final 0.109025 | |af-target| 3.11e-05
+[work0 12:46:19] g_cutwA == stored EXACT (0.14365819573402408)
+[work0 12:46:19] g_sc25 == stored EXACT (0.1454454553127289)
+[work0 12:46:19] bisects done 56s
+[work0 12:46:30] seed 801 done af {'cutwA': 0.1126004159450531, 'sc25': 0.10916268825531006} | 67s
+[work0 12:46:42] C0A-175 [('cutwA', 'cutwA'), ('sc25', 'cutng25')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 92 checks)
+[work0 12:46:42] seed 901 done af {'cutwA': 0.10938719660043716, 'sc25': 0.10755600780248642} | 79s
+[work0 12:46:55] seed 18601 done af {'cutwA': 0.10837732255458832, 'sc25': 0.10842820256948471} | 92s
+[work0 12:47:07] seed 18602 done af {'cutwA': 0.10915767401456833, 'sc25': 0.10980536043643951} | 104s
+[work0 12:47:19] seed 18603 done af {'cutwA': 0.10906586796045303, 'sc25': 0.11072346568107605} | 116s
+[work0 12:47:31] seed 18604 done af {'cutwA': 0.1088363528251648, 'sc25': 0.11012669652700424} | 128s
+[work0 12:47:44] seed 18605 done af {'cutwA': 0.10929538309574127, 'sc25': 0.10975945740938187} | 141s
+[work0 12:47:56] seed 18606 done af {'cutwA': 0.10810190439224243, 'sc25': 0.11031031608581543} | 153s
+[work0 12:48:09] seed 18607 done af {'cutwA': 0.10764287412166595, 'sc25': 0.10934630781412125} | 166s
+[work0 12:48:22] seed 18608 done af {'cutwA': 0.10975442081689835, 'sc25': 0.10966764390468597} | 178s
+[work0 12:48:34] seed 18609 done af {'cutwA': 0.10924948006868362, 'sc25': 0.10897906869649887} | 191s
+[work0 12:48:47] seed 18610 done af {'cutwA': 0.11062657833099365, 'sc25': 0.11278920620679855} | 204s
+[work0 12:48:59] seed 18611 done af {'cutwA': 0.11136102676391602, 'sc25': 0.1107693687081337} | 216s
+[work0 12:49:10] seed 18612 done af {'cutwA': 0.11113151162862778, 'sc25': 0.1085200160741806} | 227s
+[work0 12:49:21] seed 18613 done af {'cutwA': 0.1086527407169342, 'sc25': 0.1093922108411789} | 238s
+[work0 12:49:33] seed 18614 done af {'cutwA': 0.11002983897924423, 'sc25': 0.10865773260593414} | 250s
+[work0 12:49:45] seed 18615 done af {'cutwA': 0.10901996493339539, 'sc25': 0.10902497172355652} | 262s
+[work0 12:49:58] seed 18616 done af {'cutwA': 0.10553132742643356, 'sc25': 0.10971355438232422} | 275s
+[work0 12:49:58] rollouts done 275s

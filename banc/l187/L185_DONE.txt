@@ -1,0 +1,16 @@
+L185 done-gate, checked 2026-11-21 12:25:49 EST by the L187 session BEFORE any L187 worker launch
+results_l185.json status: FINAL | seeds 16 | R1 n {'sc25': (16, 16), 'sc26': (16, 16), 'sc27': (16, 16), 'sc40': (16, 16), 'dmA': (16, 16), 'dmC': (16, 16)} | R2 n {'gM50': 16, 'gM25': 16, 'g000': 16, 'gP25': 16, 'gP50': 16} | R3 n 16 | base n 16
+done files: ['done_w0.json', 'done_w1.json', 'done_w2.json', 'done_w3.json', 'done_w4.json', 'done_w5.json']
+L185-FINDINGS.md present: True
+run.out markers:
+202:--- workers finished 2026-11-21 12:14:59 rc=0 ---
+203:--- verdict exit 0 2026-11-21 12:15:17 ---
+worker pids (533880 536644 539489 542278 545056 547521) alive:
+  (none listed = all gone)
+dispatch pids 312549 312715 alive:
+  (none listed = gone)
+pgrep l185 rollout/orchestrator/verdict procs:
+  (none listed = gone)
+pgrep hermes L185 dispatch:
+  (none listed = gone)
+ 12:25:49 up 9 days, 18:50,  7 users,  load average: 3.87, 5.59, 9.04

@@ -1,0 +1,43 @@
+PASS S1_16_fresh_seeds  seeds=18601..18616 n=16
+PASS S2_anchors_excluded_from_seed_set  801/901 are anchors, not analysis seeds
+PASS S2b_anchor_schedules_unjittered  801=[900, 4900] 901=[900, 4900] (C0A arms must keep the stored schedule)
+PASS S3_schedule_in_registered_band  seg0 onsets 655-1175 (900+-300), seg2 4660-5160 (4900+-300), 500-step pulse inside segment
+PASS S4_jitter_nondegenerate_and_independent  16/16 distinct offsets, r(seg0,seg2)=-0.14
+PASS S5_no_seed_token_collision  0 hits over prior banc npz archives
+PASS C0A_anchor_identity_zero  92 checks, max |delta| = 0.0, pairs [['cutwA', 'cutwA'], ['sc25', 'cutng25']]
+PASS G1_cutwA_gain_exact_vs_lineage_pin  0.14365819573402408
+PASS G2_flagged_stored_exact
+PASS G3_af_matched_across_arms  af 0.10904 vs 0.10902 (sc25 gain +1.244% vs cut base)
+PASS P0_clock_order  ['aligned', 'elapsed']
+PASS P1_cutwA_diagonal_clock_invariant  same-seed diagonal identical between clocks (wiring check)
+PASS P2_cutwA_same_mean  recomputed 0.2708 vs stored 0.2708
+PASS M_cutwA_aligned  recomputed 0.1256 vs stored 0.1256 over 240 ordered pairs
+PASS M_cutwA_elapsed  recomputed 0.0830 vs stored 0.0830 over 240 ordered pairs
+PASS P1_sc25_diagonal_clock_invariant  same-seed diagonal identical between clocks (wiring check)
+PASS P2_sc25_same_mean  recomputed 0.8585 vs stored 0.8585
+PASS M_sc25_aligned  recomputed 0.4007 vs stored 0.4007 over 240 ordered pairs
+PASS M_sc25_elapsed  recomputed 0.3734 vs stored 0.3734 over 240 ordered pairs
+PASS C_A_value  recomputed +0.2752 vs stored +0.2752
+PASS C_A_ci_excludes_zero_above  recomputed [+0.179,+0.371] vs stored [+0.179,+0.371]
+PASS C_A_survival_bar  registered survival bar A/T >= .15
+PASS C_T_value  recomputed +0.2904 vs stored +0.2904
+PASS C_T_ci_excludes_zero_above  recomputed [+0.181,+0.400] vs stored [+0.181,+0.400]
+PASS C_T_survival_bar  registered survival bar A/T >= .15
+PASS C_D_value  recomputed -0.0153 vs stored -0.0153
+PASS C_D_ci_straddles_zero  recomputed [-0.156,+0.126] vs stored [-0.156,+0.126]
+PASS E3_branch_consistent  branch=E3-mixed/unresolved, |D|=0.015 < the registered .10 margin for E1/E2
+
+[tick-216 instrument | sc25] tone-phase rotation vs (aligned - elapsed) pair duty
+   n=240  rho(rotation)=+0.148  rho(|lag|)=+0.069
+   near-in-phase (n=72): mean delta +0.0873 | near-antiphase (n=40): mean delta -0.0238
+
+[tick-216 instrument | cutwA] tone-phase rotation vs (aligned - elapsed) pair duty
+   n=240  rho(rotation)=-0.110  rho(|lag|)=-0.085
+   near-in-phase (n=72): mean delta +0.0173 | near-antiphase (n=40): mean delta +0.0534
+PASS I1_tone_rotation_not_predictive  |rho| < .25 both arms => the cross-seed duty readout is not locked to the shared tone phase
+PASS I2_jitter_spans_multiple_tone_periods  seg0 jitter span 520 steps = 3.6 tone periods
+PASS PH1_both_pools_concentrated  R flex 0.916 / ext 0.754
+PASS PH2_phase_near_quarter_cycle  flex -100.2 deg / ext -90.4 deg
+PASS PH3_n_is_16
+
+ALL GREEN (33 named checks)

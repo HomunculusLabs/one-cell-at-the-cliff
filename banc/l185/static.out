@@ -1,0 +1,3 @@
+[static0 11:53:05] CERT-GEN static: sc25 == cutng25, sc26 == cutng25p plumbing EXACT: PASS
+[static0 11:53:05] static.json written | fresh 3577..3592 absent from 213 npz | arms 17 + s2t | 6s
+[memrun] exit 0 peak RSS 1.63 GB

@@ -1,0 +1,327 @@
+# ======================= L185 ARMS BLOCK (additive) =======================
+# R1 fresh-batch replication (6 cells x {L175 re-bisected gain, FIXED base
+# gain}), R2 gain-only null (5 gains on the base graph, no deletion), R3
+# signed-current-matched twin (1 arm). Every arm goes through the L175
+# add_arm()/gen_init() plumbing; nothing lineage-side is edited.
+SC = [f"sc{r}" for r in WIN_RANKS]
+SC_GI = dict(zip(SC, WIN_CELLS))
+PREREG_PATH = f"{OUT}/PREREG.md"
+
+
+def prereg_sha():
+    return hashlib.sha256(open(PREREG_PATH, "rb").read()).hexdigest()
+
+
+# --- L175 pins re-derived from stored L175 artifacts (never prose) ---
+S175 = json.load(open("l175/static.json"))
+SEL175 = json.load(open("l175/selection.json"))
+R175 = json.load(open("l175/results_l175.json"))
+assert sorted(USED) == S175["used_cells"] and len(USED) == 78, len(USED)
+assert int(POOL_A.sum()) == S175["pool_A_n"] == 21001
+assert int(POOL_C.sum()) == S175["pool_C_n"] == 313
+assert R175["status"] == "FINAL" and R175["branch"] == "D2_identity_carried"
+DM = {"dmA": int(SEL175["dmA"]["pick"]["gi"]),
+      "dmC": int(SEL175["dmC"]["pick"]["gi"])}
+assert DM == {"dmA": 511, "dmC": 1480}, DM
+assert POOL_A[DM["dmA"]] and POOL_C[DM["dmC"]]
+R1_CELL = {"sc25": 1110, "sc26": 319, "sc27": 707, "sc40": 559,
+           "dmA": DM["dmA"], "dmC": DM["dmC"]}
+for _a in ("sc25", "sc26", "sc27", "sc40"):
+    assert SC_GI[_a] == R1_CELL[_a], _a
+R1R = list(R1_CELL)                 # rematched: L175 stored re-bisected gain
+R1F = [a + "F" for a in R1R]        # fixed: base gain g_cutwA
+# L175 stored gains: floats read from the L175 gains files, cross-checked
+# against results_l175.json rows and the lineage constants.
+G175, W175 = {}, {}
+for _w in range(5):
+    _gj = json.load(open(f"l175/gains_w{_w}.json"))
+    assert _gj["gain"]["cutwA"] == G_CUTWA_STORED, _w
+    for _a, _g in _gj["gain"].items():
+        if _a in R1R:
+            assert _a not in G175
+            G175[_a], W175[_a] = float(_g), _w
+assert sorted(G175) == sorted(R1R), sorted(G175)
+assert G175["sc25"] == G_CUTNG25_STORED and G175["sc26"] == G_CUTNG25P_STORED
+_rows175 = {r["arm"]: r for r in R175["window"]}
+_rows175.update({k: R175["twins"][k] for k in ("dmA", "dmC")})
+for _a in R1R:
+    assert _rows175[_a]["gain"] == G175[_a], (_a, "gain json vs results drift")
+    assert _rows175[_a]["gi"] == R1_CELL[_a], _a
+assert R175["base"]["gain"] == G_CUTWA_STORED
+# R2 gain-only null: base graph, gain = g_cutwA * (1 + delta) in float64.
+R2_DELTA = {"gM50": -0.005, "gM25": -0.0025, "g000": 0.0,
+            "gP25": 0.0025, "gP50": 0.005}
+R2 = list(R2_DELTA)
+R2_GAIN = {a: G_CUTWA_STORED * (1.0 + d) for a, d in R2_DELTA.items()}
+assert R2_GAIN["g000"] == G_CUTWA_STORED
+assert len(set(R2_GAIN.values())) == 5
+# R3 candidate pool: L175 Pool A minus L175's own twin picks (prior arms)
+_tw = np.zeros(Nall, bool)
+_tw[[DM["dmA"], DM["dmC"]]] = True
+POOL_S = POOL_A & ~_tw
+assert int(POOL_S.sum()) == 21001 - 2
+
+
+def add_alias(name, src):
+    """GEN arm `src`'s graph + plumbing OBJECTS under a new arm name (the
+    only difference between the two arms is GAIN[name])."""
+    assert name not in GEN and name not in WB and src in GEN, name
+    GEN[name] = GEN[src]
+    POOLS[name] = POOLS[src]
+    mech[name] = mech[src]
+    motor[name] = motor[src]
+    dng100[name] = dng100[src]
+    WB[name] = WB[src]
+    N_OF[name] = N_OF[src]
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+def add_base_alias(name):
+    """The k=24 base graph under a generic arm name: the lineage cutwA
+    plumbing objects VERBATIM in the GEN field layout. Certified in-run:
+    arm g000 (gain == g_cutwA) must be bit-identical to the lineage cutwA
+    arm on every seed."""
+    assert name not in GEN and name not in WB, name
+    _om = keep_cutk["cutwA"][gi_old]
+    assert _om.all() and len(old_pos_in_wA) == len(gi_old)
+    GEN[name] = dict(
+        extra=None, drop=cutk_drop["cutwA"], loc=loc_wA,
+        pos_in_new=wA_pos_in_new, old_mask=_om, old_pos=old_pos_in_wA,
+        kept_mask=kept_new_mask_wA, kept_new=kept_new_cutwA,
+        edges=cutk_pins["cutwA"]["edges"], n=n_cutk["cutwA"])
+    POOLS[name] = POOLS["cutwA"]
+    mech[name] = mech["cutwA"]
+    motor[name] = motor["cutwA"]
+    dng100[name] = dng100["cutwA"]
+    WB[name] = Wb_wA
+    N_OF[name] = n_cutk["cutwA"]
+    GAIN[name] = None
+    GEN_ARMS.append(name)
+
+
+# ---------------- R3 selection (MODE=select; ZERO rollouts) ----------------
+def signed_current(xbar, g, gate):
+    """PREREG §R3. Rows of Wb are targets, columns are sources. For pool P:
+    u_P[m] = (1/|P|) sum_{t in P} Wb[t, m];
+    A1_P[c] = u_P[c];  A2_P[c] = sum_{m != c} u_P[m] * gate[m] * Wb[m, c];
+    J_P[c] = g * xbar[c] * (A1_P[c] + g * A2_P[c])."""
+    n = n_cutk["cutwA"]
+    crow = Wb_wA.crow_indices().numpy()
+    col = Wb_wA.col_indices().numpy()
+    val = Wb_wA.values().numpy().astype(np.float64)
+    row = np.repeat(np.arange(n), np.diff(crow))
+    assert len(row) == len(col) == cutk_pins["cutwA"]["edges"]
+    nd = row != col
+    out = {}
+    for P, pk in (("f", "Ti_fR"), ("e", "Ti_eR")):
+        pool = POOLS["cutwA"][pk]
+        inpool = np.zeros(n, bool)
+        inpool[pool] = True
+        u = np.zeros(n)
+        _s = inpool[row]
+        np.add.at(u, col[_s], val[_s])
+        u /= len(pool)
+        A2 = np.zeros(n)
+        np.add.at(A2, col[nd], (u * gate)[row[nd]] * val[nd])
+        out[P] = dict(A1=u, A2=A2, J1=g * xbar * u, J2=g * xbar * g * A2,
+                      J=g * xbar * (u + g * A2))
+    return out
+
+
+def _brute_paths(c_gi, xbar, g, gate):
+    """Independent re-derivation of (J_f, J_e) for ONE cell from the global
+    edge arrays (float64 log1p weights), not from the CSR matrix."""
+    weff = vals_all * np.where(vals_all < 0, BETA, 1.0)
+    res = []
+    oe = np.where(emask_wA & (src_all == c_gi))[0]
+    for pk in ("Ti_fR", "Ti_eR"):
+        pg = gi_wA[POOLS["cutwA"][pk]]
+        inp = np.zeros(Nall, bool)
+        inp[pg] = True
+        a1 = float(weff[oe][inp[dst_all[oe]]].sum()) / len(pg)
+        a2 = 0.0
+        for e in oe:
+            m = int(dst_all[e])
+            if m == c_gi or gate[loc_wA[m]] == 0:
+                continue
+            me = emask_wA & (src_all == m) & inp[dst_all]
+            a2 += float(weff[me].sum()) / len(pg) * float(weff[e])
+        res.append(g * float(xbar[loc_wA[c_gi]]) * (a1 + g * a2))
+    return np.array(res)
+
+
+if MODE == "select":
+    assert os.path.exists(PREREG_PATH), "PREREG first (STOP)"
+    assert not glob.glob(f"{OUT}/raw_w*.npz"), "select must precede rollouts"
+    cen = np.load("l175/census_k24.npz")
+    assert np.array_equal(cen["gi"], gi_wA)
+    assert float(cen["g_cutwA"]) == G_CUTWA_STORED
+    assert [int(x) for x in cen["seeds"]] == [801, 901, 3561]
+    xbar = cen["x_mean_3seed"].astype(np.float64)
+    drv = cen["delivered_drive"].astype(np.float64)
+    assert np.allclose(drv, xbar * OW_EFF[gi_wA], rtol=1e-12, atol=1e-12)
+    gate = ((xbar > 0.05) & (xbar < 0.95)).astype(np.float64)
+    g = G_CUTWA_STORED
+    SCG = signed_current(xbar, g, gate)                       # PRIMARY
+    SCU = signed_current(xbar, g, np.ones_like(xbar))         # covariate
+    SCL = signed_current(xbar, g, (xbar > 0.05).astype(np.float64))  # covariate
+    lc = int(loc_wA[GI_CARRIER])
+
+    def vec(S, i, key="J"):
+        return np.array([S["f"][key][i], S["e"][key][i]])
+
+    Jc = vec(SCG, lc)
+    nrm = float(np.linalg.norm(Jc))
+    _bc = _brute_paths(GI_CARRIER, xbar, g, gate)
+    assert np.allclose(_bc, Jc, rtol=1e-4, atol=1e-6), (_bc, Jc)
+    active = xbar > 0.05
+    cand = np.where(POOL_S[gi_wA] & active)[0]
+    Dabs = np.sqrt((SCG["f"]["J"][cand] - Jc[0]) ** 2
+                   + (SCG["e"]["J"][cand] - Jc[1]) ** 2)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        tie = np.where(drv[cand] > 0, np.abs(np.log(drv[cand] / drv[lc])), np.inf)
+    o = np.lexsort((gi_wA[cand], tie, Dabs))       # distance, drive tie, gi
+    degenerate = bool(nrm == 0.0)
+
+    def srow(i):
+        gi_ = int(gi_wA[i])
+        ci = cell_info(gi_)
+        Jg, Ju, Jl, J1 = vec(SCG, i), vec(SCU, i), vec(SCL, i), vec(SCG, i, "J1")
+        dd = float(np.linalg.norm(Jg - Jc))
+        nu = float(np.linalg.norm(vec(SCU, lc)))
+        n1 = float(np.linalg.norm(vec(SCG, lc, "J1")))
+        nl = float(np.linalg.norm(vec(SCL, lc)))
+        ci.update(
+            x_mean=float(xbar[i]), x_mean_seeds=[float(v) for v in cen["x_mean"][:, i]],
+            in_pool_S=bool(POOL_S[gi_]), active=bool(active[i]),
+            J_flex=float(Jg[0]), J_ext=float(Jg[1]), J_scalar=float(Jg.sum()),
+            J1_flex=float(J1[0]), J1_ext=float(J1[1]),
+            J2_flex=float(SCG["f"]["J2"][i]), J2_ext=float(SCG["e"]["J2"][i]),
+            dist_abs=dd, dist_rel=(dd / nrm if nrm > 0 else None),
+            scalar_absdiff=float(abs(Jg.sum() - Jc.sum())),
+            cov_ungated_J=[float(v) for v in Ju],
+            cov_ungated_dist_rel=(float(np.linalg.norm(Ju - vec(SCU, lc))) / nu
+                                  if nu > 0 else None),
+            cov_lowergate_J=[float(v) for v in Jl],
+            cov_lowergate_dist_rel=(float(np.linalg.norm(Jl - vec(SCL, lc))) / nl
+                                    if nl > 0 else None),
+            cov_direct_dist_rel=(float(np.linalg.norm(J1 - vec(SCG, lc, "J1"))) / n1
+                                 if n1 > 0 else None),
+            delivered_drive=float(drv[i]), drive_ratio=float(drv[i] / drv[lc]),
+            mass_ratio=float(OW_RAW[gi_] / OW_RAW[GI_CARRIER]))
+        return ci
+
+    rows = [srow(cand[j]) for j in o[:6]]
+    pick = rows[0]
+    _bp = _brute_paths(pick["gi"], xbar, g, gate)
+    assert np.allclose(_bp, [pick["J_flex"], pick["J_ext"]], rtol=1e-4, atol=1e-6)
+    add_arm("s2t", pick["gi"])      # machinery admissibility (asserts inside)
+    ref = {k: srow(int(loc_wA[v])) for k, v in
+           (("carrier", GI_CARRIER), ("sc26_mass_twin", 319), ("sc27", 707),
+            ("sc40", 559), ("dmA", DM["dmA"]), ("dmC", DM["dmC"]))}
+    Dall = np.sqrt((SCG["f"]["J"] - Jc[0]) ** 2 + (SCG["e"]["J"] - Jc[1]) ** 2)
+    for k in ("dmA", "dmC"):        # where L175's twins would have ranked
+        ref[k]["rank_among_pool_S_active_if_eligible"] = int(
+            (Dabs < Dall[int(loc_wA[DM[k]])]).sum() + 1)
+    nz = int((np.abs(SCG["f"]["J"][cand]) + np.abs(SCG["e"]["J"][cand]) > 0).sum())
+    atomic_json(f"{OUT}/selection_s2.json", dict(
+        rule="argmin over POOL_S & active of || (J_f, J_e)(c) - (J_f, J_e)"
+             "(carrier) ||_2 ; tie-break |log(drive_c/drive_carrier)| then gi. "
+             "J_P(c) = g * xbar_c * ( u_P[c] + g * sum_{m != c} u_P[m] * a_m * "
+             "Wb[m,c] ), u_P[m] = mean_{t in P} Wb[t,m], P in {Ti_fR, Ti_eR}, "
+             "a_m = 1[.05 < xbar_m < .95], g = g_cutwA, xbar = census_k24 "
+             "3-seed mean, Wb = the stepped k=24-base matrix (PREREG §R3).",
+        prereg_sha256=prereg_sha(), g=g, census_seeds=[801, 901, 3561],
+        pool_S_n=int(POOL_S.sum()), pool_S_active_n=int(len(cand)),
+        pool_S_active_nonzero_J=nz, gate_n=int(gate.sum()),
+        n_base=int(len(xbar)),
+        pool_sizes=dict(Ti_fR=int(len(POOLS["cutwA"]["Ti_fR"])),
+                        Ti_eR=int(len(POOLS["cutwA"]["Ti_eR"]))),
+        carrier_J=[float(v) for v in Jc], carrier_J_norm=nrm,
+        degenerate=degenerate, brute_force_check="PASS (carrier + pick)",
+        pick=pick, runners_up=rows[1:6], reference_cells=ref,
+        dist_rel_quantiles_pool=(
+            [float(np.quantile(Dabs / nrm, q)) for q in (0, .001, .01, .1, .5)]
+            if nrm > 0 else None)))
+    log(f"SELECT s2t: pool_S {int(POOL_S.sum())} active {len(cand)} | carrier J "
+        f"(f {Jc[0]:+.6f}, e {Jc[1]:+.6f}) norm {nrm:.6f} | pick gi {pick['gi']} "
+        f"{pick['super_class']}/{pick['cell_type']}/{pick['side']} x "
+        f"{pick['x_mean']:.4f} J (f {pick['J_flex']:+.6f}, e {pick['J_ext']:+.6f}) "
+        f"dist_rel {pick['dist_rel']} drive ratio {pick['drive_ratio']:.3f} "
+        f"sign {pick['eff_sign']:+.0f} | degenerate {degenerate}")
+    sys.exit(0)
+
+# ---------------- arms (static | work) ----------------
+for _nm in ("sc25", "sc26", "sc27", "sc40"):
+    add_arm(_nm, SC_GI[_nm])
+
+
+# CERT-GEN (static, L175 form VERBATIM): the generic plumbing for ranks
+# 25/26 is IDENTICAL to the lineage's hand-written cutng25 / cutng25p.
+def _cert_gen(name, lin, Wb_ref, pos_ref, oldpos_ref, mask_ref, kn_ref):
+    g = GEN[name]
+    assert torch.equal(WB[name].crow_indices(), Wb_ref.crow_indices())
+    assert torch.equal(WB[name].col_indices(), Wb_ref.col_indices())
+    assert torch.equal(WB[name].values(), Wb_ref.values())
+    assert np.array_equal(g["drop"], cutk_drop[lin])
+    assert np.array_equal(g["pos_in_new"], pos_ref)
+    assert g["old_mask"].all() and np.array_equal(g["old_pos"], oldpos_ref)
+    assert np.array_equal(g["kept_mask"], mask_ref)
+    assert np.array_equal(g["kept_new"], kn_ref)
+    assert sorted(POOLS[name]) == sorted(POOLS[lin])
+    for pk in POOLS[lin]:
+        assert np.array_equal(POOLS[name][pk], POOLS[lin][pk]), pk
+    assert np.array_equal(mech[name], mech[lin])
+    assert np.array_equal(motor[name], motor[lin])
+    assert np.array_equal(dng100[name], dng100[lin])
+    assert N_OF[name] == N_OF[lin] and g["edges"] == cutk_pins[lin]["edges"]
+
+
+_cert_gen("sc25", "cutng25", Wb_p25, p25_pos_in_new, old_pos_in_p25,
+          kept_new_mask_p25, kept_new_cutcutng25)
+_cert_gen("sc26", "cutng25p", Wb_p25p, p25p_pos_in_new, old_pos_in_p25p,
+          kept_new_mask_p25p, kept_new_cutcutng25p)
+log("CERT-GEN static: sc25 == cutng25, sc26 == cutng25p plumbing EXACT: PASS")
+add_arm("dmA", DM["dmA"])
+add_arm("dmC", DM["dmC"])
+for _a in R1R:
+    add_alias(_a + "F", _a)
+    assert WB[_a + "F"] is WB[_a]
+for _a in R2:
+    add_base_alias(_a)
+    assert WB[_a] is Wb_wA
+S2 = None
+if MODE == "work":
+    _s2 = json.load(open(f"{OUT}/selection_s2.json"))
+    assert _s2["prereg_sha256"] == prereg_sha(), "PREREG changed after selection (VOID)"
+    S2 = int(_s2["pick"]["gi"])
+    assert POOL_S[S2], "R3 pick outside pool (STOP)"
+    add_arm("s2t", S2)
+TRACK = WIN_CELLS + [DM["dmA"], DM["dmC"]] + ([S2] if S2 is not None else [])
+N_TRACK_175 = 36                    # L175 xwin layout = the first 36 entries
+
+if MODE == "static":
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L185 static pins (zero rollouts): fresh-batch absence, L175 "
+               "gains/cells re-derived from stored L175 files, R2 gain grid, "
+               "R3 candidate pool, generic-plumbing cert.",
+        src="banc l175 scan_run.py transform (l185 build_rep.py)",
+        fresh_batch=[B40[0], B40[-1]], anchors_bit=ANCH_BIT, anchor_175=ANCH_175,
+        npz_scanned_for_seed_absence=N_NPZ_SCANNED, npz_unreadable=N_NPZ_SKIPPED,
+        seed_absence="PASS", cert_gen_static="PASS",
+        r1_cells=R1_CELL, r1_gain_rematched=G175, r1_gain_fixed=G_CUTWA_STORED,
+        r1_gain_delta_pct={a: 100 * (G175[a] / G_CUTWA_STORED - 1) for a in R1R},
+        l175_worker_of=W175,
+        r2_delta=R2_DELTA, r2_gain=R2_GAIN,
+        pool_A_n=int(POOL_A.sum()), pool_S_n=int(POOL_S.sum()),
+        used_cells_n=len(USED), n_wA=n_cutk["cutwA"],
+        edges_wA=cutk_pins["cutwA"]["edges"],
+        arm_n={a: N_OF[a] for a in R1R + R1F + R2},
+        arm_edges={a: GEN[a]["edges"] for a in R1R + R1F + R2},
+        g_stored=dict(cutwA=G_CUTWA_STORED, cutng25=G_CUTNG25_STORED,
+                      cutng25p=G_CUTNG25P_STORED)))
+    log(f"static.json written | fresh {B40[0]}..{B40[-1]} absent from "
+        f"{N_NPZ_SCANNED} npz | arms {len(R1R + R1F + R2)} + s2t | "
+        f"{time.time()-t0:.0f}s")
+    sys.exit(0)

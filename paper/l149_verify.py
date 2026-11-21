@@ -8,7 +8,36 @@ stored value; (4) numbers.json equals sources for the new keys."""
 import json, math, re, pathlib
 
 P = pathlib.Path.home() / 'critters/peabrain-lab'
-draft = (P / 'paper/DRAFT.md').read_text()
+# L183 PIN UPDATE (2026-11-21, master fold; receipt in LANE-LOG and
+# banc/l183_worklog.md).
+# OLD: sections (1)-(30) below read paper/DRAFT.md and pin slices of it:
+#   section headings by number, verbatim literals, the abstract's wording,
+#   the Methods literals, a byte pin on section 5, and case-only / byte-
+#   identity proofs against the stored stage drafts.
+# WHY IT MOVES: the owner-directed master fold rewrites the title, the
+#   abstract, the Introduction lead, Limitations and the Discussion, inserts
+#   five Results subsections ahead of the old ones (old 2.1-2.9 become
+#   2.6-2.14) and corrects Methods.  Every one of those pins certifies text
+#   that the fold legitimately replaces or renumbers.
+# NEW (the tick-210 rule: re-point at stored artifacts, never loosen):
+#   (a) sections (1)-(30) run UNCHANGED, not one assertion edited, against
+#       the body they were written for: the stored pre-image
+#       banc/l174b4iiic/draft_post_preview.md (hash-pinned; it is the
+#       post-image the previous stage registered, and equals the pre-fold
+#       live body byte for byte).  The changelog banner stays the LIVE one.
+#   (b) section (31) binds the LIVE body to that pre-image by a byte replay
+#       of the declared edit ledger, and carries to the live text everything
+#       the old sections enforced that still applies to new prose: key
+#       resolution, the retired-wording set (harvested from this file, not
+#       re-typed), the list / caps / lane-ID / sentence-length contracts,
+#       and the section-5 and section-7 pins.
+#   So a live byte is either certified by (1)-(30) through the replay, or is
+#   inside a declared edit that (31) and paper/l183_verify.py check.
+import sys as _sys183
+_sys183.path.insert(0, str(P / 'paper'))
+import l183_fold as _F183          # stdlib only; never writes a file
+_live183 = (P / 'paper/DRAFT.md').read_text()
+draft = _F183.pre_composite(_live183)
 # L174 (b3b): whitespace-normalized view of the draft. A prose pass re-wraps
 # lines, so a gate literal must not depend on WHERE the line breaks fall
 # (the l122 wrap-fragility lesson, applied to the gate instead of the prose).
@@ -2527,7 +2556,39 @@ _post_b4 = (_B4 / 'span_post.txt').read_text()
 _ED_B4 = ('(two fresh batches, B33/B34)', '(two fresh batches, G/H)')
 assert _post_b4.count(_ED_B4[0]) == 1 and _ED_B4[0] not in _now_b4, \
     '(26) the declared §4 relabel must apply exactly once'
-assert _post_b4.replace(*_ED_B4) == _now_b4, \
+# (b4-iii-c-i) RE-POINT, one rung further down the same ladder: §4's 38
+# all-caps emphasis occurrences (35 distinct) are de-emphasised, a CASE-ONLY
+# edit, so the chain becomes 'stored (b4-i) post-image + the declared batch
+# relabel == live §4 MODULO CASE', and the retired tokens are named. This
+# proves the (b4-i) prose, the (b4-iii-b) relabel and this stage's strip at
+# once, and keeps every earlier pin verbatim.
+_chain_b4 = _post_b4.replace(*_ED_B4)
+import collections as _c26
+assert _chain_b4.lower() == _now_b4.lower(), \
+    '(26) §4 moved by more than case since the stored post-image'
+_CAPS26 = re.compile(r"\b[A-Z][A-Z0-9][A-Z0-9'\-]*\b")
+_gone26 = sorted(_c26.Counter(
+    t for t in _CAPS26.findall(_chain_b4)).items())
+_live26 = {t for t in _CAPS26.findall(_now_b4)}
+_DECL26 = ['ADMISSIBLE', 'BANC', "BANC'", 'BAND-RELATIVE', 'BELOW', 'CARRIER',
+           'COSTS', 'DATA', 'DETECTION', 'EMG', 'FIXED', 'FLOOR', 'IMPLICIT',
+           'INFERENCE', 'LEFT', 'MODEL', 'NAME', 'NETWORK', 'NOISE', 'NOT',
+           'OF', 'ONE', 'ONLY', 'OPERATING-POINT', 'PARTIAL', 'PROXIMITY',
+           'RE-DERIVED', 'ROWS', 'SAME', 'SEEDS', 'SET', 'SINGLE-BATCH',
+           'STATIC', 'STIMULUS-SET', 'SUPER', 'TWIN', 'UNIQUE', 'UNIT', 'XOR']
+assert [t for t, _ in _gone26] == _DECL26, \
+    ('(26) the §4 pre-strip caps census moved', [t for t, _ in _gone26])
+assert sum(n for _, n in _gone26) == 45, \
+    ('(26) §4 pre-strip caps occurrence pin', sum(n for _, n in _gone26))
+# 38 of the 45 occurrences are de-emphasised; the 7 survivors are exactly the
+# frozen partition's KEEP classes for this span (the specimen name BANC and
+# its possessive, the acronym EMG, the operator XOR). Occurrence-pinned, so a
+# later stage cannot quietly re-emphasise a word here.
+assert sorted(_c26.Counter(_CAPS26.findall(_now_b4)).items()) == \
+    [('BANC', 3), ("BANC'", 1), ('EMG', 1), ('XOR', 2)], \
+    ('(26) only the declared KEEP tokens may survive in §4',
+     sorted(_c26.Counter(_CAPS26.findall(_now_b4)).items()))
+assert _post_b4.replace(*_ED_B4).lower() == _now_b4.lower(), \
     '(26) the spliced §4 must equal the stored post-image + the declared edit'
 
 # bullet census, derived from the stored pre-image
@@ -2571,20 +2632,41 @@ _EXEMPT_B4 = ['fully RE-DERIVED, not\n  frozen',
               're-ordering rather than\n  turnover',
               'the unit of inference\n  is the simulation realization']
 _MARKER_B4 = ['- DATA FLOOR:', '- Wet-lab predictions']
+# (b4-iii-c-i): exactly ONE of the two markers was de-emphasised by this
+# stage; the other must still match CASE-SENSITIVELY, so the exemption cannot
+# silently cover a second label.
+_MARKER_CASE_B4 = {'- DATA FLOOR:'}
 assert all(_e in _pre_b4 for _e in _EXEMPT_B4 + _MARKER_B4), \
     '(26) the declared exception literals must come from the pre-image'
-_miss_b4, _ex_b4, _mk_b4 = [], [], []
+_miss_b4, _ex_b4, _mk_b4, _cs_b4 = [], [], [], []
+_low_b4 = _now_b4.lower()
 for _s in _lit_b4['literals']:
     if _s in _now_b4:
         continue
     if _s in _EXEMPT_B4:
-        assert re.sub(r'\s+', ' ', _s) in _ws_b4, \
+        assert re.sub(r'\s+', ' ', _s).lower() in _ws_b4.lower(), \
             '(26) declared wrap-fragile literal lost: %r' % _s
         _ex_b4.append(_s)
     elif _s in _MARKER_B4:
-        assert re.search(r'(?m)^' + re.escape(_s[2:]), _now_b4), \
+        # (b4-iii-c-i): the labelled paragraph openers are now de-emphasised,
+        # so the line-start search is case-insensitive AND the retired
+        # all-caps spelling is asserted gone (strictly stronger than either
+        # check alone).
+        assert re.search(r'(?mi)^' + re.escape(_s[2:]), _now_b4), \
             '(26) declared marker literal lost its line-start prose form: %r' % _s
+        if _s in _MARKER_CASE_B4:
+            assert not re.search(r'(?m)^' + re.escape(_s[2:]), _now_b4), \
+                '(26) a retired all-caps §4 marker survives: %r' % _s
+        else:
+            assert re.search(r'(?m)^' + re.escape(_s[2:]), _now_b4), \
+                '(26) an untouched §4 marker changed case: %r' % _s
         _mk_b4.append(_s)
+    elif _s.lower() in _low_b4:
+        # (b4-iii-c-i) CASE-ONLY class: the de-emphasis keeps every word and
+        # adjacency and only lowers case. Section (30) proves the whole draft
+        # moved by case alone, so this class cannot hide a reworded claim.
+        assert _s not in _now_b4, ('(26) retired all-caps literal survives', _s)
+        _cs_b4.append(_s)
     else:
         _miss_b4.append(_s)
 assert not _miss_b4, '(26) literal(s) lost: %r' % _miss_b4[:4]
@@ -2592,8 +2674,10 @@ assert sorted(_ex_b4) == sorted(_EXEMPT_B4), \
     '(26) the wrap exemption set must be exactly the three declared'
 assert sorted(_mk_b4) == sorted(_MARKER_B4), \
     '(26) the marker exemption set must be exactly the two declared'
-assert len(_lit_b4['literals']) - len(_ex_b4) - len(_mk_b4) == 135, \
-    '(26) verbatim-literal count pin'
+assert len(_lit_b4['literals']) - len(_ex_b4) - len(_mk_b4) - len(_cs_b4) \
+    == 135 - len(_cs_b4), '(26) verbatim-literal count pin'
+assert len(_cs_b4) == 9, ('(26) the case-only literal class count',
+                           len(_cs_b4))
 
 # every pre-image bullet opener is GONE as a bullet (derived from the stored
 # pre-image, never hand-listed); eight were de-dashed by the PARSER and only
@@ -2620,7 +2704,7 @@ for _frag in ('There is a single specimen per connectome (BANC v626 one female;'
 # the whole span must be unchanged apart from the connective set.
 _SPL_B4 = [('n = 16) and the registered R-side cliff',
             'n = 16). The registered R-side cliff'),
-           ('cutwA partial 3/16 .371), and the f4ng-vs-f4tw',
+           ('cutwA PARTIAL 3/16 .371), and the f4ng-vs-f4tw',
             'cutwA partial 3/16 .371). The f4ng-vs-f4tw'),
            ('quantifies the pattern: in the l65-baseline arm',
             'quantifies the pattern. In the l65-baseline arm'),
@@ -3205,8 +3289,23 @@ assert len(_anc29) == 1, '(29) the §3.7 anchor is not unique'
 _n29[_anc29[0] + 1:_anc29[0] + 1] = _MB29
 _chk29 = '\n'.join(_n29)
 _T29 = '## Title'
-assert _chk29[_chk29.index(_T29):] == draft[draft.index(_T29):], \
+# (b4-iii-c-i) LADDER EXTENSION: this stage de-emphasises §1/§4's all-caps
+# tokens, a CASE-ONLY edit, so tick 214's strong form becomes 'pre-image +
+# the declared relabel == the live draft MODULO CASE, title onward' with the
+# case delta pinned exactly: same length, same letters up to case, and the
+# retired tokens named by section in (30). Every earlier pin survives
+# verbatim; nothing is loosened beyond the one declared axis.
+_c29a = _chk29[_chk29.index(_T29):]
+_c29b = draft[draft.index(_T29):]
+assert len(_c29a) == len(_c29b), \
+    '(29) a case-only stage changed the title-onward length'
+assert _c29a.lower() == _c29b.lower(), \
     '(29) T7: pre-image + the declared relabel == the live draft (title onward)'
+_diff29 = [(_k, _p, _q) for _k, (_p, _q) in enumerate(zip(_c29a, _c29b))
+           if _p != _q]
+assert all(_p.isalpha() and _q.isalpha() and _p.lower() == _q.lower()
+           for _, _p, _q in _diff29), '(29) a non-letter byte moved'
+assert len(_diff29) == 412, ('(29) the declared case delta', len(_diff29))
 _bp29, _bn29 = _pre29[:_pre29.index(_T29)], draft[:draft.index(_T29)]
 _bi29 = _bn29.replace(_bp29.rstrip('\n'), '', 1)
 assert _bn29.startswith(_bp29.rstrip('\n')) and \
@@ -3334,5 +3433,235 @@ print('(29) L174 (b4-iii-b) the batch relabel: branch R1_relabel_only — the '
       'residue in §1-§6 + the References preamble, §7 byte-unchanged, and '
       'the five verifier literals carrying a relabeled code re-pointed with '
       'their measurements still attached')
+
+# ---------------------------------------------------------------- (30)
+# L174 stage (b4-iii-c-i): the all-caps de-emphasis of §1 Introduction and
+# §4 Limitations. The ONE claim this section carries that no earlier section
+# can: the whole draft moved by CASE ALONE. Everything else in the stage is
+# bounded by that fact, which is why §(23) and §(26) may re-point their
+# frozen literal pins to case-insensitive images without weakening.
+# Every span here is TITLE-RELATIVE: the banner gains this stage's entry, so
+# absolute offsets into the two texts do not align (own-catch, pre-splice).
+_C30 = P / 'banc/l174b4iiic'
+_pre30 = (_C30 / 'draft_pre.md').read_text()
+_T30 = '## Title'
+_a30, _b30 = _pre30[_pre30.index(_T30):], draft[draft.index(_T30):]
+
+# T15 CASE-ONLY, whole draft from the title onward
+assert len(_a30) == len(_b30), '(30) the stage changed the draft length'
+assert _a30.lower() == _b30.lower(), '(30) the stage moved more than case'
+_d30 = [(_p, _q) for _p, _q in zip(_a30, _b30) if _p != _q]
+assert _d30 and all(_p.isupper() and _q.islower() for _p, _q in _d30), \
+    '(30) every case change must be upper -> lower'
+assert len(_d30) == 412, ('(30) the case-delta pin', len(_d30))
+
+# the banner is the ONLY region outside the title block that may differ, and
+# it differs by exactly this stage's own entry
+_bb30 = draft[:draft.index(_T30)]
+assert _bb30.startswith(_pre30[:_pre30.index(_T30)].rstrip('\n')), \
+    '(30) the banner prefix moved'
+assert 'v3.31 = L174 stage (b4-iii-c-i)' in _bb30, \
+    "(30) the banner delta is not this stage's declared entry"
+
+# SCOPE: §2 Results and everything from §5 onward are byte-IDENTICAL, not
+# merely case-equal — the strip touched §1 and §4 and nothing else.
+for _nm, _lo, _hi in (('2 Results', '## 2. Results', '## 4. Limitations'),
+                      ('5 onward', '## 5. Discussion', None)):
+    _la, _lb = _a30.index(_lo), _b30.index(_lo)
+    _ha = _a30.index(_hi) if _hi else len(_a30)
+    _hb = _b30.index(_hi) if _hi else len(_b30)
+    assert _a30[_la:_ha] == _b30[_lb:_hb], \
+        ('(30) an out-of-scope span changed', _nm)
+
+# the owned classes are driven to ZERO in scope; the KEEP classes survive
+# occurrence-for-occurrence (the frozen partition of §(28), as amended by
+# §(29)): cell identifiers, the two field acronyms, the operator, the
+# specimen name and its possessive.
+_CAP30 = _re30 = __import__('re')
+_CAPR30 = _re30.compile(r"\b[A-Z][A-Z0-9][A-Z0-9'\-]*\b")
+_s1_30 = _b30[_b30.index('## 1. Introduction'):_b30.index('## 2. Results')]
+_s4_30 = _b30[_b30.index('## 4. Limitations'):_b30.index('## 5. Discussion')]
+assert sorted(set(_CAPR30.findall(_s1_30))) == \
+    ['CPG', 'CPG-', 'IN12B003', 'S07', 'XOR'], \
+    ('(30) the §1 caps survivors moved', sorted(set(_CAPR30.findall(_s1_30))))
+assert sorted(set(_CAPR30.findall(_s4_30))) == \
+    ['BANC', "BANC'", 'EMG', 'XOR'], \
+    ('(30) the §4 caps survivors moved', sorted(set(_CAPR30.findall(_s4_30))))
+
+# §5 Discussion is the STYLE REFERENCE this stage follows: it carries zero
+# all-caps tokens of any class, because stage (b4-ii) wrote it in the house
+# form. Pinned here so a later stage cannot re-introduce emphasis there.
+assert _CAPR30.findall(
+    _b30[_b30.index('## 5. Discussion'):_b30.index('## 6. Data & code')]) == [], \
+    '(30) §5 Discussion must stay free of all-caps tokens'
+
+# the outcome-class labels now read as the lowercase defined terms §5 uses
+# ('intermediate' is the §1 twin label; 'super'/'partial' are §4's f4 reads)
+for _t30 in ('super', 'partial'):
+    assert _t30 in _s4_30, ('(30) a class label is not in its house form', _t30)
+assert 'intermediate' in _s1_30 and 'INTERMEDIATE' not in _s1_30, \
+    '(30) the §1 twin label is not in its house form'
+
+# MEASUREMENT NEUTRALITY: a case change cannot move a number or a key, so
+# both multisets are identical with ZERO removed digit runs — the strongest
+# form of this lineage's T1 gate (tick 213 needed 15 named removals, tick 214
+# needed 0 removals but 11 named mapping additions; this stage needs neither).
+_NUM30 = _re30.compile(r'(?<![A-Za-z0-9])[-+\u2212]?\d[\d,]*(?:\.\d+)?'
+                       r'(?:[eE][-+]?\d+)?(?:%|\u00d7)?')
+_CIT30 = _re30.compile(r'\[([a-z0-9_]+(?:\.[a-z0-9_]+)*)\]')
+_strip30 = lambda s: _re30.sub(r'\u00a7\s*[\d.]+', '', s)
+assert sorted(_NUM30.findall(_strip30(_a30))) == \
+    sorted(_NUM30.findall(_strip30(_b30))), \
+    '(30) T1: the measurement multiset moved'
+assert sorted(_CIT30.findall(_a30)) == sorted(_CIT30.findall(_b30)), \
+    '(30) T1: the citation-key multiset moved'
+
+print('(30) L174 (b4-iii-c-i) the all-caps de-emphasis of §1 + §4: branch '
+      'C1_deemphasis_only — 64 declared occurrences (26 in §1, 38 in §4) '
+      'lowered to the house form, PROVED CASE-ONLY on the whole draft (same '
+      'length, 412 differing bytes, every one an upper -> lower letter), so '
+      'the visible-character and byte deltas are EXACTLY ZERO and both the '
+      'measurement and citation-key multisets are identical with no named '
+      'removal and no named addition — the first stage of this pass whose '
+      'cost is provably no bytes; §2 Results and everything from §5 onward '
+      'are byte-IDENTICAL (the §3 and §2 slices are deferred for a reason '
+      'recorded in the PREREG: §3 hosts MODEL SYMBOLS inside the state '
+      'equation and the parameter table plus one position-split token, §2 '
+      'is the bulk), §5 Discussion needed nothing and is pinned caps-free '
+      'as the style reference, and the KEEP survivors are pinned in both '
+      'edited sections (§1: CPG, CPG-, IN12B003, S07, XOR; §4: BANC, '
+      "BANC', EMG, XOR)")
+
+# ============== (31) L183 master fold: the LIVE-draft binding ==============
+import hashlib as _h31
+_nums31 = json.loads((P / 'paper/numbers.json').read_text())
+# (31a) byte replay: live body == declared_edits(renumber(stored pre-image))
+_st31 = _F183.assert_bound(_live183, _nums31)
+_lb31 = _live183[_live183.index('## Title'):]
+assert _h31.sha256(_F183.pre_body().encode()).hexdigest() == \
+    '9872b80ff61c8d6acd6de6fc07249b2f366480abb3701b989dd8b520cabed964', \
+    '(31a) the stored pre-image body is not the pre-fold live body'
+_auth31 = _F183.authored(_nums31)
+# (31b) nothing this file retired comes back in authored text
+_gone31 = _F183.harvest_gone(__file__)
+assert len(_gone31) >= 50, ('(31b) harvest shrank', len(_gone31))
+_back31 = _F183.returned(_gone31, _auth31)
+assert not _back31, ('(31b) retired wording returned in a declared edit',
+                     _back31[:4])
+# (31c) every [key] cited anywhere in the live body resolves (section (1)'s
+# contract, on the live text)
+def _res31(c):
+    if c in _nums31:
+        return True
+    parts = c.split('.')
+    for i in range(len(parts) - 1, 0, -1):
+        head, tail = '.'.join(parts[:i]), parts[i:]
+        if head in _nums31:
+            v = _nums31[head]['v']
+            try:
+                for t in tail:
+                    v = v[int(t)] if isinstance(v, list) else v[t]
+                return True
+            except (KeyError, TypeError, IndexError, ValueError):
+                return False
+    return False
+_keys31 = set()
+for _g in re.findall(r'\[([a-z][a-z0-9_.]*(?:,\s+[a-z][a-z0-9_.]*)*)\]', _lb31):
+    _keys31.update(k.strip() for k in _g.split(','))
+_keys31 = {k for k in _keys31 if '.' in k or k in _nums31}
+_unres31 = sorted(k for k in _keys31 if not _res31(k))
+assert not _unres31, ('(31c) live keys absent from numbers.json', _unres31)
+# (31d) style contracts of stages (b3)-(b4), on the live sections
+def _sec31(lo, hi):
+    return _lb31[_lb31.index(lo):_lb31.index(hi)]
+def _sents31(t):
+    t = re.sub(r'\s+', ' ', t)
+    for a in ('Fig.', 'e.g.', 'i.e.', 'cf.', 'vs.', 'et al.'):
+        t = t.replace(a, a.replace('.', '\x00'))
+    return [x for x in re.split(r'(?<=[.!?])\s+', t) if x.strip()]
+def _long31(sec):
+    w = 0
+    for para in sec.split('\n\n'):
+        ls = [l for l in para.split('\n') if not l.startswith(('|', '#'))]
+        for sn in _sents31('\n'.join(ls)):
+            w = max(w, len(sn.split()))
+    return w
+_new2_31 = _sec31('## 2. Results', '### 2.6 ') if _st31 >= 2 else ''
+_S31 = {'title': _sec31('## Title', '## Abstract (draft)'),
+        'abstract': _sec31('## Abstract (draft)', '## 1. Introduction'),
+        '1': _sec31('## 1. Introduction', '## 2. Results'),
+        '2.1-2.5': _new2_31,
+        '4': _sec31('## 4. Limitations', '## 5. Discussion'),
+        '5': _sec31('## 5. Discussion', '## 6. Data & code')}
+_long = {k: _long31(v) for k, v in _S31.items()}
+assert max(_long.values()) <= 60, ('(31d) sentence over 60 words', _long)
+_bul31 = re.findall(r'^\s*[-*]\s+\S.*', _sec31('## 1. Introduction',
+                                                '## 6. Data & code'), re.M)
+assert not _bul31, ('(31d) list items returned to sections 1-5', _bul31[:2])
+_CAP31 = re.compile(r"\b[A-Z][A-Z0-9][A-Z0-9'\-]*\b")
+_caps31 = {k: set(_CAP31.findall(v)) for k, v in _S31.items()}
+assert _caps31['5'] == set(), ('(31d) caps in the Discussion', _caps31['5'])
+assert _caps31['title'] <= {'DNP33-L'} and _caps31['abstract'] <= {'BANC'}, \
+    ('(31d) caps in title/abstract', _caps31['title'], _caps31['abstract'])
+# the survivors (30) pinned, plus one tool name the fold cites (split-GAL4)
+assert _caps31['1'] <= {'CPG', 'CPG-', 'IN12B003', 'S07', 'XOR', 'GAL4'}, \
+    ('(31d) section 1 caps', sorted(_caps31['1']))
+assert _caps31['4'] <= {'BANC', "BANC'", 'EMG', 'XOR'}, \
+    ('(31d) section 4 caps', sorted(_caps31['4']))
+# new Results: a cell-type name and the confidence-interval abbreviation only
+assert _caps31['2.1-2.5'] <= {'CI', 'IN06B033'}, \
+    ('(31d) caps in the new Results subsections', sorted(_caps31['2.1-2.5']))
+for _k in ('title', 'abstract', '1', '2.1-2.5', '4', '5'):
+    _ids = re.findall(r'\bL\d{2,3}\b|\bB\d{2}\b|\btick[- ]\d+', _S31[_k])
+    assert not _ids, ('(31d) lane / batch / tick codes in authored prose',
+                      _k, _ids[:4])
+# (31e) section 5.  Before the fold reaches it: exactly the stored (b4-ii)
+# Discussion under the declared renumber.  After: the fold's own Discussion,
+# which keeps the T8 contract (no list items, no codes, no caps, no keys, no
+# numeric value that the rest of the body does not also carry).
+_s5_31 = _S31['5']
+_pb31 = _F183.pre_body()
+_rn31 = _F183.renumber(_pb31) if _st31 >= 2 else _pb31   # whole-body map
+if _st31 < 5:
+    # (27) above proves the pre-image's section 5 is the stored disc.txt
+    assert _pb31[_pb31.index('## 5. Discussion'):
+                 _pb31.index('## 6. Data & code')].strip() == _disc_27.strip()
+    _want5 = _rn31[_rn31.index('## 5. Discussion'):
+                   _rn31.index('## 6. Data & code')]
+    assert _s5_31 == _want5, \
+        '(31e) section 5 is not the stored Discussion under the renumber'
+    _s5note = 'the stored (b4-ii) Discussion%s' % (
+        '' if _st31 < 2 else ' under the declared renumber')
+else:
+    assert not re.findall(r'\[[a-z][a-z0-9_.]*\]', _s5_31), '(31e) keys in §5'
+    _scr5 = re.sub(r'\u00a7\d+(\.\d+)?', ' ', _s5_31)
+    _rest5 = _lb31.replace(_s5_31, '')
+    _new5 = sorted(q for q in set(x.rstrip(',') for x in
+                                  re.findall(r'\d[\d,]*(?:\.\d+)?', _scr5))
+                   if q not in _rest5)
+    assert not _new5, ('(31e) section 5 carries a value found nowhere else',
+                       _new5)
+    assert max(len(l) for l in _s5_31.split('\n')) <= 78
+    _s5note = ("the fold's Discussion: %d paragraphs, %d tokens, no key, no "
+               'caps, no code, no value absent from the rest of the body'
+               % (len([p for p in _s5_31.split('\n\n') if p.strip()]) - 1,
+                  len(_s5_31.split())))
+# (31f) section 7 is the stored one under the renumber (successor of (29))
+_s7pre = _rn31[_rn31.index('## 7. Author/submit notes'):_rn31.index('## References')]
+_s7now = _lb31[_lb31.index('## 7. Author/submit notes'):_lb31.index('## References')]
+assert _s7now == _s7pre, \
+    '(31f) section 7 moved outside the declared renumber'
+assert 'v3.32 = L183 master fold' in _live183[:_live183.index('## Title')], \
+    '(31) the changelog banner does not record the master fold'
+print('(31) L183 master fold, LIVE binding at stage %d: the live body equals '
+      'declared_edits(stored pre-image) byte for byte, so sections (1)-(30) '
+      '(run unchanged on that pre-image) certify every live byte outside the '
+      '%d declared edits; inside them: %d cited keys all resolve, none of the '
+      '%d retired strings this file forbids has returned, longest sentence %d '
+      'words, zero list items in sections 1-5, caps within the pinned '
+      'survivor sets, zero lane/batch/tick codes; section 5 = %s; section 7 '
+      'unchanged under the renumber'
+      % (_st31, len(_auth31), len(_keys31), len(_gone31),
+         max(_long.values()), _s5note))
 
 print("L149 verify: ALL GREEN")

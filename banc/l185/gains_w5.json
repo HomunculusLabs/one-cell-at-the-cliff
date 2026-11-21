@@ -1,0 +1,33 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "dmC": 0.14841871619224548,
+  "dmCF": 0.14365819573402408,
+  "s2t": 0.14321668982505795
+ },
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "dmC": "bisect (this process) == stored EXACT",
+  "s2t": "bisect (this process), fresh",
+  "dmCF": "fixed base gain g_cutwA (stored float)"
+ },
+ "bisected": [
+  "cutwA",
+  "dmC",
+  "s2t"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "dmC": 0.0002759670217832022,
+  "s2t": 3.1138459841414945e-05
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "dmC": 0.10878014316161473,
+  "s2t": 0.10902497172355652
+ },
+ "stored_exact": {
+  "cutwA": true,
+  "dmC": true
+ }
+}

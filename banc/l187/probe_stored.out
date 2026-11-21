@@ -1,0 +1,45 @@
+base n 21785 active frac 0.2235024099150792
+relay    gi  75494 loc  21435 x3 0.3289 seeds [0.3239 0.3296 0.3334] sign -1 ow_eff 262.98 drive 86.503
+carrier  gi   1110 loc    467 x3 0.3891 seeds [0.3896 0.3892 0.3886] sign +1 ow_eff 183.96 drive 71.583
+sc40     gi    559 loc    280 x3 0.0343 seeds [0.034  0.0344 0.0343] sign -1 ow_eff 405.77 drive 13.899
+pm69410  gi  69410 loc  15358 x3 -0.0001 seeds [-0.     -0.     -0.0002] sign +1 ow_eff 159.34 drive -0.014
+pm72158  gi  72158 loc  18100 x3 0.0144 seeds [0.0138 0.016  0.0135] sign -1 ow_eff 276.53 drive 3.993
+74914    gi  74914 loc  20855 x3 0.2063 seeds [0.2096 0.2133 0.1961] sign -1 ow_eff 189.12 drive 39.016
+71392    gi  71392 loc  17337 x3 0.0001 seeds [-0.      0.0002  0.0001] sign -1 ow_eff 352.05 drive 0.024
+74468    gi  74468 loc  20409 x3 0.0001 seeds [0.0001 0.0001 0.0001] sign -1 ow_eff 479.43 drive 0.040
+64322    gi  64322 loc  10280 x3 0.0001 seeds [-0.      0.0003  0.0001] sign -1 ow_eff 532.88 drive 0.079
+66994    gi  66994 loc  12948 x3 0.9984 seeds [0.9999 0.9999 0.9953] sign +1 ow_eff 15.64 drive 15.611
+69186    gi  69186 loc  15135 x3 0.0001 seeds [-0.0001 -0.0001  0.0005] sign -1 ow_eff 73.63 drive 0.008
+cutwA  relay    mean 0.3270 sd 0.0138 min 0.2806 max 0.3368
+cutwA  carrier  mean 0.3885 sd 0.0202 min 0.3163 max 0.4046
+cutwA  sc40     mean 0.0342 sd 0.0005 min 0.0336 max 0.0358
+cutwA  74914    mean 0.1999 sd 0.0119 min 0.1793 max 0.2176
+cutwA  71392    mean 0.0000 sd 0.0001 min -0.0002 max 0.0003
+cutwA  74468    mean 0.0000 sd 0.0001 min -0.0001 max 0.0003
+cutwA  64322    mean -0.0000 sd 0.0001 min -0.0002 max 0.0002
+sc25   relay    mean 0.1381 sd 0.0045 min 0.1285 max 0.1447
+sc25   sc40     mean 0.0325 sd 0.0003 min 0.0321 max 0.0330
+sc25   74914    mean 0.3546 sd 0.0104 min 0.3387 max 0.3805
+sc25   71392    mean 0.0000 sd 0.0001 min -0.0002 max 0.0003
+sc25   74468    mean 0.0000 sd 0.0001 min -0.0001 max 0.0003
+sc25   64322    mean -0.0000 sd 0.0001 min -0.0002 max 0.0002
+sc40   relay    mean 0.3462 sd 0.0234 min 0.3140 max 0.3744
+sc40   carrier  mean 0.3450 sd 0.0362 min 0.2966 max 0.3817
+sc40   74914    mean 0.1515 sd 0.0127 min 0.1190 max 0.1715
+sc40   71392    mean 0.0000 sd 0.0001 min -0.0002 max 0.0003
+sc40   74468    mean 0.0000 sd 0.0001 min -0.0001 max 0.0003
+sc40   64322    mean -0.0000 sd 0.0001 min -0.0002 max 0.0002
+sc26   relay    mean 0.3246 sd 0.0146 min 0.2751 max 0.3415
+sc26   carrier  mean 0.3829 sd 0.0203 min 0.3097 max 0.3966
+sc26   sc40     mean 0.0343 sd 0.0005 min 0.0337 max 0.0358
+sc26   74914    mean 0.1956 sd 0.0102 min 0.1777 max 0.2125
+sc26   71392    mean 0.0000 sd 0.0001 min -0.0002 max 0.0003
+sc26   74468    mean 0.0000 sd 0.0001 min -0.0001 max 0.0003
+sc26   64322    mean -0.0000 sd 0.0001 min -0.0002 max 0.0002
+sc27   relay    mean 0.3146 sd 0.0138 min 0.2778 max 0.3376
+sc27   carrier  mean 0.3629 sd 0.0183 min 0.3027 max 0.3816
+sc27   sc40     mean 0.0346 sd 0.0005 min 0.0339 max 0.0361
+sc27   74914    mean 0.1987 sd 0.0124 min 0.1710 max 0.2181
+sc27   71392    mean 0.0000 sd 0.0001 min -0.0002 max 0.0003
+sc27   74468    mean 0.0000 sd 0.0001 min -0.0001 max 0.0003
+sc27   64322    mean -0.0000 sd 0.0001 min -0.0002 max 0.0002

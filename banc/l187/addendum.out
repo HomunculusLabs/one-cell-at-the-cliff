@@ -1,0 +1,23 @@
+1.4-Hz middle segment, paired (a - b), 16 seeds
+  sc25   - cutwA  0.530 vs 0.001 diff +0.529 ci [0.404, 0.654] pos/neg 16/0
+  sc25F  - cutwA  0.432 vs 0.001 diff +0.431 ci [0.326, 0.537] pos/neg 16/0
+  rcut   - cutwA  0.020 vs 0.001 diff +0.019 ci [-0.007, 0.044] pos/neg 3/1
+  rcutF  - cutwA  0.042 vs 0.001 diff +0.041 ci [-0.013, 0.095] pos/neg 3/1
+  rsilW  - cutwA  0.057 vs 0.001 diff +0.056 ci [0.011, 0.101] pos/neg 7/1
+  pp     - cutwA  0.242 vs 0.001 diff +0.241 ci [0.109, 0.372] pos/neg 13/0
+  ppF    - cutwA  0.435 vs 0.001 diff +0.434 ci [0.325, 0.544] pos/neg 15/1
+  occ    - cutwA  0.729 vs 0.001 diff +0.728 ci [0.64, 0.816] pos/neg 16/0
+  occF   - cutwA  0.595 vs 0.001 diff +0.594 ci [0.495, 0.694] pos/neg 16/0
+  occ    - sc25   0.729 vs 0.530 diff +0.199 ci [0.056, 0.342] pos/neg 12/4
+  occF   - sc25F  0.595 vs 0.432 diff +0.163 ci [0.016, 0.31] pos/neg 12/4
+  occ    - rcut   0.729 vs 0.020 diff +0.709 ci [0.617, 0.801] pos/neg 16/0
+  occF   - rcutF  0.595 vs 0.042 diff +0.553 ci [0.453, 0.653] pos/neg 16/0
+  pp     - sc25   0.242 vs 0.530 diff -0.288 ci [-0.457, -0.119] pos/neg 2/14
+  ppF    - sc25F  0.435 vs 0.432 diff +0.003 ci [-0.143, 0.149] pos/neg 6/10
+rematched - fixed duty per graph (slope per +0.1% gain); base-graph gain-null slope (B40) -0.0228
+  sc25  carrier_present=False shift +1.244% d +0.094 ci [0.007, 0.182] slope +0.0076
+  pp    carrier_present=False shift -0.809% d -0.187 ci [-0.287, -0.086] slope +0.0231
+  occ   carrier_present=False shift +1.066% d +0.109 ci [0.026, 0.192] slope +0.0102
+  sc40  carrier_present=True  shift -1.131% d +0.238 ci [0.116, 0.36] slope -0.0210
+  rcut  carrier_present=True  shift -0.126% d +0.067 ci [-0.086, 0.22] slope -0.0534
+relay rate {'base': 0.3202, 'sc25': 0.1382, 'sc25F': 0.1331, 'sc40': 0.348, 'sc40F': 0.3548, 'pp': 0.165, 'ppF': 0.1547}

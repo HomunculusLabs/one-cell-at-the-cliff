@@ -1,0 +1,689 @@
+Query: Experiment dispatch (owner request, L185 replication + gain null + 
+signed-current twin). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l185/BRIEF_replicate.md and execute it 
+completely: PREREG first, then R1/R2/R3. Observe every ground rule.
+📖 Read BRIEF_replicate.md
+📚 Skill peabrain-flybrain  0.1s
+🔎 Grep L175|L185|L135|C0A|cutwA|key-scan|banc/
+💻 $ ls -la l175 l185 + 4 commands
+💻 $ cat l185/dispatch.log + 6 commands
+💻 $ cat build_scan.py + 2 commands
+💻 $ cat bisect_block.py.txt + 9 commands  0.1s
+💻 $ cat banc/l184/BRIEF_mechanism.md + 4 commands
+📖 Read scan_run.py
+📖 Read scan_run.py L561-900
+📖 Read scan_run.py L1040-1399
+📖 Read scan_run.py L900-1039
+💻 $ cat build_verdict.py + 4 commands
+✗ $ sed -n 150,330p verdict_l175.py + 4 commands  0.1s [exit 1]
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import glob, zipfile, re, collections seedre = re.compile(r"_(\d+)\.npy$") seen = collections.Counter() + 7 commands  1.2s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import json, numpy as np for w in range(5): g=json.load(open(f"l175/gains_w{w}.json")) for a in ("cutwA","sc25","sc26","sc27","sc40","dmA","dmC"): if a in g["gain"]: print(w, a, repr(g["gain"][a]), g["af_final"][a], g["stairs"][a]) z=np.load("l175/raw_w0.npz") + 9 commands  0.5s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import json, numpy as np r=json.load(open("l175/results_l175.json")) print(r["certs"]) + 5 commands  0.7s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/arms_block.py.txt
+│ banc/l185/arms_block.py.txt
+│ @@ -0,0 +1,327 @@
+│ +# ======================= L185 ARMS BLOCK (additive) =======================
+│ +# R1 fresh-batch replication (6 cells x {L175 re-bisected gain, FIXED base
+│ +# gain}), R2 gain-only null (5 gains on the base graph, no deletion), R3
+│ +# signed-current-matched twin (1 arm). Every arm goes through the L175
+│ +# add_arm()/gen_init() plumbing; nothing lineage-side is edited.
+│ +SC = [f"sc{r}" for r in WIN_RANKS]
+│ +SC_GI = dict(zip(SC, WIN_CELLS))
+│ +PREREG_PATH = f"{OUT}/PREREG.md"
+│ +
+│ +
+│ +def prereg_sha():
+│ +    return hashlib.sha256(open(PREREG_PATH, "rb").read()).hexdigest()
+│ +
+│ +
+│ +# --- L175 pins re-derived from stored L175 artifacts (never prose) ---
+│ +S175 = json.load(open("l175/static.json"))
+│ +SEL175 = json.load(open("l175/selection.json"))
+│ +R175 = json.load(open("l175/results_l175.json"))
+│ +assert sorted(USED) == S175["used_cells"] and len(USED) == 78, len(USED)
+│ +assert int(POOL_A.sum()) == S175["pool_A_n"] == 21001
+│ +assert int(POOL_C.sum()) == S175["pool_C_n"] == 313
+│ +assert R175["status"] == "FINAL" and R175["branch"] == "D2_identity_carried"
+│ +DM = {"dmA": int(SEL175["dmA"]["pick"]["gi"]),
+│ +      "dmC": int(SEL175["dmC"]["pick"]["gi"])}
+│ +assert DM == {"dmA": 511, "dmC": 1480}, DM
+│ +assert POOL_A[DM["dmA"]] and POOL_C[DM["dmC"]]
+│ +R1_CELL = {"sc25": 1110, "sc26": 319, "sc27": 707, "sc40": 559,
+│ +           "dmA": DM["dmA"], "dmC": DM["dmC"]}
+│ +for _a in ("sc25", "sc26", "sc27", "sc40"):
+│ +    assert SC_GI[_a] == R1_CELL[_a], _a
+│ +R1R = list(R1_CELL)                 # rematched: L175 stored re-bisected gain
+│ +R1F = [a + "F" for a in R1R]        # fixed: base gain g_cutwA
+│ +# L175 stored gains: floats read from the L175 gains files, cross-checked
+│ +# against results_l175.json rows and the lineage constants.
+│ +G175, W175 = {}, {}
+│ +for _w in range(5):
+│ +    _gj = json.load(open(f"l175/gains_w{_w}.json"))
+│ +    assert _gj["gain"]["cutwA"] == G_CUTWA_STORED, _w
+│ +    for _a, _g in _gj["gain"].items():
+│ +        if _a in R1R:
+│ +            assert _a not in G175
+│ +            G175[_a], W175[_a] = float(_g), _w
+│ +assert sorted(G175) == sorted(R1R), sorted(G175)
+│ +assert G175["sc25"] == G_CUTNG25_STORED and G175["sc26"] == G_CUTNG25P_STORED
+│ +_rows175 = {r["arm"]: r for r in R175["window"]}
+│ +_rows175.update({k: R175["twins"][k] for k in ("dmA", "dmC")})
+│ +for _a in R1R:
+│ +    assert _rows175[_a]["gain"] == G175[_a], (_a, "gain json vs results drift")
+│ +    assert _rows175[_a]["gi"] == R1_CELL[_a], _a
+│ +assert R175["base"]["gain"] == G_CUTWA_STORED
+│ +# R2 gain-only null: base graph, gain = g_cutwA * (1 + delta) in float64.
+│ +R2_DELTA = {"gM50": -0.005, "gM25": -0.0025, "g000": 0.0,
+│ +            "gP25": 0.0025, "gP50": 0.005}
+│ +R2 = list(R2_DELTA)
+│ +R2_GAIN = {a: G_CUTWA_STORED * (1.0 + d) for a, d in R2_DELTA.items()}
+│ +assert R2_GAIN["g000"] == G_CUTWA_STORED
+│ +assert len(set(R2_GAIN.values())) == 5
+│ +# R3 candidate pool: L175 Pool A minus L175's own twin picks (prior arms)
+│ +_tw = np.zeros(Nall, bool)
+│ +_tw[[DM["dmA"], DM["dmC"]]] = True
+│ +POOL_S = POOL_A & ~_tw
+│ +assert int(POOL_S.sum()) == 21001 - 2
+│ +
+│ +
+│ +def add_alias(name, src):
+│ +    """GEN arm `src`'s graph + plumbing OBJECTS under a new arm name (the
+│ +    only difference between the two arms is GAIN[name])."""
+│ +    assert name not in GEN and name not in WB and src in GEN, name
+│ +    GEN[name] = GEN[src]
+│ +    POOLS[name] = POOLS[src]
+│ +    mech[name] = mech[src]
+│ +    motor[name] = motor[src]
+│ +    dng100[name] = dng100[src]
+│ +    WB[name] = WB[src]
+│ +    N_OF[name] = N_OF[src]
+│ +    GAIN[name] = None
+│ +    GEN_ARMS.append(name)
+│ +
+│ … omitted 249 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/gains_block.py.txt
+│ banc/l185/gains_block.py.txt
+│ @@ -0,0 +1,172 @@
+│ +assert ANCH == [11, 22, 33]
+│ +assert MODE == "work"
+│ +# Fixed worker plan (PREREG): cutwA rides in EVERY worker.
+│ +PLAN = {0: ["sc25", "sc25F", "gM50"], 1: ["sc26", "sc26F", "gM25"],
+│ +        2: ["sc27", "sc27F", "g000"], 3: ["sc40", "sc40F", "gP25"],
+│ +        4: ["dmA", "dmAF", "gP50"], 5: ["dmC", "dmCF", "s2t"]}
+│ +assert NW == 6 and WID in PLAN
+│ +assert sorted(sum(PLAN.values(), [])) == sorted(R1R + R1F + R2 + ["s2t"])
+│ +MY_ARMS = PLAN[WID]
+│ +RAW_PATH, XM_PATH = f"{OUT}/raw_w{WID}.npz", f"{OUT}/xm_w{WID}.npz"
+│ +GAINS_PATH = f"{OUT}/gains_w{WID}.json"
+│ +log(f"worker {WID}/{NW} arms: cutwA + {MY_ARMS}")
+│ +# Bisected IN THIS PROCESS (stored-form, vectorized): cutwA + this worker's
+│ +# rematched L175 arm (must reproduce the stored L175 float EXACTLY) + s2t.
+│ +BIS = ["cutwA"] + [a for a in MY_ARMS if a in R1R or a == "s2t"]
+│ +STORED_G = {"cutwA": G_CUTWA_STORED}
+│ +STORED_G.update({a: G175[a] for a in R1R})
+│ +new_stairs, af_final = {}, {}
+│ +if os.path.exists(GAINS_PATH):
+│ +    _gj = json.load(open(GAINS_PATH))
+│ +    assert sorted(_gj["gain"]) == sorted(["cutwA"] + MY_ARMS), "gains file arm drift"
+│ +    for _a in BIS:
+│ +        GAIN[_a] = float(_gj["gain"][_a])
+│ +    new_stairs, af_final = _gj["stairs"], _gj["af_final"]
+│ +    log(f"gains loaded from {GAINS_PATH} (resume)")
+│ +else:
+│ +    _lo, _afd = bisect_vec(BIS)
+│ +    for _a in BIS:
+│ +        GAIN[_a] = _lo[_a]
+│ +        af_final[_a] = _afd[_a]
+│ +        new_stairs[_a] = abs(_afd[_a] - AF_T)
+│ +        log(f"g_{_a} {_lo[_a]!r} | af_final {_afd[_a]:.6f} | "
+│ +            f"|af-target| {abs(_afd[_a] - AF_T):.2e}"
+│ +            + ("" if 0.14 <= _lo[_a] <= 0.16 else " [OUTSIDE .14-.16 — DISCLOSED]"))
+│ +for _a in BIS:
+│ +    if _a in STORED_G:
+│ +        assert GAIN[_a] == STORED_G[_a], (_a, GAIN[_a], STORED_G[_a],
+│ +                                         "stored-form bisect drift (VOID)")
+│ +        log(f"g_{_a} == stored EXACT ({STORED_G[_a]!r})")
+│ +GAIN_SRC = {a: "bisect (this process) == stored EXACT" for a in BIS if a in STORED_G}
+│ +if "s2t" in BIS:
+│ +    GAIN_SRC["s2t"] = "bisect (this process), fresh"
+│ +for _a in MY_ARMS:
+│ +    if _a in R1F:
+│ +        GAIN[_a] = G_CUTWA_STORED
+│ +        GAIN_SRC[_a] = "fixed base gain g_cutwA (stored float)"
+│ +    elif _a in R2:
+│ +        GAIN[_a] = R2_GAIN[_a]
+│ +        GAIN_SRC[_a] = f"g_cutwA * (1 + {R2_DELTA[_a]!r})"
+│ +assert all(GAIN[a] is not None for a in ["cutwA"] + MY_ARMS)
+│ +if _gj_exists := os.path.exists(GAINS_PATH):
+│ +    assert all(float(json.load(open(GAINS_PATH))["gain"][a]) == GAIN[a]
+│ +               for a in ["cutwA"] + MY_ARMS), "gains file value drift"
+│ +atomic_json(GAINS_PATH, dict(gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+│ +                             source=GAIN_SRC, bisected=BIS,
+│ +                             stairs=new_stairs, af_final=af_final,
+│ +                             stored_exact={a: bool(GAIN[a] == STORED_G[a])
+│ +                                           for a in BIS if a in STORED_G}))
+│ +log(f"bisects done {time.time()-t0:.0f}s")
+│ +
+│ +
+│ +def arms_for(seed):
+│ +    if seed in ANCH_BIT:      # vs raw_l135 (+ alias cert)
+│ +        return ["cutwA"] + [a for a in MY_ARMS if a in ("sc25", "sc26", "g000")]
+│ +    if seed in ANCH_175:      # vs stored L175 raws (+ alias cert)
+│ +        return ["cutwA"] + [a for a in MY_ARMS if a in R1R or a == "g000"]
+│ +    return ["cutwA"] + MY_ARMS
+│ +
+│ +
+│ +_poolkeys = []
+│ +for _pk, (_ag, _bg) in (("Ti", ("f", "e")), ("Tr", ("f", "e")),
+│ +                        ("Ta", ("a", "b")), ("Sr", ("a", "b")),
+│ +                        ("Pr", ("a", "b"))):
+│ +    for _c in (_ag, _bg):
+│ +        for _s in ("L", "R"):
+│ +            _poolkeys.append(f"{_pk}_{_c}{_s}")
+│ +C0A_KEYS = ["mm", "xm"] + _poolkeys
+│ +assert len(C0A_KEYS) == 22
+│ … omitted 94 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/tail_block.py.txt
+│ banc/l185/tail_block.py.txt
+│ @@ -0,0 +1,9 @@
+│ +log(f"rollouts done {time.time()-t0:.0f}s")
+│ +assert MODE == "work"
+│ +_as = json.load(open(ANCH_PATH))
+│ +assert _as["c0a135_pass"] and _as["c0a175_pass"] and _as["alias_max"] == 0.0
+│ +atomic_json(f"{OUT}/done_w{WID}.json", dict(
+│ +    wid=WID, nw=NW, arms=["cutwA"] + MY_ARMS, seeds=SEEDS,
+│ +    gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+│ +    track=TRACK, s2=S2, prereg_sha256=prereg_sha(), secs=time.time() - t0))
+│ +log(f"worker {WID} DONE {time.time()-t0:.0f}s")
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l185/gains_block.py.txt
+│ banc/l185/gains_block.py.txt
+│ @@ -48,9 +48,10 @@
+│          GAIN[_a] = R2_GAIN[_a]
+│          GAIN_SRC[_a] = f"g_cutwA * (1 + {R2_DELTA[_a]!r})"
+│  assert all(GAIN[a] is not None for a in ["cutwA"] + MY_ARMS)
+│ -if _gj_exists := os.path.exists(GAINS_PATH):
+│ -    assert all(float(json.load(open(GAINS_PATH))["gain"][a]) == GAIN[a]
+│ -               for a in ["cutwA"] + MY_ARMS), "gains file value drift"
+│ +if os.path.exists(GAINS_PATH):   # resume: every gain must equal the file's
+│ +    _gf = json.load(open(GAINS_PATH))["gain"]
+│ +    assert all(float(_gf[a]) == GAIN[a] for a in ["cutwA"] + MY_ARMS), \
+│ +        "gains file value drift (VOID)"
+│  atomic_json(GAINS_PATH, dict(gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+│                               source=GAIN_SRC, bisected=BIS,
+│                               stairs=new_stairs, af_final=af_final,
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/build_rep.py
+│ banc/l185/build_rep.py
+│ @@ -0,0 +1,169 @@
+│ +"""L185 builder: count-asserted ADDITIVE transform of the certified L175
+│ +harness banc/l175/scan_run.py -> banc/l185/rep_run.py. Run from banc/ (cwd
+│ +law). Every rep is count-pinned; long blocks are spliced on UNIQUE OPENERS.
+│ +
+│ +What stays VERBATIM from l175/scan_run.py (itself a transform of
+│ +l150_run.py): extraction, ladder, build()/wb()/pools_for(), every lineage
+│ +arm's plumbing (incl. cutwA), add_arm()/gen_init(), the out-weight tables,
+│ +USED / POOL_A / POOL_C, settle_states body, bisect_vec, the rollout step
+│ +loop, store keys, per-seed atomic checkpoints.
+│ +What is REPLACED: seeds (fresh B40 + one L175 reproduction anchor), the
+│ +arm list block (R1/R2/R3 arms; add_alias/add_base_alias; R3 selection
+│ +mode), the gains + anchors block (stored gains reused EXACTLY, fixed-gain
+│ +and gain-grid arms, three in-run anchors), the tail. Census mode removed.
+│ +"""
+│ +import hashlib
+│ +import py_compile
+│ +
+│ +SRC = "l175/scan_run.py"
+│ +s = open(SRC).read()
+│ +SRC_SHA = hashlib.sha256(s.encode()).hexdigest()
+│ +assert SRC_SHA == ("bbfea4e07ff414dc4992b0d17ca4d890ecba58a13482ebe9a7cdf8bbf9488a20"), SRC_SHA
+│ +SRC_LINES = s.count("\n")
+│ +assert SRC_LINES == 1397, SRC_LINES
+│ +NREP = 0
+│ +
+│ +
+│ +def rep(old, new, count=1):
+│ +    global s, NREP
+│ +    n = s.count(old)
+│ +    assert n == count, (old[:70], "found", n, "want", count)
+│ +    s = s.replace(old, new)
+│ +    NREP += n
+│ +
+│ +
+│ +def splice(opener, closer, new):
+│ +    """Replace [opener, closer) — both unique — with new."""
+│ +    global s, NREP
+│ +    assert s.count(opener) == 1, (opener[:60], s.count(opener))
+│ +    i = s.index(opener)
+│ +    if closer is None:
+│ +        j = len(s)
+│ +    else:
+│ +        assert s.count(closer) == 1, (closer[:60], s.count(closer))
+│ +        j = s.index(closer)
+│ +        assert j > i
+│ +    s = s[:i] + new + s[j:]
+│ +    NREP += 1
+│ +
+│ +
+│ +# ---- T1 docstring ----
+│ +rep('"""L175 scan_run.py — GENERATED by l175/build_scan.py from l150_run.py\n',
+│ +    '"""L185 rep_run.py — GENERATED by l185/build_rep.py from l175/scan_run.py\n'
+│ +    '(sha256 ' + SRC_SHA + ').\n'
+│ +    'PREREG l185/PREREG.md FIRST. R1 fresh-batch replication (rematched +\n'
+│ +    'fixed gain), R2 gain-only null, R3 signed-current twin, all on the k=24\n'
+│ +    '(cutwA) base. MODE env: static | select | work. cwd = banc/.\n'
+│ +    'L175 docstring retained below.\n\n'
+│ +    'L175 scan_run.py — GENERATED by l175/build_scan.py from l150_run.py\n')
+│ +# ---- T2 imports / mode ----
+│ +rep("import glob\nimport json\n", "import glob\nimport hashlib\nimport json\n")
+│ +rep('torch.set_num_threads(int(os.environ.get("L175_THREADS", "2")))\n'
+│ +    'MODE = os.environ["L175_MODE"]\n'
+│ +    'assert MODE in ("static", "census", "work"), MODE\n'
+│ +    'WID = int(os.environ.get("L175_WID", "0"))\n'
+│ +    'NW = int(os.environ.get("L175_NW", "1"))\n',
+│ +    'torch.set_num_threads(int(os.environ.get("L185_THREADS", "2")))\n'
+│ +    'MODE = os.environ["L185_MODE"]\n'
+│ +    'assert MODE in ("static", "select", "work"), MODE\n'
+│ +    'WID = int(os.environ.get("L185_WID", "0"))\n'
+│ +    'NW = int(os.environ.get("L185_NW", "6"))\n')
+│ +# ---- T3 seeds ----
+│ +rep('B39 = list(range(3545, 3561))       # FRESH (key-scanned absent, PREREG)\n'
+│ +    'CENSUS_SEEDS = [801, 901, 3561]     # census-only reference seeds\n'
+│ +    'SEEDS = (CENSUS_SEEDS if MODE == "census" else ANCH_BIT + B39)\n'
+│ +    'FRESH = B39\n',
+│ +    'B39 = list(range(3545, 3561))       # L175 batch: STORED, never re-sampled\n'
+│ +    'ANCH_175 = [3545]                   # L175-reproduction bit anchor (not in sample)\n'
+│ +    'B40 = list(range(3577, 3593))       # FRESH (key-scanned absent, PREREG l185)\n'
+│ … omitted 91 diff line(s) across 1 additional file(s)/section(s)
+✗ $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' p="l185/build_rep.py" + 4 commands  0.2s [exit 1]
+💻 $ sed -i 's| src="l175/scan_run.py transform (l185/build_rep.py)",| src="banc l175 scan_run.py transform (l185 build_rep.py)",|' l185/arms_block.py.txt + 3 commands  0.2s
+✗ $ (command -v /usr/bin/time >/dev/null + 6 commands  0.1s [exit 1]
+💻 $ cat <<'EOF' """Run rep_run.py in-process and report peak RSS (static/select only; zero rollouts).""" import resource, runpy, sys try: runpy.run_path("l185/rep_run.py", run_name="__main__") except SystemExit as e: rc = e.code else: rc = 0 print(f"[memrun] exit {rc} peak RSS {resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1e6:.2f} GB", flush=True) sys.exit(rc or 0) EOF time (L185_MODE=static L185_THREADS=2 /home/t3rpz/critters/peabrain/.venv/bin/python l185/_memrun.py + 3 commands  8.8s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/verdict_tail.py.txt
+│ banc/l185/verdict_tail.py.txt
+│ @@ -0,0 +1,436 @@
+│ +
+│ +
+│ +# ======================= L185 verdict tail (additive) =======================
+│ +# Helpers ABOVE this line are the l150_verdict.py block VERBATIM (sliced by
+│ +# l185/build_verdict.py; same slice + sha as L175). Reads stored files only;
+│ +# partial-capable (first m complete fresh seeds on ALL arms); the results
+│ +# json is rewritten atomically at every call.
+│ +import hashlib
+│ +import os
+│ +import sys
+│ +
+│ +import pandas as pd
+│ +
+│ +OUT = "l185"
+│ +B40 = list(range(3577, 3593))
+│ +B39 = list(range(3545, 3561))
+│ +B26 = list(range(3001, 3017))
+│ +ANCH = [801, 901, 3545]
+│ +NW = 6
+│ +R1R = ["sc25", "sc26", "sc27", "sc40", "dmA", "dmC"]
+│ +R1F = [a + "F" for a in R1R]
+│ +R2 = ["gM50", "gM25", "g000", "gP25", "gP50"]
+│ +T975 = {7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179,
+│ +        13: 2.160, 14: 2.145, 15: 2.131}
+│ +
+│ +
+│ +def atomic_json(path, obj):
+│ +    tmp = path + ".tmp"
+│ +    json.dump(obj, open(tmp, "w"), indent=1)
+│ +    os.replace(tmp, path)
+│ +
+│ +
+│ +st = json.load(open(f"{OUT}/static.json"))
+│ +sel2 = json.load(open(f"{OUT}/selection_s2.json"))
+│ +PRE_SHA = hashlib.sha256(open(f"{OUT}/PREREG.md", "rb").read()).hexdigest()
+│ +assert sel2["prereg_sha256"] == PRE_SHA, "PREREG changed after the R3 selection"
+│ +r175 = json.load(open("l175/results_l175.json"))
+│ +G0 = st["g_stored"]["cutwA"]
+│ +
+│ +# ---- CERT-METRIC: reproduce stored l135 Ti cells EXACT before any B40 read
+│ +z135 = np.load("l135/raw_l135.npz")
+│ +r135 = json.load(open("l135/results_l135.json"))
+│ +mfail = []
+│ +for a in ("cutwA", "cutng25", "cutng25p"):
+│ +    want = r135["table"]["Ti"][a]
+│ +    got = side_k(z135, a, B26, "Ti")
+│ +    for kk in ("kL", "kR", "meanL", "meanR"):
+│ +        if got[kk] != want[kk]:
+│ +            mfail.append((a, kk, got[kk], want[kk]))
+│ +assert not mfail, ("CERT-METRIC FAIL (no B40 read)", mfail)
+│ +print("CERT-METRIC vs results_l135 (B26: cutwA/cutng25/cutng25p): PASS")
+│ +# ---- CERT-METRIC-175: reproduce the stored L175 rows from the L175 raws
+│ +rows175 = {r["arm"]: r for r in r175["window"]}
+│ +rows175.update({k: r175["twins"][k] for k in ("dmA", "dmC")})
+│ +rows175["cutwA"] = r175["base"]
+│ +for a in ["cutwA"] + R1R:
+│ +    w = 0 if a == "cutwA" else st["l175_worker_of"][a]
+│ +    z = np.load(f"l175/raw_w{w}.npz")
+│ +    got = side_k(z, a, B39, "Ti")
+│ +    for kk in ("kL", "kR", "meanL", "meanR"):
+│ +        if got[kk] != rows175[a][kk]:
+│ +            mfail.append((a, kk, got[kk], rows175[a][kk]))
+│ +    _, R_ = duty_seeds(z, a, B39, "Ti")
+│ +    if [float(v) for v in R_] != rows175[a]["dutyR"]:
+│ +        mfail.append((a, "dutyR"))
+│ +assert not mfail, ("CERT-METRIC-175 FAIL (no B40 read)", mfail)
+│ +print("CERT-METRIC-175 vs results_l175 (B39: base + 6 arms, kL/kR/means/dutyR): PASS")
+│ +
+│ +# ---- workers: gains, anchors, raws ----
+│ +gains, arm_w, anch, raws, gsrc, stairs = {}, {}, {}, {}, {}, {}
+│ +for w in range(NW):
+│ +    gp, ap, rp = (f"{OUT}/gains_w{w}.json", f"{OUT}/anchors_w{w}.json",
+│ +                  f"{OUT}/raw_w{w}.npz")
+│ +    if not (os.path.exists(gp) and os.path.exists(ap) and os.path.exists(rp)):
+│ +        print(f"worker {w} not ready (gains/anchors/raw missing) — no read")
+│ +        sys.exit(0)
+│ +    gj = json.load(open(gp))
+│ +    anch[w] = json.load(open(ap))
+│ … omitted 358 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/build_verdict.py
+│ banc/l185/build_verdict.py
+│ @@ -0,0 +1,32 @@
+│ +"""L185 verdict builder: slice the certified helper block of l150_verdict.py
+│ +VERBATIM (S_of / s_arrays / duty_seeds / side_k / wilson + constants; the
+│ +SAME slice + sha L175 used) and append l185/verdict_tail.py.txt. Run from
+│ +banc/."""
+│ +import hashlib
+│ +import os
+│ +import py_compile
+│ +
+│ +src = open("l150_verdict.py").read()
+│ +opener = "# ---- batches ----\n"
+│ +assert src.count(opener) == 1
+│ +head = src[:src.index(opener)]
+│ +assert head.count("\n") == 71, head.count("\n")
+│ +for need in ("def S_of(", "def s_arrays(", "def duty_seeds(", "def side_k(",
+│ +             "def wilson(", "MEAS0 = 500", "TS = np.arange(499, WIN, 10)",
+│ +             "SEGB = [(0, 2000, 0.7), (2000, 4000, 1.4), (4000, 6000, 0.7)]"):
+│ +    assert head.count(need) == 1, need
+│ +sha = hashlib.sha256(head.encode()).hexdigest()
+│ +assert sha[:16] == "5c8323f2755f1d0c", sha      # == the L175 verdict's helper sha
+│ +# and the L175 verdict really carries this exact block
+│ +v175 = open("l175/verdict_l175.py").read()
+│ +assert head in v175, "helper block != the one inside l175/verdict_l175.py"
+│ +out = (f"# GENERATED by l185/build_verdict.py — helper block == l150_verdict.py"
+│ +       f" lines 1-71 VERBATIM (sha256 {sha[:16]})\n" + head
+│ +       + open("l185/verdict_tail.py.txt").read())
+│ +for need in ("def S_of(", "def duty_seeds(", "def side_k(", "def wilson(",
+│ +             "def classify(", "def arm_row("):
+│ +    assert out.count(need) == 1, need
+│ +open("l185/verdict_l185.py.new", "w").write(out)
+│ +py_compile.compile("l185/verdict_l185.py.new", doraise=True)
+│ +os.replace("l185/verdict_l185.py.new", "l185/verdict_l185.py")
+│ +print("l185/verdict_l185.py written, helper sha", sha[:16])
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/run_all.sh
+│ banc/l185/run_all.sh
+│ @@ -0,0 +1,36 @@
+│ +#!/usr/bin/env bash
+│ +# L185 orchestrator: 6 fixed-plan workers (2 threads each), incremental
+│ +# verdict (results_l185.json rewritten atomically whenever a new fresh seed
+│ +# is complete on all arms), final verdict. Survives the launching session
+│ +# (setsid/nohup). Resume-safe: workers skip cached seeds and reload gains.
+│ +cd /home/t3rpz/critters/peabrain-lab/banc || exit 1
+│ +PY=/home/t3rpz/critters/peabrain/.venv/bin/python
+│ +NW=6
+│ +[ -f l185/PREREG.md ] || { echo "PREREG missing — refusing to roll" >> l185/run.out; exit 2; }
+│ +[ -f l185/selection_s2.json ] || { echo "R3 selection missing — refusing to roll" >> l185/run.out; exit 2; }
+│ +echo "--- L185 rollouts: $NW workers x 2 threads, launched $(date '+%F %T') | PREREG sha $(sha256sum l185/PREREG.md | cut -c1-16) ---" >> l185/run.out
+│ +pids=()
+│ +for i in $(seq 0 $((NW-1))); do
+│ +  L185_MODE=work L185_WID=$i L185_NW=$NW L185_THREADS=2 nice -n 5 \
+│ +    $PY l185/rep_run.py >> l185/run.out 2> l185/work_w$i.err &
+│ +  pids+=($!)
+│ +  sleep 12   # stagger the graph-build memory peak (1.6 GB each)
+│ +done
+│ +echo "${pids[@]}" > l185/worker_pids.txt
+│ +last=-1
+│ +while true; do
+│ +  alive=0
+│ +  for p in "${pids[@]}"; do kill -0 "$p" 2>/dev/null && alive=1; done
+│ +  [ $alive -eq 0 ] && break
+│ +  sleep 20
+│ +  n=$(grep -c "seed 35[789][0-9] done" l185/run.out)
+│ +  if [ "$n" != "$last" ] && [ "$n" -gt 0 ]; then
+│ +    last=$n
+│ +    $PY l185/verdict_l185.py > l185/verdict_partial.out 2>&1
+│ +  fi
+│ +done
+│ +rc=0
+│ +for p in "${pids[@]}"; do wait "$p" || rc=1; done
+│ +echo "--- workers finished $(date '+%F %T') rc=$rc ---" >> l185/run.out
+│ +$PY l185/verdict_l185.py > l185/verdict.out 2>&1
+│ +echo "--- verdict exit $? $(date '+%F %T') ---" >> l185/run.out
+💻 $ chmod +x l185/run_all.sh + 6 commands  0.2s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/PREREG.md
+│ banc/l185/PREREG.md
+│ @@ -0,0 +1,249 @@
+│ +# PREREG — L185: fresh-batch replication + gain-only null + signed-current twin
+│ +
+│ +Registered 2026-11-21 ~12:00 EST, BEFORE any rollout of this card (no settle,
+│ +no bisect, no trace exists under `banc/l185/`). Owner-directed
+│ +(`BRIEF_replicate.md`); experimenter = fable session. What exists at
+│ +registration: the brief, `build_rep.py` + three block files, the generated
+│ +`rep_run.py`, `build_verdict.py` + `verdict_tail.py.txt` + `verdict_l185.py`,
+│ +`run_all.sh`, and `static.json` from `L185_MODE=static` (ZERO rollouts, no
+│ +RNG: graph tables, stored-file reads, seed-key scan). The R3 twin has NOT been
+│ +selected: its rule is frozen below and is executed after this file exists.
+│ +Nothing here was tuned on an L185 outcome. L175's stored results (one batch,
+│ +B39) are prior data and are used openly to form predictions.
+│ +
+│ +## Question
+│ +
+│ +L175 fired D2 (identity-carried) on ONE batch. Three ways it could be soft:
+│ +(R1) the batch (L90 rule: a single-batch class is not a class); (R1-fixed /
+│ +R2) the per-arm gain re-matching, since the scan's non-carrier meanR covaries
+│ +with the re-bisected gain (Spearman -.72); (R3) the drive twins matched
+│ +UNSIGNED pooled output, not signed current onto the right tibia.
+│ +
+│ +## Machinery (inherited; nothing lineage-side edited)
+│ +
+│ +`rep_run.py` (sha256 6818da52295d…) is a count-asserted ADDITIVE transform of
+│ +the certified L175 harness `l175/scan_run.py` (sha256 bbfea4e07ff4…, 1397
+│ +lines; builder `build_rep.py` 4bd0a445319b…, 10 rep sites). VERBATIM:
+│ +extraction, ladder, `build()/wb()/pools_for()`, `add_arm()/gen_init()`,
+│ +out-weight tables, USED / POOL_A, `settle_states`, `bisect_vec`, the rollout
+│ +step loop, store keys, per-seed atomic checkpoints. REPLACED: the seed list,
+│ +the arm block, the gains + anchors block, the tail; census mode removed.
+│ +Constants unchanged (TAU .05, DT .01, BG .02, NOISE .01, SETTLE 400, WIN 6000,
+│ +BETA 2, D .2, AF_T 0.10905611018339793). Readout: `verdict_l185.py`
+│ +(515655914e47…) = the `l150_verdict.py` helper block lines 1-71 VERBATIM
+│ +(sha 5c8323f2755f1d0c, the same slice L175 used) + `verdict_tail.py.txt`
+│ +(d10c5957be23…), written before any rollout.
+│ +
+│ +## Seeds
+│ +
+│ +FRESH **B40 = 3577..3592, n = 16 for EVERY arm** (next slot of the lineage's
+│ +32-step batch grid). Verified absent from all 213 npz files in the lab
+│ +(`banc/**` INCLUDING the L175 outputs, plus sibling dirs) by an
+│ +any-key-endswith scan, in-script assert re-run by every process
+│ +(`static.json`: 213 scanned, 0 unreadable). Non-sample anchor seeds, rolled
+│ +FIRST: 801, 901 (vs `l135/raw_l135.npz`) and 3545 (one stored B39 seed, vs the
+│ +L175 raws). Bisect settle anchors 11/22/33 (lineage).
+│ +
+│ +## Arms (all on the k=24 = cutwA base; 19 arms + the base in every worker)
+│ +
+│ +Gains are exact floats; `d%` = 100·(g/g_cutwA − 1); g_cutwA =
+│ +0.14365819573402408 (lineage stored).
+│ +
+│ +| arm | graph | gain | role |
+│ +|---|---|---|---|
+│ +| `cutwA` | base (lineage plumbing VERBATIM) | 0.14365819573402408 | base; C0A anchor; in EVERY worker |
+│ +| `sc25` | wA − gi 1110 (carrier, DNp33-L) | 0.1454454553127289 (+1.244%) | R1 rematched |
+│ +| `sc26` | wA − gi 319 (mass twin) | 0.1435265743732452 (−0.092%) | R1 rematched |
+│ +| `sc27` | wA − gi 707 (boundary, 11/16 on B39) | 0.143261958360672 (−0.276%) | R1 rematched |
+│ +| `sc40` | wA − gi 559 (boundary, 11/16 on B39) | 0.14203338861465453 (−1.131%) | R1 rematched |
+│ +| `dmA` | wA − gi 511 (drive twin, any class) | 0.14381492614746094 (+0.109%) | R1 rematched |
+│ +| `dmC` | wA − gi 1480 (drive twin, carrier class) | 0.14841871619224548 (+3.314%) | R1 rematched |
+│ +| `sc25F … dmCF` | the SAME six graphs (same matrix objects) | g_cutwA | R1 fixed gain |
+│ +| `gM50, gM25, g000, gP25, gP50` | base, NO deletion | g_cutwA·(1+δ), δ = −.005, −.0025, 0, +.0025, +.005 → 0.14293990475535395, 0.14329905024468903, 0.14365819573402408, 0.14401734122335913, 0.14437648671269418 | R2 gain-only null |
+│ +| `s2t` | wA − the R3 pick | own stored-form bisect | R3 signed-current twin |
+│ +
+│ +Rematched gains are the L175 stored floats (read from `l175/gains_w*.json`,
+│ +cross-checked against `results_l175.json` rows and the lineage constants).
+│ +Each worker ALSO re-runs the stored-form bisect for cutwA and its own
+│ +rematched arm and asserts the result == the stored float EXACTLY (so the gain
+│ +used is the stored float by assertion, and the bisect is re-certified in every
+│ +process before `s2t` relies on it). R2's centre `g000` is rolled as its own
+│ +arm through the generic base alias (`add_base_alias`) and must be
+│ +bit-identical to `cutwA` on every seed: that certifies the plumbing all five
+│ +R2 arms use. So "13 R1 arms" = 12 + the base, "5 R2 arms" include the centre.
+│ +
+│ +Worker plan (fixed): w0 sc25, sc25F, gM50 · w1 sc26, sc26F, gM25 · w2 sc27,
+│ +sc27F, g000 · w3 sc40, sc40F, gP25 · w4 dmA, dmAF, gP50 · w5 dmC, dmCF, s2t.
+│ +
+│ +## Readout and bands (inherited verbatim, no new instrument)
+│ … omitted 171 diff line(s) across 1 additional file(s)/section(s)
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python -c " import json; print(json.load(open('l175/selection.json'))['active_frac_k24'])" + 5 commands  7.1s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' p="l185/PREREG.md" + 10 commands  0.3s
+
+────────────────────────────────────────
+✿ Miso
+PREREG is frozen (sha f1f71502…). Now the R3 selection — zero rollouts, rule already registered.
+────────────────────────────────────────
+
+💻 $ L185_MODE=select L185_THREADS=2 /home/t3rpz/critters/peabrain/.venv/bin/python l185/rep_run.py + 3 commands  6.8s
+✗ $ time /home/t3rpz/critters/peabrain/.venv/bin/python l185/verdict_l185.py + 8 commands [Foreground command uses shell-level backgroun...]
+💻 $ time /home/t3rpz/critters/peabrain/.venv/bin/python l185/verdict_l185.py + 1 command  7.4s
+💻 $ exec l185/run_all.sh
+💻 $ sleep 150 + 7 commands  150.3s
+💻 $ sleep 240 + 8 commands  240.5s
+💻 $ sleep 200 + 2 commands  200.2s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python l185/verdict_l185.py | cut -c1-330 + 1 command  22.0s
+💻 $ sleep 280 + 3 commands  280.2s
+💻 $ sleep 120 + 3 commands  120.2s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import json, numpy as np r=json.load(open("l185/results_l185.json")) print(r["status"], r["prereg_sha256"][:16], r["certs"]) b=r["base"] + 8 commands  0.5s
+💻 $ tail -n +2 l185/PREREG.sha256 | sha256sum -c | grep -v ": OK" + 9 commands  0.2s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l185/L185-FINDINGS.md
+│ banc/l185/L185-FINDINGS.md
+│ @@ -0,0 +1,57 @@
+│ +# L185 FINDINGS — fresh-batch replication + gain-only null + signed-current twin (batch 3577-3592, n=16 every arm, FINAL)
+│ +
+│ +**Branches fired: R1 `REP_D2` · gain form `GAIN_ROBUST` · R2 `GAIN_SENSITIVE_NEGATIVE` · R3 `S2_NO_FLIP` → `D2_hardened` = true.**
+│ +PREREG sha256 f1f7150240e629f5, registered 11:57 before any rollout; R3 pick computed after it, before any rollout; all 13 pinned script/static shas unchanged at the end (`PREREG.sha256`). Rollouts 11:58-12:15 (17 min, 6 workers x 2 threads, CPU).
+│ +Certs green: stored-form bisect re-run in every worker == stored floats EXACT (g_cutwA x6 + all six L175 gains); C0A vs `raw_l135` 368 checks max 0.0; one stored B39 seed (3545) re-rolled for base + six arms vs the L175 raws, 300 checks max 0.0; cutwA identical across workers (2185); generic base alias `g000` == cutwA on all 19 seeds (437); metric reproduces `results_l135` AND the stored `results_l175` rows EXACT.
+│ +
+│ +## R1 — what replicated (rematched = L175's stored re-bisected gain; fixed = base gain g_cutwA)
+│ +
+│ +| arm | gi | re-bisect shift | rematched kR, meanR, class | fixed kR, meanR, class | fixed − rematched (paired) | B39 | pooled B39+B40 |
+│ +|---|---|---|---|---|---|---|---|
+│ +| cutwA (base) | - | 0 | 3/16 .370 not (partial) | same arm | - | 5/16 .408 | 8/32 |
+│ +| sc25 carrier | 1110 | +1.24% | **15/16 .770 SUPER** | **15/16 .683 SUPER** | -.088 (t -1.9) | 16/16 .758 | **31/32 .764 SUPER** |
+│ +| sc26 mass twin | 319 | -0.09% | 4/16 .424 not (partial) | 4/16 .390 not (partial) | -.034 | 2/16 .378 | 6/32 .401 |
+│ +| sc27 boundary | 707 | -0.28% | 4/16 .422 not (partial) | 7/16 .424 not (partial) | +.001 | 11/16 .596 | 15/32 .509 interm. |
+│ +| sc40 boundary | 559 | -1.13% | 12/16 .538 interm. | 3/16 .341 not | **-.198 (t -3.1, 0 up / 8 down)** | 11/16 .605 | 23/32 .572 interm. |
+│ +| dmA drive twin | 511 | +0.11% | 5/16 .406 not (partial) | 8/16 .478 not (partial) | +.073 | 5/16 .390 | 10/32 .398 |
+│ +| dmC drive twin | 1480 | +3.31% | 2/16 .382 not | 2/16 .409 not | +.027 | 2/16 .366 | 4/32 .374 |
+│ +
+│ +- **The carrier flip replicates** on a fresh batch (Wilson lb .717) and **does not depend on the gain re-match**: at the base's own gain it is still 15/16, +.312 over the same-gain base (t 4.8, 11 seeds up >= .20, 0 down).
+│ +- **All three twins and the base stay in the strict NOT-SUPER band**, in both gain forms.
+│ +- **Neither boundary cell promotes.** sc27 regressed to the null (11/16 -> 4/16). sc40 stays elevated under its re-bisected gain (12/16, but meanR .538 < .60, so INTERMEDIATE on both batches and pooled) and **loses the elevation entirely at fixed gain** (3/16, -.030 vs base): it is what its -1.13% gain shift produces, not a deletion effect.
+│ +
+│ +## R2 — gain-only null (base graph, no deletion)
+│ +
+│ +| gain shift | -0.50% | -0.25% | 0 | +0.25% | +0.50% |
+│ +|---|---|---|---|---|---|
+│ +| kR / 16 | 8 | 8 | 3 | 2 | 3 |
+│ +| meanR | .470 | .474 | .370 | .311 | .266 |
+│ +
+│ +- **Slope = -0.0228 meanR per +0.1% gain** (SE .0062, 95% CI [-.036, -.0095]; 13/16 seeds negative; kR-rate slope -.040 per +0.1%). A 1% gain span moves the base from 8/16 to 2-3/16 with no cell removed. No gain-only arm is SUPER (max 8/16, .474).
+│ +- It is 0.76x the L175 scan's cross-arm slope (-.0299, arms within +-.5%) and reproduces R² = .36 of those 25 arms' meanR spread (.45 for the 18 silent cells). So roughly a third to a half of the scan's null spread is pure gain sensitivity; the rest is seed-level decorrelation (next point), not cell identity.
+│ +- Pairing is void off the exact gain: arms 0.25% apart differ per seed with sd .26-.31, larger than the between-seed sd (.15). "Same-seed" contrasts carry no variance reduction once the gain or graph changes.
+│ +- The carrier runs against this: +1.24% gain should lower duty, and it is the highest arm.
+│ +
+│ +## R3 — signed-current-matched twin
+│ +
+│ +- Registered current (PREREG §R3): J = g·x̄·(direct + g·gated one-relay) onto the right-tibia flexor / extensor pools. Carrier: **(-0.00214, 0)** — zero direct input, a small net-inhibitory relayed current onto the flexors (~1/10 of the background term .02).
+│ +- **The astra's loophole was real:** L175's drive twins do not match it — dmA delivers (0, 0) (dist_rel 1.00, rank 212 of 4,751), dmC (0, -0.0115) onto the extensors (dist_rel 5.5, rank 4,339).
+│ +- Pick (rule frozen before selection): **gi 1508, DNg19-R**, descending, excitatory like the carrier, J = (-0.002145, 0), **dist_rel .003**, unsigned drive x1.40. Brute-force path recount agrees.
+│ +- **It does not flip: 2/16, meanR .345, NOT-SUPER** (Wilson ub .36; -.025 vs base), at a re-bisected gain of -0.31% — a shift that by R2 alone pushes duty up.
+│ +
+│ +## Caveats (they bound how hard this can be leaned on)
+│ +
+│ +1. R3 is one batch and one definition. The match holds under the registered linear-regime gate (and with the lower gate alone, .003) but not ungated (dist_rel 20.4). The pick is rail-saturated (x̄ .997) and is a DN with cord input, not a pure projector like the carrier. It matches a time-averaged, linearized, path-length <= 2 current — not phase, not longer paths.
+│ +2. sc40 is not a clean null: 23/32 pooled under its own re-bisected gain. The fixed-gain arm explains it, on one batch.
+│ +3. P5 failed: fixed − rematched did not follow the base's gain slope on the deletion graphs (carrier -.088 where +.28 was implied; sc27 0). Gain dependence is graph-specific; R2's slope should not be extrapolated across arms or beyond +-.5% (the all-arm extrapolation fits worse than no model).
+│ +4. Chopped 0.7-Hz right-tibia classifier only; one base (k=24); one model class.
+│ +5. Process: partial verdicts (m = 6, 7, 13) were printed while workers ran; code and bands were frozen and hashed first, nothing was changed. The results json was refreshed per completed seed by the orchestrator (20 s poll), not by the workers.
+│ +
+│ +## What it changes
+│ +
+│ +Keep "identity". The contrast now stands on two batches (carrier 31/32; mass twin 6/32; two unsigned drive twins 10/32 and 4/32), on both gain forms, plus one signed-current twin (2/16). Honest wording: "cell identity, not removal mass, delivered drive, or signed current onto the right tibia (<= 2 synapses)". Add to Methods/Limitations: the base's duty moves -.023 per +0.1% gain, so any non-carrier elevation that rides a re-bisected gain shift needs its fixed-gain arm (sc40 is the worked example).
+│ +
+│ +**Predictions:** 8 of 9 correct (P1 carrier SUPER, P2 twins/base not, P3 no promotion, P4 carrier SUPER at fixed gain, P6, P7 slope -.0228 inside [-.050, -.010], P8, P9); P5 wrong (2 of 4 signs).
+│ +**Next:** (i) second batch for s2t; (ii) a gain sweep ON the carrier-deleted graph (P5's miss says its gain curve differs); (iii) the unchopped panel on these raws (zero rollouts).
+│ +
+│ +Files: `PREREG.md`, `PREREG.sha256`, `build_rep.py` -> `rep_run.py`, `build_verdict.py` -> `verdict_l185.py`, `run_all.sh`, `static.json`, `selection_s2.json`, `results_l185.json`, `verdict.out`, `run.out`, raws `raw_w0..5.npz` (w0 sc25 + base, w4 dmA, w5 dmC + s2t; every arm kept) + `xm_w*.npz`.
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import json, numpy as np r=json.load(open("l185/results_l185.json")) print("base sd", np.std(r["base"]["dutyR"],ddof=1)) for a,v in r["R2"]["arms"].items(): print(a, round(float(np.std(v["dutyR"],ddof=1)),3), round(float(np.corrcoef(v["dutyR"], r["base"]["dutyR"])[0,1]),2)) for a,v in r["R1"].items(): print(a, "corr(rem,base) %.2f corr(fix,base) %.2f corr(rem,fix) %.2f"%(np.corrcoef(v["rematched"]["dutyR"], r["base"]["dutyR"])[0,1], np.corrcoef(v["fixed"]["dutyR"], r["base"]["dutyR"])[0,1], np.corrcoef(v["rematched"]["dutyR"], v["fixed"]["dutyR"])[0,1])) EOF  0.4s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' p="l185/L185-FINDINGS.md" + 26 commands  1.1s
+💻 $ ps aux | grep "[r]ep_run.py" | cut -c1-200 + 3 commands  0.2s
+
+────────────────────────────────────────
+✿ Miso
+L185 is done, Chief of Staff~ ★ D2 held up on all three arms: the carrier flip replicated, gain alone doesn't produce it, and the signed-current twin did not flip (◕‿◕)
+
+The PREREG was frozen at 11:57, before any rollout, and the R3 pick was made after it. All certs came back exact, including cutwA against stored results in every worker.R1 — replication (fresh seeds 3577–3592, n=16 per arm): carrier
+  (sc25)
+arm: 15/16, meanR .770, SUPER
+L175 re-bisected gain: 15/16, .683, SUPER
+fixed base gain:
+Column 5: base
+Column 6: 3/16
+Column 7: same arm
+────────────────────────────────────────
+The PREREG was frozen at 11:57, before any rollout, and the R3 pick was made after it. All certs came back exact, including cutwA against stored results in every worker.R1 — replication (fresh seeds 3577–3592, n=16 per arm): mass twin
+  (sc26)
+arm: 4/16
+L175 re-bisected gain: 4/16
+fixed base gain:
+Column 5:
+Column 6:
+Column 7:
+────────────────────────────────────────
+The PREREG was frozen at 11:57, before any rollout, and the R3 pick was made after it. All certs came back exact, including cutwA against stored results in every worker.R1 — replication (fresh seeds 3577–3592, n=16 per arm): dmA
+arm: 5/16
+L175 re-bisected gain: 8/16
+fixed base gain:
+Column 5:
+Column 6:
+Column 7:
+────────────────────────────────────────
+The PREREG was frozen at 11:57, before any rollout, and the R3 pick was made after it. All certs came back exact, including cutwA against stored results in every worker.R1 — replication (fresh seeds 3577–3592, n=16 per arm): dmC
+arm: 2/16
+L175 re-bisected gain: 2/16
+fixed base gain:
+Column 5: sc27
+Column 6: 4/16
+Column 7: 7/16
+────────────────────────────────────────
+The PREREG was frozen at 11:57, before any rollout, and the R3 pick was made after it. All certs came back exact, including cutwA against stored results in every worker.R1 — replication (fresh seeds 3577–3592, n=16 per arm): sc40
+arm: 12/16, .538, INTERMEDIATE
+L175 re-bisected gain: 3/16
+fixed base gain:
+Column 5:
+Column 6:
+Column 7:
+
+- Carrier: pooled with the L175 batch it is 31/32, and at fixed gain it sits +.31 over the same-gain base.
+- Twins and base: none flip in either gain form.
+- Boundary cells: neither promotes. sc27 fell back to the null, and sc40's elevation disappears at fixed gain, so it comes from its −1.13% gain shift rather than the deletion.
+
+R2 — gain-only null- The slope is −0.023 meanR per +0.1% gain (95% CI −.036 to −.0095).- The base goes from 8/16 at −0.5% to 3/16 at +0.5% with nothing removed; no gain-only arm is SUPER.
+- That line accounts for about a third of the L175 scan's spread (R² .36 within ±0.5%).- The carrier goes against it: its gain is +1.24% and it is still the highest arm.
+
+R3 — signed-current twin
+
+- L175's drive twins did not match the carrier's signed current onto right-Ti, so the loophole was real.- The pick is gi 1508 (DNg19-R), matched to 0.3%.
+- It did not flip: 2/16, meanR .345, NOT-SUPER.Caveats, nya- R3 is one batch and one gate definition; ungated, the match fails.
+- sc40 is still 23/32 pooled under its own re-bisected gain.
+- One of my nine predictions was wrong: fixed-minus-rematched did not follow the base's gain slope on the deletion graphs.Nothing is left unfinished ♪ Everything is in /home/t3rpz/critters/peabrain-lab/banc/l185/; open L185-FINDINGS.md first. The LAB-INTENT §L185 line is appended.
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-77b22705ccf6f842abdb52c02e2e84e9aa543dbf6b33741b4c0b512df3b7588f -p maple
+
+Session:        local-77b22705ccf6f842abdb52c02e2e84e9aa543dbf6b33741b4c0b512df3b7588f
+Duration:       34m 57s
+Messages:       91 (1 user, 89 tool calls)

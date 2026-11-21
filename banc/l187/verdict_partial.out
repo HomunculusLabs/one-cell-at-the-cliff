@@ -1,0 +1,48 @@
+CERT-METRIC vs results_l135 (B26) + results_l175 (B39: base/sc25/sc40) + l184 threepanel 1.4-Hz panel (B39) + results_l185 (B40: 5 rows): PASS
+CERT-G (cutwA x6 + sc25/sc40 re-bisected == stored EXACT; rsilW bisect == g_cutwA EXACT; fixed gains == g_cutwA) PASS
+C0A-187a vs raw_l135 (322 checks) + C0A-187b vs L175 raws (200 checks) + FC-150 silWg vs stored l150 silW (48 checks): max 0.0 PASS
+CERT-SILCUT (full-run relay clamp vs relay cut, same gain): {"801": {"head_max": 0.0, "full_max": 0.0, "carrier_trace_full_max": 0.0, "relay_xmean_clamped": 0.0, "af_sil": 0.11085609346628189, "af_cut": 0.11086118221282959}, "901": {"head_max": 0.0, "full_max": 0.0, "carrier_trace_full_max": 0.0, "relay_xmean_clamped": 0.0, "af_sil": 0.10617396980524063, "af_cut": 0.10617884993553162}, "3545": {"head_max": 0.0, "full_max": 0.0, "carrier_trace_full_max": 0.0, "relay_xmean_clamped": 0.0, "af_sil": 0.10819371044635773, "af_cut": 0.10819867998361588}}
+fresh seeds complete on all arms: m=15/16 | FINAL=False
+CERT-X cutwA identical across 6 workers (2250 checks): PASS
+---- L187 (m=15, B41) ----
+arm     gain d%   kR meanR cls                | dBase   t      | 1.4Hz k mean | x_car  x_relay x_74914 | gainnull pred / excess
+cutwA   +0.000   5 0.400 NOT-SUPER/PARTIAL  | +0.000    None |  0 0.001 | 0.3789 0.3195 0.2025 | -0.000 / +0.000
+sc25    +1.244  15 0.806 SUPER              | +0.406   7.027 |  9 0.552 |   -    0.1385 0.3533 | -0.284 / +0.690 (extrap.)
+sc25F   +0.000  15 0.716 SUPER              | +0.316   5.204 |  6 0.412 |   -    0.1336 0.3479 | -0.000 / +0.316
+sc40    -1.131  10 0.560 INTERMEDIATE       | +0.160   2.403 |  0 0.000 | 0.3454 0.3470 0.1551 | +0.258 / -0.098 (extrap.)
+sc40F   +0.000   2 0.321 NOT-SUPER          | -0.079  -1.212 |  0 0.000 | 0.4044 0.3546 0.1822 | -0.000 / -0.079
+rcut    -0.126  12 0.697 SUPER              | +0.297   4.543 |  0 0.019 | 0.3684   -    0.4310 | +0.029 / +0.268
+rcutF   +0.000  12 0.626 SUPER              | +0.226   4.384 |  0 0.023 | 0.3759   -    0.4363 | -0.000 / +0.226
+rsilW   +0.000  11 0.572 INTERMEDIATE       | +0.172   2.437 |  0 0.050 | 0.3842 0.0000 0.4362 | -0.000 / +0.172
+rsilF   -0.126  12 0.697 SUPER              | +0.297   4.543 |  0 0.019 | 0.3684 0.0000 0.4310 | +0.029 / +0.268
+pp      -0.809  11 0.580 INTERMEDIATE       | +0.180   2.711 |  2 0.223 |   -    0.1656 0.3152 | +0.184 / -0.005 (extrap.)
+ppF     +0.000  15 0.781 SUPER              | +0.382   7.817 |  6 0.420 |   -    0.1545 0.3306 | -0.000 / +0.382
+occ     +1.066  15 0.836 SUPER              | +0.436   8.789 | 15 0.717 |   -      -    0.4910 | -0.243 / +0.679 (extrap.)
+occF    +0.000  14 0.727 SUPER              | +0.327   5.877 | 12 0.591 |   -      -    0.4783 | -0.000 / +0.327
+---- contrasts (paired, same seeds) ----
+rsilW_minus_sc25F      mean -0.144 t  -2.143 ci [-0.2883, 0.0001] up 1 dn 5
+rcutF_minus_sc25F      mean -0.090 t  -1.513 ci [-0.2171, 0.0375] up 1 dn 5
+rcut_minus_sc25        mean -0.110 t  -1.896 ci [-0.2334, 0.0144] up 2 dn 6
+rsilW_minus_rcutF      mean -0.054 t  -0.845 ci [-0.192, 0.0835] up 3 dn 5
+rsilW_minus_rcut       mean -0.125 t  -1.641 ci [-0.2885, 0.0384] up 3 dn 6
+rcutF_minus_rcut       mean -0.071 t  -0.925 ci [-0.235, 0.0934] up 3 dn 4
+rsilF_minus_rcut       mean +0.000 t    None ci [0.0, 0.0] up 0 dn 0
+pp_minus_sc25          mean -0.227 t  -5.389 ci [-0.317, -0.1365] up 0 dn 8
+ppF_minus_sc25F        mean +0.066 t   2.003 ci [-0.0046, 0.1357] up 2 dn 1
+pp_minus_sc40          mean +0.020 t   0.354 ci [-0.1008, 0.1407] up 4 dn 1
+ppF_minus_sc40F        mean +0.461 t   9.008 ci [0.3508, 0.5701] up 14 dn 0
+ppF_minus_pp           mean +0.202 t   4.213 ci [0.099, 0.3044] up 5 dn 0
+sc25F_minus_sc25       mean -0.090 t  -2.063 ci [-0.1847, 0.0036] up 1 dn 5
+sc40F_minus_sc40       mean -0.239 t  -3.913 ci [-0.3697, -0.1079] up 1 dn 7
+occ_minus_rcut         mean +0.139 t   3.225 ci [0.0465, 0.2311] up 6 dn 0
+occF_minus_rcutF       mean +0.101 t   1.566 ci [-0.0372, 0.2385] up 5 dn 2
+occ_minus_sc25         mean +0.029 t   1.095 ci [-0.0281, 0.0866] up 1 dn 0
+occF_minus_sc25F       mean +0.011 t   0.217 ci [-0.0966, 0.1184] up 2 dn 1
+occF_minus_occ         mean -0.109 t  -2.608 ci [-0.1985, -0.0193] up 1 dn 4
+additivity {"rematched": {"d_pp": 0.1798, "d_carrier": 0.4065, "d_sc40": 0.1599, "additive_sum": 0.5664, "interaction": -0.3866, "note": "duty-scale; ceiling-limited above ~.8"}, "fixed": {"d_pp": 0.3815, "d_carrier": 0.316, "d_sc40": -0.0789, "additive_sum": 0.2371, "interaction": 0.1445, "note": "duty-scale; ceiling-limited above ~.8"}}
+silence_vs_cut {"label": "ECHO (0 <= silence effect <= cut effect)", "d_sil": 0.172, "d_cut": 0.297, "d_cut_fixed": 0.226}
+sc40 pooled {"rematched": {"kR": 33, "n": 47, "meanR": 0.568, "cls": "INTERMEDIATE", "batches": {"B39": {"kR": 11, "meanR": 0.605}, "B40": {"kR": 12, "meanR": 0.538}, "B41": {"kR": 10, "meanR": 0.56}}}, "fixed": {"kR": 5, "n": 31, "meanR": 0.331, "cls": "NOT-SUPER", "batches": {"B40": {"kR": 3, "meanR": 0.341}, "B41": {"kR": 2, "meanR": 0.321}}}}
+sc25 pooled {"rematched": {"kR": 46, "n": 47, "meanR": 0.778}, "fixed": {"kR": 30, "n": 31, "meanR": 0.699}}
+BRANCHES {"header": "CONTROLS_OK", "A1": "A1_unresolved", "A1b_full_clamp": "R1_conduit", "A2": "R1_conduit", "A2_fixed": "R1_conduit", "A2_gain_form": "AGREE", "relay": "MIXED", "silence_vs_cut": "ECHO (0 <= silence effect <= cut effect)", "A3": "R3_partial", "A3_fixed": "R3_stack", "A3_vs_carrier": {"rematched": "below_carrier", "fixed": "at_carrier (CI includes 0)"}, "A4": {"rematched": "INTERMEDIATE", "fixed": "NOT-SUPER"}, "OCC": {"rematched": "O1c_flip_with_relay_removed (relay removal alone also flips)", "fixed": "O1c_flip_with_relay_removed (relay removal alone also flips)"}}
+PREDICTIONS {"P1_controls": true, "P2_sc40_not_super_fixed_below": true, "P3_A1_modal_R1_conduit": false, "P4_A2_modal_R1_conduit": true, "P4b_rcut_gain_shift_negative": true, "P4c_silence_le_cut": true, "P4d_full_clamp_equals_cut": true, "P5_A3_stack_not_cancel": false, "P5b_ppF_at_carrier": true, "P5c_pp_ge_sc25_rematched": false, "P6_occ_super": true, "P7_silcut_cert": true}
+L187 VERDICT WRITTEN (PARTIAL (first 15 of 16 fresh seeds on all arms))
