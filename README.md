@@ -146,8 +146,15 @@ matched-floor re-extraction that follows from it).
 ## Status
 
 Draft v3.8+ (2026-11-21). One external model-referee round adjudicated
-(12/12 issues confirmed-in-direction and addressed); a second round is in
-flight. Submission to a preprint server is the owner's call, not ours.
+(12/12 issues confirmed-in-direction and addressed); the **round-2 report
+has landed** (`paper/review_fable_r2.md`, with its full recomputation
+evidence in `paper/review_fable_evidence_r2/`): verdict *major revision* —
+every pooled statistic it independently recomputed from the raw traces
+matches the draft, and its new majors (most consequentially, that the
+mass-matched twin is a near-silent cell, so the title's control matches
+static weight rather than delivered drive) are queued for adjudication
+against our own artifacts before any draft edit. Submission to a preprint
+server is the owner's call, not ours.
 
 **Snapshot note (2026-11-21):** the initial push was taken while the
 manuscript's identifier-relabel pass was mid-flight (one gate, `l149`,

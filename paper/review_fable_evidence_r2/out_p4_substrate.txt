@@ -1,0 +1,39 @@
+annotated rows 80635
+
+super_class x region==ventral_nerve_cord:
+region                          False  True 
+super_class                                 
+ascending                        1782     58
+ascending_visceral_circulatory      4      1
+central_brain_intrinsic         19878      0
+descending                       1310      3
+motor                             103    728
+optic_lobe_intrinsic            25466      0
+sensory                          5056   7407
+sensory_ascending                 467     42
+sensory_descending                 13      0
+ventral_nerve_cord_intrinsic       14  12386
+visceral_circulatory               80    108
+visual_centrifugal                429      0
+visual_projection                5300      0
+
+cord_mask rule keeps 20521 annotated rows; classes kept: sensory / ventral_nerve_cord_intrinsic / motor ONLY
+ASCENDING class present in table: ascending 1840 -> excluded by the cord_mask rule
+ASCENDING class present in table: ascending_visceral_circulatory 5 -> excluded by the cord_mask rule
+ASCENDING class present in table: sensory_ascending 509 -> excluded by the cord_mask rule
+l92/static.json {'n_old': 21249, 'n_new': 21809, 'dn_into': 728, 'dn_new': 560, 'dng100': 2}
+l107/static.json {'n_old': 21249, 'n_new': 21809, 'n_cut': 21732, 'cut': {'K': 77, 'mass_share': 0.5024, 'families': {'DNpe055': 3, 'DNg79': 3, 'DNp43': 2, 'DNp14': 2, 'DNpe031': 2, 'DNp08': 2, 'DNpe025': 2, 'DNpe050': 2, 'DNpe006': 2, 'DNge084': 2, 'DNb07': 2, 'DNg24': 2}, 'n_cells': 77}}
+
+descending rows 1313
+DNp33 2
+cell_type  side          region        cell_class cell_sub_class         pt_root_id
+    DNp33 right neck_connective descending_neuron            NaN 720575941451941498
+    DNp33  left neck_connective descending_neuron            NaN 720575941639588127
+DNpe025 2
+cell_type  side          region        cell_class cell_sub_class         pt_root_id
+  DNpe025 right neck_connective descending_neuron            NaN 720575941578384629
+  DNpe025  left neck_connective descending_neuron            NaN 720575941459023088
+DNg100 2
+cell_type  side          region        cell_class cell_sub_class         pt_root_id
+   DNg100  left neck_connective descending_neuron            NaN 720575941626500746
+   DNg100 right neck_connective descending_neuron            NaN 720575941491992807

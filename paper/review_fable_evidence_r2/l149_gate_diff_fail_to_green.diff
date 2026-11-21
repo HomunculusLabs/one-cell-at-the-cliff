@@ -1,0 +1,361 @@
+2182a2183,2185
+> # (b4-iii-b) RE-POINT: five more identifier runs leave this span, each a
+> # DECLARED batch relabel -- B26 -> A (§2.8), B35 -> J, B37 -> K and B38 -> L
+> # twice (§2.7) -- so the set is the UNION of two strips, still exact.
+2184,2185c2187,2191
+<     ['138', '139', '156', '157', '162', '162', '169', '169', '170', '171', '172', '2'], \
+<     '(24) identifier digits removed != the declared lane IDs'
+---
+>     ['138', '139', '156', '157', '162', '162', '169', '169', '170', '171',
+>      '172', '2', '26', '35', '37', '38', '38'], \
+>     '(24) identifier digits removed != the declared lane IDs + batch codes'
+> for _lab, _was in (('batch A', 'B26'), ('batch J', 'B35'), ('batch L', 'B38')):
+>     assert _lab in _now_b32 and _was not in _now_b32, ('(24) relabel', _lab)
+2190c2196,2198
+< assert len(_NUM_B3B.findall(_now_b32)) == 400 \
+---
+> # (b4-iii-b): 400 -> 395, the five lost tokens being exactly the five
+> # relabeled batch codes' identifier digits named above; keys unchanged.
+> assert len(_NUM_B3B.findall(_now_b32)) == 395 \
+2269c2277,2285
+< assert _vis(_edit_b32) - _vis(_pre_edit_b32) == 48 - 51, '(24) visible-char delta pin'
+---
+> # (b4-iii-b) adds its own layer: its frozen pre-tick draft is the second
+> # intermediate, so tick 209's +48 and (b4-iii-a)'s -51 both survive verbatim
+> # and the relabel's +3 (§2.8's 'B26' -> 'batch A') is separate. Net now 0.
+> _m2_b32 = _pre_b4iiib[_pre_b4iiib.index('### 2.5 Robustness'):
+>                       _pre_b4iiib.index('### 2.9 Statistics')]
+> _m2_edit_b32 = _m2_b32[:_m2_b32.index('### 2.7 Pre-posting controls')] + \
+>                _m2_b32[_m2_b32.index('### 2.8 The slow line'):]
+> assert _vis(_m2_edit_b32) - _vis(_pre_edit_b32) == 48 - 51, '(24) visible-char delta pin'
+> assert _vis(_edit_b32) - _vis(_m2_edit_b32) == 3, '(24) relabel visible-cost pin'
+2280c2296,2297
+< assert _vis(_edit_b32) - _vis(_mid_edit_b32) == -51, '(24) strip visible-cost pin'
+---
+> assert _vis(_m2_edit_b32) - _vis(_mid_edit_b32) == -51, '(24) strip visible-cost pin'
+> assert _vis(_edit_b32) - _vis(_m2_edit_b32) == 3, '(24) relabel cost on the region'
+2322,2323c2339,2343
+< assert sorted((_idc(_pre_b33x) - _idc(_now_b33)).elements()) == ['169', '172'], \
+<     '(25) identifier digits removed != the declared lane IDs'
+---
+> # (b4-iii-b) RE-POINT: four more runs leave, each a DECLARED batch relabel --
+> # B35 -> batch J, B37 -> K, B38 -> L and B38 -> batch L.
+> assert sorted((_idc(_pre_b33x) - _idc(_now_b33)).elements()) == \
+>     ['169', '172', '35', '37', '38', '38'], \
+>     '(25) identifier digits removed != the declared lane IDs + batch codes'
+2328c2348,2350
+< assert len(_NUM_B3B.findall(_now_b33)) == 247 \
+---
+> # (b4-iii-b): 247 -> 243, the four lost tokens being exactly the four
+> # relabeled batch codes named above; the citation-key pin is unchanged.
+> assert len(_NUM_B3B.findall(_now_b33)) == 243 \
+2429,2430c2451,2458
+< assert _vis(_now_b33) - _vis(_mid_b33) == -15, '(25) strip visible-cost pin'
+< assert _vis(_now_b33) - _vis(_pre_b33x) == 93, '(25) net visible delta pin'
+---
+> # (b4-iii-b) layer: its own frozen pre-tick draft is the second intermediate,
+> # so tick 210's +108 and (b4-iii-a)'s -15 survive verbatim and the relabel's
+> # +2 (batch J / K / L / batch L) is separate. Net now +95.
+> _m2_b33 = _pre_b4iiib[_pre_b4iiib.index('### 2.7 Pre-posting controls'):
+>                       _pre_b4iiib.index('### 2.8 The slow line')]
+> assert _vis(_m2_b33) - _vis(_mid_b33) == -15, '(25) strip visible-cost pin'
+> assert _vis(_now_b33) - _vis(_m2_b33) == 2, '(25) relabel visible-cost pin'
+> assert _vis(_now_b33) - _vis(_pre_b33x) == 95, '(25) net visible delta pin'
+2468,2469c2496,2505
+< assert (_B4 / 'span_post.txt').read_text() == _now_b4, \
+<     '(26) the spliced §4 must equal the stored post-image'
+---
+> # (b4-iii-b) RE-POINT, strong form: §4 is no longer byte-identical to the
+> # (b4-i) post-image -- the batch relabel rewrote ONE declared occurrence --
+> # so the pin becomes 'stored post-image + the declared edit == live', which
+> # proves the (b4-i) prose AND this stage's single §4 edit at once.
+> _post_b4 = (_B4 / 'span_post.txt').read_text()
+> _ED_B4 = ('(two fresh batches, B33/B34)', '(two fresh batches, G/H)')
+> assert _post_b4.count(_ED_B4[0]) == 1 and _ED_B4[0] not in _now_b4, \
+>     '(26) the declared §4 relabel must apply exactly once'
+> assert _post_b4.replace(*_ED_B4) == _now_b4, \
+>     '(26) the spliced §4 must equal the stored post-image + the declared edit'
+2485c2521,2531
+< assert _ns(_pre_b4) == _ns(_now_b4), '(26) T1 breach: §4 numeric multiset moved'
+---
+> # (b4-iii-b) RE-POINT, the ADDENDUM-1 form of §(23)-§(25) applied here: this
+> # regex has no left word boundary, so a relabeled batch code (B33 -> G) leaves
+> # '33' behind and a RELABEL would breach a MEASUREMENT gate without moving any
+> # measurement. Comparison on measurement tokens, removed identifier runs named.
+> _meas4 = lambda t: sorted(_x.rstrip(',') for _x in
+>                           _MEAS_B3B.findall(_SREF_B4.sub('', t)))
+> assert _meas4(_pre_b4) == _meas4(_now_b4), '(26) T1 breach: §4 measurement multiset moved'
+> assert sorted((_idc(_pre_b4) - _idc(_now_b4)).elements()) == ['33', '34'], \
+>     '(26) §4 identifier digits removed != the declared B33/B34 relabel'
+> assert sorted((_idc(_now_b4) - _idc(_pre_b4)).elements()) == [], \
+>     '(26) an identifier digit ENTERED §4'
+2488c2534,2535
+< assert len(_ns(_now_b4)) == 166 and len(_CIT_B4.findall(_now_b4)) == 18, \
+---
+> # 166 -> 164: the two lost tokens are exactly B33's and B34's digits.
+> assert len(_ns(_now_b4)) == 164 and len(_CIT_B4.findall(_now_b4)) == 18, \
+2586a2634,2636
+> # (b4-iii-b) adds its ONE declared §4 relabel to the declared-edit list, so
+> # the T7 strong form still runs end to end from the (b4-i) pre-image.
+> _REL_B4 = [('(two fresh batches, B33/B34)', '(two fresh batches, G/H)')]
+2588c2638
+< for _o, _n in _OPEN_B4 + _SPL_B4:
+---
+> for _o, _n in _OPEN_B4 + _SPL_B4 + _REL_B4:
+2654c2704,2710
+< assert _vis(_now_b4) - _vis(_pre_b4) == -14, '(26) visible-char delta pin'
+---
+> # (b4-iii-b) DECOMPOSITION layer: (b4-i)'s -14 is measured against this
+> # stage's frozen pre-tick draft and the relabel's -4 ('B33/B34' -> 'G/H') is
+> # separate, so tick 211's measurement survives verbatim. Net -18.
+> _m2_b4 = _pre_b4iiib[_pre_b4iiib.index('## 4. Limitations'):
+>                      _pre_b4iiib.index('## 5. Discussion')]
+> assert _vis(_m2_b4) - _vis(_pre_b4) == -14, '(26) visible-char delta pin'
+> assert _vis(_now_b4) - _vis(_m2_b4) == -4, '(26) relabel visible-cost pin'
+2697c2753,2756
+<               ('recorded in\nthe lane log', 'recorded in\nthe project log')]
+---
+>               ('recorded in\nthe lane log', 'recorded in\nthe project log'),
+>               # (b4-iii-b): §2.8's single batch relabel, chained onto the same
+>               # stored post-image so BOTH stages' edits stay declared.
+>               ('(B26, n = 16 seeds)', '(batch A, n = 16 seeds)')]
+2740c2799,2801
+< assert sorted(_dc27.elements()) == ['l156', 'l157', 'l162', "l162's", 'l171', 'lane'], \
+---
+> # (b4-iii-b) adds 'b26' out and 'batch'/'a' in -- the batch relabel, named.
+> assert sorted(_dc27.elements()) == ['b26', 'l156', 'l157', 'l162', "l162's",
+>                                     'l171', 'lane'], \
+2743c2804
+< assert sorted(_ac27.elements()) == ['project', 'the'], \
+---
+> assert sorted(_ac27.elements()) == ['a', 'batch', 'project', 'the'], \
+2761c2822,2827
+< assert _vis(_s28post_27) - _vis(_now28_27) == 21, '(27) §2.8 strip visible-cost pin'
+---
+> # (b4-iii-b) layer: the strip's 21 is read against this stage's own frozen
+> # pre-tick §2.8, and the relabel's -3 ('B26' -> 'batch A') is pinned separately.
+> _m2_28 = _pre_b4iiib[_pre_b4iiib.index('### 2.8 The slow line'):
+>                      _pre_b4iiib.index('### 2.9 Statistics')]
+> assert _vis(_s28post_27) - _vis(_m2_28) == 21, '(27) §2.8 strip visible-cost pin'
+> assert _vis(_now28_27) - _vis(_m2_28) == 3, '(27) §2.8 relabel visible-cost pin'
+2858a2925,2932
+> # (b4-iii-b) RE-POINT (tick-210 rule: a stage that supersedes a predecessor's
+> # freeze re-points it at STORED ARTIFACTS, never loosens it). Every read below
+> # ran against the LIVE draft, which stage (b4-iii-b) has now edited, so the
+> # whole section runs against (b4-iii-b)'s OWN frozen pre-tick draft -- which IS
+> # the state (b4-iii-a) produced -- and §(29) proves that artifact equals the
+> # live draft minus (b4-iii-b)'s declared edits. Strictly stronger: these pins
+> # now survive every later stage. §(29) re-asserts the live-draft properties
+> # (zero lane residue in scope, the §6/§7 premise) on the LIVE bytes.
+2859a2934,2935
+> _live28 = draft
+> draft = (P / 'banc/l174b4iiib' / 'draft_pre.md').read_text()
+3005a3082
+> draft = _live28   # (b4-iii-b): restore the live draft for the sections below
+3020a3098,3303
+> 
+> # ============ (29) L174 stage (b4-iii-b): the batch-code RELABEL ============
+> # PREREG banc/l174b4iiib/PREREG.md.  Reader-facing labels replace the internal
+> # batch codes in the body; the codes survive in ONE declared place (the §3.7
+> # mapping block) and verbatim inside stored artefact keys, which are FILENAMES
+> # (T13).  Everything below is RE-DERIVED from the frozen pre-image by the
+> # stage's own parsed rule -- never read off emit.py's report.
+> _B29 = P / 'banc/l174b4iiib'
+> _pre29 = (_B29 / 'draft_pre.md').read_text()
+> _rep29 = json.loads((_B29 / 'emit_report.json').read_text())
+> _amd29 = json.loads((_B29 / 'caps_partition_amend.json').read_text())
+> _MAP29 = {'B26': 'A', 'B27': 'B', 'B29': 'C', 'B30': 'D', 'B31': 'E',
+>           'B32': 'F', 'B33': 'G', 'B34': 'H', 'B35': 'J', 'B37': 'K',
+>           'B38': 'L'}
+> _TOK29 = re.compile(r'(?<![A-Za-z0-9])B(\d{1,3})(?![0-9])')
+> _PRV29 = re.compile(r'(?i)(\bbatch(es)?[,:]?\s*\(?\s*|(?:[A-HJ-L]|B\d{1,3})/)$')
+> _MB29 = ['',
+>  '**Batch labels.** The eleven seed batches this manuscript cites are labelled',
+>  'A, B, C, D, E, F, G, H, J, K and L in the order they were run (I and O are',
+>  'skipped so that a label cannot be read as a digit); the labels map one-to-one',
+>  'onto the internal run codes, which the stored artefact keys retain verbatim:',
+>  'A = B26, B = B27, C = B29, D = B30, E = B31, F = B32, G = B33, H = B34,',
+>  'J = B35, K = B37, L = B38. Gaps in the internal codes are batches this',
+>  'manuscript does not cite, and a label never renames the batch it points at, so',
+>  'every pooled cell stays traceable to the batches it unions.']
+> 
+> # --- CERT-4: the transform is PARSED. Classify every B<n> in the pre-image ---
+> _l29 = _pre29.split('\n')
+> _h29 = [(_i, _x) for _i, _x in enumerate(_l29) if re.match(r'^## ', _x)]
+> _s29 = []
+> for _k, (_i, _x) in enumerate(_h29):
+>     _j = _h29[_k + 1][0] if _k + 1 < len(_h29) else len(_l29)
+>     _s29.append((_x[3:].strip(), _i + 1, _j))
+> _T0_29 = _s29[0][1]
+> def _sec29(_n):
+>     for _nm, _i, _j in _s29:
+>         if _i <= _n <= _j:
+>             return _nm
+>     return 'BANNER' if _n < _T0_29 else '?'
+> _subs29, _oth29 = [], {'ARTEFACT_KEY': 0, 'BRANCH': 0, 'OUT_BANNER': 0, 'OUT_SEC7': 0}
+> for _n, _x in enumerate(_l29, 1):
+>     for _m in _TOK29.finditer(_x):
+>         _t, _a, _b = _m.group(0), _m.start(), _m.end()
+>         _num, _sc = int(_m.group(1)), _sec29(_n)
+>         if _sc == 'BANNER':
+>             _oth29['OUT_BANNER'] += 1; continue
+>         if _sc.startswith('7. '):
+>             _oth29['OUT_SEC7'] += 1; continue
+>         if _a > 0 and _x[_a - 1] in '_.':          # inside a stored key (T13)
+>             _oth29['ARTEFACT_KEY'] += 1; continue
+>         if _x[_b:_b + 1] == '_' or _x[_a:_a + 5] == 'B1-B4' or _num <= 4:
+>             _oth29['BRANCH'] += 1; continue        # a PREREG branch label
+>         assert _t in _MAP29, ('(29) unmapped batch token', _t, _n)
+>         _new = _MAP29[_t] if _PRV29.search(_x[:_a]) else 'batch ' + _MAP29[_t]
+>         _subs29.append((_n, _a, _b, _t, _new))
+> assert len(_subs29) == 19 == _rep29['raw_delta'] - 611, '(29) substitution count'
+> assert _oth29 == {'ARTEFACT_KEY': 6, 'BRANCH': 4, 'OUT_BANNER': 10,
+>                   'OUT_SEC7': 0}, ('(29) other-class census', _oth29)
+> assert sorted({_s[3] for _s in _subs29}) == sorted(_MAP29), \
+>     '(29) every internal code must occur in the body'
+> _bare29 = sum(1 for _s in _subs29 if ' ' not in _s[4])
+> assert (_bare29, len(_subs29) - _bare29) == (6, 13), '(29) bare/prefixed split'
+> 
+> # --- T7 STRONG: pre-image + the declared edits == the live draft ------------
+> _n29 = list(_l29)
+> for _ln in sorted({_s[0] for _s in _subs29}):
+>     _x = _l29[_ln - 1]
+>     for (_, _a, _b, _t, _w) in sorted([_s for _s in _subs29 if _s[0] == _ln],
+>                                       reverse=True):
+>         _x = _x[:_a] + _w + _x[_b:]
+>     _n29[_ln - 1] = _x
+> import textwrap as _tw
+> for (_i, _j) in [(771, 780), (827, 831)]:          # T14 declared reflow
+>     _blk = _n29[_i - 1:_j]
+>     _wr = _tw.wrap(' '.join(_y.strip() for _y in _blk), width=78,
+>                    break_long_words=False, break_on_hyphens=False)
+>     assert len(_wr) == len(_blk), ('(29) reflow changed the line count', _i)
+>     _n29[_i - 1:_j] = _wr
+> _anc29 = [_k for _k, _x in enumerate(_n29)
+>           if _x.strip() == 'reported with their up/down counts.']
+> assert len(_anc29) == 1, '(29) the §3.7 anchor is not unique'
+> _n29[_anc29[0] + 1:_anc29[0] + 1] = _MB29
+> _chk29 = '\n'.join(_n29)
+> _T29 = '## Title'
+> assert _chk29[_chk29.index(_T29):] == draft[draft.index(_T29):], \
+>     '(29) T7: pre-image + the declared relabel == the live draft (title onward)'
+> _bp29, _bn29 = _pre29[:_pre29.index(_T29)], draft[:draft.index(_T29)]
+> _bi29 = _bn29.replace(_bp29.rstrip('\n'), '', 1)
+> assert _bn29.startswith(_bp29.rstrip('\n')) and \
+>     'v3.30 = L174 stage (b4-iii-b)' in _bi29, \
+>     "(29) the banner delta is not exactly this stage's declared entry"
+> 
+> # --- T10 ZERO RESIDUE, read on the LIVE draft (never on the edit list) ------
+> _MBJ29 = '\n'.join(_MB29)
+> _scope29 = draft[draft.index('## 1. Introduction'):
+>                  draft.index('## 7. Author/submit notes')] + \
+>     draft[draft.index('## References'):draft.index('No citation is written from memory')]
+> _res29 = []
+> for _x in _scope29.split('\n'):
+>     if _x in _MB29:
+>         continue
+>     for _m in _TOK29.finditer(_x):
+>         _a, _b, _num = _m.start(), _m.end(), int(_m.group(1))
+>         if _a > 0 and _x[_a - 1] in '_.':
+>             continue
+>         if _x[_b:_b + 1] == '_' or _x[_a:_a + 5] == 'B1-B4' or _num <= 4:
+>             continue
+>         _res29.append((_m.group(0), _x.strip()[:60]))
+> assert not _res29, ('(29) a batch code survived in §1-§6 / the References '
+>                     'preamble outside the mapping block', _res29[:4])
+> assert not re.compile(r'\bL\d{2,3}\b').findall(
+>     draft[draft.index('## 1. Introduction'):draft.index('## 7. Author/submit notes')]), \
+>     '(29) a lane ID is back in §1-§6 (the §(28) property, re-read LIVE)'
+> # T13: the stored keys are FILENAMES and stay byte-exact
+> for _k in ('l145.pooled.eOutMot_B29_B31', 'l148.pooled.eAll_B29_B32'):
+>     assert _k in draft, ('(29) a stored artefact key was relabeled', _k)
+> # the branch labels are DECLARED out of scope and still present
+> for _k in ('B1-B4', 'B2_preserved', 'registered B4 degenerate'):
+>     assert _k in draft, ('(29) a PREREG branch label was stripped', _k)
+> # §7 byte-unchanged (out of manuscript scope, (b4-iii-a) premise)
+> assert draft[draft.index('## 7. Author/submit notes'):draft.index('## References')] == \
+>     _pre29[_pre29.index('## 7. Author/submit notes'):_pre29.index('## References')], \
+>     '(29) §7 is out of scope and must be byte-unchanged'
+> 
+> # --- T1': no measurement moved; identifier runs accounted for BY NAME -------
+> _pb29, _nb29 = _pre29[_pre29.index(_T29):], draft[draft.index(_T29):]
+> assert _meas(_pb29) == _meas(_nb29), '(29) T1 breach: a MEASUREMENT moved'
+> assert sorted(_CIT_B4.findall(_pre29)) == sorted(_CIT_B4.findall(draft)), \
+>     '(29) T1 breach: the citation-key multiset moved'
+> _g29 = sorted((_idc(_pb29) - _idc(_nb29)).elements())
+> assert _g29 == ['26', '27', '29', '30', '30', '30', '30', '31', '32', '33',
+>                 '33', '33', '34', '34', '35', '37', '38', '38'], \
+>     ('(29) identifier digits removed != the 19 declared relabels', _g29)
+> _e29 = sorted((_idc(_nb29) - _idc(_pb29)).elements())
+> assert _e29 == ['26', '27', '29', '30', '31', '32', '33', '34', '35', '37',
+>                 '38'], ('(29) identifier digits entered != the mapping block', _e29)
+> 
+> # --- T12 BIJECTION and the mapping block ------------------------------------
+> assert _MBJ29 in draft, '(29) the §3.7 mapping block is missing'
+> assert draft.index(_MBJ29) > draft.index('### 3.7 Seeds') and \
+>     draft.index(_MBJ29) < draft.index('### 3.8 Preregistration'), \
+>     '(29) the mapping block must live in §3.7'
+> assert len(set(_MAP29.values())) == 11 and 'I' not in _MAP29.values() \
+>     and 'O' not in _MAP29.values(), '(29) the label set is not 11 distinct non-I/O letters'
+> for _c, _lab in _MAP29.items():
+>     assert _MBJ29.count(_c) == 1 and f'{_lab} = {_c}' in _MBJ29, \
+>         ('(29) mapping row missing or duplicated', _c)
+> assert sorted(_MAP29) == sorted(re.findall(r'(?<![A-Za-z0-9])B\d{2}', _MBJ29)), \
+>     '(29) the mapping block names a code outside the declared map'
+> # run order is MONOTONE in the label, which is what makes "fresh batch X" readable
+> assert [_MAP29[_c] for _c in sorted(_MAP29, key=lambda _z: int(_z[1:]))] == \
+>     list('ABCDEFGHJKL'), '(29) labels are not monotone in the internal code'
+> # T8 born-clean: the new block quotes no measurement and no provenance key
+> assert not _meas(_MBJ29) and not _CIT_B4.findall(_MBJ29) and \
+>     not re.findall(r'^\s*[-*]\s+\S', _MBJ29, re.M), '(29) the mapping block is not born clean'
+> 
+> # --- the five verifier-literal re-points (T3 exception class) ---------------
+> for _o, _n in (('.622 with 14/16 seeds on B30', '.622 with 14/16 seeds on batch D'),
+>                ('.659 with\n14/16 on B33', '.659 with\n14/16 on batch G'),
+>                ('The batch unions were re-pooled with B35',
+>                 'The batch unions were re-pooled with batch J'),
+>                ('The own-gain diagonal reproduces on B38',
+>                 'The own-gain diagonal reproduces on batch L'),
+>                ('\u2212.036 on B30', '\u2212.036 on batch D')):
+>     assert _o in _pre29 and _o not in draft and _n in draft, \
+>         ('(29) verifier-literal re-point', _o)
+> 
+> # --- T11 partition AMENDMENT (one class split, nothing applied) -------------
+> assert set(_amd29['amends']) == {'B1-B4'} | set(_MAP29), '(29) amendment vocabulary'
+> assert _amd29['amends']['B1-B4'] == 'DEFER_BRANCH' and \
+>     all(_amd29['amends'][_c] == 'KEEP_MAPPING' for _c in _MAP29), \
+>     '(29) amendment classes'
+> assert _amd29['n_distinct'] == 179 and _amd29['counts_after']['KEEP_MAPPING'] == 11 \
+>     and _amd29['counts_after']['DEFER_BRANCH'] == 1 and \
+>     _amd29['counts_after']['STRIP_EMPHASIS'] == 129, '(29) amended partition counts'
+> assert sum(_amd29['counts_after'].values()) == 179, '(29) amended partition incomplete'
+> 
+> # --- deltas and house width -------------------------------------------------
+> assert len(draft) - len(_pre29) == 630 == _rep29['raw_delta'], '(29) raw delta pin'
+> assert _rep29['body_delta'] == 40, '(29) body-only raw delta pin'
+> assert len(_MBJ29) == 589, '(29) mapping block size pin'
+> for _x in _MB29 + sum(_rep29['reflow'].values(), []):
+>     assert len(_x) <= 78, ('(29) an edited line crossed the house width', _x[:40])
+> assert 'v3.30 = L174 stage (b4-iii-b)' in draft[:draft.index('## Title')], \
+>     '(29) the banner must record the (b4-iii-b) stage'
+> 
+> print('(29) L174 (b4-iii-b) the batch relabel: branch R1_relabel_only — the '
+>       'B<n> shape was READ, not assumed, and splits into THREE classes the '
+>       'frozen partition had conflated: 19 prose batch codes (11 distinct) '
+>       'relabeled to the reader-facing letters A-L in RUN ORDER (I and O '
+>       'skipped), 6 occurrences inside stored artefact KEYS left byte-exact '
+>       'because they are filenames, and 4 PREREG BRANCH labels (B1-B4, '
+>       'B2_preserved, the bare B4) declared out of scope — so the partition '
+>       'is AMENDED (DEFER_BATCH -> KEEP_MAPPING 11 + DEFER_BRANCH 1, still '
+>       '179 distinct) rather than applied. A letter scheme was chosen BECAUSE '
+>       'it adds no digit run: the measurement multiset is identical with ZERO '
+>       'named removals needed, every removed identifier run is a declared '
+>       'relabel and every entered run is a mapping row. The §3.7 mapping '
+>       'block (589 chars, born clean under T8) is the ONE declared home of '
+>       'the internal codes, bijective and monotone in run order so the '
+>       'draft\'s "fresh batch X" claims read in sequence; pre-image + the '
+>       'declared edits == the live draft byte for byte from the title onward, '
+>       'two paragraphs re-wrapped with their line counts unchanged, zero '
+>       'residue in §1-§6 + the References preamble, §7 byte-unchanged, and '
+>       'the five verifier literals carrying a relabeled code re-pointed with '
+>       'their measurements still attached')

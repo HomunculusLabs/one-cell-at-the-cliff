@@ -1,0 +1,12 @@
+
+ l152_clamp_cut_grid.svg | bytes 10692 | mtime 11-19 21:46
+  width 1260.0 None | first fills ['#282c34'] | n font sizes 55 | min/median/max (9.5, 11.5, 19.0)
+  at 6.5-in print width: scale 0.371 -> text min 3.5 pt, median 4.3 pt, share under 7 pt: 98%
+
+ l160_slowline_carrier.svg | bytes 15979 | mtime 11-19 20:50
+  width 1680.0 None | first fills ['#282c34'] | n font sizes 89 | min/median/max (10.0, 11.0, 18.0)
+  at 6.5-in print width: scale 0.279 -> text min 2.8 pt, median 3.1 pt, share under 7 pt: 100%
+
+ fig_l152.svg | bytes 10692 | mtime 11-19 21:43
+  width 1260.0 None | first fills ['#282c34'] | n font sizes 55 | min/median/max (9.5, 11.5, 19.0)
+  at 6.5-in print width: scale 0.371 -> text min 3.5 pt, median 4.3 pt, share under 7 pt: 98%

@@ -1,0 +1,14 @@
+(1) 37 numbered entries
+(2) in-text numeric citation markers: 45 tokens, 37 distinct entries, uncited 0
+(3) references.bib keys: 37 (unique=True)
+(4) 22 of 22 new entries verified against the stored primary records
+(4b) CERT-1 re-resolution of the pre-existing entries: 13/14 MATCH (non-MATCH: {'sapkal2026': 'DIFFERS'})
+(5) 13 required characterizations present, 7 superseded wordings gone
+(6) 7 cited field numbers traced to LANE-RESEARCH digests
+(7) numbers.json byte-identical to the pre-tick copy (sha 238bf2d37f51)
+(8) entries 36-37 verified against banc/l174b/refs_b.json; legacy-DOI controls both unresolved
+(8b) 21 narrowing texts present, 2 superseded gone, predicate sensitivity self-test OK
+(8c) 9 stage-(b1) field numbers traced to LANE-RESEARCH digests
+(8d) Abstract block byte-identical to the stage-(b1) pin; numbers.json unchanged
+
+L174 VERIFY: ALL GREEN

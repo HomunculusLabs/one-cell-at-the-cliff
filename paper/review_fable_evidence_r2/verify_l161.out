@@ -1,0 +1,27 @@
+(1) draft cites 81 root keys
+(2) registry: 99 keys == numbers.json 99 (18 registry-only, e.g. ['dose_l135', 'l135.pooled', 'l137.pooled_full', 'l137.vol1110'])
+(3) 286 map paths all exist on disk
+(4) provenance: 48 walked exact(tol 1e-3), 1 star-walk, 1 kencode-verified, 19 renamed-path (values verified, names drifted), 49 declared-not-walkable (prose subpaths)
+    renamed: l137.g2.vol1110_dR=0.022 exact
+    renamed: l137.g2.volrand_dR=0.077 exact
+    renamed: l137.sil24.dR=-0.032 exact
+    renamed: l142.window.n_edges=644177 exact
+    renamed: l144.silf.dR_vs_full=-0.036 exact
+    renamed: l144.silw.dR_vs_wA=0.189 exact
+    renamed: l144.silw.n_down=0 exact
+    renamed: l144.silw.n_up=6 exact
+    renamed: l148.eall.dR_vs_wA=0.398 exact
+    renamed: l148.eall.n_up=15 exact
+    renamed: l150.h1.b30_dR=0.189 exact
+    renamed: l150.h1.b30_meanR=0.622 exact
+    renamed: l151.sheet.m1110=160.04365274470274 exact
+    renamed: l151.sheet.ng58_others_G0=52.030840862299534 exact
+    renamed: l151.sheet.ng58_others_G1=36.85743541773707 exact
+    renamed: l151.sheet.redundancy_ratio_G0=0.325 rounded<=5e-4
+    renamed: l151.sheet.redundancy_ratio_G1=0.23 rounded<=5e-4
+    renamed: l151.sheet.share_1110_of_DNsheet_G0=0.1447 rounded<=5e-4
+    renamed: l151.sheet.share_1110_of_DNsheet_G1=0.1467 rounded<=5e-4
+    derived: l142.aeall.gains_equal=True (exact float pair in src)
+(5) §1 four-result keys: 6/6 in map + cited + src exists
+(6) §-table references 40 blocks, all defined
+L161 verify: ALL GREEN

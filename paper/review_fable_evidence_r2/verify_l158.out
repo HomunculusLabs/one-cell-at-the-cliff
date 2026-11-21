@@ -1,0 +1,11 @@
+(1) 0 abstract citations all resolve OK
+(2) four results stated (abstract + §1 map); all SEVEN canonical U-law cells Wilson-recomputed against l172.pooled, two located in the compressed abstract and five relocated to the certified body; superseded per-batch cells absent
+(3) band-honesty abstract numbers independently recomputed from l154/l156/l157 stored jsons (census, Wilson, median, carrier subset)
+(4) numeric vocabulary frozen as a TWO-PLACE contract: 31 abstract tokens subset of the v3.8 allowlist + the four declared prose-reformatting additions; 28 required in the abstract, 30 relocated cells each located in the body; re-scope language contract held (no affirmative uniqueness claim); the retired-token guard is a disclosed degenerate pass
+(5) abstract length 1916 <= 1,920 chars (was 5,322 at v3.21)
+(6) zero inline citation keys; 19 claim->numbers.json traces asserted by VALUE and 9 declared non-measurement tokens cover all 31 numeric tokens
+(7) all-caps emphasis gone: ['BANC'] only
+(8) zero arm codes, lane ids or batch labels in the abstract
+(9) relocation complete: 102 -> 31 numeric tokens, 76 dropped and all 76 present in the certified body (9 of them are slash->prose re-formattings the abstract still states)
+(10) abstract pinned at 20be2db8d67f68d2
+L158 verify: ALL GREEN

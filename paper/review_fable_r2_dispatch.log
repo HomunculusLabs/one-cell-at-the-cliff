@@ -1,0 +1,347 @@
+Query: Referee dispatch (owner request, round 2). Read 
+/home/t3rpz/critters/peabrain-lab/paper/review_fable_r2_BRIEF.md and execute it 
+completely. Write your report to review_fable_r2.md and keep evidence in 
+review_fable_evidence_r2/.
+📖 Read review_fable_r2_BRIEF.md
+💻 $ ls -la + 3 commands
+💻 $ mkdir -p review_fable_evidence_r2 + 7 commands
+📖 Read review_fable.md
+💻 $ sed -n 350,380p l158_verify.py + 2 commands
+💻 $ E=review_fable_evidence_r2 + 7 commands  0.2s
+💻 $ grep -n -iE "python|venv|interp" review_fable_evidence/NOTES.md + 3 commands  1.1s
+💻 $ E=review_fable_evidence_r2 + 12 commands  13.3s
+💻 $ E=review_fable_evidence_r2 + 8 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_fable_evidence_r2/NOTES.md
+│ paper/review_fable_evidence_r2/NOTES.md
+│ @@ -0,0 +1,25 @@
+│ +# Round-2 referee running log (fable 5.2)
+│ +
+│ +Start: 2026-11-21 10:11 EST. Interpreter for all probes:
+│ +/home/t3rpz/critters/peabrain/.venv/bin/python (torch+numpy, no scipy), CUDA_VISIBLE_DEVICES="".
+│ +All writes confined to paper/review_fable_r2.md and paper/review_fable_evidence_r2/.
+│ +
+│ +## 10:11 pins (00_sha256_at_start.txt)
+│ +- DRAFT.md a1848d890195bb25a34b... 1,654 lines / 108,031 bytes — matches the brief. Copy kept at snap1/DRAFT.md.a1848d89.
+│ +- numbers.json 238bf2d3..., CLAIM-MAP.md 64ecc3d8..., references.bib 9ff16bbd...
+│ +- l149_verify.py was 9934180c... at 10:11:51.
+│ +
+│ +## 10:12 Task 1 — six verify scripts (02_verify_exit_statuses.txt, verify_*.out)
+│ +- l143 exit 0, l158 exit 0, l159 exit 0, l161 exit 0, l174 exit 0.
+│ +- l149 exit 1: AssertionError at line 2183, "(24) identifier digits removed != the declared lane IDs".
+│ +  Checks (1)-(23) printed green before the failure.
+│ +- OBSERVED: l149_verify.py changed under me. sha 9934180c... (10:11:51, mtime 10:11:45) ->
+│ +  4a580136... (mtime 10:12:13, 174,531 bytes) by the time it ran. Somebody is editing the gate
+│ +  while the review runs. DRAFT.md and numbers.json unchanged across the run. Snapshot of the
+│ +  failing version kept in snap1/. Will re-run l149 later and record every state seen.
+│ +- l158 has a write path (creates banc/l174b2/abstract_pin_b2.txt if absent). File existed
+│ +  (Nov 20 23:52) so the branch did not fire; checked before running.
+│ +- mtime snapshot of paper/ and banc/ taken before the runs: 01_mtime_snapshot_before.txt.
+│ +- Brief's paraphrase of the 12 round-1 majors does not match review_fable.md in places
+│ +  (e.g. brief #9 "lesion arms 0/16 both sides unreported" vs actual #9 "readout scope").
+│ +  Delta-check uses review_fable.md's wording, as the brief instructs.
+📖 Read DRAFT.md
+📖 Read DRAFT.md L561-1120
+📖 Read DRAFT.md L1121-1660
+💻 $ ls -d l1[2-7]* | tr '\n' ' ' + 3 commands
+💻 $ cat l167/ADJUDICATION.md | cut -c1-600 + 2 commands
+💻 $ sed -n 120,330p l172/l172_stats.py
+💻 $ ls -la */raw_*.npz | awk '{printf "%s %.0fMB\n",$9,$5/1e6}' | tr '\n' ';' + 7 commands  0.3s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_fable_evidence_r2/p1_duty_from_raw.py
+│ paper/review_fable_evidence_r2/p1_duty_from_raw.py
+│ @@ -0,0 +1,89 @@
+│ +#!/usr/bin/env python3
+│ +"""Round-2 referee probe 1: per-(file, arm, seed) tibia duty from RAW npz traces.
+│ +
+│ +Independent implementation (rolling Pearson via sliding_window_view, not the
+│ +lab's per-window np.corrcoef loop). Reads banc/*/raw_l*.npz ONLY; writes ONLY
+│ +into the evidence dir. No rollouts, CPU only.
+│ +
+│ +Definitions taken from DRAFT §3.6 (and nothing else):
+│ +  S = -Pearson(flexor pool mean, extensor pool mean) over a 500-step window,
+│ +  sampled every 10 steps, per side; duty = fraction of samples with S >= .25
+│ +  inside the 0.7-Hz segments, dropping the first 500 steps of each segment.
+│ +A flat window (std <= 1e-6) is counted as "not structured" (the lab's code does
+│ +the same: nan >= .25 is False) and is ALSO counted separately here.
+│ +"""
+│ +import json, os, re, sys, time, zipfile
+│ +import numpy as np
+│ +from numpy.lib.stride_tricks import sliding_window_view as swv
+│ +
+│ +BANC = '/home/t3rpz/critters/peabrain-lab/banc'
+│ +OUT = os.path.dirname(os.path.abspath(__file__))
+│ +SEGB = [(0, 2000, 0.7), (2000, 4000, 1.4), (4000, 6000, 0.7)]
+│ +ENDS = np.arange(499, 6000, 10)                 # window = [t-499, t]
+│ +Q07 = np.zeros(len(ENDS), bool)
+│ +Q14 = np.zeros(len(ENDS), bool)
+│ +for a0, b0, fr in SEGB:
+│ +    m = (ENDS >= a0 + 500) & (ENDS < b0)
+│ +    if fr == 0.7:
+│ +        Q07 |= m
+│ +    else:
+│ +        Q14 |= m
+│ +
+│ +
+│ +def rollS(f, e):
+│ +    """-corr over each 500-step window ending at ENDS; nan where flat."""
+│ +    F = swv(f.astype(np.float64), 500)[::10][:len(ENDS)]
+│ +    E = swv(e.astype(np.float64), 500)[::10][:len(ENDS)]
+│ +    Fc = F - F.mean(1, keepdims=True)
+│ +    Ec = E - E.mean(1, keepdims=True)
+│ +    sf = F.std(1)
+│ +    se = E.std(1)
+│ +    with np.errstate(invalid='ignore', divide='ignore'):
+│ +        r = (Fc * Ec).mean(1) / (sf * se)
+│ +    r[(sf <= 1e-6) | (se <= 1e-6)] = np.nan
+│ +    return -r
+│ +
+│ +
+│ +TI = re.compile(r'^Ti_fL_(.+)_(\d+)$')
+│ +files = sorted(os.path.join(d, n) for d in sorted(os.listdir(BANC))
+│ +               if os.path.isdir(os.path.join(BANC, d))
+│ +               for n in sorted(os.listdir(os.path.join(BANC, d)))
+│ +               if n.startswith('raw_') and n.endswith('.npz') and 'partial' not in n)
+│ +rows = []
+│ +t0 = time.time()
+│ +for f in files:
+│ +    names = [n[:-4] for n in zipfile.ZipFile(os.path.join(BANC, f)).namelist()]
+│ +    pairs = [TI.match(k).groups() for k in names if TI.match(k)]
+│ +    if not pairs:
+│ +        print('no Ti traces', f, flush=True)
+│ +        continue
+│ +    z = np.load(os.path.join(BANC, f))
+│ +    nbad = 0
+│ +    for arm, seed in pairs:
+│ +        try:
+│ +            tr = {c: z[f'Ti_{c}_{arm}_{seed}'] for c in ('fL', 'fR', 'eL', 'eR')}
+│ +        except KeyError:
+│ +            nbad += 1
+│ +            continue
+│ +        if min(len(v) for v in tr.values()) < 6000:
+│ +            nbad += 1
+│ +            continue
+│ +        tr = {c: v[:6000] for c, v in tr.items()}
+│ +        sR = rollS(tr['fR'], tr['eR'])
+│ +        sL = rollS(tr['fL'], tr['eL'])
+│ +        rec = dict(file=f, arm=arm, seed=int(seed))
+│ +        for side, s in (('R', sR), ('L', sL)):
+│ +            rec['duty07' + side] = float(np.mean(np.nan_to_num(s[Q07], nan=-9) >= .25))
+│ +            rec['duty14' + side] = float(np.mean(np.nan_to_num(s[Q14], nan=-9) >= .25))
+│ +            rec['nan07' + side] = int(np.isnan(s[Q07]).sum())
+│ … omitted 11 diff line(s) across 1 additional file(s)/section(s)
+💻 $ (CUDA_VISIBLE_DEVICES="" nohup /home/t3rpz/critters/peabrain/.venv/bin/python p1_duty_from_raw.py &) + 4 commands  20.3s
+💻 $ wc -l l135_run.py l135_build.py build_graph_banc.py l131_static.py + 1 command
+💻 $ sed -n 76,170p l135_run.py + 2 commands
+💻 $ tail -3 out_p1_duty.log + 4 commands  0.4s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_fable_evidence_r2/p2_stats_recompute.py
+│ paper/review_fable_evidence_r2/p2_stats_recompute.py
+│ @@ -0,0 +1,239 @@
+│ +#!/usr/bin/env python3
+│ +"""Round-2 referee probe 2: pooled statistics recomputed from out_duty_rows.json
+│ +(which p1 derived from RAW npz). Own Wilson / Newcombe / Fisher (log-gamma
+│ +hypergeometric, not the lab's comb() form). Compares against the DRAFT's
+│ +printed values, which are typed in below BY HAND FROM THE DRAFT TEXT."""
+│ +import json, math, os, collections, itertools
+│ +import numpy as np
+│ +
+│ +HERE = os.path.dirname(os.path.abspath(__file__))
+│ +D = json.load(open(os.path.join(HERE, 'out_duty_rows.json')))
+│ +ROWS = D['rows']
+│ +Z = 1.959963984540054
+│ +
+│ +
+│ +def wilson(k, n):
+│ +    p = k / n
+│ +    den = 1 + Z * Z / n
+│ +    c = (p + Z * Z / (2 * n)) / den
+│ +    h = Z * math.sqrt(p * (1 - p) / n + Z * Z / (4 * n * n)) / den
+│ +    return max(0., c - h), min(1., c + h)
+│ +
+│ +
+│ +def newcombe(k1, n1, k2, n2):
+│ +    p1, p2 = k1 / n1, k2 / n2
+│ +    l1, u1 = wilson(k1, n1)
+│ +    l2, u2 = wilson(k2, n2)
+│ +    d = p1 - p2
+│ +    return d, d - math.sqrt((p1 - l1) ** 2 + (u2 - p2) ** 2), d + math.sqrt((u1 - p1) ** 2 + (p2 - l2) ** 2)
+│ +
+│ +
+│ +def lchoose(n, k):
+│ +    return math.lgamma(n + 1) - math.lgamma(k + 1) - math.lgamma(n - k + 1)
+│ +
+│ +
+│ +def fisher2(a, b, c, d):
+│ +    """two-sided Fisher exact, [[a,b],[c,d]], sum of tables with prob <= observed."""
+│ +    n = a + b + c + d
+│ +    r1, c1 = a + b, a + c
+│ +    lo, hi = max(0, c1 - (n - r1)), min(r1, c1)
+│ +    lp = [lchoose(r1, x) + lchoose(n - r1, c1 - x) - lchoose(n, c1) for x in range(lo, hi + 1)]
+│ +    l0 = lp[a - lo]
+│ +    return min(1.0, sum(math.exp(v) for v in lp if v <= l0 + 1e-9))
+│ +
+│ +
+│ +# ---------------------------------------------------------------- inventory
+│ +lab = json.load(open('/home/t3rpz/critters/peabrain-lab/banc/l172/stats.json'))
+│ +ADM = set(lab['admissibility']['admissible'])
+│ +allfiles = sorted({r['file'] for r in ROWS})
+│ +print('files with Ti traces:', len(allfiles), '| lab-admissible:', len(ADM),
+│ +      '| admissible-but-missing-from-my-rows:', sorted(ADM - set(allfiles)))
+│ +print('non-admissible files I also scored:', sorted(set(allfiles) - ADM))
+│ +
+│ +ALIAS = {'sil1110_wA': 'silW'}          # the lab pools these two names; flagged in the report
+│ +
+│ +
+│ +def pool(arm, files=None, side='R', key='duty07', alias=True):
+│ +    """unique-seed union; returns dict seed -> duty, plus dup stats."""
+│ +    seen, dup, bad = {}, 0, 0
+│ +    for r in ROWS:
+│ +        a = ALIAS.get(r['arm'], r['arm']) if alias else r['arm']
+│ +        if a != arm:
+│ +            continue
+│ +        if files is not None and r['file'] not in files:
+│ +            continue
+│ +        v = r[key + side]
+│ +        if r['seed'] in seen:
+│ +            dup += 1
+│ +            bad += abs(seen[r['seed']] - v) > 1e-6
+│ +            continue
+│ +        seen[r['seed']] = v
+│ +    return seen, dup, bad
+│ +
+│ +
+│ +def kn(arm, files=ADM, side='R', key='duty07'):
+│ +    s, dup, bad = pool(arm, files, side, key)
+│ +    v = np.array(list(s.values()))
+│ +    return int((v >= .5).sum()), len(v), float(v.mean()) if len(v) else float('nan'), dup, bad
+│ +
+│ … omitted 161 diff line(s) across 1 additional file(s)/section(s)
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python p2_stats_recompute.py + 1 command  1.9s
+💻 $ tail -1 out_p2_stats.txt | cut -c1500-2600 + 4 commands  0.5s
+💻 $ sed -n 4928,4942p LAB-INTENT.md | cut -c1-200 + 3 commands
+💻 $ echo "== normalization grep in run scripts" + 3 commands  0.2s
+💻 $ ls data 2>/dev/null + 4 commands  1.0s
+💻 $ cat <<'EOF' #!/usr/bin/env python3 """Round-2 probe 5: (a) the dose ladder re-scored in the UNCHOPPED 1.4-Hz segment (same S, same .25 bar, same .50 seed bar; windows ending in steps 2500-3999), canonical lab-admissible unique-seed pools; (b) drive-envelope spectrum.""" import json, os, math, numpy as np HERE = os.path.dirname(os.path.abspath(__file__)) D = json.load(open(os.path.join(HERE, 'out_duty_rows.json'))) ADM = set(json.load(open('/home/t3rpz/critters/peabrain-lab/banc/l172/stats.json'))['admissibility']['admissible']) Z = 1.959963984540054 def wil(k, n): p = k / n + 13 commands  15.6s
+💻 $ E=review_fable_evidence_r2 + 9 commands
+💻 $ cat <<'EOF' ## 10:13-10:16 Task 3 — headline statistics from RAW traces - p1_duty_from_raw.py: own duty implementation (rolling Pearson via sliding windows) over every banc/*/raw_l*.npz with tibia traces -> out_duty_rows.json (6,506 arm x seed rows, 44 files). - p2_stats_recompute.py -> out_p2_stats.txt. Own Wilson / Newcombe / Fisher (log-gamma form). - A: all 14 canonical pooled cells of DRAFT 2.9 MATCH (k, n, Wilson, mean duty), using the lab's list of 38 admissible files. carrier 203/210, twin 30/66, base 72/258, silW 78/98, etc. 0 inconsistent repeat seeds. - B: all 12 difference rows MATCH (d, Newcombe CI, Fisher p). - C: NEW. All 66 twin seeds were also run on the base arm. Same seeds: twin 30/66 vs base 19/66, exact McNemar p = .09; unpaired on those seeds d = +.167 [+.002,+.319], Fisher p = .07; paired mean-duty difference +.048, bootstrap [-.004,+.101]. The abstract's p = .008 exists only when 192 base seeds the twin never ran on are added to the comparator. - D: batches look exchangeable (permutation chi-square p .22-.82) EXCEPT cutwA is under-dispersed: 16 batches all 3-6 of 16 (chi2 4.3 on 15 df, upper-tail p .9975 => lower tail ~.003). Checked for an outcome-based void rule: PREREG void clauses I read (l169, l169c2, l169d) are bit-identity/plumbing only. Unexplained + 6 commands  0.3s
+💻 $ P=~/.hermes/profiles/maple/playground/website/publish/peabrain-figs + 9 commands  1.0s
+🔍 Search Habib Petr Rust "Focal neuronal loss and cell replacement in a connectome model of fly steering" bioRxiv  1.7s
+🔍 Search DNp33 descending neuron Drosophila function  1.7s
+🔍 Search connectome-constrained model Drosophila ventral nerve cord descending neuron ablation simulation 2026 preprint single neuron perturbation  1.7s
+💻 $ E=review_fable_evidence_r2 + 8 commands
+💻 $ cat <<'EOF' #!/usr/bin/env python3 """Round-2 probe 7: per-file recheck of the §2.7 / §4 control cells from RAW-derived duty rows, both sides, plus abstract length and a scan of abstract/Discussion sentences against §2.6.""" import json, os, re, collections, numpy as np HERE = os.path.dirname(os.path.abspath(__file__)) R = json.load(open(os.path.join(HERE, 'out_duty_rows.json')))['rows'] def cell(f, arm, n16=True): v = sorted([r for r in R if r['file'] == f and r['arm'] == arm], key=lambda r: r['seed']) return v def show(f, arms, drop_anchor=2): for a in arms: v = cell(f, a) if not v: print(' ', a, 'absent') + 2 commands  2.5s
+💻 $ grep -n -iE "near-vacuous|census_319|sil319|319.*silent|silent.*319|twin.*silent|x_mean" LAB-INTENT.md | cut -c1-260 + 3 commands
+💻 $ sed -n 6250,6258p LAB-INTENT.md | cut -c1-240 + 4 commands  0.1s
+💻 $ cat <<'EOF' #!/usr/bin/env python3 """Round-2 probe 8: how active is each ladder cell? Uses the lab's OWN stored census (banc/l137/raw_l137.npz: census_ids / census_u / census_x — one intact-closure rollout, seed 3101, all 58 non-glutamatergic ladder cells) and the stored ladder masses. Read-only.""" import numpy as np, json, os B = '/home/t3rpz/critters/peabrain-lab/banc' z = np.load(os.path.join(B, 'l137/raw_l137.npz')) ids = z['census_ids'].tolist() + 2 commands  0.3s
+💻 $ cat <<'EOF' #!/usr/bin/env python3 """Round-2 probe 8b: static removal mass vs activity-weighted removal mass along the ladder. Sources: banc/l135/static.json (rank_ids, rank_mass), my out_p8_census_xmean.json (from the lab's stored l137 census, intact closure, ONE seed = 3101), scramble memberships from stored statics.""" import json, os, numpy as np B = '/home/t3rpz/critters/peabrain-lab/banc' s = json.load(open(os.path.join(B, 'l135/static.json'))) c = json.load(open('out_p8_census_xmean.json')) xm = dict(zip(c['ids'], c['x_mean'])) rid, rm = s['rank_ids'], s['rank_mass'] print('ladder cells', len(rid), '| k29_window_mass', s.get('k29_window_mass'), '| all in census:', all(i in xm for i in rid)) tot = sum(rm) print('rank id mass x_mean x*mass (share of ladder static mass | share of ladder activity-weighted mass)') aw = [m * max(xm[i], 0) for i, m in zip(rid, rm)] for r, (i, m, a) in enumerate(zip(rid, rm, aw), 1): if r <= 30 or i in (1110, 319): tag = ' <- CARRIER' if i == 1110 else (' <- TWIN' if i == 319 else '') print('%3d %5d %.5f %.4f %.6f %.4f | %.4f%s' % (r, i, m, xm[i], a, m / tot, a / sum(aw), tag)) i25, i26 = rid.index(1110), rid.index(319) print('\nstatic mass: carrier %.6f vs twin %.6f (ratio %.3f)' % (rm[i25], rm[i26], rm[i25] / rm[i26])) print('activity-weighted (x_mean * mass): carrier %.6f vs twin %.8f (ratio %.0fx)' % (aw[i25], aw[i26], aw[i25] / max(aw[i26], 1e-12))) print('ranks 1-24: static %.4f, activity-weighted %.5f | rank 25 adds +%.1f%% static, +%.1f%% activity-weighted | rank 26 would add +%.1f%% static, +%.2f%% activity-weighted' % (sum(rm[:24]), sum(aw[:24]), 100 * rm[24] / sum(rm[:24]), 100 * aw[24] / sum(aw[:24]), 100 * rm[25] / sum(rm[:24]), 100 * aw[25] / sum(aw[:24]))) rk = np.argsort(-np.array(aw)) print('carrier rank by activity-weighted mass among the 58: %d ; twin: %d' % (list(rk).index(i25) + 1, list(rk).index(i26) + 1)) print('among ranks 25-58 (cells NOT in the k=24 base), carrier rank by activity-weighted mass: %d of %d' % (sorted(range(24, len(rid)), key=lambda j: -aw[j]).index(i25) + 1, len(rid) - 24)) print('top-5 activity-weighted among ranks 25-58:', [(j + 1, rid[j], round(aw[j], 5)) for j in sorted(range(24, len(rid)), key=lambda j: -aw[j])[:5]]) # scramble memberships for f in ['l125/static.json', 'l127/static.json', 'l128/static.json', 'l168/static.json']: p = os.path.join(B, f) if not os.path.exists(p): continue d = json.load(open(p)) def walk(o, path=''): if isinstance(o, dict): for k, v in o.items(): walk(v, path + '/' + k) elif isinstance(o, list) and 5 <= len(o) <= 12 and all(isinstance(x, int) for x in o) and all(x in xm for x in o): a = sum(rm[rid.index(x)] * max(xm[x], 0) for x in o if x in rid) st = sum(rm[rid.index(x)] for x in o if x in rid) print(' %s%s: n=%d static %.4f activity-weighted %.5f (ranks %s)' % (f, path, len(o), st, a, sorted(rid.index(x) + 1 for x in o if x in rid))) walk(d) print('for scale: ranks 25-29 (the k=29 window) static %.4f activity-weighted %.5f' % (sum(rm[24:29]), sum(aw[24:29]))) EOF /home/t3rpz/critters/peabrain/.venv/bin/python p8b_activity_weighted_mass.py | tee out_p8b_activity_weighted.txt | cut -c1-260  0.5s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' import json s=json.load(open('l135/static.json')) for k in ['rank_ids','rank_mass','mass_split','xor25p','design']: print(k, json.dumps(s[k])[:600]) s=json.load(open('l134/static.json')) print('ng58_profile', json.dumps(s['ng58_profile'])[:700]) for f in ['l125/static.json','l127/static.json','l168/static.json']: d=json.load(open(f)) + 2 commands  0.2s
+💻 $ cat <<'EOF' #!/usr/bin/env python3 """Round-2 probe 8b: activity of the cells each control removes. Sources: the lab's stored l137 census (intact closure, ONE seed 3101) via out_p8_census_xmean.json; cohort memberships from banc/l125,l127,l128,l133 static.json. Static mass per set as stored. Read-only.""" import json, os B = '/home/t3rpz/critters/peabrain-lab/banc' c = json.load(open('out_p8_census_xmean.json')) xm = dict(zip(c['ids'], c['x_mean'])) p25 = json.load(open(os.path.join(B, 'l133/static.json')))['xor25p']['cutng25p']['drop_ids'] wA = sorted(set(p25) - {319}) scr = {} for f in ['l125/static.json', 'l127/static.json', 'l128/static.json']: d = json.load(open(os.path.join(B, f))).get('scr', {}) for k, v in d.items(): scr.setdefault(k, v) k19 = sorted(set(scr['cutscr0']['drop_ids']) - set(scr['cutscr0']['extra_ids_desc'])) r2024 = sorted(set(wA) - set(k19)) def desc(name, ids, mass=None): xs = sorted(((xm.get(i, float('nan')), i) for i in ids), reverse=True) act = sum(1 for x, _ in xs if x print('%-28s n=%2d static mass %s sum(x_mean)=%.3f active(>.05): %d silent(<.01): %d | %s' % (name, len(ids), ('%.4f' % mass) if mass is not None else ' - ', sum(max(x, 0) for x, _ in xs), act, sum(1 for x, _ in xs if x ' '.join('%d:%.2f' % (i, x) for x, i in xs))) print('k19 prefix is the scramble base: %d cells; cutwA adds ranks 20-24: %s' % (len(k19), r2024)) desc('k=19 prefix', k19) desc('ranks 20-24 (k19 -> cutwA)', r2024) desc('CARRIER (rank 25, id 1110)', [1110], 0.006436) desc('TWIN (rank 26, id 319)', [319], 0.006045) print() for k in sorted(scr): v = scr[k] ex = v.get('extra_ids_desc') or sorted(set(v['drop_ids']) - set(k19)) desc(k + ' extra cells', ex, v.get('extra_mass')) print('\nright-side outcome (canonical unique seeds, from out_p2): cutscr0 41/50 | cutscr3 18/34 | cutscrL1 11/18 | cutscr2 12/34 | cutscrL2 4/18 | cutcl40 0/18 | cutscr1 0/34') EOF /home/t3rpz/critters/peabrain/.venv/bin/python p8b_activity_weighted_mass.py | tee out_p8b_activity_weighted.txt | cut -c1-330  0.3s
+💻 $ sed -i "s#for f in \['l125/static.json', 'l127/static.json', 'l128/static.json'\]:#for f in [x for x in ['l125/static.json', 'l127/static.json', 'l128/static.json', 'l126/static.json'] if os.path.exists(os.path.join(B, x))]:#" p8b_activity_weighted_mass.py + 1 command  0.1s
+💻 $ for d in peabrain peabrain-lab + 20 commands  0.3s
+💻 $ cat inv2.py + 3 commands
+💻 $ S=review_fable_evidence_r2/snap1/DRAFT.md.a1848d89 + 5 commands
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/review_fable_r2.md
+│ paper/review_fable_r2.md
+│ @@ -0,0 +1,394 @@
+│ +# Referee report, round 2 — fable 5.2 (claude-fable-5-2, official Anthropic route)
+│ +
+│ +Reviewed: `paper/DRAFT.md` at sha256 `a1848d890195bb25a34b…` (1,654 lines, 108,031 bytes), the
+│ +state named in the brief. Review window 2026-11-21 10:11–10:35 EST. A byte copy of that state
+│ +is at `review_fable_evidence_r2/snap1/DRAFT.md.a1848d89`; all line numbers below refer to it.
+│ +
+│ +Three things to know before reading the rest:
+│ +
+│ +- **The draft and one gate were edited while I reviewed.** `DRAFT.md` moved to sha
+│ +  `d76fa7d6…` at 10:20:34 (one 19-line changelog paragraph added; body byte-identical, diff
+│ +  saved). `l149_verify.py` had three different hashes during the window (see Task 1).
+│ +- **No vision and no rollouts**, as instructed. Figure findings come from SVG parsing. Every
+│ +  statistic I report is recomputed from the stored raw `.npz` traces with my own code.
+│ +- **Nothing outside my two output locations was written by me.** The one verify script with a
+│ +  write path (`l158_verify.py` creates a pin file if absent) was checked first; the file existed.
+│ +
+│ +## Verdict
+│ +
+│ +**Major revision.** The numbers are honest: every pooled count, interval and p-value I
+│ +recomputed from raw traces matches the draft. Six of the twelve round-1 majors are resolved,
+│ +five are partly resolved and one (figures) is untouched.
+│ +
+│ +The verdict stays at major revision because of what the recomputation turned up beyond the
+│ +round-1 list:
+│ +
+│ +1. The mass-matched twin, the control the title is built on, is a cell that is silent in the
+│ +   model. The lab's own log says so; the draft does not.
+│ +2. The "unchopped segment" re-score is used in the abstract to support the identity contrast,
+│ +   but applied to the rest of the paper it reverses the first headline result (k=58 goes from
+│ +   1/258 to 186/258) and removes the "one scramble supers" result (41/50 to 9/50).
+│ +3. Methods describe a different weight rule and a different substrate from the ones the code runs.
+│ +4. The abstract and Discussion assert things the body has retracted.
+│ +
+│ +The carrier effect itself survives all of this and in one respect gets stronger (carrier
+│ +132/210 against base 0/258 in the unchopped segment). What does not survive as written is the
+│ +framing: "mass-twin controls isolate identity, not mass" and "a non-monotone, all-or-none
+│ +window". Fixing item 1 needs new rollouts, not editing.
+│ +
+│ +## Task 1 — verify scripts
+│ +
+│ +Interpreter `/home/t3rpz/critters/peabrain/.venv/bin/python`, `CUDA_VISIBLE_DEVICES=""`.
+│ +Outputs in `review_fable_evidence_r2/verify_*.out`; statuses in `02_verify_exit_statuses.txt`.
+│ +
+│ +| script | exit | note |
+│ +|---|---|---|
+│ +| l143_verify.py | 0 | all green |
+│ +| l149_verify.py | **1**, then 0 | see below |
+│ +| l158_verify.py | 0 | all green; abstract pinned at 1,916 chars (I recounted: 1,916) |
+│ +| l159_verify.py | 0 | pass |
+│ +| l161_verify.py | 0 | all green |
+│ +| l174_verify.py | 0 | all green |
+│ +
+│ +`l149_verify.py` failed at 10:12 with `AssertionError: (24) identifier digits removed != the
+│ +declared lane IDs`, after printing checks (1)–(23) green. Its hash was `9934180c…` when I
+│ +pinned it at 10:11:51, `4a580136…` when it ran, and `9595db3d…` at 10:18:47. Re-run at
+│ +10:19:59 on that third version: exit 0, 28 checks green, with `DRAFT.md` unchanged in between.
+│ +The diff between the failing and passing gate (361 lines, saved) re-points token-count pins for
+│ +the batch relabel (B26 → "batch A", counts 400 → 395 and 247 → 243). `banc/l174b4iiib/` was
+│ +being written at the same time. So the lane agent was mid-stage: the draft had been edited at
+│ +10:08 and the gate had not caught up.
+│ +
+│ +Two consequences. The draft was dispatched for review with one of six gates red. And the gate
+│ +went green by editing its pins to match the draft, which is what these gates are: they detect
+│ +change in the draft's token sets and check ledger equality. They do not check that a sentence
+│ +follows from the data. Every problem in Task 4 passes all six.
+│ +
+│ +## Task 2 — delta-check of the 12 round-1 majors
+│ +
+│ +Wording follows `review_fable.md`; the brief's shorthand list differs in places (its item 9 is
+│ +the "other pairs are 0/16" component of round-1 major 9).
+│ +
+│ +| # | round-1 major | verdict | evidence |
+│ +|---|---|---|---|
+│ +| 1 | Scramble arms unreported; uniqueness overclaim | **RESOLVED** | Title, abstract, §2.2 table, `l168.scr`. Residuals: counts are 39/48 where the paper's own canonical rule gives 41/50 (N7); "mass-matched" is loose (N7); result is scoring-window dependent (N2). |
+│ +| 2 | Male non-transfer was a floor artifact | **PARTIAL** | §2.6 (line 869) now says "UNTESTED AT MATCHED FLOOR, not 'no ladder'". But the abstract (line 476) still says "the male connectome admits no such ladder", and the new Discussion (line 1513) says "the ladder does not transfer to the male connectome at a matched synapse floor (§2.6)". §2.6 ran no dynamics on the floored male graph. The Discussion sentence is new and false. |
+│ +| 3 | Slow line described the stimulus | **RESOLVED** | Out of the headline; §3.3 states the chop; §2.8 re-attributes. I rebuilt the envelope: dominant line .100 Hz, next .1167 Hz at 47% (`out_p5_unchopped.txt`). |
+│ +| 4 | Gain re-matching confounded with the flip | **RESOLVED** | §2.4 gain table; §2.7 two 2×2 designs. All eight cells reproduce from raw (`out_p7_controls.txt`). Caveat under N2. |
+│ +| 5 | Jitter robustness narrower than stated | **PARTIAL** | §2.5 now says the interior re-draws. Still missing: the per-set carrier-vs-twin contrast, which the lab's own adjudication confirmed as clear in 3 of 5 sets. "a BROADER family than the critique demanded" is still there (line 845). Ensemble is still five sets at 1%. See N5. |
+│ … omitted 316 diff line(s) across 1 additional file(s)/section(s)
+💻 $ E=review_fable_evidence_r2 + 5 commands  2.2s
+💻 $ /home/t3rpz/critters/peabrain/.venv/bin/python - <<'EOF' p='review_fable_r2.md' s=open(p).read() reps=[ ("state named in the brief. Review window 2026-11-21 10:11–10:35 EST.", "state named in the brief. Review window 2026-11-21 10:11–10:30 EST."), ("- **The draft and one gate were edited while I reviewed.** `DRAFT.md` moved to sha\n `d76fa7d6…` at 10:20:34 (one 19-line changelog paragraph added; body byte-identical, diff\n saved). `l149_verify.py` had three different hashes during the window (see Task 1).", "- **The draft and one gate were edited while I reviewed.** `DRAFT.md` moved to sha\n `d76fa7d6…` at 10:20:34 (one 19-line changelog paragraph added; body byte-identical, diff\n saved). `l149_verify.py` had three different hashes during the window (see Task 1), and\n `CLAIM-MAP.md` and `banc/l174b4iiib/` also changed. Before/after file listings are saved."), ("Still present: a 429-line changelog banner above the title, the heading \"WORKING DRAFT — preprint skeleton\", 237 all-caps tokens of four or more letters in the body, no figure captions, §7 author notes (\"13 entries\"). Methods contain errors (N3). The abstract still opens \"We run a female Drosophila brain-and-nerve-cord connectome\"; no brain neuron is simulated.", "Still present: a changelog banner of about 430 lines above the title, the heading \"WORKING DRAFT — preprint skeleton\", 222 all-caps tokens of four or more letters between the abstract and §5 (126 distinct; 212 without BANC), no figure captions, §7 author notes (\"13 entries\"). Methods contain errors (N3). The abstract's second sentence still reads \"We run a female Drosophila brain-and-nerve-cord connectome\"; no brain neuron is simulated."), ("they degraded. The nearest cord rate model (the draft's reference 4) treats descending neurons\nas inputs the experimenter switches on.", "they degraded. The nearest cord rate model (the draft's reference 4) activates descending\nneurons in a screen, as inputs under the experimenter's control (from an excerpt of its\npreprint; I did not read the full text)."), ("**Prose for a mixed audience.** §1's first paragraph is unreadable cold: four results, eleven\nbracketed keys and nine all-caps words in one paragraph, before the reader knows what a cohort,\na twin or \"structure\" is.", "**Prose for a mixed audience.** §1's first paragraph is unreadable cold: four results, ten\nbracketed keys and nine all-caps words in 258 words, before the reader knows what a cohort,\na twin or \"structure\" is."), ("Arm codes (cutwA, silW, cutng25p, eOutInt) run through §2 without a\ntable defining them in plain words.", "Arm codes run through §2 without a table defining them in plain words (cutwA appears 29\ntimes, cutng25 26 times)."), ("| 00_sha256_at_start.txt, 01_mtime_snapshot_before.txt | pins before any run |", "| 00_sha256_at_start.txt, 01_mtime_snapshot_before.txt, 03_mtime_snapshot_after.txt | pins before any run; file listing after |"), ] for a,b in reps: assert s.count(a)==1, a[:60] s=s.replace(a,b) open(p,'w').write(s) print('patched', len(s)) EOF cat <<'EOF' ## 10:28 close-out - Report written: paper/review_fable_r2.md. Verdict: major revision. Delta-check 6 resolved / 5 partial / 1 unresolved / 0 regressed. - Counts used in the report re-measured on the a1848d89 snapshot: 430 banner lines before the title + 4 commands  0.6s
+
+────────────────────────────────────────
+✿ Miso
+Verdict: major revision, again (｡•̀ᴗ-)✧ The numbers are honest, but the framing built on them isn't yet.Report: /home/t3rpz/critters/peabrain-lab/paper/review_fable_r2.mdEvidence: /home/t3rpz/critters/peabrain-lab/paper/review_fable_evidence_r2/ (NOTES.md is the log)
+
+Verify scripts: five exit 0. l149 exited 1 at 10:12 on check (24), then 0 at 10:20 after the lane agent re-pointed its pins mid-review; DRAFT.md also gained a changelog paragraph at 10:20 (body unchanged; I reviewed the a1848d89 snapshot).
+
+Delta-check: 6 of 12 resolved (1, 3, 4, 6, 7, 10), 5 partial (2, 5, 8, 9, 11), 1 unresolved (12, figures), 0 regressed.
+
+Recompute: every pooled count, Wilson bound, difference interval and Fisher p I rebuilt from the raw traces matches the draft (carrier 203/210, twin 30/66, base 72/258, silW 78/98). One exception: the scramble arm is printed as 39/48 where the paper's own pooling rule gives 41/50.
+
+Top new majors ★1. The mass twin is a silent cell: mean rate .0033 against the carrier's .454 in the lab's own census (one seed, intact network). The lab log calls it "the SILENT twin"; the draft never says so. The title's control matches static weight, not delivered drive.2. The unchopped re-score is quoted only where it helps. Applied to every arm, k=58 goes from 1/258 to 186/258, the intact network from 207/513 to 0/513, and the scramble from 41/50 to 9/50. The carrier step itself gets cleaner (0/258 to 132/210).
+3. Methods don't match the code: weights are log1p(synapse count), not in-degree normalized. The cohort arms run on an undefined network of 560 brain-deafferented descending neurons, with ascending neurons excluded.
+4. The abstract and Discussion still say the male connectome has no ladder; §2.6 says that is untested.
+5. The twin's p = .008 is p = .09 when paired on its own seeds.Fixing #1 needs new rollouts (a single-cell scan on the k=24 base), not editing, nya~
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-8b3c9eea86323c31ba0553bdeda51432c0a8108b04a3b4b4137f21c95ad17965 -p maple
+
+Session:        local-8b3c9eea86323c31ba0553bdeda51432c0a8108b04a3b4b4137f21c95ad17965
+Duration:       16m 51s
+Messages:       94 (1 user, 92 tool calls)

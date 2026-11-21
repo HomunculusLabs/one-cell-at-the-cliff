@@ -1,0 +1,45 @@
+l169 (batch J) gain-swap 2x2, draft: wA 4/16 .426 | wAgN 2/16 .317 | n25gW 15/16 .702 | cutng25 16/16 .753
+    cutwA     fresh-16: R  4/16 (mean 0.426)  L  0/16 (mean 0.278) | incl. anchors R 4/18 L 0/18 | unchopped R 0/16
+    wAgN      fresh-16: R  2/16 (mean 0.317)  L  0/16 (mean 0.171) | incl. anchors R 2/18 L 0/18 | unchopped R 0/16
+    n25gW     fresh-16: R 15/16 (mean 0.702)  L  0/16 (mean 0.277) | incl. anchors R 16/18 L 0/18 | unchopped R 2/16
+    cutng25   fresh-16: R 16/16 (mean 0.753)  L  0/16 (mean 0.131) | incl. anchors R 18/18 L 0/18 | unchopped R 9/16
+l169d (batch L) XOR swap, draft: cutng25 16/16 .798 | cutng25p 8/16 .477 | p25gN 1/16 .324 | n25gP 15/16 .651
+    cutng25   fresh-16: R 16/16 (mean 0.798)  L  0/16 (mean 0.170) | incl. anchors R 18/18 L 0/18 | unchopped R 9/16
+    cutng25p  fresh-16: R  8/16 (mean 0.477)  L  0/16 (mean 0.191) | incl. anchors R 9/18 L 0/18 | unchopped R 0/16
+    p25gN     fresh-16: R  1/16 (mean 0.324)  L  0/16 (mean 0.132) | incl. anchors R 1/18 L 0/18 | unchopped R 0/16
+    n25gP     fresh-16: R 15/16 (mean 0.651)  L  0/16 (mean 0.253) | incl. anchors R 16/18 L 0/18 | unchopped R 4/16
+    cutwA     fresh-16: R  5/16 (mean 0.423)  L  3/16 (mean 0.291) | incl. anchors R 5/18 L 3/18 | unchopped R 0/16
+l169c2 (batch K) rewire + deletion, draft: cutwA 5/16 .452 | cutng25 15/16 .786 | rew1 16/16 .724 | rew2 1/16 .333 | rew3 3/16 .302 | hom 2/16 .301
+    cutwA     fresh-16: R  5/16 (mean 0.452)  L  0/16 (mean 0.250) | incl. anchors R 5/18 L 0/18 | unchopped R 0/16
+    cutng25   fresh-16: R 15/16 (mean 0.785)  L  0/16 (mean 0.148) | incl. anchors R 17/18 L 0/18 | unchopped R 13/16
+    rew1      fresh-16: R 16/16 (mean 0.724)  L  3/16 (mean 0.352) | incl. anchors R 17/18 L 3/18 | unchopped R 12/16
+    rew2      fresh-16: R  1/16 (mean 0.333)  L  0/16 (mean 0.240) | incl. anchors R 1/18 L 0/18 | unchopped R 8/16
+    rew3      fresh-16: R  3/16 (mean 0.302)  L  0/16 (mean 0.251) | incl. anchors R 3/18 L 0/18 | unchopped R 0/16
+    hom       fresh-16: R  2/16 (mean 0.301)  L  2/16 (mean 0.316) | incl. anchors R 2/18 L 2/18 | unchopped R 0/16
+l169b2 floor-4 dynamic arm, draft: f4wA/f4ng/f4tw all 0/16 R (.043/.081/.082); cutng25 16/16 .754; cutwA 3/16 .371; f4wA L 16/16 .698, f4ng L .289, f4tw L .560
+    f4wA      fresh-16: R  0/16 (mean 0.043)  L 16/16 (mean 0.698) | incl. anchors R 0/18 L 18/18 | unchopped R 0/16
+    f4ng      fresh-16: R  0/16 (mean 0.081)  L  2/16 (mean 0.289) | incl. anchors R 0/18 L 3/18 | unchopped R 0/16
+    f4tw      fresh-16: R  0/16 (mean 0.082)  L 10/16 (mean 0.560) | incl. anchors R 0/18 L 12/18 | unchopped R 0/16
+    cutwA     fresh-16: R  3/16 (mean 0.371)  L  0/16 (mean 0.233) | incl. anchors R 3/18 L 0/18 | unchopped R 0/16
+    cutng25   fresh-16: R 16/16 (mean 0.754)  L  0/16 (mean 0.106) | incl. anchors R 18/18 L 0/18 | unchopped R 7/16
+
+abstract flattened chars: 1916 | words: 301
+  line  476: admits no such ladder              | le the transition interior re-draws (0 of 5), and the male connectome admits no such ladder: the claim is cohort-relative, gain-robust at its endpoints
+  line 1513: does not transfer to the male      | law (§2.5). The same discipline applies across substrates: the ladder does not transfer to the male connectome at a matched synapse floor (§2.6), and on the fl
+  line  116: UNTESTED AT MATCHED FLOOR          | dder exists to walk" was a FLOOR ARTIFACT. The honest status > is now UNTESTED AT MATCHED FLOOR, with the floor-3 ladder stored as > design pins; what surv
+  line  869: UNTESTED AT MATCHED FLOOR          | , so all three shares were undefined. The honest status is therefore UNTESTED AT MATCHED FLOOR, not "no ladder": the earlier read was a floor artifact of 
+  line  465: converts kill to                   | es differ by 3.9e-04, identity carries it, not mass. Removing DNp33-L converts kill to super; its mass twin lands intermediate, not neutral (30 of
+  line  481: We
+release|We release              | 6 against 0 of 16) and a 0.3-Hz high-pass (15 of 16 against 1 of 16). We release the preregistration and bit-identity anchor protocol that m
+  line 1554: private tree                       | tration chain under peabrain-lab/banc/ (release form TBD by owner — private tree today; a public release needs owner decision). ## 7. Aut
+  line 1465: Wet-lab predictions are NOT        | registered left-side test is queued and nothing in §2 depends on it. Wet-lab predictions are NOT derived here. ## 5. Discussion A connectome-constrained m
+  line 1539: wet-lab replication can refute     |  structure statistic while its mass twin should not, and a spiking or wet-lab replication can refute that without reproducing our pipeline. The carrier's homolo
+  line 1191: in-degree                          |  type-name strings (tibia flexor 101 / extensor 12). Edge weights are in-degree normalized; inhibitory weights are scaled by β = 2.0 [l173.
+  line  845: BROADER family                     | e]; re-gains spanned g_full .1487–.1750 (±8%) [gains.full.spread] — a BROADER family than the critique demanded. Across those sets the carrier r
+  line  706: rank \(34/58\)|\(34/58\)           | / 13% motor, ZERO direct antagonist-pool edges, mid-pack removal-mass rank (34/58); the mass-twin carries the family's only interconnect edges
+  line 1563: 13 entries                         | re review. The real citation list shipped (L152, References below — 13 entries, primary-source verified) and Fig. 2 = the clamp-vs-cut g
+  line  619: own removal mass                   | d subnet and survives a MASS-matched twin control, with the carrier's own removal mass 9.72× below any band where mass alone reproduces the step. 
+  line 1505: own removal mass                   | different currencies, and the difference is large here: the carrier's own removal mass sits 9.72× below any band in which mass alone reproduces th
+  line  457: brain-and-nerve-cord               | ells matter, not just whether wiring does. We run a female Drosophila brain-and-nerve-cord connectome (BANC v626) as a rate model, every arm gain-bise
+  line  513: brain-and-nerve-cord               | ual lineage [1], the whole-brain sensorimotor model [2], an untrained brain-and-nerve-cord simulation [3], a frozen larval rate operator [7], and conn
+  line 1585: brain-and-nerve-cord               | rer, J., Geng, J., et al. Sensorimotor behaviour from an untrained brain-and-nerve-cord connectome. arXiv:2610.33881 (2026). 4. Pugliese, S. M.,

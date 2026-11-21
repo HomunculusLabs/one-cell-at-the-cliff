@@ -1,0 +1,50 @@
+no Ti traces l101/raw_l101.npz
+no Ti traces l103/raw_l103.npz
+no Ti traces l105/raw_l105.npz
+l107/raw_l107.npz            arms*seeds=   64 skipped=0  t=0s
+l109/raw_l109.npz            arms*seeds=  136 skipped=0  t=1s
+l111/raw_l111.npz            arms*seeds=   72 skipped=0  t=2s
+l113/raw_l113.npz            arms*seeds=   90 skipped=0  t=2s
+l115/raw_l115.npz            arms*seeds=  126 skipped=0  t=3s
+l116/raw_l116.npz            arms*seeds=   90 skipped=0  t=4s
+l117/raw_l117.npz            arms*seeds=  144 skipped=0  t=5s
+l118/raw_l118.npz            arms*seeds=  144 skipped=0  t=6s
+l119/raw_l119.npz            arms*seeds=  180 skipped=0  t=7s
+l120/raw_l120.npz            arms*seeds=  162 skipped=0  t=8s
+l121/raw_l121.npz            arms*seeds=  162 skipped=0  t=10s
+l122/raw_l122.npz            arms*seeds=  162 skipped=0  t=11s
+l123/raw_l123.npz            arms*seeds=  180 skipped=0  t=12s
+l124/raw_l124.npz            arms*seeds=  180 skipped=0  t=13s
+l125/raw_l125.npz            arms*seeds=  216 skipped=0  t=15s
+l126/raw_l126.npz            arms*seeds=  234 skipped=0  t=17s
+l127/raw_l127.npz            arms*seeds=  216 skipped=0  t=18s
+l128/raw_l128.npz            arms*seeds=  216 skipped=0  t=20s
+l131/raw_l131.npz            arms*seeds=  216 skipped=0  t=22s
+l133/raw_l133.npz            arms*seeds=  234 skipped=0  t=24s
+l135/raw_l135.npz            arms*seeds=  234 skipped=0  t=25s
+l137/raw_l137.npz            arms*seeds=  180 skipped=0  t=27s
+l139/raw_l139_j0.npz         arms*seeds=  108 skipped=0  t=27s
+l139/raw_l139_j1.npz         arms*seeds=   96 skipped=0  t=28s
+l139/raw_l139_j2.npz         arms*seeds=   96 skipped=0  t=29s
+l139/raw_l139_j3.npz         arms*seeds=   96 skipped=0  t=29s
+l139/raw_l139_j4.npz         arms*seeds=   96 skipped=0  t=30s
+l139/raw_l139_j5.npz         arms*seeds=   96 skipped=0  t=31s
+l142/raw_l142.npz            arms*seeds=  162 skipped=0  t=32s
+l144/raw_l144.npz            arms*seeds=  108 skipped=0  t=33s
+l145/raw_l145.npz            arms*seeds=  144 skipped=0  t=34s
+l148/raw_l148.npz            arms*seeds=  108 skipped=0  t=35s
+l150/raw_l150.npz            arms*seeds=  126 skipped=0  t=35s
+l154/raw_l154.npz            arms*seeds=   36 skipped=0  t=36s
+l169/raw_l169.npz            arms*seeds=  162 skipped=0  t=37s
+l169b2/raw_l169b2.npz        arms*seeds=  216 skipped=0  t=38s
+l169c2/raw_l169c2.npz        arms*seeds=  288 skipped=0  t=40s
+l169d/raw_l169d.npz          arms*seeds=  342 skipped=0  t=43s
+no Ti traces l65/raw_l65.npz
+no Ti traces l68/raw_l68.npz
+l78/raw_l78.npz              arms*seeds=   15 skipped=0  t=43s
+l91/raw_l91.npz              arms*seeds=  255 skipped=0  t=45s
+l92/raw_l92.npz              arms*seeds=   12 skipped=0  t=45s
+l93/raw_l93.npz              arms*seeds=   33 skipped=0  t=45s
+l94/raw_l94.npz              arms*seeds=  255 skipped=0  t=47s
+l95/raw_l95.npz              arms*seeds=   18 skipped=0  t=47s
+rows 6506 q07 windows 300 q14 windows 150

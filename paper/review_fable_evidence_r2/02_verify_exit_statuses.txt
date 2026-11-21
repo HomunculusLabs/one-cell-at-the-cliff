@@ -1,0 +1,7 @@
+l143 exit=0 secs= lines=12 sha=33e0fbc297eb2a22
+l149 exit=1 secs= lines=30 sha=4a5801364c5d48cc
+l158 exit=0 secs= lines=11 sha=e36696f1536e4bb5
+l159 exit=0 secs= lines=11 sha=d4e6d2107fa1dac2
+l161 exit=0 secs= lines=27 sha=87c1c9e9e1b99bd9
+l174 exit=0 secs= lines=14 sha=1ebf5926c78baa5b
+l149 rerun exit=0 at 10:19:59 sha=9595db3db2897cbc

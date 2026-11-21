@@ -1,0 +1,94 @@
+files with Ti traces: 44 | lab-admissible: 38 | admissible-but-missing-from-my-rows: []
+non-admissible files I also scored: ['l139/raw_l139_j1.npz', 'l139/raw_l139_j2.npz', 'l139/raw_l139_j3.npz', 'l139/raw_l139_j4.npz', 'l139/raw_l139_j5.npz', 'l95/raw_l95.npz']
+
+== A. canonical pooled counts (lab-admissible files, unique seeds), mine vs DRAFT §2.9
+b65       mine 513/513 [0.993,1.000] mean 0.995 dup 77 inconsistent 0 | draft 513/513 [0.993,1.000] 0.995  MATCH
+full      mine 207/513 [0.362,0.447] mean 0.457 dup 77 inconsistent 0 | draft 207/513 [0.362,0.447] 0.457  MATCH
+cutk5     mine   0/226 [0.000,0.017] mean 0.032 dup 26 inconsistent 0 | draft   0/226 [0.000,0.017] 0.032  MATCH
+cutng19   mine   5/178 [0.012,0.064] mean 0.220 dup 20 inconsistent 0 | draft   5/178 [0.012,0.064] 0.220  MATCH
+cutng23   mine   0/ 82 [0.000,0.045] mean 0.084 dup  8 inconsistent 0 | draft   0/ 82 [0.000,0.045] 0.084  MATCH
+cutwA     mine  72/258 [0.228,0.337] mean 0.404 dup 30 inconsistent 0 | draft  72/258 [0.228,0.337] 0.404  MATCH
+cutng25   mine 203/210 [0.933,0.984] mean 0.766 dup 24 inconsistent 0 | draft 203/210 [0.933,0.984] 0.766  MATCH
+cutng25p  mine  30/ 66 [0.340,0.574] mean 0.459 dup  6 inconsistent 0 | draft  30/ 66 [0.340,0.574] 0.459  MATCH
+cutng29   mine 188/194 [0.934,0.986] mean 0.768 dup 22 inconsistent 0 | draft 188/194 [0.934,0.986] 0.768  MATCH
+cut58     mine   1/258 [0.001,0.022] mean 0.220 dup 48 inconsistent 0 | draft   1/258 [0.001,0.022] 0.220  MATCH
+silW      mine  78/ 98 [0.706,0.864] mean 0.644 dup 10 inconsistent 0 | draft  78/ 98 [0.706,0.864] 0.644  MATCH
+eMotTop5  mine  31/ 98 [0.233,0.414] mean 0.412 dup 10 inconsistent 0 | draft  31/ 98 [0.233,0.414] 0.412  MATCH
+eMotBot5  mine  25/ 98 [0.179,0.350] mean 0.372 dup 10 inconsistent 0 | draft  25/ 98 [0.179,0.350] 0.372  MATCH
+eOutMot   mine  21/ 34 [0.450,0.761] mean 0.569 dup  2 inconsistent 0 | draft  21/ 34 [0.450,0.761] 0.569  MATCH
+A all match: True
+
+== B. contrasts, mine vs DRAFT §2.9 difference table
+carrier-base   203/210 vs  72/258 d=+0.688 [+0.621,+0.742] p=3.37e-59 | draft +0.688 [+0.621,+0.742] p=3.4e-59 MATCH
+carrier-twin   203/210 vs  30/ 66 d=+0.512 [+0.388,+0.628] p=3.85e-20 | draft +0.512 [+0.388,+0.628] p=3.8e-20 MATCH
+twin-base       30/ 66 vs  72/258 d=+0.175 [+0.047,+0.305] p=0.0076 | draft +0.175 [+0.047,+0.305] p=0.008 MATCH
+clamp-base      78/ 98 vs  72/258 d=+0.517 [+0.410,+0.602] p=6.68e-19 | draft +0.517 [+0.410,+0.602] p=6.7e-19 MATCH
+clamp-carrier   78/ 98 vs 203/210 d=-0.171 [-0.263,-0.095] p=2.86e-06 | draft -0.171 [-0.263,-0.095] p=2.9e-06 MATCH
+10mot-base      21/ 34 vs  72/258 d=+0.339 [+0.162,+0.491] p=0.000144 | draft +0.339 [+0.162,+0.491] p=0.00014 MATCH
+10mot-carrier   21/ 34 vs 203/210 d=-0.349 [-0.517,-0.202] p=3.06e-08 | draft -0.349 [-0.517,-0.202] p=3.1e-08 MATCH
+top5-base       31/ 98 vs  72/258 d=+0.037 [-0.064,+0.147] p=0.514 | draft +0.037 [-0.064,+0.147] p=0.51 MATCH
+bot5-base       25/ 98 vs  72/258 d=-0.024 [-0.119,+0.083] p=0.691 | draft -0.024 [-0.119,+0.083] p=0.69 MATCH
+k23-base         0/ 82 vs  72/258 d=-0.279 [-0.337,-0.211] p=1.74e-10 | draft -0.279 [-0.337,-0.211] p=1.7e-10 MATCH
+base-full       72/258 vs 207/513 d=-0.124 [-0.191,-0.053] p=0.000831 | draft -0.124 [-0.191,-0.053] p=0.00083 MATCH
+LEFT carrier-base 0/210 vs 13/258 d=-0.050 [-0.084,-0.023] p=0.000402 | draft 0/210 vs 13/258 -.050 [-.084,-.023] 4.0e-04
+B all match: True
+
+== C. is the TWIN contrast robust to HOW it is pooled? (twin = cutng25p)
+twin seeds 66; of these also run on the base arm: 66; also on carrier arm: 66
+SAME-SEED (paired) twin 30/66 vs base 19/66 ; discordant twin-only 23, base-only 12 ; exact McNemar p=0.0895
+  same-seed unpaired form: d=+0.167 [+0.002,+0.319] Fisher p=0.0711
+  paired mean-duty difference twin-base on common seeds: +0.048 boot95 [-0.004,+0.101]; seeds up 38 down 28
+per-file twin vs base (same file):
+  l133/raw_l133.npz        ADM twin  8/18  base  6/18  carrier 18/18
+  l135/raw_l135.npz        ADM twin  6/18  base  5/18  carrier 17/18
+  l139/raw_l139_j0.npz     ADM twin 10/18  base  3/18  carrier 16/18
+  l139/raw_l139_j1.npz     not twin 13/16  base 10/16  carrier 16/16
+  l139/raw_l139_j2.npz     not twin  5/16  base  0/16  carrier 16/16
+  l139/raw_l139_j3.npz     not twin  6/16  base  3/16  carrier 13/16
+  l139/raw_l139_j4.npz     not twin  0/16  base  1/16  carrier 14/16
+  l139/raw_l139_j5.npz     not twin 13/16  base 15/16  carrier 13/16
+  l169d/raw_l169d.npz      ADM twin  9/18  base  5/18  carrier 18/18
+
+== D. batch homogeneity of the k/n arms (are seeds exchangeable across batches?)
+full      per-batch k: [np.int64(5), np.int64(12), np.int64(6), np.int64(9), np.int64(6), np.int64(7), np.int64(7), np.int64(4), np.int64(8), np.int64(7), np.int64(4), np.int64(10), np.int64(2), np.int64(6), np.int64(6), np.int64(4), np.int64(6), np.int64(7), np.int64(10), np.int64(4), np.int64(6), np.int64(8), np.int64(8), np.int64(6), np.int64(8), np.int64(9), np.int64(8), np.int64(5), np.int64(6), np.int64(5), np.int64(8)]  n: [16, 33]  chi2=27.6 df=30  permutation p=0.6046
+cutwA     per-batch k: [np.int64(5), np.int64(4), np.int64(3), np.int64(6), np.int64(6), np.int64(5), np.int64(3), np.int64(4), np.int64(5), np.int64(5), np.int64(4), np.int64(5), np.int64(4), np.int64(3), np.int64(5), np.int64(5)]  n: [16, 18]  chi2=4.3 df=15  permutation p=0.9975
+cutng25p  per-batch k: [np.int64(8), np.int64(5), np.int64(9), np.int64(8)]  n: [16, 18]  chi2=2.2 df=3  permutation p=0.5811
+cutng25   per-batch k: [np.int64(18), np.int64(16), np.int64(15), np.int64(14), np.int64(14), np.int64(16), np.int64(16), np.int64(15), np.int64(16), np.int64(16), np.int64(16), np.int64(15), np.int64(16)]  n: [16, 18]  chi2=14.1 df=12  permutation p=0.3073
+silW      per-batch k: [np.int64(15), np.int64(14), np.int64(14), np.int64(11), np.int64(11), np.int64(13)]  n: [16, 18]  chi2=3.7 df=5  permutation p=0.6271
+eMotTop5  per-batch k: [np.int64(7), np.int64(8), np.int64(5), np.int64(5), np.int64(3), np.int64(3)]  n: [16, 18]  chi2=5.4 df=5  permutation p=0.3832
+eMotBot5  per-batch k: [np.int64(7), np.int64(2), np.int64(5), np.int64(5), np.int64(5), np.int64(1)]  n: [16, 18]  chi2=7.1 df=5  permutation p=0.2168
+cutng19   per-batch k: [np.int64(0), np.int64(0), np.int64(1), np.int64(1), np.int64(1), np.int64(0), np.int64(1), np.int64(0), np.int64(1), np.int64(0), np.int64(0)]  n: [16, 18]  chi2=6.3 df=10  permutation p=0.8237
+
+== E. the five 1%-jitter networks (l139): carrier vs twin vs base, right side
+set j0 | full  8/18 (0.45) | cutng23  0/18 (0.10) | cutwA  3/18 (0.38) | cutng25p 10/18 (0.45) | cutng25 16/18 (0.74) | cutng29 18/18 (0.75) | carrier-vs-twin Fisher p=0.0599 | twin-vs-base p=0.0354
+set j1 | full  7/16 (0.49) | cutng23  1/16 (0.11) | cutwA 10/16 (0.53) | cutng25p 13/16 (0.60) | cutng25 16/16 (0.79) | cutng29 15/16 (0.77) | carrier-vs-twin Fisher p=0.226 | twin-vs-base p=0.433
+set j2 | full  6/16 (0.47) | cutng23  0/16 (0.17) | cutwA  0/16 (0.34) | cutng25p  5/16 (0.37) | cutng25 16/16 (0.69) | cutng29 13/16 (0.64) | carrier-vs-twin Fisher p=6.77e-05 | twin-vs-base p=0.0434
+set j3 | full  4/16 (0.39) | cutng23  1/16 (0.17) | cutwA  3/16 (0.29) | cutng25p  6/16 (0.44) | cutng25 13/16 (0.65) | cutng29 15/16 (0.71) | carrier-vs-twin Fisher p=0.029 | twin-vs-base p=0.433
+set j4 | full  9/16 (0.53) | cutng23  0/16 (0.17) | cutwA  1/16 (0.29) | cutng25p  0/16 (0.30) | cutng25 14/16 (0.69) | cutng29  9/16 (0.52) | carrier-vs-twin Fisher p=5.09e-07 | twin-vs-base p=1
+set j5 | full  4/16 (0.39) | cutng23  0/16 (0.19) | cutwA 15/16 (0.63) | cutng25p 13/16 (0.67) | cutng25 13/16 (0.69) | cutng29 13/16 (0.71) | carrier-vs-twin Fisher p=1 | twin-vs-base p=0.6
+
+== F. what are the classes made of? tibia pool activity in the scored windows (lab-admissible, unique seeds)
+arm        n   meanR-duty | flexR mean  sd | extR mean  sd | flat-window count (R) | median S (R)
+b65        513  0.995 | 0.0271 0.0170 | 0.1263 0.0848 |     0 of 153900 | 0.692
+full       513  0.457 | 0.0144 0.0188 | 0.1980 0.1281 |     0 of 153900 | 0.228
+cutk5      226  0.032 | 0.0147 0.0082 | 0.0289 0.0428 |     0 of 67800 | -0.379
+cutng19    178  0.220 | 0.0218 0.0088 | 0.0253 0.0371 |     0 of 53400 | 0.097
+cutng23     82  0.084 | 0.0207 0.0080 | 0.0153 0.0283 |     0 of 24600 | -0.011
+cutwA      258  0.404 | 0.0260 0.0069 | 0.0261 0.0432 |     0 of 77400 | 0.176
+cutng25p    66  0.459 | 0.0261 0.0068 | 0.0271 0.0444 |     0 of 19800 | 0.232
+cutng25    210  0.766 | 0.0247 0.0105 | 0.0331 0.0499 |     0 of 63000 | 0.590
+cutng29    194  0.768 | 0.0238 0.0096 | 0.0314 0.0494 |     0 of 58200 | 0.571
+cut58      258  0.220 | 0.0195 0.0102 | 0.1797 0.0987 |     0 of 77400 | 0.114
+silW        98  0.644 | 0.0236 0.0087 | 0.0304 0.0468 |     0 of 29400 | 0.449
+
+== G. scramble arm under the canonical rule vs the count the DRAFT prints (39/48)
+cutscr0   canonical unique-seed R 41/50  L 37/50
+cutscr1   canonical unique-seed R  0/34  L  0/34
+cutscr2   canonical unique-seed R 12/34  L 25/34
+cutscr3   canonical unique-seed R 18/34  L 13/34
+cutcl40   canonical unique-seed R  0/18  L 12/18
+cutscrL1  canonical unique-seed R 11/18  L  0/18
+cutscrL2  canonical unique-seed R  4/18  L 11/18
+
+== H. every arm name present in admissible files (inventory for the single-cell-scan question)
+[('b65', 590), ('base', 3), ('cfh', 51), ('cfh_fb', 51), ('cfn', 54), ('cfn_fb', 51), ('chop200', 3), ('chop50', 3), ('csham', 51), ('cut', 392), ('cut19', 342), ('cut58', 306), ('cutR1', 18), ('cutR2', 18), ('cutR3', 18), ('cutcl40', 18), ('cutk1', 18), ('cutk10', 18), ('cutk15', 18), ('cutk2', 18), ('cutk3', 36), ('cutk4a', 18), ('cutk4b', 18), ('cutk5', 252), ('cutng19', 198), ('cutng21', 18), ('cutng23', 90), ('cutng25', 234), ('cutng25p', 72), ('cutng26', 72), ('cutng28', 18), ('cutng29', 216), ('cutng39', 36), ('cutnga', 18), ('cutngb', 18), ('cutngc', 18), ('cutr5', 18), ('cutscr0', 54), ('cutscr1', 36), ('cutscr2', 36), ('cutscr3', 36), ('cutscrL1', 18), ('cutscrL2', 18), ('cutwA', 288), ('cutwB', 36), ('d105_R_20', 3), ('d74b_R_20', 3), ('eAll', 36), ('eIn', 18), ('eMotBot5', 108), ('eMotIn', 18), ('eMotTop5', 108), ('eOutAll', 18), ('eOutInt', 18), ('eOutMot', 36), ('f4ng', 54), ('f4tw', 54), ('f4wA', 54), ('fbn_g01', 3), ('fbn_g03', 3), ('fbp_g01', 3), ('fh', 51), ('fh_fb', 51), ('fn', 51), ('fn_fb', 51), ('fsham', 51), ('full', 590), ('h65', 50), ('hom', 36), ('intr16_05', 3), ('intr16_20', 3), ('n25gP', 18), ('n25gW', 72), ('off', 18), ('oldref', 3), ('open', 3), ('p25gN', 18), ('rew1', 36), ('rew2', 36), ('rew3', 36), ('se0', 18), ('sham_g01', 3), ('shamdn_20a', 3), ('shamdn_20b', 3), ('shamint_20a', 3), ('shamint_20b', 3), ('sil1110', 36), ('sil1110_wA', 18), ('sil24', 18), ('sil319', 18), ('silW', 90), ('silrand1', 18), ('silrand2', 18), ('silrand3', 18), ('tidon_20', 3), ('vol1110', 18), ('volrand', 18), ('wAgN', 72), ('xl080_L_20', 3)]

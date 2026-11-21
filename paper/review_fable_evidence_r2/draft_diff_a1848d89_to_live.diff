@@ -1,0 +1,20 @@
+429a430,448
+> >
+> > v3.30 = L174 stage (b4-iii-b) fold — the BATCH-CODE RELABEL. The `B<n>`
+> > shape was read rather than assumed and splits into three classes the frozen
+> > partition had conflated: nineteen prose batch codes (eleven distinct) now
+> > carry the reader-facing labels A to L, assigned in RUN ORDER with I and O
+> > skipped so a label cannot be read as a digit; six occurrences sit inside
+> > stored artefact keys, which are filenames and stay byte-exact; and four are
+> > preregistered BRANCH labels, declared out of scope. A letter scheme was
+> > chosen because it adds no digit run, so the measurement multiset is
+> > identical with no removed-run disclosure needed at all — every identifier
+> > run that leaves is a declared relabel and every one that enters is a row of
+> > the new mapping. §3.7 Methods gains that mapping as its one declared home
+> > for the internal codes, bijective and monotone in run order so the draft's
+> > fresh-batch claims read in sequence. The pre-image plus the declared edits
+> > reproduces the live draft byte for byte from the title onward, two
+> > paragraphs are re-wrapped with their line counts unchanged, and the five
+> > verifier literals that quoted a code are re-pointed with their measurements
+> > still attached. The all-caps strip (b4-iii-c), the changelog banner (b4-iv)
+> > and stage (c) remain OPEN on card L174.
