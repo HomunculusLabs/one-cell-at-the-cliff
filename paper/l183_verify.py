@@ -30,6 +30,23 @@ branch rules re-applied, each sentence-level reading of the new text proved);
 the four finalization pins at the end of (5) are re-pinned to the stage-7
 state with the retired values kept beside them.  Nothing was removed.
 
+L197 REPAIRS (2026-11-21, stage 8; receipt in LANE-LOG and
+banc/l197_worklog.md).  The fourth-round referee's three minor repairs enter
+as eleven more declared edits and five keys (l139.sets, l139.gains,
+l139.contrast, l175.null_centre, l197.reference).  Sections (1), (2), (4) and
+(6) are unchanged and run over the stage-8 ledger.  Section (3) gains ONE
+declared non-measurement class, the figure label ("Fig. 4"), the sibling of
+the table label already declared; the predicate self-test still fires.
+Section (5) GAINS the L197 re-derivation (the per-set jitter table recounted
+from the stored cells, the registered super rule re-applied per cell, the
+null centre and its interval recomputed from the stored per-seed duties, the
+reference contrast and its Newcombe interval recomputed, and one check per
+sentence-level reading); the four finalization pins are re-pinned to the
+stage-8 state with the retired values kept beside them.  NEW section (7): the
+figure layer resolves (every cited figure file exists under paper/, Figs 1-5
+are each cited, the three legacy figures are byte-identical to their lab
+originals, and both figure verifiers exit 0).  Nothing was removed.
+
 Run: python3 paper/l183_verify.py     (stdlib only; zero rollouts)
 """
 import csv, hashlib, json, math, os, re, sys
@@ -104,6 +121,9 @@ EXEMPT = [   # (regex, the declared class it removes)
     (r'\b(?:DN[a-z]*\d+(?:-[LR])?|IN\d+[A-Z]\d+|GAL4)\b', 'cell / tool name'),
     (r'\b(?:Table|Tables|entry|entries|Entries|[Ss]tage) \d+(?:-\d+)?',
      'table / reference-entry / stage label'),
+    # L197 (2026-11-21; receipt in LANE-LOG): the figure label, sibling of the
+    # table label above.  Section (7) below checks what the label points at.
+    (r'\bFigs?\.? \d+', 'figure label'),
     (r'\b(?:0\.7|1\.4)[- ]Hz\b', 'drive-segment frequency (protocol, 3.3)'),
     (r'\+0\.1%', 'unit of the gain slope'),
     (r'\b95%', 'confidence level'),
@@ -460,6 +480,237 @@ print('(5) L190 (stage 7): 4 arms x 16 seeds recounted from the stored rows '
       % (_e['kR'], _e['meanR'], _e['vs_base']['mean'], *_e['vs_base']['ci95'],
          _s['kR'], _s['meanR'], EMn['edge_share_of_carrier'],
          EMn['seed_lo'], EMn['seed_hi']))
+# ---- L197 repairs (stage 8): jitter table, yardstick, null centre ----------
+r139 = json.load(open(os.path.join(B, 'l139', 'results_l139.json')))
+JSn, JGn = nums['l139.sets']['v'], nums['l139.gains']['v']
+JTn = nums['l139.contrast']['v']
+_A3 = ('cutwA', 'cutng25p', 'cutng25')        # base, base + mass twin, carrier
+_SETS = ['0', '1', '2', '3', '4', '5']
+_JIT = _SETS[1:]
+ck(sorted(JSn) == sorted(JGn) == sorted(r139['sets']) == sorted(r139['gains'])
+   == _SETS, '(5) l139 set labels')
+ck(all(JSn[s][a] == {k: r139['sets'][s][a][k] for k in ('kR', 'meanR', 'cls')}
+       and JGn[s][a] == r139['gains'][s][a] for s in _SETS for a in _A3)
+   and all(sorted(JSn[s]) == sorted(JGn[s]) == sorted(_A3) for s in _SETS),
+   '(5) l139.sets / l139.gains are not the stored cells verbatim')
+# the registered super rule, re-applied to every cell of Table 5
+ck(all(_sup(r139['sets'][s][a]) == (r139['sets'][s][a]['cls'] == 'SUPER')
+       for s in _SETS for a in _A3),
+   '(5) a stored class label of Table 5 disagrees with the registered super rule')
+ck(sorted(nums['sustain.cutng25']['v']['classes']) == _JIT
+   and all(nums['sustain.' + a]['v']['classes'][s] == r139['sets'][s][a]['cls']
+           for s in _JIT for a in _A3),
+   '(5) Table 5 classes != the class-sustain keys section 2.10 already cites')
+_k139 = lambda s, a: r139['sets'][s][a]['kR']
+_hold139 = {}
+for _s in _SETS:
+    _b, _t, _c = (r139['sets'][_s][a] for a in _A3)
+    _hold139[_s] = (_sup(_c) and not _sup(_b) and not _sup(_t)
+                    and _c['kR'] > _b['kR'] and _c['kR'] > _t['kR'])
+    _p = JTn['per_set'][_s]
+    ck(_p['carrier_minus_base'] == _c['kR'] - _b['kR']
+       and _p['carrier_minus_twin'] == _c['kR'] - _t['kR']
+       and _p['holds'] is _hold139[_s]
+       and _p['n_super'] == sum(_sup(x) for x in (_b, _t, _c))
+       and near(_p['base_gain_delta_pct'], (r139['gains'][_s]['cutwA']
+                                           / r139['gains']['0']['cutwA'] - 1) * 100),
+       '(5) l139.contrast.per_set.%s != recomputed from the stored cells' % _s)
+_holds = [int(s) for s in _JIT if _hold139[s]]
+_adv = [int(s) for s in _JIT if not _hold139[s]]
+ck(JTn['hold_sets'] == _holds == [1, 2, 3, 4] and JTn['n_sets_hold'] == 4
+   and JTn['n_jitter_sets'] == 5 and JTn['n_networks'] == 6
+   and _adv == [JTn['adverse_set']] == [5] and _hold139['0'],
+   '(5) "the title contrast holds in 4 of the 5 jitter sets ... and does not '
+   'hold in set 5" / "In sets 1 to 4"')
+ck(all(JTn['per_set'][str(s)]['n_super'] == 1 for s in _holds),
+   '(5) "the only one of the three in the super class" in the holding sets')
+for _lab, _a in (('base', 'cutwA'), ('twin', 'cutng25p'), ('carrier', 'cutng25')):
+    _pp = JTn['pooled'][_lab]
+    ck(_pp['kR'] == sum(_k139(s, _a) for s in _JIT) and _pp['n'] == 16 * 5
+       and near(_pp['meanR'], sum(r139['sets'][s][_a]['meanR'] for s in _JIT) / 5),
+       '(5) l139.contrast.pooled.%s' % _lab)
+_Pn = JTn['pooled']
+ck(_Pn['carrier_minus_base'] == _Pn['carrier']['kR'] - _Pn['base']['kR'] > 0
+   and _Pn['carrier_minus_twin'] == _Pn['carrier']['kR'] - _Pn['twin']['kR'] > 0
+   and _Pn['carrier']['meanR'] > max(_Pn['base']['meanR'], _Pn['twin']['meanR']),
+   '(5) "holds summed over them"')
+ck(JTn['n_seeds'] == 16 and '3201-3216' in open(os.path.join(
+       B, 'l139', 'PREREG.md')).read()
+   and 'same B28 seed = same noise draw in every set' in open(os.path.join(
+       B, 'l139', 'PREREG.md')).read(),
+   '(5) "The same 16 seeds run in every network"')
+_th = JTn['tightest_hold']
+_ts = str(_th['set'])
+ck(_th['set'] == min(_holds, key=lambda s: _k139(str(s), 'cutng25')
+                     - _k139(str(s), 'cutng25p'))
+   and _th['carrier_minus_twin'] == _k139(_ts, 'cutng25') - _k139(_ts, 'cutng25p')
+   and (_th['twin_kR'], _th['twin_meanR']) == (
+       _k139(_ts, 'cutng25p'), r139['sets'][_ts]['cutng25p']['meanR'])
+   and _th['twin_kR'] >= _BDn['super_kR_min']
+   and _BDn['super_meanR_min'] - .01 < _th['twin_meanR'] < _BDn['super_meanR_min'],
+   '(5) "The narrowest of the four is set 1 ... just under the band\'s mean bar"')
+_ad = JTn['adverse']
+_as = str(JTn['adverse_set'])
+ck((_ad['base_kR'], _ad['twin_kR'], _ad['carrier_kR'])
+   == tuple(_k139(_as, a) for a in _A3)
+   and all(_sup(r139['sets'][_as][a]) for a in _A3)
+   and _ad['base_minus_carrier'] == _ad['base_kR'] - _ad['carrier_kR'] == 2
+   and _ad['carrier_minus_twin'] == 0
+   and near(_ad['base_gain_delta_pct'], JTn['per_set'][_as]['base_gain_delta_pct'], 1e-9),
+   '(5) set 5: "the base reaches the super class with the carrier still in it '
+   '... the twin arm reaches it too ... 2 seeds below the base and level with '
+   'the twin arm"')
+
+
+def _rk197(v):
+    o = sorted(range(len(v)), key=lambda i: v[i])
+    out = [0.0] * len(v)
+    i = 0
+    while i < len(o):
+        j = i
+        while j + 1 < len(o) and v[o[j + 1]] == v[o[i]]:
+            j += 1
+        for q in range(i, j + 1):
+            out[o[q]] = (i + j) / 2 + 1
+        i = j + 1
+    return out
+
+
+def _sp197(a, b):
+    ra, rb = _rk197(a), _rk197(b)
+    ma, mb = sum(ra) / len(ra), sum(rb) / len(rb)
+    return sum((x - ma) * (y - mb) for x, y in zip(ra, rb)) / (
+        sum((x - ma) ** 2 for x in ra) * sum((y - mb) ** 2 for y in rb)) ** .5
+
+
+_bg = [r139['gains'][s]['cutwA'] for s in _SETS]
+_bk = [_k139(s, 'cutwA') for s in _SETS]
+_by_gain = [k for _, k in sorted(zip(_bg, _bk))]
+ck(JTn['base_kR_by_set'] == _bk
+   and JTn['base_gain_lowest_set'] == int(min(_SETS, key=lambda s: _bg[int(s)]))
+   == JTn['adverse_set'] == JTn['base_kR_highest_set']
+   and near(JTn['rho_base_gain_kR'], _sp197(_bg, _bk))
+   and all(x >= y for x, y in zip(_by_gain, _by_gain[1:]))
+   and _ad['base_gain_delta_pct'] < 0,
+   '(5) "the base re-bisects to the lowest gain of the six networks ... the '
+   'base\'s count falls as its gain rises"')
+ck(R2['slope_meanR_per_0p1pct'] < 0 and R2['deltas_pct'][2] == 0.0
+   and min(R2['kR'][:2]) > R2['kR'][2],
+   '(5) "On the unjittered graph a lower gain alone raises the base (2.2)"')
+# the centre of the silent-cell null, from the stored per-seed duties
+NCn = nums['l175.null_centre']['v']
+_NLn = nums['l175.null']['v']
+_sil = [a for a in r175['window'] if not a['active']]
+_car = next(a for a in r175['window'] if a['arm'] == 'sc25')
+_bD = r175['base']['dutyR']
+_mb = sum(_bD) / 16
+_armm = [sum(a['dutyR']) / 16 for a in _sil]
+_sd_ = [sum(a['dutyR'][i] for a in _sil) / len(_sil) - _bD[i] for i in range(16)]
+_m = sum(_sd_) / 16
+_hf = _T15 * (sum((x - _m) ** 2 for x in _sd_) / 15) ** .5 / 4
+ck(len(_sil) == NCn['n'] == _NLn['n_silent'] == 20
+   and all(len(a['dutyR']) == 16 for a in _sil) and len(_bD) == 16
+   and near(NCn['mean'], _m, 1e-9) and near(NCn['base_duty'], _mb, 1e-9)
+   and near(NCn['mean_duty'], sum(_armm) / 20, 1e-9)
+   and NCn['n_above'] == sum(x > _mb for x in _armm)
+   == sum(a['meanR'] > r175['base']['meanR'] for a in _sil)
+   and NCn['n_above'] + NCn['n_below'] == 20,
+   '(5) l175.null_centre: mean / counts != recomputed from the per-seed duties')
+ck(near(NCn['over_seeds']['mean'], _m, 1e-9)
+   and near(NCn['over_seeds']['ci95'][0], _m - _hf, 1e-9)
+   and near(NCn['over_seeds']['ci95'][1], _m + _hf, 1e-9)
+   and NCn['over_seeds']['n_up'] == sum(x > 0 for x in _sd_)
+   and NCn['over_seeds']['n'] == 16,
+   '(5) l175.null_centre.over_seeds != recomputed paired t interval')
+ck(_m > 0 and NCn['n_above'] > NCn['n_below']
+   and NCn['over_seeds']['ci95'][0] < 0 < NCn['over_seeds']['ci95'][1],
+   '(5) "above the base as a point estimate and is not resolved from zero"')
+_gp = [a['gain_delta_vs_wA'] / r175['base']['gain'] * 100 for a in _sil]
+ck(near(NCn['mean_gain_pct'], sum(_gp) / 20, 1e-9) and NCn['mean_gain_pct'] < 0
+   and all(near(a['gain_delta_vs_wA'] / r175['base']['gain'] * 100,
+               S[a['arm']]['gain_pct'], 6e-3) for a in _sil),
+   '(5) "re-bisect to gains that average ... below the base\'s"')
+ck(near(NCn['carrier_minus_centre'], sum(_car['dutyR']) / 16 - sum(_armm) / 20, 1e-9)
+   and max(_armm) < sum(_car['dutyR']) / 16
+   and max(a['meanR'] for a in _sil) == _NLn['silent_meanR_max'] < _car['meanR'],
+   '(5) "The carrier\'s mean duty stands ... above it and above every arm in '
+   'the null"')
+# the reference network: recomputed from the Table 4 pools and the stored rows
+REFn = nums['l197.reference']['v']
+for _lab, _arm in (('reference', 'b65'), ('closure', 'full'), ('base', 'cutwA'),
+                   ('carrier', 'cutng25')):
+    _d = REFn[_lab]
+    ck(_d['code'] == _arm and all(_d[k] == LFn[_arm][k] for k in
+                                  ('n', 'chopped_k', 'chopped_mean', 'fast_k',
+                                   'fast_mean')),
+       '(5) l197.reference.%s != the Table 4 pool (itself re-pooled above)' % _lab)
+
+
+def _wil(k, n, z=1.959963984540054):
+    ph = k / n
+    den = 1 + z * z / n
+    c = (ph + z * z / (2 * n)) / den
+    h = z * ((ph * (1 - ph) / n + z * z / (4 * n * n)) ** .5) / den
+    return max(0.0, c - h), min(1.0, c + h)
+
+
+def _newc(k1, n1, k2, n2):
+    p1, p2 = k1 / n1, k2 / n2
+    (l1, u1), (l2, u2) = _wil(k1, n1), _wil(k2, n2)
+    d = p1 - p2
+    return d, d - ((p1 - l1) ** 2 + (u2 - p2) ** 2) ** .5, \
+        min(1.0, d + ((u1 - p1) ** 2 + (p2 - l2) ** 2) ** .5)
+
+
+_Rr, _Cc = REFn['reference'], REFn['closure']
+for _key, _col in (('fast_diff', 'fast_k'), ('chopped_diff', 'chopped_k')):
+    _d, _lo, _hi = _newc(_Rr[_col], _Rr['n'], _Cc[_col], _Cc['n'])
+    ck(near(REFn[_key]['diff'], _d, 1e-9) and near(REFn[_key]['ci95'][0], _lo, 1e-9)
+       and near(REFn[_key]['ci95'][1], _hi, 1e-9),
+       '(5) l197.reference.%s != recomputed Newcombe interval' % _key)
+_seedset = lambda arm: {r['seed'] for r in _rows
+                        if r['arm'] == arm and r['file'] in _adm}
+ck(REFn['same_seeds'] is (_seedset('b65') == _seedset('full'))
+   and len(_seedset('b65')) == _Rr['n'] and len(_seedset('full')) == _Cc['n'],
+   '(5) l197.reference.same_seeds')
+ck(_Rr['chopped_k'] == _Rr['fast_k'] == _Rr['n'] and _Cc['fast_k'] == 0
+   and REFn['fast_diff']['diff'] == 1.0 and REFn['fast_diff']['ci95'][0] > .98,
+   '(5) "structured in every seed" / the reference-minus-closure contrast')
+_others = [a for a in LFn if a != 'b65']
+ck(max(abs(LFn[a][c] / LFn[a]['n'] - LFn[b][c] / LFn[b]['n'])
+       for a in _others for b in _others for c in ('chopped_k', 'fast_k')) < 1.0
+   == REFn['fast_diff']['diff'],
+   '(5) "Adding the projectors is the largest effect in this paper": a '
+   'contrast between two networks that both hold the projectors reaches the '
+   'maximum too')
+_car_ref = REFn['carrier']
+ck(REFn['base']['chopped_mean'] < _car_ref['chopped_mean'] < _Rr['chopped_mean']
+   and near(REFn['carrier_below_reference'],
+            _Rr['chopped_mean'] - _car_ref['chopped_mean'], 1e-9)
+   and REFn['carrier_below_reference'] > .2
+   and _car_ref['fast_k'] < _car_ref['n']
+   and near(REFn['carrier_above_base'],
+            _car_ref['chopped_mean'] - REFn['base']['chopped_mean'], 1e-9),
+   '(5) "between the base and the baseline network ... a partial recovery, '
+   'not a transition beyond it"')
+ck((REFn['super_meanR_min'], REFn['super_kR_min'])
+   == (_BDn['super_meanR_min'], _BDn['super_kR_min'])
+   and _car_ref['chopped_mean'] >= REFn['super_meanR_min']
+   and _Rr['chopped_mean'] - REFn['super_meanR_min'] > .3,
+   '(5) "The band\'s floor ... sits far below that level"')
+print('(5) L197 (stage 8): Table 5 = 6 networks x 3 arms == the stored cells, '
+      'registered super rule re-applied per cell; contrast holds in sets %s and '
+      'summed (%d/%d vs base %d, twin %d), does NOT hold in set %d (base %d, '
+      'twin %d, carrier %d of 16); null centre %+.3f [%+.3f, %+.3f] over 16 '
+      'seeds, %d of %d arms above the base; reference minus closure %+.3f '
+      '[%+.3f, %+.3f] (Newcombe), carrier %.3f between base %.3f and reference '
+      '%.3f'
+      % (_holds, _Pn['carrier']['kR'], _Pn['carrier']['n'], _Pn['base']['kR'],
+         _Pn['twin']['kR'], JTn['adverse_set'], _ad['base_kR'], _ad['twin_kR'],
+         _ad['carrier_kR'], _m, _m - _hf, _m + _hf, NCn['n_above'], NCn['n'],
+         REFn['fast_diff']['diff'], *REFn['fast_diff']['ci95'],
+         _car_ref['chopped_mean'], REFn['base']['chopped_mean'],
+         _Rr['chopped_mean']))
 # L190b PIN UPDATE (2026-11-21; receipt in LANE-LOG).  OLD (stage 6, the master
 # fold's finalization): numbers.json 592f7680796e..., l183_text.py
 # d1d8e0735bf1..., l183_fold.py 698922e3b836..., built body e62c81f6f5cc....
@@ -467,12 +718,19 @@ print('(5) L190 (stage 7): 4 arms x 16 seeds recounted from the stored rows '
 # six l190.* keys (every pre-existing key byte-identical: l174 (7)), four
 # declared edits and one table builder.  The pins are re-set, not loosened:
 # same four files, same whole-file equality.
-NUMBERS_SHA = '464e5261317f6fd30250455d91d0bde1d9fb70fc5461934f555e9cf7b1a1e2ea'
+# L197 PIN UPDATE (2026-11-21; receipt in LANE-LOG + banc/l197_worklog.md).
+# OLD (stage 7, the L190b follow-up): numbers.json 464e5261317f6fd3...,
+# l183_text.py 0af399b5aa46f6f3..., l183_fold.py 360e61c23c651843..., built
+# body 8c8db0d49dd6f00c....  NEW: the stage-8 values below.  REASON: the
+# owner-directed fourth-round repairs add five keys (every pre-existing key
+# byte-identical: l174 (7)), eleven declared edits and one table builder.
+# The pins are re-set, not loosened: same four files, same whole-file equality.
+NUMBERS_SHA = 'c8f0c4205e732c9bfee006c05a1201877b80af25f7405c95aa65e6a27b7a3962'
 # the ledger and the built body are pinned too: a later stage that edits
 # either has to re-pin here deliberately (and say why in the lane log)
-LEDGER_SHA = {'l183_text.py': '0af399b5aa46f6f34c0bf2d5b40bb0b52b58a4c462a4d2425c5df5e108a231b7',
-              'l183_fold.py': '360e61c23c651843b565aa45df7ed4ab462f7d6081d29d0bbb72e3ee3c884cdd'}
-BODY_SHA = '8c8db0d49dd6f00c117d634bc4bacae4a5f3e94f714eab92338c89b1452db944'
+LEDGER_SHA = {'l183_text.py': '22ec57a34935180b944b5602c1f8373968740547b15ec1b8e1d52dd5b682faca',
+              'l183_fold.py': 'b5feccb4d58986ea2635d8a4f0fd7727feafa09ec6b60a42cc89a6511d43c277'}
+BODY_SHA = '1863b3cd1325e52ab3bf4ec6771e49c7f4dac040ee5e5d111d0b2670aa59c87a'
 for _f, _want in LEDGER_SHA.items():
     _got = hashlib.sha256(open(os.path.join(HERE, _f), 'rb').read()).hexdigest()
     ck(_got == _want, '(5) %s moved since the fold was finalized (%s)'
@@ -506,6 +764,55 @@ for s in FIELD:
     ck(s in prior, '(6) cited-field statement not in the verified digest: ' + s)
 print('(6) %d cited-field statements traced to paper/priorart_terra_20261121.md'
       % len(FIELD))
+
+# ------------------------------------------------------------------ (7)
+# L197 (stage 8): the figure layer resolves.
+import subprocess  # noqa: E402
+FIGS = {1: ['figures/l136_transition_law.png'],
+        2: ['figures/l152_clamp_cut_grid.png', 'figures/l152_clamp_cut_grid.svg'],
+        3: ['figures/l160_slowline_carrier.png', 'figures/l160_slowline_carrier.svg'],
+        4: ['figures/fig4_scatter.png', 'figures/fig4_scatter.svg',
+            'figures/fig4_caption.md'],
+        5: ['figures/fig5_threepanel.png', 'figures/fig5_threepanel.svg',
+            'figures/fig5_caption.md']}
+ck('peabrain-figs/' not in body, '(7) a peabrain-figs/ path is still cited')
+_cited = {int(x) for x in re.findall(r'\bFigs?\.? (\d+)', body)}
+ck(_cited == set(FIGS), '(7) figures cited in the body: %s (want 1-5)'
+   % sorted(_cited))
+_paths = set(re.findall(r'figures/[A-Za-z0-9_]+\.(?:png|svg|md)', body))
+ck(_paths <= {p for v in FIGS.values() for p in v}
+   and all(FIGS[n][0] in _paths for n in FIGS),
+   '(7) a cited figure path is not in the declared figure table, or a '
+   "figure's file is never named: %s" % sorted(_paths))
+for _n, _v in FIGS.items():
+    for _p in _v:
+        ck(os.path.isfile(os.path.join(HERE, _p))
+           and os.path.getsize(os.path.join(HERE, _p)) > 1000,
+           '(7) Fig. %d: %s is missing under paper/' % (_n, _p))
+_sha = lambda p: hashlib.sha256(open(p, 'rb').read()).hexdigest()
+for _copy, _orig in (('figures/l136_transition_law.png', ('banc', 'l136', 'fig_l136.png')),
+                     ('figures/l152_clamp_cut_grid.png', ('paper', 'fig_l152.png')),
+                     ('figures/l152_clamp_cut_grid.svg', ('paper', 'fig_l152.svg')),
+                     ('figures/l160_slowline_carrier.png', ('banc', 'l160', 'fig_l160.png')),
+                     ('figures/l160_slowline_carrier.svg', ('banc', 'l160', 'fig_l160.svg'))):
+    _o = os.path.join(LAB, *_orig)
+    ck(os.path.isfile(os.path.join(HERE, _copy)) and os.path.isfile(_o)
+       and _sha(os.path.join(HERE, _copy)) == _sha(_o),
+       '(7) %s is not byte-identical to its lab original %s'
+       % (_copy, '/'.join(_orig)))
+_fv = {}
+for _v in ('fig4_verify.py', 'fig5_verify.py'):
+    _r = subprocess.run([sys.executable, os.path.join(HERE, 'figures', _v)],
+                        capture_output=True, text=True)
+    _fv[_v] = re.findall(r'checks run: (\d+)', _r.stdout)
+    ck(_r.returncode == 0 and 'ALL PASS' in _r.stdout,
+       '(7) paper/figures/%s does not exit 0' % _v)
+print('(7) figure layer: Figs %s cited, %d cited paths all resolve under '
+      'paper/, no peabrain-figs/ path left, 5 legacy files byte-identical to '
+      'their lab originals, fig4_verify (%s checks) and fig5_verify (%s checks) '
+      'exit 0'
+      % (sorted(_cited), len(_paths), ''.join(_fv['fig4_verify.py']),
+         ''.join(_fv['fig5_verify.py'])))
 
 print()
 if fails:

@@ -88,7 +88,7 @@ def Y(v):  return PYB - (v - YLO) / (YHI - YLO) * (PYB - PYT)
 
 # palette (house, One Dark)
 BG, PANEL, GRID = "#282c34", "#21252b", "#3e4451"
-TXT, MUT = "#abb2bf", "#5c6370"
+TXT, MUT = "#abb2bf", "#9aa3b2"
 BLUE, PURP, YELL, GREEN, ORNG, RED, CYAN, GRAY = ("#61afef", "#c678dd", "#e5c07b",
     "#98c379", "#d19a66", "#e06c75", "#56b6c2", "#7f848e")
 

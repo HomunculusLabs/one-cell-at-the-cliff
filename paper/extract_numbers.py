@@ -1278,6 +1278,209 @@ put('l190.certs', dict(
     'banc/l190/results_l190.json:anchors + trace_arrays_verified; '
     'banc/l190/selection.json:archives')
 
+# ---- L197 repairs (additive block; every key above is byte-identical): the
+# fourth-round referee's three minor repairs.  No new run: every value below
+# is read or re-derived from an artifact that was already stored.
+#  M1  l139.sets / l139.gains are the stored per-set cells VERBATIM for the
+#      three arms of the title contrast (walkable provenance); l139.contrast
+#      is the per-set carrier-vs-base-vs-twin read DERIVED here, including the
+#      set in which the contrast does NOT hold.
+#  M2  l175.null_centre is where the low-rate ("silent") window arms actually
+#      sit relative to the base; l197.reference puts the network before the
+#      projectors are added beside the closure, the base and the carrier arm.
+_r139 = json.load(open(f'{B}/l139/results_l139.json'))
+_s139 = _r139['sets']
+_g139 = _r139['gains']
+_A139 = (('base', 'cutwA'), ('twin', 'cutng25p'), ('carrier', 'cutng25'))
+assert sorted(_s139) == sorted(_g139) == ['0', '1', '2', '3', '4', '5']
+put('l139.sets', {s: {c: dict(kR=_s139[s][c]['kR'], meanR=_s139[s][c]['meanR'],
+                              cls=_s139[s][c]['cls']) for _, c in _A139}
+                  for s in sorted(_s139)}, 'l139/results_l139.json:sets')
+put('l139.gains', {s: {c: _g139[s][c] for _, c in _A139} for s in sorted(_g139)},
+    'l139/results_l139.json:gains')
+_N139 = 16                       # seeds per set (banc/l139/PREREG.md: B28)
+assert '3201-3216' in open(f'{B}/l139/PREREG.md').read()
+_JS139 = ['1', '2', '3', '4', '5']          # the jittered sets; '0' = unjittered
+assert sorted(_r139['sustain']['cutng25']['classes']) == _JS139
+_per139 = {}
+for s in sorted(_s139):
+    _b, _t, _c = (_s139[s][c] for _, c in _A139)
+    _per139[s] = dict(
+        carrier_minus_base=_c['kR'] - _b['kR'],
+        carrier_minus_twin=_c['kR'] - _t['kR'],
+        base_gain_delta_pct=round((_g139[s]['cutwA'] / _g139['0']['cutwA'] - 1)
+                                  * 100, 3),
+        n_super=sum(1 for x in (_b, _t, _c) if x['cls'] == 'SUPER'),
+        # the title contrast, per set: the carrier arm is the only one of the
+        # three in the super class AND out-counts both comparators
+        holds=bool(_c['cls'] == 'SUPER' and _b['cls'] != 'SUPER'
+                   and _t['cls'] != 'SUPER' and _c['kR'] > _b['kR']
+                   and _c['kR'] > _t['kR']))
+_hold139 = [s for s in _JS139 if _per139[s]['holds']]
+_adv139 = [s for s in _JS139 if not _per139[s]['holds']]
+assert len(_adv139) == 1
+_pool139 = {}
+for _lab, c in _A139:
+    _pool139[_lab] = dict(kR=sum(_s139[s][c]['kR'] for s in _JS139),
+                          n=_N139 * len(_JS139),
+                          meanR=sum(_s139[s][c]['meanR'] for s in _JS139)
+                          / len(_JS139))
+
+
+def _rank139(v):
+    o = sorted(range(len(v)), key=lambda i: v[i])
+    rk = [0.0] * len(v)
+    i = 0
+    while i < len(o):
+        j = i
+        while j + 1 < len(o) and v[o[j + 1]] == v[o[i]]:
+            j += 1
+        for q in range(i, j + 1):
+            rk[o[q]] = (i + j) / 2 + 1
+        i = j + 1
+    return rk
+
+
+def _rho139(a, b):
+    ra, rb = _rank139(a), _rank139(b)
+    ma, mb = sum(ra) / len(ra), sum(rb) / len(rb)
+    num = sum((x - ma) * (y - mb) for x, y in zip(ra, rb))
+    return num / (sum((x - ma) ** 2 for x in ra)
+                  * sum((y - mb) ** 2 for y in rb)) ** .5
+
+
+_all139 = sorted(_s139)
+_bg139 = [_g139[s]['cutwA'] for s in _all139]
+_bk139 = [_s139[s]['cutwA']['kR'] for s in _all139]
+_tight139 = min(_hold139, key=lambda s: _per139[s]['carrier_minus_twin'])
+put('l139.contrast', dict(
+    n_seeds=_N139, n_jitter_sets=len(_JS139), n_networks=len(_all139),
+    per_set=_per139, n_sets_hold=len(_hold139), hold_sets=[int(s) for s in _hold139],
+    adverse_set=int(_adv139[0]),
+    adverse=dict(
+        base_kR=_s139[_adv139[0]]['cutwA']['kR'],
+        twin_kR=_s139[_adv139[0]]['cutng25p']['kR'],
+        carrier_kR=_s139[_adv139[0]]['cutng25']['kR'],
+        base_minus_carrier=-_per139[_adv139[0]]['carrier_minus_base'],
+        carrier_minus_twin=_per139[_adv139[0]]['carrier_minus_twin'],
+        base_gain_delta_pct=_per139[_adv139[0]]['base_gain_delta_pct']),
+    pooled=dict(_pool139,
+                carrier_minus_base=_pool139['carrier']['kR'] - _pool139['base']['kR'],
+                carrier_minus_twin=_pool139['carrier']['kR'] - _pool139['twin']['kR']),
+    tightest_hold=dict(set=int(_tight139),
+                       carrier_minus_twin=_per139[_tight139]['carrier_minus_twin'],
+                       twin_meanR=_s139[_tight139]['cutng25p']['meanR'],
+                       twin_kR=_s139[_tight139]['cutng25p']['kR']),
+    base_kR_by_set=_bk139,
+    base_gain_lowest_set=int(min(_all139, key=lambda s: _g139[s]['cutwA'])),
+    base_kR_highest_set=int(max(_all139, key=lambda s: _s139[s]['cutwA']['kR'])),
+    rho_base_gain_kR=round(_rho139(_bg139, _bk139), 3)),
+    'l139/results_l139.json:sets + gains (DERIVED here: per-set count '
+    'differences carrier - base and carrier - twin; holds = the carrier arm '
+    'is the only one of the three in the super class and out-counts both; '
+    'pooled = sums over the five jittered sets, 16 shared seeds per set, so '
+    'the 80 are not independent runs; base_gain_delta_pct = base gain / '
+    'unjittered base gain - 1; rho = Spearman of base gain against base '
+    'count over the six networks, descriptive)')
+
+_b175 = _r175['base']
+_sil175 = [a for a in _r175['window'] if not a['active']]
+_act175 = [a for a in _r175['window'] if a['active']]
+_car175 = next(a for a in _r175['window'] if a['arm'] == 'sc25')
+assert len(_sil175) == 20 and len(_act175) == 14 and _car175['active']
+assert all(len(a['dutyR']) == 16 for a in _sil175 + [_b175, _car175])
+_mb175 = sum(_b175['dutyR']) / 16
+_arm_d175 = [sum(a['dutyR']) / 16 - _mb175 for a in _sil175]
+_seed_d175 = [sum(a['dutyR'][i] for a in _sil175) / 20 - _b175['dutyR'][i]
+              for i in range(16)]
+_m175 = sum(_seed_d175) / 16
+assert abs(_m175 - sum(_arm_d175) / 20) < 1e-12
+_sd175 = (sum((x - _m175) ** 2 for x in _seed_d175) / 15) ** .5
+_hf175 = 2.131449546 * _sd175 / 4          # two-sided 95% t, 15 df
+# three ways to state the centre agree at the printed precision
+_alt175 = (sum(a['meanR'] - _b175['meanR'] for a in _sil175) / 20,
+           sum(a['dR_vs_wA'] for a in _sil175) / 20)
+assert all(f'{x:.3f}' == f'{_m175:.3f}' for x in _alt175), (_m175, _alt175)
+_nab175 = sum(1 for x in _arm_d175 if x > 0)
+assert _nab175 == sum(1 for a in _sil175 if a['meanR'] > _b175['meanR']) \
+    and all(x != 0 for x in _arm_d175)
+_gp175 = [a['gain_delta_vs_wA'] / _b175['gain'] * 100 for a in _sil175]
+assert all(abs(a['gain'] - a['gain_delta_vs_wA'] - _b175['gain']) < 1e-12
+           for a in _sil175)
+_mean_sil175 = _mb175 + _m175
+put('l175.null_centre', dict(
+    n=len(_sil175), mean=_m175, n_above=_nab175, n_below=20 - _nab175,
+    mean_duty=_mean_sil175, base_duty=_mb175,
+    carrier_minus_centre=sum(_car175['dutyR']) / 16 - _mean_sil175,
+    over_seeds=dict(mean=_m175, ci95=[_m175 - _hf175, _m175 + _hf175],
+                    n_up=sum(1 for x in _seed_d175 if x > 0), n=16),
+    mean_gain_pct=sum(_gp175) / 20,
+    n_gain_below=sum(1 for x in _gp175 if x < 0),
+    n_gain_above=sum(1 for x in _gp175 if x > 0),
+    active=dict(n=len(_act175),
+                mean=sum(sum(a['dutyR']) / 16 - _mb175 for a in _act175) / 14)),
+    'banc/l175/results_l175.json:window + base (DERIVED here from the stored '
+    'per-seed duties: the 20 window arms whose cell is below the activity '
+    'bar; mean = their mean duty minus the base mean duty; n_above = arms '
+    'whose mean exceeds the base; over_seeds = the same mean taken per seed '
+    'over the 20 arms, paired with the base on the 16 shared seeds, with its '
+    't interval; mean_gain_pct = mean re-bisected gain shift of those arms)')
+
+_ref197 = {}
+_seeds197 = {}
+for _lab, _arm in (('reference', 'b65'), ('closure', 'full'), ('base', 'cutwA'),
+                   ('carrier', 'cutng25')):
+    _d = _lad183[_arm]
+    _ref197[_lab] = dict(code=_arm, n=_d['n'], chopped_k=_d['chopped_k'],
+                         chopped_mean=_d['chopped_mean'], fast_k=_d['fast_k'],
+                         fast_mean=_d['fast_mean'])
+    _sn = {}
+    for _r in _r2rows['rows']:
+        if _r['arm'] == _arm and _r['file'] in _adm183 and _r['seed'] not in _sn:
+            _sn[_r['seed']] = _r
+    _seeds197[_lab] = set(_sn)
+    assert len(_sn) == _d['n']
+
+
+def _wil197(k, n):
+    ph = k / n
+    den = 1 + _Z183 * _Z183 / n
+    c = (ph + _Z183 * _Z183 / (2 * n)) / den
+    h = _Z183 * ((ph * (1 - ph) / n + _Z183 * _Z183 / (4 * n * n)) ** .5) / den
+    return max(0.0, c - h), min(1.0, c + h)
+
+
+def _newcombe197(k1, n1, k2, n2):
+    """Newcombe hybrid-score interval for p1 - p2 (two independent samples)."""
+    p1, p2 = k1 / n1, k2 / n2
+    l1, u1 = _wil197(k1, n1)
+    l2, u2 = _wil197(k2, n2)
+    d = p1 - p2
+    return dict(diff=d, ci95=[d - ((p1 - l1) ** 2 + (u2 - p2) ** 2) ** .5,
+                              min(1.0, d + ((u1 - p1) ** 2 + (p2 - l2) ** 2) ** .5)])
+
+
+_R197, _C197 = _ref197['reference'], _ref197['closure']
+_bands197 = OUT['l175.bands']['v']
+put('l197.reference', dict(
+    _ref197,
+    fast_diff=_newcombe197(_R197['fast_k'], _R197['n'], _C197['fast_k'], _C197['n']),
+    chopped_diff=_newcombe197(_R197['chopped_k'], _R197['n'],
+                              _C197['chopped_k'], _C197['n']),
+    same_seeds=bool(_seeds197['reference'] == _seeds197['closure']),
+    super_meanR_min=_bands197['super_meanR_min'],
+    super_kR_min=_bands197['super_kR_min'],
+    carrier_below_reference=round(_R197['chopped_mean']
+                                  - _ref197['carrier']['chopped_mean'], 3),
+    carrier_above_base=round(_ref197['carrier']['chopped_mean']
+                             - _ref197['base']['chopped_mean'], 3)),
+    '../paper/review_fable_evidence_r2/out_duty_rows.json:rows (the four '
+    'l183.ladder_fast pools re-keyed reference / closure / base / carrier; '
+    'fast_diff and chopped_diff = reference minus closure in the proportion '
+    'of structured seeds with a Newcombe hybrid-score 95% interval DERIVED '
+    'here, the two pools treated as independent samples; same_seeds = the '
+    'two pools hold the same seed set; the band bars are l175.bands)')
+
 json.dump(OUT, open(os.path.join(os.path.dirname(
     os.path.abspath(__file__)), 'numbers.json'), 'w'), indent=1, sort_keys=True)
 

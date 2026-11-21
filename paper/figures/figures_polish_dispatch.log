@@ -12,3 +12,134 @@ completely. Numbers frozen; verify scripts stay green.
 ────────────────────────────────────────
   🔀 [set 1] delegating 2 tasks
   ✓ [set 1 · 2/2] Implement fig5 portion of /home/t3rpz/cr  (394.36s)
+  ✓ [set 1 · 1/2] Implement fig4 portion of /home/t3rpz/cr  (1195.14s)
+
+🔀 Delegate 2x: Implement fig4 portion of /... | Implement fig5 portion of /...  1195.3s
+
+────────────────────────────────────────
+**Verifying commands independently**
+∴ Thought for 1s
+────────────────────────────────────────
+
+💻 $ python paper/figures/fig4_verify.py + 3 commands  0.4s
+👁️ Vision Inspect figure for label collisions, clipping, legibility and other problems. Describe precisely.  136.9s
+👁️ Vision Inspect figure for row label collisions, clipping, and print legibility; report concrete problems.  136.9s
+
+────────────────────────────────────────
+**Inspecting colors and height**
+∴ Thought for 2s
+────────────────────────────────────────
+
+📖 Read fig5_threepanel.py
+
+────────────────────────────────────────
+**Checking Fig. 4 colors**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔎 Grep #5c6370|W, H|height=
+
+────────────────────────────────────────
+**Reviewing figure 4 effects**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔎 Grep MUT
+
+────────────────────────────────────────
+**Changing contrast styling**
+∴ Thought for 0s
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig4_scatter.py  1.1s
+│ paper/figures/fig4_scatter.py
+│ @@ -88,7 +88,7 @@
+│
+│  # palette (house, One Dark)
+│  BG, PANEL, GRID = "#282c34", "#21252b", "#3e4451"
+│ -TXT, MUT = "#abb2bf", "#5c6370"
+│ +TXT, MUT = "#abb2bf", "#9aa3b2"
+│  BLUE, PURP, YELL, GREEN, ORNG, RED, CYAN, GRAY = ("#61afef", "#c678dd", "#e5c07b",
+│      "#98c379", "#d19a66", "#e06c75", "#56b6c2", "#7f848e")
+│
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig5_threepanel.py
+│ paper/figures/fig5_threepanel.py
+│ @@ -34,7 +34,7 @@
+│  A(all(r[c] not in ("", None) for r in rows for c in ("chopped_mean", "fast_mean", "cross_mean")), "no missing values")
+│
+│  # ---------------- geometry ----------------
+│ -W, H = 1330, 830
+│ +W, H = 1330, 842
+│  X0, X1, VMAX = 140.0, 1150.0, 0.8
+│  SX = lambda v: X0 + v / VMAX * (X1 - X0)
+│  YTOP, DY = 112.0, 17.5
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig5_threepanel.py
+│ paper/figures/fig5_threepanel.py
+│ @@ -53,17 +53,17 @@
+│  s.append(f'<rect width="{W}" height="{H}" fill="#282c34"/>')
+│  s.append(f'<rect x="124" y="64" width="1190" height="750" fill="#21252b" rx="6"/>')
+│  s.append('<text x="30" y="34" fill="#abb2bf" font-size="19" font-weight="bold">Fig. 5 — three readouts per arm: the honesty panel</text>')
+│ -s.append('<text x="30" y="56" fill="#5c6370" font-size="13">Right-Ti mean duty, all 37 B39 arms · one row per arm, three readouts per row · rows sorted by chopped-gate duty (high → low)</text>')
+│ -s.append('<text x="30" y="76" fill="#5c6370" font-size="13">chopped = 5-s-on/4-s-off gate at 0.7 Hz (16 matched seeds) · fast = continuous 1.4-Hz middle segment · cross = chopped, flex/ext from different seeds (240 ordered pairs, nonindependent)</text>')
+│ +s.append('<text x="30" y="56" fill="#9aa3b2" font-size="13">Right-Ti mean duty, all 37 B39 arms · one row per arm, three readouts per row · rows sorted by chopped-gate duty (high → low)</text>')
+│ +s.append('<text x="30" y="76" fill="#9aa3b2" font-size="13">chopped = 5-s-on/4-s-off gate at 0.7 Hz (16 matched seeds) · fast = continuous 1.4-Hz middle segment · cross = chopped, flex/ext from different seeds (240 ordered pairs, nonindependent)</text>')
+│  # grid + axis numbers
+│  for v in [i / 10 for i in range(9)]:
+│      x = SX(v)
+│      s.append(f'<line x1="{x:.1f}" y1="102" x2="{x:.1f}" y2="750" stroke="#3e4451" stroke-width="1"/>')
+│ -    s.append(f'<text x="{x:.1f}" y="766" fill="#5c6370" font-size="13" text-anchor="middle">{v:.1f}</text>')
+│ +    s.append(f'<text x="{x:.1f}" y="766" fill="#9aa3b2" font-size="13" text-anchor="middle">{v:.1f}</text>')
+│  s.append('<text x="645" y="784" fill="#abb2bf" font-size="14" text-anchor="middle">mean duty — fraction of 500-sample windows with r(flex, ext) ≤ −0.25</text>')
+│  # k mini-columns (counts with duty >= .5, straight from the csv)
+│  for hx, htxt in ((1180, "k·chop"), (1216, "k·1.4"), (1262, "k·cross")):
+│ -    s.append(f'<text x="{hx}" y="100" fill="#5c6370" font-size="11" text-anchor="middle">{htxt}</text>')
+│ +    s.append(f'<text x="{hx}" y="100" fill="#9aa3b2" font-size="11" text-anchor="middle">{htxt}</text>')
+│
+│  order = sorted(rows, key=lambda r: -float(r["chopped_mean"]))
+│  for i, r in enumerate(order):
+│ @@ -82,7 +82,7 @@
+│      for key, col in (("ch", C_CH), ("fa", C_FA), ("xr", C_XR)):
+│          s.append(f'<circle class="dot {arm} {key}" cx="{SX(vals[key]):.1f}" cy="{y:.1f}" {big} fill="{col}"/>')
+│      for hx, c in ((1180, "chopped_k"), (1216, "fast_k"), (1262, "cross_k")):
+│ -        s.append(f'<text x="{hx}" y="{y + 4:.1f}" fill="#5c6370" font-size="11" text-anchor="middle">{r[c]}</text>')
+│ +        s.append(f'<text x="{hx}" y="{y + 4:.1f}" fill="#9aa3b2" font-size="11" text-anchor="middle">{r[c]}</text>')
+│
+│  # annotation, placed only where the bottom rows leave clear space (asserted below)
+│  ann_x, ann_y = 620.0, YTOP + (len(order) - 4) * DY
+│ @@ -92,8 +92,8 @@
+│  s.append('<circle cx="36" cy="802" r="6" fill="#98c379"/><text x="48" y="806" fill="#abb2bf" font-size="13">chopped gate 0.7 Hz (matched, 16 seeds)</text>')
+│  s.append('<circle cx="340" cy="802" r="6" fill="#61afef"/><text x="352" y="806" fill="#abb2bf" font-size="13">continuous 1.4 Hz (middle segment)</text>')
+│  s.append('<circle cx="620" cy="802" r="6" fill="#e5c07b"/><text x="632" y="806" fill="#abb2bf" font-size="13">cross-seed, chopped (240 ordered pairs)</text>')
+│ -s.append('<text x="1300" y="806" fill="#5c6370" font-size="11.5" text-anchor="end">asserted vs threepanel.csv + results_l175.json at draw time · L184</text>')
+│ -s.append('<text x="36" y="822" fill="#5c6370" font-size="11.5">row labels: green = carrier (DNp33-L) · purple = twins (mass sc26, drive dmA/dmC) · blue = boundary cells (sc27, sc40 — sc40 shares leading relay GI 75494) · orange = k=24 base · k columns: runs/pairs with duty ≥ .5 (16 seeds; cross 240) · no values missing</text>')
+│ +s.append('<text x="1300" y="806" fill="#9aa3b2" font-size="11.5" text-anchor="end">asserted vs threepanel.csv + results_l175.json at draw time · L184</text>')
+│ +s.append('<text x="36" y="822" fill="#9aa3b2" font-size="11.5">row labels: green = carrier (DNp33-L) · purple = twins (mass sc26, drive dmA/dmC) · blue = boundary cells (sc27, sc40 — sc40 shares leading relay GI 75494) · orange = k=24 base · k columns: runs/pairs with duty ≥ .5 (16 seeds; cross 240) · no values missing</text>')
+│  s.append("</svg>")
+│  svg = "\n".join(s) + "\n"
+│  open(f"{OUT}/fig5_threepanel.svg", "w").write(svg)
+💻 $ python paper/figures/fig4_scatter.py + 5 commands  0.6s
+
+────────────────────────────────────────
+**Appending one log**
+∴ Thought for 2s
+────────────────────────────────────────
+
+💻 $ python -c 'from pathlib import Path; p=Path("LAB-INTENT.md"); f=p.open("a"); f.write("\n\n### 2026-11-21 — Figure 4/5 publication polish\n\nAdjusted Fig. 4 label placement, x-axis headroom, and floor-stack annotation; increased Fig. 5 type and row-label clearance, and improved secondary-text contrast and footer margin. Regenerated SVG/PNG from stored data. Fig. 4 verifier: 247 checks, all pass; Fig. 5 self-check: 37 rows × 3 dots, all pass. Baseline comparisons confirmed Fig. 4 plotted values against stored JSON within rendering precision and Fig. 5 dot positions, connector lines, bands, and k counts unchanged. Captions unchanged.\n"); f.close()'
+
+────────────────────────────────────────
+✿ Miso
+Done, Boss ♪ Figures 4 and 5 have been regenerated in:
+
+/home/t3rpz/critters/peabrain-lab/paper/figures/
+
+Fig. 4 now has staggered labels, more right-edge headroom, and a floor-stack note. Fig. 5 has larger type and better row-label spacing; both figures have higher-contrast secondary text. Captions remain unchanged.
+
+Verification: Fig. 4 passed all 247 checks; Fig. 5’s 37-row, three-readout checks passed. Baseline comparisons confirmed the plotted data remained unchanged within rendering precision. I also appended the work and verification results to LAB-INTENT.md.
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-19679e724b999f9de4930d890ffcc350072bec27bc0a73827ea7c396e5afbf22 -p maple
+
+Session:        local-19679e724b999f9de4930d890ffcc350072bec27bc0a73827ea7c396e5afbf22
+Duration:       23m 26s
+Messages:       30 (1 user, 28 tool calls)

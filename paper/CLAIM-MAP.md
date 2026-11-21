@@ -17,6 +17,7 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 | §2.4 the downstream interneuron (Table 3) | relay cut / clamp, push-pull, occlusion: neither registered pole; the 1.4-Hz panel separates carrier-absent from carrier-present arms | l187.base l187.arms l187.contrasts l187.fast l187.relay l187.relay_rate l187.g74914_rate l187.gain_slopes l187.meta l187.certs l187.branches l187.sc25_pooled | B47 |
 | §2.4 the single-edge cut (Table 3b) + §3.7 batch R + §4 (L190b follow-up fold) | cutting only the carrier-to-relay edge (21 synapses) reaches the registered super band on the chopped readout (12/16, about 60% of the carrier's paired shift by point ratio) with zero 1.4-Hz signature; the count-matched sham edge (22 synapses, sole eligible candidate) is base-like; double dissociation stated in its limited sense; one batch, re-bisected gains only, no fixed-gain form | l190.arms l190.summary l190.selection l190.gain l190.meta l190.certs l187.contrasts l185.r2 l175.bands | B49, B47 |
 | §2.5 which clock (gate-jitter) | UNRESOLVED and underpowered by construction (window overlap) | l186.means l186.contrasts l186.branch l186.power l186.phase | B46 |
+| §2.10 the per-set jitter table (Table 5) + §2.1 yardstick and null centre + §4 (L197 repairs) | the title contrast holds summed over the five jitter sets (72/80 against base 29, twin 37) and in 4 of 5, and does NOT hold in set 5, where the base reaches the super class with the carrier present (15/16; twin 13, carrier 13); the super band was frozen on the closure — the network before the projectors are added reads 513/513 at .995, the reference-minus-closure contrast in the continuous segment is +1.000 [+.989, +1.000], and the carrier-removed network's .766 is a partial recovery toward that level; the silent-cell null is centred +.044 above the base as a point estimate (14 of 20 arms above; not resolved over seeds) | l139.sets l139.gains l139.contrast l175.null_centre l197.reference l183.ladder_fast l175.null l185.r2 l175.bands | B50, B48 |
 | §2.6 Table 4 + §2.7 paired twin + §3.1 substrate and weights | the ladder in the continuous segment; paired McNemar on the twin's own seeds; the deafferented closure; signed log1p weights with the glutamate override | l183.ladder_fast l183.ladder_fast_meta l172.paired_twin l92.substrate l135.weights | B48 |
 
 ## Conventions
@@ -1383,6 +1384,55 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 - gate: `paper/l183_verify.py` (5) recounts all four arms from the stored
   per-seed rows, re-applies the registered branch rules and proves each
   sentence-level reading; `paper/l174_verify.py` (7) pins the added key set
+
+### B50 — L197: the fourth-round minor repairs (per-set jitter table, yardstick calibration, figure layer)
+
+- claim (M1): across the five 1% weight-jitter sets the carrier-removed arm
+  is the only one of base / base + mass twin / carrier-removed in the super
+  class in sets 1 to 4, and summed over the five sets it is structured in 72
+  of 80 set-seed runs against 29 (base) and 37 (twin arm); in set 5 the
+  contrast does NOT hold — the base reads 15 of 16 (super) with the carrier
+  present, the twin arm 13, the carrier-removed arm 13 (2 seeds below the
+  base, level with the twin)
+- claim (what set 5 is): the draw in which the base re-bisects to the lowest
+  gain of the six networks (-0.65% from the unjittered base); across the six
+  the base's count falls as its gain rises (Spearman -.986, descriptive)
+- claim (M2, yardstick): the super band was registered on the closure; the
+  baseline network before the projectors are added reads 513 of 513 at mean
+  .995 (chopped) and 513 of 513 against the closure's 0 of 513 in the
+  continuous segment, a contrast of +1.000 [+.989, +1.000] (Newcombe, pools
+  treated as independent); the carrier-removed network's pooled .766 sits
+  between the base (.404) and that reference — a partial recovery, not a
+  transition beyond it
+- claim (M2, null centre): the 20 silent window arms average .452 against the
+  base's .408, 14 of 20 above the base; over the 16 shared seeds the mean
+  shift is +.044 [-.041, +.129] (a point estimate, not resolved from zero),
+  and those arms re-bisect to gains averaging 0.20% below the base's
+- NOT claimed: an interval on the summed jitter counts (16 shared seeds x 5
+  networks are not 80 independent runs); that gain explains set 5 (the jitter
+  moves weights and gain together); that the null's upward centre is a
+  resolved effect of deleting a silent cell
+- keys: l139.sets l139.gains l139.contrast l175.null_centre l197.reference
+- artifacts: `banc/l139/results_l139.json`, `banc/l175/results_l175.json`,
+  `paper/review_fable_evidence_r2/out_duty_rows.json`
+- figures (M3): `paper/figures/l136_transition_law.png` (Fig 1),
+  `paper/figures/l152_clamp_cut_grid.png` + `paper/figures/l152_clamp_cut_grid.svg`
+  (Fig 2), `paper/figures/l160_slowline_carrier.png` +
+  `paper/figures/l160_slowline_carrier.svg` (Fig 3) — byte copies of the lab
+  originals `banc/l136/fig_l136.png`, `paper/fig_l152.png`,
+  `paper/fig_l152.svg`, `banc/l160/fig_l160.png`, `banc/l160/fig_l160.svg`;
+  `paper/figures/fig4_scatter.png` (Fig 4, verifier
+  `paper/figures/fig4_verify.py`); `paper/figures/fig5_threepanel.png` (Fig 5,
+  verifier `paper/figures/fig5_verify.py`, new)
+- fold: stage 8 of the declared ledger `paper/l183_text.py` (edits E40-E50)
+  and the Table 5 builder in `paper/l183_fold.py`; brief
+  `banc/l197_BRIEF_repairs.md`, worklog `banc/l197_worklog.md`; referee
+  report `paper/review_opus_r4.md` (M1-M3)
+- gate: `paper/l183_verify.py` (5) recounts Table 5 from the stored cells,
+  re-applies the registered super rule per cell, recomputes the null centre
+  and the Newcombe interval and proves each sentence-level reading; (7)
+  checks that every cited figure resolves and runs both figure verifiers;
+  `paper/l174_verify.py` (7) pins the added key set
 
 ## How to re-verify the whole package
 

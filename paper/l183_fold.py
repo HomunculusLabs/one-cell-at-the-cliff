@@ -45,6 +45,8 @@ ALIAS = {
     'LF': 'l183.ladder_fast',
     'EA': 'l190.arms', 'EM': 'l190.meta', 'ES': 'l190.selection',
     'ESM': 'l190.summary',
+    'REF': 'l197.reference', 'NC': 'l175.null_centre',
+    'JT': 'l139.contrast', 'JS': 'l139.sets', 'JG': 'l139.gains',
 }
 MINUS = '\u2212'
 CLS = {'SUPER': 'super', 'INTERMEDIATE': 'intermediate',
@@ -314,8 +316,53 @@ def table_edge(nums):
     return '\n'.join(rows)
 
 
+def table_jitter(nums):
+    """the weight-jitter ensemble, per network: the three arms of the title
+    contrast with the carrier-removed arm's count difference from each
+    comparator.  The row in which the contrast does not hold is printed like
+    every other row."""
+    JS = resolve(nums, 'JS'); JG = resolve(nums, 'JG'); JT = resolve(nums, 'JT')
+    low = {'SUPER': 'super', 'KILL': 'kill', 'PARTIAL': 'partial',
+           'NEUTRAL-INT': 'neutral', 'OTHER': 'other'}
+    n = JT['n_seeds']
+    sint = lambda v: (MINUS if v < 0 else '+' if v > 0 else '') + str(abs(v))
+    cell = lambda d: f"{d['kR']}/{n} {fmt(d['meanR'], 'f3')} {low[d['cls']]}"
+    rows = ['| network | base gain shift | base (`cutwA`) | '
+            'base cut plus the mass twin (`cutng25p`) | carrier removed (`cutng25`) | '
+            'carrier \u2212 base, seeds | carrier \u2212 twin, seeds | '
+            'title contrast |',
+            '|---|---|---|---|---|---|---|---|']
+    assert sorted(JS) == sorted(JG) == sorted(JT['per_set']) \
+        and len(JS) == JT['n_networks'] == JT['n_jitter_sets'] + 1
+    for s in sorted(JS, key=int):
+        b, t, c = JS[s]['cutwA'], JS[s]['cutng25p'], JS[s]['cutng25']
+        p = JT['per_set'][s]
+        assert p['carrier_minus_base'] == c['kR'] - b['kR'] \
+            and p['carrier_minus_twin'] == c['kR'] - t['kR'], s
+        assert abs(p['base_gain_delta_pct']
+                   - (JG[s]['cutwA'] / JG['0']['cutwA'] - 1) * 100) < 6e-4, s
+        rows.append(
+            f"| {'unjittered' if s == '0' else 'jitter set ' + s} | "
+            f"{'0' if s == '0' else fmt(p['base_gain_delta_pct'], 'sp2') + '%'} | "
+            f"{cell(b)} | {cell(t)} | {cell(c)} | "
+            f"{sint(p['carrier_minus_base'])} | {sint(p['carrier_minus_twin'])} | "
+            f"{'holds' if p['holds'] else 'does not hold'} |")
+    P = JT['pooled']
+    pc = lambda d: f"{d['kR']}/{d['n']} {fmt(d['meanR'], 'f3')}"
+    assert all(P[a]['kR'] == sum(JS[s][c]['kR'] for s in JS if s != '0')
+               for a, c in (('base', 'cutwA'), ('twin', 'cutng25p'),
+                            ('carrier', 'cutng25')))
+    rows.append(
+        f"| jitter sets 1 to {JT['n_jitter_sets']}, summed | \u2014 | "
+        f"{pc(P['base'])} | {pc(P['twin'])} | {pc(P['carrier'])} | "
+        f"{sint(P['carrier_minus_base'])} | {sint(P['carrier_minus_twin'])} | "
+        f"\u2014 |")
+    return '\n'.join(rows)
+
+
 TABLES = {'scan': table_scan, 'rep': table_rep, 'null': table_null,
-          'relay': table_relay, 'ladder': table_ladder, 'edge': table_edge}
+          'relay': table_relay, 'ladder': table_ladder, 'edge': table_edge,
+          'jitter': table_jitter}
 
 # ---------------------------------------------------------------- renumber
 # old Results subsection -> new (the scan block takes 2.1-2.5).

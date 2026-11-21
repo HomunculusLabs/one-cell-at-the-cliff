@@ -221,7 +221,19 @@ L190B_ADDED = {
     "l190.arms", "l190.certs", "l190.gain", "l190.meta", "l190.selection",
     "l190.summary"}
 assert L183_ADDED.isdisjoint(L190B_ADDED) and len(L183_ADDED) == 46
-DECLARED_ADDED = L183_ADDED | L190B_ADDED
+# L197 PIN UPDATE (2026-11-21, owner-directed fourth-round minor repairs;
+# receipt in LANE-LOG + banc/l197_worklog.md).  OLD: added keys ==
+# L183_ADDED | L190B_ADDED (46 + 6).  NEW: == L183_ADDED | L190B_ADDED |
+# L197_ADDED (46 + 6 + 5), still an EXACT set equality, and guarantee (a) is
+# untouched: every pre-tick key byte-identical.  REASON: the per-set jitter
+# table (M1) and the yardstick / null-centre calibration (M2) print numbers
+# that were stored but had no key; the five keys are re-derived from their
+# stored sources in l183_verify.py (5).
+L197_ADDED = {
+    "l139.contrast", "l139.gains", "l139.sets", "l175.null_centre",
+    "l197.reference"}
+assert L197_ADDED.isdisjoint(L183_ADDED | L190B_ADDED) and len(L190B_ADDED) == 6
+DECLARED_ADDED = L183_ADDED | L190B_ADDED | L197_ADDED
 
 
 def _numbers_guard(pre_path, label):
@@ -237,7 +249,7 @@ def _numbers_guard(pre_path, label):
     ck(not moved, "%s: pre-tick numbers.json keys moved: %s" % (label, moved[:6]))
     added = set(new) - set(old)
     ck(added == DECLARED_ADDED, "%s: added keys differ from the declared L183 + "
-       "L190b set: undeclared %s, missing %s"
+       "L190b + L197 set: undeclared %s, missing %s"
        % (label, sorted(added - DECLARED_ADDED)[:6],
           sorted(DECLARED_ADDED - added)[:6]))
     return len(old), len(added)
@@ -246,7 +258,7 @@ def _numbers_guard(pre_path, label):
 _g7 = _numbers_guard(os.path.join(L174A, "numbers_pretick.json"), "(7)")
 if _g7:
     print("(7) numbers.json: all %d pre-tick keys byte-identical per key; the %d "
-          "added keys are exactly the declared L183 + L190b set" % _g7)
+          "added keys are exactly the declared L183 + L190b + L197 set" % _g7)
 
 # ------------------------------------------------------------------ (8)
 # stage (b1): the tick-204 novelty narrowing + entries 36/37.

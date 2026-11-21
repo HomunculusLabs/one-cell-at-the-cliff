@@ -530,6 +530,18 @@
 > 3.7 gains the batch label, and section 4 names the two new single-batch
 > arms and drops its "is not reported here" marker. Six l190.* keys entered
 > numbers.json first.
+> Stage 8 (fourth-round minor repairs, owner-directed, same day): 2.10
+> gains Table 5, the per-set base / mass-twin / carrier-removed cells of the
+> weight-jitter ensemble with the carrier-removed arm's count difference from
+> each comparator, and says in words that the title contrast holds in four of
+> the five jitter sets and summed over them and does NOT hold in set 5, where
+> the base reaches the super class with the carrier present. 2.1 gains the
+> yardstick calibration (the baseline network before the projectors are
+> added, against which reaching the super class is a partial recovery and not
+> a transition beyond it) and the measured centre of the silent-cell null;
+> section 4 gains a yardstick card and names set 5. Figs 1-3 are re-pointed
+> at paper/figures/, Figs 4 and 5 are cited, and paper/figures/fig5_verify.py
+> is new. Five keys entered numbers.json first.
 
 ## Title
 
@@ -816,6 +828,10 @@ Table 1 gives every arm with three readouts side by side: the registered one
 (antiphase duty in the chopped 0.7-Hz segments), the same statistic in the
 continuously driven 1.4-Hz segment, and a cross-seed control in which the
 flexor trace of one run is paired with the extensor trace of another (§2.3).
+Fig. 4 plots the scan as mean duty against each cell's rate on the base, and
+Fig. 5 draws the three readouts of every arm in one panel
+(`figures/fig4_scatter.png` and `figures/fig5_threepanel.png`, each with an
+svg and a caption file beside it).
 
 | rank | removed cell (arm code) | sign | rate | drive | gain | chopped 0.7 Hz | continuous 1.4 Hz | cross-seed, chopped | class |
 |---|---|---|---|---|---|---|---|---|---|
@@ -872,6 +888,21 @@ super, 10 are intermediate and 23 are not-super [l175.null]. The registered
 branch that fired is the one in which the flip follows the cell and not its
 delivered drive [l175.verdict].
 
+**The band is a yardstick set on a degraded network.** The super band was
+registered on the closure, the network to which the deafferented projectors
+have already been added (§3.1). Before they are added, the baseline network is
+structured in 513 of 513 seeds at mean duty .995 on the chopped readout. In
+the continuous segment it is structured in 513 of 513 and the closure in 0 of
+513 (Table 4). That difference in the proportion of structured seeds is +1.000
+[+.989, +1.000] (Newcombe interval, the two pools treated as independent
+samples) [l197.reference]. Adding the projectors is therefore the largest
+effect in this paper, and each removal arm undoes part of it. On its canonical
+pooled seeds the carrier-removed network reads mean duty .766, between the
+base (.404) and the baseline network (.995). Reaching the super class is thus
+a partial recovery toward the level the network had before the projectors were
+added, not a transition beyond it. The band's floor of .60 was frozen on the
+degraded network and sits far below that level.
+
 **The mass twin is silent, and we say so.** The rank-26 cell matches the
 carrier's removal mass to 3.9e-04 of cohort mass [xor] and does not flip (2 of
 16, .378). On this base, however, it fires at a mean rate of .0005 against the
@@ -910,6 +941,16 @@ runs against that trend: its gain rises by 1.24% and its duty is the highest
 in the table. One arm (rank 47) bisected to an outlying gain (+10.28%) and
 should be read with care. These are associations across different deletions,
 not a gain intervention; §2.2 supplies the intervention.
+
+**The null is not centred on the base.** The 20 silent arms average .452
+against the base's .408, and 14 of them sit above the base. Over the 16 shared
+seeds their mean shift is +.044 [−.041, +.129] [l175.null_centre]. The centre
+is therefore above the base as a point estimate and is not resolved from zero.
+The same arms re-bisect to gains that average 0.20% below the base's, and on
+the base a lower gain raises the duty by itself (§2.2), so the upward centre
+is not separated from the gain adjustment. The comparison for a single
+deletion is that centre and not zero. The carrier's mean duty stands .31 above
+it and above every arm in the null.
 
 Scope of this subsection: one batch, one base, the chopped classifier as the
 registered readout, and comparators matched on unsigned, time-averaged drive
@@ -1019,12 +1060,13 @@ written down before the numbers were computed.
 the carrier-removed arm the mean duty is .758 for true pairs and .622 for
 cross-seed pairs, and 193 of 240 ordered pairs clear the .50 bar. In the base
 the corresponding values are .408 and .097, with 0 of 240 pairs clearing it
-[l184.threepanel]. The cross-seed duty rises by +.525 between base and carrier
-removal while the same-seed duty rises by +.350. The shared-timing component
-therefore increases by more than the whole net effect (1.50 times it), and the
-run-specific remainder shrinks (−.174) [l184.q3, l184.q3_ratios]. The 240
-pairings reuse 16 seeds and are a descriptive control, not independent trials,
-and the two duties must not be subtracted to obtain a variance fraction.
+[l184.threepanel] (Fig. 5). The cross-seed duty rises by +.525 between base
+and carrier removal while the same-seed duty rises by +.350. The shared-timing
+component therefore increases by more than the whole net effect (1.50 times
+it), and the run-specific remainder shrinks (−.174) [l184.q3, l184.q3_ratios].
+The 240 pairings reuse 16 seeds and are a descriptive control, not independent
+trials, and the two duties must not be subtracted to obtain a variance
+fraction.
 
 **Mean rates do not carry it.** Pool mean rates barely move between base and
 carrier removal: flexor .0260 to .0248 and extensor .0262 to .0330 [l184.q3].
@@ -1249,7 +1291,7 @@ signals that share a stimulus, not transmission delays. A removed cell is
 structurally absent, not silent, so no phase comparison across the deletion is
 available.
 
-### 2.6 The dose cliff (Fig 1 = peabrain-figs/l136_transition_law.png)
+### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)
 
 The substrate is the l65 cord subnet, 20,521 cord + 728 DN-into cells, and the
 Ti flexor pool has n=101 [subnet]; 11 runs are summed [n_runs_summed]. The
@@ -1501,7 +1543,7 @@ SUPER replicates on its second batch (.768, 15/16 [l148.eall]).
 | eAll (cutwA base) | all 93 incident edges | .745 / .768 | 14, 15/16 | SUPER ≡ node-drop (§3.8); pooled 29/32 |
 | se0 (eAll + window clamp) | edges + carrier silence | .768 | 15/16 | ≡ eAll BIT-IDENTICAL (§3.8) |
 
-Fig. 2 (peabrain-figs/l152_clamp_cut_grid.png, +svg) renders this grid:
+Fig. 2 (figures/l152_clamp_cut_grid.png, +svg) renders this grid:
 dashed = the ACTIVITY family on the intact closure, solid = the WIRING family
 on the cutwA base, whiskers = Wilson 95% lower bounds, pooled where n>16.
 Every plotted value is asserted against numbers.json at draw time and se0 is
@@ -1534,6 +1576,53 @@ gains (wA hit KILL in one set, SUPER in another).
 
 The untreated full subnet stays inside its base spread across all sets (kR
 {8,7,6,4,9,4} vs base 2–10 spread) [full_kR_sets].
+
+Table 5 prints what the class-sustain fractions above do not: the base, the
+mass-twin arm and the carrier-removed arm in each network, with the
+carrier-removed arm's count difference from each comparator.
+
+| network | base gain shift | base (`cutwA`) | base cut plus the mass twin (`cutng25p`) | carrier removed (`cutng25`) | carrier − base, seeds | carrier − twin, seeds | title contrast |
+|---|---|---|---|---|---|---|---|
+| unjittered | 0 | 3/16 .374 partial | 9/16 .463 neutral | 14/16 .728 super | +11 | +5 | holds |
+| jitter set 1 | −0.38% | 10/16 .526 neutral | 13/16 .596 other | 16/16 .795 super | +6 | +3 | holds |
+| jitter set 2 | +0.38% | 0/16 .337 other | 5/16 .373 partial | 16/16 .692 super | +16 | +11 | holds |
+| jitter set 3 | −0.14% | 3/16 .285 other | 6/16 .443 partial | 13/16 .652 super | +10 | +7 | holds |
+| jitter set 4 | +0.02% | 1/16 .287 kill | 0/16 .296 kill | 14/16 .688 super | +13 | +14 | holds |
+| jitter set 5 | −0.65% | 15/16 .628 super | 13/16 .668 super | 13/16 .688 super | −2 | 0 | does not hold |
+| jitter sets 1 to 5, summed | — | 29/80 .413 | 37/80 .475 | 72/80 .703 | +43 | +35 | — |
+
+Table 5 [l139.sets, l139.gains, l139.contrast]. Cells are structured seeds of
+16, mean duty and the class label stored under that run's registered rules,
+lower-cased. §3.6 defines super and partial. Kill and neutral are that run's
+classes for a loss of structure and for no change, both read against the
+untreated closure of the same network, and other means none of the registered
+classes. The gain column is the base's re-bisected gain relative to the
+unjittered base. The contrast holds in a network when the carrier-removed arm
+is the only one of the three in the super class and out-counts both
+comparators. The same 16 seeds run in every network, so the summed row counts
+each seed five times. It is not 80 independent runs and carries no interval.
+
+**The title contrast holds in 4 of the 5 jitter sets and summed over them, and
+it does not hold in set 5.** In sets 1 to 4 the carrier-removed arm is the
+only one of the three in the super class. Summed over the five sets it is
+structured in 72 of 80 set-seed runs, against 29 for the base and 37 for the
+twin arm. The narrowest of the four is set 1: the twin arm reads 13 of 16 at
+mean .596, 3 seeds behind the carrier-removed arm and just under the band's
+mean bar. In set 5 the base reaches the super class with the carrier still in
+it (15 of 16), and the twin arm reaches it too (13). The carrier-removed arm
+reads 13 there, 2 seeds below the base and level with the twin arm. In that
+network the base does not need the deletion, and the claim that removing this
+cell is what lifts the readout into the super class does not hold.
+
+**What set 5 is.** It is the jitter draw in which the base re-bisects to the
+lowest gain of the six networks, −0.65% from the unjittered base. Across the
+six the base's count falls as its gain rises (Spearman ρ = −.986; six
+networks, descriptive). On the unjittered graph a lower gain alone raises the
+base (§2.2). A jitter draw moves the weights and the re-bisected gain
+together, so this is an association and not an account of set 5. What the set
+shows is that the base sits close enough to the band for a weight perturbation
+of this size to carry it across without the deletion. §4 states that as a
+limitation.
 
 ### 2.11 Scope boundary: cross-connectome, re-scoped at a matched synapse floor
 
@@ -2153,8 +2242,9 @@ shows this line is not antagonist-clock-wide. The mm/xm aggregates carry it in
 36 of 36 traces each, and a Tr/Ta/Sr subset of the antagonist pools in 8 of 20
 (pooled Wilson lb ≥ .56, subset median .100 Hz; strongest members 36/36). The
 Ti pools stay at ≤ 6 of 36 and the strongest Pr pool reaches
-20 of 36 (lb .396) [l157.pooled] (Fig. 3). The post-hoc untruncated sign read
-(11+/5−) is labeled descriptive, not claim-carrying.
+20 of 36 (lb .396) [l157.pooled] (Fig. 3,
+`figures/l160_slowline_carrier.png`, with svg). The post-hoc untruncated sign
+read (11+/5−) is labeled descriptive, not claim-carrying.
 
 Readout is simulated motor-pool structure duty, not behavior or EMG.
 
@@ -2245,11 +2335,12 @@ registered left-side test is queued and nothing in §2 depends on it.
 Single-batch classes: the scan's class labels for the non-carrier arms rest on
 one batch of 16 seeds each. The silent-cell null is wide enough (2 to 11
 structured seeds of 16) that an individual label can move on a second batch,
-as the rank-27 cell's did (§2.2). The carrier, the mass twin, both drive
-twins, the two edge-of-band cells and the base are the only single-cell arms
-with a second batch; the relay, push-pull and occlusion arms, the single-edge
-cut and its sham, and the signed-current twin have one. Statements about those
-arms are statements about a batch mean.
+as the rank-27 cell's did (§2.2). The null is also not centred on the base:
+its arms average +.044 above it as a point estimate (§2.1). The carrier, the
+mass twin, both drive twins, the two edge-of-band cells and the base are the
+only single-cell arms with a second batch; the relay, push-pull and occlusion
+arms, the single-edge cut and its sham, and the signed-current twin have one.
+Statements about those arms are statements about a batch mean.
 
 No relay-matched twin: the downstream interneuron of §2.4 reaches the super
 band on the chopped readout when removed, and nothing here says how often
@@ -2284,13 +2375,24 @@ difference within one bilateral pair in one specimen is more economically
 explained by reconstruction or individual variation than by cell-type
 function.
 
+Yardstick: the super band was registered on the closure, a network the added
+projectors had already degraded (§3.1), and it was never calibrated against
+the network before they are added. That baseline network sits far above the
+band (mean duty .995, structured in every seed; §2.1, Table 4), and adding the
+projectors is the largest effect in this paper. Reaching the super class is
+therefore a partial recovery toward that level (.766 for the carrier-removed
+network on its pooled seeds), not a transition beyond it. Every count in §2,
+the controls' negative results included, is expressed in units of that band.
+
 Network-level fragility: the intervals in this paper measure how reproducibly
 one deterministic graph behaves under different noise. They do not say whether
 a slightly different graph behaves the same way, and our own controls say it
 need not. The transition interior re-draws across the weight-jitter sets
 (§2.10), the effect is absent on the floor-4 substrate (above), and a
 degree-preserving rewire of the carrier's edges flips in one draw of three
-(§2.12).
+(§2.12). In one of the five weight-jitter sets the base reaches the super
+class with the carrier present, and the title contrast does not hold in that
+network (§2.10, Table 5).
 
 Timing attribution: which clock the shared timing follows is unresolved
 (§2.5), and the run that would resolve it has not been done.
@@ -2534,7 +2636,7 @@ keys in paper/references.bib.
 
 - numbers.json: every quoted value keyed to its stored-results source;
   regenerate with `python3 paper/extract_numbers.py`.
-- Fig 1 candidate: peabrain-figs/l136_transition_law.png (values asserted
+- Fig 1 candidate: figures/l136_transition_law.png (values asserted
   against sources by l136_fig.py at draw time).
 - Master-fold replay: `python3 paper/l183_verify.py` rebuilds this draft from
   the stored pre-image and the declared edit ledger (paper/l183_text.py) and

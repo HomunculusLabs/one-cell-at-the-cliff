@@ -34,7 +34,7 @@ for r in rows:  # chopped column cross-check vs l175 stored means
 A(all(r[c] not in ("", None) for r in rows for c in ("chopped_mean", "fast_mean", "cross_mean")), "no missing values")
 
 # ---------------- geometry ----------------
-W, H = 1330, 830
+W, H = 1330, 842
 X0, X1, VMAX = 140.0, 1150.0, 0.8
 SX = lambda v: X0 + v / VMAX * (X1 - X0)
 YTOP, DY = 112.0, 17.5
@@ -49,23 +49,24 @@ HL = {  # arm -> (label, colour, band)
     "cutwA": ("cutwA (base)", "#d19a66", "#d19a66"),
 }
 s = []
-s.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
+s.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" data-n-arms="{len(rows)}" data-x="mean duty, linear 0-{VMAX}" data-source="banc/l184/threepanel.csv">')
 s.append(f'<rect width="{W}" height="{H}" fill="#282c34"/>')
 s.append(f'<rect x="124" y="64" width="1190" height="750" fill="#21252b" rx="6"/>')
 s.append('<text x="30" y="34" fill="#abb2bf" font-size="19" font-weight="bold">Fig. 5 — three readouts per arm: the honesty panel</text>')
-s.append('<text x="30" y="56" fill="#5c6370" font-size="13">Right-Ti mean duty, all 37 B39 arms · one row per arm, three readouts per row · rows sorted by chopped-gate duty (high → low)</text>')
-s.append('<text x="30" y="76" fill="#5c6370" font-size="13">chopped = 5-s-on/4-s-off gate at 0.7 Hz (16 matched seeds) · fast = continuous 1.4-Hz middle segment · cross = chopped, flex/ext from different seeds (240 ordered pairs, nonindependent)</text>')
+s.append('<text x="30" y="56" fill="#9aa3b2" font-size="13">Right-Ti mean duty, all 37 B39 arms · one row per arm, three readouts per row · rows sorted by chopped-gate duty (high → low)</text>')
+s.append('<text x="30" y="76" fill="#9aa3b2" font-size="13">chopped = 5-s-on/4-s-off gate at 0.7 Hz (16 matched seeds) · fast = continuous 1.4-Hz middle segment · cross = chopped, flex/ext from different seeds (240 ordered pairs, nonindependent)</text>')
 # grid + axis numbers
 for v in [i / 10 for i in range(9)]:
     x = SX(v)
     s.append(f'<line x1="{x:.1f}" y1="102" x2="{x:.1f}" y2="750" stroke="#3e4451" stroke-width="1"/>')
-    s.append(f'<text x="{x:.1f}" y="766" fill="#5c6370" font-size="13" text-anchor="middle">{v:.1f}</text>')
+    s.append(f'<text x="{x:.1f}" y="766" fill="#9aa3b2" font-size="13" text-anchor="middle">{v:.1f}</text>')
 s.append('<text x="645" y="784" fill="#abb2bf" font-size="14" text-anchor="middle">mean duty — fraction of 500-sample windows with r(flex, ext) ≤ −0.25</text>')
 # k mini-columns (counts with duty >= .5, straight from the csv)
 for hx, htxt in ((1180, "k·chop"), (1216, "k·1.4"), (1262, "k·cross")):
-    s.append(f'<text x="{hx}" y="100" fill="#5c6370" font-size="11" text-anchor="middle">{htxt}</text>')
+    s.append(f'<text x="{hx}" y="100" fill="#9aa3b2" font-size="11" text-anchor="middle">{htxt}</text>')
 
 order = sorted(rows, key=lambda r: -float(r["chopped_mean"]))
+RD = {"ch": "chopped", "fa": "fast", "xr": "cross"}   # csv column stems
 for i, r in enumerate(order):
     arm = r["arm"]
     y = YTOP + i * DY
@@ -80,9 +81,10 @@ for i, r in enumerate(order):
     s.append(f'<line x1="{min(xs):.1f}" y1="{y:.1f}" x2="{max(xs):.1f}" y2="{y:.1f}" stroke="#5c6370" stroke-width="1" opacity="0.55"/>')
     big = 'r="6" stroke="#abb2bf" stroke-width="1"' if arm == "sc25" else 'r="5"'
     for key, col in (("ch", C_CH), ("fa", C_FA), ("xr", C_XR)):
-        s.append(f'<circle class="dot {arm} {key}" cx="{SX(vals[key]):.1f}" cy="{y:.1f}" {big} fill="{col}"/>')
+        # data-* attributes (L197 / referee r4 M3): machine-readable, no visual change
+        s.append(f'<circle class="dot {arm} {key}" data-arm="{arm}" data-readout="{RD[key]}" data-v="{vals[key]!r}" cx="{SX(vals[key]):.1f}" cy="{y:.1f}" {big} fill="{col}"/>')
     for hx, c in ((1180, "chopped_k"), (1216, "fast_k"), (1262, "cross_k")):
-        s.append(f'<text x="{hx}" y="{y + 4:.1f}" fill="#5c6370" font-size="11" text-anchor="middle">{r[c]}</text>')
+        s.append(f'<text x="{hx}" y="{y + 4:.1f}" fill="#9aa3b2" font-size="11" text-anchor="middle">{r[c]}</text>')
 
 # annotation, placed only where the bottom rows leave clear space (asserted below)
 ann_x, ann_y = 620.0, YTOP + (len(order) - 4) * DY
@@ -92,8 +94,8 @@ s.append(f'<text x="{ann_x}" y="{ann_y + 15:.1f}" fill="#e5c07b" font-size="12">
 s.append('<circle cx="36" cy="802" r="6" fill="#98c379"/><text x="48" y="806" fill="#abb2bf" font-size="13">chopped gate 0.7 Hz (matched, 16 seeds)</text>')
 s.append('<circle cx="340" cy="802" r="6" fill="#61afef"/><text x="352" y="806" fill="#abb2bf" font-size="13">continuous 1.4 Hz (middle segment)</text>')
 s.append('<circle cx="620" cy="802" r="6" fill="#e5c07b"/><text x="632" y="806" fill="#abb2bf" font-size="13">cross-seed, chopped (240 ordered pairs)</text>')
-s.append('<text x="1300" y="806" fill="#5c6370" font-size="11.5" text-anchor="end">asserted vs threepanel.csv + results_l175.json at draw time · L184</text>')
-s.append('<text x="36" y="822" fill="#5c6370" font-size="11.5">row labels: green = carrier (DNp33-L) · purple = twins (mass sc26, drive dmA/dmC) · blue = boundary cells (sc27, sc40 — sc40 shares leading relay GI 75494) · orange = k=24 base · k columns: runs/pairs with duty ≥ .5 (16 seeds; cross 240) · no values missing</text>')
+s.append('<text x="1300" y="806" fill="#9aa3b2" font-size="11.5" text-anchor="end">asserted vs threepanel.csv + results_l175.json at draw time · L184</text>')
+s.append('<text x="36" y="822" fill="#9aa3b2" font-size="11.5">row labels: green = carrier (DNp33-L) · purple = twins (mass sc26, drive dmA/dmC) · blue = boundary cells (sc27, sc40 — sc40 shares leading relay GI 75494) · orange = k=24 base · k columns: runs/pairs with duty ≥ .5 (16 seeds; cross 240) · no values missing</text>')
 s.append("</svg>")
 svg = "\n".join(s) + "\n"
 open(f"{OUT}/fig5_threepanel.svg", "w").write(svg)
