@@ -1,0 +1,88 @@
+CERT-bin fr[6] == 0.1 to 1e-12: PASS
+CERT-A PLV_self separates pinned 1.0000 from free 6.31e-17: PASS
+CERT-sets CARRIER ['Tr_fL', 'Tr_eL', 'Tr_eR', 'Ta_aL', 'Ta_aR', 'Ta_bR', 'Sr_aL', 'Sr_bL']
+          CONTROL ['Ti_fL', 'Ti_fR', 'Ti_eL', 'Ti_eR', 'Tr_fR', 'Pr_aL', 'Pr_aR', 'Pr_bL', 'Sr_aR']: PASS
+coverage 22 channels x 2 arms x 16 seeds: PASS
+free-phase PLV floor at n=16: 0.2216
+
+--- op point (L30; af = end-of-settle SNAPSHOT, phase-pinned) -----
+  af_settle_fix                    [0.10934632271528244, 0.10504023730754852, 0.11238175630569458]
+  mm_window_fix                    [0.10160497203469276, 0.10130969434976578, 0.10218800604343414]
+  xm_window_fix                    [0.040584880858659744, 0.04053061828017235, 0.04069413244724274]
+  af_settle_rnd                    [0.19057366997003555, 0.10805214196443558, 0.27107158303260803]
+  mm_window_rnd                    [0.10116840526461601, 0.10067499428987503, 0.10193493962287903]
+  xm_window_rnd                    [0.04017849639058113, 0.03790797293186188, 0.04070074111223221]
+  mm_window_ratio_rnd_over_fix     0.9957032932411252
+
+--- PLV_self per channel (bin-6 phase reproducibility) -----------
+channel    set           fix      rnd   ev_fix   ev_rnd   |X|_fix   |X|_rnd
+Ti_fL      control     0.959    0.255    0.840    0.064      30.8      23.5
+Ti_fR      control     0.906    0.242    0.758    0.092      10.7      10.1
+Ti_eL      control     0.773    0.322    0.551    0.036        58      48.4
+Ti_eR      control     0.761    0.264    0.543    0.107      45.4      33.3
+Tr_fL      CARRIER     0.990    0.255    0.961    0.054        34      29.1
+Tr_fR      control     0.870    0.331    0.699    0.157      16.1      14.8
+Tr_eL      CARRIER     0.987    0.280    0.938    0.094      62.3      68.5
+Tr_eR      CARRIER     0.996    0.284    0.986    0.076      65.4      63.9
+Ta_aL      CARRIER     0.979    0.326    0.937    0.094      1.39      1.14
+Ta_aR      CARRIER     0.982    0.369    0.917    0.185      27.7      31.6
+Ta_bL      -           0.566    0.398    0.262    0.051      7.35      6.33
+Ta_bR      CARRIER     0.995    0.325    0.979    0.093       191       175
+Pr_aL      control     0.271    0.271    0.079    0.079       0.3       0.3
+Pr_aR      control     0.882    0.267    0.652    0.059      35.1      53.8
+Pr_bL      control     0.191    0.191    0.112    0.112     0.364     0.364
+Pr_bR      -           0.991    0.287    0.966    0.089      74.9      60.2
+Sr_aL      CARRIER     0.979    0.264    0.925    0.052      96.1      69.7
+Sr_aR      control     0.152    0.152    0.072    0.072     0.255     0.255
+Sr_bL      CARRIER     0.944    0.194    0.845    0.024        81      68.9
+Sr_bR      -           0.904    0.226    0.730    0.040      19.7      20.4
+mm         -           0.994    0.340    0.978    0.115        14      13.1
+xm         -           1.000    0.314    1.000    0.095      38.9      38.8
+
+--- carrier pair PLV (phase RELATION across rollouts) ------------
+pair                          fix      rnd      p_rnd
+Tr_fL~Tr_eL                 0.970    0.965   3.42e-07
+Tr_fL~Tr_eR                 0.988    0.989   1.57e-07
+Tr_fL~Ta_aL                 0.984    0.964   3.44e-07
+Tr_fL~Ta_aR                 0.963    0.941   6.94e-07
+Tr_fL~Ta_bR                 0.986    0.983   1.96e-07
+Tr_fL~Sr_aL                 0.974    0.980   2.14e-07
+Tr_fL~Sr_bL                 0.928    0.920   1.30e-06
+Tr_eL~Tr_eR                 0.988    0.980   2.11e-07
+Tr_eL~Ta_aL                 0.968    0.954   4.80e-07
+Tr_eL~Ta_aR                 0.978    0.970   2.93e-07
+Tr_eL~Ta_bR                 0.980    0.976   2.38e-07
+Tr_eL~Sr_aL                 0.951    0.937   7.95e-07
+Tr_eL~Sr_bL                 0.910    0.921   1.26e-06
+Tr_eR~Ta_aL                 0.978    0.961   3.84e-07
+Tr_eR~Ta_aR                 0.977    0.968   3.10e-07
+Tr_eR~Ta_bR                 0.995    0.996   1.28e-07
+Tr_eR~Sr_aL                 0.970    0.969   3.01e-07
+Tr_eR~Sr_bL                 0.932    0.933   8.94e-07
+Ta_aL~Ta_aR                 0.955    0.923   1.19e-06
+Ta_aL~Ta_bR                 0.977    0.964   3.46e-07
+Ta_aL~Sr_aL                 0.966    0.970   2.92e-07
+Ta_aL~Sr_bL                 0.911    0.887   3.41e-06
+Ta_aR~Ta_bR                 0.973    0.972   2.71e-07
+Ta_aR~Sr_aL                 0.965    0.912   1.69e-06
+Ta_aR~Sr_bL                 0.931    0.878   4.43e-06
+Ta_bR~Sr_aL                 0.981    0.965   3.41e-07
+Ta_bR~Sr_bL                 0.952    0.927   1.08e-06
+Sr_aL~Sr_bL                 0.971    0.931   9.53e-07
+
+--- medians -------------------------------------------------------
+  self_carrier_fix       0.9843
+  self_carrier_rnd       0.2822
+  self_control_fix       0.7735
+  self_control_rnd       0.2637
+  pair_carrier_fix       0.9705
+  pair_carrier_rnd       0.9644
+  pair_control_fix       0.2959
+  pair_control_rnd       0.3477
+  locked pairs: {'carrier|fix': 28, 'carrier|rnd': 28, 'control|fix': 14, 'control|rnd': 11}
+
+free-phase floor (n=16) 0.2216 | drive PLV rnd 0.3125
+positive control (fix carrier PLV_self >= .8): PASS
+BRANCH: B_SHARED
+
+l164/results.json written

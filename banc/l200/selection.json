@@ -1,0 +1,567 @@
+{
+ "rule": "ascending |log(dL_c/dL_ru2)| over POOL_L; tie-break |log(total-drive ratio)|, then gi; dL = x_mean (stored 3-seed census of the k=24 base) x sum of model-true |Wb| over the cell's base edges onto the left-Ti premotor pool PM_L (PREREG l200)",
+ "pool": "in k=24 base & cord interneuron & eff sign == ru2's & not prior-arm (L198 PRIOR + L198's six cells) & not motor & not DNg100 & not the homolog pick",
+ "census_seeds": [
+  801,
+  901,
+  3561
+ ],
+ "pool_n": 7274,
+ "pool_n_positive_dL": 3222,
+ "prior_arm_cells_n": 89,
+ "PM_L_n": 1910,
+ "PM_R_n": 2219,
+ "PM_shared_n": 108,
+ "dL_ref": 7.976961341606866,
+ "ru2": {
+  "gi": 70994,
+  "root_id": "720575941663099516",
+  "super_class": "ventral_nerve_cord_intrinsic",
+  "cell_type": "IN07B031",
+  "side": "right",
+  "eff_sign": -1.0,
+  "is_glut": true,
+  "in_dn_new": false,
+  "is_mech": false,
+  "lineage_mass_share": 0.0,
+  "out_w_raw": 143.90336282196483,
+  "out_w_eff": 287.80672564392967,
+  "out_w_motor": 33.183010061373906,
+  "out_edges": 61,
+  "x_mean": 0.2994140883286794,
+  "total_drive": 86.17338837353955,
+  "total_drive_ratio": 1.0,
+  "dL": 7.976961341606866,
+  "dR": 6.634453827247749,
+  "dL_ratio": 1.0,
+  "edges_onto_PM_L": 5,
+  "edges_onto_PM_R": 5,
+  "mass_onto_PM_L": 26.641903813324312,
+  "mass_onto_PM_R": 22.15812176468073,
+  "in_PM_L": false,
+  "in_PM_R": false,
+  "in_edges": 52,
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "edge_from_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_from_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  }
+ },
+ "top5": [
+  {
+   "gi": 71926,
+   "root_id": "720575941413451156",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN14A074",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": true,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 57.225624304387225,
+   "out_w_eff": 114.45124860877445,
+   "out_w_motor": 0.0,
+   "out_edges": 30,
+   "x_mean": 0.7189790606498718,
+   "total_drive": 82.2880512149416,
+   "total_drive_ratio": 0.9549125637052125,
+   "dL": 7.951087462538082,
+   "dR": 53.77712954644324,
+   "dL_ratio": 0.9967564241619389,
+   "edges_onto_PM_L": 3,
+   "edges_onto_PM_R": 19,
+   "mass_onto_PM_L": 11.058858175022847,
+   "mass_onto_PM_R": 74.79651701933446,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 35,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 1,
+   "abs_log_dL_ratio": 0.0032488476329006317,
+   "abs_log_total_drive_ratio": 0.04613549902256382
+  },
+  {
+   "gi": 68609,
+   "root_id": "720575941507478145",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN01B040",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 37.722894685001435,
+   "out_w_eff": 75.44578937000287,
+   "out_w_motor": 0.0,
+   "out_edges": 15,
+   "x_mean": 0.15914760529994965,
+   "total_drive": 12.007016708200354,
+   "total_drive_ratio": 0.13933555282929125,
+   "dL": 7.934474428431809,
+   "dR": 0.0,
+   "dL_ratio": 0.9946737972825003,
+   "edges_onto_PM_L": 10,
+   "edges_onto_PM_R": 0,
+   "mass_onto_PM_L": 49.856071748472104,
+   "mass_onto_PM_R": 0.0,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 20,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 2,
+   "abs_log_dL_ratio": 0.00534043750259269,
+   "abs_log_total_drive_ratio": 1.9708702058555347
+  },
+  {
+   "gi": 10317,
+   "root_id": "720575941503566530",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN13B075",
+   "side": "right",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 46.99246890997761,
+   "out_w_eff": 93.98493781995522,
+   "out_w_motor": 28.62266049639902,
+   "out_edges": 21,
+   "x_mean": 0.3377055029074351,
+   "total_drive": 31.739230692211997,
+   "total_drive_ratio": 0.3683182394387298,
+   "dL": 8.086614084685085,
+   "dR": 0.0,
+   "dL_ratio": 1.0137461795767122,
+   "edges_onto_PM_L": 6,
+   "edges_onto_PM_R": 0,
+   "mass_onto_PM_L": 23.945757516724925,
+   "mass_onto_PM_R": 0.0,
+   "in_PM_L": true,
+   "in_PM_R": false,
+   "in_edges": 45,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 1,
+     "syn": 3,
+     "w_eff_sum": -2.772588722239781,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 1,
+     "syn": 11,
+     "w_eff_sum": -4.969813299576001,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 3,
+   "abs_log_dL_ratio": 0.013652557835414948,
+   "abs_log_total_drive_ratio": 0.9988079334374277
+  },
+  {
+   "gi": 67125,
+   "root_id": "720575941546638625",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN00A048",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 49.72676106783669,
+   "out_w_eff": 99.45352213567338,
+   "out_w_motor": 0.0,
+   "out_edges": 30,
+   "x_mean": 0.24756509065628052,
+   "total_drive": 24.621220223604382,
+   "total_drive_ratio": 0.28571721140728157,
+   "dL": 7.853803594786032,
+   "dR": 7.298104724981448,
+   "dL_ratio": 0.9845608193964214,
+   "edges_onto_PM_L": 9,
+   "edges_onto_PM_R": 8,
+   "mass_onto_PM_L": 31.72419654954606,
+   "mass_onto_PM_R": 29.47953891897521,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 56,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 4,
+   "abs_log_dL_ratio": 0.015559605872097839,
+   "abs_log_total_drive_ratio": 1.2527527286223101
+  },
+  {
+   "gi": 67756,
+   "root_id": "720575941506272802",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN09A043",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 36.270500193505455,
+   "out_w_eff": 72.54100038701091,
+   "out_w_motor": 0.0,
+   "out_edges": 14,
+   "x_mean": 0.19912743071715036,
+   "total_drive": 14.444903028717293,
+   "total_drive_ratio": 0.16762603051074587,
+   "dL": 8.126546984445117,
+   "dR": 8.213514007085486,
+   "dL_ratio": 1.0187522085707035,
+   "edges_onto_PM_L": 7,
+   "edges_onto_PM_R": 7,
+   "mass_onto_PM_L": 40.81078611408607,
+   "mass_onto_PM_R": 41.24752665920917,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 14,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 5,
+   "abs_log_dL_ratio": 0.018578553492748395,
+   "abs_log_total_drive_ratio": 1.7860197896840782
+  }
+ ],
+ "picks": [
+  71926,
+  68609
+ ],
+ "homolog": {
+  "gi": 67738,
+  "root_id": "720575941625932682",
+  "super_class": "ventral_nerve_cord_intrinsic",
+  "cell_type": "IN07B031",
+  "side": "left",
+  "eff_sign": -1.0,
+  "is_glut": true,
+  "in_dn_new": false,
+  "is_mech": false,
+  "lineage_mass_share": 0.0,
+  "out_w_raw": 155.7754010647439,
+  "out_w_eff": 311.5508021294878,
+  "out_w_motor": 28.873960613307393,
+  "out_edges": 77,
+  "x_mean": 3.720401582540944e-05,
+  "total_drive": 0.011590940972844471,
+  "total_drive_ratio": 0.00013450719754224717,
+  "dL": 0.00048745299291696683,
+  "dR": 0.0004895491324219361,
+  "dL_ratio": 6.110760376566838e-05,
+  "edges_onto_PM_L": 4,
+  "edges_onto_PM_R": 4,
+  "mass_onto_PM_L": 13.102160670086809,
+  "mass_onto_PM_R": 13.158502424020202,
+  "in_PM_L": false,
+  "in_PM_R": false,
+  "in_edges": 44,
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "edge_from_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_from_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  }
+ },
+ "homolog_candidates": [
+  67738,
+  68321
+ ],
+ "prereg_sha256_at_selection": "db03c33d5997bc51656eaee10fe667c4b56e6f8ab3bcde389eeb8283b9dd231a"
+}

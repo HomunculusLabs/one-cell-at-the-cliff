@@ -1,0 +1,41 @@
+--- l182 drift gate on /home/t3rpz/critters/peabrain-lab/paper/DRAFT.md
+    uncanonical-arm rows: 40 tokens, 0 of them POOLED-marked
+    resolved 101  unresolved 257  ignored denoms [0, 1, 2, 5, 18, 20, 26, 33, 36, 49, 58, 240, 433, 449, 500, 518]
+    D1: PASS  {"detail": {}}
+    D2: PASS  {"detail": []}
+    D3: PASS  {"uncovered": [], "vacuous_regions": ["### 2.1", "### 2.10", "### 2.12"], "reconcile_fail": [], "regions_used": ["### 2.2", "### 2.4 A", "### 2.7", "### 2.9 M"]}
+    D4: PASS  {"detail": []}
+    PRIMARY True  ALL True
+
+--- l182 drift gate on /home/t3rpz/critters/peabrain-lab/banc/l182/tamper_T1_perbatch_carrier.md
+    uncanonical-arm rows: 40 tokens, 0 of them POOLED-marked
+    resolved 101  unresolved 257  ignored denoms [0, 1, 2, 5, 18, 20, 26, 33, 36, 49, 58, 240, 433, 449, 500, 518]
+    D1: PASS  {"detail": {}}
+    D2: FAIL  {"detail": [{"arm": "cutng25", "cell": "124/128", "canon": 210, "line": 1918, "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means", "text": "| cutng25 (carrier, k=25) | 124/128 | [.933,.984] | .766 | [.749,.783] | 13 |"}]}
+    D3: PASS  {"uncovered": [], "vacuous_regions": ["### 2.10", "### 2.12"], "reconcile_fail": [], "regions_used": ["### 2.1", "### 2.2", "### 2.4 A", "### 2.7", "### 2.9 M"]}
+    D4: PASS  {"detail": []}
+    PRIMARY False  ALL False
+    TAMPER T1_perbatch_carrier: target D2 red = True; collateral changes []
+
+--- l182 drift gate on /home/t3rpz/critters/peabrain-lab/banc/l182/tamper_T2_second_union_clamp.md
+    uncanonical-arm rows: 40 tokens, 0 of them POOLED-marked
+    resolved 101  unresolved 257  ignored denoms [0, 1, 2, 5, 18, 20, 26, 33, 36, 49, 58, 240, 433, 449, 500, 518]
+    D1: FAIL  {"detail": {"silW": [98, 258]}}
+    D2: FAIL  {"detail": [{"arm": "silW", "cell": "78/258", "canon": 98, "line": 1922, "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means", "text": "| silW (carrier clamp on cut base) | 78/258 | [.706,.864] | .644 | [.611,.676] | 6 |"}]}
+    D3: PASS  {"uncovered": [], "vacuous_regions": ["### 2.1", "### 2.10", "### 2.12"], "reconcile_fail": [], "regions_used": ["### 2.2", "### 2.4 A", "### 2.7", "### 2.9 M"]}
+    D4: PASS  {"detail": []}
+    PRIMARY False  ALL False
+    TAMPER T2_second_union_clamp: target D1 red = True; collateral changes ['D2']
+
+--- l182 drift gate on /home/t3rpz/critters/peabrain-lab/banc/l182/tamper_T3_drop_reconciliation.md
+    uncanonical-arm rows: 40 tokens, 0 of them POOLED-marked
+    resolved 100  unresolved 254  ignored denoms [0, 1, 2, 5, 18, 20, 26, 33, 36, 49, 58, 240, 433, 449, 500, 518]
+    D1: PASS  {"detail": {}}
+    D2: PASS  {"detail": []}
+    D3: FAIL  {"uncovered": [], "vacuous_regions": ["### 2.1", "### 2.10", "### 2.12"], "reconcile_fail": ["cutscr0: canonical 41/50 absent from body"], "regions_used": ["### 2.2", "### 2.4 A", "### 2.7", "### 2.9 M"]}
+    D4: PASS  {"detail": []}
+    PRIMARY True  ALL False
+    TAMPER T3_drop_reconciliation: target D3 red = True; collateral changes []
+
+    tampers 3/3 turned their named cell red
+    LIVE: PRIMARY True  ALL True

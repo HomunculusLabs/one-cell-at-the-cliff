@@ -1,0 +1,195 @@
+Query: Writing dispatch (owner request, the meta-paper skeleton, burn window). 
+Read /home/t3rpz/critters/peabrain-lab/paper/metapaper/BRIEF_meta.md and execute
+it completely. Every number cited from an artifact path.
+⚠️  Normalized model 'claude-opus-5.5' to 'claude-opus-5-5' for anthropic.
+📖 Read BRIEF_meta.md
+💻 $ ls + 7 commands
+💻 $ cat paper/metapaper/dispatch.log + 6 commands  0.2s
+📖 Read LANE-LOG.md  0.1s
+💻 $ grep -n '2026-11-2[01]' LANE-LOG.md | cut -c1-260
+💻 $ awk 'NR>=470 && NR<=493 {print NR": "substr($0,1,200)}' LANE-LOG.md + 1 command
+💻 $ S=/home/t3rpz/.hermes/profiles/maple/cache/scratch/meta + 3 commands
+📖 Read insession.txt
+📖 Read SKILL.md
+📖 Read review_fable.md
+📖 Read review_claudeai_fable_20261121.md
+📖 Read review_astra_r3.md
+📖 Read review_fable_r2.md
+💻 $ grep -n '^#' review_opus_r4.md + 1 command
+📖 Read review_opus_r4.md L1-20
+📖 Read review_opus_r4.md L132-401
+📖 Read review_opus_r4.md L444-633
+💻 $ grep -n '^#' review_fable_r2.md + 1 command
+💻 $ for d in banc/l17[5-9]* banc/l18* banc/l19* banc/l20[0-2]* ducklesion duckplast duckplast2 duckroute + 3 commands  0.1s
+💻 $ for f in banc/l175/L175-FINDINGS.md banc/l184/L184-FINDINGS.md banc/l185/L185-FINDINGS.md banc/l186/L186-FINDINGS.md banc/l187/L187-FINDINGS.md banc/l190/L190-FINDINGS.md + 3 commands
+💻 $ grep -n -i -m3 'prediction' banc/l197b/L197b-FINDINGS.md banc/l198/L198-FINDINGS.md banc/l199/L199-FINDINGS.md banc/l200/L200-FINDINGS.md ducklesion/DUCK-FINDINGS.md duckplast/DUCKPLAST-FINDINGS.md duckplast2/DUCKPLAST2-FINDINGS.md banc/l187/L187-FINDINGS.md banc/l185/L185-FINDINGS.md | cut -c1-400 + 2 commands  5.2s
+✗ $ sed -n 50,62p banc/l199/L199-FINDINGS.md | cut -c1-500 + 6 commands  0.1s [exit 1]
+💻 $ gh api 'repos/HomunculusLabs/one-cell-at-the-cliff/commits?per_page=100' --jq '.[] | [.sha[0:7], .commit.committer.date, (.commit.message|split("\n")[0])] | @tsv'  0.8s
+💻 $ grep -n '^#' RESPONSE-LETTER.md + 3 commands
+💻 $ sed -n 776,871p RESPONSE-LETTER.md + 1 command
+💻 $ head -20 ducklesion/DUCK-FINDINGS.md | cut -c1-300 + 5 commands
+✗ $ tail -5 banc/l201_dispatch.log | cut -c1-300 + 9 commands  0.2s [exit 1]
+💻 $ grep -n 'What they do not check\|Every stale sentence\|No human referee\|We thank all four' RESPONSE-LETTER.md + 5 commands
+💻 $ mkdir -p /home/t3rpz/critters/peabrain-lab/paper/metapaper/evidence + 6 commands  0.8s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/metapaper/evidence/jobs.tsv
+│ paper/metapaper/evidence/jobs.tsv
+│ @@ -0,0 +1,31 @@
+│ +id	kind	family	result_artifact	lanelog_line	wrong_predictions
+│ +R1	review	fable-5.2	paper/review_fable.md	370	
+│ +R2	review	fable-5.2	paper/review_fable_r2.md	415	
+│ +SO	review	fable-5.2(hosted claude.ai)	paper/review_claudeai_fable_20261121.md	418	
+│ +R3	review	gpt-6.2-astra	paper/review_astra_r3.md	421	
+│ +R4	review	claude-opus-5	paper/review_opus_r4.md	446	
+│ +L175b	experiment	fable-5.2	banc/l175/L175-FINDINGS.md	420	2
+│ +L184	experiment	gpt-6.2-astra	banc/l184/L184-FINDINGS.md	424	
+│ +L185	experiment	fable-5.2	banc/l185/L185-FINDINGS.md	426	1
+│ +L186	experiment	gpt-6.2-astra	banc/l186/L186-FINDINGS.md	429	
+│ +L187	experiment	fable-5.2	banc/l187/L187-FINDINGS.md	428	2
+│ +L190	experiment	gpt-6.2-astra	banc/l190/L190-FINDINGS.md	435	
+│ +L191duck	experiment	gpt-6.2-astra	ducklesion/DUCK-FINDINGS.md	434	
+│ +L192duck	experiment	gpt-6.2-astra	duckplast/DUCKPLAST-FINDINGS.md	460	
+│ +L197b	experiment	fable-5.2	banc/l197b/L197b-FINDINGS.md	461	3
+│ +L198	experiment	fable-5.2	banc/l198/L198-FINDINGS.md	461	1
+│ +L199	experiment	fable-5.2	banc/l199/L199-FINDINGS.md	465	2
+│ +L200	experiment	fable-5.2	banc/l200/L200-FINDINGS.md	466	1
+│ +duckplast2	experiment	fable-5.2	duckplast2/DUCKPLAST2-FINDINGS.md	468	
+│ +L202	experiment	fable-5.2	banc/l202/L202-FINDINGS.md	493	
+│ +duckroute	experiment	fable-5.2	duckroute/DUCKROUTE-FINDINGS.md	493	
+│ +L188	priorart	gpt-6.1-terra	paper/priorart_terra_20261121.md	427	
+│ +L189	digest	glm-5.3	(gitea commit 5a2c4103)	427	
+│ +L183	fold	fable-5.2	banc/l183_worklog.md	438	
+│ +L190b	fold	fable-5.2	banc/l190b_worklog.md	441	
+│ +L197	fold	fable-5.2	banc/l197_worklog.md	449	
+│ +residue	fold	fable-5.2	banc/residue_worklog.md	459	
+│ +letter	fold	fable-5.2	paper/RESPONSE-LETTER.md	445	
+│ +figs45	figures	gpt-6.1-terra	paper/figures/fig5_verify.py	444	
+│ +L201fold	fold	claude-opus-5.5	paper/l201_FOLDED.marker	493	
+│ +fig6	figures	claude-opus-5.5	paper/figures/fig6_verify.py	493	
+💻 $ sed -i 's#paper/l201_FOLDED.marker#-#; s#paper/figures/fig6_verify.py#-#' jobs.tsv + 1 command  0.2s
+💻 $ sed -i 's#^\(L192duck\t.*\t460\t\)$#\12#' jobs.tsv + 3 commands
+💻 $ sed -n 251,262p references.bib | cut -c1-200 + 2 commands
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/metapaper/SKELETON.md
+│ paper/metapaper/SKELETON.md
+│ @@ -0,0 +1,395 @@
+│ +# META-PAPER SKELETON — adversarial cross-family agent review (draft 0)
+│ +
+│ +Status: skeleton, 2026-11-22, writer claude-opus-5.5 (BRIEF_meta.md). Not a
+│ +draft. Every number carries a source key; the receipts are the data.
+│ +
+│ +## Source keys (paths relative to /home/t3rpz/critters/peabrain-lab/)
+│ +
+│ +    LL   /home/t3rpz/critters/peabrain/LANE-LOG.md   (LL:n = line n)
+│ +    R1   paper/review_fable.md          round 1, fable-5.2, 2026-11-19/20
+│ +    R2   paper/review_fable_r2.md       round 2, fable-5.2, 2026-11-21
+│ +    SO   paper/review_claudeai_fable_20261121.md  hosted claude.ai fable-5.2
+│ +    R3   paper/review_astra_r3.md       round 3, gpt-6.2-astra
+│ +    R4   paper/review_opus_r4.md        round 4, claude-opus-5
+│ +    RL   paper/RESPONSE-LETTER.md       PA  paper/priorart_terra_20261121.md
+│ +    SK   ~/.hermes/profiles/maple/skills/research/adversarial-agent-review/SKILL.md
+│ +    EV   paper/metapaper/evidence/  (jobs.tsv + counts.py -> counts.out;
+│ +         commits.tsv, releases.tsv = gh API pulls, fetched_at.txt)
+│ +    F:x  banc/x/X-FINDINGS.md (or ducklesion/, duckplast/, duckplast2/)
+│ +
+│ +Counts marked [EV:counts.out] are recomputed by `python3 EV/counts.py`.
+│ +
+│ +## Title candidates
+│ +
+│ +1. Gates check numbers, referees check sentences: cross-family model review
+│ +   of a connectome-model preprint
+│ +2. Rotate the referee: a receipts-first case study of adversarial agent
+│ +   review on one computational-neuroscience preprint
+│ +3. Adjudicate before believing: five model-referee rounds, thirteen
+│ +   referee-run experiments, and the claims that did not survive
+│ +4. What four model families missed together: calibrating the yardstick in
+│ +   agent peer review (strong if §5's shared-blind-spot result holds up)
+│ +
+│ +Working pick: (1). It names the central finding without overclaiming the
+│ +method's generality (we have n = 1 paper).
+│ +
+│ +## Abstract (draft, ~190 words; trim at draft stage)
+│ +
+│ +A rate-model study of a fly nerve-cord connectome was built by a
+│ +pre-registered, anchor-certified agent lane with automated verify gates that
+│ +check every quoted number against a ledger. The gates were green while the
+│ +framing was wrong: three referee reports say so in nearly the same words
+│ +[R1:22-23; R2:63-66; SO:40], and the authors' response letter concedes it
+│ +[RL:794-795]. We report what happened when the draft was instead attacked by
+│ +model referees from rotating families: five review instances from three
+│ +model lines across two vendors (fable-5.2 x3 incl. one hosted instance,
+│ +gpt-6.2-astra, claude-opus-5) [EV:counts.out], each given the artifact tree
+│ +rather than the prose, each adjudicated by recomputation before any fix,
+│ +and some re-dispatched as experimenters (13 completed pre-registered
+│ +experiments, 8 fable / 5 astra [EV:counts.out]). The title, the central
+│ +control and at least twelve claims died (§3.3); the verdict moved from major
+│ +revision x3 to minor [R1:15; R2:20; R3:75; R4:9]. The last referee named a
+│ +blind spot all families shared: none audited the outcome band itself
+│ +[R4:595-613]. We describe the procedure, its costs, and why model referees
+│ +do not replace a human from the field, who has not yet read the paper
+│ +[RL:846].
+│ +
+│ +## §1 The problem
+│ +
+│ +1.1 Internal verification certifies values, not inferences.
+│ +- The lane's gates (six, later seven scripts) assert number == ledger key,
+│ +  frozen abstract contracts, byte-replay of declared edits [RL:783-793].
+│ +- R1: "All four verify scripts pass, but they check value-vs-ledger
+│ +  equality, not whether claims follow" [R1:22-23].
+│ +- R2: "Every problem in Task 4 passes all six" [R2:66]; R2 also caught one
+│ +  gate going green by having its pins re-pointed mid-review [R2:54-65].
+│ +- SO: the "six verification gates check that numbers match the ledger, not
+│ +  that statements are true" [SO:40]. RL: "Every stale sentence listed above
+│ +  passes all seven gates" [RL:795-796].
+│ +- The R1 critique was adjudicated by the lab itself: 12/12 CONFIRMED at
+│ +  least in direction, zero refuted [LL:370]. Every framing defect R1 raised
+│ +  was real and had survived ~190 internal ticks (R1 adjudication = tick 189
+│ +  [LL:370]).
+│ +- Claim for the paper: value-level verification and inference-level review
+│ +  are different instruments; the second needs an adversary.
+│ +
+│ +1.2 Same-family review converges — on hits AND on misses.
+│ +- R2 (API fable) and SO (hosted fable, own rebuild, own code) converged
+│ +  independently on the same three defects: silent mass twin, Methods weight
+│ … omitted 317 diff line(s) across 1 additional file(s)/section(s)
+💻 $ p(){ awk -v a=$2 -v b=$3 'NR>=a&&NR<=b{print FILENAME":"NR": "substr($0,1,110)}' $1 + 13 commands  0.1s
+💻 $ sed -i 's#\[RL:808-814\]#[RL:809-819]#; s#\[R1:27-33;R2:117\]#[R1:27-33;R2:118]#; s#The title, the central#The title, the central#; s#control and at least twelve claims died (§3.3)#control and fourteen drafted claims died or narrowed (§3.4)#' SKELETON.md + 3 commands
+📖 Read SKELETON.md L47-52
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/metapaper/SKELETON.md
+│ paper/metapaper/SKELETON.md
+│ @@ -47,8 +47,8 @@
+│  rather than the prose, each adjudicated by recomputation before any fix,
+│  and some re-dispatched as experimenters (13 completed pre-registered
+│  experiments, 8 fable / 5 astra [EV:counts.out]). The title, the central
+│ -control and fourteen drafted claims died or narrowed (§3.4); the verdict moved from major
+│ -revision x3 to minor [R1:15; R2:20; R3:75; R4:9]. The last referee named a
+│ +control and fourteen drafted claims died or narrowed (§3.4); the
+│ +verdict moved from major revision x3 to minor [R1:15; R2:20; R3:75; R4:9]. The last referee named a
+│  blind spot all families shared: none audited the outcome band itself
+│  [R4:595-613]. We describe the procedure, its costs, and why model referees
+│  do not replace a human from the field, who has not yet read the paper
+💻 $ tail -c 200 LAB-INTENT.md | od -c + 4 commands  0.1s
+
+────────────────────────────────────────
+✿ Miso
+The meta-paper skeleton is written: paper/metapaper/SKELETON.md, 395 lines (the cap was 400). Every number in it points to a file and line, and I spot-checked the cited lines against the source files. I didn't edit the draft or any gate, and the LAB-INTENT append is done. ฅ^•ﻌ•^ฅSome of the brief's numbers didn't match the receipts, so the skeleton uses the counts from paper/metapaper/evidence/counts.out:
+- Referees: 5 reviews from 3 model families and 2 vendors (fable ×3 counting the claude.ai one, astra, opus-5). You only get "4 families" if you count terra, which never refereed.
+- Experiments: 13 finished and 2 still running (L202, duckroute), not ~20. They had 14 self-scored wrong predictions between them.
+- Claims: 14 drafted claims died or were narrowed. Each one is in the §3.4 table with what replaced it.Weak spots the skeleton states openly:
+- The "same-family reviewers share blind spots" point in §1.2 is tangled up with round order and how much the draft had matured. Treat it as a hint, not proof.- The token and dollar cost was never tracked, so it's listed as unmeasured.- Reviewers had zero claims refuted. That's listed as a risk that our checking was too lenient, not as proof they were right.
+- There are no verified sources yet on AI peer review, so none are cited.
+
+The skeleton also suggests writing down what a human expert should catch before the Sauers handoff, then scoring it after he reads the draft.
+
+Files are in /home/t3rpz/critters/peabrain-lab/paper/metapaper/:
+- SKELETON.md
+- evidence/jobs.tsv
+- evidence/counts.py
+- evidence/counts.out- evidence/commits.tsv
+- evidence/releases.tsv- evidence/fetched_at.txt
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-c790e400c5e4bd881eaa4c83658e7aafbbcf282230038e0345b72a32937d7ac9 -p maple
+
+Session:        local-c790e400c5e4bd881eaa4c83658e7aafbbcf282230038e0345b72a32937d7ac9
+Duration:       7m 30s
+Messages:       74 (1 user, 72 tool calls)

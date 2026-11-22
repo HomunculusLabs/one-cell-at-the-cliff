@@ -1,0 +1,33 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "lt2": 0.1430170154571533,
+  "lt2F": 0.14365819573402408
+ },
+ "bis_gain": {
+  "cutwA": 0.14365819573402408,
+  "lt2": 0.1430170154571533
+ },
+ "cert_gain": {},
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "lt2": "bisect (this process), fresh",
+  "lt2F": "fixed base gain g_cutwA (stored float)"
+ },
+ "bisected": [
+  "cutwA",
+  "lt2"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "lt2": 9.234497944514419e-05
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "lt2": 0.10896376520395279
+ },
+ "threads": 1,
+ "stored_exact": {
+  "cutwA": true
+ }
+}

@@ -1,0 +1,585 @@
+Query: Figure dispatch (owner request, Figure 6 the circuit, burn window). Read 
+/home/t3rpz/critters/peabrain-lab/paper/figures/BRIEF_fig6.md and execute it 
+completely. Stored-artifact numbers only; fig6_verify.py required.
+⚠️  Normalized model 'claude-opus-5.5' to 'claude-opus-5-5' for anthropic.
+📖 Read BRIEF_fig6.md
+💻 $ ls paper/figures/ + 4 commands
+📚 Skill peabrain-flybrain
+💻 $ cat paper/figures/fig6_dispatch.log + 5 commands  0.1s
+💻 $ cat l200/L200-FINDINGS.md + 2 commands  0.1s
+💻 $ cat l199/L199-FINDINGS.md + 2 commands
+💻 $ cat l184/L184-FINDINGS.md + 2 commands  0.1s
+💻 $ head -3 l184/edges.csv + 5 commands  0.1s
+💻 $ sed -n 1,60p l187/L187-FINDINGS.md + 1 command  0.1s
+💻 $ grep -n -E "60 ?%|~60|60 per" LAB-INTENT.md banc/l1[89]*/*.md banc/l20*/*.md paper/*.md 2>/dev/null + 4 commands  0.1s
+💻 $ sed -n 1236,1260p paper/DRAFT.md + 3 commands  0.1s
+💻 $ python3 - <<'E' import json d=json.load(open('results_l200.json')) + 3 commands  1.0s
+💻 $ python3 - <<'E' import json d=json.load(open('l200/results_l200.json')) for k,a in d['arms'].items(): print(k, a['removed'], a['kL'],a['meanL'],a['clsL'],a['kR'],a['meanR'],a['clsR'],a['k14R'],a['mean14R'],a['mean14L'],round(a['gain_delta_pct'],3), a.get('x_carrier')) p=json.load(open('l199/results_primary.json')) + 2 commands  0.2s
+💻 $ python3 - <<'E' import json p=json.load(open('results_primary.json')) for ds,v in p['datasets'].items(): print('==',ds, v.get('n'), v.get('W'), v.get('pulse')) print(' B theta', {g:round(x['theta']['value'],2) for g,x in v['B']['graphs'].items()}, 'dtheta', round(v['B']['dtheta']['value'],2), v['B']['label']) print(' octants', {g:[round(a,3) for a in o] for g,o in v['B']['octants'].items()}) print(' C', json.dumps(v['C'])[:1500]) print(p['labels']) E grep -n -i "octant" ph.py analyze_primary.py  0.2s
+💻 $ cat fig5_threepanel.py + 6 commands
+💻 $ grep -o 'font-family="[^"]*"' l152_clamp_cut_grid.svg + 4 commands
+💻 $ python3 - <<'E' import csv,json,collections r=list(csv.DictReader(open('l184/edges.csv'))) print(collections.Counter((x['direction'],x['target_class']) for x in r)) print(collections.Counter((x['direction'],x['partner_super']) for x in r if x['direction']=='out')) s=json.load(open('l200/selection.json')) + 1 command  0.2s
+💻 $ sed -n 60,135p ph.py + 1 command
+💻 $ python3 -c " import json;d=json.load(open('l200/results_l200.json')) for a in ['l2','l2k','l2c','sc25']: print(a, d['arms'][a].get('L_vs_base'), d['arms'][a].get('R_vs_base')) print(d['base'].keys()) " + 2 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.1s
+│ paper/figures/fig6_circuit.py
+│ @@ -0,0 +1,358 @@
+│ +#!/usr/bin/env python3
+│ +"""Fig. 6 — the circuit: three characters, asymmetric necessity (BRIEF_fig6.md).
+│ +
+│ +House style = l152_clamp_cut_grid.svg / fig5_threepanel.py: #282c34 ground,
+│ +#21252b panels, #abb2bf title/labels, #5c6370 / #9aa3b2 sub-text, #3e4451 grid,
+│ +five-colour accent palette (#98c379 #e5c07b #c678dd #61afef #d19a66), stroke 1-2,
+│ +no font-family (renderer default), footer assert line.
+│ +
+│ +STORED ARTIFACTS ONLY (no rollout, no recomputation beyond one point ratio and
+│ +one subtraction, both declared as expressions):
+│ +  l184e  banc/l184/edges.csv              carrier partner list (L184 Q2)
+│ +  l190r  banc/l190/results_l190.json      single-edge cut 1110->75494 (L190)
+│ +  l198s  banc/l198/static.json            relay wiring (L198)
+│ +  l200a4 banc/l200/a4_wiring.json         carrier / ru2 laterality + overlap (L200 A4)
+│ +  l200s  banc/l200/selection.json         premotor pool sizes (L200)
+│ +  l200r  banc/l200/results_l200.json      arm duties, 1.4-Hz panel, contrasts (L200)
+│ +  l199p  banc/l199/results_primary.json   phase Parts B/C (L199)
+│ +Every drawn number carries data-src (artifact pointer) + data-v (value) +
+│ +data-fmt on its SVG element; fig6_verify.py resolves each pointer itself.
+│ +L202 (registered replicate) has NOT landed: its slot is drawn as pending and
+│ +the generator refuses to run silently if results_l202.json appears.
+│ +"""
+│ +import csv, json, math, os, subprocess
+│ +
+│ +P = os.path.expanduser("~/critters/peabrain-lab")
+│ +OUT = f"{P}/paper/figures"
+│ +FILES = {
+│ +    "l184e": f"{P}/banc/l184/edges.csv",
+│ +    "l190r": f"{P}/banc/l190/results_l190.json",
+│ +    "l198s": f"{P}/banc/l198/static.json",
+│ +    "l200a4": f"{P}/banc/l200/a4_wiring.json",
+│ +    "l200s": f"{P}/banc/l200/selection.json",
+│ +    "l200r": f"{P}/banc/l200/results_l200.json",
+│ +    "l199p": f"{P}/banc/l199/results_primary.json",
+│ +}
+│ +L202 = f"{P}/banc/l202/results_l202.json"
+│ +if os.path.exists(L202):
+│ +    raise SystemExit("L202 results landed: extend Panel B with the replicate before regenerating (BRIEF_fig6)")
+│ +
+│ +J = {k: json.load(open(v)) for k, v in FILES.items() if v.endswith(".json")}
+│ +EDGES = list(csv.DictReader(open(FILES["l184e"])))
+│ +
+│ +
+│ +def A(c, m):
+│ +    if not c:
+│ +        raise AssertionError(m)
+│ +
+│ +
+│ +def resolve(src):
+│ +    """Pointer grammar: alias/key/key/idx ; csv:  l184e?col=val&col=val#count|#field"""
+│ +    if src.startswith("ratio(") or src.startswith("sub("):
+│ +        op, body = src.split("(", 1)
+│ +        a, b = body[:-1].split(";")
+│ +        va, vb = resolve(a), resolve(b)
+│ +        return va / vb if op == "ratio" else va - vb
+│ +    if src.startswith("l184e?"):
+│ +        q, out = src[6:].split("#")
+│ +        conds = [c.split("=", 1) for c in q.split("&")]
+│ +        rows = [r for r in EDGES if all(r[k] == v for k, v in conds)]
+│ +        if out == "count":
+│ +            return len(rows)
+│ +        A(len(rows) == 1, f"csv pointer {src} must select one row")
+│ +        return int(rows[0][out])
+│ +    alias, *path = src.split("/")
+│ +    x = J[alias]
+│ +    for p in path:
+│ +        x = x[int(p)] if isinstance(x, list) else x[p]
+│ +    return x
+│ +
+│ +
+│ +def fmt(v, f):
+│ +    if f == "d":
+│ +        s = f"{int(v)}"
+│ +    elif f == "comma":
+│ +        s = f"{int(v):,}"
+│ +    elif f == "pct":
+│ +        s = f"{round(v * 100)}%"
+│ +    elif f.startswith("s"):        # signed: s3 / s1 / s0
+│ … omitted 280 diff line(s) across 1 additional file(s)/section(s)
+✗ Exec p='/home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py' [This code is not allowed in an unattended session — it did not run.]
+
+────────────────────────────────────────
+✿ Miso
+Use the patch tool instead.
+────────────────────────────────────────
+
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -301,11 +301,9 @@
+│          s.append(f'<circle class="oct" data-graph="{g}" data-k="{k}" data-src="l199p/datasets/S/B/octants/{g}/{k % 8}" data-v="{oc[k % 8]!r}" cx="{pts[k][0]:.1f}" cy="{pts[k][1]:.1f}" r="{5 if k < 8 else 3.5}" fill="{col}"/>')
+│  s.append(T(XC(S["B"]["graphs"]["cutwA"]["theta"]["value"]) + 6, YC1 + 14, "θ base {}° (SE {})", [("l199p/datasets/S/B/graphs/cutwA/theta/value", "s0"), ("l199p/datasets/S/B/graphs/cutwA/theta/se", "f0")], fs=11, fill=COL["cutwA"], bold=True))
+│  s.append(T(XC(S["B"]["graphs"]["sc25"]["theta"]["value"]) + 6, YC1 + 14, "θ carrier cut {}° (SE {})", [("l199p/datasets/S/B/graphs/sc25/theta/value", "s0"), ("l199p/datasets/S/B/graphs/sc25/theta/se", "f0")], fs=11, fill=COL["sc25"], bold=True))
+│ -s.append(T(XC(S["B"]["graphs"]["sc25"]["theta"]["value"]) + 6, YC1 + 28, "Δθ {}° [{}, {}] · label {}",
+│ -           [("l199p/datasets/S/B/dtheta/value", "s0"), ("l199p/datasets/S/B/dtheta/ci95/0", "s0"), ("l199p/datasets/S/B/dtheta/ci95/1", "s0")], fs=11, fill="#9aa3b2",
+│ -           extra=""))
+│ -# the label string is categorical: append verbatim from the artifact
+│ -s[-1] = s[-1].replace("label {}", f'label {S["B"]["label"]}')
+│ +s.append(T(XC(S["B"]["graphs"]["sc25"]["theta"]["value"]) + 6, YC1 + 28, "Δθ {}° [{}, {}] · label " + S["B"]["label"],
+│ +           [("l199p/datasets/S/B/dtheta/value", "s0"), ("l199p/datasets/S/B/dtheta/ci95/0", "s0"), ("l199p/datasets/S/B/dtheta/ci95/1", "s0")], fs=11, fill="#9aa3b2"))
+│ +# (label string is categorical, copied verbatim from the artifact)
+│  s.append('<text x="760" y="926" fill="#5c6370" font-size="10" text-anchor="end">S: W150 window, 500-step pulse, n=96 · octants descriptive, θ registered</text>')
+│
+│  # phase dial (Part C)
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -334,8 +334,7 @@
+│  s.append(T(LX, 802, "flex − ext: {}° → {}°", [("l199p/datasets/S/C/cutwA/Delta/mean_deg", "s0"), ("l199p/datasets/S/C/sc25/Delta/mean_deg", "s0")], fs=12, fill="#abb2bf", bold=True))
+│  s.append(f'<text x="{LX}" y="820" fill="#9aa3b2" font-size="11">the extensor moves; the flexor stays —</text>')
+│  s.append(f'<text x="{LX}" y="835" fill="#9aa3b2" font-size="11">about a third of a period, not antiphase</text>')
+│ -s.append(T(LX, 860, "label {}: base {}, carrier cut {}", [], fs=11, fill="#5c6370"))
+│ -s[-1] = s[-1].replace("label {}: base {}, carrier cut {}", f'label {C["label"]}: base {C["cutwA"]["label"]}, carrier cut {C["sc25"]["label"]}')
+│ +s.append(f'<text x="{LX}" y="860" fill="#5c6370" font-size="11">Part C label {C["label"]}: base {C["cutwA"]["label"]}, carrier cut {C["sc25"]["label"]}</text>')
+│
+│  # footer + legend
+│  s.append('<text x="30" y="986" fill="#9aa3b2" font-size="11.5">orange = base cutwA · green = carrier DNp33-L removed (sc25) · purple = ru2 IN07B031-R · blue = relay IN06B033-L (A) / ru2 cut with carrier replay-clamped at base (B) · yellow = carrier + ru2 removed</text>')
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -186,8 +186,6 @@
+│  # the carrier's wide fan (the other outputs)
+│  fan_n = 14
+│  for i in range(fan_n):
+│ -    ang = math.radians(200 + i * 9.0)
+│ -    x2, y2 = 133 + 92 * math.cos(ang), 300 - 62 * math.sin(ang) * -1
+│      s.append(f'<line class="fan" x1="133" y1="196" x2="{60 + i * 11.5:.1f}" y2="{268 + (i % 3) * 6:.1f}" stroke="#98c379" stroke-width="1" opacity="0.45"/>')
+│  s.append(T(133, 302, "{} other outputs = {} − {}", [("sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)", "d"),
+│                                                     ("l184e?direction=out#count", "d"), ("l184e?target_class=direct right-Ti premotor#count", "d")], fs=11, fill="#98c379", anchor="middle", bold=True))
+💻 $ python3 fig6_circuit.py + 1 command  0.5s
+✗ Vision Scientific figure QA: list every text overlap, clipped text, text running outside its panel, or line crossing through text. Be specific with locations and which labels.  120.6s [Error analyzing image: Error code: 400 - {'ty...]
+✗ $ fc-match sans-serif + 3 commands  0.1s [exit 1]
+💻 $ for f in none serif sans-serif + 9 commands  1.2s
+✍️ Write /home/t3rpz/.hermes/profiles/maple/cache/scratch/fig6_layout.py
+│ profiles/maple/cache/scratch/fig6_layout.py
+│ @@ -0,0 +1,56 @@
+│ +import sys, re, xml.etree.ElementTree as ET
+│ +from PIL import ImageFont
+│ +NS = "{http://www.w3.org/2000/svg}"
+│ +FR = "/usr/share/fonts/liberation/LiberationSerif-Regular.ttf"
+│ +FB = "/usr/share/fonts/liberation/LiberationSerif-Bold.ttf"
+│ +root = ET.parse(sys.argv[1]).getroot()
+│ +boxes = []
+│ +for t in root.iter(NS + "text"):
+│ +    if t.get("transform"):
+│ +        continue
+│ +    fs = float(t.get("font-size")); txt = "".join(t.itertext())
+│ +    f = ImageFont.truetype(FB if t.get("font-weight") == "bold" else FR, int(round(fs * 4)))
+│ +    w = f.getlength(txt) / 4
+│ +    x, y = float(t.get("x")), float(t.get("y"))
+│ +    a = t.get("text-anchor", "start")
+│ +    x0 = x - (w / 2 if a == "middle" else w if a == "end" else 0)
+│ +    boxes.append((x0, y - fs * 0.72, x0 + w, y + fs * 0.22, txt))
+│ +n = 0
+│ +for i in range(len(boxes)):
+│ +    for j in range(i + 1, len(boxes)):
+│ +        a, b = boxes[i], boxes[j]
+│ +        if a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]:
+│ +            n += 1; print("OVERLAP", [round(v) for v in a[:4]], a[4][:50], "||", [round(v) for v in b[:4]], b[4][:50])
+│ +panels = [(24, 92, 700, 564), (716, 92, 1376, 564), (24, 580, 1376, 964)]
+│ +for b in boxes:
+│ +    for p in panels:
+│ +        inter = b[0] < p[2] and p[0] < b[2] and b[1] < p[3] and p[1] < b[3]
+│ +        inside = b[0] >= p[0] + 2 and b[2] <= p[2] - 2 and b[1] >= p[1] and b[3] <= p[3]
+│ +        if inter and not inside:
+│ +            n += 1; print("PANEL-EDGE", [round(v) for v in b[:4]], b[4][:60], p)
+│ +    if b[2] > 1400 or b[0] < 0:
+│ +        print("CANVAS", b[4][:60])
+│ +# segments through text
+│ +def segs():
+│ +    for e in root.iter():
+│ +        tag = e.tag.replace(NS, "")
+│ +        if tag == "line":
+│ +            yield e, [(float(e.get("x1")), float(e.get("y1"))), (float(e.get("x2")), float(e.get("y2")))]
+│ +        elif tag == "path" and e.get("class"):
+│ +            nums = list(map(float, re.findall(r"-?\d+\.?\d*", e.get("d"))))
+│ +            pts = list(zip(nums[0::2], nums[1::2]))
+│ +            if "C" in e.get("d"):
+│ +                p0, p1, p2, p3 = pts[:4]
+│ +                pts = [tuple((1-t)**3*p0[k] + 3*(1-t)**2*t*p1[k] + 3*(1-t)*t*t*p2[k] + t**3*p3[k] for k in (0, 1)) for t in [i/40 for i in range(41)]]
+│ +            yield e, pts
+│ +for e, pts in segs():
+│ +    if e.get("stroke") == "#3e4451" or e.get("class") in ("thr", "theta"):
+│ +        continue
+│ +    dense = []
+│ +    for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+│ +        for k in range(21):
+│ +            dense.append((x1 + (x2 - x1) * k / 20, y1 + (y2 - y1) * k / 20))
+│ +    for b in boxes:
+│ +        if any(b[0] < x < b[2] and b[1] < y < b[3] for x, y in dense):
+│ +            n += 1; print("LINE-THRU", e.get("class") or e.get("stroke"), e.get("data-edge", ""), "|", b[4][:60])
+│ +print("issues", n)
+💻 $ python3 $TMPDIR/fig6_layout.py fig6_circuit.svg  0.3s
+💻 $ grep -n "PML\|ru2-P\|carrier-PMR\|edge-cut\|cut only\|= {} of\|other outputs\|onto cord\|candidate substrate\|relay cut and\|two-hop onto\|LI2 laterality\|shared direct\|base rates\|5 edges\|edges\", \[(\"l200a4/cells/ru2\|onto premotor R\|S: W150\|Part C label\|YC0 + 34\|fan_n\|class=\"fan\"" fig6_circuit.py
+
+────────────────────────────────────────
+✿ Miso
+I'll rewrite the Panel A block (lines ~168–206) wholesale.
+────────────────────────────────────────
+
+📖 Read fig6_circuit.py L160-207
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.1s
+│ paper/figures/fig6_circuit.py
+│ @@ -165,7 +165,7 @@
+│  s += node(528, 134, 156, 40, "#abb2bf", "Ti flexor R · {} MN", None, [("l198s/relay/direct_onto/Ti_fR/targets", "d")], nid="TifR")
+│  s += node(528, 186, 156, 40, "#abb2bf", "Ti extensor R · {} MN", None, [("l198s/relay/direct_onto/Ti_eR/targets", "d")], nid="TieR")
+│  s += node(528, 300, 156, 40, "#5c6370", "premotor R · {} cells", None, [("l200s/PM_R_n", "comma")], nid="PMR")
+│ -s += node(528, 470, 156, 40, "#5c6370", "premotor L · {} cells", None, [("l200s/PM_L_n", "comma")], nid="PML")
+│ +s += node(528, 486, 156, 40, "#5c6370", "premotor L · {} cells", None, [("l200s/PM_L_n", "comma")], nid="PML")
+│  s.append(T(606, 360, "(Ti MN-L: flexor {} · extensor {})", [("l200a4/cells/ru2/direct_onto/Ti_fL/targets", "d"), ("l200a4/cells/ru2/direct_onto/Ti_eL/targets", "d")], fs=10, fill="#5c6370", anchor="middle"))
+│  # premotor pools feed their own motor pools (definition of PM: >=1 edge onto that side's Ti MNs)
+│  s.append('<line x1="606" y1="300" x2="606" y2="230" stroke="#5c6370" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>')
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -177,32 +177,37 @@
+│  s.append('<line class="edge" data-edge="relay-TifR" x1="460" y1="168" x2="524" y2="155" stroke="#61afef" stroke-width="2" marker-end="url(#arr)"/>')
+│  s.append(T(492, 145, "{} edge · {} syn", [("l198s/relay/direct_onto/Ti_fR/n_edges", "d"), ("l198s/relay/direct_onto/Ti_fR/syn", "d")], fs=10.5, fill="#61afef", anchor="middle"))
+│  # carrier one-hop onto premotor R (3 edges; the relay is one: it has a direct Ti_fR edge)
+│ -s.append('<path class="edge" data-edge="carrier-PMR" d="M 200 196 C 300 300, 420 318, 524 318" fill="none" stroke="#98c379" stroke-width="1.6" marker-end="url(#arrg)"/>')
+│ -s.append(T(392, 292, "{} edges onto premotor R (relay is one)", [("l200a4/cells/carrier/one_hop/PM_R/edges", "d")], fs=10.5, fill="#98c379", anchor="middle"))
+│ +s.append('<path class="edge" data-edge="carrier-PMR" d="M 215 196 C 235 300, 420 320, 524 320" fill="none" stroke="#98c379" stroke-width="1.6" marker-end="url(#arrg)"/>')
+│ +s.append(T(440, 300, "{} edges onto premotor R", [("l200a4/cells/carrier/one_hop/PM_R/edges", "d")], fs=10.5, fill="#98c379", anchor="middle"))
+│ +s.append('<text x="440" y="287" fill="#98c379" font-size="10.5" text-anchor="middle">(the relay is one)</text>')
+│  # edge-cut result on the bottleneck edge (L190)
+│ -s.append(T(252, 222, "cut only this edge: {} vs carrier {}", [("l190r/summary/E-edge/delta", "s3"), ("l190r/summary/sc25/delta", "s3")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ -s.append(T(252, 236, "= {} of the chopped shift (point ratio, no interval) · 1.4 Hz {}",
+│ -           [("ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)", "pct"), ("l190r/summary/E-edge/mid", "f3")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ +s.append(T(392, 214, "cut only this edge (L190): {}", [("l190r/summary/E-edge/delta", "s3")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ +s.append(T(392, 228, "vs carrier removal {} = {}", [("l190r/summary/sc25/delta", "s3"),
+│ +                                                         ("ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)", "pct")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ +s.append(T(392, 242, "point ratio, no interval · its 1.4 Hz {}", [("l190r/summary/E-edge/mid", "f3")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│  # the carrier's wide fan (the other outputs)
+│  fan_n = 14
+│  for i in range(fan_n):
+│ -    s.append(f'<line class="fan" x1="133" y1="196" x2="{60 + i * 11.5:.1f}" y2="{268 + (i % 3) * 6:.1f}" stroke="#98c379" stroke-width="1" opacity="0.45"/>')
+│ -s.append(T(133, 302, "{} other outputs = {} − {}", [("sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)", "d"),
+│ +    s.append(f'<line class="fan" x1="120" y1="196" x2="{50 + i * 11.0:.1f}" y2="{250 + (i % 3) * 5:.1f}" stroke="#98c379" stroke-width="1" opacity="0.45"/>')
+│ +s.append(T(130, 282, "{} other outputs = {} − {}", [("sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)", "d"),
+│                                                     ("l184e?direction=out#count", "d"), ("l184e?target_class=direct right-Ti premotor#count", "d")], fs=11, fill="#98c379", anchor="middle", bold=True))
+│ -s.append(T(133, 317, "{} onto cord interneurons · {} onto other motor neurons", [("l184e?target_class=ventral_nerve_cord_intrinsic#count", "d"), ("l184e?target_class=other motor#count", "d")], fs=10, fill="#9aa3b2", anchor="middle"))
+│ -s.append('<text x="133" y="331" fill="#9aa3b2" font-size="10" text-anchor="middle">candidate substrate of the 1.4-Hz signature (by elimination:</text>')
+│ -s.append('<text x="133" y="344" fill="#9aa3b2" font-size="10" text-anchor="middle">relay cut and edge cut both leave it at base, L187/L190)</text>')
+│ +s.append(T(130, 297, "{} → cord interneurons", [("l184e?target_class=ventral_nerve_cord_intrinsic#count", "d")], fs=10, fill="#9aa3b2", anchor="middle"))
+│ +s.append(T(130, 310, "{} → other motor neurons", [("l184e?target_class=other motor#count", "d")], fs=10, fill="#9aa3b2", anchor="middle"))
+│ +s.append('<text x="130" y="326" fill="#9aa3b2" font-size="10" text-anchor="middle">candidate substrate of the 1.4-Hz</text>')
+│ +s.append('<text x="130" y="339" fill="#9aa3b2" font-size="10" text-anchor="middle">signature, by elimination (relay cut</text>')
+│ +s.append('<text x="130" y="352" fill="#9aa3b2" font-size="10" text-anchor="middle">and edge cut leave it at base)</text>')
+│  # ru2 -> both premotor pools, even
+│ -s.append('<path class="edge" data-edge="ru2-PMR" d="M 222 412 C 330 380, 420 330, 524 324" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>')
+│ -s.append('<path class="edge" data-edge="ru2-PML" d="M 222 434 C 330 470, 420 490, 524 490" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>')
+│ -s.append(T(378, 372, "{} edges", [("l200a4/cells/ru2/one_hop/PM_R/edges", "d")], fs=11, fill="#c678dd", anchor="middle", bold=True))
+│ -s.append(T(378, 500, "{} edges", [("l200a4/cells/ru2/one_hop/PM_L/edges", "d")], fs=11, fill="#c678dd", anchor="middle", bold=True))
+│ -s.append(T(372, 430, "two-hop onto extensors: {} L · {} R", [("l200a4/cells/ru2/two_hop/Ti_eL/signed", "f1"), ("l200a4/cells/ru2/two_hop/Ti_eR/signed", "f1")], fs=10.5, fill="#c678dd", anchor="middle"))
+│ -s.append(T(372, 444, "LI2 laterality: ru2 {} · carrier {} (bars ±0.20)", [("l200a4/LI2_ru2", "s3"), ("l200a4/LI2_carrier", "s3")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ -s.append(T(372, 458, "shared direct targets {} of {} / {} (J {}) · premotor mirror J {}",
+│ +s.append('<path class="edge" data-edge="ru2-PMR" d="M 222 414 C 380 414, 440 322, 524 322" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>')
+│ +s.append('<path class="edge" data-edge="ru2-PML" d="M 222 432 C 380 432, 440 506, 524 506" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>')
+│ +s.append(T(262, 406, "{} edges", [("l200a4/cells/ru2/one_hop/PM_R/edges", "d")], fs=11, fill="#c678dd", anchor="middle", bold=True))
+│ +s.append(T(262, 450, "{} edges", [("l200a4/cells/ru2/one_hop/PM_L/edges", "d")], fs=11, fill="#c678dd", anchor="middle", bold=True))
+│ +s.append(T(44, 474, "two-hop → extensors: {} L · {} R", [("l200a4/cells/ru2/two_hop/Ti_eL/signed", "f1"), ("l200a4/cells/ru2/two_hop/Ti_eR/signed", "f1")], fs=10.5, fill="#c678dd"))
+│ +s.append(T(44, 488, "LI2 laterality: ru2 {} · carrier {}", [("l200a4/LI2_ru2", "s3"), ("l200a4/LI2_carrier", "s3")], fs=10.5, fill="#9aa3b2"))
+│ +s.append(T(44, 502, "shared direct targets {} of {} / {} (J {})",
+│             [("l200a4/overlap/n_shared", "d"), ("l200a4/overlap/n_targets_carrier", "d"), ("l200a4/overlap/n_targets_ru2", "d"),
+│ -            ("l200a4/overlap/J_same", "f3"), ("l200a4/overlap/premotor/J_mirror", "f1")], fs=10.5, fill="#9aa3b2", anchor="middle"))
+│ -s.append(T(372, 545, "base rates x̄: carrier {} · ru2 {} · relay {} — no direct Ti motor edge from carrier or ru2",
+│ +            ("l200a4/overlap/J_same", "f3")], fs=10.5, fill="#9aa3b2"))
+│ +s.append(T(44, 516, "premotor mirror overlap J {}", [("l200a4/overlap/premotor/J_mirror", "f1")], fs=10.5, fill="#9aa3b2"))
+│ +s.append(T(362, 550, "base rates x̄: carrier {} · ru2 {} · relay {} — no direct Ti motor edge from carrier or ru2",
+│             [("l200a4/cells/carrier/x_mean", "f2"), ("l200a4/cells/ru2/x_mean", "f2"), ("l198s/relay/census_x_mean_3seed", "f2")], fs=10.5, fill="#5c6370", anchor="middle"))
+│
+│  # ======================= Panel B — asymmetric necessity =======================
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.1s
+│ paper/figures/fig6_circuit.py
+│ @@ -307,7 +307,7 @@
+│  s.append(T(XC(S["B"]["graphs"]["sc25"]["theta"]["value"]) + 6, YC1 + 28, "Δθ {}° [{}, {}] · label " + S["B"]["label"],
+│             [("l199p/datasets/S/B/dtheta/value", "s0"), ("l199p/datasets/S/B/dtheta/ci95/0", "s0"), ("l199p/datasets/S/B/dtheta/ci95/1", "s0")], fs=11, fill="#9aa3b2"))
+│  # (label string is categorical, copied verbatim from the artifact)
+│ -s.append('<text x="760" y="926" fill="#5c6370" font-size="10" text-anchor="end">S: W150 window, 500-step pulse, n=96 · octants descriptive, θ registered</text>')
+│ +s.append('<text x="750" y="958" fill="#5c6370" font-size="10" text-anchor="end">S batch: W150 window, 500-step pulse · octants descriptive, θ registered</text>')
+│
+│  # phase dial (Part C)
+│  CX, CY, RD = 1000.0, 772.0, 118.0
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.1s
+│ paper/figures/fig6_circuit.py
+│ @@ -337,7 +337,7 @@
+│  s.append(T(LX, 802, "flex − ext: {}° → {}°", [("l199p/datasets/S/C/cutwA/Delta/mean_deg", "s0"), ("l199p/datasets/S/C/sc25/Delta/mean_deg", "s0")], fs=12, fill="#abb2bf", bold=True))
+│  s.append(f'<text x="{LX}" y="820" fill="#9aa3b2" font-size="11">the extensor moves; the flexor stays —</text>')
+│  s.append(f'<text x="{LX}" y="835" fill="#9aa3b2" font-size="11">about a third of a period, not antiphase</text>')
+│ -s.append(f'<text x="{LX}" y="860" fill="#5c6370" font-size="11">Part C label {C["label"]}: base {C["cutwA"]["label"]}, carrier cut {C["sc25"]["label"]}</text>')
+│ +s.append(f'<text x="{LX}" y="860" fill="#5c6370" font-size="11">Part C {C["label"]} · base {C["cutwA"]["label"]} · cut {C["sc25"]["label"]}</text>')
+│
+│  # footer + legend
+│  s.append('<text x="30" y="986" fill="#9aa3b2" font-size="11.5">orange = base cutwA · green = carrier DNp33-L removed (sc25) · purple = ru2 IN07B031-R · blue = relay IN06B033-L (A) / ru2 cut with carrier replay-clamped at base (B) · yellow = carrier + ru2 removed</text>')
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -290,7 +290,7 @@
+│  for d in (0, 90, 180, 270, 360):
+│      s.append(f'<line x1="{XC(d):.1f}" y1="{YC1:.1f}" x2="{XC(d):.1f}" y2="{YC0:.1f}" stroke="#3e4451" stroke-width="1"/>')
+│      s.append(f'<text class="xctick" x="{XC(d):.1f}" y="{YC0 + 16:.1f}" fill="#5c6370" font-size="11" text-anchor="middle">{d}°</text>')
+│ -s.append(f'<text x="{(XC0 + XC1) / 2:.1f}" y="{YC0 + 34:.1f}" fill="#abb2bf" font-size="12" text-anchor="middle">tone offset between the two seeds\' pair-segments (deg; octant centres, 360° = 0°)</text>')
+│ +s.append(f'<text x="{(XC0 + XC1) / 2:.1f}" y="{YC0 + 32:.1f}" fill="#abb2bf" font-size="12" text-anchor="middle">tone offset between the two seeds\' pair-segments (deg; octant centres, 360° = 0°)</text>')
+│  s.append(f'<text x="58" y="{(YC0 + YC1) / 2:.1f}" fill="#abb2bf" font-size="12" text-anchor="middle" transform="rotate(-90 58 {(YC0 + YC1) / 2:.1f})">cross-seed duty</text>')
+│  for g, col in (("cutwA", COL["cutwA"]), ("sc25", COL["sc25"])):
+│      th = S["B"]["graphs"][g]["theta"]
+💻 $ python3 fig6_circuit.py + 1 command  0.9s
+📖 Read fig6_circuit.py L340
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.2s
+│ paper/figures/fig6_circuit.py
+│ @@ -349,10 +349,38 @@
+│  subprocess.run(["rsvg-convert", "-w", str(W), "-o", f"{OUT}/fig6_circuit.png", f"{OUT}/fig6_circuit.svg"], check=True)
+│
+│  # ---------------- caption with the per-number pointer table ----------------
+│ -cap = open(f"{OUT}/fig6_caption_prose.md").read() if os.path.exists(f"{OUT}/fig6_caption_prose.md") else None
+│ -rows = ["| element | value | shown as | artifact pointer |", "|---|---|---|---|"]
+│ +# Prose numbers are written as «pointer|fmt» and resolved here, so the caption
+│ +# can only state stored values; each one is also logged for fig6_verify.py.
+│ +PROSE = """**Figure 6 — the circuit: a carrier, a relay, and a cord interneuron the carrier's phenotype needs.** BANC female cord, k=24 cutwA base, rate model at the certified matched operating point. Every number in the figure and in this caption is read from a stored artifact; the table below gives the pointer for each one, and `fig6_verify.py` resolves every pointer against the files themselves.
+│ +
+│ +**(A) Wiring, schematic.** Node positions are arbitrary; counts and signs are not. The carrier DNp33-L (gi «l200a4/cells/carrier/gi|d», descending, excitatory) has «l200a4/cells/carrier/out_edges|d» output edges and none onto a tibia motor neuron. «l184e?target_class=direct right-Ti premotor#count|d» of them land on direct right-tibia premotor cells (L184 Q2). One of those is the inhibitory relay IN06B033-L (gi «l198s/relay/cell/gi|d»), reached by a «l198s/relay/carrier_to_relay/syn|d»-synapse edge. The relay has «l198s/relay/direct_onto/Ti_fR/n_edges|d» direct edge («l198s/relay/direct_onto/Ti_fR/syn|d» synapses) onto the right tibia flexor pool («l198s/relay/direct_onto/Ti_fR/targets|d» motor neurons). Cutting only the carrier-to-relay edge raised the right chopped duty by «l190r/summary/E-edge/delta|s3». Removing the carrier on the same seeds raised it by «l190r/summary/sc25/delta|s3», so the edge cut gives «ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)|pct» of the carrier's shift. That is a point ratio with no interval. The edge cut's 1.4-Hz duty was «l190r/summary/E-edge/mid|f3» (L190). The carrier's other «sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)|d» outputs («l184e?target_class=ventral_nerve_cord_intrinsic#count|d» onto cord interneurons, «l184e?target_class=other motor#count|d» onto other motor neurons) are drawn as a fan. They are the candidate substrate of the 1.4-Hz signature by elimination only, because relay removal and the edge cut both leave that signature at base (L187, L190). The inhibitory cord interneuron ru2, IN07B031-R (gi «l200a4/cells/ru2/gi|d», «l200a4/cells/ru2/out_edges|d» outputs), sends «l200a4/cells/ru2/one_hop/PM_L/edges|d» edges into the left tibia premotor pool («l200s/PM_L_n|comma» cells) and «l200a4/cells/ru2/one_hop/PM_R/edges|d» into the right one («l200s/PM_R_n|comma»). Its signed two-hop weight goes mostly onto both extensor pools («l200a4/cells/ru2/two_hop/Ti_eL/signed|f1» left, «l200a4/cells/ru2/two_hop/Ti_eR/signed|f1» right). Its two-hop laterality index LI2 is «l200a4/LI2_ru2|s3», against the carrier's «l200a4/LI2_carrier|s3». The two cells share «l200a4/overlap/n_shared|d» of «l200a4/overlap/n_targets_carrier|d» / «l200a4/overlap/n_targets_ru2|d» direct targets (Jaccard «l200a4/overlap/J_same|f3»), and their mirrored premotor target sets do not overlap (J «l200a4/overlap/premotor/J_mirror|f1»). The base rates are carrier «l200a4/cells/carrier/x_mean|f2», ru2 «l200a4/cells/ru2/x_mean|f2» and relay «l198s/relay/census_x_mean_3seed|f2» (L200 A4, L198).
+│ +
+│ +**(B) Asymmetric necessity.** L200 batch B44: 16 seeds per arm, fresh seeds «l200r/seeds/0|d»–«l200r/seeds/15|d». Bars show mean duty, dots individual seeds, and open diamonds the same arm at the base gain (`l2F`, `l2kF`, `l2cF`). Removing the carrier raises the right chopped duty to «l200r/arms/sc25/meanR|f3», with a 1.4-Hz signature of «l200r/arms/sc25/mean14R|f3». Removing ru2 as well brings the right duty down to «l200r/arms/l2c/meanR|f3» and the signature to «l200r/arms/l2c/mean14R|f3». On paired seeds the double removal minus carrier removal is «l200r/contrasts/R_l2c_minus_sc25/mean|s3» [«l200r/contrasts/R_l2c_minus_sc25/ci95/0|s3», «l200r/contrasts/R_l2c_minus_sc25/ci95/1|s3»]. On the left, removing ru2 flips the duty to «l200r/arms/l2/meanL|f3», «l200r/arms/l2/L_vs_base/mean|s3» [«l200r/arms/l2/L_vs_base/ci95/0|s3», «l200r/arms/l2/L_vs_base/ci95/1|s3»] above base («l200r/base/meanL|f3»). The flip stays intact when the carrier's whole rate trajectory is replay-clamped at its base value («l200r/arms/l2k/meanL|f3», carrier rate «l200r/arms/l2k/x_carrier|f2» = base «l200r/base/x_carrier|f2») and when the carrier is removed outright («l200r/arms/l2c/meanL|f3»). So ru2's left effect does not need the carrier, while the carrier's right-side regime needs ru2. Dashed lines mark the registered bars: SUPER mean «l200r/bands/super_mean_min|f2» on the chopped readouts and signature mean «l200r/bands/signature_mean14_min|f2» on the 1.4-Hz readout. The k row counts seeds with duty ≥ .5. Limits: the right-side wipe (item 6 of L200) is post hoc and comes from one batch. Its registered replicate, L202, which also supplies the base-gain carrier comparator sc25F and the ru2 activity clamp, had not landed when this figure was drawn, so its slot is marked pending. The carrier-only arm has no base-gain form in this batch.
+│ +
+│ +**(C) Phase rotation.** L199 dataset S: «l199p/datasets/S/n|d» seeds, W«l199p/datasets/S/W|d» window, «l199p/datasets/S/pulse|d»-step pulse. Left: mean cross-seed duty of right-tibia pair-segments, binned by the tone offset between the two seeds' segments into eight octants. The octants are descriptive, and 360° repeats 0°. Dashed lines and shading show the registered first-harmonic preferred offset θ ± SE: base «l199p/datasets/S/B/graphs/cutwA/theta/value|s0»° (SE «l199p/datasets/S/B/graphs/cutwA/theta/se|f0»), carrier removed «l199p/datasets/S/B/graphs/sc25/theta/value|s0»° (SE «l199p/datasets/S/B/graphs/sc25/theta/se|f0»). The rotation is Δθ «l199p/datasets/S/B/dtheta/value|s0»° [«l199p/datasets/S/B/dtheta/ci95/0|s0», «l199p/datasets/S/B/dtheta/ci95/1|s0»]. The registered label is Hq: the removed graph falls outside the 0 ± 45° band, so the pools do not go to antiphase. Right: tone phase of the right flexor and extensor peaks (first harmonic; arrow length = resultant R). In the base graph the two pools peak together: flexor «l199p/datasets/S/C/cutwA/alpha/Ti_fR/mean_deg|f0»°, extensor «l199p/datasets/S/C/cutwA/alpha/Ti_eR/mean_deg|f0»°, difference «l199p/datasets/S/C/cutwA/Delta/mean_deg|s0»°. With the carrier removed the flexor barely moves («l199p/datasets/S/C/sc25/alpha/Ti_fR/mean_deg|f0»°) while the extensor moves to «l199p/datasets/S/C/sc25/alpha/Ti_eR/mean_deg|f0»° and loosens its locking (R «l199p/datasets/S/C/cutwA/alpha/Ti_eR/R|f2» → «l199p/datasets/S/C/sc25/alpha/Ti_eR/R|f2»). The difference becomes «l199p/datasets/S/C/sc25/Delta/mean_deg|s0»°, about a third of a period. Scope: under the 250-step pulse (dataset W) the rotation is only «l199p/datasets/W/B/dtheta/value|s0»°, so the phrase "500-step pulse" must travel with this panel.
+│ +
+│ +Scope of the whole figure: one model class, one base (k=24), the chopped 0.7-Hz classifier plus the 1.4-Hz panel. The wiring in A is one-hop and two-hop static weight, not a measured transfer function.
+│ +"""
+│ +import re
+│ +CAP_PTRS = []
+│ +
+│ +
+│ +def _sub(m):
+│ +    src, f = m.group(1).rsplit("|", 1)
+│ +    v = resolve(src)
+│ +    CAP_PTRS.append({"id": f"cap{len(CAP_PTRS)}", "src": src, "v": v, "fmt": f})
+│ +    return fmt(v, f)
+│ +
+│ +
+│ +prose = re.sub(r"«([^»]+)»", _sub, PROSE)
+│ +rows = ["| element | value (stored) | shown as | artifact pointer |", "|---|---|---|---|"]
+│  for eid, src, v, f in REG:
+│      rows.append(f"| `{eid}` | {v!r} | {fmt(v, f)} | `{src}` |")
+│ -json.dump([{"id": e, "src": s_, "v": v, "fmt": f} for e, s_, v, f in REG], open(f"{OUT}/fig6_pointers.json", "w"), indent=1)
+│ -open(f"{OUT}/fig6_pointer_table.md", "w").write("\n".join(rows) + "\n")
+│ -print(f"fig6 drawn: {len(REG)} text-borne numbers registered; svg {len(svg)} bytes; png rendered")
+│ +FILE_KEY = "\n".join(f"- `{k}` = `{os.path.relpath(v, P)}`" for k, v in FILES.items())
+│ +open(f"{OUT}/fig6_caption.md", "w").write(
+│ +    prose + "\n### Per-number artifact pointers (figure)\n\nPointer aliases:\n" + FILE_KEY +
+│ +    "\n\n`ratio(a;b)` and `sub(a;b)` are the only derived values (a/b, a−b of two stored numbers). Bar heights, seed dots, base-gain diamonds, octant points, θ lines and phase arrows carry their pointers as `data-src` on the SVG element; the table lists every number printed as text.\n\n" +
+│ +    "\n".join(rows) + "\n")
+│ +json.dump({"figure": [{"id": e, "src": s_, "v": v, "fmt": f} for e, s_, v, f in REG], "caption": CAP_PTRS},
+│ +          open(f"{OUT}/fig6_pointers.json", "w"), indent=1)
+│ +print(f"fig6 drawn: {len(REG)} text-borne figure numbers + {len(CAP_PTRS)} caption numbers resolved; svg {len(svg)} bytes; png rendered")
+💻 $ rm -f fig6_pointer_table.md + 3 commands  1.1s
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py  0.1s
+│ paper/figures/fig6_circuit.py
+│ @@ -376,11 +376,14 @@
+│  rows = ["| element | value (stored) | shown as | artifact pointer |", "|---|---|---|---|"]
+│  for eid, src, v, f in REG:
+│      rows.append(f"| `{eid}` | {v!r} | {fmt(v, f)} | `{src}` |")
+│ +crow = ["| # | value (stored) | shown as | artifact pointer |", "|---|---|---|---|"]
+│ +for c in CAP_PTRS:
+│ +    crow.append(f"| `{c['id']}` | {c['v']!r} | {fmt(c['v'], c['fmt'])} | `{c['src']}` |")
+│  FILE_KEY = "\n".join(f"- `{k}` = `{os.path.relpath(v, P)}`" for k, v in FILES.items())
+│  open(f"{OUT}/fig6_caption.md", "w").write(
+│ -    prose + "\n### Per-number artifact pointers (figure)\n\nPointer aliases:\n" + FILE_KEY +
+│ -    "\n\n`ratio(a;b)` and `sub(a;b)` are the only derived values (a/b, a−b of two stored numbers). Bar heights, seed dots, base-gain diamonds, octant points, θ lines and phase arrows carry their pointers as `data-src` on the SVG element; the table lists every number printed as text.\n\n" +
+│ -    "\n".join(rows) + "\n")
+│ +    prose + "\n### Per-number artifact pointers\n\nPointer aliases:\n" + FILE_KEY +
+│ +    "\n\n`ratio(a;b)` and `sub(a;b)` are the only derived values (a/b, a−b of two stored numbers). Bar heights, seed dots, base-gain diamonds, octant points, θ lines and phase arrows carry their pointers as `data-src` on the SVG element; the first table lists every number printed as text in the figure, the second every number in the caption prose, in order of appearance.\n\n#### Figure text\n\n" +
+│ +    "\n".join(rows) + "\n\n#### Caption prose\n\n" + "\n".join(crow) + "\n")
+│  json.dump({"figure": [{"id": e, "src": s_, "v": v, "fmt": f} for e, s_, v, f in REG], "caption": CAP_PTRS},
+│            open(f"{OUT}/fig6_pointers.json", "w"), indent=1)
+│  print(f"fig6 drawn: {len(REG)} text-borne figure numbers + {len(CAP_PTRS)} caption numbers resolved; svg {len(svg)} bytes; png rendered")
+✍️ Write /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_verify.py
+│ paper/figures/fig6_verify.py
+│ @@ -0,0 +1,352 @@
+│ +#!/usr/bin/env python3
+│ +"""Independent verification of fig6_circuit.svg/.png + fig6_caption.md
+│ +(run AFTER fig6_circuit.py; mirrors fig4_verify.py).
+│ +
+│ +Nothing is taken from the generator's memory or code: this file re-implements
+│ +the pointer resolver, the number formatter and every axis transform, then
+│ +re-derives each plotted value and position from the stored artifacts:
+│ +  banc/l184/edges.csv, banc/l190/results_l190.json, banc/l198/static.json,
+│ +  banc/l200/{a4_wiring,selection,results_l200}.json, banc/l199/results_primary.json
+│ +Checks: (1) every data-src pointer resolves to exactly its data-v;
+│ +(2) every printed number equals its pointer's value under the stated format;
+│ +(3) no printed number in the figure is unsourced (allowlisted protocol
+│ +constants and ticks only); (4) bar / seed / diamond / threshold / octant /
+│ +theta / phase-arrow geometry from independent transforms; (5) inventory and
+│ +data truths (k = #seeds with duty >= .5, arm removal sets, class labels vs
+│ +bands); (6) caption: every number pointer resolves and appears, and the
+│ +caption prose carries no unsourced decimal; (7) layout: no text-text overlap,
+│ +text inside its panel, no edge line through text; (8) PNG magic, size, ink in
+│ +every panel; (9) L202 status consistent with the artifact tree; (10) earlier
+│ +figure files byte-pinned (untouched by this dispatch).
+│ +"""
+│ +import csv, hashlib, json, math, os, re, struct
+│ +import xml.etree.ElementTree as ET
+│ +
+│ +HERE = os.path.dirname(os.path.abspath(__file__))
+│ +P = os.path.expanduser("~/critters/peabrain-lab")
+│ +NS = "{http://www.w3.org/2000/svg}"
+│ +SRC = {
+│ +    "l190r": json.load(open(f"{P}/banc/l190/results_l190.json")),
+│ +    "l198s": json.load(open(f"{P}/banc/l198/static.json")),
+│ +    "l200a4": json.load(open(f"{P}/banc/l200/a4_wiring.json")),
+│ +    "l200s": json.load(open(f"{P}/banc/l200/selection.json")),
+│ +    "l200r": json.load(open(f"{P}/banc/l200/results_l200.json")),
+│ +    "l199p": json.load(open(f"{P}/banc/l199/results_primary.json")),
+│ +}
+│ +with open(f"{P}/banc/l184/edges.csv") as fh:
+│ +    EDGES = list(csv.DictReader(fh))
+│ +
+│ +fails, checks = [], 0
+│ +
+│ +
+│ +def A(cond, msg):
+│ +    global checks
+│ +    checks += 1
+│ +    if not cond:
+│ +        fails.append(msg)
+│ +
+│ +
+│ +def get(ptr):
+│ +    m = re.fullmatch(r"(ratio|sub)\((.+);(.+)\)", ptr)
+│ +    if m:
+│ +        a, b = get(m.group(2)), get(m.group(3))
+│ +        return a / b if m.group(1) == "ratio" else a - b
+│ +    if ptr.startswith("l184e?"):
+│ +        query, what = ptr[len("l184e?"):].split("#")
+│ +        sel = EDGES
+│ +        for cond in query.split("&"):
+│ +            k, v = cond.split("=", 1)
+│ +            sel = [r for r in sel if r[k] == v]
+│ +        if what == "count":
+│ +            return len(sel)
+│ +        if len(sel) != 1:
+│ +            raise KeyError(f"{ptr}: {len(sel)} rows")
+│ +        return int(sel[0][what])
+│ +    head, *keys = ptr.split("/")
+│ +    node = SRC[head]
+│ +    for k in keys:
+│ +        node = node[int(k)] if isinstance(node, list) else node[k]
+│ +    return node
+│ +
+│ +
+│ +def show(v, f):
+│ +    if f == "d":
+│ +        out = str(int(v))
+│ +    elif f == "comma":
+│ +        out = format(int(v), ",")
+│ +    elif f == "pct":
+│ +        out = "%d%%" % round(v * 100)
+│ … omitted 274 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 fig6_circuit.py + 2 commands  0.9s
+✍️ Write /home/t3rpz/.hermes/profiles/maple/cache/scratch/fig6_mutate.py
+│ profiles/maple/cache/scratch/fig6_mutate.py
+│ @@ -0,0 +1,37 @@
+│ +import os, shutil, subprocess
+│ +D = os.path.expanduser("~/critters/peabrain-lab/paper/figures")
+│ +svg = f"{D}/fig6_circuit.svg"; cap = f"{D}/fig6_caption.md"
+│ +orig_svg, orig_cap = open(svg).read(), open(cap).read()
+│ +MUT = [
+│ +    ("svg", 'data-v="0.783"', 'data-v="0.784"'),                        # bar data-v
+│ +    ("svg", '>0.78</text>', '>0.79</text>'),                               # printed bar label
+│ +    ("svg", '21 syn</text>', '22 syn</text>'),                             # printed edge count
+│ +    ("svg", 'L202 replicate: pending', 'L202 replicate: pending 0.42'),    # unsourced number
+│ +    ("svg", 'data-l202="pending"', 'data-l202="landed"'),                  # status flag
+│ +    ("cap", '−0.487 [', '−0.478 ['),                                       # caption number
+│ +    ("cap", 'Scope of the whole figure', 'Scope 0.33 of the whole figure'),  # unsourced decimal
+│ +]
+│ +ok = 0
+│ +for kind, a, b in MUT:
+│ +    src = orig_svg if kind == "svg" else orig_cap
+│ +    assert a in src, a
+│ +    if kind == "svg":
+│ +        open(svg, "w").write(src.replace(a, b, 1))
+│ +    else:
+│ +        open(cap, "w").write(src.replace(a, b, 1))
+│ +    r = subprocess.run(["python3", f"{D}/fig6_verify.py"], capture_output=True, text=True)
+│ +    caught = r.returncode != 0
+│ +    ok += caught
+│ +    first = [l for l in r.stdout.splitlines() if l.startswith("  -")][:1]
+│ +    print("CAUGHT" if caught else "MISSED", kind, repr(b)[:40], first)
+│ +    open(svg, "w").write(orig_svg); open(cap, "w").write(orig_cap)
+│ +# geometry mutation: move one seed dot
+│ +import re
+│ +m = re.search(r'(class="seed"[^>]*cy=")([\d.]+)', orig_svg)
+│ +open(svg, "w").write(orig_svg[:m.start(2)] + f"{float(m.group(2)) + 3:.1f}" + orig_svg[m.end(2):])
+│ +r = subprocess.run(["python3", f"{D}/fig6_verify.py"], capture_output=True, text=True)
+│ +print("CAUGHT" if r.returncode else "MISSED", "seed dot moved 3px"); ok += bool(r.returncode)
+│ +open(svg, "w").write(orig_svg)
+│ +r = subprocess.run(["python3", f"{D}/fig6_verify.py"], capture_output=True, text=True)
+│ +print("restored:", r.stdout.strip().splitlines()[-2])
+│ +print(f"{ok}/{len(MUT) + 1} mutations caught")
+💻 $ grep -c 'data-v="0.783"' fig6_circuit.svg + 2 commands  2.1s
+💻 $ python3 - <<'E' import xml.etree.ElementTree as ET NS="{http://www.w3.org/2000/svg}" r=ET.parse('fig6_circuit.svg').getroot() labs=[(float(t.get('x')),float(t.get('y')),''.join(t.itertext())) for t in r.iter(NS+'text') if t.get('font-size')=='9.5'] for d in r.iter(NS+'polygon'): if d.get('class')!='fixed': continue pts=[tuple(map(float,p.split(','))) for p in d.get('points').split()] cx=pts[0][0] + 1 command  0.4s
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_circuit.py
+│ paper/figures/fig6_circuit.py
+│ @@ -246,7 +246,10 @@
+│          for j, d in enumerate(resolve(f"{pre}/{dk}")):
+│              dx = x + BW / 2 + ((j % 4) - 1.5) * 4.6
+│              s.append(f'<circle class="seed" data-group="{gk}" data-arm="{arm}" data-j="{j}" data-src="{pre}/{dk}/{j}" data-v="{d!r}" cx="{dx:.1f}" cy="{YB(d):.1f}" r="1.7" fill="#dcdfe4" opacity="0.6"/>')
+│ -        s.append(T(x + BW / 2, min(YB(v), YB(max(resolve(f"{pre}/{dk}")))) - 5, "{}", [(f"{pre}/{mk}", "f2")], fs=9.5, fill=COL[arm], anchor="middle"))
+│ +        top = min(YB(v), YB(max(resolve(f"{pre}/{dk}"))))
+│ +        if arm in ("l2", "l2k", "l2c"):
+│ +            top = min(top, YB(resolve(f"l200r/arms/{arm}F/{mk}")) - 5)
+│ +        s.append(T(x + BW / 2, top - 5, "{}", [(f"{pre}/{mk}", "f2")], fs=9.5, fill=COL[arm], anchor="middle"))
+│          s.append(T(x + BW / 2, YB0 + 14, "{}", [(f"{pre}/{kk}", "d")], fs=9.5, fill="#9aa3b2", anchor="middle"))
+│          if arm in ("l2", "l2k", "l2c"):
+│              vf = resolve(f"l200r/arms/{arm}F/{mk}")
+🔧 Patch /home/t3rpz/critters/peabrain-lab/paper/figures/fig6_verify.py
+│ paper/figures/fig6_verify.py
+│ @@ -301,6 +301,17 @@
+│              A(not hit or inside, f"text crosses panel edge: {bx[4][:50]!r}")
+│          A(bx[0] >= 0 and bx[2] <= 1400, f"text on canvas: {bx[4][:40]!r}")
+│      for e in root.iter():
+│ +        if e.get("class") == "fixed":
+│ +            pts = [tuple(map(float, p.split(","))) for p in e.get("points").split()]
+│ +            mb = (min(p[0] for p in pts), min(p[1] for p in pts), max(p[0] for p in pts), max(p[1] for p in pts))
+│ +        elif e.get("class") == "oct":
+│ +            cx_, cy_, r_ = float(e.get("cx")), float(e.get("cy")), float(e.get("r"))
+│ +            mb = (cx_ - r_, cy_ - r_, cx_ + r_, cy_ + r_)
+│ +        else:
+│ +            continue
+│ +        for bx in boxes:
+│ +            A(not (mb[0] < bx[2] and bx[0] < mb[2] and mb[1] < bx[3] and bx[1] < mb[3]), f"marker {e.get('class')} {e.get('data-arm') or e.get('data-graph')} covers text {bx[4][:30]!r}")
+│ +    for e in root.iter():
+│          cls = e.get("class")
+│          if cls not in ("edge", "fan", "phase"):
+│              continue
+💻 $ python3 fig6_circuit.py + 1 command  0.9s
+💻 $ tail -c 600 LAB-INTENT.md + 3 commands  0.1s
+💻 $ cat <<'EOF' ### 2026-11-22 — Figure 6 delivered (BRIEF_fig6.md, owner burn window) paper/figures/fig6_circuit.{py,svg,png} + fig6_caption.md + fig6_pointers.json + fig6_verify.py (+ fig6_verify.pins.json). Three panels in the l152 house style. A: wiring schematic (positions arbitrary, counts real). Carrier DNp33-L gi 1110 (80 outputs, none onto a Ti MN) -> relay IN06B033-L gi 75494 by a 21-syn edge (L190/L198/L184 agree) -> 1 edge / 8 syn onto Ti flexor R. Edge cut +.223 vs carrier +.370 = 60% point ratio, no interval (L190). The 77 other carrier outputs are drawn as the signature's candidate substrate, by elimination only. ru2 IN07B031-R gi 70994 sends 5/5 edges into the premotor pools (not the Ti pools directly, a correction to the brief's wording), LI2 -.048 vs +.174, J .022. B: L200 B44 right/1.4-Hz/left mean duty with seed dots and base-gain diamonds for base, sc25, l2, l2k (carrier replay-clamped), l2c. Right wipe -.487 [-.591, -.384], signature .585 -> .000 + 3 commands  0.6s
+
+────────────────────────────────────────
+✿ Miso
+Figure 6 is done. All 3 panels are built, every number is read from a stored artifact, and fig6_verify.py passes (16,923 checks, 396 pointers resolved). I also planted 8 deliberate errors in a copy of the figure and caption, and the verifier caught all of them.- Panel A: the wiring schematic: carrier → relay (21-syn edge; cutting just that edge gives 60% of the carrier's effect, a point ratio with no interval), the carrier's 77 other outputs fanned out, and ru2 with 5 edges per side.
+- Panel B: necessity bars from L200, with per-seed dots and base-gain diamonds.- Panel C: the phase rotation from L199: θ goes from +172 to +55, and the flexor-minus-extensor peak gap goes from −5° to −116°.
+
+Things to know:
+- L202 hasn't landed. Its slot is marked "pending", and both scripts stop with an error once results_l202.json appears.
+- ru2's 5+5 edges go to the premotor pools, not straight to the Ti pools, so the figure says premotor. "ru2-clamp" only exists as L202 arm 4; L200's clamp arm holds the carrier, and it's labelled that way.
+- Vision QA was down (the endpoint returns a 400), so I checked layout with font measurements only. Someone still needs to look at the PNG.
+
+Files are in /home/t3rpz/critters/peabrain-lab/paper/figures/:
+- fig6_circuit.png- fig6_circuit.svg
+- fig6_circuit.py
+- fig6_caption.md- fig6_pointers.json
+- fig6_verify.py
+- fig6_verify.pins.json
+
+I added one LAB-INTENT entry and didn't touch DRAFT, nya.
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-d54dca5f0752470ef0361bba96ed055511817cf9afd8a0ee6b5bc9625da72c2f -p maple
+
+Session:        local-d54dca5f0752470ef0361bba96ed055511817cf9afd8a0ee6b5bc9625da72c2f
+Duration:       16m 17s
+Messages:       95 (1 user, 93 tool calls)

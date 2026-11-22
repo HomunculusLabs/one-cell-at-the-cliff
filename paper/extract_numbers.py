@@ -1481,6 +1481,122 @@ put('l197.reference', dict(
     'here, the two pools treated as independent samples; same_seeds = the '
     'two pools hold the same seed set; the band bars are l175.bands)')
 
+# ---- L201 tone-phase fold (additive block; every pre-existing key above is
+# ---- byte-identical): gate-jitter v2 (l197b) and the tone-phase registered
+# ---- test (l199, Parts A-D).  Intervals are the stored ones where stored;
+# ---- where a result stores only value + se (l199 Part D, Part B dtheta) the
+# ---- interval is value +- 1.96 se, the registered jackknife normal rule of
+# ---- gj.jack (banc/l197b/gj.py), DERIVED here.  Pool-phase shifts across the
+# ---- deletion are circular differences of the stored mean phases, DERIVED
+# ---- here and wrapped to (-180, 180].
+def _vc201(d, nd=3):
+    out = dict(value=round(d['value'], nd))
+    lo, hi = d['ci95'] if 'ci95' in d else (d['value'] - 1.96 * d['se'],
+                                             d['value'] + 1.96 * d['se'])
+    out['ci95'] = [round(lo, nd), round(hi, nd)]
+    return out
+
+
+def _wrap201(x):
+    x = (x + 180.0) % 360.0 - 180.0
+    return 180.0 if x == -180.0 else x
+
+
+_r197b = json.load(open(f'{B}/l197b/results_l197b.json'))
+put('l197b.timing', dict(
+    verdict=_r197b['verdict'], prereg_sha256=_r197b['prereg_sha256'][:16],
+    **{a: dict(n=d['n'], W=d['W'], clock=d['clock'], mechanism=d['mechanism'],
+               R0_no_elevation=d['R0_no_elevation'],
+               **{k: _vc201(d[k]) for k in ('A', 'T', 'D', 'T_on', 'T_off',
+                                            'A_inphase', 'A_antiphase',
+                                            'A_in_minus_anti')})
+       for a, d in _r197b['arms'].items()}),
+    'banc/l197b/results_l197b.json:arms.{S,W} (A, T, D, T_on, T_off = partner '
+    'undriven, A_inphase / A_antiphase / A_in_minus_anti = the tone split; '
+    'values and stored jackknife intervals rounded to 3 dp) + verdict + '
+    'prereg_sha256 (first 16 hex)')
+_r199p = json.load(open(f'{B}/l199/results_primary.json'))
+_r199c = json.load(open(f'{B}/l199/results_causal.json'))
+_D199 = _r199c['D']
+_W199 = _r199c['descriptive_W500']
+put('l199.causal', dict(
+    n=_D199['n'], seed_lo=_r199c['seeds'][0], seed_hi=_r199c['seeds'][-1],
+    label=_D199['label'], status=_r199c['status'],
+    removed_K_positive=_D199['sign_conditions']['removed_K_positive'],
+    base_K_negative=_D199['sign_conditions']['base_K_negative'],
+    blocks={g: {k: round(v, 3) for k, v in b.items()}
+            for g, b in _D199['blocks'].items()},
+    E_00=_vc201(_D199['E_00']), E_PP=_vc201(_D199['E_PP']),
+    E_X=_vc201(_D199['E_X']), K_base=_vc201(_D199['K']['cutwA']),
+    K_removed=_vc201(_D199['K']['sc25']), K_I=_vc201(_D199['K_I']),
+    E_PP_minus_E_00=_vc201(_D199['E_PP_minus_E_00']),
+    W500=dict(label=_W199['label'], K_removed=_vc201(_W199['K']['sc25']),
+              K_I=_vc201(_W199['K_I'])),
+    pool_shift_phiPI_minus_phi0={k: dict(deg=round(v['mean_deg'], 1),
+                                         R=round(v['R'], 2))
+                                 for k, v in _r199c['pool_phase_shift_phiPI_minus_phi0'].items()},
+    certs=dict(c0a_checks=_r199c['certs']['c0a_checks'],
+               c0a_max=_r199c['certs']['c0a_max'],
+               gates_canonical=_r199c['certs']['gates_canonical'],
+               mc_max_dev=_r199c['certs']['mc_max_dev'])),
+    'banc/l199/results_causal.json:D (Part D, the tone shifted half a period '
+    'in one arm at identical gates; E = carrier-removal elevation by phase '
+    'class, K = within minus cross, K_I = the K interaction; intervals = value '
+    '+- 1.96 se DERIVED here, the registered jackknife normal rule) + '
+    'descriptive_W500 + pool_phase_shift_phiPI_minus_phi0 + seeds + certs')
+
+
+def _cpart199(c):
+    out = dict(label=c['label'])
+    for g in ('cutwA', 'sc25'):
+        out[g] = dict(Delta=dict(deg=round(c[g]['Delta']['mean_deg'], 1),
+                                 R=round(c[g]['Delta']['R'], 2)),
+                      label=c[g]['label'],
+                      **{p: dict(deg=round(c[g]['alpha'][p]['mean_deg'], 1),
+                                 R=round(c[g]['alpha'][p]['R'], 2))
+                         for p in ('Ti_fR', 'Ti_eR')})
+    out['shift'] = {p: round(_wrap201(c['sc25']['alpha'][p]['mean_deg']
+                                      - c['cutwA']['alpha'][p]['mean_deg']), 1)
+                    for p in ('Ti_fR', 'Ti_eR')}
+    return out
+
+
+_ds199 = _r199p['datasets']
+put('l199.phase', dict(
+    **{ds: dict(
+        n=d['n'], W=d['W'], pulse=d['pulse'],
+        A=dict(label=d['A']['label'],
+               slope_base=_vc201(d['A']['slope']['cutwA']),
+               slope_removed=_vc201(d['A']['slope']['sc25']),
+               I=_vc201(d['A']['I'])),
+        B=dict(label=d['B']['label'],
+               theta_base=_vc201(d['B']['graphs']['cutwA']['theta'], 1),
+               theta_removed=_vc201(d['B']['graphs']['sc25']['theta'], 1),
+               dtheta=_vc201(d['B']['dtheta'], 1)),
+        C=_cpart199(d['C']))
+       for ds, d in _ds199.items()},
+    causal={phi: dict(label=c['label'],
+                      **{g: dict(deg=round(c[g]['Delta']['mean_deg'], 1),
+                                 R=round(c[g]['Delta']['R'], 2))
+                         for g in ('cutwA', 'sc25')})
+            for phi, c in _r199c['C_by_phi'].items()}),
+    'banc/l199/results_primary.json:datasets.{S,W,V1}.{A,B,C} (V1 = the L186 '
+    'batch; A = 3-bin profile slopes and interaction, B = signed-offset '
+    'preferred offset theta, C = per-seed first-harmonic pool phase against '
+    'the tone: Delta = flexor minus extensor, alpha = each pool; shift = '
+    'carrier-removed minus base alpha, circular difference DERIVED here; '
+    'dtheta interval = value +- 1.96 se DERIVED here) + '
+    'banc/l199/results_causal.json:C_by_phi (the Part D batch)')
+put('l199.meta', dict(
+    prereg_sha256=_r199p['prereg_sha256'][:16],
+    status=[_r199p['status'], _r199c['status']],
+    part_a_verdict=_r199p['part_a_verdict'], labels=_r199p['labels'],
+    causal_label=_D199['label'],
+    cert_197b={k: v.startswith('PASS') for k, v in _r199p['cert_197b'].items()}),
+    'banc/l199/results_primary.json:prereg_sha256 (first 16 hex) + status + '
+    'part_a_verdict + labels + cert_197b (PASS flags); '
+    'banc/l199/results_causal.json:status + D.label')
+
 json.dump(OUT, open(os.path.join(os.path.dirname(
     os.path.abspath(__file__)), 'numbers.json'), 'w'), indent=1, sort_keys=True)
 

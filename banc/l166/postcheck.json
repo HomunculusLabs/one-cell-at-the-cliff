@@ -1,0 +1,105 @@
+{
+ "disjoint": true,
+ "n_stored_seeds": 34,
+ "stored_clear": [
+  "Sr_aL~Sr_bL",
+  "Ta_aL~Sr_aL",
+  "Ta_aL~Sr_bL",
+  "Ta_aL~Ta_aR",
+  "Ta_aL~Ta_bR",
+  "Ta_aR~Ta_bR",
+  "Ta_bR~Sr_aL",
+  "Ta_bR~Sr_bL",
+  "Tr_eL~Sr_bL",
+  "Tr_eL~Ta_aL",
+  "Tr_eL~Ta_aR",
+  "Tr_eL~Ta_bR",
+  "Tr_eL~Tr_eR",
+  "Tr_eR~Sr_aL",
+  "Tr_eR~Sr_bL",
+  "Tr_eR~Ta_aL",
+  "Tr_eR~Ta_aR",
+  "Tr_eR~Ta_bR",
+  "Tr_fL~Sr_aL",
+  "Tr_fL~Sr_bL",
+  "Tr_fL~Ta_aL",
+  "Tr_fL~Ta_bR",
+  "Tr_fL~Tr_eR"
+ ],
+ "fresh_clear": [
+  "Sr_aL~Sr_bL",
+  "Ta_aL~Sr_aL",
+  "Ta_aL~Sr_bL",
+  "Ta_aL~Ta_bR",
+  "Ta_aR~Sr_bL",
+  "Ta_aR~Ta_bR",
+  "Ta_bR~Sr_aL",
+  "Ta_bR~Sr_bL",
+  "Tr_eL~Sr_bL",
+  "Tr_eL~Ta_aL",
+  "Tr_eL~Ta_aR",
+  "Tr_eL~Ta_bR",
+  "Tr_eL~Tr_eR",
+  "Tr_eR~Sr_aL",
+  "Tr_eR~Sr_bL",
+  "Tr_eR~Ta_aL",
+  "Tr_eR~Ta_aR",
+  "Tr_eR~Ta_bR",
+  "Tr_fL~Sr_aL",
+  "Tr_fL~Sr_bL",
+  "Tr_fL~Ta_aL",
+  "Tr_fL~Ta_bR",
+  "Tr_fL~Tr_eR"
+ ],
+ "n_intersection": 22,
+ "jaccard": 0.9166666666666666,
+ "rank_rho": 0.9332238642583469,
+ "h3": {
+  "H3_l150_cutng25": {
+   "delta": 0.1217057276857059,
+   "ratio": 0.648178881891069,
+   "ptp_frac": 0.5036407572257237,
+   "clears": 4,
+   "clears_ctl": 9
+  },
+  "H3_l150_cutwA": {
+   "delta": 0.10976033867460888,
+   "ratio": 0.6307477293381333,
+   "ptp_frac": 0.4980345210553646,
+   "clears": 4,
+   "clears_ctl": 9
+  },
+  "H3_l150_eMotBot5": {
+   "delta": 0.07219463205211518,
+   "ratio": 0.7346506339516491,
+   "ptp_frac": 0.522366543984393,
+   "clears": 4,
+   "clears_ctl": 7
+  },
+  "H3_l150_eMotTop5": {
+   "delta": 0.062102885196365976,
+   "ratio": 0.7626735766357609,
+   "ptp_frac": 0.5254142726203062,
+   "clears": 4,
+   "clears_ctl": 5
+  },
+  "H3_l150_full": {
+   "delta": 0.0719329757167938,
+   "ratio": 0.7659383603336009,
+   "ptp_frac": 0.8815881186429853,
+   "clears": 2,
+   "clears_ctl": 3
+  },
+  "H3_l150_silW": {
+   "delta": 0.12254557379309994,
+   "ratio": 0.6158963770741689,
+   "ptp_frac": 0.46846645630263,
+   "clears": 4,
+   "clears_ctl": 8
+  }
+ },
+ "n_inverted": 6,
+ "amplitude_breakers": [
+  "H3_l150_full"
+ ]
+}

@@ -1,0 +1,11 @@
+log(f"rollouts done {time.time()-t0:.0f}s")
+assert MODE == "work"
+_as = json.load(open(ANCH_PATH))
+assert all(_as[k] for k in NEED_ANCH)
+atomic_json(f"{OUT}/done_w{WID}.json", dict(
+    wid=WID, nw=NW, arms=["cutwA"] + MY_ARMS, cert_arms=CERT_ARMS, seeds=SEEDS,
+    gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+    gi=dict(ru2=GI_RU2, carrier=GI_CARRIER, lt1=LT_GI[0], lt2=LT_GI[1], l2h=HOM_GI),
+    track=TRACK, ctr_cells=CTR_CELLS, prereg_sha256=prereg_sha(),
+    threads=torch.get_num_threads(), secs=time.time() - t0))
+log(f"worker {WID} DONE {time.time()-t0:.0f}s")

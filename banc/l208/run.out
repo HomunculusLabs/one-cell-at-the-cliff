@@ -1,0 +1,51 @@
+CERT-CONST: constants match run-script literals
+WINDOW: |W| 3000 | |W_on| 1400
+CERT-ADD: 109 stored B36 values reproduced EXACTLY
+CERT-175F: 180 stored B37 values reproduced EXACTLY
+GATES PASSED — reading L208 values now
+B36|Ti|f4wA              rho +0.203 (on +0.171) p_up 0.1910 p_dn 0.8127 | lvl L 0.1845 R 0.1187 | dM -0.06582 | fhi95 0.0000/0.0000 | flo 0.093/0.058
+B36|Ti|f4ng              rho -0.238 (on -0.353) p_up 0.8703 p_dn 0.1335 | lvl L 0.2022 R 0.0931 | dM -0.10908 | fhi95 0.0000/0.0000 | flo 0.189/0.377
+B36|Ti|f4tw              rho -0.153 (on -0.400) p_up 0.7561 p_dn 0.2484 | lvl L 0.1812 R 0.1146 | dM -0.06660 | fhi95 0.0000/0.0000 | flo 0.143/0.140
+B36|Ti|cutwA             rho +0.088 (on -0.141) p_up 0.3786 p_dn 0.6245 | lvl L 0.0806 R 0.0259 | dM -0.05467 | fhi95 0.0000/0.0000 | flo 0.493/0.390
+B36|Ti|cutng25           rho -0.074 (on -0.171) p_up 0.6086 p_dn 0.3971 | lvl L 0.0888 R 0.0285 | dM -0.06025 | fhi95 0.0000/0.0000 | flo 0.500/0.436
+B36|Tr|f4wA              rho +0.159 (on +0.029) p_up 0.3093 p_dn 0.6953 | lvl L 0.0221 R 0.0765 | dM +0.05448 | fhi95 0.0000/0.0000 | flo 0.562/0.386
+B36|Tr|f4ng              rho -0.691 (on -0.665) p_up 0.9897 p_dn 0.0107 | lvl L 0.0256 R 0.0782 | dM +0.05265 | fhi95 0.0000/0.0000 | flo 0.638/0.267
+B36|Tr|f4tw              rho -0.335 (on -0.332) p_up 0.8842 p_dn 0.1178 | lvl L 0.0233 R 0.0797 | dM +0.05640 | fhi95 0.0000/0.0000 | flo 0.598/0.347
+B36|Tr|cutwA             rho +0.000 (on -0.471) p_up 0.5050 p_dn 0.4990 | lvl L 0.0002 R 0.0435 | dM +0.04328 | fhi95 0.0000/0.0000 | flo 0.996/0.306
+B36|Tr|cutng25           rho +0.506 (on +0.126) p_up 0.0403 p_dn 0.9646 | lvl L 0.0000 R 0.0547 | dM +0.05469 | fhi95 0.0000/0.0000 | flo 1.000/0.304
+B37|Ti|f4wA              rho +0.062 (on -0.535) p_up 0.3860 p_dn 0.6191 | lvl L 0.1804 R 0.1173 | dM -0.06310 | fhi95 0.0000/0.0000 | flo 0.106/0.072
+B37|Ti|f4ng              rho -0.097 (on -0.103) p_up 0.6391 p_dn 0.3649 | lvl L 0.2025 R 0.1038 | dM -0.09872 | fhi95 0.0000/0.0000 | flo 0.229/0.347
+B37|Ti|f4tw              rho +0.159 (on -0.041) p_up 0.2100 p_dn 0.7938 | lvl L 0.1817 R 0.1113 | dM -0.07033 | fhi95 0.0000/0.0000 | flo 0.118/0.144
+B37|Ti|cutwA             rho +0.174 (on +0.121) p_up 0.2227 p_dn 0.7803 | lvl L 0.0811 R 0.0268 | dM -0.05432 | fhi95 0.0000/0.0000 | flo 0.497/0.382
+B37|Ti|cutng25           rho -0.524 (on -0.468) p_up 0.9775 p_dn 0.0229 | lvl L 0.0886 R 0.0288 | dM -0.05987 | fhi95 0.0000/0.0000 | flo 0.498/0.438
+B37|Tr|f4wA              rho -0.679 (on -0.347) p_up 0.9908 p_dn 0.0095 | lvl L 0.0220 R 0.0770 | dM +0.05501 | fhi95 0.0000/0.0000 | flo 0.568/0.383
+B37|Tr|f4ng              rho -0.909 (on -0.897) p_up 1.0000 p_dn 0.0001 | lvl L 0.0242 R 0.0823 | dM +0.05806 | fhi95 0.0000/0.0000 | flo 0.660/0.260
+B37|Tr|f4tw              rho -0.312 (on -0.521) p_up 0.8677 p_dn 0.1343 | lvl L 0.0234 R 0.0780 | dM +0.05459 | fhi95 0.0000/0.0000 | flo 0.587/0.358
+B37|Tr|cutwA             rho +0.318 (on +0.068) p_up 0.1257 p_dn 0.8763 | lvl L 0.0001 R 0.0452 | dM +0.04516 | fhi95 0.0000/0.0000 | flo 0.999/0.292
+B37|Tr|cutng25           rho -0.088 (on -0.391) p_up 0.6346 p_dn 0.3711 | lvl L 0.0001 R 0.0556 | dM +0.05548 | fhi95 0.0000/0.0000 | flo 0.998/0.302
+
+H0_VOID check: median |dM| over Ti arms = 0.065168 (bar 0.005) -> void=False
+BRANCH = H_UNREGISTERED_SHAPE
+  B36 sig_up [] sig_dn []
+  B37 sig_up [] sig_dn ['cutng25']
+between-arm B36: margin-side values 1 distinct, agree-with-dominance 2/5
+   f4wA      margin->R dom L dM -0.06582 agree False
+   f4ng      margin->R dom L dM -0.10908 agree False
+   f4tw      margin->R dom L dM -0.06660 agree False
+   cutwA     margin->R dom R dM -0.05467 agree True
+   cutng25   margin->R dom R dM -0.06025 agree True
+between-arm B37: margin-side values 1 distinct, agree-with-dominance 2/5
+   f4wA      margin->R dom L dM -0.06310 agree False
+   f4ng      margin->R dom L dM -0.09872 agree False
+   f4tw      margin->R dom L dM -0.07033 agree False
+   cutwA     margin->R dom R dM -0.05432 agree True
+   cutng25   margin->R dom R dM -0.05987 agree True
+
+PREDICTIONS: {
+ "Q208-1 H3_NULL_BAND": false,
+ "Q208-2 margin sign does NOT flip with floor": true,
+ "Q208-3 fhi95 ~0 everywhere": true,
+ "Q208-4 flo nonzero and side-asymmetric somewhere": true
+}
+npz fingerprints unchanged (read-only honoured)
+wrote l208/static.json

@@ -1,0 +1,493 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1012" viewBox="0 0 1400 1012" data-figure="fig6" data-l202="pending">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#abb2bf"/></marker><marker id="arrg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#98c379"/></marker><marker id="arrp" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c678dd"/></marker></defs>
+<rect width="1400" height="1012" fill="#282c34"/>
+<text x="30" y="34" fill="#abb2bf" font-size="19" font-weight="bold">Fig. 6 — the circuit: a carrier, a relay, and a cord interneuron the carrier's phenotype needs</text>
+<text x="30" y="56" fill="#9aa3b2" font-size="13">BANC female cord, k=24 cutwA base · rate model, certified matched operating point · every number below is read from a stored artifact (pointer on its SVG element; table in fig6_caption.md)</text>
+<text x="30" y="76" fill="#9aa3b2" font-size="13">A wiring (schematic — positions arbitrary, counts real) · B asymmetric necessity (L200 batch B44, 16 seeds/arm) · C phase rotation under carrier removal (L199 S, 96 seeds)</text>
+<rect x="24" y="92" width="676" height="472" fill="#21252b" rx="6"/>
+<text x="40" y="116" fill="#abb2bf" font-size="15" font-weight="bold">A</text>
+<text x="60" y="116" fill="#abb2bf" font-size="13">wiring, schematic (one-hop static edges, model-true signs)</text>
+<rect class="node" data-node="carrier" x="44" y="150" width="178" height="46" rx="7" fill="#282c34" stroke="#98c379" stroke-width="2"/>
+<text x="133.0" y="169.0" fill="#98c379" font-size="12.5" text-anchor="middle" font-weight="bold" id="t0" data-src="l200a4/cells/carrier/gi" data-v="1110" data-fmt="d">DNp33-L · gi 1110</text>
+<text x="133.0" y="186.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t1" data-src="l200a4/cells/carrier/out_edges" data-v="80" data-fmt="d">carrier · descending · excit. · 80 out</text>
+<rect class="node" data-node="relay" x="282" y="150" width="178" height="46" rx="7" fill="#282c34" stroke="#61afef" stroke-width="2"/>
+<text x="371.0" y="169.0" fill="#61afef" font-size="12.5" text-anchor="middle" font-weight="bold" id="t2" data-src="l198s/relay/cell/gi" data-v="75494" data-fmt="d">IN06B033-L · gi 75494</text>
+<text x="371.0" y="186.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t3" data-src="l198s/relay/out_edges" data-v="51" data-fmt="d">relay · cord IN · inhib. · 51 out</text>
+<rect class="node" data-node="ru2" x="44" y="400" width="178" height="46" rx="7" fill="#282c34" stroke="#c678dd" stroke-width="2"/>
+<text x="133.0" y="419.0" fill="#c678dd" font-size="12.5" text-anchor="middle" font-weight="bold" id="t4" data-src="l200a4/cells/ru2/gi" data-v="70994" data-fmt="d">IN07B031-R · gi 70994</text>
+<text x="133.0" y="436.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t5" data-src="l200a4/cells/ru2/out_edges" data-v="61" data-fmt="d">ru2 · cord IN · inhib. · 61 out</text>
+<rect class="node" data-node="TifR" x="528" y="134" width="156" height="40" rx="7" fill="#282c34" stroke="#abb2bf" stroke-width="2"/>
+<text x="606.0" y="159.0" fill="#abb2bf" font-size="12.5" text-anchor="middle" font-weight="bold" id="t6" data-src="l198s/relay/direct_onto/Ti_fR/targets" data-v="51" data-fmt="d">Ti flexor R · 51 MN</text>
+<rect class="node" data-node="TieR" x="528" y="186" width="156" height="40" rx="7" fill="#282c34" stroke="#abb2bf" stroke-width="2"/>
+<text x="606.0" y="211.0" fill="#abb2bf" font-size="12.5" text-anchor="middle" font-weight="bold" id="t7" data-src="l198s/relay/direct_onto/Ti_eR/targets" data-v="6" data-fmt="d">Ti extensor R · 6 MN</text>
+<rect class="node" data-node="PMR" x="528" y="300" width="156" height="40" rx="7" fill="#282c34" stroke="#5c6370" stroke-width="2"/>
+<text x="606.0" y="325.0" fill="#5c6370" font-size="12.5" text-anchor="middle" font-weight="bold" id="t8" data-src="l200s/PM_R_n" data-v="2219" data-fmt="comma">premotor R · 2,219 cells</text>
+<rect class="node" data-node="PML" x="528" y="486" width="156" height="40" rx="7" fill="#282c34" stroke="#5c6370" stroke-width="2"/>
+<text x="606.0" y="511.0" fill="#5c6370" font-size="12.5" text-anchor="middle" font-weight="bold" id="t9" data-src="l200s/PM_L_n" data-v="1910" data-fmt="comma">premotor L · 1,910 cells</text>
+<text x="606.0" y="360.0" fill="#5c6370" font-size="10" text-anchor="middle" id="t10" data-src="l200a4/cells/ru2/direct_onto/Ti_fL/targets|l200a4/cells/ru2/direct_onto/Ti_eL/targets" data-v="50|6" data-fmt="d|d">(Ti MN-L: flexor 50 · extensor 6)</text>
+<line x1="606" y1="300" x2="606" y2="230" stroke="#5c6370" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+<line class="edge" data-edge="carrier-relay" x1="222" y1="173" x2="278" y2="173" stroke="#98c379" stroke-width="3.2" marker-end="url(#arrg)"/>
+<text x="250.0" y="143.0" fill="#98c379" font-size="12" text-anchor="middle" font-weight="bold" id="t12" data-src="l198s/relay/carrier_to_relay/syn" data-v="21" data-fmt="d">21 syn</text>
+<line class="edge" data-edge="relay-TifR" x1="460" y1="168" x2="524" y2="155" stroke="#61afef" stroke-width="2" marker-end="url(#arr)"/>
+<text x="492.0" y="145.0" fill="#61afef" font-size="10.5" text-anchor="middle" id="t13" data-src="l198s/relay/direct_onto/Ti_fR/n_edges|l198s/relay/direct_onto/Ti_fR/syn" data-v="1|8" data-fmt="d|d">1 edge · 8 syn</text>
+<path class="edge" data-edge="carrier-PMR" d="M 215 196 C 235 300, 420 320, 524 320" fill="none" stroke="#98c379" stroke-width="1.6" marker-end="url(#arrg)"/>
+<text x="440.0" y="300.0" fill="#98c379" font-size="10.5" text-anchor="middle" id="t15" data-src="l200a4/cells/carrier/one_hop/PM_R/edges" data-v="3" data-fmt="d">3 edges onto premotor R</text>
+<text x="440" y="287" fill="#98c379" font-size="10.5" text-anchor="middle">(the relay is one)</text>
+<text x="392.0" y="214.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t16" data-src="l190r/summary/E-edge/delta" data-v="0.22281250000000002" data-fmt="s3">cut only this edge (L190): +0.223</text>
+<text x="392.0" y="228.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t17" data-src="l190r/summary/sc25/delta|ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)" data-v="0.37012500000000004|0.6019925700776765" data-fmt="s3|pct">vs carrier removal +0.370 = 60%</text>
+<text x="392.0" y="242.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle" id="t19" data-src="l190r/summary/E-edge/mid" data-v="0.0" data-fmt="f3">point ratio, no interval · its 1.4 Hz 0.000</text>
+<line class="fan" x1="120" y1="196" x2="50.0" y2="250.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="61.0" y2="255.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="72.0" y2="260.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="83.0" y2="250.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="94.0" y2="255.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="105.0" y2="260.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="116.0" y2="250.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="127.0" y2="255.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="138.0" y2="260.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="149.0" y2="250.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="160.0" y2="255.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="171.0" y2="260.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="182.0" y2="250.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<line class="fan" x1="120" y1="196" x2="193.0" y2="255.0" stroke="#98c379" stroke-width="1" opacity="0.45"/>
+<text x="130.0" y="282.0" fill="#98c379" font-size="11" text-anchor="middle" font-weight="bold" id="t20" data-src="sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)|l184e?direction=out#count|l184e?target_class=direct right-Ti premotor#count" data-v="77|80|3" data-fmt="d|d|d">77 other outputs = 80 − 3</text>
+<text x="130.0" y="297.0" fill="#9aa3b2" font-size="10" text-anchor="middle" id="t23" data-src="l184e?target_class=ventral_nerve_cord_intrinsic#count" data-v="67" data-fmt="d">67 → cord interneurons</text>
+<text x="130.0" y="310.0" fill="#9aa3b2" font-size="10" text-anchor="middle" id="t24" data-src="l184e?target_class=other motor#count" data-v="10" data-fmt="d">10 → other motor neurons</text>
+<text x="130" y="326" fill="#9aa3b2" font-size="10" text-anchor="middle">candidate substrate of the 1.4-Hz</text>
+<text x="130" y="339" fill="#9aa3b2" font-size="10" text-anchor="middle">signature, by elimination (relay cut</text>
+<text x="130" y="352" fill="#9aa3b2" font-size="10" text-anchor="middle">and edge cut leave it at base)</text>
+<path class="edge" data-edge="ru2-PMR" d="M 222 414 C 380 414, 440 322, 524 322" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>
+<path class="edge" data-edge="ru2-PML" d="M 222 432 C 380 432, 440 506, 524 506" fill="none" stroke="#c678dd" stroke-width="2" marker-end="url(#arrp)"/>
+<text x="262.0" y="406.0" fill="#c678dd" font-size="11" text-anchor="middle" font-weight="bold" id="t25" data-src="l200a4/cells/ru2/one_hop/PM_R/edges" data-v="5" data-fmt="d">5 edges</text>
+<text x="262.0" y="450.0" fill="#c678dd" font-size="11" text-anchor="middle" font-weight="bold" id="t26" data-src="l200a4/cells/ru2/one_hop/PM_L/edges" data-v="5" data-fmt="d">5 edges</text>
+<text x="44.0" y="474.0" fill="#c678dd" font-size="10.5" id="t27" data-src="l200a4/cells/ru2/two_hop/Ti_eL/signed|l200a4/cells/ru2/two_hop/Ti_eR/signed" data-v="-95.46391430399075|-105.29919748751833" data-fmt="f1|f1">two-hop → extensors: −95.5 L · −105.3 R</text>
+<text x="44.0" y="488.0" fill="#9aa3b2" font-size="10.5" id="t29" data-src="l200a4/LI2_ru2|l200a4/LI2_carrier" data-v="-0.04751471539703847|0.17399138353637195" data-fmt="s3|s3">LI2 laterality: ru2 −0.048 · carrier +0.174</text>
+<text x="44.0" y="502.0" fill="#9aa3b2" font-size="10.5" id="t31" data-src="l200a4/overlap/n_shared|l200a4/overlap/n_targets_carrier|l200a4/overlap/n_targets_ru2|l200a4/overlap/J_same" data-v="3|80|61|0.021739130434782608" data-fmt="d|d|d|f3">shared direct targets 3 of 80 / 61 (J 0.022)</text>
+<text x="44.0" y="516.0" fill="#9aa3b2" font-size="10.5" id="t35" data-src="l200a4/overlap/premotor/J_mirror" data-v="0.0" data-fmt="f1">premotor mirror overlap J 0.0</text>
+<text x="362.0" y="550.0" fill="#5c6370" font-size="10.5" text-anchor="middle" id="t36" data-src="l200a4/cells/carrier/x_mean|l200a4/cells/ru2/x_mean|l198s/relay/census_x_mean_3seed" data-v="0.3891147971153259|0.2994140883286794|0.3289374311765035" data-fmt="f2|f2|f2">base rates x̄: carrier 0.39 · ru2 0.30 · relay 0.33 — no direct Ti motor edge from carrier or ru2</text>
+<rect x="716" y="92" width="660" height="472" fill="#21252b" rx="6"/>
+<text x="732" y="116" fill="#abb2bf" font-size="15" font-weight="bold">B</text>
+<text x="752" y="116" fill="#abb2bf" font-size="13">asymmetric necessity: mean duty per arm (bars) · seeds (dots) · base-gain form (◇)</text>
+<line x1="772" y1="456.0" x2="1366" y2="456.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="460.0" fill="#5c6370" font-size="11" text-anchor="end">0.0</text>
+<line x1="772" y1="400.0" x2="1366" y2="400.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="404.0" fill="#5c6370" font-size="11" text-anchor="end">0.2</text>
+<line x1="772" y1="344.0" x2="1366" y2="344.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="348.0" fill="#5c6370" font-size="11" text-anchor="end">0.4</text>
+<line x1="772" y1="288.0" x2="1366" y2="288.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="292.0" fill="#5c6370" font-size="11" text-anchor="end">0.6</text>
+<line x1="772" y1="232.0" x2="1366" y2="232.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="236.0" fill="#5c6370" font-size="11" text-anchor="end">0.8</text>
+<line x1="772" y1="176.0" x2="1366" y2="176.0" stroke="#3e4451" stroke-width="1"/>
+<text class="ytick" x="766" y="180.0" fill="#5c6370" font-size="11" text-anchor="end">1.0</text>
+<text x="742" y="316.0" fill="#abb2bf" font-size="12" text-anchor="middle" transform="rotate(-90 742 316.0)">mean duty</text>
+<text x="871.0" y="148" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="middle">right Ti · chopped 0.7 Hz</text>
+<line class="thr" data-group="R" data-src="l200r/bands/super_mean_min" data-v="0.6" x1="784.0" y1="288.0" x2="958.0" y2="288.0" stroke="#abb2bf" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+<text x="956.0" y="284.0" fill="#9aa3b2" font-size="9.5" text-anchor="end" id="t39" data-src="l200r/bands/super_mean_min" data-v="0.6" data-fmt="f2">0.60</text>
+<rect class="bar" data-group="R" data-arm="cutwA" data-src="l200r/base/meanR" data-v="0.43" x="790.0" y="335.6" width="26.0" height="120.40" fill="#d19a66" opacity="0.85"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="0" data-src="l200r/base/dutyR/0" data-v="0.377" cx="796.1" cy="350.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="1" data-src="l200r/base/dutyR/1" data-v="0.437" cx="800.7" cy="333.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="2" data-src="l200r/base/dutyR/2" data-v="0.22" cx="805.3" cy="394.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="3" data-src="l200r/base/dutyR/3" data-v="0.397" cx="809.9" cy="344.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="4" data-src="l200r/base/dutyR/4" data-v="0.59" cx="796.1" cy="290.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="5" data-src="l200r/base/dutyR/5" data-v="0.697" cx="800.7" cy="260.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="6" data-src="l200r/base/dutyR/6" data-v="0.343" cx="805.3" cy="360.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="7" data-src="l200r/base/dutyR/7" data-v="0.45" cx="809.9" cy="330.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="8" data-src="l200r/base/dutyR/8" data-v="0.58" cx="796.1" cy="293.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="9" data-src="l200r/base/dutyR/9" data-v="0.393" cx="800.7" cy="346.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="10" data-src="l200r/base/dutyR/10" data-v="0.5" cx="805.3" cy="316.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="11" data-src="l200r/base/dutyR/11" data-v="0.497" cx="809.9" cy="316.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="12" data-src="l200r/base/dutyR/12" data-v="0.463" cx="796.1" cy="326.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="13" data-src="l200r/base/dutyR/13" data-v="0.347" cx="800.7" cy="358.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="14" data-src="l200r/base/dutyR/14" data-v="0.187" cx="805.3" cy="403.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="cutwA" data-j="15" data-src="l200r/base/dutyR/15" data-v="0.407" cx="809.9" cy="342.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="803.0" y="255.8" fill="#d19a66" font-size="9.5" text-anchor="middle" id="t40" data-src="l200r/base/meanR" data-v="0.43" data-fmt="f2">0.43</text>
+<text x="803.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t41" data-src="l200r/base/kR" data-v="4" data-fmt="d">4</text>
+<rect class="bar" data-group="R" data-arm="sc25" data-src="l200r/arms/sc25/meanR" data-v="0.783" x="824.0" y="236.8" width="26.0" height="219.24" fill="#98c379" opacity="0.85"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="0" data-src="l200r/arms/sc25/dutyR/0" data-v="0.683" cx="830.1" cy="264.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="1" data-src="l200r/arms/sc25/dutyR/1" data-v="0.483" cx="834.7" cy="320.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="2" data-src="l200r/arms/sc25/dutyR/2" data-v="0.913" cx="839.3" cy="200.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="3" data-src="l200r/arms/sc25/dutyR/3" data-v="0.863" cx="843.9" cy="214.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="4" data-src="l200r/arms/sc25/dutyR/4" data-v="0.803" cx="830.1" cy="231.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="5" data-src="l200r/arms/sc25/dutyR/5" data-v="0.893" cx="834.7" cy="206.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="6" data-src="l200r/arms/sc25/dutyR/6" data-v="0.817" cx="839.3" cy="227.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="7" data-src="l200r/arms/sc25/dutyR/7" data-v="0.903" cx="843.9" cy="203.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="8" data-src="l200r/arms/sc25/dutyR/8" data-v="0.737" cx="830.1" cy="249.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="9" data-src="l200r/arms/sc25/dutyR/9" data-v="0.873" cx="834.7" cy="211.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="10" data-src="l200r/arms/sc25/dutyR/10" data-v="0.847" cx="839.3" cy="218.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="11" data-src="l200r/arms/sc25/dutyR/11" data-v="0.797" cx="843.9" cy="232.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="12" data-src="l200r/arms/sc25/dutyR/12" data-v="0.847" cx="830.1" cy="218.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="13" data-src="l200r/arms/sc25/dutyR/13" data-v="0.62" cx="834.7" cy="282.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="14" data-src="l200r/arms/sc25/dutyR/14" data-v="0.733" cx="839.3" cy="250.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="sc25" data-j="15" data-src="l200r/arms/sc25/dutyR/15" data-v="0.713" cx="843.9" cy="256.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="837.0" y="195.4" fill="#98c379" font-size="9.5" text-anchor="middle" id="t42" data-src="l200r/arms/sc25/meanR" data-v="0.783" data-fmt="f2">0.78</text>
+<text x="837.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t43" data-src="l200r/arms/sc25/kR" data-v="15" data-fmt="d">15</text>
+<rect class="bar" data-group="R" data-arm="l2" data-src="l200r/arms/l2/meanR" data-v="0.533" x="858.0" y="306.8" width="26.0" height="149.24" fill="#c678dd" opacity="0.85"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="0" data-src="l200r/arms/l2/dutyR/0" data-v="0.35" cx="864.1" cy="358.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="1" data-src="l200r/arms/l2/dutyR/1" data-v="0.373" cx="868.7" cy="351.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="2" data-src="l200r/arms/l2/dutyR/2" data-v="0.433" cx="873.3" cy="334.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="3" data-src="l200r/arms/l2/dutyR/3" data-v="0.757" cx="877.9" cy="244.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="4" data-src="l200r/arms/l2/dutyR/4" data-v="0.353" cx="864.1" cy="357.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="5" data-src="l200r/arms/l2/dutyR/5" data-v="0.577" cx="868.7" cy="294.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="6" data-src="l200r/arms/l2/dutyR/6" data-v="0.353" cx="873.3" cy="357.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="7" data-src="l200r/arms/l2/dutyR/7" data-v="0.807" cx="877.9" cy="230.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="8" data-src="l200r/arms/l2/dutyR/8" data-v="0.64" cx="864.1" cy="276.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="9" data-src="l200r/arms/l2/dutyR/9" data-v="0.51" cx="868.7" cy="313.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="10" data-src="l200r/arms/l2/dutyR/10" data-v="0.457" cx="873.3" cy="328.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="11" data-src="l200r/arms/l2/dutyR/11" data-v="0.587" cx="877.9" cy="291.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="12" data-src="l200r/arms/l2/dutyR/12" data-v="0.333" cx="864.1" cy="362.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="13" data-src="l200r/arms/l2/dutyR/13" data-v="0.717" cx="868.7" cy="255.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="14" data-src="l200r/arms/l2/dutyR/14" data-v="0.693" cx="873.3" cy="262.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2" data-j="15" data-src="l200r/arms/l2/dutyR/15" data-v="0.59" cx="877.9" cy="290.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="871.0" y="225.0" fill="#c678dd" font-size="9.5" text-anchor="middle" id="t44" data-src="l200r/arms/l2/meanR" data-v="0.533" data-fmt="f2">0.53</text>
+<text x="871.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t45" data-src="l200r/arms/l2/kR" data-v="9" data-fmt="d">9</text>
+<polygon class="fixed" data-group="R" data-arm="l2F" data-src="l200r/arms/l2F/meanR" data-v="0.542" points="871.0,299.2 876.0,304.2 871.0,309.2 866.0,304.2" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="R" data-arm="l2k" data-src="l200r/arms/l2k/meanR" data-v="0.547" x="892.0" y="302.8" width="26.0" height="153.16" fill="#61afef" opacity="0.85"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="0" data-src="l200r/arms/l2k/dutyR/0" data-v="0.853" cx="898.1" cy="217.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="1" data-src="l200r/arms/l2k/dutyR/1" data-v="0.5" cx="902.7" cy="316.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="2" data-src="l200r/arms/l2k/dutyR/2" data-v="0.54" cx="907.3" cy="304.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="3" data-src="l200r/arms/l2k/dutyR/3" data-v="0.79" cx="911.9" cy="234.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="4" data-src="l200r/arms/l2k/dutyR/4" data-v="0.34" cx="898.1" cy="360.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="5" data-src="l200r/arms/l2k/dutyR/5" data-v="0.68" cx="902.7" cy="265.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="6" data-src="l200r/arms/l2k/dutyR/6" data-v="0.363" cx="907.3" cy="354.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="7" data-src="l200r/arms/l2k/dutyR/7" data-v="0.463" cx="911.9" cy="326.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="8" data-src="l200r/arms/l2k/dutyR/8" data-v="0.607" cx="898.1" cy="286.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="9" data-src="l200r/arms/l2k/dutyR/9" data-v="0.467" cx="902.7" cy="325.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="10" data-src="l200r/arms/l2k/dutyR/10" data-v="0.51" cx="907.3" cy="313.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="11" data-src="l200r/arms/l2k/dutyR/11" data-v="0.4" cx="911.9" cy="344.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="12" data-src="l200r/arms/l2k/dutyR/12" data-v="0.633" cx="898.1" cy="278.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="13" data-src="l200r/arms/l2k/dutyR/13" data-v="0.54" cx="902.7" cy="304.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="14" data-src="l200r/arms/l2k/dutyR/14" data-v="0.307" cx="907.3" cy="370.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2k" data-j="15" data-src="l200r/arms/l2k/dutyR/15" data-v="0.76" cx="911.9" cy="243.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="905.0" y="212.2" fill="#61afef" font-size="9.5" text-anchor="middle" id="t46" data-src="l200r/arms/l2k/meanR" data-v="0.547" data-fmt="f2">0.55</text>
+<text x="905.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t47" data-src="l200r/arms/l2k/kR" data-v="10" data-fmt="d">10</text>
+<polygon class="fixed" data-group="R" data-arm="l2kF" data-src="l200r/arms/l2kF/meanR" data-v="0.513" points="905.0,307.4 910.0,312.4 905.0,317.4 900.0,312.4" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="R" data-arm="l2c" data-src="l200r/arms/l2c/meanR" data-v="0.296" x="926.0" y="373.1" width="26.0" height="82.88" fill="#e5c07b" opacity="0.85"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="0" data-src="l200r/arms/l2c/dutyR/0" data-v="0.14" cx="932.1" cy="416.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="1" data-src="l200r/arms/l2c/dutyR/1" data-v="0.217" cx="936.7" cy="395.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="2" data-src="l200r/arms/l2c/dutyR/2" data-v="0.097" cx="941.3" cy="428.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="3" data-src="l200r/arms/l2c/dutyR/3" data-v="0.673" cx="945.9" cy="267.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="4" data-src="l200r/arms/l2c/dutyR/4" data-v="0.29" cx="932.1" cy="374.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="5" data-src="l200r/arms/l2c/dutyR/5" data-v="0.34" cx="936.7" cy="360.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="6" data-src="l200r/arms/l2c/dutyR/6" data-v="0.303" cx="941.3" cy="371.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="7" data-src="l200r/arms/l2c/dutyR/7" data-v="0.533" cx="945.9" cy="306.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="8" data-src="l200r/arms/l2c/dutyR/8" data-v="0.123" cx="932.1" cy="421.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="9" data-src="l200r/arms/l2c/dutyR/9" data-v="0.08" cx="936.7" cy="433.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="10" data-src="l200r/arms/l2c/dutyR/10" data-v="0.32" cx="941.3" cy="366.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="11" data-src="l200r/arms/l2c/dutyR/11" data-v="0.253" cx="945.9" cy="385.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="12" data-src="l200r/arms/l2c/dutyR/12" data-v="0.217" cx="932.1" cy="395.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="13" data-src="l200r/arms/l2c/dutyR/13" data-v="0.517" cx="936.7" cy="311.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="14" data-src="l200r/arms/l2c/dutyR/14" data-v="0.29" cx="941.3" cy="374.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R" data-arm="l2c" data-j="15" data-src="l200r/arms/l2c/dutyR/15" data-v="0.337" cx="945.9" cy="361.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="939.0" y="262.6" fill="#e5c07b" font-size="9.5" text-anchor="middle" id="t48" data-src="l200r/arms/l2c/meanR" data-v="0.296" data-fmt="f2">0.30</text>
+<text x="939.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t49" data-src="l200r/arms/l2c/kR" data-v="3" data-fmt="d">3</text>
+<polygon class="fixed" data-group="R" data-arm="l2cF" data-src="l200r/arms/l2cF/meanR" data-v="0.313" points="939.0,363.4 944.0,368.4 939.0,373.4 934.0,368.4" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<text x="1071.0" y="148" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="middle">right Ti · 1.4-Hz signature</text>
+<line class="thr" data-group="R14" data-src="l200r/bands/signature_mean14_min" data-v="0.25" x1="984.0" y1="386.0" x2="1158.0" y2="386.0" stroke="#abb2bf" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+<text x="1156.0" y="382.0" fill="#9aa3b2" font-size="9.5" text-anchor="end" id="t50" data-src="l200r/bands/signature_mean14_min" data-v="0.25" data-fmt="f2">0.25</text>
+<rect class="bar" data-group="R14" data-arm="cutwA" data-src="l200r/base/mean14R" data-v="0.0" x="990.0" y="456.0" width="26.0" height="0.00" fill="#d19a66" opacity="0.85"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="0" data-src="l200r/base/duty14R/0" data-v="0.0" cx="996.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="1" data-src="l200r/base/duty14R/1" data-v="0.0" cx="1000.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="2" data-src="l200r/base/duty14R/2" data-v="0.0" cx="1005.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="3" data-src="l200r/base/duty14R/3" data-v="0.0" cx="1009.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="4" data-src="l200r/base/duty14R/4" data-v="0.0" cx="996.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="5" data-src="l200r/base/duty14R/5" data-v="0.0" cx="1000.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="6" data-src="l200r/base/duty14R/6" data-v="0.0" cx="1005.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="7" data-src="l200r/base/duty14R/7" data-v="0.0" cx="1009.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="8" data-src="l200r/base/duty14R/8" data-v="0.0" cx="996.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="9" data-src="l200r/base/duty14R/9" data-v="0.0" cx="1000.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="10" data-src="l200r/base/duty14R/10" data-v="0.0" cx="1005.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="11" data-src="l200r/base/duty14R/11" data-v="0.0" cx="1009.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="12" data-src="l200r/base/duty14R/12" data-v="0.0" cx="996.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="13" data-src="l200r/base/duty14R/13" data-v="0.0" cx="1000.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="14" data-src="l200r/base/duty14R/14" data-v="0.0" cx="1005.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="cutwA" data-j="15" data-src="l200r/base/duty14R/15" data-v="0.0" cx="1009.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1003.0" y="451.0" fill="#d19a66" font-size="9.5" text-anchor="middle" id="t51" data-src="l200r/base/mean14R" data-v="0.0" data-fmt="f2">0.00</text>
+<text x="1003.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t52" data-src="l200r/base/k14R" data-v="0" data-fmt="d">0</text>
+<rect class="bar" data-group="R14" data-arm="sc25" data-src="l200r/arms/sc25/mean14R" data-v="0.585" x="1024.0" y="292.2" width="26.0" height="163.80" fill="#98c379" opacity="0.85"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="0" data-src="l200r/arms/sc25/duty14R/0" data-v="0.413" cx="1030.1" cy="340.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="1" data-src="l200r/arms/sc25/duty14R/1" data-v="0.293" cx="1034.7" cy="374.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="2" data-src="l200r/arms/sc25/duty14R/2" data-v="0.7" cx="1039.3" cy="260.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="3" data-src="l200r/arms/sc25/duty14R/3" data-v="0.307" cx="1043.9" cy="370.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="4" data-src="l200r/arms/sc25/duty14R/4" data-v="0.62" cx="1030.1" cy="282.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="5" data-src="l200r/arms/sc25/duty14R/5" data-v="0.853" cx="1034.7" cy="217.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="6" data-src="l200r/arms/sc25/duty14R/6" data-v="0.58" cx="1039.3" cy="293.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="7" data-src="l200r/arms/sc25/duty14R/7" data-v="0.68" cx="1043.9" cy="265.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="8" data-src="l200r/arms/sc25/duty14R/8" data-v="0.927" cx="1030.1" cy="196.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="9" data-src="l200r/arms/sc25/duty14R/9" data-v="0.413" cx="1034.7" cy="340.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="10" data-src="l200r/arms/sc25/duty14R/10" data-v="0.667" cx="1039.3" cy="269.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="11" data-src="l200r/arms/sc25/duty14R/11" data-v="0.827" cx="1043.9" cy="224.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="12" data-src="l200r/arms/sc25/duty14R/12" data-v="0.66" cx="1030.1" cy="271.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="13" data-src="l200r/arms/sc25/duty14R/13" data-v="0.493" cx="1034.7" cy="318.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="14" data-src="l200r/arms/sc25/duty14R/14" data-v="0.153" cx="1039.3" cy="413.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="sc25" data-j="15" data-src="l200r/arms/sc25/duty14R/15" data-v="0.78" cx="1043.9" cy="237.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1037.0" y="191.4" fill="#98c379" font-size="9.5" text-anchor="middle" id="t53" data-src="l200r/arms/sc25/mean14R" data-v="0.585" data-fmt="f2">0.58</text>
+<text x="1037.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t54" data-src="l200r/arms/sc25/k14R" data-v="10" data-fmt="d">10</text>
+<rect class="bar" data-group="R14" data-arm="l2" data-src="l200r/arms/l2/mean14R" data-v="0.0" x="1058.0" y="456.0" width="26.0" height="0.00" fill="#c678dd" opacity="0.85"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="0" data-src="l200r/arms/l2/duty14R/0" data-v="0.0" cx="1064.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="1" data-src="l200r/arms/l2/duty14R/1" data-v="0.0" cx="1068.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="2" data-src="l200r/arms/l2/duty14R/2" data-v="0.0" cx="1073.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="3" data-src="l200r/arms/l2/duty14R/3" data-v="0.0" cx="1077.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="4" data-src="l200r/arms/l2/duty14R/4" data-v="0.0" cx="1064.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="5" data-src="l200r/arms/l2/duty14R/5" data-v="0.0" cx="1068.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="6" data-src="l200r/arms/l2/duty14R/6" data-v="0.0" cx="1073.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="7" data-src="l200r/arms/l2/duty14R/7" data-v="0.0" cx="1077.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="8" data-src="l200r/arms/l2/duty14R/8" data-v="0.0" cx="1064.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="9" data-src="l200r/arms/l2/duty14R/9" data-v="0.0" cx="1068.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="10" data-src="l200r/arms/l2/duty14R/10" data-v="0.0" cx="1073.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="11" data-src="l200r/arms/l2/duty14R/11" data-v="0.0" cx="1077.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="12" data-src="l200r/arms/l2/duty14R/12" data-v="0.0" cx="1064.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="13" data-src="l200r/arms/l2/duty14R/13" data-v="0.0" cx="1068.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="14" data-src="l200r/arms/l2/duty14R/14" data-v="0.0" cx="1073.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2" data-j="15" data-src="l200r/arms/l2/duty14R/15" data-v="0.0" cx="1077.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1071.0" y="446.0" fill="#c678dd" font-size="9.5" text-anchor="middle" id="t55" data-src="l200r/arms/l2/mean14R" data-v="0.0" data-fmt="f2">0.00</text>
+<text x="1071.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t56" data-src="l200r/arms/l2/k14R" data-v="0" data-fmt="d">0</text>
+<polygon class="fixed" data-group="R14" data-arm="l2F" data-src="l200r/arms/l2F/mean14R" data-v="0.0" points="1071.0,451.0 1076.0,456.0 1071.0,461.0 1066.0,456.0" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="R14" data-arm="l2k" data-src="l200r/arms/l2k/mean14R" data-v="0.0" x="1092.0" y="456.0" width="26.0" height="0.00" fill="#61afef" opacity="0.85"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="0" data-src="l200r/arms/l2k/duty14R/0" data-v="0.0" cx="1098.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="1" data-src="l200r/arms/l2k/duty14R/1" data-v="0.0" cx="1102.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="2" data-src="l200r/arms/l2k/duty14R/2" data-v="0.0" cx="1107.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="3" data-src="l200r/arms/l2k/duty14R/3" data-v="0.0" cx="1111.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="4" data-src="l200r/arms/l2k/duty14R/4" data-v="0.0" cx="1098.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="5" data-src="l200r/arms/l2k/duty14R/5" data-v="0.0" cx="1102.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="6" data-src="l200r/arms/l2k/duty14R/6" data-v="0.0" cx="1107.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="7" data-src="l200r/arms/l2k/duty14R/7" data-v="0.0" cx="1111.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="8" data-src="l200r/arms/l2k/duty14R/8" data-v="0.0" cx="1098.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="9" data-src="l200r/arms/l2k/duty14R/9" data-v="0.0" cx="1102.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="10" data-src="l200r/arms/l2k/duty14R/10" data-v="0.0" cx="1107.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="11" data-src="l200r/arms/l2k/duty14R/11" data-v="0.0" cx="1111.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="12" data-src="l200r/arms/l2k/duty14R/12" data-v="0.0" cx="1098.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="13" data-src="l200r/arms/l2k/duty14R/13" data-v="0.007" cx="1102.7" cy="454.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="14" data-src="l200r/arms/l2k/duty14R/14" data-v="0.0" cx="1107.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2k" data-j="15" data-src="l200r/arms/l2k/duty14R/15" data-v="0.0" cx="1111.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1105.0" y="445.4" fill="#61afef" font-size="9.5" text-anchor="middle" id="t57" data-src="l200r/arms/l2k/mean14R" data-v="0.0" data-fmt="f2">0.00</text>
+<text x="1105.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t58" data-src="l200r/arms/l2k/k14R" data-v="0" data-fmt="d">0</text>
+<polygon class="fixed" data-group="R14" data-arm="l2kF" data-src="l200r/arms/l2kF/mean14R" data-v="0.002" points="1105.0,450.4 1110.0,455.4 1105.0,460.4 1100.0,455.4" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="R14" data-arm="l2c" data-src="l200r/arms/l2c/mean14R" data-v="0.0" x="1126.0" y="456.0" width="26.0" height="0.00" fill="#e5c07b" opacity="0.85"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="0" data-src="l200r/arms/l2c/duty14R/0" data-v="0.0" cx="1132.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="1" data-src="l200r/arms/l2c/duty14R/1" data-v="0.0" cx="1136.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="2" data-src="l200r/arms/l2c/duty14R/2" data-v="0.0" cx="1141.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="3" data-src="l200r/arms/l2c/duty14R/3" data-v="0.0" cx="1145.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="4" data-src="l200r/arms/l2c/duty14R/4" data-v="0.0" cx="1132.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="5" data-src="l200r/arms/l2c/duty14R/5" data-v="0.0" cx="1136.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="6" data-src="l200r/arms/l2c/duty14R/6" data-v="0.0" cx="1141.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="7" data-src="l200r/arms/l2c/duty14R/7" data-v="0.0" cx="1145.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="8" data-src="l200r/arms/l2c/duty14R/8" data-v="0.0" cx="1132.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="9" data-src="l200r/arms/l2c/duty14R/9" data-v="0.0" cx="1136.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="10" data-src="l200r/arms/l2c/duty14R/10" data-v="0.0" cx="1141.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="11" data-src="l200r/arms/l2c/duty14R/11" data-v="0.0" cx="1145.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="12" data-src="l200r/arms/l2c/duty14R/12" data-v="0.0" cx="1132.1" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="13" data-src="l200r/arms/l2c/duty14R/13" data-v="0.0" cx="1136.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="14" data-src="l200r/arms/l2c/duty14R/14" data-v="0.0" cx="1141.3" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="R14" data-arm="l2c" data-j="15" data-src="l200r/arms/l2c/duty14R/15" data-v="0.0" cx="1145.9" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1139.0" y="446.0" fill="#e5c07b" font-size="9.5" text-anchor="middle" id="t59" data-src="l200r/arms/l2c/mean14R" data-v="0.0" data-fmt="f2">0.00</text>
+<text x="1139.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t60" data-src="l200r/arms/l2c/k14R" data-v="0" data-fmt="d">0</text>
+<polygon class="fixed" data-group="R14" data-arm="l2cF" data-src="l200r/arms/l2cF/mean14R" data-v="0.0" points="1139.0,451.0 1144.0,456.0 1139.0,461.0 1134.0,456.0" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<text x="1271.0" y="148" fill="#abb2bf" font-size="12" font-weight="bold" text-anchor="middle">left Ti · chopped 0.7 Hz</text>
+<line class="thr" data-group="L" data-src="l200r/bands/super_mean_min" data-v="0.6" x1="1184.0" y1="288.0" x2="1358.0" y2="288.0" stroke="#abb2bf" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+<text x="1356.0" y="284.0" fill="#9aa3b2" font-size="9.5" text-anchor="end" id="t61" data-src="l200r/bands/super_mean_min" data-v="0.6" data-fmt="f2">0.60</text>
+<rect class="bar" data-group="L" data-arm="cutwA" data-src="l200r/base/meanL" data-v="0.293" x="1190.0" y="374.0" width="26.0" height="82.04" fill="#d19a66" opacity="0.85"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="0" data-src="l200r/base/dutyL/0" data-v="0.31" cx="1196.1" cy="369.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="1" data-src="l200r/base/dutyL/1" data-v="0.47" cx="1200.7" cy="324.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="2" data-src="l200r/base/dutyL/2" data-v="0.287" cx="1205.3" cy="375.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="3" data-src="l200r/base/dutyL/3" data-v="0.227" cx="1209.9" cy="392.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="4" data-src="l200r/base/dutyL/4" data-v="0.27" cx="1196.1" cy="380.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="5" data-src="l200r/base/dutyL/5" data-v="0.37" cx="1200.7" cy="352.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="6" data-src="l200r/base/dutyL/6" data-v="0.117" cx="1205.3" cy="423.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="7" data-src="l200r/base/dutyL/7" data-v="0.447" cx="1209.9" cy="330.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="8" data-src="l200r/base/dutyL/8" data-v="0.043" cx="1196.1" cy="444.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="9" data-src="l200r/base/dutyL/9" data-v="0.263" cx="1200.7" cy="382.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="10" data-src="l200r/base/dutyL/10" data-v="0.627" cx="1205.3" cy="280.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="11" data-src="l200r/base/dutyL/11" data-v="0.28" cx="1209.9" cy="377.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="12" data-src="l200r/base/dutyL/12" data-v="0.207" cx="1196.1" cy="398.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="13" data-src="l200r/base/dutyL/13" data-v="0.133" cx="1200.7" cy="418.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="14" data-src="l200r/base/dutyL/14" data-v="0.337" cx="1205.3" cy="361.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="cutwA" data-j="15" data-src="l200r/base/dutyL/15" data-v="0.3" cx="1209.9" cy="372.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1203.0" y="275.4" fill="#d19a66" font-size="9.5" text-anchor="middle" id="t62" data-src="l200r/base/meanL" data-v="0.293" data-fmt="f2">0.29</text>
+<text x="1203.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t63" data-src="l200r/base/kL" data-v="1" data-fmt="d">1</text>
+<rect class="bar" data-group="L" data-arm="sc25" data-src="l200r/arms/sc25/meanL" data-v="0.137" x="1224.0" y="417.6" width="26.0" height="38.36" fill="#98c379" opacity="0.85"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="0" data-src="l200r/arms/sc25/dutyL/0" data-v="0.047" cx="1230.1" cy="442.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="1" data-src="l200r/arms/sc25/dutyL/1" data-v="0.49" cx="1234.7" cy="318.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="2" data-src="l200r/arms/sc25/dutyL/2" data-v="0.007" cx="1239.3" cy="454.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="3" data-src="l200r/arms/sc25/dutyL/3" data-v="0.147" cx="1243.9" cy="414.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="4" data-src="l200r/arms/sc25/dutyL/4" data-v="0.09" cx="1230.1" cy="430.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="5" data-src="l200r/arms/sc25/dutyL/5" data-v="0.083" cx="1234.7" cy="432.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="6" data-src="l200r/arms/sc25/dutyL/6" data-v="0.03" cx="1239.3" cy="447.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="7" data-src="l200r/arms/sc25/dutyL/7" data-v="0.317" cx="1243.9" cy="367.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="8" data-src="l200r/arms/sc25/dutyL/8" data-v="0.063" cx="1230.1" cy="438.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="9" data-src="l200r/arms/sc25/dutyL/9" data-v="0.0" cx="1234.7" cy="456.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="10" data-src="l200r/arms/sc25/dutyL/10" data-v="0.197" cx="1239.3" cy="400.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="11" data-src="l200r/arms/sc25/dutyL/11" data-v="0.057" cx="1243.9" cy="440.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="12" data-src="l200r/arms/sc25/dutyL/12" data-v="0.1" cx="1230.1" cy="428.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="13" data-src="l200r/arms/sc25/dutyL/13" data-v="0.063" cx="1234.7" cy="438.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="14" data-src="l200r/arms/sc25/dutyL/14" data-v="0.187" cx="1239.3" cy="403.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="sc25" data-j="15" data-src="l200r/arms/sc25/dutyL/15" data-v="0.32" cx="1243.9" cy="366.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1237.0" y="313.8" fill="#98c379" font-size="9.5" text-anchor="middle" id="t64" data-src="l200r/arms/sc25/meanL" data-v="0.137" data-fmt="f2">0.14</text>
+<text x="1237.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t65" data-src="l200r/arms/sc25/kL" data-v="0" data-fmt="d">0</text>
+<rect class="bar" data-group="L" data-arm="l2" data-src="l200r/arms/l2/meanL" data-v="0.843" x="1258.0" y="220.0" width="26.0" height="236.04" fill="#c678dd" opacity="0.85"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="0" data-src="l200r/arms/l2/dutyL/0" data-v="0.983" cx="1264.1" cy="180.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="1" data-src="l200r/arms/l2/dutyL/1" data-v="0.857" cx="1268.7" cy="216.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="2" data-src="l200r/arms/l2/dutyL/2" data-v="0.933" cx="1273.3" cy="194.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="3" data-src="l200r/arms/l2/dutyL/3" data-v="0.57" cx="1277.9" cy="296.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="4" data-src="l200r/arms/l2/dutyL/4" data-v="0.997" cx="1264.1" cy="176.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="5" data-src="l200r/arms/l2/dutyL/5" data-v="0.717" cx="1268.7" cy="255.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="6" data-src="l200r/arms/l2/dutyL/6" data-v="0.87" cx="1273.3" cy="212.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="7" data-src="l200r/arms/l2/dutyL/7" data-v="0.787" cx="1277.9" cy="235.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="8" data-src="l200r/arms/l2/dutyL/8" data-v="0.777" cx="1264.1" cy="238.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="9" data-src="l200r/arms/l2/dutyL/9" data-v="0.763" cx="1268.7" cy="242.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="10" data-src="l200r/arms/l2/dutyL/10" data-v="0.95" cx="1273.3" cy="190.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="11" data-src="l200r/arms/l2/dutyL/11" data-v="0.927" cx="1277.9" cy="196.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="12" data-src="l200r/arms/l2/dutyL/12" data-v="0.793" cx="1264.1" cy="234.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="13" data-src="l200r/arms/l2/dutyL/13" data-v="0.86" cx="1268.7" cy="215.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="14" data-src="l200r/arms/l2/dutyL/14" data-v="0.837" cx="1273.3" cy="221.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2" data-j="15" data-src="l200r/arms/l2/dutyL/15" data-v="0.873" cx="1277.9" cy="211.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1271.0" y="171.8" fill="#c678dd" font-size="9.5" text-anchor="middle" id="t66" data-src="l200r/arms/l2/meanL" data-v="0.843" data-fmt="f2">0.84</text>
+<text x="1271.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t67" data-src="l200r/arms/l2/kL" data-v="16" data-fmt="d">16</text>
+<polygon class="fixed" data-group="L" data-arm="l2F" data-src="l200r/arms/l2F/meanL" data-v="0.819" points="1271.0,221.7 1276.0,226.7 1271.0,231.7 1266.0,226.7" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="L" data-arm="l2k" data-src="l200r/arms/l2k/meanL" data-v="0.898" x="1292.0" y="204.6" width="26.0" height="251.44" fill="#61afef" opacity="0.85"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="0" data-src="l200r/arms/l2k/dutyL/0" data-v="0.807" cx="1298.1" cy="230.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="1" data-src="l200r/arms/l2k/dutyL/1" data-v="1.0" cx="1302.7" cy="176.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="2" data-src="l200r/arms/l2k/dutyL/2" data-v="0.937" cx="1307.3" cy="193.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="3" data-src="l200r/arms/l2k/dutyL/3" data-v="0.893" cx="1311.9" cy="206.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="4" data-src="l200r/arms/l2k/dutyL/4" data-v="0.97" cx="1298.1" cy="184.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="5" data-src="l200r/arms/l2k/dutyL/5" data-v="0.763" cx="1302.7" cy="242.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="6" data-src="l200r/arms/l2k/dutyL/6" data-v="0.9" cx="1307.3" cy="204.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="7" data-src="l200r/arms/l2k/dutyL/7" data-v="0.82" cx="1311.9" cy="226.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="8" data-src="l200r/arms/l2k/dutyL/8" data-v="0.84" cx="1298.1" cy="220.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="9" data-src="l200r/arms/l2k/dutyL/9" data-v="0.947" cx="1302.7" cy="190.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="10" data-src="l200r/arms/l2k/dutyL/10" data-v="0.957" cx="1307.3" cy="188.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="11" data-src="l200r/arms/l2k/dutyL/11" data-v="0.833" cx="1311.9" cy="222.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="12" data-src="l200r/arms/l2k/dutyL/12" data-v="0.913" cx="1298.1" cy="200.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="13" data-src="l200r/arms/l2k/dutyL/13" data-v="0.913" cx="1302.7" cy="200.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="14" data-src="l200r/arms/l2k/dutyL/14" data-v="0.987" cx="1307.3" cy="179.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2k" data-j="15" data-src="l200r/arms/l2k/dutyL/15" data-v="0.883" cx="1311.9" cy="208.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1305.0" y="171.0" fill="#61afef" font-size="9.5" text-anchor="middle" id="t68" data-src="l200r/arms/l2k/meanL" data-v="0.898" data-fmt="f2">0.90</text>
+<text x="1305.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t69" data-src="l200r/arms/l2k/kL" data-v="16" data-fmt="d">16</text>
+<polygon class="fixed" data-group="L" data-arm="l2kF" data-src="l200r/arms/l2kF/meanL" data-v="0.904" points="1305.0,197.9 1310.0,202.9 1305.0,207.9 1300.0,202.9" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<rect class="bar" data-group="L" data-arm="l2c" data-src="l200r/arms/l2c/meanL" data-v="0.902" x="1326.0" y="203.4" width="26.0" height="252.56" fill="#e5c07b" opacity="0.85"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="0" data-src="l200r/arms/l2c/dutyL/0" data-v="1.0" cx="1332.1" cy="176.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="1" data-src="l200r/arms/l2c/dutyL/1" data-v="0.847" cx="1336.7" cy="218.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="2" data-src="l200r/arms/l2c/dutyL/2" data-v="0.95" cx="1341.3" cy="190.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="3" data-src="l200r/arms/l2c/dutyL/3" data-v="0.873" cx="1345.9" cy="211.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="4" data-src="l200r/arms/l2c/dutyL/4" data-v="0.88" cx="1332.1" cy="209.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="5" data-src="l200r/arms/l2c/dutyL/5" data-v="0.91" cx="1336.7" cy="201.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="6" data-src="l200r/arms/l2c/dutyL/6" data-v="0.937" cx="1341.3" cy="193.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="7" data-src="l200r/arms/l2c/dutyL/7" data-v="0.813" cx="1345.9" cy="228.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="8" data-src="l200r/arms/l2c/dutyL/8" data-v="0.843" cx="1332.1" cy="220.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="9" data-src="l200r/arms/l2c/dutyL/9" data-v="0.81" cx="1336.7" cy="229.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="10" data-src="l200r/arms/l2c/dutyL/10" data-v="0.973" cx="1341.3" cy="183.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="11" data-src="l200r/arms/l2c/dutyL/11" data-v="0.99" cx="1345.9" cy="178.8" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="12" data-src="l200r/arms/l2c/dutyL/12" data-v="0.82" cx="1332.1" cy="226.4" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="13" data-src="l200r/arms/l2c/dutyL/13" data-v="0.943" cx="1336.7" cy="192.0" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="14" data-src="l200r/arms/l2c/dutyL/14" data-v="0.96" cx="1341.3" cy="187.2" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<circle class="seed" data-group="L" data-arm="l2c" data-j="15" data-src="l200r/arms/l2c/dutyL/15" data-v="0.887" cx="1345.9" cy="207.6" r="1.7" fill="#dcdfe4" opacity="0.6"/>
+<text x="1339.0" y="171.0" fill="#e5c07b" font-size="9.5" text-anchor="middle" id="t70" data-src="l200r/arms/l2c/meanL" data-v="0.902" data-fmt="f2">0.90</text>
+<text x="1339.0" y="470.0" fill="#9aa3b2" font-size="9.5" text-anchor="middle" id="t71" data-src="l200r/arms/l2c/kL" data-v="16" data-fmt="d">16</text>
+<polygon class="fixed" data-group="L" data-arm="l2cF" data-src="l200r/arms/l2cF/meanL" data-v="0.952" points="1339.0,184.4 1344.0,189.4 1339.0,194.4 1334.0,189.4" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+<text x="770" y="470.0" fill="#5c6370" font-size="9.5" text-anchor="end">k</text>
+<rect x="740" y="483" width="11" height="11" fill="#d19a66"/>
+<text x="756" y="492" fill="#abb2bf" font-size="11">cutwA · base</text>
+<rect x="950" y="483" width="11" height="11" fill="#98c379"/>
+<text x="966" y="492" fill="#abb2bf" font-size="11">sc25 · carrier cut</text>
+<rect x="1160" y="483" width="11" height="11" fill="#c678dd"/>
+<text x="1176" y="492" fill="#abb2bf" font-size="11">l2 · ru2 cut</text>
+<rect x="740" y="499" width="11" height="11" fill="#61afef"/>
+<text x="756" y="508" fill="#abb2bf" font-size="11">l2k · ru2 cut · carrier clamped</text>
+<rect x="950" y="499" width="11" height="11" fill="#e5c07b"/>
+<text x="966" y="508" fill="#abb2bf" font-size="11">l2c · carrier + ru2 cut</text>
+<polygon points="1166,499 1171,504 1166,509 1161,504" fill="none" stroke="#ffffff" stroke-width="1.4"/><text x="1178" y="508" fill="#abb2bf" font-size="11">same arm, base gain</text>
+<text x="740.0" y="530.0" fill="#e5c07b" font-size="11" id="t72" data-src="l200r/contrasts/R_l2c_minus_sc25/mean|l200r/contrasts/R_l2c_minus_sc25/ci95/0|l200r/contrasts/R_l2c_minus_sc25/ci95/1|l200r/arms/sc25/mean14R|l200r/arms/l2c/mean14R" data-v="-0.4872|-0.5906|-0.3838|0.585|0.0" data-fmt="s3|s3|s3|f3|f3">right: carrier+ru2 − carrier −0.487 [−0.591, −0.384] · 1.4 Hz 0.585 → 0.000</text>
+<text x="740.0" y="546.0" fill="#c678dd" font-size="11" id="t77" data-src="l200r/arms/l2/L_vs_base/mean|l200r/arms/l2/L_vs_base/ci95/0|l200r/arms/l2/L_vs_base/ci95/1|l200r/arms/l2k/L_vs_base/mean|l200r/arms/l2c/L_vs_base/mean" data-v="0.5504|0.4651|0.6357|0.6047|0.6092" data-fmt="s3|s3|s3|s3|s3">left: ru2 cut +0.550 [+0.465, +0.636] vs base; carrier clamped +0.605 · carrier also cut +0.609 — carrier not needed</text>
+<rect id="l202-slot" x="1210" y="122" width="158" height="18" rx="3" fill="none" stroke="#5c6370" stroke-dasharray="3 3"/>
+<text x="1289" y="135" fill="#9aa3b2" font-size="10" text-anchor="middle">L202 replicate: pending</text>
+<rect x="24" y="580" width="1352" height="384" fill="#21252b" rx="6"/>
+<text x="40" y="604" fill="#abb2bf" font-size="15" font-weight="bold">C</text>
+<text x="60" y="604" fill="#abb2bf" font-size="13">phase rotation: cross-seed right-Ti duty vs the partners' tone offset (octants, L199 Part B) · pool peak phases vs the tone (Part C)</text>
+<line x1="110.0" y1="912.0" x2="750.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="916.0" fill="#5c6370" font-size="11" text-anchor="end">0.0</text>
+<line x1="110.0" y1="868.3" x2="750.0" y2="868.3" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="872.3" fill="#5c6370" font-size="11" text-anchor="end">0.1</text>
+<line x1="110.0" y1="824.7" x2="750.0" y2="824.7" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="828.7" fill="#5c6370" font-size="11" text-anchor="end">0.2</text>
+<line x1="110.0" y1="781.0" x2="750.0" y2="781.0" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="785.0" fill="#5c6370" font-size="11" text-anchor="end">0.3</text>
+<line x1="110.0" y1="737.3" x2="750.0" y2="737.3" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="741.3" fill="#5c6370" font-size="11" text-anchor="end">0.4</text>
+<line x1="110.0" y1="693.7" x2="750.0" y2="693.7" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="697.7" fill="#5c6370" font-size="11" text-anchor="end">0.5</text>
+<line x1="110.0" y1="650.0" x2="750.0" y2="650.0" stroke="#3e4451" stroke-width="1"/>
+<text class="yctick" x="104.0" y="654.0" fill="#5c6370" font-size="11" text-anchor="end">0.6</text>
+<line x1="110.0" y1="650.0" x2="110.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="xctick" x="110.0" y="928.0" fill="#5c6370" font-size="11" text-anchor="middle">0°</text>
+<line x1="270.0" y1="650.0" x2="270.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="xctick" x="270.0" y="928.0" fill="#5c6370" font-size="11" text-anchor="middle">90°</text>
+<line x1="430.0" y1="650.0" x2="430.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="xctick" x="430.0" y="928.0" fill="#5c6370" font-size="11" text-anchor="middle">180°</text>
+<line x1="590.0" y1="650.0" x2="590.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="xctick" x="590.0" y="928.0" fill="#5c6370" font-size="11" text-anchor="middle">270°</text>
+<line x1="750.0" y1="650.0" x2="750.0" y2="912.0" stroke="#3e4451" stroke-width="1"/>
+<text class="xctick" x="750.0" y="928.0" fill="#5c6370" font-size="11" text-anchor="middle">360°</text>
+<text x="430.0" y="944.0" fill="#abb2bf" font-size="12" text-anchor="middle">tone offset between the two seeds' pair-segments (deg; octant centres, 360° = 0°)</text>
+<text x="58" y="781.0" fill="#abb2bf" font-size="12" text-anchor="middle" transform="rotate(-90 58 781.0)">cross-seed duty</text>
+<rect class="thband" data-graph="cutwA" data-src="l199p/datasets/S/B/graphs/cutwA/theta/se" data-v="3.935793370010476" x="409.4" y="650.0" width="13.99" height="262.0" fill="#d19a66" opacity="0.13"/>
+<line class="theta" data-graph="cutwA" data-src="l199p/datasets/S/B/graphs/cutwA/theta/value" data-v="172.3453838008853" x1="416.4" y1="650.0" x2="416.4" y2="912.0" stroke="#d19a66" stroke-width="1.6" stroke-dasharray="6 4"/>
+<path class="octline" data-graph="cutwA" d="M 110.0 822.5 L 190.0 847.8 L 270.0 809.1 L 350.0 719.3 L 430.0 695.7 L 510.0 764.6 L 590.0 822.4 L 670.0 833.4 L 750.0 822.5" fill="none" stroke="#d19a66" stroke-width="2"/>
+<circle class="oct" data-graph="cutwA" data-k="0" data-src="l199p/datasets/S/B/octants/cutwA/0" data-v="0.20506959260388094" cx="110.0" cy="822.5" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="1" data-src="l199p/datasets/S/B/octants/cutwA/1" data-v="0.14703751991887584" cx="190.0" cy="847.8" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="2" data-src="l199p/datasets/S/B/octants/cutwA/2" data-v="0.23572303921568627" cx="270.0" cy="809.1" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="3" data-src="l199p/datasets/S/B/octants/cutwA/3" data-v="0.4412983665935291" cx="350.0" cy="719.3" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="4" data-src="l199p/datasets/S/B/octants/cutwA/4" data-v="0.4953118972139754" cx="430.0" cy="695.7" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="5" data-src="l199p/datasets/S/B/octants/cutwA/5" data-v="0.3375822798035733" cx="510.0" cy="764.6" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="6" data-src="l199p/datasets/S/B/octants/cutwA/6" data-v="0.2053046218487395" cx="590.0" cy="822.4" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="7" data-src="l199p/datasets/S/B/octants/cutwA/7" data-v="0.17989620880946902" cx="670.0" cy="833.4" r="5" fill="#d19a66"/>
+<circle class="oct" data-graph="cutwA" data-k="8" data-src="l199p/datasets/S/B/octants/cutwA/0" data-v="0.20506959260388094" cx="750.0" cy="822.5" r="3.5" fill="#d19a66"/>
+<rect class="thband" data-graph="sc25" data-src="l199p/datasets/S/B/graphs/sc25/theta/se" data-v="5.4340221643121875" x="197.4" y="650.0" width="19.32" height="262.0" fill="#98c379" opacity="0.13"/>
+<line class="theta" data-graph="sc25" data-src="l199p/datasets/S/B/graphs/sc25/theta/value" data-v="54.61250206206472" x1="207.1" y1="650.0" x2="207.1" y2="912.0" stroke="#98c379" stroke-width="1.6" stroke-dasharray="6 4"/>
+<path class="octline" data-graph="sc25" d="M 110.0 717.5 L 190.0 730.9 L 270.0 740.6 L 350.0 753.5 L 430.0 777.5 L 510.0 825.9 L 590.0 833.1 L 670.0 765.2 L 750.0 717.5" fill="none" stroke="#98c379" stroke-width="2"/>
+<circle class="oct" data-graph="sc25" data-k="0" data-src="l199p/datasets/S/B/octants/sc25/0" data-v="0.4454011310914694" cx="110.0" cy="717.5" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="1" data-src="l199p/datasets/S/B/octants/sc25/1" data-v="0.41464495402680845" cx="190.0" cy="730.9" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="2" data-src="l199p/datasets/S/B/octants/sc25/2" data-v="0.3924282212885154" cx="270.0" cy="740.6" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="3" data-src="l199p/datasets/S/B/octants/sc25/3" data-v="0.3630150106223662" cx="350.0" cy="753.5" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="4" data-src="l199p/datasets/S/B/octants/sc25/4" data-v="0.30800583706536505" cx="430.0" cy="777.5" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="5" data-src="l199p/datasets/S/B/octants/sc25/5" data-v="0.19717549542019294" cx="510.0" cy="825.9" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="6" data-src="l199p/datasets/S/B/octants/sc25/6" data-v="0.18071603641456585" cx="590.0" cy="833.1" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="7" data-src="l199p/datasets/S/B/octants/sc25/7" data-v="0.3361965385893601" cx="670.0" cy="765.2" r="5" fill="#98c379"/>
+<circle class="oct" data-graph="sc25" data-k="8" data-src="l199p/datasets/S/B/octants/sc25/0" data-v="0.4454011310914694" cx="750.0" cy="717.5" r="3.5" fill="#98c379"/>
+<text x="422.4" y="664.0" fill="#d19a66" font-size="11" font-weight="bold" id="t82" data-src="l199p/datasets/S/B/graphs/cutwA/theta/value|l199p/datasets/S/B/graphs/cutwA/theta/se" data-v="172.3453838008853|3.935793370010476" data-fmt="s0|f0">θ base +172° (SE 4)</text>
+<text x="213.1" y="664.0" fill="#98c379" font-size="11" font-weight="bold" id="t84" data-src="l199p/datasets/S/B/graphs/sc25/theta/value|l199p/datasets/S/B/graphs/sc25/theta/se" data-v="54.61250206206472|5.4340221643121875" data-fmt="s0|f0">θ carrier cut +55° (SE 5)</text>
+<text x="213.1" y="678.0" fill="#9aa3b2" font-size="11" id="t86" data-src="l199p/datasets/S/B/dtheta/value|l199p/datasets/S/B/dtheta/ci95/0|l199p/datasets/S/B/dtheta/ci95/1" data-v="-117.73288173882057|-130.97885046023407|-104.48691301740708" data-fmt="s0|s0|s0">Δθ −118° [−131, −104] · label Hq</text>
+<text x="750" y="958" fill="#5c6370" font-size="10" text-anchor="end">S batch: W150 window, 500-step pulse · octants descriptive, θ registered</text>
+<circle cx="1000.0" cy="772.0" r="59.0" fill="none" stroke="#3e4451" stroke-width="1"/>
+<circle cx="1000.0" cy="772.0" r="118.0" fill="none" stroke="#3e4451" stroke-width="1"/>
+<line x1="1000.0" y1="772.0" x2="1118.0" y2="772.0" stroke="#3e4451" stroke-width="1"/>
+<text x="1126.0" y="776.0" fill="#5c6370" font-size="10.5" text-anchor="start">0°</text>
+<line x1="1000.0" y1="772.0" x2="1000.0" y2="654.0" stroke="#3e4451" stroke-width="1"/>
+<text x="1000.0" y="648.0" fill="#5c6370" font-size="10.5" text-anchor="middle">90°</text>
+<line x1="1000.0" y1="772.0" x2="882.0" y2="772.0" stroke="#3e4451" stroke-width="1"/>
+<text x="874.0" y="776.0" fill="#5c6370" font-size="10.5" text-anchor="end">180°</text>
+<line x1="1000.0" y1="772.0" x2="1000.0" y2="890.0" stroke="#3e4451" stroke-width="1"/>
+<text x="1000.0" y="906.0" fill="#5c6370" font-size="10.5" text-anchor="middle">−90°</text>
+<text x="1000.0" y="924.0" fill="#9aa3b2" font-size="10.5" text-anchor="middle">peak phase vs the 0.7-Hz tone · arrow length = R (1 = ring)</text>
+<line class="phase" data-graph="cutwA" data-pool="Ti_fR" data-src="l199p/datasets/S/C/cutwA/alpha/Ti_fR/mean_deg|l199p/datasets/S/C/cutwA/alpha/Ti_fR/R" data-v="101.79866393295053|0.8820369923041153" x1="1000.0" y1="772.0" x2="978.72" y2="670.12" stroke="#d19a66" stroke-width="2.4"/>
+<circle cx="978.7" cy="670.1" r="4" fill="#d19a66"/>
+<line class="phase" data-graph="cutwA" data-pool="Ti_eR" data-src="l199p/datasets/S/C/cutwA/alpha/Ti_eR/mean_deg|l199p/datasets/S/C/cutwA/alpha/Ti_eR/R" data-v="107.94476073987653|0.9480734389321386" x1="1000.0" y1="772.0" x2="965.53" y2="665.57" stroke="#d19a66" stroke-width="2.4" stroke-dasharray="5 3"/>
+<circle cx="965.5" cy="665.6" r="4" fill="#d19a66"/>
+<line class="phase" data-graph="sc25" data-pool="Ti_fR" data-src="l199p/datasets/S/C/sc25/alpha/Ti_fR/mean_deg|l199p/datasets/S/C/sc25/alpha/Ti_fR/R" data-v="93.32491195778663|0.9723355000442814" x1="1000.0" y1="772.0" x2="993.35" y2="657.46" stroke="#98c379" stroke-width="2.4"/>
+<circle cx="993.3" cy="657.5" r="4" fill="#98c379"/>
+<line class="phase" data-graph="sc25" data-pool="Ti_eR" data-src="l199p/datasets/S/C/sc25/alpha/Ti_eR/mean_deg|l199p/datasets/S/C/sc25/alpha/Ti_eR/R" data-v="-150.25411825521732|0.7015053431204614" x1="1000.0" y1="772.0" x2="928.13" y2="813.07" stroke="#98c379" stroke-width="2.4" stroke-dasharray="5 3"/>
+<circle cx="928.1" cy="813.1" r="4" fill="#98c379"/>
+<text x="1150" y="672" fill="#abb2bf" font-size="12" font-weight="bold">pool peak phases (S, n=96)</text>
+<line x1="1150" y1="690" x2="1176" y2="690" stroke="#abb2bf" stroke-width="2.4"/><text x="1182" y="694" fill="#abb2bf" font-size="11">flexor R</text>
+<line x1="1250" y1="690" x2="1276" y2="690" stroke="#abb2bf" stroke-width="2.4" stroke-dasharray="5 3"/><text x="1282" y="694" fill="#abb2bf" font-size="11">extensor R</text>
+<text x="1150.0" y="720.0" fill="#d19a66" font-size="11" id="t89" data-src="l199p/datasets/S/C/cutwA/alpha/Ti_fR/mean_deg|l199p/datasets/S/C/cutwA/alpha/Ti_fR/R" data-v="101.79866393295053|0.8820369923041153" data-fmt="f0|f2">base: flex 102° (R 0.88)</text>
+<text x="1150.0" y="735.0" fill="#d19a66" font-size="11" id="t91" data-src="l199p/datasets/S/C/cutwA/alpha/Ti_eR/mean_deg|l199p/datasets/S/C/cutwA/alpha/Ti_eR/R" data-v="107.94476073987653|0.9480734389321386" data-fmt="f0|f2">      ext 108° (R 0.95)</text>
+<text x="1150.0" y="760.0" fill="#98c379" font-size="11" id="t93" data-src="l199p/datasets/S/C/sc25/alpha/Ti_fR/mean_deg|l199p/datasets/S/C/sc25/alpha/Ti_fR/R" data-v="93.32491195778663|0.9723355000442814" data-fmt="f0|f2">carrier cut: flex 93° (R 0.97)</text>
+<text x="1150.0" y="775.0" fill="#98c379" font-size="11" id="t95" data-src="l199p/datasets/S/C/sc25/alpha/Ti_eR/mean_deg|l199p/datasets/S/C/sc25/alpha/Ti_eR/R" data-v="-150.25411825521732|0.7015053431204614" data-fmt="f0|f2">      ext −150° (R 0.70)</text>
+<text x="1150.0" y="802.0" fill="#abb2bf" font-size="12" font-weight="bold" id="t97" data-src="l199p/datasets/S/C/cutwA/Delta/mean_deg|l199p/datasets/S/C/sc25/Delta/mean_deg" data-v="-5.081101934997697|-116.01801641082564" data-fmt="s0|s0">flex − ext: −5° → −116°</text>
+<text x="1150" y="820" fill="#9aa3b2" font-size="11">the extensor moves; the flexor stays —</text>
+<text x="1150" y="835" fill="#9aa3b2" font-size="11">about a third of a period, not antiphase</text>
+<text x="1150" y="860" fill="#5c6370" font-size="11">Part C Dq · base co-move · cut intermediate</text>
+<text x="30" y="986" fill="#9aa3b2" font-size="11.5">orange = base cutwA · green = carrier DNp33-L removed (sc25) · purple = ru2 IN07B031-R · blue = relay IN06B033-L (A) / ru2 cut with carrier replay-clamped at base (B) · yellow = carrier + ru2 removed</text>
+<text x="30" y="1002" fill="#9aa3b2" font-size="11">one model class, one base (k=24), chopped 0.7-Hz classifier + 1.4-Hz panel · Panel B is one batch (L200 B44); its right-side wipe is post hoc pending L202</text>
+<text x="1370" y="1002" fill="#9aa3b2" font-size="10.5" text-anchor="end">every number asserted vs stored JSON/CSV · fig6_verify.py · L184/L190/L198/L199/L200</text>
+</svg>

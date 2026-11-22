@@ -1,0 +1,350 @@
+
+
+def duty14L_seeds(raw, a, seeds):
+    """duty14_seeds mirrored: same instrument (s_arrays), LEFT Ti pair (SL)."""
+    q14 = (TS >= 2000 + MEAS0) & (TS < 4000)
+    L = []
+    for s in seeds:
+        SL, _ = s_arrays(raw, a, s, "Ti")
+        L.append(round(float(np.nanmean(SL[TS[q14]] >= .25)), 3))
+    return np.array(L)
+
+
+# ======================= L200 verdict tail (additive) =======================
+# Helpers ABOVE = l198/verdict_l198.py helper block VERBATIM (sliced by
+# l200/build_verdict.py) + duty14L_seeds (left mirror). Reads stored files
+# only; partial-capable; results json rewritten atomically.
+import hashlib
+import os
+import sys
+
+OUT = "l200"
+B44 = list(range(3705, 3721))
+B43 = list(range(3673, 3689))
+ANCH = [801, 901, 3545, 3609, 3673]
+NW = 6
+T975 = {7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179,
+        13: 2.160, 14: 2.145, 15: 2.131}
+GI_CARRIER, GI_RU2 = 1110, 70994
+SIG = 0.25
+
+
+def atomic_json(path, obj):
+    tmp = path + ".tmp"
+    json.dump(obj, open(tmp, "w"), indent=1)
+    os.replace(tmp, path)
+
+
+st = json.load(open(f"{OUT}/static.json"))
+sel = json.load(open(f"{OUT}/selection.json"))
+a4 = json.load(open(f"{OUT}/a4_wiring.json"))
+frz = json.load(open(f"{OUT}/FREEZE.json"))
+PRE_SHA = hashlib.sha256(open(f"{OUT}/PREREG.md", "rb").read()).hexdigest()
+assert PRE_SHA == frz["prereg_sha256"], "PREREG changed after freeze"
+assert hashlib.sha256(open(f"{OUT}/selection.json", "rb").read()).hexdigest() == \
+    frz["selection_sha256"], "selection changed after freeze"
+assert hashlib.sha256(open(f"{OUT}/a4_wiring.json", "rb").read()).hexdigest() == \
+    frz["a4_sha256"], "a4_wiring changed after freeze"
+SLOT0 = st["slot0"]
+PLAN = {0: ["sc25", SLOT0], 1: ["l2", "l2F"], 2: ["lt1", "lt1F"],
+        3: ["lt2", "lt2F"], 4: ["l2c", "l2cF"], 5: ["l2k", "l2kF"]}
+ALL = sum(PLAN.values(), [])
+assert sorted(ALL) == sorted(st["all_arms"])
+G0 = st["g_stored"]["cutwA"]
+TRACK = st["track"]
+GI = st["gi"]
+assert GI["ru2"] == GI_RU2 and GI["carrier"] == GI_CARRIER
+IXC = {"carrier": TRACK.index(GI_CARRIER), "ru2": TRACK.index(GI_RU2),
+       "lt1": TRACK.index(GI["lt1"]), "lt2": TRACK.index(GI["lt2"])}
+REMOVED = dict(sc25=[GI_CARRIER], sc25F=[GI_CARRIER], l2=[GI_RU2], l2F=[GI_RU2],
+               lt1=[GI["lt1"]], lt1F=[GI["lt1"]], lt2=[GI["lt2"]], lt2F=[GI["lt2"]],
+               l2c=[GI_RU2, GI_CARRIER], l2cF=[GI_RU2, GI_CARRIER],
+               l2k=[GI_RU2], l2kF=[GI_RU2], l2h=[GI["l2h"]])
+
+# ---- CERT-METRIC: reproduce stored L198 B43 rows EXACT before any B44 read ----
+r198 = json.load(open("l198/results_l198.json"))
+assert r198["status"] == "FINAL"
+mfail = []
+for a, w in (("cutwA", 0), ("sc25", 0), ("sc25F", 0), ("ru2", 3)):
+    z = np.load(f"l198/raw_w{w}.npz")
+    want = r198["base"] if a == "cutwA" else r198["arms"][a]
+    got = side_k(z, a, B43, "Ti")
+    for kk in ("kL", "kR", "meanL", "meanR"):
+        if got[kk] != want[kk]:
+            mfail.append((a, kk, got[kk], want[kk]))
+    d14 = duty14_seeds(z, a, B43)
+    if int((d14 >= .5).sum()) != want["k14"] or round(float(d14.mean()), 3) != want["mean14"]:
+        mfail.append((a, "mean14", float(d14.mean()), want["mean14"]))
+assert not mfail, ("CERT-METRIC FAIL (no B44 read)", mfail)
+print("CERT-METRIC vs results_l198 (B43: cutwA / sc25 / sc25F / ru2; kL, kR, meanL, meanR, "
+      "1.4-Hz k + mean): PASS")
+# stored L198 ru2 LEFT 1.4-Hz (never read before PREREG; descriptive pin for FINDINGS)
+_z3 = np.load("l198/raw_w3.npz")
+L198_RU2_L14 = round(float(duty14L_seeds(_z3, "ru2", B43).mean()), 3)
+L198_BASE_L14 = round(float(duty14L_seeds(_z3, "cutwA", B43).mean()), 3)
+
+# ---- workers ----
+gains, arm_w, anch, raws, xms, stairs = {}, {}, {}, {}, {}, {}
+NEED = ["c0a135_pass", "c0a175_pass", "c0a187_pass", "c0a198_pass"]
+for w in range(NW):
+    gp, ap, rp, xp = (f"{OUT}/gains_w{w}.json", f"{OUT}/anchors_w{w}.json",
+                      f"{OUT}/raw_w{w}.npz", f"{OUT}/xm_w{w}.npz")
+    if not all(os.path.exists(p) for p in (gp, ap, rp, xp)):
+        print(f"worker {w} not ready — no read")
+        sys.exit(0)
+    gj = json.load(open(gp))
+    anch[w] = json.load(open(ap))
+    if any(anch[w].get(k) is False for k in NEED + ["null_pass", "replay_pass"]):
+        print(f"worker {w} ANCHOR FAIL — VOID, no read")
+        sys.exit(3)
+    if not all(anch[w].get(k) for k in NEED):
+        print(f"worker {w} anchors not complete yet — no read")
+        sys.exit(0)
+    raws[w] = np.load(rp)
+    xms[w] = np.load(xp)
+    assert sorted(gj["gain"]) == sorted(["cutwA"] + PLAN[w]), w
+    for a, g in gj["gain"].items():
+        if a == "cutwA":
+            assert g == G0, (w, "g_cutwA drift")
+        else:
+            gains[a], arm_w[a] = g, w
+    stairs.update(gj["stairs"])
+    assert all(gj["stored_exact"].values()), (w, gj["stored_exact"])
+    assert all(anch[w][f"{k}_max"] == 0.0 for k in ("c0a135", "c0a175", "c0a187", "c0a198")), w
+assert anch[5].get("null_pass") is True and anch[5]["null_max"] == 0.0
+assert sorted(arm_w) == sorted(ALL)
+assert gains["sc25"] == st["g_stored"]["sc25"] and gains["l2"] == st["g_stored"]["l2"]
+assert gains["l2k"] == gains["l2"]
+for a in ALL:
+    if a.endswith("F"):
+        assert gains[a] == G0, a
+N_C0A = {k: sum(anch[w][f"{k}_checks"] for w in range(NW))
+         for k in ("c0a135", "c0a175", "c0a187", "c0a198")}
+
+
+def have(w, a, s):
+    return f"mm_{a}_{s}" in raws[w].files and f"xwin_{a}_{s}" in raws[w].files
+
+
+m = 0
+for s in B44:
+    if all(have(w, a, s) for w in range(NW) for a in ["cutwA"] + PLAN[w]):
+        m += 1
+    else:
+        break
+SEEDS = B44[:m]
+KEYS22 = ["mm", "xm"] + [f"{pk}_{c}{sd}" for pk in PAIRS for c in PREF[pk] for sd in "LR"]
+assert len(KEYS22) == 22
+nx, mxx = 0, 0.0
+for s in ANCH + SEEDS:
+    for k in KEYS22:
+        ref = raws[0][f"{k}_cutwA_{s}"]
+        for w in range(1, NW):
+            mxx = max(mxx, float(np.abs(raws[w][f"{k}_cutwA_{s}"] - ref).max()))
+            nx += 1
+assert mxx == 0.0, ("CERT-X FAIL", mxx)
+print(f"CERT-X cutwA identical across {NW} workers on {len(ANCH + SEEDS)} seeds: "
+      f"PASS ({nx} checks, max {mxx})")
+# CERT-REPLAY (verdict side): clamp arms' carrier trace == same-worker cutwA's, EXACT
+nrp, mrp = 0, 0.0
+for a in ("l2k", "l2kF"):
+    for s in SEEDS:
+        mrp = max(mrp, float(np.abs(raws[5][f"c{GI_CARRIER}_{a}_{s}"]
+                                   - raws[5][f"c{GI_CARRIER}_cutwA_{s}"]).max()))
+        nrp += 1
+assert mrp == 0.0, ("CERT-REPLAY FAIL", mrp)
+print(f"CERT-REPLAY carrier trace of l2k / l2kF == cutwA's on {len(SEEDS)} seeds: PASS "
+      f"({nrp} checks, max {mrp}); CERT-NULL bk == cutwA: PASS ({anch[5]['null_checks']} checks)")
+if m < 8:
+    print(f"only {m} complete fresh seeds — no branch read")
+    sys.exit(0)
+DONE = all(os.path.exists(f"{OUT}/done_w{w}.json") for w in range(NW)) and m == 16
+tq = T975[m - 1]
+SUP_K, NOT_K = math.ceil(.75 * m), math.floor(.5 * m)
+
+
+def cls_of(k, mean):
+    if mean >= .60 and k >= SUP_K:
+        return "SUPER"
+    if k <= NOT_K and mean <= .50:
+        return "NOT-SUPER"
+    return "INTERMEDIATE"
+
+
+def paired(x, y):
+    d = np.asarray(x, float) - np.asarray(y, float)
+    mu, sd = float(d.mean()), float(d.std(ddof=1))
+    h = tq * sd / math.sqrt(len(d))
+    return dict(mean=round(mu, 4), sd=round(sd, 4), ci95=[round(mu - h, 4), round(mu + h, 4)],
+                n_up=int((d >= .2).sum()), n_dn=int((d <= -.2).sum()), n=len(d))
+
+
+def xw_seeds(w, a, key):
+    return [float(raws[w][f"xwin_{a}_{s}"][IXC[key]]) for s in SEEDS]
+
+
+def xmean_of(v):
+    v = np.array(v, float)
+    return None if np.isnan(v).all() else round(float(np.nanmean(v)), 4)
+
+
+def row(w, a):
+    L, R = duty_seeds(raws[w], a, SEEDS, "Ti")
+    d14R = duty14_seeds(raws[w], a, SEEDS)
+    d14L = duty14L_seeds(raws[w], a, SEEDS)
+    kL, kR = int((L >= .5).sum()), int((R >= .5).sum())
+    meanL, meanR = round(float(L.mean()), 3), round(float(R.mean()), 3)
+    g = G0 if a == "cutwA" else gains[a]
+    xc = xw_seeds(w, a, "carrier")
+    return dict(arm=a, removed=(None if a == "cutwA" else REMOVED[a]), n=m,
+                kL=kL, meanL=meanL, clsL=cls_of(kL, meanL), dutyL=[float(v) for v in L],
+                kR=kR, meanR=meanR, clsR=cls_of(kR, meanR), dutyR=[float(v) for v in R],
+                k14L=int((d14L >= .5).sum()), mean14L=round(float(d14L.mean()), 3),
+                duty14L=[float(v) for v in d14L], sigL=bool(float(d14L.mean()) >= SIG),
+                k14R=int((d14R >= .5).sum()), mean14R=round(float(d14R.mean()), 3),
+                duty14R=[float(v) for v in d14R], sigR=bool(float(d14R.mean()) >= SIG),
+                gain=g, gain_delta_pct=100 * (g / G0 - 1),
+                af_mean=round(float(np.mean([float(raws[w][f"af_{a}_{s}"]) for s in SEEDS])), 6),
+                x_carrier=xmean_of(xc), x_carrier_seeds=xc,
+                x_ru2=xmean_of(xw_seeds(w, a, "ru2")), x_lt1=xmean_of(xw_seeds(w, a, "lt1")),
+                x_lt2=xmean_of(xw_seeds(w, a, "lt2")))
+
+
+base = row(0, "cutwA")
+arms = {}
+for a in ALL:
+    arms[a] = row(arm_w[a], a)
+    arms[a]["L_vs_base"] = paired(arms[a]["dutyL"], base["dutyL"])
+    arms[a]["R_vs_base"] = paired(arms[a]["dutyR"], base["dutyR"])
+    if arms[a]["x_carrier"] is not None:
+        arms[a]["xcar_vs_base"] = paired(arms[a]["x_carrier_seeds"], base["x_carrier_seeds"])
+# clamp arms: carrier window-mean identical to base per seed (third replay check)
+for a in ("l2k", "l2kF"):
+    assert arms[a]["x_carrier_seeds"] == row(5, "cutwA")["x_carrier_seeds"], a
+
+
+def dL(a, b):
+    return paired(arms[a]["dutyL"], arms[b]["dutyL"])
+
+
+def dRt(a, b):
+    return paired(arms[a]["dutyR"], arms[b]["dutyR"])
+
+
+contrasts = dict(
+    L_l2k_minus_l2=dL("l2k", "l2"), L_l2kF_minus_l2F=dL("l2kF", "l2F"),
+    L_l2c_minus_l2=dL("l2c", "l2"), L_l2cF_minus_l2F=dL("l2cF", "l2F"),
+    L_lt1_minus_l2=dL("lt1", "l2"), L_lt2_minus_l2=dL("lt2", "l2"),
+    L_l2_minus_l2F=dL("l2", "l2F"), L_l2c_minus_sc25=dL("l2c", "sc25"),
+    R_l2c_minus_sc25=dRt("l2c", "sc25"), R_l2k_minus_l2=dRt("l2k", "l2"),
+    R_l2_minus_sc25=dRt("l2", "sc25"))
+_den = arms["l2"]["meanL"] - base["meanL"]
+_denF = arms["l2F"]["meanL"] - base["meanL"]
+retained = dict(
+    rematched=(None if abs(_den) < 1e-9 else round((arms["l2k"]["meanL"] - base["meanL"]) / _den, 3)),
+    fixed=(None if abs(_denF) < 1e-9 else round((arms["l2kF"]["meanL"] - base["meanL"]) / _denF, 3)))
+
+# ---- registered branches (LEFT duty, re-matched form carries the label) ----
+br = {}
+br["E0_base_left_super"] = bool(base["clsL"] == "SUPER")
+br["REF_ru2"] = "REF_ru2_ok" if arms["l2"]["clsL"] == "SUPER" else "REF_ru2_not_super"
+br["carrier_rate_rise_replicates"] = bool(arms["l2"]["xcar_vs_base"]["ci95"][0] > 0)
+br["l2_right_class"] = arms["l2"]["clsR"]
+tw_cls = [arms["lt1"]["clsL"], arms["lt2"]["clsL"]]
+T = sum(c == "SUPER" for c in tw_cls)
+br["twins_left_class"] = dict(lt1=tw_cls[0], lt2=tw_cls[1], lt1F=arms["lt1F"]["clsL"],
+                              lt2F=arms["lt2F"]["clsL"], T=T)
+br["M2_flag"] = dict(l2k_left=arms["l2k"]["clsL"], l2kF_left=arms["l2kF"]["clsL"],
+                     retained_fraction=retained)
+if T == 2:
+    M = "M3_generic_left_hotspot"
+elif T == 1:
+    M = "M3_partial"
+else:
+    ck = arms["l2k"]["clsL"]
+    if ck == "NOT-SUPER":
+        M = "M2_cross_coupled"
+    elif ck == "INTERMEDIATE":
+        M = "M2_partial"
+    else:
+        both_not = all(c == "NOT-SUPER" for c in tw_cls)
+        if both_not and arms["l2"]["sigL"]:
+            M = "M1_mirror_carrier"
+        elif both_not:
+            M = "M1_unique_no_left_signature"
+        else:
+            M = "M1_unresolved_twin_band"
+br["M"] = M
+br["M_status"] = ("NO_CLAIM (E0)" if br["E0_base_left_super"] else
+                  "DESCRIPTIVE (ru2 left flip did not re-class SUPER on this batch)"
+                  if br["REF_ru2"] != "REF_ru2_ok" else "READ")
+br["gain_form"] = {k: ("AGREE" if arms[k]["clsL"] == arms[k + "F"]["clsL"] else "DEPENDENT")
+                   for k in ("l2", "lt1", "lt2", "l2k", "l2c")}
+br["A3a_double"] = dict(l2c_left=arms["l2c"]["clsL"], l2c_right=arms["l2c"]["clsR"],
+                        l2c_right_14=arms["l2c"]["mean14R"], l2c_sigR=arms["l2c"]["sigR"],
+                        l2cF_left=arms["l2cF"]["clsL"], l2cF_right=arms["l2cF"]["clsR"])
+br["CTRL_carrier"] = ("CTRL_carrier_ok" if arms["sc25"]["clsR"] == "SUPER"
+                      and arms["sc25"]["sigR"] else "CTRL_carrier_FAIL")
+if "l2h" in arms:
+    br["homolog_l2h"] = dict(right=arms["l2h"]["clsR"], left=arms["l2h"]["clsL"],
+                             literal_mirror=bool(arms["l2h"]["clsR"] == "SUPER"),
+                             homolog_census_x_mean=sel["homolog"]["x_mean"])
+br["A4"] = a4["label"]
+pred = dict(
+    P1_l2_left_super=dict(got=[arms["l2"]["clsL"], arms["l2F"]["clsL"]],
+                          correct=bool(arms["l2"]["clsL"] == "SUPER"),
+                          fixed_correct=bool(arms["l2F"]["clsL"] == "SUPER")),
+    P2_carrier_rate_ge_50=dict(got=arms["l2"]["x_carrier"],
+                               correct=bool(arms["l2"]["x_carrier"] >= .50)),
+    P3_T0=dict(got=T, correct=bool(T == 0)),
+    P4_clamp_class=dict(prior="SUPER .50 / NOT-SUPER .30 / INTERMEDIATE .20",
+                        got=arms["l2k"]["clsL"], modal_correct=bool(arms["l2k"]["clsL"] == "SUPER"),
+                        M_prior="M1 .35 / M2 .30 / M3 .35", M_got=M),
+    P5_no_left_signature=dict(got=arms["l2"]["mean14L"], correct=bool(not arms["l2"]["sigL"])),
+    P6_double=dict(got=[arms["l2c"]["clsR"], arms["l2c"]["mean14R"], arms["l2c"]["clsL"]],
+                   right_correct=bool(arms["l2c"]["clsR"] == "SUPER" and arms["l2c"]["sigR"]),
+                   left_super=bool(arms["l2c"]["clsL"] == "SUPER")),
+    P7_A4_mirror=dict(got=a4["label"], correct=bool(a4["label"] == "A4_mirror")),
+    P8_l2h_right_super=(dict(got=arms["l2h"]["clsR"], correct=bool(arms["l2h"]["clsR"] == "SUPER"))
+                        if "l2h" in arms else None))
+res = dict(
+    design="L200: ru2 (gi 70994) left-tibia phenotype — A1 replicate, A2 left-matched twins, "
+           "A3 double removal + carrier replay clamp, A4 wiring (PREREG l200/PREREG.md)",
+    status="FINAL" if DONE else f"PARTIAL (m={m})", prereg_sha256=PRE_SHA,
+    selection_sha256=frz["selection_sha256"], seeds=SEEDS, anchors=ANCH,
+    bands=dict(n=m, super_k_min=SUP_K, super_mean_min=.6, not_k_max=NOT_K,
+               not_mean_max=.5, signature_mean14_min=SIG),
+    certs=dict(cert_metric="PASS (results_l198 B43, 4 rows, both sides + right 1.4-Hz)",
+               cert_g_stored_exact=True, c0a_checks=N_C0A, c0a_max=0.0,
+               cert_x_checks=nx, cert_x_max=mxx, cert_replay_checks=nrp, cert_replay_max=mrp,
+               cert_replay_inrun_checks=anch[5].get("replay_checks"),
+               cert_null_checks=anch[5]["null_checks"], cert_null_max=anch[5]["null_max"],
+               cert_sub_static="PASS (static.json)"),
+    gi=GI, l198_stored=dict(ru2_left_14=L198_RU2_L14, base_left_14=L198_BASE_L14,
+                            ru2_kL=r198["arms"]["ru2"]["kL"], ru2_meanL=r198["arms"]["ru2"]["meanL"]),
+    base=base, arms=arms, contrasts=contrasts, retained_fraction=retained, branches=br,
+    predictions=pred, a4=dict(label=a4["label"], LI2_carrier=a4["LI2_carrier"],
+                              LI2_ru2=a4["LI2_ru2"], overlap=a4["overlap"]), stairs=stairs)
+atomic_json(f"{OUT}/results_l200.json", res)
+
+print(f"\nL200 verdict — {res['status']} | B44 {SEEDS[0]}..{SEEDS[-1]} n={m} | PREREG {PRE_SHA[:16]}")
+print(f"C0A: vs raw_l135 {N_C0A['c0a135']} checks, vs L175 {N_C0A['c0a175']}, vs L187 "
+      f"{N_C0A['c0a187']}, vs L198 {N_C0A['c0a198']} — all max 0.0")
+print(f"stored L198 B43 left 1.4-Hz: ru2 {L198_RU2_L14}, base {L198_BASE_L14}")
+print(f"{'arm':6s} {'gain d%':>8s} | {'kL':>3s} {'meanL':>6s} {'clsL':13s} {'dL vs base [95% CI]':27s} "
+      f"{'L1.4':>5s} | {'kR':>3s} {'meanR':>6s} {'clsR':13s} {'R1.4':>5s} | x_car  x_ru2")
+for a in ["cutwA"] + ALL:
+    r = base if a == "cutwA" else arms[a]
+    vb = r.get("L_vs_base")
+    ci = f"{vb['mean']:+.3f} [{vb['ci95'][0]:+.3f}, {vb['ci95'][1]:+.3f}]" if vb else "-"
+    print(f"{a:6s} {r['gain_delta_pct']:+8.3f} | {r['kL']:3d} {r['meanL']:6.3f} {r['clsL']:13s} "
+          f"{ci:27s} {r['mean14L']:5.3f} | {r['kR']:3d} {r['meanR']:6.3f} {r['clsR']:13s} "
+          f"{r['mean14R']:5.3f} | {r['x_carrier']} {r['x_ru2']}")
+print("contrasts:")
+for k, v in contrasts.items():
+    print(f"  {k}: {v['mean']:+.4f} [{v['ci95'][0]:+.4f}, {v['ci95'][1]:+.4f}]")
+print("retained fraction of the left flip under the clamp:", retained)
+print("branches:", json.dumps(br, indent=1))
+print("predictions:", json.dumps(pred, indent=1))
+if DONE:
+    print("L200 VERDICT WRITTEN (FINAL)")

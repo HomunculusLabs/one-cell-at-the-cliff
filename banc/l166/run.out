@@ -1,0 +1,39 @@
+CERT-bin fr[6] = np.float64(0.1) == 0.1: PASS
+CERT-fix o_s=0 reproduces l154_run.py AMPA + sin_t EXACTLY (max|d| 0.0): PASS
+offsets o_s (rng 164) = [503, 65, 105, 319, 115, 329, 708, 144, 877, 156, 837, 868, 450, 481, 316, 28]
+
+D1 drive bin-6 power  fix 3313.77 | rnd med 3313.77 [2882.31, 3665.85]
+D2 PLV_drive          fix 1.000000 (1.0 by construction) | rnd 0.312526  (free-phase floor at n=16: 0.2216)
+D3 arg S[6]           fix   -57.06 deg | rnd circular spread 87.4 deg
+
+GATE (PLV_drive(rnd) < 0.4): PASS -> WELL_POSED
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l166_run.py:106: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+graph built 3s | n_old 21,249 edges 627,051 | mech 4848 motor 728 DNg100 2
+B44 absence across 189 stored npzs: PASS
+seed 801 done af 0.10899 | 7s
+seed 901 done af 0.10805 | 9s
+seed 4401 done af 0.11106 | 12s
+seed 4402 done af 0.10758 | 15s
+seed 4403 done af 0.11088 | 18s
+seed 4404 done af 0.10942 | 20s
+seed 4405 done af 0.11008 | 23s
+seed 4406 done af 0.11073 | 26s
+seed 4407 done af 0.11224 | 28s
+seed 4408 done af 0.10890 | 31s
+seed 4409 done af 0.11121 | 34s
+seed 4410 done af 0.11041 | 37s
+seed 4411 done af 0.11031 | 39s
+seed 4412 done af 0.10951 | 42s
+seed 4413 done af 0.10819 | 45s
+seed 4414 done af 0.10885 | 47s
+seed 4415 done af 0.10956 | 50s
+seed 4416 done af 0.10786 | 53s
+seed 4417 done af 0.11238 | 56s
+seed 4418 done af 0.10956 | 59s
+rollouts done 59s
+raw_l166.npz checkpointed BEFORE analysis
+C0A-166b fix vs l150 STORED b65 (46 checks): PASS (max 0.0e+00) | 59s
+B44 af range [0.10758, 0.11238]

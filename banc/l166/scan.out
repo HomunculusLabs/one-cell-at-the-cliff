@@ -1,0 +1,18 @@
+CERT-3 bin exactness: full fr[6]=np.float64(0.1) seg fr[2]=np.float64(0.1) K=5: PASS
+held-out sources: ['H1_fresh_b65_B44', 'H2_l154_off', 'H3_l150_cutng25', 'H3_l150_cutwA', 'H3_l150_eMotBot5', 'H3_l150_eMotTop5', 'H3_l150_full', 'H3_l150_silW']
+H1_fresh_b65_B44       [PRIMARY] n=18 F1_carrier_coherent  clears 23/28 (ctl  2/36) med 0.7097 vs 0.1815 ratio  3.91 | bars fail: none | ptp car 0.1666
+H2_l154_off            [WEAK   ] n=18 F2_not_coherent      clears  3/28 (ctl  5/36) med 0.2405 vs 0.2162 ratio  1.11 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0733
+H3_l150_cutng25        [FREE   ] n=18 F2_not_coherent      clears  4/28 (ctl  9/36) med 0.2242 vs 0.3459 ratio  0.65 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0839
+H3_l150_cutwA          [FREE   ] n=18 F2_not_coherent      clears  4/28 (ctl  9/36) med 0.1875 vs 0.2973 ratio  0.63 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0830
+H3_l150_eMotBot5       [FREE   ] n=18 F2_not_coherent      clears  4/28 (ctl  7/36) med 0.1999 vs 0.2721 ratio  0.73 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0870
+H3_l150_eMotTop5       [FREE   ] n=18 F2_not_coherent      clears  4/28 (ctl  5/36) med 0.1996 vs 0.2617 ratio  0.76 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0875
+H3_l150_full           [FREE   ] n=18 F2_not_coherent      clears  2/28 (ctl  3/36) med 0.2354 vs 0.3073 ratio  0.77 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.1469
+H3_l150_silW           [FREE   ] n=18 F2_not_coherent      clears  4/28 (ctl  8/36) med 0.1965 vs 0.3190 ratio  0.62 | bars fail: ['count>=22', 'ratio>=2x'] | ptp car 0.0781
+
+stored comparator per file: l154 23/28 med 0.6596 | l150 24/28 med 0.7189
+
+Q1 (primary re-basing on fresh B44): PASS -> 23/28, med 0.7097 vs 0.1815, calib True
+Q2 (off arm lands F2): CORRECT -> F2_not_coherent, 3/28 med 0.2405
+Q3 (H3 non-transport on >=4 of 6): CORRECT -> 6 arms fail/invert ['H3_l150_cutng25', 'H3_l150_cutwA', 'H3_l150_eMotBot5', 'H3_l150_eMotTop5', 'H3_l150_full', 'H3_l150_silW']
+BRANCH B_REBASED | draft fold licensed: True
+l166/results_l166.json written

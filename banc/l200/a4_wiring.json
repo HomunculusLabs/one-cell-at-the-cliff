@@ -1,0 +1,416 @@
+{
+ "cells": {
+  "carrier": {
+   "gi": 1110,
+   "cell_type": "DNp33",
+   "side": "left",
+   "eff_sign": 1.0,
+   "super_class": "descending",
+   "out_edges": 80,
+   "out_mass_eff": 183.96376182027785,
+   "x_mean": 0.3891147971153259,
+   "one_hop": {
+    "PM_L": {
+     "edges": 2,
+     "mass": 3.5553480614894135,
+     "share": 0.01932635007193855,
+     "drive": 1.3834385396208204
+    },
+    "PM_R": {
+     "edges": 3,
+     "mass": 7.6128310304073565,
+     "share": 0.041382231778042566,
+     "drive": 2.962265201870216
+    },
+    "shared": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "LI1": 0.3633074770319458,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "two_hop": {
+    "Ti_fL": {
+     "signed": 0.0,
+     "abs": 0.0
+    },
+    "Ti_eL": {
+     "signed": 8.093007281858798,
+     "abs": 19.62790976081253
+    },
+    "Ti_fR": {
+     "signed": -13.583428896217075,
+     "abs": 13.583428896217075
+    },
+    "Ti_eR": {
+     "signed": -5.872162242949448,
+     "abs": 14.313370818387378
+    }
+   },
+   "A_L": 19.62790976081253,
+   "A_R": 27.896799714604455,
+   "LI2": 0.17399138353637195
+  },
+  "ru2": {
+   "gi": 70994,
+   "cell_type": "IN07B031",
+   "side": "right",
+   "eff_sign": -1.0,
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "out_edges": 61,
+   "out_mass_eff": 287.80672564392967,
+   "x_mean": 0.2994140883286794,
+   "one_hop": {
+    "PM_L": {
+     "edges": 5,
+     "mass": 26.641903813324312,
+     "share": 0.09256873255382257,
+     "drive": 7.976961341606866
+    },
+    "PM_R": {
+     "edges": 5,
+     "mass": 22.15812176468073,
+     "share": 0.07698958985445822,
+     "drive": 6.634453827247749
+    },
+    "shared": {
+     "edges": 1,
+     "mass": 4.605170185988092
+    }
+   },
+   "LI1": -0.09188073152700346,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "two_hop": {
+    "Ti_fL": {
+     "signed": -22.153618342362726,
+     "abs": 22.153618342362726
+    },
+    "Ti_eL": {
+     "signed": -95.46391430399075,
+     "abs": 135.35417864682782
+    },
+    "Ti_fR": {
+     "signed": 2.6739133532297146,
+     "abs": 37.91965818800433
+    },
+    "Ti_eR": {
+     "signed": -105.29919748751833,
+     "abs": 105.29919748751833
+    }
+   },
+   "A_L": 157.50779698919055,
+   "A_R": 143.21885567552266,
+   "LI2": -0.04751471539703847
+  },
+  "lt1": {
+   "gi": 71926,
+   "cell_type": "IN14A074",
+   "side": "right",
+   "eff_sign": -1.0,
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "out_edges": 30,
+   "out_mass_eff": 114.45124860877445,
+   "x_mean": 0.7189790606498718,
+   "one_hop": {
+    "PM_L": {
+     "edges": 3,
+     "mass": 11.058858175022847,
+     "share": 0.09662505485479705,
+     "drive": 7.951087462538082
+    },
+    "PM_R": {
+     "edges": 19,
+     "mass": 74.79651701933446,
+     "share": 0.6535229447343938,
+     "drive": 53.77712954644324
+    },
+    "shared": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "LI1": 0.7423840231322016,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "two_hop": {
+    "Ti_fL": {
+     "signed": -148.5360804523367,
+     "abs": 148.5360804523367
+    },
+    "Ti_eL": {
+     "signed": -11.388616088484843,
+     "abs": 11.388616088484843
+    },
+    "Ti_fR": {
+     "signed": -307.22066310316796,
+     "abs": 971.4865676476675
+    },
+    "Ti_eR": {
+     "signed": 134.59393355415781,
+     "abs": 134.59393355415781
+    }
+   },
+   "A_L": 159.92469654082154,
+   "A_R": 1106.0805012018252,
+   "LI2": 0.7473553871248307
+  },
+  "lt2": {
+   "gi": 68609,
+   "cell_type": "IN01B040",
+   "side": "left",
+   "eff_sign": -1.0,
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "out_edges": 15,
+   "out_mass_eff": 75.44578937000287,
+   "x_mean": 0.15914760529994965,
+   "one_hop": {
+    "PM_L": {
+     "edges": 10,
+     "mass": 49.856071748472104,
+     "share": 0.66081980405781,
+     "drive": 7.934474428431809
+    },
+    "PM_R": {
+     "edges": 0,
+     "mass": 0.0,
+     "share": 0.0,
+     "drive": 0.0
+    },
+    "shared": {
+     "edges": 0,
+     "mass": 0.0
+    }
+   },
+   "LI1": -1.0,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "two_hop": {
+    "Ti_fL": {
+     "signed": 344.83977815716787,
+     "abs": 849.1269789327272
+    },
+    "Ti_eL": {
+     "signed": -64.27098195500308,
+     "abs": 119.61808496521415
+    },
+    "Ti_fR": {
+     "signed": 0.0,
+     "abs": 0.0
+    },
+    "Ti_eR": {
+     "signed": 0.0,
+     "abs": 0.0
+    }
+   },
+   "A_L": 968.7450638979413,
+   "A_R": 0.0,
+   "LI2": -1.0
+  },
+  "l2h": {
+   "gi": 67738,
+   "cell_type": "IN07B031",
+   "side": "left",
+   "eff_sign": -1.0,
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "out_edges": 77,
+   "out_mass_eff": 311.5508021294878,
+   "x_mean": 3.720401582540944e-05,
+   "one_hop": {
+    "PM_L": {
+     "edges": 4,
+     "mass": 13.102160670086809,
+     "share": 0.04205465234090858,
+     "drive": 0.00048745299291696683
+    },
+    "PM_R": {
+     "edges": 4,
+     "mass": 13.158502424020202,
+     "share": 0.042235495251754226,
+     "drive": 0.0004895491324219361
+    },
+    "shared": {
+     "edges": 1,
+     "mass": 3.2188758248682006
+    }
+   },
+   "LI1": 0.0021454810082856208,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "two_hop": {
+    "Ti_fL": {
+     "signed": -11.534902478953729,
+     "abs": 11.534902478953729
+    },
+    "Ti_eL": {
+     "signed": -66.96324125791338,
+     "abs": 66.96324125791338
+    },
+    "Ti_fR": {
+     "signed": -27.925426750699227,
+     "abs": 27.925426750699227
+    },
+    "Ti_eR": {
+     "signed": -108.7822143627833,
+     "abs": 108.7822143627833
+    }
+   },
+   "A_L": 78.4981437368671,
+   "A_R": 136.7076411134825,
+   "LI2": 0.2704829585184863
+  }
+ },
+ "overlap": {
+  "n_targets_carrier": 80,
+  "n_targets_ru2": 61,
+  "n_shared": 3,
+  "J_same": 0.021739130434782608,
+  "J_mirror": 0.039603960396039604,
+  "J_type_sideblind": 0.04878048780487805,
+  "n_typed_carrier": 53,
+  "n_typed_ru2": 52,
+  "premotor": {
+   "n_carrier_in_PM_R": 3,
+   "n_ru2_in_PM_L": 5,
+   "n_carrier_in_PM_L": 2,
+   "n_ru2_in_PM_R": 5,
+   "J_same": 0.0,
+   "J_mirror": 0.0,
+   "mirror_shared_types": []
+  }
+ },
+ "context": {
+  "n_cord_with_two_hop": 10109,
+  "LI2_median": 0.1786104202661482,
+  "LI2_p10": -1.0,
+  "LI2_p90": 1.0,
+  "ru2_LI2_percentile": 45.67217331091107,
+  "frac_cord_LI2_le_minus_20": 0.4331783559204669,
+  "frac_cord_LI2_ge_plus_20": 0.4945098427144129
+ },
+ "label": "A4_no_laterality_contrast",
+ "LI2_carrier": 0.17399138353637195,
+ "LI2_ru2": -0.04751471539703847,
+ "prereg_sha256_at_analysis": "db03c33d5997bc51656eaee10fe667c4b56e6f8ab3bcde389eeb8283b9dd231a"
+}

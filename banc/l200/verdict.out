@@ -1,0 +1,127 @@
+CERT-METRIC vs results_l198 (B43: cutwA / sc25 / sc25F / ru2; kL, kR, meanL, meanR, 1.4-Hz k + mean): PASS
+CERT-X cutwA identical across 6 workers on 21 seeds: PASS (2310 checks, max 0.0)
+CERT-REPLAY carrier trace of l2k / l2kF == cutwA's on 16 seeds: PASS (32 checks, max 0.0); CERT-NULL bk == cutwA: PASS (48 checks)
+
+L200 verdict — FINAL | B44 3705..3720 n=16 | PREREG db03c33d5997bc51
+C0A: vs raw_l135 322 checks, vs L175 175, vs L187 195, vs L198 239 — all max 0.0
+stored L198 B43 left 1.4-Hz: ru2 0.0, base 0.0
+arm     gain d% |  kL  meanL clsL          dL vs base [95% CI]          L1.4 |  kR  meanR clsR           R1.4 | x_car  x_ru2
+cutwA    +0.000 |   1  0.293 NOT-SUPER     -                           0.000 |   4  0.430 NOT-SUPER     0.000 | 0.38 0.2893
+sc25     +1.244 |   0  0.137 NOT-SUPER     -0.156 [-0.224, -0.087]     0.000 |  15  0.783 SUPER         0.585 | None 0.3193
+l2h      -0.049 |   0  0.214 NOT-SUPER     -0.079 [-0.172, +0.014]     0.001 |   4  0.393 NOT-SUPER     0.000 | 0.38 0.2811
+l2       -0.300 |  16  0.843 SUPER         +0.550 [+0.465, +0.636]     0.000 |   9  0.533 INTERMEDIATE  0.000 | 0.5907 None
+l2F      +0.000 |  16  0.819 SUPER         +0.525 [+0.429, +0.622]     0.000 |  12  0.542 INTERMEDIATE  0.000 | 0.6122 None
+lt1      +0.015 |   1  0.280 NOT-SUPER     -0.013 [-0.120, +0.093]     0.000 |   1  0.188 NOT-SUPER     0.000 | 0.3798 0.304
+lt1F     +0.000 |   1  0.288 NOT-SUPER     -0.005 [-0.067, +0.058]     0.000 |   0  0.204 NOT-SUPER     0.000 | 0.3839 0.3009
+lt2      -0.446 |   2  0.308 NOT-SUPER     +0.015 [-0.081, +0.112]     0.000 |   5  0.427 NOT-SUPER     0.000 | 0.347 0.261
+lt2F     +0.000 |   1  0.270 NOT-SUPER     -0.023 [-0.098, +0.052]     0.000 |   1  0.357 NOT-SUPER     0.000 | 0.3719 0.2936
+l2c      -0.644 |  16  0.902 SUPER         +0.609 [+0.530, +0.689]     0.057 |   3  0.296 NOT-SUPER     0.000 | None None
+l2cF     +0.000 |  16  0.952 SUPER         +0.659 [+0.584, +0.733]     0.029 |   4  0.313 NOT-SUPER     0.000 | None None
+l2k      -0.300 |  16  0.898 SUPER         +0.605 [+0.526, +0.683]     0.007 |  10  0.547 INTERMEDIATE  0.000 | 0.38 None
+l2kF     +0.000 |  16  0.904 SUPER         +0.611 [+0.546, +0.675]     0.003 |   9  0.513 INTERMEDIATE  0.002 | 0.38 None
+contrasts:
+  L_l2k_minus_l2: +0.0543 [-0.0072, +0.1158]
+  L_l2kF_minus_l2F: +0.0853 [+0.0272, +0.1433]
+  L_l2c_minus_l2: +0.0589 [+0.0098, +0.1079]
+  L_l2cF_minus_l2F: +0.1331 [+0.1018, +0.1643]
+  L_lt1_minus_l2: -0.5637 [-0.6781, -0.4492]
+  L_lt2_minus_l2: -0.5350 [-0.6064, -0.4636]
+  L_l2_minus_l2F: +0.0249 [-0.0275, +0.0772]
+  L_l2c_minus_sc25: +0.7649 [+0.6760, +0.8537]
+  R_l2c_minus_sc25: -0.4872 [-0.5906, -0.3838]
+  R_l2k_minus_l2: +0.0139 [-0.1050, +0.1329]
+  R_l2_minus_sc25: -0.2497 [-0.3490, -0.1503]
+retained fraction of the left flip under the clamp: {'rematched': 1.1, 'fixed': 1.162}
+branches: {
+ "E0_base_left_super": false,
+ "REF_ru2": "REF_ru2_ok",
+ "carrier_rate_rise_replicates": true,
+ "l2_right_class": "INTERMEDIATE",
+ "twins_left_class": {
+  "lt1": "NOT-SUPER",
+  "lt2": "NOT-SUPER",
+  "lt1F": "NOT-SUPER",
+  "lt2F": "NOT-SUPER",
+  "T": 0
+ },
+ "M2_flag": {
+  "l2k_left": "SUPER",
+  "l2kF_left": "SUPER",
+  "retained_fraction": {
+   "rematched": 1.1,
+   "fixed": 1.162
+  }
+ },
+ "M": "M1_unique_no_left_signature",
+ "M_status": "READ",
+ "gain_form": {
+  "l2": "AGREE",
+  "lt1": "AGREE",
+  "lt2": "AGREE",
+  "l2k": "AGREE",
+  "l2c": "AGREE"
+ },
+ "A3a_double": {
+  "l2c_left": "SUPER",
+  "l2c_right": "NOT-SUPER",
+  "l2c_right_14": 0.0,
+  "l2c_sigR": false,
+  "l2cF_left": "SUPER",
+  "l2cF_right": "NOT-SUPER"
+ },
+ "CTRL_carrier": "CTRL_carrier_ok",
+ "homolog_l2h": {
+  "right": "NOT-SUPER",
+  "left": "NOT-SUPER",
+  "literal_mirror": false,
+  "homolog_census_x_mean": 3.720401582540944e-05
+ },
+ "A4": "A4_no_laterality_contrast"
+}
+predictions: {
+ "P1_l2_left_super": {
+  "got": [
+   "SUPER",
+   "SUPER"
+  ],
+  "correct": true,
+  "fixed_correct": true
+ },
+ "P2_carrier_rate_ge_50": {
+  "got": 0.5907,
+  "correct": true
+ },
+ "P3_T0": {
+  "got": 0,
+  "correct": true
+ },
+ "P4_clamp_class": {
+  "prior": "SUPER .50 / NOT-SUPER .30 / INTERMEDIATE .20",
+  "got": "SUPER",
+  "modal_correct": true,
+  "M_prior": "M1 .35 / M2 .30 / M3 .35",
+  "M_got": "M1_unique_no_left_signature"
+ },
+ "P5_no_left_signature": {
+  "got": 0.0,
+  "correct": true
+ },
+ "P6_double": {
+  "got": [
+   "NOT-SUPER",
+   0.0,
+   "SUPER"
+  ],
+  "right_correct": false,
+  "left_super": true
+ },
+ "P7_A4_mirror": {
+  "got": "A4_no_laterality_contrast",
+  "correct": false
+ },
+ "P8_l2h_right_super": {
+  "got": "NOT-SUPER",
+  "correct": false
+ }
+}
+L200 VERDICT WRITTEN (FINAL)

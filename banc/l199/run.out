@@ -1,0 +1,77 @@
+--- L199 Part D rollouts: 3 workers x 2 threads, launched 2026-11-21 20:27:51 | PREREG sha 01e23ae1c711012e ---
+[work0 20:27:58] fresh keyscan PASS 160
+[work0 20:27:58] graphs built 5s | K 77 n_cut 21,732 edges_cut 639,164
+[work0 20:28:02] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work0 20:28:02] sc25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+[work1 20:28:03] fresh keyscan PASS 160
+[work1 20:28:04] graphs built 6s | K 77 n_cut 21,732 edges_cut 639,164
+[work1 20:28:09] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work1 20:28:09] sc25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+[work2 20:28:09] fresh keyscan PASS 160
+[work2 20:28:09] graphs built 6s | K 77 n_cut 21,732 edges_cut 639,164
+[work2 20:28:14] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work2 20:28:14] sc25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+[work0 20:29:11] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work0 20:29:11] g_sc25 0.1454454553127289 | af_final 0.109025 | |af-target| 3.11e-05
+[work0 20:29:11] g_cutwA == stored EXACT (0.14365819573402408)
+[work0 20:29:11] g_sc25 == stored EXACT (0.1454454553127289)
+[work0 20:29:11] bisects done 78s
+[work1 20:29:19] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work1 20:29:19] g_sc25 0.1454454553127289 | af_final 0.109025 | |af-target| 3.11e-05
+[work1 20:29:19] g_cutwA == stored EXACT (0.14365819573402408)
+[work1 20:29:19] g_sc25 == stored EXACT (0.1454454553127289)
+[work1 20:29:19] bisects done 81s
+[work2 20:29:26] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work2 20:29:26] g_sc25 0.1454454553127289 | af_final 0.109025 | |af-target| 3.11e-05
+[work2 20:29:26] g_cutwA == stored EXACT (0.14365819573402408)
+[work2 20:29:26] g_sc25 == stored EXACT (0.1454454553127289)
+[work2 20:29:26] bisects done 83s
+[work0 20:29:31] seed 801 done af {'cutwA': 0.1126004159450531, 'sc25': 0.10916268825531006} | 99s
+[work1 20:29:38] seed 801 done af {'cutwA': 0.1126004159450531, 'sc25': 0.10916268825531006} | 100s
+[work2 20:29:43] seed 801 done af {'cutwA': 0.1126004159450531, 'sc25': 0.10916268825531006} | 101s
+[work0 20:29:48] C0A-175 [('cutwA', 'cutwA'), ('sc25', 'cutng25')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 92 checks)
+[work0 20:29:48] seed 901 done af {'cutwA': 0.10938719660043716, 'sc25': 0.10755600780248642} | 115s
+[work1 20:29:53] C0A-175 [('cutwA', 'cutwA'), ('sc25', 'cutng25')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 92 checks)
+[work1 20:29:53] seed 901 done af {'cutwA': 0.10938719660043716, 'sc25': 0.10755600780248642} | 115s
+[work2 20:29:59] C0A-175 [('cutwA', 'cutwA'), ('sc25', 'cutng25')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 92 checks)
+[work2 20:29:59] seed 901 done af {'cutwA': 0.10938719660043716, 'sc25': 0.10755600780248642} | 116s
+[work0 20:30:03] seed 19931 done af {'cutwA': 0.11035116016864777, 'sc25': 0.1093922108411789} | 131s
+[work1 20:30:09] seed 19932 done af {'cutwA': 0.10952490568161011, 'sc25': 0.11109071224927902} | 131s
+[work2 20:30:14] seed 19933 done af {'cutwA': 0.10782648622989655, 'sc25': 0.10888725519180298} | 131s
+[work0 20:30:18] seed 19934 done af {'cutwA': 0.10543952137231827, 'sc25': 0.10769371688365936} | 145s
+[work1 20:30:23] seed 19935 done af {'cutwA': 0.11081019043922424, 'sc25': 0.10911678522825241} | 145s
+[work2 20:30:28] seed 19936 done af {'cutwA': 0.10998393595218658, 'sc25': 0.11122842133045197} | 145s
+[work0 20:30:31] seed 19937 done af {'cutwA': 0.11048886924982071, 'sc25': 0.10778553038835526} | 159s
+[work1 20:30:36] seed 19938 done af {'cutwA': 0.10823961347341537, 'sc25': 0.1085200160741806} | 159s
+[work2 20:30:41] seed 19939 done af {'cutwA': 0.10635758191347122, 'sc25': 0.10810686647891998} | 159s
+[work0 20:30:45] seed 19940 done af {'cutwA': 0.10998393595218658, 'sc25': 0.10971355438232422} | 173s
+[work1 20:30:51] seed 19941 done af {'cutwA': 0.10947900265455246, 'sc25': 0.10907087475061417} | 173s
+[work2 20:30:56] seed 19942 done af {'cutwA': 0.11007574200630188, 'sc25': 0.10833639651536942} | 173s
+[work0 20:31:01] seed 19943 done af {'cutwA': 0.11002983897924423, 'sc25': 0.10985126346349716} | 189s
+[work1 20:31:09] seed 19944 done af {'cutwA': 0.11053477227687836, 'sc25': 0.10842820256948471} | 191s
+[work2 20:31:15] seed 19945 done af {'cutwA': 0.11007574200630188, 'sc25': 0.1099889799952507} | 193s
+[work0 20:31:21] seed 19946 done af {'cutwA': 0.1125086098909378, 'sc25': 0.1099889799952507} | 209s
+[work1 20:31:31] seed 69932 done af {'cutwA': 0.10952490568161011, 'sc25': 0.11109071224927902} | 214s
+[work2 20:31:46] seed 69933 done af {'cutwA': 0.10782648622989655, 'sc25': 0.10888725519180298} | 224s
+[work0 20:31:56] seed 69931 done af {'cutwA': 0.11035116016864777, 'sc25': 0.1093922108411789} | 243s
+[work1 20:32:13] seed 69935 done af {'cutwA': 0.11081019043922424, 'sc25': 0.10911678522825241} | 256s
+[work2 20:32:24] seed 69936 done af {'cutwA': 0.10998393595218658, 'sc25': 0.11122842133045197} | 262s
+[work0 20:32:35] seed 69934 done af {'cutwA': 0.10543952137231827, 'sc25': 0.10769371688365936} | 282s
+[work1 20:32:48] seed 69938 done af {'cutwA': 0.10823961347341537, 'sc25': 0.1085200160741806} | 290s
+[work2 20:33:00] seed 69939 done af {'cutwA': 0.10635758191347122, 'sc25': 0.10810686647891998} | 297s
+[work0 20:33:12] seed 69937 done af {'cutwA': 0.11048886924982071, 'sc25': 0.10778553038835526} | 320s
+[work1 20:33:25] seed 69941 done af {'cutwA': 0.10947900265455246, 'sc25': 0.10907087475061417} | 327s
+[work2 20:33:36] seed 69942 done af {'cutwA': 0.11007574200630188, 'sc25': 0.10833639651536942} | 334s
+[work0 20:33:47] seed 69940 done af {'cutwA': 0.10998393595218658, 'sc25': 0.10971355438232422} | 355s
+[work1 20:34:01] seed 69944 done af {'cutwA': 0.11053477227687836, 'sc25': 0.10842820256948471} | 363s
+[work1 20:34:01] rollouts done 363s
+[work1 20:34:01] worker 1 DONE 363s
+[work2 20:34:09] seed 69945 done af {'cutwA': 0.11007574200630188, 'sc25': 0.1099889799952507} | 366s
+[work2 20:34:09] rollouts done 366s
+[work2 20:34:09] worker 2 DONE 366s
+[work0 20:34:16] seed 69943 done af {'cutwA': 0.11002983897924423, 'sc25': 0.10985126346349716} | 384s
+[work0 20:34:42] seed 69946 done af {'cutwA': 0.1125086098909378, 'sc25': 0.1099889799952507} | 409s
+[work0 20:34:42] rollouts done 409s
+[work0 20:34:42] worker 0 DONE 409s
+--- workers finished 2026-11-21 20:34:44 rc=0 ---
+--- causal analysis exit 0 2026-11-21 20:34:47 FINAL ---

@@ -1,0 +1,19 @@
+{
+ "prereg_sha256": "626be3aa86b63f754cfbbe81b61c051198955f4eb6e129fdbdd5566728c9f3ab",
+ "static_sha256": "a05e01856c80b33217092d81c2e2a72f7d13264d104ee48f0885f895e8d32e35",
+ "files": {
+  "PREREG.md": "626be3aa86b63f754cfbbe81b61c051198955f4eb6e129fdbdd5566728c9f3ab",
+  "static.json": "a05e01856c80b33217092d81c2e2a72f7d13264d104ee48f0885f895e8d32e35",
+  "nec_run.py": "2737c7a90cdf63f085e205bd0bc31fde66927a1d8d675670767df76b5e47aa89",
+  "build_nec.py": "b2272580e0dc3c8b1ae0ae4f763f7f3968014d85c01fa05eb97b6d2580106e77",
+  "nec_block.py.txt": "e7bd90390f2d5d5f9788f7546ba7fa894b7f42296bba8e89d03f43015dfed7cb",
+  "gains_block.py.txt": "a94178c187c33be226be813b7de08b9c1b482f6d1eaf9b3d7a4ebda5d7b1b582",
+  "tail_block.py.txt": "702b8e9cb16c7e9db4dc1a13ffb9b91c4f83bab4e9485649210a371a1d74b0a1",
+  "verdict_l202.py": "fc750748995da0131770e09ee1d493deadd99a5d07a4a4c54c3971494478bbd1",
+  "verdict_tail.py.txt": "b0d95773bb5b241bbda1f2cf001b81b0d7331049fcebff232a42eb999ebe492b",
+  "build_verdict.py": "b675360a4f656e9fef36ec6c4a27e93bc05cd8d6baf5d9fc787c7544244daa3b",
+  "run_all.sh": "c33e45cd5616a2cc65b6b7e10fa2d58bbe6b07ddb752a476eb8fd3b0d97cee33",
+  "ref_probe.py": "11173bca9b98fecd4825bf7d9a502eb19d9af60642fb88f42a137f7b1bf1d133"
+ },
+ "frozen": "2026-11-22 15:45:50 EST before any rollout (no raw_w*.npz / gains_w*.json exists)"
+}

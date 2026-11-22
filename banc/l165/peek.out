@@ -1,0 +1,149 @@
+n_keys 2923
+prefixes {'K': 1, 'g': 6, 'clamp': 2, 'g65': 1, 'cut': 1, 'cut19': 1, 'cut58': 1, 'cutng19': 1, 'cutng29': 1, 'cutwA': 1, 'cutng25': 1, 'cutng25p': 1, 'cutng23': 1, 'cutng26': 1, 'cutk5': 1, 'e': 1, 'new': 1, 'mass': 1, 'batches': 1, 'mm': 126, 'xm': 126, 'Ti': 504, 'Tr': 504, 'Ta': 504, 'Sr': 504, 'Pr': 504, 'af': 126}
+  K () int64
+  g_cutwA () float64
+  g_cutng25 () float64
+  g_silW () float64
+  g_eMotTop5 () float64
+  g_eMotBot5 () float64
+  clamp_loc (1,) int64
+  clamp_id (1,) int64
+  g_full () float64
+  g65 () float64
+  cut_drop (77,) int64
+  cut19_drop (19,) int64
+  cut58_drop (58,) int64
+  cutng19_drop (19,) int64
+  cutng29_drop (29,) int64
+  cutwA_drop (24,) int64
+  cutng25_drop (25,) int64
+  cutng25p_drop (25,) int64
+  cutng23_drop (23,) int64
+  cutng26_drop (26,) int64
+  cutk5_drop (5,) int64
+  e_edges (2,) int64
+  new_mass (8,) float64
+  mass_split (2,) float64
+  batches (18,) int64
+  mm_full_801 (6000,) float32
+  xm_full_801 (6000,) float32
+  Ti_fL_full_801 (6000,) float32
+  Ti_eL_full_801 (6000,) float32
+  Ti_fR_full_801 (6000,) float32
+  Ti_eR_full_801 (6000,) float32
+  Tr_fL_full_801 (6000,) float32
+  Tr_eL_full_801 (6000,) float32
+  Tr_fR_full_801 (6000,) float32
+  Tr_eR_full_801 (6000,) float32
+  Ta_aL_full_801 (6000,) float32
+  Ta_bL_full_801 (6000,) float32
+  Ta_aR_full_801 (6000,) float32
+  Ta_bR_full_801 (6000,) float32
+  Sr_aL_full_801 (6000,) float32
+...
+STATIC KEYS ['design', 'defect', 'scope', 'top5_dsts', 'bot5_dsts', 'top5_pos', 'bot5_pos', 'motor_edges_ranked']
+{
+ "design": "L150 ADDENDUM 1: corrected motor_edges_ranked (l145 zip bug). Zero rollouts, no RNG; ranking re-derived from unchanged data (mtimes 11-14).",
+ "defect": "l145_static.py zipped UNRANKED mot_pos with RANKED dst/w/syn columns (zip(mot_pos, mot_dst, mot_w, mot_cnt) should pair mot_ord); stored 'pos' column = ascending np.where(out_mot)[0].",
+ "scope": "l145 RUN arms unaffected (masks from mot_ord in l145_run.py, subset law asserted on masks); mass splits + top5_share (computed from masks) correct; dst_gi/syn columns were the ranked order and are reproduced here verbatim; consumed nowhere downstream (draft grep clean, 11-19).",
+ "top5_dsts": [
+  "iii4",
+  "i2",
+  "iv1",
+  "DVM1a-c",
+  "hi1 MN"
+ ],
+ "bot5_dsts": [
+  "i1",
+  "DVM1a-c",
+  "DVM1a-c",
+  "DLM1-4",
+  "iv4"
+ ],
+ "top5_pos": [
+  1643893,
+  1643929,
+  1643890,
+  1643942,
+  1643937
+ ],
+ "bot5_pos": [
+  1643928,
+  1643936,
+  1643940,
+  1643917,
+  1643961
+ ],
+ "motor_edges_ranked": [
+  {
+   "pos": 1643893,
+   "dst_gi": 4945,
+   "w": 3.583519,
+   "syn": 35,
+   "dst_type": "iii4"
+  },
+  {
+   "pos": 1643929,
+   "dst_gi": 8509,
+   "w": 3.465736,
+   "syn": 31,
+   "dst_type": "i2"
+  },
+  {
+   "pos": 1643890,
+   "dst_gi": 9770,
+   "w": 3.044522,
+   "syn": 20,
+   "dst_type": "iv1"
+  },
+  {
+   "pos": 1643942,
+   "dst_gi": 4947,
+   "w": 2.564949,
+   "syn": 12,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643937,
+   "dst_gi": 16630,
+   "w": 2.302585,
+   "syn": 9,
+   "dst_type": "hi1 MN"
+  },
+  {
+   "pos": 1643928,
+   "dst_gi": 9395,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "i1"
+  },
+  {
+   "pos": 1643936,
+   "dst_gi": 8506,
+   "w": 2.197225,
+   "syn": 8,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643940,
+   "dst_gi": 22572,
+   "w": 1.791759,
+   "syn": 5,
+   "dst_type": "DVM1a-c"
+  },
+  {
+   "pos": 1643917,
+   "dst_gi": 4946,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "DLM1-4"
+  },
+  {
+   "pos": 1643961,
+   "dst_gi": 4944,
+   "w": 1.386294,
+   "syn": 3,
+   "dst_type": "iv4"
+  }
+ ]
+}

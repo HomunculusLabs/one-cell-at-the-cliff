@@ -1,0 +1,1032 @@
+{
+ "figure": [
+  {
+   "id": "t0",
+   "src": "l200a4/cells/carrier/gi",
+   "v": 1110,
+   "fmt": "d"
+  },
+  {
+   "id": "t1",
+   "src": "l200a4/cells/carrier/out_edges",
+   "v": 80,
+   "fmt": "d"
+  },
+  {
+   "id": "t2",
+   "src": "l198s/relay/cell/gi",
+   "v": 75494,
+   "fmt": "d"
+  },
+  {
+   "id": "t3",
+   "src": "l198s/relay/out_edges",
+   "v": 51,
+   "fmt": "d"
+  },
+  {
+   "id": "t4",
+   "src": "l200a4/cells/ru2/gi",
+   "v": 70994,
+   "fmt": "d"
+  },
+  {
+   "id": "t5",
+   "src": "l200a4/cells/ru2/out_edges",
+   "v": 61,
+   "fmt": "d"
+  },
+  {
+   "id": "t6",
+   "src": "l198s/relay/direct_onto/Ti_fR/targets",
+   "v": 51,
+   "fmt": "d"
+  },
+  {
+   "id": "t7",
+   "src": "l198s/relay/direct_onto/Ti_eR/targets",
+   "v": 6,
+   "fmt": "d"
+  },
+  {
+   "id": "t8",
+   "src": "l200s/PM_R_n",
+   "v": 2219,
+   "fmt": "comma"
+  },
+  {
+   "id": "t9",
+   "src": "l200s/PM_L_n",
+   "v": 1910,
+   "fmt": "comma"
+  },
+  {
+   "id": "t10",
+   "src": "l200a4/cells/ru2/direct_onto/Ti_fL/targets",
+   "v": 50,
+   "fmt": "d"
+  },
+  {
+   "id": "t10",
+   "src": "l200a4/cells/ru2/direct_onto/Ti_eL/targets",
+   "v": 6,
+   "fmt": "d"
+  },
+  {
+   "id": "t12",
+   "src": "l198s/relay/carrier_to_relay/syn",
+   "v": 21,
+   "fmt": "d"
+  },
+  {
+   "id": "t13",
+   "src": "l198s/relay/direct_onto/Ti_fR/n_edges",
+   "v": 1,
+   "fmt": "d"
+  },
+  {
+   "id": "t13",
+   "src": "l198s/relay/direct_onto/Ti_fR/syn",
+   "v": 8,
+   "fmt": "d"
+  },
+  {
+   "id": "t15",
+   "src": "l200a4/cells/carrier/one_hop/PM_R/edges",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "t16",
+   "src": "l190r/summary/E-edge/delta",
+   "v": 0.22281250000000002,
+   "fmt": "s3"
+  },
+  {
+   "id": "t17",
+   "src": "l190r/summary/sc25/delta",
+   "v": 0.37012500000000004,
+   "fmt": "s3"
+  },
+  {
+   "id": "t17",
+   "src": "ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)",
+   "v": 0.6019925700776765,
+   "fmt": "pct"
+  },
+  {
+   "id": "t19",
+   "src": "l190r/summary/E-edge/mid",
+   "v": 0.0,
+   "fmt": "f3"
+  },
+  {
+   "id": "t20",
+   "src": "sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)",
+   "v": 77,
+   "fmt": "d"
+  },
+  {
+   "id": "t20",
+   "src": "l184e?direction=out#count",
+   "v": 80,
+   "fmt": "d"
+  },
+  {
+   "id": "t20",
+   "src": "l184e?target_class=direct right-Ti premotor#count",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "t23",
+   "src": "l184e?target_class=ventral_nerve_cord_intrinsic#count",
+   "v": 67,
+   "fmt": "d"
+  },
+  {
+   "id": "t24",
+   "src": "l184e?target_class=other motor#count",
+   "v": 10,
+   "fmt": "d"
+  },
+  {
+   "id": "t25",
+   "src": "l200a4/cells/ru2/one_hop/PM_R/edges",
+   "v": 5,
+   "fmt": "d"
+  },
+  {
+   "id": "t26",
+   "src": "l200a4/cells/ru2/one_hop/PM_L/edges",
+   "v": 5,
+   "fmt": "d"
+  },
+  {
+   "id": "t27",
+   "src": "l200a4/cells/ru2/two_hop/Ti_eL/signed",
+   "v": -95.46391430399075,
+   "fmt": "f1"
+  },
+  {
+   "id": "t27",
+   "src": "l200a4/cells/ru2/two_hop/Ti_eR/signed",
+   "v": -105.29919748751833,
+   "fmt": "f1"
+  },
+  {
+   "id": "t29",
+   "src": "l200a4/LI2_ru2",
+   "v": -0.04751471539703847,
+   "fmt": "s3"
+  },
+  {
+   "id": "t29",
+   "src": "l200a4/LI2_carrier",
+   "v": 0.17399138353637195,
+   "fmt": "s3"
+  },
+  {
+   "id": "t31",
+   "src": "l200a4/overlap/n_shared",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "t31",
+   "src": "l200a4/overlap/n_targets_carrier",
+   "v": 80,
+   "fmt": "d"
+  },
+  {
+   "id": "t31",
+   "src": "l200a4/overlap/n_targets_ru2",
+   "v": 61,
+   "fmt": "d"
+  },
+  {
+   "id": "t31",
+   "src": "l200a4/overlap/J_same",
+   "v": 0.021739130434782608,
+   "fmt": "f3"
+  },
+  {
+   "id": "t35",
+   "src": "l200a4/overlap/premotor/J_mirror",
+   "v": 0.0,
+   "fmt": "f1"
+  },
+  {
+   "id": "t36",
+   "src": "l200a4/cells/carrier/x_mean",
+   "v": 0.3891147971153259,
+   "fmt": "f2"
+  },
+  {
+   "id": "t36",
+   "src": "l200a4/cells/ru2/x_mean",
+   "v": 0.2994140883286794,
+   "fmt": "f2"
+  },
+  {
+   "id": "t36",
+   "src": "l198s/relay/census_x_mean_3seed",
+   "v": 0.3289374311765035,
+   "fmt": "f2"
+  },
+  {
+   "id": "t39",
+   "src": "l200r/bands/super_mean_min",
+   "v": 0.6,
+   "fmt": "f2"
+  },
+  {
+   "id": "t40",
+   "src": "l200r/base/meanR",
+   "v": 0.43,
+   "fmt": "f2"
+  },
+  {
+   "id": "t41",
+   "src": "l200r/base/kR",
+   "v": 4,
+   "fmt": "d"
+  },
+  {
+   "id": "t42",
+   "src": "l200r/arms/sc25/meanR",
+   "v": 0.783,
+   "fmt": "f2"
+  },
+  {
+   "id": "t43",
+   "src": "l200r/arms/sc25/kR",
+   "v": 15,
+   "fmt": "d"
+  },
+  {
+   "id": "t44",
+   "src": "l200r/arms/l2/meanR",
+   "v": 0.533,
+   "fmt": "f2"
+  },
+  {
+   "id": "t45",
+   "src": "l200r/arms/l2/kR",
+   "v": 9,
+   "fmt": "d"
+  },
+  {
+   "id": "t46",
+   "src": "l200r/arms/l2k/meanR",
+   "v": 0.547,
+   "fmt": "f2"
+  },
+  {
+   "id": "t47",
+   "src": "l200r/arms/l2k/kR",
+   "v": 10,
+   "fmt": "d"
+  },
+  {
+   "id": "t48",
+   "src": "l200r/arms/l2c/meanR",
+   "v": 0.296,
+   "fmt": "f2"
+  },
+  {
+   "id": "t49",
+   "src": "l200r/arms/l2c/kR",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "t50",
+   "src": "l200r/bands/signature_mean14_min",
+   "v": 0.25,
+   "fmt": "f2"
+  },
+  {
+   "id": "t51",
+   "src": "l200r/base/mean14R",
+   "v": 0.0,
+   "fmt": "f2"
+  },
+  {
+   "id": "t52",
+   "src": "l200r/base/k14R",
+   "v": 0,
+   "fmt": "d"
+  },
+  {
+   "id": "t53",
+   "src": "l200r/arms/sc25/mean14R",
+   "v": 0.585,
+   "fmt": "f2"
+  },
+  {
+   "id": "t54",
+   "src": "l200r/arms/sc25/k14R",
+   "v": 10,
+   "fmt": "d"
+  },
+  {
+   "id": "t55",
+   "src": "l200r/arms/l2/mean14R",
+   "v": 0.0,
+   "fmt": "f2"
+  },
+  {
+   "id": "t56",
+   "src": "l200r/arms/l2/k14R",
+   "v": 0,
+   "fmt": "d"
+  },
+  {
+   "id": "t57",
+   "src": "l200r/arms/l2k/mean14R",
+   "v": 0.0,
+   "fmt": "f2"
+  },
+  {
+   "id": "t58",
+   "src": "l200r/arms/l2k/k14R",
+   "v": 0,
+   "fmt": "d"
+  },
+  {
+   "id": "t59",
+   "src": "l200r/arms/l2c/mean14R",
+   "v": 0.0,
+   "fmt": "f2"
+  },
+  {
+   "id": "t60",
+   "src": "l200r/arms/l2c/k14R",
+   "v": 0,
+   "fmt": "d"
+  },
+  {
+   "id": "t61",
+   "src": "l200r/bands/super_mean_min",
+   "v": 0.6,
+   "fmt": "f2"
+  },
+  {
+   "id": "t62",
+   "src": "l200r/base/meanL",
+   "v": 0.293,
+   "fmt": "f2"
+  },
+  {
+   "id": "t63",
+   "src": "l200r/base/kL",
+   "v": 1,
+   "fmt": "d"
+  },
+  {
+   "id": "t64",
+   "src": "l200r/arms/sc25/meanL",
+   "v": 0.137,
+   "fmt": "f2"
+  },
+  {
+   "id": "t65",
+   "src": "l200r/arms/sc25/kL",
+   "v": 0,
+   "fmt": "d"
+  },
+  {
+   "id": "t66",
+   "src": "l200r/arms/l2/meanL",
+   "v": 0.843,
+   "fmt": "f2"
+  },
+  {
+   "id": "t67",
+   "src": "l200r/arms/l2/kL",
+   "v": 16,
+   "fmt": "d"
+  },
+  {
+   "id": "t68",
+   "src": "l200r/arms/l2k/meanL",
+   "v": 0.898,
+   "fmt": "f2"
+  },
+  {
+   "id": "t69",
+   "src": "l200r/arms/l2k/kL",
+   "v": 16,
+   "fmt": "d"
+  },
+  {
+   "id": "t70",
+   "src": "l200r/arms/l2c/meanL",
+   "v": 0.902,
+   "fmt": "f2"
+  },
+  {
+   "id": "t71",
+   "src": "l200r/arms/l2c/kL",
+   "v": 16,
+   "fmt": "d"
+  },
+  {
+   "id": "t72",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/mean",
+   "v": -0.4872,
+   "fmt": "s3"
+  },
+  {
+   "id": "t72",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/ci95/0",
+   "v": -0.5906,
+   "fmt": "s3"
+  },
+  {
+   "id": "t72",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/ci95/1",
+   "v": -0.3838,
+   "fmt": "s3"
+  },
+  {
+   "id": "t72",
+   "src": "l200r/arms/sc25/mean14R",
+   "v": 0.585,
+   "fmt": "f3"
+  },
+  {
+   "id": "t72",
+   "src": "l200r/arms/l2c/mean14R",
+   "v": 0.0,
+   "fmt": "f3"
+  },
+  {
+   "id": "t77",
+   "src": "l200r/arms/l2/L_vs_base/mean",
+   "v": 0.5504,
+   "fmt": "s3"
+  },
+  {
+   "id": "t77",
+   "src": "l200r/arms/l2/L_vs_base/ci95/0",
+   "v": 0.4651,
+   "fmt": "s3"
+  },
+  {
+   "id": "t77",
+   "src": "l200r/arms/l2/L_vs_base/ci95/1",
+   "v": 0.6357,
+   "fmt": "s3"
+  },
+  {
+   "id": "t77",
+   "src": "l200r/arms/l2k/L_vs_base/mean",
+   "v": 0.6047,
+   "fmt": "s3"
+  },
+  {
+   "id": "t77",
+   "src": "l200r/arms/l2c/L_vs_base/mean",
+   "v": 0.6092,
+   "fmt": "s3"
+  },
+  {
+   "id": "t82",
+   "src": "l199p/datasets/S/B/graphs/cutwA/theta/value",
+   "v": 172.3453838008853,
+   "fmt": "s0"
+  },
+  {
+   "id": "t82",
+   "src": "l199p/datasets/S/B/graphs/cutwA/theta/se",
+   "v": 3.935793370010476,
+   "fmt": "f0"
+  },
+  {
+   "id": "t84",
+   "src": "l199p/datasets/S/B/graphs/sc25/theta/value",
+   "v": 54.61250206206472,
+   "fmt": "s0"
+  },
+  {
+   "id": "t84",
+   "src": "l199p/datasets/S/B/graphs/sc25/theta/se",
+   "v": 5.4340221643121875,
+   "fmt": "f0"
+  },
+  {
+   "id": "t86",
+   "src": "l199p/datasets/S/B/dtheta/value",
+   "v": -117.73288173882057,
+   "fmt": "s0"
+  },
+  {
+   "id": "t86",
+   "src": "l199p/datasets/S/B/dtheta/ci95/0",
+   "v": -130.97885046023407,
+   "fmt": "s0"
+  },
+  {
+   "id": "t86",
+   "src": "l199p/datasets/S/B/dtheta/ci95/1",
+   "v": -104.48691301740708,
+   "fmt": "s0"
+  },
+  {
+   "id": "t89",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_fR/mean_deg",
+   "v": 101.79866393295053,
+   "fmt": "f0"
+  },
+  {
+   "id": "t89",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_fR/R",
+   "v": 0.8820369923041153,
+   "fmt": "f2"
+  },
+  {
+   "id": "t91",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_eR/mean_deg",
+   "v": 107.94476073987653,
+   "fmt": "f0"
+  },
+  {
+   "id": "t91",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_eR/R",
+   "v": 0.9480734389321386,
+   "fmt": "f2"
+  },
+  {
+   "id": "t93",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_fR/mean_deg",
+   "v": 93.32491195778663,
+   "fmt": "f0"
+  },
+  {
+   "id": "t93",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_fR/R",
+   "v": 0.9723355000442814,
+   "fmt": "f2"
+  },
+  {
+   "id": "t95",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_eR/mean_deg",
+   "v": -150.25411825521732,
+   "fmt": "f0"
+  },
+  {
+   "id": "t95",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_eR/R",
+   "v": 0.7015053431204614,
+   "fmt": "f2"
+  },
+  {
+   "id": "t97",
+   "src": "l199p/datasets/S/C/cutwA/Delta/mean_deg",
+   "v": -5.081101934997697,
+   "fmt": "s0"
+  },
+  {
+   "id": "t97",
+   "src": "l199p/datasets/S/C/sc25/Delta/mean_deg",
+   "v": -116.01801641082564,
+   "fmt": "s0"
+  }
+ ],
+ "caption": [
+  {
+   "id": "cap0",
+   "src": "l200a4/cells/carrier/gi",
+   "v": 1110,
+   "fmt": "d"
+  },
+  {
+   "id": "cap1",
+   "src": "l200a4/cells/carrier/out_edges",
+   "v": 80,
+   "fmt": "d"
+  },
+  {
+   "id": "cap2",
+   "src": "l184e?target_class=direct right-Ti premotor#count",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "cap3",
+   "src": "l198s/relay/cell/gi",
+   "v": 75494,
+   "fmt": "d"
+  },
+  {
+   "id": "cap4",
+   "src": "l198s/relay/carrier_to_relay/syn",
+   "v": 21,
+   "fmt": "d"
+  },
+  {
+   "id": "cap5",
+   "src": "l198s/relay/direct_onto/Ti_fR/n_edges",
+   "v": 1,
+   "fmt": "d"
+  },
+  {
+   "id": "cap6",
+   "src": "l198s/relay/direct_onto/Ti_fR/syn",
+   "v": 8,
+   "fmt": "d"
+  },
+  {
+   "id": "cap7",
+   "src": "l198s/relay/direct_onto/Ti_fR/targets",
+   "v": 51,
+   "fmt": "d"
+  },
+  {
+   "id": "cap8",
+   "src": "l190r/summary/E-edge/delta",
+   "v": 0.22281250000000002,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap9",
+   "src": "l190r/summary/sc25/delta",
+   "v": 0.37012500000000004,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap10",
+   "src": "ratio(l190r/summary/E-edge/delta;l190r/summary/sc25/delta)",
+   "v": 0.6019925700776765,
+   "fmt": "pct"
+  },
+  {
+   "id": "cap11",
+   "src": "l190r/summary/E-edge/mid",
+   "v": 0.0,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap12",
+   "src": "sub(l184e?direction=out#count;l184e?target_class=direct right-Ti premotor#count)",
+   "v": 77,
+   "fmt": "d"
+  },
+  {
+   "id": "cap13",
+   "src": "l184e?target_class=ventral_nerve_cord_intrinsic#count",
+   "v": 67,
+   "fmt": "d"
+  },
+  {
+   "id": "cap14",
+   "src": "l184e?target_class=other motor#count",
+   "v": 10,
+   "fmt": "d"
+  },
+  {
+   "id": "cap15",
+   "src": "l200a4/cells/ru2/gi",
+   "v": 70994,
+   "fmt": "d"
+  },
+  {
+   "id": "cap16",
+   "src": "l200a4/cells/ru2/out_edges",
+   "v": 61,
+   "fmt": "d"
+  },
+  {
+   "id": "cap17",
+   "src": "l200a4/cells/ru2/one_hop/PM_L/edges",
+   "v": 5,
+   "fmt": "d"
+  },
+  {
+   "id": "cap18",
+   "src": "l200s/PM_L_n",
+   "v": 1910,
+   "fmt": "comma"
+  },
+  {
+   "id": "cap19",
+   "src": "l200a4/cells/ru2/one_hop/PM_R/edges",
+   "v": 5,
+   "fmt": "d"
+  },
+  {
+   "id": "cap20",
+   "src": "l200s/PM_R_n",
+   "v": 2219,
+   "fmt": "comma"
+  },
+  {
+   "id": "cap21",
+   "src": "l200a4/cells/ru2/two_hop/Ti_eL/signed",
+   "v": -95.46391430399075,
+   "fmt": "f1"
+  },
+  {
+   "id": "cap22",
+   "src": "l200a4/cells/ru2/two_hop/Ti_eR/signed",
+   "v": -105.29919748751833,
+   "fmt": "f1"
+  },
+  {
+   "id": "cap23",
+   "src": "l200a4/LI2_ru2",
+   "v": -0.04751471539703847,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap24",
+   "src": "l200a4/LI2_carrier",
+   "v": 0.17399138353637195,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap25",
+   "src": "l200a4/overlap/n_shared",
+   "v": 3,
+   "fmt": "d"
+  },
+  {
+   "id": "cap26",
+   "src": "l200a4/overlap/n_targets_carrier",
+   "v": 80,
+   "fmt": "d"
+  },
+  {
+   "id": "cap27",
+   "src": "l200a4/overlap/n_targets_ru2",
+   "v": 61,
+   "fmt": "d"
+  },
+  {
+   "id": "cap28",
+   "src": "l200a4/overlap/J_same",
+   "v": 0.021739130434782608,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap29",
+   "src": "l200a4/overlap/premotor/J_mirror",
+   "v": 0.0,
+   "fmt": "f1"
+  },
+  {
+   "id": "cap30",
+   "src": "l200a4/cells/carrier/x_mean",
+   "v": 0.3891147971153259,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap31",
+   "src": "l200a4/cells/ru2/x_mean",
+   "v": 0.2994140883286794,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap32",
+   "src": "l198s/relay/census_x_mean_3seed",
+   "v": 0.3289374311765035,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap33",
+   "src": "l200r/seeds/0",
+   "v": 3705,
+   "fmt": "d"
+  },
+  {
+   "id": "cap34",
+   "src": "l200r/seeds/15",
+   "v": 3720,
+   "fmt": "d"
+  },
+  {
+   "id": "cap35",
+   "src": "l200r/arms/sc25/meanR",
+   "v": 0.783,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap36",
+   "src": "l200r/arms/sc25/mean14R",
+   "v": 0.585,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap37",
+   "src": "l200r/arms/l2c/meanR",
+   "v": 0.296,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap38",
+   "src": "l200r/arms/l2c/mean14R",
+   "v": 0.0,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap39",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/mean",
+   "v": -0.4872,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap40",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/ci95/0",
+   "v": -0.5906,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap41",
+   "src": "l200r/contrasts/R_l2c_minus_sc25/ci95/1",
+   "v": -0.3838,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap42",
+   "src": "l200r/arms/l2/meanL",
+   "v": 0.843,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap43",
+   "src": "l200r/arms/l2/L_vs_base/mean",
+   "v": 0.5504,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap44",
+   "src": "l200r/arms/l2/L_vs_base/ci95/0",
+   "v": 0.4651,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap45",
+   "src": "l200r/arms/l2/L_vs_base/ci95/1",
+   "v": 0.6357,
+   "fmt": "s3"
+  },
+  {
+   "id": "cap46",
+   "src": "l200r/base/meanL",
+   "v": 0.293,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap47",
+   "src": "l200r/arms/l2k/meanL",
+   "v": 0.898,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap48",
+   "src": "l200r/arms/l2k/x_carrier",
+   "v": 0.38,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap49",
+   "src": "l200r/base/x_carrier",
+   "v": 0.38,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap50",
+   "src": "l200r/arms/l2c/meanL",
+   "v": 0.902,
+   "fmt": "f3"
+  },
+  {
+   "id": "cap51",
+   "src": "l200r/bands/super_mean_min",
+   "v": 0.6,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap52",
+   "src": "l200r/bands/signature_mean14_min",
+   "v": 0.25,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap53",
+   "src": "l199p/datasets/S/n",
+   "v": 96,
+   "fmt": "d"
+  },
+  {
+   "id": "cap54",
+   "src": "l199p/datasets/S/W",
+   "v": 150,
+   "fmt": "d"
+  },
+  {
+   "id": "cap55",
+   "src": "l199p/datasets/S/pulse",
+   "v": 500,
+   "fmt": "d"
+  },
+  {
+   "id": "cap56",
+   "src": "l199p/datasets/S/B/graphs/cutwA/theta/value",
+   "v": 172.3453838008853,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap57",
+   "src": "l199p/datasets/S/B/graphs/cutwA/theta/se",
+   "v": 3.935793370010476,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap58",
+   "src": "l199p/datasets/S/B/graphs/sc25/theta/value",
+   "v": 54.61250206206472,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap59",
+   "src": "l199p/datasets/S/B/graphs/sc25/theta/se",
+   "v": 5.4340221643121875,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap60",
+   "src": "l199p/datasets/S/B/dtheta/value",
+   "v": -117.73288173882057,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap61",
+   "src": "l199p/datasets/S/B/dtheta/ci95/0",
+   "v": -130.97885046023407,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap62",
+   "src": "l199p/datasets/S/B/dtheta/ci95/1",
+   "v": -104.48691301740708,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap63",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_fR/mean_deg",
+   "v": 101.79866393295053,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap64",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_eR/mean_deg",
+   "v": 107.94476073987653,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap65",
+   "src": "l199p/datasets/S/C/cutwA/Delta/mean_deg",
+   "v": -5.081101934997697,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap66",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_fR/mean_deg",
+   "v": 93.32491195778663,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap67",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_eR/mean_deg",
+   "v": -150.25411825521732,
+   "fmt": "f0"
+  },
+  {
+   "id": "cap68",
+   "src": "l199p/datasets/S/C/cutwA/alpha/Ti_eR/R",
+   "v": 0.9480734389321386,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap69",
+   "src": "l199p/datasets/S/C/sc25/alpha/Ti_eR/R",
+   "v": 0.7015053431204614,
+   "fmt": "f2"
+  },
+  {
+   "id": "cap70",
+   "src": "l199p/datasets/S/C/sc25/Delta/mean_deg",
+   "v": -116.01801641082564,
+   "fmt": "s0"
+  },
+  {
+   "id": "cap71",
+   "src": "l199p/datasets/W/B/dtheta/value",
+   "v": -39.06000948217678,
+   "fmt": "s0"
+  }
+ ]
+}

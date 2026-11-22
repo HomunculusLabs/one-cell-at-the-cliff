@@ -1,0 +1,43 @@
+{
+ "c0a135_pass": true,
+ "c0a175_pass": true,
+ "c0a187_pass": true,
+ "c0a198_pass": true,
+ "replay_checks": 0,
+ "replay_max": 0.0,
+ "c0a135_max": 0.0,
+ "c0a135_checks": 92,
+ "c0a135_pairs": [
+  [
+   "cutwA",
+   "cutwA"
+  ],
+  [
+   "sc25",
+   "cutng25"
+  ]
+ ],
+ "g_cutwA": 0.14365819573402408,
+ "g_cutwA_stored_exact": true,
+ "c0a175_max": 0.0,
+ "c0a175_checks": 50,
+ "c0a175_arms": [
+  "cutwA",
+  "sc25"
+ ],
+ "c0a175_seed": 3545,
+ "c0a187_max": 0.0,
+ "c0a187_checks": 55,
+ "c0a187_arms": [
+  "cutwA",
+  "sc25"
+ ],
+ "c0a187_seed": 3609,
+ "c0a198_max": 0.0,
+ "c0a198_checks": 59,
+ "c0a198_arms": [
+  "cutwA",
+  "sc25"
+ ],
+ "c0a198_seed": 3673
+}

@@ -1,0 +1,101 @@
+{
+ "card": "C0A-166 halting anchor for L166",
+ "slice_sha": {
+  "a": "22f257e25087a1d2",
+  "b": "756e77f0a0518717"
+ },
+ "carrier": [
+  "Tr_fL",
+  "Tr_eL",
+  "Tr_eR",
+  "Ta_aL",
+  "Ta_aR",
+  "Ta_bR",
+  "Sr_aL",
+  "Sr_bL"
+ ],
+ "control": [
+  "Ti_fL",
+  "Ti_fR",
+  "Ti_eL",
+  "Ti_eR",
+  "Tr_fR",
+  "Pr_aL",
+  "Pr_aR",
+  "Pr_bL",
+  "Sr_aR"
+ ],
+ "floor": 0.2,
+ "carrier_wilson_margin": 0.060075100026028894,
+ "n_checks": 204,
+ "n_fail": 0,
+ "stored_pooled": {
+  "n_clear_f": 23,
+  "n_clear_f_control": 2,
+  "med_carrier": 0.6961098419357329,
+  "med_control": 0.18493588764305458
+ },
+ "stored_per_file": {
+  "l154/raw_l154.npz": {
+   "n_clear_f": 23,
+   "n_clear_f_control": 2,
+   "med_carrier": 0.6595985215890314,
+   "med_control": 0.19000325984303945
+  },
+  "l150/raw_l150.npz": {
+   "n_clear_f": 24,
+   "n_clear_f_control": 2,
+   "med_carrier": 0.7189227147072201,
+   "med_control": 0.16455886214390858
+  }
+ },
+ "seeds": {
+  "l154/raw_l154.npz": [
+   801,
+   901,
+   3401,
+   3402,
+   3403,
+   3404,
+   3405,
+   3406,
+   3407,
+   3408,
+   3409,
+   3410,
+   3411,
+   3412,
+   3413,
+   3414,
+   3415,
+   3416
+  ],
+  "l150/raw_l150.npz": [
+   801,
+   901,
+   3365,
+   3366,
+   3367,
+   3368,
+   3369,
+   3370,
+   3371,
+   3372,
+   3373,
+   3374,
+   3375,
+   3376,
+   3377,
+   3378,
+   3379,
+   3380
+  ]
+ },
+ "mtimes": {
+  "l154/raw_l154.npz": 1795114498.2430763,
+  "l150/raw_l150.npz": 1795093638.9038072,
+  "l157/static.json": 1795126540.7499967,
+  "l162/static.json": 1795151828.2475116,
+  "l162/addendum3.json": 1795152056.5200884
+ }
+}

@@ -1,0 +1,9 @@
+CERT-bin fr[6] = np.float64(0.1) == 0.1: PASS
+CERT-fix o_s=0 reproduces l154_run.py AMPA + sin_t EXACTLY (max|d| 0.0): PASS
+offsets o_s (rng 164) = [503, 65, 105, 319, 115, 329, 708, 144, 877, 156, 837, 868, 450, 481, 316, 28]
+
+D1 drive bin-6 power  fix 3313.77 | rnd med 3313.77 [2882.31, 3665.85]
+D2 PLV_drive          fix 1.000000 (1.0 by construction) | rnd 0.312526  (free-phase floor at n=16: 0.2216)
+D3 arg S[6]           fix   -57.06 deg | rnd circular spread 87.4 deg
+
+GATE (PLV_drive(rnd) < 0.4): PASS -> WELL_POSED

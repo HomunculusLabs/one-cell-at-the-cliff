@@ -553,6 +553,18 @@
 > its title is the publisher's. Twelve passages of 2.6-2.12 and section 3
 > are rewritten from capitalised emphasis and bare arm codes into prose, with
 > no number added and no section renumbered. No key entered numbers.json.
+> Stage 10 (L201 tone-phase fold, owner-directed, 2026-11-22): 2.5 is
+> retitled and rewritten around the resolved timing statement. The gate-jitter
+> run of batch Q stays as the first run, its open status superseded by a
+> powered second run (no internal rhythm; the deletion elevation is signed by
+> the tone's phase) and a causal third run (the tone shifted half a period at
+> identical gates inverts the elevation; registered causal branch met, sign
+> refinement not met). The asymmetric two-pool picture enters 2.5 and the
+> Discussion as description: the base pools peak together, and with the
+> carrier removed the extensor's phase rotates by about a third of a period
+> while the flexor's holds. Abstract, section 1 and the section-4 timing card
+> follow. Four keys entered numbers.json first (l197b.timing, l199.causal,
+> l199.phase, l199.meta).
 
 ## Title
 
@@ -595,10 +607,10 @@ carrier-removed network keeps it (8 of 16) while the base and all three scan
 twins score 0. The carrier is sufficient, not unique, and set-dependent: of
 seven carrier-free cohorts mass-matched to the same window exactly one reaches
 the class (41 of 50), a downstream interneuron does so alone on the chopped
-readout (13 of 16), and the effect is absent at a stricter synapse floor.
-Which clock the timing follows is unresolved. The claim concerns one perturbed
-model graph, not the fly; we state a sign-specific prediction for unilateral
-DNp33 silencing.
+readout (13 of 16), and the effect is absent at a stricter synapse floor. The
+timing follows the phase of the external drive. The claim concerns one
+perturbed model graph, not the fly; we state a sign-specific prediction for
+unilateral DNp33 silencing.
 
 ## 1. Introduction
 
@@ -626,8 +638,9 @@ of the two motor pools, not their rates (§2.3).
 We do not claim uniqueness, mechanism or biology. One carrier-free cohort and
 one downstream interneuron reach the same class on the same readout. The route
 through that interneuron is neither necessary nor sufficient for the carrier's
-signature (§2.4). Which clock the timing follows is unresolved (§2.5). And
-every statement is about one perturbed model graph.
+signature (§2.4). The shared timing follows the phase of the external drive,
+not the gate edge or an internal rhythm (§2.5). And every statement is about
+one perturbed model graph.
 
 The cohort-level lineage that located this cell came first. It rests on four
 load-bearing results, restated with their present scope:
@@ -1269,42 +1282,83 @@ not separated from its gain adjustment. And the sham is the one eligible edge,
 so it shows that this edge differs from that one, not from large edges onto
 the relay in general.
 
-### 2.5 Which clock the timing follows is unresolved
+### 2.5 The shared timing follows the phase of the external drive
 
 If the shared component of §2.3 rides on the chopping gate, then moving the
 gate's onsets independently in each run should move the shared timing with
-them. Cross-seed antiphase should be recovered when two runs are compared at
-gate-aligned times and lost when they are compared at equal elapsed time. A
-registered discriminator tested this on the base and on the carrier-removed
-graph with 16 paired jitter schedules (batch Q), the on-time, tone, gain and
-noise held matched [l186.power].
-
-The deletion effect survives re-alignment, and neither clock wins. Cross-seed
-duty in the carrier-removed graph is .401 gate-aligned and .373 at equal
-elapsed time, against .126 and .083 on the base; the same-seed values are .858
-and .271 [l186.means]. The deletion contrast is +.275 [+.179, +.371]
+them. A first registered discriminator tested this on the base and on the
+carrier-removed graph with 16 paired jitter schedules (batch Q), the on-time,
+tone, gain and noise held matched [l186.power]. The deletion effect survived
+re-alignment, and neither clock won. Cross-seed duty in the carrier-removed
+graph is .401 gate-aligned and .373 at equal elapsed time, against .126 and
+.083 on the base [l186.means]. The deletion contrast is +.275 [+.179, +.371]
 gate-aligned and +.290 [+.181, +.400] by elapsed time, and their difference is
-−.015 [−.156, +.126] (seed-jackknife 95% intervals) [l186.contrasts]. By the
-registered margin and uncertainty rule this is the mixed, unresolved branch
-[l186.branch]. It is not evidence for two independent rhythms, and it is not
-evidence against gate-locking.
+−.015 [−.156, +.126] (seed-jackknife 95% intervals) [l186.contrasts]. By its
+registered rule that is the mixed, unresolved branch [l186.branch]. The run
+could not have resolved the question: its jitter band (600 steps wide) is
+barely larger than the 500-step readout window, so the two windows of a pair
+share 62% of their samples on average [l186.power]. Its open status is
+superseded by the two registered runs below.
 
-We state the status plainly because the run could not have resolved the
-question. The registered jitter band (600 steps wide) is barely larger than
-the 500-step window over which the statistic is computed, so the gate-aligned
-and elapsed-time windows of a pair share 62% of their samples on average. 70%
-of pair-segments share half or more, and 2% are disjoint [l186.power]. The
-alignment contrast is attenuated by construction. A decisive run needs a
-jitter of at least 1,000 steps or a readout window shorter than the jitter,
-and neither has been run.
+The second run had the power the first lacked: two designs of 96 fresh seeds
+per arm, and the clock difference is now pinned small and of opposite sign in
+the two, −.056 [−.082, −.029] and +.040 [+.012, +.068] [l197b.timing]. Its
+registered verdict is a no-vote, because the pooled deletion elevation fell
+below the registered bar on both clocks. The reason is that the elevation is
+signed by the phase of the external 0.7-Hz tone. It is +.237 [+.202, +.272]
+for pair-segments whose gate lag leaves the tone in phase and −.166 [−.196,
+−.136] for those that put it in antiphase, and the two cancel when pooled
+[l197b.timing]. Nor does the elevation persist on elapsed time: with the
+partner run undriven it is +.010 [−.013, +.034] and +.015 [−.007, +.036] in
+the two designs [l197b.timing]. The gate-or-elapsed dichotomy was therefore
+mis-posed. The tone itself runs on elapsed time while a gate is open, and the
+data show no internal rhythm.
 
-One descriptive observation comes out of the same traces. With the carrier
-present, the flexor and extensor pools peak about 100° and 90° before the
-carrier does at the drive frequency, consistently across seeds (resultant
+The third run manipulates the tone alone. On 16 fresh seeds (19931 to 19946),
+with the same settle state, the same noise and the canonical gate in every
+arm, one run of a pair is driven with the tone shifted by half a period
+[l199.causal]. The carrier-removal elevation is +.197 [+.108, +.286] and +.258
+[+.159, +.357] when both runs share a tone phase, unshifted or shifted, and
+−.170 [−.220, −.119] when they do not [l199.causal]. The within-minus-cross
+interaction is +.397 [+.288, +.506], against +.403 [+.345, +.462] for the
+correlational tone split of the second run [l199.causal, l197b.timing]. A
+timing locked to the gate edge predicts no difference between these classes,
+because the gates are identical. The registered causal branch is met. Its
+stricter sign refinement is not: the carrier-removed graph's own
+within-minus-cross contrast, +.096 [−.002, +.194], touches zero at the
+registered window [l199.causal].
+
+What the deletion changes is the pools' phase relation to the tone, and the
+change is carried by one pool (descriptive; no band was registered for it). We
+read the first-harmonic phase of each pool's rate trace against the tone, per
+seed [l199.phase]. On the base the flexor and extensor peaks lie within 5° of
+each other on the 96-seed design and within 22° on every batch, so the base
+pools move together. With the carrier removed their difference is 116° on that
+design, 129° on batch Q, and 94° and 126° on the causal batch [l199.phase].
+The relation rotates by about a third of a period, between quadrature and
+antiphase, and does not reach antiphase.
+
+It is the extensor that moves. Across the deletion its peak phase against the
+tone shifts by 102° and 112° on the two batches, while the flexor's shifts by
+8° and 10° [l199.phase]. The extensor's locking to the tone also loosens, from
+a resultant length of .95 to .70 [l199.phase]. The rotation depends on the
+drive design. The signed-offset profile rotates by 118° under the 500-step
+pulse and by 39° under the 250-step pulse, where the direct pool phases are
+dispersed (resultant length .49) [l199.phase].
+
+These are phase relations of rate traces at the drive frequency, not
+transmission delays. The causal test is one batch with one shift of half a
+period. It shifts the tone over the whole window, so it does not separate the
+tone's phase at gate onset from its phase during the pulse; a tone-reset arm
+that would separate them has not been run.
+
+One descriptive observation comes out of the first run's traces. With the
+carrier present, the flexor and extensor pools peak about 100° and 90° before
+the carrier does at the drive frequency, consistently across seeds (resultant
 length .92 and .75, n = 16) [l186.phase]. These are phase relations between
 signals that share a stimulus, not transmission delays. A removed cell is
-structurally absent, not silent, so no phase comparison across the deletion is
-available.
+structurally absent, not silent, so no phase comparison against the carrier
+across the deletion is available.
 
 ### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)
 
@@ -2413,8 +2467,11 @@ degree-preserving rewire of the carrier's edges flips in one draw of three
 class with the carrier present, and the title contrast does not hold in that
 network (§2.10, Table 5).
 
-Timing attribution: which clock the shared timing follows is unresolved
-(§2.5), and the run that would resolve it has not been done.
+Timing attribution: the shared timing follows the phase of the external drive
+(§2.5), on one causal batch with one shift of half a period. That batch does
+not separate the tone's phase at gate onset from its phase during the pulse,
+and the carrier-removed graph's own within-minus-cross contrast is not
+resolved from zero at the registered window (§2.5).
 
 Registration: hash agreement between a registration file and its result is an
 integrity check, not an external timestamp (§3.8).
@@ -2460,9 +2517,18 @@ different runs (193 of 240 pairs), and in the continuously driven segment the
 carrier-removed network is the one arm of the scan that keeps the structure in
 half its seeds (§2.3). That is why we describe the readout as antiphase duty
 and not as endogenous motor organisation: a network that is merely more
-reproducibly locked to a shared stimulus passes the same test. Whether the
-shared timing follows the stimulus gate or elapsed time is unresolved, and the
-experiment that left it unresolved could not have resolved it (§2.5).
+reproducibly locked to a shared stimulus passes the same test. The shared
+stimulus is the phase of the external drive. Shifting the tone by half a
+period in one run of a pair, at identical gates, inverts the deletion's
+cross-seed effect, and no elevation survives when the partner run is undriven
+(§2.5).
+
+The two pools are not affected alike. On the base they peak together against
+the drive. With the carrier removed the extensor's peak moves by about a third
+of a period while the flexor's holds, so their relation rotates partway toward
+antiphase without reaching it (§2.5). The deletion acts on the timing of one
+pool of the pair. We offer this as a description and not a mechanism: which
+input sets the extensor's phase once the carrier is gone is not known.
 
 The carrier is a sufficient route into the high class and not the only one.
 One of seven carrier-free cohorts matched on removal mass reaches it, raising

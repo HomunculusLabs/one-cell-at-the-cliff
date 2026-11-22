@@ -1,0 +1,31 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+========================================================================
+[L205] handedness static | NDRAW 2000 seed 20526
+[pins] substrate edge counts GREEN: base_closure 647,953 cutwA 644,177 cutng25 644,084 f4_closure 472,095 f4wA 469,618 f4ng 469,537 f4tw 469,519
+[pins] pool sizes invariant across all 7 substrates GREEN
+[null] permutation draws built (per-side counts held EXACT)
+------------------------------------------------------------------------
+[Ti] base_closure  fam base   M_L  16161.55 M_R  19684.17 m_L 288.599 m_R 345.336 A_cell -0.0895 pct 0.058 [null -0.0934,+0.0979]
+[Ti] cutwA         fam base   M_L  16131.31 M_R  19655.85 m_L 288.059 m_R 344.840 A_cell -0.0897 pct 0.058 [null -0.0937,+0.0983]
+[Ti] cutng25       fam base   M_L  16131.31 M_R  19655.85 m_L 288.059 m_R 344.840 A_cell -0.0897 pct 0.058 [null -0.0937,+0.0983]
+[Ti] f4_closure    fam floor4 M_L  14298.09 M_R  17660.45 m_L 255.323 m_R 309.833 A_cell -0.0965 pct 0.049 [null -0.0958,+0.1009]
+[Ti] f4wA          fam floor4 M_L  14270.62 M_R  17638.50 m_L 254.833 m_R 309.447 A_cell -0.0968 pct 0.048 [null -0.0961,+0.1008]
+[Ti] f4ng          fam floor4 M_L  14270.62 M_R  17638.50 m_L 254.833 m_R 309.447 A_cell -0.0968 pct 0.048 [null -0.0961,+0.1008]
+[Ti] f4tw          fam floor4 M_L  14270.62 M_R  17636.70 m_L 254.833 m_R 309.416 A_cell -0.0967 pct 0.048 [null -0.0962,+0.1007]
+[Ti] delta(f4wA-cutwA) A_cell -0.0071 pct 0.013 [null -0.0053,+0.0053]
+[Tr] base_closure  fam base   M_L  19510.00 M_R  20120.13 m_L 354.727 m_R 365.820 A_cell -0.0154 pct 0.365 [null -0.0715,+0.0731]
+[Tr] cutwA         fam base   M_L  19504.72 M_R  20118.34 m_L 354.631 m_R 365.788 A_cell -0.0155 pct 0.365 [null -0.0714,+0.0731]
+[Tr] cutng25       fam base   M_L  19504.72 M_R  20118.34 m_L 354.631 m_R 365.788 A_cell -0.0155 pct 0.365 [null -0.0714,+0.0731]
+[Tr] f4_closure    fam floor4 M_L  17653.47 M_R  18072.57 m_L 320.972 m_R 328.592 A_cell -0.0117 pct 0.401 [null -0.0740,+0.0752]
+[Tr] f4wA          fam floor4 M_L  17649.58 M_R  18070.78 m_L 320.901 m_R 328.560 A_cell -0.0118 pct 0.400 [null -0.0740,+0.0751]
+[Tr] f4ng          fam floor4 M_L  17649.58 M_R  18070.78 m_L 320.901 m_R 328.560 A_cell -0.0118 pct 0.400 [null -0.0740,+0.0751]
+[Tr] f4tw          fam floor4 M_L  17649.58 M_R  18070.78 m_L 320.901 m_R 328.560 A_cell -0.0118 pct 0.400 [null -0.0740,+0.0751]
+[Tr] delta(f4wA-cutwA) A_cell +0.0037 pct 0.912 [null -0.0044,+0.0045]
+[GATES] C1 False C2 False C3 False
+[C4 Ti] L keep 0.8072 edges / 0.8847 mass | R keep 0.8239 / 0.8972 | ratio 0.9797 / 0.9860
+[C4 Tr] L keep 0.8356 edges / 0.9049 mass | R keep 0.8243 / 0.8982 | ratio 1.0137 / 1.0074
+[C5 cutwA] shared-drive L 1356.172 R 1790.011 A -0.1379 pct 0.206 [null -0.2651,+0.2639]
+[C5 f4wA] shared-drive L 1118.457 R 1481.402 A -0.1396 pct 0.221 [null -0.2855,+0.2923]
+========================================================================
+L205 DONE 3s | BRANCH H_UNREGISTERED_SHAPE | C1 False C2 False C3 False | Ti A_cell f4wA -0.0968 cutwA -0.0897

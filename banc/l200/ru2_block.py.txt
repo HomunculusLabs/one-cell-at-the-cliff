@@ -1,0 +1,339 @@
+# ======================= L200 RU2 BLOCK (additive) =======================
+# The ru2 left-tibia phenotype. Everything above is the L198 harness VERBATIM
+# (its twin block re-pointed READ-ONLY at the frozen l198/selection.json, so
+# GEN["ru2"] is L198's own graph object). Selection + A4 are ZERO-ROLLOUT and
+# follow the rules frozen in l200/PREREG.md (stage 1) BEFORE this block was
+# first executed.
+GI_RU2 = 70994
+assert TW_GI[TW_NAMES.index("ru2")] == GI_RU2, "ru2 id drift vs the frozen L198 selection (STOP)"
+R198 = json.load(open("l198/results_l198.json"))
+assert R198["status"] == "FINAL" and R198["arms"]["ru2"]["removed"] == GI_RU2
+assert (R198["arms"]["ru2"]["kL"], R198["arms"]["ru2"]["meanL"]) == (16, 0.84)
+assert (R198["base"]["kL"], R198["base"]["meanL"]) == (0, 0.262)
+assert R198["base"]["x_carrier"] == 0.3906 and R198["arms"]["ru2"]["x_carrier"] == 0.5926
+G198_RU2 = float(json.load(open("l198/gains_w3.json"))["gain"]["ru2"])
+assert G198_RU2 == R198["arms"]["ru2"]["gain"] == 0.14322753667831417
+RU2_INFO = cell_info(GI_RU2)
+assert RU2_INFO["cell_type"] == "IN07B031" and RU2_INFO["side"] == "right", RU2_INFO
+assert EFF_SIGN[GI_RU2] == -1.0 and is_cord_g[GI_RU2] and in_wA[GI_RU2]
+_absw_all = np.abs(vals_all) * np.where(vals_all < 0, BETA, 1.0)   # model-true |Wb|
+_sgnw_all = vals_all * np.where(vals_all < 0, BETA, 1.0)           # model-true signed
+MN = {pk: gi_wA[POOLS["cutwA"][pk]] for pk in ("Ti_fL", "Ti_eL", "Ti_fR", "Ti_eR")}
+for _pk in MN:
+    assert np.array_equal(MN[_pk], _pool_gi[_pk])
+
+
+def _premotor(side):
+    mn = np.concatenate([MN[f"Ti_f{side}"], MN[f"Ti_e{side}"]])
+    s_ = np.unique(src_all[emask_wA & np.isin(dst_all, mn)])
+    return s_[~is_motor_g[s_]]
+
+
+PM = {sd: _premotor(sd) for sd in "LR"}
+is_pm = {sd: np.zeros(Nall, bool) for sd in "LR"}
+for _sd in "LR":
+    is_pm[_sd][PM[_sd]] = True
+assert len(PM["L"]) == 1910, len(PM["L"])        # ref_probe pin (pre-PREREG)
+
+
+def _mass_onto(dst_mask):
+    m = emask_wA & dst_mask[dst_all]
+    o = np.zeros(Nall)
+    np.add.at(o, src_all[m], _absw_all[m])
+    n = np.zeros(Nall, np.int64)
+    np.add.at(n, src_all[m], 1)
+    return o, n
+
+
+OW_PM, N_PM = {}, {}
+for _sd in "LR":
+    OW_PM[_sd], N_PM[_sd] = _mass_onto(is_pm[_sd])
+OW_PMS, N_PMS = _mass_onto(is_pm["L"] & is_pm["R"])
+_xb_g = np.zeros(Nall)
+_xb_g[gi_wA] = _xbar
+_drv_g = np.zeros(Nall)
+_drv_g[gi_wA] = _drv
+DLg, DRg = _xb_g * OW_PM["L"], _xb_g * OW_PM["R"]
+DL_REF = float(DLg[GI_RU2])
+D_RU2 = float(_drv_g[GI_RU2])
+assert int(N_PM["L"][GI_RU2]) == 5 and abs(DL_REF - 7.976961341606866) < 1e-9, DL_REF
+assert D_RU2 == [r for r in SEL["runners_up"] if r["gi"] == GI_RU2][0]["delivered_drive"]
+PRIOR200 = set(PRIOR) | set(TW_GI)
+is_prior200 = np.zeros(Nall, bool)
+is_prior200[sorted(PRIOR200)] = True
+# --- homolog (secondary arm l2h): same cell_type, LEFT side ---
+_ct_ser = _ann1["cell_type"].astype(str)
+_sd_ser = _ann1["side"].astype(str).str.lower()
+_hom_idx = _ct_ser.index[((_ct_ser == RU2_INFO["cell_type"]) & (_sd_ser == "left")).to_numpy()].to_numpy()
+HOM_CAND = [int(g) for g in _hom_idx if in_wA[g] and is_cord_g[g] and not is_motor_g[g]
+            and not is_dng100_g[g] and not is_prior200[g]]
+HOM_CAND.sort(key=lambda g: (-_drv_g[g], g))
+HOM_GI = HOM_CAND[0] if HOM_CAND else None
+POOL_L = (in_wA & is_cord_g & ~is_prior200 & ~is_motor_g & ~is_dng100_g
+          & (EFF_SIGN == EFF_SIGN[GI_RU2]))
+if HOM_GI is not None:
+    POOL_L[HOM_GI] = False
+assert not POOL_L[GI_RU2] and not POOL_L[GI_CARRIER]
+
+
+def _info200(g):
+    g = int(g)
+    ci = cell_info(g)
+    ci.update(x_mean=float(_xb_g[g]), total_drive=float(_drv_g[g]),
+              total_drive_ratio=float(_drv_g[g] / D_RU2),
+              dL=float(DLg[g]), dR=float(DRg[g]), dL_ratio=float(DLg[g] / DL_REF),
+              edges_onto_PM_L=int(N_PM["L"][g]), edges_onto_PM_R=int(N_PM["R"][g]),
+              mass_onto_PM_L=float(OW_PM["L"][g]), mass_onto_PM_R=float(OW_PM["R"][g]),
+              in_PM_L=bool(is_pm["L"][g]), in_PM_R=bool(is_pm["R"][g]),
+              in_edges=int((emask_wA & (dst_all == g)).sum()),
+              direct_onto={pk: _direct_onto(g, pk) for pk in _pool_gi},
+              edge_from_carrier=_edge(GI_CARRIER, g), edge_to_carrier=_edge(g, GI_CARRIER),
+              edge_from_ru2=_edge(GI_RU2, g), edge_to_ru2=_edge(g, GI_RU2))
+    return ci
+
+
+def select_left():
+    cand = np.where(POOL_L)[0]                       # global gi
+    d = DLg[cand]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        score = np.where(d > 0, np.abs(np.log(d / DL_REF)), np.inf)
+        tie = np.where(_drv_g[cand] > 0, np.abs(np.log(_drv_g[cand] / D_RU2)), np.inf)
+    o = np.lexsort((cand, tie, score))               # score, then tie, then gi
+    rows = []
+    for j in o[:5]:
+        r = _info200(cand[j])
+        r.update(rank=len(rows) + 1, abs_log_dL_ratio=float(score[j]),
+                 abs_log_total_drive_ratio=float(tie[j]))
+        rows.append(r)
+    return dict(
+        rule="ascending |log(dL_c/dL_ru2)| over POOL_L; tie-break |log(total-drive "
+             "ratio)|, then gi; dL = x_mean (stored 3-seed census of the k=24 base) x "
+             "sum of model-true |Wb| over the cell's base edges onto the left-Ti "
+             "premotor pool PM_L (PREREG l200)",
+        pool="in k=24 base & cord interneuron & eff sign == ru2's & not prior-arm "
+             "(L198 PRIOR + L198's six cells) & not motor & not DNg100 & not the homolog pick",
+        census_seeds=[801, 901, 3561], pool_n=int(len(cand)),
+        pool_n_positive_dL=int((d > 0).sum()), prior_arm_cells_n=len(PRIOR200),
+        PM_L_n=int(len(PM["L"])), PM_R_n=int(len(PM["R"])),
+        PM_shared_n=int((is_pm["L"] & is_pm["R"]).sum()),
+        dL_ref=DL_REF, ru2=_info200(GI_RU2), top5=rows,
+        picks=[int(rows[0]["gi"]), int(rows[1]["gi"])],
+        homolog=(_info200(HOM_GI) if HOM_GI is not None else None),
+        homolog_candidates=HOM_CAND)
+
+
+SEL200 = select_left()
+SEL200_PATH = f"{OUT}/selection.json"
+assert all(np.isfinite(r["abs_log_dL_ratio"]) for r in SEL200["top5"])
+_top5 = [int(r["gi"]) for r in SEL200["top5"]]
+assert len(set(_top5)) == 5
+if MODE == "static":
+    assert os.path.exists(PREREG_PATH), "PREREG (selection rule) first (STOP)"
+    if os.path.exists(SEL200_PATH):  # idempotent re-run: must reproduce the frozen picks
+        _frz2 = json.load(open(SEL200_PATH))
+        assert [int(r["gi"]) for r in _frz2["top5"]] == _top5, "selection drift (STOP)"
+        assert (_frz2["homolog"] or {}).get("gi") == HOM_GI
+    else:
+        SEL200["prereg_sha256_at_selection"] = prereg_sha()
+        atomic_json(SEL200_PATH, SEL200)
+else:
+    _frz2 = json.load(open(SEL200_PATH))
+    assert [int(r["gi"]) for r in _frz2["top5"]] == _top5, "selection drift (STOP)"
+    assert (_frz2["homolog"] or {}).get("gi") == HOM_GI
+LT_NAMES = ["lt1", "lt2"]
+LT_GI = [int(g) for g in SEL200["picks"]]
+add_alias("l2", "ru2")
+add_alias("l2F", "ru2")
+for _n, _g in zip(LT_NAMES, LT_GI):
+    add_arm(_n, _g)
+    add_alias(_n + "F", _n)
+add_arm_multi("l2c", [GI_RU2, GI_CARRIER])
+add_alias("l2cF", "l2c")
+add_alias("l2k", "ru2")
+add_alias("l2kF", "ru2")
+add_base_alias("bk")
+if HOM_GI is not None:
+    add_arm("l2h", HOM_GI)
+assert WB["l2"] is WB["ru2"] and WB["l2k"] is WB["ru2"] and WB["bk"] is Wb_wA
+# replay clamp: carrier's entry <- the same-step cutwA carrier value
+CARRIER_LOC = int(loc_wA[GI_CARRIER])
+assert CARRIER_LOC == 467
+REPLAY = {a: int(LOC_OF(a)[GI_CARRIER]) for a in ("l2k", "l2kF", "bk")}
+assert REPLAY["bk"] == 467 and all(v >= 0 for v in REPLAY.values())
+assert not (set(REPLAY) & set(CLAMP)) and not (set(REPLAY) & set(CLAMPF))
+# CERT-SUB for the new graphs (L187 loop form, k-cell expected set)
+_new_graphs = {"lt1": [LT_GI[0]], "lt2": [LT_GI[1]], "l2c": sorted([GI_RU2, GI_CARRIER])}
+if HOM_GI is not None:
+    _new_graphs["l2h"] = [HOM_GI]
+for _nm, _want in _new_graphs.items():
+    _g = GEN[_nm]
+    _ex = [int(x) for x in np.setdiff1d(_g["drop"], cutk_drop["cutwA"])]
+    assert _ex == _want, (_nm, _ex)
+    _gi_a = np.where(_g["loc"] >= 0)[0]
+    assert len(_gi_a) == _g["n"] == n_cutk["cutwA"] - len(_ex)
+    assert np.array_equal(_g["loc"][_gi_a], np.arange(_g["n"]))
+    _d, _s, _v = _coo_gi(WB[_nm], _gi_a)
+    _kp = ~np.isin(_base_coo[0], _ex) & ~np.isin(_base_coo[1], _ex)
+    assert np.array_equal(_d, _base_coo[0][_kp]), _nm
+    assert np.array_equal(_s, _base_coo[1][_kp]), _nm
+    assert np.array_equal(_v, _base_coo[2][_kp]), _nm
+    _bl = loc_wA[_gi_a]
+    assert (_bl >= 0).all()
+    assert torch.equal(gen_init(_nm, _X0o_t, _X0n_t), _base_init[_bl]), _nm
+    assert np.array_equal(_g["pos_in_new"], wA_pos_in_new[_bl]), _nm
+    for _pk in POOLS["cutwA"]:
+        assert np.array_equal(_gi_a[POOLS[_nm][_pk]],
+                              gi_wA[POOLS["cutwA"][_pk]]), (_nm, _pk)
+    assert np.array_equal(_gi_a[mech[_nm]], gi_wA[mech["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[motor[_nm]], gi_wA[motor["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[dng100[_nm]], gi_wA[dng100["cutwA"]]), _nm
+    CERT_SUB[_nm] = dict(removed=_ex, n=_g["n"], edges=_g["edges"],
+                         edges_removed=int((~_kp).sum()))
+log(f"CERT-SUB static ({list(_new_graphs)} == base minus the cell(s), maps restricted "
+    f"EXACT): PASS | twins {dict(zip(LT_NAMES, LT_GI))} | homolog {HOM_GI}")
+N_TRACK_198 = len(TRACK)
+assert N_TRACK_198 == 55 and GI_RU2 in TRACK
+TRACK = TRACK + [g for g in LT_GI + ([HOM_GI] if HOM_GI is not None else [])
+                 if g not in TRACK]
+assert len(set(TRACK)) == len(TRACK)
+CTR_CELLS = [GI_CARRIER, GI_RELAY, GI_SC40, GI_DOWN, TW_GI[0], GI_RU2]
+CTR_CELLS = CTR_CELLS + [g for g in LT_GI if g not in CTR_CELLS]
+CTR_LOC = {}
+for _a in ["cutwA"] + GEN_ARMS:
+    _l = LOC_OF(_a)
+    CTR_LOC[_a] = [(g, int(_l[g])) for g in CTR_CELLS if _l[g] >= 0]
+assert [g for g, _ in CTR_LOC["cutwA"]] == CTR_CELLS
+assert GI_RU2 not in [g for g, _ in CTR_LOC["l2k"]] and GI_CARRIER in [g for g, _ in CTR_LOC["l2k"]]
+assert GI_CARRIER not in [g for g, _ in CTR_LOC["l2c"]]
+SLOT0 = "l2h" if HOM_GI is not None else "sc25F"
+ALL_ARMS = ["sc25", SLOT0, "l2", "l2F", "lt1", "lt1F", "lt2", "lt2F", "l2c", "l2cF",
+            "l2k", "l2kF"]
+assert all(a in GEN for a in ALL_ARMS) and len(set(ALL_ARMS)) == 12
+
+
+def _a4():
+    """A4 mirror-symmetry probe — wiring only (PREREG l200 §A4, metrics fixed there)."""
+    em = emask_wA
+    rs, ra = {}, {}
+    for pk, mn in MN.items():
+        mk = em & np.isin(dst_all, mn)
+        r = np.zeros(Nall)
+        np.add.at(r, src_all[mk], _sgnw_all[mk])
+        a = np.zeros(Nall)
+        np.add.at(a, src_all[mk], _absw_all[mk])
+        rs[pk], ra[pk] = r, a
+    nm = em & ~is_motor_g[dst_all]                   # s -> non-motor intermediate p
+    A2, S2 = {}, {}
+    for pk in MN:
+        a = np.zeros(Nall)
+        np.add.at(a, src_all[nm], _absw_all[nm] * ra[pk][dst_all[nm]])
+        s = np.zeros(Nall)
+        np.add.at(s, src_all[nm], _sgnw_all[nm] * rs[pk][dst_all[nm]])
+        A2[pk], S2[pk] = a, s
+    A_side = {sd: A2[f"Ti_f{sd}"] + A2[f"Ti_e{sd}"] for sd in "LR"}
+    with np.errstate(divide="ignore", invalid="ignore"):
+        LI2 = (A_side["R"] - A_side["L"]) / (A_side["R"] + A_side["L"])
+        LI1 = (OW_PM["R"] - OW_PM["L"]) / (OW_PM["R"] + OW_PM["L"])
+
+    def tgt(s):
+        return set(int(x) for x in dst_all[em & (src_all == s)])
+
+    def typed(gs, flip):
+        out = set()
+        for g in gs:
+            if g not in _ann1.index:
+                continue
+            ct, sd = str(_ann1.loc[g, "cell_type"]), str(_ann1.loc[g, "side"]).lower()
+            if ct in ("", "nan") or sd not in ("left", "right"):
+                continue
+            if flip:
+                sd = "left" if sd == "right" else "right"
+            out.add((ct, sd))
+        return out
+
+    def jac(a, b):
+        return (len(a & b) / len(a | b)) if (a | b) else None
+
+    cells = {"carrier": GI_CARRIER, "ru2": GI_RU2, "lt1": LT_GI[0], "lt2": LT_GI[1]}
+    if HOM_GI is not None:
+        cells["l2h"] = HOM_GI
+    out = dict(cells={})
+    for name, s in cells.items():
+        ci = cell_info(s)
+        tot = float(OW_EFF[s])
+        out["cells"][name] = dict(
+            gi=int(s), cell_type=ci["cell_type"], side=ci["side"], eff_sign=ci["eff_sign"],
+            super_class=ci["super_class"], out_edges=int(OW_N[s]), out_mass_eff=tot,
+            x_mean=float(_xb_g[s]),
+            one_hop=dict(
+                PM_L=dict(edges=int(N_PM["L"][s]), mass=float(OW_PM["L"][s]),
+                          share=float(OW_PM["L"][s] / tot), drive=float(DLg[s])),
+                PM_R=dict(edges=int(N_PM["R"][s]), mass=float(OW_PM["R"][s]),
+                          share=float(OW_PM["R"][s] / tot), drive=float(DRg[s])),
+                shared=dict(edges=int(N_PMS[s]), mass=float(OW_PMS[s]))),
+            LI1=(None if not np.isfinite(LI1[s]) else float(LI1[s])),
+            direct_onto={pk: _direct_onto(s, pk) for pk in _pool_gi},
+            two_hop={pk: dict(signed=float(S2[pk][s]), abs=float(A2[pk][s])) for pk in MN},
+            A_L=float(A_side["L"][s]), A_R=float(A_side["R"][s]),
+            LI2=(None if not np.isfinite(LI2[s]) else float(LI2[s])))
+    Tc, Tr = tgt(GI_CARRIER), tgt(GI_RU2)
+    pmL, pmR = set(int(x) for x in PM["L"]), set(int(x) for x in PM["R"])
+    Tc_pm, Tr_pm = Tc & pmR, Tr & pmL
+    out["overlap"] = dict(
+        n_targets_carrier=len(Tc), n_targets_ru2=len(Tr), n_shared=len(Tc & Tr),
+        J_same=jac(Tc, Tr), J_mirror=jac(typed(Tc, False), typed(Tr, True)),
+        J_type_sideblind=jac({t for t, _ in typed(Tc, False)}, {t for t, _ in typed(Tr, False)}),
+        n_typed_carrier=len(typed(Tc, False)), n_typed_ru2=len(typed(Tr, False)),
+        premotor=dict(n_carrier_in_PM_R=len(Tc_pm), n_ru2_in_PM_L=len(Tr_pm),
+                      n_carrier_in_PM_L=len(Tc & pmL), n_ru2_in_PM_R=len(Tr & pmR),
+                      J_same=jac(Tc_pm, Tr_pm),
+                      J_mirror=jac(typed(Tc_pm, False), typed(Tr_pm, True)),
+                      mirror_shared_types=sorted(t for t, _ in (typed(Tc_pm, False)
+                                                               & typed(Tr_pm, True)))))
+    ctx = in_wA & is_cord_g & ((A_side["L"] + A_side["R"]) > 0)
+    v = LI2[ctx]
+    out["context"] = dict(
+        n_cord_with_two_hop=int(ctx.sum()), LI2_median=float(np.median(v)),
+        LI2_p10=float(np.percentile(v, 10)), LI2_p90=float(np.percentile(v, 90)),
+        ru2_LI2_percentile=float((v <= LI2[GI_RU2]).mean() * 100),
+        frac_cord_LI2_le_minus_20=float((v <= -.2).mean()),
+        frac_cord_LI2_ge_plus_20=float((v >= .2).mean()))
+    lc, lr = out["cells"]["carrier"]["LI2"], out["cells"]["ru2"]["LI2"]
+    if lc is not None and lr is not None and lc >= .2 and lr <= -.2:
+        lab = "A4_mirror"
+    elif (lc is not None and lr is not None and abs(lc) >= .2 and abs(lr) >= .2
+          and (lc > 0) == (lr > 0)):
+        lab = "A4_same_side"
+    else:
+        lab = "A4_no_laterality_contrast"
+    out["label"] = lab
+    out["LI2_carrier"], out["LI2_ru2"] = lc, lr
+    return out
+
+
+if MODE == "static":
+    A4 = _a4()
+    if os.path.exists(f"{OUT}/a4_wiring.json"):
+        assert json.load(open(f"{OUT}/a4_wiring.json"))["label"] == A4["label"]
+    A4["prereg_sha256_at_analysis"] = prereg_sha()
+    atomic_json(f"{OUT}/a4_wiring.json", A4)
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L200 static pins (zero rollouts): fresh-batch absence, stored-census "
+               "left-matched selection, new graphs + CERT-SUB, stored gains, A4 label.",
+        src="banc l198 twin_run.py transform (l200 build_ru2.py)",
+        fresh_batch=[B44[0], B44[-1]], anchors_bit=ANCH_BIT, anchor_175=ANCH_175,
+        anchor_187=ANCH_187, anchor_198=ANCH_198,
+        npz_scanned_for_seed_absence=N_NPZ_SCANNED, seed_absence="PASS",
+        cert_sub={k: CERT_SUB[k] for k in list(_new_graphs) + ["sc25", "ru2"]},
+        gi=dict(ru2=GI_RU2, carrier=GI_CARRIER, lt1=LT_GI[0], lt2=LT_GI[1], l2h=HOM_GI),
+        top5=_top5, slot0=SLOT0, all_arms=ALL_ARMS, replay=REPLAY,
+        track=TRACK, n_track_198=N_TRACK_198, ctr_cells=CTR_CELLS,
+        pool_n=SEL200["pool_n"], dL_ref=DL_REF,
+        arm_n={a: N_OF[a] for a in ALL_ARMS},
+        arm_edges={a: GEN[a]["edges"] for a in ALL_ARMS},
+        g_stored=dict(cutwA=G_CUTWA_STORED, sc25=G175["sc25"], l2=G198_RU2),
+        a4_label=A4["label"], n_wA=n_cutk["cutwA"]))
+    log(f"static.json + selection.json + a4_wiring.json written | fresh {B44[0]}..{B44[-1]} "
+        f"absent from {N_NPZ_SCANNED} npz | pool {SEL200['pool_n']} | picks {LT_GI} | "
+        f"homolog {HOM_GI} | A4 {A4['label']} | {time.time()-t0:.0f}s")
+    sys.exit(0)

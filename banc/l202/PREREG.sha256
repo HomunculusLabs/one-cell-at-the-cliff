@@ -1,0 +1,3 @@
+626be3aa86b63f754cfbbe81b61c051198955f4eb6e129fdbdd5566728c9f3ab  l202/PREREG.md
+frozen 2026-11-22 15:40:16 EST before the L202 harness (build_nec.py / blocks / verdict tail) was written or executed; only l202/ref_probe.py had run (zero rollouts: seed key scan, stored-arm file map, stored gain floats, frozen L200 selection rows).
+stage-2: static.json a05e01856c80b33217092d81c2e2a72f7d13264d104ee48f0885f895e8d32e35 | nec_run.py 2737c7a90cdf63f085e205bd0bc31fde66927a1d8d675670767df76b5e47aa89 | verdict_l202.py fc750748995da0131770e09ee1d493deadd99a5d07a4a4c54c3971494478bbd1 | FREEZE.json written 2026-11-22 15:45:50 EST before any rollout

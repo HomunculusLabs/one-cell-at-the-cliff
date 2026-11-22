@@ -1,0 +1,22 @@
+L199 Parts A-C — Part A verdict PH1_sign | A {'S': 'PH1_sign', 'W': 'PH_weak', 'V1': 'PH1_sign'} | B {'S': 'Hq', 'W': 'Hq', 'V1': 'H1'} | C {'S': 'Dq', 'W': 'Dq', 'V1': 'D1'}
+CERT-197b PASS; PREREG 01e23ae1c711012e
+[S] n 96 seeds, window 150, bins in/mid/anti {'inphase': 4642, 'mid': 8994, 'antiphase': 4604}
+    profile in / mid / anti: cutwA 0.186 / 0.236 / 0.465 ; sc25 0.423 / 0.299 / 0.298
+    slope (in - anti): cutwA -0.278 [-0.308, -0.249] | sc25 +0.125 [+0.075, +0.176] | I +0.403 [+0.345, +0.462] | pooled E +0.049 [+0.037, +0.061] -> PH1_sign
+    B: cutwA theta +172.3 (SE 3.9) R 0.159 ; sc25 theta +54.6 (SE 5.4) R 0.121 | dtheta -117.7 (SE 6.8) | phenotype theta +18.8 (SE 3.0) R 0.240 -> Hq
+    B octants (0,45,..,315): cutwA 0.21 0.15 0.24 0.44 0.50 0.34 0.21 0.18 ; sc25 0.45 0.41 0.39 0.36 0.31 0.20 0.18 0.34
+    C: cutwA Delta -5.1 R 0.77 n 96 (co-move) ; sc25 Delta -116.0 R 0.77 n 96 (intermediate) | paired shift -106.9 R 0.59 -> Dq
+[W] n 96 seeds, window 250, bins in/mid/anti {'inphase': 4532, 'mid': 9186, 'antiphase': 4522}
+    profile in / mid / anti: cutwA 0.113 / 0.169 / 0.329 ; sc25 0.232 / 0.239 / 0.342
+    slope (in - anti): cutwA -0.216 [-0.251, -0.182] | sc25 -0.110 [-0.160, -0.060] | I +0.106 [+0.044, +0.169] | pooled E +0.068 [+0.045, +0.090] -> PH_weak
+    B: cutwA theta +172.7 (SE 4.7) R 0.122 ; sc25 theta +133.7 (SE 8.6) R 0.084 | dtheta -39.1 (SE 10.0) | phenotype theta +35.9 (SE 11.4) R 0.077 -> Hq
+    B octants (0,45,..,315): cutwA 0.12 0.10 0.16 0.31 0.35 0.24 0.14 0.12 ; sc25 0.24 0.24 0.29 0.37 0.35 0.24 0.16 0.21
+    C: cutwA Delta +4.7 R 0.68 n 96 (co-move) ; sc25 Delta -76.2 R 0.49 n 96 (dispersed) | paired shift -73.0 R 0.39 -> Dq
+[V1] n 16 seeds, window 150, bins in/mid/anti {'inphase': 138, 'mid': 238, 'antiphase': 104}
+    profile in / mid / anti: cutwA 0.190 / 0.257 / 0.413 ; sc25 0.493 / 0.320 / 0.250
+    slope (in - anti): cutwA -0.223 [-0.340, -0.106] | sc25 +0.243 [+0.121, +0.366] | I +0.466 [+0.274, +0.658] | pooled E +0.083 [+0.011, +0.155] -> PH1_sign
+    B: cutwA theta +168.6 (SE 11.6) R 0.134 ; sc25 theta +32.4 (SE 9.6) R 0.162 | dtheta -136.3 (SE 18.9) | phenotype theta +12.7 (SE 5.4) R 0.275 -> H1
+    B octants (0,45,..,315): cutwA 0.20 0.16 0.27 0.43 0.43 0.34 0.21 0.19 ; sc25 0.52 0.47 0.39 0.34 0.25 0.20 0.20 0.44
+    C: cutwA Delta -6.9 R 0.74 n 16 (co-move) ; sc25 Delta -129.3 R 0.80 n 16 (alternate) | paired shift -123.6 R 0.51 -> D1
+[V1 @ W500, descriptive] slope cutwA -0.189 [-0.322, -0.055] | sc25 +0.459 [+0.313, +0.604] | I +0.647 [+0.435, +0.859] (PH1_sign); B H1
+predictions: {"Q1_cert": {"correct": true}, "Q2_S": {"base_slope_below0": true, "removed_slope_above0": true, "label_PH1_sign": true}, "Q3_W": {"removed_slope_below0": true}, "Q4_V1": {"I_ge15_ci_above0": true, "base_slope_below0": true, "label": "PH1_sign"}, "Q5_B": {"S_base_near180": true, "S_removed_near0": false, "S_label": "Hq", "W_not_H1": true}, "Q6_C": {"base_comove_all": true, "S_removed_label": "intermediate"}}

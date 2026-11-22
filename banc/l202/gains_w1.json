@@ -1,0 +1,50 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "l2": 0.14322753667831417,
+  "s2k": 0.1454454553127289,
+  "s2kF": 0.14365819573402408,
+  "lt5": 0.14364997029304508
+ },
+ "bis_gain": {
+  "cutwA": 0.14365819573402408,
+  "l2": 0.14322753667831417,
+  "lt5": 0.14364997029304508,
+  "sc25": 0.1454454553127289
+ },
+ "cert_gain": {
+  "bk2": 0.14365819573402408
+ },
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "l2": "bisect (this process) == stored EXACT",
+  "sc25": "bisect (this process) == stored EXACT",
+  "lt5": "bisect (this process), fresh",
+  "s2k": "sc25's re-bisected gain (== L175 stored EXACT); no bisect under the clamp",
+  "s2kF": "fixed base gain g_cutwA (stored float)"
+ },
+ "bisected": [
+  "cutwA",
+  "l2",
+  "lt5",
+  "sc25"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "l2": 5.339582761221262e-07,
+  "lt5": 5.339582761221262e-07,
+  "sc25": 3.1138459841414945e-05
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "l2": 0.10905557622512181,
+  "lt5": 0.10905557622512181,
+  "sc25": 0.10902497172355652
+ },
+ "threads": 1,
+ "stored_exact": {
+  "cutwA": true,
+  "l2": true,
+  "sc25": true
+ }
+}

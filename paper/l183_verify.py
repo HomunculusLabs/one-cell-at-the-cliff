@@ -62,6 +62,22 @@ an arm code's digits).  Two of the four finalization pins move (the text
 ledger and the built body); numbers.json and l183_fold.py are unchanged and
 keep their stage-8 pins.  Nothing was removed.
 
+L201 TONE-PHASE FOLD (2026-11-22, stage 10; receipt in LANE-LOG and
+banc/l201_worklog.md).  Five more declared edits (E90-E94: section 2.5
+rewritten around the resolved timing statement, the abstract / section 1 /
+section-4 timing sentences, the Discussion's two-pool paragraph) and four
+keys (l197b.timing, l199.causal, l199.phase, l199.meta).  Sections (1)-(4),
+(6) and (7) are unchanged and run over the stage-10 ledger; no class was added
+to section (3).  Section (5) GAINS the stage-10 block (the four keys
+re-derived from the stored results, the 1.96-se interval rule proved on
+gj.py and on every stored l197b interval, and one check per sentence-level
+reading, including that the retired "unresolved" timing statements are
+gone and that the carrier-removed relation is never worded as antiphase).
+One stage-9 check is re-pointed (its abstract string carries the one declared
+E91 sentence swap, asserted to be the whole difference).  Three of the four
+finalization pins move (numbers.json, the text ledger, the built body);
+l183_fold.py is unchanged.  Nothing was removed.
+
 Run: python3 paper/l183_verify.py     (stdlib only; zero rollouts)
 """
 import csv, hashlib, json, math, os, re, sys
@@ -762,6 +778,22 @@ if STAGE >= 9:
        _abs9.replace('not a transition beyond it', ''),
        '(5) stage 9: the abstract still words the result as a flip or a '
        'transition')
+    # L201 PIN MOVE (stage 10; receipt in LANE-LOG + banc/l201_worklog.md).
+    # OLD: the stage-9 abstract rendering must occur verbatim in the body.
+    # WHY: stage 10 (E91) declares one sentence substitution in that same
+    #   abstract (the timing sentence), so the verbatim stage-9 string can no
+    #   longer occur.  NEW (nothing loosened): the stage-9 rendering with
+    #   exactly the declared E91 substitution applied must occur verbatim, and
+    #   the substitution is asserted to be the ONLY difference between the
+    #   E60 and E91 templates.
+    if STAGE >= 10:
+        _e91 = next(e for e in TXT.EDITS if e['id'] == 'E91-abstract-timing')
+        _old91, _new91 = ('Which clock the timing follows is unresolved.',
+                          'The timing follows the phase of the external drive.')
+        ck(_e9['E60-abstract-yardstick']['new'].replace(_old91, _new91)
+           == _e91['new'] and _e9['E60-abstract-yardstick']['new'].count(_old91) == 1,
+           '(5) stage 10: E91 is not exactly E60 with the one declared sentence swap')
+        _abs9 = _abs9.replace(_old91, _new91)
     ck(_abs9 in re.sub(r'\s+', ' ', body) and _dis9.split('(\u00a72.1). ', 1)[1].strip()
        in re.sub(r'\s+', ' ', body[body.index('## 5. Discussion'):
                                    body.index('## 6. Data & code')]),
@@ -802,6 +834,168 @@ if STAGE >= 9:
           'headings unchanged' % (_R9['chopped_k'], _R9['n'], _C9['chopped_mean'],
                                   _B9['chopped_mean'], _R9['chopped_mean'],
                                   len(_fmt9), _caps_gone))
+# ---- L201 tone-phase fold (stage 10): the four keys and every reading -----
+if STAGE >= 10:
+    _e10 = {e['id']: e for e in TXT.EDITS if e['stage'] == 10}
+    ck(sorted(_e10) == ['E90-sec25-tone-phase', 'E91-abstract-timing',
+                        'E92-intro-timing', 'E93-limit-timing',
+                        'E94-discussion-two-pool']
+       and all(e['kind'] == 'rep' for e in _e10.values()),
+       '(5) stage 10 is not the five declared replacements')
+    _r7b = json.load(open(os.path.join(B, 'l197b', 'results_l197b.json')))
+    _r9p = json.load(open(os.path.join(B, 'l199', 'results_primary.json')))
+    _r9c = json.load(open(os.path.join(B, 'l199', 'results_causal.json')))
+    # the interval rule the keys apply where only value + se is stored is the
+    # registered jackknife normal rule: proved on gj.py's source AND on every
+    # stored interval it produced in these two runs
+    _gj = open(os.path.join(B, 'l197b', 'gj.py')).read()
+    ck('ci95=[float(full - 1.96 * se), float(full + 1.96 * se)]' in _gj,
+       '(5) stage 10: gj.jack is not the 1.96-se normal rule')
+    _nstored = 0
+    for _arm in _r7b['arms'].values():
+        for _k in ('A', 'T', 'D', 'T_on', 'T_off', 'A_inphase', 'A_antiphase'):
+            _d = _arm[_k]
+            ck(near(_d['ci95'][0], _d['value'] - 1.96 * _d['se'], 1e-12)
+               and near(_d['ci95'][1], _d['value'] + 1.96 * _d['se'], 1e-12),
+               '(5) stage 10: a stored l197b interval is not value +- 1.96 se')
+            _nstored += 1
+
+    def _vc10(d, nd=3):
+        lo, hi = d['ci95'] if 'ci95' in d else (d['value'] - 1.96 * d['se'],
+                                                 d['value'] + 1.96 * d['se'])
+        return dict(value=round(d['value'], nd), ci95=[round(lo, nd), round(hi, nd)])
+
+    def _wr10(x):
+        x = (x + 180.0) % 360.0 - 180.0
+        return 180.0 if x == -180.0 else x
+    # l197b.timing, field by field
+    _T = nums['l197b.timing']['v']
+    ck(_T['verdict'] == _r7b['verdict'] and _T['verdict'].startswith('NO_VOTE')
+       and _T['prereg_sha256'] == _r7b['prereg_sha256'][:16]
+       and open(os.path.join(B, 'l197b', 'PREREG.sha256')).read().split()[0]
+       .startswith(_T['prereg_sha256']),
+       '(5) stage 10: l197b verdict / prereg hash')
+    for _a in ('S', 'W'):
+        _s = _r7b['arms'][_a]
+        ck(all(_T[_a][k] == _vc10(_s[k]) for k in ('A', 'T', 'D', 'T_on', 'T_off',
+                                                     'A_inphase', 'A_antiphase',
+                                                     'A_in_minus_anti'))
+           and (_T[_a]['n'], _T[_a]['W'], _T[_a]['clock'], _T[_a]['mechanism'],
+                _T[_a]['R0_no_elevation'])
+           == (_s['n'], _s['W'], _s['clock'], _s['mechanism'], _s['R0_no_elevation']),
+           '(5) stage 10: l197b.timing.%s != results_l197b.json' % _a)
+    # l199.causal
+    _C = nums['l199.causal']['v']
+    _D = _r9c['D']
+    ck(_C['status'] == _r9c['status'] == 'FINAL' and _C['label'] == _D['label'] == 'CA1'
+       and _C['n'] == _D['n'] == len(_r9c['seeds']) == 16
+       and (_C['seed_lo'], _C['seed_hi']) == (_r9c['seeds'][0], _r9c['seeds'][-1])
+       and _r9c['seeds'] == list(range(_C['seed_lo'], _C['seed_hi'] + 1))
+       and _C['E_00'] == _vc10(_D['E_00']) and _C['E_PP'] == _vc10(_D['E_PP'])
+       and _C['E_X'] == _vc10(_D['E_X']) and _C['K_I'] == _vc10(_D['K_I'])
+       and _C['K_base'] == _vc10(_D['K']['cutwA'])
+       and _C['K_removed'] == _vc10(_D['K']['sc25'])
+       and _C['E_PP_minus_E_00'] == _vc10(_D['E_PP_minus_E_00'])
+       and _C['W500']['K_I'] == _vc10(_r9c['descriptive_W500']['K_I'])
+       and _C['removed_K_positive'] is _D['sign_conditions']['removed_K_positive'] is False
+       and _C['base_K_negative'] is _D['sign_conditions']['base_K_negative'] is True
+       and _r9c['predictions']['Q7']['CA1'] is True
+       and _r9c['predictions']['Q7']['CA1_sign'] is False
+       and _C['certs']['c0a_max'] == 0.0 and _C['certs']['gates_canonical'] is True,
+       '(5) stage 10: l199.causal != results_causal.json')
+    # l199.phase, recomputed from the stored datasets
+    _P = nums['l199.phase']['v']
+    for _ds, _d in _r9p['datasets'].items():
+        _c = _d['C']
+        for _g in ('cutwA', 'sc25'):
+            ck(_P[_ds]['C'][_g]['Delta'] == dict(deg=round(_c[_g]['Delta']['mean_deg'], 1),
+                                                R=round(_c[_g]['Delta']['R'], 2))
+               and all(_P[_ds]['C'][_g][p] == dict(deg=round(_c[_g]['alpha'][p]['mean_deg'], 1),
+                                                   R=round(_c[_g]['alpha'][p]['R'], 2))
+                       for p in ('Ti_fR', 'Ti_eR'))
+               and _P[_ds]['C'][_g]['label'] == _c[_g]['label'],
+               '(5) stage 10: l199.phase.%s.C.%s' % (_ds, _g))
+        ck(all(_P[_ds]['C']['shift'][p] == round(_wr10(_c['sc25']['alpha'][p]['mean_deg']
+                                                       - _c['cutwA']['alpha'][p]['mean_deg']), 1)
+               for p in ('Ti_fR', 'Ti_eR'))
+           and _P[_ds]['B']['dtheta'] == _vc10(_d['B']['dtheta'], 1)
+           and _P[_ds]['B']['theta_removed'] == _vc10(_d['B']['graphs']['sc25']['theta'], 1)
+           and _P[_ds]['B']['label'] == _d['B']['label'] == _r9p['labels']['B'][_ds]
+           and (_P[_ds]['n'], _P[_ds]['pulse'], _P[_ds]['W']) == (_d['n'], _d['pulse'], _d['W']),
+           '(5) stage 10: l199.phase.%s shift / B / design' % _ds)
+    for _phi, _c in _r9c['C_by_phi'].items():
+        ck(all(_P['causal'][_phi][g] == dict(deg=round(_c[g]['Delta']['mean_deg'], 1),
+                                             R=round(_c[g]['Delta']['R'], 2))
+               for g in ('cutwA', 'sc25')), '(5) stage 10: l199.phase.causal.' + _phi)
+    _M = nums['l199.meta']['v']
+    ck(_M['prereg_sha256'] == _r9p['prereg_sha256'][:16] == _r9c['prereg_sha256'][:16]
+       and open(os.path.join(B, 'l199', 'PREREG.sha256')).read().split()[0]
+       .startswith(_M['prereg_sha256'])
+       and _M['labels'] == _r9p['labels'] and _M['causal_label'] == 'CA1'
+       and all(_M['cert_197b'].values()) and _M['status'] == ['FINAL', 'FINAL'],
+       '(5) stage 10: l199.meta / prereg hash / CERT-197b')
+    # sentence-level readings of the stage-10 text, on the stored values
+    _b25 = body[body.index('### 2.5 '):body.index('### 2.6 ')]
+    _f25 = re.sub(r'\s+', ' ', _b25)
+    _base_d = {k: abs(_P[k]['C']['cutwA']['Delta']['deg']) for k in ('S', 'W', 'V1')}
+    _base_d.update({k: abs(_P['causal'][k]['cutwA']['deg']) for k in ('phi0', 'phiPI')})
+    _rem_d = [abs(_P['S']['C']['sc25']['Delta']['deg']), abs(_P['V1']['C']['sc25']['Delta']['deg']),
+              abs(_P['causal']['phi0']['sc25']['deg']), abs(_P['causal']['phiPI']['sc25']['deg'])]
+    ck(max(_base_d, key=_base_d.get) == 'phiPI' and max(_base_d.values()) < 30
+       and _P['S']['C']['cutwA']['label'] == 'co-move',
+       '(5) stage 10: "within N deg on every batch, so the base pools move together"')
+    ck(all(90 < x < 150 for x in _rem_d) and 105 <= sum(_rem_d) / 4 <= 135
+       and all(_P[k]['B']['theta_removed']['ci95'][0] > 0 for k in ('S', 'V1')),
+       '(5) stage 10: "rotates by about a third of a period, between quadrature '
+       'and antiphase, and does not reach antiphase"')
+    ck(all(abs(_P[k]['C']['shift']['Ti_eR']) > 90 and abs(_P[k]['C']['shift']['Ti_fR']) < 15
+           for k in ('S', 'V1'))
+       and _P['S']['C']['sc25']['Ti_eR']['R'] < _P['S']['C']['cutwA']['Ti_eR']['R'],
+       '(5) stage 10: "it is the extensor that moves", "locking loosens"')
+    ck(abs(_P['W']['B']['dtheta']['value']) < abs(_P['S']['B']['dtheta']['value']) / 2
+       and _P['W']['C']['sc25']['label'] == 'dispersed'
+       and (_P['S']['pulse'], _P['W']['pulse']) == (500, 250),
+       '(5) stage 10: the design dependence (smaller rotation, dispersed phases)')
+    _ex = lambda d: d['ci95'][0] > 0 or d['ci95'][1] < 0
+    ck(_C['E_00']['ci95'][0] > 0 and _C['E_PP']['ci95'][0] > 0
+       and _C['E_X']['ci95'][1] < 0 and _C['K_I']['ci95'][0] > 0
+       and not _ex(_C['K_removed']) and not _ex(_C['E_PP_minus_E_00']),
+       '(5) stage 10: the causal readings (same-phase up, cross-phase inverts, '
+       'interaction resolved, removed-graph K touches zero)')
+    ck(all(not _ex(_T[a]['T_off']) for a in ('S', 'W'))
+       and _T['S']['A_inphase']['ci95'][0] > 0 and _T['S']['A_antiphase']['ci95'][1] < 0
+       and _T['S']['D']['ci95'][1] < 0 < _T['W']['D']['ci95'][0]
+       and all(-.10 < x < .10 for a in ('S', 'W') for x in _T[a]['D']['ci95'])
+       and all(_T[a]['R0_no_elevation'] for a in ('S', 'W'))
+       and _T['S']['mechanism'] == 'M_tone' and 'M_internal' not in
+       (_T['S']['mechanism'], _T['W']['mechanism']),
+       '(5) stage 10: the second-run readings (no internal rhythm, signed by tone '
+       'phase, clock difference small and of opposite sign, no-vote)')
+    # the retired status is gone where the fold put the resolved one, and the
+    # carrier-removed relation is never called antiphase or alternation
+    _flat = re.sub(r'\s+', ' ', body)
+    ck('Which clock the timing follows is unresolved' not in _flat
+       and 'which clock the shared timing follows is unresolved' not in _flat
+       and 'or elapsed time is unresolved' not in _flat
+       and '### 2.5 Which clock' not in body
+       and _f25.count('unresolved') == 1 and 'the mixed, unresolved branch [l186.branch]' in _f25
+       and 'superseded by the two registered runs below' in _f25
+       and 'does not reach antiphase' in _f25 and 'without reaching it (\u00a72.5)' in _flat
+       and 'alternate' not in _f25,
+       '(5) stage 10: a retired "unresolved" timing statement survives, or the '
+       'carrier-removed relation is worded as antiphase')
+    ck(re.findall(r'(?m)^### (2\.\d+|3\.\d+) ', body) ==
+       re.findall(r'(?m)^### (2\.\d+|3\.\d+) ', F.build_body(nums, upto=9)),
+       '(5) stage 10 renumbered a Results / Methods subsection')
+    print('(5) tone-phase fold (stage 10): l197b.timing / l199.causal / l199.phase / '
+          'l199.meta re-derived from the stored results (%d stored intervals == '
+          'value +- 1.96 se, the gj.jack rule); causal K_I %+.3f [%+.3f, %+.3f], '
+          'removed-graph K straddles 0; base |dphase| <= %.1f deg on 5 batches, '
+          'removed %s deg; extensor shifts %s vs flexor %s; retired timing '
+          'statements gone' % (_nstored, _C['K_I']['value'], *_C['K_I']['ci95'],
+                               max(_base_d.values()), _rem_d,
+                               [_P[k]['C']['shift']['Ti_eR'] for k in ('S', 'V1')],
+                               [_P[k]['C']['shift']['Ti_fR'] for k in ('S', 'V1')]))
 # L190b PIN UPDATE (2026-11-21; receipt in LANE-LOG).  OLD (stage 6, the master
 # fold's finalization): numbers.json 592f7680796e..., l183_text.py
 # d1d8e0735bf1..., l183_fold.py 698922e3b836..., built body e62c81f6f5cc....
@@ -824,12 +1018,20 @@ if STAGE >= 9:
 # stage-8 values: numbers.json c8f0c4205e73... and l183_fold.py
 # b5feccb4d589....  The pins are re-set, not loosened: same four files, same
 # whole-file equality.
-NUMBERS_SHA = 'c8f0c4205e732c9bfee006c05a1201877b80af25f7405c95aa65e6a27b7a3962'
+# L201 PIN UPDATE (2026-11-22; receipt in LANE-LOG + banc/l201_worklog.md).
+# OLD (stage 9, the residue fold): numbers.json c8f0c4205e73...,
+# l183_text.py 270e80883dac..., built body 9e8c64cb4d7e....  NEW: the
+# stage-10 values below.  REASON: the owner-directed tone-phase fold adds four
+# keys (every pre-existing key byte-identical: l174 (7)) and five declared
+# edits (no table builder).  UNCHANGED and still pinned: l183_fold.py
+# b5feccb4d589....  The pins are re-set, not loosened: same four files, same
+# whole-file equality.
+NUMBERS_SHA = '138225183e519002e984afcb6ede6e06f840a58a575df5284b2da2aac662a52b'
 # the ledger and the built body are pinned too: a later stage that edits
 # either has to re-pin here deliberately (and say why in the lane log)
-LEDGER_SHA = {'l183_text.py': '270e80883dac87b706b88540ef7bd27d6c814d442a03f1ed7c032e2f85f3e7f4',
+LEDGER_SHA = {'l183_text.py': 'c4c2c416038a0e2ba032866641a864a4b41046ae93730577e0fed7ca95f6431e',
               'l183_fold.py': 'b5feccb4d58986ea2635d8a4f0fd7727feafa09ec6b60a42cc89a6511d43c277'}
-BODY_SHA = '9e8c64cb4d7e751d1e148e0713dd24789b69791815e4612f84122c9d176555ba'
+BODY_SHA = '7762d0709d659552a965a39e3f4ea79b12bfe229d1758ed38b78672cf6695d4e'
 for _f, _want in LEDGER_SHA.items():
     _got = hashlib.sha256(open(os.path.join(HERE, _f), 'rb').read()).hexdigest()
     ck(_got == _want, '(5) %s moved since the fold was finalized (%s)'

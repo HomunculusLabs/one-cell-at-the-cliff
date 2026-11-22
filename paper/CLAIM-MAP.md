@@ -16,7 +16,7 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
 | §2.3 shared timing, not rate | cross-seed pairing, pool rates, harmonic amplitudes, template subtraction, anatomy of the carrier's outputs | l184.threepanel l184.q1 l184.q1_twins l184.q3 l184.q3_ratios l184.sens l184.anatomy l184.design | B44 |
 | §2.4 the downstream interneuron (Table 3) | relay cut / clamp, push-pull, occlusion: neither registered pole; the 1.4-Hz panel separates carrier-absent from carrier-present arms | l187.base l187.arms l187.contrasts l187.fast l187.relay l187.relay_rate l187.g74914_rate l187.gain_slopes l187.meta l187.certs l187.branches l187.sc25_pooled | B47 |
 | §2.4 the single-edge cut (Table 3b) + §3.7 batch R + §4 (L190b follow-up fold) | cutting only the carrier-to-relay edge (21 synapses) reaches the registered super band on the chopped readout (12/16, about 60% of the carrier's paired shift by point ratio) with zero 1.4-Hz signature; the count-matched sham edge (22 synapses, sole eligible candidate) is base-like; double dissociation stated in its limited sense; one batch, re-bisected gains only, no fixed-gain form | l190.arms l190.summary l190.selection l190.gain l190.meta l190.certs l187.contrasts l185.r2 l175.bands | B49, B47 |
-| §2.5 which clock (gate-jitter) | UNRESOLVED and underpowered by construction (window overlap) | l186.means l186.contrasts l186.branch l186.power l186.phase | B46 |
+| §2.5 the timing follows the drive's phase (L186 + L197b + L199; L201 fold) | the first gate-jitter run is mixed/unresolved and underpowered by construction (kept as history, status superseded); the powered second run shows no internal rhythm (partner-undriven elevation +.010 / +.015, intervals span 0) and an elevation signed by tone phase (+.237 in phase, −.166 antiphase); the causal third run shifts the tone half a period at identical gates: elevation +.197 / +.258 same-phase, −.170 cross-phase, K_I +.397 [+.288, +.506] (causal branch met, sign refinement not met: removed-graph K +.096 [−.002, +.194]); descriptive: base pools co-move (within 22° on 5 batches), carrier removed rotates the relation ~1/3 period (116° / 129° / 94° / 126°), extensor shifts 102° / 112° while flexor 8° / 10°; 118° vs 39° rotation under 500- vs 250-step pulse | l186.means l186.contrasts l186.branch l186.power l186.phase l197b.timing l199.causal l199.phase l199.meta | B46, B51 |
 | §2.10 the per-set jitter table (Table 5) + §2.1 yardstick and null centre + §4 (L197 repairs) | the title contrast holds summed over the five jitter sets (72/80 against base 29, twin 37) and in 4 of 5, and does NOT hold in set 5, where the base reaches the super class with the carrier present (15/16; twin 13, carrier 13); the super band was frozen on the closure — the network before the projectors are added reads 513/513 at .995, the reference-minus-closure contrast in the continuous segment is +1.000 [+.989, +1.000], and the carrier-removed network's .766 is a partial recovery toward that level; the silent-cell null is centred +.044 above the base as a point estimate (14 of 20 arms above; not resolved over seeds) | l139.sets l139.gains l139.contrast l175.null_centre l197.reference l183.ladder_fast l175.null l185.r2 l175.bands | B50, B48 |
 | §2.6 Table 4 + §2.7 paired twin + §3.1 substrate and weights | the ladder in the continuous segment; paired McNemar on the twin's own seeds; the deafferented closure; signed log1p weights with the glutamate override | l183.ladder_fast l183.ladder_fast_meta l172.paired_twin l92.substrate l135.weights | B48 |
 
@@ -1314,6 +1314,8 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
   neither clock (gate-aligned vs elapsed time) wins by the registered margin;
   the registered jitter is smaller than the readout window, so the run is
   underpowered for the discrimination and the status is stated as unresolved
+- status (L201 fold, 2026-11-22): the open status is SUPERSEDED by B51
+  (L197b + L199); §2.5 keeps this run as its first run
 - keys: l186.means l186.contrasts l186.phase l186.branch l186.power
 - prereg: `banc/l186/PREREG.md`
 - artifacts: `banc/l186/results_l186.json`, `banc/l186/L186-FINDINGS.md`,
@@ -1433,6 +1435,49 @@ it. Research-only (L161); the owner release decision for L152 is untouched.
   and the Newcombe interval and proves each sentence-level reading; (7)
   checks that every cited figure resolves and runs both figure verifiers;
   `paper/l174_verify.py` (7) pins the added key set
+
+### B51 — L197b + L199 (L201 fold): the shared timing follows the phase of the external drive
+
+- claim (L197b, gate-jitter v2, 96 fresh seeds per design arm): the clock
+  difference is pinned small and of opposite sign in the two designs
+  (−.056 [−.082, −.029] / +.040 [+.012, +.068]); the registered verdict is a
+  no-vote (pooled elevation under the .15 bar on both clocks) because the
+  elevation is signed by the tone's phase (+.237 [+.202, +.272] in phase,
+  −.166 [−.196, −.136] antiphase); with the partner undriven the elapsed
+  elevation is +.010 [−.013, +.034] / +.015 [−.007, +.036]: no internal rhythm
+- claim (L199 Part D, causal, 16 fresh seeds 19931-19946): with identical
+  gates, settle state and noise, shifting one run's tone half a period gives
+  carrier-removal elevation +.197 [+.108, +.286] (both unshifted) and +.258
+  [+.159, +.357] (both shifted) against −.170 [−.220, −.119] cross-phase;
+  K_I +.397 [+.288, +.506] (correlational I +.403); registered branch CA1 met,
+  CA1_sign NOT met (removed-graph K +.096 [−.002, +.194] at the 150-step
+  window)
+- claim (L199 Parts B/C, descriptive, no registered band): base flexor and
+  extensor co-move against the tone (|Δ| ≤ 22° on five batches); with the
+  carrier removed the relation rotates ~1/3 period (116° S, 129° batch Q,
+  94° / 126° causal batch), never antiphase; the extensor carries it
+  (peak-phase shift 102° / 112° vs flexor 8° / 10°; extensor R .95 → .70);
+  the signed-offset rotation is 118° under the 500-step pulse and 39° under
+  the 250-step pulse (direct phases dispersed, R .49)
+- NOT claimed: separation of the tone's phase at gate onset from its phase
+  during the pulse (no tone-reset arm); "alternation" or "antiphase" for the
+  carrier-removed graph; a mechanism for why the extensor moves; replication
+  of the causal batch (one batch, one shift)
+- keys: l197b.timing l199.causal l199.phase l199.meta
+- prereg: `banc/l197b/PREREG.md` (+ `banc/l197b/PREREG.sha256`),
+  `banc/l199/PREREG.md` (+ `banc/l199/PREREG.sha256`, `banc/l199/FREEZE.json`)
+- artifacts: `banc/l197b/results_l197b.json`, `banc/l197b/L197b-FINDINGS.md`,
+  `banc/l199/results_primary.json`, `banc/l199/results_causal.json`,
+  `banc/l199/L199-FINDINGS.md`
+- fold: stage 10 of the declared ledger `paper/l183_text.py` (edits E90-E94),
+  built by `banc/l201/build_stage10.py` from `banc/l201/stage10_new.py`;
+  brief `banc/l201_BRIEF_fold.md`, worklog `banc/l201_worklog.md`
+- gate: `paper/l183_verify.py` (5) re-derives the four keys from the stored
+  results (intervals where only se is stored = value ± 1.96 se, the gj.jack
+  rule, proved on the stored l197b intervals) and proves each sentence-level
+  reading; `paper/l174_verify.py` (7) pins the added key set;
+  `paper/l158_verify.py` (14) requires the resolved abstract sentence and
+  retires the old one
 
 ## How to re-verify the whole package
 

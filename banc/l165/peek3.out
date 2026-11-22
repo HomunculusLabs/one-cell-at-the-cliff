@@ -1,0 +1,35 @@
+TOP ['card', 'cert6', 'carrier', 'control', 'floor_1_over_K', 'plv_self', 'circ_sd_deg', 'i5_evoked_fraction', 'e_axis', 'f_axis', 'fold_draft']
+card = L162 ADDENDUM 3: I4' PLV_self + I5 evoked + I6 vs floor
+cert6 ndict 2 ['pinned', 'free']
+carrier = ['Tr_fL', 'Tr_eL', 'Tr_eR', 'Ta_aL', 'Ta_aR', 'Ta_bR', 'Sr_aL', 'Sr_bL']
+control = ['Ti_fL', 'Ti_fR', 'Ti_eL', 'Ti_eR', 'Tr_fR', 'Pr_aL', 'Pr_aR', 'Pr_bL', 'Sr_aR']
+floor_1_over_K = 0.2
+plv_self ndict 66 ['l154/raw_l154.npz|Ti_fL', 'l150/raw_l150.npz|Ti_fL', 'pooled|Ti_fL', 'l154/raw_l154.npz|Ti_fR', 'l150/raw_l150.npz|Ti_fR', 'pooled|Ti_fR']
+circ_sd_deg ndict 44 ['l154/raw_l154.npz|Ti_fL', 'l150/raw_l150.npz|Ti_fL', 'l154/raw_l154.npz|Ti_fR', 'l150/raw_l150.npz|Ti_fR', 'l154/raw_l154.npz|Ti_eL', 'l150/raw_l150.npz|Ti_eL']
+i5_evoked_fraction ndict 66 ['l154/raw_l154.npz|b65|Ti_fL', 'l154/raw_l154.npz|b65|Ti_fR', 'l154/raw_l154.npz|b65|Ti_eL', 'l154/raw_l154.npz|b65|Ti_eR', 'l154/raw_l154.npz|b65|Tr_fL', 'l154/raw_l154.npz|b65|Tr_fR']
+e_axis ndict 3 ['cls', 'med_plv_self_carrier', 'med_plv_self_control']
+f_axis ndict 9 ['cls', 'n_clear_f', 'n_clear_f_control', 'med_carrier', 'med_control', 'calibration_ok']
+fold_draft = False
+   l150/raw_l150.npz|Pr_aL 0.18992692038896491
+   l150/raw_l150.npz|Pr_aR 0.9299229096876979
+   l150/raw_l150.npz|Pr_bL 0.07953860108827925
+   l150/raw_l150.npz|Pr_bR 0.9851370030750057
+   l150/raw_l150.npz|Sr_aL 0.9708529062803463
+   l150/raw_l150.npz|Sr_aR 0.33077938870330836
+   l150/raw_l150.npz|Sr_bL 0.97089570692538
+   l150/raw_l150.npz|Sr_bR 0.9195630536571566
+   l150/raw_l150.npz|Ta_aL 0.9768597828476379
+   l150/raw_l150.npz|Ta_aR 0.9897854870442708
+   l150/raw_l150.npz|Ta_bL 0.3889869927746271
+   l150/raw_l150.npz|Ta_bR 0.9976511536009738
+   l150/raw_l150.npz|Ti_eL 0.7485845039520784
+   l150/raw_l150.npz|Ti_eR 0.5863485999836797
+   l150/raw_l150.npz|Ti_fL 0.9427376886562658
+   l150/raw_l150.npz|Ti_fR 0.871860275907618
+   l150/raw_l150.npz|Tr_eL 0.9808932370648438
+   l150/raw_l150.npz|Tr_eR 0.9968741094057842
+   l150/raw_l150.npz|Tr_fL 0.9870347792252671
+   l150/raw_l150.npz|Tr_fR 0.9230559518854284
+   l150/raw_l150.npz|mm 0.9939582106960551
+   l150/raw_l150.npz|xm 0.9999930300647701
+EV keys sample: []

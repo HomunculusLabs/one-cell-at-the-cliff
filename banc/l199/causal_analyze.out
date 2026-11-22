@@ -1,0 +1,15 @@
+C0A 276 checks max 0.0 | gains EXACT x3 | gates canonical x32 | MC tone(phi0)+tone(phiPI) == ENT_AMP*gate, max dev 5.6e-16
+L199 Part D — causal label CA1 (n = 16 seeds x 2 graphs x 2 tone phases; canonical gate; C0A 276 checks max 0.0; MC dev 5.6e-16)
+[W150 registered] duty within phi0-phi0 / phiPI-phiPI / cross 0-PI / cross PI-0: cutwA 0.175 / 0.210 / 0.505 / 0.483 ; sc25 0.372 / 0.469 / 0.300 / 0.349
+    K (within - cross): cutwA -0.301 [-0.356, -0.246] | sc25 +0.096 [-0.002, +0.194] | K_I +0.397 [+0.288, +0.506] -> CA1
+    E (sc25 - cutwA): phi0-phi0 +0.197 [+0.108, +0.286] | phiPI-phiPI +0.258 [+0.159, +0.357] | cross -0.170 [-0.220, -0.119] | E_PP - E_00 +0.061 [-0.067, +0.189]
+    same-seed duty phi0 / phiPI / cross-phi: cutwA 0.317 / 0.304 / 0.484 ; sc25 0.442 / 0.597 / 0.313
+[W500 descriptive] duty within phi0-phi0 / phiPI-phiPI / cross 0-PI / cross PI-0: cutwA 0.055 / 0.065 / 0.309 / 0.304 ; sc25 0.438 / 0.620 / 0.265 / 0.303
+    K (within - cross): cutwA -0.247 [-0.297, -0.197] | sc25 +0.245 [+0.110, +0.381] | K_I +0.492 [+0.358, +0.626] -> CA1_sign
+    E (sc25 - cutwA): phi0-phi0 +0.383 [+0.265, +0.502] | phiPI-phiPI +0.555 [+0.390, +0.720] | cross -0.023 [-0.081, +0.036] | E_PP - E_00 +0.171 [-0.031, +0.374]
+    same-seed duty phi0 / phiPI / cross-phi: cutwA 0.300 / 0.257 / 0.291 ; sc25 0.616 / 0.732 / 0.293
+[C phi0] cutwA Delta +10.4 R 0.75 (co-move) ; sc25 Delta -93.6 R 0.89 (intermediate) | paired shift -106.8 R 0.63 -> Dq
+[C phiPI] cutwA Delta -21.6 R 0.67 (co-move) ; sc25 Delta -125.9 R 0.74 (alternate) | paired shift -91.6 R 0.42 -> D1
+pool peak phase vs UNSHIFTED tone, phiPI - phi0: Ti_fR_cutwA +156.7 R 0.75 ; Ti_eR_cutwA -171.9 R 0.91 ; Ti_fR_sc25 +167.4 R 0.95 ; Ti_eR_sc25 -163.8 R 0.48
+predictions: {"Q7": {"certs_mc": true, "K_base_below0": true, "label": "CA1", "CA1": true, "CA1_sign": false, "E_PP_above0": true}}
+L199 CAUSAL WRITTEN (FINAL)

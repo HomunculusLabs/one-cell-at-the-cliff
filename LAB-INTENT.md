@@ -9560,3 +9560,830 @@ A >= .10 in W (+.068), P4 (M_tone in both), P6 (sc25 segment rho +.216 < .25).
 Artifacts: banc/l197b/{PREREG.md, FREEZE.json, schedule.json, pilot.json,
 gj.py, results_l197b.json, verdict.out, addendum.json, L197b-FINDINGS.md,
 pairmat_S.npz, pairmat_W.npz, raw_w0-5.npz}.
+
+## L182 — the pooled-count DRIFT GATE (tick 222, 2026-11-21 19:5x, A_GREEN)
+
+Meta card, zero rollouts, zero RNG, no graph build, draft READ-ONLY
+(sha c32a7d186642 before and after; tampers on unlinked copies).
+
+Intent: make the defect L172 fixed PERMANENTLY detectable. That defect was
+not a wrong number — it was two unions of the same arm in two sections, the
+one class a value-pinning verifier cannot see, because every individual
+number was right.
+
+Shipped `paper/l182_verify.py` (eighth gate in the paper suite). Canonical
+table = the 15 arms of `banc/l172/stats.json`. The classifier is derived
+from the data rather than tuned: no canonical n is a multiple of 16 (13 of
+15 are 16*batches + 2, the two extra being the forward-chain anchor seeds),
+so {16..160} cleanly separates the per-batch unions L172 replaced, and the
+160 cap keeps §2.1's /240 scan column outside the classifier by
+construction. Cells: D1 no arm with two canonical denominators, D2 every
+canonical cell equals its own n (plus §2.14, the canonical table, admitting
+no non-canonical cell of any class), D3 a POOLED-marked token must be
+canonical and the family-matched quote must be reconciled against the
+canonical count in the body, D4 well-posedness. LIVE: 101 resolved table
+tokens, all four cells green. TAMPERS 3/3 turned their NAMED cell red.
+
+THE TRANSFERABLE LESSON IS ABOUT THE INSTRUMENT, NOT THE DRAFT. Every one
+of the four PREREG addenda was forced by a false attribution of my own
+resolver, and the first census's reds were ALL mine:
+
+1. Sentence-level co-occurrence attribution is UNSOUND, because prose names
+   an arm as a COMPARATOR: "30 of 66 ... above the base" and "on the cut
+   base (pooled 78 of 98" both resolved to `cutwA`, which is how one arm
+   came out carrying four denominators. Gate axes are TABLE-ROW scoped;
+   prose is a 257-token diagnostic census that is reported, never judged.
+2. Arm phrases need TWO TIERS: a label column resolves on CODE tokens alone
+   when it has any, prose GLOSS aliases only otherwise — that is what lets
+   the contrast table `| A - B | kA/nA vs kB/nB |` order-pair while
+   `| silW (carrier clamp on cut base) |` still resolves to the clamp.
+3. The FIRST code token in a label column is the row's SUBJECT; a qualifier
+   that names another arm ("sil1110 on cutwA base") must not win. And a
+   marker-proximity test needs a DIRECTED, SHORT lookback: a ±40-character
+   window around a token read the NEXT cell's "pooled" marker and failed a
+   legitimate per-batch cell.
+4. A row whose label leads with an arm that is NOT in the canonical table is
+   UNCANONICAL and must be censused separately, never attributed — 40 tokens
+   over 14 codes here, and ZERO of them POOLED-marked, which is the first
+   positive evidence for L181's family (iii) that the body never calls an
+   un-canonicalised arm's count pooled.
+
+Two findings handed to L181, both corrections to that card's own census,
+derived from the artifact and not from the card sentence (the L44 rule
+applied to queue text): the regions that actually carry per-batch arm cells
+are §2.2, §2.4, §2.7 and §2.9, so §2.10 and §2.12 are VACUOUS as declared
+regions while §2.4 and §2.9 were never named; and §2.1's scan table is
+UNRESOLVED rather than covered, because the resolver reads the first table
+cell as the label and §2.1 puts the rank there — its exemption came out
+vacuous for that reason, not because the table is clean. A per-table
+label-column index is the owed extension and is stated as a gate LIMIT.
+
+A tamper suite is what separated gate bugs from draft bugs all the way
+through: T1 (a real pre-L172 per-batch union re-introduced into §2.14), T2
+(a second union for one arm) and T3 (the reconciliation clause deleted)
+each had to turn ONE NAMED cell red. T3's first form was a one-site
+deletion and correctly did NOT fire — D3's cell claims the canonical count
+appears SOMEWHERE in the body, and the §2.7 table still carried it; the
+re-registered two-site tamper fires. A one-site tamper against an
+existential claim is a vacuous tamper.
+
+Budget: ~65 min against a 35-min tick, disclosed on the card. Stopping at
+35 would have shipped a gate whose reds were its own bugs.
+
+## L199 — the tone-phase registered test (2026-11-21, experiment dispatch, concurrent with L200)
+
+INTENT: L197b's post hoc reading — the carrier-deletion phenotype is a change
+in the pools' PHASE RELATION to the external 0.7-Hz tone (base: co-move;
+removed: alternate) — registered and tested. Instrument = the pair-SEGMENT
+phase statistic (each pair-segment's OWN gate lag -> tone offset; tick 216's
+pair-level mean of independent lags is what it replaces). Four parts: A the
+brief's 3-bin conditioned profile on stored raws (S, W, L186); B a signed
+first-harmonic profile (preferred offset theta; never computed before); C the
+direct per-seed flexor-minus-extensor peak phase against the tone; D a causal
+arm: 16 fresh seeds x {cutwA, sc25} x {tone as is, tone shifted half a
+period}, canonical gate everywhere, same settle and noise. PREREG sha
+01e23ae1c711012e frozen 20:27:51 before any statistic or rollout; it discloses
+that S's and W's interaction and point profiles were already seen in L197b.
+
+RESULT (CERT-197b 1e-12; C0A 276 checks max 0.0; gains EXACT x3; manipulation
+check 5.6e-16; no post-freeze code change):
+- A = **PH1_sign**. Base slope (in - anti) -.278 [-.308,-.249] (S), -.223
+  [-.340,-.106] (L186); carrier-removed slope +.125 [+.075,+.176] (S), +.243
+  [+.121,+.366] (L186); interaction +.403 / +.466. W = PH_weak: its removed
+  slope is NEGATIVE, -.110 [-.160,-.060] — no reversal under the 250-step pulse.
+- D = **CA1** (causal). Identical gates, tone shifted for one partner: the
+  deletion elevation is +.197 [+.108,+.286] (both unshifted), +.258
+  [+.159,+.357] (both shifted), **-.170 [-.220,-.119]** (one shifted). K_I
+  +.397 [+.288,+.506], matching S's correlational +.403. The sign refinement
+  fails by a hair (removed K +.096 [-.002,+.194] at W150; +.245 at W500).
+- B/C CORRECT THE POST HOC'S WORDING. Base: pools peak together (-5 deg, R
+  .77; theta 172). Carrier removed: NOT antiphase — the relation rotates about
+  a third of a period: -116 (S, R .77), -129 (L186), -94 / -126 (fresh batch);
+  theta +55 [+44,+65] in S, outside the registered 0 +- 45 band (Hq). It is the
+  EXTENSOR that moves (108 -> -150 deg; flexor 102 -> 93), and its locking
+  loosens. In W the rotation is -39 deg only.
+
+METHOD LESSONS: (1) a FOLDED phase bin (|psi - .5|) reads any rotation past a
+quarter period as "reversal"; register the SIGNED offset (first harmonic,
+atan2) beside it — it is what turned "alternate" into "-120 deg". (2) The
+causal form of a lag-conditioned correlation is to hold the gates identical
+and move the tone; within-vs-cross-arm pairs on shared seeds give the contrast
+with a 16-seed batch (every pair-segment is in a class, not 25% per bin).
+(3) Tag a manipulated rollout by seed + offset and map the RNG seed back, so
+the certified harness needs two one-line changes and the anchors stay
+bit-exact (PHI + 0.0). (4) When the registered test re-reads seen data, say in
+the PREREG which numbers are already fixed and put the risk on what is not.
+
+DRAFT-FOLD NOTE (not applied; gated fold card): §2.5's "unresolved" can read
+"no internal rhythm; the timing locks to the phase of the external tone"
+(L197b items 3-4 + L199 Part D). Phenotype wording: "removing the carrier
+rotates the extensor's tone phase by about a third of a period; the base pools
+peak together" — never "alternate/antiphase". Scope: 500-step pulse.
+
+PREDICTIONS: wrong on Q5 (theta_sc25 within 0 +- 45 in S, .55; modal label
+H1) — S is Hq. Everything else scored correct.
+
+Artifacts: banc/l199/{PREREG.md, FREEZE.json, ph.py, selftest.json,
+results_primary.json, results_causal.json, primary.out, causal.out,
+verdict.out, L199-FINDINGS.md, segduty_*.npz, raw_w0-2.npz}.
+
+## L200 — the ru2 left-tibia phenotype (2026-11-21, experiment dispatch, concurrent with L199)
+
+INTENT: L198's side observation — removing runner-up ru2 flips the LEFT tibia
+16/16 and raises the carrier's rate — as its own card. Id re-derived from the
+stored selection, not the brief's prose: ru2 = gi 70994, IN07B031-R, inhibitory
+cord interneuron. Four arms: A1 replicate, A2 two cells matched to ru2's
+delivered drive onto the left-tibia premotor pool (rule + top-5 registered
+before the selection code existed; PREREG sha db03c33d5997bc51, 20:26:14), A3
+ru2 + carrier removed together AND ru2 removed with the carrier's whole rate
+trajectory replayed from the same-seed base rollout, A4 a wiring-only mirror
+probe. Branches M1 mirror-carrier / M2 routes through the carrier / M3 generic
+left hotspot.
+
+RESULT (B44 3705-3720, n=16 every arm; C0A 931 checks max 0.0 incl. L198's
+stored ru2 arm re-rolled bit-exact at 3673; 6 workers x 1 thread): registered
+branch **M1_unique_no_left_signature, status READ, all gain forms AGREE**.
+- A1: left 16/16 .843 (L198 16/16 .840; pooled 32/32, base 1/32); fixed gain
+  16/16 .819; carrier rate .380 -> .591 again.
+- A2: twins 1/16 .280 and 2/16 .308 — M3 rejected (two twins, neither with
+  ru2's bilateral shape; stated in SELECTION.md before rollouts).
+- A3: carrier held at base (exact replay) -> left 16/16 .898, retained
+  fraction 1.10; carrier removed -> 16/16 .902. M2 rejected: the flip does not
+  route through the carrier.
+- No left 1.4-Hz signature (.000) -> the full M1 "mirror" branch is not met.
+- A4: A4_no_laterality_contrast (LI2 carrier +.174, ru2 -.048; direct-target
+  Jaccard .022; ru2 projects to both premotor pools evenly).
+
+THE UNPREDICTED PART (post hoc, one batch): the coupling runs the other way.
+Carrier removed alone -> right 15/16 .783 with the 1.4-Hz signature .585;
+carrier + ru2 removed -> right 3/16 .296, signature .000 (paired -.487
+[-.591,-.384] chopped, -.585 [-.704,-.467] at 1.4 Hz, 16/16 seeds lower). The
+carrier's right-side regime needs ru2; ru2's left flip does not need the
+carrier. Owed as its own registered card before any wording moves.
+
+PREDICTIONS: P1-P5 held (replicate, carrier rate, T=0, clamp stays SUPER, no
+left signature); P6 wrong (.70 that the carrier-removal right phenotype
+survives ru2's absence). METHOD NOTES: (i) a replay clamp — overwrite one
+cell with its same-seed, same-step base value — is a zero-bisect mediation
+test whose null cert is free (replay on the base graph must equal the base
+bit-for-bit); (ii) a "homolog" arm needs the homolog's base rate checked at
+registration: IN07B031-L is silent on this base, so its removal was a null by
+construction and P8 was unanswerable; (iii) one thread per worker preserved
+bit-identity against stored 2-thread raws.
+
+Artifacts: banc/l200/{PREREG.md, FREEZE.json, selection.json, SELECTION.md,
+a4_wiring.json, results_l200.json, verdict.out, addendum.json,
+L200-FINDINGS.md, raw_w0-5.npz}.
+
+## Duck plasticity v2 — routing-aimed (2026-11-21, experiment dispatch, offline)
+
+Three-factor signed rule on the 946,999 synapses into her mood-axis and motor readout cells (FEAR/JOY-SAL/MOTOR, eta .05, band 20%), 2 seeds x {frozen, plastic}, 3 sessions with simulated world days between, RETEST with updates off. Q1 supported (kindness-arc food_joy +.017, salience +.046, cx move +.103; noise floor <= .002), Q2-any supported (12 near-threshold flips vs 0 noise, all mood tag neutral -> curious), Q2-action NOT supported (0 reply/ambient intent flips in 1,536 paired turns), Q3 supported (picked_up t5 replicates, salience gap .0139 -> .0175 across sessions), Q4 supported. Frozen S1 reproduces v1's stored frozen arm exactly. Why no action moved: frozen food_joy never sits between .35 and .61, so the one reachable neural action comparator (.60) has no cheap flip; the rest are body-set or saturated. Exploratory: in her solo life the dusk settle came 1-2 ticks later in both seeds (sleep shaved ~.011 through salience). Side finding, live code, untouched: from night 2 on `consolidate_night` replays only a post-midnight `water` — the small-hours pass stamps the date and blocks the evening pass (her live diary archive shows the same since 11-17). No rollout proposed. Scope and evidence: duckplast2/DUCKPLAST2-FINDINGS.md.
+
+## tick 224 (2026-11-21 22:1x, cron, Miso) — L177(a): the ladder we already had
+
+Intent: take the first non-draft item the tick-222 precedence note names, with
+the GPU finally free. Before building the beta ladder I opened l65's stored
+scan (L44) and found the ladder already there: BETAS = [0.5, 1.0, 2.0, 4.0],
+36 rows per sign arm, 8 s, seeds 11/22. beta=2 is a selection on that table.
+
+What the stored table says, and what it cannot say:
+  - arm B S_Ti is 0/9 monotone-increasing over beta on paired (g,d) cells;
+    7/9 have an interior maximum. That is our L50 family, not Guba's law.
+  - BUT af falls 5.68x monotonically across the same rungs (g was a ratio
+    grid, never re-bisected), so the shape is gain-confounded and cannot be
+    read as a result. The af-matched ladder is the experiment that remains.
+  - FREE: d = .05/.2/.8 give bit-identical af and S at beta <= 2 in both arms
+    (DNg100 drive inert — L35's male verdict on the female cord), and the
+    d-rows separate only at beta 4. Drive visibility is beta-gated.
+
+Method note worth keeping: when a card's premise is a negative ("X was never
+done"), the cheapest first move is a grep of the prior run's SOURCE for the
+parameter name, not a design session. It cost 4 minutes and turned a
+build-from-scratch item into a pre-measured registered fork (P4a/P4b), with
+the drive-relevance probe the card asked for answered for free over most of
+the ladder.
+
+Artifacts: banc/l177/{PREREG.md, BRIEF_l177b.md, static_prem.json, prem.out},
+code banc/l177_prem.py. Stage (b) dispatched to fable (anthropic window).
+
+## L177 — the af-matched beta ladder (tick 225, 2026-11-21, cron body)
+
+Question: does the field's monotone reciprocal-inhibition law (Guba DC arm)
+hold in our rate model on the BANC female cord, once the operating point is
+held fixed? Stage (a) (tick 224) found the stored l65 scan already votes
+non-monotone, but at a RATIO gain grid whose af slid 5.68x across beta — so
+the shape was gain-confounded and unreadable as a result.
+
+Answer: **P4a / B_INTERIOR**. With a fresh af-matched bisect per rung
+(gains .0496 -> .2943, 5.9x spread, af residual <= 1.7e-3) the interior
+optimum SURVIVES: S_Ti +.108 / +.164 / +.682 / +.120 / +.104 over beta
+1.0/1.5/2.0/3.0/4.0, 16 paired seeds, and 3 of 4 per-side series peak at
+beta 2.0 with 16/16 seed unanimity. The monotone law is rejected in this
+model class at a matched op point. The L65 beta=2 pin was NOT a lucky
+free-gain landing — it is the optimum under matching too.
+
+Three things worth carrying forward:
+ 1. A viability/census AND-cell can be vacuous when a pool is small: the
+    6-cell per-side extensor pools flag at every rung. Report the per-pool
+    burial table, not the flag (L55/L109).
+ 2. **A printed-digit equality is not a bit-identity.** Stage (a) read the
+    stored scan's d-rows as identical 'to every printed digit' and called
+    the DNg100 drive inert (L35 replication). At 60 s and matched gain the
+    d=0 arm diverges from d=0.2 at EVERY rung, most strongly (2.8e-1,
+    0/16 identical) exactly at the structure peak. The drive is relevant
+    where the rhythm is. New L44 instance, and it corrects our own M3.
+ 3. An interior maximum needs its LEFT limb's readability stated: ours is
+    depth-limited (ptp .018/.024 < the .03 floor at beta 1.0/1.5). The
+    claim is carried by the right limb, which is readable and still falls.
+
+Also: a hermes-CLI child dispatched from a CRON tick is killed by the
+tick's own exit (tick 224's fable child died 2 min in, KeyboardInterrupt in
+the CLI signal handler, zero output). Cron ticks run their own work.
+
+Artifacts: banc/l177/{PREREG.md,static_prem.json,prem.out,cert.json,cert.out,ladder.json,run.out,rung_b*.npz}, banc/{l177_prem,l177_cert,l177_run}.py.
+
+## L104 — brain-state-intent smoke probe (tick 226, 2026-11-22, read-only)
+
+Intent: the card's first descriptive probe on the L102 archive — does intent
+separate from CX/DN population activity beyond a shuffle null, and what does
+the answer size for a future decode card?
+
+Answer: NOT WITH THIS SAMPLING. Branch B_CONFOUND_ONLY.
+
+- n=73 (brain-state, intent) pairs, 2026-11-16 08:16 -> 11-21 21:09, median
+  gap 1.47 h. Labels are a TIME SERIES, not iid: 31 runs, lag-1 agreement
+  .583 — so a circular-shift null was registered beside the iid one.
+- stay-vs-settle separates at CX AUC .998 (p1 .0005, circular-shift p2 .014)
+  but the label is circadian: best arc classifier .967 at 19:00-04:30.
+- The separation is a WHOLE-BRAIN LEVEL SHIFT: whole-brain mean AUC .9978,
+  global mean .0373 -> .0552 (x1.48, night-high). Size-matched RANDOM index
+  sets separate as well as CX (max rand d .499 vs CX .498) => C4 fails.
+- The only hour-OVERLAPPING contrast (stay-vs-to_fence, n 32/8, overlap
+  .825) is at chance on every population (CX .512 p1 .94; whole-brain .441;
+  LOO .425 vs majority .800) => C3 fails, the dissociation is unreadable.
+- Global-normalised read: CX/KC/DN saturate (sign only); DAN alone is
+  d .219 and FAILS the temporal null (p2 .110) = the one population not
+  clock-locked, and the first candidate for a decision-carrying readout.
+- P5 null as registered: DN L/R asymmetry +.012..+.017 across all intents,
+  overall sd .0025.
+
+ADDENDUM-1 method lesson (self-inflicted, caught in-run): a rank/linear
+statistic on a CIRCULAR coordinate collapses to .5 when one class straddles
+the wrap point. The registered clock baseline read hour-of-day AUC .517 and
+would have reported "the clock does not own this contrast" — the exact
+opposite of the truth (.967 arc, circ-midnight AUC .002). The PREREG's own
+static census carried a spurious -5 h shift (captured_at already holds
+-05:00), which is how the wrap went unnoticed. Phase/clock baselines get a
+circular instrument, registered as such.
+
+Prescription for the decode card: sample at intent TRANSITIONS not on an
+hourly cadence; need ~30+ hour-stratified samples per non-settle intent
+inside the day arc; normalise out the circadian level before any readout;
+start from DAN.
+
+Artifacts: peabrain/lane/l104/{PREREG.md, l104_probe.py, l104_add1.py,
+results_l104.json, results_l104_add1.json, census_meta.json, run.out,
+run_add1.out}.
+
+## L163 — skill-file-split (tick 227, 2026-11-22)
+
+Meta/infrastructure, zero rollouts. peabrain-flybrain SKILL.md sat at 99,998 of 100,000 chars, so every lesson patch since tick 184 was refused — the lane's memory channel had been silently closed for ~43 ticks.
+
+Split (lane/t227_split.py): the three largest section bodies to references/ (simulation-lessons 53,479 / null-controls 15,728 / gates-and-visual-qa 8,405); SKILL.md 36,537 chars. Each moved section keeps a FULL TEXT pointer + a lossless headline index (one line per top-level bullet, 83 entries); the cron service-restart procedure and the two navigation pointer lines stay inline verbatim.
+
+Method laws banked:
+- Read the right UNIT before declaring a margin: the limit is CHARS, wc -c gives BYTES, and 620 chars of multibyte punctuation separated the two here.
+- An auto-generated bullet index loses NON-BULLET pointer lines (they are swallowed by the bullet block above). Enumerate them explicitly and assert each exists in the source section.
+- Verify a split by byte-exact ROUND TRIP against a pre-split backup (every top-level bullet must reappear verbatim somewhere in the tree; untouched sections and frontmatter byte-identical), and put that check INSIDE the builder so it refuses to write a lossy split.
+- The real acceptance test for a limit fix is a live patch through the same API that was failing, re-running the round trip afterwards.
+
+Verified: 85/85 bullets byte-exact post-split and again post-patch; skill_view reads a moved reference back; skill_manage patch landed. Artifacts lane/t227_{split,verify,fold,postcheck}.py, backup scratch/l163/SKILL_pre_t227.md.
+
+
+## L164 — slow-line ORIGIN, the rollout arm (tick 228, 2026-11-22)
+
+PREREG banc/l164/PREREG.md FIRST. The question L162 could not answer: do
+the 8 carrier pools that carry the ~.100 Hz line share ONE oscillator, or
+is each separately locked to the protocol? L162's instrument was
+degenerate because every rollout starts the chopped 0.7/1.4/0.7 Hz mech
+drive at the SAME phase, so a seed-shuffled null carries the same
+deterministic component as the matched arm.
+
+INTERVENTION: a per-seed integer onset offset o_s in [0,900) (rng 164)
+shifts the chop gate and the carrier's starting phase, leaving the
+segment skeleton (and therefore the dynamical regime) identical.
+
+GATE FIRST (registered halting, l164_drive.py): PLV of the DRIVE's own
+bin-6 phase across the 16 offsets = 0.3125 (bar .4,
+free floor .2216 at n=16, spread 87.4 deg)
+at UNCHANGED bin-6 power (3313.77 fix vs
+3313.77 rnd median). Phase intervention, not power
+intervention => WELL_POSED. The o_s=0 series is byte-identical to
+l154_run.py's own AMPA + sin_t construction.
+
+VERDICT **B_SHARED**, 16 fresh seeds B42 4201-4216 x 2 arms:
+  carrier PLV_self   0.9843 -> 0.2822   (free floor .2216)
+  carrier pair PLV   0.9705 -> 0.9644   28/28 locked BOTH arms
+  control pair PLV   0.2959 -> 0.3477   14 -> 11 locked
+Absolute phase is protocol-set; the phase RELATIONS are wiring-set and
+survive the scramble on the per-rollout INDUCED component (evoked
+fraction Tr_eR .986 -> .076). One shared slow clock.
+
+This CORRECTS our own prior reading: L162's D-axis formally returned
+D2_independent and its ADDENDUM 2 called that pass degenerate — the
+admissible instrument shows it was also wrong in DIRECTION.
+
+METHOD LAW (inheritable, L30 class): an `af` recorded at the END OF
+SETTLE under a periodic drive is a PHASE SNAPSHOT, not an operating
+point. The whole l150/l154/l164 family's af sits at .105-.113 only
+because every rollout ends settle at the same 0.7 Hz phase; free the
+phase and the SAME system reads .108-.271 with window-mean motor
+activity unchanged (ratio 0.9957).
+Match operating points on a WINDOW statistic whenever the drive is
+periodic and the settle length is not a whole number of drive cycles.
+
+DISCLOSED: Pr_aL / Pr_bL / Sr_aR are bit-identical across arms
+(max|fix-rnd| exactly 0.0 over 16 seeds, l164_postcheck.py) — inert
+channels inside the CONTROL set, so part of the control median rests on
+channels that cannot respond. Reported, not cited.
+
+CERTS: C0A-164 fix vs l150 stored b65, 46 checks, max|d| 0.0e+00;
+CERT-A pinned 1.0000 vs free 6.3e-17; CERT-bin 1e-12; CERT-sets 8/9
+disjoint from l157/static.json; B42 absence over every banc/ npz.
+Zero live changes, no draft edit.
+
+## L165 (tick 229, 2026-11-22)
+
+Question re-posed before measuring: the l154 'off' arm removes the MECHANOSENSORY SINUSOID, not an echo (l154_run.py L619-624), and all seven l150 arms carry that identical sinusoid (l150_run.py L885-889). So the stored artifacts answer a SPECIFICITY question, not the echo-dose question the card asked.
+
+Result: drive presence is NECESSARY (off arm carrier PLV_self .186, below the n=18 free floor .2089, Rayleigh p .54) and NOT SUFFICIENT (b65 .984 8/8 vs .556-.755 1-3/8 for the other six substrates, all still above floor). b65's lock replicates across disjoint seed batches (.9840 B33 vs .9838 B34, max|d| .0152).
+
+The finding that outruns the card: the l157 carrier/control partition INVERTS in 7 of 9 arms (carrier_med - control_med positive only in the two b65 arms). The 'carrier pools' vocabulary is b65-substrate-scoped and every draft sentence using it inherits that qualifier. Handed to L166.
+
+Binding caveat (L164): phase-pinned protocol, so this is evoked drive-following, never an intrinsic-clock claim.
+
+## L166 — the F-axis held-out re-basing (tick 230, 2026-11-22)
+
+PREREG `banc/l166/PREREG.md` first; bars pinned unrounded. Branch **B_REBASED**.
+
+The L162 ADDENDUM-3 coherence result was labelled DESCRIPTIVE-STRONG because
+its recombination (which bars, which counts, which calibration window) was
+written with the table in hand. This tick paid that debt on data the
+recombination never saw: a fresh 18-seed batch B44 (4401-4418) of the b65
+condition, run through l164's certified extraction with `drive_series(0)`
+imported rather than re-typed.
+
+- **Primary (Q1) PASSES.** Fresh B44: 23/28 carrier pairs clear, control 2/36,
+  med MSC 0.7097 vs 0.1815, ratio 3.91, all three bars green — against stored
+  per-file 23/28 (0.6596) and 24/28 (0.7189). Not just the count: the fresh
+  batch clears 22 of the SAME 23 pairs (Jaccard 0.917) and the 28-pair rank
+  correlation with the stored table is +0.933.
+- **Q2 CORRECT.** The l154 `off` arm (mechanosensory drive removed) lands F2 at
+  3/28 with carrier 0.2405 and control 0.2162 — both AT the analytic 1/K =
+  0.200 floor, so the calibration instrument is behaving and only the count and
+  ratio bars fail.
+- **Q3 CORRECT and stronger than registered** (>= 4 of 6 predicted, 6 of 6
+  measured, all inverting): every l150 lesion arm puts med_control ABOVE
+  med_carrier (+.062..+.123) and clears more control pairs than carrier pairs.
+  L165's substrate-scoping of the carrier vocabulary therefore replicates on a
+  SECOND, INDEPENDENT instrument — across-seed phase reproducibility and
+  within-rollout coherence invert the same partition on the same lesions.
+- **Amplitude confound broken the same way as in L165.** Five lesion arms carry
+  0.47-0.53x b65's carrier ptp, but `full` sits at 0.88x (b65-class amplitude)
+  and still inverts, with the lowest carrier count of all (2/28).
+
+Method note worth carrying: a held-out re-basing is only as good as the
+protocol it re-runs. Writing the drive inline as a constant 0.7 Hz sinusoid
+would have silently dropped the 900/500 chop train and the 1.4 Hz middle
+segment — the imported constructor plus the 801/901 bit-identity anchor
+(max|d| = 0.0) is what makes "same condition, new seeds" an honest claim rather
+than an assumed one.
+
+Verification: C0A-166 halting anchor ran first, 204 stored values reproduced to
+float equality using `l162_static.py` lines 1-106 / 206-218 exec'd as verbatim
+source slices; C0A-166b bit-identity on anchors 801/901; B44 disjointness
+asserted before and after; op point per seed; raw checkpoint before analysis.
+Artifacts `banc/l166/`, code `banc/l166_{cert,run,scan,postcheck}.py`.
+
+## tick 231 (2026-11-22 06:2x-07:0x) — L175 floor-4 LEFT-side registered test
+
+Branch B_REPLICATES_IDENTITY. Fresh B37 (3701-3716) on the l169b2 floor-4
+substrate, mirrored house bands registered first. G1 f4wA superL TRUE (meanL
+.625, kL 14/16); G2 carrier-vs-mass-twin dL -0.377, 15/16 down, sign p 0.0003
+(stored descriptive was -0.270 at 11/16 = below its own bar); G3 ratio 20.1.
+Disclosures: the twin leg cost went .139 -> .020 across batches so the G3 ratio
+is denominator-unstable (the carrier leg is the stable object: -.409 16/16 vs
+-.396 16/16); f4wA L structure weakened .698 -> .625 (still in band). G4 static
+half NOT run, seeded as L205. CERT-L exact on 5 stored rows + 3 legs before any
+B37 read; FC-169B2 12 arms x 22 keys x 2 seeds vs l169b2 at max|d| 0.0; f4
+gains float-equal to stored. Method lesson: `import l169b2_verdict` executes a
+SCRIPT and rewrote its own results json — restored via l169b2_addendum.py and
+replaced by an exec' d verbatim source slice (lines 1-91) with a
+no-side-effect assert.
+
+## tick 232 (2026-11-22, L178 — linearized top-k path contribution, branch B_CARRIER_LOW)
+
+Asked whether the carrier (gi 1110) has a PATH signature its mass-matched twin
+(gi 290) lacks, on the f4wA floor-4 substrate where the L169b2/L175 dynamic
+contrast actually lives. Instrument: J = g*diag(a)@W_beta at the settled
+operating point, complete length-d walk sums into the 20 semantic motor pools,
+ABS and SIGNED reported separately, exhaustive per-path enumeration at depth 2
+as the search certification.
+
+Answer: there IS a signature and it points the OTHER WAY. The carrier is a
+short-path AVOIDER of the readout, not a driver of it. Gated: exactly ZERO
+depth-2 and depth-3 walks into any pool, 3/3 settle seeds (twin: 3 paths).
+Anatomical (the seed-free leg, since the gated twin reads 0.117/0.363/0.0):
+r2 0.503, r3 0.241; carrier rank 33 of 35 ng actors against a family median
+of 0.398. Null: all 100 l169c degree-neutral destination swaps give it MORE
+reach than its real wiring (median 0.336 vs 0.0402, percentile 0.0 at both
+depths). Anatomy: 5 of its 69 targets carry any pool out-edge vs a family
+median of 22. Second, opposite-signed signature: PI2 0.906 vs 0.645, PI3
+0.840 vs 0.272 — less reach, more antagonist polarization (direction, not
+magnitude). The registered mass-restatement branch did NOT fire (rho 0.14
+gated, -0.021 anatomical).
+
+Method notes earned: (1) the l151 head-slice pattern generalises well — a
+generated static script whose head is another static script byte-for-byte
+re-runs every inherited pin as free certification and costs 3 s; (2) an
+operating-point row mask can be the dominant term in a path read (19 of 303
+pool cells active here), so a gated path statistic needs its anatomical twin
+computed in the same run or the result is uninterpretable; (3) a geometry
+null built from the SAME stored swap protocol is worth its transcription cost
+only if the transcription is certified against the stored P6 table first —
+CERT-REW reproduced l169c exactly before the floor-4 adaptation was trusted.
+
+Artifacts banc/l178/{PREREG.md, static.json, VERDICT.md, run.out}; code
+banc/l178_{build,tail}.py -> banc/l178_static.py. 8 s, CPU, zero rollout
+batches. Seeded L206 (avoidance length scale) and L207 (cell vs ladder slot).
+
+
+## L205 — the floor-4 handedness static (tick 234, 2026-11-22)
+
+PREREG `banc/l205/PREREG.md` first. Zero rollouts, zero settles, CPU 3 s.
+Branch **H_UNREGISTERED_SHAPE**, and that is the headline.
+
+L175 found the Ti antiphase side-dominance flipping with the substrate
+(floored arms L-dominant 12-16 of 16 seeds, base arms R-dominant 1-3 of 16,
+replicating 5/5 arms across two batches). L205 asked the unrun static half:
+is the flip already in the wiring?
+
+**It is not — and the static points the OTHER WAY.** Ti per-cell in-mass
+asymmetry `A_cell = (m_L - m_R)/(m_L + m_R)` is NEGATIVE (right-heavier) on
+all seven substrates and agrees within .008 across them: -0.0897 on cutwA,
+-0.0968 on f4wA (m_L 254.8 vs m_R 309.4 — the left Ti pools carry 18% LESS
+in-mass per cell). The floored arms' left-side antiphase self-orders on the
+side with LESS drive.
+
+Gate cells (L109, separate objects):
+
+- **C1 FLOORED FAIL** — wrong sign (H_STATIC predicted L-heavier).
+- **C2 BASE** sign-PASS, percentile-FAIL (pct_up .058 > .05).
+- **C3 FLIP FAIL** — paired delta `A_cell(f4wA) - A_cell(cutwA)` = -0.00707,
+  OUTSIDE its paired null [-.0053, +.0053] (pct .0135, |z| 2.15) in the
+  WRONG direction. A detectable floor-induced handedness shift exists and is
+  anti-correlated with the dominance flip it was proposed to explain —
+  stronger evidence against H_STATIC than a null result would have been.
+- **C4 MECHANISM (descriptive)** — the delta's cause, on a FIXED node set:
+  the left Ti pools have fewer in-edges (6,964 vs 8,296) and more sub-floor
+  synapses (19.28% vs 17.61%), so syn>=4 strips relatively more from the
+  left (edge retention .8072 L / .8239 R, mass .8847 / .8972; median synapse
+  count 7 on both sides). For Tr the ratio INVERTS (1.0137 / 1.0074): the
+  floor is near-side-symmetric in bulk and its residual handedness is
+  joint-specific and tiny.
+- **C5 SHARED-DRIVE COMPANION (descriptive)** — the statistic nearest in
+  KIND to S (per side, sum over sources of min(mass->flexor, mass->extensor)
+  into the Ti pair): A = -0.1379 on cutwA, -0.1396 on f4wA, percentiles
+  .206 / .221 INSIDE the handedness null [-.265, +.264] and floor-invariant
+  (shift .0017).
+
+HONESTY LEG: the static R-bias is itself MARGINAL. The one-sided-up
+percentile .048 looks like a pass only because the null is symmetric about
+zero and the real value is negative; the two-sided |A| percentile is .877
+(base) / .898 (floored) and does NOT clear .95. Reported as a DIRECTION with
+its absolute masses, never as an established wiring asymmetry. Tr sits
+inside the null on both families (.29 / .22).
+
+VERDICT: the dominance flip is not an edge-floor bookkeeping effect at depth
+1 — it is a dynamics/attractor property (L45b class), which is what
+H_DYNAMIC would have claimed had its precondition been written to cover a
+sign inversion.
+
+NEW HYPOTHESIS, seeded not claimed (L208): the left pools are the
+less-driven side (-18% in-mass, -0.14 common drive) and L178 measured only
+19 of 303 pool cells active at the f4wA op point, so "antiphase self-orders
+on the less-saturated side" is testable from the STORED traces with zero new
+rollouts. L209 asks whether the handedness absent at depth 1 appears at
+depth 2-3 under the L206 normalisation legs.
+
+METHOD LESSON (self-inflicted): a signed pre-registered hypothesis needs its
+branch table to cover SIGN x BAND = four cells. I registered three
+(correct-sign-outside, inside-band, correct-sign-no-delta) and the data
+landed on the missing fourth (wrong sign, outside band) — the most
+informative of the four. The `H_UNREGISTERED_SHAPE` fallback caught it
+honestly instead of mapping it onto the nearest registered label.
+
+Verification: CERT-HEAD1 = `l151_static.py` lines 1-319 BYTE-FOR-BYTE
+(sha256 e6245e8306dc8a0f, identical to the head sha L178 recorded, so the
+whole L151/L142/L134/L92/L101 pin set re-ran free); CERT-HEAD2 =
+`l178_tail.py` lines 22-83 BYTE-FOR-BYTE (sha256 66112b0c221d02d8)
+re-running CERT-F4 in full (K4 73, carrier rank 21, twin gi 290, gap
+2.44e-05, jaccard .9231, f4wA n 21,789 / edges 469,618, family 33, three
+stored gains at FLOAT EQUALITY); forbidden-token audit on both slices; NO
+lab module imported (L175: a lab run script is a SCRIPT, never a library).
+DISCLOSED: the card asked for the build "imported from l169b2_run.py"; a
+literal import is forbidden by that lesson, so the verbatim-source-slice
+form was used and the substitution was registered in the PREREG before the
+run. Substrate edge counts asserted pre-read (f4wA 469,618 / f4 closure
+472,095 / floor-eligible wA 469,256 / cutwA 644,177 / cutng25 644,084 /
+closure == S92 edges_new); all 20 pool sizes asserted invariant on ALL SEVEN
+substrates with zero L/R overlap; per-side counts held EXACT on all 2000
+permutation draws, draws SHARED so the delta null is paired (seed 20526);
+side convention confirmed before the direction was read
+(`l169b2_verdict.s_arrays` uses the SAME `POOL_G` Ti_fL/Ti_eL keys and the
+same SIDE_MAP as this static). No live changes.
+
+Artifacts `banc/l205/{PREREG.md, static.json, VERDICT.md, run.out, run.err}`,
+code `banc/l205_{build,tail}.py` -> generated `banc/l205_static.py`.
+
+## L206 — the avoidance length scale: there is no crossing depth (tick 235, 2026-11-22)
+
+Asked the one question L178 could not: at what depth, if any, does the
+carrier's walk reach into the motor pools cross the degree-neutral null band
+it sits below at depths 2-3? Answer: **never within 10 hops**, and the
+mechanism turned out not to be path length at all.
+
+Static, zero rollouts, 23 s of CPU. Anatomical leg only (row-mask-free,
+seed-free) per the card. lam1(A_abs) = 30.1798 by power iteration (rel spread
+of the last six iterates 1.18e-16); depth-d sums normalised by lam1^d so
+depths are comparable, with the scale-free pool SHARE reported beside them.
+
+**G1 = G1_NEVER.** Carrier below the 100-draw null's p05 at every depth
+1..10, percentile 0.0 at all ten. The deficit ratio (null median / carrier)
+RISES and flattens: 8.38, 7.64, 9.78, 9.94, 10.00, 10.16, 10.28, 10.36,
+10.39 — a depth-invariant ~10.4x, not a shrinking one (my registered
+prediction had it shrinking; wrong direction).
+
+**The mechanism, and it is the result.** The carrier's pool share — the
+fraction of its whole broadcast landing in the 303 motor-pool cells —
+converges to 0.15714 at depth 10 against the null's 0.15721 and the 33-cell
+family's 0.15721. Identical to four decimals. So by depth ~9-10 its influence
+is distributed exactly like everyone else's, and what stays ~10x small is the
+AMPLITUDE of its projection onto the operator's dominant mode. The avoidance
+is global and depth-invariant; longer loops cannot rescue it. Carrier rank 33
+of 35 ng actors at every depth 2..10.
+
+**G2 = G2_SI_HIGH at percentile 100.0** (the tick-233 field amendment's
+second statistic, registered as its OWN gate cell). Search information from
+the carrier into the motor pools 22.393 bits vs null median 18.718 [p05
+17.080, p95 20.624], 100/100 draws below; 303/303 pool cells reachable from
+the carrier and the null median reach is also 303. The route EXISTS and is
+HIDDEN — +3.675 bits, ~12.8x less findable by a walker following the
+transition probabilities. Twin 20.202, family median 20.270, carrier rank
+32/35. Because the swaps leave every weight with its SOURCE, out-strength is
+preserved exactly, so the SI excess is not an out-strength artifact. Both
+halves of the field-legible sentence are now measured: low communicability
+AND high search information at matched out-mass.
+
+**G3 = AGREE.** The registered expectation of a routing/diffusion
+disagreement (from Seguin et al's HCP result) did not materialise: diffusion
+pct 0.0, routing pct 100.0. Cross-level confirmation rather than a dating.
+
+**N2 (Crofts/Estrada strength normalisation, amendment (b)):** lam1 0.388120,
+depth-2 carrier 0.017987 vs twin 0.032690 vs family median 0.095370, rank
+32/35 — agrees in ORDER, differs in magnitude, as registered. No null on that
+leg (the swaps are out-strength-neutral but not total-strength-neutral under
+sqrt(s_i s_j)); ordering check only, disclosed.
+
+Predictions 1 of 4 (Q206-4 correct). Disclosed: the json's
+deficit_ratio_tail_spread 0.0 is a one-element artifact (d_conv undefined ->
+tail = depth 10 alone), so depth-invariance is reported as a
+rising-and-flattening trend, never a measured asymptote; and my registered
+convergence diagnostic (cos > 0.99) was too strict for the statistic that
+actually saturates — the pool share is at the null's value by depth 9 while
+cos(x_d, v1) is 0.954.
+
+Certification: three VERBATIM SOURCE SLICES (l151_static.py 1-319, sha
+e6245e8306dc8a0f = the sha L178 and L205 recorded; l178_tail.py 7-149 sha
+6e2e8fa4bd19eced, re-running CERT-F4, the gains at float equality, the CSR
+orientation and all 20 pool sizes; l178_tail.py 348-458 sha 5bb7b56e6b64,
+re-running CERT-REW on l169c P6 exactly), forbidden-token audited, no lab
+module imported. CERT-178 (halting): 420 stored anatomical values reproduced
+by FLOAT EQUALITY before any depth > 3 was read. CERT-NULL (halting): all 8
+stored L178 Q2b_null_anatomical statistics reproduced by float equality from
+my own null construction. Sweep self-check max rel diff 0.0.
+
+Method lesson, caught in-run: a float-equality claim is a claim about the
+EXPRESSION, not just the operands. `sum(x[idx].sum() for ...)` over numpy
+scalars and `sum(float(x[idx].sum()) for ...)` over Python floats differ in
+the last bits on this graph — the first form failed the stored-value assert
+on the twin while passing on the carrier (whose depth-1 value is exactly 0).
+Mirror the certified script's reduction character-for-character, then record
+the max rel diff anyway.
+
+Draft sentence licensed: the identity cliff is not a feedforward drive of the
+readout at ANY path length up to 10 hops. No live changes.
+
+Artifacts `banc/l206/{PREREG.md, static.json, VERDICT.md, run.out, run.err}`,
+code `banc/l206_{build,mid,tail}.py` -> generated `banc/l206_static.py`.
+
+## tick 236 (2026-11-22, L207) — the avoidance is the CELL TYPE, not the slot
+
+Branches **Q1 = B_NEITHER** (registered letter) / **Q2 = M_AVOIDS**;
+predictions 3/4. Static, 17 s, CPU, zero rollouts. PREREG `banc/l207/PREREG.md`
+written first.
+
+The question L178/L206 could not answer on one substrate: their comparison
+family is MASS-ORDERED, so a slot effect (whoever sits at that out-mass rank
+avoids) is confounded with a cell effect. L207 breaks the confound by computing
+the SAME anatomical statistic — lam1^2-normalised depth-2 per-out-mass ABS walk
+mass into the 20 semantic motor pools — on THREE substrates where the carrier
+occupies TWO DIFFERENT ladder slots (closure slot 25, cutwA slot 25, f4wA slot
+21), and by measuring the cells that occupy those slots instead.
+
+MEASURED. Carrier (gi 1110, DNp33-L, ACh, pure-projecting) R = 3.20548e-05 /
+3.20568e-05 / 4.40882e-05 on G0_closure / G1_cutwA / F4_f4wA = rank 5 of 58,
+5 of 34, 3 of 35, a 6.92x / 6.74x / 6.51x deficit against each cohort median.
+Slot occupants mid-pack: gi 80 at closure slot 21 pct .351, gi 32072 at f4wA
+slot 25 pct .235. rho(slot, R) = -.0888 / -.0466 / +.2919, all inside the
+registered |rho| < .5, and rho(m_out, R) = .115 / .156 / -.182. So the ladder
+slot does not predict avoidance and the slot does not avoid.
+
+THE POSITIVE LEG. The contralateral homolog gi 928 = DNp33-R (ACh, identity
+cross-checked against l169c P2_hom_identity) avoids at least as HARD: pct
+.060 on ALL THREE substrates against a mass-matched cohort of 100 present
+descending cells (log-mass spread <= .122), R 2.31e-05 / 2.31e-05 / 2.27e-05
+against cohort medians 4.77e-04 / 4.82e-04 / 4.25e-04 ~ 20x; the carrier on
+the same cohort rule reads pct .100 / .100 / .090 ~ 15x. Both members of the
+bilateral DNp33 pair sit in the bottom 6-10% of mass-matched descending cells
+on every substrate. The object is a cell TYPE, not a slot and not an
+individual cell.
+
+WHY B_NEITHER ANYWAY. B_CELL required carrier pct <= .10 on all three; cutwA
+reads .121, which is ONE cohort step (1/33 = .030) on the smallest cohort, at
+the SAME rank 5 as the closure ladder. The data fall in B_CELL's shape and
+miss B_CELL's threshold; the bar was written for a cohort of 58 and applied to
+a cohort of 34. Reported as registered, with the shape named.
+
+MAGNITUDES DO NOT TRANSPORT BETWEEN NULLS (inheritable): the same cell and the
+same statistic read 10.4x at percentile 0.0 against L206's 100 degree-neutral
+destination swaps, ~15x at pct .09 against a mass-matched descending cohort,
+and 6.5x at pct .06-.12 against the ladder cohort. Only the rewire null holds
+the cell's own out-degree and out-strength fixed; the cohorts are
+comparability sets. Never quote one magnitude as another's.
+
+UNREGISTERED AND WORTH KEEPING: carrier R moves by 6e-05 RELATIVE between
+closure and cutwA (3.20548e-05 -> 3.20568e-05) although 24 ladder cells and
+3,776 edges are gone, while the syn>=4 floor moves it +38%. The ladder
+deletion is invisible to this statistic; the floor is not.
+
+Q3 SLICED, NOT SUBSTITUTED: both cells carry inline v783 matches (carrier
+720575940604103084, mirror 720575940633165452), but v783 is a BRAIN-ONLY
+volume and the 831 annotated motor cells this statistic reads into have no
+counterpart there, so the measurement cannot be made — handed to L212 with the
+readout choice to be registered first, rather than answered with a substituted
+statistic (L78 would in any case make it exploratory).
+
+VERIFIED: three VERBATIM slices + one bridge, forbidden-token audited, no lab
+module imported (L175) — CERT-HEAD1 l151_static.py 1-319 (sha256
+e6245e8306dc8a0f, the same head sha L178/L205/L206 recorded, asserted a
+literal PREFIX), CERT-HEAD2 l178_tail.py 7-149 (6e2e8fa4bd19eced, CERT-F4 in
+full + the three stored gains at FLOAT EQUALITY + CSR orientation + 20 pool
+sizes), MID l206_mid.py (febbc390ad4f), CERT-HEAD3 l206_tail.py 22-121
+(29a830839ebc7837) carrying CERT-178 HALTING = 420 stored anatomical values by
+FLOAT EQUALITY and lam1 = 30.179788 (rel spread 1.18e-16). NEW: **CERT-GEN
+HALTING** — the generic substrate builder, reach_sub and power_iter_sub
+reproduce the certified f4wA specialisation exactly (44 checks: CSR row/col
+arrays and |values| by array_equal, pool-local arrays AND their key ORDER,
+reach_sub == reach() per depth per pool, the G-scaled form == L178's stored
+carrier/twin P1/P2, power_iter_sub == LAM1) BEFORE either new substrate was
+built. Gain invariance asserted numerically (lam1 rel 1.18e-16, depth-2 rel
+1.31e-16), so no per-substrate gain bisect is needed. Substrate pins asserted
+(21,809/647,953; 21,785/644,177; 21,789/469,618), 20 pool sizes invariant with
+zero L/R overlap on all three, carrier slots 25/21 asserted, and the PREREG's
+claim that slot-21's occupant is REMOVED on cutwA asserted rather than
+discovered.
+
+METHOD LESSON (inheritable): a PERCENTILE BAR is a statement about cohort
+RESOLUTION as well as effect size — a .10 bar cannot be met at rank 5 of a
+34-cell cohort without 4 cells below, so the same cell passes on a 58-cell
+cohort and fails on a 34-cell one at IDENTICAL rank. Register either a RANK
+bar or a per-cohort bar when cohort sizes differ by design, and report rank
+beside percentile always.
+
+No live changes. Artifacts `banc/l207/{PREREG.md, static.json, VERDICT.md,
+run.out, run.err}`, code `banc/l207_{build,tail}.py` -> generated
+`banc/l207_static.py`.
+
+
+## tick 237 (2026-11-22) — L208: the less-saturated-side hypothesis
+
+Asked whether side-dominance of the antagonist antiphase rides the side's
+own saturation margin, using ZERO new rollouts: 10,240 stored pool-mean
+traces from B36 (l169b2) and B37 (l175f), read-only.
+
+Registered branch H_UNREGISTERED_SHAPE (B36 no significant arm either tail;
+B37 one lower-tail hit, cutng25 rho -.524 p .0229). H0_VOID did NOT fire
+(median |dM| .0652 vs bar .005). The result is the between-arm leg and it
+refutes by SIGN: the Ti margin side is R on all five arms in both batches
+(dM -.055 to -.109, matched <.005 per arm across batches) while dominance
+flips L (floored) -> R (base), agreement 2/5. The explanatory variable is
+floor-INVARIANT; the thing it must explain FLIPS.
+
+The ceiling leg is VACUOUS-BY-SUBSTRATE, measured: fhi95 = fhi90 = 0.00000
+in all 20 cells and the largest pool mean anywhere is .7744. At ~11% active
+the pool mean never approaches RMAX, so margin-from-ceiling is just "low
+level" — which in a relu net means DEAD, not roomy. Post-hoc re-scoring in
+the FLOOR currency (A = floR - floL) gives sign agreement 8/10 and 9/10 arm
+x pair cells and one replicated within-seed cell, Tr|f4ng rho +.759
+(p .0007) and +.912 (p .0008) — the same cell that read -.691 / -.909 in
+the margin currency. Same data, two currencies, opposite verdicts. Labelled
+post-hoc; registered version handed to L214.
+
+Descriptive mechanism: the left trochanter pools are DEAD on the base arms
+(flo_L .996 / 1.000, level .0002 / .0000) and ALIVE on the floored arms
+(flo_L .562-.660, level .022-.026) — the syn>=4 floor resurrects them,
+matching L205's C4 inversion of Tr's retention ratio. Honest exception:
+Ti|f4wA (the headline L175 phenotype) disagrees in BOTH batches and is
+explained by neither currency. Dissociation recorded: the left Ti pools
+have 18% LESS per-cell in-mass (L205) yet run HOTTER on every arm.
+
+Capability limit registered before measuring: stored traces are POOL MEANS,
+so the per-CELL ceiling fraction is unrecoverable and was never
+substituted for.
+
+Verified: head = l169b2_verdict.py lines 13-63 byte-for-byte (sha256
+de636f4a18ee789b, literal-slice assert, forbidden-token audit, no lab
+module imported); CERT-ADD halting gate 109 stored B36 values exact;
+CERT-175F 180 stored B37 values exact; CERT-CONST against the run script's
+own literals; |W| 3000 / |W_on| 1400; npz size+mtime_ns fingerprints
+asserted unchanged in both runs. Predictions 3 of 4. Artifacts
+banc/l208/{PREREG.md, static.json, addendum_floor.json, VERDICT.md,
+run.out, run.err, add.out, add.err}.
+
+## tick 238 (2026-11-22) — L209: does the handedness appear DEEPER?
+
+Static, zero rollouts, 18 s CPU. PREREG banc/l209/PREREG.md written first.
+
+Branch D_NULL_RIGHTWARD = the registered expectation, on all four Ti
+depth x substrate cells (primary Ti|f4wA|d2 A_cell -0.0638, two-sided
+pct_abs .755, inside the membership-permutation null, right-heavy). The
+dominance flip stays dynamics-owned at depth 2 and 3, not only depth 1.
+
+The positive content is a decay, not an absence: |A_cell| for Ti runs
+.0882/.0584/.0302 (cutwA) and .0957/.0638/.0323 (f4wA) — per-hop ratios
+.662/.517 and .667/.506, agreeing to three decimals across two substrates
+whose LEVELS differ. The rightward bias is a direct-drive feature the
+wiring actively homogenises with path length (~halving per hop), so the
+decay is operator mixing and not the syn>=4 floor.
+
+Unregistered and kept: Tr INVERTS with depth toward the dynamics'
+direction (-.0126 -> +.0372 -> +.0801 on f4wA, pct_abs .929) but never
+clears the .95 bar AND the Crofts/Estrada second leg erases it
+(-.0253 -> -.0097 -> +.0032) while Ti agrees in sign under both operators
+everywhere. The one trend pointing the useful way is exactly the one that
+fails the second normalisation leg. The floor's deep Tr nudge is outside
+its paired null (pct_up .9895 / .9990, leftward) but is +.0058/+.0073
+against null sd ~.003 — a direction, never a magnitude (L175).
+
+Registered no-op, measured: A_cell is a ratio, so lam1^d division cannot
+move the gate statistic (max rel diff 7.19e-14 over 24 cells); only the
+Crofts form can, because it is a different OPERATOR, not a normalisation
+of the same one. lam1(beta) 227.779875 cutwA vs 200.510803 f4wA.
+
+Verified: four verbatim certified source slices + one bridge, forbidden-
+token audited, no lab module imported (L175) — l151_static.py 1-319
+(e6245e8306dc8a0f), l178_tail.py 7-149 (6e2e8fa4bd19eced), l206_mid.py
+(febbc390ad4f), l206_tail.py 22-121 (29a830839ebc7837, CERT-178 = 420
+stored L178 values at float equality, incl. this card's required anchor),
+l207_tail.py 26-146 (e3aa8d3d40b79326, gain invariance + CERT-GEN's 44
+checks). NEW HALTING GATE CERT-205: 250 stored L205 values reproduced by
+FLOAT EQUALITY before any L209 number was read, which certifies the RNG
+stream, the side convention, the pool membership and the depth-1 anchor
+in one gate; GROUPS key ORDER asserted == L205's. Predictions 4 of 4.
+Artifacts banc/l209/{PREREG.md, static.json, VERDICT.md, run.out,
+run.err}, code banc/l209_{build,tail}.py -> banc/l209_static.py.
+
+## in-session (2026-11-22) — META-PAPER skeleton (owner-directed, burn window; writer claude-opus-5.5)
+
+Deliverable paper/metapaper/SKELETON.md (395 lines): titles, abstract, §1-§5,
+references from verified digests only. Writes confined to paper/metapaper/**
+plus this append; no draft, gate or artifact touched. Counts recomputed by
+paper/metapaper/evidence/counts.py (jobs.tsv -> counts.out); repo trail pulled
+via gh API to evidence/commits.tsv (10 commits) + releases.tsv.
+
+Measured, correcting the brief's round numbers: referee instances 5 across 3
+model lines / 2 vendors (fable-5.2 x3 incl. the hosted claude.ai instance,
+gpt-6.2-astra, claude-opus-5); referee-family experiments 13 landed (8 fable,
+5 astra) + 2 in flight (L202, duckroute); 14 self-scored wrong predictions
+across 8 of them; 14 drafted claims died or narrowed (SKELETON §3.4).
+Open, named not done: costs were never instrumented (tokens/$ unmeasured);
+the §1.2 same-family claim is confounded with round order and draft maturity;
+zero refuted reviewer claims is listed as a threat (lenient adjudication) not
+as referee accuracy; no LLM-review literature is verified yet, so none is
+cited. Seeded draft cards M1-M5 incl. PREREG_human.md (register what a human
+should catch BEFORE the Sauers handoff, score after).
+
+### 2026-11-22 — Figure 6 delivered (BRIEF_fig6.md, owner burn window)
+
+paper/figures/fig6_circuit.{py,svg,png} + fig6_caption.md + fig6_pointers.json + fig6_verify.py (+ fig6_verify.pins.json). Three panels in the l152 house style. A: wiring schematic (positions arbitrary, counts real). Carrier DNp33-L gi 1110 (80 outputs, none onto a Ti MN) -> relay IN06B033-L gi 75494 by a 21-syn edge (L190/L198/L184 agree) -> 1 edge / 8 syn onto Ti flexor R. Edge cut +.223 vs carrier +.370 = 60% point ratio, no interval (L190). The 77 other carrier outputs are drawn as the signature's candidate substrate, by elimination only. ru2 IN07B031-R gi 70994 sends 5/5 edges into the premotor pools (not the Ti pools directly, a correction to the brief's wording), LI2 -.048 vs +.174, J .022. B: L200 B44 right/1.4-Hz/left mean duty with seed dots and base-gain diamonds for base, sc25, l2, l2k (carrier replay-clamped), l2c. Right wipe -.487 [-.591, -.384], signature .585 -> .000; left flip +.550, survives clamp and carrier removal. C: L199 S octant profile + registered theta +172 -> +55 (dtheta -118 [-131, -104], Hq) and a pool-phase dial (flex 102 -> 93, ext 108 -> -150, Delta -5 -> -116). Every printed number in the figure (99) and caption (72) is resolved from a «pointer» at build time. L202 had NOT landed: its slot is drawn "pending", and both scripts fail loudly once results_l202.json exists. The brief's "ru2-clamp variants" exist only as L202 arm 4; L200 carries the carrier clamp (l2k) and is labelled as such. fig6_verify.py: 16,923 checks / 396 pointers, ALL PASS. Mutation test (scratch): 8/8 planted errors caught (data-v, printed label, edge count, unsourced number, L202 flag, caption number, caption decimal, 3-px seed shift). Vision QA was unavailable (aux endpoint 400), so layout was checked analytically with Liberation Serif metrics (rsvg's default here): no text overlaps, no panel overflow, no edge or marker through text, ink present in every panel. Human eyes on the PNG are still owed. No DRAFT edits.

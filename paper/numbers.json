@@ -5758,6 +5758,587 @@
    "super_meanR_min": 0.6
   }
  },
+ "l197b.timing": {
+  "src": "banc/l197b/results_l197b.json:arms.{S,W} (A, T, D, T_on, T_off = partner undriven, A_inphase / A_antiphase / A_in_minus_anti = the tone split; values and stored jackknife intervals rounded to 3 dp) + verdict + prereg_sha256 (first 16 hex)",
+  "v": {
+   "S": {
+    "A": {
+     "ci95": [
+      0.037,
+      0.061
+     ],
+     "value": 0.049
+    },
+    "A_antiphase": {
+     "ci95": [
+      -0.196,
+      -0.136
+     ],
+     "value": -0.166
+    },
+    "A_in_minus_anti": {
+     "ci95": [
+      0.345,
+      0.462
+     ],
+     "value": 0.403
+    },
+    "A_inphase": {
+     "ci95": [
+      0.202,
+      0.272
+     ],
+     "value": 0.237
+    },
+    "D": {
+     "ci95": [
+      -0.082,
+      -0.029
+     ],
+     "value": -0.056
+    },
+    "R0_no_elevation": true,
+    "T": {
+     "ci95": [
+      0.08,
+      0.13
+     ],
+     "value": 0.105
+    },
+    "T_off": {
+     "ci95": [
+      -0.013,
+      0.034
+     ],
+     "value": 0.01
+    },
+    "T_on": {
+     "ci95": [
+      0.134,
+      0.199
+     ],
+     "value": 0.167
+    },
+    "W": 150,
+    "clock": "E3_equal_resolved",
+    "mechanism": "M_tone",
+    "n": 96
+   },
+   "W": {
+    "A": {
+     "ci95": [
+      0.045,
+      0.09
+     ],
+     "value": 0.068
+    },
+    "A_antiphase": {
+     "ci95": [
+      -0.028,
+      0.054
+     ],
+     "value": 0.013
+    },
+    "A_in_minus_anti": {
+     "ci95": [
+      0.044,
+      0.169
+     ],
+     "value": 0.106
+    },
+    "A_inphase": {
+     "ci95": [
+      0.077,
+      0.161
+     ],
+     "value": 0.119
+    },
+    "D": {
+     "ci95": [
+      0.012,
+      0.068
+     ],
+     "value": 0.04
+    },
+    "R0_no_elevation": true,
+    "T": {
+     "ci95": [
+      0.008,
+      0.047
+     ],
+     "value": 0.027
+    },
+    "T_off": {
+     "ci95": [
+      -0.007,
+      0.036
+     ],
+     "value": 0.015
+    },
+    "T_on": {
+     "ci95": [
+      0.038,
+      0.101
+     ],
+     "value": 0.07
+    },
+    "W": 250,
+    "clock": "E3_equal_resolved",
+    "mechanism": "M_unassigned",
+    "n": 96
+   },
+   "prereg_sha256": "86a2a99515383ed6",
+   "verdict": "NO_VOTE (R0 / underpowered in both arms)"
+  }
+ },
+ "l199.causal": {
+  "src": "banc/l199/results_causal.json:D (Part D, the tone shifted half a period in one arm at identical gates; E = carrier-removal elevation by phase class, K = within minus cross, K_I = the K interaction; intervals = value +- 1.96 se DERIVED here, the registered jackknife normal rule) + descriptive_W500 + pool_phase_shift_phiPI_minus_phi0 + seeds + certs",
+  "v": {
+   "E_00": {
+    "ci95": [
+     0.108,
+     0.286
+    ],
+    "value": 0.197
+   },
+   "E_PP": {
+    "ci95": [
+     0.159,
+     0.357
+    ],
+    "value": 0.258
+   },
+   "E_PP_minus_E_00": {
+    "ci95": [
+     -0.067,
+     0.189
+    ],
+    "value": 0.061
+   },
+   "E_X": {
+    "ci95": [
+     -0.22,
+     -0.119
+    ],
+    "value": -0.17
+   },
+   "K_I": {
+    "ci95": [
+     0.288,
+     0.506
+    ],
+    "value": 0.397
+   },
+   "K_base": {
+    "ci95": [
+     -0.356,
+     -0.246
+    ],
+    "value": -0.301
+   },
+   "K_removed": {
+    "ci95": [
+     -0.002,
+     0.194
+    ],
+    "value": 0.096
+   },
+   "W500": {
+    "K_I": {
+     "ci95": [
+      0.358,
+      0.626
+     ],
+     "value": 0.492
+    },
+    "K_removed": {
+     "ci95": [
+      0.11,
+      0.381
+     ],
+     "value": 0.245
+    },
+    "label": "CA1_sign"
+   },
+   "base_K_negative": true,
+   "blocks": {
+    "cutwA": {
+     "w00": 0.175,
+     "wPP": 0.21,
+     "x0P": 0.505,
+     "xP0": 0.483
+    },
+    "sc25": {
+     "w00": 0.372,
+     "wPP": 0.469,
+     "x0P": 0.3,
+     "xP0": 0.349
+    }
+   },
+   "certs": {
+    "c0a_checks": 276,
+    "c0a_max": 0.0,
+    "gates_canonical": true,
+    "mc_max_dev": 5.551115123125783e-16
+   },
+   "label": "CA1",
+   "n": 16,
+   "pool_shift_phiPI_minus_phi0": {
+    "Ti_eR_cutwA": {
+     "R": 0.91,
+     "deg": -171.9
+    },
+    "Ti_eR_sc25": {
+     "R": 0.48,
+     "deg": -163.8
+    },
+    "Ti_fR_cutwA": {
+     "R": 0.75,
+     "deg": 156.7
+    },
+    "Ti_fR_sc25": {
+     "R": 0.95,
+     "deg": 167.4
+    }
+   },
+   "removed_K_positive": false,
+   "seed_hi": 19946,
+   "seed_lo": 19931,
+   "status": "FINAL"
+  }
+ },
+ "l199.meta": {
+  "src": "banc/l199/results_primary.json:prereg_sha256 (first 16 hex) + status + part_a_verdict + labels + cert_197b (PASS flags); banc/l199/results_causal.json:status + D.label",
+  "v": {
+   "causal_label": "CA1",
+   "cert_197b": {
+    "S": true,
+    "W": true
+   },
+   "labels": {
+    "A": {
+     "S": "PH1_sign",
+     "V1": "PH1_sign",
+     "W": "PH_weak"
+    },
+    "B": {
+     "S": "Hq",
+     "V1": "H1",
+     "W": "Hq"
+    },
+    "C": {
+     "S": "Dq",
+     "V1": "D1",
+     "W": "Dq"
+    }
+   },
+   "part_a_verdict": "PH1_sign",
+   "prereg_sha256": "01e23ae1c711012e",
+   "status": [
+    "FINAL",
+    "FINAL"
+   ]
+  }
+ },
+ "l199.phase": {
+  "src": "banc/l199/results_primary.json:datasets.{S,W,V1}.{A,B,C} (V1 = the L186 batch; A = 3-bin profile slopes and interaction, B = signed-offset preferred offset theta, C = per-seed first-harmonic pool phase against the tone: Delta = flexor minus extensor, alpha = each pool; shift = carrier-removed minus base alpha, circular difference DERIVED here; dtheta interval = value +- 1.96 se DERIVED here) + banc/l199/results_causal.json:C_by_phi (the Part D batch)",
+  "v": {
+   "S": {
+    "A": {
+     "I": {
+      "ci95": [
+       0.345,
+       0.462
+      ],
+      "value": 0.403
+     },
+     "label": "PH1_sign",
+     "slope_base": {
+      "ci95": [
+       -0.308,
+       -0.249
+      ],
+      "value": -0.278
+     },
+     "slope_removed": {
+      "ci95": [
+       0.075,
+       0.176
+      ],
+      "value": 0.125
+     }
+    },
+    "B": {
+     "dtheta": {
+      "ci95": [
+       -131.0,
+       -104.5
+      ],
+      "value": -117.7
+     },
+     "label": "Hq",
+     "theta_base": {
+      "ci95": [
+       164.6,
+       180.1
+      ],
+      "value": 172.3
+     },
+     "theta_removed": {
+      "ci95": [
+       44.0,
+       65.3
+      ],
+      "value": 54.6
+     }
+    },
+    "C": {
+     "cutwA": {
+      "Delta": {
+       "R": 0.77,
+       "deg": -5.1
+      },
+      "Ti_eR": {
+       "R": 0.95,
+       "deg": 107.9
+      },
+      "Ti_fR": {
+       "R": 0.88,
+       "deg": 101.8
+      },
+      "label": "co-move"
+     },
+     "label": "Dq",
+     "sc25": {
+      "Delta": {
+       "R": 0.77,
+       "deg": -116.0
+      },
+      "Ti_eR": {
+       "R": 0.7,
+       "deg": -150.3
+      },
+      "Ti_fR": {
+       "R": 0.97,
+       "deg": 93.3
+      },
+      "label": "intermediate"
+     },
+     "shift": {
+      "Ti_eR": 101.8,
+      "Ti_fR": -8.5
+     }
+    },
+    "W": 150,
+    "n": 96,
+    "pulse": 500
+   },
+   "V1": {
+    "A": {
+     "I": {
+      "ci95": [
+       0.274,
+       0.658
+      ],
+      "value": 0.466
+     },
+     "label": "PH1_sign",
+     "slope_base": {
+      "ci95": [
+       -0.34,
+       -0.106
+      ],
+      "value": -0.223
+     },
+     "slope_removed": {
+      "ci95": [
+       0.121,
+       0.366
+      ],
+      "value": 0.243
+     }
+    },
+    "B": {
+     "dtheta": {
+      "ci95": [
+       -173.3,
+       -99.2
+      ],
+      "value": -136.3
+     },
+     "label": "H1",
+     "theta_base": {
+      "ci95": [
+       145.9,
+       191.4
+      ],
+      "value": 168.6
+     },
+     "theta_removed": {
+      "ci95": [
+       13.5,
+       51.2
+      ],
+      "value": 32.4
+     }
+    },
+    "C": {
+     "cutwA": {
+      "Delta": {
+       "R": 0.74,
+       "deg": -6.9
+      },
+      "Ti_eR": {
+       "R": 0.95,
+       "deg": 110.5
+      },
+      "Ti_fR": {
+       "R": 0.87,
+       "deg": 102.1
+      },
+      "label": "co-move"
+     },
+     "label": "D1",
+     "sc25": {
+      "Delta": {
+       "R": 0.8,
+       "deg": -129.3
+      },
+      "Ti_eR": {
+       "R": 0.77,
+       "deg": -137.2
+      },
+      "Ti_fR": {
+       "R": 0.99,
+       "deg": 92.1
+      },
+      "label": "alternate"
+     },
+     "shift": {
+      "Ti_eR": 112.3,
+      "Ti_fR": -10.0
+     }
+    },
+    "W": 150,
+    "n": 16,
+    "pulse": 500
+   },
+   "W": {
+    "A": {
+     "I": {
+      "ci95": [
+       0.044,
+       0.169
+      ],
+      "value": 0.106
+     },
+     "label": "PH_weak",
+     "slope_base": {
+      "ci95": [
+       -0.251,
+       -0.182
+      ],
+      "value": -0.216
+     },
+     "slope_removed": {
+      "ci95": [
+       -0.16,
+       -0.06
+      ],
+      "value": -0.11
+     }
+    },
+    "B": {
+     "dtheta": {
+      "ci95": [
+       -58.6,
+       -19.5
+      ],
+      "value": -39.1
+     },
+     "label": "Hq",
+     "theta_base": {
+      "ci95": [
+       163.5,
+       182.0
+      ],
+      "value": 172.7
+     },
+     "theta_removed": {
+      "ci95": [
+       116.8,
+       150.6
+      ],
+      "value": 133.7
+     }
+    },
+    "C": {
+     "cutwA": {
+      "Delta": {
+       "R": 0.68,
+       "deg": 4.7
+      },
+      "Ti_eR": {
+       "R": 0.91,
+       "deg": 102.4
+      },
+      "Ti_fR": {
+       "R": 0.81,
+       "deg": 103.3
+      },
+      "label": "co-move"
+     },
+     "label": "Dq",
+     "sc25": {
+      "Delta": {
+       "R": 0.49,
+       "deg": -76.2
+      },
+      "Ti_eR": {
+       "R": 0.6,
+       "deg": 133.5
+      },
+      "Ti_fR": {
+       "R": 0.82,
+       "deg": 73.1
+      },
+      "label": "dispersed"
+     },
+     "shift": {
+      "Ti_eR": 31.1,
+      "Ti_fR": -30.2
+     }
+    },
+    "W": 250,
+    "n": 96,
+    "pulse": 250
+   },
+   "causal": {
+    "phi0": {
+     "cutwA": {
+      "R": 0.75,
+      "deg": 10.4
+     },
+     "label": "Dq",
+     "sc25": {
+      "R": 0.89,
+      "deg": -93.6
+     }
+    },
+    "phiPI": {
+     "cutwA": {
+      "R": 0.67,
+      "deg": -21.6
+     },
+     "label": "D1",
+     "sc25": {
+      "R": 0.74,
+      "deg": -125.9
+     }
+    }
+   }
+  }
+ },
  "l92.substrate": {
   "src": "banc/l92/static.json:(top-level fields n_old n_new cord dn_into dn_proj dn_new edges_old edges_new; asserted equal at run time by banc/l135_run.py)",
   "v": {

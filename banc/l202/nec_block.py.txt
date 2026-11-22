@@ -1,0 +1,173 @@
+# ======================= L202 NECESSITY BLOCK (additive) =======================
+# ru2-necessity replicate + bilateral twin + chain batches. Everything above is
+# the L200 harness VERBATIM (its selection re-pointed READ-ONLY at the frozen
+# l200/selection.json, so lt1 / lt2 / l2c / l2h are L200's own objects). No
+# fresh selection happens here: the two bilateral cells are ranks 4 and 5 of
+# the frozen L200 top-5 (PREREG l202).
+assert SEL200_PATH == "l200/selection.json"
+GI_T4, GI_T5 = 67125, 67756
+assert _top5[3:5] == [GI_T4, GI_T5], "bilateral twin id drift vs frozen L200 selection (STOP)"
+_r4, _r5 = SEL200["top5"][3], SEL200["top5"][4]
+assert (_r4["edges_onto_PM_L"], _r4["edges_onto_PM_R"]) == (9, 8)
+assert (_r5["edges_onto_PM_L"], _r5["edges_onto_PM_R"]) == (7, 7)
+assert _r4["x_mean"] > 0.05 and _r5["x_mean"] > 0.05, "bilateral twin silent on the base (STOP)"
+assert _r4["dR"] > 0 and _r5["dR"] > 0
+for _g in (GI_T4, GI_T5):
+    assert in_wA[_g] and is_cord_g[_g] and EFF_SIGN[_g] == -1.0 and not is_prior200[_g]
+R200 = json.load(open("l200/results_l200.json"))
+assert R200["status"] == "FINAL" and R200["arms"]["l2c"]["removed"] == [GI_RU2, GI_CARRIER]
+assert (R200["arms"]["l2c"]["kR"], R200["arms"]["l2c"]["meanR"]) == (3, 0.296)
+assert (R200["arms"]["sc25"]["kR"], R200["arms"]["sc25"]["meanR"],
+        R200["arms"]["sc25"]["mean14R"]) == (15, 0.783, 0.585)
+G200_L2C = float(json.load(open("l200/gains_w4.json"))["gain"]["l2c"])
+assert G200_L2C == R200["arms"]["l2c"]["gain"] == 0.14273352026939398
+assert float(json.load(open("l200/gains_w1.json"))["gain"]["l2"]) == G198_RU2
+assert G187_RCUT == 0.14347783327102664
+assert float(json.load(open("l198/gains_w1.json"))["gain"]["rcut"]) == G187_RCUT
+_g190 = json.load(open("l190/gains_w0.json"))["gain"]
+G190 = {"edge": float(_g190["E-edge"]), "sham": float(_g190["E-sham"])}
+assert G190 == {"edge": 0.14314373373985292, "sham": 0.14365692973136904}
+assert float(_g190["cutwA"]) == G_CUTWA_STORED and float(_g190["sc25"]) == G175["sc25"]
+E_SRC = {"edge": GI_CARRIER, "sham": 48}
+_e190 = {"edge": _sel190["edges"]["E-edge"], "sham": _sel190["edges"]["E-sham"]}
+for _n in E_SRC:
+    assert _e190[_n]["source"] == E_SRC[_n] and _e190[_n]["target"] == GI_RELAY, _n
+assert _e190["edge"]["syn"] == 21 and _e190["sham"]["syn"] == 22
+
+# ---- graph arms ----
+add_arm("lt4", GI_T4)
+add_alias("lt4F", "lt4")
+add_arm("lt5", GI_T5)
+add_arm_multi("t4c", [GI_T4, GI_CARRIER])
+add_alias("t4cF", "t4c")
+add_alias("s2k", "sc25")
+add_alias("s2kF", "sc25")
+add_base_alias("bk2")
+assert WB["s2k"] is WB["sc25"] and WB["s2kF"] is WB["sc25"] and WB["bk2"] is Wb_wA
+assert WB["sc25F"] is WB["sc25"] and WB["rcutF"] is WB["rcut"] and WB["l2cF"] is WB["l2c"]
+# ru2 replay clamp: ru2's entry <- the same-step cutwA ru2 value
+RU2_LOC = int(loc_wA[GI_RU2])
+assert RU2_LOC >= 0
+REPLAY2 = {a: int(LOC_OF(a)[GI_RU2]) for a in ("s2k", "s2kF", "bk2")}
+assert REPLAY2["bk2"] == RU2_LOC and all(v >= 0 for v in REPLAY2.values())
+assert int(LOC_OF("s2k")[GI_CARRIER]) == -1, "s2k must be the carrier-removed graph"
+assert not (set(REPLAY2) & set(CLAMP)) and not (set(REPLAY2) & set(CLAMPF))
+assert not (set(REPLAY2) & set(REPLAY))
+
+
+def add_edge_arm(name, src_gi, dst_gi):
+    """Base graph minus ONE CSR entry (dst row, src col) — L190 edge_run.py form."""
+    add_base_alias(name)
+    base = Wb_wA
+    row, col = int(loc_wA[dst_gi]), int(loc_wA[src_gi])
+    assert row >= 0 and col >= 0
+    cr, ci, val = base.crow_indices(), base.col_indices(), base.values()
+    lo, hi = int(cr[row]), int(cr[row + 1])
+    hits = torch.where(ci[lo:hi] == col)[0]
+    assert len(hits) == 1, (name, len(hits))
+    j = lo + int(hits[0])
+    keep = torch.arange(len(ci)) != j
+    newcr = cr.clone()
+    newcr[row + 1:] -= 1
+    WB[name] = torch.sparse_csr_tensor(newcr, ci[keep], val[keep], size=base.shape)
+    w = WB[name]
+    assert torch.equal(w.col_indices(), ci[keep]) and torch.equal(w.values(), val[keep])
+    assert torch.equal(cr[1:] - cr[:-1] - (w.crow_indices()[1:] - w.crow_indices()[:-1]),
+                       (torch.arange(len(cr) - 1) == row).to(cr.dtype))
+    assert float(val[j]) != 0.0
+    GEN[name]["edges"] -= 1
+    assert GEN[name]["edges"] == cutk_pins["cutwA"]["edges"] - 1
+    return float(val[j])
+
+
+E_W = {}
+for _n in ("edge", "sham"):
+    E_W[_n] = add_edge_arm(_n, E_SRC[_n], GI_RELAY)
+    assert E_W[_n] == _e190[_n]["effective_weight"], (_n, E_W[_n])
+    assert GEN[_n]["edges"] == _e190[_n]["edges_after"], _n
+    assert WB[_n] is not Wb_wA and GEN[_n]["loc"] is loc_wA
+# CERT-SUB for the new cell graphs (L187 loop form, k-cell expected set)
+_new202 = {"lt4": [GI_T4], "lt5": [GI_T5], "t4c": sorted([GI_T4, GI_CARRIER])}
+for _nm, _want in _new202.items():
+    _g = GEN[_nm]
+    _ex = [int(x) for x in np.setdiff1d(_g["drop"], cutk_drop["cutwA"])]
+    assert _ex == _want, (_nm, _ex)
+    _gi_a = np.where(_g["loc"] >= 0)[0]
+    assert len(_gi_a) == _g["n"] == n_cutk["cutwA"] - len(_ex)
+    assert np.array_equal(_g["loc"][_gi_a], np.arange(_g["n"]))
+    _d, _s, _v = _coo_gi(WB[_nm], _gi_a)
+    _kp = ~np.isin(_base_coo[0], _ex) & ~np.isin(_base_coo[1], _ex)
+    assert np.array_equal(_d, _base_coo[0][_kp]), _nm
+    assert np.array_equal(_s, _base_coo[1][_kp]), _nm
+    assert np.array_equal(_v, _base_coo[2][_kp]), _nm
+    _bl = loc_wA[_gi_a]
+    assert (_bl >= 0).all()
+    assert torch.equal(gen_init(_nm, _X0o_t, _X0n_t), _base_init[_bl]), _nm
+    assert np.array_equal(_g["pos_in_new"], wA_pos_in_new[_bl]), _nm
+    for _pk in POOLS["cutwA"]:
+        assert np.array_equal(_gi_a[POOLS[_nm][_pk]],
+                              gi_wA[POOLS["cutwA"][_pk]]), (_nm, _pk)
+    assert np.array_equal(_gi_a[mech[_nm]], gi_wA[mech["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[motor[_nm]], gi_wA[motor["cutwA"]]), _nm
+    assert np.array_equal(_gi_a[dng100[_nm]], gi_wA[dng100["cutwA"]]), _nm
+    CERT_SUB[_nm] = dict(removed=_ex, n=_g["n"], edges=_g["edges"],
+                         edges_removed=int((~_kp).sum()))
+# CERT-SUB for the edge graphs: COO == base COO minus exactly the one (dst, src) pair
+for _nm in ("edge", "sham"):
+    _d, _s, _v = _coo_gi(WB[_nm], gi_wA)
+    _kp = ~((_base_coo[0] == GI_RELAY) & (_base_coo[1] == E_SRC[_nm]))
+    assert int((~_kp).sum()) == 1, _nm
+    assert np.array_equal(_d, _base_coo[0][_kp]) and np.array_equal(_s, _base_coo[1][_kp]), _nm
+    assert np.array_equal(_v, _base_coo[2][_kp]), _nm
+    CERT_SUB[_nm] = dict(removed_edge=[E_SRC[_nm], GI_RELAY], n=GEN[_nm]["n"],
+                         edges=GEN[_nm]["edges"], edges_removed=1, w_eff=E_W[_nm])
+log(f"CERT-SUB static ({list(_new202)} == base minus the cell(s); edge / sham == base minus "
+    f"one CSR entry, weights == L190 stored): PASS")
+N_TRACK_200 = len(TRACK)
+assert N_TRACK_200 == 58 and GI_RU2 in TRACK
+TRACK = TRACK + [g for g in (GI_T4, GI_T5, E_SRC["sham"]) if g not in TRACK]
+assert len(set(TRACK)) == len(TRACK)
+CTR_CELLS = [GI_CARRIER, GI_RELAY, GI_SC40, GI_DOWN, TW_GI[0], GI_RU2] + LT_GI
+CTR_CELLS = CTR_CELLS + [g for g in (GI_T4, GI_T5) if g not in CTR_CELLS]
+assert len(set(CTR_CELLS)) == len(CTR_CELLS)
+CTR_LOC = {}
+for _a in ["cutwA"] + GEN_ARMS:
+    _l = LOC_OF(_a)
+    CTR_LOC[_a] = [(g, int(_l[g])) for g in CTR_CELLS if _l[g] >= 0]
+assert [g for g, _ in CTR_LOC["cutwA"]] == CTR_CELLS
+assert GI_RU2 in [g for g, _ in CTR_LOC["s2k"]] and GI_CARRIER not in [g for g, _ in CTR_LOC["s2k"]]
+assert GI_RU2 not in [g for g, _ in CTR_LOC["l2c"]]
+assert [g for g, _ in CTR_LOC["edge"]] == CTR_CELLS
+ALL_ARMS = ["sc25", "sc25F", "l2c", "l2cF", "l2", "s2k", "s2kF", "lt5",
+            "lt4", "lt4F", "t4c", "t4cF", "rcut", "rcutF", "edge", "sham"]
+assert all(a in GEN for a in ALL_ARMS) and len(set(ALL_ARMS)) == 16
+REMOVED = dict(sc25=[GI_CARRIER], sc25F=[GI_CARRIER], l2c=[GI_RU2, GI_CARRIER],
+               l2cF=[GI_RU2, GI_CARRIER], l2=[GI_RU2], s2k=[GI_CARRIER], s2kF=[GI_CARRIER],
+               lt5=[GI_T5], lt4=[GI_T4], lt4F=[GI_T4], t4c=[GI_T4, GI_CARRIER],
+               t4cF=[GI_T4, GI_CARRIER], rcut=[GI_RELAY], rcutF=[GI_RELAY], edge=[], sham=[])
+for _a, _want in REMOVED.items():
+    _ex = sorted(int(x) for x in np.setdiff1d(GEN[_a]["drop"], cutk_drop["cutwA"]))
+    assert _ex == sorted(_want), (_a, _ex)
+G_STORED202 = dict(cutwA=G_CUTWA_STORED, sc25=G175["sc25"], l2=G198_RU2, l2c=G200_L2C,
+                   rcut=G187_RCUT, edge=G190["edge"], sham=G190["sham"])
+
+if MODE == "static":
+    atomic_json(f"{OUT}/static.json", dict(
+        design="L202 static pins (zero rollouts): fresh-batch absence, frozen-L200 bilateral "
+               "twin ids, new graphs + CERT-SUB, edge arms (L190 form), stored gains.",
+        src="banc l200 ru2_run.py transform (l202 build_nec.py)",
+        fresh_batch=[B45[0], B45[-1]], anchors=[int(s) for s in SEEDS if s not in B45],
+        npz_scanned_for_seed_absence=N_NPZ_SCANNED, seed_absence="PASS",
+        cert_sub={k: CERT_SUB[k] for k in ["lt4", "lt5", "t4c", "edge", "sham", "sc25",
+                                           "ru2", "l2c", "rcut"]},
+        gi=dict(ru2=GI_RU2, carrier=GI_CARRIER, relay=GI_RELAY, lt4=GI_T4, lt5=GI_T5,
+                sham_src=E_SRC["sham"]),
+        twins={"lt4": _r4, "lt5": _r5}, ru2_row=SEL200["ru2"],
+        all_arms=ALL_ARMS, removed=REMOVED, replay2=REPLAY2, ru2_loc=RU2_LOC,
+        track=TRACK, n_track_200=N_TRACK_200, ctr_cells=CTR_CELLS,
+        arm_n={a: N_OF[a] for a in ALL_ARMS},
+        arm_edges={a: GEN[a]["edges"] for a in ALL_ARMS},
+        edge_w=E_W, g_stored=G_STORED202, n_wA=n_cutk["cutwA"]))
+    log(f"static.json written | fresh {B45[0]}..{B45[-1]} absent from {N_NPZ_SCANNED} npz | "
+        f"twins lt4 {GI_T4} lt5 {GI_T5} | edges {E_W} | {time.time()-t0:.0f}s")
+    sys.exit(0)

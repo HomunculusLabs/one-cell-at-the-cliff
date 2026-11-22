@@ -1,0 +1,50 @@
+{
+ "c0a135_pass": true,
+ "c0a175_pass": true,
+ "c0a187_pass": true,
+ "c0a190_pass": true,
+ "c0a198_pass": true,
+ "c0a200_pass": true,
+ "replay_checks": 0,
+ "replay_max": 0.0,
+ "c0a135_max": 0.0,
+ "c0a135_checks": 46,
+ "c0a135_pairs": [
+  [
+   "cutwA",
+   "cutwA"
+  ]
+ ],
+ "g_cutwA": 0.14365819573402408,
+ "g_cutwA_stored_exact": true,
+ "c0a175_max": 0.0,
+ "c0a175_checks": 25,
+ "c0a175_arms": [
+  "cutwA~cutwA"
+ ],
+ "c0a175_seed": 3545,
+ "c0a187_max": 0.0,
+ "c0a187_checks": 28,
+ "c0a187_arms": [
+  "cutwA~cutwA"
+ ],
+ "c0a187_seed": 3609,
+ "c0a190_max": 0.0,
+ "c0a190_checks": 29,
+ "c0a190_arms": [
+  "cutwA~cutwA"
+ ],
+ "c0a190_seed": 3641,
+ "c0a198_max": 0.0,
+ "c0a198_checks": 30,
+ "c0a198_arms": [
+  "cutwA~cutwA"
+ ],
+ "c0a198_seed": 3673,
+ "c0a200_max": 0.0,
+ "c0a200_checks": 33,
+ "c0a200_arms": [
+  "cutwA~cutwA"
+ ],
+ "c0a200_seed": 3705
+}

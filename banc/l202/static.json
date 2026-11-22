@@ -1,0 +1,540 @@
+{
+ "design": "L202 static pins (zero rollouts): fresh-batch absence, frozen-L200 bilateral twin ids, new graphs + CERT-SUB, edge arms (L190 form), stored gains.",
+ "src": "banc l200 ru2_run.py transform (l202 build_nec.py)",
+ "fresh_batch": [
+  3737,
+  3752
+ ],
+ "anchors": [
+  801,
+  901,
+  3545,
+  3609,
+  3641,
+  3673,
+  3705
+ ],
+ "npz_scanned_for_seed_absence": 301,
+ "seed_absence": "PASS",
+ "cert_sub": {
+  "lt4": {
+   "removed": [
+    67125
+   ],
+   "n": 21784,
+   "edges": 644091,
+   "edges_removed": 86
+  },
+  "lt5": {
+   "removed": [
+    67756
+   ],
+   "n": 21784,
+   "edges": 644149,
+   "edges_removed": 28
+  },
+  "t4c": {
+   "removed": [
+    1110,
+    67125
+   ],
+   "n": 21783,
+   "edges": 643998,
+   "edges_removed": 179
+  },
+  "edge": {
+   "removed_edge": [
+    1110,
+    75494
+   ],
+   "n": 21785,
+   "edges": 644176,
+   "edges_removed": 1,
+   "w_eff": 3.0910425186157227
+  },
+  "sham": {
+   "removed_edge": [
+    48,
+    75494
+   ],
+   "n": 21785,
+   "edges": 644176,
+   "edges_removed": 1,
+   "w_eff": 3.1354942321777344
+  },
+  "sc25": {
+   "removed": [
+    1110
+   ],
+   "n": 21784,
+   "edges": 644084,
+   "edges_removed": 93
+  },
+  "ru2": {
+   "removed": [
+    70994
+   ],
+   "n": 21784,
+   "edges": 644064,
+   "edges_removed": 113
+  },
+  "l2c": {
+   "removed": [
+    1110,
+    70994
+   ],
+   "n": 21783,
+   "edges": 643971,
+   "edges_removed": 206
+  },
+  "rcut": {
+   "removed": [
+    75494
+   ],
+   "n": 21784,
+   "edges": 644068,
+   "edges_removed": 109
+  }
+ },
+ "gi": {
+  "ru2": 70994,
+  "carrier": 1110,
+  "relay": 75494,
+  "lt4": 67125,
+  "lt5": 67756,
+  "sham_src": 48
+ },
+ "twins": {
+  "lt4": {
+   "gi": 67125,
+   "root_id": "720575941546638625",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN00A048",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 49.72676106783669,
+   "out_w_eff": 99.45352213567338,
+   "out_w_motor": 0.0,
+   "out_edges": 30,
+   "x_mean": 0.24756509065628052,
+   "total_drive": 24.621220223604382,
+   "total_drive_ratio": 0.28571721140728157,
+   "dL": 7.853803594786032,
+   "dR": 7.298104724981448,
+   "dL_ratio": 0.9845608193964214,
+   "edges_onto_PM_L": 9,
+   "edges_onto_PM_R": 8,
+   "mass_onto_PM_L": 31.72419654954606,
+   "mass_onto_PM_R": 29.47953891897521,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 56,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 4,
+   "abs_log_dL_ratio": 0.015559605872097839,
+   "abs_log_total_drive_ratio": 1.2527527286223101
+  },
+  "lt5": {
+   "gi": 67756,
+   "root_id": "720575941506272802",
+   "super_class": "ventral_nerve_cord_intrinsic",
+   "cell_type": "IN09A043",
+   "side": "left",
+   "eff_sign": -1.0,
+   "is_glut": false,
+   "in_dn_new": false,
+   "is_mech": false,
+   "lineage_mass_share": 0.0,
+   "out_w_raw": 36.270500193505455,
+   "out_w_eff": 72.54100038701091,
+   "out_w_motor": 0.0,
+   "out_edges": 14,
+   "x_mean": 0.19912743071715036,
+   "total_drive": 14.444903028717293,
+   "total_drive_ratio": 0.16762603051074587,
+   "dL": 8.126546984445117,
+   "dR": 8.213514007085486,
+   "dL_ratio": 1.0187522085707035,
+   "edges_onto_PM_L": 7,
+   "edges_onto_PM_R": 7,
+   "mass_onto_PM_L": 40.81078611408607,
+   "mass_onto_PM_R": 41.24752665920917,
+   "in_PM_L": false,
+   "in_PM_R": false,
+   "in_edges": 14,
+   "direct_onto": {
+    "Ti_fR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 51
+    },
+    "Ti_eR": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    },
+    "Ti_fL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 50
+    },
+    "Ti_eL": {
+     "n_edges": 0,
+     "syn": 0,
+     "w_eff_sum": 0.0,
+     "targets": 6
+    }
+   },
+   "edge_from_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_carrier": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_from_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "edge_to_ru2": {
+    "n": 0,
+    "syn": 0,
+    "w_eff": 0.0
+   },
+   "rank": 5,
+   "abs_log_dL_ratio": 0.018578553492748395,
+   "abs_log_total_drive_ratio": 1.7860197896840782
+  }
+ },
+ "ru2_row": {
+  "gi": 70994,
+  "root_id": "720575941663099516",
+  "super_class": "ventral_nerve_cord_intrinsic",
+  "cell_type": "IN07B031",
+  "side": "right",
+  "eff_sign": -1.0,
+  "is_glut": true,
+  "in_dn_new": false,
+  "is_mech": false,
+  "lineage_mass_share": 0.0,
+  "out_w_raw": 143.90336282196483,
+  "out_w_eff": 287.80672564392967,
+  "out_w_motor": 33.183010061373906,
+  "out_edges": 61,
+  "x_mean": 0.2994140883286794,
+  "total_drive": 86.17338837353955,
+  "total_drive_ratio": 1.0,
+  "dL": 7.976961341606866,
+  "dR": 6.634453827247749,
+  "dL_ratio": 1.0,
+  "edges_onto_PM_L": 5,
+  "edges_onto_PM_R": 5,
+  "mass_onto_PM_L": 26.641903813324312,
+  "mass_onto_PM_R": 22.15812176468073,
+  "in_PM_L": false,
+  "in_PM_R": false,
+  "in_edges": 52,
+  "direct_onto": {
+   "Ti_fR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 51
+   },
+   "Ti_eR": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   },
+   "Ti_fL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 50
+   },
+   "Ti_eL": {
+    "n_edges": 0,
+    "syn": 0,
+    "w_eff_sum": 0.0,
+    "targets": 6
+   }
+  },
+  "edge_from_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_carrier": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_from_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  },
+  "edge_to_ru2": {
+   "n": 0,
+   "syn": 0,
+   "w_eff": 0.0
+  }
+ },
+ "all_arms": [
+  "sc25",
+  "sc25F",
+  "l2c",
+  "l2cF",
+  "l2",
+  "s2k",
+  "s2kF",
+  "lt5",
+  "lt4",
+  "lt4F",
+  "t4c",
+  "t4cF",
+  "rcut",
+  "rcutF",
+  "edge",
+  "sham"
+ ],
+ "removed": {
+  "sc25": [
+   1110
+  ],
+  "sc25F": [
+   1110
+  ],
+  "l2c": [
+   70994,
+   1110
+  ],
+  "l2cF": [
+   70994,
+   1110
+  ],
+  "l2": [
+   70994
+  ],
+  "s2k": [
+   1110
+  ],
+  "s2kF": [
+   1110
+  ],
+  "lt5": [
+   67756
+  ],
+  "lt4": [
+   67125
+  ],
+  "lt4F": [
+   67125
+  ],
+  "t4c": [
+   67125,
+   1110
+  ],
+  "t4cF": [
+   67125,
+   1110
+  ],
+  "rcut": [
+   75494
+  ],
+  "rcutF": [
+   75494
+  ],
+  "edge": [],
+  "sham": []
+ },
+ "replay2": {
+  "s2k": 16938,
+  "s2kF": 16938,
+  "bk2": 16939
+ },
+ "ru2_loc": 16939,
+ "track": [
+  1110,
+  319,
+  707,
+  354,
+  32271,
+  1266,
+  228,
+  549,
+  725,
+  890,
+  808,
+  924,
+  779,
+  456,
+  826,
+  559,
+  692,
+  32097,
+  1509,
+  722,
+  618,
+  1022,
+  1038,
+  32005,
+  643,
+  736,
+  1543,
+  1557,
+  1060,
+  262,
+  1673,
+  651,
+  1224,
+  1489,
+  511,
+  1480,
+  75494,
+  74914,
+  71392,
+  74468,
+  64322,
+  74934,
+  71248,
+  73413,
+  65443,
+  66994,
+  69186,
+  69410,
+  72158,
+  73008,
+  67561,
+  70994,
+  64787,
+  67353,
+  71153,
+  71926,
+  68609,
+  67738,
+  67125,
+  67756,
+  48
+ ],
+ "n_track_200": 58,
+ "ctr_cells": [
+  1110,
+  75494,
+  559,
+  74914,
+  73008,
+  70994,
+  71926,
+  68609,
+  67125,
+  67756
+ ],
+ "arm_n": {
+  "sc25": 21784,
+  "sc25F": 21784,
+  "l2c": 21783,
+  "l2cF": 21783,
+  "l2": 21784,
+  "s2k": 21784,
+  "s2kF": 21784,
+  "lt5": 21784,
+  "lt4": 21784,
+  "lt4F": 21784,
+  "t4c": 21783,
+  "t4cF": 21783,
+  "rcut": 21784,
+  "rcutF": 21784,
+  "edge": 21785,
+  "sham": 21785
+ },
+ "arm_edges": {
+  "sc25": 644084,
+  "sc25F": 644084,
+  "l2c": 643971,
+  "l2cF": 643971,
+  "l2": 644064,
+  "s2k": 644084,
+  "s2kF": 644084,
+  "lt5": 644149,
+  "lt4": 644091,
+  "lt4F": 644091,
+  "t4c": 643998,
+  "t4cF": 643998,
+  "rcut": 644068,
+  "rcutF": 644068,
+  "edge": 644176,
+  "sham": 644176
+ },
+ "edge_w": {
+  "edge": 3.0910425186157227,
+  "sham": 3.1354942321777344
+ },
+ "g_stored": {
+  "cutwA": 0.14365819573402408,
+  "sc25": 0.1454454553127289,
+  "l2": 0.14322753667831417,
+  "l2c": 0.14273352026939398,
+  "rcut": 0.14347783327102664,
+  "edge": 0.14314373373985292,
+  "sham": 0.14365692973136904
+ },
+ "n_wA": 21785
+}

@@ -1,0 +1,26 @@
+channel      max|fix-rnd| over 16 seeds  identical?
+Pr_aL                                 0  YES
+Pr_bL                                 0  YES
+Sr_aR                                 0  YES
+Ta_aL                          0.018306  
+mm                            0.0345986  
+xm                            0.0686142  
+Ti_fR                         0.0972383  
+Ta_aR                          0.119244  
+Ti_fL                          0.124852  
+Tr_fR                          0.136976  
+Tr_fL                          0.162367  
+Tr_eR                          0.162886  
+Tr_eL                          0.165494  
+Sr_bR                          0.195805  
+Ta_bL                          0.257143  
+Pr_bR                          0.284903  
+Sr_bL                           0.31565  
+Sr_aL                          0.317792  
+Pr_aR                          0.359419  
+Ta_bR                          0.376304  
+Ti_eR                          0.422245  
+Ti_eL                          0.506564  
+
+bit-identical across arms: ['Pr_aL', 'Pr_bL', 'Sr_aR']
+predicted-from-PLV-equality set ['Pr_aL', 'Pr_bL', 'Sr_aR'] == measured ['Pr_aL', 'Pr_bL', 'Sr_aR']: True

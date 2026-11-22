@@ -1,0 +1,22 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[settle] seed 801: af 0.10978 (AF_T 0.10906)
+[settle] seed 901: af 0.10955 (AF_T 0.10906)
+[settle] seed 11: af 0.11015 (AF_T 0.10906)
+[Q5] linearization one-step rel err 2.552e-03 -> PASS
+[census] 35 actors, depths 1-3, abs+signed
+[Q6] exhaustive depth-2 enumeration == matvec for all actors (<1e-6)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[Q2] carrier P2abs/mass 0.0000 vs null med 0.0011 -> percentile 0.0 (PASS)
+[Q3] spearman(P2abs, m_out) over 35 ng actors = 0.1398 -> structure beyond mass
+[Q1] r2 0.0 r3 0.0 -> B_CARRIER_LOW
+[Q4] PI2 carrier nan twin 1.0 null pct None
+[D] carrier targets 69 (5 with pool out-edges) | twin 97 (19) | pool cells active 19/303
+[mask] 801:af0.4539/J1.0000 901:af0.4545/J0.7156 11:af0.4617/J0.8174
+[E] ANATOMICAL r2 0.503425568170211 r3 0.24064805791316904 | carrier P2/mass 0.040156 twin 0.079766 | rho(P2,mass) -0.0207
+[Q2b] ANAT carrier P2/mass 0.040156 vs null med 0.336435 [p05 0.210042, p95 0.475717] -> pct 0.0 (PASS); depth3 pct 0.0
+[F] s801: pool-active 19/303 carrP2 0.000e+00 twinP2 1.174e-01 r2 0.0 | s901: pool-active 24/303 carrP2 0.000e+00 twinP2 3.633e-01 r2 0.0 | s11: pool-active 21/303 carrP2 0.000e+00 twinP2 0.000e+00 r2 None
+========================================================================
+L178 DONE 8s | Q5 True | Q1 B_CARRIER_LOW (r2 0.0) | Q2 pct 0.0 PASS | Q3 rho 0.1398 ok

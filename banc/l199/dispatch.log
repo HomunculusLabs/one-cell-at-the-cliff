@@ -1,0 +1,686 @@
+Query: Experiment dispatch (owner request, L199 tone-phase registered test, 
+anthropic-pinned budget window). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l199/BRIEF_tonephase.md and execute it 
+completely. PREREG first.
+📖 Read BRIEF_tonephase.md
+📚 Skill peabrain-flybrain
+💻 $ ls -la banc/l199 banc/l197b banc/l186 + 3 commands
+💻 $ cat l199/dispatch.log + 7 commands
+💻 $ cat l197b/PREREG.md + 2 commands
+💻 $ cat l197b/build_v2.py + 8 commands  0.1s
+💻 $ cat l186/PREREG.md l186/L186-FINDINGS.md l186/build.py l186/sequence.py + 2 commands  0.1s
+💻 $ grep -n "^## \|^### " LAB-INTENT.md + 7 commands  0.2s
+💻 $ sed -n 14,30p l197b/run_v2.py + 9 commands  0.3s
+💻 $ grep -n "work0" l197b/run.out | cut -c1-200 + 10 commands  0.4s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/PREREG.md
+│ banc/l199/PREREG.md
+│ @@ -0,0 +1,224 @@
+│ +# PREREG — L199: the tone-phase registered test
+│ +
+│ +Registered 2026-11-21 ~20:45 EST, BEFORE any L199 statistic is computed on any
+│ +trace and before any L199 rollout (no raw, gains or results file exists under
+│ +`banc/l199/`). Owner-directed (`banc/l199/BRIEF_tonephase.md`). Experimenter =
+│ +Miso session (claude-fable-5-2). L200 runs concurrently in its own directory.
+│ +
+│ +What exists at registration: this text; `ph.py` (instrument); `selftest.py`
+│ +(SYNTHETIC traces only); `analyze_primary.py`; `build_tp.py` -> `run_tp.py`;
+│ +`analyze_causal.py`; `freeze.py`; `run_all.sh`.
+│ +
+│ +## Hypothesis under test (L197b's post hoc, verbatim source: L197b-FINDINGS)
+│ +
+│ +The carrier-deletion phenotype (sc25 vs cutwA, right tibia) is a change in the
+│ +pools' PHASE RELATION to the external 0.7-Hz tone: on the base graph the
+│ +cross-seed flexor-extensor anticorrelation appears when the partner is rotated
+│ +half a tone period (the pools CO-MOVE relative to the tone); with the carrier
+│ +removed it appears at zero rotation (they ALTERNATE).
+│ +
+│ +## What has ALREADY been seen (disclosed; this limits what Part A can add)
+│ +
+│ +The brief's instrument is not new to these data. On L197b's stored raws:
+│ +- the INTERACTION this test turns on, I = (in - anti)_sc25 - (in - anti)_cutwA,
+│ +  is algebraically L197b's registered `A_in_minus_anti`, already computed with
+│ +  intervals: S +.403 [+.345, +.462], W +.106 [+.044, +.169];
+│ +- the per-graph 3-bin POINT values (addendum.json, post hoc): S cutwA
+│ +  .186 / .236 / .465 and sc25 .423 / .299 / .298 (in / mid / anti); W cutwA
+│ +  .113 / .169 / .329 and sc25 .232 / .239 / .342;
+│ +- on L186 (pilot.json): the pooled contrast in phase / antiphase at W = 150,
+│ +  +.303 / -.163 (difference +.466 [+.274, +.658]); L186's stored phase
+│ +  secondary (carrier-present only): Ti_fR -100 deg, Ti_eR -90 deg vs GI 1110.
+│ +
+│ +Consequences, stated before computing anything:
+│ +1. On S and W, PH1-vs-PH0 at the level of "is there a profile difference" is
+│ +   ALREADY decided by L197b (S yes; W direction only, under the .15 bar). Part
+│ +   A's 3-bin read of S and W is a formalisation with intervals, not an
+│ +   out-of-sample confirmation, and W's label below is fixed by a stored number.
+│ +2. NOT yet seen, and therefore what is actually at risk here: (a) intervals on
+│ +   the per-graph SIGN claims (S's sc25 slope is +.125 as a point value — its
+│ +   interval is unknown); (b) L186's per-graph profile; (c) the SIGNED-offset
+│ +   instrument (Part B — never computed on any dataset); (d) the direct
+│ +   per-seed pool phase against the tone (Part C — never computed for sc25);
+│ +   (e) the causal rollouts (Part D — fresh seeds, the only fully
+│ +   out-of-sample test).
+│ +
+│ +## Datasets (Parts A-C: stored raws, ZERO rollouts)
+│ +
+│ +| tag | raws | seeds | pulse | readout (window W, starts rel. flexor seed's onset) |
+│ +|---|---|---|---|---|
+│ +| S | l197b/raw_w0-5.npz | 19001..19096 | 500 | W 150, -75..+425 step 10 (L197b's registered S readout) |
+│ +| W | l197b/raw_w0-5.npz | 19201..19296 | 250 | W 250, -125..+125 step 10 (L197b's registered W readout) |
+│ +| V1 | l186/raw.npz | 18601..18616 | 500 | W 150, -75..+425 step 10 (same schedule law as S; the S readout) |
+│ +
+│ +Onsets: l197b/schedule.json (segment-relative -> absolute [o0, 4000 + o1],
+│ +gate-position asserted against every stored gate array) and
+│ +l186/results_l186.json (absolute). Graphs: cutwA (base), sc25 (carrier removed).
+│ +
+│ +## Instrument — the pair-SEGMENT phase statistic (fixes tick 216's error)
+│ +
+│ +Unit event = ordered pair-segment (segment g in {first, last outer}, flexor
+│ +seed i, extensor seed j, i != j). `l197b/gj.py` UNCHANGED (sha asserted):
+│ +h_G(g,i,j) = fraction of start offsets with Pearson r <= -.25 (both SDs > 1e-6)
+│ +between flexor seed i's window at its own onset + offset and extensor seed j's
+│ +window at ITS own onset + the same offset (aligned clock), graph G.
+│ +Each pair-segment's OWN gate lag L = on_i - on_j (never a mean of the two
+│ +segments' independent lags) induces the tone-phase offset
+│ +psi = (L / 142.857) mod 1; folded rotation rot = |psi - .5| * 2.
+│ +
+│ +### Part A — registered 3-bin conditioned profile (the brief's instrument)
+│ +
+│ +Bin edges: **in-phase rot >= .75** (offset within +-1/8 period of 0);
+│ +**mid .25 < rot < .75**; **antiphase rot <= .25** (within +-1/8 period of a
+│ +half period). P_G(bin) = sum(h_G * 1[bin]) / sum(1[bin]) over ordered
+│ +off-diagonal pairs and both segments (`gj.ratio`).
+│ +- slope S_G = P_G(in) - P_G(anti)   (> 0: anticorrelation at zero rotation =
+│ +  ALTERNATE; < 0: at half rotation = CO-MOVE)
+│ +- interaction I = S_sc25 - S_cutwA
+│ +- pooled elevation E = aligned duty sc25 - cutwA over all pair-segments
+│ … omitted 146 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/ph.py
+│ banc/l199/ph.py
+│ @@ -0,0 +1,238 @@
+│ +"""L199 tone-phase instrument. Pure numpy; reads stored traces only.
+│ +Uses l197b/gj.py UNCHANGED for the pair-segment duty (sha asserted by callers).
+│ +Run from banc/. See l199/PREREG.md for every definition."""
+│ +import math
+│ +import sys
+│ +import numpy as np
+│ +
+│ +sys.path.insert(0, "l197b")
+│ +import gj  # noqa: E402
+│ +
+│ +PER = gj.PER
+│ +GRAPHS = ("cutwA", "sc25")
+│ +BINS = {"inphase": lambda r: r >= .75,
+│ +        "mid": lambda r: (r > .25) & (r < .75),
+│ +        "antiphase": lambda r: r <= .25}
+│ +wrap = lambda d: (np.asarray(d, float) + 180.0) % 360.0 - 180.0
+│ +
+│ +
+│ +def tone_phi(n=6000, dt=0.01):
+│ +    """The harness's elapsed tone phase (run.py: ph += 2 pi target(i) DT)."""
+│ +    PHI = np.empty(n)
+│ +    ph = 0.0
+│ +    for i in range(n):
+│ +        ph += 2 * math.pi * (1.4 if 2000 <= i < 4000 else 0.7) * dt
+│ +        PHI[i] = ph
+│ +    return PHI
+│ +
+│ +
+│ +def seg_duty(raw, seeds, onsets_abs, W, starts, graphs=GRAPHS):
+│ +    """h[G][seg,i,j] (aligned duty per ordered pair-segment) and lag[seg,i,j]."""
+│ +    h, lag = {}, None
+│ +    for g in graphs:
+│ +        H = gj.pair_hits(raw, g, seeds, onsets_abs, W, starts)
+│ +        h[g] = H["hit_al"].mean(-1)
+│ +        if lag is None:
+│ +            lag = H["lag"]
+│ +        assert np.array_equal(lag, H["lag"])
+│ +    return h, lag
+│ +
+│ +
+│ +def _jack_angle(fn, n):
+│ +    """Delete-one jackknife for an angle (deg): wrapped replicate deviations."""
+│ +    full = float(fn(list(range(n))))
+│ +    d = np.array([float(wrap(fn([k for k in range(n) if k != x]) - full)) for x in range(n)])
+│ +    se = float(np.sqrt((n - 1) / n * ((d - d.mean()) ** 2).sum()))
+│ +    return dict(value=full, se=se, ci95=[full - 1.96 * se, full + 1.96 * se])
+│ +
+│ +
+│ +def part_a(h, lag):
+│ +    """Registered 3-bin conditioned profile + bands."""
+│ +    n = lag.shape[-1]
+│ +    rot = gj.rot_of(lag)
+│ +    mo = np.broadcast_to(~np.eye(n, dtype=bool), rot.shape)
+│ +    mk = {b: f(rot) for b, f in BINS.items()}
+│ +    P = lambda g, b, idx=None: gj.ratio(h[g] * mk[b], mk[b].astype(float), idx)
+│ +    S = lambda g: (lambda idx=None: P(g, "inphase", idx) - P(g, "antiphase", idx))
+│ +    Ifn = lambda idx=None: S("sc25")(idx) - S("cutwA")(idx)
+│ +    one = np.ones_like(rot)
+│ +    Efn = lambda idx=None: gj.ratio(h["sc25"], one, idx) - gj.ratio(h["cutwA"], one, idx)
+│ +    out = dict(n=n, bin_counts={b: int((mk[b] & mo).sum()) for b in mk},
+│ +               profile={g: {b: gj.jack(lambda idx, g=g, b=b: P(g, b, idx), n) for b in mk} for g in GRAPHS},
+│ +               slope={g: gj.jack(S(g), n) for g in GRAPHS},
+│ +               I=gj.jack(Ifn, n), E=gj.jack(Efn, n),
+│ +               A_inphase=gj.jack(lambda idx: P("sc25", "inphase", idx) - P("cutwA", "inphase", idx), n),
+│ +               A_antiphase=gj.jack(lambda idx: P("sc25", "antiphase", idx) - P("cutwA", "antiphase", idx), n),
+│ +               curvature={g: gj.jack(lambda idx, g=g: P(g, "mid", idx) - (P(g, "inphase", idx) + P(g, "antiphase", idx)) / 2, n)
+│ +                          for g in GRAPHS})
+│ +    I, sb, sr = out["I"], out["slope"]["cutwA"], out["slope"]["sc25"]
+│ +    sign_ok = bool(sb["value"] < 0 and sb["ci95"][1] < 0 and sr["value"] > 0 and sr["ci95"][0] > 0)
+│ +    if I["value"] >= .15 and I["ci95"][0] > 0:
+│ +        lab = "PH1_sign" if sign_ok else "PH1_shape"
+│ +    elif I["ci95"][0] > -.10 and I["ci95"][1] < .10:
+│ +        lab = "PH0"
+│ +    elif I["ci95"][0] > 0:
+│ +        lab = "PH_weak"
+│ +    elif I["value"] <= -.15 and I["ci95"][1] < 0:
+│ +        lab = "PH_rev"
+│ +    else:
+│ … omitted 160 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/selftest.py
+│ banc/l199/selftest.py
+│ @@ -0,0 +1,62 @@
+│ +"""L199 instrument self-test on SYNTHETIC traces only (no lab data is read).
+│ +Plants a flexor-minus-extensor tone-phase difference Delta into sinusoid pools
+│ +gated by an S-law jittered pulse and checks that Part B recovers
+│ +theta = Delta + 180, Part C recovers Delta, and Part A's slope sign matches.
+│ +Also checks Part D's block algebra on a planted tone flip. Run from banc/."""
+│ +import json, math, sys
+│ +import numpy as np
+│ +sys.path.insert(0, "l199")
+│ +import ph
+│ +gj = ph.gj
+│ +
+│ +PHI = ph.tone_phi()
+│ +rng = np.random.default_rng(199)
+│ +n, pulse, W, starts = 24, 500, 150, gj.starts_of("S")
+│ +res = {}
+│ +ok = True
+│ +for Dl in (0.0, 180.0, 90.0, -60.0):
+│ +    raw, ons = {}, {}
+│ +    for s in range(n):
+│ +        o = [int(x) for x in rng.integers(600, 1201, 2)]
+│ +        ons[s] = [o[0], 4000 + o[1]]
+│ +        gate = np.zeros(6000, bool)
+│ +        for a in ons[s]:
+│ +            gate[a:a + pulse] = True
+│ +        raw[f"gate_{s}"] = gate
+│ +        af = rng.normal(40, 8)
+│ +        for g, d in (("cutwA", Dl), ("sc25", Dl + 70.0)):
+│ +            raw[f"Ti_fR_{g}_{s}"] = (.3 + gate * .1 * np.cos(PHI - math.radians(af)) + rng.normal(0, .02, 6000)).astype(np.float32)
+│ +            raw[f"Ti_eR_{g}_{s}"] = (.3 + gate * .1 * np.cos(PHI - math.radians(af - d)) + rng.normal(0, .02, 6000)).astype(np.float32)
+│ +    seeds = list(range(n))
+│ +    h, lag = ph.seg_duty(raw, seeds, ons, W, starts)
+│ +    A, B, C = ph.part_a(h, lag), ph.part_b(h, lag), ph.part_c(raw, seeds, ons, pulse, PHI)
+│ +    for g, d in (("cutwA", Dl), ("sc25", Dl + 70.0)):
+│ +        th, De = B["graphs"][g]["theta"]["value"], C[g]["Delta"]["mean_deg"]
+│ +        e1, e2 = abs(float(ph.wrap(th - (d + 180)))), abs(float(ph.wrap(De - d)))
+│ +        good = e1 < 12 and e2 < 5
+│ +        ok &= good
+│ +        res[f"{Dl}:{g}"] = dict(planted=d, theta=th, theta_err=e1, Delta=De, Delta_err=e2, slope=A["slope"][g]["value"], ok=good)
+│ +        print(f"planted Delta {d:+6.1f} [{g}]: theta {th:+7.1f} (err {e1:.1f}) | direct Delta {De:+7.1f} (err {e2:.1f}) | 3-bin slope {A['slope'][g]['value']:+.3f}")
+│ +    assert abs(float(ph.wrap(B["dtheta"]["value"] - 70.0))) < 15, B["dtheta"]
+│ +# slope sign: co-move (Delta 0) -> negative; alternate (180) -> positive
+│ +ok &= res["0.0:cutwA"]["slope"] < -.3 and res["180.0:cutwA"]["slope"] > .3
+│ +# Part D block algebra: co-moving pools, phiPI tags see the flipped tone
+│ +nb = 8
+│ +raw, tags = {}, list(range(nb)) + [50000 + k for k in range(nb)]
+│ +for t in tags:
+│ +    gate = np.zeros(6000, bool); gate[900:1400] = True; gate[4900:5400] = True
+│ +    raw[f"gate_{t}"] = gate
+│ +    sh = math.pi if t >= 50000 else 0.0
+│ +    for g, d in (("cutwA", 0.0), ("sc25", 180.0)):
+│ +        raw[f"Ti_fR_{g}_{t}"] = (.3 + gate * .1 * np.cos(PHI + sh - .5) + rng.normal(0, .02, 6000)).astype(np.float32)
+│ +        raw[f"Ti_eR_{g}_{t}"] = (.3 + gate * .1 * np.cos(PHI + sh - .5 + math.radians(d)) + rng.normal(0, .02, 6000)).astype(np.float32)
+│ +h, lag = ph.seg_duty(raw, tags, {t: [900, 4900] for t in tags}, W, starts)
+│ +assert not lag.any()
+│ +Dd = ph.part_d(h, nb)
+│ +print("Part D synthetic:", {g: {k: round(v, 3) for k, v in Dd["blocks"][g].items()} for g in ph.GRAPHS}, "K", {g: round(Dd["K"][g]["value"], 3) for g in ph.GRAPHS}, "K_I", round(Dd["K_I"]["value"], 3), Dd["label"])
+│ +ok &= Dd["K"]["cutwA"]["value"] < -.8 and Dd["K"]["sc25"]["value"] > .8 and Dd["label"] == "CA1_sign"
+│ +res["part_d"] = dict(K={g: Dd["K"][g]["value"] for g in ph.GRAPHS}, label=Dd["label"])
+│ +res["pass"] = bool(ok)
+│ +json.dump(res, open("l199/selftest.json", "w"), indent=1)
+│ +print("SELFTEST", "PASS" if ok else "FAIL")
+│ +assert ok
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/build_tp.py
+│ banc/l199/build_tp.py
+│ @@ -0,0 +1,90 @@
+│ +"""L199 builder: count-asserted transform of the certified L186 harness
+│ +banc/l186/run.py (sha-pinned; L197b's run_v2.py has the same parent) ->
+│ +banc/l199/run_tp.py. Run from banc/. The ONLY changes: seed/tag list
+│ +(per-worker slice), output paths, PREREG freeze asserts, the gate block
+│ +(canonical schedule for every rollout), the tone-phase shift (+pi for tags
+│ +>= 50000, +0.0 otherwise), the RNG seed of a tag (= its base seed), a stored
+│ +tone trace, and a .tmp.npz-tolerant key-scan (L200 writes concurrently).
+│ +Dynamics, bisect, RNG mapping, C0A anchor: VERBATIM."""
+│ +import hashlib
+│ +import py_compile
+│ +
+│ +s = open("l186/run.py").read()
+│ +SHA = hashlib.sha256(s.encode()).hexdigest()
+│ +assert SHA == "0f283b58c67ffccab539e7654da69fdb46925992cff27715712dd7ad25934dcb", SHA
+│ +MARK = "# ---------------- rollouts ----------------"
+│ +assert s.count(MARK) == 1
+│ +N = 0
+│ +
+│ +
+│ +def rep(old, new, tail=False):
+│ +    """Replace exactly one site (tail=True: the site must be unique within the
+│ +    rollout section; the head is left untouched)."""
+│ +    global s, N
+│ +    if tail:
+│ +        head, tl = s.split(MARK)
+│ +        assert tl.count(old) == 1, (old[:60], tl.count(old))
+│ +        s = head + MARK + tl.replace(old, new)
+│ +    else:
+│ +        assert s.count(old) == 1, (old[:60], s.count(old))
+│ +        s = s.replace(old, new)
+│ +    N += 1
+│ +
+│ +
+│ +rep("B39=list(range(18601,18617)); SEEDS=ANCH_BIT+B39\n",
+│ +    "import hashlib\n"
+│ +    "_FRZ = json.load(open('l199/FREEZE.json'))\n"
+│ +    "assert hashlib.sha256(open('l199/PREREG.md','rb').read()).hexdigest() == _FRZ['prereg_sha256'], 'PREREG changed after freeze (STOP)'\n"
+│ +    "BASE = list(range(19931, 19947)); TAGOFF = 50000\n"
+│ +    "assert _FRZ['causal_seeds'] == BASE and _FRZ['tag_offset'] == TAGOFF\n"
+│ +    "assert NW == 3 and 0 <= WID < NW\n"
+│ +    "B39 = BASE[WID::NW] + [TAGOFF + x for x in BASE[WID::NW]]   # phi0 seeds, then phiPI tags\n"
+│ +    "SEEDS = ANCH_BIT + B39\n")
+│ +rep('OUT="l186"\n', 'OUT="l199"\n')
+│ +rep("    if archive.parts[0]==OUT: continue\n",
+│ +    "    if archive.parts[0]==OUT or archive.name.endswith('.tmp.npz'): continue\n")
+│ +rep("RAW_PATH,XM_PATH=OUT+'/raw.npz',OUT+'/xm.npz'; GAINS_PATH=OUT+'/gains.json'\n",
+│ +    "RAW_PATH,XM_PATH=OUT+f'/raw_w{WID}.npz',OUT+f'/xm_w{WID}.npz'; GAINS_PATH=OUT+f'/gains_w{WID}.json'\n")
+│ +rep("ANCH_PATH=OUT+'/anchors.json'\n", "ANCH_PATH=OUT+f'/anchors_w{WID}.json'\n")
+│ +rep("    if seed not in ANCH_BIT:\n"
+│ +    "        for b,j in zip((0,4000),np.random.default_rng(np.random.SeedSequence([186,seed])).integers(-300,301,2)):\n"
+│ +    "            AMPA[b+900:b+1400]=0\n"
+│ +    "            AMPA[b+900+j:b+1400+j]=ENT_AMP\n",
+│ +    "    assert np.array_equal(AMPA, canonical)          # L199: canonical gate for EVERY rollout\n"
+│ +    "    _SHIFT = math.pi if seed >= TAGOFF else 0.0     # phiPI tag: tone shifted half a 0.7-Hz period\n"
+│ +    "    _RS = seed - TAGOFF if seed >= TAGOFF else seed  # RNG seed of a tag = its base seed\n"
+│ +    "    assert (seed in ANCH_BIT and _SHIFT == 0.0 and _RS == seed) or (seed in B39 and _RS in BASE)\n"
+│ +    "    tone_tr = np.zeros(WIN, np.float64)\n")
+│ +rep("    gen = torch.Generator().manual_seed(seed)\n"
+│ +    "    gen2 = torch.Generator().manual_seed(seed + 9000)\n",
+│ +    "    gen = torch.Generator().manual_seed(_RS)\n"
+│ +    "    gen2 = torch.Generator().manual_seed(_RS + 9000)\n", tail=True)
+│ +rep("        sin_t = ENT_AMP * (0.5 + 0.5 * math.sin(PHI[k])) if AMPA[k] > 0 else 0.0\n",
+│ +    "        sin_t = ENT_AMP * (0.5 + 0.5 * math.sin(PHI[k] + _SHIFT)) if AMPA[k] > 0 else 0.0\n"
+│ +    "        tone_tr[k] = sin_t\n")
+│ +rep("    store[f'GI1110_cutwA_{seed}']=carrier\n",
+│ +    "    store[f'GI1110_cutwA_{seed}']=carrier\n"
+│ +    "    store[f'tone_{seed}']=tone_tr\n")
+│ +rep('log(f"rollouts done {time.time()-t0:.0f}s")\n',
+│ +    'log(f"rollouts done {time.time()-t0:.0f}s")\n'
+│ +    "assert json.load(open(ANCH_PATH))['c0a_pass']\n"
+│ +    "atomic_json(OUT+f'/done_w{WID}.json', dict(wid=WID, nw=NW, seeds=SEEDS, n_fresh=len(B39),\n"
+│ +    "    gain={a: GAIN[a] for a in ['cutwA']+MY_ARMS}, prereg_sha256=_FRZ['prereg_sha256'], secs=time.time()-t0))\n"
+│ +    'log(f"worker {WID} DONE {time.time()-t0:.0f}s")\n')
+│ +tl = s.split(MARK)[1]
+│ +assert "186" not in tl, "stale v1 schedule code"
+│ +assert tl.count("manual_seed(") == 2 and tl.count("manual_seed(_RS") == 2
+│ +for keep in ("            drive = torch.sparse.mm(WB[a], X[a]) * GAIN[a] + Iv[a]\n"
+│ +             "            if sin_t > 0:\n"
+│ … omitted 12 diff line(s) across 1 additional file(s)/section(s)
+💻 $ PY=/home/t3rpz/critters/peabrain/.venv/bin/python + 3 commands  1.0s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/analyze_primary.py
+│ banc/l199/analyze_primary.py
+│ @@ -0,0 +1,129 @@
+│ +"""L199 Parts A-C: the registered tone-phase test on STORED raws (zero
+│ +rollouts). Run from banc/ AFTER freeze. Writes l199/results_primary.json and
+│ +l199/primary.out. Written BEFORE any statistic was computed (PREREG)."""
+│ +import hashlib, json, os, sys
+│ +import numpy as np
+│ +sys.path.insert(0, "l199")
+│ +import ph
+│ +gj = ph.gj
+│ +
+│ +OUT = "l199"
+│ +sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+│ +frz = json.load(open(f"{OUT}/FREEZE.json"))
+│ +assert sha(f"{OUT}/PREREG.md") == frz["prereg_sha256"], "PREREG changed after freeze"
+│ +assert sha(f"{OUT}/ph.py") == frz["files"]["ph.py"], "instrument changed after freeze"
+│ +assert sha("l197b/gj.py") == json.load(open("l197b/FREEZE.json"))["files"]["gj.py"], "gj.py is not L197b's frozen readout"
+│ +SCHED = json.load(open("l197b/schedule.json"))
+│ +R197 = json.load(open("l197b/results_l197b.json"))
+│ +ADD = json.load(open("l197b/addendum.json"))
+│ +PHI = ph.tone_phi()
+│ +
+│ +# ---- load ----
+│ +store = {}
+│ +for w in range(6):
+│ +    z = np.load(f"l197b/raw_w{w}.npz")
+│ +    for s in SCHED["arms"]["S"]["seeds"][w::6] + SCHED["arms"]["W"]["seeds"][w::6]:
+│ +        for k in ("gate_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}"):
+│ +            store[k.format(s=s)] = z[k.format(s=s)]
+│ +R1 = json.load(open("l186/results_l186.json"))
+│ +z1 = np.load("l186/raw.npz")
+│ +DS = {}
+│ +for arm in ("S", "W"):
+│ +    d = gj.DESIGN[arm]
+│ +    seeds = SCHED["arms"][arm]["seeds"]
+│ +    ons = {s: [o[0], gj.SEG0[1] + o[1]] for s, o in ((s, SCHED["arms"][arm]["onsets"][str(s)]) for s in seeds)}
+│ +    for s in seeds:
+│ +        assert np.array_equal(store[f"gate_{s}"], gj.expected_gate(arm, SCHED["arms"][arm]["onsets"][str(s)])), (arm, s)
+│ +    DS[arm] = dict(raw=store, seeds=seeds, onsets=ons, pulse=d["pulse"], W=d["W"], starts=gj.starts_of(arm))
+│ +v1seeds = R1["seeds"]
+│ +v1ons = {s: R1["onsets"][str(s)] for s in v1seeds}
+│ +for s in v1seeds:
+│ +    g = z1[f"gate_{s}"]
+│ +    for o in v1ons[s]:
+│ +        assert g[o:o + 500].all() and not g[o - 25:o].any() and not g[o + 500:o + 525].any(), ("v1 gate", s, o)
+│ +v1raw = {k.format(s=s): z1[k.format(s=s)] for s in v1seeds
+│ +         for k in ("gate_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}")}
+│ +DS["V1"] = dict(raw=v1raw, seeds=v1seeds, onsets=v1ons, pulse=500, W=150, starts=gj.starts_of("S"))
+│ +
+│ +res = dict(design="L199 tone-phase registered test, Parts A-C (PREREG l199/PREREG.md)", status="FINAL",
+│ +           prereg_sha256=frz["prereg_sha256"], datasets={})
+│ +for tag, d in DS.items():
+│ +    for s in d["seeds"]:
+│ +        for o in d["onsets"][s]:
+│ +            g = d["raw"][f"gate_{s}"]
+│ +            assert g[o:o + d["pulse"]].all() and not g[o - 25:o].any()
+│ +    h, lag = ph.seg_duty(d["raw"], d["seeds"], d["onsets"], d["W"], d["starts"])
+│ +    A, B = ph.part_a(h, lag), ph.part_b(h, lag)
+│ +    C = ph.part_c(d["raw"], d["seeds"], d["onsets"], d["pulse"], PHI)
+│ +    res["datasets"][tag] = dict(n=len(d["seeds"]), W=int(d["W"]), n_offsets=len(d["starts"]), pulse=d["pulse"], A=A, B=B, C=C)
+│ +    np.savez_compressed(f"{OUT}/segduty_{tag}.npz", lag=lag, **{f"h_{g}": h[g] for g in h})
+│ +
+│ +# ---- CERT-197b: this instrument == L197b's stored numbers ----
+│ +cert = {}
+│ +for arm in ("S", "W"):
+│ +    A = res["datasets"][arm]["A"]
+│ +    for mine, theirs in ((A["I"], R197["arms"][arm]["A_in_minus_anti"]), (A["A_inphase"], R197["arms"][arm]["A_inphase"]),
+│ +                         (A["A_antiphase"], R197["arms"][arm]["A_antiphase"])):
+│ +        assert abs(mine["value"] - theirs["value"]) < 1e-12 and np.allclose(mine["ci95"], theirs["ci95"], atol=1e-12), (arm, mine, theirs)
+│ +    for g in ph.GRAPHS:
+│ +        for b in ("inphase", "mid", "antiphase"):
+│ +            assert abs(A["profile"][g][b]["value"] - ADD[f"{arm}_by_graph"][g][f"aligned_{b}"]) < 1e-12, (arm, g, b)
+│ +    cert[arm] = "PASS (I, A_inphase, A_antiphase values + CIs == results_l197b.json; 6 bin means == addendum.json; 1e-12)"
+│ +res["cert_197b"] = cert
+│ +print("CERT-197b PASS (S, W)")
+│ +
+│ +# ---- Part A verdict ----
+│ +lab = {t: res["datasets"][t]["A"]["label"] for t in DS}
+│ +ph1 = ("PH1_sign", "PH1_shape")
+│ +if lab["S"] in ph1 and lab["V1"] in ph1 and lab["W"] != "PH0":
+│ … omitted 51 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/analyze_causal.py
+│ banc/l199/analyze_causal.py
+│ @@ -0,0 +1,103 @@
+│ +"""L199 Part D: the causal tone-phase manipulation. Reads the three workers'
+│ +stored raws, certifies, applies the registered block statistic (ph.part_d).
+│ +Run from banc/. Written BEFORE any rollout (PREREG)."""
+│ +import hashlib, json, math, os, sys
+│ +import numpy as np
+│ +sys.path.insert(0, "l199")
+│ +import ph
+│ +gj = ph.gj
+│ +
+│ +OUT, NW = "l199", 3
+│ +sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+│ +frz = json.load(open(f"{OUT}/FREEZE.json"))
+│ +assert sha(f"{OUT}/PREREG.md") == frz["prereg_sha256"], "PREREG changed after freeze"
+│ +assert sha(f"{OUT}/ph.py") == frz["files"]["ph.py"] and sha(f"{OUT}/run_tp.py") == frz["files"]["run_tp.py"]
+│ +BASE, TAGOFF = frz["causal_seeds"], frz["tag_offset"]
+│ +assert BASE == list(range(19931, 19947)) and TAGOFF == 50000
+│ +G_CUTWA, G_SC25, ENT_AMP = 0.14365819573402408, 0.1454454553127289, 0.1
+│ +PHI = ph.tone_phi()
+│ +t = np.arange(6000)
+│ +canon = (t // 2000 == 1) | ((t % 2000) % 900 < 500)
+│ +
+│ +store, secs, n_c0a = {}, {}, 0
+│ +for w in range(NW):
+│ +    for nm in ("done", "anchors", "gains"):
+│ +        assert os.path.exists(f"{OUT}/{nm}_w{w}.json"), f"worker {w} incomplete ({nm}) — no read"
+│ +    an, gn, dn = (json.load(open(f"{OUT}/{nm}_w{w}.json")) for nm in ("anchors", "gains", "done"))
+│ +    assert an["c0a_pass"] and an["c0a_max"] == 0.0 and an["n_checks"] == 92, w
+│ +    assert gn["gain"] == {"cutwA": G_CUTWA, "sc25": G_SC25} and all(gn["stored_exact"].values()), w
+│ +    assert dn["prereg_sha256"] == frz["prereg_sha256"]
+│ +    mine = BASE[w::NW] + [TAGOFF + x for x in BASE[w::NW]]
+│ +    assert dn["seeds"] == [801, 901] + mine
+│ +    n_c0a += an["n_checks"]
+│ +    secs[w] = dn["secs"]
+│ +    z = np.load(f"{OUT}/raw_w{w}.npz")
+│ +    for s in (801, 901):
+│ +        assert np.array_equal(z[f"gate_{s}"], canon)
+│ +        assert np.array_equal(z[f"tone_{s}"], np.where(canon, ENT_AMP * (0.5 + 0.5 * np.sin(PHI)), 0.0))
+│ +    for s in mine:
+│ +        for k in ("gate_{s}", "tone_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}", "xm_cutwA_{s}", "xm_sc25_{s}"):
+│ +            key = k.format(s=s)
+│ +            assert key not in store
+│ +            store[key] = z[key]
+│ +tags = BASE + [TAGOFF + b for b in BASE]
+│ +mc_max = 0.0
+│ +for b in BASE:
+│ +    g0, gp, t0, tp = store[f"gate_{b}"], store[f"gate_{TAGOFF + b}"], store[f"tone_{b}"], store[f"tone_{TAGOFF + b}"]
+│ +    assert np.array_equal(g0, canon) and np.array_equal(gp, canon), ("gate not canonical", b)
+│ +    mc_max = max(mc_max, float(np.abs(t0 + tp - ENT_AMP * canon).max()), float(np.abs(t0 - np.where(canon, ENT_AMP * (0.5 + 0.5 * np.sin(PHI)), 0.0)).max()))
+│ +    assert float(np.abs(t0 - tp).max()) > .09, ("tone not shifted", b)
+│ +    for g in ph.GRAPHS:
+│ +        for p in ("Ti_fR", "Ti_eR"):
+│ +            y0, yp = store[f"{p}_{g}_{b}"], store[f"{p}_{g}_{TAGOFF + b}"]
+│ +            assert y0.shape == (6000,) and np.isfinite(y0).all() and np.isfinite(yp).all() and not np.array_equal(y0, yp)
+│ +assert mc_max < 1e-12, mc_max
+│ +print(f"C0A {n_c0a} checks max 0.0 | gains EXACT x{NW} | gates canonical x32 | MC tone(phi0)+tone(phiPI) == ENT_AMP*gate, max dev {mc_max:.1e}")
+│ +
+│ +ons = {tg: [900, 4900] for tg in tags}
+│ +nb = len(BASE)
+│ +res = dict(design="L199 Part D causal tone-phase manipulation (PREREG l199/PREREG.md)", status="FINAL",
+│ +           prereg_sha256=frz["prereg_sha256"], seeds=BASE, tag_offset=TAGOFF,
+│ +           certs=dict(c0a_checks=n_c0a, c0a_max=0.0, gains_stored_exact=True, gates_canonical=True, mc_max_dev=mc_max, worker_secs=secs))
+│ +h, lag = ph.seg_duty(store, tags, ons, 150, gj.starts_of("S"))
+│ +assert not lag.any()
+│ +Dd = ph.part_d(h, nb)
+│ +res["D"] = Dd
+│ +np.savez_compressed(f"{OUT}/segduty_causal.npz", **{f"h_{g}": h[g] for g in h})
+│ +h5, _ = ph.seg_duty(store, tags, ons, 500, np.arange(-250, 251, 10))
+│ +res["descriptive_W500"] = ph.part_d(h5, nb)
+│ +# descriptive: direct pool phase per phi arm, against each arm's OWN tone phase
+│ +res["C_by_phi"] = dict(phi0=ph.part_c(store, BASE, {b: ons[b] for b in BASE}, 500, PHI),
+│ +                       phiPI=ph.part_c(store, tags[nb:], {tg: ons[tg] for tg in tags[nb:]}, 500, PHI + math.pi))
+│ +# descriptive: pool peak phase against the UNSHIFTED tone, phiPI minus phi0 (expected ~180 if tone-locked)
+│ +sh = {}
+│ +for g in ph.GRAPHS:
+│ +    for p in ("Ti_fR", "Ti_eR"):
+│ +        dl = [float(ph.wrap(ph.pool_alpha(store[f"{p}_{g}_{TAGOFF + b}"], [900, 4900], 500, PHI)[0]
+│ +                            - ph.pool_alpha(store[f"{p}_{g}_{b}"], [900, 4900], 500, PHI)[0])) for b in BASE]
+│ +        sh[f"{p}_{g}"] = ph.circ(dl)
+│ … omitted 25 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/freeze.py  0.1s
+│ banc/l199/freeze.py
+│ @@ -0,0 +1,37 @@
+│ +"""L199 freeze: key-scan the fresh seeds + tags against every lab npz, refuse if
+│ +any L199 raw/gains/result already exists, hash everything. Run from banc/."""
+│ +import glob, hashlib, json, os, re, time, zipfile
+│ +
+│ +OUT = "l199"
+│ +BASE, TAGOFF = list(range(19931, 19947)), 50000
+│ +fresh = set(BASE) | {TAGOFF + b for b in BASE}
+│ +for pat in ("raw_w*.npz", "xm_w*.npz", "gains_w*.json", "anchors_w*.json", "done_w*.json", "results_*.json", "segduty_*.npz", "primary.out", "causal.out"):
+│ +    assert not glob.glob(f"{OUT}/{pat}"), ("L199 output exists before freeze (STOP)", pat)
+│ +nscan = 0
+│ +for f in sorted(glob.glob("../**/*.npz", recursive=True)):
+│ +    if f.startswith("../banc/l199/"):
+│ +        continue
+│ +    try:
+│ +        names = zipfile.ZipFile(f).namelist()
+│ +    except (zipfile.BadZipFile, FileNotFoundError, OSError):
+│ +        assert f.endswith(".tmp.npz"), ("unreadable npz (STOP)", f)
+│ +        continue
+│ +    nscan += 1
+│ +    for k in names:
+│ +        assert not (set(map(int, re.findall(r"\d+", k))) & fresh), ("fresh seed/tag token collides (STOP)", f, k)
+│ +# concurrent L200: no text file there may already name one of these seeds
+│ +l200_hits = [p for p in glob.glob("l200/*") if os.path.isfile(p) and not p.endswith(".npz")
+│ +             and (set(map(int, re.findall(r"\d+", open(p, errors="ignore").read()))) & fresh)]
+│ +assert not l200_hits, ("L200 names one of these seeds (STOP)", l200_hits)
+│ +sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+│ +FILES = ["PREREG.md", "ph.py", "selftest.py", "selftest.json", "analyze_primary.py", "analyze_causal.py",
+│ +         "build_tp.py", "run_tp.py", "run_all.sh", "freeze.py"]
+│ +frz = dict(prereg_sha256=sha(f"{OUT}/PREREG.md"), files={f: sha(f"{OUT}/{f}") for f in FILES},
+│ +           src_l186_run=sha("l186/run.py"), gj_sha256=sha("l197b/gj.py"),
+│ +           causal_seeds=BASE, tag_offset=TAGOFF,
+│ +           keyscan=dict(npz_scanned=nscan, collisions=0, tokens="19931..19946 and 69931..69946"),
+│ +           frozen=time.strftime("%Y-%m-%d %H:%M:%S %Z") + " before any L199 statistic or rollout (no raw/gains/results file exists under l199)")
+│ +assert frz["gj_sha256"] == json.load(open("l197b/FREEZE.json"))["files"]["gj.py"]
+│ +json.dump(frz, open(f"{OUT}/FREEZE.json", "w"), indent=1)
+│ +open(f"{OUT}/PREREG.sha256", "w").write("".join(f"{v}  {k}\n" for k, v in frz["files"].items()) + "frozen " + frz["frozen"] + "\n")
+│ +print("FROZEN", frz["prereg_sha256"][:16], "| keyscan", nscan, "npz, 0 collisions |", frz["frozen"])
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/run_all.sh  0.1s
+│ banc/l199/run_all.sh
+│ @@ -0,0 +1,23 @@
+│ +#!/usr/bin/env bash
+│ +# L199 Part D orchestrator: 3 workers x 2 threads (CPU <= 6), nice 5.
+│ +# Refuses to roll without PREREG + FREEZE. L200 runs concurrently elsewhere.
+│ +cd /home/t3rpz/critters/peabrain-lab/banc || exit 1
+│ +PY=/home/t3rpz/critters/peabrain/.venv/bin/python
+│ +NW=3
+│ +[ -f l199/PREREG.md ] && [ -f l199/FREEZE.json ] || { echo "PREREG/FREEZE missing — refusing to roll" >> l199/run.out; exit 2; }
+│ +echo "--- L199 Part D rollouts: $NW workers x 2 threads, launched $(date '+%F %T') | PREREG sha $(sha256sum l199/PREREG.md | cut -c1-16) ---" >> l199/run.out
+│ +pids=()
+│ +for i in $(seq 0 $((NW-1))); do
+│ +  L175_MODE=work L175_WID=$i L175_NW=$NW L175_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
+│ +    CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 nice -n 5 \
+│ +    $PY -B l199/run_tp.py >> l199/run.out 2> l199/work_w$i.err &
+│ +  pids+=($!)
+│ +  sleep 5
+│ +done
+│ +echo "${pids[@]}" > l199/worker_pids.txt
+│ +rc=0
+│ +for p in "${pids[@]}"; do wait "$p" || rc=1; done
+│ +echo "--- workers finished $(date '+%F %T') rc=$rc ---" >> l199/run.out
+│ +[ $rc -eq 0 ] || { echo "worker failure — no analysis" >> l199/run.out; exit 3; }
+│ +OMP_NUM_THREADS=2 $PY -B l199/analyze_causal.py > l199/causal_analyze.out 2>&1
+│ +echo "--- causal analysis exit $? $(date '+%F %T') FINAL ---" >> l199/run.out
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l199/analyze_causal.py
+│ banc/l199/analyze_causal.py
+│ @@ -34,7 +34,7 @@
+│      z = np.load(f"{OUT}/raw_w{w}.npz")
+│      for s in (801, 901):
+│          assert np.array_equal(z[f"gate_{s}"], canon)
+│ -        assert np.array_equal(z[f"tone_{s}"], np.where(canon, ENT_AMP * (0.5 + 0.5 * np.sin(PHI)), 0.0))
+│ +        assert np.allclose(z[f"tone_{s}"], np.where(canon, ENT_AMP * (0.5 + 0.5 * np.sin(PHI)), 0.0), rtol=0, atol=1e-12)
+│      for s in mine:
+│          for k in ("gate_{s}", "tone_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}", "xm_cutwA_{s}", "xm_sc25_{s}"):
+│              key = k.format(s=s)
+🔧 Patch /home/t3rpz/critters/peabrain-lab/banc/l199/analyze_primary.py
+│ banc/l199/analyze_primary.py
+│ @@ -63,6 +63,7 @@
+│  for arm in ("S", "W"):
+│      A = res["datasets"][arm]["A"]
+│      for mine, theirs in ((A["I"], R197["arms"][arm]["A_in_minus_anti"]), (A["A_inphase"], R197["arms"][arm]["A_inphase"]),
+│ +                         (A["E"], R197["arms"][arm]["A"]),
+│                           (A["A_antiphase"], R197["arms"][arm]["A_antiphase"])):
+│          assert abs(mine["value"] - theirs["value"]) < 1e-12 and np.allclose(mine["ci95"], theirs["ci95"], atol=1e-12), (arm, mine, theirs)
+│      for g in ph.GRAPHS:
+💻 $ PY=/home/t3rpz/critters/peabrain/.venv/bin/python + 8 commands  0.1s
+💻 $ PY=/home/t3rpz/critters/peabrain/.venv/bin/python + 8 commands  3.2s
+
+────────────────────────────────────────
+✿ Miso
+Frozen at 20:27:51 (PREREG sha 01e23ae1c711012e); rollouts launched. Running the stored-data parts now.
+────────────────────────────────────────
+
+💻 $ PY=/home/t3rpz/critters/peabrain/.venv/bin/python + 2 commands  9.0s
+💻 $ sleep 420 + 4 commands  420.2s
+💻 $ cat l199/causal_analyze.out + 4 commands  0.2s
+💻 $ python3 - <<'E' import json,hashlib r=json.load(open('l199/results_primary.json')) + 4 commands  0.5s
+💻 $ ls paper + 1 command  0.2s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l199/L199-FINDINGS.md
+│ banc/l199/L199-FINDINGS.md
+│ @@ -0,0 +1,68 @@
+│ +# L199 FINDINGS — the tone-phase registered test (FINAL)
+│ +
+│ +**Registered verdicts.** Part A (3-bin conditioned profile, stored raws): **`PH1_sign`** — S `PH1_sign`, L186 `PH1_sign`, W `PH_weak` (direction only, no reversal). Part D (causal, 64 fresh rollouts): **`CA1`** — the phenotype follows the tone phase; the sign refinement `CA1_sign` is NOT met. Part B (signed-offset profile, new instrument): S `Hq`, W `Hq`, L186 `H1`. Part C (direct pool phase): S `Dq`, W `Dq`, L186 `D1`.
+│ +PREREG sha 01e23ae1c711012e, frozen 20:27:51 before any L199 statistic or rollout; every frozen file still hashes to FREEZE.json; no post-freeze code change. Certs: CERT-197b (this instrument reproduces L197b's stored I, A_inphase, A_antiphase, pooled A with intervals and all six addendum bin means, 1e-12); C0A unshifted cutwA + sc25 @801/901 == raw_l135 EXACT in all 3 workers (276 checks, max 0.0); both gains == stored floats EXACT x3; all 32 gates canonical; manipulation check tone(phi0) + tone(phiPI) == ENT_AMP x gate, max deviation 5.6e-16; fresh seeds 19931..19946 (+ tags 69931..69946) key-scanned against 268 npz.
+│ +
+│ +## Part A — the brief's instrument (in / mid / antiphase bins of each pair-segment's own tone offset)
+│ +
+│ +| | S (96 seeds, W150) | W (96 seeds, 250-step pulse) | L186 (16 seeds, W150) |
+│ +|---|---|---|---|
+│ +| base duty in / mid / anti | .186 / .236 / .465 | .113 / .169 / .329 | .190 / .257 / .413 |
+│ +| carrier removed in / mid / anti | .423 / .299 / .298 | .232 / .239 / .342 | .493 / .320 / .250 |
+│ +| base slope (in − anti) | −.278 [−.308, −.249] | −.216 [−.251, −.182] | −.223 [−.340, −.106] |
+│ +| removed slope | **+.125 [+.075, +.176]** | −.110 [−.160, −.060] | **+.243 [+.121, +.366]** |
+│ +| interaction I | +.403 [+.345, +.462] | +.106 [+.044, +.169] | +.466 [+.274, +.658] |
+│ +| pooled elevation | +.049 | +.068 | +.083 |
+│ +| label | PH1_sign | PH_weak | PH1_sign |
+│ +
+│ +What this adds over L197b, and what it does not: S's and W's interaction and point profiles were already known (PREREG §"already seen"); W's label was fixed by a stored number. New here: the intervals on the per-graph sign claims (S's removed slope excludes 0), L186's per-graph profile (a second batch with the reversal), and W's removed slope being NEGATIVE with an interval below 0 — under the 250-step pulse the profile shifts but does not reverse.
+│ +
+│ +## Part D — the causal version (same gates, tone shifted half a period in one arm)
+│ +
+│ +Same 16 seeds, same settle state, same noise, canonical gate in all four arms; the only difference between a same-phase pair and a cross-phase pair is the tone.
+│ +
+│ +| duty (W150, distinct seeds) | phi0–phi0 | phiPI–phiPI | cross |
+│ +|---|---|---|---|
+│ +| base (cutwA) | .175 | .210 | .505 / .483 |
+│ +| carrier removed (sc25) | .372 | .469 | .300 / .349 |
+│ +| elevation sc25 − cutwA | **+.197 [+.108, +.286]** | **+.258 [+.159, +.357]** | **−.170 [−.220, −.119]** |
+│ +
+│ +- K (within − cross): base **−.301 [−.356, −.246]**; removed +.096 [−.002, +.194]; **K_I +.397 [+.288, +.506]** (S's correlational I was +.403).
+│ +- The elevation reappears when BOTH partners are shifted (E_PP − E_00 +.061 [−.067, +.189]) and inverts when only one is. A gate-edge-locked timing predicts no difference between these classes; the gates are identical.
+│ +- `CA1_sign` fails on one condition: the removed graph's K interval touches 0 at the 150-step window. At v1's 500-step window (descriptive) it is +.245 [+.110, +.381] and K_I +.492 [+.358, +.626].
+│ +- Pool peaks move with the tone: phiPI − phi0 peak phase against the unshifted tone +157 / −172 (base flexor / extensor), +167 / −164 (removed).
+│ +
+│ +## Parts B and C — what the phase relation actually is (the correction to the post hoc)
+│ +
+│ +| | S | W | L186 | Part D batch (phi0 / phiPI) |
+│ +|---|---|---|---|---|
+│ +| B: preferred offset theta, base | +172 (SE 4) | +173 (SE 5) | +169 (SE 12) | — |
+│ +| B: theta, carrier removed | **+55 (SE 5)** | +134 (SE 9) | +32 (SE 10) | — |
+│ +| B: rotation dtheta | **−118 [−131, −104]** | −39 [−59, −20] | −136 [−173, −99] | — |
+│ +| C: flexor − extensor peak phase, base | −5 (R .77) | +5 (R .68) | −7 (R .74) | +10 / −22 |
+│ +| C: same, carrier removed | **−116 (R .77)** | −76 (R .49, dispersed) | −129 (R .80) | −94 / −126 |
+│ +
+│ +1. **"Co-move" holds for the base graph everywhere**: flexor and extensor peak at the same tone phase (within ±22 deg in five batches), and the cross-seed anticorrelation peaks at a half-period offset (theta 169–173).
+│ +2. **"Alternate" is too strong for the carrier-removed graph.** The pools do not go to antiphase. Their relation rotates by about a third of a period: −116 (S), −129 (L186), −94 / −126 (fresh batch) — between quadrature and antiphase. The folded 3-bin profile reads this as a sign reversal because cos is positive there; the signed instrument puts S's preferred offset at +55 [+44, +65], outside the registered 0 ± 45 band (`Hq`). L186 lands inside it (`H1`, +32, wide interval). The two instruments agree: theta − 180 = −125 vs direct −116 in S.
+│ +3. **It is the extensor that moves (descriptive, no registered band).** Flexor peak tone phase: 102 → 93 (S), 102 → 92 (L186). Extensor: 108 → −150 (S), 110 → −137 (L186), 109 → −172 (fresh phi0), and its locking loosens (R .95 → .70–.82).
+│ +4. **Under the 250-step pulse (W) the rotation is a third the size** (−39 deg; direct phase dispersed, R .49). Design-dependent, as L197b already reported for the elevation.
+│ +
+│ +## Predictions
+│ +
+│ +Correct: Q1; Q2 (all three); Q3; Q4 (I, base slope; label was a coin flip between sign and shape); Q5's base-near-180 and W-not-H1; Q6 (base co-move everywhere; S removed = intermediate, my modal call); Q7 certs, base K, CA1, E_PP. Wrong: Q5's "theta_sc25 within 0 ± 45 in S" (.55) and its modal label H1 (.50) — S is Hq.
+│ +
+│ +## Limits
+│ +
+│ +- Part A on S and W is a formalised re-read of partly seen data; the out-of-sample weight is L186's per-graph profile, Parts B–C (never computed before) and Part D.
+│ +- Part D is one 16-seed batch, one shift (half a period), canonical schedule; it shifts the whole-window tone and so does not separate tone phase at gate onset from tone phase during the pulse (phiPI's own elevation runs higher than phi0's, +.061, interval spans 0).
+│ +- Cross-seed duty of the right tibia pair, one model class, AF-matched gains. First-harmonic phases are of rate traces, not synaptic latencies.
+│ +
+│ +## Draft-fold note (NOT applied — for a gated fold card)
+│ +
+│ +- §2.5 "Which clock the timing follows is unresolved" (DRAFT.md ~l.1272; echoed ~l.599, ~l.629, abstract note ~l.493) can now read: **"no internal rhythm; the timing locks to the phase of the external 0.7-Hz tone"** — cite L197b items 3–4 (partner-undriven elapsed elevation +.010 [−.013, +.034] / +.015 [−.007, +.036]; elevation signed by tone phase) and L199 Part D (tone shifted half a period at identical gates: elevation +.197 / +.258 same-phase, −.170 cross-phase; K_I +.397 [+.288, +.506]).
+│ +- Supported phenotype sentence: "removing the carrier rotates the extensor's phase against the tone by about a third of a period while the flexor's is unchanged; the base pools peak together." Do NOT write "alternate" or "antiphase" for the carrier-removed graph.
+│ +- Scope words that must travel with it: 500-step pulse; weaker and non-reversing under a 250-step pulse.
+│ +
+│ +**Next (cards, not run):** (i) a tone-RESET arm (tone phase restarted at each gate onset) to split onset phase from in-pulse phase; (ii) a graded shift (quarter / three-quarter period) to trace the profile causally and test the −120 deg reading directly; (iii) why the extensor: which input sets its tone phase once the carrier is gone.
+│ +
+│ +Files: `PREREG.md` + `PREREG.sha256` + `FREEZE.json`, `ph.py`, `selftest.py/.json`, `analyze_primary.py` → `results_primary.json`, `primary.out`, `segduty_{S,W,V1}.npz`; `build_tp.py` → `run_tp.py`, `run_all.sh`, `raw_w0-2.npz`, `xm_w0-2.npz`, `analyze_causal.py` → `results_causal.json`, `causal.out`, `segduty_causal.npz`; `verdict.out`. Rollouts 20:27–20:34, 3 workers × 2 threads, CPU only, concurrent with L200.
+💻 $ { echo "L199 tone-phase registered test — Part A PH1_sign (S PH1_sign, L186 PH1_sign, W PH_weak) | Part D CA1 (CA1_sign not met) | Part B S Hq / W Hq / L186 H1 | Part C S Dq / W Dq / L186 D1" + 11 commands  0.5s
+⚡ Skill_manage  0.3s [operations[0] (patch on 'peabrain-flybrain') ...]
+⚡ Skill_manage  0.4s [operations[1] (patch on 'peabrain-flybrain') ...]
+⚡ Skill_manage  0.4s
+
+────────────────────────────────────────
+✿ Miso
+L199 is done, nya: the tone-phase hypothesis holds, and the causal arm confirms it, but "alternate" turned out to be the wrong word for the carrier-removed graph.
+
+PREREG froze at 20:27:51 (sha 01e23ae1c711012e) before any statistic or rollout, with no post-freeze code change. C0A was exact in all 3 workers (276 checks, max 0.0) and gains matched stored floats.- Stored-data test: PH1_sign. The base profile slopes toward half-rotation (S −.278 [−.308, −.249]). The carrier-removed profile slopes toward zero rotation (S +.125 [+.075, +.176]; L186 +.243 [+.121, +.366]). W is direction-only with no reversal (removed slope −.110).- Causal test: CA1. With identical gates and the tone shifted half a period for one partner, the deletion elevation is +.197 with both unshifted, +.258 with both shifted, and −.170 [−.220, −.119] with one shifted. The interaction is +.397 [+.288, +.506], against S's correlational +.403. The stricter sign refinement narrowly failed (removed-graph interval touches 0).
+- Correction to the post hoc. Base pools do peak together (−5°). With the carrier removed they don't reach antiphase: the relation rotates about a third of a period (−116° in S, −129° in L186, −94°/−126° in the fresh batch). It is the extensor that moves; the flexor stays put.My one wrong prediction was that S's removed-graph offset would land near 0°; it's +55°.
+
+S and W had already been partly seen in L197b, which the PREREG discloses. The out-of-sample weight is L186, the two new instruments, and the 64 fresh rollouts (16 seeds, one batch).
+
+The draft-fold note is in the findings file, DRAFT.md untouched. I also saved a short phase-instrument reference to the peabrain skill.
+
+Everything is in /home/t3rpz/critters/peabrain-lab/banc/l199/; start with L199-FINDINGS.md.
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-817c2a32cc67125da6242b29aeef3866b91667eeddfbf815d7e8bec49a9ffaed -p maple
+
+Session:        local-817c2a32cc67125da6242b29aeef3866b91667eeddfbf815d7e8bec49a9ffaed
+Duration:       19m 45s
+Messages:       55 (1 user, 53 tool calls)

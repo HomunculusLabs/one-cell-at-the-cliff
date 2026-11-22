@@ -1,0 +1,51 @@
+helper slice sha256 0e878bafb27c8641 (2727 chars)
+---- CERT-L (metric copy vs stored B36 addendum) ----
+  f4wA      True mine {'meanL': 0.698, 'kL': 16, 'meanR': 0.043, 'kR': 0}
+  f4ng      True mine {'meanL': 0.289, 'kL': 2, 'meanR': 0.081, 'kR': 0}
+  f4tw      True mine {'meanL': 0.56, 'kL': 10, 'meanR': 0.082, 'kR': 0}
+  cutwA     True mine {'meanL': 0.233, 'kL': 0, 'meanR': 0.371, 'kR': 3}
+  cutng25   True mine {'meanL': 0.106, 'kL': 0, 'meanR': 0.754, 'kR': 16}
+  f4ng_vs_f4wA   True mine {'mean_paired_dL': -0.409, 'n_up': 0, 'n_down': 16}
+  f4tw_vs_f4wA   True mine {'mean_paired_dL': -0.139, 'n_up': 6, 'n_down': 9}
+  f4ng_vs_f4tw   True mine {'mean_paired_dL': -0.27, 'n_up': 5, 'n_down': 11}
+CERT-L: PASS
+
+---- run anchors ----
+  fc169b2_pass: True
+  fc169b2_max: 0.0
+  fc169_pass: True
+  c0a150_pass: True
+  fc144_pass: True
+  fc145_pass: True
+  ntf4_pass: True
+  nt_pass: True
+  paf4_ok: True
+  c0a_pass: True
+  f4_gain_exact: {'f4wA': True, 'f4ng': True, 'f4tw': True}
+
+---- B37 Ti LEFT-side duty (n=16, FRESH) ----
+f4wA      meanL 0.625 kL 14/16 [0.640,0.965] | meanR 0.042 kR  0/16 | superL True
+f4ng      meanL 0.228 kL  0/16 [0.000,0.194] | meanR 0.106 kR  0/16 | superL False
+f4tw      meanL 0.605 kL 11/16 [0.444,0.858] | meanR 0.064 kR  0/16 | superL False
+cutwA     meanL 0.277 kL  1/16 [0.011,0.283] | meanR 0.452 kR  5/16 | superL False
+cutng25   meanL 0.118 kL  0/16 [0.000,0.194] | meanR 0.775 kR 15/16 | superL False
+
+---- paired legs (L axis, per seed) ----
+  f4ng_vs_f4wA   dL -0.396 up  0/16 down 16/16
+  f4tw_vs_f4wA   dL -0.020 up  8/16 down  8/16
+  f4ng_vs_f4tw   dL -0.377 up  1/16 down 15/16
+
+G1 replication  meanL>=.60 True | kL>=12 True  -> True
+G2 carrier/twin n_down>=12 True (15/16, sign p 0.0003) | dL<=-.10 True (-0.377)  -> True
+G3 asymmetry    |dng|/|dtw| = 20.12 >= 2.0 -> True (-0.396 vs -0.020)
+
+---- G4 side-swap diagnostic (descriptive) ----
+  f4wA      per-seed L>R 16/16 | mean-dominant L (B36 L, replicates True)
+  f4ng      per-seed L>R 12/16 | mean-dominant L (B36 L, replicates True)
+  f4tw      per-seed L>R 16/16 | mean-dominant L (B36 L, replicates True)
+  cutwA     per-seed L>R  3/16 | mean-dominant R (B36 R, replicates True)
+  cutng25   per-seed L>R  1/16 | mean-dominant R (B36 R, replicates True)
+
+BRANCH: B_REPLICATES_IDENTITY
+
+wrote l175f/results_l175f.json

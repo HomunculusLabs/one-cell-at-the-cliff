@@ -1,0 +1,42 @@
+free floor E[PLV | uniform, n=18] = 0.2089
+Rayleigh p=.05 threshold R = 0.4080
+
+arm           carr_med  ctl_med   p(carr_med)   p(ctl_med)  n_carr>floor  n_ctl>floor
+full          0.5558   0.7604   3.85e-03     3.02e-05   6/8          9/9
+b65           0.9840   0.7486   2.70e-08     4.16e-05   8/8          7/9
+cutwA         0.6302   0.8888   7.87e-04     6.68e-07   6/8          8/9
+cutng25       0.6909   0.9255   1.86e-04     2.02e-07   6/8          8/9
+silW          0.6972   0.9137   1.58e-04     2.98e-07   6/8          8/9
+eMotTop5      0.5684   0.7619   2.98e-03     2.90e-05   6/8          8/9
+eMotBot5      0.7546   0.8911   3.53e-05     6.21e-07   5/8          8/9
+l154_b65      0.9838   0.6974   2.71e-08     1.58e-04   8/8          8/9
+l154_off      0.1860   0.2810   5.36e-01     2.41e-01   4/8          8/9
+
+b65 CROSS-BATCH replication (B33 n=18 vs B34 n=18, disjoint seeds):
+  carrier med 0.9840 vs 0.9838; per-channel max|d| 0.0152, median|d| 0.0026; locked 8/8 vs 8/8
+  batch disjointness asserted (anchors 801/901 shared by design)
+
+CARRIER-SET PORTABILITY (carrier_med - control_med):
+  full          -0.2047
+  b65           +0.2354
+  cutwA         -0.2586
+  cutng25       -0.2346
+  silW          -0.2164
+  eMotTop5      -0.1936
+  eMotBot5      -0.1364
+  l154_b65      +0.2864
+  l154_off      -0.0950
+  INVERTED in 7/9 arms: ['full', 'cutwA', 'cutng25', 'silW', 'eMotTop5', 'eMotBot5', 'l154_off']
+
+AMPLITUDE CONTROL (median carrier ptp vs l65 readability floor .03):
+  full          ptp 0.1469 = 4.9x floor, carrier_med 0.5558
+  b65           ptp 0.1681 = 5.6x floor, carrier_med 0.9840
+  cutwA         ptp 0.0830 = 2.8x floor, carrier_med 0.6302
+  cutng25       ptp 0.0839 = 2.8x floor, carrier_med 0.6909
+  silW          ptp 0.0781 = 2.6x floor, carrier_med 0.6972
+  eMotTop5      ptp 0.0875 = 2.9x floor, carrier_med 0.5684
+  eMotBot5      ptp 0.0870 = 2.9x floor, carrier_med 0.7546
+  l154_b65      ptp 0.1675 = 5.6x floor, carrier_med 0.9838
+  l154_off      ptp 0.0733 = 2.4x floor, carrier_med 0.1860
+
+wrote l165/postcheck.json

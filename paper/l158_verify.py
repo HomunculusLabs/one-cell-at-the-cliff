@@ -502,7 +502,15 @@ if _st183 >= 1:
               "base's own gain", 'gain-only null', 'shared timing, not rate',
               '1.4-Hz', 'sufficient, not unique', 'set-dependent',
               'carrier-free', 'mass-matched', 'downstream interneuron',
-              'stricter synapse floor', 'unresolved',
+              'stricter synapse floor',
+              # L201 PIN MOVE (2026-11-22, stage 10; receipt in LANE-LOG and
+              # banc/l201_worklog.md).  OLD: 'unresolved' was required (the
+              # timing sentence "Which clock the timing follows is
+              # unresolved").  NEW: the resolved statement is required in its
+              # place and the old sentence is RETIRED below, so neither can be
+              # dropped or revived silently.  REASON: L197b + L199 resolve it
+              # (the registered causal tone-shift branch is met).
+              'The timing follows the phase of the external drive.',
               'one perturbed model graph, not the fly',
               # RESIDUE-FOLD ADDITION: the calibration may not be dropped
               'yardstick set on a degraded network',
@@ -531,7 +539,9 @@ if _st183 >= 1:
                 '.008', '39 of 48', '39/48', 'regime transition',
                 'a real slow oscillation', 'antagonist clock, not',
                 # RESIDUE-FOLD ADDITION: the abstract's own transition word
-                'The flip is'):
+                'The flip is',
+                # L201 PIN MOVE: the superseded timing status may not return
+                'Which clock the timing follows is unresolved'):
         assert bad not in L_flat, f'(14) retired abstract claim returned: {bad}'
     assert 'selectively' in L_title and 'perturbed' in L_title \
         and 'model' in L_title, '(14) the adopted title lost its scope words'
@@ -547,9 +557,9 @@ if _st183 >= 1:
     assert not (FORBIDDEN_L172 & L_toks), '(14) superseded per-batch counts'
     assert '12\u00d7 below' not in _live183[_live183.index('## Title'):], \
         '(14) the retired 12x mass ratio returned'
-    print('(14) claim-set contract: 23 required statements present (19 + the '
-          'four yardstick statements, re-derived from l197.reference), 15 '
-          'retired claims gone, the adopted title keeps its three scope '
+    print('(14) claim-set contract: 23 required statements present (18 + the '
+          'resolved timing statement + the four yardstick statements, '
+          're-derived from l197.reference), 16 retired claims gone, the adopted title keeps its three scope '
           'words, no affirmative uniqueness claim in title / abstract / '
           'section 1, no superseded per-batch count')
 
@@ -584,7 +594,13 @@ if _st183 >= 1:
     # gains the yardstick sentence (fourth-round M2) and says "rise" where it
     # said "flip".  Same whole-block byte pin; (12)-(15) above run on the new
     # text with four more traces and four more required statements.
-    ABSTRACT_PIN_L183 = '614879fe645151d603659f9bc19d5efd733293f2c1e84b09868424310c32e43a'
+    # L201 PIN MOVE (2026-11-22, stage 10; receipt in LANE-LOG and
+    # banc/l201_worklog.md).  OLD: 614879fe645151d6... (the stage-9
+    # abstract).  NEW: the stage-10 abstract (1,915 chars), whose only change
+    # is the timing sentence ("Which clock the timing follows is unresolved."
+    # -> "The timing follows the phase of the external drive."; l183_verify
+    # (5) asserts that one swap is the whole difference).  Same whole-block pin.
+    ABSTRACT_PIN_L183 = '0480d7325b56f0d6aa2c0ec1d150246bc7d672605b1b5bdaf6c5228ce77853b1'
     _sha183 = hashlib.sha256(L_abs.encode()).hexdigest()
     assert ABSTRACT_PIN_L183 is None or _sha183 == ABSTRACT_PIN_L183, \
         f'(16) the live abstract moved since the L183 pin ({_sha183[:12]})'

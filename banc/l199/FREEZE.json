@@ -1,0 +1,42 @@
+{
+ "prereg_sha256": "01e23ae1c711012ef0a4836f4351b86a38da9a1963dfbcf94563ba6a4f8395b7",
+ "files": {
+  "PREREG.md": "01e23ae1c711012ef0a4836f4351b86a38da9a1963dfbcf94563ba6a4f8395b7",
+  "ph.py": "c19570f03a54ec9f3b1071df9f598a667f0a9b4273d1eb47753acc48400c3bc7",
+  "selftest.py": "12aa3d7884d99a3536f786e5051f6d5ba1c1e034eb8744774ae1af723eb61a39",
+  "selftest.json": "f6fe17ff4275c715aa20feecb0bd4c82a6da8b95de0e04d64d0fd952d5000ae6",
+  "analyze_primary.py": "4308e4dd856ab605331ab5cf716ec130b8ae112415a7c779a207916e1d1575f5",
+  "analyze_causal.py": "f5cb93735c85ad9f7c94163d234c293ffffa35cd9c40c1ee20a90f50adb7c985",
+  "build_tp.py": "123609d39420c6f6498fb310ed0d3d74b15d6d94fa936f8b11a3e3c3f841fc34",
+  "run_tp.py": "6f74dd6965c997daa1b44504b1745109f559d2214fa2d6a3c36cc2707de9348d",
+  "run_all.sh": "7fa983ed7efb4bd3ff74d483424500af746c13928703eb9f333c1b21c844e61a",
+  "freeze.py": "6ae8cd5511219947d0be43a85a938ca26203cb2361ed6f7e9dc3515c463c90f3"
+ },
+ "src_l186_run": "0f283b58c67ffccab539e7654da69fdb46925992cff27715712dd7ad25934dcb",
+ "gj_sha256": "e91af27d0ffb60b5cce317e96e444b4e3c9bce9b412b7d4d52972305ae59d6b9",
+ "causal_seeds": [
+  19931,
+  19932,
+  19933,
+  19934,
+  19935,
+  19936,
+  19937,
+  19938,
+  19939,
+  19940,
+  19941,
+  19942,
+  19943,
+  19944,
+  19945,
+  19946
+ ],
+ "tag_offset": 50000,
+ "keyscan": {
+  "npz_scanned": 268,
+  "collisions": 0,
+  "tokens": "19931..19946 and 69931..69946"
+ },
+ "frozen": "2026-11-21 20:27:51 EST before any L199 statistic or rollout (no raw/gains/results file exists under l199)"
+}

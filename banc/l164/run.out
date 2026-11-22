@@ -1,0 +1,32 @@
+CERT-bin fr[6] = np.float64(0.1) == 0.1: PASS
+CERT-fix o_s=0 reproduces l154_run.py AMPA + sin_t EXACTLY (max|d| 0.0): PASS
+offsets o_s (rng 164) = [503, 65, 105, 319, 115, 329, 708, 144, 877, 156, 837, 868, 450, 481, 316, 28]
+
+D1 drive bin-6 power  fix 3313.77 | rnd med 3313.77 [2882.31, 3665.85]
+D2 PLV_drive          fix 1.000000 (1.0 by construction) | rnd 0.312526  (free-phase floor at n=16: 0.2216)
+D3 arg S[6]           fix   -57.06 deg | rnd circular spread 87.4 deg
+
+GATE (PLV_drive(rnd) < 0.4): PASS -> WELL_POSED
+graph built 3s | n_old 21,249 edges 627,051 | mech 4848 motor 728 DNg100 2
+B42 absence across 187 stored npzs: PASS
+seed 801 done af {'fix': 0.10899336636066437} off {'fix': 0, 'rnd': 0} | 7s
+seed 901 done af {'fix': 0.10805214196443558} off {'fix': 0, 'rnd': 0} | 9s
+seed 4201 done af {'fix': 0.10772271454334259, 'rnd': 0.2646242082118988} off {'fix': 0, 'rnd': 503} | 14s
+seed 4202 done af {'fix': 0.10946397483348846, 'rnd': 0.27107158303260803} off {'fix': 0, 'rnd': 65} | 20s
+seed 4203 done af {'fix': 0.10504023730754852, 'rnd': 0.24725869297981262} off {'fix': 0, 'rnd': 105} | 25s
+seed 4204 done af {'fix': 0.11035813391208649, 'rnd': 0.25248247385025024} off {'fix': 0, 'rnd': 319} | 30s
+seed 4205 done af {'fix': 0.10974634438753128, 'rnd': 0.14287731051445007} off {'fix': 0, 'rnd': 115} | 35s
+seed 4206 done af {'fix': 0.10922867059707642, 'rnd': 0.26283589005470276} off {'fix': 0, 'rnd': 329} | 40s
+seed 4207 done af {'fix': 0.10734622925519943, 'rnd': 0.10805214196443558} off {'fix': 0, 'rnd': 708} | 45s
+seed 4208 done af {'fix': 0.11012282967567444, 'rnd': 0.10880511999130249} off {'fix': 0, 'rnd': 144} | 50s
+seed 4209 done af {'fix': 0.1084756925702095, 'rnd': 0.12791189551353455} off {'fix': 0, 'rnd': 877} | 55s
+seed 4210 done af {'fix': 0.11087580770254135, 'rnd': 0.10871099680662155} off {'fix': 0, 'rnd': 156} | 60s
+seed 4211 done af {'fix': 0.11238175630569458, 'rnd': 0.11704080551862717} off {'fix': 0, 'rnd': 837} | 65s
+seed 4212 done af {'fix': 0.10607557743787766, 'rnd': 0.11214645206928253} off {'fix': 0, 'rnd': 868} | 70s
+seed 4213 done af {'fix': 0.1089463010430336, 'rnd': 0.14447738230228424} off {'fix': 0, 'rnd': 450} | 75s
+seed 4214 done af {'fix': 0.10960515588521957, 'rnd': 0.2640124261379242} off {'fix': 0, 'rnd': 481} | 80s
+seed 4215 done af {'fix': 0.10748741030693054, 'rnd': 0.24005836248397827} off {'fix': 0, 'rnd': 316} | 85s
+seed 4216 done af {'fix': 0.10946397483348846, 'rnd': 0.23666995763778687} off {'fix': 0, 'rnd': 28} | 90s
+rollouts done 90s
+raw_l164.npz checkpointed BEFORE analysis
+C0A-164 fix vs l150 STORED b65 (46 checks): PASS (max 0.0e+00) | 90s

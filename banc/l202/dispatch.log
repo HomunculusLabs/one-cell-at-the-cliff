@@ -1,0 +1,519 @@
+Query: Experiment dispatch (owner request, L202 ru2-necessity replicate + 
+bilateral twin + chain second-batches, burn window). Read 
+/home/t3rpz/critters/peabrain-lab/banc/l202/BRIEF_necessity.md and execute it 
+completely. PREREG first; C0A anchors mandatory.
+📖 Read BRIEF_necessity.md  0.1s
+📚 Skill peabrain-flybrain  0.1s
+💻 $ ls -la l202 l200 l198 l187 l190 + 5 commands  0.2s
+📚 Skill peabrain-flybrain → references/gate-jitter-and-twins.md  0.2s
+📚 Skill peabrain-flybrain → references/experiment-design-laws.md  0.2s
+💻 $ cat l202/dispatch.log + 7 commands
+📖 Read PREREG.md
+📖 Read build_ru2.py
+💻 $ cat l200/ru2_block.py.txt + 4 commands
+💻 $ cat l200/SELECTION.md + 13 commands
+💻 $ grep -n -E "^(def |class |[A-Z_0-9]+ = |add_arm|add_alias|add_base_alias|add_arm_multi|for seed in SEEDS|if MODE|assert MODE|# ====|# ----)" l200/ru2_run.py | cut -c1-170
+💻 $ sed -n 1,80p l187/L187-FINDINGS.md | cut -c1-900 + 2 commands
+📖 Read ru2_run.py L781-1030
+📖 Read ru2_run.py L1100-1329
+📖 Read ru2_run.py L1664-1845
+📖 Read ru2_run.py L2136-2330
+💻 $ cat l200/build_verdict.py + 6 commands  0.2s
+💻 $ sed -n 1,125p l200/verdict_l200.py
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/ref_probe.py
+│ banc/l202/ref_probe.py
+│ @@ -0,0 +1,59 @@
+│ +"""L202 ref_probe — ZERO rollouts, run BEFORE the PREREG is frozen. Reads stored
+│ +names / pins only: fresh-batch key scan, which stored files carry which arm
+│ +(anchor plumbing), stored gains, and the two bilateral candidates' registered
+│ +covariates from the frozen l200/selection.json. No outcome of any L202 arm
+│ +exists yet; no new statistic on a stored outcome is computed here."""
+│ +import json
+│ +import re
+│ +import zipfile
+│ +from pathlib import Path
+│ +
+│ +import numpy as np
+│ +
+│ +seen, n = set(), 0
+│ +for p in sorted(Path("..").rglob("*.npz")):
+│ +    if "l202" in p.parts:
+│ +        continue
+│ +    try:
+│ +        with zipfile.ZipFile(p) as z:
+│ +            for k in z.namelist():
+│ +                m = re.search(r"_(\d+)\.npy$", k)
+│ +                if m:
+│ +                    seen.add(int(m[1]))
+│ +    except zipfile.BadZipFile:
+│ +        print("bad zip", p)
+│ +    n += 1
+│ +start = 3737
+│ +while seen.intersection(range(start, start + 16)):
+│ +    start += 32
+│ +print(f"npz scanned {n} | first free 16-block on the 32-grid from 3737: {start}..{start+15}")
+│ +print("seeds >= 3700 present anywhere:", sorted(s for s in seen if 3700 <= s < 4200))
+│ +
+│ +for run, nw in (("l187", 6), ("l198", 6), ("l200", 6), ("l190", 1)):
+│ +    for w in range(nw):
+│ +        z = np.load(f"{run}/raw_w{w}.npz")
+│ +        arms = sorted(set(re.match(r"mm_(.+)_(\d+)$", k)[1] for k in z.files if k.startswith("mm_")))
+│ +        seeds = sorted(set(int(re.match(r"mm_(.+)_(\d+)$", k)[2]) for k in z.files if k.startswith("mm_")))
+│ +        g = json.load(open(f"{run}/gains_w{w}.json"))["gain"]
+│ +        print(run, w, arms, f"seeds {seeds[0]}..{seeds[-1]} n={len(seeds)}",
+│ +              {a: g[a] for a in g if a != "cutwA"})
+│ +z = np.load("l190/raw_w0.npz")
+│ +print("l190 key kinds @3641:", sorted(k for k in z.files if k.endswith("_E-edge_3641"))[:40])
+│ +print("l190 xwin shape", z["xwin_E-edge_3641"].shape, "| xm keys", np.load("l190/xm_w0.npz").files[:4])
+│ +print("l190 done:", {k: v for k, v in json.load(open("l190/done_w0.json")).items()
+│ +                     if k in ("arms", "seeds", "threads", "track", "ctr_cells")})
+│ +sel = json.load(open("l200/selection.json"))
+│ +for r in sel["top5"]:
+│ +    print({k: r[k] for k in ("rank", "gi", "cell_type", "side", "x_mean", "dL", "dR", "dL_ratio",
+│ +                             "total_drive_ratio", "edges_onto_PM_L", "edges_onto_PM_R",
+│ +                             "in_PM_L", "in_PM_R")},
+│ +          "edges car/ru2:", r["edge_from_carrier"]["n"], r["edge_to_carrier"]["n"],
+│ +          r["edge_from_ru2"]["n"], r["edge_to_ru2"]["n"])
+│ +r = sel["ru2"]
+│ +print("ru2", {k: r[k] for k in ("gi", "x_mean", "dL", "dR", "total_drive", "edges_onto_PM_L",
+│ +                               "edges_onto_PM_R")}, "edge to/from carrier",
+│ +      r["edge_to_carrier"], r["edge_from_carrier"])
+│ +r200 = json.load(open("l200/results_l200.json"))
+│ +print("l200 gains:", {a: r200["arms"][a]["gain"] for a in ("sc25", "l2", "l2c", "l2cF")})
+│ +r198 = json.load(open("l198/results_l198.json"))
+│ +print("l198 arms:", list(r198["arms"]))
+💻 $ OMP_NUM_THREADS=1 /home/t3rpz/critters/peabrain/.venv/bin/python l202/ref_probe.py | cut -c1-1200 + 5 commands  1.5s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/PREREG.md
+│ banc/l202/PREREG.md
+│ @@ -0,0 +1,195 @@
+│ +# PREREG — L202: ru2-necessity registered replicate + the bilateral twin + chain second batches
+│ +
+│ +Registered 2026-11-22 ~15:45 EST. Owner-directed (`BRIEF_necessity.md`);
+│ +experimenter = Miso session (claude-fable-5-2). Frozen (sha256 in
+│ +`PREREG.sha256`) BEFORE the L202 harness is written or executed; `FREEZE.json`
+│ +(script + static shas) is written after the zero-rollout static pass and
+│ +BEFORE any rollout. Workers and the verdict assert both.
+│ +
+│ +What I had seen before writing this (all of it): `l200/L200-FINDINGS.md`,
+│ +`l200/PREREG.md`, `l200/SELECTION.md` (covariates of ranks 1-5, incl. 67125 and
+│ +67756), `l187/L187-FINDINGS.md`, `l190/` PREREG + FINDINGS + selection, the
+│ +L200 harness source, and one zero-rollout probe (`ref_probe.py`: seed key scan
+│ +over 301 npz, which stored file carries which arm, stored gain floats). NOT
+│ +looked at: L198's stored rcut / rcutF rows, any outcome of removing 67125 or
+│ +67756, any ru2 trace under carrier removal beyond L200's printed +.030.
+│ +
+│ +## Ids (re-derived in-script from stored artifacts, never prose)
+│ +
+│ +carrier = gi 1110 (DNp33-L, +); ru2 = gi 70994 (IN07B031-R, inhibitory cord
+│ +interneuron); relay = gi 75494; **rank-4 bilateral twin = gi 67125**
+│ +(IN00A048-L; frozen `l200/selection.json` top5[3]: dL 7.854 / dR 7.298, 9 / 8
+│ +edges onto PM_L / PM_R, x̄ .248, total-drive ratio .286); rank 5 = gi 67756
+│ +(IN09A043-L; dL 8.127 / dR 8.214, 7 / 7 edges, x̄ .199, total-drive ratio
+│ +.168); L190 edge = 1110→75494 (21 syn), sham = 48→75494 (22 syn). Limit fixed
+│ +now: both bilateral candidates match ru2's LEFT and RIGHT premotor drive
+│ +(ru2 7.977 / 6.634) but carry 29% / 17% of its TOTAL drive.
+│ +
+│ +## Machinery
+│ +
+│ +`nec_run.py` = count-asserted additive transform (`build_nec.py`) of the
+│ +certified L200 harness `l200/ru2_run.py` (sha d3dffb6b7032…, in L200's
+│ +FREEZE). VERBATIM: extraction, build()/wb()/pools_for(), add_arm /
+│ +add_arm_multi / add_alias / add_base_alias / gen_init, the L187 arms block,
+│ +the L198 twin block and the L200 block (both re-pointed READ-ONLY at their
+│ +frozen selection files), settle_states, bisect_vec, the rollout step loop,
+│ +store keys, per-seed atomic checkpoints, the L200 carrier-replay line.
+│ +ADDED: the L202 block (new graphs, edge arms in L190's CSR-entry-removal form,
+│ +CERT-SUB), ONE ru2-replay line pair (settle + window loops), gains + anchors
+│ +block, tail. Constants unchanged. Readout `verdict_l202.py` = the L200
+│ +verdict's helper block VERBATIM (L198 helpers + left mirror) + an L202 tail.
+│ +
+│ +## Seeds
+│ +
+│ +FRESH **B45 = 3737..3752, n = 16 for every arm** (next free 16-block on the
+│ +lineage's 32-grid; key-scanned absent from every npz in the lab, re-asserted
+│ +in-script by every process). Anchor seeds rolled FIRST, never sampled:
+│ +801, 901, 3545, 3609, **3641**, 3673, **3705**.
+│ +
+│ +## Arms (k=24 cutwA base; 4 workers × 1 thread = 4 CPU; cutwA in EVERY worker)
+│ +
+│ +| arm | graph | gain | role |
+│ +|---|---|---|---|
+│ +| `sc25` / `sc25F` | wA − 1110 | L175 stored 0.1454454553127289 EXACT / g_cutwA | carrier removal; `sc25F` = the OWED fixed-gain comparator |
+│ +| `l2c` / `l2cF` | wA − {70994, 1110} | re-bisected, must equal L200's 0.14273352026939398 EXACT / g_cutwA | **replicate**: ru2 cut on the carrier-removed graph |
+│ +| `s2k` / `s2kF` | wA − 1110, **ru2 replay-clamped at its base trajectory** | sc25's gain (no bisect under a clamp) / g_cutwA | **necessity direction** |
+│ +| `l2` | wA − 70994 | L198 stored 0.14322753667831417 EXACT | same-batch reference for the twin branch |
+│ +| `lt4` / `lt4F` | wA − 67125 | re-bisected / g_cutwA | **rank-4 bilateral twin** |
+│ +| `lt5` | wA − 67756 | re-bisected | secondary bilateral twin (declared addition) |
+│ +| `t4c` / `t4cF` | wA − {67125, 1110} | re-bisected / g_cutwA | wipe-specificity control (declared addition) |
+│ +| `rcut` / `rcutF` | wA − 75494 | L187 stored 0.14347783327102664 EXACT / g_cutwA | chain batch |
+│ +| `edge` | base minus the single CSR entry 1110→75494 | re-bisected, must equal L190's 0.14314373373985292 EXACT | chain batch |
+│ +| `sham` | base minus the single CSR entry 48→75494 | re-bisected, must equal L190's 0.14365692973136904 EXACT | chain batch |
+│ +
+│ +Plan: w0 sc25, sc25F, l2c, l2cF · w1 l2, s2k, s2kF, lt5 (+ cert arm `bk2` on
+│ +801 / 901) · w2 lt4, lt4F, t4c, t4cF · w3 rcut, rcutF, edge, sham.
+│ +
+│ +**Necessity transform, exactly:** `s2k` steps the carrier-removed graph; after
+│ +every state update (all 400 settle steps, all 6000 window steps; the init draw
+│ +is already the base's) ru2's entry is overwritten with ru2's value in the
+│ +SAME-seed, SAME-step `cutwA` rollout of the same process (cutwA stepped first).
+│ +ru2 is present with all its wiring and emits its base trajectory bit-for-bit;
+│ +every other cell is free. `s2k` runs at sc25's gain so it differs from `sc25`
+│ +ONLY by the clamp line; `s2kF` likewise from `sc25F`. "ru2-cut on the sc25
+│ +graph" is `l2c` itself (same matrix: wA − {70994, 1110}).
+│ +Limits, stated now: (i) in this model class a cell acts only through its rate,
+│ +and a cell clamped to 0 from t = 0 IS the cut graph (L187 item 7, bit-identical),
+│ +so "wiring present, activity absent" is not a separate condition — the cut is
+│ +the activity-absent pole. The clamp is the pole "present, emitting what it
+│ … omitted 117 diff line(s) across 1 additional file(s)/section(s)
+💻 $ S=$(sha256sum l202/PREREG.md | cut -d' ' -f1) + 5 commands  0.3s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/nec_block.py.txt
+│ banc/l202/nec_block.py.txt
+│ @@ -0,0 +1,173 @@
+│ +# ======================= L202 NECESSITY BLOCK (additive) =======================
+│ +# ru2-necessity replicate + bilateral twin + chain batches. Everything above is
+│ +# the L200 harness VERBATIM (its selection re-pointed READ-ONLY at the frozen
+│ +# l200/selection.json, so lt1 / lt2 / l2c / l2h are L200's own objects). No
+│ +# fresh selection happens here: the two bilateral cells are ranks 4 and 5 of
+│ +# the frozen L200 top-5 (PREREG l202).
+│ +assert SEL200_PATH == "l200/selection.json"
+│ +GI_T4, GI_T5 = 67125, 67756
+│ +assert _top5[3:5] == [GI_T4, GI_T5], "bilateral twin id drift vs frozen L200 selection (STOP)"
+│ +_r4, _r5 = SEL200["top5"][3], SEL200["top5"][4]
+│ +assert (_r4["edges_onto_PM_L"], _r4["edges_onto_PM_R"]) == (9, 8)
+│ +assert (_r5["edges_onto_PM_L"], _r5["edges_onto_PM_R"]) == (7, 7)
+│ +assert _r4["x_mean"] > 0.05 and _r5["x_mean"] > 0.05, "bilateral twin silent on the base (STOP)"
+│ +assert _r4["dR"] > 0 and _r5["dR"] > 0
+│ +for _g in (GI_T4, GI_T5):
+│ +    assert in_wA[_g] and is_cord_g[_g] and EFF_SIGN[_g] == -1.0 and not is_prior200[_g]
+│ +R200 = json.load(open("l200/results_l200.json"))
+│ +assert R200["status"] == "FINAL" and R200["arms"]["l2c"]["removed"] == [GI_RU2, GI_CARRIER]
+│ +assert (R200["arms"]["l2c"]["kR"], R200["arms"]["l2c"]["meanR"]) == (3, 0.296)
+│ +assert (R200["arms"]["sc25"]["kR"], R200["arms"]["sc25"]["meanR"],
+│ +        R200["arms"]["sc25"]["mean14R"]) == (15, 0.783, 0.585)
+│ +G200_L2C = float(json.load(open("l200/gains_w4.json"))["gain"]["l2c"])
+│ +assert G200_L2C == R200["arms"]["l2c"]["gain"] == 0.14273352026939398
+│ +assert float(json.load(open("l200/gains_w1.json"))["gain"]["l2"]) == G198_RU2
+│ +assert G187_RCUT == 0.14347783327102664
+│ +assert float(json.load(open("l198/gains_w1.json"))["gain"]["rcut"]) == G187_RCUT
+│ +_g190 = json.load(open("l190/gains_w0.json"))["gain"]
+│ +G190 = {"edge": float(_g190["E-edge"]), "sham": float(_g190["E-sham"])}
+│ +assert G190 == {"edge": 0.14314373373985292, "sham": 0.14365692973136904}
+│ +assert float(_g190["cutwA"]) == G_CUTWA_STORED and float(_g190["sc25"]) == G175["sc25"]
+│ +E_SRC = {"edge": GI_CARRIER, "sham": 48}
+│ +_e190 = {"edge": _sel190["edges"]["E-edge"], "sham": _sel190["edges"]["E-sham"]}
+│ +for _n in E_SRC:
+│ +    assert _e190[_n]["source"] == E_SRC[_n] and _e190[_n]["target"] == GI_RELAY, _n
+│ +assert _e190["edge"]["syn"] == 21 and _e190["sham"]["syn"] == 22
+│ +
+│ +# ---- graph arms ----
+│ +add_arm("lt4", GI_T4)
+│ +add_alias("lt4F", "lt4")
+│ +add_arm("lt5", GI_T5)
+│ +add_arm_multi("t4c", [GI_T4, GI_CARRIER])
+│ +add_alias("t4cF", "t4c")
+│ +add_alias("s2k", "sc25")
+│ +add_alias("s2kF", "sc25")
+│ +add_base_alias("bk2")
+│ +assert WB["s2k"] is WB["sc25"] and WB["s2kF"] is WB["sc25"] and WB["bk2"] is Wb_wA
+│ +assert WB["sc25F"] is WB["sc25"] and WB["rcutF"] is WB["rcut"] and WB["l2cF"] is WB["l2c"]
+│ +# ru2 replay clamp: ru2's entry <- the same-step cutwA ru2 value
+│ +RU2_LOC = int(loc_wA[GI_RU2])
+│ +assert RU2_LOC >= 0
+│ +REPLAY2 = {a: int(LOC_OF(a)[GI_RU2]) for a in ("s2k", "s2kF", "bk2")}
+│ +assert REPLAY2["bk2"] == RU2_LOC and all(v >= 0 for v in REPLAY2.values())
+│ +assert int(LOC_OF("s2k")[GI_CARRIER]) == -1, "s2k must be the carrier-removed graph"
+│ +assert not (set(REPLAY2) & set(CLAMP)) and not (set(REPLAY2) & set(CLAMPF))
+│ +assert not (set(REPLAY2) & set(REPLAY))
+│ +
+│ +
+│ +def add_edge_arm(name, src_gi, dst_gi):
+│ +    """Base graph minus ONE CSR entry (dst row, src col) — L190 edge_run.py form."""
+│ +    add_base_alias(name)
+│ +    base = Wb_wA
+│ +    row, col = int(loc_wA[dst_gi]), int(loc_wA[src_gi])
+│ +    assert row >= 0 and col >= 0
+│ +    cr, ci, val = base.crow_indices(), base.col_indices(), base.values()
+│ +    lo, hi = int(cr[row]), int(cr[row + 1])
+│ +    hits = torch.where(ci[lo:hi] == col)[0]
+│ +    assert len(hits) == 1, (name, len(hits))
+│ +    j = lo + int(hits[0])
+│ +    keep = torch.arange(len(ci)) != j
+│ +    newcr = cr.clone()
+│ +    newcr[row + 1:] -= 1
+│ +    WB[name] = torch.sparse_csr_tensor(newcr, ci[keep], val[keep], size=base.shape)
+│ +    w = WB[name]
+│ +    assert torch.equal(w.col_indices(), ci[keep]) and torch.equal(w.values(), val[keep])
+│ +    assert torch.equal(cr[1:] - cr[:-1] - (w.crow_indices()[1:] - w.crow_indices()[:-1]),
+│ +                       (torch.arange(len(cr) - 1) == row).to(cr.dtype))
+│ +    assert float(val[j]) != 0.0
+│ +    GEN[name]["edges"] -= 1
+│ … omitted 95 diff line(s) across 1 additional file(s)/section(s)
+💻 $ sed -n 1084,1099p l200/ru2_run.py + 3 commands  0.5s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/gains_block.py.txt
+│ banc/l202/gains_block.py.txt
+│ @@ -0,0 +1,245 @@
+│ +assert ANCH == [11, 22, 33]
+│ +assert MODE == "work"
+│ +assert os.path.exists(PREREG_PATH), "PREREG first (STOP)"
+│ +_FRZ = json.load(open(f"{OUT}/FREEZE.json"))
+│ +assert prereg_sha() == _FRZ["prereg_sha256"], "PREREG changed after freeze (STOP)"
+│ +assert hashlib.sha256(open(f"{OUT}/static.json", "rb").read()).hexdigest() == \
+│ +    _FRZ["static_sha256"], "static.json changed after freeze (STOP)"
+│ +assert hashlib.sha256(open(__file__, "rb").read()).hexdigest() == \
+│ +    _FRZ["files"]["nec_run.py"], "nec_run.py changed after freeze (STOP)"
+│ +# Fixed worker plan (PREREG): cutwA rides in EVERY worker.
+│ +PLAN = {0: ["sc25", "sc25F", "l2c", "l2cF"], 1: ["l2", "s2k", "s2kF", "lt5"],
+│ +        2: ["lt4", "lt4F", "t4c", "t4cF"], 3: ["rcut", "rcutF", "edge", "sham"]}
+│ +assert NW == 4 and WID in PLAN
+│ +assert sorted(sum(PLAN.values(), [])) == sorted(ALL_ARMS)
+│ +MY_ARMS = PLAN[WID]
+│ +CERT_ARMS = ["bk2"] if WID == 1 else []         # ru2 replay-null cert arm (801 / 901 only)
+│ +RAW_PATH, XM_PATH = f"{OUT}/raw_w{WID}.npz", f"{OUT}/xm_w{WID}.npz"
+│ +GAINS_PATH = f"{OUT}/gains_w{WID}.json"
+│ +log(f"worker {WID}/{NW} arms: cutwA + {MY_ARMS} + cert {CERT_ARMS}")
+│ +REMATCH = ["sc25", "l2c", "l2", "lt5", "lt4", "t4c", "rcut", "edge", "sham"]
+│ +FIXED = ["sc25F", "l2cF", "s2kF", "lt4F", "t4cF", "rcutF"]
+│ +INHERIT = {"s2k": "sc25"}                       # clamp arm runs at sc25's gain
+│ +assert all(a in REMATCH or a in FIXED or a in INHERIT for a in ALL_ARMS)
+│ +assert not any(a in REPLAY or a in REPLAY2 for a in REMATCH)   # never bisect under a clamp
+│ +# Bisected IN THIS PROCESS (stored-form, vectorized): cutwA + this worker's
+│ +# rematched arms (+ sc25 in the clamp worker). Arms with a stored gain must
+│ +# reproduce the stored float EXACTLY.
+│ +BIS = ["cutwA"] + [a for a in MY_ARMS if a in REMATCH] + \
+│ +    sorted(set(INHERIT[a] for a in MY_ARMS if a in INHERIT) - set(MY_ARMS))
+│ +STORED_G = dict(G_STORED202)
+│ +new_stairs, af_final = {}, {}
+│ +if os.path.exists(GAINS_PATH):
+│ +    _gj = json.load(open(GAINS_PATH))
+│ +    assert sorted(_gj["gain"]) == sorted(["cutwA"] + MY_ARMS), "gains file arm drift"
+│ +    assert sorted(_gj["bis_gain"]) == sorted(BIS), "gains file bisect-set drift"
+│ +    for _a in BIS:
+│ +        GAIN[_a] = float(_gj["bis_gain"][_a])
+│ +    new_stairs, af_final = _gj["stairs"], _gj["af_final"]
+│ +    log(f"gains loaded from {GAINS_PATH} (resume)")
+│ +else:
+│ +    _lo, _afd = bisect_vec(BIS)
+│ +    for _a in BIS:
+│ +        GAIN[_a] = _lo[_a]
+│ +        af_final[_a] = _afd[_a]
+│ +        new_stairs[_a] = abs(_afd[_a] - AF_T)
+│ +        log(f"g_{_a} {_lo[_a]!r} | af_final {_afd[_a]:.6f} | "
+│ +            f"|af-target| {abs(_afd[_a] - AF_T):.2e}"
+│ +            + ("" if 0.14 <= _lo[_a] <= 0.16 else " [OUTSIDE .14-.16 — DISCLOSED]"))
+│ +_gfail = [(a, GAIN[a], STORED_G[a]) for a in BIS if a in STORED_G and GAIN[a] != STORED_G[a]]
+│ +if _gfail:
+│ +    atomic_json(f"{OUT}/gains_w{WID}.VOID.json", dict(cert_g_fail=_gfail,
+│ +                                                      bis={a: GAIN[a] for a in BIS}))
+│ +    log(f"CERT-G FAIL {_gfail} -> VOID, stopping before any rollout")
+│ +    sys.exit(3)
+│ +for _a in BIS:
+│ +    if _a in STORED_G:
+│ +        log(f"g_{_a} == stored EXACT ({STORED_G[_a]!r})")
+│ +GAIN_SRC = {a: "bisect (this process) == stored EXACT" for a in BIS if a in STORED_G}
+│ +for _a in BIS:
+│ +    if _a not in STORED_G:
+│ +        GAIN_SRC[_a] = "bisect (this process), fresh"
+│ +for _a in MY_ARMS:
+│ +    if _a in FIXED:
+│ +        GAIN[_a] = G_CUTWA_STORED
+│ +        GAIN_SRC[_a] = "fixed base gain g_cutwA (stored float)"
+│ +    if _a in INHERIT:
+│ +        GAIN[_a] = GAIN[INHERIT[_a]]
+│ +        assert GAIN[_a] == G175["sc25"]
+│ +        GAIN_SRC[_a] = "sc25's re-bisected gain (== L175 stored EXACT); no bisect under the clamp"
+│ +for _a in CERT_ARMS:
+│ +    GAIN[_a] = G_CUTWA_STORED
+│ +assert all(GAIN[a] is not None for a in ["cutwA"] + MY_ARMS + CERT_ARMS)
+│ +if os.path.exists(GAINS_PATH):   # resume: every gain must equal the file's
+│ +    _gf = json.load(open(GAINS_PATH))["gain"]
+│ +    assert all(float(_gf[a]) == GAIN[a] for a in ["cutwA"] + MY_ARMS), \
+│ +        "gains file value drift (VOID)"
+│ +atomic_json(GAINS_PATH, dict(gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+│ +                             bis_gain={a: GAIN[a] for a in BIS},
+│ … omitted 167 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/tail_block.py.txt  0.7s
+│ banc/l202/tail_block.py.txt
+│ @@ -0,0 +1,11 @@
+│ +log(f"rollouts done {time.time()-t0:.0f}s")
+│ +assert MODE == "work"
+│ +_as = json.load(open(ANCH_PATH))
+│ +assert all(_as[k] for k in NEED_ANCH)
+│ +atomic_json(f"{OUT}/done_w{WID}.json", dict(
+│ +    wid=WID, nw=NW, arms=["cutwA"] + MY_ARMS, cert_arms=CERT_ARMS, seeds=SEEDS,
+│ +    gain={a: GAIN[a] for a in ["cutwA"] + MY_ARMS},
+│ +    gi=dict(ru2=GI_RU2, carrier=GI_CARRIER, relay=GI_RELAY, lt4=GI_T4, lt5=GI_T5),
+│ +    track=TRACK, ctr_cells=CTR_CELLS, prereg_sha256=prereg_sha(),
+│ +    threads=torch.get_num_threads(), secs=time.time() - t0))
+│ +log(f"worker {WID} DONE {time.time()-t0:.0f}s")
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/build_nec.py  0.7s
+│ banc/l202/build_nec.py
+│ @@ -0,0 +1,163 @@
+│ +"""L202 builder: count-asserted ADDITIVE transform of the certified L200
+│ +harness banc/l200/ru2_run.py -> banc/l202/nec_run.py. Run from banc/.
+│ +VERBATIM from l200/ru2_run.py: extraction, ladder, build()/wb()/pools_for(),
+│ +add_arm()/add_arm_multi()/add_alias()/add_base_alias()/gen_init(), the L187
+│ +arms block, the L198 twin block, the L200 ru2 block up to its static dump
+│ +(its selection re-pointed READ-ONLY at the frozen l200/selection.json),
+│ +settle_states, bisect_vec, the rollout step loop incl. the L200 carrier-replay
+│ +line, store keys, per-seed atomic checkpoints.
+│ +REPLACED: env names, seed list, output dir, the L200 static dump (-> L202
+│ +block: bilateral twins + edge arms + CERT-SUB + static pins), gains + anchors
+│ +block, tail.
+│ +ADDED: one ru2-replay line pair in each of the two rollout loops."""
+│ +import hashlib
+│ +import py_compile
+│ +
+│ +SRC = "l200/ru2_run.py"
+│ +s = open(SRC).read()
+│ +SRC_SHA = hashlib.sha256(s.encode()).hexdigest()
+│ +assert SRC_SHA == "d3dffb6b70323692c86973b1ca785ecdbadda0daea7d22e500fd69ff6261f70b", SRC_SHA
+│ +assert s.count("\n") == 2329
+│ +NREP = 0
+│ +
+│ +
+│ +def rep(old, new, count=1):
+│ +    global s, NREP
+│ +    n = s.count(old)
+│ +    assert n == count, (old[:70], "found", n, "want", count)
+│ +    s = s.replace(old, new)
+│ +    NREP += n
+│ +
+│ +
+│ +def splice(opener, closer, new):
+│ +    global s, NREP
+│ +    assert s.count(opener) == 1, (opener[:60], s.count(opener))
+│ +    i = s.index(opener)
+│ +    if closer is None:
+│ +        j = len(s)
+│ +    else:
+│ +        assert s.count(closer) == 1, (closer[:60], s.count(closer))
+│ +        j = s.index(closer)
+│ +        assert j > i
+│ +    s = s[:i] + new + s[j:]
+│ +    NREP += 1
+│ +
+│ +
+│ +rep('"""L200 ru2_run.py — GENERATED by l200/build_ru2.py from l198/twin_run.py\n',
+│ +    '"""L202 nec_run.py — GENERATED by l202/build_nec.py from l200/ru2_run.py\n'
+│ +    '(sha256 ' + SRC_SHA + ').\n'
+│ +    'PREREG l202/PREREG.md FIRST. ru2-necessity replicate (sc25 / l2c, both gain\n'
+│ +    'forms), bilateral twins (lt4 / lt5), wipe specificity (t4c), ru2 replay clamp\n'
+│ +    'on the carrier-removed graph (s2k), chain batches (rcut / edge / sham), on\n'
+│ +    'the k=24 (cutwA) base. MODE env: static | work. cwd = banc/. L200 docstring\n'
+│ +    'retained below.\n\n'
+│ +    'L200 ru2_run.py — GENERATED by l200/build_ru2.py from l198/twin_run.py\n')
+│ +rep('torch.set_num_threads(int(os.environ.get("L200_THREADS", "1")))\n'
+│ +    'MODE = os.environ["L200_MODE"]\n'
+│ +    'assert MODE in ("static", "work"), MODE\n'
+│ +    'WID = int(os.environ.get("L200_WID", "0"))\n'
+│ +    'NW = int(os.environ.get("L200_NW", "6"))\n',
+│ +    'torch.set_num_threads(int(os.environ.get("L202_THREADS", "1")))\n'
+│ +    'MODE = os.environ["L202_MODE"]\n'
+│ +    'assert MODE in ("static", "work"), MODE\n'
+│ +    'WID = int(os.environ.get("L202_WID", "0"))\n'
+│ +    'NW = int(os.environ.get("L202_NW", "4"))\n')
+│ +rep('B44 = list(range(3705, 3721))       # FRESH (key-scanned absent, PREREG l200)\n'
+│ +    'SEEDS = ANCH_BIT + ANCH_175 + ANCH_187 + ANCH_198 + B44   # anchors FIRST\n'
+│ +    'FRESH = B44\n'
+│ +    'assert not (set(B44) & (set(B39) | set(B40) | set(B41) | set(B42) | set(B43)))\n'
+│ +    'assert ANCH_175[0] in B39 and ANCH_187[0] in B41 and ANCH_198[0] in B43\n',
+│ +    'B44 = list(range(3705, 3721))       # L200 batch: STORED, never re-sampled\n'
+│ +    'B45 = list(range(3737, 3753))       # FRESH (key-scanned absent, PREREG l202)\n'
+│ +    'SEEDS = ANCH_BIT + [3545, 3609, 3641, 3673, 3705] + B45   # anchors FIRST\n'
+│ +    'FRESH = B45\n'
+│ +    'assert not (set(B45) & (set(B39) | set(B40) | set(B41) | set(B42) | set(B43) | set(B44)))\n'
+│ +    'assert ANCH_175[0] in B39 and ANCH_187[0] in B41 and ANCH_198[0] in B43\n'
+│ +    'assert 3641 in B42 and 3705 in B44 and len(SEEDS) == 23\n')
+│ +rep('OUT = "l200"\n', 'OUT = "l202"\n')
+│ +rep('_fresh = set(B44)\n', '_fresh = set(B45)\n')
+│ … omitted 85 diff line(s) across 1 additional file(s)/section(s)
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l202/verdict_tail.py.txt
+│ banc/l202/verdict_tail.py.txt
+│ @@ -0,0 +1,486 @@
+│ +
+│ +
+│ +# ======================= L202 verdict tail (additive) =======================
+│ +# Helpers ABOVE = l200/verdict_l200.py helper block VERBATIM (the L198 helper
+│ +# block + duty14L_seeds), sliced by l202/build_verdict.py. Reads stored files
+│ +# only; no partial read (needs all 16 fresh seeds in all 4 workers); results
+│ +# json rewritten atomically. Branch rules = PREREG l202 §Registered branches.
+│ +import hashlib
+│ +import os
+│ +import sys
+│ +
+│ +OUT = "l202"
+│ +B41 = list(range(3609, 3625))
+│ +B42 = list(range(3641, 3657))
+│ +B43 = list(range(3673, 3689))
+│ +B44 = list(range(3705, 3721))
+│ +B45 = list(range(3737, 3753))
+│ +ANCH = [801, 901, 3545, 3609, 3641, 3673, 3705]
+│ +NW = 4
+│ +T975 = {15: 2.131, 31: 2.040, 47: 2.012}
+│ +GI_CARRIER, GI_RU2, GI_RELAY = 1110, 70994, 75494
+│ +SIG = 0.25
+│ +
+│ +
+│ +def atomic_json(path, obj):
+│ +    tmp = path + ".tmp"
+│ +    json.dump(obj, open(tmp, "w"), indent=1)
+│ +    os.replace(tmp, path)
+│ +
+│ +
+│ +st = json.load(open(f"{OUT}/static.json"))
+│ +frz = json.load(open(f"{OUT}/FREEZE.json"))
+│ +PRE_SHA = hashlib.sha256(open(f"{OUT}/PREREG.md", "rb").read()).hexdigest()
+│ +assert PRE_SHA == frz["prereg_sha256"], "PREREG changed after freeze"
+│ +assert hashlib.sha256(open(f"{OUT}/static.json", "rb").read()).hexdigest() == \
+│ +    frz["static_sha256"], "static.json changed after freeze"
+│ +PLAN = {0: ["sc25", "sc25F", "l2c", "l2cF"], 1: ["l2", "s2k", "s2kF", "lt5"],
+│ +        2: ["lt4", "lt4F", "t4c", "t4cF"], 3: ["rcut", "rcutF", "edge", "sham"]}
+│ +ALL = sum(PLAN.values(), [])
+│ +assert sorted(ALL) == sorted(st["all_arms"])
+│ +G0 = st["g_stored"]["cutwA"]
+│ +TRACK = st["track"]
+│ +GI = st["gi"]
+│ +assert GI["ru2"] == GI_RU2 and GI["carrier"] == GI_CARRIER and GI["lt4"] == 67125
+│ +IXC = {"carrier": TRACK.index(GI_CARRIER), "ru2": TRACK.index(GI_RU2),
+│ +       "relay": TRACK.index(GI_RELAY), "lt4": TRACK.index(GI["lt4"]),
+│ +       "lt5": TRACK.index(GI["lt5"])}
+│ +REMOVED = st["removed"]
+│ +
+│ +# ---- CERT-METRIC: reproduce stored L200 B44 rows EXACT before any B45 read ----
+│ +r200 = json.load(open("l200/results_l200.json"))
+│ +assert r200["status"] == "FINAL"
+│ +mfail = []
+│ +for a, w in (("cutwA", 0), ("sc25", 0), ("l2c", 4), ("l2cF", 4), ("l2", 1)):
+│ +    z = np.load(f"l200/raw_w{w}.npz")
+│ +    want = r200["base"] if a == "cutwA" else r200["arms"][a]
+│ +    got = side_k(z, a, B44, "Ti")
+│ +    for kk in ("kL", "kR", "meanL", "meanR"):
+│ +        if got[kk] != want[kk]:
+│ +            mfail.append((a, kk, got[kk], want[kk]))
+│ +    d14 = duty14_seeds(z, a, B44)
+│ +    if int((d14 >= .5).sum()) != want["k14R"] or round(float(d14.mean()), 3) != want["mean14R"]:
+│ +        mfail.append((a, "mean14R", float(d14.mean()), want["mean14R"]))
+│ +assert not mfail, ("CERT-METRIC FAIL (no B45 read)", mfail)
+│ +print("CERT-METRIC vs results_l200 (B44: cutwA / sc25 / l2c / l2cF / l2; kL, kR, meanL, meanR, "
+│ +      "right 1.4-Hz k + mean): PASS")
+│ +
+│ +# ---- workers ----
+│ +gains, arm_w, anch, raws, xms, stairs = {}, {}, {}, {}, {}, {}
+│ +NEED = ["c0a135_pass", "c0a175_pass", "c0a187_pass", "c0a190_pass", "c0a198_pass",
+│ +        "c0a200_pass"]
+│ +TAGS = [k[:-5] for k in NEED]
+│ +for w in range(NW):
+│ +    gp, ap, rp, xp, dp = (f"{OUT}/gains_w{w}.json", f"{OUT}/anchors_w{w}.json",
+│ +                          f"{OUT}/raw_w{w}.npz", f"{OUT}/xm_w{w}.npz", f"{OUT}/done_w{w}.json")
+│ +    if not all(os.path.exists(p) for p in (gp, ap, rp, xp, dp)):
+│ +        print(f"worker {w} not complete — no read")
+│ +        sys.exit(0)
+│ … omitted 408 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 - <<'EOF' import re p='l202/verdict_tail.py.txt' + 1 command  2.0s
+💻 $ L202_MODE=static L202_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 nice -n 5 /home/t3rpz/critters/peabrain/.venv/bin/python l202/nec_run.py + 4 commands  16.0s
+💻 $ python3 - <<'EOF' import hashlib, json, os, time, glob sha=lambda p: hashlib.sha256(open(p,'rb').read()).hexdigest() assert not glob.glob('l202/raw_w*.npz') and not glob.glob('l202/gains_w*.json') files=['PREREG.md','static.json','nec_run.py','build_nec.py','nec_block.py.txt','gains_block.py.txt','tail_block.py.txt','verdict_l202.py','verdict_tail.py.txt','build_verdict.py','run_all.sh','ref_probe.py'] d=dict(prereg_sha256=sha('l202/PREREG.md'), static_sha256=sha('l202/static.json'), files={f: sha('l202/'+f) for f in files}, frozen=time.strftime('%Y-%m-%d %H:%M:%S %Z')+' before any rollout (no raw_w*.npz / gains_w*.json exists)') assert d['prereg_sha256']==open('l202/PREREG.sha256').read().split()[0] json.dump(d,open('l202/FREEZE.json','w'),indent=1) + 2 commands  1.5s
+💻 $ ps -o pid,ppid,etime,nice,args -p 2972672,2972673,2972674,2972675 | cut -c1-220 + 6 commands  0.1s
+💻 $ exec /home/t3rpz/critters/peabrain-lab/banc/l202/run_all.sh
+💻 $ sleep 270 + 6 commands  270.3s
+💻 $ sleep 150 + 4 commands  150.3s
+💻 $ grep -n "L200" LAB-INTENT.md + 3 commands  0.1s

@@ -1,0 +1,26 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l177_run.py:133: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(
+build OK n 21,249 edges 627,051 | af target 0.10377 | sides Ti_L 50/6 Ti_R 51/6 Tr_L 31/24 Tr_R 31/24 | 3s
+beta 1.0: bisect g 0.0495807 af 0.10546 (|d| 1.69e-03, 8 its) | 4s
+  beta 1.0: S {Ti +0.108 Tr -0.060 Ti_L +0.068 Ti_R +0.108 Tr_L -0.052 Tr_R -0.015} | d0_bitid False op_ok True | 76s
+beta 1.5: bisect g 0.1 af 0.10513 (|d| 1.36e-03, 1 its) | 76s
+  beta 1.5: S {Ti +0.164 Tr -0.025 Ti_L -0.054 Ti_R +0.267 Tr_L +0.010 Tr_R -0.025} | d0_bitid False op_ok True | 143s
+beta 2.0: bisect g 0.138237 af 0.10344 (|d| 3.29e-04, 7 its) | 144s
+  beta 2.0: S {Ti +0.682 Tr +0.526 Ti_L +0.628 Ti_R +0.690 Tr_L +0.018 Tr_R +0.744} | d0_bitid False op_ok True | 211s
+beta 3.0: bisect g 0.200335 af 0.10415 (|d| 3.76e-04, 11 its) | 212s
+  beta 3.0: S {Ti +0.120 Tr -0.133 Ti_L +0.223 Ti_R -0.014 Tr_L -0.142 Tr_R -0.065} | d0_bitid False op_ok True | 279s
+beta 4.0: bisect g 0.294273 af 0.10429 (|d| 5.18e-04, 6 its) | 280s
+  beta 4.0: S {Ti +0.104 Tr -0.195 Ti_L +0.128 Ti_R -0.009 Tr_L -0.101 Tr_R -0.207} | d0_bitid False op_ok True | 348s
+
+=== VERDICT ===
+S_Ti over beta [1.0, 1.5, 2.0, 3.0, 4.0]: +0.108 +0.164 +0.682 +0.120 +0.104
+  Ti_L: +0.068 -0.054 +0.628 +0.223 +0.128  argmax beta 2.0
+  Ti_R: +0.108 +0.267 +0.690 -0.014 -0.009  argmax beta 2.0
+  Tr_L: -0.052 +0.010 +0.018 -0.142 -0.101  argmax beta 2.0
+  Tr_R: -0.015 -0.025 +0.744 -0.065 -0.207  argmax beta 2.0
+P1 monotone False | P2 interior True | P3 collapse True | P5 drive-gating False
+census flags {'1.0': True, '1.5': True, '2.0': True, '3.0': True, '4.0': True}
+g spread [0.04958, 0.1, 0.13824, 0.20034, 0.29427] af resid [0.00169, 0.00136, 0.00033, 0.00038, 0.00052]
+BRANCH: B_INTERIOR | wall 348s -> l177/ladder.json

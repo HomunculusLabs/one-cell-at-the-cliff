@@ -1,0 +1,23 @@
+{
+ "prereg_sha256": "db03c33d5997bc51656eaee10fe667c4b56e6f8ab3bcde389eeb8283b9dd231a",
+ "selection_sha256": "28410bc0a756dffba8b6b7c88e12fb9b682d0d1df0ba6c252bb393c22a84f04b",
+ "a4_sha256": "0c1cef671cda1ffd0777ae582759eb747fccfa0dc4756370b5dbf1e099a8ef32",
+ "files": {
+  "PREREG.md": "db03c33d5997bc51656eaee10fe667c4b56e6f8ab3bcde389eeb8283b9dd231a",
+  "selection.json": "28410bc0a756dffba8b6b7c88e12fb9b682d0d1df0ba6c252bb393c22a84f04b",
+  "a4_wiring.json": "0c1cef671cda1ffd0777ae582759eb747fccfa0dc4756370b5dbf1e099a8ef32",
+  "SELECTION.md": "d14e0a1725a776e1650910576234129e9e55cd328daa1d68cdf46b19bac48798",
+  "static.json": "485a8c5f883d32d9e2f5fc2bcf692b83a560fa86756f3a43a3852db6f9126fb1",
+  "ru2_run.py": "d3dffb6b70323692c86973b1ca785ecdbadda0daea7d22e500fd69ff6261f70b",
+  "build_ru2.py": "24c24574700647e1acf02183b0178b6adaafe2c311cd48f00a9da51fc12cf7b6",
+  "ru2_block.py.txt": "d91e897928391b4c71927a5b0551845c0ed549899b0c6b9bb1978d67a3569597",
+  "gains_block.py.txt": "3001e18149071ac1be2ac27d2b8a780fb5aa47b92837f480b046df7021f6caa5",
+  "tail_block.py.txt": "85e0089caa22a2723b0dd8ad113736e697fb72e09ae6def6a557559862adaee0",
+  "verdict_l200.py": "480e6b577a7d17f2e37762dec5015b451eef8375e309212394695fefcfb9cd27",
+  "verdict_tail.py.txt": "00a72e9a89931823295070ff01ebba6980bd942e5dbac1bb93f98604ca04e5a9",
+  "build_verdict.py": "559b51387844ef0a9a0a4bda201182455519a2807f2109707038c758e1810a1e",
+  "run_all.sh": "074551e4527cc2b14ea4e3900b17d8b5676059f7d008862adf487c63823197ae",
+  "ref_probe.py": "529fd06ac18aa4ca5033b1d419bf95df766c8e982b7b75b88731a05b29623cf5"
+ },
+ "frozen": "2026-11-21 20:30:44 EST before any rollout (no raw_w*.npz exists)"
+}

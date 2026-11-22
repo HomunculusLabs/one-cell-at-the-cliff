@@ -1,0 +1,28 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+graph 80,635 nnz 1,830,698 | glut cells 10,061 | 1s
+subnet n 21,249 edges 627,051 | cord 20,521 dn_into 728 | 3s
+/home/t3rpz/critters/peabrain-lab/banc/l177_cert.py:134: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  t = torch.sparse_coo_tensor(
+arm B built (nnz 627,051) | 3s
+C0S n           OK  mine=21249 stored=21249
+C0S edges       OK  mine=627051 stored=627051
+C0S cord        OK  mine=20521 stored=20521
+C0S dn_into     OK  mine=728 stored=728
+C0S Ti          OK  mine=[101, 12] stored=[101, 12]
+C0S Tr          OK  mine=[62, 48] stored=[62, 48]
+C0S dng100      OK  mine=2 stored=2
+C0S gband       OK  mine=[0.1] stored=[0.1]
+C0S gstar       OK  mine=0.10000000000000002 stored=0.10000000000000002
+C0S frozen_g    OK  mine=0.14 stored=0.14
+C0S frozen_beta OK  mine=2.0 stored=2.0
+C0S frozen_d    OK  mine=0.2 stored=0.2
+C0S frozen_af   OK  mine=0.1038 stored=0.1038
+C0S-177 PASS (13 cells) | 4s
+  anchor seed 11: af 0.1046 S {Ti 0.6825 Tr 0.4767} | max|d| 0.000e+00 | 6s
+  anchor seed 22: af 0.1038 S {Ti 0.7123 Tr 0.5079} | max|d| 0.000e+00 | 8s
+  anchor seed 33: af 0.1047 S {Ti 0.7639 Tr 0.5126} | max|d| 0.000e+00 | 10s
+C0A-177 max|d| over 15 traces = 0.000000e+00
+C0A-177 stored-S/af exact match per seed: {11: True, 22: True, 33: True}
+C0A-177 PASS | wall 10s -> l177/cert.json
+CERT CORE GREEN: stage (b) may proceed from this build.

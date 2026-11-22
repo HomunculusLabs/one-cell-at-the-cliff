@@ -233,7 +233,16 @@ L197_ADDED = {
     "l139.contrast", "l139.gains", "l139.sets", "l175.null_centre",
     "l197.reference"}
 assert L197_ADDED.isdisjoint(L183_ADDED | L190B_ADDED) and len(L190B_ADDED) == 6
-DECLARED_ADDED = L183_ADDED | L190B_ADDED | L197_ADDED
+# L201 PIN UPDATE (2026-11-22, owner-directed tone-phase fold; receipt in
+# LANE-LOG + banc/l201_worklog.md).  OLD: added keys == L183_ADDED |
+# L190B_ADDED | L197_ADDED (46 + 6 + 5).  NEW: == ... | L201_ADDED (+ 4),
+# still an EXACT set equality, and guarantee (a) is untouched: every pre-tick
+# key byte-identical.  REASON: section 2.5's resolved timing statement cites
+# the gate-jitter v2 run (l197b) and the tone-phase registered test (l199);
+# the four keys are re-derived from their stored results in l183_verify.py (5).
+L201_ADDED = {"l197b.timing", "l199.causal", "l199.meta", "l199.phase"}
+assert L201_ADDED.isdisjoint(L183_ADDED | L190B_ADDED | L197_ADDED) and len(L197_ADDED) == 5
+DECLARED_ADDED = L183_ADDED | L190B_ADDED | L197_ADDED | L201_ADDED
 
 
 def _numbers_guard(pre_path, label):
@@ -460,6 +469,22 @@ ORDER_C = [("chalfie1985", "chalfie1985", "Chalfie", "1985"),
            ("zung2025", "zung2025", "Zung", "2025"),
            ("sturner2025nature", "sturner2025nature", "St\u00fcrner", "2025")]
 DIGEST_SURNAME_WRONG = {"rangaraju2015": "Wu"}   # the one declared correction
+# L201 PIN MOVE (2026-11-22; receipt in LANE-LOG + banc/l201_worklog.md).
+# OLD: entry 42 was looked up in the digest under the digest's (wrong)
+#   surname, ("Rangaraju", "2015").
+# WHY IT MOVES: after the residue fold shipped, the digest line itself was
+#   corrected in-session (LANE-LOG 2026-11-21 19:0x, "digest patched
+#   in-session") to "Ona Wu et al. (2015)", so the parser's first-token key
+#   for that record is now ("Ona", "2015") and the old lookup found nothing
+#   (this gate was red on the pre-L201 state for that reason alone).
+# NEW (stronger, nothing dropped): the record is looked up under its corrected
+#   digest key; every digest check (year, DOI, venue, title overlap) and every
+#   primary-record check runs unchanged; the correction branch ADDITIONALLY
+#   asserts that the digest now names the primary record's first author on
+#   that line and that the wrong surname appears NOWHERE in the digest, on top
+#   of the retained guards (absent from the landing page, the Crossref record,
+#   the list entry and the bib keys).
+DIGEST_KEY = {"rangaraju2015": ("Ona", "2015")}
 
 
 def _fold(x):
@@ -511,7 +536,7 @@ if STAGE183 >= 4:
     ck(N == 37 + len(ORDER_C), "the list has %d entries, expected %d" % (N, 37 + len(ORDER_C)))
     for i, (key, rkey, sn, yr) in enumerate(ORDER_C):
         n = 38 + i
-        rec = PREC.get((sn, yr))
+        rec = PREC.get(DIGEST_KEY.get(rkey, (sn, yr)))
         seg = segs.get(n, "")
         if not ck(rec is not None, "%s %s is not in the verified digest" % (sn, yr)):
             continue
@@ -557,6 +582,12 @@ if STAGE183 >= 4:
                and sn not in page and sn not in json.dumps(m)
                and sn not in seg and ("@article{%s," % rkey) not in BIB,
                "entry %d: the declared first-author correction no longer holds" % n)
+            _dk = DIGEST_KEY[rkey]
+            ck(sn not in PRIOR and re.search(
+                r"^\d+\. %s %s et al\. \(%s\), " % (re.escape(_dk[0]), re.escape(fam[0]),
+                                                    _dk[1]), PRIOR, re.M) is not None,
+               "entry %d: the digest line does not carry the corrected first "
+               "author, or the wrong surname survives in the digest" % n)
         else:
             ck(_fold(fam[0]) == _fold(sn),
                "entry %d: primary first author %r != digest %r (undeclared)"

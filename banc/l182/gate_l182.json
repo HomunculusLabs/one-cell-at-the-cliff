@@ -1,0 +1,3339 @@
+{
+ "live": {
+  "path": "/home/t3rpz/critters/peabrain-lab/paper/DRAFT.md",
+  "n_noncanon_pooled": 0,
+  "noncanon": [
+   [
+    987,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    16,
+    16,
+    "sc25",
+    "| DNp33-L, the carrier (`sc25`) | +1.24% | 16/16 .758 | 15/16 .770 | 15/16 .683 | 31/32 .764 |"
+   ],
+   [
+    987,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    15,
+    16,
+    "sc25",
+    "| DNp33-L, the carrier (`sc25`) | +1.24% | 16/16 .758 | 15/16 .770 | 15/16 .683 | 31/32 .764 |"
+   ],
+   [
+    987,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    15,
+    16,
+    "sc25",
+    "| DNp33-L, the carrier (`sc25`) | +1.24% | 16/16 .758 | 15/16 .770 | 15/16 .683 | 31/32 .764 |"
+   ],
+   [
+    987,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    31,
+    32,
+    "sc25",
+    "| DNp33-L, the carrier (`sc25`) | +1.24% | 16/16 .758 | 15/16 .770 | 15/16 .683 | 31/32 .764 |"
+   ],
+   [
+    988,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    2,
+    16,
+    "sc26",
+    "| DNpe025-R, the mass twin (`sc26`) | \u22120.09% | 2/16 .378 | 4/16 .424 | 4/16 .390 | 6/32 .401 |"
+   ],
+   [
+    988,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    4,
+    16,
+    "sc26",
+    "| DNpe025-R, the mass twin (`sc26`) | \u22120.09% | 2/16 .378 | 4/16 .424 | 4/16 .390 | 6/32 .401 |"
+   ],
+   [
+    988,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    4,
+    16,
+    "sc26",
+    "| DNpe025-R, the mass twin (`sc26`) | \u22120.09% | 2/16 .378 | 4/16 .424 | 4/16 .390 | 6/32 .401 |"
+   ],
+   [
+    988,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    6,
+    32,
+    "sc26",
+    "| DNpe025-R, the mass twin (`sc26`) | \u22120.09% | 2/16 .378 | 4/16 .424 | 4/16 .390 | 6/32 .401 |"
+   ],
+   [
+    989,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    11,
+    16,
+    "sc27",
+    "| DNpe055-R, edge-of-band cell, rank 27 (`sc27`) | \u22120.28% | 11/16 .596 | 4/16 .422 | 7/16 .424 | 15/"
+   ],
+   [
+    989,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    4,
+    16,
+    "sc27",
+    "| DNpe055-R, edge-of-band cell, rank 27 (`sc27`) | \u22120.28% | 11/16 .596 | 4/16 .422 | 7/16 .424 | 15/"
+   ],
+   [
+    989,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    7,
+    16,
+    "sc27",
+    "| DNpe055-R, edge-of-band cell, rank 27 (`sc27`) | \u22120.28% | 11/16 .596 | 4/16 .422 | 7/16 .424 | 15/"
+   ],
+   [
+    989,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    15,
+    32,
+    "sc27",
+    "| DNpe055-R, edge-of-band cell, rank 27 (`sc27`) | \u22120.28% | 11/16 .596 | 4/16 .422 | 7/16 .424 | 15/"
+   ],
+   [
+    990,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    11,
+    16,
+    "sc40",
+    "| DNge084-R, edge-of-band cell, rank 40 (`sc40`) | \u22121.13% | 11/16 .605 | 12/16 .538 | 3/16 .341 | 23"
+   ],
+   [
+    990,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    12,
+    16,
+    "sc40",
+    "| DNge084-R, edge-of-band cell, rank 40 (`sc40`) | \u22121.13% | 11/16 .605 | 12/16 .538 | 3/16 .341 | 23"
+   ],
+   [
+    990,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    3,
+    16,
+    "sc40",
+    "| DNge084-R, edge-of-band cell, rank 40 (`sc40`) | \u22121.13% | 11/16 .605 | 12/16 .538 | 3/16 .341 | 23"
+   ],
+   [
+    990,
+    "### 2.2 Replication, the gain-only null and the signed-current twin",
+    23,
+    32,
+    "sc40",
+    "| DNge084-R, edge-of-band cell, rank 40 (`sc40`) | \u22121.13% | 11/16 .605 | 12/16 .538 | 3/16 .341 | 23"
+   ],
+   [
+    1145,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    16,
+    16,
+    "sc25",
+    "| carrier removed (`sc25` / `sc25F`) | +1.24% | 16/16 .810 | 16/16 .715 | +.301 [+.176, +.426] | 9/1"
+   ],
+   [
+    1145,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    16,
+    16,
+    "sc25",
+    "| carrier removed (`sc25` / `sc25F`) | +1.24% | 16/16 .810 | 16/16 .715 | +.301 [+.176, +.426] | 9/1"
+   ],
+   [
+    1145,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    9,
+    16,
+    "sc25",
+    "| carrier removed (`sc25` / `sc25F`) | +1.24% | 16/16 .810 | 16/16 .715 | +.301 [+.176, +.426] | 9/1"
+   ],
+   [
+    1145,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    7,
+    16,
+    "sc25",
+    "| carrier removed (`sc25` / `sc25F`) | +1.24% | 16/16 .810 | 16/16 .715 | +.301 [+.176, +.426] | 9/1"
+   ],
+   [
+    1149,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    11,
+    16,
+    "sc40",
+    "| rank-40 cell removed (`sc40` / `sc40F`) | \u22121.13% | 11/16 .567 | 2/16 .329 | \u2212.085 [\u2212.215, +.046] |"
+   ],
+   [
+    1149,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    2,
+    16,
+    "sc40",
+    "| rank-40 cell removed (`sc40` / `sc40F`) | \u22121.13% | 11/16 .567 | 2/16 .329 | \u2212.085 [\u2212.215, +.046] |"
+   ],
+   [
+    1149,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    0,
+    16,
+    "sc40",
+    "| rank-40 cell removed (`sc40` / `sc40F`) | \u22121.13% | 11/16 .567 | 2/16 .329 | \u2212.085 [\u2212.215, +.046] |"
+   ],
+   [
+    1149,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    0,
+    16,
+    "sc40",
+    "| rank-40 cell removed (`sc40` / `sc40F`) | \u22121.13% | 11/16 .567 | 2/16 .329 | \u2212.085 [\u2212.215, +.046] |"
+   ],
+   [
+    1229,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    15,
+    16,
+    "sc25",
+    "| carrier removed (`sc25`) | the whole cell | +1.244% | 15/16 .772 | +.370 [+.257, +.483] | 8/16 .48"
+   ],
+   [
+    1229,
+    "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+    8,
+    16,
+    "sc25",
+    "| carrier removed (`sc25`) | the whole cell | +1.244% | 15/16 .772 | +.370 [+.257, +.483] | 8/16 .48"
+   ],
+   [
+    1404,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    17,
+    32,
+    "scr3",
+    "| cutscr3 (scattered, pinned RNG) | .2388 | .0442 | 2 | 17/32 [.364,.691] | 12/32 [.229,.547] |"
+   ],
+   [
+    1404,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    12,
+    32,
+    "scr3",
+    "| cutscr3 (scattered, pinned RNG) | .2388 | .0442 | 2 | 17/32 [.364,.691] | 12/32 [.229,.547] |"
+   ],
+   [
+    1405,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    12,
+    32,
+    "scr2",
+    "| cutscr2 (scattered, pinned RNG) | .2409 | .0463 | 2 | 12/32 [.229,.547] | 23/32 [.546,.844] |"
+   ],
+   [
+    1405,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    23,
+    32,
+    "scr2",
+    "| cutscr2 (scattered, pinned RNG) | .2409 | .0463 | 2 | 12/32 [.229,.547] | 23/32 [.546,.844] |"
+   ],
+   [
+    1409,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    0,
+    32,
+    "scr1",
+    "| cutscr1 (scattered, pinned RNG) | .2422 | .0476 | 2 | 0/32 [.000,.107] | 0/32 [.000,.107] |"
+   ],
+   [
+    1409,
+    "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+    0,
+    32,
+    "scr1",
+    "| cutscr1 (scattered, pinned RNG) | .2422 | .0476 | 2 | 0/32 [.000,.107] | 0/32 [.000,.107] |"
+   ],
+   [
+    1550,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    7,
+    16,
+    "vol1110",
+    "| vol1110 (intact) | tonic boost, carrier | .486 | 7/16 | noise |"
+   ],
+   [
+    1551,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    5,
+    16,
+    "sil24",
+    "| sil24 (intact) | activity clamp, cohort 1\u201324 | .432 | 5/16 | PARTIAL = cut class (no separation) |"
+   ],
+   [
+    1555,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    15,
+    16,
+    "eOutInt",
+    "| eOutInt (cutwA base) | carrier's 70 intrinsic out-edges | .781 | 15/16 | SUPER |"
+   ],
+   [
+    1556,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    15,
+    16,
+    "eIn",
+    "| eIn (cutwA base) | carrier's 13 in-edges | .793 | 15/16 | SUPER |"
+   ],
+   [
+    1560,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    15,
+    16,
+    "eMotIn",
+    "| eMotIn (cutwA base) | 10 motor + 13 in-edges | .801 | 15/16 | SUPER |"
+   ],
+   [
+    1561,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    15,
+    16,
+    "eAll",
+    "| eAll (cutwA base) | all 93 incident edges | .745 / .768 | 14, 15/16 | SUPER \u2261 node-drop (\u00a73.8); po"
+   ],
+   [
+    1561,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    29,
+    32,
+    "eAll",
+    "| eAll (cutwA base) | all 93 incident edges | .745 / .768 | 14, 15/16 | SUPER \u2261 node-drop (\u00a73.8); po"
+   ],
+   [
+    1562,
+    "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+    15,
+    16,
+    "se0",
+    "| se0 (eAll + window clamp) | edges + carrier silence | .768 | 15/16 | \u2261 eAll BIT-IDENTICAL (\u00a73.8) |"
+   ]
+  ],
+  "n_resolved": 101,
+  "n_unresolved": 257,
+  "ignored_denoms": [
+   0,
+   1,
+   2,
+   5,
+   18,
+   20,
+   26,
+   33,
+   36,
+   49,
+   58,
+   240,
+   433,
+   449,
+   500,
+   518
+  ],
+  "D4": {
+   "pass": true,
+   "detail": []
+  },
+  "D1": {
+   "pass": true,
+   "detail": {}
+  },
+  "D2": {
+   "pass": true,
+   "detail": []
+  },
+  "D3": {
+   "pass": true,
+   "uncovered": [],
+   "vacuous_regions": [
+    "### 2.1",
+    "### 2.10",
+    "### 2.12"
+   ],
+   "reconcile_fail": [],
+   "regions_used": [
+    "### 2.2",
+    "### 2.4 A",
+    "### 2.7",
+    "### 2.9 M"
+   ]
+  },
+  "PRIMARY": true,
+  "ALL": true
+ },
+ "tampers": {
+  "T1_perbatch_carrier": {
+   "target": "D2",
+   "target_red": true,
+   "collateral": [],
+   "all": false
+  },
+  "T2_second_union_clamp": {
+   "target": "D1",
+   "target_red": true,
+   "collateral": [
+    "D2"
+   ],
+   "all": false
+  },
+  "T3_drop_reconciliation": {
+   "target": "D3",
+   "target_red": true,
+   "collateral": [],
+   "all": false
+  }
+ },
+ "canon_n": {
+  "full": 513,
+  "b65": 513,
+  "cutwA": 258,
+  "cutng25": 210,
+  "cutng25p": 66,
+  "cutng19": 178,
+  "cutng23": 82,
+  "cutng29": 194,
+  "cutk5": 226,
+  "cut58": 258,
+  "silW": 98,
+  "eMotTop5": 98,
+  "eMotBot5": 98,
+  "eOutMot": 34,
+  "cutscr0": 50
+ },
+ "exempt_regions": {
+  "### 2.1": "single-cell scan: 34 deletions on ONE shared batch (family-matching is the design)",
+  "### 2.2": "replication table: per-batch by design \u2014 the section IS the batch-to-batch replication claim (region NOT in the card)",
+  "### 2.7": "scramble cohort table: seven cohorts + base on the same 3 fresh batches (family-matched by design, card item (i))",
+  "### 2.10": "gain-ensemble cells: per-jitter-set by construction, must NOT be pooled (card item (ii))",
+  "### 2.12": "rewire/hom/swap arms: 2 batches each, not yet canonical (card item (iii))"
+ },
+ "resolved": [
+  {
+   "arm": "cutwA",
+   "k": 5,
+   "n": 16,
+   "line": 986,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | 0 | 5/16 .408 | 3/16 .370 | same arm | 8/32 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 3,
+   "n": 16,
+   "line": 986,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | 0 | 5/16 .408 | 3/16 .370 | same arm | 8/32 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 8,
+   "n": 32,
+   "line": 986,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | 0 | 5/16 .408 | 3/16 .370 | same arm | 8/32 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 5,
+   "n": 16,
+   "line": 991,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNge046-L, drive twin of any class (`dmA`) | +0.11% | 5/16 .390 | 5/16 .406 | 8/16 .478 | 10/32 .398 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 5,
+   "n": 16,
+   "line": 991,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNge046-L, drive twin of any class (`dmA`) | +0.11% | 5/16 .390 | 5/16 .406 | 8/16 .478 | 10/32 .398 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 8,
+   "n": 16,
+   "line": 991,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNge046-L, drive twin of any class (`dmA`) | +0.11% | 5/16 .390 | 5/16 .406 | 8/16 .478 | 10/32 .398 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 10,
+   "n": 32,
+   "line": 991,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNge046-L, drive twin of any class (`dmA`) | +0.11% | 5/16 .390 | 5/16 .406 | 8/16 .478 | 10/32 .398 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 2,
+   "n": 16,
+   "line": 992,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNpe019-L, drive twin of the carrier's class (`dmC`) | +3.31% | 2/16 .366 | 2/16 .382 | 2/16 .409 | 4/32 .37"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 2,
+   "n": 16,
+   "line": 992,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNpe019-L, drive twin of the carrier's class (`dmC`) | +3.31% | 2/16 .366 | 2/16 .382 | 2/16 .409 | 4/32 .37"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 2,
+   "n": 16,
+   "line": 992,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNpe019-L, drive twin of the carrier's class (`dmC`) | +3.31% | 2/16 .366 | 2/16 .382 | 2/16 .409 | 4/32 .37"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 4,
+   "n": 32,
+   "line": 992,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNpe019-L, drive twin of the carrier's class (`dmC`) | +3.31% | 2/16 .366 | 2/16 .382 | 2/16 .409 | 4/32 .37"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 2,
+   "n": 16,
+   "line": 993,
+   "head": "### 2.2 Replication, the gain-only null and the signed-current twin",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| DNg19-R, signed-current twin (`s2t`) | \u22120.31% | \u2014 | 2/16 .345 | \u2014 | \u2014 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 6,
+   "n": 16,
+   "line": 1144,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | 0 | \u2014 | 6/16 .414 | \u2014 | \u2014 | 0/16 .001 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 0,
+   "n": 16,
+   "line": 1144,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | 0 | \u2014 | 6/16 .414 | \u2014 | \u2014 | 0/16 .001 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 12,
+   "n": 16,
+   "line": 1148,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and rank-40 cell removed (`pp` / `ppF`) | \u22120.81% | 12/16 .605 | 16/16 .792 | +.378 [+.280, +.475] | "
+  },
+  {
+   "arm": "cutng25",
+   "k": 16,
+   "n": 16,
+   "line": 1148,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and rank-40 cell removed (`pp` / `ppF`) | \u22120.81% | 12/16 .605 | 16/16 .792 | +.378 [+.280, +.475] | "
+  },
+  {
+   "arm": "cutng25",
+   "k": 3,
+   "n": 16,
+   "line": 1148,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and rank-40 cell removed (`pp` / `ppF`) | \u22120.81% | 12/16 .605 | 16/16 .792 | +.378 [+.280, +.475] | "
+  },
+  {
+   "arm": "cutng25",
+   "k": 7,
+   "n": 16,
+   "line": 1148,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and rank-40 cell removed (`pp` / `ppF`) | \u22120.81% | 12/16 .605 | 16/16 .792 | +.378 [+.280, +.475] | "
+  },
+  {
+   "arm": "cutng25",
+   "k": 16,
+   "n": 16,
+   "line": 1150,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and relay removed (`occ` / `occF`) | +1.07% | 16/16 .839 | 15/16 .730 | +.316 [+.203, +.429] | 16/16"
+  },
+  {
+   "arm": "cutng25",
+   "k": 15,
+   "n": 16,
+   "line": 1150,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and relay removed (`occ` / `occF`) | +1.07% | 16/16 .839 | 15/16 .730 | +.316 [+.203, +.429] | 16/16"
+  },
+  {
+   "arm": "cutng25",
+   "k": 16,
+   "n": 16,
+   "line": 1150,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and relay removed (`occ` / `occF`) | +1.07% | 16/16 .839 | 15/16 .730 | +.316 [+.203, +.429] | 16/16"
+  },
+  {
+   "arm": "cutng25",
+   "k": 13,
+   "n": 16,
+   "line": 1150,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier and relay removed (`occ` / `occF`) | +1.07% | 16/16 .839 | 15/16 .730 | +.316 [+.203, +.429] | 16/16"
+  },
+  {
+   "arm": "cutwA",
+   "k": 5,
+   "n": 16,
+   "line": 1228,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | \u2014 | 0 | 5/16 .402 | \u2014 | 0/16 .000 | reference |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 0,
+   "n": 16,
+   "line": 1228,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| none: the base (`cutwA`) | \u2014 | 0 | 5/16 .402 | \u2014 | 0/16 .000 | reference |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 12,
+   "n": 16,
+   "line": 1230,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier-to-relay edge cut (`E-edge`) | 21 | \u22120.358% | 12/16 .624 | +.223 [+.082, +.364] | 0/16 .000 | super,"
+  },
+  {
+   "arm": "cutng25",
+   "k": 0,
+   "n": 16,
+   "line": 1230,
+   "head": "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| carrier-to-relay edge cut (`E-edge`) | 21 | \u22120.358% | 12/16 .624 | +.223 [+.082, +.364] | 0/16 .000 | super,"
+  },
+  {
+   "arm": "b65",
+   "k": 513,
+   "n": 513,
+   "line": 1327,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| baseline network, before the projectors are added (`b65`) | 513 | 513/513 .995 | 513/513 1.000 | [.993, 1.00"
+  },
+  {
+   "arm": "b65",
+   "k": 513,
+   "n": 513,
+   "line": 1327,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| baseline network, before the projectors are added (`b65`) | 513 | 513/513 .995 | 513/513 1.000 | [.993, 1.00"
+  },
+  {
+   "arm": "full",
+   "k": 207,
+   "n": 513,
+   "line": 1328,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| closure, nothing removed (`full`) | 513 | 207/513 .457 | 0/513 .017 | [.000, .007] |"
+  },
+  {
+   "arm": "full",
+   "k": 0,
+   "n": 513,
+   "line": 1328,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| closure, nothing removed (`full`) | 513 | 207/513 .457 | 0/513 .017 | [.000, .007] |"
+  },
+  {
+   "arm": "cutk5",
+   "k": 0,
+   "n": 226,
+   "line": 1329,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| glutamatergic control cut (`cutk5`) | 226 | 0/226 .032 | 0/226 .001 | [.000, .017] |"
+  },
+  {
+   "arm": "cutk5",
+   "k": 0,
+   "n": 226,
+   "line": 1329,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| glutamatergic control cut (`cutk5`) | 226 | 0/226 .032 | 0/226 .001 | [.000, .017] |"
+  },
+  {
+   "arm": "cutng19",
+   "k": 5,
+   "n": 178,
+   "line": 1330,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 19 (`cutng19`) | 178 | 5/178 .220 | 0/178 .014 | [.000, .021] |"
+  },
+  {
+   "arm": "cutng19",
+   "k": 0,
+   "n": 178,
+   "line": 1330,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 19 (`cutng19`) | 178 | 5/178 .220 | 0/178 .014 | [.000, .021] |"
+  },
+  {
+   "arm": "cutng23",
+   "k": 0,
+   "n": 82,
+   "line": 1331,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 23 (`cutng23`) | 82 | 0/82 .084 | 0/82 .001 | [.000, .045] |"
+  },
+  {
+   "arm": "cutng23",
+   "k": 0,
+   "n": 82,
+   "line": 1331,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 23 (`cutng23`) | 82 | 0/82 .084 | 0/82 .001 | [.000, .045] |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1332,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 24, the base (`cutwA`) | 258 | 72/258 .404 | 0/258 .003 | [.000, .015] |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 0,
+   "n": 258,
+   "line": 1332,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 24, the base (`cutwA`) | 258 | 72/258 .404 | 0/258 .003 | [.000, .015] |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 30,
+   "n": 66,
+   "line": 1333,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 24 plus the mass twin (`cutng25p`) | 66 | 30/66 .459 | 0/66 .000 | [.000, .055] |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 0,
+   "n": 66,
+   "line": 1333,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 24 plus the mass twin (`cutng25p`) | 66 | 30/66 .459 | 0/66 .000 | [.000, .055] |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1334,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 25, carrier removed (`cutng25`) | 210 | 203/210 .766 | 132/210 .562 | [.561, .691] |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 132,
+   "n": 210,
+   "line": 1334,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 25, carrier removed (`cutng25`) | 210 | 203/210 .766 | 132/210 .562 | [.561, .691] |"
+  },
+  {
+   "arm": "cutng29",
+   "k": 188,
+   "n": 194,
+   "line": 1335,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 29 (`cutng29`) | 194 | 188/194 .768 | 108/194 .530 | [.486, .625] |"
+  },
+  {
+   "arm": "cutng29",
+   "k": 108,
+   "n": 194,
+   "line": 1335,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 29 (`cutng29`) | 194 | 188/194 .768 | 108/194 .530 | [.486, .625] |"
+  },
+  {
+   "arm": "cut58",
+   "k": 1,
+   "n": 258,
+   "line": 1336,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 58 (`cut58`) | 258 | 1/258 .220 | 186/258 .659 | [.663, .772] |"
+  },
+  {
+   "arm": "cut58",
+   "k": 186,
+   "n": 258,
+   "line": 1336,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k = 58 (`cut58`) | 258 | 1/258 .220 | 186/258 .659 | [.663, .772] |"
+  },
+  {
+   "arm": "cutscr0",
+   "k": 41,
+   "n": 50,
+   "line": 1337,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| heaviest carrier-free cohort (`cutscr0`) | 50 | 41/50 .623 | 9/50 .282 | [.098, .308] |"
+  },
+  {
+   "arm": "cutscr0",
+   "k": 9,
+   "n": 50,
+   "line": 1337,
+   "head": "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| heaviest carrier-free cohort (`cutscr0`) | 50 | 41/50 .623 | 9/50 .282 | [.098, .308] |"
+  },
+  {
+   "arm": "cutscr0",
+   "k": 39,
+   "n": 48,
+   "line": 1403,
+   "head": "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| cutscr0 (ranks 30\u201339, max-mass, deterministic) | .2490 | .0544 | 3 | 39/48 [.681,.898] | 35/48 [.590,.834] |"
+  },
+  {
+   "arm": "cutscr0",
+   "k": 35,
+   "n": 48,
+   "line": 1403,
+   "head": "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| cutscr0 (ranks 30\u201339, max-mass, deterministic) | .2490 | .0544 | 3 | 39/48 [.681,.898] | 35/48 [.590,.834] |"
+  },
+  {
+   "arm": "full",
+   "k": 16,
+   "n": 48,
+   "line": 1410,
+   "head": "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| untreated base (`full`, same three batches) | \u2014 | \u2014 | 3 | 16/48 [.217,.475] | 15/48 [.199,.453] |"
+  },
+  {
+   "arm": "full",
+   "k": 15,
+   "n": 48,
+   "line": 1410,
+   "head": "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| untreated base (`full`, same three batches) | \u2014 | \u2014 | 3 | 16/48 [.217,.475] | 15/48 [.199,.453] |"
+  },
+  {
+   "arm": "silW",
+   "k": 3,
+   "n": 16,
+   "line": 1549,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| sil1110 (intact) | activity clamp, carrier | .376 / .392 | 2, 3/16 | no demonstrated effect (both batches) |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 4,
+   "n": 16,
+   "line": 1552,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| cutwA (wiring cut 1\u201324) | edges, cohort | .377 | 4/16 | PARTIAL |"
+  },
+  {
+   "arm": "silW",
+   "k": 14,
+   "n": 16,
+   "line": 1553,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| sil1110 on cutwA base | activity clamp, carrier | .622 / .659 | 14, 14/16 | SUPER at UNCHANGED gain; pooled "
+  },
+  {
+   "arm": "silW",
+   "k": 78,
+   "n": 98,
+   "line": 1553,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": true,
+   "cls": "CANON",
+   "text": "| sil1110 on cutwA base | activity clamp, carrier | .622 / .659 | 14, 14/16 | SUPER at UNCHANGED gain; pooled "
+  },
+  {
+   "arm": "cutng25",
+   "k": 14,
+   "n": 16,
+   "line": 1554,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| cutng25 (wiring cut +carrier) | node | .745 | 14/16 | SUPER |"
+  },
+  {
+   "arm": "eOutMot",
+   "k": 12,
+   "n": 16,
+   "line": 1557,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| eOutMot (cutwA base) | carrier's 10 motor out-edges | .525 / .632 | 9, 12/16 | half-step\u2192SUPER; pooled 21/34"
+  },
+  {
+   "arm": "eOutMot",
+   "k": 21,
+   "n": 34,
+   "line": 1557,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": true,
+   "cls": "CANON",
+   "text": "| eOutMot (cutwA base) | carrier's 10 motor out-edges | .525 / .632 | 9, 12/16 | half-step\u2192SUPER; pooled 21/34"
+  },
+  {
+   "arm": "eMotTop5",
+   "k": 8,
+   "n": 16,
+   "line": 1558,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| eMotTop5 (cutwA base) | 5 heavy motor edges | .438 / .460 | 6, 8/16 | no detected move; pooled 31/98 [.233,."
+  },
+  {
+   "arm": "eMotTop5",
+   "k": 31,
+   "n": 98,
+   "line": 1558,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": true,
+   "cls": "CANON",
+   "text": "| eMotTop5 (cutwA base) | 5 heavy motor edges | .438 / .460 | 6, 8/16 | no detected move; pooled 31/98 [.233,."
+  },
+  {
+   "arm": "eMotBot5",
+   "k": 2,
+   "n": 16,
+   "line": 1559,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "BATCH",
+   "text": "| eMotBot5 (cutwA base) | 5 light motor edges | .418 / .350 | 6, 2/16 | no detected move; pooled 25/98 [.179,."
+  },
+  {
+   "arm": "eMotBot5",
+   "k": 25,
+   "n": 98,
+   "line": 1559,
+   "head": "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   "row": true,
+   "pooled_marked": true,
+   "cls": "CANON",
+   "text": "| eMotBot5 (cutwA base) | 5 light motor edges | .418 / .350 | 6, 2/16 | no detected move; pooled 25/98 [.179,."
+  },
+  {
+   "arm": "b65",
+   "k": 513,
+   "n": 513,
+   "line": 1912,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| b65 (un-cut baseline) | 513/513 | [.993,1.000] | .995 | [.994,.996] | 31 |"
+  },
+  {
+   "arm": "full",
+   "k": 207,
+   "n": 513,
+   "line": 1913,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| full (intact closure) | 207/513 | [.362,.447] | .457 | [.443,.470] | 31 |"
+  },
+  {
+   "arm": "cutk5",
+   "k": 0,
+   "n": 226,
+   "line": 1914,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutk5 (glut control) | 0/226 | [.000,.017] | .032 | [.025,.039] | 14 |"
+  },
+  {
+   "arm": "cutng19",
+   "k": 5,
+   "n": 178,
+   "line": 1915,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutng19 (k=19) | 5/178 | [.012,.064] | .220 | [.201,.239] | 11 |"
+  },
+  {
+   "arm": "cutng23",
+   "k": 0,
+   "n": 82,
+   "line": 1916,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutng23 (k=23) | 0/82 | [.000,.045] | .084 | [.066,.103] | 5 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1917,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutwA (k=24 base) | 72/258 | [.228,.337] | .404 | [.385,.425] | 16 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1918,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutng25 (carrier, k=25) | 203/210 | [.933,.984] | .766 | [.749,.783] | 13 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 30,
+   "n": 66,
+   "line": 1919,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutng25p (twin-XOR) | 30/66 | [.340,.574] | .459 | [.421,.496] | 4 |"
+  },
+  {
+   "arm": "cutng29",
+   "k": 188,
+   "n": 194,
+   "line": 1920,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cutng29 (k=29) | 188/194 | [.934,.986] | .768 | [.751,.785] | 12 |"
+  },
+  {
+   "arm": "cut58",
+   "k": 1,
+   "n": 258,
+   "line": 1921,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| cut58 (k=58) | 1/258 | [.001,.022] | .220 | [.207,.234] | 16 |"
+  },
+  {
+   "arm": "silW",
+   "k": 78,
+   "n": 98,
+   "line": 1922,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| silW (carrier clamp on cut base) | 78/98 | [.706,.864] | .644 | [.611,.676] | 6 |"
+  },
+  {
+   "arm": "eMotTop5",
+   "k": 31,
+   "n": 98,
+   "line": 1923,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| eMotTop5 (5 heavy motor edges) | 31/98 | [.233,.414] | .412 | [.376,.448] | 6 |"
+  },
+  {
+   "arm": "eMotBot5",
+   "k": 25,
+   "n": 98,
+   "line": 1924,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| eMotBot5 (5 light motor edges) | 25/98 | [.179,.350] | .372 | [.339,.405] | 6 |"
+  },
+  {
+   "arm": "eOutMot",
+   "k": 21,
+   "n": 34,
+   "line": 1925,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| eOutMot (10 motor edges) | 21/34 | [.450,.761] | .569 | [.517,.619] | 2 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1938,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 base | 203/210 vs 72/258 | +.688 | [+.621,+.742] | 3.4e-59 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1938,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 base | 203/210 vs 72/258 | +.688 | [+.621,+.742] | 3.4e-59 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1939,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 twin | 203/210 vs 30/66 | +.512 | [+.388,+.628] | 3.8e-20 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 30,
+   "n": 66,
+   "line": 1939,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 twin | 203/210 vs 30/66 | +.512 | [+.388,+.628] | 3.8e-20 |"
+  },
+  {
+   "arm": "cutng25p",
+   "k": 30,
+   "n": 66,
+   "line": 1940,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| twin \u2212 base | 30/66 vs 72/258 | +.175 | [+.047,+.305] | .008 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1940,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| twin \u2212 base | 30/66 vs 72/258 | +.175 | [+.047,+.305] | .008 |"
+  },
+  {
+   "arm": "silW",
+   "k": 78,
+   "n": 98,
+   "line": 1941,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| clamp \u2212 base | 78/98 vs 72/258 | +.517 | [+.410,+.602] | 6.7e-19 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1941,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| clamp \u2212 base | 78/98 vs 72/258 | +.517 | [+.410,+.602] | 6.7e-19 |"
+  },
+  {
+   "arm": "silW",
+   "k": 78,
+   "n": 98,
+   "line": 1942,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| clamp \u2212 carrier | 78/98 vs 203/210 | \u2212.171 | [\u2212.263,\u2212.095] | 2.9e-06 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1942,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| clamp \u2212 carrier | 78/98 vs 203/210 | \u2212.171 | [\u2212.263,\u2212.095] | 2.9e-06 |"
+  },
+  {
+   "arm": "eOutMot",
+   "k": 21,
+   "n": 34,
+   "line": 1943,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 10 motor edges \u2212 base | 21/34 vs 72/258 | +.339 | [+.162,+.491] | 1.4e-04 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1943,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 10 motor edges \u2212 base | 21/34 vs 72/258 | +.339 | [+.162,+.491] | 1.4e-04 |"
+  },
+  {
+   "arm": "eOutMot",
+   "k": 21,
+   "n": 34,
+   "line": 1944,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 10 motor edges \u2212 carrier | 21/34 vs 203/210 | \u2212.349 | [\u2212.517,\u2212.202] | 3.1e-08 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 203,
+   "n": 210,
+   "line": 1944,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 10 motor edges \u2212 carrier | 21/34 vs 203/210 | \u2212.349 | [\u2212.517,\u2212.202] | 3.1e-08 |"
+  },
+  {
+   "arm": "eMotTop5",
+   "k": 31,
+   "n": 98,
+   "line": 1945,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 5 heavy edges \u2212 base | 31/98 vs 72/258 | +.037 | [\u2212.064,+.147] | .51 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1945,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 5 heavy edges \u2212 base | 31/98 vs 72/258 | +.037 | [\u2212.064,+.147] | .51 |"
+  },
+  {
+   "arm": "eMotBot5",
+   "k": 25,
+   "n": 98,
+   "line": 1946,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 5 light edges \u2212 base | 25/98 vs 72/258 | \u2212.024 | [\u2212.119,+.083] | .69 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1946,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| 5 light edges \u2212 base | 25/98 vs 72/258 | \u2212.024 | [\u2212.119,+.083] | .69 |"
+  },
+  {
+   "arm": "cutng23",
+   "k": 0,
+   "n": 82,
+   "line": 1947,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k=23 \u2212 base | 0/82 vs 72/258 | \u2212.279 | [\u2212.337,\u2212.211] | 1.7e-10 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1947,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| k=23 \u2212 base | 0/82 vs 72/258 | \u2212.279 | [\u2212.337,\u2212.211] | 1.7e-10 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 72,
+   "n": 258,
+   "line": 1948,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| base \u2212 intact closure | 72/258 vs 207/513 | \u2212.124 | [\u2212.191,\u2212.053] | 8.3e-04 |"
+  },
+  {
+   "arm": "full",
+   "k": 207,
+   "n": 513,
+   "line": 1948,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| base \u2212 intact closure | 72/258 vs 207/513 | \u2212.124 | [\u2212.191,\u2212.053] | 8.3e-04 |"
+  },
+  {
+   "arm": "cutng25",
+   "k": 0,
+   "n": 210,
+   "line": 1949,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 base, LEFT side | 0/210 vs 13/258 | \u2212.050 | [\u2212.084,\u2212.023] | 4.0e-04 |"
+  },
+  {
+   "arm": "cutwA",
+   "k": 13,
+   "n": 258,
+   "line": 1949,
+   "head": "### 2.14 Statistics: one pooled count per arm, and what the interval means",
+   "row": true,
+   "pooled_marked": false,
+   "cls": "CANON",
+   "text": "| carrier \u2212 base, LEFT side | 0/210 vs 13/258 | \u2212.050 | [\u2212.084,\u2212.023] | 4.0e-04 |"
+  }
+ ],
+ "unresolved": [
+  [
+   582,
+   "## Abstract (draft)",
+   16,
+   16,
+   "Only DNp33-L lifts it into the registered high class (16 of 16 seeds;"
+  ],
+  [
+   584,
+   "## Abstract (draft)",
+   513,
+   513,
+   "descending neurons that receive no cord input the model scores 513 of 513, so"
+  ],
+  [
+   587,
+   "## Abstract (draft)",
+   2,
+   16,
+   "silent on this base (2 of 16);"
+  ],
+  [
+   588,
+   "## Abstract (draft)",
+   2,
+   16,
+   "class and sign (5 and 2 of 16);"
+  ],
+  [
+   588,
+   "## Abstract (draft)",
+   2,
+   16,
+   "and a signed-current twin (2 of 16)."
+  ],
+  [
+   589,
+   "## Abstract (draft)",
+   31,
+   32,
+   "contrast replicates on a second batch (31 of 32 pooled) and holds at the"
+  ],
+  [
+   590,
+   "## Abstract (draft)",
+   15,
+   16,
+   "base's own gain (15 of 16);"
+  ],
+  [
+   594,
+   "## Abstract (draft)",
+   8,
+   16,
+   "carrier-removed network keeps it (8 of 16) while the base and all three scan"
+  ],
+  [
+   597,
+   "## Abstract (draft)",
+   41,
+   50,
+   "the class (41 of 50), a downstream interneuron does so alone on the chopped"
+  ],
+  [
+   598,
+   "## Abstract (draft)",
+   13,
+   16,
+   "readout (13 of 16), and the effect is absent at a stricter synapse floor."
+  ],
+  [
+   612,
+   "## 1. Introduction",
+   16,
+   16,
+   "super class, 16 of 16 seeds against 5 of 16 for the base."
+  ],
+  [
+   612,
+   "## 1. Introduction",
+   5,
+   16,
+   "super class, 16 of 16 seeds against 5 of 16 for the base."
+  ],
+  [
+   635,
+   "## 1. Introduction",
+   5,
+   178,
+   "right-side antagonist structure then super-raises it \u2014 kill 5 of 178 at k=19,"
+  ],
+  [
+   636,
+   "## 1. Introduction",
+   188,
+   194,
+   "super 188 of 194 at k=29 [l172.pooled], a non-monotone window rather than a"
+  ],
+  [
+   639,
+   "## 1. Introduction",
+   30,
+   66,
+   "30 of 66, [.340,.574] \u2014 above the base by +.175 [+.047,+.305] and below the"
+  ],
+  [
+   646,
+   "## 1. Introduction",
+   39,
+   48,
+   "mass-matched to the same window, one reaches super (39/48 on its own fresh"
+  ],
+  [
+   647,
+   "## 1. Introduction",
+   41,
+   50,
+   "41 of 50 on the canonical pool [l172.pooled]) and six"
+  ],
+  [
+   651,
+   "## 1. Introduction",
+   78,
+   98,
+   "subnet, flip-completing on the cut base (pooled 78 of 98, Wilson [.706,.864]"
+  ],
+  [
+   656,
+   "## 1. Introduction",
+   12,
+   16,
+   "segment (12/16 vs 0/16) and after a 0.3-Hz high-pass (15/16 vs 1/16), the"
+  ],
+  [
+   656,
+   "## 1. Introduction",
+   0,
+   16,
+   "segment (12/16 vs 0/16) and after a 0.3-Hz high-pass (15/16 vs 1/16), the"
+  ],
+  [
+   656,
+   "## 1. Introduction",
+   15,
+   16,
+   "segment (12/16 vs 0/16) and after a 0.3-Hz high-pass (15/16 vs 1/16), the"
+  ],
+  [
+   656,
+   "## 1. Introduction",
+   1,
+   16,
+   "segment (12/16 vs 0/16) and after a 0.3-Hz high-pass (15/16 vs 1/16), the"
+  ],
+  [
+   754,
+   "## 1. Introduction",
+   25,
+   50,
+   "in only 25 of 50 ensemble members, and one attribution score falls from .872"
+  ],
+  [
+   824,
+   "## 2. Results",
+   12,
+   16,
+   "An arm is in the super class when at least 12 of 16 seeds are structured and"
+  ],
+  [
+   853,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "| \u2014 | none: the base, 24-cell cut (`cutwA`) | \u2014 | \u2014 | \u2014 | 0 | 5/16 .408 | 0/16 .000 | 0/24"
+  ],
+  [
+   853,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| \u2014 | none: the base, 24-cell cut (`cutwA`) | \u2014 | \u2014 | \u2014 | 0 | 5/16 .408 | 0/16 .000 | 0/24"
+  ],
+  [
+   854,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   16,
+   16,
+   "| 25 | DNp33-L, the carrier (`sc25`) | + | .389 | 1.00 | +1.24% | 16/16 .758 | 8/16 .510 |"
+  ],
+  [
+   854,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   8,
+   16,
+   "| 25 | DNp33-L, the carrier (`sc25`) | + | .389 | 1.00 | +1.24% | 16/16 .758 | 8/16 .510 |"
+  ],
+  [
+   855,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "| 26 | DNpe025-R, the mass twin (`sc26`) | + | .001 | 0.00 | \u22120.09% | 2/16 .378 | 0/16 .00"
+  ],
+  [
+   855,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 26 | DNpe025-R, the mass twin (`sc26`) | + | .001 | 0.00 | \u22120.09% | 2/16 .378 | 0/16 .00"
+  ],
+  [
+   856,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   11,
+   16,
+   "| 27 | DNpe055-R (`sc27`) | + | .041 | 0.12 | \u22120.28% | 11/16 .596 | 0/16 .000 | 4/240 .169"
+  ],
+  [
+   856,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 27 | DNpe055-R (`sc27`) | + | .041 | 0.12 | \u22120.28% | 11/16 .596 | 0/16 .000 | 4/240 .169"
+  ],
+  [
+   857,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   6,
+   16,
+   "| 28 | DNg109-R (`sc28`) | + | .000 | 0.00 | \u22120.07% | 6/16 .441 | 0/16 .000 | 1/240 .133 |"
+  ],
+  [
+   857,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 28 | DNg109-R (`sc28`) | + | .000 | 0.00 | \u22120.07% | 6/16 .441 | 0/16 .000 | 1/240 .133 |"
+  ],
+  [
+   858,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   7,
+   16,
+   "| 29 | DNge132-R (`sc29`) | + | .000 | 0.00 | \u22120.02% | 7/16 .422 | 0/16 .000 | 0/240 .086 "
+  ],
+  [
+   858,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 29 | DNge132-R (`sc29`) | + | .000 | 0.00 | \u22120.02% | 7/16 .422 | 0/16 .000 | 0/240 .086 "
+  ],
+  [
+   859,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   10,
+   16,
+   "| 30 | DNg38-L (`sc30`) | \u2212 | .019 | 0.10 | \u22120.53% | 10/16 .531 | 0/16 .000 | 2/240 .174 |"
+  ],
+  [
+   859,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 30 | DNg38-L (`sc30`) | \u2212 | .019 | 0.10 | \u22120.53% | 10/16 .531 | 0/16 .000 | 2/240 .174 |"
+  ],
+  [
+   860,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   4,
+   16,
+   "| 31 | DNge141-L (`sc31`) | \u2212 | .253 | 1.65 | +0.81% | 4/16 .435 | 0/16 .000 | 3/240 .200 "
+  ],
+  [
+   860,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 31 | DNge141-L (`sc31`) | \u2212 | .253 | 1.65 | +0.81% | 4/16 .435 | 0/16 .000 | 3/240 .200 "
+  ],
+  [
+   861,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "| 32 | DNpe025-L (`sc32`) | + | .000 | 0.00 | \u22120.04% | 5/16 .414 | 0/16 .000 | 0/240 .115 "
+  ],
+  [
+   861,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 32 | DNpe025-L (`sc32`) | + | .000 | 0.00 | \u22120.04% | 5/16 .414 | 0/16 .000 | 0/240 .115 "
+  ],
+  [
+   862,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 33 | DNp44-R (`sc33`) | + | .110 | 0.27 | +0.51% | 0/16 .270 | 0/16 .109 | 1/240 .084 | "
+  ],
+  [
+   862,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 33 | DNp44-R (`sc33`) | + | .110 | 0.27 | +0.51% | 0/16 .270 | 0/16 .109 | 1/240 .084 | "
+  ],
+  [
+   863,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 34 | DNp53-R (`sc34`) | + | .363 | 0.85 | +0.01% | 0/16 .210 | 0/16 .000 | 0/240 .080 | "
+  ],
+  [
+   863,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 34 | DNp53-R (`sc34`) | + | .363 | 0.85 | +0.01% | 0/16 .210 | 0/16 .000 | 0/240 .080 | "
+  ],
+  [
+   864,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "| 35 | DNg56-R (`sc35`) | \u2212 | .420 | 2.01 | \u22120.92% | 2/16 .361 | 0/16 .005 | 0/240 .124 | "
+  ],
+  [
+   864,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 35 | DNg56-R (`sc35`) | \u2212 | .420 | 2.01 | \u22120.92% | 2/16 .361 | 0/16 .005 | 0/240 .124 | "
+  ],
+  [
+   865,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   4,
+   16,
+   "| 36 | DNp22-R (`sc36`) | + | .000 | 0.00 | +0.00% | 4/16 .355 | 0/16 .001 | 2/240 .111 | "
+  ],
+  [
+   865,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 36 | DNp22-R (`sc36`) | + | .000 | 0.00 | +0.00% | 4/16 .355 | 0/16 .001 | 2/240 .111 | "
+  ],
+  [
+   866,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   4,
+   16,
+   "| 37 | DNp44-L (`sc37`) | + | .348 | 0.78 | +1.35% | 4/16 .368 | 0/16 .031 | 0/240 .058 | "
+  ],
+  [
+   866,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 37 | DNp44-L (`sc37`) | + | .348 | 0.78 | +1.35% | 4/16 .368 | 0/16 .031 | 0/240 .058 | "
+  ],
+  [
+   867,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 38 | DNpe050-L (`sc38`) | + | .024 | 0.07 | +0.01% | 3/16 .340 | 0/16 .000 | 0/240 .079 "
+  ],
+  [
+   867,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 38 | DNpe050-L (`sc38`) | + | .024 | 0.07 | +0.01% | 3/16 .340 | 0/16 .000 | 0/240 .079 "
+  ],
+  [
+   868,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   11,
+   16,
+   "| 39 | DNg56-L (`sc39`) | \u2212 | .349 | 1.49 | \u22120.07% | 11/16 .547 | 0/16 .000 | 2/240 .168 |"
+  ],
+  [
+   868,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 39 | DNg56-L (`sc39`) | \u2212 | .349 | 1.49 | \u22120.07% | 11/16 .547 | 0/16 .000 | 2/240 .168 |"
+  ],
+  [
+   869,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   11,
+   16,
+   "| 40 | DNge084-R (`sc40`) | \u2212 | .034 | 0.19 | \u22121.13% | 11/16 .605 | 0/16 .000 | 15/240 .25"
+  ],
+  [
+   869,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 40 | DNge084-R (`sc40`) | \u2212 | .034 | 0.19 | \u22121.13% | 11/16 .605 | 0/16 .000 | 15/240 .25"
+  ],
+  [
+   870,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 41 | DNge043-L (`sc41`) | \u2212 | .994 | 4.16 | \u22120.04% | 3/16 .297 | 0/16 .000 | 0/240 .060 "
+  ],
+  [
+   870,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 41 | DNge043-L (`sc41`) | \u2212 | .994 | 4.16 | \u22120.04% | 3/16 .297 | 0/16 .000 | 0/240 .060 "
+  ],
+  [
+   871,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 42 | DNp15-R (`sc42`) | + | .000 | 0.00 | +0.00% | 3/16 .379 | 0/16 .003 | 0/240 .090 | "
+  ],
+  [
+   871,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 42 | DNp15-R (`sc42`) | + | .000 | 0.00 | +0.00% | 3/16 .379 | 0/16 .003 | 0/240 .090 | "
+  ],
+  [
+   872,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   6,
+   16,
+   "| 43 | DNge175-R (`sc43`) | + | .000 | 0.00 | +0.00% | 6/16 .412 | 0/16 .000 | 0/240 .107 "
+  ],
+  [
+   872,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 43 | DNge175-R (`sc43`) | + | .000 | 0.00 | +0.00% | 6/16 .412 | 0/16 .000 | 0/240 .107 "
+  ],
+  [
+   873,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   11,
+   16,
+   "| 44 | DNge043-R (`sc44`) | \u2212 | .000 | 0.00 | \u22120.33% | 11/16 .489 | 0/16 .000 | 0/240 .121"
+  ],
+  [
+   873,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 44 | DNge043-R (`sc44`) | \u2212 | .000 | 0.00 | \u22120.33% | 11/16 .489 | 0/16 .000 | 0/240 .121"
+  ],
+  [
+   874,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   4,
+   16,
+   "| 45 | DNpe050-R (`sc45`) | + | .020 | 0.05 | \u22120.21% | 4/16 .462 | 0/16 .000 | 0/240 .111 "
+  ],
+  [
+   874,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 45 | DNpe050-R (`sc45`) | + | .020 | 0.05 | \u22120.21% | 4/16 .462 | 0/16 .000 | 0/240 .111 "
+  ],
+  [
+   875,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   9,
+   16,
+   "| 46 | DNp67-R (`sc46`) | + | .000 | 0.00 | \u22120.12% | 9/16 .485 | 0/16 .000 | 0/240 .102 | "
+  ],
+  [
+   875,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 46 | DNp67-R (`sc46`) | + | .000 | 0.00 | \u22120.12% | 9/16 .485 | 0/16 .000 | 0/240 .102 | "
+  ],
+  [
+   876,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "| 47 | DNge101-R (`sc47`) | \u2212 | .385 | 1.52 | +10.28% | 2/16 .297 | 3/16 .310 | 0/240 .120"
+  ],
+  [
+   876,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 47 | DNge101-R (`sc47`) | \u2212 | .385 | 1.52 | +10.28% | 2/16 .297 | 3/16 .310 | 0/240 .120"
+  ],
+  [
+   877,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   9,
+   16,
+   "| 48 | DNg24-L (`sc48`) | \u2212 | .007 | 0.03 | \u22120.32% | 9/16 .497 | 0/16 .000 | 0/240 .138 | "
+  ],
+  [
+   877,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 48 | DNg24-L (`sc48`) | \u2212 | .007 | 0.03 | \u22120.32% | 9/16 .497 | 0/16 .000 | 0/240 .138 | "
+  ],
+  [
+   878,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "| 49 | DNge084-L (`sc49`) | \u2212 | .065 | 0.34 | +0.57% | 2/16 .310 | 0/16 .000 | 0/240 .130 "
+  ],
+  [
+   878,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 49 | DNge084-L (`sc49`) | \u2212 | .065 | 0.34 | +0.57% | 2/16 .310 | 0/16 .000 | 0/240 .130 "
+  ],
+  [
+   879,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   9,
+   16,
+   "| 50 | DNge006-L (`sc50`) | + | 1.000 | 1.86 | \u22120.54% | 9/16 .526 | 0/16 .000 | 5/240 .207"
+  ],
+  [
+   879,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 50 | DNge006-L (`sc50`) | + | 1.000 | 1.86 | \u22120.54% | 9/16 .526 | 0/16 .000 | 5/240 .207"
+  ],
+  [
+   880,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "| 51 | DNge016-L (`sc51`) | + | .000 | 0.00 | +0.00% | 5/16 .369 | 0/16 .000 | 1/240 .104 "
+  ],
+  [
+   880,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 51 | DNge016-L (`sc51`) | + | .000 | 0.00 | +0.00% | 5/16 .369 | 0/16 .000 | 1/240 .104 "
+  ],
+  [
+   881,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   8,
+   16,
+   "| 52 | DNge096-R (`sc52`) | \u2212 | .020 | 0.08 | \u22120.23% | 8/16 .506 | 0/16 .000 | 3/240 .146 "
+  ],
+  [
+   881,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 52 | DNge096-R (`sc52`) | \u2212 | .020 | 0.08 | \u22120.23% | 8/16 .506 | 0/16 .000 | 3/240 .146 "
+  ],
+  [
+   882,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   9,
+   16,
+   "| 53 | DNp15-L (`sc53`) | + | .880 | 1.46 | \u22120.25% | 9/16 .483 | 0/16 .000 | 3/240 .166 | "
+  ],
+  [
+   882,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 53 | DNp15-L (`sc53`) | + | .880 | 1.46 | \u22120.25% | 9/16 .483 | 0/16 .000 | 3/240 .166 | "
+  ],
+  [
+   883,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 54 | DNp64-L (`sc54`) | + | .098 | 0.22 | +0.20% | 3/16 .401 | 0/16 .001 | 4/240 .181 | "
+  ],
+  [
+   883,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 54 | DNp64-L (`sc54`) | + | .098 | 0.22 | +0.20% | 3/16 .401 | 0/16 .001 | 4/240 .181 | "
+  ],
+  [
+   884,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   7,
+   16,
+   "| 55 | DNge016-L (`sc55`) | + | .000 | 0.00 | \u22120.08% | 7/16 .476 | 0/16 .000 | 0/240 .110 "
+  ],
+  [
+   884,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 55 | DNge016-L (`sc55`) | + | .000 | 0.00 | \u22120.08% | 7/16 .476 | 0/16 .000 | 0/240 .110 "
+  ],
+  [
+   885,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "| 56 | DNg24-R (`sc56`) | \u2212 | .017 | 0.06 | \u22120.26% | 5/16 .407 | 0/16 .000 | 2/240 .134 | "
+  ],
+  [
+   885,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 56 | DNg24-R (`sc56`) | \u2212 | .017 | 0.06 | \u22120.26% | 5/16 .407 | 0/16 .000 | 2/240 .134 | "
+  ],
+  [
+   886,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   6,
+   16,
+   "| 57 | DNp51-R (`sc57`) | + | .000 | 0.00 | \u22120.29% | 6/16 .468 | 0/16 .000 | 1/240 .134 | "
+  ],
+  [
+   886,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 57 | DNp51-R (`sc57`) | + | .000 | 0.00 | \u22120.29% | 6/16 .468 | 0/16 .000 | 1/240 .134 | "
+  ],
+  [
+   887,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   3,
+   16,
+   "| 58 | DNpe004-L (`sc58`) | + | .372 | 0.57 | +0.43% | 3/16 .316 | 0/16 .003 | 1/240 .087 "
+  ],
+  [
+   887,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| 58 | DNpe004-L (`sc58`) | + | .372 | 0.57 | +0.43% | 3/16 .316 | 0/16 .003 | 1/240 .087 "
+  ],
+  [
+   888,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "| \u2014 | DNge046-L, drive twin of any class (`dmA`) | \u2212 | .259 | 1.00 | +0.11% | 5/16 .390 | "
+  ],
+  [
+   888,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| \u2014 | DNge046-L, drive twin of any class (`dmA`) | \u2212 | .259 | 1.00 | +0.11% | 5/16 .390 | "
+  ],
+  [
+   889,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "| \u2014 | DNpe019-L, drive twin of the carrier's class (`dmC`) | + | .619 | 1.01 | +3.31% | 2/"
+  ],
+  [
+   889,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "| \u2014 | DNpe019-L, drive twin of the carrier's class (`dmC`) | + | .619 | 1.01 | +3.31% | 2/"
+  ],
+  [
+   901,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   ".758, against 5 of 16 and .408 for the base."
+  ],
+  [
+   909,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   513,
+   513,
+   "structured in 513 of 513 seeds at mean duty .995 on the chopped readout."
+  ],
+  [
+   910,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   513,
+   513,
+   "the continuous segment it is structured in 513 of 513 and the closure in 0 of"
+  ],
+  [
+   936,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   5,
+   16,
+   "5 of 16 at .390 and 2 of 16 at .366."
+  ],
+  [
+   936,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   2,
+   16,
+   "5 of 16 at .390 and 2 of 16 at .366."
+  ],
+  [
+   946,
+   "### 2.1 A single-cell scan: one of 34 deletions lifts the readout",
+   0,
+   16,
+   "count to 0 and 0 of 16 when removed, the opposite direction."
+  ],
+  [
+   1000,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   15,
+   16,
+   "Carrier removal gives 15 of 16 at .770 at its re-matched gain and 15 of 16 at"
+  ],
+  [
+   1000,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   15,
+   16,
+   "Carrier removal gives 15 of 16 at .770 at its re-matched gain and 15 of 16 at"
+  ],
+  [
+   1003,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   31,
+   32,
+   "Pooled over the two batches the carrier arm is 31 of 32."
+  ],
+  [
+   1008,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   11,
+   16,
+   "(11 of 16 on batch M, 4 of 16 on batch N)."
+  ],
+  [
+   1008,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   4,
+   16,
+   "(11 of 16 on batch M, 4 of 16 on batch N)."
+  ],
+  [
+   1009,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   12,
+   16,
+   "its re-matched gain (12 of 16, mean .538, below the .60 bar) and loses the"
+  ],
+  [
+   1010,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   3,
+   16,
+   "elevation entirely at the base's gain (3 of 16;"
+  ],
+  [
+   1014,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   34,
+   48,
+   "batch agrees (34 of 48 re-matched, 5 of 32 fixed [l187.sc40_pooled])."
+  ],
+  [
+   1014,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   5,
+   32,
+   "batch agrees (34 of 48 re-matched, 5 of 32 fixed [l187.sc40_pooled])."
+  ],
+  [
+   1051,
+   "### 2.2 Replication, the gain-only null and the signed-current twin",
+   2,
+   16,
+   "2 of 16 (Wilson upper bound .360 on the"
+  ],
+  [
+   1105,
+   "### 2.3 What changes is shared timing, not rate",
+   8,
+   16,
+   "keeps 8 of 16 structured seeds (mean .510), while the base, the mass twin and"
+  ],
+  [
+   1107,
+   "### 2.3 What changes is shared timing, not rate",
+   3,
+   16,
+   "arm has any structured seed there (rank 47, 3 of 16, the gain outlier of"
+  ],
+  [
+   1146,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   12,
+   16,
+   "| relay clamped inside the window (`rsilW`) | 0 (base gain) | \u2014 | 12/16 .591 | +.177 [+.03"
+  ],
+  [
+   1146,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   0,
+   16,
+   "| relay clamped inside the window (`rsilW`) | 0 (base gain) | \u2014 | 12/16 .591 | +.177 [+.03"
+  ],
+  [
+   1147,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   13,
+   16,
+   "| relay removed (`rcut` / `rcutF`) | \u22120.13% | 13/16 .697 | 13/16 .630 | +.216 [+.111, +.32"
+  ],
+  [
+   1147,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   13,
+   16,
+   "| relay removed (`rcut` / `rcutF`) | \u22120.13% | 13/16 .697 | 13/16 .630 | +.216 [+.111, +.32"
+  ],
+  [
+   1147,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   0,
+   16,
+   "| relay removed (`rcut` / `rcutF`) | \u22120.13% | 13/16 .697 | 13/16 .630 | +.216 [+.111, +.32"
+  ],
+  [
+   1147,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   0,
+   16,
+   "| relay removed (`rcut` / `rcutF`) | \u22120.13% | 13/16 .697 | 13/16 .630 | +.216 [+.111, +.32"
+  ],
+  [
+   1157,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   13,
+   16,
+   "Cutting the relay gives 13 of 16 structured seeds at its re-matched gain and"
+  ],
+  [
+   1158,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   13,
+   16,
+   "13 of 16 at the base's gain (mean .697 and .630), +.216 [+.111, +.321] above"
+  ],
+  [
+   1160,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   12,
+   16,
+   "the measurement window gives 12 of 16 at mean .591."
+  ],
+  [
+   1176,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   16,
+   16,
+   "+.653] fixed, with 16 and 16 of 16 seeds positive [l187.contrasts, l187.fast]."
+  ],
+  [
+   1183,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   16,
+   16,
+   "At the base's gain the double removal is 16 of 16 at"
+  ],
+  [
+   1191,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   12,
+   16,
+   "gain the double-removal arm falls to the band edge (12 of 16, .605)."
+  ],
+  [
+   1231,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   5,
+   16,
+   "| sham edge cut (`E-sham`) | 22 | \u22120.001% | 5/16 .421 | +.020 [\u2212.094, +.133] | 0/16 .002 |"
+  ],
+  [
+   1231,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   0,
+   16,
+   "| sham edge cut (`E-sham`) | 22 | \u22120.001% | 5/16 .421 | +.020 [\u2212.094, +.133] | 0/16 .002 |"
+  ],
+  [
+   1240,
+   "### 2.4 A downstream interneuron: neither necessary nor sufficient for the signature",
+   12,
+   16,
+   "zero.** The edge cut gives 12 of 16 structured seeds at mean .624, +.223"
+  ],
+  [
+   1315,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   1,
+   258,
+   "(1 of 258 [l172.pooled]), so the structured range is a window in k, not a"
+  ],
+  [
+   1317,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   253,
+   258,
+   "(253 of 258), so k=58 kills the right pair, not the cord."
+  ],
+  [
+   1349,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   132,
+   210,
+   "carrier removal keeps 132 of 210."
+  ],
+  [
+   1350,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   1,
+   258,
+   "reads as dead (1 of 258), is the strongest of the cut arms (186 of 258)."
+  ],
+  [
+   1350,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   186,
+   258,
+   "reads as dead (1 of 258), is the strongest of the cut arms (186 of 258)."
+  ],
+  [
+   1351,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   9,
+   50,
+   "heaviest carrier-free cohort falls from 41 to 9 of 50."
+  ],
+  [
+   1355,
+   "### 2.6 The dose cliff (Fig 1 = figures/l136_transition_law.png)",
+   0,
+   66,
+   "any structure, and the mass twin shows none there (0 of 66)."
+  ],
+  [
+   1366,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   203,
+   210,
+   "the pair gives the super class (203 of 210 pooled, [.933,.984]), and removing"
+  ],
+  [
+   1367,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   30,
+   66,
+   "only the twin gives an intermediate reading (30 of 66, [.340,.574])"
+  ],
+  [
+   1388,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   203,
+   210,
+   "carrier cell 203 of 210,"
+  ],
+  [
+   1390,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   72,
+   258,
+   "(`cutwA`) 72 of 258, [.228,.337], mean duty .404 [.385,.425] [l172.pooled]."
+  ],
+  [
+   1406,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   10,
+   16,
+   "| cutscrL1 (scattered, cl40-matched) | .2406 | .0460 | 1 | 10/16 [.386,.815] | 0/16 [.000,"
+  ],
+  [
+   1406,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   0,
+   16,
+   "| cutscrL1 (scattered, cl40-matched) | .2406 | .0460 | 1 | 10/16 [.386,.815] | 0/16 [.000,"
+  ],
+  [
+   1407,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   4,
+   16,
+   "| cutscrL2 (scattered, cl40-matched) | .2386 | .0439 | 1 | 4/16 [.102,.495] | 9/16 [.332,."
+  ],
+  [
+   1407,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   9,
+   16,
+   "| cutscrL2 (scattered, cl40-matched) | .2386 | .0439 | 1 | 4/16 [.102,.495] | 9/16 [.332,."
+  ],
+  [
+   1408,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   0,
+   16,
+   "| cutcl40 (ranks 40\u201349, contiguous) | .2396 | .0450 | 1 | 0/16 [.000,.194] | 11/16 [.444,."
+  ],
+  [
+   1408,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   11,
+   16,
+   "| cutcl40 (ranks 40\u201349, contiguous) | .2396 | .0450 | 1 | 0/16 [.000,.194] | 11/16 [.444,."
+  ],
+  [
+   1418,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   41,
+   50,
+   "unique-seed union of \u00a72.14 the heaviest cohort reads 41 of 50 [l172.pooled];"
+  ],
+  [
+   1425,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   39,
+   48,
+   "cutscr0 \u2014 does reach the super class on the right (39/48, lb .681, three"
+  ],
+  [
+   1431,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   0,
+   32,
+   "second-heaviest set kills outright (cutscr1, .0476, 0/32) while two"
+  ],
+  [
+   1432,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   17,
+   32,
+   "lighter sets sit well above it (cutscr3 .0442 at 17/32;"
+  ],
+  [
+   1433,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   10,
+   16,
+   "10/16), so the right-side outcome is not monotone \u2014 not even ordered \u2014 in"
+  ],
+  [
+   1437,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   39,
+   48,
+   "sides above the untreated base band (right 39/48 vs 16/48;"
+  ],
+  [
+   1437,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   16,
+   48,
+   "sides above the untreated base band (right 39/48 vs 16/48;"
+  ],
+  [
+   1437,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   35,
+   48,
+   "left 35/48 vs"
+  ],
+  [
+   1438,
+   "### 2.7 The mass twin and the carrier-free cohorts: static-mass controls",
+   15,
+   48,
+   "15/48) [l168.base]."
+  ],
+  [
+   1461,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   14,
+   16,
+   ".622 with 14/16 seeds on batch D [l144.silw] and .659 with 14/16 on batch G"
+  ],
+  [
+   1461,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   14,
+   16,
+   ".622 with 14/16 seeds on batch D [l144.silw] and .659 with 14/16 on batch G"
+  ],
+  [
+   1462,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   6,
+   16,
+   "The paired \u0394R against the base is +.189 (6/16 seeds up and 0 down)"
+  ],
+  [
+   1463,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   9,
+   16,
+   "and +.281 (9/16 up and 0 down)."
+  ],
+  [
+   1463,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   78,
+   98,
+   "The canonical pooled count is 78 of 98, Wilson"
+  ],
+  [
+   1495,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   0,
+   16,
+   "class as the k=24 CUT, with the Ti_L death .119 (0/16) [l137.sil24];"
+  ],
+  [
+   1496,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   5,
+   16,
+   "matches the cut base (.383, 5/16), but on that batch the"
+  ],
+  [
+   1498,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   6,
+   16,
+   "6/16, so sil24 is a class-label match with NO demonstrated separation from"
+  ],
+  [
+   1528,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   8,
+   16,
+   "inside the .075 clamp/noise floor, per-seed order sign count 8/16 = coin flip"
+  ],
+  [
+   1529,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   31,
+   98,
+   "canonical pooled top5 31 of 98 [.233,.414] and bot5"
+  ],
+  [
+   1530,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   25,
+   98,
+   "25 of 98 [.179,.350], neither distinguishable from the base), while all ten"
+  ],
+  [
+   1531,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   21,
+   34,
+   "together SUPER [l145.mot] at pooled 21 of 34 [.450,.761] [l172.pooled],"
+  ],
+  [
+   1543,
+   "### 2.9 Mechanism: the carrier's channel, isolated at an unchanged gain",
+   15,
+   16,
+   "SUPER replicates on its second batch (.768, 15/16 [l148.eall])."
+  ],
+  [
+   1607,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   3,
+   16,
+   "| unjittered | 0 | 3/16 .374 partial | 9/16 .463 neutral | 14/16 .728 super | +11 | +5 | h"
+  ],
+  [
+   1607,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   9,
+   16,
+   "| unjittered | 0 | 3/16 .374 partial | 9/16 .463 neutral | 14/16 .728 super | +11 | +5 | h"
+  ],
+  [
+   1607,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   14,
+   16,
+   "| unjittered | 0 | 3/16 .374 partial | 9/16 .463 neutral | 14/16 .728 super | +11 | +5 | h"
+  ],
+  [
+   1608,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   10,
+   16,
+   "| jitter set 1 | \u22120.38% | 10/16 .526 neutral | 13/16 .596 other | 16/16 .795 super | +6 | "
+  ],
+  [
+   1608,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   13,
+   16,
+   "| jitter set 1 | \u22120.38% | 10/16 .526 neutral | 13/16 .596 other | 16/16 .795 super | +6 | "
+  ],
+  [
+   1608,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   16,
+   16,
+   "| jitter set 1 | \u22120.38% | 10/16 .526 neutral | 13/16 .596 other | 16/16 .795 super | +6 | "
+  ],
+  [
+   1609,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   0,
+   16,
+   "| jitter set 2 | +0.38% | 0/16 .337 other | 5/16 .373 partial | 16/16 .692 super | +16 | +"
+  ],
+  [
+   1609,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   5,
+   16,
+   "| jitter set 2 | +0.38% | 0/16 .337 other | 5/16 .373 partial | 16/16 .692 super | +16 | +"
+  ],
+  [
+   1609,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   16,
+   16,
+   "| jitter set 2 | +0.38% | 0/16 .337 other | 5/16 .373 partial | 16/16 .692 super | +16 | +"
+  ],
+  [
+   1610,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   3,
+   16,
+   "| jitter set 3 | \u22120.14% | 3/16 .285 other | 6/16 .443 partial | 13/16 .652 super | +10 | +"
+  ],
+  [
+   1610,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   6,
+   16,
+   "| jitter set 3 | \u22120.14% | 3/16 .285 other | 6/16 .443 partial | 13/16 .652 super | +10 | +"
+  ],
+  [
+   1610,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   13,
+   16,
+   "| jitter set 3 | \u22120.14% | 3/16 .285 other | 6/16 .443 partial | 13/16 .652 super | +10 | +"
+  ],
+  [
+   1611,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   1,
+   16,
+   "| jitter set 4 | +0.02% | 1/16 .287 kill | 0/16 .296 kill | 14/16 .688 super | +13 | +14 |"
+  ],
+  [
+   1611,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   0,
+   16,
+   "| jitter set 4 | +0.02% | 1/16 .287 kill | 0/16 .296 kill | 14/16 .688 super | +13 | +14 |"
+  ],
+  [
+   1611,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   14,
+   16,
+   "| jitter set 4 | +0.02% | 1/16 .287 kill | 0/16 .296 kill | 14/16 .688 super | +13 | +14 |"
+  ],
+  [
+   1612,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   15,
+   16,
+   "| jitter set 5 | \u22120.65% | 15/16 .628 super | 13/16 .668 super | 13/16 .688 super | \u22122 | 0 "
+  ],
+  [
+   1612,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   13,
+   16,
+   "| jitter set 5 | \u22120.65% | 15/16 .628 super | 13/16 .668 super | 13/16 .688 super | \u22122 | 0 "
+  ],
+  [
+   1612,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   13,
+   16,
+   "| jitter set 5 | \u22120.65% | 15/16 .628 super | 13/16 .668 super | 13/16 .688 super | \u22122 | 0 "
+  ],
+  [
+   1613,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   29,
+   80,
+   "| jitter sets 1 to 5, summed | \u2014 | 29/80 .413 | 37/80 .475 | 72/80 .703 | +43 | +35 | \u2014 |"
+  ],
+  [
+   1613,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   37,
+   80,
+   "| jitter sets 1 to 5, summed | \u2014 | 29/80 .413 | 37/80 .475 | 72/80 .703 | +43 | +35 | \u2014 |"
+  ],
+  [
+   1613,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   72,
+   80,
+   "| jitter sets 1 to 5, summed | \u2014 | 29/80 .413 | 37/80 .475 | 72/80 .703 | +43 | +35 | \u2014 |"
+  ],
+  [
+   1629,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   72,
+   80,
+   "structured in 72 of 80 set-seed runs, against 29 for the base and 37 for the"
+  ],
+  [
+   1630,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   13,
+   16,
+   "the twin arm reads 13 of 16 at"
+  ],
+  [
+   1633,
+   "### 2.10 Robustness: endpoints hold, interior re-draws",
+   15,
+   16,
+   "it (15 of 16), and the twin arm reaches it too (13)."
+  ],
+  [
+   1689,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   4,
+   16,
+   "graph at its own gain is in the partial class (meanR .426, kR 4/16)."
+  ],
+  [
+   1691,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   2,
+   16,
+   ".317, kR 2/16)."
+  ],
+  [
+   1692,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "meanR .702, kR 15/16, [.717,.989]), as it"
+  ],
+  [
+   1693,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "does at its own gain (meanR .753, kR 16/16)."
+  ],
+  [
+   1696,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   10,
+   16,
+   "(10/16 seeds up) while `wAgN` sits \u2212.109 BELOW it (2/16 up)."
+  ],
+  [
+   1696,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   2,
+   16,
+   "(10/16 seeds up) while `wAgN` sits \u2212.109 BELOW it (2/16 up)."
+  ],
+  [
+   1712,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   42,
+   48,
+   "silW 42/48 (lb .753, three batches), cutng25 140/144 (lb .931, nine),"
+  ],
+  [
+   1712,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   140,
+   144,
+   "silW 42/48 (lb .753, three batches), cutng25 140/144 (lb .931, nine),"
+  ],
+  [
+   1713,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   47,
+   160,
+   "cutwA 47/160 (ub .368, ten), eMotTop5 19/48, eMotBot5 13/48."
+  ],
+  [
+   1713,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   19,
+   48,
+   "cutwA 47/160 (ub .368, ten), eMotTop5 19/48, eMotBot5 13/48."
+  ],
+  [
+   1713,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   13,
+   48,
+   "cutwA 47/160 (ub .368, ten), eMotTop5 19/48, eMotBot5 13/48."
+  ],
+  [
+   1741,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   5,
+   16,
+   "\u2014 cutwA PARTIAL (meanR .452, kR 5/16) and cutng25 SUPER (.786, 15/16) \u2014 so"
+  ],
+  [
+   1741,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "\u2014 cutwA PARTIAL (meanR .452, kR 5/16) and cutng25 SUPER (.786, 15/16) \u2014 so"
+  ],
+  [
+   1745,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "One flips (`rew1` meanR .724, kR 16/16,"
+  ],
+  [
+   1746,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "paired +.272 over cutwA, 15/16 seeds up)."
+  ],
+  [
+   1746,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   1,
+   16,
+   "Two do not (`rew2` .333, 1/16,"
+  ],
+  [
+   1747,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   3,
+   16,
+   "`rew3` .302, 3/16, paired \u2212.150)."
+  ],
+  [
+   1748,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "the carrier-intact base, with 15/16 and 12/16 seeds down."
+  ],
+  [
+   1748,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   12,
+   16,
+   "the carrier-intact base, with 15/16 and 12/16 seeds down."
+  ],
+  [
+   1749,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   20,
+   48,
+   "20 of 48 [.288,.557], straddling the same-batch cutwA interval [.142,.556] and"
+  ],
+  [
+   1768,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   2,
+   16,
+   "(meanR .301, kR 2/16, [.035,.360], paired \u2212.150, 13/16 seeds down)."
+  ],
+  [
+   1768,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   13,
+   16,
+   "(meanR .301, kR 2/16, [.035,.360], paired \u2212.150, 13/16 seeds down)."
+  ],
+  [
+   1793,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "(meanR .798, kR 16/16, [.806,1.000]) and cutng25p NOT-SUPER"
+  ],
+  [
+   1794,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   8,
+   16,
+   "(.477, kR 8/16, [.280,.720]), paired +.321 with 16 of 16 seeds up"
+  ],
+  [
+   1794,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "(.477, kR 8/16, [.280,.720]), paired +.321 with 16 of 16 seeds up"
+  ],
+  [
+   1797,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "15/16 \u2192 16/16, cutng25p 5/16 \u2192 8/16) [l169d.xbatch]."
+  ],
+  [
+   1797,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "15/16 \u2192 16/16, cutng25p 5/16 \u2192 8/16) [l169d.xbatch]."
+  ],
+  [
+   1797,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   5,
+   16,
+   "15/16 \u2192 16/16, cutng25p 5/16 \u2192 8/16) [l169d.xbatch]."
+  ],
+  [
+   1797,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   8,
+   16,
+   "15/16 \u2192 16/16, cutng25p 5/16 \u2192 8/16) [l169d.xbatch]."
+  ],
+  [
+   1799,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   1,
+   16,
+   "does not flip \u2014 meanR .324, kR 1/16, paired \u2212.152 below its own-gain self"
+  ],
+  [
+   1800,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   12,
+   16,
+   "(12/16 seeds down)."
+  ],
+  [
+   1801,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   15,
+   16,
+   "(`n25gP`) stays SUPER \u2014 meanR .651, kR 15/16, [.717,.989], paired \u2212.147 but"
+  ],
+  [
+   1806,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   16,
+   16,
+   "+.474 above the twin-removed graph with 16 of 16 seeds up, and"
+  ],
+  [
+   1807,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   12,
+   16,
+   "at g_cutng25p it is +.174 with 12 of 16 up."
+  ],
+  [
+   1816,
+   "### 2.12 Pre-posting controls: the gain swaps, the rewire and the deletion",
+   8,
+   16,
+   "boundary on this batch (kR exactly 8 of 16, meanR .477 just under the .50 bar)"
+  ],
+  [
+   1860,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   11,
+   16,
+   "11/16 seeds [l154.band]."
+  ],
+  [
+   1874,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   15,
+   16,
+   "| published, 0.7-Hz chopped (q07) | 15/16, meanR .754 | 5/16, .399 | +.355 | \u2014 |"
+  ],
+  [
+   1874,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   5,
+   16,
+   "| published, 0.7-Hz chopped (q07) | 15/16, meanR .754 | 5/16, .399 | +.355 | \u2014 |"
+  ],
+  [
+   1875,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   12,
+   16,
+   "| UNCHOPPED 1.4-Hz segment | 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |"
+  ],
+  [
+   1875,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   0,
+   16,
+   "| UNCHOPPED 1.4-Hz segment | 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |"
+  ],
+  [
+   1875,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   16,
+   16,
+   "| UNCHOPPED 1.4-Hz segment | 12/16, .628 | 0/16, .000 | +.628 | 16/16 up |"
+  ],
+  [
+   1876,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   15,
+   16,
+   "| 0.3-Hz high-pass, same q07 | 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |"
+  ],
+  [
+   1876,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   1,
+   16,
+   "| 0.3-Hz high-pass, same q07 | 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |"
+  ],
+  [
+   1876,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   15,
+   16,
+   "| 0.3-Hz high-pass, same q07 | 15/16, .676 | 1/16, .370 | +.306 | 15/16 up |"
+  ],
+  [
+   1879,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   0,
+   16,
+   "mass-twin arm sits at absolute floor (meanR .000, 0/16) while the carrier-cut"
+  ],
+  [
+   1880,
+   "### 2.13 The slow line is stimulus-set, and the identity contrast does not ride on it",
+   12,
+   16,
+   "arm keeps 12/16, every one of the 16 seeds moving the same way."
+  ],
+  [
+   2016,
+   "### 3.1 Substrate and graph construction",
+   513,
+   513,
+   "The baseline network is structured in 513 of 513"
+  ],
+  [
+   2017,
+   "### 3.1 Substrate and graph construction",
+   207,
+   513,
+   "seeds and the closure in 207 of 513 [l172.pooled]."
+  ],
+  [
+   2114,
+   "### 3.6 Readouts: antagonist structure, duty, classes",
+   12,
+   16,
+   "class requires meanR \u2265 .60 and kR \u2265 12 of 16;"
+  ],
+  [
+   2247,
+   "## 4. Limitations (honest, per card)",
+   16,
+   16,
+   "often sits below it (16/16 on-drive vs 11/16 mech-off seeds;"
+  ],
+  [
+   2247,
+   "## 4. Limitations (honest, per card)",
+   11,
+   16,
+   "often sits below it (16/16 on-drive vs 11/16 mech-off seeds;"
+  ],
+  [
+   2327,
+   "## 4. Limitations (honest, per card)",
+   69,
+   80,
+   "carrier is robust \u2014 rank 25 \u2192 21 (inside the 19\u201329 window), 69/80 edges"
+  ],
+  [
+   2340,
+   "## 4. Limitations (honest, per card)",
+   0,
+   16,
+   "arms sit at kR 0/16 (meanR .043/.081/.082, upper bound .194) while the"
+  ],
+  [
+   2342,
+   "## 4. Limitations (honest, per card)",
+   16,
+   16,
+   "(cutng25 super 16/16 meanR .754, cutwA partial 3/16 .371)."
+  ],
+  [
+   2342,
+   "## 4. Limitations (honest, per card)",
+   3,
+   16,
+   "(cutng25 super 16/16 meanR .754, cutwA partial 3/16 .371)."
+  ],
+  [
+   2349,
+   "## 4. Limitations (honest, per card)",
+   16,
+   16,
+   "(f4wA meanL .698, kL 16/16, versus .233 for base cutwA), where carrier removal"
+  ],
+  [
+   2350,
+   "## 4. Limitations (honest, per card)",
+   16,
+   16,
+   "costs structure (f4ng .289, paired \u2212.409, 16/16 seeds down) more than its"
+  ],
+  [
+   2432,
+   "## 5. Discussion",
+   16,
+   16,
+   "tried (16 of 16 seeds against 5 of 16 for the base)."
+  ],
+  [
+   2432,
+   "## 5. Discussion",
+   5,
+   16,
+   "tried (16 of 16 seeds against 5 of 16 for the base)."
+  ],
+  [
+   2438,
+   "## 5. Discussion",
+   513,
+   513,
+   "in every seed (513 of 513, mean duty .995), and adding them is the largest"
+  ],
+  [
+   2451,
+   "## 5. Discussion",
+   31,
+   32,
+   "The contrast replicates on a second batch (31 of 32 pooled)"
+  ],
+  [
+   2452,
+   "## 5. Discussion",
+   15,
+   16,
+   "and holds when the gain is not re-matched (15 of 16), which matters because a"
+  ],
+  [
+   2470,
+   "## 5. Discussion",
+   13,
+   16,
+   "downstream of the carrier reaches it alone on the chopped readout (13 of 16),"
+  ]
+ ],
+ "draft_sha_note": "see run.out"
+}

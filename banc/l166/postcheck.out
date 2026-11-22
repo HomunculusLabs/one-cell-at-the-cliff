@@ -1,0 +1,14 @@
+(1) B44 4401-4418 disjoint from all 34 stored b65 seeds: PASS
+CERT-3 bin exactness: full fr[6]=np.float64(0.1) seg fr[2]=np.float64(0.1) K=5: PASS
+(2) clearing SETS: stored 23/28, fresh 23/28, intersection 22, Jaccard 0.917; 28-pair rank rho(stored, fresh) = +0.933
+    stored-only: ['Ta_aL~Ta_aR']
+    fresh-only : ['Ta_aR~Sr_bL']
+(3) H3 inversion (med_control - med_carrier), ptp vs b65:
+    H3_l150_cutng25      delta +0.1217 ratio 0.65 | carrier ptp 0.0839 = 0.50x b65 | clears 4/28 carrier vs 9/36 control
+    H3_l150_cutwA        delta +0.1098 ratio 0.63 | carrier ptp 0.0830 = 0.50x b65 | clears 4/28 carrier vs 9/36 control
+    H3_l150_eMotBot5     delta +0.0722 ratio 0.73 | carrier ptp 0.0870 = 0.52x b65 | clears 4/28 carrier vs 7/36 control
+    H3_l150_eMotTop5     delta +0.0621 ratio 0.76 | carrier ptp 0.0875 = 0.53x b65 | clears 4/28 carrier vs 5/36 control
+    H3_l150_full         delta +0.0719 ratio 0.77 | carrier ptp 0.1469 = 0.88x b65 | clears 2/28 carrier vs 3/36 control
+    H3_l150_silW         delta +0.1225 ratio 0.62 | carrier ptp 0.0781 = 0.47x b65 | clears 4/28 carrier vs 8/36 control
+    inverted on 6/6 lesion arms; arms at b65-class amplitude (>=0.8x) that still invert: ['H3_l150_full']
+l166/postcheck.json written
