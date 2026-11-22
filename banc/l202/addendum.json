@@ -1,0 +1,72 @@
+{
+ "note": "POST HOC (after the registered verdict); descriptive only",
+ "independent_duty_checks": 816,
+ "independent_duty_max_diff": 0.0,
+ "headline": {
+  "W": [
+   -0.4587,
+   [
+    -0.5528,
+    -0.3647
+   ]
+  ],
+  "W_fixed": [
+   -0.3603,
+   [
+    -0.4726,
+    -0.248
+   ]
+  ],
+  "N_clamp_minus_free": [
+   -0.3086,
+   [
+    -0.3825,
+    -0.2346
+   ]
+  ],
+  "N_clamp_minus_cut": [
+   0.1502,
+   [
+    0.0644,
+    0.236
+   ]
+  ],
+  "S_twin_minus_cut": [
+   0.237,
+   [
+    0.1177,
+    0.3563
+   ]
+  ]
+ },
+ "ru2_free_vs_base": {
+  "sc25": {
+   "corr_window": 0.326,
+   "corr_window_range": [
+    0.179,
+    0.446
+   ],
+   "corr_middle": 0.557,
+   "mean_rate_diff": 0.0253,
+   "amp14_free": 0.1259,
+   "amp14_base": 0.1116,
+   "amp14_ratio_seeds_gt1": 13,
+   "amp07mid_free": 0.0256,
+   "amp07mid_base": 0.0292
+  },
+  "sc25F": {
+   "corr_window": 0.321,
+   "corr_window_range": [
+    0.184,
+    0.542
+   ],
+   "corr_middle": 0.5,
+   "mean_rate_diff": -0.0183,
+   "amp14_free": 0.1,
+   "amp14_base": 0.1116,
+   "amp14_ratio_seeds_gt1": 2,
+   "amp07mid_free": 0.015,
+   "amp07mid_base": 0.0292
+  }
+ }
+}

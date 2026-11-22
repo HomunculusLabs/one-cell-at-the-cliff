@@ -1,0 +1,258 @@
+CERT-METRIC vs results_l200 (B44: cutwA / sc25 / l2c / l2cF / l2; kL, kR, meanL, meanR, right 1.4-Hz k + mean): PASS
+CERT-X cutwA identical across 4 workers on 23 seeds: PASS (1518 checks, max 0.0)
+CERT-REPLAY ru2 trace of s2k / s2kF == cutwA's on 16 seeds: PASS (32 checks, max 0.0); CERT-NULL bk2 == cutwA: PASS (48 checks)
+
+L202 verdict — FINAL | B45 3737..3752 n=16 | PREREG 626be3aa86b63f75
+C0A checks (all max 0.0): {'c0a135': 230, 'c0a175': 125, 'c0a187': 220, 'c0a190': 202, 'c0a198': 266, 'c0a200': 258}
+arm     gain d% |  kL  meanL clsL           L1.4 |  kR  meanR clsR          dR vs base [95% CI]          R1.4 k14 | x_car  x_ru2  x_relay
+cutwA    +0.000 |   2  0.284 NOT-SUPER     0.000 |   5  0.417 NOT-SUPER     -                           0.000   0 | 0.384 0.2874 0.3257
+sc25     +1.244 |   0  0.180 NOT-SUPER     0.000 |  16  0.810 SUPER         +0.394 [+0.285, +0.502]     0.562   7 | None 0.3127 0.1386
+sc25F    +0.000 |   0  0.269 NOT-SUPER     0.000 |  14  0.689 SUPER         +0.272 [+0.139, +0.406]     0.366   4 | None 0.2691 0.1327
+l2c      -0.644 |  16  0.952 SUPER         0.096 |   1  0.351 NOT-SUPER     -0.065 [-0.158, +0.028]     0.000   0 | None None 0.1163
+l2cF     +0.000 |  16  0.950 SUPER         0.050 |   2  0.329 NOT-SUPER     -0.088 [-0.220, +0.044]     0.000   0 | None None 0.1191
+l2       -0.300 |  16  0.870 SUPER         0.001 |  11  0.548 INTERMEDIATE  +0.132 [+0.022, +0.242]     0.000   0 | 0.5934 None 0.3876
+s2k      +1.244 |   1  0.300 NOT-SUPER     0.000 |   7  0.502 INTERMEDIATE  +0.085 [+0.006, +0.164]     0.212   3 | None 0.2874 0.1473
+s2kF     +0.000 |   4  0.339 NOT-SUPER     0.004 |   6  0.419 NOT-SUPER     +0.003 [-0.090, +0.095]     0.402   7 | None 0.2874 0.1443
+lt5      -0.006 |   0  0.205 NOT-SUPER     0.030 |   4  0.359 NOT-SUPER     -0.058 [-0.170, +0.054]     0.000   0 | 0.3742 0.2796 0.3172
+lt4      +0.958 |   1  0.200 NOT-SUPER     0.000 |   0  0.182 NOT-SUPER     -0.235 [-0.331, -0.140]     0.110   0 | 0.3937 0.3365 0.2814
+lt4F     +0.000 |   0  0.190 NOT-SUPER     0.005 |   3  0.328 NOT-SUPER     -0.089 [-0.185, +0.008]     0.018   0 | 0.3491 0.3012 0.2788
+t4c      +2.230 |   0  0.207 NOT-SUPER     0.002 |  12  0.588 INTERMEDIATE  +0.172 [+0.062, +0.281]     0.860  15 | None 0.4367 0.1248
+t4cF     +0.000 |   0  0.209 NOT-SUPER     0.005 |   8  0.521 INTERMEDIATE  +0.104 [-0.035, +0.243]     0.678  13 | None 0.2982 0.1201
+rcut     -0.126 |   1  0.298 NOT-SUPER     0.000 |  10  0.516 INTERMEDIATE  +0.100 [-0.056, +0.255]     0.000   0 | 0.3595 0.2564 None
+rcutF    +0.000 |   0  0.252 NOT-SUPER     0.000 |  11  0.539 INTERMEDIATE  +0.122 [+0.000, +0.244]     0.000   0 | 0.3702 0.2646 None
+edge     -0.358 |   2  0.337 NOT-SUPER     0.016 |  14  0.618 SUPER         +0.201 [+0.105, +0.297]     0.000   0 | 0.3506 0.2522 0.1818
+sham     -0.001 |   1  0.268 NOT-SUPER     0.000 |   6  0.481 NOT-SUPER     +0.065 [-0.041, +0.170]     0.005   0 | 0.3858 0.2878 0.2079
+contrasts:
+  R_l2c_minus_sc25: -0.4587 [-0.5528, -0.3647] lower 16/16 higher 0/16
+  R_l2cF_minus_sc25F: -0.3603 [-0.4726, -0.2480] lower 15/16 higher 1/16
+  R14_l2c_minus_sc25: -0.5624 [-0.7305, -0.3944] lower 16/16 higher 0/16
+  R14_l2cF_minus_sc25F: -0.3658 [-0.4822, -0.2494] lower 16/16 higher 0/16
+  R_sc25_minus_sc25F: +0.1212 [+0.0379, +0.2046] lower 3/16 higher 13/16
+  R_l2c_minus_l2cF: +0.0228 [-0.0715, +0.1172] lower 9/16 higher 7/16
+  R_s2k_minus_sc25: -0.3086 [-0.3825, -0.2346] lower 16/16 higher 0/16
+  R_s2k_minus_l2c: +0.1502 [+0.0644, +0.2360] lower 2/16 higher 14/16
+  R_s2kF_minus_sc25F: -0.2698 [-0.3843, -0.1554] lower 14/16 higher 2/16
+  R_s2kF_minus_l2cF: +0.0905 [-0.0417, +0.2227] lower 5/16 higher 11/16
+  R14_s2k_minus_sc25: -0.3503 [-0.5184, -0.1822] lower 14/16 higher 2/16
+  R14_s2k_minus_l2c: +0.2121 [+0.1013, +0.3230] lower 0/16 higher 13/16
+  R14_s2kF_minus_sc25F: +0.0357 [-0.1641, +0.2356] lower 9/16 higher 7/16
+  R14_s2kF_minus_l2cF: +0.4016 [+0.2349, +0.5682] lower 0/16 higher 13/16
+  R_t4c_minus_sc25: -0.2218 [-0.3504, -0.0931] lower 14/16 higher 2/16
+  R_t4c_minus_l2c: +0.2370 [+0.1177, +0.3563] lower 2/16 higher 14/16
+  R_t4cF_minus_sc25F: -0.1683 [-0.3023, -0.0342] lower 13/16 higher 3/16
+  R_t4cF_minus_l2cF: +0.1921 [+0.0371, +0.3471] lower 4/16 higher 12/16
+  R14_t4c_minus_sc25: +0.2977 [+0.1542, +0.4412] lower 3/16 higher 13/16
+  R14_t4cF_minus_sc25F: +0.3121 [+0.1776, +0.4466] lower 2/16 higher 14/16
+  R_rcut_minus_sc25: -0.2940 [-0.3867, -0.2013] lower 15/16 higher 1/16
+  R_edge_minus_sham: +0.1364 [+0.0478, +0.2251] lower 4/16 higher 12/16
+  L_lt4_minus_l2: -0.6703 [-0.7485, -0.5920] lower 16/16 higher 0/16
+  L_lt5_minus_l2: -0.6653 [-0.7233, -0.6072] lower 16/16 higher 0/16
+  L_l2c_minus_l2: +0.0817 [+0.0349, +0.1285] lower 2/16 higher 14/16
+  L_lt4_minus_lt4F: +0.0099 [-0.0701, +0.0899] lower 9/16 higher 7/16
+  xru2_sc25_minus_base: +0.0253 [+0.0070, +0.0437] lower 3/16 higher 13/16
+  xru2_sc25F_minus_base: -0.0183 [-0.0353, -0.0014] lower 14/16 higher 2/16
+pooled:
+  sc25: n=32 kR 31 meanR 0.796 R1.4 0.574 dR vs base +0.3730 [0.307, 0.439] | kL 0 meanL 0.159 | stored l200 15/16 0.783 SUPER 1.4 0.585
+  l2c: n=32 kR 4 meanR 0.324 R1.4 0.0 dR vs base -0.0999 [-0.1688, -0.0311] | kL 32 meanL 0.927 | stored l200 3/16 0.296 NOT-SUPER 1.4 0.0
+  l2cF: n=32 kR 6 meanR 0.321 R1.4 0.0 dR vs base -0.1027 [-0.1882, -0.0171] | kL 32 meanL 0.951 | stored l200 4/16 0.313 NOT-SUPER 1.4 0.0
+  sc25F: n=48 kR 45 meanR 0.701 R1.4 0.381 dR vs base +0.3181 [0.2522, 0.384] | kL 1 meanL 0.26 | stored l187 16/16 0.715 SUPER 1.4 0.432; l198 15/16 0.7 SUPER 1.4 0.345
+  l2: n=48 kR 30 meanR 0.541 R1.4 0.0 dR vs base +0.1522 [0.0947, 0.2097] | kL 48 meanL 0.851 | stored l198 10/16 0.541 INTERMEDIATE 1.4 0.0; l200 9/16 0.533 INTERMEDIATE 1.4 0.0
+  rcut: n=48 kR 35 meanR 0.599 R1.4 0.019 dR vs base +0.2161 [0.1388, 0.2935] | kL 3 meanL 0.273 | stored l187 13/16 0.697 SUPER 1.4 0.02; l198 12/16 0.584 INTERMEDIATE 1.4 0.037
+  rcutF: n=48 kR 38 meanR 0.604 R1.4 0.027 dR vs base +0.2206 [0.1584, 0.2828] | kL 2 meanL 0.242 | stored l187 13/16 0.63 SUPER 1.4 0.042; l198 14/16 0.642 SUPER 1.4 0.037
+  edge: n=32 kR 26 meanR 0.621 R1.4 0.0 dR vs base +0.2120 [0.1316, 0.2925] | kL 4 meanL 0.309 | stored l190 12/16 0.624 SUPER 1.4 0.0
+  sham: n=32 kR 11 meanR 0.451 R1.4 0.003 dR vs base +0.0422 [-0.0312, 0.1155] | kL 1 meanL 0.257 | stored l190 5/16 0.421 NOT-SUPER 1.4 0.002
+  wipe_l2c_minus_sc25: chopped -0.4730 [-0.539, -0.407] lower 32/32 | 1.4-Hz -0.5739 [-0.6707, -0.4771]
+branches: {
+ "E0_base_right_super": false,
+ "E0_base_left_super": false,
+ "CTRL_carrier": "CTRL_carrier_ok",
+ "CTRL_carrier_fixed": {
+  "cls": "SUPER",
+  "sig": true,
+  "ok": true
+ },
+ "W": "W1_wipe_replicates",
+ "W_fixed": "W1_wipe_replicates",
+ "W_gain_form": "AGREE",
+ "W_replicates_with_fixed_gain_comparator": true,
+ "W_detail": {
+  "seeds_lower": 16,
+  "seeds_lower_fixed": 15,
+  "signature_near_zero": true,
+  "signature_near_zero_fixed": true,
+  "l2c_vs_base": [
+   -0.1582,
+   0.0278
+  ],
+  "l2cF_vs_base": [
+   -0.2202,
+   0.0442
+  ],
+  "l2c_right": "NOT-SUPER",
+  "l2cF_right": "NOT-SUPER",
+  "l2c_left": "SUPER",
+  "l2cF_left": "SUPER"
+ },
+ "W_status": "READ",
+ "REF_ru2": "REF_ru2_ok",
+ "T": "T1_bilateral_specific",
+ "T_status": "READ",
+ "T_detail": {
+  "lt4_left": "NOT-SUPER",
+  "lt4F_left": "NOT-SUPER",
+  "gain_form": "AGREE",
+  "lt5_left": "NOT-SUPER",
+  "T_count": 0,
+  "lt4_right": "NOT-SUPER",
+  "lt4F_right": "NOT-SUPER",
+  "lt5_right": "NOT-SUPER",
+  "l200_twins_left": {
+   "lt1": "NOT-SUPER",
+   "lt2": "NOT-SUPER"
+  }
+ },
+ "S": "S_partial",
+ "S_fixed": "S_partial",
+ "S_status": "READ",
+ "N": "N3_partial:band",
+ "N_fixed": "N3_partial:signature_only",
+ "N_gain_form": "DEPENDENT",
+ "N_status": "READ",
+ "N_detail": {
+  "retained_chopped": {
+   "fraction": 0.327,
+   "denominator": [
+    0.3647,
+    0.5528
+   ],
+   "direction_only": false
+  },
+  "retained_14": {
+   "fraction": 0.377,
+   "denominator": [
+    0.3944,
+    0.7305
+   ],
+   "direction_only": false
+  },
+  "retained_chopped_fixed": {
+   "fraction": 0.251,
+   "denominator": [
+    0.248,
+    0.4726
+   ],
+   "direction_only": false
+  },
+  "retained_14_fixed": {
+   "fraction": 1.098,
+   "denominator": [
+    0.2494,
+    0.4822
+   ],
+   "direction_only": false
+  },
+  "x_ru2": {
+   "base": 0.2874,
+   "sc25_free": 0.3127,
+   "sc25F_free": 0.2691,
+   "s2k_clamped": 0.2874,
+   "s2kF_clamped": 0.2874
+  },
+  "s2k_right": "INTERMEDIATE",
+  "s2k_sig": false,
+  "s2kF_right": "NOT-SUPER",
+  "s2kF_sig": true,
+  "s2k_left": "NOT-SUPER"
+ },
+ "C": {
+  "rcut": {
+   "cls": "INTERMEDIATE",
+   "sig": false,
+   "replicates": false
+  },
+  "rcutF": {
+   "cls": "INTERMEDIATE",
+   "sig": false,
+   "replicates": false
+  },
+  "edge": {
+   "branch": "B3-partial",
+   "l190": "B3-partial",
+   "replicates": true,
+   "cls": "SUPER"
+  },
+  "sham": {
+   "branch": "B2-edge-inert",
+   "l190": "B2-edge-inert",
+   "replicates": true,
+   "cls": "NOT-SUPER"
+  }
+ },
+ "UNREGISTERED_SHAPE": false
+}
+predictions: {
+ "P1_wipe": {
+  "got": [
+   "W1_wipe_replicates",
+   "W1_wipe_replicates"
+  ],
+  "correct": true,
+  "fixed_correct": true,
+  "all16_lower": true,
+  "sig_le_10": true
+ },
+ "P2_ctrl": {
+  "got": [
+   "CTRL_carrier_ok",
+   {
+    "cls": "SUPER",
+    "sig": true,
+    "ok": true
+   }
+  ],
+  "correct": true,
+  "fixed_correct": true
+ },
+ "P3_twin": {
+  "prior": "NOT-SUPER .70 / SUPER .15 / INTERMEDIATE .15",
+  "got": "NOT-SUPER",
+  "modal_correct": true,
+  "lt5_got": "NOT-SUPER",
+  "lt5_correct": true
+ },
+ "P4_left": {
+  "got": [
+   "SUPER",
+   "SUPER"
+  ],
+  "l2_correct": true,
+  "l2c_correct": true
+ },
+ "P5_N": {
+  "prior": "N1 .50 / N2 .20 / N3 .30",
+  "got": "N3_partial:band",
+  "modal_correct": false
+ },
+ "P6_S": {
+  "prior": "S1 .65 / S2 .15 / partial .20",
+  "got": "S_partial",
+  "modal_correct": false
+ },
+ "P7_rcut": {
+  "got": [
+   "INTERMEDIATE",
+   "INTERMEDIATE"
+  ],
+  "correct": false,
+  "fixed_correct": false
+ },
+ "P8_edge": {
+  "got": [
+   "B3-partial",
+   "B2-edge-inert"
+  ],
+  "edge_correct": true,
+  "sham_correct": true
+ }
+}
+L202 VERDICT WRITTEN (FINAL)
