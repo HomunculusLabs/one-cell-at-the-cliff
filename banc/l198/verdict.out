@@ -1,0 +1,83 @@
+CERT-METRIC vs results_l187 (B41: cutwA / sc25 / sc25F / rcut / rcutF, chopped k + mean and 1.4-Hz k + mean): PASS
+CERT-X cutwA identical across 6 workers on 20 seeds: PASS (2200 checks, max 0.0)
+
+L198 verdict — FINAL | B43 3673..3688 n=16 | PREREG c9fff8791fff1161
+C0A: vs raw_l135 322 checks, vs L175 175, vs L187 276 — all max 0.0
+arm         gi  gain d%  kR  meanR class         dR vs base [95% CI]          1.4Hz k/mean  x_relay x_74914 x_twin
+cutwA        -   +0.000   2  0.319 NOT-SUPER     -                             0 / 0.000    0.3267 0.1994 0.1488
+sc25      1110   +1.244  16  0.816 SUPER         +0.497 [+0.394, +0.601]       8 / 0.471    0.1395 0.3501 0.1631
+sc25F     1110   +0.000  15  0.700 SUPER         +0.381 [+0.279, +0.483]       4 / 0.345    0.1324 0.3533 0.1604
+rcut     75494   -0.126  12  0.584 INTERMEDIATE  +0.265 [+0.143, +0.388]       0 / 0.037    None 0.4256 0.1498
+rcutF    75494   +0.000  14  0.642 SUPER         +0.324 [+0.230, +0.417]       0 / 0.037    None 0.4284 0.1499
+tw       73008   -0.401   5  0.419 NOT-SUPER     +0.100 [-0.020, +0.220]       0 / 0.000    0.3286 0.1897 None
+twF      73008   +0.000   1  0.249 NOT-SUPER     -0.070 [-0.177, +0.036]       0 / 0.018    0.3338 0.1904 None
+ru1      67561   +1.007   8  0.517 INTERMEDIATE  +0.198 [+0.049, +0.347]       1 / 0.082    0.3294 0.211 0.1634
+ru2      70994   -0.300  10  0.541 INTERMEDIATE  +0.222 [+0.135, +0.309]       0 / 0.000    0.3886 0.1455 0.1403
+ru3      64787   -0.024   4  0.331 NOT-SUPER     +0.012 [-0.104, +0.128]       0 / 0.000    0.3223 0.2133 0.1417
+ru4      67353   -0.837   2  0.244 NOT-SUPER     -0.075 [-0.216, +0.065]       0 / 0.065    0.3293 0.2284 0.1437
+ru5      71153   -0.001   4  0.431 NOT-SUPER     +0.112 [-0.008, +0.232]       0 / 0.000    0.322 0.2034 0.1476
+contrasts:
+  tw_minus_rcut: -0.1654 [-0.3008, -0.0300]
+  twF_minus_rcutF: -0.3939 [-0.5090, -0.2789]
+  tw_minus_twF: +0.1704 [+0.0540, +0.2868]
+  tw_minus_sc25: -0.3971 [-0.4969, -0.2974]
+  rcut_minus_sc25: -0.2317 [-0.3146, -0.1488]
+  mid14_tw_minus_rcut: -0.0363 [-0.0725, +0.0000]
+  mid14_tw_minus_sc25: -0.4704 [-0.6164, -0.3244]
+branches: {
+ "E0_base_super": false,
+ "REF_relay": "REF_relay_not_super",
+ "CTRL_carrier": "CTRL_carrier_ok",
+ "T": "T1_relay_special",
+ "T_fixed_gain": "T1_relay_special",
+ "T_gain_form": "AGREE",
+ "T_status": "DESCRIPTIVE (relay reference not SUPER on this batch)",
+ "panel": {
+  "n_super": 0,
+  "n_intermediate": 2,
+  "n_not": 4,
+  "n_signature": 0,
+  "reading": "not a class property at this drive (0/6 SUPER)"
+ }
+}
+predictions: {
+ "P1_controls": {
+  "got": [
+   "NOT-SUPER",
+   "SUPER",
+   0.471
+  ],
+  "correct": true
+ },
+ "P2_rcut_super_again": {
+  "got": [
+   "INTERMEDIATE",
+   12,
+   0.584,
+   0.037
+  ],
+  "correct": false,
+  "mid_lt_10": true
+ },
+ "P3_T_modal_T1": {
+  "prior": "T1 .50 / T3 .30 / T2 .20",
+  "got": "T1_relay_special",
+  "correct": true
+ },
+ "P4_twin_mid_lt_10": {
+  "got": 0.0,
+  "correct": true
+ },
+ "P5_at_most_1_of_6_super": {
+  "got": 0,
+  "correct": true
+ },
+ "P6_gain_small_and_forms_agree": {
+  "got": [
+   -0.4009958440610917,
+   "AGREE"
+  ],
+  "correct": true
+ }
+}
+L198 VERDICT WRITTEN (FINAL)

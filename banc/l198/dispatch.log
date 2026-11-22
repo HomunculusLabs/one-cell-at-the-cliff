@@ -291,3 +291,157 @@ Nothing ran. Re-sending the file-writing part without the launch.
 │ … omitted 122 diff line(s) across 1 additional file(s)/section(s)
 💻 $ cat <<'E' """L197b analysis: reads the six workers' stored raws, certifies, applies the registered readout (gj.py) per design arm, writes results_l197b.json and L197b-FINDINGS.md. Run from banc/. Written BEFORE any rollout (PREREG).""" import hashlib, json, os, sys import numpy as np sys.path.insert(0, "l197b") import gj OUT = "l197b" NW = 6 frz = json.load(open(f"{OUT}/FREEZE.json")) sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest() assert sha(f"{OUT}/PREREG.md") == frz["prereg_sha256"], "PREREG changed after freeze" assert sha(f"{OUT}/schedule.json") == frz["schedule_sha256"] assert sha(f"{OUT}/gj.py") == frz["files"]["gj.py"], "readout changed after freeze" SCHED = json.load(open(f"{OUT}/schedule.json")) assert SCHED["gate"]["pass"] is True G_CUTWA, G_SC25 = 0.14365819573402408, 0.1454454553127289 # ---- CERT-V1 (readout reproduces stored v1) ---- R1 = json.load(open("l186/results_l186.json")) v1 = gj.analyse(np.load("l186/raw.npz"), R1["seeds"], {int(k): v for k, v in R1["onsets"].items()}, 500, np.arange(-250, 251, 10)) for k in "ATD": assert abs(v1[k]["value"] - R1["contrasts"][k]["value"]) assert np.allclose(v1[k]["ci95"], R1["contrasts"][k]["ci95"], atol=1e-12) print("CERT-V1 PASS (gj.analyse == results_l186.json)") # ---- workers ---- anch, gains, secs = {}, {}, {} store = {} for w in range(NW): for nm in ("done", "anchors", "gains"): assert os.path.exists(f"{OUT}/{nm}_w{w}.json"), f"worker {w} incomplete ({nm}) — no read" anch[w] = json.load(open(f"{OUT}/anchors_w{w}.json")) gj_ = json.load(open(f"{OUT}/gains_w{w}.json")) dn = json.load(open(f"{OUT}/done_w{w}.json")) assert anch[w]["c0a_pass"] and anch[w]["c0a_max"] == 0.0 and anch[w]["n_checks"] == 92, w assert gj_["gain"] == {"cutwA": G_CUTWA, "sc25": G_SC25} and all(gj_["stored_exact"].values()), w assert dn["prereg_sha256"] == frz["prereg_sha256"] gains[w], secs[w] = gj_, dn["secs"] z = np.load(f"{OUT}/raw_w{w}.npz") mine = SCHED["arms"]["S"]["seeds"][w::NW] + SCHED["arms"]["W"]["seeds"][w::NW] assert dn["seeds"] == [801, 901] + mine for s in mine: for k in ("gate_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}", "GI1110_cutwA_{s}", "GI1110_sc25_{s}"): key = k.format(s=s) assert key not in store store[key] = z[key] for s in (801, 901): # anchors unjittered t = np.arange(6000) canon = (t // 2000 == 1) | (((t % 2000) % 900 & (t % 2000 assert np.array_equal(z[f"gate_{s}"], canon), ("anchor gate not canonical", w, s) n_c0a = sum(anch[w]["n_checks"] for w in range(NW)) print(f"C0A: {n_c0a} checks across {NW} workers, max 0.0 | gains == stored EXACT in every worker") res = dict(design="L197b gate-jitter v2 (PREREG l197b/PREREG.md)", status="FINAL", prereg_sha256=frz["prereg_sha256"], schedule_sha256=frz["schedule_sha256"], certs=dict(c0a_checks=n_c0a, c0a_max=0.0, gains_stored_exact=True, cert_v1="PASS", worker_secs=secs), gains=dict(cutwA=G_CUTWA, sc25=G_SC25), arms={}) KEEP = ("A", "T", "D", "T_on", "T_off", "A_inphase", "A_antiphase", "A_in_minus_anti", "means", "tone_instrument", "rot_bin_share", "n", "W", "n_offsets") for arm in ("S", "W"): d = gj.DESIGN[arm] seeds = SCHED["arms"][arm]["seeds"] onsets = {s: SCHED["arms"][arm]["onsets"][str(s)] for s in seeds} for s in seeds: # the gate actually applied == the registered schedule g = store[f"gate_{s}"] assert np.array_equal(g, gj.expected_gate(arm, onsets[s])), (arm, s) assert list(g.reshape(3, -1).sum(1)) == [700 + d["pulse"], 2000, 700 + d["pulse"]] for k in ("Ti_fR", "Ti_eR"): for a in ("cutwA", "sc25"): y = store[f"{k}_{a}_{s}"] assert y.shape == (6000,) and np.isfinite(y).all() assert np.isfinite(store[f"GI1110_cutwA_{s}"]).all() and np.isnan(store[f"GI1110_sc25_{s}"]).all() ov = gj.overlap_stats(onsets, seeds, d["W"]) assert abs(ov["mean_overlap"] - SCHED["arms"][arm]["overlap"]["mean_overlap"]) and ov["mean_overlap"] <= .25 a_ = gj.analyse(store, seeds, onsets, d["W"], gj.starts_of(arm)) r = {k: a_[k] for k in KEEP} A, T, D = (a_[k]["value"] for k in "ATD") lo, hi = a_["D"]["ci95"] hw = (hi - lo) / 2 r["overlap"] = ov r["half_width_D"] = hw r["R0_no_elevation"] = bool(A and T r["clock"] = ("E1_external" if D >= .10 and lo else "E2_elapsed" if D <= -.10 and hi else "E3_equal_resolved" if lo and hi else "E3_unresolved") r["underpowered_again"] = bool(hw r["clock_status"] = ("NOT READ (UNDERPOWERED_AGAIN)" if r["underpowered_again"] else "DESCRIPTIVE (R0: no elevation at this resolution)" if r["R0_no_elevation"] else "READ") toff, din, aan, ain = a_["T_off"], a_["A_in_minus_anti"], a_["A_antiphase"], a_["A_inphase"] r["mechanism"] = ("M_internal" if toff["value"] >= .15 and toff["ci95"][0] else "M_tone" if din["value"] >= .15 and din["ci95"][0] and aan["value"] else "M_gate" if ain["value"] >= .15 and aan["value"] >= .15 and ain["ci95"][0] and aan["ci95"][0] else "M_unassigned") ti = a_["tone_instrument"] r["tone_control_verbatim_not_predictive"] = bool(all(abs(ti[g]["rho_rot"]) for g in ti)) r["pair_matrices_sha256"] = hashlib.sha256(json.dumps(a_["pair_matrices"]).encode()).hexdigest() np.savez_compressed(f"{OUT}/pairmat_{arm}.npz", **{f"{g}_{c}": np.array(a_["pair_matrices"][g][c]) for g in a_["pair_matrices"] for c in ("aligned", "elapsed")}) res["arms"][arm] = r votes = [res["arms"][a]["clock"] for a in ("S", "W") if not res["arms"][a]["R0_no_elevation"] and not res["arms"][a]["underpowered_again"]] if len(votes) == 2 and votes[0] == votes[1]: res["verdict"] = {"E1_external": "E1", "E2_elapsed": "E2", "E3_equal_resolved": "E3_EQUAL_POWERED", "E3_unresolved": "E3_UNRESOLVED_BOTH"}[votes[0]] elif len(votes) == 1: only = [a for a in ("S", "W") if not res["arms"][a]["R0_no_elevation"] and not res["arms"][a]["underpowered_again"]][0] res["verdict"] = f"{votes[0]} (arm {only} alone; the other arm does not vote)" elif len(votes) == 0: res["verdict"] = "NO_VOTE (R0 / underpowered in both arms)" else: res["verdict"] = "ARM_DEPENDENT" res["mechanism_verdict"] = {a: res["arms"][a]["mechanism"] for a in ("S", "W")} S, Wd = res["arms"]["S"], res["arms"]["W"] ti = S["tone_instrument"] res["predictions"] = dict( P1_certs_complete=dict(correct=True), P2_S=dict(got=[S["R0_no_elevation"], S["clock"], S["D"]["value"]], R0_correct=bool(S["R0_no_elevation"]), class_correct=bool(S["clock"] == "E3_equal_resolved"), D_in_minus10_0=bool(-.10 P3_W=dict(got=[Wd["A"]["value"], Wd["clock"], Wd["D"]["value"]], A_ge_10=bool(Wd["A"]["value"] >= .10), modal_class_correct=bool(Wd["clock"] == "E3_equal_resolved"), D_positive=bool(Wd["D"]["value"] P4_M_tone_both=dict(got=res["mechanism_verdict"], correct=bool(all(v == "M_tone" for v in res["mechanism_verdict"].values()))), P5_no_M_internal=dict(got=[S["T_off"]["ci95"], Wd["T_off"]["ci95"]], correct=bool(S["T_off"]["ci95"][1] and Wd["T_off"]["ci95"][1] and "M_internal" not in res["mechanism_verdict"].values())), P6_instrument=dict(got=[ti["sc25"]["rho_rot"], ti["cutwA"]["rho_rot"], ti["sc25"]["rho_rot_segment_aligned"]], correct=bool(S["tone_control_verbatim_not_predictive"] and ti["sc25"]["rho_rot_segment_aligned"] P7_halfwidth=dict(got=[S["half_width_D"], Wd["half_width_D"]], correct=bool(S["half_width_D"] <= .06 and Wd["half_width_D"] <= .06))) tmp = f"{OUT}/results_l197b.json.tmp" json.dump(res, open(tmp, "w"), indent=1, allow_nan=False) os.replace(tmp, f"{OUT}/results_l197b.json") f3 = lambda d: f"{d['value']:+.3f} [{d['ci95'][0]:+.3f}, {d['ci95'][1]:+.3f}]" L = [f"L197b gate-jitter v2 — verdict {res['verdict']} | mechanism {res['mechanism_verdict']}", f"n = 96 seeds per design arm; C0A {n_c0a} checks max 0.0; gains == stored EXACT; CERT-V1 PASS; PREREG {frz['prereg_sha256'][:16]}"] for arm in ("S", "W"): r = res["arms"][arm] d = gj.DESIGN[arm] L += [f"[{arm}] pulse {d['pulse']}, window {d['W']}, mean overlap {r['overlap']['mean_overlap']:.3f} | clock {r['clock']} ({r['clock_status']})", " duty aligned / elapsed / same-seed: " + " ; ".join(f"{g} {m['aligned']:.3f} / {m['elapsed']:.3f} / {m['same']:.3f}" for g, m in r["means"].items()), f" A {f3(r['A'])} | T {f3(r['T'])} | D {f3(r['D'])} (half-width {r['half_width_D']:.3f})", f" T_on {f3(r['T_on'])} (share {r['T_on']['window_share']:.2f}) | T_off {f3(r['T_off'])}", f" A_inphase {f3(r['A_inphase'])} | A_antiphase {f3(r['A_antiphase'])} | in - anti {f3(r['A_in_minus_anti'])} -> {r['mechanism']}", " tone control: " + " ; ".join(f"{g} verbatim rho {v['rho_rot']:+.3f}, segment-level rho(aligned) {v['rho_rot_segment_aligned']:+.3f}" for g, v in r["tone_instrument"].items())] L.append("predictions: " + json.dumps({k: {kk: vv for kk, vv in v.items() if kk != 'got'} for k, v in res["predictions"].items()})) open(f"{OUT}/verdict.out", "w").write("\n".join(L) + "\n") print("\n".join(L)) print("L197b VERDICT WRITTEN (FINAL)") E cat <<'E' #!/usr/bin/env bash # L197b orchestrator: refuses to start while any L198 process is alive or L198 # is not FINAL (chain order + the 6-worker CPU cap). 6 workers x 2 threads. cd /home/t3rpz/critters/peabrain-lab/banc + 31 commands  3.1s
 💻 $ python3 - <<'E' import json,hashlib,time,glob sha=lambda p: hashlib.sha256(open(p,'rb').read()).hexdigest() assert not glob.glob('l197b/raw_w*.npz') and not glob.glob('l197b/gains_w*.json') files=['PREREG.md','schedule.json','gj.py','pilot.py','pilot.json','schedule.py','build_v2.py','run_v2.py','analyze_v2.py','run_all.sh'] frz=dict(prereg_sha256=sha('l197b/PREREG.md'),schedule_sha256=sha('l197b/schedule.json'),files={f:sha('l197b/'+f) for f in files}, src_l186_run=sha('l186/run.py'),frozen=time.strftime('%F %T %Z')+' before any v2 rollout (no raw/gains file exists under l197b)') json.dump(frz,open('l197b/FREEZE.json','w'),indent=1) open('l197b/PREREG.sha256','w').write(''.join(f"{v} {k}\n" for k,v in frz['files'].items())+f"frozen {frz['frozen']}\n") print(open('l197b/PREREG.sha256').read()) E grep -c "done af" l198/run.out + 1 command  2.8s
+💻 $ sleep 420 + 3 commands  420.3s
+💻 $ sleep 45 + 1 command  45.3s
+💻 $ for i in $(seq 1 30) + 10 commands  100.2s
+💻 $ exec l197b/run_all.sh
+💻 $ cat <<'E' """L198 addendum — POST HOC, descriptive (written after the FINAL verdict was read). Zero rollouts: stored results_l198.json / results_l187.json only. (1) relay arm pooled over its two batches (B41 L187 + B43 L198), scaled bands; (2) each drive-matched cell vs the same-batch relay arm, paired; (3) gain-only null expectation (L185 B40 slope) and each arm's excess.""" import json, math import numpy as np r = json.load(open("l198/results_l198.json")) + 9 commands  20.8s
+💻 $ python3 - <<'E' import json a=json.load(open('l198/addendum.json')) + 4 commands  0.5s
+💻 $ python3 - <<'E' import json r=json.load(open('l198/results_l198.json')) print('base',r['base']['kL'],r['base']['meanL']) for k,v in r['arms'].items(): print(k,v['kL'],v['meanL'],v['x_carrier'],v['x_relay'],v['x_74914']) E tail -2 l197b/run.out | cut -c1-200  0.4s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l198/L198-FINDINGS.md
+│ banc/l198/L198-FINDINGS.md
+│ @@ -0,0 +1,51 @@
+│ +# L198 FINDINGS — relay-matched cord-interneuron twin (B43 3673-3688, n=16 every arm, FINAL)
+│ +
+│ +**Registered branch: T = T1_relay_special on both gain forms (AGREE), status DESCRIPTIVE** — the registered reference flag came up `REF_relay_not_super`: the relay's own re-matched arm is INTERMEDIATE on this batch (12/16, meanR .584, .016 under the .60 bar), so by PREREG the T-label is printed but not read as a claim. Header: base not SUPER, `CTRL_carrier_ok`. Runner-up panel: 0/6 SUPER, 2/6 INTERMEDIATE, 4/6 NOT-SUPER, 0/6 with the 1.4-Hz signature.
+│ +PREREG stage 1 sha c9fff8791fff1161 frozen 18:44:49 before the selection code first ran; selection + FREEZE 18:47:56 before any rollout. Certs green: C0A cutwA == raw_l135 EXACT in all 6 workers (322 checks) + vs L175 raws @3545 (175) + **vs L187 raws @3609 incl. the relay-cut arm itself (276)**, all max 0.0; g_cutwA ×6 / g_sc25 / g_rcut == stored floats EXACT; CERT-X 2200 checks 0.0; CERT-SUB on all six twin graphs; metric reproduces five stored L187 rows (chopped + 1.4-Hz) EXACT.
+│ +
+│ +| arm | removed | gain d% | kR | meanR | class | dR vs base [95% CI] | 1.4-Hz k / mean |
+│ +|---|---|---|---|---|---|---|---|
+│ +| cutwA | — (base) | 0 | 2 | .319 | NOT-SUPER | — | 0 / .000 |
+│ +| sc25 / sc25F | carrier 1110 | +1.244 / 0 | 16 / 15 | .816 / .700 | SUPER / SUPER | +.497 / +.381 | 8 / .471 · 4 / .345 |
+│ +| rcut | relay 75494 | −0.126 | 12 | .584 | INTERMEDIATE | +.265 [+.143, +.388] | 0 / .037 |
+│ +| rcutF | relay, base gain | 0 | 14 | .642 | SUPER | +.324 [+.230, +.417] | 0 / .037 |
+│ +| **tw** | **twin 73008** | −0.401 | 5 | .419 | NOT-SUPER | +.100 [−.020, +.220] | 0 / **.000** |
+│ +| twF | twin, base gain | 0 | 1 | .249 | NOT-SUPER | −.070 [−.177, +.036] | 0 / .018 |
+│ +| ru1 | 67561 | +1.007 | 8 | .517 | INTERMEDIATE | +.198 [+.049, +.347] | 1 / .082 |
+│ +| ru2 | 70994 | −0.300 | 10 | .541 | INTERMEDIATE | +.222 [+.135, +.309] | 0 / .000 |
+│ +| ru3 | 64787 | −0.024 | 4 | .331 | NOT-SUPER | +.012 [−.104, +.128] | 0 / .000 |
+│ +| ru4 | 67353 | −0.837 | 2 | .244 | NOT-SUPER | −.075 [−.216, +.065] | 0 / .065 |
+│ +| ru5 | 71153 | −0.001 | 4 | .431 | NOT-SUPER | +.112 [−.008, +.232] | 0 / .000 |
+│ +
+│ +Twin = gi 73008 (IN17B003-R, inhibitory): drive 86.493 vs the relay's 86.503 (ratio .99988) from the stored 3-seed census, pool 12,385 cord interneurons, none in a prior arm. All six selected cells are inhibitory, none wired directly to the carrier, the relay or gi 74914 (`SELECTION.md`).
+│ +
+│ +## What was measured
+│ +
+│ +1. **The drive-matched twin does not do what the relay does.** Re-matched 5/16 .419, fixed gain 1/16 .249; 1.4-Hz middle value .000 (fixed .018). Paired on the same seeds it sits below the relay in both forms: tw − rcut −.165 [−.301, −.030]; twF − rcutF −.394 [−.509, −.279]. Its small re-matched rise (+.100, CI includes 0) is exactly what its −0.40% re-bisect predicts from the L185 gain-only slope (+.091); at the base gain it is −.070.
+│ +2. **The relay's own effect replicated in size, not in label.** dR +.265 re-matched and +.324 at fixed gain (L187: +.283 / +.216), both CIs clear of 0, the relay's downstream cell 74914 disinhibited again (.199 → .426), 1.4-Hz middle .037. But the re-matched arm classes INTERMEDIATE here (12/16 .584) where L187 had SUPER (13/16 .697); the fixed-gain form is SUPER in both batches (13/16 .630, 14/16 .642). Pooled over the two batches (post hoc, `addendum.json`): re-matched 25/32 .641, fixed 27/32 .636 — SUPER on scaled bands; 1.4-Hz .028 / .040.
+│ +3. **The class is not uniformly inert (secondary panel, one batch each, re-matched only).** Of six drive-matched inhibitory cord interneurons none reaches SUPER, but two lift the chopped duty with CIs clear of 0: ru2 +.222, ru1 +.198 — about three quarters of the relay's +.265, and neither is separable from the relay on paired seeds (ru2 − rcut −.044 [−.190, +.103]; ru1 − rcut −.067 [−.243, +.109]). The other four are separable (−.154 to −.341). The relay has the largest rise of the seven; six-cell mean +.095, sd .112.
+│ +4. **The 1.4-Hz signature stays the carrier's alone.** Carrier removal .471 / .345 (8 and 4 seeds ≥ .5); every other arm ≤ .082, twin .000. Now 6 further cord interneurons on top of L187's relay arms.
+│ +5. **Not asked, seen:** removing ru2 (IN07B031-R) flips the LEFT tibia instead — left duty 16/16 .840 (base 0/16 .262) and the carrier's own rate rises .38 → .59. The right-tibia readout this card registers does not see it.
+│ +
+│ +## Reading
+│ +
+│ +L187's caveat is narrowed, not closed. What is supported: a cord interneuron matched to the relay's delivered drive to four decimals leaves the base regime alone at both gains, so delivered drive within the class does not predict the relay's effect, and the relay's rise is the largest of seven such cells. What is not supported: "special to THIS interneuron" as a class statement — two of five further drive-matched cells produce an intermediate rise the relay cannot be told apart from on 16 seeds, and the relay's own re-matched arm sits on the band edge (.697, then .584).
+│ +
+│ +## Caveats
+│ +
+│ +- The registered reference flag failed, so T1 is DESCRIPTIVE by the PREREG's own rule. The paired contrasts in item 1 do not depend on that flag; the label does.
+│ +- One batch for every new arm; ru1..ru5 have no fixed-gain form. ru1's rise comes with a +1.0% re-bisect (the L185 gain-only slope predicts a FALL of .23 there, so its excess is larger than its dR — but that is the slope extrapolated beyond ±.5%, and L187 showed the slope's sign depends on the graph).
+│ +- Drive matching is not wiring matching: the twin reaches the relay's drive with a lower rate (.146 vs .329) through 151 output edges (relay 51), and none of the six has the relay's direct edge onto a right-Ti flexor motor neuron. Runners-up were rolled as a declared deviation from the brief's single arm.
+│ +- Chopped 0.7-Hz right-tibia classifier + the 1.4-Hz panel only. Items 2 (pooling), 3 (vs-relay contrasts), 5 and the gain-null arithmetic are post hoc.
+│ +
+│ +## What it would change (nothing edited)
+│ +
+│ +- Keep L187's wording that the chopped classifier alone is not unique to the carrier; add that it is also not unique to the relay — intermediate rises occur in about a third of drive-matched cord interneurons (2/6), SUPER in none.
+│ +- "The relay does it" can be written as: largest chopped-duty rise of seven drive-matched cord-interneuron removals, replicated in size across two batches (+.27 / +.28 re-matched, +.32 / +.22 fixed), absent in its closest drive twin. Not as: unique.
+│ +- The conjunction claim is safer than before on its second leg: 13 carrier-present arms across L187 / L190 / L198 now show a 1.4-Hz middle value ≤ .082.
+│ +
+│ +**Next.** (i) fixed-gain forms + a second batch for ru1 / ru2 (are the intermediate rises real at the base gain?); (ii) a twin matched on wiring position (direct right-Ti flexor edge + an input from the carrier) rather than drive; (iii) the ru2 left-tibia flip as its own card.
+│ +
+│ +**Predictions.** Correct: P1 controls, P3 (modal T1), P4 twin 1.4-Hz < .10, P5 ≤ 1 of 6 SUPER (0), P6 gain shift ≤ .5% and gain forms agree. Wrong: P2 — I gave .65 to rcut classing SUPER again; it came in INTERMEDIATE (its 1.4-Hz < .10 half held).
+│ +
+│ +Files: `results_l198.json`, `verdict.out`, `addendum.py/.json/.out`, `selection.json` + `SELECTION.md`, `static.json`, `raw_w0-5.npz`, `xm_w0-5.npz`, `anchors_w0-5.json`, `gains_w0-5.json`, `PREREG.md` + `PREREG.sha256` + `FREEZE.json`, scripts `build_twin.py` → `twin_run.py`, `build_verdict.py` → `verdict_l198.py`, `run_all.sh`. Wall 18:37 → 19:06 (rollouts 18:48-19:05, 6 workers × 2 threads, CPU only).
+💻 $ python3 - <<'E' import json r=json.load(open('l198/results_l198.json')) + 9 commands  0.7s
+💻 $ python3 - <<'E' p='/home/t3rpz/critters/peabrain-lab/LAB-INTENT.md' s=open(p).read() + 4 commands  0.9s
+💻 $ sleep 400 + 4 commands  400.3s
+💻 $ for i in $(seq 1 55) + 7 commands  0.2s
+💻 $ sleep 540 + 3 commands  540.2s
+💻 $ for i in $(seq 1 30) + 7 commands  40.3s
+💻 $ cp l197b/analyze_v2.py l197b/analyze_v2.frozen.py + 2 commands  4.5s
+💻 $ cat <<'E' """L197b addendum — POST HOC, descriptive (written after the FINAL verdict was read). Zero rollouts; stored l197b raws only; frozen gj.py unchanged. (1) v1's OWN readout (W=500, starts -250..+250) on arm S's 96 fresh seeds — arm S uses v1's schedule law, so this is a 6x replication of L186 as run. (2) per-GRAPH aligned duty by tone-rotation bin (which graph carries the in-phase / antiphase split), both design arms. (3) same-seed (diagonal) duty per graph, both arms (does the phenotype itself survive the 250-step pulse?).""" import json, sys import numpy as np sys.path.insert(0, "l197b") import gj SCHED = json.load(open("l197b/schedule.json")) store = {} for w in range(6): z = np.load(f"l197b/raw_w{w}.npz") for s in SCHED["arms"]["S"]["seeds"][w::6] + SCHED["arms"]["W"]["seeds"][w::6]: for k in ("gate_{s}", "Ti_fR_cutwA_{s}", "Ti_eR_cutwA_{s}", "Ti_fR_sc25_{s}", "Ti_eR_sc25_{s}"): store[k.format(s=s)] = z[k.format(s=s)] out = {} f3 = lambda d: f"{d['value']:+.3f} [{d['ci95'][0]:+.3f}, {d['ci95'][1]:+.3f}]" seedsS = SCHED["arms"]["S"]["seeds"] onsS = {s: [o[0], 4000 + o[1]] for s, o in ((s, SCHED["arms"]["S"]["onsets"][str(s)]) for s in seedsS)} v = gj.analyse(store, seedsS, onsS, 500, np.arange(-250, 251, 10)) out["S_seeds_v1_readout_W500"] = {k: v[k] for k in ("A", "T", "D", "T_on", "T_off", "A_inphase", "A_antiphase", "A_in_minus_anti", "means", "tone_instrument")} out["S_seeds_v1_readout_W500"]["overlap"] = gj.overlap_stats(onsS, seedsS, 500) print("v1 readout (W=500) on S's 96 seeds: A", f3(v["A"]), "T", f3(v["T"]), "D", f3(v["D"]), "| overlap", round(out["S_seeds_v1_readout_W500"]["overlap"]["mean_overlap"], 3)) print(" T_on", f3(v["T_on"]), "T_off", f3(v["T_off"]), "| A_in", f3(v["A_inphase"]), "A_anti", f3(v["A_antiphase"]), "diff", f3(v["A_in_minus_anti"])) print(" means", v["means"]) print(" tone", v["tone_instrument"]) for arm in ("S", "W"): d = gj.DESIGN[arm] + 7 commands  11.4s
+✍️ Write /home/t3rpz/critters/peabrain-lab/banc/l197b/L197b-FINDINGS.md
+│ banc/l197b/L197b-FINDINGS.md
+│ @@ -0,0 +1,50 @@
+│ +# L197b FINDINGS — gate-jitter v2, the discriminator with power (n = 96 seeds per design arm, FINAL)
+│ +
+│ +**Registered verdict: `NO_VOTE`** — both design arms carry the `R0_no_elevation` flag (pooled deletion elevation < .15 on BOTH clocks at these resolutions), so by PREREG no clock branch is read. Beside the flag, the clock class is **`E3_equal_resolved` in both arms**: the aligned − elapsed difference D is now pinned inside ±.10 (half-width .027 / .028; v1's was .141). **Mechanism panel (registered secondary): S = `M_tone`, W = `M_unassigned` (same direction, under the bar); no `M_internal` in either arm.**
+│ +PREREG sha 86a2a99515383ed6, frozen 18:56:01 before any v2 rollout. Certs green: C0A unjittered cutwA + sc25 @801/901 == raw_l135 EXACT in all 6 workers (552 checks, max 0.0); both gains == stored floats EXACT ×6; every stored gate array == the registered schedule; overlap gate from the drawn schedule S .228 / W .230 (≤ .25); CERT-V1 (the generalised readout reproduces `results_l186.json` to 1e-12); 192 fresh seeds key-scanned against 254 npz.
+│ +
+│ +| | S: v1 schedule, 150-step window | W: 250-step pulse, band 1000, 250-step window |
+│ +|---|---|---|
+│ +| duty aligned / elapsed / same-seed, base | .281 / .229 / .334 | .195 / .186 / .305 |
+│ +| same, carrier removed | .330 / .334 / .585 | .263 / .213 / .425 |
+│ +| **A** aligned elevation | +.049 [+.037, +.061] | +.068 [+.045, +.090] |
+│ +| **T** elapsed elevation | +.105 [+.080, +.130] | +.027 [+.008, +.047] |
+│ +| **D = A − T** | **−.056 [−.082, −.029]** | **+.040 [+.012, +.068]** |
+│ +| T_on (partner driven) / share of windows | +.167 [+.134, +.199] / .61 | +.070 [+.038, +.101] / .24 |
+│ +| T_off (partner undriven) | +.010 [−.013, +.034] | +.015 [−.007, +.036] |
+│ +| A, tone in phase / antiphase | +.237 [+.202, +.272] / −.166 [−.196, −.136] | +.119 [+.077, +.161] / +.013 [−.028, +.054] |
+│ +| in-phase − antiphase | **+.403 [+.345, +.462]** | +.106 [+.044, +.169] |
+│ +| card's tone instrument verbatim, rho (sc25 / base) | +.015 / −.006 | −.023 / −.006 |
+│ +| same statistic at pair-SEGMENT level | +.216 / −.475 | −.136 / −.315 |
+│ +
+│ +## What was measured
+│ +
+│ +1. **Neither clock wins, and that is now a resolved statement.** D is −.056 in S and +.040 in W — opposite signs, both intervals inside ±.10, both excluding the registered ±.10 margin for E1 / E2. v1 could not say this (D −.015 [−.156, +.126], power .28 for a .10 difference; here ≥ .92 by the registered analysis, realised half-width .03).
+│ +2. **The pooled elevation is small at fine resolution because it is signed by tone phase, not because it is absent.** In S the carrier-removal elevation is +.237 for pair-segments whose gate lag leaves the 0.7-Hz tone in phase and −.166 for those it puts in antiphase; pooled over all rotations they cancel to +.049. The same-seed elevation is intact (+.251 in S, +.120 in W).
+│ +3. **No internal rhythm.** With the partner seed undriven the elapsed-clock elevation is +.010 [−.013, +.034] (S) and +.015 [−.007, +.036] (W): upper bounds a quarter of the .15 bar. The elapsed-clock elevation lives entirely in windows where both seeds are being driven (T_on).
+│ +4. **The dichotomy the card inherited was mis-posed.** The external tone runs on elapsed time while a gate is open, so "elapsed" was never the internal-rhythm pole. The shared timing is locked to the external tone's phase during drive: not to the gate edge (that would give an elevation at every rotation — antiphase is −.166 / +.013), and not to a free-running clock (item 3).
+│ +5. **Tick 216's "tone confound cleared" does not stand.** The card's instrument, carried verbatim, again reads "not predictive" (|rho| ≤ .023, all four cells) — because it rotates the MEAN of the two outer segments' independent lags, which carries no phase information. At pair-segment level the same statistic is −.475 / +.216 (S) and −.315 / −.136 (W).
+│ +6. **Arm W: the phenotype is weaker under a 250-step pulse** (same-seed elevation +.120 vs +.251), and the tone split shrinks with it (+.106, CI above 0, under the registered .15 bar → `M_unassigned`). S and W are two designs, not replicates.
+│ +
+│ +## Post hoc (`addendum.py`, zero rollouts, written after the verdict was read)
+│ +
+│ +- **v1's own readout (500-step window) on S's 96 fresh seeds** — S uses v1's schedule law, so this is L186 as run, six times over: A +.222 [+.192, +.252], T +.225 [+.194, +.257], D −.003 [−.031, +.024]; in phase +.469, antiphase −.033. v1's elevation replicates at its own resolution, and D is zero there too.
+│ +- **Which graph carries the split (S, aligned duty in phase / mid / antiphase):** base .186 / .236 / **.465**; carrier removed **.423** / .299 / .298. On the base graph the cross-seed flexor-extensor anticorrelation appears mostly when the partner is rotated half a tone period — the two pools move TOGETHER relative to the tone; with the carrier removed it appears at zero rotation — they alternate. Read that way the deletion phenotype is a change in the pools' phase relation to the external tone. One batch, post hoc: a hypothesis for a registered test, not a result.
+│ +
+│ +## Deviations (declared)
+│ +
+│ +- Card (i) amended before freeze: its "jitter ≥ 1000 with the 500-step window" cannot pass its own .25 overlap gate (.417; passing needs a 1824-step band, which does not fit); pulse and window shortened to 250 steps (PREREG §Design).
+│ +- One post-freeze plumbing fix in `analyze_v2.py`: the schedule stores onsets relative to each segment, the readout takes absolute steps. The frozen script stopped on its own bounds assert before computing any v2 statistic; fix = one conversion + a gate-position assert; frozen original kept as `analyze_v2.frozen.py`; `gj.py` (the readout) untouched, sha-asserted.
+│ +- The v1-data pilot (and its tone-split observation) was seen before registration and is disclosed in the PREREG; the fresh batch confirms it in S on 96 new seeds.
+│ +
+│ +## What it would change (nothing edited)
+│ +
+│ +- The draft may keep "the carrier-removal elevation survives independently jittered gate onsets" (replicated: +.22 on either clock, 96 seeds, v1's window).
+│ +- Withdraw "the cross-seed structure is not locked to the shared elapsed-time tone". Supported wording: "the shared timing follows the phase of the external 0.7-Hz drive while the pools are driven; it does not persist on elapsed time when the partner is undriven, and it is not carried by the gate edge."
+│ +- No internal-rhythm claim (E2) is available from this design or v1's.
+│ +
+│ +**Next.** (i) registered test of the co-active → alternating reading: per-seed phase of each pool against the tone, base vs carrier-removed (stored traces, zero rollouts); (ii) a tone-RESET design (tone phase restarted at each gate onset) is the only way to separate gate from tone experimentally.
+│ +
+│ +**Predictions.** Correct: P1; P2 (S: R0 flag, E3_equal_resolved, D in (−.10, 0)); P3's class and sign for W; P5 no internal rhythm; P7 half-widths. Wrong: P3's "A ≥ .10 in W" (+.068); P4 (M_tone in both — W fell under the bar); P6 (segment-level rho for sc25 +.216, I registered > +.25; the verbatim-instrument half held).
+│ +
+│ +Files: `results_l197b.json`, `verdict.out`, `addendum.py/.json/.out`, `pairmat_S.npz`, `pairmat_W.npz`, `schedule.json`, `pilot.json`, `PREREG.md` + `PREREG.sha256` + `FREEZE.json`, `gj.py`, `build_v2.py` → `run_v2.py`, `analyze_v2.py` (+ `.frozen.py`), `run_all.sh`, `raw_w0-5.npz`, `xm_w0-5.npz`. Rollouts 19:06-19:24, 6 workers × 2 threads, CPU only, after L198 FINAL.
+💻 $ python3 - <<'E' p='/home/t3rpz/critters/peabrain-lab/LAB-INTENT.md' s=open(p).read() + 6 commands  0.5s
+💻 $ pwd + 7 commands  0.5s
+💻 $ ps -eo pid,etimes,cmd | grep -E "twin_run.py|run_v2.py|verdict_l198|analyze_v2" | grep -v grep  0.1s
+⚡ Skill_manage  0.2s [operations[0] (patch on 'peabrain-flybrain') ...]
+⚡ Skill_manage  0.4s
+
+────────────────────────────────────────
+✿ Miso
+Both jobs are done, Boss — chain finished 19:27, well inside the 3 h cap (◕‿◕)♪
+
+L198 — T1 relay-special, but DESCRIPTIVE by my own registered flag- Twin gi 73008 (drive ratio .99988): 5/16 .419 re-matched, 1/16 .249 at fixed gain; 1.4-Hz middle .000.
+- It sits below the relay on paired seeds in both forms (−.165 [−.301, −.030]; −.394 [−.509, −.279]).
+- The flag: the relay's own re-matched arm classed INTERMEDIATE this batch (12/16 .584; fixed gain 14/16 .642 SUPER), though its rise replicated (+.265).
+- I also rolled the five runners-up (declared deviation): 0/6 SUPER, but 2/6 INTERMEDIATE and not separable from the relay. So the relay has the largest rise of seven, not a unique one.
+
+L197b (v2) — registered verdict NO_VOTE, with D now resolved- n = 96 seeds per arm (power analysis asked for 88; v1 had power .28).
+- D = −.056 [−.082, −.029] and +.040 [+.012, +.068]: neither clock wins by .10.- No vote because the pooled elevation is under .15 on both clocks at these resolutions.- Mechanism panel: the elevation is signed by tone phase — +.237 in phase vs −.166 antiphase (arm S only; arm W fell under the bar).
+- No internal rhythm: partner-undriven elevation is +.010.
+
+What changed- Tick 216's "tone confound cleared" doesn't hold; its instrument averaged independent lags.
+- Card option (i) was amended: it couldn't pass its own overlap gate, so the pulse is 250 steps.
+- One post-freeze plumbing fix in the v2 analysis, made before any statistic existed.- C0A exact everywhere (773 + 552 checks).
+
+LANE cards and the draft are untouched. Findings are in banc/l198/L198-FINDINGS.md and banc/l197b/L197b-FINDINGS.md ★
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-c46c7bdb83d46ed8392499b88c0f4e492ed0b168b588bab0e13648e78c1e254a -p maple
+
+Session:        local-c46c7bdb83d46ed8392499b88c0f4e492ed0b168b588bab0e13648e78c1e254a
+Duration:       50m 39s
+Messages:       116 (1 user, 114 tool calls)

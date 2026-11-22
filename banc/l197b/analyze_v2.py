@@ -77,7 +77,16 @@ for arm in ("S", "W"):
         assert np.isfinite(store[f"GI1110_cutwA_{s}"]).all() and np.isnan(store[f"GI1110_sc25_{s}"]).all()
     ov = gj.overlap_stats(onsets, seeds, d["W"])
     assert abs(ov["mean_overlap"] - SCHED["arms"][arm]["overlap"]["mean_overlap"]) < 1e-12 and ov["mean_overlap"] <= .25
-    a_ = gj.analyse(store, seeds, onsets, d["W"], gj.starts_of(arm))
+    # POST-FREEZE PLUMBING FIX (19:25, before any v2 statistic was computed: the
+    # frozen script stopped on gj.pair_hits' segment-bounds assert): the schedule
+    # stores onsets RELATIVE to each outer segment's start, the readout takes
+    # ABSOLUTE steps (v1's convention). Frozen original: analyze_v2.frozen.py.
+    onsets_abs = {s: [o[0], gj.SEG0[1] + o[1]] for s, o in onsets.items()}
+    for s in seeds:
+        g = store[f"gate_{s}"]
+        for o in onsets_abs[s]:
+            assert g[o:o + d["pulse"]].all() and not g[o - 25:o].any() and not g[o + d["pulse"]:o + d["pulse"] + 25].any()
+    a_ = gj.analyse(store, seeds, onsets_abs, d["W"], gj.starts_of(arm))
     r = {k: a_[k] for k in KEEP}
     A, T, D = (a_[k]["value"] for k in "ATD")
     lo, hi = a_["D"]["ci95"]

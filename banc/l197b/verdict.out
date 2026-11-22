@@ -1,0 +1,15 @@
+L197b gate-jitter v2 — verdict NO_VOTE (R0 / underpowered in both arms) | mechanism {'S': 'M_tone', 'W': 'M_unassigned'}
+n = 96 seeds per design arm; C0A 552 checks max 0.0; gains == stored EXACT; CERT-V1 PASS; PREREG 86a2a99515383ed6
+[S] pulse 500, window 150, mean overlap 0.228 | clock E3_equal_resolved (DESCRIPTIVE (R0: no elevation at this resolution))
+    duty aligned / elapsed / same-seed: cutwA 0.281 / 0.229 / 0.334 ; sc25 0.330 / 0.334 / 0.585
+    A +0.049 [+0.037, +0.061] | T +0.105 [+0.080, +0.130] | D -0.056 [-0.082, -0.029] (half-width 0.027)
+    T_on +0.167 [+0.134, +0.199] (share 0.61) | T_off +0.010 [-0.013, +0.034]
+    A_inphase +0.237 [+0.202, +0.272] | A_antiphase -0.166 [-0.196, -0.136] | in - anti +0.403 [+0.345, +0.462] -> M_tone
+    tone control: cutwA verbatim rho -0.006, segment-level rho(aligned) -0.475 ; sc25 verbatim rho +0.015, segment-level rho(aligned) +0.216
+[W] pulse 250, window 250, mean overlap 0.230 | clock E3_equal_resolved (DESCRIPTIVE (R0: no elevation at this resolution))
+    duty aligned / elapsed / same-seed: cutwA 0.195 / 0.186 / 0.305 ; sc25 0.263 / 0.213 / 0.425
+    A +0.068 [+0.045, +0.090] | T +0.027 [+0.008, +0.047] | D +0.040 [+0.012, +0.068] (half-width 0.028)
+    T_on +0.070 [+0.038, +0.101] (share 0.24) | T_off +0.015 [-0.007, +0.036]
+    A_inphase +0.119 [+0.077, +0.161] | A_antiphase +0.013 [-0.028, +0.054] | in - anti +0.106 [+0.044, +0.169] -> M_unassigned
+    tone control: cutwA verbatim rho -0.006, segment-level rho(aligned) -0.315 ; sc25 verbatim rho -0.023, segment-level rho(aligned) -0.136
+predictions: {"P1_certs_complete": {"correct": true}, "P2_S": {"R0_correct": true, "class_correct": true, "D_in_minus10_0": true}, "P3_W": {"A_ge_10": false, "modal_class_correct": true, "D_positive": true}, "P4_M_tone_both": {"correct": false}, "P5_no_M_internal": {"correct": true}, "P6_instrument": {"correct": false}, "P7_halfwidth": {"correct": true}}

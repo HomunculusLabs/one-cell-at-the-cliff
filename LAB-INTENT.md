@@ -9469,3 +9469,94 @@ Artifacts: banc/l180/{PREREG.md, results_l180.json, census_dn_into.csv,
 census_dn_new.csv, run.out}; code banc/l180_static.py. mtimes_unchanged True
 on all six inputs (connections release, annotations, NT predictions,
 banc_graph.pt, l92/static.json, l170/static.json).
+
+## L198 — the relay-matched cord-interneuron twin (2026-11-21, experiment dispatch)
+
+INTENT: close L187's caveat ("no relay-matched twin; 'the relay does it' is not
+shown to be special to gi 75494"). Selection registered before the selection
+code ran (PREREG sha c9fff8791fff1161, 18:44:49): among the 12,385 cord
+interneurons of the k=24 base not in any prior arm, argmin |log(drive ratio)|
+to the relay on the STORED 3-seed census, tie-break mass, five runners-up.
+Pick gi 73008 (IN17B003-R, inhibitory, drive ratio .99988).
+
+RESULT (B43 3673-3688, n=16 every arm, C0A 773 checks max 0.0 incl. the stored
+L187 relay-cut arm re-rolled bit-exact): registered branch **T1_relay_special
+on both gain forms, status DESCRIPTIVE** — the twin is NOT-SUPER re-matched
+(5/16 .419, dR +.100 [-.020,+.220]) and at the base gain (1/16 .249), 1.4-Hz
+middle .000, and sits below the relay on paired seeds in both forms (-.165
+[-.301,-.030]; -.394 [-.509,-.279]). DESCRIPTIVE because my own reference flag
+failed: the relay's re-matched arm classed INTERMEDIATE on this batch (12/16
+.584, bar .60) though its effect replicated in size (dR +.265 [+.143,+.388];
+fixed gain 14/16 .642 SUPER, +.324). Pooled over B41+B43 (post hoc): 25/32
+.641 re-matched, 27/32 .636 fixed.
+
+THE PART THAT BOUNDS THE CLAIM: the five registered runners-up were rolled as
+a secondary class null — 0/6 drive-matched cells SUPER, but 2/6 INTERMEDIATE
+with CIs clear of zero (ru2 gi 70994 +.222, ru1 gi 67561 +.198) and not
+separable from the relay on 16 paired seeds. So: the relay has the largest
+rise of seven, its closest drive twin has none, and "unique to this
+interneuron" is still not licensed. The 1.4-Hz signature stayed the carrier's
+alone (carrier .471, every other arm <= .082). Side observation, not asked:
+removing ru2 (IN07B031-R) flips the LEFT tibia (16/16 .840).
+
+PREDICTIONS: 5 of 6 correct; P2 wrong (I gave .65 to the relay classing SUPER
+again). METHOD NOTE: a "matches the reference" branch needs the reference to
+re-class on the same batch — registering that flag in advance is what kept a
+clean-looking T1 from being over-read.
+
+Artifacts: banc/l198/{PREREG.md, FREEZE.json, selection.json, SELECTION.md,
+results_l198.json, verdict.out, addendum.json, L198-FINDINGS.md, raw_w0-5.npz}.
+
+## L197b — gate-jitter v2, the discriminator with power (2026-11-21, experiment dispatch, chained after L198)
+
+INTENT: L186 (v1) came out E3 with D = -.015 [-.156,+.126] from a readout whose
+two clocks shared 62% of their samples. v2 implements the lane's L197 card with
+a registered power analysis: two design arms (S = v1's schedule read through a
+150-step window; W = 250-step pulse on a 1000-step band, 250-step window —
+the card's option (i) AMENDED, because "jitter >= 1000 with the 500-step
+window" cannot pass the card's own .25 overlap gate), n = 96 seeds per arm
+(sized to v1's own SE(D) .072: 88 for 90% power at a .10 difference; v1's n=16
+had power .28). Overlap from the drawn schedule .228 / .230. PREREG sha
+86a2a99515383ed6 frozen 18:56:01; rollouts only after L198 FINAL.
+
+RESULT (C0A 552 checks max 0.0, gains == stored EXACT x6): registered verdict
+**NO_VOTE** — both arms carry R0 (pooled elevation < .15 on both clocks at
+these resolutions). Beside the flag the clock class is E3_equal_resolved in
+BOTH arms: D = -.056 [-.082,-.029] (S) and +.040 [+.012,+.068] (W), half-width
+.03 against v1's .14. Neither clock wins by the registered margin, and that
+is now a resolved statement rather than an unpowered one.
+
+THE FINDING IS IN THE REGISTERED MECHANISM PANEL: the elevation is SIGNED BY
+TONE PHASE. In S it is +.237 [+.202,+.272] for pair-segments the gate lag
+leaves in tone phase and -.166 [-.196,-.136] for antiphase ones (difference
++.403 [+.345,+.462], label M_tone); they cancel in the pooled number, which is
+why R0 fires. With the partner seed undriven the elapsed elevation is +.010 /
++.015 (CIs within +-.04): no internal rhythm. W shows the same direction
+under the bar (+.106 [+.044,+.169], M_unassigned) with a weaker phenotype
+(same-seed elevation +.120 vs +.251) under its 250-step pulse.
+
+CORRECTS TICK 216: "the tone confound is cleared" does not stand. The tick's
+instrument, carried verbatim, reads |rho| <= .023 here too — it rotates the
+MEAN of two independent segment lags, which carries no phase. At pair-segment
+level the same statistic is -.475 (base) / +.216 (carrier removed). Draft
+sentence to withdraw: "not locked to the shared elapsed-time tone". Sentence
+that survives (post hoc replication, v1's own 500-step readout on 96 fresh
+seeds: A +.222, T +.225, D -.003 [-.031,+.024]): the elevation survives
+jittered gate onsets.
+
+METHOD LESSONS: (1) "aligned vs elapsed" was never gate-vs-internal while the
+external tone runs on elapsed time — only the partner-undriven windows speak
+to an internal clock; a tone-RESET design is what separates gate from tone.
+(2) A phase covariate must be computed per event (pair-segment), never from a
+pair-level mean of independent lags. (3) A pooled contrast can read "absent"
+because two signed sub-populations cancel; register the split with it.
+(4) One post-freeze plumbing fix, declared: schedule onsets were
+segment-relative, the readout takes absolute steps; the frozen analysis
+stopped on its own bounds assert before any statistic existed.
+
+PREDICTIONS: correct P1, P2 (S fully), P5, P7 and P3's class/sign; wrong P3's
+A >= .10 in W (+.068), P4 (M_tone in both), P6 (sc25 segment rho +.216 < .25).
+
+Artifacts: banc/l197b/{PREREG.md, FREEZE.json, schedule.json, pilot.json,
+gj.py, results_l197b.json, verdict.out, addendum.json, L197b-FINDINGS.md,
+pairmat_S.npz, pairmat_W.npz, raw_w0-5.npz}.
