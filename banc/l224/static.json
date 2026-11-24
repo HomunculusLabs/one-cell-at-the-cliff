@@ -1,0 +1,70 @@
+{
+ "design": "L224 the MASS-NEUTRAL statistic. L213's addendum measured Spearman(R, m_out) = +.53 INSIDE a statistic explicitly divided by m_out. Here P2 ~ m_out^k is fitted over the present-descending population on the three L207/L213 BANC substrates (OLS primary, Theil-Sen, RMA-as-identity, plus the bisected neutralising exponent), R_k = P2/(lam1^2*m_out^k) is formed, and the residual rank correlation is read AGAINST ITS COMPONENT-SHUFFLED SPURIOUS BASELINE (Pearson 1897; Jackson & Somers 1991) rather than against zero. PREREG l224/PREREG.md.",
+ "prereg": "l224/PREREG.md",
+ "parents": [
+  "l213/static.json",
+  "l213/addendum.json"
+ ],
+ "seeds": {
+  "spurious": 22401,
+  "bootstrap": 22402,
+  "b_spurious": 2000,
+  "b_bootstrap": 2000
+ },
+ "primary_substrate": "G0_closure",
+ "bars": {
+  "rho_bar": 0.05,
+  "q3_bar": 0.05,
+  "k_lo": 0.5,
+  "k_hi": 3.0,
+  "excl_bar": 0.05
+ },
+ "cert_213": {
+  "n_checks": 289,
+  "mode": "float/int/str equality (==)",
+  "source": "l213/static.json (read-only, fingerprinted)",
+  "excluded": [
+   "runtime_s"
+  ]
+ },
+ "cert_add": {
+  "n_checks": 33,
+  "mode": "float equality (==)",
+  "source": "l213/addendum.json (read-only, fingerprinted)"
+ },
+ "cert_rank": {
+  "n_checks": 18,
+  "note": "tick 252 law as a GATE: argsort-of-argsort would fail the tie-group check"
+ },
+ "cert_k1": {
+  "n_checks": 6,
+  "mode": "np.array_equal"
+ },
+ "cert_fast": {
+  "n_checks": 15,
+  "max_rel_diff": 0.0,
+  "bar": 1e-12
+ },
+ "fit_population": {
+  "G0_closure": {
+   "n": 1162,
+   "n_excluded": 126,
+   "excl_frac": 0.09782608695652174,
+   "fit_unmeasurable": true
+  },
+  "G1_cutwA": {
+   "n": 1136,
+   "n_excluded": 128,
+   "excl_frac": 0.10126582278481013,
+   "fit_unmeasurable": true
+  },
+  "F4_f4wA": {
+   "n": 1070,
+   "n_excluded": 190,
+   "excl_frac": 0.15079365079365079,
+   "fit_unmeasurable": true
+  }
+ },
+ "branch": "K_DEGENERATE",
+ "degenerate_reason": "a substrate exceeded the P2==0 exclusion bar"
+}

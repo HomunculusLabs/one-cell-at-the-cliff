@@ -1,0 +1,6 @@
+L214 ADDENDUM (post-hoc, arithmetic only)
+  rho_A vs rho_M over 20 cells: spearman -0.6767 pearson -0.6900 | opposite sign in 15/20
+  mean_A vs mean_dM over 20 cells: spearman -0.8556 pearson -0.8011 | opposite sign in 13/20
+  sign agreement floor 17/20 p(two-tailed) 0.00258; ceiling 4/20 p 0.01182
+  prior-json fingerprints unchanged
+wrote l214/addendum.json

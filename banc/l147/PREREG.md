@@ -23,7 +23,7 @@ Zero rollouts, deterministic, no RNG, CPU-only, descriptive census + join table.
   + connectome-weights significant-only feather (l138_probe form verbatim).
   Cord = superclass in {vnc_sensory, vnc_intrinsic, vnc_motor}; DN =
   superclass == 'descending_neuron'.
-- v783 (live brain): ~/critters/peabrain/data/
+- v783 (live brain): /home/t3rpz/critters/peabrain/data/
   neuron_annotations.tsv. Brain-only specimen — NO cord exists; the cord
   fate columns are structurally undefined and disclosed as such (L138
   precedent). Report count/sides/super_class + membership among

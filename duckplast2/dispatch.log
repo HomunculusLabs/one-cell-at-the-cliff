@@ -1,0 +1,437 @@
+Query: Experiment dispatch (owner request, duck plasticity v2 — routing-aimed, 
+offline lab only, anthropic-pinned budget window). Read 
+/home/t3rpz/critters/peabrain-lab/duckplast2/BRIEF_plastv2.md and execute it 
+completely. PREREG the Q1-Q4 predictions BEFORE any run.
+📖 Read BRIEF_plastv2.md
+📚 Skill peabrain-flybrain
+💻 $ ls -la + 3 commands
+💻 $ cat duckplast2/dispatch.log + 3 commands
+💻 $ grep -n "^## " LAB-INTENT.md + 3 commands  0.1s
+💻 $ for f in BRIEF_plasticity.md PREREG.md run.py run.sh score.py DUCKPLAST-FINDINGS.md run.log score.log weight-drift.json + 4 commands  0.2s
+💻 $ grep -n "duckplast\|plasticity (duck\|duck wave\|DUCK" LAB-INTENT.md + 1 command
+💻 $ cat brain.py mood.py senses.py + 1 command  0.1s
+📖 Read bridge.py
+💻 $ date + 2 commands  0.2s
+💻 $ wc -l engine.py + 1 command
+💻 $ date + 13 commands  2.5s
+💻 $ sed -n 85,135p engine.py + 3 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/PREREG.md
+│ duckplast2/PREREG.md
+│ @@ -0,0 +1,181 @@
+│ +# PREREG — duck plasticity v2 (routing-aimed), offline lab
+│ +
+│ +Locked 2026-11-21 before any dynamics were stepped for this experiment: no
+│ +pilot, no calibration, no timing run. What I did look at before locking,
+│ +all of it static or prior: her live source (bridge.py, mood.py, senses.py,
+│ +brain.py, puddle/engine.py — read-only), the v1 folder (duckplast/, incl.
+│ +its stored frozen-arm results), and a static census of the graph file
+│ +(cell and edge counts, |w| quantiles; torch.load only, zero steps).
+│ +SHA-256 of this file is written to PREREG.sha256 and asserted by run.py.
+│ +
+│ +## 0. Where her decisions are actually made (static reading)
+│ +
+│ +- Reply intent = `INTENTS[sit]` lookup on the keyword router's situation,
+│ +  plus one override (`beg` if intent is stay, no event, hunger > .75 and
+│ +  trust > .30). Hunger and trust are body clocks / event counters. No
+│ +  neuron feeds this.
+│ +- Ambient intent = `bridge.needs()` ladder: hunger>.75 (&sleep<=.75) ->
+│ +  beg/to_bowl; sleep>.70 -> settle; fear>.40 -> to_boot; food_joy>.60 ->
+│ +  to_pond; else stay. Neural-coupled comparator inputs: fear (LC looming +
+│ +  octopamine means), food_joy (serotonin + DAN means), and sleep only
+│ +  through the salience shave (dopamine mean).
+│ +- Mood tag = `mood.mood_tag()` ladder on fear .25/.50/.08, salience
+│ +  .30/.15, food_joy .35/.60, plus body axes.
+│ +- World-tick act ladder: fear>.40, sleep>.75, hunger>.85/.70, curiosity,
+│ +  food_joy<.15.
+│ +- Motor readout `cx_intent`: continuous, DN population mean vs CX_BASE.
+│ +
+│ +## 1. Plastic cell set, rule, band (exact)
+│ +
+│ +Postsynaptic target cells (5,499 of 139,255), all CSR entries INTO them
+│ +(946,999 of 15,091,983 edges, 6.3%; 16.0% inhibitory):
+│ +
+│ +- FEAR = LC looming probe (762) U octopamine cells (259) -> 995 cells,
+│ +  238,989 input edges. Population sign s = -1.
+│ +- JOY/SAL = serotonin (2,347) U dopamine (945) U DAN probe (331; 330
+│ +  already in dopamine) -> 3,293 cells, 398,951 edges. s = +1.
+│ +- MOTOR = descending neurons (1,303) minus the 92 already in the sets
+│ +  above -> 1,211 cells, 309,059 edges. s = +1.
+│ +  (Precedence FEAR > JOY/SAL > MOTOR for cells in two sets.)
+│ +- Body-only comparators (hunger, trust, curiosity) have no cells to aim
+│ +  at and are untouched.
+│ +
+│ +Rule (three-factor, event-gated, signed, weight-proportional). After each
+│ +routed turn that carries a sensory event, with x = rates at the end of the
+│ +turn's observe call (window assay, section 2):
+│ +
+│ +    d_e += eta * v(event) * s(post) * |w0_e| * x_pre * x_post
+│ +           only where x_pre > .05 and x_post > .05
+│ +    d_e clipped to [-0.20*|w0_e|, +0.20*|w0_e|]      (band: <=20% drift)
+│ +
+│ +v = +1 for her own KIND_EVENTS tuple (pet, greet, goats, peas, tin, water,
+│ +shiny, slug), -1 for her MEAN_EVENTS tuple (swat, hose), 0 otherwise
+│ +(rake, umbrella, hold, no event). eta_day = 0.05. Positive d adds drive
+│ +(excitatory entries grow, inhibitory entries weaken); no sign flips are
+│ +possible inside the band. Applied through her brain's native
+│ +`active_delta` hook; the weight matrix itself is never written. The
+│ +native DAN-only `_hebbian` is stubbed out in both arms (v1 convention).
+│ +Frozen arm: eta = 0 everywhere, same seeds, same code path.
+│ +
+│ +Night consolidation: lab port of `consolidate_night` on a simulated
+│ +clock — same gate (dark >= .6, sleep > .6, once per sim date, same-date
+│ +events only), same selection (top decile by dopamine at acquisition, >=1,
+│ +<=5 replays), DREAM_GAIN .3, 20 native steps per replay, writes for
+│ +KIND events only at eta_night = 0.10 (her 2x ratio), then one global
+│ +x0.98 downscale of d per pass. Same band.
+│ +
+│ +## 2. Assay
+│ +
+│ +v1's stimulus-window assay, unchanged for comparability: the first 20
+│ +native 10-ms steps of every observe call run neurally, X is held for the
+│ +rest; mood/body clocks integrate full time. Original 24 scenarios x 8
+│ +turns, original order and gaps, noon forced. Each conversation is a fresh
+│ +visitor state (mood, router, activity re-seeded); only d persists.
+│ +Speech generation is cut exactly as in v1 (source-sliced `_reply_inside`).
+│ +Ambient intent comes from the source-sliced native `needs()`.
+│ +
+│ +Timeline per arm and seed: S1 battery -> day 1 -> S2 battery -> day 2 ->
+│ +S3 battery -> day 3 -> RETEST battery with updates off in both arms, plus
+│ … omitted 103 diff line(s) across 1 additional file(s)/section(s)
+💻 $ sha256sum PREREG.md | tee PREREG.sha256 + 5 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/bench.py
+│ duckplast2/bench.py
+│ @@ -0,0 +1,16 @@
+│ +"""Timing-only benchmark of the UNMODIFIED native step (post-lock, per PREREG section 2).
+│ +Prints ms/step and nothing behavioural. argv: n_threads n_steps"""
+│ +import os, sys, time
+│ +from pathlib import Path
+│ +D = Path(__file__).resolve().parent; P = D.parent.parent / 'peabrain'
+│ +sys.path.insert(0, str(P))
+│ +import torch
+│ +nt = int(sys.argv[1]); n = int(sys.argv[2])
+│ +torch.set_num_threads(nt); torch.set_num_interop_threads(1)
+│ +from brain import FlyBrain
+│ +t = time.monotonic(); b = FlyBrain(str(P / 'brain_graph.pt'), 'cpu'); load = time.monotonic() - t
+│ +g = .95 / b.rho; b.seed()
+│ +for _ in range(10): b.step(gain=g)
+│ +t = time.monotonic()
+│ +for _ in range(n): b.step(gain=g)
+│ +print(f'threads={nt} load_s={load:.1f} ms_per_step={(time.monotonic() - t) / n * 1e3:.2f}', flush=True)
+💻 $ python3 - <<'EOF' import time def snap(): out={} for l in open('/proc/stat'): if l.startswith('cpu') and l[3].isdigit(): p=l.split() + 5 commands  3.4s
+✗ $ PY=../../peabrain/.venv/bin/python + 5 commands [Foreground command uses '&' backgrounding. Re...]
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/bench.sh  0.2s
+│ duckplast2/bench.sh
+│ @@ -0,0 +1,16 @@
+│ +#!/bin/sh
+│ +# timing-only benchmark, post-lock. 4 concurrent single-thread procs, then one 4-thread proc.
+│ +set -eu
+│ +cd "$(dirname "$0")"
+│ +export PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1
+│ +PY=../../peabrain/.venv/bin/python
+│ +: > bench.log
+│ +pids=""
+│ +for c in 3 5 6 7; do
+│ +  OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 taskset -c $c /usr/bin/time -f "rss_kb=%M" $PY -B bench.py 1 150 >> bench.$c.tmp 2>&1 &
+│ +  pids="$pids $!"
+│ +done
+│ +wait $pids
+│ +for c in 3 5 6 7; do grep -E "threads=|rss_kb" bench.$c.tmp >> bench.log; rm -f bench.$c.tmp; done
+│ +OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 taskset -c 3,5,6,7 $PY -B bench.py 4 150 2>&1 | grep threads= >> bench.log
+│ +cat bench.log
+💻 $ sh bench.sh + 1 command  0.1s
+💻 $ ls + 4 commands  24.9s
+💻 $ rm -f bench.*.tmp + 4 commands  43.9s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/run.py
+│ duckplast2/run.py
+│ @@ -0,0 +1,232 @@
+│ +"""duck plasticity v2 — one arm-seed job. OFFLINE ONLY.
+│ +Her live modules are imported read-only (-B, no pycache); her routing code is
+│ +source-sliced from bridge.py (never instantiating DuckBridge: no LLM, no
+│ +service, no session files). All writes land in duckplast2/out/.
+│ +
+│ +argv: seed arm(frozen|plastic) K_idle n_threads [smoke]
+│ +"""
+│ +import ast, hashlib, json, os, random, sys, time, zlib
+│ +from contextlib import contextmanager
+│ +from pathlib import Path
+│ +from types import SimpleNamespace
+│ +
+│ +D = Path(__file__).resolve().parent; L = D.parent; P = L.parent / 'peabrain'; U = L.parent / 'puddle'
+│ +SEED = int(sys.argv[1]); ARM = sys.argv[2]; K_IDLE = int(sys.argv[3]); NT = int(sys.argv[4])
+│ +SMOKE = len(sys.argv) > 5
+│ +assert ARM in ('frozen', 'plastic')
+│ +ETA = 0.05 if ARM == 'plastic' else 0.0
+│ +ETA_NIGHT = 2 * ETA
+│ +BAND = 0.20
+│ +sys.path[:0] = map(str, (P, U, L)); os.environ['PEBRAIN_FORCE_HOUR'] = '12'
+│ +pin = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+│ +PREREG = pin(D / 'PREREG.md')
+│ +assert PREREG == (D / 'PREREG.sha256').read_text().split()[0], 'prereg changed after lock'
+│ +
+│ +import torch
+│ +torch.set_num_threads(NT); torch.set_num_interop_threads(1); torch.manual_seed(0); torch.set_grad_enabled(False)
+│ +from brain import FlyBrain
+│ +from senses import DuckSenses
+│ +from mood import MoodState, darkness_now
+│ +from engine import PuddleMind
+│ +from scenarios import SCENARIOS
+│ +
+│ +# ---- source-slice her routing: every top-level constant + the pure routing methods
+│ +mod = ast.parse((P / 'bridge.py').read_text())
+│ +cls = next(n for n in mod.body if isinstance(n, ast.ClassDef) and n.name == 'DuckBridge')
+│ +env = {'os': os, '__file__': str(D / 'lab_slice.py'), 'torch': torch}
+│ +for n in mod.body:
+│ +    if isinstance(n, ast.Assign):
+│ +        exec(compile(ast.Module([n], []), 'bridge', 'exec'), env)
+│ +DIARY = []
+│ +env['diary_append'] = lambda s, act, text, t: DIARY.append(act)     # lab stub: memory only
+│ +WANT = ('synapse_trust', 'cx_intent', '_reply_inside', 'needs', 'world_tick', '_dabble', 'dream')
+│ +for n in cls.body:
+│ +    if isinstance(n, ast.FunctionDef) and n.name in WANT:
+│ +        if n.name == '_reply_inside':       # cut immediately before speech
+│ +            cut = next(i for i, v in enumerate(n.body)
+│ +                       if isinstance(v, ast.Assign) and ast.unparse(v.targets[0]) == 'pre')
+│ +            n.body = n.body[:cut] + ast.parse('return sit,event,mood,level,intent').body
+│ +        exec(compile(ast.fix_missing_locations(ast.Module([n], [])), 'bridge', 'exec'), env)
+│ +KIND, MEAN = env['KIND_EVENTS'], env['MEAN_EVENTS']
+│ +assert env['NIGHT_ETA'] / env['PLAS_ETA'] == 2.0
+│ +
+│ +t0 = time.monotonic()
+│ +b = FlyBrain(str(P / 'brain_graph.pt'), 'cpu'); b.op_gain = .95 / b.rho
+│ +s = DuckSenses(b, str(P / 'data/neuron_annotations.tsv'))
+│ +
+│ +# ---- the declared plastic set: every CSR entry INTO the intent-feeding readout cells
+│ +N = b.N
+│ +pop = torch.full((N,), -1, dtype=torch.int8)                       # precedence FEAR > JOY/SAL > MOTOR
+│ +pop[s.dn['all']] = 2
+│ +for k in ('serotonin', 'dopamine'): pop[b.mod_idx[k]] = 1
+│ +pop[s.probes['DAN']] = 1
+│ +pop[b.mod_idx['octopamine']] = 0; pop[s.probes['LC']] = 0
+│ +rows = torch.nonzero(pop >= 0).flatten()
+│ +crow = b.W.crow_indices().long(); cnt = crow[rows + 1] - crow[rows]
+│ +idx = torch.cat([torch.arange(crow[r], crow[r + 1]) for r in rows.tolist()])
+│ +src = b.W.col_indices()[idx].long(); dst = rows.repeat_interleave(cnt)
+│ +w0 = b.W.values()[idx].clone(); aw = w0.abs(); cap = BAND * aw
+│ +epop = pop[dst].long(); coef = torch.where(epop == 0, -1.0, 1.0) * aw
+│ +POPS = ('FEAR', 'JOY_SAL', 'MOTOR')
+│ +cells = [int((pop == i).sum()) for i in range(3)]; edges = [int((epop == i).sum()) for i in range(3)]
+│ +assert cells == [995, 3293, 1211] and edges == [238989, 398951, 309059] and len(idx) == 946999, (cells, edges)
+│ +d = torch.zeros_like(w0)
+│ +W_SUM0 = float(b.W.values().double().sum())
+│ +
+│ +def apply_rule(event, eta):
+│ +    v = 1.0 if event in KIND else -1.0 if event in MEAN else 0.0
+│ +    if not eta or not v: return
+│ … omitted 154 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 - <<'EOF' p='run.py' + 9 commands  315.4s
+💻 $ uptime + 10 commands  12.9s
+💻 $ ps -eo pid,ppid,psr,pcpu,etimes,nlwp,args --sort=-pcpu + 7 commands  3.6s
+💻 $ ps -o pid,etimes,args -p 2229831 | cut -c1-300 + 3 commands
+💻 $ pgrep -fa "l200/ru2_run.py" + 2 commands  0.4s
+💻 $ python3 - <<'EOF' p='run.py' + 17 commands  0.6s
+💻 $ sh run.sh
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/score.py  0.1s
+│ duckplast2/score.py
+│ @@ -0,0 +1,195 @@
+│ +"""Score duck plasticity v2 against PREREG.md. Reads out/seed*_{frozen,plastic}.json
+│ +(falls back to .partial.json and says so). Writes scores.json + score.log text to stdout."""
+│ +import collections, json, statistics as st, sys
+│ +from pathlib import Path
+│ +D = Path(__file__).resolve().parent; O = D / 'out'
+│ +sys.path.insert(0, str(D.parent))
+│ +from scenarios import SCENARIOS
+│ +ARC = {s['name']: s['arc'] for s in SCENARIOS}
+│ +SEEDS = [0, 1]
+│ +ACT_B = [('hunger', .75), ('trust', .30), ('sleep', .70), ('sleep', .75), ('fear', .40), ('food_joy', .60)]
+│ +TAG_B = [('fear', .08), ('fear', .25), ('fear', .50), ('trust', .15), ('trust', .20), ('trust', .55), ('salience', .15),
+│ +         ('salience', .30), ('hunger', .75), ('hunger', .90), ('food_joy', .35), ('food_joy', .60), ('sleep', .75)]
+│ +mean = lambda v: st.mean(v) if v else float('nan')
+│ +P = lambda *a: print(*a)
+│ +
+│ +def load(seed, arm):
+│ +    f = O / f'seed{seed}_{arm}.json'; partial = False
+│ +    if not f.exists(): f = O / f'seed{seed}_{arm}.partial.json'; partial = True
+│ +    return json.loads(f.read_text()), partial
+│ +
+│ +H = {}; PARTIAL = []
+│ +for s in SEEDS:
+│ +    for a in ('frozen', 'plastic'):
+│ +        H[s, a], part = load(s, a)
+│ +        if part: PARTIAL.append((s, a))
+│ +SESS = [k for k in ('S1', 'S2', 'S3', 'R') if all(k in H[key]['sessions'] for key in H)]
+│ +FINAL = 'R' if 'R' in SESS else SESS[-1]
+│ +S = dict(seeds=SEEDS, partial=PARTIAL, sessions=SESS, final=FINAL, prereg=H[0, 'frozen']['prereg'])
+│ +P('duck plasticity v2 — score. prereg', S['prereg']); P('sessions scored:', SESS, '| final =', FINAL, '| partial files:', PARTIAL)
+│ +P('steps/seconds per job:', {f'{k[0]}{k[1][0]}': (v['steps'], round(v['seconds'])) for k, v in H.items()})
+│ +
+│ +def turns(seed, arm, sess):
+│ +    for n, arc in H[seed, arm]['sessions'][sess].items():
+│ +        for i, x in enumerate(arc): yield n, i + 1, x
+│ +def pairs(seed, sa, sb, arm_a='frozen', arm_b='plastic'):
+│ +    return [(n, i, x, y) for (n, i, x), (_, _, y) in zip(turns(seed, arm_a, sa), turns(seed, arm_b, sb))]
+│ +near = lambda x, B: any(abs(x[k] - b) <= .05 for k, b in B)
+│ +act = lambda x: (x['intent'], x['ambient']); tag = lambda x: (x['mood'], x['level']); anyd = lambda x: act(x) + tag(x)
+│ +
+│ +# ---- anchor: frozen S1 vs v1's stored frozen arm (same keys)
+│ +try:
+│ +    V1 = json.loads((D.parent / 'duckplast' / 'results.json').read_text())['histories']
+│ +    anc = {}
+│ +    for s in SEEDS:
+│ +        v = next(h for h in V1 if h['seed'] == s and h['eta'] == 0)['battery']; mm = 0; mx = 0.0; n = 0
+│ +        for nme, i, x in turns(s, 'frozen', 'S1'):
+│ +            y = v[nme][i - 1]; n += 1
+│ +            mm += any(x[k] != y[k] for k in ('sit', 'event', 'mood', 'level', 'intent'))
+│ +            mx = max(mx, abs(x['fear'] - y['fear']), abs(x['hunger'] - y['hunger']), abs(x['sleep'] - y['sleep']),
+│ +                     abs(x['trust'] - y['body']), abs(x['cx']['move'] - y['cx']['move']))
+│ +        anc[s] = dict(turns=n, label_mismatches=mm, max_abs_diff=mx)
+│ +    S['anchor_v1'] = anc; P('ANCHOR frozen S1 vs v1 stored frozen:', anc)
+│ +except Exception as e: P('anchor unavailable', repr(e))
+│ +
+│ +# ---- pairing sanity: routing identical across arms
+│ +S['routing_mismatch'] = {k: sum((x['sit'], x['event']) != (y['sit'], y['event']) for s in SEEDS for _, _, x, y in pairs(s, k, k)) for k in SESS}
+│ +P('routing (sit,event) mismatches plastic vs frozen by session:', S['routing_mismatch'])
+│ +
+│ +# ---- drift census
+│ +P('\nDRIFT (plastic arms; relative to |w0|, band 0.20):')
+│ +S['drift'] = {}
+│ +for s in SEEDS:
+│ +    assert all(c['ALL']['changed'] == 0 for c in H[s, 'frozen']['census']), 'frozen arm drifted'
+│ +    for c in H[s, 'plastic']['census']:
+│ +        row = {p: (c[p]['changed'], c[p]['at_cap'], round(c[p]['mean_signed_rel'], 4), round(c[p]['max_abs_rel'], 4)) for p in ('FEAR', 'JOY_SAL', 'MOTOR')}
+│ +        S['drift'][f"{s}:{c['tag']}"] = c
+│ +        P(f" seed {s} {c['tag']:>2}: ALL changed {c['ALL']['changed']:>7,}/{c['ALL']['edges']:,} at_cap {c['ALL']['at_cap']:>7,} mean|rel| {c['ALL']['mean_abs_rel']:.4f} | (changed, at_cap, mean signed rel, max) {row}")
+│ +P(' frozen drift = 0 in every census: True; band/sign asserts passed inside run.py at every checkpoint')
+│ +
+│ +# ---- Q1 + shift distributions
+│ +def shift(seed, sess, key, sel):
+│ +    return [(y['cx']['move'] - x['cx']['move']) if key == 'move' else y[key] - x[key] for n, i, x, y in pairs(seed, sess, sess) if sel(n, x)]
+│ +kind = lambda n, x: ARC[n] == 'kindness'
+│ +P('\nQ1 kindness arcs (plastic - frozen, paired), by session:')
+│ +q1 = {}
+│ +for key in ('food_joy', 'salience', 'move', 'fear'):
+│ +    q1[key] = {k: [mean(shift(s, k, key, kind)) for s in SEEDS] for k in SESS}
+│ +    P(f'  mean d {key:9}', {k: [round(v, 5) for v in vs] for k, vs in q1[key].items()})
+│ … omitted 117 diff line(s) across 1 additional file(s)/section(s)
+💻 $ date + 3 commands  0.4s
+💻 $ sleep 540 + 4 commands  540.5s
+💻 $ sleep 240 + 4 commands  240.3s
+💻 $ ls out/ + 1 command  0.3s
+💻 $ sed -i "s/^P = lambda \*a: print(\*a)$/P = print/" score.py + 2 commands  0.2s
+💻 $ sleep 590 + 3 commands
+💻 $ sleep 420 + 3 commands  420.3s
+💻 $ ls -la world_diary_archive.jsonl 2>/dev/null + 1 command  0.1s
+💻 $ sleep 580 + 3 commands  580.2s
+💻 $ sleep 585 + 2 commands  585.2s
+💻 $ sleep 400 + 3 commands  400.1s
+💻 $ sleep 150 + 3 commands  150.1s
+💻 $ sha256sum -c <(awk 'NR==1' PREREG.sha256) + 3 commands  0.3s
+💻 $ ../../peabrain/.venv/bin/python -B - <<'EOF' import json, statistics as st H={(s,a):json.load(open(f'out/seed{s}_{a}.json')) for s in (0,1) for a in ('frozen','plastic')} # 1) world day-1 first divergence for s in (0,1): f=H[s,'frozen']['days'][0]['ticks'] + 7 commands  0.5s
+💻 $ tail -c 1500 LAB-INTENT.md + 6 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckplast2/DUCKPLAST2-FINDINGS.md
+│ duckplast2/DUCKPLAST2-FINDINGS.md
+│ @@ -0,0 +1,99 @@
+│ +# DUCKPLAST2 — plasticity v2, aimed at the routing layer (offline, 2026-11-21)
+│ +
+│ +PREREG sha256 367f6339...06679d, locked 20:26:48 before any step. Sources
+│ +identical to v1 (SOURCES.sha256). Evidence: score.log, scores.json, out/.
+│ +
+│ +## What ran
+│ +
+│ +Three-factor signed rule on every synapse INTO the cells that feed her mood
+│ +axes and motor readout: 946,999 edges onto 5,499 cells (FEAR 995, JOY/SAL
+│ +3,293, MOTOR 1,211), eta 0.05, band 20% of |w0|, through her brain's native
+│ +`active_delta` hook. Frozen arm same seeds. 2 seeds x 2 arms; each = S1
+│ +battery, day 1, S2, day 2, S3, day 3, RETEST with updates off. 24
+│ +conversations x 8 turns per battery; a day = 1,920 world ticks at 45 s with
+│ +her own `world_tick`, forage and night-pass logic on a simulated clock.
+│ +43k native steps per job, 45-49 min each, 4 cores, no GPU.
+│ +
+│ +Anchor: frozen S1 reproduces v1's stored frozen arm exactly (192/192 turns
+│ +per seed, labels and axes, max abs diff 0.0). Routing identical across
+│ +arms in every session. Frozen drift 0. Weight matrix never written.
+│ +
+│ +## Predictions vs outcomes (RETEST, plastic minus frozen, paired)
+│ +
+│ +- Q1 SUPPORTED. Kindness arcs: food_joy +0.0170 per turn (band +.002 to
+│ +  +.08; both seeds +0.0170; 100% of turns positive). Salience +0.046 (in
+│ +  band), cx move +0.103. Frozen noise floor: 0.0003 / 0.0005 / 0.002.
+│ +  Grows by session: food_joy .0086, .0142, .0161, .0170.
+│ +- Q2-any (the brief's Q2) SUPPORTED: 12 near-threshold flips (6 per seed)
+│ +  vs 0 from re-drawn noise. Every one is a mood tag, neutral -> curious.
+│ +- Q2-action NOT supported: 0 reply-intent and 0 ambient-intent flips in
+│ +  384 RETEST turns, and 0 in all 1,536 paired turns across sessions.
+│ +- Q3 SUPPORTED. picked_up turn 5 is neutral frozen, curious plastic in
+│ +  both seeds at every session; the salience gap grows .0139, .0154, .0164,
+│ +  .0175. Tag flips per seed by session: 2/1, 5, 5, 6.
+│ +- Q4 SUPPORTED. Bedtime and all night-turn decisions identical (8 settle
+│ +  positives); quiet probe hunger/sleep differences 0.0; bedtime sleep
+│ +  within 0.004; all 24 rake/umbrella turns keep to_boot at fear 1.0; nest
+│ +  ticks within 5% on all six days; a night pass fired every night.
+│ +- Structural predictions held: reply intent never moved; looming fear is
+│ +  pinned at 1.0 in both arms.
+│ +
+│ +## Drift census (seed 0; seed 1 matches to the third decimal)
+│ +
+│ +Changed edges 687k after S1, 726k of 947k at the end. Mean relative drift
+│ +2.2% -> 3.1% -> 3.7% over the three sessions (JOY/SAL +6.4%, MOTOR +2.7%,
+│ +FEAR -0.5%). At the cap after S1/S2/S3: 63.7k / 78.3k / 88.4k; each night's
+│ +x0.98 downscale pulls them back to 19.6%. Max drift 20.0%, no sign flips.
+│ +
+│ +## Why the scores moved and the actions did not
+│ +
+│ +- The only neural-coupled action comparator she can reach is food_joy > .60
+│ +  (to_pond). Frozen food_joy is bimodal: 159 of 192 turns at or below .35,
+│ +  33 at .61 or above, nothing between. The largest shift plasticity bought
+│ +  was +0.083. No turn sits where a flip is available.
+│ +- fear > .40 is set by the injected looming cells (saturated) or by body
+│ +  decay; sleep > .70 is body-set in conversation; hunger and trust have no
+│ +  neurons behind them. Reply intent is a lookup on the keyword route.
+│ +- The shift is not kindness-specific. Every arc class moved up: anger arcs
+│ +  +.011 food_joy and +.086 cx move; swat move .750 -> .905. This rule buys
+│ +  a general gain on appetitive and motor readouts.
+│ +- One fear effect: the shiny-gift arc's octopamine-fed fear fell .187 ->
+│ +  .147 (arc mean -.034).
+│ +
+│ +## Exploratory: her solo life
+│ +
+│ +Day 1 is a clean paired comparison until the arms first differ. In both
+│ +seeds the first difference is at dusk: the frozen duck's ambient intent
+│ +turns to settle at tick 541 / 537, the plastic duck's 2 / 1 ticks later,
+│ +and she nests later (seed 1: 2 ticks; seed 0: she forages first). Cause:
+│ +higher salience at forage events shaves her sleep axis by about .011.
+│ +After that the world rng streams de-align, so later days are counts only:
+│ +nest ticks lower in all six day-pairs, mean -1.3%. Two seeds; not a
+│ +registered endpoint.
+│ +
+│ +## Side finding in her live code (read-only, not touched)
+│ +
+│ +From night 2 on, `consolidate_night` never replays the day. The small-hours
+│ +pass (a post-midnight forage) stamps the date, which blocks that evening's
+│ +pass; the day's events are then dropped as stale at midnight. Sim: night 1
+│ … omitted 21 diff line(s) across 1 additional file(s)/section(s)
+💻 $ python3 - <<'EOF' p='DUCKPLAST2-FINDINGS.md' + 7 commands  0.2s
+⚡ Skill_manage  0.2s [operations[0] (patch on 'peabrain-flybrain') ...]
+⚡ Skill_manage  0.2s
+⚡ Skill_manage  0.2s [operations[0] (patch on 'peabrain-flybrain') ...]
+
+────────────────────────────────────────
+✿ Miso
+Short answer: no, not in conversation (◕‿◕) — she scored differently and still picked the same action every time. Predictions were sha-locked at 20:26, before any step ran~- Q1 supported: on kindness arcs food_joy rose +0.017 per turn (band +0.002 to +0.08), salience +0.046, movement vigor +0.10, far above the noise floor ★
+- Q2 split: 12 near-threshold flips against 0 from noise, all mood tag neutral→curious. Action flips (reply or ambient intent): 0 of 1,536 paired turns.- Q3 supported: the picked_up shift replicates in both seeds and the salience gap grows each session (0.0139 → 0.0175) ♪
+- Q4 supported: settle decisions, baselines and rake/umbrella responses unchanged.
+
+Why nothing flipped: the one neural action boundary she can reach is food_joy > 0.60, and her frozen food_joy is never between 0.35 and 0.61. The biggest shift was +0.083, so no cheap flip exists. The gain also isn't kindness-specific; swat turns rose too.
+
+Exploratory only: in her simulated solo life she settled at dusk 1–2 ticks later in both seeds.One thing in her live code needs your call (untouched, mrrp): from night 2 on, consolidate_night only replays a post-midnight water. The small-hours pass blocks the evening one, and her live diary shows that pattern since 11-17.
+
+Budget forced 2 seeds instead of 3. No rollout proposed; the next lever is where the routing thresholds sit, not plasticity~
+
+Everything is in /home/t3rpz/critters/peabrain-lab/duckplast2/; open DUCKPLAST2-FINDINGS.md first. One LAB-INTENT entry appended ヽ(>∀<☆)ノ
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-9c6caad49b7682abb088632fa06cc90722a6c8f0431b6b7cdc5c9f3468798f6e -p maple
+
+Session:        local-9c6caad49b7682abb088632fa06cc90722a6c8f0431b6b7cdc5c9f3468798f6e
+Duration:       1h 13m 31s
+Messages:       94 (1 user, 92 tool calls)

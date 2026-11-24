@@ -1,0 +1,275 @@
+# ===================== L214 TAIL — the FLOOR currency, registered =====
+# PREREG l214/PREREG.md (written BEFORE this file produced any number).
+# Zero new rollouts; read-only npz; the currency arrives as a VERBATIM
+# SOURCE SLICE (flo_side/spearman) so it is bit-identical to the post-hoc
+# leg rather than re-implemented.
+
+RMAX = 1.0
+BG = 0.02
+SEG = 2000
+ENT_AMP = 0.1
+ARMS5 = ["f4wA", "f4ng", "f4tw", "cutwA", "cutng25"]
+PAIRS2 = ["Ti", "Tr"]
+B36 = list(range(3449, 3465))
+B37 = list(range(3701, 3717))
+PERM_SEED = 20837
+N_PERM = 20000
+PAIR_SEED = 51423          # registered: independent batch pairing for Q1
+HH_SEED = 77041            # registered: paired head-to-head null for Q3
+ALPHA = 0.05               # registered per-tail level
+QFDR = 0.10                # registered BH level
+
+W = np.zeros(WIN, bool)
+for _a0, _b0, _f in SEGB:
+    if _f == 0.7:
+        W[_a0 + MEAS0:_b0] = True
+assert int(W.sum()) == 3000, "window drift"
+
+PATHS = {"B36": "l169b2/raw_l169b2.npz", "B37": "l175f/raw_l175f.npz"}
+FP0 = {k: (os.stat(v).st_size, os.stat(v).st_mtime_ns) for k, v in PATHS.items()}
+RAW = {k: np.load(v) for k, v in PATHS.items()}
+SEEDS = {"B36": B36, "B37": B37}
+
+PRIOR = {"static": "l208/static.json", "add": "l208/addendum_floor.json"}
+FPP = {k: (os.stat(v).st_size, os.stat(v).st_mtime_ns)
+       for k, v in PRIOR.items()}
+with open(PRIOR["static"]) as fh:
+    PREV = json.load(fh)
+with open(PRIOR["add"]) as fh:
+    ADDP = json.load(fh)
+assert PREV["head_sha"] == HEAD_SHA, "head drift vs l208/static.json"
+assert PREV["branch"] == "H_UNREGISTERED_SHAPE", "l208 verdict drift"
+assert "POST-HOC" in ADDP["label"], "addendum label drift"
+print("premise: head sha matches l208/static.json; l208 branch "
+      f"{PREV['branch']!r}; addendum is labelled POST-HOC")
+
+CELLS = [(bk, pk, arm) for bk in ("B36", "B37")
+         for pk in PAIRS2 for arm in ARMS5]
+assert len(CELLS) == 20
+
+# ============ GATE 1 — CERT-FLO: the L208 stored `flo` values reproduced
+# at FLOAT EQUALITY from the npz, BEFORE any new number is read.
+FLO = {}
+nflo = 0
+for bk, pk, arm in CELLS:
+    raw, seeds = RAW[bk], SEEDS[bk]
+    rows = [flo_side(raw, arm, s, pk, W) for s in seeds]
+    floL = float(np.mean([r["L"] for r in rows]))
+    floR = float(np.mean([r["R"] for r in rows]))
+    key = f"{bk}|{pk}|{arm}"
+    assert floL == PREV["arms"][key]["floL"], ("CERT-FLO floL", key)
+    assert floR == PREV["arms"][key]["floR"], ("CERT-FLO floR", key)
+    nflo += 2
+    FLO[key] = rows
+assert nflo == 40
+print(f"CERT-FLO: {nflo} stored flo values reproduced at FLOAT EQUALITY")
+
+# ============ GATE 2 — CERT-RHO: the post-hoc addendum's own numbers
+# reproduced at FLOAT EQUALITY with the same PERM_SEED draws.
+rng = np.random.default_rng(PERM_SEED)
+SIGNS = rng.choice([-1.0, 1.0], size=(N_PERM, 16))
+
+CUR = {}
+nrho = 0
+for bk, pk, arm in CELLS:
+    raw, seeds = RAW[bk], SEEDS[bk]
+    key = f"{bk}|{pk}|{arm}"
+    dL, dR = duty_seeds(raw, arm, seeds, pk)
+    dS = np.array([float(dL[i] - dR[i]) for i in range(len(seeds))])
+    A = np.array([r["R"] - r["L"] for r in FLO[key]])
+    rho = spearman(dS, A)
+    null = np.array([spearman(dS * SIGNS[j], A) for j in range(N_PERM)])
+    p_up = float((null >= rho).mean())
+    p_dn = float((null <= rho).mean())
+    want = ADDP["cells"][key]
+    assert rho == want["rho"], ("CERT-RHO rho", key)
+    assert p_up == want["p_up"], ("CERT-RHO p_up", key)
+    assert p_dn == want["p_dn"], ("CERT-RHO p_dn", key)
+    assert float(A.mean()) == want["mean_A"], ("CERT-RHO mean_A", key)
+    assert float(dS.mean()) == want["mean_dS"], ("CERT-RHO mean_dS", key)
+    nrho += 5
+    CUR[key] = dict(rho=rho, p_up=p_up, p_dn=p_dn, null=null,
+                    mean_A=float(A.mean()), mean_dS=float(dS.mean()))
+assert nrho == 100
+print(f"CERT-RHO: {nrho} post-hoc values reproduced at FLOAT EQUALITY")
+print("GATES PASSED — reading L214 numbers now\n")
+
+OUT = {"prereg": "l214/PREREG.md",
+       "premise": ("REGISTERED DECISION RULE, not a fresh test: the 20 "
+                   "per-cell point estimates were already observed in "
+                   "l208/addendum_floor.json (tick 237). Registration "
+                   "after observation does not restore independence "
+                   "(Kriegeskorte 2009). Branch-deciding quantities are "
+                   "the NULL-CORRECTED ones, which were unknown when the "
+                   "PREREG was written."),
+       "head_sha": HEAD_SHA, "slice2_sha": SLICE2_SHA,
+       "window": {"n_W": int(W.sum())},
+       "cert": {"cert_flo": nflo, "cert_rho": nrho},
+       "cells": {k: {m: v[m] for m in
+                     ("rho", "p_up", "p_dn", "mean_A", "mean_dS")}
+                 for k, v in CUR.items()},
+       "q1": {}, "q2": {}, "q3": {}, "q4": {},
+       "branch": {}, "predictions": {}}
+
+# ============ Q1 (PRIMARY) — cross-batch joint replication, null-corrected
+ARMPAIR = [(pk, arm) for pk in PAIRS2 for arm in ARMS5]
+assert len(ARMPAIR) == 10
+
+SELF = {}
+for key, c in CUR.items():
+    srt = np.sort(c["null"])
+    SELF[key] = dict(
+        p_up=(N_PERM - np.searchsorted(srt, c["null"], side="left")) / N_PERM,
+        p_dn=np.searchsorted(srt, c["null"], side="right") / N_PERM)
+
+C_obs_cells = []
+for pk, arm in ARMPAIR:
+    a = CUR[f"B36|{pk}|{arm}"]
+    b = CUR[f"B37|{pk}|{arm}"]
+    up = a["p_up"] < ALPHA and b["p_up"] < ALPHA
+    dn = a["p_dn"] < ALPHA and b["p_dn"] < ALPHA
+    if up or dn:
+        C_obs_cells.append(f"{pk}|{arm}" + ("|up" if up else "|dn"))
+C_obs = len(C_obs_cells)
+
+prng = np.random.default_rng(PAIR_SEED)
+SIG = prng.permutation(N_PERM)
+C_null = np.zeros(N_PERM, np.int64)
+for pk, arm in ARMPAIR:
+    a = SELF[f"B36|{pk}|{arm}"]
+    b = SELF[f"B37|{pk}|{arm}"]
+    up = (a["p_up"] < ALPHA) & (b["p_up"][SIG] < ALPHA)
+    dn = (a["p_dn"] < ALPHA) & (b["p_dn"][SIG] < ALPHA)
+    C_null += (up | dn).astype(np.int64)
+p_C = float((C_null >= C_obs).mean())
+null_var = float(C_null.var())
+
+if null_var == 0.0:
+    q1 = "F_DEGENERATE"
+elif C_obs == 0:
+    q1 = "F_NONE"
+elif p_C <= 0.05:
+    q1 = "F_REPLICATES"
+elif p_C <= 0.20:
+    q1 = "F_MARGINAL"
+else:
+    q1 = "F_NULL"
+OUT["q1"] = dict(C_obs=C_obs, cells=C_obs_cells, p_C=p_C,
+                 C_null_mean=float(C_null.mean()), C_null_var=null_var,
+                 C_null_max=int(C_null.max()), branch=q1)
+print(f"Q1 cross-batch replication: C_obs {C_obs} {C_obs_cells} | "
+      f"null mean {C_null.mean():.4f} max {int(C_null.max())} | "
+      f"p_C {p_C:.5f} -> {q1}")
+
+# ============ Q2 — Benjamini-Hochberg per batch at q = 0.10
+for bk in ("B36", "B37"):
+    hyp = []
+    for pk, arm in ARMPAIR:
+        c = CUR[f"{bk}|{pk}|{arm}"]
+        hyp.append((c["p_up"], f"{pk}|{arm}|up"))
+        hyp.append((c["p_dn"], f"{pk}|{arm}|dn"))
+    hyp.sort()
+    m = len(hyp)
+    kmax = 0
+    for i, (p, _n) in enumerate(hyp, start=1):
+        if p <= (i / m) * QFDR:
+            kmax = i
+    surv = [n for _p, n in hyp[:kmax]]
+    OUT["q2"][bk] = dict(m=m, q=QFDR, n_survivors=kmax, survivors=surv,
+                         smallest_p=hyp[0][0], smallest=hyp[0][1])
+    print(f"Q2 BH {bk}: {kmax}/{m} survive at q={QFDR} -> {surv}")
+sh = sorted(set(OUT["q2"]["B36"]["survivors"])
+            & set(OUT["q2"]["B37"]["survivors"]))
+OUT["q2"]["shared"] = sh
+OUT["q2"]["reading"] = ("cross-batch survivor present" if sh else
+                        "FALSE-DISCOVERY-SHAPED: no survivor shared")
+print(f"Q2 shared across batches: {sh if sh else 'NONE'} "
+      f"({OUT['q2']['reading']})")
+
+# ============ Q3 — head-to-head against the refuted ceiling currency
+keys20 = [f"{bk}|{pk}|{arm}" for bk, pk, arm in CELLS]
+rhoA = np.array([CUR[k]["rho"] for k in keys20])
+rhoM = np.array([PREV["arms"][k]["rho"] for k in keys20])
+diff = np.abs(rhoA) - np.abs(rhoM)
+D = float(diff.mean())
+hrng = np.random.default_rng(HH_SEED)
+HS = hrng.choice([-1.0, 1.0], size=(N_PERM, 20))
+D_null = (HS * diff).mean(axis=1)
+p_D = float((np.abs(D_null) >= abs(D)).mean())
+if float(np.abs(diff).sum()) == 0.0:
+    q3 = "H_DEGENERATE"
+elif p_D <= 0.05 and D > 0:
+    q3 = "H_FLOOR_BETTER"
+elif p_D <= 0.05 and D < 0:
+    q3 = "H_CEIL_BETTER"
+else:
+    q3 = "H_TIE"
+
+ag_floor = sum((CUR[k]["mean_A"] > 0) == (CUR[k]["mean_dS"] > 0)
+               for k in keys20)
+ag_ceil = sum((PREV["arms"][k]["mean_dM"] > 0) ==
+              (PREV["arms"][k]["mean_dS"] > 0) for k in keys20)
+OUT["q3"] = dict(D=D, p_D=p_D, mean_absrhoA=float(np.abs(rhoA).mean()),
+                 mean_absrhoM=float(np.abs(rhoM).mean()),
+                 sign_agree_floor=int(ag_floor),
+                 sign_agree_ceiling=int(ag_ceil), n_cells=20, branch=q3)
+print(f"\nQ3 head-to-head: mean|rho_A| {np.abs(rhoA).mean():.4f} vs "
+      f"mean|rho_M| {np.abs(rhoM).mean():.4f} | D {D:+.5f} p_D {p_D:.5f} "
+      f"-> {q3}")
+print(f"   sign agreement over 20 cells: floor {ag_floor}/20, "
+      f"ceiling {ag_ceil}/20")
+
+# ============ Q4 — the registered exception, Ti|f4wA (descriptive)
+q4rows = {}
+ok = True
+for bk in ("B36", "B37"):
+    absA = sorted((abs(CUR[f"{bk}|{pk}|{arm}"]["mean_A"]), f"{pk}|{arm}")
+                  for pk, arm in ARMPAIR)
+    rank = [n for _v, n in absA].index("Ti|f4wA") + 1
+    c = CUR[f"{bk}|Ti|f4wA"]
+    bot3 = rank <= 3
+    nosig = (c["p_up"] >= ALPHA) and (c["p_dn"] >= ALPHA)
+    q4rows[bk] = dict(absA=abs(c["mean_A"]), rank_of_10=rank,
+                      bottom3=bool(bot3), p_up=c["p_up"], p_dn=c["p_dn"],
+                      no_tail_sig=bool(nosig),
+                      sign_agree=bool((c["mean_A"] > 0) ==
+                                      (c["mean_dS"] > 0)))
+    ok = ok and bot3 and nosig
+    print(f"Q4 {bk} Ti|f4wA: |A| {abs(c['mean_A']):.4f} rank {rank}/10 "
+          f"bottom3 {bot3} | p_up {c['p_up']:.4f} p_dn {c['p_dn']:.4f} "
+          f"no_tail_sig {nosig} | sign_agree {q4rows[bk]['sign_agree']}")
+q4 = "ACCOUNTED" if ok else "UNACCOUNTED"
+OUT["q4"] = dict(rows=q4rows, branch=q4)
+print(f"Q4 -> {q4}")
+
+# ============ verdict
+passed = q1 in ("F_REPLICATES", "F_MARGINAL")
+verdict = ("PASS" if (passed and q4 == "ACCOUNTED") else
+           "PARTIAL" if passed else "FAIL")
+OUT["branch"] = dict(q1=q1, q3=q3, q4=q4, verdict=verdict)
+print(f"\nVERDICT: Q1 {q1} / Q3 {q3} / Q4 {q4} -> {verdict}")
+
+P = {}
+P["P1_Q1_replicates"] = (q1 == "F_REPLICATES")
+P["P2_Q3_floor_better"] = (q3 == "H_FLOOR_BETTER")
+P["P3_signs_17_vs_12"] = bool(ag_floor >= 17 and ag_ceil <= 12)
+P["P4_Q4_accounted"] = (q4 == "ACCOUNTED")
+P["P5_all_BH_survivors_Tr"] = bool(
+    all(s.startswith("Tr|") for s in OUT["q2"]["B36"]["survivors"]) and
+    all(s.startswith("Tr|") for s in OUT["q2"]["B37"]["survivors"]) and
+    (OUT["q2"]["B36"]["n_survivors"] + OUT["q2"]["B37"]["n_survivors"]) > 0)
+OUT["predictions"] = P
+print("predictions:", {k: bool(v) for k, v in P.items()},
+      f"-> {sum(bool(v) for v in P.values())}/5")
+
+for k, v in PATHS.items():
+    st = os.stat(v)
+    assert (st.st_size, st.st_mtime_ns) == FP0[k], ("npz MUTATED", v)
+for k, v in PRIOR.items():
+    st = os.stat(v)
+    assert (st.st_size, st.st_mtime_ns) == FPP[k], ("prior json MUTATED", v)
+print("npz + prior-json fingerprints unchanged")
+
+with open("l214/static.json", "w") as fh:
+    json.dump(OUT, fh, indent=1)
+print("wrote l214/static.json")

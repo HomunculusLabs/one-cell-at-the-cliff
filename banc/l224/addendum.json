@@ -1,0 +1,422 @@
+{
+ "design": "L224 addendum: the card's log-log fit is undefined on 9.8-15.1% of its own population (P2 == 0), which is why the registered FIT-UNMEASURABLE escape fired. The RANK-BASED neutralising exponent needs no exclusion, so it is measured on the FULL population and compared against the outcome-selected regression estimators. POST-HOC, UNREGISTERED, descriptive; carries no branch.",
+ "parent": "l224/static.json",
+ "prereg": "l224/PREREG.md",
+ "registered": false,
+ "cert_224": {
+  "n_checks": 19,
+  "mode": "float/int equality (==)"
+ },
+ "cert_zk": {
+  "n_checks": 18
+ },
+ "A_zero_census": {
+  "per_substrate": {
+   "G0_closure": {
+    "n": 1288,
+    "n_zero": 126,
+    "frac_zero": 0.09782608695652174,
+    "median_mout_zero": 18.587923968007402,
+    "median_mout_nonzero": 97.31049616666729,
+    "ratio_median_mout": 5.2351460192194255,
+    "max_mout_zero": 213.58026646444364,
+    "mass_pct_of_zeros": 0.15692472641230404,
+    "rho_indicator_mout": 0.39088694573399185,
+    "zero_frac_pure": 0.1392857142857143,
+    "zero_frac_nonpure": 0.06593406593406594
+   },
+   "G1_cutwA": {
+    "n": 1264,
+    "n_zero": 128,
+    "frac_zero": 0.10126582278481013,
+    "median_mout_zero": 18.587923968007402,
+    "median_mout_nonzero": 94.97846782784715,
+    "ratio_median_mout": 5.109686697197563,
+    "max_mout_zero": 213.58026646444364,
+    "mass_pct_of_zeros": 0.15891391416139242,
+    "rho_indicator_mout": 0.39613119901156296,
+    "zero_frac_pure": 0.1455223880597015,
+    "zero_frac_nonpure": 0.06868131868131869
+   },
+   "F4_f4wA": {
+    "n": 1260,
+    "n_zero": 190,
+    "frac_zero": 0.15079365079365079,
+    "median_mout_zero": 13.62968435889988,
+    "median_mout_nonzero": 84.05386989477044,
+    "ratio_median_mout": 6.166971125775568,
+    "max_mout_zero": 195.558439769885,
+    "mass_pct_of_zeros": 0.18007518796992486,
+    "rho_indicator_mout": 0.46637918911614484,
+    "zero_frac_pure": 0.2130841121495327,
+    "zero_frac_nonpure": 0.10482758620689656
+   }
+  },
+  "note": "the excluded cells are NOT a random sample of the population: dropping them is selection on the OUTCOME, and the m_out contrast gives the direction of the induced bias."
+ },
+ "B_neutralising_exponent": {
+  "per_substrate": {
+   "G0_closure": {
+    "k_neut_full": 1.9527789465096088,
+    "monotone_full": true,
+    "rho_at_k0_full": 0.799463823983212,
+    "rho_at_k8_full": -0.5578162566174474,
+    "k_neut_sub": 1.593499101361151,
+    "monotone_sub": true,
+    "rho_at_k0_sub": 0.7677840733683714,
+    "rho_at_k8_sub": -0.9757952173072141,
+    "d_full_minus_sub": 0.3592798451484578
+   },
+   "G1_cutwA": {
+    "k_neut_full": 2.0057234746396064,
+    "monotone_full": true,
+    "rho_at_k0_full": 0.7992707728449624,
+    "rho_at_k8_full": -0.5442984341399687,
+    "k_neut_sub": 1.6092692149240353,
+    "monotone_sub": true,
+    "rho_at_k0_sub": 0.7671712086024788,
+    "rho_at_k8_sub": -0.9748675662731594,
+    "d_full_minus_sub": 0.39645425971557113
+   },
+   "F4_f4wA": {
+    "k_neut_full": 2.1718710910591303,
+    "monotone_full": true,
+    "rho_at_k0_full": 0.7883466104468659,
+    "rho_at_k8_full": -0.36452376243030005,
+    "k_neut_sub": 1.5153911229636114,
+    "monotone_sub": true,
+    "rho_at_k0_sub": 0.7420440877497869,
+    "rho_at_k8_sub": -0.9760302104796298,
+    "d_full_minus_sub": 0.6564799680955189
+   }
+  },
+  "note": "k_NEUT is defined on the FULL population because P2==0 gives R_k == 0 for EVERY k (a tied bottom rank at every exponent), so this estimator requires no outcome-selected exclusion. The subpopulation value is the same estimator restricted to the cells the card's fit could have used."
+ },
+ "C_regression_estimators": {
+  "per_substrate": {
+   "G0_closure": {
+    "k_ols": 1.568165515061957,
+    "k_ts": 1.581106041998555,
+    "k_rma": 2.0853693494219727,
+    "pearson_r": 0.7519845419693277,
+    "k_ols_ci95": [
+     1.4902320304858538,
+     1.649009198731202
+    ],
+    "k_spread": 0.5172038343600158,
+    "n_fit": 1162,
+    "n_pairs_used": 674538,
+    "ortho_rel": 1.488499416276795e-17,
+    "outcome_selected": true,
+    "k_neut_sub_minus_k_ols": 0.025333586299194133,
+    "k_neut_full_minus_k_ols": 0.3846134314476519
+   },
+   "G1_cutwA": {
+    "k_ols": 1.5835197148310507,
+    "k_ts": 1.5972385570237393,
+    "k_rma": 2.112032325759466,
+    "pearson_r": 0.7497611165878497,
+    "k_ols_ci95": [
+     1.5050235116796156,
+     1.6681582455811605
+    ],
+    "k_spread": 0.5285126109284155,
+    "n_fit": 1136,
+    "n_pairs_used": 644678,
+    "ortho_rel": 1.1357517239382166e-16,
+    "outcome_selected": true,
+    "k_neut_sub_minus_k_ols": 0.0257495000929846,
+    "k_neut_full_minus_k_ols": 0.42220375980855573
+   },
+   "F4_f4wA": {
+    "k_ols": 1.4858236794517794,
+    "k_ts": 1.5056630097426016,
+    "k_rma": 2.008080111871774,
+    "pearson_r": 0.7399225113916457,
+    "k_ols_ci95": [
+     1.4087866734207313,
+     1.5643090776256368
+    ],
+    "k_spread": 0.5222564324199948,
+    "n_fit": 1070,
+    "n_pairs_used": 571912,
+    "ortho_rel": 3.709478870105412e-17,
+    "outcome_selected": true,
+    "k_neut_sub_minus_k_ols": 0.029567443511832048,
+    "k_neut_full_minus_k_ols": 0.6860474116073509
+   }
+  },
+  "label": "OUTCOME-SELECTED: computed on the P2>0 subpopulation only, because log(0) is undefined. Reported for the card's sake; the exclusion is not random (see leg A).",
+  "refs": "Forstmeier 2018 (OLS with predictor noise biases the slope LOW; Theil-Sen is robust to outliers, NOT to predictor noise); RMA gated as the identity k_RMA = k_OLS/|r|."
+ },
+ "D_spurious_baseline": {
+  "per_substrate": {
+   "G0_closure": {
+    "k0": {
+     "k": 0.0,
+     "measured": 0.799463823983212,
+     "spur_median": -2.3462365906627778e-05,
+     "spur_p05": -0.047099407392650894,
+     "spur_p95": 0.045123609294159844,
+     "excess": 0.7994872863491187
+    },
+    "k1": {
+     "k": 1.0,
+     "measured": 0.5319431776009682,
+     "spur_median": -0.3635311811851347,
+     "spur_p05": -0.40197610187827,
+     "spur_p95": -0.32438913643174483,
+     "excess": 0.8954743587861029
+    },
+    "k_neut_full": {
+     "k": 1.9527789465096088,
+     "measured": -1.3442784665030815e-06,
+     "spur_median": -0.5650808273499304,
+     "spur_p05": -0.5946490078847922,
+     "spur_p95": -0.534664989131736,
+     "excess": 0.5650794830714638
+    },
+    "k_ols": {
+     "k": 1.568165515061957,
+     "measured": 0.2154667103931768,
+     "spur_median": -0.4984721664578291,
+     "spur_p05": -0.5315399082482822,
+     "spur_p95": -0.46490129080587134,
+     "excess": 0.7139388768510059
+    }
+   },
+   "G1_cutwA": {
+    "k0": {
+     "k": 0.0,
+     "measured": 0.7992707728449624,
+     "spur_median": 7.558866358240178e-05,
+     "spur_p05": -0.04720114121556321,
+     "spur_p95": 0.04463047238532831,
+     "excess": 0.79919518418138
+    },
+    "k1": {
+     "k": 1.0,
+     "measured": 0.5378751622578909,
+     "spur_median": -0.35726944948787304,
+     "spur_p05": -0.3958461245299269,
+     "spur_p95": -0.31916930434278323,
+     "excess": 0.895144611745764
+    },
+    "k_neut_full": {
+     "k": 2.0057234746396064,
+     "measured": 1.8147699258055565e-06,
+     "spur_median": -0.56559489447242,
+     "spur_p05": -0.5945210095608493,
+     "spur_p95": -0.5345536396197677,
+     "excess": 0.5655967092423457
+    },
+    "k_ols": {
+     "k": 1.5835197148310507,
+     "measured": 0.2212721429431746,
+     "spur_median": -0.49442143052280474,
+     "spur_p05": -0.5264404041917947,
+     "spur_p95": -0.46088245245666365,
+     "excess": 0.7156935734659793
+    }
+   },
+   "F4_f4wA": {
+    "k0": {
+     "k": 0.0,
+     "measured": 0.7883466104468659,
+     "spur_median": -0.0006443005668984383,
+     "spur_p05": -0.046996768174711476,
+     "spur_p95": 0.04696223840737734,
+     "excess": 0.7889909110137644
+    },
+    "k1": {
+     "k": 1.0,
+     "measured": 0.5447150100010776,
+     "spur_median": -0.3405330154350962,
+     "spur_p05": -0.3797758427000442,
+     "spur_p95": -0.2995678291280217,
+     "excess": 0.8852480254361738
+    },
+    "k_neut_full": {
+     "k": 2.1718710910591303,
+     "measured": 3.2299380223062683e-06,
+     "spur_median": -0.546545011009343,
+     "spur_p05": -0.5793025906909391,
+     "spur_p95": -0.5121033505064675,
+     "excess": 0.5465482409473653
+    },
+    "k_ols": {
+     "k": 1.4858236794517794,
+     "measured": 0.3038926969104913,
+     "spur_median": -0.4478172494129684,
+     "spur_p05": -0.4826355601245348,
+     "spur_p95": -0.40996032613296185,
+     "excess": 0.7517099463234598
+    }
+   }
+  },
+  "n_draws": 2000,
+  "seed": 22401,
+  "kind": "component shuffling on the FULL population: P2 permuted across cells (zeros included), m_out held, R_sh = P2_perm/(lam1^2*m^k)",
+  "note": "the k=0 arm is the built-in positive control -- with no denominator the shuffled index must be uncorrelated with m_out.",
+  "refs": "Pearson 1897 Proc R Soc 60:489-498 (spurious organic correlation); Jackson & Somers 1991 Oecologia 86:147-151 (identify the appropriate null correlation; randomisation test)."
+ },
+ "E_transport": {
+  "per_substrate": {
+   "G0_closure": {
+    "k_neut_full": {
+     "k": 1.9527789465096088,
+     "carrier": {
+      "pct_mm_R": 0.05,
+      "pct_cls_R": 0.31785714285714284,
+      "pct_pop_R": 0.24301242236024845,
+      "pct_pop_Rk": 0.16071428571428573,
+      "pct_cls_Rk": 0.19107142857142856,
+      "d_primary": 0.14107142857142857,
+      "d_companion": 0.11071428571428572
+     },
+     "mirror": {
+      "pct_mm_R": 0.07,
+      "pct_cls_R": 0.14423076923076922,
+      "pct_pop_R": 0.20652173913043478,
+      "pct_pop_Rk": 0.1420807453416149,
+      "pct_cls_Rk": 0.12087912087912088,
+      "d_primary": 0.05087912087912087,
+      "d_companion": 0.0720807453416149
+     },
+     "max_d_primary": 0.14107142857142857,
+     "max_d_companion": 0.11071428571428572
+    },
+    "k_ols_outcome_selected": {
+     "k": 1.568165515061957,
+     "carrier": {
+      "pct_mm_R": 0.05,
+      "pct_cls_R": 0.31785714285714284,
+      "pct_pop_R": 0.24301242236024845,
+      "pct_pop_Rk": 0.19254658385093168,
+      "pct_cls_Rk": 0.2392857142857143,
+      "d_primary": 0.18928571428571428,
+      "d_companion": 0.14254658385093166
+     },
+     "mirror": {
+      "pct_mm_R": 0.07,
+      "pct_cls_R": 0.14423076923076922,
+      "pct_pop_R": 0.20652173913043478,
+      "pct_pop_Rk": 0.16149068322981366,
+      "pct_cls_Rk": 0.12774725274725274,
+      "d_primary": 0.05774725274725273,
+      "d_companion": 0.09149068322981366
+     },
+     "max_d_primary": 0.18928571428571428,
+     "max_d_companion": 0.14254658385093166
+    }
+   },
+   "G1_cutwA": {
+    "k_neut_full": {
+     "k": 2.0057234746396064,
+     "carrier": {
+      "pct_mm_R": 0.08,
+      "pct_cls_R": 0.3358208955223881,
+      "pct_pop_R": 0.25158227848101267,
+      "pct_pop_Rk": 0.16534810126582278,
+      "pct_cls_Rk": 0.19776119402985073,
+      "d_primary": 0.11776119402985073,
+      "d_companion": 0.08534810126582278
+     },
+     "mirror": {
+      "pct_mm_R": 0.07,
+      "pct_cls_R": 0.15247252747252749,
+      "pct_pop_R": 0.21677215189873417,
+      "pct_pop_Rk": 0.14477848101265822,
+      "pct_cls_Rk": 0.125,
+      "d_primary": 0.05499999999999999,
+      "d_companion": 0.07477848101265822
+     },
+     "max_d_primary": 0.11776119402985073,
+     "max_d_companion": 0.08534810126582278
+    },
+    "k_ols_outcome_selected": {
+     "k": 1.5835197148310507,
+     "carrier": {
+      "pct_mm_R": 0.08,
+      "pct_cls_R": 0.3358208955223881,
+      "pct_pop_R": 0.25158227848101267,
+      "pct_pop_Rk": 0.19382911392405064,
+      "pct_cls_Rk": 0.24440298507462688,
+      "d_primary": 0.16440298507462686,
+      "d_companion": 0.11382911392405064
+     },
+     "mirror": {
+      "pct_mm_R": 0.07,
+      "pct_cls_R": 0.15247252747252749,
+      "pct_pop_R": 0.21677215189873417,
+      "pct_pop_Rk": 0.1661392405063291,
+      "pct_cls_Rk": 0.13186813186813187,
+      "d_primary": 0.061868131868131865,
+      "d_companion": 0.0961392405063291
+     },
+     "max_d_primary": 0.16440298507462686,
+     "max_d_companion": 0.11382911392405064
+    }
+   },
+   "F4_f4wA": {
+    "k_neut_full": {
+     "k": 2.1718710910591303,
+     "carrier": {
+      "pct_mm_R": 0.09,
+      "pct_cls_R": 0.4074766355140187,
+      "pct_pop_R": 0.2984126984126984,
+      "pct_pop_Rk": 0.20555555555555555,
+      "pct_cls_Rk": 0.2504672897196262,
+      "d_primary": 0.16046728971962618,
+      "d_companion": 0.11555555555555555
+     },
+     "mirror": {
+      "pct_mm_R": 0.06,
+      "pct_cls_R": 0.15310344827586206,
+      "pct_pop_R": 0.23095238095238096,
+      "pct_pop_Rk": 0.18015873015873016,
+      "pct_cls_Rk": 0.1393103448275862,
+      "d_primary": 0.0793103448275862,
+      "d_companion": 0.12015873015873016
+     },
+     "max_d_primary": 0.16046728971962618,
+     "max_d_companion": 0.12015873015873016
+    },
+    "k_ols_outcome_selected": {
+     "k": 1.4858236794517794,
+     "carrier": {
+      "pct_mm_R": 0.09,
+      "pct_cls_R": 0.4074766355140187,
+      "pct_pop_R": 0.2984126984126984,
+      "pct_pop_Rk": 0.24206349206349206,
+      "pct_cls_Rk": 0.31962616822429907,
+      "d_primary": 0.22962616822429907,
+      "d_companion": 0.15206349206349207
+     },
+     "mirror": {
+      "pct_mm_R": 0.06,
+      "pct_cls_R": 0.15310344827586206,
+      "pct_pop_R": 0.23095238095238096,
+      "pct_pop_Rk": 0.19365079365079366,
+      "pct_cls_Rk": 0.14206896551724138,
+      "d_primary": 0.08206896551724138,
+      "d_companion": 0.13365079365079366
+     },
+     "max_d_primary": 0.22962616822429907,
+     "max_d_companion": 0.15206349206349207
+    }
+   }
+  },
+  "note": "descriptive only. The parent's registered Q224-3 bar is NOT scored here: the branch is K_DEGENERATE and stays so. Read as 'does a global exponent reproduce a LOCAL mass match', with the premise-0c 2x2 so that the comparison SET and the STATISTIC are not moved in the same step (L222)."
+ },
+ "reading": "The card's primary estimator family is undefined on 9.8-15.1% of its own population: P2 == 0 for 126/1288, 128/1264 and 190/1260 present descending cells, and those cells are systematically LOW out-mass, so the log-log fit is a regression on a sample selected on its own outcome. The registered FIT-UNMEASURABLE escape therefore fired correctly. The exclusion-free instrument is the RANK-BASED neutralising exponent, which is defined on the whole population because a zero numerator gives R_k == 0 at every k. Report k_NEUT (full) as the mass-neutral exponent, k_NEUT (subpopulation) and the three regression estimators as outcome-selected companions, and every residual rho against its COMPONENT-SHUFFLED spurious baseline rather than against zero (Pearson 1897).",
+ "limitations": [
+  "POST-HOC and UNREGISTERED: no branch, no bar, no prediction. The parent's K_DEGENERATE stands exactly as measured.",
+  "k_NEUT is a DESCRIPTIVE reparametrisation that zeroes a rank correlation; it is not a better model of the biology.",
+  "The zeros are tied at the bottom of R_k at every k, so k_NEUT is determined entirely by the non-zero cells' ORDERING against m_out -- the zeros contribute rank mass, not slope information.",
+  "Three substrates sharing a graph are not three independent replications; one depth, one weighting, no dynamics.",
+  "Both actors' percentiles are DESCRIPTIONS OF A SELECTED CELL (Kriegeskorte 2009)."
+ ],
+ "readonly_fingerprints_ok": true,
+ "runtime_s": 3.3762974739074707
+}

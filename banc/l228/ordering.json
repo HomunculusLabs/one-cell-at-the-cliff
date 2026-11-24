@@ -1,0 +1,43 @@
+{
+ "label": "POST-HOC, UNREGISTERED, DESCRIPTION ONLY. Pure arithmetic on certified stored values; no branch, no bar, no RNG.",
+ "question": "does the depth-2 anatomical term recover the L/R ordering of the dynamic level on BOTH joints, where depth-1 gets it wrong (L208's dissociation)?",
+ "joints": {
+  "Ti": {
+   "lvlL": 0.18450981299088237,
+   "lvlR": 0.11869173048168136,
+   "dyn_L_hotter": true,
+   "d1_gain_L": 3.2676540067290776,
+   "d1_gain_R": 4.268148644433582,
+   "d1_says_L_higher": false,
+   "d2_gain_L": -56.71769995094802,
+   "d2_gain_R": -68.94219849083169,
+   "d2_says_L_higher": true,
+   "d1_agrees": false,
+   "d2_agrees": true,
+   "d1_margin_rel": 0.26553100818003594,
+   "d2_margin_rel": 0.19456483240032985
+  },
+  "Tr": {
+   "lvlL": 0.02206304228078253,
+   "lvlR": 0.07654644851300822,
+   "dyn_L_hotter": false,
+   "d1_gain_L": 0.4820956677737062,
+   "d1_gain_R": 0.26448252844143927,
+   "d1_says_L_higher": true,
+   "d2_gain_L": -61.2145190482933,
+   "d2_gain_R": -59.620444656742755,
+   "d2_says_L_higher": false,
+   "d1_agrees": false,
+   "d2_agrees": true,
+   "d1_margin_rel": 0.5829614109693506,
+   "d2_margin_rel": 0.02638432358769527
+  }
+ },
+ "n_joints": 2,
+ "depth1_orderings_correct": 0,
+ "depth2_orderings_correct": 2,
+ "resolution_floor": "with 2 joints a sign-pattern statistic has 4 outcomes; the smallest one-sided coin-flip probability is 1/4 = 0.25, so 2/2 is DESCRIPTION and cannot be a p-value (L225)",
+ "coinflip_p_two_of_two": 0.25,
+ "note": "the depth-2 term is NEGATIVE on all four pool-sides, so 'higher d2' means LESS net two-hop inhibition; the ordering comparison is on the signed value, which is the quantity a linear expansion would feed forward",
+ "gates_asserted": 10
+}

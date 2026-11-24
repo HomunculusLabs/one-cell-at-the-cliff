@@ -5,7 +5,7 @@ This card hardens it. All rollouts are transforms of YOUR certified L175
 harness (same seeds/keys discipline, C0A anchors mandatory: the cutwA base
 must reproduce stored results EXACTLY in every worker before any new arm).
 
-Working set: `~/critters/peabrain-lab/banc/l175/` (your harness),
+Working set: `/home/t3rpz/critters/peabrain-lab/banc/l175/` (your harness),
 `banc/l175/selection.json` (census data for twin selection).
 
 ## Arms (register ALL in `banc/l185/PREREG.md` BEFORE any rollout)

@@ -15,7 +15,7 @@ paper/review_opus_r4_evidence/00_pins.txt); snapshot DRAFT.md into your
 evidence dir. If any of these change during your review, disclose it with
 hashes and timestamps — do not silently review a moving target.
 
-## The object (paths relative to ~/critters/peabrain-lab)
+## The object (paths relative to /home/t3rpz/critters/peabrain-lab)
 
 - paper/DRAFT.md — the folded draft (title, control ladder, 3-readout
   tables, Methods equation, relay/occlusion/edge-cut mechanism, wet-lab
@@ -26,7 +26,7 @@ hashes and timestamps — do not silently review a moving target.
 - Prior rounds + adjudications: paper/review_fable.md, review_fable_r2.md
   (+ evidence), review_astra_r3.md (+ evidence),
   review_claudeai_fage_20261121.md [sic: review_claudeai_fable_20261121.md]
-- ~/critters/peabrain/LANE-LOG.md — today's adjudication +
+- /home/t3rpz/critters/peabrain/LANE-LOG.md — today's adjudication +
   experiment lines (what we verified vs what any agent claimed)
 - Findings files: banc/l175/L175-FINDINGS.md, banc/l184..l187, l190,
   ducklesion/DUCK-FINDINGS.md (contrast result)

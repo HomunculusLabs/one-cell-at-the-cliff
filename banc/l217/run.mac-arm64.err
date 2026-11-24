@@ -1,0 +1,9 @@
+/Users/t3rpz/critters/peabrain/.venv-mac/lib/python3.14/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:51.)
+  result = torch.sparse_compressed_tensor(
+/Users/t3rpz/critters/peabrain-lab/banc/l217_static.py:435: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/Context.cpp:923.)
+  W = torch.sparse_coo_tensor(
+Traceback (most recent call last):
+  File "/Users/t3rpz/critters/peabrain-lab/banc/l217_static.py", line 941, in <module>
+    assert real[f] == st[f], (J, sname, f, real[f], st[f], "CERT-205")
+           ^^^^^^^^^^^^^^^^
+AssertionError: ('Ti', 'base_closure', 'null_A_cell_mean', 0.0013305471397729528, 0.0013305471397729565, 'CERT-205')

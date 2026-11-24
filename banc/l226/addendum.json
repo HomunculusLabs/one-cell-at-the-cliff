@@ -1,0 +1,72 @@
+{
+ "label": "L226b POST-HOC ADDENDUM \u2014 declared unregistered, no branch",
+ "parent": "l226/static.json",
+ "cert_226": 64,
+ "A_q4_exception_out_of_sample": {
+  "cell": "Ti|f4wA",
+  "stored_L214_branch": "ACCOUNTED",
+  "B38_absA": 0.02435416666666667,
+  "B38_absA_rank_of_10": 2,
+  "B38_bottom3": true,
+  "B38_p_up": 0.99185,
+  "B38_p_dn": 0.0083,
+  "B38_no_tail_sig": false,
+  "would_score": "UNACCOUNTED",
+  "survives_B38_BH": true,
+  "magnitude_clause_batches": 3,
+  "nosig_clause_batches": 2,
+  "finding": "L214's registered ACCOUNTED verdict for its own exception cell does NOT hold out of sample: the magnitude clause holds 3/3, the no-significance clause 2/3."
+ },
+ "B_magnitude_vs_correlation": {
+  "n_cells": 30,
+  "spearman_absA_absrho": 0.2978865406006674,
+  "distinct_absA": 30,
+  "distinct_absrho": 29,
+  "mean_absrho_small_absA": 0.20980392156862746,
+  "mean_absrho_rest": 0.36708683473389353,
+  "max_absrho_small_absA": 0.6029411764705882,
+  "finding": "a near-zero currency MEAN does not bound the per-seed CORRELATION; a magnitude screen cannot excuse a correlation result."
+ },
+ "C_what_carries_the_reading": {
+  "exception_rhos": [
+   -0.2647058823529412,
+   0.07058823529411765,
+   -0.6029411764705882
+  ],
+  "exception_signs": [
+   -1,
+   1,
+   -1
+  ],
+  "actor_rhos": [
+   0.7588235294117647,
+   0.9117647058823529,
+   0.8
+  ],
+  "per_batch_any_tail_hits": {
+   "B36": [
+    "Ti|cutwA|up",
+    "Tr|f4ng|up",
+    "Tr|cutwA|up"
+   ],
+   "B37": [
+    "Tr|f4ng|up",
+    "Tr|f4tw|up"
+   ],
+   "B38": [
+    "Ti|f4wA|dn",
+    "Tr|f4ng|up",
+    "Tr|f4tw|up"
+   ]
+  },
+  "expected_false_positives_per_batch": 1.0,
+  "cross_batch_consistency": {
+   "Ti|f4wA|dn": 1,
+   "Ti|cutwA|up": 1,
+   "Tr|f4ng|up": 3,
+   "Tr|f4tw|up": 2,
+   "Tr|cutwA|up": 1
+  },
+  "finding": "the CROSS-BATCH filter is the instrument that separates signal from multiplicity here: the actor is 3/3 in one tail, every other hit is 1/3 or 2/3."
+ }
+}

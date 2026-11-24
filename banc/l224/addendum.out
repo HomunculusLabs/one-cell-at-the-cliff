@@ -1,0 +1,73 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[premise] pure_proj 560 of 1313 DNs | carrier True / mirror False (registered)
+[sub] G0_closure: n 21,809 edges 647,953 lam1(g=1) 227.786907 (rel spread 1.25e-16)
+[sub] G1_cutwA: n 21,785 edges 644,177 lam1(g=1) 227.779875 (rel spread 1.25e-16)
+[sub] F4_f4wA: n 21,789 edges 469,618 lam1(g=1) 200.510803 (rel spread 1.42e-16)
+[CERT-207] GREEN 522 checks at FLOAT EQUALITY (l207 ladder_table x3 substrates + 2 slot comparators + Q2 actors); artifact fingerprint unchanged
+[CERT-T] GREEN 272 checks: fast transposed census agrees with the verbatim reach_sub at max rel diff 9.05e-16 (< 1e-12)
+[pop] G0_closure: 1288 present descending cells with m_out>0 (1273 named types, 560 pure_proj)
+[pop] G1_cutwA: 1264 present descending cells with m_out>0 (1249 named types, 536 pure_proj)
+[pop] F4_f4wA: 1260 present descending cells with m_out>0 (1245 named types, 535 pure_proj)
+[strata] counts G0_closure [129, 129, 129, 127, 130, 129, 128, 129, 129, 129] | G1_cutwA [127, 126, 126, 127, 126, 126, 127, 126, 126, 127] | F4_f4wA [126, 126, 126, 126, 126, 126, 126, 126, 126, 126]
+[Q1] G0_closure: DNp33 type median 2.75903e-05 | pct among 426 type medians 0.131 | NULL pct 0.0145 (null med 0.000411367) -> T_TYPE_LOW
+[Q1] G1_cutwA: DNp33 type median 2.7592e-05 | pct among 411 type medians 0.141 | NULL pct 0.0105 (null med 0.000444818) -> T_TYPE_LOW
+[Q1] F4_f4wA: DNp33 type median 3.33736e-05 | pct among 409 type medians 0.169 | NULL pct 0.0130 (null med 0.000479518) -> T_TYPE_LOW
+[Q1] BRANCH T_TYPE_LOW (['T_TYPE_LOW', 'T_TYPE_LOW', 'T_TYPE_LOW'])
+[Q2] G0_closure: median pure 9.17346e-05 vs nonpure 0.000336298 (dlog10 -0.5642, ratio 0.273) | NULL pct 0.1660 -> C_CLASS_TYPICAL
+[Q2] G1_cutwA: median pure 8.35644e-05 vs nonpure 0.000336746 (dlog10 -0.6053, ratio 0.248) | NULL pct 0.2275 -> C_CLASS_TYPICAL
+[Q2] F4_f4wA: median pure 9.25719e-05 vs nonpure 0.000384002 (dlog10 -0.6179, ratio 0.241) | NULL pct 0.1700 -> C_CLASS_TYPICAL
+[Q2] BRANCH C_CLASS_TYPICAL (['C_CLASS_TYPICAL', 'C_CLASS_TYPICAL', 'C_CLASS_TYPICAL'])
+[Q3] G0_closure: carrier pct-in-pure_proj 0.318 (560 cells) | mirror pct-in-nonpure 0.144 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] G1_cutwA: carrier pct-in-pure_proj 0.336 (536 cells) | mirror pct-in-nonpure 0.152 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] F4_f4wA: carrier pct-in-pure_proj 0.407 (535 cells) | mirror pct-in-nonpure 0.153 (725 cells) -> D_CLASS_EXPLAINS
+[Q3] BRANCH D_CLASS_EXPLAINS (['D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS'])
+[READ] derived reading: MIXTURE
+[CERT-213] GREEN 289 stored l213 leaves reproduced at float/int/str equality BEFORE any L224 number was read
+[CERT-ADD] GREEN 33 checks: l213/addendum.json's population rho, within-class raw and mass-matched percentiles at FLOAT equality
+[CERT-RANK] GREEN 18 checks: rankvec is a midrank estimator on all six population vectors (tie groups unsplit, rank sum exact)
+[CERT-K1] GREEN 6 checks: R_k(k=1) array-equal to the inherited R on all three substrates (x**1.0 is a float no-op here)
+[CERT-FAST] GREEN 15 checks: numpy midrank EXACTLY array-equal to rankvec; numpy Spearman within 0.00e+00 relative
+[fit] G0_closure: 1162 cells in the fit (126 excluded for P2==0, 0.0978)
+[fit] G1_cutwA: 1136 cells in the fit (128 excluded for P2==0, 0.1013)
+[fit] F4_f4wA: 1070 cells in the fit (190 excluded for P2==0, 0.1508)
+[CERT-224] GREEN 19 parent values at float/int equality BEFORE any addendum number was read
+[CERT-ZK] GREEN 18 checks: the P2==0 set is k-invariant over k in [0,6] and the k=1 full-population rho IS L213's published value
+[A] G0_closure: 126/1288 cells with P2==0 (0.0978) | median m_out zero 18.59 vs nonzero 97.31 (5.24x) | rho(P2>0, m_out) +0.3909 | zero frac pure 0.139 vs nonpure 0.066
+[A] G1_cutwA: 128/1264 cells with P2==0 (0.1013) | median m_out zero 18.59 vs nonzero 94.98 (5.11x) | rho(P2>0, m_out) +0.3961 | zero frac pure 0.146 vs nonpure 0.069
+[A] F4_f4wA: 190/1260 cells with P2==0 (0.1508) | median m_out zero 13.63 vs nonzero 84.05 (6.17x) | rho(P2>0, m_out) +0.4664 | zero frac pure 0.213 vs nonpure 0.105
+[B] G0_closure: k_NEUT FULL (no exclusion) 1.95278 [monotone True, rho(0) +0.7995 -> rho(8) -0.5578] | k_NEUT SUBPOP 1.5935 [monotone True] | full-sub 0.3592798451484578
+[B] G1_cutwA: k_NEUT FULL (no exclusion) 2.00572 [monotone True, rho(0) +0.7993 -> rho(8) -0.5443] | k_NEUT SUBPOP 1.60927 [monotone True] | full-sub 0.39645425971557113
+[B] F4_f4wA: k_NEUT FULL (no exclusion) 2.17187 [monotone True, rho(0) +0.7883 -> rho(8) -0.3645] | k_NEUT SUBPOP 1.51539 [monotone True] | full-sub 0.6564799680955189
+[C] G0_closure: k_OLS 1.5682 CI95 [1.4902,1.6490] | k_TS 1.5811 | k_RMA 2.0854 (r +0.7520) | spread 0.5172 | k_NEUT_full - k_OLS 0.3846134314476519
+[C] G1_cutwA: k_OLS 1.5835 CI95 [1.5050,1.6682] | k_TS 1.5972 | k_RMA 2.1120 (r +0.7498) | spread 0.5285 | k_NEUT_full - k_OLS 0.42220375980855573
+[C] F4_f4wA: k_OLS 1.4858 CI95 [1.4088,1.5643] | k_TS 1.5057 | k_RMA 2.0081 (r +0.7399) | spread 0.5223 | k_NEUT_full - k_OLS 0.6860474116073509
+[D] G0_closure k0 (k=0.0000): measured +0.7995 | SPURIOUS median -0.0000 [-0.0471,+0.0451] -> Pearson-corrected excess +0.7995
+[D] G0_closure k1 (k=1.0000): measured +0.5319 | SPURIOUS median -0.3635 [-0.4020,-0.3244] -> Pearson-corrected excess +0.8955
+[D] G0_closure k_neut_full (k=1.9528): measured -0.0000 | SPURIOUS median -0.5651 [-0.5946,-0.5347] -> Pearson-corrected excess +0.5651
+[D] G0_closure k_ols (k=1.5682): measured +0.2155 | SPURIOUS median -0.4985 [-0.5315,-0.4649] -> Pearson-corrected excess +0.7139
+[D] G1_cutwA k0 (k=0.0000): measured +0.7993 | SPURIOUS median +0.0001 [-0.0472,+0.0446] -> Pearson-corrected excess +0.7992
+[D] G1_cutwA k1 (k=1.0000): measured +0.5379 | SPURIOUS median -0.3573 [-0.3958,-0.3192] -> Pearson-corrected excess +0.8951
+[D] G1_cutwA k_neut_full (k=2.0057): measured +0.0000 | SPURIOUS median -0.5656 [-0.5945,-0.5346] -> Pearson-corrected excess +0.5656
+[D] G1_cutwA k_ols (k=1.5835): measured +0.2213 | SPURIOUS median -0.4944 [-0.5264,-0.4609] -> Pearson-corrected excess +0.7157
+[D] F4_f4wA k0 (k=0.0000): measured +0.7883 | SPURIOUS median -0.0006 [-0.0470,+0.0470] -> Pearson-corrected excess +0.7890
+[D] F4_f4wA k1 (k=1.0000): measured +0.5447 | SPURIOUS median -0.3405 [-0.3798,-0.2996] -> Pearson-corrected excess +0.8852
+[D] F4_f4wA k_neut_full (k=2.1719): measured +0.0000 | SPURIOUS median -0.5465 [-0.5793,-0.5121] -> Pearson-corrected excess +0.5465
+[D] F4_f4wA k_ols (k=1.4858): measured +0.3039 | SPURIOUS median -0.4478 [-0.4826,-0.4100] -> Pearson-corrected excess +0.7517
+[E] G0_closure k_neut_full carrier: mass-matched R 0.0500 | class R 0.3179 -> class R_k 0.1911 (d 0.1411) | pop R 0.2430 -> pop R_k 0.1607 (d 0.1107)
+[E] G0_closure k_neut_full mirror: mass-matched R 0.0700 | class R 0.1442 -> class R_k 0.1209 (d 0.0509) | pop R 0.2065 -> pop R_k 0.1421 (d 0.0721)
+[E] G0_closure k_ols_outcome_selected carrier: mass-matched R 0.0500 | class R 0.3179 -> class R_k 0.2393 (d 0.1893) | pop R 0.2430 -> pop R_k 0.1925 (d 0.1425)
+[E] G0_closure k_ols_outcome_selected mirror: mass-matched R 0.0700 | class R 0.1442 -> class R_k 0.1277 (d 0.0577) | pop R 0.2065 -> pop R_k 0.1615 (d 0.0915)
+[E] G1_cutwA k_neut_full carrier: mass-matched R 0.0800 | class R 0.3358 -> class R_k 0.1978 (d 0.1178) | pop R 0.2516 -> pop R_k 0.1653 (d 0.0853)
+[E] G1_cutwA k_neut_full mirror: mass-matched R 0.0700 | class R 0.1525 -> class R_k 0.1250 (d 0.0550) | pop R 0.2168 -> pop R_k 0.1448 (d 0.0748)
+[E] G1_cutwA k_ols_outcome_selected carrier: mass-matched R 0.0800 | class R 0.3358 -> class R_k 0.2444 (d 0.1644) | pop R 0.2516 -> pop R_k 0.1938 (d 0.1138)
+[E] G1_cutwA k_ols_outcome_selected mirror: mass-matched R 0.0700 | class R 0.1525 -> class R_k 0.1319 (d 0.0619) | pop R 0.2168 -> pop R_k 0.1661 (d 0.0961)
+[E] F4_f4wA k_neut_full carrier: mass-matched R 0.0900 | class R 0.4075 -> class R_k 0.2505 (d 0.1605) | pop R 0.2984 -> pop R_k 0.2056 (d 0.1156)
+[E] F4_f4wA k_neut_full mirror: mass-matched R 0.0600 | class R 0.1531 -> class R_k 0.1393 (d 0.0793) | pop R 0.2310 -> pop R_k 0.1802 (d 0.1202)
+[E] F4_f4wA k_ols_outcome_selected carrier: mass-matched R 0.0900 | class R 0.4075 -> class R_k 0.3196 (d 0.2296) | pop R 0.2984 -> pop R_k 0.2421 (d 0.1521)
+[E] F4_f4wA k_ols_outcome_selected mirror: mass-matched R 0.0600 | class R 0.1531 -> class R_k 0.1421 (d 0.0821) | pop R 0.2310 -> pop R_k 0.1937 (d 0.1337)
+[done] addendum 3.4s -> l224/addendum.json

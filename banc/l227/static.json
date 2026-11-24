@@ -1,0 +1,442 @@
+{
+ "prereg": "l227/PREREG.md",
+ "premise": "Three of the card's four currency pairs are settled structurally before any simulation: lvl/margin is an exact sign-flip identity, flo/fhi is degenerate by data (fhi == 0 on all 20 cells), duty/S-mean is a quantity and its own mean. Each INSTRUMENT has its own mirror coefficient (MAG <- r_rho, SGN <- r_cur); the card quoted SGN's for MAG. Branches ride only on simulated power curves and on the aggregation branch.",
+ "cert": {
+  "cert_rank": 11,
+  "expr_form_residual_D": 6.938893903907228e-17,
+  "cert_214": 31,
+  "cert_agg": 56,
+  "cert_sim": 4,
+  "inputs_unmoved": 5
+ },
+ "pairs": {
+  "lvl_vs_margin": {
+   "klass": "C_ANALYTIC_MIRROR",
+   "mirror_r": -1.0,
+   "mirror_basis": "proof: dM = -(lvlL-lvlR)",
+   "max_abs_resid": 2.7755575615628914e-17,
+   "derived_tol": 1.798330939774239e-16,
+   "n_float_exact": 3,
+   "n_cells": 20,
+   "D_forced": 0.0,
+   "note": "Spearman flips sign under a strictly decreasing transform, so rho_M == -rho_A cellwise, |rho_M| == |rho_A| cellwise, and D is identically zero: the magnitude head-to-head has EXACTLY ZERO power on this pair by proof."
+  },
+  "flo_vs_fhi": {
+   "klass": "C_DEGENERATE",
+   "mirror_r": null,
+   "n_zero_checks": 80,
+   "note": "fhi95/fhi90 are identically 0.0 on all 20 cells (80 checks): a Spearman against a constant is undefined. At this sparse relu operating point the ceiling-side currency never fires, so no head-to-head exists."
+  },
+  "A_vs_dM": {
+   "klass": "C_EMPIRICAL_NEAR_MIRROR",
+   "r_rho_midrank": -0.682963568418539,
+   "r_rho_stored_ordinal": -0.6766917293233082,
+   "r_cur_midrank": -0.8556390977443609,
+   "r_cur_stored_ordinal": -0.8556390977443609,
+   "tie_group_in_rhoM": {
+    "0.1588235294117647": 2
+   },
+   "frac_opposite_rho": 0.75,
+   "frac_opposite_currency": 0.65,
+   "mag_consumes": "r_rho",
+   "sgn_consumes": "r_cur",
+   "note": "The card quotes -0.856 (the CURRENCY-level mirror, which is SGN's coefficient) to justify a claim about MAG, whose coefficient is the rho-level one. Both are reported; the stored rho-level value is argsort-of-argsort with one tie group in rho_M and the midrank repair moves it by -0.0063."
+  },
+  "duty_vs_Smean": {
+   "klass": "C_NOT_APPLICABLE",
+   "agg_branch": "A_ROUNDED",
+   "n_units": 56,
+   "n_float_exact": 4,
+   "max_abs_resid": 0.0004999999999999449,
+   "mirror_r": 0.9999829116790118,
+   "note": "mean<side> is the mean of the per-seed duty<side> list, so this is one quantity at two granularities, not two candidate currencies; and l200/l202 store per-arm scalars with no shared within-cell regression, so the magnitude instrument does not exist there. Serves as the NOT-A-MIRROR positive control: its coefficient is positive."
+  }
+ },
+ "sim": {
+  "beta_calibrated": 0.32864775718098826,
+  "beta_cal_mean_absrhoA": 0.32927279411764704,
+  "beta_target": 0.32926470588235296,
+  "grid": {
+   "cal": [
+    {
+     "lam": 0.0,
+     "power_mag": 0.575,
+     "power_sgn": 0.0,
+     "r_rho": -0.0007435198888501635,
+     "r_cur": 0.01195112781954887,
+     "mean_absrhoA": 0.3322283088235294,
+     "mean_D": 0.12555772058823528,
+     "max_abs_dv": 0.8441176470588235,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.1,
+     "power_mag": 0.515,
+     "power_sgn": 0.0025,
+     "r_rho": -0.0636238227088934,
+     "r_cur": -0.08942481203007517,
+     "mean_absrhoA": 0.3286661764705882,
+     "mean_D": 0.11711066176470589,
+     "max_abs_dv": 0.8647058823529412,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.2,
+     "power_mag": 0.575,
+     "power_sgn": 0.01,
+     "r_rho": -0.16947778225955404,
+     "r_cur": -0.17835338345864662,
+     "mean_absrhoA": 0.3315636029411764,
+     "mean_D": 0.12018345588235294,
+     "max_abs_dv": 0.8558823529411765,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.3,
+     "power_mag": 0.4875,
+     "power_sgn": 0.005,
+     "r_rho": -0.23864654273340272,
+     "r_cur": -0.2648609022556391,
+     "mean_absrhoA": 0.3291051470588235,
+     "mean_D": 0.10702683823529412,
+     "max_abs_dv": 0.8235294117647058,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.4,
+     "power_mag": 0.44,
+     "power_sgn": 0.0125,
+     "r_rho": -0.327024054582818,
+     "r_cur": -0.3443496240601503,
+     "mean_absrhoA": 0.32823676470588237,
+     "mean_D": 0.09959522058823529,
+     "max_abs_dv": 0.85,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.5,
+     "power_mag": 0.3775,
+     "power_sgn": 0.0075,
+     "r_rho": -0.4104581061305241,
+     "r_cur": -0.4563233082706767,
+     "mean_absrhoA": 0.3274676470588236,
+     "mean_D": 0.0862125,
+     "max_abs_dv": 0.8441176470588235,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.6,
+     "power_mag": 0.295,
+     "power_sgn": 0.0275,
+     "r_rho": -0.4939752540001697,
+     "r_cur": -0.5589548872180451,
+     "mean_absrhoA": 0.3260205882352941,
+     "mean_D": 0.07199889705882354,
+     "max_abs_dv": 0.7676470588235293,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.7,
+     "power_mag": 0.2825,
+     "power_sgn": 0.0375,
+     "r_rho": -0.5927240238290401,
+     "r_cur": -0.6598082706766918,
+     "mean_absrhoA": 0.327691544117647,
+     "mean_D": 0.056780147058823525,
+     "max_abs_dv": 0.7058823529411765,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.8,
+     "power_mag": 0.2275,
+     "power_sgn": 0.05,
+     "r_rho": -0.6947128857087645,
+     "r_cur": -0.7582368421052632,
+     "mean_absrhoA": 0.32841801470588233,
+     "mean_D": 0.04268713235294117,
+     "max_abs_dv": 0.6,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.9,
+     "power_mag": 0.1325,
+     "power_sgn": 0.08,
+     "r_rho": -0.8172248512226008,
+     "r_cur": -0.8691165413533836,
+     "mean_absrhoA": 0.3309305147058823,
+     "mean_D": 0.02190625,
+     "max_abs_dv": 0.5882352941176471,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 1.0,
+     "power_mag": 0.0,
+     "power_sgn": 0.135,
+     "r_rho": -1.0,
+     "r_cur": -1.0,
+     "mean_absrhoA": 0.32677830882352943,
+     "mean_D": 0.0,
+     "max_abs_dv": 0.0,
+     "frac_pD_one": 1.0
+    }
+   ],
+   "fixed50": [
+    {
+     "lam": 0.0,
+     "power_mag": 0.9825,
+     "power_sgn": 0.0025,
+     "r_rho": -0.004739752499009654,
+     "r_cur": 0.00923308270676692,
+     "mean_absrhoA": 0.46310992647058824,
+     "mean_D": 0.2564393382352941,
+     "max_abs_dv": 0.9029411764705882,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.1,
+     "power_mag": 0.9925,
+     "power_sgn": 0.005,
+     "r_rho": -0.06102502166432235,
+     "r_cur": -0.08401503759398496,
+     "mean_absrhoA": 0.4620011029411765,
+     "mean_D": 0.24930441176470589,
+     "max_abs_dv": 0.9264705882352942,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.2,
+     "power_mag": 0.995,
+     "power_sgn": 0.0175,
+     "r_rho": -0.15041823655413217,
+     "r_cur": -0.18348496240601506,
+     "mean_absrhoA": 0.4658757352941177,
+     "mean_D": 0.24768014705882352,
+     "max_abs_dv": 0.8882352941176471,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.3,
+     "power_mag": 0.97,
+     "power_sgn": 0.01,
+     "r_rho": -0.22599281908475233,
+     "r_cur": -0.26460526315789473,
+     "mean_absrhoA": 0.46495698529411766,
+     "mean_D": 0.2277716911764706,
+     "max_abs_dv": 0.8735294117647059,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.4,
+     "power_mag": 0.96,
+     "power_sgn": 0.03,
+     "r_rho": -0.305278249740994,
+     "r_cur": -0.342390977443609,
+     "mean_absrhoA": 0.4626797794117647,
+     "mean_D": 0.20815845588235293,
+     "max_abs_dv": 0.8647058823529412,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.5,
+     "power_mag": 0.94,
+     "power_sgn": 0.045,
+     "r_rho": -0.3768392766317644,
+     "r_cur": -0.4574285714285714,
+     "mean_absrhoA": 0.46253492647058825,
+     "mean_D": 0.1814797794117647,
+     "max_abs_dv": 0.8823529411764706,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.6,
+     "power_mag": 0.85,
+     "power_sgn": 0.075,
+     "r_rho": -0.46850024326447454,
+     "r_cur": -0.5600902255639097,
+     "mean_absrhoA": 0.45815036764705885,
+     "mean_D": 0.14876727941176474,
+     "max_abs_dv": 0.823529411764706,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.7,
+     "power_mag": 0.7475,
+     "power_sgn": 0.11,
+     "r_rho": -0.571795062292555,
+     "r_cur": -0.6585037593984963,
+     "mean_absrhoA": 0.46032352941176474,
+     "mean_D": 0.11644889705882353,
+     "max_abs_dv": 0.7970588235294118,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.8,
+     "power_mag": 0.6275,
+     "power_sgn": 0.12,
+     "r_rho": -0.6690879032540655,
+     "r_cur": -0.7593533834586467,
+     "mean_absrhoA": 0.46202720588235296,
+     "mean_D": 0.08513161764705883,
+     "max_abs_dv": 0.6617647058823529,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 0.9,
+     "power_mag": 0.2975,
+     "power_sgn": 0.19,
+     "r_rho": -0.7941013853580707,
+     "r_cur": -0.8701654135338347,
+     "mean_absrhoA": 0.4649426470588236,
+     "mean_D": 0.04105183823529412,
+     "max_abs_dv": 0.55,
+     "frac_pD_one": 0.0
+    },
+    {
+     "lam": 1.0,
+     "power_mag": 0.0,
+     "power_sgn": 0.2925,
+     "r_rho": -1.0,
+     "r_cur": -1.0,
+     "mean_absrhoA": 0.46248860294117644,
+     "mean_D": 0.0,
+     "max_abs_dv": 0.0,
+     "frac_pD_one": 1.0
+    }
+   ]
+  },
+  "refine": [
+   {
+    "lam": 0.91,
+    "power_mag": 0.09,
+    "power_sgn": 0.06,
+    "r_rho": -0.8230666164158055,
+    "r_cur": -0.8751353383458647,
+    "mean_absrhoA": 0.3291047794117647,
+    "mean_D": 0.017572058823529413,
+    "max_abs_dv": 0.5235294117647058,
+    "frac_pD_one": 0.0
+   },
+   {
+    "lam": 0.92,
+    "power_mag": 0.0725,
+    "power_sgn": 0.075,
+    "r_rho": -0.8298406595972136,
+    "r_cur": -0.8857744360902257,
+    "mean_absrhoA": 0.3253746323529412,
+    "mean_D": 0.01680514705882353,
+    "max_abs_dv": 0.5058823529411764,
+    "frac_pD_one": 0.0
+   },
+   {
+    "lam": 0.93,
+    "power_mag": 0.13,
+    "power_sgn": 0.055,
+    "r_rho": -0.8521916165648065,
+    "r_cur": -0.9031165413533836,
+    "mean_absrhoA": 0.33385955882352936,
+    "mean_D": 0.019613235294117647,
+    "max_abs_dv": 0.6970588235294117,
+    "frac_pD_one": 0.0025
+   },
+   {
+    "lam": 0.94,
+    "power_mag": 0.1,
+    "power_sgn": 0.0825,
+    "r_rho": -0.8654135611035536,
+    "r_cur": -0.9140751879699248,
+    "mean_absrhoA": 0.32744522058823533,
+    "mean_D": 0.015263970588235294,
+    "max_abs_dv": 0.4323529411764706,
+    "frac_pD_one": 0.0
+   },
+   {
+    "lam": 0.95,
+    "power_mag": 0.0525,
+    "power_sgn": 0.075,
+    "r_rho": -0.884247036979516,
+    "r_cur": -0.9261578947368421,
+    "mean_absrhoA": 0.32441875,
+    "mean_D": 0.009687132352941177,
+    "max_abs_dv": 0.38529411764705884,
+    "frac_pD_one": 0.0
+   },
+   {
+    "lam": 0.96,
+    "power_mag": 0.0525,
+    "power_sgn": 0.0875,
+    "r_rho": -0.8990962639922095,
+    "r_cur": -0.9360676691729323,
+    "mean_absrhoA": 0.3308977941176471,
+    "mean_D": 0.008910294117647058,
+    "max_abs_dv": 0.44705882352941173,
+    "frac_pD_one": 0.005
+   },
+   {
+    "lam": 0.97,
+    "power_mag": 0.0875,
+    "power_sgn": 0.085,
+    "r_rho": -0.9139038458069706,
+    "r_cur": -0.9466127819548872,
+    "mean_absrhoA": 0.3286044117647059,
+    "mean_D": 0.009725735294117646,
+    "max_abs_dv": 0.3411764705882353,
+    "frac_pD_one": 0.0025
+   },
+   {
+    "lam": 0.98,
+    "power_mag": 0.0375,
+    "power_sgn": 0.1,
+    "r_rho": -0.9321878843838204,
+    "r_cur": -0.9630639097744361,
+    "mean_absrhoA": 0.32872095588235295,
+    "mean_D": 0.004654044117647058,
+    "max_abs_dv": 0.4029411764705882,
+    "frac_pD_one": 0.0
+   },
+   {
+    "lam": 0.99,
+    "power_mag": 0.03,
+    "power_sgn": 0.1125,
+    "r_rho": -0.9560262362643209,
+    "r_cur": -0.9779360902255639,
+    "mean_absrhoA": 0.32494264705882353,
+    "mean_D": 0.0017849264705882353,
+    "max_abs_dv": 0.3176470588235294,
+    "frac_pD_one": 0.0
+   }
+  ],
+  "mag_power_max_increase": 0.05999999999999994
+ },
+ "rule": {
+  "X_lam": 0.92,
+  "X_abs_r_rho": 0.8298406595972136,
+  "X_abs_r_cur": 0.8857744360902257,
+  "power_mag_at_X": 0.0725,
+  "power_sgn_at_X": 0.075,
+  "X50_lam": 0.3,
+  "X50_abs_r_rho": 0.23864654273340272,
+  "measured_pair_abs_r_rho": 0.682963568418539,
+  "measured_pair_abs_r_cur": 0.8556390977443609,
+  "retro_flags_L214_Q3": false,
+  "one_line": "PRE-STEP: before registering a MAGNITUDE head-to-head between two candidate currencies, compute the mirror coefficient in the currency the instrument consumes (per-cell correlations for a mean-|rho| statistic, per-cell currency means for a sign-agreement statistic). If |mirror r| >= 0.83, register the SIGN comparison as the primary; the magnitude test has less power than the sign test there and exactly zero power at |r| = 1."
+ },
+ "branch": {
+  "verdict": "M_CROSSES",
+  "crossing_grid_index": 10
+ },
+ "predictions": {
+  "P1_M_CROSSES": true,
+  "P2_mag_power_zero_at_lam1": true,
+  "P3_threshold_le_0.6767": false,
+  "P4prime_A_ROUNDED": true,
+  "P5_mag_beats_sgn_at_lam0": true
+ },
+ "limitations": [
+  "The simulation's generative model is Gaussian with a linear mirror; real currencies may be mirrors through a nonlinear monotone map, which leaves the ANALYTIC arm (rho_M == -rho_A exactly) untouched but changes the induced coefficient at intermediate lam.",
+  "The within-cell mirror strength of the real A/dM pair is not recoverable from the stored jsons (per-seed values live in the npz), so the measured pair is placed on the grid through the INDUCED across-cell coefficient.",
+  "N_PERM_SIM = 2000 (vs L214's 20000): p resolution 1/2001, adequate at alpha .05 and registered in advance with its cost reason.",
+  "beta is calibrated against an OBSERVED value (L214's mean_absrhoA), so it is a nuisance parameter and description; the branch rides on curve SHAPE.",
+  "SGN's success criterion requires BOTH currencies' binomial tests to be significant in opposite directions, which is a strict reading; a looser one would only move the crossing further toward low |r|."
+ ],
+ "self_sha256": "d456443e7555a6e6"
+}

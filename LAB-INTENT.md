@@ -10433,3 +10433,1263 @@ now has its input (the figure scripts fail loudly by design until rebuilt).
 Artifacts banc/l202/{PREREG.md, PREREG.sha256, FREEZE.json, static.json,
 nec_run.py, verdict_l202.py, results_l202.json, verdict.out, addendum.*,
 L202-FINDINGS.md, raw_w0-3.npz, xm_w0-3.npz}. No DRAFT / LANE edits.
+
+## tick 239 (2026-11-22 16:2x-17:1x) — L210, the dominant-mode COEFFICIENT
+
+Branch B_CLOSED_FORM (registered), AT the threshold: R_asym 11.3985 vs the
+stored D10 10.38808, ratio 1.0973 against a |.|<=0.10 bar — clears by 0.27
+percentage points and is reported as threshold-clearing everywhere.
+
+L206's depth-invariant ~10.39x carrier pool-reach deficit HAS a closed form and
+it is one number: u1[carrier] = 4.0973e-04 real vs 4.6726e-03 null median
+(100 l169c degree-neutral destination swaps), percentile 0.0 (all 100 draws
+above the real wiring). The prediction is carried entirely by the overlap —
+lam1 is swap-invariant (30.179788 vs median 30.179083, so lam^10 moves the
+prediction 0.023%), K_ratio_med 11.4016 ~= R_asym 11.3985, and the card's bare
+unit-L2 form R_bare 11.4039 agrees to 0.047% (the convention disclosure
+registered in advance proved unnecessary, which is why the agreement counts).
+
+The 9.7% residual is MEASURED, not slack: C_real = P10/(lam1^10 K) = 1.2030 vs
+C_null_med 1.1029 (twin 1.1755), and C_real/C_null = 1.0907 ~ the 1.0973
+overshoot. So the deficit factorises into an exact dominant-mode term times a
+convergence correction. Q210-3 refuted my prediction BY DIRECTION (I registered
+C_real in [0.75,1.00); it is above, not below the asymptote) and |C_real-1| =
+0.203 > 0.10, so the pass is explicitly a RATIO-level pass with errors
+cancelling, exactly as the PREREG said it would have to be.
+
+Q210-4 gives the honest version of "depth-invariant": |lam2| 26.9469 by
+Hotelling deflation, converged (rel spread 3.09e-10), lam2/lam1 0.89288, so
+(lam2/lam1)^10 = 0.322 — a third of the subdominant amplitude survives at d10,
+which is why cos(x10,v1) is only 0.9649 and why L206's ratio was still drifting
+(10.279 -> 10.357 -> 10.388). Q210-5: K/m_out puts the carrier at rank 4 of 35
+(percentile .086), 14.5x below the family median, 5.8x below the twin — one
+rank off my registered bottom-3, which is L207's cohort-resolution lesson
+verbatim. PREDICTIONS 3 of 5.
+
+Certification: five verbatim certified source slices, no lab module imported
+(L175). Free re-runs: CERT-HEAD1 l151_static.py 1-319 (sha e6245e8306dc8a0f,
+identical to the head sha L178/L205/L206/L207/L209 recorded), CERT-HEAD2
+l178_tail.py 7-149 (6e2e8fa4bd19eced, CERT-F4 + the three gains at float
+equality + CSR orientation + 20 pool sizes), MID l206_mid.py (febbc390ad4f),
+CERT-HEAD3 l178_tail.py 348-458 (5bb7b56e6b6487d5, CERT-REW = l169c P6),
+CERT-HEAD4 l206_tail.py 22-263 (772a2410e76516e5, carrying CERT-178's 420
+values + the lam1 iteration + the depth-1..10 sweep whose own self-check vs
+L178 reads max rel diff 0.0 + CERT-NULL's 8). NEW halting gates: CERT-206 (94
+stored L206 G1 values at FLOAT EQUALITY), CERT-MV (8 exact array equalities of
+the bincount matvec vs the certified np.add.at jmatvec, bilinear rel 0.0, and
+the transpose is the SAME function with index arrays swapped — no new
+machinery), CERT-LEFT (right replay rel 0.0 / |cos-1| 2.2e-16; independent left
+iteration agrees on lam1 at rel 2.35e-16), CERT-REBUILD (1,000 stored null
+values, 100 draws x depths 1-10, reproduced at FLOAT EQUALITY from my own
+operator rebuild — this is what proves the 100 eigendecomposed operators ARE
+the certified ones). 1,530 checks green before the branch was called; 100/100
+draws converged both directions so B_DEGENERATE did not fire.
+
+Method lesson (self-inflicted, caught by a gate): my first transcription of
+L206's deficit_ratio_tail_mean averaged all ten depths while the source's
+expression cuts at d_conv (None -> DMAX, so its "tail" is the d10 value alone).
+CERT-206 halted the run on it. The L206 law — a float-equality claim is a claim
+about the EXPRESSION, not just the operands — bit a second time, and the gate,
+not a plausible number, is what caught it.
+
+Owed / seeded: ideas 106 = L218 (the convergence correction as its own object:
+sweep to d50 with forward walks only, three registered branches on whether the
+measured deficit reaches 11.3985 within 1%, plus u2[carrier] as the mechanism
+of the carrier's slower mixing) and L219 (is the u1 deficit target CHOICE or
+target QUALITY — decompose u1[c] = (1/lam1) sum_t A[t,c] u1[t] over the 69
+out-edges, with the relation to L211's search-information version declared up
+front so the finding is not double-banked). Artifacts
+banc/l210/{PREREG.md, static.json, VERDICT.md, run.out, run.err}, code
+banc/l210_{build,tail}.py -> generated banc/l210_static.py, and
+peabrain/lane/t239_{fold,journal}.py. No DRAFT edit, no live change, no
+sessions/ mutation. Budget ~55 min vs 35, disclosed: the overrun is the PREREG,
+the three new gates, and 5m47s of 202 power iterations across the 100 draws.
+
+
+## L211 — the hidden route is the NEIGHBOURHOOD, not the edges (tick 240, 2026-11-22)
+
+Branch **B_REMAINDER**, registered. L206's +3.58-bit search-information excess
+into the 303 motor-pool cells splits EXACTLY at the carrier's own out-edge into
+a first-hop term of **-0.0201 bits** (percentile 45.0 — dead inside the 100
+degree-neutral draws) and a remainder of **+3.6017 bits** (percentile 100.0).
+share_fh = -0.0056: the remainder carries 100.6% of the excess, and the
+additivity residual is 0.0 exactly. The carrier is hidden because of WHERE its
+targets sit, not how it spreads its own out-mass — the L178 anatomy finding
+(5 of 69 targets carry any pool out-edge) restated in routing currency.
+
+Registered BEFORE measuring, and it is what makes the result readable: the
+l169c null relocates destinations with each weight travelling with its SOURCE,
+so NLT is bit-identical in every draw and the 69-edge first-hop MENU is
+invariant (CERT-MENU, 100 draws, median 69/69 relocated). D_fh could only ever
+have been a SELECTION effect among a fixed menu, never an allocation
+difference, so "the carrier allocates its out-mass unusually" is not an
+available reading of this card.
+
+UNREGISTERED AND KEPT — the first hop is CHEAPER than chance. Uniform
+allocation over 69 targets costs log2(69) = 6.1085 bits; the menu median is
+6.1952; the realised mean first hop is **5.8473**, below both, using only **11
+distinct first hops** for 303 pool cells against a null median of **16**. The
+length metric enters the carrier's heaviest out-edges and the wiring funnels
+pool traffic through fewer, fatter first steps, then pays downstream. This
+refuted Q211-3. Paths are longer too: hop_mean 3.8053 vs 3.2063 and dist_mean
+1.4900 vs 1.2183, both at percentile 100 — longer AND more improbable, with
+all the improbability accruing after step one.
+
+Cohort/mirror (declared descriptive — the draws swap the CARRIER's edges, so
+they are not a null for another source): carrier fh-share 0.2611 vs family
+median 0.2835, twin 0.3068; **remainder rank 32/35 = exactly its L206 SI rank**
+while first-hop rank is 26/35, so the cohort reproduces the split at rank
+level. Mirror gi 928 (DNp33-R, 74 out-edges) si_mean **24.6340** — hidden
+HARDER than the carrier, consistent with L207 — fh-share 0.2464, gap 0.0148:
+the decomposition transports to the homolog, remainder-dominated on both sides
+of the cord.
+
+Predictions 3 of 5. Q211-1 scored FALSE honestly: branch predicted right,
+registered band [0.00, 0.25] excluded negative shares and the measured share is
+negative. Lesson: a share band must admit the sign its own definition allows.
+
+Certification: five verbatim slices (all four inherited shas asserted against
+L210's recorded values by the builder, so a moved source halts the build) plus
+**CERT-HEAD5 = l206_tail.py lines 320-461 VERBATIM**, which re-EXECUTES L206's
+whole SI block rather than re-implementing it — that is what lets the card
+certify SI instead of trusting it. **CERT-SI** 240 stored L206 values at float
+equality (recursive leaf compare of the entire G2 block, all 35 actors).
+**CERT-FH** 61,819 EXACT equalities: the first-hop-tracking walker reproduces
+the certified dijkstra's pool dist and si for carrier, twin and all 100 draws,
+plus the rebuilt null median/p05/p95 float-identical. No lab module imported
+(L175). Both source jsons read-only, size+mtime_ns asserted unchanged.
+
+DEFERRED ON PURPOSE and carded, not dropped: the cutwA (unfloored) transport
+leg (-> L220, with the CERT-MV generic-builder recipe and the warning that
+cutwA's carrier out-degree is NOT 69). The funnel is carded as L221.
+Relation to L219 declared up front so the finding is not double-banked.
+
+Artifacts banc/l211/{PREREG.md, static.json, VERDICT.md, run.out, run.err};
+code banc/l211_{build,mid2,tail}.py -> generated banc/l211_static.py (1,389
+lines); peabrain/lane/t240_{fold,journal}.py. 44 s CPU, zero rollouts, zero
+RNG of my own, no DRAFT edit, no live change, no sessions/ mutation.
+
+## L212 — the v783 leg, re-posed (tick 241, 2026-11-22)
+
+branch **V_AVOIDS** (registered). EXPLORATORY per L78. Static, 283 s CPU, zero
+rollouts. The DNp33 carrier matched by root id into FAFB v783 avoids the brain's
+own 110-cell motor readout at pct 0.020 (rank
+3/100, R 1.6001e-06 vs cohort median
+2.0582e-05 = 12.86x), the same
+direction as BANC's leg-motor .070/.121/.059 — suggestive only, because readout,
+volume and body segment moved at once.
+
+The avoidance is READOUT-SPECIFIC: swapping to the descending population
+collapses the deficit to 1.44x (pct
+0.290). Robust to the sign convention (beta=1: pct
+0.070, 10.82x, cohort Jaccard
+0.709). lam1^2 division measured as a NO-OP
+(rel 3.97e-16, L209's law on a third graph).
+
+UNREGISTERED: the BILATERAL SYMMETRY BREAKS. The mirror is NOT hidden on v783
+(pct 0.250, rank 26/100) where in BANC
+it was hidden harder (.06 vs .10). Per-pool: carrier CV 2.484
+AN 10.164 ON 0, P1 = 0.000000; mirror
+CV 14.652 AN 45.019
+ON 8.618, P1 = 0.693147 = log1p(1) =
+one synapse. The CELL transports; the TYPE-level bilateral reading does not —
+and the one-synapse edge is exactly what a floor removes, so L222 tests
+syn>=2/syn>=4 before anyone calls it biology.
+
+PREREG amended BEFORE measuring: brain_graph.pt is in-degree normalised
+(non-invertible), so the operator was rebuilt from the raw Zenodo feather in
+BANC's own expression and the live graph demoted to a provenance gate.
+Honest failure: cohort log-mass spread 0.316 /
+0.349 vs a registered <= 0.15 (Q212-5 FALSE).
+Predictions 3/5.
+
+Gates: CERT-783 (ids array-equal to the Zenodo npy, 15,091,983 unique pairs ==
+live nnz), CERT-L207 (read-only + mtime fingerprint, 8 checks), CERT-SRC (three
+verbatim l207_tail.py slices, shas asserted), CERT-MV (4 EXACT array
+equalities), CERT-GATE (32 float equalities). Artifacts banc/l212/.
+
+## L213 — TYPE or CLASS? the class gap is MASS, and so was my conditional (tick 242, 11-22)
+
+Branches as registered: Q1 T_TYPE_LOW / Q2 C_CLASS_TYPICAL / Q3
+D_CLASS_EXPLAINS -> derived MIXTURE. Predictions 3/5. Static, 18.8 s + 16.1 s
+addendum, CPU, zero rollouts. PREREG l213/PREREG.md first.
+
+PREMISE CORRECTION registered before any measurement (found by l213_scope.py,
+which read no R value and wrote nothing): the carrier gi 1110 DNp33-L IS
+pure_proj; its homolog gi 928 DNp33-R is NOT (dn_into True). The two cells
+L207 found avoiding at pct .06-.10 sit in DIFFERENT classes under the very
+flag hypothesis (ii) proposes as the explanation — which is why Q3 was
+registered per-actor within its OWN class and not as one pooled number.
+
+Population: 1288 / 1264 / 1260 present descending cells with m_out>0 on the
+three L207 substrates; 426 / 411 / 409 cell_types with >=2 present members;
+560 / 536 / 535 pure_proj.
+
+Q1 (TYPE): DNp33's 2-member type median 2.759e-05 / 2.759e-05 / 3.337e-05 vs
+a 2000-draw within-mass-stratum type-label permutation null (10 equal-count
+strata, per-stratum counts asserted exact on EVERY draw) -> null percentile
+.0145 / .0105 / .0130 = T_TYPE_LOW on all three. Raw, the same median is only
+at the 13.1 / 14.1 / 16.9th percentile of the 409-426 type medians: mass
+conditioning moves the percentile by ~10x. This is the type-level null L207
+never had.
+
+Q2 (CLASS): pure_proj medians are 3.7-4.1x BELOW non-pure_proj (ratio .273 /
+.248 / .241, dlog10 -.564 / -.605 / -.618) and the within-stratum flag
+permutation puts that at null pct .166 / .228 / .170 = C_CLASS_TYPICAL. The 4x
+gap is ENTIRELY mass composition: median out-mass 37.6 (pure) vs 139.2
+(non-pure) on the closure = the same 3.7x. A large raw class difference,
+null-corrected to nothing.
+
+Q3 (CONDITIONAL): raw within-class percentiles carrier .318 / .336 / .407,
+mirror .144 / .152 / .153 — both above the registered .10 bar, so
+D_CLASS_EXPLAINS fired and the derived reading is MIXTURE.
+
+ADDENDUM (unregistered, post hoc, separate artifact l213/addendum.json) — the
+one quantity that reconciles Q1 with Q3: the carrier sits at MASS percentile
+.921 / .963 / .978 inside pure_proj (very nearly the heaviest pure-projecting
+DN there is); the mirror at .654 / .655 / .692. And R still rises with
+out-mass despite being divided by it: Spearman(R, m_out) = +.532 / +.538 /
++.545 population-wide (+.50ish within pure, +.42ish within non-pure), because
+P2 grows faster than linearly in out-mass. Re-read the within-class percentile
+on the 100 nearest class members in log out-mass and it collapses into the
+L207 range: carrier .050 / .080 / .090 (9.39x / 9.48x / 6.95x), mirror .070 /
+.070 / .060 (19.61x / 19.72x / 20.12x — reproducing L207's ~20x). L207's
+numbers reproduce WITHIN each actor's own class once the cohort is
+mass-matched, and the class explains nothing because Q2 says the class
+carries no null-corrected shift to explain with.
+
+METHOD LESSON, self-inflicted and the most transportable thing here: A
+CONDITIONAL GATE MEANT TO ADJUDICATE A PRIOR CLAIM MUST INHERIT THE PRIOR
+CLAIM'S NULL, not a simpler convenient one. L207's claim was mass-matched; I
+registered Q3 against a raw within-class percentile, DISCLOSED that it was a
+different null, and then let it carry a branch anyway. It fired
+D_CLASS_EXPLAINS purely because the carrier is a 92nd-98th-percentile-mass
+cell compared against a class whose bulk is lighter. The disclosure was not a
+substitute for the right instrument. Narrower second lesson: a per-unit
+normalisation does not make a statistic scale-neutral — R is divided by m_out
+and still correlates +.53 with it; measure the residual rho before using a
+normalised statistic to compare cells of different size.
+
+Predictions: P1 (T_TYPE_LOW >=2/3) TRUE; P2 (C_CLASS_TYPICAL) TRUE; P3
+(D_TYPE_SURVIVES all 3) FALSE; P4 (mirror within-class pct <=.10 all 3) FALSE
+at .144-.153; P5 (type-median null pct <=.02 on >=2/3) TRUE at all three.
+P3 and P4 failed for the SAME reason (the raw within-class null) and both
+would have passed mass-matched (.05-.09 / .06-.07) — scored false as
+registered, registration not amended.
+
+VERIFIED: six verbatim sha-asserted source slices with every inherited sha
+checked against L210/L211/L212's recorded values (l151 1-319 e6245e8306dc8a0f,
+l178 7-149 6e2e8fa4bd19eced, l206_mid febbc390ad4f, l206 22-121
+29a830839ebc7837, l207 48-112 946dab653fe60b16 = build_sub/reach_sub/
+power_iter_sub, l207 199-241 340c0432c85c6e7b = Rstat/pct_of/rankvec/
+spearman_l), forbidden-token audited, tail asserted NOT to re-transcribe any
+certified function, no lab module imported (L175); generated sha
+7131bfef8d6e4ac8 — so CERT-F4, the three stored gains at float equality, the
+CSR orientation, all 20 pool sizes and CERT-178's 420 stored values at FLOAT
+EQUALITY re-ran as free certification. CERT-207 HALTING = 522 FLOAT
+EQUALITIES (all 127 present ladder cells x R/R1/P2/m_out on three substrates,
+both slot comparators, L207's Q2 mirror/carrier R + m_out), with
+l207/static.json opened READ-ONLY and (size, mtime_ns) asserted unchanged
+after. CERT-T = 272 checks gating the fast transposed census (two matvecs give
+P1/P2 for all 1288 sources; same np.add.at expression with rows/cols swapped,
+the L210 CERT-MV transpose identity) at max rel diff 9.05e-16 vs a 1e-12 bar —
+float equality deliberately NOT claimed because the summation order differs
+(L206's expression law). Per-stratum count vector asserted EXACT on all 12,000
+draws (2000 x 3 substrates x 2 nulls), Q2 additionally asserting the pure_proj
+count invariant per draw. Premise asserts halting. Addendum ISOLATION: built
+from l213_tail.py lines 1-221 ONLY (cut before the registered Q blocks and the
+parent's json.dump), builder asserting the slice carries CERT-207/CERT-T/the
+premise and contains no Q1_type/Q2_class/Q3_conditional/json.dump(o, the tail
+never opening l213/static.json; after the run md5sum -c on l213/static.json
+reads OK — the parent artifact is byte-identical (L175).
+
+NOT DONE / NEXT: the multiple-comparison question. A null pct of .013 on ONE
+preselected type says nothing about how many of 426 types clear it by chance.
+Seeded as L225 (type-level null + Benjamini-Hochberg over the >=2 member
+types, registered BEFORE measuring because the honest headline may be "DNp33
+is one of N equally extreme types") alongside L224 (the mass-neutral
+statistic: fit P2 ~ m_out^k, residual rho at the fitted k, and whether an
+unmatched percentile under R_k reproduces the mass-matched one under R).
+
+Artifacts: banc/l213/{PREREG.md, static.json, addendum.json, VERDICT.md,
+run.out, run.err, addendum.out, addendum.err, build.out, buildb.out}. Code:
+banc/l213_{scope,build,tail}.py -> l213_static.py; banc/l213b_{build,tail}.py
+-> l213_addendum.py; lane/t242_{fold,journal,digest}.py.
+
+## L214 — the FLOOR currency, registered (tick 244, 2026-11-22)
+
+**PASS** (Q1 F_REPLICATES / Q3 H_TIE / Q4 ACCOUNTED), predictions 4/5.
+Static, zero new rollouts; 182 s CPU on the stored B36/B37 traces.
+
+**The premise, registered before any number.** The card asked to "register
+properly" a leg whose 20 point estimates were already computed post hoc in
+tick 237. That is not registrable in the inferential sense (Kriegeskorte
+2009, digested tick 243): registration after observation buys a DECISION
+RULE and multiplicity discipline, not independence. So the PREREG declared
+every observed-derivable quantity as description and put all branches on
+the three things genuinely unknown when it was written — the permutation
+null of the cross-batch count, the BH status, and the paired head-to-head
+null. The instrument this card could not have (a third, out-of-sample seed
+batch) is seeded as L226 rather than substituted for.
+
+**Q1 (primary).** 1 of 10 arm x pair cells replicates on the same tail in
+both batches — `Tr|f4ng` up, p .0007 / .0008 — against a permutation
+expectation of 0.0474 (max 2): **p_C .0465**. A pass inside the registered
+band, and only just; the card's own multiplicity rule is what makes it one,
+since each batch separately produced hits that do not replicate.
+
+**Q2.** BH at q .10: B36 2/20, B37 1/20, shared = `Tr|f4ng` only.
+`Tr|cutwA` survives BH in B36 (p .0084) and dies in B37 (p .2640) — the
+false-discovery shape the rule predicts.
+
+**Q3, and the tick's real lesson.** The head-to-head against the refuted
+ceiling currency tied in magnitude (mean|rho| .3293 vs .2884, D +.0409,
+p_D .4625) while the directional content was not close: sign agreement with
+dominance **17/20 floor** (p .00258) vs **4/20 ceiling** (p .01182) — the
+ceiling currency is INVERTED, not noisy. The post-hoc addendum says why the
+magnitude test could not see it: the currencies are NEAR-MIRRORS of one
+"which side is more active" quantity, Spearman(mean_A, mean_dM) = -.8556
+and Spearman(rho_A, rho_M) = -.6767, so |rho| is nearly invariant between
+them by construction. **A magnitude head-to-head cannot separate mirror
+currencies.** Measure the mirror coefficient before choosing the statistic;
+a catch-all that fires only on EXACT degeneracy is too narrow. Seeded as
+L227. Scored P2 FALSE as registered, not amended.
+
+**Q4.** `Ti|f4wA`, the arm that carries the headline L175 phenotype:
+|A| .0351 / .0346, rank 2/10 in both batches, neither tail significant ->
+ACCOUNTED. Its sign disagreement is uninformative rather than
+contradictory — an accounting, not an explanation. The floor currency still
+has nothing positive to say about the phenotype arm.
+
+**Evidence.** `banc/l214/{PREREG.md, VERDICT.md, static.json,
+addendum.json, run.out}`; code `banc/l214_{build,tail}.py` ->
+`l214_static.py` (generated sha b1b4cd430e4765a2) and
+`banc/l214_addendum.py`. Halting gates: **CERT-FLO 40 float equalities**
+(every stored floL/floR reproduced from the npz before any new number, as
+the card's Verify line requires) and **CERT-RHO 100 float equalities** (all
+20 cells' rho / p_up / p_dn / mean_A / mean_dS from the same PERM_SEED
+20837 machinery). Two verbatim source slices, sha asserted by the builder
+(de636f4a18ee789b inherited from L208, 595f869b450e2d25 new); no lab module
+imported (L175); npz and both prior jsons fingerprinted and `md5sum -c` OK
+afterwards. Research only — no runtime change proposed.
+
+## L215 — the dead-left-trochanter resurrection (tick 245, 2026-11-23)
+
+Branch **D_DEGENERATE** (the escape declared in the PREREG). Static, zero
+rollouts, 3 s. The card asked whether the syn>=4 edge floor resurrects the
+dead left trochanter pools by stripping sub-floor INHIBITION onto them.
+
+It does not, and the depth-1 account runs the wrong way. Sub-floor edges are
+excitation-enriched on every pool-side (Tr_L: the floor removes 9.63% of the
+excitatory in-mass vs 9.39% of the inhibitory; same direction on Tr_R, Ti_L,
+Ti_R), so NET depth-1 drive FALLS everywhere, including on the actor: Tr_L
+220.8 -> 176.2 (-20.2%) across exactly the substrate change that takes its
+dynamic level from .0002 to .022. A dead pool waking up on less direct drive
+is not a depth-1 phenomenon. This replicates L208's Ti dissociation on a
+second joint and in a stronger form (there a static LEVEL mispredicted a
+dynamic level; here the static CHANGE mispredicts the dynamic change).
+
+Q1 confirmed the bulk is side-symmetric exactly as registered (ret ratio
+1.00742, reproducing L205's C4 1.0074) — which is what leaves the asymmetry
+with nothing to be made of. Q2b: no relu crossing, both NETs positive; but Tr
+is the NEAR-BALANCED joint (inhibitory fraction .4943/.4965 vs Ti
+.4555/.4511), the regime where small network changes flip a pool between dead
+and alive. Q4 inverted the expected specificity: the handedness-asymmetric
+inhibitory stripping is significant on **Ti** (A_inh +.07716, two-sided pct
+.0350 against a [-.0607,+.0611] null band) and absent on **Tr** (-.03472,
+.2950) — the joint with no dead side carries it.
+
+METHOD: a degeneracy guard on a ratio-of-differences must be scaled by the
+POOL, not by the difference — and when it trips on 3 of 4 cells (S_sign
+|dNET_act| .0946 vs a 1%-of-pool-mass bar .50946 on Tr_L), the statistic was
+wrong for the whole table, not just the actor. The legs that stayed readable
+are the ones that are NOT ratios of differences: the sign of dNET and the
+directional comparison frac_of_inh vs frac_of_exc. Register the
+degeneracy-free directional leg as PRIMARY next time.
+
+PREMISE: the card's lam1^d normalisation is a provable NO-OP at d=1 on ratio
+statistics (measured: a global x3.7 rescale moves every S_sign by <=1.11e-16).
+What does bite across these substrates is the bisected gain,
+g_f4wA/g_cutwA = 1.04773, and it is inside every reported number.
+
+Predictions 2/5. 66 halting float equalities (CERT-205 36 / CERT-TBL 28 /
+CERT-G 2) before any L215 statistic; two verbatim slices with inherited sha
+pins asserted against L205's banner; prior artifacts read-only, md5 green.
+Follow-ons L228 (the depth-2 network account) and L229 (near-balance as a
+NONSELECTIVE population question — Kriegeskorte step 1) seeded in ideas 111.
+
+## L216 — the DEPTH-DECAY LAW (tick 246, 2026-11-23)
+
+Branch **R_SPECTRAL**. Static, 35 s, zero rollouts.
+
+The PREREG's premise correction was the card: `A_cell(d)` is a normalised
+contrast whose limit is the Perron asymmetry `A_inf`, not zero, so the
+spectral quantity is `A_cell(d) - A_inf` and the card's bare `c*r^d` asserts
+`A_inf == 0`. Measured: primary (f4wA, beta, Ti) `r_deep = 0.891375`
+(rms log residual 0.00338, d=4..8) vs `gap = |lam2|/lam1 = 0.892879`
+(Hotelling deflation, converged) -> 0.17% error against a registered 10% bar.
+6/8 cells clear it, 8/8 clear the factor-2 bar.
+
+`A_inf` is large, positive and at percentile 1.000 on every beta cell
+(+0.2866 / +0.4442 / +0.2570 / +0.4065): the asymptotic arrival distribution
+is strongly LEFT-heavy. The card's own model fits 343x worse and backwards
+(`r_bare` 1.0725 = growth, rms 1.15857).
+
+This overturns L209's *reading* (not its numbers — all 412 reproduced at
+float equality): the Ti series extended to depth 8 crosses zero at d~4 and
+climbs to `A_inf`; it is not "erased by depth". The Tr "deep inversion" is
+not Tr-specific — Ti does the same three hops later, so the depth-2/3
+dissociation is crossing PHASE, not kind. Folded as an amendment on L217.
+
+Cross-substrate agreement explained: `r_deep` 0.892089 vs 0.891375 (0.08%)
+because the gaps agree (0.8982 vs 0.8929) — the syn>=4 floor removes 27% of
+edges and moves the subdominant ratio by 0.6%.
+
+Predictions 4/5; P3 FALSE (gap not strongly operator-specific: 6.6% / 9.2%).
+The two cells missing the 10% bar are both cutwA Crofts, and cutwA Crofts Ti
+is the one cell with `A_inf` ~ 0 (pct 0.178) — where the Perron mode carries
+no side contrast, a third mode sets the rate.
+
+Method: a convergence-level bar must be DERIVED from the iteration's own
+measured convergence (the first run halted on a fixed 1e-9 left/right lam1
+bar; Crofts operators converge only to ~1e-08). And the ratio of SUCCESSIVE
+DIFFERENCES is the cheapest decay-rate preview because the asymptote cancels.
+
+672 halting float equalities before any L216 number (CERT-205 250, CERT-GAP
+10, CERT-209 412), eight verbatim slices, six inherited sha pins.
+Follow-ons L230 (crossing-phase closed form) and L231 (is the left-heavy
+Perron mode global or pool-specific? nonselective, BH-FDR).
+
+## L217 — the crossing phase, the three-operator sign table, and the source population (tick 247, 2026-11-23)
+
+Re-posed per the L216 amendment: WHEN each joint crosses, not WHETHER Tr is
+special. Two registered branches, two instrument failures caught by their own
+guards, and one clean mechanism result.
+
+**Q1 PHASE_DEGENERATE — the primary is unscoreable, and that is the finding.**
+Real d_cross on f4wA beta: Ti 4.0761, Tr 1.2522, one sign change each (exactly
+the description the PREREG stated in advance from l216/static.json). But under
+the 2000 shared handedness draws a sign change is a RARE EVENT: Ti crosses in
+0.194 of draws, Tr in 0.271, BOTH in 0.051 — against a registered 0.25
+degeneracy bar. No D statistic reported.
+LAW: a null that rarely produces the EVENT you are timing cannot test its
+TIMING. Register the event-existence RATE before a timing contrast.
+
+**Q2 the third operator does not exist on f4wA, structurally.** The card's
+literal W/s_in is ROW-stochastic under A[dst,src] so r_1 == 1 identically
+(EXACT, 3.77e-15 / 4.88e-15 over 20,887 and 20,043 in-positive nodes) —
+excluded unconditionally by PREREG amendment 0a-i, written before the script
+existed. The substituted source-normalised walk T_pq = W_pq/s_p (Seguin, tick
+233) resolves on cutwA (residual 4.3e-06 at 400 iters) but on f4wA escalating
+400 -> 3200 -> 25600 -> 102400 moved lam1 not at all (0.999900003 at all
+three) AND the eigenpair residual not at all (6.781e-03 at all three): a stable
+2-cycle, i.e. a dominant spectrum that is not simple, so that walk has no
+unique asymptotic arrival distribution. Its iterate reads A_inf exactly
++1.000000 / -1.000000 — total localisation — and is recorded as unresolved,
+never as a measurement.
+LAW: diagnose an eigenpair with its RESIDUAL, never the iteration's
+convergence SPREAD. The spread read 2.00e-04 and looked ordinary; only the
+residual separated "needs more iterations" from "has no Perron vector".
+
+Sign table: cutwA Ti/Tr SPLIT; f4wA both THIRD_LEG_UNRESOLVED with the
+certified beta/Crofts pair BOTH_AGREE on both joints. Per the L216 amendment
+the cutwA SPLIT is reported with its asymptote signs and is a RESOLUTION
+statement (Crofts Ti -0.0084 at pct 0.178 = indistinguishable from zero), not
+a disagreement about the wiring. The two genuinely-unobserved cutwA Crofts
+series behaved as the amendment predicted: Tr crosses at 3.1915, Ti not by d8.
+
+**Q3 the mechanism leg is REFUTED BY HOMOGENEITY.** Exact additive
+decomposition r_d^(g) = A^d 1_g (additivity max rel 2.58e-15; arrivals_from
+certified ARRAY-IDENTICAL to arrivals at x0=1 over 16 depth vectors). Every
+source group's share of the drift tracks its share of the MASS and every
+group's own A_cell sits near the total — f4wA beta Ti d8: vnc_intrinsic drift
+.809 / mass .761 / A +0.1108; descending .122/.108/+0.1169; sensory
+.068/.130/+0.0549; motor .001/.001/+0.1012. E and I are indistinguishable
+(A +0.110 vs +0.102 Ti; +0.251 vs +0.242 Tr) at drift shares matching their
+mass shares to 0.02. No population carries the leftward drift: it is the same
+wherever the walk STARTS, so it is a property of the pools' own in-wiring
+geometry at the DESTINATION. Sensory is the one asymmetric row — the only
+group whose drift share sits well below its mass share.
+NOTE: report each group's own A_cell beside its share; the share column alone
+cannot tell "carries it" from "is big".
+
+**Q4 CORD_CARRIES, and carries essentially all of it.** Cord-origin walks
+alone: A_cell(d8) +0.10263 vs +0.10418 all-source on Ti (ratio 0.9852) and
++0.24171 vs +0.24487 on Tr (0.9871); cord drift share 0.9165 at d2. The
+left-heavy asymptote is CORD-INTRINSIC and does not need descending input,
+consistent with L65.
+
+Predictions 3/5 (P1 and P2 are the two instrument failures above). 884 halting
+float equalities before any L217 number: CERT-205 250, CERT-GAP 10, CERT-209
+412, CERT-216 212, plus CERT-178 420 and CERT-GEN 44 free inside the verbatim
+heads. Ten verbatim slices, six inherited sha pins plus a SEVENTH parent pin
+(l216_tail.py's whole-file sha must equal the TAIL sha l216_static.py's own
+banner recorded, so slicing a MOVED parent HALTS the build); the CERT-216M
+slice is cut at the end of the parent's measurement block and asserted both
+positively (every parent gate present) and negatively (the parent's
+fits/verdict/writer block absent). Generated sha 44799852a17f3fc4.
+Artifacts banc/l217/, code banc/l217_{build,head,tail}.py. Follow-ons L232
+(crossing-existence rate as PRIMARY, with the depth-truncation control that
+decides whether 0.051 is an effect) and L233 (does DESTINATION geometry
+explain the asymptote, mass-matched + bilateral-homolog).
+
+## L218 — the CONVERGENCE CORRECTION as its own object (tick 248, 2026-11-23)
+
+Intent: L210 factorised L206's depth-10 pool-reach deficit into an exact
+dominant-mode term (the carrier's left-Perron overlap ratio, 11.3985) times a
+convergence correction (1.0907 at d10), and the 9.7% by which the closed form
+overshot the measured 10.38808 WAS that correction. With |lam2|/lam1 = 0.89288
+the subdominant amplitude is still 0.322 at d10. Extend to depth 50 and ask
+whether the measured deficit converges to the closed form, to a different
+plateau, or to no plateau at all; and whether the carrier's slower mixing is a
+subdominant-overlap effect.
+
+Outcome: **CF_EXACT / RATE_SPECTRAL / U2_NULL**, predictions 4/5.
+
+- C_prof(50) = D_50/R_asym(50) = 0.999394 (0.061% off a 1% bar). D_50
+  11.37931 vs R_asym(50) 11.38621. The card's literal depth-free form reads
+  0.196% off — three times worse — which is exactly the lam-power factor
+  median(lam_k)^50/lam1^50 = 0.998833 that the PREREG registered as the reason
+  to make the finite-depth form primary before either number was seen.
+- The deficit profile is monotone and converging: 8.378 (d2), 10.388 (d10),
+  10.849, 11.106, 11.251, 11.331, 11.368, 11.379 (d50). C_car closes 1.3926 ->
+  1.2030 -> 1.00197.
+- **A 50-depth forward MASS SWEEP measures the spectral gap.** Per-hop ratio
+  of (C_car(d)-1) over d20-45: median 0.8921719 [0.890752, 0.892297] vs the
+  certified |lam2|/lam1 = 0.8928794, |diff| 7.07e-04 = 0.079%. Two instruments
+  sharing nothing (no eigenvector vs Hotelling deflation). The PREREG
+  registered the mass sweep as the FALLBACK because it needs no eigenvector —
+  which is the instrument L217 wanted and did not have.
+- lam2 real and POSITIVE: no sign alternation in d15-50, and the signed
+  Rayleigh quotient reads +26.946910 in BOTH directions matching |lam2| to
+  eight digits, residuals 7.04e-09 / 3.54e-09 (L217's residual law). All 101
+  eigenpairs resolved, max 7.08e-09 vs a 1e-03 bar.
+- The RATE belongs to the operator (draw rates median 0.889687, the real one
+  inside them); the carrier differs in AMPLITUDE.
+- **The currency inversion.** Scale- and sign-invariant A2 = K2/K reads
+  +0.557089 vs draw median +0.211157 = 2.638x at percentile 0.940 (a
+  MAGNITUDE: |A2-med| 0.346). Registered bar was 0.95 and the carrier sits
+  0.0049 BELOW the null p95 — U2_NULL, P4 false by ONE DRAW (L207: against 100
+  draws one draw IS one percentile point). The card's LITERAL bare unit-L2
+  |u2[carrier]| = 3.228e-04 sits at percentile 0.100, the OPPOSITE side. The
+  decomposition explains it: A2 = K2/K and the carrier's K is itself 11.4x
+  suppressed at percentile 0.0, so it avoids BOTH modes and avoids the
+  DOMINANT one harder — which IS a slower approach to the dominant mode.
+
+Method laws banked:
+
+1. When a vector statistic admits both a scale-invariant form and a bare
+   unit-norm form, the two can place the SAME cell on OPPOSITE sides of the
+   SAME null. Register which one carries the branch BEFORE measuring and
+   report both. L210 registered this disclosure for the dominant mode and it
+   was VACUOUS there (0.047% apart); one mode down it decides the sign.
+2. A normalised depth PROFILE's per-hop ratio is an eigenvector-free
+   instrument for the spectral gap — register it as the fallback whenever a
+   deflation might not resolve.
+3. A mathematical NO-OP is not a FLOATING-POINT no-op (amendment A2): L206's
+   lam1^(d+1)*m_out division cancels algebraically and still moves the last
+   bit (10.388078940332742 vs 10.38807894033274). Re-use the parent's
+   expression character for character.
+4. A numerical degeneracy guard must not be phrased so broadly that it fires
+   on a known anatomical zero (amendment A1: P_1 == 0 because the carrier's 69
+   out-edges reach no pool cell directly).
+
+Gates: CERT-218T 1,224 halting float equalities before any d>10 number (1,100
+from L210's per-draw table by recursive leaf compare, 124 from its headline
+blocks); CERT-W50 1,010 (all 101 extended walks' first ten depths, each
+through its OWN source expression); anchor continuity at float equality;
+CERT-DEFLV (a vector-returning deflation admitted only by exact agreement with
+the certified lam2_defl); NO-OP 3.32e-15 over 50 depths. CERT-210M =
+l210_tail.py 1-326 verbatim, sliced to cut L210's writer, so 1,530 parent
+equalities re-ran free and the 100 per-draw power iterations were RECOMPUTED.
+Five inherited sha pins plus a parent pin. This card's own new gates: 2,234.
+
+Artifacts: banc/l218/{PREREG.md, static.json, VERDICT.md, run.out, run.err,
+build.out, prior.md5}; code banc/l218_{build,tail}.py -> l218_static.py.
+Follow-ons: L234 (two-mode closed form + K2's own null), L235 (the
+currency-inversion audit over all 35 actors, nonselectively).
+
+## L219 — the u1 deficit is TARGET QUALITY; the weights point the other way
+
+Tick 249, 2026-11-23. Static, zero rollouts. PREREG `banc/l219/PREREG.md`
+written before the generated script existed. Branch **TARGET_QUALITY**
+(registered), Q219-3 **WM_REPRODUCES**, predictions 4/5.
+
+Identity (I) `lam1*u1[c] = sum_e w_e u1[t_e]` rel 4.21e-16; identity (II)
+`U = (m_out/lam)*Q*align` max rel 8.29e-16 over the real wiring, all 100 l169c
+draws and all 35 cohort actors. rQ **12.6673** (bar 5) vs rA **0.8981**;
+per-draw product median **11.4024**; lam ratio 0.999977; m_out invariant by
+construction. Carrier Q **0.181022** — its 69 out-edges point at cells
+averaging 0.181x an average node's left-Perron importance.
+
+PREMISE CORRECTION, measured not assumed (CERT-WMULT, 7,200 checks): the l169c
+null moves weights WITH their source, so the carrier's out-weight multiset is
+invariant in all 100 draws (out-degree 69, sorted weights float-identical,
+multiset rebuilt two independent ways at exact array equality). The card's
+"the weight distribution does the work" can therefore only mean ALIGNMENT.
+
+P4 FALSE BY SIGN, and informative: `align_real` **1.113626** at percentile
+**0.92** of its own draws = the weights are a +11% PARTIAL COMPENSATION
+against an 1140% deficit, and nearly maxed out while doing it. Q219-2 says why
+they cannot matter — weight Gini **0.1493** (family median 0.1530, twin 0.1489;
+a near-constant of this cohort under log1p synapse weighting) against
+contribution Gini **0.8351**, Spearman(w, u1[t]) **+0.067**, top-1 target 25.4%
+and top-10 83.2% of S_car. The concentration is entirely the `u1[t]` tail.
+
+Q219-3 is the headline: holding the REAL u1 FIXED, keeping the carrier's exact
+69 weights, and redrawing only its targets from the l169c relocation menu
+(49,076 block edge destinations / 9,803 distinct cells, 2000 draws, seed 21901)
+gives median `S_draw/S_car` **11.4757** vs L210's full-null `K_ratio_med`
+**11.4016** — **0.65% apart**, `S_car` percentile 0.0000 — and the semi-analytic
+`Q_med` 2.30737 matches the real draws' own 2.293065 to 0.6%. The 11.4x needs
+NO eigenvector change; it is which cells the 69 out-edges land on, computable
+against the unperturbed graph.
+
+METHOD LAW: a semi-analytic null's SAMPLING LAW is load-bearing. The card's
+literal node-uniform "graph-wide" leg reads only **4.7309** (its Q_med 0.95607
+is the built-in positive control), because the l169c menu is 2.4x richer than a
+uniform node — edge-destination/in-degree weighted. Menu-matched vs node-uniform
+differs by more than most cards' entire effect.
+
+Limits: cohort reads are DESCRIPTIVE (Kriegeskorte 2009, PREREG 0c) because the
+carrier was selected on a related statistic — carrier Q is lowest of 33 (family
+median 2.3413, p05 0.2202; twin 1.1796), carrier align at family pct 0.848. One
+substrate, one operator, one null family. A decomposition is not a mechanism:
+"why do those cells have low u1" is L237, which must declare its relation to
+L233. Q219-5 relation to L211 declared in the PREREG and honoured — cited, not
+re-banked.
+
+Verification: 8,906 halting float equalities in CERT-219P (1,106), CERT-WMULT
+(7,200), CERT-219D (600), on top of L210/L206/L178's gates re-running free
+inside six verbatim slices; five inherited sha pins + the l210 parent pin
+asserted by the BUILDER; generated sha `fcef1ff55e0beedb`; six prior artifacts
+read-only fingerprinted and unchanged. Owed / seeded: ideas 115 = L236 (is the
+11.4x special or is it the MENU? nonselective over all 35 actors + every block
+DN, BH-FDR, with the honest demotion escape named) and L237 (destination
+geometry: what predicts u1[t], held-out scored, L233 relation declared).
+
+## L220 — the L211 first-hop/remainder split TRANSPORTS to the unfloored substrate (tick 250, 2026-11-23)
+
+Branch **T_TRANSPORTS** (registered). Predictions 5/5. Static, 43 s, CPU,
+zero rollouts. PREREG `banc/l220/PREREG.md` first; verdict
+`banc/l220/VERDICT.md`; code `banc/l220_{build,tail}.py -> l220_static.py`
+(2,007 lines, generated sha bbbd7154633774b2).
+
+Intent: L211 decomposed L206's search-information excess into a FIRST-HOP term
+and a REMAINDER on the f4wA (synapse-floor-4) substrate only, and found
+B_REMAINDER. Its deferred leg asked whether that split survives on the BASE
+unfloored cutwA substrate — the single most damaging counterfactual being that
+the remainder dominance is a floor artifact.
+
+Three premise corrections, all pre-measurement:
+
+* **0a the card's dilemma was false.** It offered "re-run the l169c swap on
+  cutwA, or the leg is descriptive". The stored l169c P6 destination-swap null
+  IS the wA-block null: `CERT-REW` already calls the certified `rewire_draws`
+  with `_blk_wA` / `_sel_car_wA` at seed 16943 and gates it against
+  `l169c/static.json`, while the null L206/L211 used is the DERIVED `_blk_f4`
+  one. So the certified function was called UNCHANGED with its certified cutwA
+  arguments and gated at float equality (CERT-REWCUT, 31 checks) before any SI
+  number was read. The primary is SCOREABLE.
+* **0b the out-degree was knowable in advance (80, not 69)** — a PIN inside the
+  inherited head (l151_static.py 126-133), read while scoping, so the
+  menu-size leg of the card's branch (iii) was resolved in advance and declared
+  description. The rule registered with it: a first-hop cost in bits is read
+  against its OWN `log2(out-degree)`, never the other substrate's.
+* **0c the gain choice is a mathematical no-op, MEASURED anyway** (L209):
+  max|dL| 2.22e-16, max|dT| 4.44e-15, carrier si_mean rel 1.59e-16, and
+  `fh_share_of_si` bit-identical. Here the no-op really is one — contrast L218,
+  where a cancelling factor moved the last bit and halted a gate. Measure;
+  never predict which way it falls.
+
+Measured. cutwA (21,785 cells / 644,177 edges, +37.2% over f4wA; carrier
+out-degree 80): si 23.11189 = fh 5.96940 + rem 17.14249; D_total +3.90518 =
+fh -0.05327 + rem +3.95844 (additivity EXACTLY 0.0); **share_fh -0.013640**
+vs f4wA's -0.005619; percentiles si 99.0 / fh 30.0 / rem 99.0. The remainder
+carries 101.4% of the excess.
+
+1. **T_INVERTS refuted, and it goes the other way.** Removing the floor moves
+   share_fh 0.0080 FURTHER from first-hop dominance, and the excess GROWS:
+   D_total +3.5816 -> +3.9052 (+9.0%), because the carrier's own SI rises
+   +0.7187 bits while its null's mean rises only +0.3951. The floor was
+   SUPPRESSING part of L206's effect, not manufacturing it.
+2. **0b earned its place: the bare bits difference has the WRONG SIGN.** The
+   first hop costs +0.1221 bits MORE on cutwA, but the uniform baseline moved
+   +0.2134 (log2 80 vs log2 69), so `fh - log2(out)` goes -0.26124 -> -0.35253:
+   the carrier's first-hop SELECTION advantage below uniform GREW by 0.0913
+   bits (fh percentile 45.0 -> 30.0, still inside (5,95), so not a claim).
+   Transportable law: when the menu SIZE changes between substrates, a bare
+   bits difference reports the OPPOSITE SIGN of the selection effect.
+3. **The 11-way funnel is an invariant.** Exactly 11 distinct realised
+   first-hop costs on BOTH substrates out of menus of 69 and 80, null median
+   16.0 on both. Whether they are the SAME 11 targets is unmeasured -> L238.
+4. **CERT-MENUCUT**: the 80-edge menu is bit-identical in all 100 cutwA draws
+   (median 80 of 80 relocated), so D_fh on cutwA is SELECTION by construction,
+   never allocation (L211's law: name what the null cannot move first).
+5. **The TWIN does not exist on cutwA.** 4 of L211's 35 actors are absent,
+   including gi 290 (DNpe005-R, removed by `keep_wA`): f4wA was constructed to
+   contain it, the base substrate is not. Named, not worked around -> L239.
+   The bilateral homolog gi 928 IS present and agrees BETTER without the floor
+   (fh/si 0.248814 vs the carrier's 0.258283, gap 0.0095 vs 0.015 on f4wA).
+   Cohort DESCRIPTIVE, 31 ranked: carrier fh-share 0.2583 vs family med 0.2860
+   [0.2230, 0.3545], remainder rank 28/31.
+
+Disclosed: the reach percentile reads 0.0 because the carrier AND all 100
+draws reach all 303 pool cells — a TIE under a strict `<`, not a deficit.
+
+Verified: 64,296 halting equalities in five new gates — CERT-211 434 (L211's
+whole primary+cohort reproduced from my own re-run at float equality BEFORE any
+cutwA number: the card's required anchor, and what licenses calling this a
+transport test), CERT-SIGEN 1,922,356 (ONE generic SI-index builder vs the
+certified f4wA specialisation on START/END/L_L/T_L/TGT0/pos_in_sorted/A_max by
+exact list/array equality BEFORE touching cutwA), CERT-REWCUT 31,
+CERT-MENUCUT 100, CERT-WALKCUT 61,206, CERT-REBIND 606 (f4wA bit-identical on
+all 303 pool cells after rebinding the module globals to cutwA and back — what
+makes the card's "UNCHANGED certified dijkstra on rebound globals" safe) — on
+top of CERT-SI 240, CERT-FH 61,819, CERT-MENU 100, CERT-GEN, CERT-178,
+CERT-NULL, CERT-F4 and CERT-REW re-running FREE inside the slices. NINE
+verbatim source slices, forbidden-token audited, no lab module imported
+(L175); seven inherited sha pins plus a PARENT PIN (l211_tail.py whole-file
+sha == the TAIL sha l211_static.py's own banner recorded, 01344b557db98d29
+GREEN). CERT-211SL = l211_tail.py 29-322, sliced to CUT L211's
+predictions/writer block (L213), asserted positively and negatively.
+`md5sum -c` GREEN against l220/prior.md5 (12 files); four prior artifacts
+read-only with (size, mtime_ns) fingerprinted before and asserted unchanged
+after.
+
+Owed / seeded: ideas 116 = L238 (are the eleven first hops the SAME eleven
+targets? nonselective over all 31 cutwA-present actors, BH-FDR, with the
+pool-geometry demotion escape registered) and L239 (a matched twin selected ON
+cutwA by the L212 own-distribution rule, with "no candidate clears the bar" as
+an admissible outcome).
+
+## L221 — the first-hop funnel is the LENGTH METRIC, and it is not the carrier's
+
+Tick 251, 2026-11-23. Branch **F_METRIC** (registered), predictions 3/5 with
+both false ones load-bearing. Static, f4wA, 43 s, zero rollouts.
+
+The registered bar split. **Narrowness passes**: 11 realised first-hop EDGES
+vs null p05 15.0 (null median 21.0), carrier percentile 0.0. **Metric
+invariance fails**: J_min(feasible) 0.2391 vs the 0.80 bar, from
+realised/feasible counts abs (-log10 A/A_max) 11/11, Crofts (A/sqrt(s_i s_j))
+30/30, hop-count (L==1, T_L kept) 23/46. The two metrics that do NOT use
+-log10 agree with each other far better (crofts|hop 0.6522), so the
+disagreement localises to the -log10 domain choice exactly as leg (c)
+registered.
+
+Post-hoc descriptive (t251_containment.py, asserts green): **the sets are
+NESTED, not different.** abs realised and abs feasible are both exact SUBSETS
+of hop's (containment 1.0000) and 0.9091 inside Crofts' (lone exception edge
+j=38). Method law: a SYMMETRIC overlap bar cannot distinguish "a different
+set" from "a nested subset", and at 2-4x size differences the 0.80 Jaccard was
+structurally unpassable even by a perfect subset — register the DIRECTED
+containment fraction alongside any set-agreement bar.
+
+**The pool-geometry control demotes the card**, reported before the branch
+(L223's rho-first rule) and borrowed from L238's registered escape (cited, not
+re-banked): nonselectively over all 35 actors the carrier's 11 entry edges sit
+at percentile 0.286 of a census with median 14.0 [5, 22]. L211's funnel
+survives against the null and NOT against the cohort — the narrowness is
+substantially the 303 pool cells' entry geometry.
+
+Anatomy: 11 used edges -> 11 distinct targets, 10 of 11 ventral-cord
+intrinsic, 4 of L178's five pool-out-edge targets realised. FOUR edges carry
+275 of 303 pool cells (90.8%), and the two highest-traffic entries
+(IN17B004-L 113 cells, IN17B001-L 55) carry ZERO direct pool out-edges while
+the five-members j=67/j=59 carry 10/12.
+
+Addendum l221b (post-hoc; parent sliced at its leg-(a) log so the writer is
+cut and every gate re-runs free, L213 pattern; parent md5 re-verified green):
+(A) PREREG 0b's rank identity is TRUE and my ESTIMATOR was wrong — avg-rank
+rho +0.272282 == -rho(T_L) == -rho(L_L) at |err| 0.000e+00, where
+argsort(argsort(x)) ordinal ranks read +0.2280 vs -0.1898 because the 69
+out-edges carry only 28 distinct weights (41 tied, largest group 10).
+**Method law: a tie-handling convention can refute a true analytic identity.**
+CERT-MONO (2,346 pairwise order checks) asserts the monotonicity premise, so
+this is a gate on the estimator and not an opinion. (B) PREREG 0a extended to
+the null and it bites: carrier tie deficit 0 (11 edges = 11 costs) but the
+null median is 21.0 EDGES vs 16.0 COSTS with 99/100 draws tied — L211's
+headline is 1.909x in EDGES vs 1.455x in COSTS, so a cost-count contrast mixes
+narrowness with tie structure and the clean currency is LARGER.
+
+Verified: 97,185 halting checks in five new gates + 2,346 in the addendum's
+sixth, atop ~1.99M re-running free in nine verbatim slices — CERT-D5 6,
+CERT-CROFTS (rel 0.000e+00 against a bar DERIVED from the operator's own
+measured rel_spread, L216), CERT-FHE 93,930, CERT-DAG 909 (fixpoint-asserted;
+zero-length edges exist), CERT-EDGEIDX, CERT-MONO 2,346. Seven inherited sha
+pins + two PARENT PINS. Generated sha 356598824b1f2a75.
+
+Seeded: L240 (which metric, decided by DYNAMICS — the first rollout-requiring
+successor, with the honest escape that if no metric beats raw out-weight the
+whole funnel family leaves the draft) and L241 (the cost-vs-edge currency
+audit of every published distinct-count, with a hypergeometric-style null on
+the observed weight multiset so "deficit 0" is not called remarkable by
+default).
+
+## L222 — the bilateral break is not a last-hop floor artifact, and the branch floor does not exist (tick 253, 2026-11-23)
+
+Asked: is L212's v783 DNp33 left/right asymmetry (carrier pct .020 vs mirror
+.250, the mirror carrying P1 = log1p(1) = exactly one synapse onto motor) a
+SYNAPSE-FLOOR artifact? Registered branch on gap_4 = |mirror_pct -
+carrier_pct| at a global syn>=4 floor.
+
+BRANCH: F_DEGENERATE_ACTOR — a registered escape. The branch floor does not
+exist. Every in-brain out-edge of BOTH DNp33 cells is below BANC's f4
+threshold (frac_edges_below4 = 1.0000 for both; carrier 34 out-edges, 85.3%
+single-synapse, syn_max 3; mirror 31 out-edges, 93.5% single-synapse, syn_max
+2). At syn>=4 both out-masses are 0.000, so R, the log-out-mass cohort and the
+percentile do not exist. 199 of 1,303 v783 DNs die the same way (eligible
+1,273 -> 1,194 -> 1,104). Finest measurable floor = 2. This puts a number on
+L212's own deepest stated limitation: a descending neuron's real output leaves
+this volume.
+
+Three currencies disagree IN SIGN at F=2. Registered two-cohort gap GROWS
+.230 -> .360; gap_union collapses .2377 -> .0828; gap_cohC .230 -> .090;
+ratio_R 6.2667 -> 2.0356; ratio_P2 INVERTS 5.3991 -> 0.7737. Mechanism
+measured: the cohorts relocate 85.7% / 93.6% (Jaccard .1429 / .0638) and the
+out-masses collapse differentially (ratio_m_out .862 -> .380), so R's
+denominator — not its numerator — carries the percentile.
+
+The LOCAL floor (PREREG 0c: floor only edges landing in the readout) is the
+clean instrument and the break SURVIVES it. 99.95% / 99.92% of edges kept,
+lam1 552.6325 / 552.6309 vs 552.6341, cohort Jaccard .92 / .89 — gap
+.210 / .250, ratio_R 5.9035 / 7.9930. The break gets STRONGER at local syn>=4.
+
+L212's one-synapse story is refuted as a mechanism. The mirror's single direct
+motor edge goes to CB0810 (AN, right, collapsed syn_count 1). The l222b
+addendum drops exactly that edge: both percentiles move by 0.000, ratio_R
+widens 6.2667 -> 6.3313, and the mirror loses 2.111% of its depth-2 motor
+mass. Removing it under either floor moves the mirror AWAY from the carrier
+(.250 -> .440 global, .250 -> .290 local).
+
+Predictions 2 of 6. Q222-2 (carrier P1 == 0.0 on all five floors) and Q222-3
+(mirror P1 == 0.0 at F=2) correct; Q222-1 predicted the wrong KIND of answer;
+Q222-4/-5/-6 scored FALSE BY UNMEASURABILITY and recorded as such, never as
+nulls.
+
+Gates: CERT-212 (139 stored L212 values at float equality, by RE-RUNNING
+L212's whole pipeline as a verbatim source slice), CERT-FLOORGEN (15 exact
+array equalities: the floored builder at F=1 IS build_v783), CERT-MONOTONE (6
+nesting/monotonicity gates over 139,255 cells), CERT-DROPGEN (10), plus
+CERT-783 / CERT-L207 / CERT-MV / CERT-GATE inherited verbatim and re-run at
+EVERY floor. PARENT PIN: the builder reconstructs l212_static.py byte-for-byte
+(sha b32c576b5145487e) from the three pinned sources.
+
+Two self-inflicted failures, kept as evidence. (1) The F_DEGENERATE_ACTOR
+escape set a flag but did not short-circuit the leg, so the run crashed in
+math.log(0.0) inside the verbatim matched_cohort — a flag that does not change
+control flow is documentation, not a guard. (2) The addendum's drop gate
+asserted om_before - om_after == log1p(1) at float equality and failed by
+1.665e-15: om is an np.add.at accumulation, so a DIFFERENCE OF SUMS is not the
+removed summand (the L218 law); re-armed with a bar derived from np.spacing(om),
+measured 0.47 ulp against a 4-ulp bar.
+
+Artifacts: banc/l222/{PREREG.md, VERDICT.md, static.json, addendum.json,
+run.out, run.err, run_attempt1.*, addendum*.{out,err}, prior.md5, parent.md5}.
+Code: banc/l222_{build,tail}.py -> l222_static.py (sha 730ac82cb12f4740),
+banc/l222b_{build,tail}.py -> l222b_static.py (sha 5e0c476ed1d0dd71),
+lane/t253_{fold,journal}.py. No live change, no draft edit, sessions/
+untouched.
+
+## L223 — the READOUT-SPECIFICITY claim, nulled properly (tick 254, 11-23)
+
+Branch **S_SPECIFIC** (registered), predictions 5/6. Static, zero rollouts.
+`l223_static.py` 233.0 s + `l223b_static.py` 237.2 s, nice -n 15 on om.
+
+L212 published "12.86x into motor, 1.44x into descending" as readout
+specificity. Those are two percentiles against the same cohort through two
+readouts of very different size (110 vs 1,301 cells), which does not establish
+that the carrier is unusual in its CONTRAST. The card's fix — make the cohort
+its own control — turned out to need no new cohort machinery at all: l212's own
+pipeline already measures both legs over the IDENTICAL cohort key set, so
+re-running it as a verbatim source slice hands over the paired table (PREREG
+0a), and CERT-PAIR gates that structurally instead of promising it.
+
+Read FIRST, as the card demanded: rho_spearman(R_motor, R_desc) across the
+cohort = **.4776** / .4343 / .4238 against a .95 degeneracy bar. ~23% shared
+rank variance — correlated, not identical. The question is answerable.
+
+C_log(g) = log R_motor(g) - log R_desc(g), cohort-free per cell. Carrier
+**-4.5867** (ratio .0102) at pct **.0404**, rank 5/99, z -2.054; mirror -2.7915
+at pct .3434, rank 35/99, z -0.382; cohort median -2.2283. **L212's claim
+survives its proper null.** All three L222 companion readings agree: own-cohort
+gap .3030, union-cohort gap .3058, cohort-free ratio **6.02x** more
+motor-specific than its own contralateral twin.
+
+The failed prediction is the interesting one. P5 registered |pct_log -
+pct_rank| <= .10 and measured **.1496** for the carrier (.0404 vs .1900) while
+the mirror's agreed to .0134 — and under the companion currency the carrier
+reads **S_GENERIC**. The binary call is currency-dependent; the direction is
+not. The POST-HOC l223b addendum settles what that means by scoring EVERY
+cohort cell leave-one-out exactly as the carrier was scored: the carrier's
+.1496 sits at percentile **.586** of the cohort's own disagreements (median
+.1224, p90 .2776, max .4082) = dead typical. Mechanism measured, not asserted:
+rho(C_log, C_rank) = **.8339**, and the 20 most motor-specific cells by C_log
+sit **+.0622** higher in rank space than in log space while the cohort-wide
+shift is **-.0043**.
+
+**METHOD LAW**: a rank-difference contrast COMPRESSES the tail a specificity
+question lives in, so it can fail a bar the magnitude currency clears on
+identical data — and the way to separate "this cell is special" from "these
+currencies differ" is to percentile the DISAGREEMENT itself across the cohort.
+L218 showed two currencies can straddle a null; L223 makes the straddle a
+measurable cohort property.
+
+Gates: CERT-212 **139** stored parent values at float equality (inherited as a
+verbatim slice of l222_tail.py 26-88, cut before its `del` of the descending
+leg), **CERT-PAIR 11**, **CERT-RANK 252** (the inherited rankvec PROVEN a
+midrank on this data before any C_rank is read — tick 252's law converted from
+memory into a gate), **CERT-223 16** in the addendum, plus CERT-783/L207/MV/
+GATE re-running free. PARENT PIN 1 reconstructs l212_static.py byte-for-byte;
+PARENT PIN 2 asserts l222_tail.py is a literal SUFFIX of l222_static.py, which
+is what proves CERT-212 arrives as the code that ran. The addendum is
+l223_static.py lines 1-818 verbatim with ONE declared modification (the
+inherited escape write replaced by a halting assert), prefix asserted
+write-free. Shas d1b06d9df0df2582 / 3b2863da71aac9f7.
+
+Disclosed: PREREG 0e's hand-written carrier C_log (-4.5884) was .0017 off the
+exact -4.58674. The run's own recomputation from the two published R values
+confirms the quantity WAS observation-derivable (so DESCRIPTION, no branch) —
+only my transcription was imprecise.
+
+Follow-ons seeded as LANE ideas 119: **L245** (the currency-disagreement audit
+applied to every percentile claim with a defensible second currency, L218's
+.940-vs-.100 case first), **L246** (is the motor specificity a per-pool story?
+the carrier reaches NEITHER of the two biggest pools), **L247** (the
+nonselective 1,303-cell C_log population reading, raw and residual to
+log m_out).
+
+Artifacts: `banc/l223/{PREREG.md, VERDICT.md, static.json, addendum.json,
+run.{out,err}, addendum.{out,err}, prior.md5, parent.md5}`; code
+`banc/l223_{build,tail}.py`, `banc/l223b_{build,tail}.py`.
+
+
+## L224 — the MASS-NEUTRAL statistic (tick 255, 2026-11-23)
+
+Branch **K_DEGENERATE**, a REGISTERED escape that fired and short-circuited.
+The card asked for a better exponent k in R_k = P2/(lam1^2 * m_out^k) because
+L213 had measured Spearman(R, m_out) = +.53 inside a statistic explicitly
+divided by m_out. The escape fired on premise, not on a disappointing number:
+**log(P2) does not exist for 9.8-15.1% of the card's own population** — P2 == 0
+for 126/1288 (G0_closure), 128/1264 (G1_cutwA) and 190/1260 (F4_f4wA) present
+descending cells, against a registered exclusion bar of 5%. A log-log fit can
+therefore only be computed on a subpopulation selected on its own outcome.
+Predictions: P5 FALSE (the branch IS degenerate); P1-P4 and P6 recorded
+UNSCORED BY ESCAPE, never as nulls (L222's discipline).
+
+The POST-HOC addendum (declared unregistered, no branch, no bar) measured what
+the escape made unanswerable in registered form.
+
+**(A) The exclusion is selection on the OUTCOME and on the GROUPING VARIABLE.**
+Median out-mass of the zeros is 18.59 vs 97.31 for the rest (5.24x; 5.11x and
+6.17x on the other two), rho(1[P2>0], m_out) = +.3909/+.3961/+.4664, and the
+zero rate is **2x higher in pure_proj (.139) than non-pure_proj (.066)** — the
+very class flag whose contrast L213 published.
+
+**(B)+(C) THE HEADLINE: the EXCLUSION moves the exponent 14-22x more than the
+ESTIMATOR CHOICE does.** k_NEUT on the FULL population (rank-based, and
+exclusion-free because R_k == 0 for EVERY k when P2 == 0, so the zeros hold a
+tied bottom rank at every exponent) = **1.9528 / 2.0057 / 2.1719**. k_OLS on
+the P2>0 subpopulation = 1.5682 / 1.5835 / 1.4858. But k_NEUT restricted to
+the SAME cells = 1.5935 / 1.6093 / 1.5154, so estimator-vs-estimator differs by
++.0253/+.0258/+.0296 while with-vs-without-the-zeros differs by
++.3593/+.3965/+.6565. All three OLS bootstrap CIs (2000 resamples) EXCLUDE the
+exclusion-free value. Secondary: the errors-in-variables correction
+k_RMA = k_OLS/|r| (|r| ~ .75) gives 2.0854/2.1120/2.0081, landing near
+k_NEUT_full from a different direction — agreement-grade, not an identity.
+
+**(D) Pearson 1897 confirmed, and the correct null is nowhere near zero.**
+Component shuffling (P2 permuted across cells, m_out held, 2000 draws) gives a
+spurious baseline at k=1 of **-.3635 / -.3573 / -.3405**, so L213's published
++.5319 is a Pearson-corrected EXCESS of **+.8955** = 1.68x the naive
+against-zero reading. The k=0 arm is the built-in positive control at -.0000
+[-.0471, +.0451], which is what makes -.3635 legible as the denominator's own
+footprint. And at k_NEUT the index reads exactly 0.0000 while independent
+components would read **-.5651**: a "mass-neutral" statistic is neutral in the
+measured currency and +.5651 away from independence of its own components —
+the card's registered caveat with a number on it. Also: |rho_resid(k_OLS)| is
++.2155 on the FULL population versus ~.025 on the sample it was fitted to.
+
+**(E) Q224-3: mass matching is IRREPLACEABLE** (the card's own registered
+conclusion for a failure). Carrier on G0_closure: mass-matched .0500, raw
+within-class .3179, class R_k .1911 at k_NEUT (d .1411) and .2393 at k_OLS
+(d .1893) — a single global exponent recovers roughly half the distance and
+stops. Mirror d .0509, consistent with its already-tight cohort (log-mass
+spread .138 vs the carrier's .530). All three substrates agree.
+
+**METHOD LAWS.** (1) A ZERO in the outcome is a MODEL-FAMILY verdict, not a
+missing value: before fitting any power law by logs, measure the outcome's
+zero fraction AND the zeros' covariance with the predictor and with every
+grouping variable the card will use. (2) When one estimator needs an exclusion
+and a rival does not, the EXCLUSION is the comparison worth making, not the
+estimators. (3) A statistic neutralised against its own denominator is still
+far from independence of its components, and only the component-shuffling null
+can say how far. (4) A coverage bar on a certification must be DERIVED FROM
+THE ARTIFACT, never guessed.
+
+Gates: CERT-213 **289** stored l213 leaves at float/int/str equality with
+coverage DERIVED from the artifact's own leaf count, by re-executing L213's
+pipeline as a verbatim source slice (l213_tail.py 1-430, runtime stamp and
+writer cut); CERT-ADD **33** (what actually pins the population R vector,
+since static.json does not store it); CERT-RANK **18** (tick 252's midrank law
+as a gate); CERT-K1 6; CERT-FAST 15 at 0.00e+00 relative; CERT-OLS and
+CERT-RMA as identities; CERT-224 19 + CERT-ZK 18 in the addendum; CERT-178
+420 / CERT-207 522 / CERT-T 272 re-run free; PARENT PIN proving l213_tail.py
+is the literal suffix of l213_static.py. Two self-inflicted failures,
+disclosed, both caught by this card's own gates: a GUESSED `_n213 >= 400`
+coverage bar halted the first run at 289 (repaired by deriving the count from
+the artifact — strictly stronger), and the addendum prefix cut at 1428 pulled
+in the escape's leading comment (moved to 1427).
+
+Follow-ons seeded as LANE ideas 120: **L248** (the zero-outcome audit of
+l205-l223), **L249** (the spurious-baseline audit of every ratio statistic in
+the lane), **L250** (is k ~ 2 the DIMENSIONAL answer? k_NEUT per depth against
+the depth itself).
+
+Artifacts: `banc/l224/{PREREG.md, VERDICT.md, static.json, addendum.json,
+run.{out,err}, run_attempt1.{out,err}, addendum.{out,err}, prior.md5,
+parent.md5}`; code `banc/l224_{build,tail}.py` -> `l224_static.py`,
+`banc/l224b_{build,tail}.py` -> `l224b_static.py`.
+
+## L225 — the TYPE-LEVEL null applied NONSELECTIVELY (tick 256, 2026-11-23)
+
+INTENT: give the whole descending-type population the null L213 gave one
+preselected type, and correct for multiplicity. This is Kriegeskorte et al.
+2009 policy step (1) — the nonselective analysis — applied to our own
+family's type-level claim.
+
+PREMISE FIRST: a permutation FDR has a RESOLUTION FLOOR. p_min = 1/(B+1),
+and BH rejects rank 1 only if p_1 <= alpha/m. At L213's B=2000 with m=426
+that is 4.998e-04 vs 1.174e-04, so the registered F_UNIQUE branch was
+UNREACHABLE BY CONSTRUCTION and 5 floor-tied types were needed for ANY
+rejection. Ran at B=20000 with the first 2000 draws asserted bit-identical
+to L213's (CERT-SEED, float equality). Load-bearing: 2 of 3 substrates'
+survivors sit AT the floor.
+
+RESULT: branch F_SMALL_FAMILY, 5 / 2 / 1 survivors of 426 / 411 / 409 types.
+DNp33 is NOT one of them — q .1573 / .1423 / .1915, rank 42 / 31 / 29. The
+only type surviving on all three substrates is oviDNa_b, which nobody
+selected. 63 of 426 types clear the UNCORRECTED p<=.05 bar against 21.3
+expected by chance (2.96x), and 38 sit at or below DNp33's own L213
+percentile.
+
+ADDENDUM (post-hoc): the parent's auto-generated headline string claimed
+DNp33 was among the survivors while its own stored dnp33_survives field says
+False — because the registered branch was a COUNT and the question was a
+MEMBERSHIP. The addendum asserts that contradiction rather than describing
+it. Power-vs-magnitude: the Wilson interval for DNp33's tail probability
+excludes its BH requirement on all three substrates, so no draw count helps.
+
+WHAT CHANGED FOR THE LANE: L213's type-level avoidance claim is withdrawn as
+an inferential claim and retained as a description of a selected cell. The
+cell-level L206-L212 claims are untouched. Follow-ons L251 (nonselective
+audit of the whole chain), L252 (oviDNa_b as the honest replacement actor),
+L253 (membership-branch + generated-prose audit).
+
+## L227 — the MIRROR COEFFICIENT as a required pre-step (tick 257, 2026-11-23)
+
+Branch **M_CROSSES** (registered), predictions 4/5 — the FALSE one is the
+card's own expectation. Static, zero rollouts (L226 is the rollout card and
+the GPU read 99%).
+
+Three of the card's four "currency pairs" are not pairs, and all three were
+settled from DEFINITIONS before any simulation: `lvl`/`margin` is an exact
+sign-flip identity (`dM = -(lvlL-lvlR)`, max residual 2.776e-17 against a
+data-derived tol 1.798e-16) so `D ≡ 0` and the magnitude head-to-head has
+exactly zero power BY PROOF; `flo`/`fhi` is degenerate by data (`fhi` ≡ 0 on
+all 20 cells, 80 checks); `duty`/`S-mean` is a quantity and its own mean
+(branch A_ROUNDED, 3-decimal store). Only `A` vs `dM` is a real pair.
+
+Two stored lane numbers corrected. (1) `l214_addendum.py` ranks with
+`argsort(np.argsort(x))` and `rho_M` has one tie group, so the stored
+rho-mirror -0.6766917293233082 should be the midrank **-0.682963568418539**.
+(2) The duty/mean aggregation reads 0.9999829 instead of 1 because the
+3-decimal store collapses 56 distinct values to 55 — ties cap a rank
+correlation whether they come from a tie-blind estimator or a rounded file.
+
+Each INSTRUMENT has its own mirror coefficient: L214's sign comparison is
+computed on per-cell currency MEANS (17/20 and 4/20), not on rho signs
+(15 and 8), so MAG consumes `r_rho` and SGN consumes `r_cur` — the card
+quoted SGN's -0.856 to justify a claim about MAG.
+
+Simulation (20 cells x 16 seeds, 400 datasets/point, lam 0..1 + 0.01
+refinement, beta calibrated to L214's measured mean|rho_A|): MAG power
+0.575 -> 0.228 -> **exactly 0.000** at lam 1 (`max|diff| == 0.0`,
+`p_D == 1` in all 400 draws). The crossing with SGN is at |r_rho| 0.830,
+which the measured 0.683 does not reach — so **P3 is FALSE** and the card's
+expectation fails as stated.
+
+The addendum is where the finding is. The parent's auto-generated rule
+recommends SGN at the crossing, where the parent's own field says SGN has
+power **0.075** (SGN tops out at 0.135 over the whole grid at n=20): a
+CROSSING threshold is reported in units of the WEAKER instrument. The real
+threshold is 2-D — MAG loses half its power at |r| **0.2386** at the lane's
+effect size and **0.7941** at beta 0.50 (3.3x) — so the one-line
+"if |r| > X" rule the card asked for does not exist as a number. What does
+exist: at the measured mirror and effect size MAG was running at **23.4%
+power**, so L214's Q3 read `H_TIE` at one-quarter power. That is the
+retro-flag the card wanted, delivered by POWER, not by a crossing.
+
+Gates: CERT-214 (31, float equality, including `p_D = 0.46245` re-derived
+from L214's own 20,000-draw HH_SEED null), CERT-RANK (11), CERT-SIM (4),
+CERT-AGG (56), CERT-227 (19). Expression form reported: the stored `D`
+reproduces only from the PAIRED difference vector, the difference-of-means
+form missing by +6.939e-17. One gate halt disclosed (`mirror_r == 1.0` at
+0.9999829), repaired to a bracket + counted mechanism — which is how the
+rounding-tie finding was found. Artifacts `banc/l227/`, code
+`banc/l227_{probe,static}.py`, `banc/l227b_addendum.py`.
+
+## L226 — the floor currency out of sample (tick 258)
+
+**Branch O_TRANSPORTS (registered). Predictions 6 of 6. Research only — no
+runtime change proposed.**
+
+The lane's first genuinely out-of-sample test, and it passed. L214's floor
+currency was discovered in a post-hoc leg on batches B36/B37, so its
+`p_C = .0465` was a null-corrected DESCRIPTION of an already-observed
+pattern (Kriegeskorte et al. 2009). L226 froze L214's decision rule in a
+PREREG, then produced a THIRD seed batch that did not exist when the rule
+was frozen.
+
+**B38 (seeds 3801-3816, 16 seeds, the five shared arms, 423 s):** the
+pre-named cell `Tr|f4ng` reads rho **+0.8000**, p_up **.00460** against the
+registered alpha .05 — **rank 1 of 10 by p_up for the third consecutive
+batch** — and the population sign currency reads **8/10** against the
+card's registered bar of 7. Both legs of the registered prediction held.
+Three-batch joint replication: C3 = 1 cell (`Tr|f4ng|up`) at
+**p_C3 = .00205** against the extended L214 null, 22.7x smaller than the
+two-batch description and earned rather than described.
+
+| | B36 (observed) | B37 (observed) | **B38 (out of sample)** |
+|---|---|---|---|
+| `Tr\|f4ng` rho | +0.7588 | +0.9118 | **+0.8000** |
+| p_up | .00070 | .00075 | **.00460** |
+| p_up rank of 10 | 1 | 1 | **1** |
+| sign agreement | 8/10 | 9/10 | **8/10** |
+
+**The cost slice needed its own certification, and it got one.** The card
+demanded only the five arms all three batches share. Dropping arms changes
+the ROLLOUT loop, and the only subset result on record certified the SETTLE
+subset. CERT-SUBSET measured **230 bit-identity checks at max abs diff
+exactly 0.0e+00** — the L139 spectator law is now a rollout claim, not a
+settle-only one.
+
+**Addendum (declared post-hoc): B38 refutes L214's own Q4 "ACCOUNTED"
+leg.** L214's registered exception cell `Ti|f4wA` was excused because
+(a) its `|mean_A|` ranked bottom-3 of 10 and (b) neither tail cleared
+alpha .05. Out of sample (a) holds (|mean_A| .024, rank 2/10) and (b)
+**fails: p_dn .00830**, surviving B38's own BH — so L214's Q4 would score
+UNACCOUNTED. Magnitude clause 3/3 batches, no-significance clause 2/3.
+
+Why: over all 30 cells (3 batches x 10, 30 distinct values) Spearman
+(`|mean_A|`, `|rho|`) = **+0.2979**, and the 30% smallest-`|mean_A|` cells
+still reach `|rho|` **0.6029**. **A near-zero currency MEAN does not bound
+the per-seed CORRELATION, so a magnitude screen cannot excuse a
+correlation result.** L214's *conclusion* survives on a different clause:
+`Ti|f4wA`'s rho is [-0.265, +0.071, -0.603] — sign-UNSTABLE — while the
+actor is 3/3 in the same tail; per batch 2-3 of 20 one-tailed hypotheses
+clear .05 against 1.0 expected, and cross-batch consistency is
+`{Tr|f4ng|up: 3, Tr|f4tw|up: 2, three others: 1}`. **The cross-batch
+filter is the instrument that separates signal from multiplicity here; a
+within-batch magnitude screen is not.**
+
+**Method laws this tick adds**
+1. A COST SLICE of a simulation is an INTERVENTION until measured: dropping
+   arms from the rollout loop is a bit-exact no-op here (230 checks at 0.0),
+   but the prior certification covered only the settle loop — certify the
+   slice you actually took, at the loop you actually took it from.
+2. A MAGNITUDE screen cannot adjudicate a CORRELATION claim: the two are
+   only weakly coupled (Spearman +0.2979 over 30 cells; a near-zero-mean
+   cell reached |rho| .6029), so "its value is near zero therefore its sign
+   is noise" is not an argument — the SIGN-STABILITY across batches is.
+3. REGISTRATION BEFORE THE DATA EXISTS is cheap and it changes the status
+   of the answer: the same per-cell machinery that produced a description
+   in L214 produced a prediction that held in L226, for one 423 s batch.
+
+**Evidence** — `peabrain-lab/banc/l226/{PREREG.md, VERDICT.md, static.json,
+addendum.json, anchors_run.json, raw_l226.npz, run.out, verdict.out,
+addendum.out, prior.md5, parent.md5}`; code `l226_build.py -> l226_run.py`,
+`l226_build_verdict.py + l226_tail.py -> l226_static.py`,
+`l226b_build.py + l226b_tail.py -> l226b_static.py`.
+
+**Gates** — CERT-FLO 40 + CERT-RHO 100 re-run FREE because the frozen rule
+arrives as `l214_tail.py` lines 1-95 VERBATIM, with a PARENT PIN asserting
+that file a literal SUFFIX of `l214_static.py`; CERT-BH 8, CERT-SGN 3,
+CERT-Q1 6 (every re-implemented piece gated by exact reproduction of the
+parent's stored output); CERT-SUBSET 230, CERT-GAIN 7 bisects EXACT,
+CERT-SEP, CERT-226 64. Run-script diff STRUCTURAL for deletions (131 del /
+67 add, 0 unexplained); addendum prefix AST-verified to contain ZERO
+writes. All md5 and (size, mtime_ns) fingerprints green before and after.
+
+**Limitations** — the card's 7/10 sign bar is a replication threshold, not
+an alpha-.05 test (exact one-sided binomial P(X>=7) = .1719, registered and
+reported beside the branch). B38 is a fresh SEED batch on the same
+substrate, drive, window and gains: it tests seed-level generalisation
+only, not a fresh specimen or protocol. Q3's three-batch null is a declared
+extension of L214's machinery, gated by CERT-Q1 but not independently
+validated. An inherited verbatim log line still prints "12 arms" where
+`len(ARMS)` is 5 — the COUNTED 230 is authoritative.
+
+## L228 — the DEPTH-2 account of the resurrection (tick 259)
+
+2026-11-23, tick 259. PREREG l228/PREREG.md (nine premise corrections, zero
+amendments) -> l228_build.py -> l228_static.py (generated sha
+aea81b0191d49176, 1,027 lines) -> l228/static.json; post-hoc
+banc/t259_ordering.py -> l228/ordering.json. Runtime 4 s, nice -n 15,
+timeout 1700, om. Zero rollouts.
+
+INTENT: L215 left the resurrection unexplained in the worst way -- depth-1
+net drive onto the left Tr pools FALLS 20.2% across the synapse floor while
+those pools go from dead (.0002) to alive (.022). Depth-1 is anti-predictive,
+so the account has to be a network effect. This card asks the same question
+one hop out, with the same counterfactual and the same null, so the only thing
+that changes is the depth.
+
+WHAT CAME BACK: branch D2_RISES_EVERYWHERE, 3/6 predictions.
+ - d2 is NEGATIVE on all four pool-sides (-56.7 to -75.4 in the g^2 currency):
+   these pools sit under net two-hop inhibition, and the floor relieves 5-10%
+   of it. dd2 is POSITIVE on 4/4 where dd1 was NEGATIVE on 4/4 -- the depth-2
+   term sign-flips the depth-1 verdict everywhere.
+ - the strongest leg is the one nobody selected for: depth-2 recovers the L/R
+   ORDERING of dynamic level on BOTH joints where depth-1 gets BOTH wrong,
+   0/2 -> 2/2 (DESCRIPTION; 2 joints = 4 sign patterns, floor 1/4).
+ - honest deflation: the RISE is bulk. Because d2 < 0, stripping ~18% of the
+   two-hop mass raises it generically, and the sign-neutral counterfactual
+   accounts for 86-105% of the measured rise on 3/4 sides. The ordering leg
+   survives because mass retention is side-symmetric and that leg reads the
+   LEVEL, not the change.
+ - the card's registered disinhibition relay is refuted ON the actor
+   (share_neg Tr_L +.3061, Tr_R -.0921) and confirmed OFF it (Ti_L +.5895,
+   Ti_R +.5579).
+ - P6 FALSE: rel dd2 spans .901-.951 against dynamic folds 1.76x-110.74x,
+   Spearman -0.2000. A linear two-hop term cannot encode a 110x fold; that
+   lives in the relu gate. The registered escape did NOT fire, so the depth-k
+   family stays -- as a SIDE-ORDERING instrument, not as an account of
+   magnitude.
+
+TWO METHOD LAWS, both found by gates halting:
+ 1. a degeneracy guard must be scoped to the ARM whose own quantity defines
+    the degeneracy. Premises 0f (net_in==0 sources contribute nothing) and 0g
+    (classify on the baseline arm) are each defensible and jointly
+    INCONSISTENT: a source with net_in_cutwA==0 can acquire net_in_f4wA!=0.
+    The assert halted on Ti_R/f4wA and the three-class identity was wrong
+    until it did (the class itself is <= 9e-05 of absolute mass).
+ 2. a SHARE of a cross-substrate DIFFERENCE is not invariant to per-substrate
+    rescaling and the rescaling can FLIP ITS SIGN (+.2994 raw -> -.0921
+    g^2-scaled on Tr_R). L209's global-rescale invariance does not cover it
+    because op-point matching makes the arms' gains differ by construction.
+ Plus: a hand-typed premise pin contradicted bytes CERT-215 had already proven
+ identical; repaired by DERIVING the pin from the stored file.
+
+CERTIFICATION: CERT-215 76 float equalities using the parent's own expression,
+CERT-D2 86 (6 exact bincount-vs-add.at array equalities + 80 definitional
+math.fsum probes against data-derived bars), inherited FREE CERT-205 36 /
+CERT-TBL 28 / CERT-G 2 / substrate+pool pins / L208 premise asserts via
+l215_tail.py lines 1-157 BYTE-FOR-BYTE, PARENT PIN (that file's sha ==
+l215_static.py's own banner AND a literal suffix of it), HEAD3 line-set audit,
+AST Import + AST Call audits in the builder, md5sum -c prior.md5 green both
+sides, four read-only fingerprints unchanged.
+
+NEXT: L260 (the GATED two-hop term -- the instrument both L215 and L228 named),
+L261 (the depth PROFILE of the ordering result plus the membership null that
+converts its 1/4 floor into a percentile), L262 (the share-currency audit).

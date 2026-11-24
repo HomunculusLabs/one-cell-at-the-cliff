@@ -1,0 +1,114 @@
+{
+ "design": "L213 addendum: reconcile Q1 (mass-stratified, LOW) with Q3 (raw within-class, MID-PACK) by measuring the actors' MASS rank inside their own class and re-reading the within-class percentile on a mass-matched sub-cohort. UNREGISTERED, descriptive.",
+ "parent": "l213/static.json",
+ "prereg": "l213/PREREG.md",
+ "registered": false,
+ "per_substrate": {
+  "G0_closure": {
+   "carrier": {
+    "gi": 1110,
+    "class_n": 560,
+    "R": 3.2054789617774535e-05,
+    "m_out": 183.96376182027785,
+    "mass_pct_in_class": 0.9214285714285714,
+    "R_pct_in_class_raw": 0.31785714285714284,
+    "R_pct_in_class_massmatched": 0.05,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.5296985917264303,
+    "cohort_median_R": 0.00030088870958679787,
+    "deficit_x_vs_massmatched": 9.386700495452748
+   },
+   "mirror": {
+    "gi": 928,
+    "class_n": 728,
+    "R": 2.3125721314351374e-05,
+    "m_out": 200.052528301847,
+    "mass_pct_in_class": 0.6538461538461539,
+    "R_pct_in_class_raw": 0.14423076923076922,
+    "R_pct_in_class_massmatched": 0.07,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.13790767790756941,
+    "cohort_median_R": 0.0004535543791180902,
+    "deficit_x_vs_massmatched": 19.612550586113965
+   },
+   "rho_R_vs_mout_population": 0.5319431776009682,
+   "rho_R_vs_mout_pure": 0.5108793086252027,
+   "rho_R_vs_mout_nonpure": 0.41193243322704465,
+   "median_mout_pure": 37.64415390620037,
+   "median_mout_nonpure": 139.1846638998947
+  },
+  "G1_cutwA": {
+   "carrier": {
+    "gi": 1110,
+    "class_n": 536,
+    "R": 3.2056768821700394e-05,
+    "m_out": 183.96376182027785,
+    "mass_pct_in_class": 0.9626865671641791,
+    "R_pct_in_class_raw": 0.3358208955223881,
+    "R_pct_in_class_massmatched": 0.08,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.6427201528340412,
+    "cohort_median_R": 0.0003038777143033085,
+    "deficit_x_vs_massmatched": 9.479361940483615
+   },
+   "mirror": {
+    "gi": 928,
+    "class_n": 728,
+    "R": 2.3127149198263875e-05,
+    "m_out": 200.052528301847,
+    "mass_pct_in_class": 0.6552197802197802,
+    "R_pct_in_class_raw": 0.15247252747252749,
+    "R_pct_in_class_massmatched": 0.07,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.13790767790756941,
+    "cohort_median_R": 0.0004560210893566052,
+    "deficit_x_vs_massmatched": 19.717998333786774
+   },
+   "rho_R_vs_mout_population": 0.5378751622578909,
+   "rho_R_vs_mout_pure": 0.4978091017986602,
+   "rho_R_vs_mout_nonpure": 0.41593426601682615,
+   "median_mout_pure": 35.994194889762966,
+   "median_mout_nonpure": 138.29248948497028
+  },
+  "F4_f4wA": {
+   "carrier": {
+    "gi": 1110,
+    "class_n": 535,
+    "R": 4.408819876803457e-05,
+    "m_out": 168.71452384795904,
+    "mass_pct_in_class": 0.9775700934579439,
+    "R_pct_in_class_raw": 0.4074766355140187,
+    "R_pct_in_class_massmatched": 0.09,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.6670312827260707,
+    "cohort_median_R": 0.00030660414138432274,
+    "deficit_x_vs_massmatched": 6.954335852945325
+   },
+   "mirror": {
+    "gi": 928,
+    "class_n": 725,
+    "R": 2.26590094122899e-05,
+    "m_out": 180.64440724616853,
+    "mass_pct_in_class": 0.6924137931034483,
+    "R_pct_in_class_raw": 0.15310344827586206,
+    "R_pct_in_class_massmatched": 0.06,
+    "cohort_k": 100,
+    "cohort_logmass_spread": 0.11981298508476179,
+    "cohort_median_R": 0.0004558913775962086,
+    "deficit_x_vs_massmatched": 20.11965171561913
+   },
+   "rho_R_vs_mout_population": 0.5447150100010776,
+   "rho_R_vs_mout_pure": 0.5272080346799178,
+   "rho_R_vs_mout_nonpure": 0.42496614588717285,
+   "median_mout_pure": 28.496195346996767,
+   "median_mout_nonpure": 117.39245363355484
+  }
+ },
+ "reading": "Both actors are HIGH-mass cells inside their own class. A RAW within-class percentile therefore compares them against a class whose bulk is lower-mass, and R rises with out-mass, so the raw number reads mid-pack by construction. The mass-matched within-class percentile is the comparable object and it is the one to read against L207.",
+ "limitations": [
+  "UNREGISTERED and POST HOC: these numbers carry no branch and refute no registered branch. Q3 stands as measured.",
+  "The mass-matched class cohort is a THIRD null (neither Q3's raw class nor L207's whole-descending cohort): its magnitude transports to neither (L207 cross-null law).",
+  "Descriptive correlations only; no causal or mechanistic claim."
+ ],
+ "runtime_s": 16.10937809944153
+}

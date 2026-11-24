@@ -3,9 +3,9 @@
 Status: skeleton, 2026-11-22, writer claude-opus-5.5 (BRIEF_meta.md). Not a
 draft. Every number carries a source key; the receipts are the data.
 
-## Source keys (paths relative to ~/critters/peabrain-lab/)
+## Source keys (paths relative to /home/t3rpz/critters/peabrain-lab/)
 
-    LL   ~/critters/peabrain/LANE-LOG.md   (LL:n = line n)
+    LL   /home/t3rpz/critters/peabrain/LANE-LOG.md   (LL:n = line n)
     R1   paper/review_fable.md          round 1, fable-5.2, 2026-11-19/20
     R2   paper/review_fable_r2.md       round 2, fable-5.2, 2026-11-21
     SO   paper/review_claudeai_fable_20261121.md  hosted claude.ai fable-5.2

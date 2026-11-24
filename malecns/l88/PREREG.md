@@ -61,7 +61,7 @@ no chain run has ever touched.
 - GO for the endgame = G1 AND G2a AND G3 AND G4 on fresh. A fixed rule that
   clears IS the policy (training optional; L89 holdout confirm card).
   NO-GO closes the 2-feature class: C4b echo lever + C4c diagnostic stand;
-  L80 amendment final pending the owner.
+  L80 amendment final pending Bill.
 
 ## Registered expectations (directional, L55 spirit)
 - E1: the census winner uses SL2500 (the .735 carrier), most likely at a

@@ -1,0 +1,412 @@
+{
+ "design": "L213 TYPE or CLASS? L207 found both members of the bilateral DNp33 pair at pct .06-.10 of mass-matched descending cohorts on three substrates and called it a cell-TYPE property. Here the same anatomical statistic R = P2/(lam1^2*m_out) is computed for EVERY present descending cell on the three L207 substrates, aggregated (Q1) by cell_type with a within-mass-stratum type-label permutation null, (Q2) by the pure_proj class flag with the same null on the flag, and (Q3) per actor WITHIN ITS OWN class -- the carrier inside pure_proj, the mirror inside non-pure_proj, because the mirror is not pure_proj. PREREG l213/PREREG.md.",
+ "prereg": "l213/PREREG.md",
+ "cert_f4": {
+  "K4": 73,
+  "carrier_rank": 21,
+  "twin_gi": 290,
+  "mass_gap_rel": 2.4362329626845237e-05,
+  "n_f4wA": 21789,
+  "edges_f4wA": 469618,
+  "n_family": 33
+ },
+ "gains": {
+  "g_f4wA": 0.15051452517509462,
+  "g_f4ng": 0.16230986118316648,
+  "g_f4tw": 0.15261898636817928
+ },
+ "csr_orientation": {
+  "carrier_local": 470,
+  "out_edges": 69,
+  "in_edges": 12,
+  "convention": "W[target,source]"
+ },
+ "pools": {
+  "n_pools": 20,
+  "n_pool_cells": 303,
+  "sizes": {
+   "Ti_fL": 50,
+   "Ti_eL": 6,
+   "Ti_fR": 51,
+   "Ti_eR": 6,
+   "Tr_fL": 31,
+   "Tr_eL": 24,
+   "Tr_fR": 31,
+   "Tr_eR": 24,
+   "Ta_aL": 12,
+   "Ta_bL": 3,
+   "Ta_aR": 12,
+   "Ta_bR": 3,
+   "Sr_aL": 6,
+   "Sr_bL": 11,
+   "Sr_aR": 6,
+   "Sr_bR": 13,
+   "Pr_aL": 4,
+   "Pr_bL": 3,
+   "Pr_aR": 4,
+   "Pr_bR": 3
+  }
+ },
+ "cert_178": {
+  "n_checks": 420,
+  "mode": "float equality (==)",
+  "source": "l178/static.json E_anatomical.all_actors",
+  "n_actors": 35,
+  "depths": [
+   1,
+   2,
+   3
+  ]
+ },
+ "premise": {
+  "carrier_gi": 1110,
+  "mirror_gi": 928,
+  "carrier_pure_proj": true,
+  "mirror_pure_proj": false,
+  "carrier_dn_into": false,
+  "mirror_dn_into": true,
+  "n_dn_all": 1313,
+  "n_dn_into": 728,
+  "n_dn_proj": 1287,
+  "n_pure_proj": 560,
+  "note": "registered in l213/PREREG.md BEFORE any aggregate was computed: the two DNp33 members sit in DIFFERENT classes under the very flag hypothesis (ii) proposes as the explanation."
+ },
+ "substrates": {
+  "G0_closure": {
+   "n": 21809,
+   "n_edges": 647953,
+   "lam1_g1": 227.78690666391347
+  },
+  "G1_cutwA": {
+   "n": 21785,
+   "n_edges": 644177,
+   "lam1_g1": 227.77987470599243
+  },
+  "F4_f4wA": {
+   "n": 21789,
+   "n_edges": 469618,
+   "lam1_g1": 200.51080275455487
+  }
+ },
+ "cert_207": {
+  "n_checks": 522,
+  "mode": "float equality (==)",
+  "source": "l207/static.json (read-only, fingerprinted)",
+  "fingerprint_size": 29060,
+  "verdict_asserted": true
+ },
+ "cert_T": {
+  "n_checks": 272,
+  "max_rel_diff": 9.049156913359568e-16,
+  "bar": 1e-12,
+  "mode": "relative difference (summation order differs; float equality deliberately NOT claimed)",
+  "note": "transpose = same np.add.at expression with rows/cols swapped (L210 CERT-MV transpose identity)"
+ },
+ "population": {
+  "G0_closure": {
+   "n": 1288,
+   "n_named": 1273,
+   "n_pure": 560
+  },
+  "G1_cutwA": {
+   "n": 1264,
+   "n_named": 1249,
+   "n_pure": 536
+  },
+  "F4_f4wA": {
+   "n": 1260,
+   "n_named": 1245,
+   "n_pure": 535
+  }
+ },
+ "strata": {
+  "G0_closure": {
+   "n_strata": 10,
+   "counts": [
+    129,
+    129,
+    129,
+    127,
+    130,
+    129,
+    128,
+    129,
+    129,
+    129
+   ]
+  },
+  "G1_cutwA": {
+   "n_strata": 10,
+   "counts": [
+    127,
+    126,
+    126,
+    127,
+    126,
+    126,
+    127,
+    126,
+    126,
+    127
+   ]
+  },
+  "F4_f4wA": {
+   "n_strata": 10,
+   "counts": [
+    126,
+    126,
+    126,
+    126,
+    126,
+    126,
+    126,
+    126,
+    126,
+    126
+   ]
+  }
+ },
+ "Q1_type": {
+  "branch": "T_TYPE_LOW",
+  "per_substrate": {
+   "G0_closure": {
+    "n_types_ge2": 426,
+    "n_cells_in_types": 1233,
+    "dnp33_members": [
+     928,
+     1110
+    ],
+    "dnp33_member_R": [
+     2.3125721314351374e-05,
+     3.2054789617774535e-05
+    ],
+    "type_median": 2.7590255466062955e-05,
+    "pct_among_type_medians": 0.13145539906103287,
+    "type_median_all_median": 0.0002959023630158611,
+    "ratio_to_median_of_type_medians": 10.724886668042348,
+    "null_pct": 0.0145,
+    "null_median": 0.00041136693866393405,
+    "null_p05": 7.538015622203303e-05,
+    "null_p95": 0.0010716259430871697,
+    "n_draws": 2000,
+    "branch": "T_TYPE_LOW"
+   },
+   "G1_cutwA": {
+    "n_types_ge2": 411,
+    "n_cells_in_types": 1198,
+    "dnp33_members": [
+     928,
+     1110
+    ],
+    "dnp33_member_R": [
+     2.3127149198263875e-05,
+     3.2056768821700394e-05
+    ],
+    "type_median": 2.7591959009982135e-05,
+    "pct_among_type_medians": 0.1411192214111922,
+    "type_median_all_median": 0.0003035812545056362,
+    "ratio_to_median_of_type_medians": 11.002526293831021,
+    "null_pct": 0.0105,
+    "null_median": 0.00044481784177113074,
+    "null_p05": 7.585701722968711e-05,
+    "null_p95": 0.0011981910590650156,
+    "n_draws": 2000,
+    "branch": "T_TYPE_LOW"
+   },
+   "F4_f4wA": {
+    "n_types_ge2": 409,
+    "n_cells_in_types": 1192,
+    "dnp33_members": [
+     928,
+     1110
+    ],
+    "dnp33_member_R": [
+     2.26590094122899e-05,
+     4.408819876803457e-05
+    ],
+    "type_median": 3.337360409016224e-05,
+    "pct_among_type_medians": 0.1687041564792176,
+    "type_median_all_median": 0.00035496338067228826,
+    "ratio_to_median_of_type_medians": 10.636051764541762,
+    "null_pct": 0.013,
+    "null_median": 0.00047951755893850724,
+    "null_p05": 9.318582813901777e-05,
+    "null_p95": 0.001351456215767018,
+    "n_draws": 2000,
+    "branch": "T_TYPE_LOW"
+   }
+  },
+  "limit": "DNp33 has 2 present members, so the type median is a 2-POINT statistic: a DIRECTION only, never a magnitude (PREREG limit 1)."
+ },
+ "Q2_class": {
+  "branch": "C_CLASS_TYPICAL",
+  "per_substrate": {
+   "G0_closure": {
+    "n_pure": 560,
+    "n_nonpure": 728,
+    "median_pure": 9.17346435085684e-05,
+    "median_nonpure": 0.00033629781176491066,
+    "dlog10": -0.5641906638587852,
+    "ratio_pure_over_nonpure": 0.2727779970590341,
+    "null_pct": 0.166,
+    "null_median": -0.5277639194948771,
+    "null_p05": -0.5902188143103834,
+    "null_p95": -0.459333314631042,
+    "n_draws": 2000,
+    "branch": "C_CLASS_TYPICAL"
+   },
+   "G1_cutwA": {
+    "n_pure": 536,
+    "n_nonpure": 728,
+    "median_pure": 8.356444202691399e-05,
+    "median_nonpure": 0.0003367459960045806,
+    "dlog10": -0.605280922882637,
+    "ratio_pure_over_nonpure": 0.2481527412898394,
+    "null_pct": 0.2275,
+    "null_median": -0.568717443751231,
+    "null_p05": -0.6512177327194579,
+    "null_p95": -0.503414489898899,
+    "n_draws": 2000,
+    "branch": "C_CLASS_TYPICAL"
+   },
+   "F4_f4wA": {
+    "n_pure": 535,
+    "n_nonpure": 725,
+    "median_pure": 9.257186397447972e-05,
+    "median_nonpure": 0.00038400213589513205,
+    "dlog10": -0.6178546314808968,
+    "ratio_pure_over_nonpure": 0.24107122154070612,
+    "null_pct": 0.17,
+    "null_median": -0.5638181135783795,
+    "null_p05": -0.6532683981396246,
+    "null_p95": -0.4913525095367522,
+    "n_draws": 2000,
+    "branch": "C_CLASS_TYPICAL"
+   }
+  },
+  "flag": "pure_proj = dn_proj & ~dn_into (l169c flag)"
+ },
+ "Q3_conditional": {
+  "branch": "D_CLASS_EXPLAINS",
+  "per_substrate": {
+   "G0_closure": {
+    "carrier_class": "pure_proj",
+    "mirror_class": "non_pure_proj",
+    "carrier_R": 3.2054789617774535e-05,
+    "mirror_R": 2.3125721314351374e-05,
+    "carrier_pct_in_class": 0.31785714285714284,
+    "mirror_pct_in_class": 0.14423076923076922,
+    "carrier_class_n": 560,
+    "mirror_class_n": 728,
+    "carrier_class_median": 9.17346435085684e-05,
+    "mirror_class_median": 0.00033629781176491066,
+    "carrier_deficit_x": 2.861807692467309,
+    "mirror_deficit_x": 14.542154477845877,
+    "branch": "D_CLASS_EXPLAINS"
+   },
+   "G1_cutwA": {
+    "carrier_class": "pure_proj",
+    "mirror_class": "non_pure_proj",
+    "carrier_R": 3.2056768821700394e-05,
+    "mirror_R": 2.3127149198263875e-05,
+    "carrier_pct_in_class": 0.3358208955223881,
+    "mirror_pct_in_class": 0.15247252747252749,
+    "carrier_class_n": 536,
+    "mirror_class_n": 728,
+    "carrier_class_median": 8.356444202691399e-05,
+    "mirror_class_median": 0.0003367459960045806,
+    "carrier_deficit_x": 2.6067643464536006,
+    "mirror_deficit_x": 14.5606357756303,
+    "branch": "D_CLASS_EXPLAINS"
+   },
+   "F4_f4wA": {
+    "carrier_class": "pure_proj",
+    "mirror_class": "non_pure_proj",
+    "carrier_R": 4.408819876803457e-05,
+    "mirror_R": 2.26590094122899e-05,
+    "carrier_pct_in_class": 0.4074766355140187,
+    "mirror_pct_in_class": 0.15310344827586206,
+    "carrier_class_n": 535,
+    "mirror_class_n": 725,
+    "carrier_class_median": 9.257186397447972e-05,
+    "mirror_class_median": 0.00038400213589513205,
+    "carrier_deficit_x": 2.099697119892261,
+    "mirror_deficit_x": 16.94699573613554,
+    "branch": "D_CLASS_EXPLAINS"
+   }
+  },
+  "pct_bar": 0.1,
+  "null_kind": "WITHIN-CLASS percentile among present descending cells of the actor's own class, NOT mass-matched -- a different null from L207's cohort, so the MAGNITUDE does not transport (L207)."
+ },
+ "derived_reading": {
+  "reading": "MIXTURE",
+  "rule": "(i) TYPE iff Q3 == D_TYPE_SURVIVES; (ii) CLASS iff Q2 == C_CLASS_LOW AND Q3 == D_CLASS_EXPLAINS; else MIXTURE.",
+  "premise_note": "the strong CLASS reading was already strained before any measurement: the mirror is not pure_proj (see o['premise'])."
+ },
+ "predictions": {
+  "Q213_P1": {
+   "registered": "Q1 == T_TYPE_LOW on >= 2 of 3",
+   "measured": [
+    "T_TYPE_LOW",
+    "T_TYPE_LOW",
+    "T_TYPE_LOW"
+   ],
+   "correct": true
+  },
+  "Q213_P2": {
+   "registered": "Q2 == C_CLASS_TYPICAL",
+   "measured": "C_CLASS_TYPICAL",
+   "correct": true
+  },
+  "Q213_P3": {
+   "registered": "Q3 == D_TYPE_SURVIVES on all 3",
+   "measured": [
+    "D_CLASS_EXPLAINS",
+    "D_CLASS_EXPLAINS",
+    "D_CLASS_EXPLAINS"
+   ],
+   "correct": false
+  },
+  "Q213_P4": {
+   "registered": "mirror within-non-pure_proj pct <= 0.10 on all 3",
+   "measured": {
+    "G0_closure": 0.14423076923076922,
+    "G1_cutwA": 0.15247252747252749,
+    "F4_f4wA": 0.15310344827586206
+   },
+   "correct": false
+  },
+  "Q213_P5": {
+   "registered": "DNp33 type-median null pct <= 0.02 on >= 2 of 3",
+   "measured": {
+    "G0_closure": 0.0145,
+    "G1_cutwA": 0.0105,
+    "F4_f4wA": 0.013
+   },
+   "correct": true
+  }
+ },
+ "n_predictions_correct": 3,
+ "branches": {
+  "Q1": "T_TYPE_LOW",
+  "Q2": "C_CLASS_TYPICAL",
+  "Q3": "D_CLASS_EXPLAINS",
+  "derived": "MIXTURE"
+ },
+ "bars": {
+  "null_bar": 0.05,
+  "pct_bar": 0.1,
+  "n_strata": 10,
+  "n_draws": 2000,
+  "seed": 21342
+ },
+ "limitations": [
+  "DNp33 has 2 present members: the type median is a 2-POINT statistic. Direction only, never a magnitude.",
+  "One type, one class flag, one statistic, one null family. Other partitions of descending cells are untested.",
+  "ANATOMICAL leg only: no row mask, no settle, no seed -- wiring geometry, not an operating point (L164).",
+  "The within-stratum permutation holds log out-mass stratum and type SIZE but not neurotransmitter, side, or neuropil composition.",
+  "Q3 is a within-class percentile and is NOT mass-matched: its magnitude does not transport to L207's cohort percentile (L207 cross-null law).",
+  "The three substrates share a graph and most cells, so they are not three independent replications."
+ ],
+ "runtime_s": 18.834111213684082
+}

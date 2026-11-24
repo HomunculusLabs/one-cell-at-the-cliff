@@ -1,0 +1,32 @@
+[    0.5s] [CERT-783] GREEN ids array-equal (N 139255), live nnz 15091983, meta pins asserted
+[    0.9s] [ann] 139241 annotated rows joined onto the v783 id set
+[    1.0s] [nt] mix {'acetylcholine': 86191, 'glutamate': 24873, 'gaba': 19171, 'dopamine': 5909, 'serotonin': 2281, 'unknown': 614, 'octopamine': 216}
+[    1.0s] [CERT-L207] GREEN carrier {'gi': 132493, 'root_id': '720575940604103084', 'cell_type': 'DNp33', 'side': 'left', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'} | mirror {'gi': 132179, 'root_id': '720575940633165452', 'cell_type': 'DNp33', 'side': 'right', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'}
+[    1.0s] [readout] PRIMARY {'mot_PhN': 40, 'mot_MxLbN': 26, 'mot_CV': 20, 'mot_AN': 14, 'mot_ON': 10}
+[    6.8s] [edges] 16847997 of 16847997 rows inside the id set
+[   13.1s] [CERT-783] GREEN unique pairs 15091983 == live graph nnz
+[   15.0s] [sub] n 139255 edges 15091983 om>0 138005
+[   16.7s] [CERT-MV] GREEN 4 EXACT array equalities (bincount == np.add.at)
+[   23.4s] [CERT-GATE] GREEN 22 float equalities: the fast kernels ARE the verbatim l207_tail functions
+[   72.7s] [lam1] 552.634080 (rel spread last6 4.114e-16)
+[   73.3s] [CERT-GATE] GREEN Rfast == verbatim Rstat on both actors (10 checks)
+[  145.9s] [NO-OP] GREEN R rescale-invariance rel diff 3.97e-16
+[  146.2s] [cohort] carrier 100 mirror 100 union 122 - measuring R on each
+[  146.3s]   cohort 0/122
+[  149.8s]   cohort 25/122
+[  153.1s]   cohort 50/122
+[  156.4s]   cohort 75/122
+[  159.7s]   cohort 100/122
+[  162.7s] [PRIMARY] carrier R 1.60013e-06 pct 0.020 | mirror R 1.00276e-05 pct 0.250 | cohort med 2.05816e-05 | zero frac 0.010
+[  162.7s] [BRANCH] V_AVOIDS (carrier_pct 0.02)
+[  180.4s] [SECONDARY] carrier pct 0.290 mirror pct 0.360
+[  233.0s] [BETA1] carrier pct 0.070 (d +0.050) lam1 379.652015
+[  233.0s] [CERT-212] GREEN 139 stored L212 values reproduced at float equality
+[  233.0s] [CERT-PAIR] GREEN 11 checks - both legs on one cohort, one operator
+[  233.0s] [CERT-RANK] GREEN 252 checks - rankvec is a midrank on this data
+[  233.0s] [Q223-0] rho COH_C 0.4776 | COH_M 0.4343 | COH_U 0.4238 (bar 0.95)
+[  233.0s] [C_log] carrier -4.5867 mirror -2.7915 | excluded zero cells C 1 M 1 U 1
+[  233.0s] [BRANCH] S_SPECIFIC (primary = C_log percentile vs COH_C)
+[  233.0s] [Q223-3] pct_rank carrier 0.190 mirror 0.330
+[  233.0s] [predictions] 5/6 correct
+[  233.0s] [done] 233.0s -> /home/t3rpz/critters/peabrain-lab/banc/l223/static.json  branch=S_SPECIFIC

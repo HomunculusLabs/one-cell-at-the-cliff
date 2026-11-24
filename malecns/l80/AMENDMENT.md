@@ -1,6 +1,6 @@
-# L80 — L57 substrate-contract amendment: structure row goes WINDOW-SCOPED (parked for the owner)
+# L80 — L57 substrate-contract amendment: structure row goes WINDOW-SCOPED (parked for Bill)
 
-Status: **PROPOSAL — parked for the owner on BBS bill/agent-bbs#54.** The live L57
+Status: **PROPOSAL — parked for Bill on BBS bill/agent-bbs#54.** The live L57
 table in LAB-INTENT.md is unchanged until his word (L75 precedent). Evidence
 re-derived this tick from STORED artifacts only (L44 rule): l77/results_l77.json,
 l79/results_l79.json (both census n=16, seeds 11,22,33,101-113); l59 numbers
@@ -66,7 +66,7 @@ carried by l77's bit-identical anchors (23rd/25th chain anchors).
    (sham -.001) ran on the nohop/l55 schedule; l77's hybrid_fb has echo
    on/off only. The C4b lever claim leans on the nohop-family sham +
    bit-identical wiring (C0x cross-run probe). A hybrid-schedule sham is the
-   one symmetry run still open if the owner wants it (cheap: 2 arms x 16 seeds).
+   one symmetry run still open if Bill wants it (cheap: 2 arms x 16 seeds).
 3. L81 untested — if reflex-arc re-host lifts the fast window, C4c upgrades
    from "no lever" to "one lever, opposite-sign"; amendment revisits.
 

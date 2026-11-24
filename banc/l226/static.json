@@ -1,0 +1,230 @@
+{
+ "prereg": "l226/PREREG.md",
+ "premise": "FIRST genuinely OUT-OF-SAMPLE test in this family. B36 and B37 were both inside the post-hoc leg that discovered the currency (Kriegeskorte 2009); B38 did not exist when the PREREG was frozen. The decision rule is L214's, re-executed as a verbatim source slice, never re-implemented.",
+ "head_sha": "de636f4a18ee789b8bd51fca5f7823ea6302ffd58be630b50c70965e865b8e0c",
+ "slice2_sha": "595f869b450e2d25eefdc89193dfbdba5d988276738434b02d8f4d930b6dad0e",
+ "frozen_rule": {
+  "N_PERM": 20000,
+  "PERM_SEED": 20837,
+  "ALPHA": 0.05,
+  "QFDR": 0.1,
+  "n_W": 3000,
+  "signs_shape": [
+   20000,
+   16
+  ],
+  "arms": [
+   "f4wA",
+   "f4ng",
+   "f4tw",
+   "cutwA",
+   "cutng25"
+  ],
+  "pairs": [
+   "Ti",
+   "Tr"
+  ]
+ },
+ "cert": {
+  "cert_flo": 40,
+  "cert_rho": 100,
+  "cert_bh": 8,
+  "cert_sgn": 3,
+  "cert_q1": 6,
+  "cert_subset_checks": 230,
+  "cert_subset_max": 0.0
+ },
+ "batch": {
+  "B38": [
+   3801,
+   3802,
+   3803,
+   3804,
+   3805,
+   3806,
+   3807,
+   3808,
+   3809,
+   3810,
+   3811,
+   3812,
+   3813,
+   3814,
+   3815,
+   3816
+  ],
+  "gains": {
+   "f4wA": 0.15051452517509462,
+   "f4ng": 0.16230986118316648,
+   "f4tw": 0.15261898636817928,
+   "cutwA": 0.14365819573402408,
+   "cutng25": 0.1454454553127289
+  },
+  "f4_gain_exact": {
+   "f4wA": true,
+   "f4ng": true,
+   "f4tw": true
+  },
+  "paf4_ok": true
+ },
+ "q1": {
+  "actor": "Tr|f4ng",
+  "tail": "up",
+  "rho": 0.8,
+  "p_up": 0.0046,
+  "p_dn": 0.99555,
+  "p_up_rank_of_10": 1,
+  "SA38": 8,
+  "SA_bar": 7,
+  "SA_bar_exact_binomial_p": 0.171875,
+  "cell_ok": true,
+  "currency_ok": true,
+  "branch": "O_TRANSPORTS",
+  "reading": "the floor currency AND the single cell replicate out of sample; L214's p_C .0465 stops being a description of an observed pattern and becomes a prediction that held"
+ },
+ "q2": {
+  "m": 20,
+  "q": 0.1,
+  "n_survivors": 2,
+  "survivors": [
+   "Tr|f4ng|up",
+   "Ti|f4wA|dn"
+  ],
+  "smallest_p": 0.0046,
+  "smallest": "Tr|f4ng|up"
+ },
+ "q3": {
+  "C3": 1,
+  "cells": [
+   "Tr|f4ng|up"
+  ],
+  "p_C3": 0.00205,
+  "C3_null_mean": 0.00205,
+  "C3_null_max": 1,
+  "note": "EXTENSION of L214's Q1 null to a third batch: a second permutation from the same PAIR_SEED stream. The first permutation is bit-identical to L214's (CERT-Q1)."
+ },
+ "q4": {
+  "B38|Ti|f4wA": {
+   "rho": -0.6029411764705882,
+   "p_up": 0.99185,
+   "p_dn": 0.0083,
+   "mean_A": -0.02435416666666667,
+   "mean_dS": 0.6016874999999999,
+   "floL": 0.09245833333333334,
+   "floR": 0.06810416666666666,
+   "null_sd": 0.25538160845691427
+  },
+  "B38|Ti|f4ng": {
+   "rho": 0.23823529411764705,
+   "p_up": 0.1769,
+   "p_dn": 0.8257,
+   "mean_A": 0.23547916666666668,
+   "mean_dS": 0.22912500000000002,
+   "floL": 0.15586458333333333,
+   "floR": 0.39134375,
+   "null_sd": 0.24431092570004798
+  },
+  "B38|Ti|f4tw": {
+   "rho": 0.01764705882352941,
+   "p_up": 0.46235,
+   "p_dn": 0.54515,
+   "mean_A": -0.011770833333333335,
+   "mean_dS": 0.570875,
+   "floL": 0.13064583333333335,
+   "floR": 0.11887500000000001,
+   "null_sd": 0.16385187439434107
+  },
+  "B38|Ti|cutwA": {
+   "rho": 0.16176470588235295,
+   "p_up": 0.2768,
+   "p_dn": 0.7262,
+   "mean_A": -0.11143750000000001,
+   "mean_dS": -0.20625,
+   "floL": 0.4995416666666667,
+   "floR": 0.38810416666666664,
+   "null_sd": 0.2593432001859261
+  },
+  "B38|Ti|cutng25": {
+   "rho": -0.18529411764705883,
+   "p_up": 0.7595,
+   "p_dn": 0.24405,
+   "mean_A": -0.07552083333333334,
+   "mean_dS": -0.6551875,
+   "floL": 0.49996875,
+   "floR": 0.42444791666666665,
+   "null_sd": 0.24520182281030037
+  },
+  "B38|Tr|f4wA": {
+   "rho": -0.03529411764705882,
+   "p_up": 0.561,
+   "p_dn": 0.4432,
+   "mean_A": -0.16383333333333333,
+   "mean_dS": -0.6044375,
+   "floL": 0.55115625,
+   "floR": 0.3873229166666667,
+   "null_sd": 0.22348831620664725
+  },
+  "B38|Tr|f4ng": {
+   "rho": 0.8,
+   "p_up": 0.0046,
+   "p_dn": 0.99555,
+   "mean_A": -0.3526979166666667,
+   "mean_dS": -0.5391874999999999,
+   "floL": 0.6090520833333334,
+   "floR": 0.25635416666666666,
+   "null_sd": 0.3282685440970527
+  },
+  "B38|Tr|f4tw": {
+   "rho": 0.5941176470588235,
+   "p_up": 0.0225,
+   "p_dn": 0.97795,
+   "mean_A": -0.22518749999999998,
+   "mean_dS": -0.6294375,
+   "floL": 0.5959687499999999,
+   "floR": 0.37078124999999995,
+   "null_sd": 0.3008957608052799
+  },
+  "B38|Tr|cutwA": {
+   "rho": 0.24705882352941178,
+   "p_up": 0.1467,
+   "p_dn": 0.85605,
+   "mean_A": -0.7009791666666667,
+   "mean_dS": -0.08099999999999999,
+   "floL": 0.99890625,
+   "floR": 0.29792708333333334,
+   "null_sd": 0.22076630578285608
+  },
+  "B38|Tr|cutng25": {
+   "rho": 0.12941176470588237,
+   "p_up": 0.4784,
+   "p_dn": 0.52585,
+   "mean_A": -0.7,
+   "mean_dS": -0.006687500000000001,
+   "floL": 0.999875,
+   "floR": 0.299875,
+   "null_sd": 0.24834761832457147
+  }
+ },
+ "prior_observed": {
+  "B36_p_up_actor": 0.0007,
+  "B37_p_up_actor": 0.00075,
+  "SA36": 8,
+  "SA37": 9,
+  "L214_p_C": 0.0465,
+  "L214_branch": "F_REPLICATES"
+ },
+ "predictions": {
+  "P1_O_TRANSPORTS": true,
+  "P2_actor_p_up_lt_alpha": true,
+  "P3_SA38_ge_7": true,
+  "P4_actor_smallest_p_up": true,
+  "P5_actor_survives_BH": true,
+  "P6_cert_subset_exactly_zero": true
+ },
+ "limitations": [
+  "The out-of-sample test is on ONE pre-named cell and ONE population sign bar, both fixed by the card before B38 existed; no multiplicity correction is needed for the PRIMARY, and none is claimed for the Q2/Q3 companions beyond their own stated procedures.",
+  "The 7/10 sign bar is a replication threshold, not an alpha-.05 test: its exact one-sided binomial p is 0.1719.",
+  "B38 shares the substrate, the drive, the window and the gains with B36/B37 \u2014 it is a fresh SEED batch, not a fresh specimen or a fresh protocol. It tests seed-level generalisation only.",
+  "Q3's third-batch null is a declared EXTENSION of L214's machinery, not a registered instrument with its own prior validation."
+ ]
+}

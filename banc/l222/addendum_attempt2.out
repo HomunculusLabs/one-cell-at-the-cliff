@@ -1,0 +1,30 @@
+[    0.3s] [CERT-783] GREEN ids array-equal (N 139255), live nnz 15091983, meta pins asserted
+[    0.5s] [ann] 139241 annotated rows joined onto the v783 id set
+[    0.5s] [nt] mix {'acetylcholine': 86191, 'glutamate': 24873, 'gaba': 19171, 'dopamine': 5909, 'serotonin': 2281, 'unknown': 614, 'octopamine': 216}
+[    0.6s] [CERT-L207] GREEN carrier {'gi': 132493, 'root_id': '720575940604103084', 'cell_type': 'DNp33', 'side': 'left', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'} | mirror {'gi': 132179, 'root_id': '720575940633165452', 'cell_type': 'DNp33', 'side': 'right', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'}
+[    0.6s] [readout] PRIMARY {'mot_PhN': 40, 'mot_MxLbN': 26, 'mot_CV': 20, 'mot_AN': 14, 'mot_ON': 10}
+[    5.5s] [edges] 16847997 of 16847997 rows inside the id set
+[   10.5s] [CERT-783] GREEN unique pairs 15091983 == live graph nnz
+[   11.9s] [sub] n 139255 edges 15091983 om>0 138005
+[   13.2s] [CERT-MV] GREEN 4 EXACT array equalities (bincount == np.add.at)
+[   18.2s] [CERT-GATE] GREEN 22 float equalities: the fast kernels ARE the verbatim l207_tail functions
+[   74.0s] [lam1] 552.634080 (rel spread last6 4.114e-16)
+[   74.8s] [CERT-GATE] GREEN Rfast == verbatim Rstat on both actors (10 checks)
+[  143.3s] [NO-OP] GREEN R rescale-invariance rel diff 3.97e-16
+[  143.6s] [cohort] carrier 100 mirror 100 union 122 - measuring R on each
+[  143.8s]   cohort 0/122
+[  147.6s]   cohort 25/122
+[  150.7s]   cohort 50/122
+[  153.1s]   cohort 75/122
+[  155.5s]   cohort 100/122
+[  157.6s] [PRIMARY] carrier R 1.60013e-06 pct 0.020 | mirror R 1.00276e-05 pct 0.250 | cohort med 2.05816e-05 | zero frac 0.010
+[  157.6s] [BRANCH] V_AVOIDS (carrier_pct 0.02)
+[  171.6s] [SECONDARY] carrier pct 0.290 mirror pct 0.360
+[  211.6s] [BETA1] carrier pct 0.070 (d +0.050) lam1 379.652015
+[  211.6s] [CERT-212] GREEN 139 stored L212 values reproduced at float equality
+[  215.4s] [CERT-FLOORGEN] GREEN 15 exact array equalities
+[  218.4s] [CERT-MONOTONE] GREEN 6 nesting/monotonicity gates over 139255 cells
+[  218.5s] [leg a] carrier direct motor edges 0 | mirror 1 | mirror syns [1.0]
+[  218.6s] [target] {'edge_index': 13661056, 'src_gi': 132179, 'dst_gi': 116732, 'syn_count': 1.0, 'dst_root_id': '720575940611008718', 'dst_cell_type': 'CB0810', 'dst_nerve': 'AN', 'dst_side': 'right'}
+[  220.3s] [CERT-DROPGEN] GREEN 10 exact array equalities
+exit 1

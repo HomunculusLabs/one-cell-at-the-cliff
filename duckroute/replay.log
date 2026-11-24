@@ -1,0 +1,27 @@
+gates {"G1_sources": {"ok": true, "files": ["brain.py", "brain_graph.pt", "bridge.py", "engine.py", "mood.py", "scenarios.py", "senses.py"]}, "G2_ast": {"ok": true, "substituted": {"needs": 6, "reply_tail": 2}, "inventory": 40}, "G3_replay": {"ok": true, "turns": 3076, "mismatches": 0}, "G4_v2_headline": {"ok": true, "action_flips_A": 0, "tag_flips": {"0": 6, "1": 6}}, "world_settle_anchor": {"stored_vs_reread": [[2572, 2572], [2556, 2556]], "note": "stored ambient==settle ticks vs regime-A settle read (reported, not halting)"}}
+ASIS {'hunger': 0.75, 'sleep_rider': 0.75, 'trust': 0.3, 'sleep': 0.7, 'fear': 0.4, 'food_joy': 0.6}
+P70 {'hunger': 0.3899, 'trust': 0.46, 'sleep': 0.08297, 'fear': 0.0, 'food_joy': 0.1394}
+drift_R {'0_frozen': {'FEAR': 0.0, 'JOY_SAL': 0.0}, '0_plastic': {'FEAR': 0.004796372726559639, 'JOY_SAL': 0.06425321102142334}, '1_frozen': {'FEAR': 0.0, 'JOY_SAL': 0.0}, '1_plastic': {'FEAR': 0.004775711335241795, 'JOY_SAL': 0.06426911056041718}}
+
+== primary seeds 0,1 (RETEST, 384 turns) ==
+regime  N_near N_all noise seeds   Q1    Q2share(kf/n,p)        Q3 rev P/F     Q4 i/ii/iii   collat  tagflip+act
+A           0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+B          25    25     5 [12, 13] T   10/25 p=0.1649 F   0.125/0.229 max1 T   0/0/0 F   0.656  0
+C           0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+Bn         23    23     5 [11, 12] T   10/23 p=0.1027 F   0.042/0.083 max1 T   1/1/1 T   0.182  0
+C2          0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+C4          0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+BC         27    27     5 [13, 14] T   12/27 p=0.0661 F   0.125/0.229 max1 T   0/0/0 F   0.656  0
+Bj         26    26     5 [13, 13] T   10/26 p=0.2015 F   0.083/0.167 max1 T   1/1/1 T   0.125  0
+held-out gates {"G3_replay": {"turns": 3076, "mismatches": 0}, "G5_v1_anchor_seed2": {"ok": true, "turns": 192, "label_mismatches": 0, "max_abs_diff": 0.0}, "run_py": "697d20c0f24af4ea7435c6c06c6a070981e2aa7a07bc9c4b740bc0bc444f5d48"} tag flips {2: 6, 3: 6}
+
+== held-out seeds [2, 3] (RETEST) ==
+regime  N_near N_all noise seeds   Q1    Q2share(kf/n,p)        Q3 rev P/F     Q4 i/ii/iii   collat  tagflip+act
+A           0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+B          21    21     7 [10, 11] T   10/21 p=0.0568 F   0.125/0.250 max1 T   0/0/0 F   0.664  0
+C           0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+Bn         19    19     7 [9, 10]  T   10/19 p=0.0269 T   0.042/0.104 max1 T   1/1/1 T   0.190  0
+C2          0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+C4          0     0     0 [0, 0]   F   0/0 p=None N   0.042/0.042 max1 T   1/1/1 T   0.000  0
+BC         23    23     7 [11, 12] T   12/23 p=0.0171 T   0.125/0.250 max1 T   0/0/0 F   0.664  0
+Bj         24    24     8 [12, 12] T   10/24 p=0.1319 F   0.083/0.167 max1 T   1/1/1 T   0.130  0

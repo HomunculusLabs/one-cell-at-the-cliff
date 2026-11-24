@@ -1,0 +1,37 @@
+[    0.4s] [CERT-783] GREEN ids array-equal (N 139255), live nnz 15091983, meta pins asserted
+[    1.0s] [ann] 139241 annotated rows joined onto the v783 id set
+[    1.1s] [nt] mix {'acetylcholine': 86191, 'glutamate': 24873, 'gaba': 19171, 'dopamine': 5909, 'serotonin': 2281, 'unknown': 614, 'octopamine': 216}
+[    1.1s] [CERT-L207] GREEN carrier {'gi': 132493, 'root_id': '720575940604103084', 'cell_type': 'DNp33', 'side': 'left', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'} | mirror {'gi': 132179, 'root_id': '720575940633165452', 'cell_type': 'DNp33', 'side': 'right', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'}
+[    1.1s] [readout] PRIMARY {'mot_PhN': 40, 'mot_MxLbN': 26, 'mot_CV': 20, 'mot_AN': 14, 'mot_ON': 10}
+[    6.7s] [edges] 16847997 of 16847997 rows inside the id set
+[   11.7s] [CERT-783] GREEN unique pairs 15091983 == live graph nnz
+[   13.3s] [sub] n 139255 edges 15091983 om>0 138005
+[   14.7s] [CERT-MV] GREEN 4 EXACT array equalities (bincount == np.add.at)
+[   20.5s] [CERT-GATE] GREEN 22 float equalities: the fast kernels ARE the verbatim l207_tail functions
+[   83.6s] [lam1] 552.634080 (rel spread last6 4.114e-16)
+[   84.8s] [CERT-GATE] GREEN Rfast == verbatim Rstat on both actors (10 checks)
+[  153.9s] [NO-OP] GREEN R rescale-invariance rel diff 3.97e-16
+[  154.3s] [cohort] carrier 100 mirror 100 union 122 - measuring R on each
+[  154.4s]   cohort 0/122
+[  158.6s]   cohort 25/122
+[  162.8s]   cohort 50/122
+[  167.1s]   cohort 75/122
+[  171.2s]   cohort 100/122
+[  175.3s] [PRIMARY] carrier R 1.60013e-06 pct 0.020 | mirror R 1.00276e-05 pct 0.250 | cohort med 2.05816e-05 | zero frac 0.010
+[  175.3s] [BRANCH] V_AVOIDS (carrier_pct 0.02)
+[  198.3s] [SECONDARY] carrier pct 0.290 mirror pct 0.360
+[  260.7s] [BETA1] carrier pct 0.070 (d +0.050) lam1 379.652015
+[  260.7s] [CERT-212] GREEN 139 stored L212 values reproduced at float equality
+[  264.8s] [CERT-FLOORGEN] GREEN 15 exact array equalities
+[  268.3s] [CERT-MONOTONE] GREEN 6 nesting/monotonicity gates over 139255 cells
+[  268.4s] [leg a] carrier direct motor edges 0 | mirror 1 | mirror syns [1.0]
+[  268.8s] [global f1] GAP 0.230 union gap 0.238 ratio_R 6.2667
+[  318.6s] [global_f2] edges 7595967 (0.5033) lam1 439.1294 | car pct 0.080 mir pct 0.440 GAP 0.360 | union gap 0.083 | ratio_R 2.0356 | P1 car 0.000000 mir 0.000000 | J_car 0.143
+[  324.1s] [global_f4] DEGENERATE edges 3537227 (0.2344) lam1 329.3654 | om car 0.0 mir 0.0 | eligible DN 1104 of 1303 | P2 car 0.0000 mir 0.0000
+[  434.4s] [local_f2] edges 15085032 (0.9995) lam1 552.6325 | car pct 0.080 mir pct 0.290 GAP 0.210 | union gap 0.224 | ratio_R 5.9035 | P1 car 0.000000 mir 0.000000 | J_car 0.923
+[  527.2s] [local_f4] edges 15080475 (0.9992) lam1 552.6309 | car pct 0.050 mir pct 0.300 GAP 0.250 | union gap 0.252 | ratio_R 7.9930 | P1 car 0.000000 mir 0.000000 | J_car 0.887
+[  533.6s] [global_f4_beta1] DEGENERATE edges 3537227 (0.2344) lam1 228.3574 | om car 0.0 mir 0.0 | eligible DN 1104 of 1303 | P2 car 0.0000 mir 0.0000
+[  533.6s] [BRANCH] F_DEGENERATE_ACTOR (gap_1 0.23 -> gap_2 0.36 -> gap_4 None)
+[  533.6s] [predictions] 2 of 6
+[  533.6s] [done] 533.6s -> /home/t3rpz/critters/peabrain-lab/banc/l222/static.json  branch=F_DEGENERATE_ACTOR
+exit 0

@@ -1,0 +1,1279 @@
+{
+ "cert_213": {
+  "n_checks": 289,
+  "mode": "float/int/str equality (==)",
+  "source": "l213/static.json (read-only, fingerprinted)",
+  "excluded": [
+   "runtime_s"
+  ]
+ },
+ "design": "L225 the TYPE-LEVEL null applied NONSELECTIVELY. L213 scored ONE preselected type (DNp33) against a within-mass-stratum type-label permutation null and read pct .0105-.0145. Here EVERY >=2-member descending cell type on the three L207/L213 substrates is scored against the SAME null (same seed, same perm_within, the first 2000 draws asserted bit-identical to L213's) and the family is corrected with Benjamini-Hochberg at alpha .05 -- Kriegeskorte et al. 2009 policy step (1), the nonselective analysis. PREREG l225/PREREG.md.",
+ "prereg": "l225/PREREG.md",
+ "parents": [
+  "l213/static.json",
+  "l207/static.json"
+ ],
+ "bars": {
+  "alpha": 0.05,
+  "n_cert": 2000,
+  "n_ext": 20000,
+  "surv_small": 10,
+  "enr_share_bar": 0.5,
+  "b_enrichment": 2000,
+  "seed_type_null": 21342,
+  "seed_enrichment": 22501,
+  "primary": "G0_closure"
+ },
+ "prior_art": [
+  "Kriegeskorte, Simmons, Bellgowan & Baker, Nat Neurosci 12:535-540 (2009) -- circular analysis; this card is their policy step (1).",
+  "Benjamini & Hochberg, J R Stat Soc B 57:289-300 (1995) -- the FDR ladder, used verbatim.",
+  "Phipson & Smyth, Stat Appl Genet Mol Biol 9:39 (2010) -- the add-one permutation p-value, which is why no p here is ever exactly zero."
+ ],
+ "premise_0a_resolution_floor": {
+  "G0_closure": {
+   "m_types": 426,
+   "p_min_at_l213_draws": 0.0004997501249375312,
+   "p_min_at_l225_draws": 4.999750012499375e-05,
+   "bh_rank1_threshold": 0.00011737089201877935,
+   "rank1_rejectable_at_l213_draws": false,
+   "rank1_rejectable_at_l225_draws": true,
+   "min_floor_tied_types_for_any_rejection_at_l213": 5,
+   "min_floor_tied_types_for_any_rejection_at_l225": 1
+  },
+  "G1_cutwA": {
+   "m_types": 411,
+   "p_min_at_l213_draws": 0.0004997501249375312,
+   "p_min_at_l225_draws": 4.999750012499375e-05,
+   "bh_rank1_threshold": 0.00012165450121654502,
+   "rank1_rejectable_at_l213_draws": false,
+   "rank1_rejectable_at_l225_draws": true,
+   "min_floor_tied_types_for_any_rejection_at_l213": 5,
+   "min_floor_tied_types_for_any_rejection_at_l225": 1
+  },
+  "F4_f4wA": {
+   "m_types": 409,
+   "p_min_at_l213_draws": 0.0004997501249375312,
+   "p_min_at_l225_draws": 4.999750012499375e-05,
+   "bh_rank1_threshold": 0.00012224938875305625,
+   "rank1_rejectable_at_l213_draws": false,
+   "rank1_rejectable_at_l225_draws": true,
+   "min_floor_tied_types_for_any_rejection_at_l213": 5,
+   "min_floor_tied_types_for_any_rejection_at_l225": 1
+  }
+ },
+ "cert_grp": {
+  "n_checks": 12,
+  "mode": "int/list/float equality (==)",
+  "per_substrate": {
+   "G0_closure": {
+    "m": 426,
+    "sizes": {
+     "2": 331,
+     "3": 23,
+     "4": 35,
+     "5": 6,
+     "6": 7,
+     "7": 4,
+     "8": 3,
+     "9": 2,
+     "10": 3,
+     "11": 2,
+     "12": 1,
+     "13": 2,
+     "14": 2,
+     "15": 1,
+     "18": 1,
+     "19": 1,
+     "23": 1,
+     "27": 1
+    }
+   },
+   "G1_cutwA": {
+    "m": 411,
+    "sizes": {
+     "2": 318,
+     "3": 23,
+     "4": 34,
+     "5": 5,
+     "6": 7,
+     "7": 4,
+     "8": 3,
+     "9": 2,
+     "10": 3,
+     "11": 2,
+     "12": 1,
+     "13": 2,
+     "14": 2,
+     "15": 1,
+     "18": 1,
+     "19": 1,
+     "23": 1,
+     "27": 1
+    }
+   },
+   "F4_f4wA": {
+    "m": 409,
+    "sizes": {
+     "2": 316,
+     "3": 22,
+     "4": 35,
+     "5": 5,
+     "6": 8,
+     "7": 3,
+     "8": 3,
+     "9": 2,
+     "10": 3,
+     "11": 2,
+     "12": 2,
+     "13": 1,
+     "14": 2,
+     "15": 1,
+     "18": 1,
+     "19": 1,
+     "22": 1,
+     "27": 1
+    }
+   }
+  }
+ },
+ "cert_fast": {
+  "n_checks": 9,
+  "mode": "np.array_equal (EXACT)",
+  "note": "premise 0e probed axis-median bit-identity at sizes 2-11 (max abs diff 0.0) before the card was written"
+ },
+ "cert_seed": {
+  "n_checks": 15,
+  "mode": "float equality (==)",
+  "note": "the first 2000 draws of the 20000-draw stream ARE l213's Q1 draws (prefix property probed before the card was written)"
+ },
+ "Q225_1_fdr": {
+  "branch": "F_SMALL_FAMILY",
+  "branch_primary_substrate": "G0_closure",
+  "per_substrate": {
+   "G0_closure": {
+    "m_types": 426,
+    "n_survivors_low": 5,
+    "n_survivors_high": 9,
+    "n_at_p_floor_low": 0,
+    "dnp33_p_low": 0.015549222538873057,
+    "dnp33_q_low": 0.15732167937057692,
+    "dnp33_survives": false,
+    "dnp33_rank_by_p": 42,
+    "dnp33_n_types_with_smaller_p": 41,
+    "dnp33_pct_among_type_medians": 0.13145539906103287,
+    "dnp33_l213_null_pct": 0.0145,
+    "dnp33_pct_strict_at_20k": 0.0155,
+    "survivor_share": 0.011737089201877934,
+    "top20": [
+     {
+      "type": "DNp13",
+      "n_members": 2,
+      "median_R": 1.8306041677036016e-05,
+      "p_low": 0.00014999250037498125,
+      "q_low": 0.02129893505324734
+     },
+     {
+      "type": "DNpe046",
+      "n_members": 2,
+      "median_R": 0.0,
+      "p_low": 0.00014999250037498125,
+      "q_low": 0.02129893505324734
+     },
+     {
+      "type": "oviDNa_b",
+      "n_members": 4,
+      "median_R": 6.259283778608058e-06,
+      "p_low": 0.00014999250037498125,
+      "q_low": 0.02129893505324734
+     },
+     {
+      "type": "DNg82",
+      "n_members": 4,
+      "median_R": 9.461009383004905e-06,
+      "p_low": 0.0002999850007499625,
+      "q_low": 0.031948402579871006
+     },
+     {
+      "type": "DNge005",
+      "n_members": 2,
+      "median_R": 9.121774633684983e-07,
+      "p_low": 0.0005499725013749313,
+      "q_low": 0.046857657117144146
+     }
+    ],
+    "survivor_types": [
+     "DNp13",
+     "DNpe046",
+     "oviDNa_b",
+     "DNg82",
+     "DNge005"
+    ],
+    "branch": "F_SMALL_FAMILY"
+   },
+   "G1_cutwA": {
+    "m_types": 411,
+    "n_survivors_low": 2,
+    "n_survivors_high": 7,
+    "n_at_p_floor_low": 2,
+    "dnp33_p_low": 0.011499425028748563,
+    "dnp33_q_low": 0.14226211766334762,
+    "dnp33_survives": false,
+    "dnp33_rank_by_p": 31,
+    "dnp33_n_types_with_smaller_p": 30,
+    "dnp33_pct_among_type_medians": 0.1411192214111922,
+    "dnp33_l213_null_pct": 0.0105,
+    "dnp33_pct_strict_at_20k": 0.01125,
+    "survivor_share": 0.004866180048661801,
+    "top20": [
+     {
+      "type": "DNpe046",
+      "n_members": 2,
+      "median_R": 0.0,
+      "p_low": 4.999750012499375e-05,
+      "q_low": 0.010274486275686215
+     },
+     {
+      "type": "oviDNa_b",
+      "n_members": 4,
+      "median_R": 6.259670254363333e-06,
+      "p_low": 4.999750012499375e-05,
+      "q_low": 0.010274486275686215
+     }
+    ],
+    "survivor_types": [
+     "DNpe046",
+     "oviDNa_b"
+    ],
+    "branch": "F_SMALL_FAMILY"
+   },
+   "F4_f4wA": {
+    "m_types": 409,
+    "n_survivors_low": 1,
+    "n_survivors_high": 9,
+    "n_at_p_floor_low": 1,
+    "dnp33_p_low": 0.013749312534373281,
+    "dnp33_q_low": 0.19153875639551357,
+    "dnp33_survives": false,
+    "dnp33_rank_by_p": 29,
+    "dnp33_n_types_with_smaller_p": 28,
+    "dnp33_pct_among_type_medians": 0.1687041564792176,
+    "dnp33_l213_null_pct": 0.013,
+    "dnp33_pct_strict_at_20k": 0.01365,
+    "survivor_share": 0.0024449877750611247,
+    "top20": [
+     {
+      "type": "oviDNa_b",
+      "n_members": 4,
+      "median_R": 5.397781145749162e-06,
+      "p_low": 4.999750012499375e-05,
+      "q_low": 0.020448977551122443
+     }
+    ],
+    "survivor_types": [
+     "oviDNa_b"
+    ],
+    "branch": "F_SMALL_FAMILY"
+   }
+  },
+  "all_substrate_branches": [
+   "F_SMALL_FAMILY",
+   "F_SMALL_FAMILY",
+   "F_SMALL_FAMILY"
+  ],
+  "agree": true
+ },
+ "Q225_2_columns_used": [
+  "cell_class",
+  "flow",
+  "hemilineage",
+  "nerve",
+  "neurotransmitter_predicted",
+  "region",
+  "side"
+ ],
+ "Q225_2_columns_absent": [],
+ "Q225_2_annotation": {
+  "status": "DESCRIPTIVE with a registered rule; NO branch",
+  "rule": "a category 'names a cheaper explanation' iff it covers >= 0.5 of the survivor TYPES and its size-matched enrichment p <= 0.05/n_categories (Bonferroni)",
+  "per_substrate": {
+   "G0_closure": {
+    "n_survivors": 5,
+    "per_column": {
+     "cell_class": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "descending_neuron",
+        "n_survivor_types": 5,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "descending_neuron",
+      "any_cheaper": false
+     },
+     "flow": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "intrinsic",
+        "n_survivor_types": 5,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "intrinsic",
+      "any_cheaper": false
+     },
+     "hemilineage": {
+      "n_categories": 26,
+      "rows": [
+       {
+        "category": "SMPpv1",
+        "n_survivor_types": 2,
+        "survivor_share": 0.4,
+        "background_share": 0.018779342723004695,
+        "enrichment": 21.3,
+        "p_enrich": 0.005497251374312844,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB12",
+        "n_survivor_types": 1,
+        "survivor_share": 0.2,
+        "background_share": 0.04929577464788732,
+        "enrichment": 4.057142857142858,
+        "p_enrich": 0.21689155422288856,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "PSp2",
+        "n_survivor_types": 1,
+        "survivor_share": 0.2,
+        "background_share": 0.03286384976525822,
+        "enrichment": 6.085714285714285,
+        "p_enrich": 0.16741629185407297,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "putative_primary",
+        "n_survivor_types": 1,
+        "survivor_share": 0.2,
+        "background_share": 0.41784037558685444,
+        "enrichment": 0.4786516853932585,
+        "p_enrich": 0.935032483758121,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM2_central",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.002347417840375587,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central1",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004694835680751174,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central2",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.007042253521126761,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB0_anterior",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.002347417840375587,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB23",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.007042253521126761,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB3",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.002347417840375587,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB6",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.03286384976525822,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB7",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.046948356807511735,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0019230769230769232,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "putative_primary",
+      "any_cheaper": false
+     },
+     "nerve": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "ocellar_nerve",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.002347417840375587,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "",
+      "any_cheaper": false
+     },
+     "neurotransmitter_predicted": {
+      "n_categories": 5,
+      "rows": [
+       {
+        "category": "acetylcholine",
+        "n_survivor_types": 3,
+        "survivor_share": 0.6,
+        "background_share": 0.676056338028169,
+        "enrichment": 0.8875,
+        "p_enrich": 0.7966016991504248,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "gaba",
+        "n_survivor_types": 2,
+        "survivor_share": 0.4,
+        "background_share": 0.18779342723004694,
+        "enrichment": 2.1300000000000003,
+        "p_enrich": 0.24887556221889057,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "glutamate",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.1056338028169014,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "octopamine",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.009389671361502348,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "serotonin",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.02112676056338028,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "acetylcholine",
+      "any_cheaper": false
+     },
+     "region": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "neck_connective",
+        "n_survivor_types": 5,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "neck_connective",
+      "any_cheaper": false
+     },
+     "side": {
+      "n_categories": 3,
+      "rows": [
+       {
+        "category": "left",
+        "n_survivor_types": 5,
+        "survivor_share": 1.0,
+        "background_share": 0.9107981220657277,
+        "enrichment": 1.0979381443298968,
+        "p_enrich": 0.6051974012993503,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "midline",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004694835680751174,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "right",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.08450704225352113,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "left",
+      "any_cheaper": false
+     }
+    },
+    "any_cheaper_explanation": false
+   },
+   "G1_cutwA": {
+    "n_survivors": 2,
+    "per_column": {
+     "cell_class": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "descending_neuron",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "descending_neuron",
+      "any_cheaper": false
+     },
+     "flow": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "intrinsic",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "intrinsic",
+      "any_cheaper": false
+     },
+     "hemilineage": {
+      "n_categories": 25,
+      "rows": [
+       {
+        "category": "SMPpv1",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 0.0170316301703163,
+        "enrichment": 58.714285714285715,
+        "p_enrich": 0.0004997501249375312,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": true
+       },
+       {
+        "category": "DM2_central",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024330900243309003,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central1",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004866180048661801,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central2",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004866180048661801,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB0_anterior",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024330900243309003,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB12",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.051094890510948905,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB23",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0072992700729927005,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB3",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024330900243309003,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB6",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0340632603406326,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB7",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.04866180048661801,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB7__prim",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.019464720194647202,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "MD3",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0413625304136253,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.002,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "putative_primary",
+      "any_cheaper": true
+     },
+     "nerve": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "ocellar_nerve",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024330900243309003,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "",
+      "any_cheaper": false
+     },
+     "neurotransmitter_predicted": {
+      "n_categories": 5,
+      "rows": [
+       {
+        "category": "gaba",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 0.1873479318734793,
+        "enrichment": 5.337662337662338,
+        "p_enrich": 0.04247876061969016,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "acetylcholine",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.6715328467153284,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "glutamate",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.10948905109489052,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "octopamine",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.009732360097323601,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "serotonin",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.021897810218978103,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "acetylcholine",
+      "any_cheaper": false
+     },
+     "region": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "neck_connective",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "neck_connective",
+      "any_cheaper": false
+     },
+     "side": {
+      "n_categories": 3,
+      "rows": [
+       {
+        "category": "left",
+        "n_survivor_types": 2,
+        "survivor_share": 1.0,
+        "background_share": 0.9099756690997567,
+        "enrichment": 1.0989304812834224,
+        "p_enrich": 0.8385807096451774,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "midline",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004866180048661801,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "right",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0851581508515815,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "left",
+      "any_cheaper": false
+     }
+    },
+    "any_cheaper_explanation": true
+   },
+   "F4_f4wA": {
+    "n_survivors": 1,
+    "per_column": {
+     "cell_class": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "descending_neuron",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "descending_neuron",
+      "any_cheaper": false
+     },
+     "flow": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "intrinsic",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "intrinsic",
+      "any_cheaper": false
+     },
+     "hemilineage": {
+      "n_categories": 24,
+      "rows": [
+       {
+        "category": "SMPpv1",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 0.017114914425427872,
+        "enrichment": 58.42857142857143,
+        "p_enrich": 0.015492253873063468,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM2_central",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024449877750611247,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central1",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004889975550122249,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "DM6_central2",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004889975550122249,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB12",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.05134474327628362,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB23",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.007334963325183374,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB3",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024449877750611247,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB6",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.034229828850855744,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB7",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0488997555012225,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "LB7__prim",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.019559902200488997,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "MD3",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.04156479217603912,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "MX0__prim",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024449877750611247,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.0020833333333333333,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "putative_primary",
+      "any_cheaper": false
+     },
+     "nerve": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "ocellar_nerve",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.0024449877750611247,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "",
+      "any_cheaper": false
+     },
+     "neurotransmitter_predicted": {
+      "n_categories": 5,
+      "rows": [
+       {
+        "category": "gaba",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 0.19070904645476772,
+        "enrichment": 5.243589743589744,
+        "p_enrich": 0.19290354822588707,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "acetylcholine",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.6772616136919315,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "glutamate",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.1100244498777506,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "octopamine",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004889975550122249,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "serotonin",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.017114914425427872,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.01,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "acetylcholine",
+      "any_cheaper": false
+     },
+     "region": {
+      "n_categories": 1,
+      "rows": [
+       {
+        "category": "neck_connective",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 1.0,
+        "enrichment": 1.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.05,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "neck_connective",
+      "any_cheaper": false
+     },
+     "side": {
+      "n_categories": 3,
+      "rows": [
+       {
+        "category": "left",
+        "n_survivor_types": 1,
+        "survivor_share": 1.0,
+        "background_share": 0.9119804400977995,
+        "enrichment": 1.096514745308311,
+        "p_enrich": 0.9100449775112444,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "midline",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.004889975550122249,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       },
+       {
+        "category": "right",
+        "n_survivor_types": 0,
+        "survivor_share": 0.0,
+        "background_share": 0.08312958435207823,
+        "enrichment": 0.0,
+        "p_enrich": 1.0,
+        "bonferroni_bar": 0.016666666666666666,
+        "names_cheaper_explanation": false
+       }
+      ],
+      "dnp33_label": "left",
+      "any_cheaper": false
+     }
+    },
+    "any_cheaper_explanation": false
+   }
+  }
+ },
+ "Q225_3_menu": {
+  "status": "DESCRIPTIVE; NO branch",
+  "per_substrate": {
+   "G0_closure": {
+    "carrier_out_degree": 80,
+    "mirror_out_degree": 88,
+    "l211_l169c_menu_note": 69,
+    "population_median_out_degree": 42.0,
+    "survivor_member_median_out_degree": 69.5,
+    "n_survivor_member_cells": 14,
+    "carrier_pct_in_population": 0.718167701863354,
+    "carrier_pct_among_survivor_members": 0.5714285714285714,
+    "survivor_cohort_too_small": false,
+    "note": "out-degree on THIS substrate; L211's 69 is the l169c/b65 operator's number, reported for cross-substrate context only (premise 0g)"
+   },
+   "G1_cutwA": {
+    "carrier_out_degree": 80,
+    "mirror_out_degree": 88,
+    "l211_l169c_menu_note": 69,
+    "population_median_out_degree": 41.0,
+    "survivor_member_median_out_degree": 92.0,
+    "n_survivor_member_cells": 6,
+    "carrier_pct_in_population": 0.7318037974683544,
+    "carrier_pct_among_survivor_members": null,
+    "survivor_cohort_too_small": true,
+    "note": "out-degree on THIS substrate; L211's 69 is the l169c/b65 operator's number, reported for cross-substrate context only (premise 0g)"
+   },
+   "F4_f4wA": {
+    "carrier_out_degree": 69,
+    "mirror_out_degree": 74,
+    "l211_l169c_menu_note": 69,
+    "population_median_out_degree": 30.0,
+    "survivor_member_median_out_degree": 76.5,
+    "n_survivor_member_cells": 4,
+    "carrier_pct_in_population": 0.7658730158730159,
+    "carrier_pct_among_survivor_members": null,
+    "survivor_cohort_too_small": true,
+    "note": "out-degree on THIS substrate; L211's 69 is the l169c/b65 operator's number, reported for cross-substrate context only (premise 0g)"
+   }
+  }
+ },
+ "predictions": {
+  "Q225_P1": {
+   "registered": "branch == F_COMMON (> 10 survivors) on the primary substrate",
+   "measured": "F_SMALL_FAMILY",
+   "correct": false
+  },
+  "Q225_P2": {
+   "registered": "DNp33 BH q <= 0.05 on the primary substrate",
+   "measured": 0.15732167937057692,
+   "correct": false
+  },
+  "Q225_P3": {
+   "registered": ">= 10 types have a strictly smaller p than DNp33",
+   "measured": 41,
+   "correct": true
+  },
+  "Q225_P4": {
+   "registered": "LOW and HIGH survivor counts differ >= 2x",
+   "measured": [
+    5,
+    9
+   ],
+   "correct": false
+  },
+  "Q225_P5": {
+   "registered": "CERT-SEED reproduces l213's stored DNp33 null on all 3 substrates (15 checks)",
+   "measured": 15,
+   "correct": true
+  },
+  "Q225_P6": {
+   "registered": "no annotation category names a cheaper explanation at the registered bar",
+   "measured": false,
+   "correct": true
+  }
+ },
+ "n_predictions_correct": 3,
+ "branches": {
+  "Q225_1": "F_SMALL_FAMILY"
+ },
+ "escape_fired": null,
+ "headline": "DNp33 is one of a small family of 5 types surviving the nonselective FDR.",
+ "limitations": [
+  "One statistic (R = P2/(lam1^2*m_out)), one null family (within-mass-stratum type-label permutation), one annotation release, three non-independent substrates sharing a graph and most cells.",
+  "BH controls the FDR over TYPE MEDIANS, not over cells; DNp33's median is a 2-POINT statistic (direction only, never a magnitude -- L213 limit 1) and every other type's inherits the same caveat scaled by its member count.",
+  "The permutation holds log-out-mass stratum and type SIZE, not neurotransmitter, side, neuropil or hemilineage composition -- which is exactly why Q225-2 can only DESCRIBE a shared-annotation family.",
+  "The resolution floor is 5.00e-05, so p-values are censored there and the BH ladder cannot separate types tied at the floor.",
+  "Q225-2's modal-label-per-type reduction discards within-type annotation heterogeneity.",
+  "ANATOMICAL leg only: no row mask, no settle, no seed (L164).",
+  "A nonselective survivor count de-circularises the TYPE claim only. The per-cell claims of L206-L212 keep their selected status; Kriegeskorte's step (3), an independent specimen, is L212's v783 leg."
+ ],
+ "runtime_s": 27.192094326019287,
+ "runtime_l225_s": 14.181053876876831
+}

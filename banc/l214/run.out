@@ -1,0 +1,20 @@
+premise: head sha matches l208/static.json; l208 branch 'H_UNREGISTERED_SHAPE'; addendum is labelled POST-HOC
+CERT-FLO: 40 stored flo values reproduced at FLOAT EQUALITY
+CERT-RHO: 100 post-hoc values reproduced at FLOAT EQUALITY
+GATES PASSED — reading L214 numbers now
+
+Q1 cross-batch replication: C_obs 1 ['Tr|f4ng|up'] | null mean 0.0474 max 2 | p_C 0.04650 -> F_REPLICATES
+Q2 BH B36: 2/20 survive at q=0.1 -> ['Tr|f4ng|up', 'Tr|cutwA|up']
+Q2 BH B37: 1/20 survive at q=0.1 -> ['Tr|f4ng|up']
+Q2 shared across batches: ['Tr|f4ng|up'] (cross-batch survivor present)
+
+Q3 head-to-head: mean|rho_A| 0.3293 vs mean|rho_M| 0.2884 | D +0.04088 p_D 0.46245 -> H_TIE
+   sign agreement over 20 cells: floor 17/20, ceiling 4/20
+Q4 B36 Ti|f4wA: |A| 0.0351 rank 2/10 bottom3 True | p_up 0.8441 p_dn 0.1588 no_tail_sig True | sign_agree False
+Q4 B37 Ti|f4wA: |A| 0.0346 rank 2/10 bottom3 True | p_up 0.3800 p_dn 0.6242 no_tail_sig True | sign_agree False
+Q4 -> ACCOUNTED
+
+VERDICT: Q1 F_REPLICATES / Q3 H_TIE / Q4 ACCOUNTED -> PASS
+predictions: {'P1_Q1_replicates': True, 'P2_Q3_floor_better': False, 'P3_signs_17_vs_12': True, 'P4_Q4_accounted': True, 'P5_all_BH_survivors_Tr': True} -> 4/5
+npz + prior-json fingerprints unchanged
+wrote l214/static.json

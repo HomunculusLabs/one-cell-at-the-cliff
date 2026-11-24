@@ -1,0 +1,82 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[premise] pure_proj 560 of 1313 DNs | carrier True / mirror False (registered)
+[sub] G0_closure: n 21,809 edges 647,953 lam1(g=1) 227.786907 (rel spread 1.25e-16)
+[sub] G1_cutwA: n 21,785 edges 644,177 lam1(g=1) 227.779875 (rel spread 1.25e-16)
+[sub] F4_f4wA: n 21,789 edges 469,618 lam1(g=1) 200.510803 (rel spread 1.42e-16)
+[CERT-207] GREEN 522 checks at FLOAT EQUALITY (l207 ladder_table x3 substrates + 2 slot comparators + Q2 actors); artifact fingerprint unchanged
+[CERT-T] GREEN 272 checks: fast transposed census agrees with the verbatim reach_sub at max rel diff 9.05e-16 (< 1e-12)
+[pop] G0_closure: 1288 present descending cells with m_out>0 (1273 named types, 560 pure_proj)
+[pop] G1_cutwA: 1264 present descending cells with m_out>0 (1249 named types, 536 pure_proj)
+[pop] F4_f4wA: 1260 present descending cells with m_out>0 (1245 named types, 535 pure_proj)
+[strata] counts G0_closure [129, 129, 129, 127, 130, 129, 128, 129, 129, 129] | G1_cutwA [127, 126, 126, 127, 126, 126, 127, 126, 126, 127] | F4_f4wA [126, 126, 126, 126, 126, 126, 126, 126, 126, 126]
+[Q1] G0_closure: DNp33 type median 2.75903e-05 | pct among 426 type medians 0.131 | NULL pct 0.0145 (null med 0.000411367) -> T_TYPE_LOW
+[Q1] G1_cutwA: DNp33 type median 2.7592e-05 | pct among 411 type medians 0.141 | NULL pct 0.0105 (null med 0.000444818) -> T_TYPE_LOW
+[Q1] F4_f4wA: DNp33 type median 3.33736e-05 | pct among 409 type medians 0.169 | NULL pct 0.0130 (null med 0.000479518) -> T_TYPE_LOW
+[Q1] BRANCH T_TYPE_LOW (['T_TYPE_LOW', 'T_TYPE_LOW', 'T_TYPE_LOW'])
+[Q2] G0_closure: median pure 9.17346e-05 vs nonpure 0.000336298 (dlog10 -0.5642, ratio 0.273) | NULL pct 0.1660 -> C_CLASS_TYPICAL
+[Q2] G1_cutwA: median pure 8.35644e-05 vs nonpure 0.000336746 (dlog10 -0.6053, ratio 0.248) | NULL pct 0.2275 -> C_CLASS_TYPICAL
+[Q2] F4_f4wA: median pure 9.25719e-05 vs nonpure 0.000384002 (dlog10 -0.6179, ratio 0.241) | NULL pct 0.1700 -> C_CLASS_TYPICAL
+[Q2] BRANCH C_CLASS_TYPICAL (['C_CLASS_TYPICAL', 'C_CLASS_TYPICAL', 'C_CLASS_TYPICAL'])
+[Q3] G0_closure: carrier pct-in-pure_proj 0.318 (560 cells) | mirror pct-in-nonpure 0.144 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] G1_cutwA: carrier pct-in-pure_proj 0.336 (536 cells) | mirror pct-in-nonpure 0.152 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] F4_f4wA: carrier pct-in-pure_proj 0.407 (535 cells) | mirror pct-in-nonpure 0.153 (725 cells) -> D_CLASS_EXPLAINS
+[Q3] BRANCH D_CLASS_EXPLAINS (['D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS'])
+[READ] derived reading: MIXTURE
+[CERT-213] GREEN 289 stored l213 leaves reproduced at float/int/str equality BEFORE any L224 number was read
+[0a floor] G0_closure: m 426 | p_min 4.998e-04 (B=2000) vs BH rank-1 thr 1.174e-04 -> F_UNIQUE reachable False (needs 5 floor-tied types) | at B=20000 p_min 5.000e-05 -> reachable True
+[0a floor] G1_cutwA: m 411 | p_min 4.998e-04 (B=2000) vs BH rank-1 thr 1.217e-04 -> F_UNIQUE reachable False (needs 5 floor-tied types) | at B=20000 p_min 5.000e-05 -> reachable True
+[0a floor] F4_f4wA: m 409 | p_min 4.998e-04 (B=2000) vs BH rank-1 thr 1.222e-04 -> F_UNIQUE reachable False (needs 5 floor-tied types) | at B=20000 p_min 5.000e-05 -> reachable True
+[0a floor] branch set REACHABLE on all three substrates at B=20000 (it would NOT have been at L213's B=2000)
+[CERT-GRP] G0_closure: 426 types >=2 members | DNp33 index 336 | size blocks {2: 331, 3: 23, 4: 35, 5: 6, 6: 7, 7: 4, 8: 3, 9: 2, 10: 3, 11: 2, 12: 1, 13: 2, 14: 2, 15: 1, 18: 1, 19: 1, 23: 1, 27: 1}
+[CERT-GRP] G1_cutwA: 411 types >=2 members | DNp33 index 330 | size blocks {2: 318, 3: 23, 4: 34, 5: 5, 6: 7, 7: 4, 8: 3, 9: 2, 10: 3, 11: 2, 12: 1, 13: 2, 14: 2, 15: 1, 18: 1, 19: 1, 23: 1, 27: 1}
+[CERT-GRP] F4_f4wA: 409 types >=2 members | DNp33 index 327 | size blocks {2: 316, 3: 22, 4: 35, 5: 5, 6: 8, 7: 3, 8: 3, 9: 2, 10: 3, 11: 2, 12: 2, 13: 1, 14: 2, 15: 1, 18: 1, 19: 1, 22: 1, 27: 1}
+[CERT-GRP] GREEN 12 checks against L213's stored Q1 aggregates
+[CERT-FAST] GREEN 9 EXACT array equalities: the padded axis-median kernel == a per-type np.median loop on real AND permuted R (premise 0e)
+[CERT-SEED] G0_closure: the DNp33 column over the first 2000 draws reproduces l213's null_pct 0.0145, null_median 0.000411367 and p05/p95 at FLOAT EQUALITY (4.9s for 20000 draws)
+[CERT-SEED] G1_cutwA: the DNp33 column over the first 2000 draws reproduces l213's null_pct 0.0105, null_median 0.000444818 and p05/p95 at FLOAT EQUALITY (4.7s for 20000 draws)
+[CERT-SEED] F4_f4wA: the DNp33 column over the first 2000 draws reproduces l213's null_pct 0.0130, null_median 0.000479518 and p05/p95 at FLOAT EQUALITY (4.8s for 20000 draws)
+[CERT-SEED] GREEN 15 checks at FLOAT EQUALITY (5 per substrate) -- the extension is CONTINUITY, not replacement (premise 0b)
+[Q225-1] G0_closure: 5 of 426 types survive BH(low) (1.2%) | HIGH side 9 | at the p floor 0 | DNp33 p 1.555e-02 q 1.573e-01 survives False rank 42 -> F_SMALL_FAMILY
+[Q225-1] G1_cutwA: 2 of 411 types survive BH(low) (0.5%) | HIGH side 7 | at the p floor 2 | DNp33 p 1.150e-02 q 1.423e-01 survives False rank 31 -> F_SMALL_FAMILY
+[Q225-1] F4_f4wA: 1 of 409 types survive BH(low) (0.2%) | HIGH side 9 | at the p floor 1 | DNp33 p 1.375e-02 q 1.915e-01 survives False rank 29 -> F_SMALL_FAMILY
+[Q225-1] BRANCH F_SMALL_FAMILY (primary G0_closure); all three ['F_SMALL_FAMILY', 'F_SMALL_FAMILY', 'F_SMALL_FAMILY']
+[Q225-2] G0_closure cell_class: 1 cats | top np.str_('descending_neuron') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'descending_neuron' | cheaper False
+[Q225-2] G0_closure flow: 1 cats | top np.str_('intrinsic') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'intrinsic' | cheaper False
+[Q225-2] G0_closure hemilineage: 26 cats | top np.str_('SMPpv1') share 0.400 vs bg 0.019 (p 0.0055) | DNp33 'putative_primary' | cheaper False
+[Q225-2] G0_closure nerve: 1 cats | top np.str_('ocellar_nerve') share 0.000 vs bg 0.002 (p 1.0000) | DNp33 '' | cheaper False
+[Q225-2] G0_closure neurotransmitter_predicted: 5 cats | top np.str_('acetylcholine') share 0.600 vs bg 0.676 (p 0.7966) | DNp33 'acetylcholine' | cheaper False
+[Q225-2] G0_closure region: 1 cats | top np.str_('neck_connective') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'neck_connective' | cheaper False
+[Q225-2] G0_closure side: 3 cats | top np.str_('left') share 1.000 vs bg 0.911 (p 0.6052) | DNp33 'left' | cheaper False
+[Q225-2] G1_cutwA cell_class: 1 cats | top np.str_('descending_neuron') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'descending_neuron' | cheaper False
+[Q225-2] G1_cutwA flow: 1 cats | top np.str_('intrinsic') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'intrinsic' | cheaper False
+[Q225-2] G1_cutwA hemilineage: 25 cats | top np.str_('SMPpv1') share 1.000 vs bg 0.017 (p 0.0005) | DNp33 'putative_primary' | cheaper True
+[Q225-2] G1_cutwA nerve: 1 cats | top np.str_('ocellar_nerve') share 0.000 vs bg 0.002 (p 1.0000) | DNp33 '' | cheaper False
+[Q225-2] G1_cutwA neurotransmitter_predicted: 5 cats | top np.str_('gaba') share 1.000 vs bg 0.187 (p 0.0425) | DNp33 'acetylcholine' | cheaper False
+[Q225-2] G1_cutwA region: 1 cats | top np.str_('neck_connective') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'neck_connective' | cheaper False
+[Q225-2] G1_cutwA side: 3 cats | top np.str_('left') share 1.000 vs bg 0.910 (p 0.8386) | DNp33 'left' | cheaper False
+[Q225-2] F4_f4wA cell_class: 1 cats | top np.str_('descending_neuron') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'descending_neuron' | cheaper False
+[Q225-2] F4_f4wA flow: 1 cats | top np.str_('intrinsic') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'intrinsic' | cheaper False
+[Q225-2] F4_f4wA hemilineage: 24 cats | top np.str_('SMPpv1') share 1.000 vs bg 0.017 (p 0.0155) | DNp33 'putative_primary' | cheaper False
+[Q225-2] F4_f4wA nerve: 1 cats | top np.str_('ocellar_nerve') share 0.000 vs bg 0.002 (p 1.0000) | DNp33 '' | cheaper False
+[Q225-2] F4_f4wA neurotransmitter_predicted: 5 cats | top np.str_('gaba') share 1.000 vs bg 0.191 (p 0.1929) | DNp33 'acetylcholine' | cheaper False
+[Q225-2] F4_f4wA region: 1 cats | top np.str_('neck_connective') share 1.000 vs bg 1.000 (p 1.0000) | DNp33 'neck_connective' | cheaper False
+[Q225-2] F4_f4wA side: 3 cats | top np.str_('left') share 1.000 vs bg 0.912 (p 0.9100) | DNp33 'left' | cheaper False
+[Q225-3] G0_closure: carrier out-degree 80 (pop median 42.0, pct 0.718) | survivor-member median 69.5 over 14 cells | mirror 88
+[Q225-3] G1_cutwA: carrier out-degree 80 (pop median 41.0, pct 0.732) | survivor-member median 92.0 over 6 cells | mirror 88
+[Q225-3] F4_f4wA: carrier out-degree 69 (pop median 30.0, pct 0.766) | survivor-member median 76.5 over 4 cells | mirror 74
+[HEADLINE] DNp33 is one of a small family of 5 types surviving the nonselective FDR.
+[CERT-225] GREEN 63 stored parent values at float/int/str equality BEFORE any addendum number was read
+[A] PARENT HEADLINE WRONG (proved against the artifact's own dnp33_survives field). CORRECTED: DNp33's TYPE-level avoidance does NOT survive multiplicity correction. Its uncorrected permutation p is 0.01555 (BH q 0.1573), rank 42 of 426 descending types, and it is NOT one of the 5 types that do survive BH at alpha 0.05 -- a result that holds on all three substrates (q 0.157, 0.142, 0.192).
+[B] G0_closure: DNp33 310/20000 null draws <= real -> pi 95% CI [0.01388, 0.01731] vs BH requirement 0.00493 at its own rank 42 (and 0.000117 at rank 1) -> MAGNITUDE
+[B] G1_cutwA: DNp33 229/20000 null draws <= real -> pi 95% CI [0.01007, 0.01302] vs BH requirement 0.00377 at its own rank 31 (and 0.000122 at rank 1) -> MAGNITUDE
+[B] F4_f4wA: DNp33 274/20000 null draws <= real -> pi 95% CI [0.01218, 0.01541] vs BH requirement 0.00355 at its own rank 29 (and 0.000122 at rank 1) -> MAGNITUDE
+[C] G0_closure: 63 of 426 types clear the UNCORRECTED p<=0.05 bar vs 21.3 expected by chance (2.96x) | 38 types sit at or below DNp33's own L213 percentile 0.0145 | 5 survive BH
+[C] G1_cutwA: 58 of 411 types clear the UNCORRECTED p<=0.05 bar vs 20.6 expected by chance (2.82x) | 28 types sit at or below DNp33's own L213 percentile 0.0105 | 2 survive BH
+[C] F4_f4wA: 58 of 409 types clear the UNCORRECTED p<=0.05 bar vs 20.5 expected by chance (2.84x) | 26 types sit at or below DNp33's own L213 percentile 0.013 | 1 survive BH
+[D] survivors on all three: ['oviDNa_b'] | on any: ['DNg82', 'DNge005', 'DNp13', 'DNpe046', 'oviDNa_b'] | DNp33 on none
+[done-addendum] 28.3s -> l225/addendum.json | CERT-225 63 | corrected headline written

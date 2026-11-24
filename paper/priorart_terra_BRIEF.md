@@ -39,9 +39,9 @@ drive-envelope time-locked.
   enters the digest — no memory-only citations. Note paywalled ones
   honestly.
 - Web search + fetch only; no lab files modified.
-- Writes confined to: ~/critters/peabrain/LANE-RESEARCH.md
+- Writes confined to: /home/t3rpz/critters/peabrain/LANE-RESEARCH.md
   (append one digest section "## 2026-11-21 — deep prior-art dig (terra)")
-  and ~/critters/peabrain-lab/paper/priorart_terra_20261121.md
+  and /home/t3rpz/critters/peabrain-lab/paper/priorart_terra_20261121.md
   (the full annotated list).
 - Timebox ~60 min. Final answer ≤300 words: the 3 closest hits and whether
   any kills our claim.

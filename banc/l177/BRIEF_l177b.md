@@ -1,7 +1,7 @@
 # BRIEF — L177(b): the af-matched beta ladder (rollouts)
 
 You are executing stage (b) of lane card L177 on the peabrain lab box.
-**Read `~/critters/peabrain-lab/banc/l177/PREREG.md` FIRST and in
+**Read `/home/t3rpz/critters/peabrain-lab/banc/l177/PREREG.md` FIRST and in
 full. It is frozen. Do not add, drop or soften a registered cell.**
 
 Stage (a) is already DONE (this is the pre-measurement your run is registered
@@ -10,7 +10,7 @@ against): `banc/l177_prem.py` -> `l177/static_prem.json` + `l177/prem.out`.
 ## What to build
 
 A single runner `banc/l177_run.py` (peabrain venv python:
-`~/critters/peabrain/.venv/bin/python`) that:
+`/home/t3rpz/critters/peabrain/.venv/bin/python`) that:
 
 1. Runs **C0S-177** (static cert) first and halts on any mismatch.
 2. Runs **C0A-177** (forward-chain bit-identity anchor): the beta=2.0 rung at

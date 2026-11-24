@@ -7,7 +7,7 @@ converged on the same core findings — but they are the same model family,
 so family-shared blind spots are a live concern. You are a DIFFERENT family,
 dispatched deliberately. You owe this paper nothing but honesty.
 
-## What exists now (read these; all paths relative to ~/critters/peabrain-lab)
+## What exists now (read these; all paths relative to /home/t3rpz/critters/peabrain-lab)
 
 - `paper/DRAFT.md` — the preprint draft (v3.8+; Methods/abstract known
   issues are being repaired by the lab's own lane, NOT yet in this draft —
@@ -23,7 +23,7 @@ dispatched deliberately. You owe this paper nothing but honesty.
 - `LAB-INTENT.md` §L175 + `LANE-LOG.md` (in ~/.hermes path below) — our
   adjudication of every round-2 claim (7/7 CONFIRMED under our tree, code
   + probes rerun) and the experiment dispatches
-  - lane log: ~/critters/peabrain/LANE-LOG.md
+  - lane log: /home/t3rpz/critters/peabrain/LANE-LOG.md
 - `banc/l175/` — THE NEW EXPERIMENTS (single-cell scan + drive-matched
   twin), PREREG-first, gain-re-matched per arm, 16 seeds; check
   `banc/l175/verdict_l175.out` / `results_l175.json` — if the run shows
@@ -61,8 +61,8 @@ dispatched deliberately. You owe this paper nothing but honesty.
 ## Hard constraints
 
 - READ-ONLY on everything except your two output locations:
-  - report → `~/critters/peabrain-lab/paper/review_astra_r3.md`
-  - evidence → `~/critters/peabrain-lab/paper/review_astra_evidence_r3/`
+  - report → `/home/t3rpz/critters/peabrain-lab/paper/review_astra_r3.md`
+  - evidence → `/home/t3rpz/critters/peabrain-lab/paper/review_astra_evidence_r3/`
     (NOTES.md running log; save probes continuously)
 - No vision tools on figures (analytic SVG checks only). CPU-only, no GPU,
   no training, no new rollouts beyond ≤2 quick probes if needed for task 1.

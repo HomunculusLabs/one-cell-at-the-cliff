@@ -1,0 +1,79 @@
+{
+ "label": "POST-HOC, UNREGISTERED, ARITHMETIC ONLY on values already certified by l227_static.py. No branch depends on it.",
+ "cert": {
+  "cert_227": 19
+ },
+ "contradiction": {
+  "parent_rule_recommends": "the SIGN comparison at |r_rho| >= 0.830",
+  "power_sgn_at_that_threshold": 0.075,
+  "power_mag_at_that_threshold": 0.0725,
+  "power_sgn_max_over_grid": 0.135,
+  "reading": "The crossing is a statement about the SIGN test's weakness, not about the magnitude test's adequacy: at the crossing the recommended instrument has power 0.075. A threshold derived from where two power curves CROSS is reported in units of the WEAKER instrument and therefore answers a different question than 'at what mirror does my instrument stop working'."
+ },
+ "power_floor": {
+  "bar_0.50": {
+   "calibrated_beta": {
+    "lam": 0.3,
+    "abs_r_rho": 0.23864654273340272,
+    "power_mag": 0.4875,
+    "prev_lam": 0.2
+   },
+   "beta_0.50": {
+    "lam": 0.9,
+    "abs_r_rho": 0.7941013853580707,
+    "power_mag": 0.2975,
+    "prev_lam": 0.8
+   }
+  },
+  "bar_0.80": {
+   "calibrated_beta": {
+    "lam": 0.0,
+    "abs_r_rho": 0.0007435198888501635,
+    "power_mag": 0.575,
+    "prev_lam": null
+   },
+   "beta_0.80_arm": {
+    "lam": 0.7,
+    "abs_r_rho": 0.571795062292555,
+    "power_mag": 0.7475,
+    "prev_lam": 0.6
+   }
+  },
+  "beta_calibrated": 0.32864775718098826,
+  "mean_absrhoA_cal": 0.3322283088235294,
+  "mean_absrhoA_fixed50": 0.46310992647058824,
+  "reading": "The |mirror r| at which the magnitude test loses half its power is 0.2386 at the lane's own measured effect size and 0.7941 at beta = 0.50 \u2014 a factor of 3.33. So the card's requested ONE-LINE RULE does not exist as a single number: the threshold is a 2-D condition in (mirror, effect size). The only mirror-ONLY statement that is unconditional is the analytic one: at |r| = 1 the magnitude test has EXACTLY zero power (measured: max|diff| == 0.0, p_D == 1 in every draw)."
+ },
+ "retro": {
+  "measured_abs_r_rho": 0.682963568418539,
+  "interp_power_mag_at_measured_mirror": 0.2338361080715312,
+  "bracketing_grid": [
+   {
+    "abs_r_rho": 0.5927240238290401,
+    "power_mag": 0.2825
+   },
+   {
+    "abs_r_rho": 0.6947128857087645,
+    "power_mag": 0.2275
+   }
+  ],
+  "l214_q3_branch": "H_TIE",
+  "reading": "At the measured mirror coefficient and the lane's own effect size, the magnitude head-to-head was running at about 23% power. L214's Q3 therefore read H_TIE at roughly one-quarter power: 'tie' was never distinguishable from 'difference' on that data. This IS the retro-flag the card expected \u2014 but it is delivered by POWER AT THE MEASURED MIRROR, not by the crossing criterion the card implicitly assumed, which the measured pair does NOT reach (0.683 < 0.830). The card's registered expectation is false as stated and true in substance, and the two differ precisely because a crossing threshold depends on the rival instrument."
+ },
+ "rule_v2": {
+  "pre_step": [
+   "1. Name which currency each candidate instrument CONSUMES (a mean-|rho| statistic consumes the per-cell correlations; a sign-agreement statistic consumes the per-cell currency means). Compute the mirror coefficient in THAT currency, with AVERAGE (midrank) ranks.",
+   "2. If the two currencies are related by a strictly monotone map (check the definitions, not the data), the magnitude head-to-head has exactly zero power: do not register it. This is a PROOF and it fires before any measurement.",
+   "3. Otherwise compute the ACHIEVED POWER of the magnitude test at the measured mirror AND the measured effect size (a 20-cell, 16-seed simulation costs seconds). Register the magnitude test only if that power clears a stated bar.",
+   "4. If it does not, the honest verdict on a null result is 'underpowered instrument', never 'tie' \u2014 and the remedy is more cells or a different statistic, NOT automatically the sign comparison, whose own power at n = 20 topped out at 0.135 across the whole mirror grid."
+  ],
+  "supersedes": "l227/static.json rule.one_line (crossing-based, misleading)"
+ },
+ "pair4_tie_mechanism": {
+  "n_units": 56,
+  "n_distinct_unrounded_means": 56,
+  "n_distinct_stored_means": 55,
+  "mirror_r": 0.9999829116790118,
+  "reading": "The stored means are 3-decimal rounded, so 56 distinct unrounded values collapse to 55 distinct stored values. The relation is a perfect monotone aggregation, yet its midrank Spearman reads 0.9999829 rather than 1: ROUNDING A STORED VALUE MANUFACTURES TIES, and ties cap a rank correlation below its analytic value. Same law as 0h, from the opposite direction."
+ }
+}

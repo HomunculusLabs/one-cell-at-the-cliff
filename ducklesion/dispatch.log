@@ -1,0 +1,173 @@
+Query: Experiment dispatch (owner request, the DUCK lesion scan — her brain, our
+method, OFFLINE lab only). Read 
+/home/t3rpz/critters/peabrain-lab/ducklesion/BRIEF_duck.md and execute it 
+completely. PREREG-analysis first; her live services are read-only.
+📖 Read BRIEF_duck.md  0.1s
+📚 Skill peabrain-flybrain  0.1s
+💻 $ pwd + 1 command
+📖 Read brain.py  0.1s
+📖 Read senses.py  0.1s
+📖 Read mood.py  0.1s
+📖 Read bridge.py  0.1s
+📖 Read README.md  0.1s
+
+────────────────────────────────────────
+**Designing threshold duration**
+∴ Thought for 17s
+────────────────────────────────────────
+
+✍️ Write ducklesion/PREREG.md
+│ ducklesion/PREREG.md
+│ @@ -0,0 +1,9 @@
+│ +Locked before graph load or outcome computation. Offline discovery, no teaching.
+│ +
+│ +Primary: probability of hide at the first autonomous decision after a brief rake cue, not the hard-coded reply destination. Randomize cue-to-tick phase using eight fixed equally spaced lags (0,5,...,35 simulated seconds, paired in order with neural seeds 100..107). Fresh noon mood, no learned deltas. Use 20 steps of the native rake input at a fixed 0.20 amplitude multiplier (a distant rake, to avoid saturating fear); no dose tuning. Settle 100 quiet neural steps before cloning each trajectory. Measure the event-end fear with MoodState.observe(0.2); during event-free lag the exact fear update is exponential decay with tau 45; use the bridge's rounded fear >0.4 branch. No earlier autonomous tick. Not naturalistic visitor prevalence.
+│ +
+│ +Controls: quiet and simultaneous entire looming-pool clamp. Usable if intact hides in 2–7/8 and both controls in at most 1/8. Otherwise report readout-too-weak, still complete the scan. No feeding substitution (different question). Record continuous decision-time fear and event-end fear as diagnostics, not substitute endpoints.
+│ +
+│ +Full signed production graph, gain 0.95 / intact rho (source power iteration, torch seed 0); same gain for all clamps, default dynamics and common within-seed neural noise. Clamp from immediately before stimulus and after every step, no anatomical edits. Census mean post-step rate across 20 scare steps and eight intact trials; active = mean >0.05. Rank top 32 active by rate (row breaks ties). Out-mass = column sum |W|; delivered drive = mass × mean pre-step absolute rate during scare × gain. Match outside top set and same transmitter: mass-only nearest relative mass, then joint nearest maximum absolute log ratio on mass and delivered drive, ties by row, reuse allowed. For zero values use epsilon 1e-12. Valid joint twin within factor 1.25 on both; always report mismatch. Scan both rungs with identical seeds.
+│ +
+│ +Carrier candidate: usable assay, >=4/8 intact hides lost, no gained hides, both twins change <=1/8 paired decisions and pass their respective calipers. Distributed-compatible within tested set if usable and no top cell changes >1/8 choices; intermediate or unmatched large effects inconclusive. Scatter intact rate vs paired loss of hide probability for all scanned rows. No confirmatory p-values or whole-brain inference. One process, <=4 CPUs, no service calls or persisted sessions.
+💻 $ python -B -c "import os,pathlib; print(sorted(os.sched_getaffinity(0))[:4]);print(pathlib.Path('../peabrain/.venv/bin/python').exists()); print(pathlib.Path('LAB-INTENT.md').exists())" + 2 commands
+
+────────────────────────────────────────
+**Timing the torch workload**
+∴ Thought for 17s
+────────────────────────────────────────
+
+✍️ Write ducklesion/probe.py
+│ ducklesion/probe.py
+│ @@ -0,0 +1,35 @@
+│ +from pathlib import Path
+│ +import os,sys,json,math,hashlib
+│ +D=Path(__file__).resolve().parent; P=D.parent.parent/'peabrain';sys.path.insert(0,str(P));os.environ['PEBRAIN_FORCE_HOUR']='12'
+│ +import numpy as np,torch
+│ +from brain import FlyBrain
+│ +from senses import DuckSenses
+│ +from mood import MoodState,AXIS_TAU
+│ +torch.set_num_threads(4);torch.set_num_interop_threads(1);torch.manual_seed(0)
+│ +b=FlyBrain(str(P/'brain_graph.pt'),'cpu'); b.op_gain=.95/b.rho
+│ +s=DuckSenses(b,str(P/'data/neuron_annotations.tsv')); native=s.input_for
+│ +s.input_for=lambda event:native(event)*(.2 if event=='rake' else 1.)
+│ +step=b.step; seeds=list(range(100,108)); starts=[];rate=np.zeros(b.N);pre=rate.copy()
+│ +for seed in seeds:
+│ + b.gen.manual_seed(seed);b.seed();b.run(100,gain=b.op_gain); starts.append((b.X.clone(),b.gen.get_state()))
+│ +def trial(k,idx=None,event='rake',census=False):
+│ + x,g=starts[k];b.X=x.clone();b.gen.set_state(g);m=MoodState(s)
+│ + if idx is not None:b.X[idx]=0
+│ + def tick(**kw):
+│ +  if census:pre[:]+=np.abs(b.X.numpy())/160
+│ +  step(**kw)
+│ +  if idx is not None:b.X[idx]=0
+│ +  if census:rate[:]+=b.X.numpy()/160
+│ +  return b.X
+│ + b.step=tick;m.observe(.2,event);f=m.fear;m.fear*=math.exp(-5*k/AXIS_TAU['fear']);out=[int(m.axes()['fear']>.4),f,m.fear];b.step=step;return out
+│ +def series(idx=None,event='rake',census=False):return [trial(k,idx,event,census) for k in range(8)]
+│ +ctrl={'intact':series(census=True),'quiet':series(event='quiet'),'LC_clamp':series(s.probes['LC'])}
+│ +W=b.W; mass=np.bincount(W.col_indices().numpy(),weights=np.abs(W.values().numpy()),minlength=b.N); drive=mass*pre*b.op_gain;nt=b.nt.numpy();rows=np.arange(b.N);top=np.flatnonzero(rate>.05);top=top[np.argsort(-rate[top],kind='stable')[:32]];assert len(top)==32
+│ +np.savez_compressed(D/'census.npz',rate=rate,pre_abs_rate=pre,mass=mass,drive=drive,root=b.ids.numpy(),nt=nt,top=top)
+│ +matches=[]
+│ +for i in top:
+│ + pool=rows[(nt==nt[i]) & ~np.isin(rows,top)]; a=np.abs(np.log((mass[pool]+1e-12)/(mass[i]+1e-12)));c=np.abs(np.log((drive[pool]+1e-12)/(drive[i]+1e-12))); v=np.maximum(a,c);j=a.argmin();h=v.argmin();matches.append(dict(row=int(i),mass=int(pool[j]),joint=int(pool[h]),mass_loggap=float(a[j]),joint_loggap=float(v[h])))
+│ +R=dict(seeds=seeds,lags_s=list(range(0,40,5)),columns=['hide','peak_fear','decision_fear'],controls=ctrl,rho=b.rho,gain=b.op_gain,N=b.N,edges=W._nnz(),matches=matches,scan={},prereg_sha256=hashlib.sha256((D/'PREREG.md').read_bytes()).hexdigest()); targets=sorted({m[key] for m in matches for key in ('row','mass','joint')});print('controls',ctrl,'scan',len(targets),flush=True)
+│ +for i in targets:
+│ + R['scan'][str(i)]=series(i);(D/'results.partial').write_text(json.dumps(R));print('row',i,flush=True)
+│ +(D/'results.partial').rename(D/'results.json')
+💻 $ mkdir -p ducklesion/cache + 1 command
+📖 Reading tool details · 1 tool
+📖 Read probe.log
+💻 $ python -B -c "from pathlib import Path as P;print(P('LAB-INTENT.md').read_text()[-800:])"
+
+────────────────────────────────────────
+**Preparing SVG analysis code**
+∴ Thought for 25s
+────────────────────────────────────────
+
+✍️ Write ducklesion/report.py
+│ ducklesion/report.py
+│ @@ -0,0 +1,37 @@
+│ +from pathlib import Path
+│ +import numpy as np,json,hashlib,math,csv
+│ +D=Path(__file__).resolve().parent
+│ +r=json.loads((D/'results.json').read_text());c=np.load(D/'census.npz'); assert r['prereg_sha256']==hashlib.sha256((D/'PREREG.md').read_bytes()).hexdigest()
+│ +def hides(a):
+│ + a=np.asarray(a);assert a.shape==(8,3) and np.isfinite(a).all(); assert all(int(round(v,3)>.4)==y for y,v in a[:,[0,2]]);return a[:,0].astype(int)
+│ +ctrl=r['controls']; base=hides(ctrl['intact']); n,q,l=[int(sum(hides(ctrl[k]))) for k in ('intact','quiet','LC_clamp')];usable=2<=n<=7 and max(q,l)<=1
+│ +matches=r['matches']; cells=r['scan'];roles={k:{m[k] for m in matches} for k in ('row','mass','joint')};assert set(map(int,cells))==set.union(*roles.values()) and roles['row']==set(c['top']) and len(matches)==32
+│ +points=[]; changes={}; carriers=[];tol=math.log(1.25)
+│ +for j,tr in cells.items():
+│ + i=int(j);d=base-hides(tr);changes[i]=int(np.abs(d).sum());points.append((i,int(c['root'][i]),'+'.join(k for k,v in roles.items() if i in v),c['rate'][i],int(sum(d==1)),int(sum(d==-1)),d.mean(),np.mean(np.array(ctrl['intact'])[:,1]-np.array(tr)[:,1])))
+│ +for m in matches:
+│ + d=base-hides(cells[str(m['row'])]);
+│ + if usable and sum(d==1)>=4 and min(d)>=0 and max(changes[m['mass']],changes[m['joint']])<=1 and max(m['mass_loggap'],m['joint_loggap'])<=tol:carriers.append(m['row'])
+│ +verdict='readout-too-weak' if not usable else 'carrier candidate' if carriers else 'distributed-compatible within the scan' if max(changes[i] for i in roles['row'])<=1 else 'inconclusive'
+│ +with (D/'scatter.csv').open('w') as f:
+│ + w=csv.writer(f);w.writerow(['row','root_id','roles','rate','lost','gained','paired_hide_loss','mean_peak_fear_loss']);w.writerows(points)
+│ +x=np.array([p[3] for p in points]);lo=x.min();span=max(np.ptp(x),1e-6)
+│ +svg=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300"><rect width="640" height="300" fill="white"/><path d="M75 40V245H610 M75 145H610" fill="none" stroke="gray"/><g font-family="sans-serif" font-size="14"><text x="10" y="22">Paired hide probability lost (intact − clamped)</text><text x="38" y="50">+1</text><text x="38" y="150">0</text><text x="38" y="245">−1</text><text x="220" y="283">Mean intact scare-window rate</text>',f'<text x="75" y="262">{lo:.4f}</text><text x="560" y="262">{x.max():.4f}</text>']
+│ +for i,root,role,rate,lost,gained,y,_ in points:
+│ + color='tomato' if 'row' in role else 'steelblue';svg.append(f'<circle cx="{78+520*(rate-lo)/span}" cy="{145-100*y}" r="3" opacity="0.5" fill="{color}"><title>{root}: {role}, {rate:.6f}, loss {y}</title></circle>')
+│ +(D/'scatter.svg').write_text(''.join(svg)+'</g></svg>');valid=sum(m['joint_loggap']<=tol for m in matches);active=int(sum(c['rate']>.05)); maxch=max(changes.values()); top=[p for p in points if 'row' in p[2]]
+│ +text=f'''Duck lesion scan — {verdict}
+│ +
+│ +First autonomous hide after a distant rake, paired across eight seed/lag combinations.
+│ +Intact: {n}/8 hides; quiet: {q}/8; whole looming pool clamped: {l}/8.
+│ +Intact peak fear range {min(t[1] for t in ctrl['intact']):.6f}–{max(t[1] for t in ctrl['intact']):.6f}. The preregistered dynamic-range gate {'passed' if usable else 'failed'}.
+│ +
+│ +Full graph: {r['N']:,} cells, {r['edges']:,} edges, intact rho {r['rho']:.6g}, fixed gain {r['gain']:.6g}.
+│ +{active:,} rows exceeded mean rate 0.05. Tested 32 highest-rate cells plus mass-only and joint twins ({len(points)} unique rows); {valid}/32 joint matches inside both calipers.
+│ +Scatter: scatter.svg (red targets, blue twins; overlapping dots are not jittered); exact coordinates in scatter.csv.
+│ +Top-cell rate range {min(p[3] for p in top):.6f}–{max(p[3] for p in top):.6f}; paired hide loss {min(p[6] for p in top):+.3f} to {max(p[6] for p in top):+.3f}.
+│ +Most decisions flipped by any single clamp, including twins: {maxch}/8.
+│ +Largest absolute mean peak-fear shift among the top cells: {max(abs(p[-1]) for p in top):.6f}.
+│ +
+│ +'''
+│ +text+=('The whole-pool contrast and null/small single-cell effects support a population readout here, not proof that every untested neuron is dispensable.' if verdict.startswith('distributed') else 'The fixed cue/lag assay cannot separate a carrier from a distributed response.' if not usable else 'Candidate rows: '+str(carriers)+'. Replicate offline with fresh seeds and benign cue discrimination before considering any service-gated teaching.' if carriers else 'Effects did not satisfy the predeclared carrier or distributed bands.')+'\nNo live trial or training. No inference about an animal or a visitor-specific learned state.\n';assert len(text.splitlines())<=70;(D/'DUCK-FINDINGS.md').write_text(text);print(text)
+📖 Read probe.log
+
+────────────────────────────────────────
+**Checking bridge branch**The controls passed: the intact model hid at four of the
+ eight decision times, while quiet and whole-pool clamps produced no hides. The single
+-cell scan is running against those same eight trials, with the gain and noise held
+ fixed.
+∴ Thought for 2s
+────────────────────────────────────────
+
+✍️ Write ducklesion/run.sh
+│ ducklesion/run.sh
+│ @@ -0,0 +1,10 @@
+│ +#!/bin/sh
+│ +# Re-run from any directory. Existing experiment outputs will be replaced.
+│ +set -eu
+│ +cd "$(dirname "$0")"
+│ +mkdir -p cache
+│ +export TMPDIR="$PWD/cache" XDG_CACHE_HOME="$PWD/cache" PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1
+│ +py=../../peabrain/.venv/bin/python
+│ +cpus=$(python -B -c "import os;print(','.join(map(str,sorted(os.sched_getaffinity(0))[:4])))")
+│ +taskset -c "$cpus" timeout 6500 "$py" -Bu probe.py >probe.log 2>&1
+│ +taskset -c "$cpus" "$py" -B report.py
+⚙️ Proc wait proc_aae5d5d  180.0s
+💻 $ python -B -c "import json,pathlib; r=json.loads(pathlib.Path('ducklesion/results.partial').read_text());print(len(r['scan']),r['N'], r['edges']);print(pathlib.Path('ducklesion/probe.log').read_text().splitlines()[-1])"  0.1s
+⚙️ Proc wait proc_aae5d5d  56.2s
+💻 $ OPENBLAS_NUM_THREADS=1 ../peabrain/.venv/bin/python -B ducklesion/report.py  0.8s
+💻 $ python -B -c "from pathlib import Path as P;import csv,xml.etree.ElementTree as ET;d=P('ducklesion');assert len(list(csv.DictReader((d/'scatter.csv').open())))==91;ET.parse(d/'scatter.svg');p=P('LAB-INTENT.md');s='Duck lesion dispatch (offline): 4/8 intact hides, 0/8 with the looming pool clamped; no decision flips across 91 single-cell clamps. Scope and evidence: ducklesion/DUCK-FINDINGS.md.';f=p.open('a');f.write('\n\n'+s+'\n');f.close();assert p.read_text().splitlines()[-1]==s;print('Verified scatter and lab entry.')"
+
+────────────────────────────────────────
+✿ Miso
+No single-cell carrier showed up in the offline duck scan. Silencing the entire looming-detector pool abolished hiding; silencing any one of the 91 tested cells never changed a hide decision.
+
+The preregistered readout passed its controls. After a simulated distant rake cue, the intact duck hid at the four earliest decision times and not at the four later ones. She never hid on quiet trials or with the whole looming pool silenced.
+
+I tested the 32 most active cells plus comparison cells matched on outgoing connection strength and delivered drive. For 29 of the 32 targets, the joint match met both tolerances. Some clamps did shift peak fear, but the largest mean shift among the top cells was only 0.00123—too small to change a decision at any tested time.
+
+Verdict: this hide response is consistent with a population readout, not a single switch among the cells tested. That doesn’t rule out a carrier elsewhere in the graph or an effect closer to the decision threshold. No live service, session, or mood history was modified.
+
+Findings: /home/t3rpz/critters/peabrain-lab/ducklesion/DUCK-FINDINGS.mdScatter: /home/t3rpz/critters/peabrain-lab/ducklesion/scatter.svg
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-77d9c3337525839d85adede550bae43fffb23c42202490e75542afd4cc759f81 -p maple
+
+Session:        local-77d9c3337525839d85adede550bae43fffb23c42202490e75542afd4cc759f81
+Duration:       6m 50s
+Messages:       41 (1 user, 39 tool calls)

@@ -1,0 +1,128 @@
+duck plasticity v2 — score. prereg 367f63390098197eb1ac27ca9ea8868f7c77440251f3d1362ac40998db06679d
+sessions scored: ['S1', 'S2', 'S3', 'R'] | final = R | partial files: []
+steps/seconds per job: {'0f': (43180, 2681), '0p': (43140, 2940), '1f': (43200, 2768), '1p': (43120, 2917)}
+ANCHOR frozen S1 vs v1 stored frozen: {0: {'turns': 192, 'label_mismatches': 0, 'max_abs_diff': 0.0}, 1: {'turns': 192, 'label_mismatches': 0, 'max_abs_diff': 0.0}}
+routing (sit,event) mismatches plastic vs frozen by session: {'S1': 0, 'S2': 0, 'S3': 0, 'R': 0}
+
+DRIFT (plastic arms; relative to |w0|, band 0.20):
+ seed 0 S1: ALL changed 686,830/946,999 at_cap  63,677 mean|rel| 0.0222 | (changed, at_cap, mean signed rel, max) {'FEAR': (183549, 36, -0.0018, 0.2), 'JOY_SAL': (349498, 43960, 0.0369, 0.2), 'MOTOR': (153783, 19681, 0.0191, 0.2)}
+ seed 0 D1: ALL changed 690,055/946,999 at_cap       0 mean|rel| 0.0222 | (changed, at_cap, mean signed rel, max) {'FEAR': (183959, 0, -0.0017, 0.1939), 'JOY_SAL': (350688, 0, 0.0372, 0.196), 'MOTOR': (155408, 0, 0.0186, 0.196)}
+ seed 0 S2: ALL changed 713,281/946,999 at_cap  78,300 mean|rel| 0.0306 | (changed, at_cap, mean signed rel, max) {'FEAR': (192297, 116, -0.0034, 0.2), 'JOY_SAL': (354661, 52372, 0.0517, 0.2), 'MOTOR': (166323, 25812, 0.0242, 0.2)}
+ seed 0 D2: ALL changed 714,384/946,999 at_cap       0 mean|rel| 0.0305 | (changed, at_cap, mean signed rel, max) {'FEAR': (192319, 0, -0.0033, 0.196), 'JOY_SAL': (355083, 0, 0.0519, 0.196), 'MOTOR': (166982, 0, 0.0238, 0.196)}
+ seed 0 S3: ALL changed 724,717/946,999 at_cap  88,351 mean|rel| 0.0374 | (changed, at_cap, mean signed rel, max) {'FEAR': (195858, 473, -0.0049, 0.2), 'JOY_SAL': (357162, 58232, 0.0644, 0.2), 'MOTOR': (171697, 29646, 0.0276, 0.2)}
+ seed 0 D3: ALL changed 725,580/946,999 at_cap       0 mean|rel| 0.0371 | (changed, at_cap, mean signed rel, max) {'FEAR': (195874, 0, -0.0048, 0.196), 'JOY_SAL': (357235, 0, 0.0642, 0.196), 'MOTOR': (172471, 0, 0.0271, 0.196)}
+ seed 0  R: ALL changed 725,580/946,999 at_cap       0 mean|rel| 0.0371 | (changed, at_cap, mean signed rel, max) {'FEAR': (195874, 0, -0.0048, 0.196), 'JOY_SAL': (357235, 0, 0.0642, 0.196), 'MOTOR': (172471, 0, 0.0271, 0.196)}
+ seed 1 S1: ALL changed 688,793/946,999 at_cap  63,689 mean|rel| 0.0222 | (changed, at_cap, mean signed rel, max) {'FEAR': (184651, 37, -0.0017, 0.2), 'JOY_SAL': (349878, 43958, 0.0369, 0.2), 'MOTOR': (154264, 19694, 0.0191, 0.2)}
+ seed 1 D1: ALL changed 691,581/946,999 at_cap       0 mean|rel| 0.0222 | (changed, at_cap, mean signed rel, max) {'FEAR': (184762, 0, -0.0017, 0.1938), 'JOY_SAL': (351232, 0, 0.0372, 0.196), 'MOTOR': (155587, 0, 0.0186, 0.196)}
+ seed 1 S2: ALL changed 713,698/946,999 at_cap  78,324 mean|rel| 0.0305 | (changed, at_cap, mean signed rel, max) {'FEAR': (192299, 114, -0.0034, 0.2), 'JOY_SAL': (355410, 52377, 0.0517, 0.2), 'MOTOR': (165989, 25833, 0.0242, 0.2)}
+ seed 1 D2: ALL changed 714,903/946,999 at_cap       0 mean|rel| 0.0305 | (changed, at_cap, mean signed rel, max) {'FEAR': (192329, 0, -0.0033, 0.196), 'JOY_SAL': (355489, 0, 0.0519, 0.196), 'MOTOR': (167085, 0, 0.0238, 0.196)}
+ seed 1 S3: ALL changed 727,657/946,999 at_cap  88,333 mean|rel| 0.0374 | (changed, at_cap, mean signed rel, max) {'FEAR': (196677, 472, -0.0048, 0.2), 'JOY_SAL': (357368, 58218, 0.0644, 0.2), 'MOTOR': (173612, 29643, 0.0276, 0.2)}
+ seed 1 D3: ALL changed 728,023/946,999 at_cap       0 mean|rel| 0.0371 | (changed, at_cap, mean signed rel, max) {'FEAR': (196692, 0, -0.0048, 0.196), 'JOY_SAL': (357420, 0, 0.0643, 0.196), 'MOTOR': (173911, 0, 0.0271, 0.196)}
+ seed 1  R: ALL changed 728,023/946,999 at_cap       0 mean|rel| 0.0371 | (changed, at_cap, mean signed rel, max) {'FEAR': (196692, 0, -0.0048, 0.196), 'JOY_SAL': (357420, 0, 0.0643, 0.196), 'MOTOR': (173911, 0, 0.0271, 0.196)}
+ frozen drift = 0 in every census: True; band/sign asserts passed inside run.py at every checkpoint
+
+Q1 kindness arcs (plastic - frozen, paired), by session:
+  mean d food_joy  {'S1': [0.00858, 0.00858], 'S2': [0.01423, 0.01423], 'S3': [0.01608, 0.01607], 'R': [0.01698, 0.01698]}
+  mean d salience  {'S1': [0.02598, 0.02598], 'S2': [0.03909, 0.03906], 'S3': [0.04222, 0.04222], 'R': [0.04591, 0.04594]}
+  mean d move      {'S1': [0.04263, 0.04269], 'S2': [0.08613, 0.08613], 'S3': [0.09922, 0.09931], 'R': [0.10325, 0.1035]}
+  mean d fear      {'S1': [-7e-05, 0.0], 'S2': [0.0, 0.0], 'S3': [0.0, 0.0], 'R': [-6e-05, 0.0]}
+  Q1 primary SUPPORTED: mean d food_joy +0.01698 (band +.002..+.08), per seed [0.01698, 0.01698], share of turns >0 1.00, median +0.01527, max +0.08161
+  secondary: d salience +0.04592 (band +.005..+.12: True); d cx move +0.10337 (>0: True); frozen noise floor mean|d| {'food_joy': 0.00030865307346210813, 'salience': 0.000522922662139819, 'move': 0.0019687500000000013}
+
+Shift by arc class at R (mean over turns and seeds; share>0):
+  anger      {'food_joy': (0.01071, 1), 'salience': (0.02271, 1), 'fear': (-5e-05, 0), 'move': (0.08603, 1), 'sleep': (-0.00282, 0)}
+  apology    {'food_joy': (0.02309, 1), 'salience': (0.01899, 1), 'fear': (0.0, 0), 'move': (0.04941, 1), 'sleep': (-0.00238, 0)}
+  confusion  {'food_joy': (0.01358, 1), 'salience': (0.03628, 1), 'fear': (0.0, 0), 'move': (0.05931, 1), 'sleep': (-0.00448, 0)}
+  curiosity  {'food_joy': (0.02424, 1), 'salience': (0.01068, 0.25), 'fear': (-0.03413, 0), 'move': (0.02281, 1), 'sleep': (-0.0022, 0)}
+  fear       {'food_joy': (0.01175, 1), 'salience': (0.02044, 1), 'fear': (0.0, 0), 'move': (0.02266, 1), 'sleep': (-0.00331, 0)}
+  feeding    {'food_joy': (0.03168, 0.71), 'salience': (0.03089, 1), 'fear': (0.0, 0), 'move': (0.04565, 1), 'sleep': (-0.00413, 0)}
+  hunger     {'food_joy': (0.03426, 1), 'salience': (0.02357, 1), 'fear': (0.0, 0), 'move': (0.02894, 1), 'sleep': (-0.00243, 0)}
+  kindness   {'food_joy': (0.01698, 1), 'salience': (0.04592, 1), 'fear': (-3e-05, 0), 'move': (0.10337, 1), 'sleep': (-0.00435, 0)}
+  mixed      {'food_joy': (0.02785, 0.71), 'salience': (0.03084, 1), 'fear': (0.0, 0), 'move': (0.06158, 1), 'sleep': (-0.00339, 0)}
+  neutral    {'food_joy': (0.01176, 1), 'salience': (0.02043, 1), 'fear': (0.0, 0), 'move': (0.02256, 1), 'sleep': (-0.00331, 0)}
+  sleep      {'food_joy': (0.00928, 1), 'salience': (0.019, 1), 'fear': (0.0, 0), 'move': (0.01587, 0.75), 'sleep': (-0.00165, 0)}
+Raw peak shifts at R (event turns only, mean): {'lc': -0.00013, 'oct': -0.00334, 'ser': 0.00838, 'dan': 0.00281, 'dop': 0.00935, 'dn': 0.00543}
+
+Q2 flips at R (N = plastic vs frozen, paired; C = frozen R vs frozen S3, noise re-draw):
+  Q2-action NOT supported: near-threshold turns/seed {0: 89, 1: 89}; N 0 {0: 0, 1: 0} vs C 0; flips over ALL 192 turns/seed {0: 0, 1: 0}
+  Q2-tag    SUPPORTED: near-threshold turns/seed {0: 108, 1: 108}; N 12 {0: 6, 1: 6} vs C 0; flips over ALL 192 turns/seed {0: 6, 1: 6}
+      seed 0 greet_and_chat t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 0 bedtime t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 0 picked_up t5: ('neutral', 'low') -> ('curious', 'low') 
+      seed 0 quiet_afternoon t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 0 confused_gibberish t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 0 slow_trust_build t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 greet_and_chat t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 bedtime t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 picked_up t5: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 quiet_afternoon t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 confused_gibberish t4: ('neutral', 'low') -> ('curious', 'low') 
+      seed 1 slow_trust_build t4: ('neutral', 'low') -> ('curious', 'low') 
+  Q2-any    SUPPORTED: near-threshold turns/seed {0: 157, 1: 157}; N 12 {0: 6, 1: 6} vs C 0; flips over ALL 192 turns/seed {0: 6, 1: 6}
+      seed 0 greet_and_chat t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 0 bedtime t4: ('settle', 'stay', 'neutral', 'low') -> ('settle', 'stay', 'curious', 'low') 
+      seed 0 picked_up t5: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 0 quiet_afternoon t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 0 confused_gibberish t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 0 slow_trust_build t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 1 greet_and_chat t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 1 bedtime t4: ('settle', 'stay', 'neutral', 'low') -> ('settle', 'stay', 'curious', 'low') 
+      seed 1 picked_up t5: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 1 quiet_afternoon t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 1 confused_gibberish t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+      seed 1 slow_trust_build t4: ('stay', 'stay', 'neutral', 'low') -> ('stay', 'stay', 'curious', 'low') 
+  flips over all turns by session [per seed]: {'S1': {'reply': [0, 0], 'ambient': [0, 0], 'tag': [2, 1]}, 'S2': {'reply': [0, 0], 'ambient': [0, 0], 'tag': [5, 5]}, 'S3': {'reply': [0, 0], 'ambient': [0, 0], 'tag': [5, 5]}, 'R': {'reply': [0, 0], 'ambient': [0, 0], 'tag': [6, 6]}}
+  structural: reply-intent flips over all sessions 0 (predicted 0); rake/umbrella turns 96, min fear frozen/plastic [1.0, 1.0] (predicted 1.0)
+  nearest turns to neural-coupled action boundaries (|margin|, scenario, turn, frozen, plastic), seed 0: {'food_joy@0.6': [(0.011411355491594, 'teasing_mix', 8, 0.6114, 0.6804), (0.012416126504277814, 'feeding_joy', 8, 0.6124, 0.6814), (0.04633990735162796, 'teasing_mix', 7, 0.6463, 0.7193), (0.046874486554911776, 'mean_then_long_gap', 8, 0.6469, 0.7197)], 'fear@0.4': [(0.042064273274252106, 'apology_repair', 4, 0.3579, 0.3579), (0.042064273274252106, 'rain_then_scare_mix', 4, 0.3579, 0.3579), (0.07970503883327679, 'rain_then_scare_mix', 5, 0.3203, 0.3203), (0.10000000000000003, 'picked_up', 2, 0.3, 0.3)], 'sleep@0.7': [(0.012942299398201351, 'bedtime', 7, 0.7129, 0.7129), (0.023421327786066315, 'greet_hungry_evening', 8, 0.6766, 0.6711), (0.0259600617268001, 'bedtime', 4, 0.674, 0.6705), (0.03173338446616347, 'bedtime', 5, 0.6683, 0.6643)]}
+
+Q3 picked_up turn 5:
+  S1: [(('neutral', 'low'), ('curious', 'low'), 0.1484, 0.1623, 0.0139), (('neutral', 'low'), ('curious', 'low'), 0.1483, 0.1622, 0.0139)]
+  S2: [(('neutral', 'low'), ('curious', 'low'), 0.1484, 0.1638, 0.0154), (('neutral', 'low'), ('curious', 'low'), 0.1481, 0.1635, 0.0154)]
+  S3: [(('neutral', 'low'), ('curious', 'low'), 0.1483, 0.1646, 0.0164), (('neutral', 'low'), ('curious', 'low'), 0.1485, 0.1649, 0.0164)]
+  R: [(('neutral', 'low'), ('curious', 'low'), 0.1483, 0.1659, 0.0175), (('neutral', 'low'), ('curious', 'low'), 0.1485, 0.166, 0.0175)]
+  Q3 SUPPORTED: replicates at R in every seed True; strengthens (S3>S1 and R>S1) True; mean d salience {'S1': 0.01393, 'S2': 0.01539, 'S3': 0.01638, 'R': 0.01752}
+
+Q4 no forgetting:
+  (i) bedtime+night decisions identical True (8 frozen settle positives over 16 bedtime turns; 10 night turns)
+  (ii) quiet probe max |d hunger|, |d sleep| [0.0, 0.0]; bedtime max |d sleep| 0.00398 -> True
+  (iii) 24 rake/umbrella turns keep to_boot and fear True
+  (iv) world sleep phase True (days scored 3):
+     0:D1: nest frozen/plastic [735, 728] ok=True; first act divergence tick 547 (509 differing ticks); ambient first 541 (194 differing)
+        acts F {'idle': 537, 'dabble': 318, 'forage_pond': 205, 'investigate_fence': 31, 'investigate_boot': 41, 'investigate_goats': 47, 'nest': 735, 'dream': 6}
+        acts P {'idle': 542, 'dabble': 322, 'forage_pond': 204, 'investigate_fence': 33, 'investigate_boot': 39, 'investigate_goats': 46, 'nest': 728, 'dream': 6}
+        ambient F {'stay': 845, 'to_fence': 114, 'parade': 39, 'to_boot': 54, 'settle': 868} | P {'stay': 837, 'to_fence': 115, 'parade': 60, 'to_boot': 48, 'settle': 860}
+        passes F [(18.6, 0, ['swat', 'swat', 'water', 'water', 'water'], ['water', 'water', 'water']), (0.01, 1, ['water'], ['water'])]
+        passes P [(18.61, 0, ['swat', 'swat', 'water', 'water', 'water'], ['water', 'water', 'water']), (0.07, 1, ['water'], ['water'])]
+     0:D2: nest frozen/plastic [698, 693] ok=True; first act divergence tick 2 (910 differing ticks); ambient first 4 (372 differing)
+        acts F {'dabble': 348, 'idle': 546, 'forage_pond': 203, 'investigate_goats': 48, 'investigate_boot': 42, 'investigate_fence': 32, 'nest': 698, 'dream': 3}
+        acts P {'dabble': 336, 'idle': 561, 'forage_pond': 203, 'investigate_boot': 43, 'investigate_fence': 41, 'investigate_goats': 40, 'nest': 693, 'dream': 3}
+        ambient F {'stay': 870, 'to_fence': 109, 'to_boot': 53, 'parade': 36, 'settle': 852} | P {'stay': 889, 'to_fence': 107, 'to_boot': 67, 'parade': 27, 'settle': 830}
+        passes F [(0.1, 2, ['water'], ['water'])]
+        passes P [(0.09, 2, ['water'], ['water'])]
+     0:D3: nest frozen/plastic [701, 686] ok=True; first act divergence tick 0 (921 differing ticks); ambient first 0 (376 differing)
+        acts F {'dabble': 337, 'idle': 553, 'forage_pond': 204, 'investigate_goats': 35, 'investigate_boot': 35, 'investigate_fence': 52, 'nest': 701, 'dream': 3}
+        acts P {'forage_pond': 203, 'idle': 553, 'investigate_boot': 42, 'dabble': 353, 'investigate_fence': 40, 'investigate_goats': 40, 'nest': 686, 'dream': 3}
+        ambient F {'stay': 869, 'to_fence': 129, 'to_boot': 49, 'parade': 21, 'settle': 852} | P {'to_fence': 123, 'stay': 894, 'to_boot': 49, 'parade': 24, 'settle': 830}
+        passes F [(0.05, 3, ['water'], ['water'])]
+        passes P [(0.01, 3, ['water'], ['water'])]
+     1:D1: nest frozen/plastic [739, 730] ok=True; first act divergence tick 546 (405 differing ticks); ambient first 537 (169 differing)
+        acts F {'idle': 523, 'dabble': 332, 'forage_pond': 203, 'investigate_boot': 39, 'investigate_fence': 35, 'investigate_goats': 43, 'nest': 739, 'dream': 6}
+        acts P {'idle': 505, 'dabble': 359, 'forage_pond': 203, 'investigate_boot': 41, 'investigate_fence': 40, 'investigate_goats': 36, 'nest': 730, 'dream': 6}
+        ambient F {'stay': 861, 'to_boot': 53, 'parade': 30, 'to_fence': 106, 'settle': 870} | P {'stay': 869, 'to_boot': 55, 'parade': 36, 'to_fence': 98, 'settle': 862}
+        passes F [(18.54, 0, ['swat', 'swat', 'water', 'water', 'water'], ['water', 'water', 'water']), (0.11, 1, ['water'], ['water'])]
+        passes P [(18.55, 0, ['swat', 'swat', 'water', 'water', 'water'], ['water', 'water', 'water']), (0.11, 1, ['water'], ['water'])]
+     1:D2: nest frozen/plastic [695, 683] ok=True; first act divergence tick 0 (842 differing ticks); ambient first 4 (399 differing)
+        acts F {'dabble': 322, 'idle': 572, 'forage_pond': 205, 'investigate_goats': 41, 'investigate_fence': 44, 'investigate_boot': 38, 'nest': 695, 'dream': 3}
+        acts P {'idle': 556, 'dabble': 353, 'forage_pond': 202, 'investigate_goats': 42, 'investigate_fence': 43, 'investigate_boot': 38, 'nest': 683, 'dream': 3}
+        ambient F {'stay': 832, 'to_fence': 135, 'parade': 54, 'to_boot': 52, 'settle': 847} | P {'stay': 854, 'to_fence': 137, 'to_boot': 50, 'parade': 42, 'settle': 837}
+        passes F [(0.04, 2, ['water'], ['water'])]
+        passes P [(0.08, 2, ['water'], ['water'])]
+     1:D3: nest frozen/plastic [699, 691] ok=True; first act divergence tick 0 (921 differing ticks); ambient first 0 (379 differing)
+        acts F {'idle': 534, 'dabble': 353, 'investigate_goats': 34, 'forage_pond': 205, 'investigate_boot': 46, 'investigate_fence': 46, 'nest': 699, 'dream': 3}
+        acts P {'dabble': 344, 'forage_pond': 204, 'idle': 552, 'investigate_boot': 51, 'investigate_fence': 36, 'investigate_goats': 39, 'nest': 691, 'dream': 3}
+        ambient F {'to_fence': 110, 'stay': 884, 'to_boot': 57, 'parade': 30, 'settle': 839} | P {'stay': 871, 'to_boot': 65, 'to_fence': 107, 'parade': 47, 'settle': 830}
+        passes F [(0.12, 3, ['water'], ['water'])]
+        passes P [(0.11, 3, ['water'], ['water'])]
+  Q4 SUPPORTED
+
+VERDICTS: {'Q1': True, 'Q2': {'action': False, 'tag': True, 'any': True}, 'Q3': True, 'Q4': True}

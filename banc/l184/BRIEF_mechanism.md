@@ -4,7 +4,7 @@ Owner-directed (Discord, 2026-11-21 ~11:3x). You found the cross-seed
 time-locking; now explain it. Everything here is analysis of STORED raw
 traces + stored wiring. No new rollouts. CPU-only.
 
-Working set: `~/critters/peabrain-lab/`
+Working set: `/home/t3rpz/critters/peabrain-lab/`
 - `banc/l175/raw_w*.npz`, `raw_census.npz`, `census_k24.npz`, `xm_*.npz`,
   `results_l175.json`, `selection.json`, `verdict_l175.out` (FINAL scan)
 - `banc/l135/raw_l135.npz` (historical anchors), `banc/l172/stats.json`

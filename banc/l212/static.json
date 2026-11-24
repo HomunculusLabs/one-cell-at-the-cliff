@@ -1,0 +1,243 @@
+{
+ "design": "L212 the v783 leg, re-posed: does the DNp33 match avoid the nearest readout its own (brain-only) volume HAS? EXPLORATORY.",
+ "prereg": "l212/PREREG.md",
+ "beta_L": 2.0,
+ "nt_mix": {
+  "acetylcholine": 86191,
+  "glutamate": 24873,
+  "gaba": 19171,
+  "dopamine": 5909,
+  "serotonin": 2281,
+  "unknown": 614,
+  "octopamine": 216
+ },
+ "cert_l207": {
+  "n_checks": 8,
+  "carrier": {
+   "gi": 132493,
+   "root_id": "720575940604103084",
+   "cell_type": "DNp33",
+   "side": "left",
+   "super_class": "descending",
+   "nt": "acetylcholine",
+   "nerve": "CV"
+  },
+  "mirror": {
+   "gi": 132179,
+   "root_id": "720575940633165452",
+   "cell_type": "DNp33",
+   "side": "right",
+   "super_class": "descending",
+   "nt": "acetylcholine",
+   "nerve": "CV"
+  },
+  "source": "l207/static.json (read-only, mtime asserted)"
+ },
+ "readout_primary": {
+  "kind": "v783 super_class==motor by nerve",
+  "sizes": {
+   "mot_PhN": 40,
+   "mot_MxLbN": 26,
+   "mot_CV": 20,
+   "mot_AN": 14,
+   "mot_ON": 10
+  },
+  "n_cells": 110,
+  "named": 110
+ },
+ "readout_secondary": {
+  "kind": "v783 super_class==descending minus actors",
+  "n_cells": 1301
+ },
+ "cert_783": {
+  "n_checks": 6,
+  "N": 139255,
+  "n_pairs": 15091983,
+  "live_nnz": 15091983,
+  "raw_rows": 16847997,
+  "mode": "array_equal / ==",
+  "note": "ids from the Zenodo npy; pair count cross-checked against the live coalesced graph's nnz."
+ },
+ "cert_mv": {
+  "n_checks": 4,
+  "mode": "EXACT array_equal (==)"
+ },
+ "cert_gate": {
+  "n_checks": 22,
+  "mode": "float equality (==)",
+  "source": "l207_tail.py reach_sub / power_iter_sub verbatim"
+ },
+ "lam1": {
+  "value": 552.6340796478873,
+  "rel_spread_last6": 4.11436217592849e-16,
+  "iters": 400
+ },
+ "rescale_noop": {
+  "rel_diff": 3.970137066455021e-16,
+  "lam1_scaled": 1657.9022389436618,
+  "note": "R measured invariant under A -> 3A (L209)"
+ },
+ "Q1_primary": {
+  "carrier_R": 1.6001329420295532e-06,
+  "mirror_R": 1.0027621125362924e-05,
+  "carrier_P2": 12.648220345819931,
+  "mirror_P2": 68.28868545807632,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.6931471805599453,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.02,
+  "mirror_pct": 0.25,
+  "cohort_k": 100,
+  "cohort_union_n": 122,
+  "cohort_median_carrier": 2.0581589159220384e-05,
+  "cohort_median_mirror": 1.6626373739425428e-05,
+  "cohort_zero_frac_carrier": 0.01,
+  "cohort_zero_frac_mirror": 0.01,
+  "cohort_min_carrier": 0.0,
+  "cohort_max_carrier": 0.0001733230671116423,
+  "carrier_rank_of_cohort": 3,
+  "mirror_rank_of_cohort": 26,
+  "deficit_vs_median": 12.862424501501362,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.3485815975868416,
+  "readout": "PRIMARY v783 motor (110 cells, 5 nerve pools)",
+  "per_pool_carrier": {
+   "mot_PhN": 0.0,
+   "mot_MxLbN": 0.0,
+   "mot_CV": 2.483906048674021,
+   "mot_AN": 10.16431429714591,
+   "mot_ON": 0.0
+  },
+  "per_pool_mirror": {
+   "mot_PhN": 0.0,
+   "mot_MxLbN": 0.0,
+   "mot_CV": 14.651711070757095,
+   "mot_AN": 45.01865506635982,
+   "mot_ON": 8.618319320959408
+  }
+ },
+ "branch": "V_AVOIDS",
+ "Q2_secondary_descriptive": {
+  "carrier_R": 0.00015709137920956863,
+  "mirror_R": 0.00016350700753680461,
+  "carrier_P2": 1241.7258132010154,
+  "mirror_P2": 1113.4922698296552,
+  "carrier_P1": 6.238324625039507,
+  "mirror_P1": 4.852030263919617,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.29,
+  "mirror_pct": 0.36,
+  "cohort_k": 100,
+  "cohort_union_n": 122,
+  "cohort_median_carrier": 0.00022586693781832335,
+  "cohort_median_mirror": 0.00022275224328085314,
+  "cohort_zero_frac_carrier": 0.0,
+  "cohort_zero_frac_mirror": 0.0,
+  "cohort_min_carrier": 1.7226570598452664e-05,
+  "cohort_max_carrier": 0.0009287935489392673,
+  "carrier_rank_of_cohort": 30,
+  "mirror_rank_of_cohort": 37,
+  "deficit_vs_median": 1.4378060652010973,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.3485815975868416,
+  "readout": "SECONDARY v783 descending minus actors (1301), DESCRIPTIVE"
+ },
+ "Q3_robust_beta1": {
+  "carrier_R": 3.1863435275063676e-06,
+  "mirror_R": 1.2904791773847535e-05,
+  "carrier_P2": 11.886720335401122,
+  "mirror_P2": 41.476101573335754,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.6931471805599453,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.07,
+  "mirror_pct": 0.17,
+  "cohort_k": 100,
+  "cohort_union_n": 124,
+  "cohort_median_carrier": 3.4476976264641136e-05,
+  "cohort_median_mirror": 2.928150083591627e-05,
+  "cohort_zero_frac_carrier": 0.01,
+  "cohort_zero_frac_mirror": 0.01,
+  "cohort_min_carrier": 0.0,
+  "cohort_max_carrier": 0.00016993556402577245,
+  "carrier_rank_of_cohort": 8,
+  "mirror_rank_of_cohort": 18,
+  "deficit_vs_median": 10.820232020501198,
+  "mass_match_logspread_carrier": 0.3165223863897433,
+  "mass_match_logspread_mirror": 0.3362464714579523,
+  "readout": "PRIMARY readout, BETA_L=1.0 (pure |W|), ROBUSTNESS",
+  "lam1": 379.6520150406987,
+  "rel_spread_last6": 1.497250550736953e-16,
+  "cohort_identity_jaccard_carrier": 0.7094017094017094,
+  "d_carrier_pct_vs_primary": 0.05
+ },
+ "predictions": {
+  "Q212_1": {
+   "registered": "V_AVOIDS",
+   "measured": "V_AVOIDS",
+   "correct": true
+  },
+  "Q212_2": {
+   "registered": "mirror_pct <= carrier_pct AND mirror low",
+   "measured": {
+    "mirror_pct": 0.25,
+    "carrier_pct": 0.02
+   },
+   "correct": false
+  },
+  "Q212_3": {
+   "registered": "secondary pct > primary pct",
+   "measured": {
+    "secondary": 0.29,
+    "primary": 0.02
+   },
+   "correct": true
+  },
+  "Q212_4": {
+   "registered": "|d carrier_pct| <= 0.10 under BETA_L=1",
+   "measured": 0.05,
+   "correct": true
+  },
+  "Q212_5": {
+   "registered": "cohort log-mass spread <= 0.15 both actors",
+   "measured": {
+    "carrier": 0.31631784799628937,
+    "mirror": 0.3485815975868416
+   },
+   "correct": false
+  }
+ },
+ "n_predictions_correct": 3,
+ "bars": {
+  "pct_extreme": 0.1,
+  "cohort_k": 100,
+  "beta_L": 2.0,
+  "degenerate_zero_frac": 0.5
+ },
+ "comparators_L207": {
+  "G0_closure_carrier_pct": 0.07017543859649122,
+  "G1_cutwA_carrier_pct": 0.12121212121212122,
+  "F4_f4wA_carrier_pct": 0.058823529411764705,
+  "mirror_leg_closure": {
+   "mirror_pct": 0.06,
+   "carrier_pct": 0.1
+  },
+  "note": "BANC leg-motor readout. NOT the same object as this card's readout; listed so the reader can see the direction, never as a test."
+ },
+ "limitations": [
+  "EXPLORATORY (L78 non-transport law): the readout, the volume AND the body segment all changed at once, so neither direction can confirm or refute L207's leg-motor finding.",
+  "ANATOMICAL leg only: no row mask, no settle, no seed, no rollouts - wiring geometry, NOT an operating point (L164).",
+  "Operator powers are walks WITH revisits, not paths.",
+  "v783 carries NO synapse floor, so the closest BANC comparator is the closure/cutwA substrate, not f4wA.",
+  "The readout is 110 cells against BANC's 303-cell 20-pool readout, and head motor neurons are not leg motor neurons: a smaller, functionally different terminal set.",
+  "A descending neuron's real output LEAVES this volume; its in-brain out-edges are not its functional output. This is the deepest limit of the whole v783 leg and it is why the card is exploratory.",
+  "MASS-MATCHED COHORT percentile (k=100 nearest v783 descending cells in log out-mass), NOT the l169c degree-neutral rewire null - different nulls, never compared as if they were the same (L207).",
+  "v783 'unknown' top_nt is scored at the build_graph_banc default magnitude 0.3; BANC's NT release has no unknown class.",
+  "No BANC pin chain is inherited (the BANC head is not sliced because it loads banc_graph.pt); provenance rests on CERT-783 instead."
+ ],
+ "pins": "ALL GREEN",
+ "runtime_s": 283.3393144607544
+}

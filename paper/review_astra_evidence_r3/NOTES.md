@@ -7,7 +7,7 @@ Second pass: anchors.py verified every claimed L135 and cross-worker comparison 
 Reproduce from lab root (NumPy, CPU; no install or simulation required):
 
     export CUDA_VISIBLE_DEVICES='' OPENBLAS_NUM_THREADS=1
-    P=~/critters/peabrain/.venv/bin/python
+    P=/home/t3rpz/critters/peabrain/.venv/bin/python
     E=paper/review_astra_evidence_r3
     "$P" -B "$E/audit.py" > "$E/audit.out"
     "$P" -B "$E/anchors.py" > "$E/anchors.out"

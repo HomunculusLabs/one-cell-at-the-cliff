@@ -1,0 +1,32 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+========================================================================
+[L215] resurrection static | NDRAW 2000 seed 21521
+[pins] substrates GREEN | cutwA 644,177 f4wA 469,618 elig 469,256 removed 174,921
+[CERT-G] GREEN g_cutwA 0.14365819573402408 g_f4wA 0.15051452517509462 ratio 1.04773
+[pins] pool sizes invariant on both substrates GREEN
+[CERT-205] GREEN 36 float equalities (c4_floor_retention)
+[CERT-TBL] GREEN 28 float equalities (table M_*/A_cell)
+[premise] L208 branch + POST-HOC label GREEN
+[CERT total] 66 float equalities before any L215 statistic
+========================================================================
+[L228] depth-2 resurrection static | NDRAW 2000 seed 22821
+[CERT-215] GREEN 76 float equalities | Tr_L d1 ratio 0.797835 (= a 20.2% fall) | dd1_gain -0.09463
+[0b] g^2 cutwA 0.02063768 f4wA 0.02265462 | ratio 1.097731 (depth-1 ratio 1.047727)
+[CERT-D2] GREEN 86 checks (80 definitional fsum probes with data-derived bars, 6 exact array equalities)
+[0f] net_in == 0 nodes: cutwA 59,824 f4wA 60,662 | zero-src edges cutwA 0.01141 | class migrations 2,145
+[d2 Ti_L] n 56 | cut d2 -1.708e+05 -> f4 -1.402e+05 | gain^2 -62.94455 -> -56.71770 | dd2 +6.22685 bar 1.78977 | RISE True DEGEN False | share_neg +0.5895
+[d2 Ti_R] n 57 | cut d2 -2.082e+05 -> f4 -1.735e+05 | gain^2 -75.38829 -> -68.94220 | dd2 +6.44609 bar 2.03914 | RISE True DEGEN False | share_neg +0.5579
+[d2 Tr_L] n 55 | cut d2 -1.768e+05 -> f4 -1.486e+05 | gain^2 -66.32736 -> -61.21452 | dd2 +5.11284 bar 2.36202 | RISE True DEGEN False | share_neg +0.3061
+[d2 Tr_R] n 55 | cut d2 -1.67e+05 -> f4 -1.447e+05 | gain^2 -62.67049 -> -59.62044 | dd2 +3.05004 bar 2.21253 | RISE True DEGEN False | share_neg -0.0921
+[0a] hybrid diagnostic: Tr_L edge-set-only share -0.02729923917516988
+[branch] D2_RISES_EVERYWHERE
+[escape] fired False | MECH_CLAIM False
+[null] L228 permutation draws built (per-side counts held EXACT)
+[Q4 Ti] A_dd2 -0.01730 pct_up 0.5820 two 0.8360 [null -0.1872,+0.2024]
+[Q4 Tr] A_dd2 +0.25270 pct_up 0.0850 two 0.1700 [null -0.3125,+0.3025]
+[0e] stored dynamic folds Ti_L 2.29x Ti_R 4.58x Tr_L 110.74x Tr_R 1.76x
+[P6] Spearman(fold, rel_dd2) -0.2000 exact perm p_up 0.6250 (floor 0.0417)
+[fingerprints] prior artifacts unchanged GREEN
+========================================================================
+L228 DONE 4s | BRANCH D2_RISES_EVERYWHERE | preds 3/6 | Tr_L dd1 -0.09463 dd2 +5.11284 | escape False

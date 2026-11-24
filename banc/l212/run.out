@@ -1,0 +1,25 @@
+[    0.4s] [CERT-783] GREEN ids array-equal (N 139255), live nnz 15091983, meta pins asserted
+[    0.7s] [ann] 139241 annotated rows joined onto the v783 id set
+[    0.8s] [nt] mix {'acetylcholine': 86191, 'glutamate': 24873, 'gaba': 19171, 'dopamine': 5909, 'serotonin': 2281, 'unknown': 614, 'octopamine': 216}
+[    0.8s] [CERT-L207] GREEN carrier {'gi': 132493, 'root_id': '720575940604103084', 'cell_type': 'DNp33', 'side': 'left', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'} | mirror {'gi': 132179, 'root_id': '720575940633165452', 'cell_type': 'DNp33', 'side': 'right', 'super_class': 'descending', 'nt': 'acetylcholine', 'nerve': 'CV'}
+[    0.8s] [readout] PRIMARY {'mot_PhN': 40, 'mot_MxLbN': 26, 'mot_CV': 20, 'mot_AN': 14, 'mot_ON': 10}
+[    4.6s] [edges] 16847997 of 16847997 rows inside the id set
+[    9.6s] [CERT-783] GREEN unique pairs 15091983 == live graph nnz
+[   10.9s] [sub] n 139255 edges 15091983 om>0 138005
+[   12.3s] [CERT-MV] GREEN 4 EXACT array equalities (bincount == np.add.at)
+[   17.9s] [CERT-GATE] GREEN 22 float equalities: the fast kernels ARE the verbatim l207_tail functions
+[   84.7s] [lam1] 552.634080 (rel spread last6 4.114e-16)
+[   85.9s] [CERT-GATE] GREEN Rfast == verbatim Rstat on both actors (10 checks)
+[  153.9s] [NO-OP] GREEN R rescale-invariance rel diff 3.97e-16
+[  154.5s] [cohort] carrier 100 mirror 100 union 122 - measuring R on each
+[  154.7s]   cohort 0/122
+[  160.3s]   cohort 25/122
+[  166.4s]   cohort 50/122
+[  172.3s]   cohort 75/122
+[  178.5s]   cohort 100/122
+[  184.4s] [PRIMARY] carrier R 1.60013e-06 pct 0.020 | mirror R 1.00276e-05 pct 0.250 | cohort med 2.05816e-05 | zero frac 0.010
+[  184.4s] [BRANCH] V_AVOIDS (carrier_pct 0.02)
+[  215.3s] [SECONDARY] carrier pct 0.290 mirror pct 0.360
+[  283.3s] [BETA1] carrier pct 0.070 (d +0.050) lam1 379.652015
+[  283.3s] [predictions] 3 of 5
+[  283.3s] [done] 283.3s -> /home/t3rpz/critters/peabrain-lab/banc/l212/static.json  branch=V_AVOIDS

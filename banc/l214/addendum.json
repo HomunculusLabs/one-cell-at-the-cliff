@@ -1,0 +1,19 @@
+{
+ "label": "POST-HOC, UNREGISTERED, ARITHMETIC ONLY on values already certified by l214_static.py. No branch depends on it.",
+ "mirror_test": {
+  "spearman_rhoA_rhoM": -0.6766917293233082,
+  "pearson_rhoA_rhoM": -0.6899979827188092,
+  "spearman_meanA_meandM": -0.8556390977443609,
+  "pearson_meanA_meandM": -0.8011096836032227,
+  "n_opposite_sign_rho": 15,
+  "n_opposite_sign_currency": 13,
+  "n_cells": 20
+ },
+ "sign_binomial": {
+  "floor_agree": 17,
+  "floor_p_two_tailed": 0.0025768280029296875,
+  "ceiling_agree": 4,
+  "ceiling_p_two_tailed": 0.01181793212890625
+ },
+ "reading": "The registered Q3 statistic was a MAGNITUDE (mean |rho| difference). If the two currencies are near-mirrors, |rho| is nearly invariant between them BY CONSTRUCTION and the magnitude head-to-head cannot separate them no matter how different their directional content is. The separating quantity is the SIGN agreement, which the PREREG reported but did not branch on."
+}

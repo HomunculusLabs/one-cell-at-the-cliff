@@ -1,0 +1,10 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+sensory channels: {'odor': 2281, 'taste': 410, 'looming': 762, 'touch': 2667, 'visual_shiny': 8346, 'sound': 2667}
+probes: {'DAN': 331, 'KC': 5177, 'LC': 762, 'CX': 2875}
+{'seed': 0, 'eta': 0, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 0, 'cap_hits': 0, 'max_rel': 0.0, 'mean_rel': 0.0, 'sign_flips': 0} 153.74039551301394
+{'seed': 0, 'eta': 0.01, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 113886, 'cap_hits': 108455, 'max_rel': 0.20000006258487701, 'mean_rel': 0.19308634102344513, 'sign_flips': 0} 310.37394444202073
+{'seed': 1, 'eta': 0, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 0, 'cap_hits': 0, 'max_rel': 0.0, 'mean_rel': 0.0, 'sign_flips': 0} 450.6421520180302
+{'seed': 1, 'eta': 0.01, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 113818, 'cap_hits': 108494, 'max_rel': 0.20000006258487701, 'mean_rel': 0.19305968284606934, 'sign_flips': 0} 930.9913456580834
+{'seed': 2, 'eta': 0, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 0, 'cap_hits': 0, 'max_rel': 0.0, 'mean_rel': 0.0, 'sign_flips': 0} 1565.4043010530295
+{'seed': 2, 'eta': 0.01, 'graph_edges': 15091983, 'candidate': 115728, 'changed': 113815, 'cap_hits': 108483, 'max_rel': 0.20000006258487701, 'mean_rel': 0.19309018552303314, 'sign_flips': 0} 2133.086295062094

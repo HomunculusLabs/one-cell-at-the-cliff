@@ -1,7 +1,7 @@
 # Round-2 referee running log (fable 5.2)
 
 Start: 2026-11-21 10:11 EST. Interpreter for all probes:
-~/critters/peabrain/.venv/bin/python (torch+numpy, no scipy), CUDA_VISIBLE_DEVICES="".
+/home/t3rpz/critters/peabrain/.venv/bin/python (torch+numpy, no scipy), CUDA_VISIBLE_DEVICES="".
 All writes confined to paper/review_fable_r2.md and paper/review_fable_evidence_r2/.
 
 ## 10:11 pins (00_sha256_at_start.txt)

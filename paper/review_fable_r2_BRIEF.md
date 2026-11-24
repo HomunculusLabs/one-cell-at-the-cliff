@@ -11,7 +11,7 @@ Round 1 (your predecessor's report) is at paper/review_fable.md — read it, but
 judge the CURRENT draft on its own merits.
 
 ## What you are reviewing
-Primary: `~/critters/peabrain-lab/paper/DRAFT.md` — preprint v3.8+
+Primary: `/home/t3rpz/critters/peabrain-lab/paper/DRAFT.md` — preprint v3.8+
 (sha256 prefix a1848d890195bb25a34b, 1,654 lines, ~108 KB; has since gained:
 Discussion, bullets→prose, canonical pooled statistics, Methods with certified
 equation, 37-entry reference list, abstract ≤1,920 chars).
@@ -37,9 +37,9 @@ Supporting material (all readable):
 - Round 1: `paper/review_fable.md` (12 majors, major-revision verdict on the
   2026-11-19 draft, 514 lines) + `paper/review_fable_evidence/`
 - Round-1 adjudication by the lab:
-  `~/critters/peabrain-lab/banc/l167/` (l167_adjudicate.py) and
-  `~/critters/peabrain/LAB-INTENT.md` §L167
-- Raw results: `~/critters/peabrain-lab/banc/l135…l174*/`
+  `/home/t3rpz/critters/peabrain-lab/banc/l167/` (l167_adjudicate.py) and
+  `/home/t3rpz/critters/peabrain/LAB-INTENT.md` §L167
+- Raw results: `/home/t3rpz/critters/peabrain-lab/banc/l135…l174*/`
   (results_*.json, PREREG.md files); lab books LAB-INTENT.md / LAB-DIFFDUCK.md
 
 ## Tasks, in order
@@ -75,8 +75,8 @@ Supporting material (all readable):
   `banc/l*/` artifacts, LANE*.md, LAB-*.md, and the live duck services
   (systemd units critter-*; do not restart anything). You edit NOTHING
   outside your own two output locations:
-  - report → `~/critters/peabrain-lab/paper/review_fable_r2.md`
-  - evidence → `~/critters/peabrain-lab/paper/review_fable_evidence_r2/`
+  - report → `/home/t3rpz/critters/peabrain-lab/paper/review_fable_r2.md`
+  - evidence → `/home/t3rpz/critters/peabrain-lab/paper/review_fable_evidence_r2/`
     (NOTES.md = your running log; save probe scripts + outputs there
     CONTINUOUSLY, not only at the end)
 - Do NOT use vision_analyze — it is broken on this provider route (profile

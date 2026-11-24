@@ -1,0 +1,85 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[GAIN-INV] GREEN lam1 rel 1.18e-16 | depth-2 rel 1.31e-16
+[CERT-GEN] GREEN 44 checks: generic builder/reach/power-iteration reproduce the certified f4wA specialisation at FLOAT EQUALITY
+========================================================================
+[L217] crossing phase + 3-operator sign table | NDRAW 2000 seed 20526 DMAX 8
+[pins] L205 substrate edge counts GREEN
+[pins] pool sizes invariant across all 7 L205 substrates GREEN
+[null] permutation draws rebuilt (per-side counts held EXACT)
+[CERT-205] GREEN 250 stored L205 values reproduced by FLOAT EQUALITY (2 joints x 7 substrates x 17 fields + 2 paired deltas) -> RNG stream, side convention, pool membership and the depth-1 anchor all certified
+[spectral] cutwA beta: lam1 227.779875 (rel spread 1.25e-16)
+[spectral] cutwA crofts: lam1 0.379465 (rel spread 4.19e-10)
+[spectral] f4wA beta: lam1 200.510803 (rel spread 1.42e-16)
+[spectral] f4wA crofts: lam1 0.388120 (rel spread 1.06e-08)
+[spectral] f4wA beta lam1 == the head's certified LAM1_G1 GREEN
+[CERT-GAP] GREEN 10 stored L210 values at FLOAT EQUALITY (lam2 26.946910057, gap 0.8928793607, 6 growth factors) -> the deflation machinery, V1, the left vector and seed 21004 all certified
+[CERT-209] GREEN 412 stored L209 values reproduced by FLOAT EQUALITY (8 cells x 3 depths x 17 fields + 4 lam1) BEFORE any depth > 3 was read
+[NO-OP] GREEN lam1^d normalisation is a measured no-op for A_cell at all 8 depths (max rel diff 7.19e-14 over 64 cells)
+[PI] cutwA  beta  : lam1 R 227.779875 L 227.779875 rel 0.00e+00 (bar 1.00e-09, spreads R 1.25e-16 L 1.25e-16)
+[A_inf] cutwA  beta   Ti: A_inf +0.256979 pct_abs 1.000 [null -0.0865,+0.0908]
+[A_inf] cutwA  beta   Tr: A_inf +0.406517 pct_abs 1.000 [null -0.1098,+0.1070]
+[PI] cutwA  crofts: lam1 R 0.379465131 L 0.379465131 rel 2.10e-09 (bar 4.19e-07, spreads R 4.19e-10 L 9.04e-11)
+[A_inf] cutwA  crofts Ti: A_inf -0.008413 pct_abs 0.178 [null -0.0582,+0.0625]
+[A_inf] cutwA  crofts Tr: A_inf +0.039218 pct_abs 0.873 [null -0.0426,+0.0416]
+[PI] f4wA   beta  : lam1 R 200.510803 L 200.510803 rel 0.00e+00 (bar 1.00e-09, spreads R 1.42e-16 L 1.42e-16)
+[A_inf] f4wA   beta   Ti: A_inf +0.286625 pct_abs 1.000 [null -0.0924,+0.0925]
+[A_inf] f4wA   beta   Tr: A_inf +0.444216 pct_abs 1.000 [null -0.1190,+0.1163]
+[PI] f4wA   crofts: lam1 R 0.388120114 L 0.388120113 rel 2.35e-09 (bar 1.32e-05, spreads R 1.06e-08 L 1.32e-08)
+[A_inf] f4wA   crofts Ti: A_inf +0.134285 pct_abs 0.994 [null -0.0805,+0.0861]
+[A_inf] f4wA   crofts Tr: A_inf +0.131460 pct_abs 1.000 [null -0.0513,+0.0510]
+[gap] cutwA  beta  : lam1 227.779875 |lam2| 204.586357 gap 0.898176 spread 8.31e-10 converged True
+[gap] cutwA  crofts: lam1 0.379465 |lam2| 0.363309 gap 0.957423 spread 3.51e-15 converged True
+[gap] f4wA   beta  : lam1 200.510803 |lam2| 179.031957 gap 0.892879 spread 3.09e-10 converged True
+[gap] f4wA   crofts: lam1 0.388120 |lam2| 0.378593 gap 0.975453 spread 1.29e-11 converged True
+[gap] f4wA beta gap 0.892879360735 vs L210's 0.892879360735 (rel 1.24e-16) — scale invariance of a spectral ratio
+[CERT-216] GREEN 212 stored L216 values reproduced by FLOAT EQUALITY (8 cells x 8 depths of A_cell + 8 x 17 A_inf fields + 4 operator-substrate pairs x 3 spectral fields) BEFORE any L217 number
+[spectral] cutwA rw: lam1 0.993265270 (rel spread 5.62e-07)
+[spectral] cutwA rw_in: lam1 0.999368295 (rel spread 5.94e-05 — NOT gated, excluded operator)
+[spectral] f4wA rw: lam1 0.999902344 (rel spread 2.00e-04)
+[spectral] f4wA rw_in: lam1 0.999990130 (rel spread 1.35e-06 — NOT gated, excluded operator)
+[rw_in] cutwA: r_1 == 1 EXACT on 20887 in-positive nodes (max dev 3.77e-15); d>=2 leakage via 898 zero-in-degree nodes, max dev d8 1.000e+00
+[rw_in] f4wA: r_1 == 1 EXACT on 20043 in-positive nodes (max dev 4.88e-15); d>=2 leakage via 1746 zero-in-degree nodes, max dev d8 1.000e+00
+[NO-OP] GREEN lam1^d is a measured no-op for the rw operator too (max rel 4.96e-14)
+[rw-PI] cutwA  iters    400: lam1 R 0.993265270 L 0.993254609 | residual R 4.338e-06 L 5.884e-06 (bar 1e-03)
+[A_inf] cutwA  rw     Ti: A_inf -0.163695 pct_abs 0.889 resolved True (budget 400)
+[A_inf] cutwA  rw     Tr: A_inf +0.054081 pct_abs 0.478 resolved True (budget 400)
+[rw-PI] f4wA   iters    400: lam1 R 0.999902344 L 0.999977689 | residual R 6.782e-03 L 3.011e-05 (bar 1e-03)
+[rw-PI] f4wA   iters   3200: lam1 R 0.999900003 L 1.000000000 | residual R 6.781e-03 L 3.548e-17 (bar 1e-03)
+[rw-PI] f4wA   iters  25600: lam1 R 0.999900003 L 1.000000000 | residual R 6.781e-03 L 3.548e-17 (bar 1e-03)
+[rw-PI] f4wA   iters 102400: lam1 R 0.999900003 L 1.000000000 | residual R 6.781e-03 L 3.548e-17 (bar 1e-03)
+[A_inf] f4wA   rw     Ti: A_inf +1.000000 pct_abs 1.000 resolved False (budget 102400)
+[A_inf] f4wA   rw     Tr: A_inf -1.000000 pct_abs 0.262 resolved False (budget 102400)
+[resid] cutwA  beta  : Perron residual right 1.343e-16 left 1.661e-16 (bar 1e-03) -> RESOLVED
+[resid] cutwA  crofts: Perron residual right 3.676e-09 left 3.121e-09 (bar 1e-03) -> RESOLVED
+[resid] cutwA  rw    : Perron residual right 4.338e-06 left 1.215e-05 (bar 1e-03) -> RESOLVED
+[resid] f4wA   beta  : Perron residual right 1.436e-16 left 1.570e-16 (bar 1e-03) -> RESOLVED
+[resid] f4wA   crofts: Perron residual right 2.806e-05 left 3.380e-05 (bar 1e-03) -> RESOLVED
+[resid] f4wA   rw    : Perron residual right 6.781e-03 left 1.000e-04 (bar 1e-03) -> UNRESOLVED
+[d_cross] cutwA  beta   Ti: d_cross 4.1158 (changes 1) | null crosses 0.172 of draws, mean 3.5336038661495928
+[d_cross] cutwA  beta   Tr: d_cross 1.3401 (changes 1) | null crosses 0.266 of draws, mean 3.474445664087046
+[d_cross] cutwA  crofts Ti: d_cross CENSORED (changes 0) | null crosses 0.134 of draws, mean 3.238205701193366
+[d_cross] cutwA  crofts Tr: d_cross 3.1915 (changes 1) | null crosses 0.222 of draws, mean 3.4125352330860315
+[d_cross] cutwA  rw     Ti: d_cross CENSORED (changes 0) | null crosses 0.208 of draws, mean 2.752616343702101
+[d_cross] cutwA  rw     Tr: d_cross 4.5623 (changes 1) | null crosses 0.186 of draws, mean 3.1927842523948065
+[d_cross] f4wA   beta   Ti: d_cross 4.0761 (changes 1) | null crosses 0.194 of draws, mean 3.62297260779813
+[d_cross] f4wA   beta   Tr: d_cross 1.2522 (changes 1) | null crosses 0.271 of draws, mean 3.5839549774167265
+[d_cross] f4wA   crofts Ti: d_cross CENSORED (changes 0) | null crosses 0.156 of draws, mean 2.9141196941822924
+[d_cross] f4wA   crofts Tr: d_cross 2.7542 (changes 1) | null crosses 0.231 of draws, mean 3.385836509938526
+[d_cross] f4wA   rw     Ti: d_cross CENSORED (changes 0) | null crosses 0.260 of draws, mean 3.102487132309368
+[d_cross] f4wA   rw     Tr: d_cross CENSORED (changes 0) | null crosses 0.236 of draws, mean 2.978131499617928
+[Q1] PHASE_DEGENERATE | d_cross Ti 4.076075685116105 Tr 1.252243179691547 D None pct_abs None (null both-cross 0.051)
+[sign] cutwA  Ti: SPLIT             n_pass 1 | beta +0.25698(1.000) crofts -0.00841(0.178) rw -0.16369(0.889)
+[sign] cutwA  Tr: SPLIT             n_pass 1 | beta +0.40652(1.000) crofts +0.03922(0.873) rw +0.05408(0.478)
+[sign] f4wA   Ti: THIRD_LEG_UNRESOLVED n_pass 3 | beta +0.28663(1.000) crofts +0.13428(0.994) rw +1.00000(1.000)
+[sign] f4wA   Tr: THIRD_LEG_UNRESOLVED n_pass 2 | beta +0.44422(1.000) crofts +0.13146(1.000) rw -1.00000(0.262)
+[CERT-SEED] GREEN 16 depth vectors: arrivals_from(x0=1) is ARRAY-IDENTICAL to the certified arrivals() on both substrates
+[ADDITIVITY] GREEN sum_g A^d 1_g == A^d 1 at every decomposed depth and every partition (max rel 2.58e-15)
+[Q4] CORD_CARRIES | Ti cord +0.10263 vs all +0.10418 (ratio 0.9851684140622532) | Tr cord +0.24171 vs all +0.24487 (ratio 0.9870771854432063)
+[read-only] l209/l210/l216 static.json fingerprints unchanged
+========================================================================
+L217 DONE 820s | Q1 PHASE_DEGENERATE | Q4 CORD_CARRIES | predictions 3/5

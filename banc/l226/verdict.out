@@ -1,0 +1,36 @@
+premise: head sha matches l208/static.json; l208 branch 'H_UNREGISTERED_SHAPE'; addendum is labelled POST-HOC
+CERT-FLO: 40 stored flo values reproduced at FLOAT EQUALITY
+CERT-RHO: 100 post-hoc values reproduced at FLOAT EQUALITY
+GATES PASSED — reading L214 numbers now
+
+premise GREEN: CERT-SUBSET 230 checks at max 0.0e+00; 5 arms x 16 fresh seeds present
+CERT-BH: 8 stored BH outputs reproduced EXACTLY (B36, B37)
+CERT-SGN: per-batch sign agreement 8/10 + 9/10 == stored 17/20
+CERT-Q1: stored p_C 0.0465 + 3 null moments reproduced at FLOAT EQUALITY; the replicating cell is Tr|f4ng|up
+ALL GATES PASSED — reading B38 for the first time now
+
+Q1 PRIMARY (frozen rule, out of sample): Tr|f4ng rho +0.8000 p_up 0.00460 (p_dn 0.99555) vs ALPHA 0.05 -> SIGNIFICANT; p_up rank 1/10
+   sign agreement B38 8/10 vs registered bar 7 (exact binomial P(X>=7) = 0.1719, DISCLOSED: the bar is a replication threshold, not an alpha-.05 test)
+   prior batches (OBSERVED, description): B36 p_up 0.00070 SA 8/10 | B37 p_up 0.00075 SA 9/10
+Q1 BRANCH -> O_TRANSPORTS
+
+Q2 BH B38: 2/20 survive at q=0.1 -> ['Tr|f4ng|up', 'Ti|f4wA|dn'] (smallest p 0.0046 = Tr|f4ng|up)
+Q3 three-batch joint replication: C3 1 ['Tr|f4ng|up'] | null mean 0.00205 max 1 | p_C3 0.00205
+
+Q4 B38 per-cell table (rho | p_up | p_dn | mean_A | mean_dS | sign | |A| rank):
+  Ti|f4wA     -0.6029 | 0.99185 | 0.00830 | -0.02435 | +0.60169 | DISAGREE | 2
+  Ti|f4ng     +0.2382 | 0.17690 | 0.82570 | +0.23548 | +0.22913 | agree | 7
+  Ti|f4tw     +0.0176 | 0.46235 | 0.54515 | -0.01177 | +0.57088 | DISAGREE | 1
+  Ti|cutwA    +0.1618 | 0.27680 | 0.72620 | -0.11144 | -0.20625 | agree | 4
+  Ti|cutng25  -0.1853 | 0.75950 | 0.24405 | -0.07552 | -0.65519 | agree | 3
+  Tr|f4wA     -0.0353 | 0.56100 | 0.44320 | -0.16383 | -0.60444 | agree | 5
+  Tr|f4ng     +0.8000 | 0.00460 | 0.99555 | -0.35270 | -0.53919 | agree | 8
+  Tr|f4tw     +0.5941 | 0.02250 | 0.97795 | -0.22519 | -0.62944 | agree | 6
+  Tr|cutwA    +0.2471 | 0.14670 | 0.85605 | -0.70098 | -0.08100 | agree | 10
+  Tr|cutng25  +0.1294 | 0.47840 | 0.52585 | -0.70000 | -0.00669 | agree | 9
+
+predictions: {'P1_O_TRANSPORTS': True, 'P2_actor_p_up_lt_alpha': True, 'P3_SA38_ge_7': True, 'P4_actor_smallest_p_up': True, 'P5_actor_survives_BH': True, 'P6_cert_subset_exactly_zero': True} -> 6/6
+READING: the floor currency AND the single cell replicate out of sample; L214's p_C .0465 stops being a description of an observed pattern and becomes a prediction that held
+
+all npz + prior-json fingerprints unchanged (incl. l226 raw)
+wrote l226/static.json

@@ -1,0 +1,6759 @@
+{
+ "prereg": "98cc1d8ad5f182494e438083b8e9a2279e81b994cb8804192d05efb887b9aba2",
+ "gates": {
+  "G1_sources": {
+   "ok": true,
+   "files": [
+    "brain.py",
+    "brain_graph.pt",
+    "bridge.py",
+    "engine.py",
+    "mood.py",
+    "scenarios.py",
+    "senses.py"
+   ]
+  },
+  "G2_ast": {
+   "ok": true,
+   "substituted": {
+    "needs": 6,
+    "reply_tail": 2
+   },
+   "inventory": 40
+  },
+  "G3_replay": {
+   "ok": true,
+   "turns": 3076,
+   "mismatches": 0
+  },
+  "G4_v2_headline": {
+   "ok": true,
+   "action_flips_A": 0,
+   "tag_flips": {
+    "0": 6,
+    "1": 6
+   }
+  },
+  "world_settle_anchor": {
+   "stored_vs_reread": [
+    [
+     2572,
+     2572
+    ],
+    [
+     2556,
+     2556
+    ]
+   ],
+   "note": "stored ambient==settle ticks vs regime-A settle read (reported, not halting)"
+  }
+ },
+ "asis": {
+  "hunger": 0.75,
+  "sleep_rider": 0.75,
+  "trust": 0.3,
+  "sleep": 0.7,
+  "fear": 0.4,
+  "food_joy": 0.6
+ },
+ "P70": {
+  "hunger": 0.3899,
+  "trust": 0.4599999999999999,
+  "sleep": 0.0829675320551776,
+  "fear": 0.0,
+  "food_joy": 0.13940135911107063
+ },
+ "regimes_static": {
+  "A": {
+   "hunger": 0.75,
+   "sleep_rider": 0.75,
+   "trust": 0.3,
+   "sleep": 0.7,
+   "fear": 0.4,
+   "food_joy": 0.6
+  },
+  "B": {
+   "hunger": 0.3899,
+   "trust": 0.4599999999999999,
+   "sleep_rider": 0.0829675320551776,
+   "sleep": 0.0829675320551776,
+   "fear": 0.0,
+   "food_joy": 0.13940135911107063
+  },
+  "Bn": {
+   "hunger": 0.75,
+   "sleep_rider": 0.75,
+   "trust": 0.3,
+   "sleep": 0.7,
+   "fear": 0.0,
+   "food_joy": 0.13940135911107063
+  }
+ },
+ "drift_R": {
+  "0_frozen": {
+   "FEAR": 0.0,
+   "JOY_SAL": 0.0
+  },
+  "0_plastic": {
+   "FEAR": 0.004796372726559639,
+   "JOY_SAL": 0.06425321102142334
+  },
+  "1_frozen": {
+   "FEAR": 0.0,
+   "JOY_SAL": 0.0
+  },
+  "1_plastic": {
+   "FEAR": 0.004775711335241795,
+   "JOY_SAL": 0.06426911056041718
+  }
+ },
+ "inventory": [
+  {
+   "func": "reply_tail",
+   "klass": "INTENT/reply",
+   "left": "session.mood.hunger",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 573,
+   "const": "0.75"
+  },
+  {
+   "func": "reply_tail",
+   "klass": "INTENT/reply",
+   "left": "session.mood.trust",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "trust",
+   "line": 573,
+   "const": "0.3"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 510,
+   "const": "0.75"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['sleep']",
+   "op": "LtE",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 510,
+   "const": "0.75"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['sleep']",
+   "op": "Gt",
+   "thr": 0.7,
+   "score": "sleep",
+   "line": 517,
+   "const": "0.7"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "session.mood.trust",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "trust",
+   "line": 516,
+   "const": "0.3"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.4,
+   "score": "fear",
+   "line": 519,
+   "const": "0.4"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "getattr(session, 'parade_ticks', 0)",
+   "op": "Gt",
+   "thr": 0.0,
+   "score": null,
+   "line": 521,
+   "const": "0"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['food_joy']",
+   "op": "Gt",
+   "thr": 0.6,
+   "score": "food_joy",
+   "line": 523,
+   "const": "0.6"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "getattr(session, 'curiosity', 0.0)",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "curiosity",
+   "line": 525,
+   "const": "CURIOSITY_GATE"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "getattr(s, 'parade_ticks', 0)",
+   "op": "Gt",
+   "thr": 0.0,
+   "score": null,
+   "line": 460,
+   "const": "0"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.4,
+   "score": "fear",
+   "line": 414,
+   "const": "0.4"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['sleep']",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 418,
+   "const": "0.75"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.85,
+   "score": "hunger",
+   "line": 419,
+   "const": "0.85"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.7,
+   "score": "hunger",
+   "line": 435,
+   "const": "0.7"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "s.curiosity",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "curiosity",
+   "line": 441,
+   "const": "CURIOSITY_GATE"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "rng.random()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 441,
+   "const": "INVESTIGATE_P"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.2,
+   "score": "fear",
+   "line": 445,
+   "const": "0.2"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['food_joy']",
+   "op": "Lt",
+   "thr": 0.15,
+   "score": "food_joy",
+   "line": 451,
+   "const": "0.15"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "rng.random()",
+   "op": "Lt",
+   "thr": 0.4,
+   "score": null,
+   "line": 451,
+   "const": "0.4"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.25,
+   "score": "fear",
+   "line": 177,
+   "const": "0.25"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.hunger",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 183,
+   "const": "0.75"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.food_joy",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "food_joy",
+   "line": 185,
+   "const": "0.35"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.sleep",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 187,
+   "const": "0.75"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Gt",
+   "thr": 0.55,
+   "score": "trust",
+   "line": 189,
+   "const": "0.55"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.salience",
+   "op": "Gt",
+   "thr": 0.15,
+   "score": "salience",
+   "line": 191,
+   "const": "0.15"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Lt",
+   "thr": 0.15,
+   "score": "trust",
+   "line": 179,
+   "const": "0.15"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.salience",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "salience",
+   "line": 179,
+   "const": "0.3"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Lt",
+   "thr": 0.2,
+   "score": "trust",
+   "line": 181,
+   "const": "0.2"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.08,
+   "score": "fear",
+   "line": 181,
+   "const": "0.08"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.5,
+   "score": "fear",
+   "line": 178,
+   "const": "0.5"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.hunger",
+   "op": "Gt",
+   "thr": 0.9,
+   "score": "hunger",
+   "line": 184,
+   "const": "0.9"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.food_joy",
+   "op": "Gt",
+   "thr": 0.6,
+   "score": "food_joy",
+   "line": 186,
+   "const": "0.6"
+  },
+  {
+   "func": "consolidate_night",
+   "klass": "GATE/night",
+   "left": "darkness_now()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 289,
+   "const": "0.6"
+  },
+  {
+   "func": "consolidate_night",
+   "klass": "GATE/night",
+   "left": "s.mood.sleep",
+   "op": "LtE",
+   "thr": 0.6,
+   "score": "sleep",
+   "line": 289,
+   "const": "0.6"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "darkness_now()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 333,
+   "const": "0.6"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "s.mood.sleep",
+   "op": "LtE",
+   "thr": 0.8,
+   "score": "sleep",
+   "line": 333,
+   "const": "0.8"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "getattr(s, 'dreams_tonight', 0)",
+   "op": "GtE",
+   "thr": 3.0,
+   "score": null,
+   "line": 334,
+   "const": "MAX_DREAMS"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "rng.random()",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": null,
+   "line": 335,
+   "const": "DREAM_P"
+  },
+  {
+   "func": "cx_intent",
+   "klass": "MOTOR",
+   "left": "m.clock_s - p.get('at', -1000000000.0)",
+   "op": "Lt",
+   "thr": 30.0,
+   "score": null,
+   "line": 486,
+   "const": "30.0"
+  }
+ ],
+ "map": [
+  {
+   "func": "reply_tail",
+   "klass": "INTENT/reply",
+   "left": "session.mood.hunger",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 573,
+   "const": "0.75",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "reply_tail",
+   "klass": "INTENT/reply",
+   "left": "session.mood.trust",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "trust",
+   "line": 573,
+   "const": "0.3",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.8438,
+    "thr_pct_rank": 0.1562,
+    "nearest_below": 0.3,
+    "nearest_above": 0.3,
+    "gap": 0.0,
+    "within_05": 166
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.8438,
+    "thr_pct_rank": 0.1562,
+    "nearest_below": 0.3,
+    "nearest_above": 0.3,
+    "gap": 0.0,
+    "within_05": 166
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 510,
+   "const": "0.75",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['sleep']",
+   "op": "LtE",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 510,
+   "const": "0.75",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.9896,
+    "thr_pct_rank": 0.9896,
+    "nearest_below": 0.7129,
+    "nearest_above": 0.9976,
+    "gap": 0.2847,
+    "within_05": 2
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.9896,
+    "thr_pct_rank": 0.9896,
+    "nearest_below": 0.7129,
+    "nearest_above": 0.9976,
+    "gap": 0.2847,
+    "within_05": 2
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['sleep']",
+   "op": "Gt",
+   "thr": 0.7,
+   "score": "sleep",
+   "line": 517,
+   "const": "0.7",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.0156,
+    "thr_pct_rank": 0.9844,
+    "nearest_below": 0.6766,
+    "nearest_above": 0.7129,
+    "gap": 0.0364,
+    "within_05": 8
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.0156,
+    "thr_pct_rank": 0.9844,
+    "nearest_below": 0.6766,
+    "nearest_above": 0.7129,
+    "gap": 0.0363,
+    "within_05": 8
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "session.mood.trust",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "trust",
+   "line": 516,
+   "const": "0.3",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.8438,
+    "thr_pct_rank": 0.1562,
+    "nearest_below": 0.3,
+    "nearest_above": 0.3,
+    "gap": 0.0,
+    "within_05": 166
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.8438,
+    "thr_pct_rank": 0.1562,
+    "nearest_below": 0.3,
+    "nearest_above": 0.3,
+    "gap": 0.0,
+    "within_05": 166
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.4,
+   "score": "fear",
+   "line": 519,
+   "const": "0.4",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.125,
+    "thr_pct_rank": 0.875,
+    "nearest_below": 0.3579,
+    "nearest_above": 0.6412,
+    "gap": 0.2832,
+    "within_05": 4
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.125,
+    "thr_pct_rank": 0.875,
+    "nearest_below": 0.3579,
+    "nearest_above": 0.6412,
+    "gap": 0.2832,
+    "within_05": 4
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "getattr(session, 'parade_ticks', 0)",
+   "op": "Gt",
+   "thr": 0.0,
+   "score": null,
+   "line": 521,
+   "const": "0",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "a['food_joy']",
+   "op": "Gt",
+   "thr": 0.6,
+   "score": "food_joy",
+   "line": 523,
+   "const": "0.6",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0385,
+     "25": 0.0457,
+     "50": 0.0792,
+     "70": 0.1394,
+     "75": 0.1506,
+     "90": 0.7012,
+     "100": 0.795
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.8281,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6109,
+    "gap": 0.2609,
+    "within_05": 10
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0384,
+     "25": 0.0456,
+     "50": 0.0791,
+     "70": 0.1396,
+     "75": 0.1505,
+     "90": 0.702,
+     "100": 0.7944
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.8281,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6114,
+    "gap": 0.2614,
+    "within_05": 10
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "needs",
+   "klass": "INTENT/needs",
+   "left": "getattr(session, 'curiosity', 0.0)",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "curiosity",
+   "line": 525,
+   "const": "CURIOSITY_GATE",
+   "note": "unreachable in a conversation session (no curiosity, no curious_at); degenerate 0.0"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "getattr(s, 'parade_ticks', 0)",
+   "op": "Gt",
+   "thr": 0.0,
+   "score": null,
+   "line": 460,
+   "const": "0",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.4,
+   "score": "fear",
+   "line": 414,
+   "const": "0.4",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0,
+     "90": 0.0,
+     "100": 0.0
+    },
+    "fire_share": 0.0,
+    "thr_pct_rank": 1.0,
+    "nearest_below": 0.0,
+    "nearest_above": null,
+    "gap": null,
+    "within_05": 0
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['sleep']",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 418,
+   "const": "0.75",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0971,
+     "10": 0.3008,
+     "25": 0.3121,
+     "50": 0.6128,
+     "70": 0.8834,
+     "75": 0.889,
+     "90": 0.9035,
+     "100": 0.9231
+    },
+    "fire_share": 0.4164,
+    "thr_pct_rank": 0.5836,
+    "nearest_below": 0.7499,
+    "nearest_above": 0.7504,
+    "gap": 0.0006,
+    "within_05": 723
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.85,
+   "score": "hunger",
+   "line": 419,
+   "const": "0.85",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.357,
+     "10": 0.4561,
+     "25": 0.5302,
+     "50": 0.6152,
+     "70": 0.6747,
+     "75": 0.6893,
+     "90": 0.7792,
+     "100": 0.8505
+    },
+    "fire_share": 0.0007,
+    "thr_pct_rank": 0.9993,
+    "nearest_below": 0.85,
+    "nearest_above": 0.85,
+    "gap": 0.0,
+    "within_05": 821
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['hunger']",
+   "op": "Gt",
+   "thr": 0.7,
+   "score": "hunger",
+   "line": 435,
+   "const": "0.7",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.357,
+     "10": 0.4561,
+     "25": 0.5302,
+     "50": 0.6152,
+     "70": 0.6747,
+     "75": 0.6893,
+     "90": 0.7792,
+     "100": 0.8505
+    },
+    "fire_share": 0.213,
+    "thr_pct_rank": 0.787,
+    "nearest_below": 0.7,
+    "nearest_above": 0.7,
+    "gap": 0.0001,
+    "within_05": 2781
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "s.curiosity",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "curiosity",
+   "line": 441,
+   "const": "CURIOSITY_GATE",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0,
+     "10": 0.2093,
+     "25": 0.2259,
+     "50": 0.4765,
+     "70": 0.8376,
+     "75": 0.8811,
+     "90": 0.9506,
+     "100": 1.0
+    },
+    "fire_share": 0.5168,
+    "thr_pct_rank": 0.4832,
+    "nearest_below": 0.3491,
+    "nearest_above": 0.3505,
+    "gap": 0.0014,
+    "within_05": 355
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "rng.random()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 441,
+   "const": "INVESTIGATE_P",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['fear']",
+   "op": "Gt",
+   "thr": 0.2,
+   "score": "fear",
+   "line": 445,
+   "const": "0.2",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0,
+     "90": 0.0,
+     "100": 0.0
+    },
+    "fire_share": 0.0,
+    "thr_pct_rank": 1.0,
+    "nearest_below": 0.0,
+    "nearest_above": null,
+    "gap": null,
+    "within_05": 0
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "a['food_joy']",
+   "op": "Lt",
+   "thr": 0.15,
+   "score": "food_joy",
+   "line": 451,
+   "const": "0.15",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0,
+     "10": 0.0655,
+     "25": 0.1288,
+     "50": 0.1454,
+     "70": 0.2091,
+     "75": 0.2123,
+     "90": 0.35,
+     "100": 0.35
+    },
+    "fire_share": 0.5312,
+    "thr_pct_rank": 0.5312,
+    "nearest_below": 0.1498,
+    "nearest_above": 0.1504,
+    "gap": 0.0006,
+    "within_05": 5816
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "world_tick",
+   "klass": "ACT/world",
+   "left": "rng.random()",
+   "op": "Lt",
+   "thr": 0.4,
+   "score": null,
+   "line": 451,
+   "const": "0.4",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.25,
+   "score": "fear",
+   "line": 177,
+   "const": "0.25",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.1667,
+    "thr_pct_rank": 0.8333,
+    "nearest_below": 0.2295,
+    "nearest_above": 0.2565,
+    "gap": 0.027,
+    "within_05": 12
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.1667,
+    "thr_pct_rank": 0.8333,
+    "nearest_below": 0.2295,
+    "nearest_above": 0.2565,
+    "gap": 0.027,
+    "within_05": 12
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.hunger",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "hunger",
+   "line": 183,
+   "const": "0.75",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.0365,
+    "thr_pct_rank": 0.9635,
+    "nearest_below": 0.7308,
+    "nearest_above": 0.7938,
+    "gap": 0.063,
+    "within_05": 6
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.food_joy",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": "food_joy",
+   "line": 185,
+   "const": "0.35",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0385,
+     "25": 0.0457,
+     "50": 0.0792,
+     "70": 0.1394,
+     "75": 0.1506,
+     "90": 0.7012,
+     "100": 0.795
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.776,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6109,
+    "gap": 0.2609,
+    "within_05": 26
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0384,
+     "25": 0.0456,
+     "50": 0.0791,
+     "70": 0.1396,
+     "75": 0.1505,
+     "90": 0.702,
+     "100": 0.7944
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.776,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6114,
+    "gap": 0.2614,
+    "within_05": 26
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.sleep",
+   "op": "Gt",
+   "thr": 0.75,
+   "score": "sleep",
+   "line": 187,
+   "const": "0.75",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.0104,
+    "thr_pct_rank": 0.9896,
+    "nearest_below": 0.7129,
+    "nearest_above": 0.9976,
+    "gap": 0.2847,
+    "within_05": 2
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0289,
+     "25": 0.0592,
+     "50": 0.0739,
+     "70": 0.083,
+     "75": 0.0863,
+     "90": 0.0957,
+     "100": 0.9986
+    },
+    "fire_share": 0.0104,
+    "thr_pct_rank": 0.9896,
+    "nearest_below": 0.7129,
+    "nearest_above": 0.9976,
+    "gap": 0.2847,
+    "within_05": 2
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Gt",
+   "thr": 0.55,
+   "score": "trust",
+   "line": 189,
+   "const": "0.55",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0573,
+    "thr_pct_rank": 0.9115,
+    "nearest_below": 0.55,
+    "nearest_above": 0.58,
+    "gap": 0.03,
+    "within_05": 52
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0573,
+    "thr_pct_rank": 0.9115,
+    "nearest_below": 0.55,
+    "nearest_above": 0.58,
+    "gap": 0.03,
+    "within_05": 52
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.salience",
+   "op": "Gt",
+   "thr": 0.15,
+   "score": "salience",
+   "line": 191,
+   "const": "0.15",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0494,
+     "25": 0.1052,
+     "50": 0.2608,
+     "70": 0.365,
+     "75": 0.3696,
+     "90": 0.518,
+     "100": 0.7181
+    },
+    "fire_share": 0.625,
+    "thr_pct_rank": 0.375,
+    "nearest_below": 0.1484,
+    "nearest_above": 0.1791,
+    "gap": 0.0308,
+    "within_05": 82
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0493,
+     "25": 0.1052,
+     "50": 0.2607,
+     "70": 0.3647,
+     "75": 0.369,
+     "90": 0.5183,
+     "100": 0.7179
+    },
+    "fire_share": 0.625,
+    "thr_pct_rank": 0.375,
+    "nearest_below": 0.1485,
+    "nearest_above": 0.1791,
+    "gap": 0.0306,
+    "within_05": 82
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Lt",
+   "thr": 0.15,
+   "score": "trust",
+   "line": 179,
+   "const": "0.15",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0521,
+    "thr_pct_rank": 0.0521,
+    "nearest_below": 0.14,
+    "nearest_above": 0.17,
+    "gap": 0.03,
+    "within_05": 14
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0521,
+    "thr_pct_rank": 0.0521,
+    "nearest_below": 0.14,
+    "nearest_above": 0.17,
+    "gap": 0.03,
+    "within_05": 14
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.salience",
+   "op": "Gt",
+   "thr": 0.3,
+   "score": "salience",
+   "line": 179,
+   "const": "0.3",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0494,
+     "25": 0.1052,
+     "50": 0.2608,
+     "70": 0.365,
+     "75": 0.3696,
+     "90": 0.518,
+     "100": 0.7181
+    },
+    "fire_share": 0.4323,
+    "thr_pct_rank": 0.5677,
+    "nearest_below": 0.2652,
+    "nearest_above": 0.332,
+    "gap": 0.0668,
+    "within_05": 56
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0493,
+     "25": 0.1052,
+     "50": 0.2607,
+     "70": 0.3647,
+     "75": 0.369,
+     "90": 0.5183,
+     "100": 0.7179
+    },
+    "fire_share": 0.4323,
+    "thr_pct_rank": 0.5677,
+    "nearest_below": 0.2648,
+    "nearest_above": 0.3318,
+    "gap": 0.0669,
+    "within_05": 56
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.trust",
+   "op": "Lt",
+   "thr": 0.2,
+   "score": "trust",
+   "line": 181,
+   "const": "0.2",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0573,
+    "thr_pct_rank": 0.0573,
+    "nearest_below": 0.2,
+    "nearest_above": 0.21,
+    "gap": 0.01,
+    "within_05": 14
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.27,
+     "25": 0.34,
+     "50": 0.34,
+     "70": 0.46,
+     "75": 0.46,
+     "90": 0.54,
+     "100": 0.65
+    },
+    "fire_share": 0.0573,
+    "thr_pct_rank": 0.0573,
+    "nearest_below": 0.2,
+    "nearest_above": 0.21,
+    "gap": 0.01,
+    "within_05": 14
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.08,
+   "score": "fear",
+   "line": 181,
+   "const": "0.08",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.2292,
+    "thr_pct_rank": 0.7708,
+    "nearest_below": 0.0769,
+    "nearest_above": 0.086,
+    "gap": 0.009,
+    "within_05": 16
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.2292,
+    "thr_pct_rank": 0.7708,
+    "nearest_below": 0.0769,
+    "nearest_above": 0.086,
+    "gap": 0.009,
+    "within_05": 16
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.fear",
+   "op": "Gt",
+   "thr": 0.5,
+   "score": "fear",
+   "line": 178,
+   "const": "0.5",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.125,
+    "thr_pct_rank": 0.875,
+    "nearest_below": 0.3579,
+    "nearest_above": 0.6412,
+    "gap": 0.2832,
+    "within_05": 0
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0,
+     "25": 0.0,
+     "50": 0.0,
+     "70": 0.0,
+     "75": 0.0096,
+     "90": 0.8007,
+     "100": 1.0
+    },
+    "fire_share": 0.125,
+    "thr_pct_rank": 0.875,
+    "nearest_below": 0.3579,
+    "nearest_above": 0.6412,
+    "gap": 0.2832,
+    "within_05": 0
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.hunger",
+   "op": "Gt",
+   "thr": 0.9,
+   "score": "hunger",
+   "line": 184,
+   "const": "0.9",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.026,
+    "thr_pct_rank": 0.974,
+    "nearest_below": 0.8973,
+    "nearest_above": 0.9008,
+    "gap": 0.0035,
+    "within_05": 10
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.1013,
+     "25": 0.3759,
+     "50": 0.3829,
+     "70": 0.3899,
+     "75": 0.3934,
+     "90": 0.4148,
+     "100": 0.9533
+    },
+    "fire_share": 0.026,
+    "thr_pct_rank": 0.974,
+    "nearest_below": 0.8973,
+    "nearest_above": 0.9008,
+    "gap": 0.0035,
+    "within_05": 10
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "mood_tag",
+   "klass": "TAG",
+   "left": "self.food_joy",
+   "op": "Gt",
+   "thr": 0.6,
+   "score": "food_joy",
+   "line": 186,
+   "const": "0.6",
+   "S1": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0385,
+     "25": 0.0457,
+     "50": 0.0792,
+     "70": 0.1394,
+     "75": 0.1506,
+     "90": 0.7012,
+     "100": 0.795
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.8281,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6109,
+    "gap": 0.2609,
+    "within_05": 10
+   },
+   "R": {
+    "n": 384,
+    "q": {
+     "0": 0.0,
+     "10": 0.0384,
+     "25": 0.0456,
+     "50": 0.0791,
+     "70": 0.1396,
+     "75": 0.1505,
+     "90": 0.702,
+     "100": 0.7944
+    },
+    "fire_share": 0.1719,
+    "thr_pct_rank": 0.8281,
+    "nearest_below": 0.35,
+    "nearest_above": 0.6114,
+    "gap": 0.2614,
+    "within_05": 10
+   },
+   "source": "frozen battery, post-turn"
+  },
+  {
+   "func": "consolidate_night",
+   "klass": "GATE/night",
+   "left": "darkness_now()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 289,
+   "const": "0.6",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "consolidate_night",
+   "klass": "GATE/night",
+   "left": "s.mood.sleep",
+   "op": "LtE",
+   "thr": 0.6,
+   "score": "sleep",
+   "line": 289,
+   "const": "0.6",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0971,
+     "10": 0.3008,
+     "25": 0.3121,
+     "50": 0.6128,
+     "70": 0.8834,
+     "75": 0.889,
+     "90": 0.9035,
+     "100": 0.9231
+    },
+    "fire_share": 0.4919,
+    "thr_pct_rank": 0.4919,
+    "nearest_below": 0.5996,
+    "nearest_above": 0.6,
+    "gap": 0.0004,
+    "within_05": 767
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "darkness_now()",
+   "op": "Lt",
+   "thr": 0.6,
+   "score": null,
+   "line": 333,
+   "const": "0.6",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "s.mood.sleep",
+   "op": "LtE",
+   "thr": 0.8,
+   "score": "sleep",
+   "line": 333,
+   "const": "0.8",
+   "world": {
+    "n": 11520,
+    "q": {
+     "0": 0.0971,
+     "10": 0.3008,
+     "25": 0.3121,
+     "50": 0.6128,
+     "70": 0.8834,
+     "75": 0.889,
+     "90": 0.9035,
+     "100": 0.9231
+    },
+    "fire_share": 0.6174,
+    "thr_pct_rank": 0.6174,
+    "nearest_below": 0.7998,
+    "nearest_above": 0.8004,
+    "gap": 0.0006,
+    "within_05": 807
+   },
+   "source": "frozen day ticks, post-act values rounded 5 dp (the comparator read the pre-act value)"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "getattr(s, 'dreams_tonight', 0)",
+   "op": "GtE",
+   "thr": 3.0,
+   "score": null,
+   "line": 334,
+   "const": "MAX_DREAMS",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "dream",
+   "klass": "GATE/night",
+   "left": "rng.random()",
+   "op": "Gt",
+   "thr": 0.35,
+   "score": null,
+   "line": 335,
+   "const": "DREAM_P",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  },
+  {
+   "func": "cx_intent",
+   "klass": "MOTOR",
+   "left": "m.clock_s - p.get('at', -1000000000.0)",
+   "op": "Lt",
+   "thr": 30.0,
+   "score": null,
+   "line": 486,
+   "const": "30.0",
+   "note": "not a score comparator (state flag, rng, clock or time window)"
+  }
+ ],
+ "primary": {
+  "A": {
+   "thr_frozen_R": {
+    "hunger": 0.75,
+    "sleep_rider": 0.75,
+    "trust": 0.3,
+    "sleep": 0.7,
+    "fear": 0.4,
+    "food_joy": 0.6
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.4,
+     "food_joy": 0.6
+    },
+    "1": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.4,
+     "food_joy": 0.6
+    }
+   },
+   "flips_R": [],
+   "N_all": 0,
+   "N_near": 0,
+   "N_by_seed": {
+    "0": 0,
+    "1": 0
+   },
+   "reply_flips": 0,
+   "ambient_flips": 0,
+   "crossed": {},
+   "ambient_transitions": {},
+   "flips_by_session": {
+    "S1": [
+     0,
+     0
+    ],
+    "S2": [
+     0,
+     0
+    ],
+    "S3": [
+     0,
+     0
+    ],
+    "R": [
+     0,
+     0
+    ]
+   },
+   "noise_control": 0,
+   "collateral_ambient": 0.0,
+   "collateral_reply": 0.0,
+   "ambient_hist_frozen": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {},
+    "n": 0,
+    "kf": 0,
+    "share": null,
+    "base": 0.2916666666666667,
+    "binom_tail": null,
+    "convs_with_flip": 0,
+    "convs_kf": 0,
+    "by_event": {},
+    "supported": null
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "plastic": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "paired_toggles": {
+     "mean": 0.0,
+     "max": 0
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": true,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 12,
+      "plastic": 12
+     },
+     "settle_one_arm": []
+    },
+    "ii": {
+     "ok": true,
+     "settle_turns_regime": 6,
+     "settle_turns_A": 6,
+     "added": 0,
+     "lost": 0
+    },
+    "iii": {
+     "ok": true,
+     "world_settle_ticks_regime": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       1.0,
+       1.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0,
+       1.0
+      ]
+     ]
+    },
+    "supported": true
+   },
+   "Q1": {
+    "N_near": 0,
+    "N_all": 0,
+    "noise": 0,
+    "by_seed": {
+     "0": 0,
+     "1": 0
+    },
+    "supported": false
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": true
+   }
+  },
+  "B": {
+   "thr_frozen_R": {
+    "hunger": 0.3899,
+    "trust": 0.4599999999999999,
+    "sleep_rider": 0.0829675320551776,
+    "sleep": 0.0829675320551776,
+    "fear": 0.0,
+    "food_joy": 0.13940135911107063
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.3899,
+     "trust": 0.4599999999999999,
+     "sleep_rider": 0.0829675320551776,
+     "sleep": 0.0829675320551776,
+     "fear": 0.0,
+     "food_joy": 0.13940135911107063
+    },
+    "1": {
+     "hunger": 0.3899,
+     "trust": 0.4599999999999999,
+     "sleep_rider": 0.0829675320551776,
+     "sleep": 0.0829675320551776,
+     "fear": 0.0,
+     "food_joy": 0.13940135911107063
+    }
+   },
+   "flips_R": [
+    {
+     "seed": 0,
+     "conv": "kindness_slow",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08329741433262824,
+      0.0994594931602478
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08295643769293429,
+      0.08066645990938204
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1390933223068714,
+      0.15028107687830924
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027760487425031,
+      0.07863878653209055
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13940423503518104,
+      0.15068486109375953
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05916424210622822,
+      0.05716484417037887
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 4,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1391604520380497,
+      0.15036681443452835
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.038127283118511254,
+      0.035767316424432205
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1316401473027389,
+      0.14224091192368857
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.024005178026317353,
+      0.02140420603995044
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13231953382492065,
+      0.14611283093690872
+     ],
+     "fear": [
+      0.00020222537219524717,
+      0.0
+     ],
+     "sleep": [
+      0.08066506379392781,
+      0.07882545110424945
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13278163745999336,
+      0.14665987119078636
+     ],
+     "fear": [
+      0.00039476327598095273,
+      0.0
+     ],
+     "sleep": [
+      0.06041538700385309,
+      0.057766631514104355
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13280102759599685,
+      0.14666644632816314
+     ],
+     "fear": [
+      0.0003532497001821983,
+      0.0
+     ],
+     "sleep": [
+      0.040256106318574805,
+      0.036796667774100435
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13234760262928255,
+      0.14304393741513904
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.04494800577241214,
+      0.04270684070103039
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1394023910164833,
+      0.15062477216124534
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027742048166389,
+      0.07863838185630403
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "pet_shy_first",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08344083800911903,
+      0.09957240670919418
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08295167541778263,
+      0.0806617780451974
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "greet_hungry_evening",
+     "turn": 6,
+     "arc": "hunger",
+     "event": "peas",
+     "reply": [
+      "to_bowl",
+      "to_bowl"
+     ],
+     "amb": [
+      "settle",
+      "beg"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.7421095002370786,
+      0.8157469129562378
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08348831165052814,
+      0.07895362614603582
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "kindness_slow",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.0831177994608879,
+      0.09922083243727683
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.0829270805474771,
+      0.08063872697254344
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13921648040413856,
+      0.150406414270401
+     ],
+     "fear": [
+      0.00015198424458504056,
+      0.0
+     ],
+     "sleep": [
+      0.0802637595579331,
+      0.0786229499343768
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "to_boot",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "fear"
+     ],
+     "food_joy": [
+      0.13970920592546462,
+      0.1509697712957859
+     ],
+     "fear": [
+      0.0005322097241878543,
+      0.0
+     ],
+     "sleep": [
+      0.05913702244467465,
+      0.05713602438342213
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1321937988001027,
+      0.14282723065662345
+     ],
+     "fear": [
+      0.0001704640929413013,
+      0.0
+     ],
+     "sleep": [
+      0.023995345547138315,
+      0.021394516066286964
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13175938054919242,
+      0.14557109922170638
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08069358989213402,
+      0.07885134596490553
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13216953501105308,
+      0.14603033438324928
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.060446469788628256,
+      0.05779563169095509
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13215873166918754,
+      0.14600682780146598
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.040279639633068756,
+      0.03681914760836458
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 2,
+     "arc": "mixed",
+     "event": "hose",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13913916200399398,
+      0.15034179911017417
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08025142044692171,
+      0.07861188471666383
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13211960153527555,
+      0.14274195049472282
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.044915867871149616,
+      0.04267367110431842
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1393411286175251,
+      0.15052826851606368
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08026782448297472,
+      0.0786297105476905
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 3,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13909933865070342,
+      0.15033717975020408
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05915828022414154,
+      0.05716032660251699
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "pet_shy_first",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08324332311749458,
+      0.09938636571168899
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08294540680033835,
+      0.08065543450479426
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "greet_hungry_evening",
+     "turn": 6,
+     "arc": "hunger",
+     "event": "peas",
+     "reply": [
+      "to_bowl",
+      "to_bowl"
+     ],
+     "amb": [
+      "settle",
+      "beg"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.7420224862801509,
+      0.8159681057929993
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08345570584397947,
+      0.07891815695702634
+     ]
+    }
+   ],
+   "N_all": 25,
+   "N_near": 25,
+   "N_by_seed": {
+    "0": 12,
+    "1": 13
+   },
+   "reply_flips": 0,
+   "ambient_flips": 25,
+   "crossed": {
+    "sleep_rider": 6,
+    "sleep": 6,
+    "food_joy": 18,
+    "fear": 1
+   },
+   "ambient_transitions": {
+    "settle->stay": 4,
+    "stay->to_pond": 18,
+    "settle->beg": 2,
+    "to_boot->to_pond": 1
+   },
+   "flips_by_session": {
+    "S1": [
+     8,
+     6
+    ],
+    "S2": [
+     12,
+     12
+    ],
+    "S3": [
+     13,
+     11
+    ],
+    "R": [
+     12,
+     13
+    ]
+   },
+   "noise_control": 5,
+   "collateral_ambient": 0.65625,
+   "collateral_reply": 0.03125,
+   "ambient_hist_frozen": {
+    "beg": 46,
+    "settle": 118,
+    "stay": 58,
+    "to_boot": 51,
+    "to_bowl": 60,
+    "to_pond": 51
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 12,
+    "settle": 10,
+    "stay": 188,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 48,
+    "settle": 112,
+    "stay": 44,
+    "to_boot": 50,
+    "to_bowl": 60,
+    "to_pond": 70
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 12,
+    "settle": 10,
+    "stay": 188,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {
+     "kindness": 10,
+     "anger": 7,
+     "mixed": 3,
+     "apology": 3,
+     "hunger": 2
+    },
+    "n": 25,
+    "kf": 10,
+    "share": 0.4,
+    "base": 0.2916666666666667,
+    "binom_tail": 0.1649061677506597,
+    "convs_with_flip": 14,
+    "convs_kf": 6,
+    "by_event": {
+     "pet": 4,
+     "swat": 8,
+     "None": 4,
+     "goats": 6,
+     "peas": 2,
+     "hose": 1
+    },
+    "supported": false
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.22916666666666666,
+     "max": 2,
+     "convs_ge2": 1,
+     "total": 11
+    },
+    "plastic": {
+     "mean": 0.125,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 6
+    },
+    "paired_toggles": {
+     "mean": 0.2708333333333333,
+     "max": 3
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": false,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 18,
+      "plastic": 18
+     },
+     "settle_one_arm": [
+      [
+       0,
+       "kindness_slow",
+       2
+      ],
+      [
+       0,
+       "pet_shy_first",
+       2
+      ],
+      [
+       0,
+       "greet_hungry_evening",
+       6
+      ],
+      [
+       1,
+       "kindness_slow",
+       2
+      ],
+      [
+       1,
+       "pet_shy_first",
+       2
+      ],
+      [
+       1,
+       "greet_hungry_evening",
+       6
+      ]
+     ]
+    },
+    "ii": {
+     "ok": false,
+     "settle_turns_regime": 118,
+     "settle_turns_A": 6,
+     "added": 112,
+     "lost": 0
+    },
+    "iii": {
+     "ok": false,
+     "world_settle_ticks_regime": [
+      [
+       1920,
+       1920,
+       1920
+      ],
+      [
+       1920,
+       1920,
+       1920
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       2.2119815668202767,
+       2.2535211267605635,
+       2.2535211267605635
+      ],
+      [
+       2.206896551724138,
+       2.2668240850059034,
+       2.2884386174016687
+      ]
+     ]
+    },
+    "supported": false
+   },
+   "Q1": {
+    "N_near": 25,
+    "N_all": 25,
+    "noise": 5,
+    "by_seed": {
+     "0": 12,
+     "1": 13
+    },
+    "supported": true
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": false
+   }
+  },
+  "C": {
+   "thr_frozen_R": {
+    "hunger": 0.75,
+    "sleep_rider": 0.75,
+    "trust": 0.3,
+    "sleep": 0.7,
+    "fear": 0.4,
+    "food_joy": 0.6
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.3980814509093762,
+     "food_joy": 0.561448073387146
+    },
+    "1": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.3980897154659033,
+     "food_joy": 0.5614385336637496
+    }
+   },
+   "flips_R": [],
+   "N_all": 0,
+   "N_near": 0,
+   "N_by_seed": {
+    "0": 0,
+    "1": 0
+   },
+   "reply_flips": 0,
+   "ambient_flips": 0,
+   "crossed": {},
+   "ambient_transitions": {},
+   "flips_by_session": {
+    "S1": [
+     0,
+     0
+    ],
+    "S2": [
+     0,
+     0
+    ],
+    "S3": [
+     0,
+     0
+    ],
+    "R": [
+     0,
+     0
+    ]
+   },
+   "noise_control": 0,
+   "collateral_ambient": 0.0,
+   "collateral_reply": 0.0,
+   "ambient_hist_frozen": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {},
+    "n": 0,
+    "kf": 0,
+    "share": null,
+    "base": 0.2916666666666667,
+    "binom_tail": null,
+    "convs_with_flip": 0,
+    "convs_kf": 0,
+    "by_event": {},
+    "supported": null
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "plastic": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "paired_toggles": {
+     "mean": 0.0,
+     "max": 0
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": true,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 12,
+      "plastic": 12
+     },
+     "settle_one_arm": []
+    },
+    "ii": {
+     "ok": true,
+     "settle_turns_regime": 6,
+     "settle_turns_A": 6,
+     "added": 0,
+     "lost": 0
+    },
+    "iii": {
+     "ok": true,
+     "world_settle_ticks_regime": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       1.0,
+       1.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0,
+       1.0
+      ]
+     ]
+    },
+    "supported": true
+   },
+   "Q1": {
+    "N_near": 0,
+    "N_all": 0,
+    "noise": 0,
+    "by_seed": {
+     "0": 0,
+     "1": 0
+    },
+    "supported": false
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": true
+   }
+  },
+  "Bn": {
+   "thr_frozen_R": {
+    "hunger": 0.75,
+    "sleep_rider": 0.75,
+    "trust": 0.3,
+    "sleep": 0.7,
+    "fear": 0.0,
+    "food_joy": 0.13940135911107063
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.0,
+     "food_joy": 0.13940135911107063
+    },
+    "1": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.0,
+     "food_joy": 0.13940135911107063
+    }
+   },
+   "flips_R": [
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1390933223068714,
+      0.15028107687830924
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027760487425031,
+      0.07863878653209055
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13940423503518104,
+      0.15068486109375953
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05916424210622822,
+      0.05716484417037887
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 4,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1391604520380497,
+      0.15036681443452835
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.038127283118511254,
+      0.035767316424432205
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1316401473027389,
+      0.14224091192368857
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.024005178026317353,
+      0.02140420603995044
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13231953382492065,
+      0.14611283093690872
+     ],
+     "fear": [
+      0.00020222537219524717,
+      0.0
+     ],
+     "sleep": [
+      0.08066506379392781,
+      0.07882545110424945
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13278163745999336,
+      0.14665987119078636
+     ],
+     "fear": [
+      0.00039476327598095273,
+      0.0
+     ],
+     "sleep": [
+      0.06041538700385309,
+      0.057766631514104355
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13280102759599685,
+      0.14666644632816314
+     ],
+     "fear": [
+      0.0003532497001821983,
+      0.0
+     ],
+     "sleep": [
+      0.040256106318574805,
+      0.036796667774100435
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 6,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13240402340888976,
+      0.14623043835163116
+     ],
+     "fear": [
+      0.00028286024750503455,
+      0.0
+     ],
+     "sleep": [
+      0.005960567485142766,
+      0.0011227991419455203
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 7,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13257622495293617,
+      0.14648385122418403
+     ],
+     "fear": [
+      0.0002531144706313487,
+      0.0
+     ],
+     "sleep": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13234760262928255,
+      0.14304393741513904
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.04494800577241214,
+      0.04270684070103039
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1394023910164833,
+      0.15062477216124534
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027742048166389,
+      0.07863838185630403
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13921648040413856,
+      0.150406414270401
+     ],
+     "fear": [
+      0.00015198424458504056,
+      0.0
+     ],
+     "sleep": [
+      0.0802637595579331,
+      0.0786229499343768
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "to_boot",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "fear"
+     ],
+     "food_joy": [
+      0.13970920592546462,
+      0.1509697712957859
+     ],
+     "fear": [
+      0.0005322097241878543,
+      0.0
+     ],
+     "sleep": [
+      0.05913702244467465,
+      0.05713602438342213
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1321937988001027,
+      0.14282723065662345
+     ],
+     "fear": [
+      0.0001704640929413013,
+      0.0
+     ],
+     "sleep": [
+      0.023995345547138315,
+      0.021394516066286964
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13175938054919242,
+      0.14557109922170638
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08069358989213402,
+      0.07885134596490553
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13216953501105308,
+      0.14603033438324928
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.060446469788628256,
+      0.05779563169095509
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13215873166918754,
+      0.14600682780146598
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.040279639633068756,
+      0.03681914760836458
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 6,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13251423612236976,
+      0.14633089080452918
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.005975885828896717,
+      0.0011393724544396678
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 7,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1327541634440422,
+      0.1466757409274578
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 2,
+     "arc": "mixed",
+     "event": "hose",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13913916200399398,
+      0.15034179911017417
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08025142044692171,
+      0.07861188471666383
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13211960153527555,
+      0.14274195049472282
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.044915867871149616,
+      0.04267367110431842
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1393411286175251,
+      0.15052826851606368
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08026782448297472,
+      0.0786297105476905
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 3,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13909933865070342,
+      0.15033717975020408
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05915828022414154,
+      0.05716032660251699
+     ]
+    }
+   ],
+   "N_all": 23,
+   "N_near": 23,
+   "N_by_seed": {
+    "0": 11,
+    "1": 12
+   },
+   "reply_flips": 0,
+   "ambient_flips": 23,
+   "crossed": {
+    "food_joy": 22,
+    "fear": 1
+   },
+   "ambient_transitions": {
+    "stay->to_pond": 22,
+    "to_boot->to_pond": 1
+   },
+   "flips_by_session": {
+    "S1": [
+     6,
+     4
+    ],
+    "S2": [
+     11,
+     11
+    ],
+    "S3": [
+     12,
+     10
+    ],
+    "R": [
+     11,
+     12
+    ]
+   },
+   "noise_control": 5,
+   "collateral_ambient": 0.18229166666666666,
+   "collateral_reply": 0.0,
+   "ambient_hist_frozen": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 190,
+    "to_boot": 97,
+    "to_pond": 77
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 168,
+    "to_boot": 96,
+    "to_pond": 100
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {
+     "anger": 7,
+     "kindness": 10,
+     "mixed": 3,
+     "apology": 3
+    },
+    "n": 23,
+    "kf": 10,
+    "share": 0.43478260869565216,
+    "base": 0.2916666666666667,
+    "binom_tail": 0.1027366839875502,
+    "convs_with_flip": 8,
+    "convs_kf": 2,
+    "by_event": {
+     "swat": 8,
+     "None": 4,
+     "goats": 10,
+     "hose": 1
+    },
+    "supported": false
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.08333333333333333,
+     "max": 2,
+     "convs_ge2": 1,
+     "total": 4
+    },
+    "plastic": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "paired_toggles": {
+     "mean": 0.1875,
+     "max": 3
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": true,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 12,
+      "plastic": 12
+     },
+     "settle_one_arm": []
+    },
+    "ii": {
+     "ok": true,
+     "settle_turns_regime": 6,
+     "settle_turns_A": 6,
+     "added": 0,
+     "lost": 0
+    },
+    "iii": {
+     "ok": true,
+     "world_settle_ticks_regime": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       1.0,
+       1.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0,
+       1.0
+      ]
+     ]
+    },
+    "supported": true
+   },
+   "Q1": {
+    "N_near": 23,
+    "N_all": 23,
+    "noise": 5,
+    "by_seed": {
+     "0": 11,
+     "1": 12
+    },
+    "supported": true
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": false
+   }
+  },
+  "C2": {
+   "thr_frozen_R": {
+    "hunger": 0.75,
+    "sleep_rider": 0.75,
+    "trust": 0.3,
+    "sleep": 0.7,
+    "fear": 0.4,
+    "food_joy": 0.6
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.3961629018187523,
+     "food_joy": 0.522896146774292
+    },
+    "1": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.3961794309318066,
+     "food_joy": 0.5228770673274994
+    }
+   },
+   "flips_R": [],
+   "N_all": 0,
+   "N_near": 0,
+   "N_by_seed": {
+    "0": 0,
+    "1": 0
+   },
+   "reply_flips": 0,
+   "ambient_flips": 0,
+   "crossed": {},
+   "ambient_transitions": {},
+   "flips_by_session": {
+    "S1": [
+     0,
+     0
+    ],
+    "S2": [
+     0,
+     0
+    ],
+    "S3": [
+     0,
+     0
+    ],
+    "R": [
+     0,
+     0
+    ]
+   },
+   "noise_control": 0,
+   "collateral_ambient": 0.0,
+   "collateral_reply": 0.0,
+   "ambient_hist_frozen": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {},
+    "n": 0,
+    "kf": 0,
+    "share": null,
+    "base": 0.2916666666666667,
+    "binom_tail": null,
+    "convs_with_flip": 0,
+    "convs_kf": 0,
+    "by_event": {},
+    "supported": null
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "plastic": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "paired_toggles": {
+     "mean": 0.0,
+     "max": 0
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": true,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 12,
+      "plastic": 12
+     },
+     "settle_one_arm": []
+    },
+    "ii": {
+     "ok": true,
+     "settle_turns_regime": 6,
+     "settle_turns_A": 6,
+     "added": 0,
+     "lost": 0
+    },
+    "iii": {
+     "ok": true,
+     "world_settle_ticks_regime": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       1.0,
+       1.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0,
+       1.0
+      ]
+     ]
+    },
+    "supported": true
+   },
+   "Q1": {
+    "N_near": 0,
+    "N_all": 0,
+    "noise": 0,
+    "by_seed": {
+     "0": 0,
+     "1": 0
+    },
+    "supported": false
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": true
+   }
+  },
+  "C4": {
+   "thr_frozen_R": {
+    "hunger": 0.75,
+    "sleep_rider": 0.75,
+    "trust": 0.3,
+    "sleep": 0.7,
+    "fear": 0.4,
+    "food_joy": 0.6
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.3923258036375046,
+     "food_joy": 0.44579229354858396
+    },
+    "1": {
+     "hunger": 0.75,
+     "sleep_rider": 0.75,
+     "trust": 0.3,
+     "sleep": 0.7,
+     "fear": 0.39235886186361313,
+     "food_joy": 0.44575413465499875
+    }
+   },
+   "flips_R": [],
+   "N_all": 0,
+   "N_near": 0,
+   "N_by_seed": {
+    "0": 0,
+    "1": 0
+   },
+   "reply_flips": 0,
+   "ambient_flips": 0,
+   "crossed": {},
+   "ambient_transitions": {},
+   "flips_by_session": {
+    "S1": [
+     0,
+     0
+    ],
+    "S2": [
+     0,
+     0
+    ],
+    "S3": [
+     0,
+     0
+    ],
+    "R": [
+     0,
+     0
+    ]
+   },
+   "noise_control": 0,
+   "collateral_ambient": 0.0,
+   "collateral_reply": 0.0,
+   "ambient_hist_frozen": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 14,
+    "settle": 6,
+    "stay": 260,
+    "to_boot": 48,
+    "to_pond": 56
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 4,
+    "settle": 10,
+    "stay": 196,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {},
+    "n": 0,
+    "kf": 0,
+    "share": null,
+    "base": 0.2916666666666667,
+    "binom_tail": null,
+    "convs_with_flip": 0,
+    "convs_kf": 0,
+    "by_event": {},
+    "supported": null
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "plastic": {
+     "mean": 0.041666666666666664,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 2
+    },
+    "paired_toggles": {
+     "mean": 0.0,
+     "max": 0
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": true,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 12,
+      "plastic": 12
+     },
+     "settle_one_arm": []
+    },
+    "ii": {
+     "ok": true,
+     "settle_turns_regime": 6,
+     "settle_turns_A": 6,
+     "added": 0,
+     "lost": 0
+    },
+    "iii": {
+     "ok": true,
+     "world_settle_ticks_regime": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       1.0,
+       1.0,
+       1.0
+      ],
+      [
+       1.0,
+       1.0,
+       1.0
+      ]
+     ]
+    },
+    "supported": true
+   },
+   "Q1": {
+    "N_near": 0,
+    "N_all": 0,
+    "noise": 0,
+    "by_seed": {
+     "0": 0,
+     "1": 0
+    },
+    "supported": false
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "stay"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": true
+   }
+  },
+  "BC": {
+   "thr_frozen_R": {
+    "hunger": 0.3899,
+    "trust": 0.4599999999999999,
+    "sleep_rider": 0.0829675320551776,
+    "sleep": 0.0829675320551776,
+    "fear": 0.0,
+    "food_joy": 0.13940135911107063
+   },
+   "thr_plastic_R": {
+    "0": {
+     "hunger": 0.3899,
+     "trust": 0.4599999999999999,
+     "sleep_rider": 0.0829675320551776,
+     "sleep": 0.0829675320551776,
+     "fear": 0.0,
+     "food_joy": 0.1304443741674338
+    },
+    "1": {
+     "hunger": 0.3899,
+     "trust": 0.4599999999999999,
+     "sleep_rider": 0.0829675320551776,
+     "sleep": 0.0829675320551776,
+     "fear": 0.0,
+     "food_joy": 0.1304421577500888
+    }
+   },
+   "flips_R": [
+    {
+     "seed": 0,
+     "conv": "kindness_slow",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08329741433262824,
+      0.0994594931602478
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08295643769293429,
+      0.08066645990938204
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1390933223068714,
+      0.15028107687830924
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027760487425031,
+      0.07863878653209055
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13940423503518104,
+      0.15068486109375953
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05916424210622822,
+      0.05716484417037887
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 4,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1391604520380497,
+      0.15036681443452835
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.038127283118511254,
+      0.035767316424432205
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1316401473027389,
+      0.14224091192368857
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.024005178026317353,
+      0.02140420603995044
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13231953382492065,
+      0.14611283093690872
+     ],
+     "fear": [
+      0.00020222537219524717,
+      0.0
+     ],
+     "sleep": [
+      0.08066506379392781,
+      0.07882545110424945
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13278163745999336,
+      0.14665987119078636
+     ],
+     "fear": [
+      0.00039476327598095273,
+      0.0
+     ],
+     "sleep": [
+      0.06041538700385309,
+      0.057766631514104355
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13280102759599685,
+      0.14666644632816314
+     ],
+     "fear": [
+      0.0003532497001821983,
+      0.0
+     ],
+     "sleep": [
+      0.040256106318574805,
+      0.036796667774100435
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "goats",
+     "turn": 5,
+     "arc": "kindness",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.12562438953498187,
+      0.13874051367503182
+     ],
+     "fear": [
+      0.0003161017203759193,
+      0.0
+     ],
+     "sleep": [
+      0.022778028365524058,
+      0.01861376751012641
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13234760262928255,
+      0.14304393741513904
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.04494800577241214,
+      0.04270684070103039
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1394023910164833,
+      0.15062477216124534
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08027742048166389,
+      0.07863838185630403
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "pet_shy_first",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08344083800911903,
+      0.09957240670919418
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08295167541778263,
+      0.0806617780451974
+     ]
+    },
+    {
+     "seed": 0,
+     "conv": "greet_hungry_evening",
+     "turn": 6,
+     "arc": "hunger",
+     "event": "peas",
+     "reply": [
+      "to_bowl",
+      "to_bowl"
+     ],
+     "amb": [
+      "settle",
+      "beg"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.7421095002370786,
+      0.8157469129562378
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08348831165052814,
+      0.07895362614603582
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "kindness_slow",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.0831177994608879,
+      0.09922083243727683
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.0829270805474771,
+      0.08063872697254344
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 2,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13921648040413856,
+      0.150406414270401
+     ],
+     "fear": [
+      0.00015198424458504056,
+      0.0
+     ],
+     "sleep": [
+      0.0802637595579331,
+      0.0786229499343768
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 3,
+     "arc": "anger",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "to_boot",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "fear"
+     ],
+     "food_joy": [
+      0.13970920592546462,
+      0.1509697712957859
+     ],
+     "fear": [
+      0.0005322097241878543,
+      0.0
+     ],
+     "sleep": [
+      0.05913702244467465,
+      0.05713602438342213
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "swat_anger",
+     "turn": 5,
+     "arc": "anger",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1321937988001027,
+      0.14282723065662345
+     ],
+     "fear": [
+      0.0001704640929413013,
+      0.0
+     ],
+     "sleep": [
+      0.023995345547138315,
+      0.021394516066286964
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13175938054919242,
+      0.14557109922170638
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08069358989213402,
+      0.07885134596490553
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 3,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13216953501105308,
+      0.14603033438324928
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.060446469788628256,
+      0.05779563169095509
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 4,
+     "arc": "kindness",
+     "event": "goats",
+     "reply": [
+      "to_fence",
+      "to_fence"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13215873166918754,
+      0.14600682780146598
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.040279639633068756,
+      0.03681914760836458
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "goats",
+     "turn": 5,
+     "arc": "kindness",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.12501680362117634,
+      0.13811654128383632
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.02279305152219044,
+      0.018629865871122822
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 2,
+     "arc": "mixed",
+     "event": "hose",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13913916200399398,
+      0.15034179911017417
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08025142044692171,
+      0.07861188471666383
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "teasing_mix",
+     "turn": 4,
+     "arc": "mixed",
+     "event": null,
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13211960153527555,
+      0.14274195049472282
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.044915867871149616,
+      0.04267367110431842
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 2,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.1393411286175251,
+      0.15052826851606368
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08026782448297472,
+      0.0786297105476905
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "mean_then_long_gap",
+     "turn": 3,
+     "arc": "apology",
+     "event": "swat",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "stay",
+      "to_pond"
+     ],
+     "near": true,
+     "crossed": [
+      "food_joy"
+     ],
+     "food_joy": [
+      0.13909933865070342,
+      0.15033717975020408
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.05915828022414154,
+      0.05716032660251699
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "pet_shy_first",
+     "turn": 2,
+     "arc": "kindness",
+     "event": "pet",
+     "reply": [
+      "back_away",
+      "back_away"
+     ],
+     "amb": [
+      "settle",
+      "stay"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.08324332311749458,
+      0.09938636571168899
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08294540680033835,
+      0.08065543450479426
+     ]
+    },
+    {
+     "seed": 1,
+     "conv": "greet_hungry_evening",
+     "turn": 6,
+     "arc": "hunger",
+     "event": "peas",
+     "reply": [
+      "to_bowl",
+      "to_bowl"
+     ],
+     "amb": [
+      "settle",
+      "beg"
+     ],
+     "near": true,
+     "crossed": [
+      "sleep_rider",
+      "sleep"
+     ],
+     "food_joy": [
+      0.7420224862801509,
+      0.8159681057929993
+     ],
+     "fear": [
+      0.0,
+      0.0
+     ],
+     "sleep": [
+      0.08345570584397947,
+      0.07891815695702634
+     ]
+    }
+   ],
+   "N_all": 27,
+   "N_near": 27,
+   "N_by_seed": {
+    "0": 13,
+    "1": 14
+   },
+   "reply_flips": 0,
+   "ambient_flips": 27,
+   "crossed": {
+    "sleep_rider": 6,
+    "sleep": 6,
+    "food_joy": 20,
+    "fear": 1
+   },
+   "ambient_transitions": {
+    "settle->stay": 4,
+    "stay->to_pond": 20,
+    "settle->beg": 2,
+    "to_boot->to_pond": 1
+   },
+   "flips_by_session": {
+    "S1": [
+     8,
+     6
+    ],
+    "S2": [
+     13,
+     13
+    ],
+    "S3": [
+     14,
+     12
+    ],
+    "R": [
+     13,
+     14
+    ]
+   },
+   "noise_control": 5,
+   "collateral_ambient": 0.65625,
+   "collateral_reply": 0.03125,
+   "ambient_hist_frozen": {
+    "beg": 46,
+    "settle": 118,
+    "stay": 58,
+    "to_boot": 51,
+    "to_bowl": 60,
+    "to_pond": 51
+   },
+   "reply_hist_frozen": {
+    "back_away": 28,
+    "beg": 12,
+    "settle": 10,
+    "stay": 188,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "ambient_hist_plastic": {
+    "beg": 48,
+    "settle": 112,
+    "stay": 42,
+    "to_boot": 50,
+    "to_bowl": 60,
+    "to_pond": 72
+   },
+   "reply_hist_plastic": {
+    "back_away": 28,
+    "beg": 12,
+    "settle": 10,
+    "stay": 188,
+    "to_boot": 24,
+    "to_bowl": 30,
+    "to_fence": 10,
+    "to_pond": 20,
+    "to_you": 62
+   },
+   "Q2": {
+    "by_arc": {
+     "kindness": 12,
+     "anger": 7,
+     "mixed": 3,
+     "apology": 3,
+     "hunger": 2
+    },
+    "n": 27,
+    "kf": 12,
+    "share": 0.4444444444444444,
+    "base": 0.2916666666666667,
+    "binom_tail": 0.0660998250245431,
+    "convs_with_flip": 14,
+    "convs_kf": 6,
+    "by_event": {
+     "pet": 4,
+     "swat": 8,
+     "None": 6,
+     "goats": 6,
+     "peas": 2,
+     "hose": 1
+    },
+    "supported": false
+   },
+   "Q3": {
+    "frozen": {
+     "mean": 0.22916666666666666,
+     "max": 2,
+     "convs_ge2": 1,
+     "total": 11
+    },
+    "plastic": {
+     "mean": 0.125,
+     "max": 1,
+     "convs_ge2": 0,
+     "total": 6
+    },
+    "paired_toggles": {
+     "mean": 0.2708333333333333,
+     "max": 3
+    },
+    "supported": true
+   },
+   "Q4": {
+    "i": {
+     "ok": false,
+     "night_turn_diffs": [],
+     "settle_pos": {
+      "frozen": 18,
+      "plastic": 18
+     },
+     "settle_one_arm": [
+      [
+       0,
+       "kindness_slow",
+       2
+      ],
+      [
+       0,
+       "pet_shy_first",
+       2
+      ],
+      [
+       0,
+       "greet_hungry_evening",
+       6
+      ],
+      [
+       1,
+       "kindness_slow",
+       2
+      ],
+      [
+       1,
+       "pet_shy_first",
+       2
+      ],
+      [
+       1,
+       "greet_hungry_evening",
+       6
+      ]
+     ]
+    },
+    "ii": {
+     "ok": false,
+     "settle_turns_regime": 118,
+     "settle_turns_A": 6,
+     "added": 112,
+     "lost": 0
+    },
+    "iii": {
+     "ok": false,
+     "world_settle_ticks_regime": [
+      [
+       1920,
+       1920,
+       1920
+      ],
+      [
+       1920,
+       1920,
+       1920
+      ]
+     ],
+     "world_settle_ticks_A": [
+      [
+       868,
+       852,
+       852
+      ],
+      [
+       870,
+       847,
+       839
+      ]
+     ],
+     "ratio": [
+      [
+       2.2119815668202767,
+       2.2535211267605635,
+       2.2535211267605635
+      ],
+      [
+       2.206896551724138,
+       2.2668240850059034,
+       2.2884386174016687
+      ]
+     ]
+    },
+    "supported": false
+   },
+   "Q1": {
+    "N_near": 27,
+    "N_all": 27,
+    "noise": 5,
+    "by_seed": {
+     "0": 13,
+     "1": 14
+    },
+    "supported": true
+   },
+   "item4_picked_up_t5": {
+    "0": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14831080052047185,
+      0.16585356060465237
+     ],
+     "food_joy": [
+      0.12465648508964185,
+      0.13471924754940098
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030722211809032448,
+      0.026490074122278787
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    },
+    "1": {
+     "tag": [
+      "neutral:low",
+      "curious:low"
+     ],
+     "reply": [
+      "stay",
+      "stay"
+     ],
+     "amb": [
+      "to_boot",
+      "to_boot"
+     ],
+     "behaviour_differs": false,
+     "salience": [
+      0.14854814072036682,
+      0.1660395309073988
+     ],
+     "food_joy": [
+      0.12502644093996015,
+      0.13510755451664125
+     ],
+     "fear": [
+      0.09608848835001697,
+      0.09608848835001697
+     ],
+     "sleep": [
+      0.030669019786435072,
+      0.026442883975532527
+     ],
+     "hunger": [
+      0.3864,
+      0.3864
+     ]
+    }
+   },
+   "tagflip_turns": {
+    "0": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ],
+    "1": [
+     {
+      "conv": "greet_and_chat",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "bedtime",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "picked_up",
+      "turn": 5,
+      "action_flip": false
+     },
+     {
+      "conv": "quiet_afternoon",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "confused_gibberish",
+      "turn": 4,
+      "action_flip": false
+     },
+     {
+      "conv": "slow_trust_build",
+      "turn": 4,
+      "action_flip": false
+     }
+    ]
+   },
+   "tagflips_with_action": 0,
+   "structural": {
+    "reply_flips_all_sessions": 0,
+    "frozen_equals_A": false
+   }
+  }
+ }
+}

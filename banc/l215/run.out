@@ -1,0 +1,29 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+========================================================================
+[L215] resurrection static | NDRAW 2000 seed 21521
+[pins] substrates GREEN | cutwA 644,177 f4wA 469,618 elig 469,256 removed 174,921
+[CERT-G] GREEN g_cutwA 0.14365819573402408 g_f4wA 0.15051452517509462 ratio 1.04773
+[pins] pool sizes invariant on both substrates GREEN
+[CERT-205] GREEN 36 float equalities (c4_floor_retention)
+[CERT-TBL] GREEN 28 float equalities (table M_*/A_cell)
+[premise] L208 branch + POST-HOC label GREEN
+[CERT total] 66 float equalities before any L215 statistic
+[row Ti_L] n 56 | cutwA Mp 8783.2 Mm 7348.1 NET 1435.1 | f4wA Mp 7743.2 Mm 6527.4 NET 1215.8 | removed inh_frac 0.4411 | ret 0.88465
+[row Ti_R] n 57 | cutwA Mp 10789.8 Mm 8866.0 NET 1923.8 | f4wA Mp 9627.4 Mm 8011.1 NET 1616.4 | removed inh_frac 0.4239 | ret 0.89737
+[row Tr_L] n 55 | cutwA Mp 9862.8 Mm 9642.0 NET 220.8 | f4wA Mp 8912.9 Mm 8736.7 NET 176.2 | removed inh_frac 0.4880 | ret 0.90489
+[row Tr_R] n 55 | cutwA Mp 10130.4 Mm 9988.0 NET 142.4 | f4wA Mp 9083.7 Mm 8987.1 NET 96.6 | removed inh_frac 0.4888 | ret 0.89822
+[Q1] ret Tr L 1.00742 Ti 0.98583 | BULK_SYMMETRIC True
+[Q2 Ti_L] NET 1435.1 -> 1215.8 pred 1269.5 | dact -0.41376 dpred -0.26920 S_sign +0.3494 | rem exc 0.1184 inh 0.1117 dir False | BULK False SIGN False DEGEN True
+[Q2 Ti_R] NET 1923.8 -> 1616.4 pred 1726.4 | dact -0.58052 dpred -0.28998 S_sign +0.5005 | rem exc 0.1079 inh 0.0966 dir False | BULK False SIGN False DEGEN False
+[Q2 Tr_L] NET 220.8 -> 176.2 pred 199.8 | dact -0.09463 dpred -0.02995 S_sign +0.6836 | rem exc 0.0963 inh 0.0939 dir False | BULK False SIGN False DEGEN True
+[Q2 Tr_R] NET 142.4 -> 96.6 pred 127.9 | dact -0.10744 dpred -0.02191 S_sign +0.7961 | rem exc 0.1033 inh 0.1002 dir False | BULK False SIGN False DEGEN True
+[Q2b] Tr_L NET cutwA 220.80 f4wA 176.16 | CROSSES False
+[Q3] SILENT_ON_Ti False
+[null] permutation draws built (per-side counts held EXACT)
+[Q4 Ti] A_inh +0.07716 pct_up 0.0175 two 0.0350 [null -0.0607,+0.0611]
+[Q4 Tr] A_inh -0.03472 pct_up 0.8525 two 0.2950 [null -0.0566,+0.0596]
+[0a] global-rescale no-op VERIFIED max move 1.11e-16
+[fingerprints] prior artifacts unchanged GREEN
+========================================================================
+L215 DONE 3s | BRANCH D_DEGENERATE | preds 2/5 | Tr_L S_sign 0.6835524413306759

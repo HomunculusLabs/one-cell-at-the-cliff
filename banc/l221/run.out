@@ -1,0 +1,42 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[spectral] lam1(A_crofts) = 0.388120 (rel spread 1.06e-08)
+[sweep] 35 actors x depths 1-10, both normalisations (depth-1..3 vs L178 stored: max rel diff 0.0e+00)
+[conv] carrier cos(x_d, v1) = 0.0039 0.0362 0.1255 0.2928 0.5844 0.8137 0.9043 0.9374 0.9540 0.9649 -> d_conv None
+[null] 100 draws x depths 1-10 (med changed 138.0)
+[CERT-NULL] GREEN: all 8 stored L178 Q2b_null_anatomical statistics reproduced by FLOAT EQUALITY from my own null construction
+[MID2] heapq available for the certified SI block
+[G2] actors done: carrier SI mean 22.39317740345491 (303/303 pool cells reachable) | twin 20.202005346103054
+[G2] null draw 0: SI mean 19.191889927203682 reach 303
+[G2] G2_SI_HIGH: carrier SI mean 22.39317740345491 vs null med 18.7180 [p05 17.0799, p95 20.6240] -> pct 100.0; family med 20.269773413028425
+[CERT-SI] GREEN 240 stored L206 search-information values reproduced by FLOAT EQUALITY (35 actors + null summary)
+[CERT-MENU] GREEN: 69-edge first-hop menu bit-identical in all 100 draws (median 69.0 of 69 carrier out-edges relocated per draw) -> any first-hop effect is SELECTION, not allocation
+[CERT-FH] GREEN actors: 1216 EXACT equalities (carrier+twin pool dist/si) vs the certified dijkstra_si
+[L211] draw 0: si 19.1919 = fh 6.0338 + rem 13.1580
+[CERT-FH] GREEN all 100 draws: 61819 EXACT equalities total; rebuilt null median/p05/p95 float-identical to the certified block
+[L211] B_REMAINDER: D_total +3.5816 bits = fh -0.0201 + rem +3.6017 -> share_fh -0.006 | pct fh 45.0 rem 100.0
+[L211] cohort: carrier fh-share 0.261 vs family med 0.283; carrier rem rank 32/35, fh rank 26/35; mirror 928 share 0.246
+[CERT-211] GREEN 434 stored L211 values (primary + cohort) reproduced by FLOAT EQUALITY from my own re-run
+[CERT-SIGEN] GREEN 1922356 EXACT list/array equalities: ONE generic SI index builder reproduces the certified f4wA specialisation (START, END, L_L, T_L, TGT0, pos_in_sorted, A_max) before touching cutwA
+========================================================================
+[L221] the FIRST-HOP FUNNEL on f4wA (static, zero rollouts)
+[CERT-D5] GREEN 6 integer equalities vs L178's stored anatomy; the carrier's FIVE pool-out-edge targets identified: [14369, 16409, 17104, 18104, 21439]
+[CERT-CROFTS] GREEN lam1(A_crofts) 0.388120114048 vs stored 0.388120114048 (rel 0.000e+00 <= derived bar 1.059e-07 = 10x the operator's own measured rel_spread)
+[L221] three metrics ready on 469,618 shared edge indices: abs (L=-log10 A/Amax), crofts (A/sqrt(s_i s_j)), hop (L==1, T_L kept)
+[CERT-FHE] GREEN actors: 3030 EXACT equalities (dist/si/hop and T_L[first-hop edge] == the certified fh) for carrier + twin
+[CERT-FHE] GREEN all 100 draws: 93930 EXACT equalities total
+[L221] metric abs: realised 11 edges (11 distinct costs) | feasible 11 (tol0 11) | reach 303/303 | sweeps 2
+[L221] metric crofts: realised 30 edges (30 distinct costs) | feasible 30 (tol0 30) | reach 303/303 | sweeps 2
+[L221] metric hop: realised 23 edges (15 distinct costs) | feasible 46 (tol0 46) | reach 303/303 | sweeps 2
+[L221] POOL-GEOMETRY control (nonselective, 35 actors): carrier 11 realised vs census med 14.0 [5, 22] -> pct 0.286; frac-of-menu pct 0.257; demotes=True
+[L221] leg (a): rho(w, used) +0.2280 == -rho(T_L, used) -0.1898 (identity False); the 11 used edges carry 18.6% of out-mass; weight ranks [2, 7, 11, 13, 15, 16, 19, 23, 25, 48, 60]
+[L221] leg (b): 11 used first-hop edges -> 11 distinct targets; 4/5 of L178's pool-out-edge targets realised, 4/5 feasible; relation overlapping; 4 used targets carry a pool out-edge
+[L221] F_METRIC: J_min(feasible) 0.2391 vs bar 0.8 | realised edges 11 vs null p05 15.0 (med 21.0) -> narrow=True | J_min(realised) 0.3226
+========================================================================
+L221 DONE 43s | F_METRIC | J_min(feas) 0.2391 | edges 11 vs null p05 15.0 | census pct 0.286 | predictions 3 of 5 | CERT-FHE 93930 + CERT-D5 6

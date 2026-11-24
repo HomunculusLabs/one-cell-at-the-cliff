@@ -1,0 +1,13 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l222_static.py", line 906, in <module>
+    GLOB[F] = floor_leg(F, BETA_L, None, f"global_f{F}")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/banc/l222_static.py", line 823, in floor_leg
+    cc = matched_cohort(SUBF, GI_CARRIER)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t3rpz/critters/peabrain-lab/banc/l222_static.py", line 333, in matched_cohort
+    tgt = math.log(float(sub["om"][gi]))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: math domain error

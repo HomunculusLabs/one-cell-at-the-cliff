@@ -1,0 +1,354 @@
+{
+ "design": "L215 dead-left-trochanter resurrection (static): sign-decomposed per-side in-mass into the Ti/Tr pools on cutwA vs f4wA, with the sub-floor REMOVED mass split by sign, against a sign-neutral counterfactual. Zero rollouts, zero dynamics.",
+ "prereg": "l215/PREREG.md",
+ "cert_f4": {
+  "K4": 73,
+  "carrier_rank": 21,
+  "twin_gi": 290,
+  "mass_gap_rel": 2.4362329626845237e-05,
+  "n_f4wA": 21789,
+  "edges_f4wA": 469618,
+  "n_family": 33
+ },
+ "gains": {
+  "g_f4wA": 0.15051452517509462,
+  "g_f4ng": 0.16230986118316648,
+  "g_f4tw": 0.15261898636817928
+ },
+ "gains_used": {
+  "g_cutwA": 0.14365819573402408,
+  "g_f4wA": 0.15051452517509462,
+  "ratio": 1.0477266848997928
+ },
+ "cert": {
+  "cert_205": 36,
+  "cert_tbl": 28,
+  "cert_g": 2,
+  "total_float_equalities": 66
+ },
+ "rows": {
+  "Ti_L": {
+   "n_cells": 56,
+   "cutwA": {
+    "Mp": 8783.186636386981,
+    "Mm": 7348.120945940516,
+    "NET": 1435.065690446465,
+    "TOT": 16131.307582327498,
+    "n_edges": 6964,
+    "NET_per_cell": 25.626173043686872,
+    "NET_gain": 3.6814097830239407,
+    "inh_frac": 0.4555192385018237
+   },
+   "f4wA": {
+    "Mp": 7743.188606670709,
+    "Mm": 6527.434684157541,
+    "NET": 1215.7539225131686,
+    "TOT": 14270.62329082825,
+    "n_edges": 5621,
+    "NET_per_cell": 21.70989147344944,
+    "NET_gain": 3.2676540067290776,
+    "inh_frac": 0.4574036151842598
+   },
+   "elig_nodematched": {
+    "Mp": 7743.188606670709,
+    "Mm": 6527.434684157541,
+    "NET": 1215.7539225131686,
+    "TOT": 14270.62329082825,
+    "n_edges": 5621
+   },
+   "removed": {
+    "Rp": 1039.9980297162733,
+    "Rm": 820.6862617829752,
+    "NET": 219.31176793329814,
+    "TOT": 1860.6842914992485,
+    "n_edges": 1343,
+    "frac_of_exc": 0.11840782540220311,
+    "frac_of_inh": 0.11168654786995101,
+    "inh_frac": 0.4410669050802306
+   },
+   "ret": 0.8846538458210479,
+   "ret_nodematched": 0.8846538458210479
+  },
+  "Ti_R": {
+   "n_cells": 57,
+   "cutwA": {
+    "Mp": 10789.842542897164,
+    "Mm": 8866.010327769816,
+    "NET": 1923.8322151273478,
+    "TOT": 19655.852870666982,
+    "n_edges": 8296,
+    "NET_per_cell": 33.75144237065523,
+    "NET_gain": 4.848671314389223,
+    "inh_frac": 0.4510621027796168
+   },
+   "f4wA": {
+    "Mp": 9627.424297881384,
+    "Mm": 8011.072172066951,
+    "NET": 1616.3521258144328,
+    "TOT": 17638.496469948335,
+    "n_edges": 6837,
+    "NET_per_cell": 28.3570548388497,
+    "NET_gain": 4.268148644433582,
+    "inh_frac": 0.4541811251155023
+   },
+   "elig_nodematched": {
+    "Mp": 9625.632538412156,
+    "Mm": 8009.280412597724,
+    "NET": 1616.352125814432,
+    "TOT": 17634.91295100988,
+    "n_edges": 6835
+   },
+   "removed": {
+    "Rp": 1164.21000448501,
+    "Rm": 856.7299151720924,
+    "NET": 307.48008931291747,
+    "TOT": 2020.9399196571023,
+    "n_edges": 1461,
+    "frac_of_exc": 0.10789870193716558,
+    "frac_of_inh": 0.096630827564984,
+    "inh_frac": 0.42392646453213506
+   },
+   "ret": 0.8973661222439648,
+   "ret_nodematched": 0.8971838091710072
+  },
+  "Tr_L": {
+   "n_cells": 55,
+   "cutwA": {
+    "Mp": 9862.760240981057,
+    "Mm": 9641.95742359478,
+    "NET": 220.80281738627673,
+    "TOT": 19504.717664575837,
+    "n_edges": 8147,
+    "NET_per_cell": 4.014596679750486,
+    "NET_gain": 0.5767297156127585,
+    "inh_frac": 0.4943397586885532
+   },
+   "f4wA": {
+    "Mp": 8912.871344737578,
+    "Mm": 8736.70720578349,
+    "NET": 176.16413895408732,
+    "TOT": 17649.578550521066,
+    "n_edges": 6808,
+    "NET_per_cell": 3.2029843446197694,
+    "NET_gain": 0.4820956677737062,
+    "inh_frac": 0.49500939531077687
+   },
+   "elig_nodematched": {
+    "Mp": 8912.871344737578,
+    "Mm": 8736.70720578349,
+    "NET": 176.16413895408732,
+    "TOT": 17649.578550521066,
+    "n_edges": 6808
+   },
+   "removed": {
+    "Rp": 949.8888962434805,
+    "Rm": 905.2502178112886,
+    "NET": 44.63867843219191,
+    "TOT": 1855.1391140547692,
+    "n_edges": 1339,
+    "frac_of_exc": 0.09631065472894373,
+    "frac_of_inh": 0.09388656037788093,
+    "inh_frac": 0.48796891346476295
+   },
+   "ret": 0.9048876714875989,
+   "ret_nodematched": 0.9048876714875989
+  },
+  "Tr_R": {
+   "n_cells": 55,
+   "cutwA": {
+    "Mp": 10130.364298370601,
+    "Mm": 9987.971167359468,
+    "NET": 142.39313101113294,
+    "TOT": 20118.33546573007,
+    "n_edges": 8407,
+    "NET_per_cell": 2.588966018384235,
+    "NET_gain": 0.37192618701777946,
+    "inh_frac": 0.4964611105313934
+   },
+   "f4wA": {
+    "Mp": 9083.712055725084,
+    "Mm": 8987.066638630906,
+    "NET": 96.6454170941779,
+    "TOT": 18070.77869435599,
+    "n_edges": 6930,
+    "NET_per_cell": 1.7571894017123255,
+    "NET_gain": 0.26448252844143927,
+    "inh_frac": 0.4973259199636935
+   },
+   "elig_nodematched": {
+    "Mp": 9083.712055725084,
+    "Mm": 8987.066638630906,
+    "NET": 96.6454170941779,
+    "TOT": 18070.77869435599,
+    "n_edges": 6930
+   },
+   "removed": {
+    "Rp": 1046.6522426455174,
+    "Rm": 1000.904528728561,
+    "NET": 45.7477139169564,
+    "TOT": 2047.5567713740784,
+    "n_edges": 1477,
+    "frac_of_exc": 0.10331832220622748,
+    "frac_of_inh": 0.10021099500161766,
+    "inh_frac": 0.4888287068381855
+   },
+   "ret": 0.8982243449085575,
+   "ret_nodematched": 0.8982243449085575
+  }
+ },
+ "Q1_bulk": {
+  "ret_Tr_L": 0.9048876714875989,
+  "ret_Tr_R": 0.8982243449085575,
+  "ratio_Tr": 1.0074183321981989,
+  "ret_Ti_L": 0.8846538458210479,
+  "ret_Ti_R": 0.8973661222439648,
+  "ratio_Ti": 0.9858337905701984,
+  "BULK_SYMMETRIC": true,
+  "bar": 0.05
+ },
+ "Q2_sign_neutral": {
+  "Ti_L": {
+   "NET_cutwA": 1435.065690446465,
+   "NET_f4wA": 1215.7539225131686,
+   "NET_pred": 1269.5363820593027,
+   "dNET_act": -0.41375577629486315,
+   "dNET_pred": -0.2692014662710216,
+   "S_sign": 0.34937109837670255,
+   "dNET_act_raw": -3.9162815702374343,
+   "S_sign_raw": 0.24523289403463297,
+   "degen_bar": 0.4138204539478126,
+   "D_DEGENERATE": true,
+   "frac_of_exc": 0.11840782540220311,
+   "frac_of_inh": 0.11168654786995101,
+   "dir_confirm": false,
+   "BULK_ACCOUNTS": false,
+   "SIGN_ACCOUNTS": false
+  },
+  "Ti_R": {
+   "NET_cutwA": 1923.8322151273478,
+   "NET_f4wA": 1616.3521258144328,
+   "NET_pred": 1726.3818547368453,
+   "dNET_act": -0.5805226699556405,
+   "dNET_pred": -0.2899775400626359,
+   "S_sign": 0.5004888610382883,
+   "dNET_act_raw": -5.394387531805526,
+   "S_sign_raw": 0.35784342709240563,
+   "degen_bar": 0.4953902384234134,
+   "D_DEGENERATE": false,
+   "frac_of_exc": 0.10789870193716558,
+   "frac_of_inh": 0.096630827564984,
+   "dir_confirm": false,
+   "BULK_ACCOUNTS": false,
+   "SIGN_ACCOUNTS": false
+  },
+  "Tr_L": {
+   "NET_cutwA": 220.80281738627673,
+   "NET_f4wA": 176.16413895408732,
+   "NET_pred": 199.80174728256947,
+   "dNET_act": -0.09463404783905233,
+   "dNET_pred": -0.029946713405664127,
+   "S_sign": 0.6835524413306759,
+   "dNET_act_raw": -0.8116123351307165,
+   "S_sign_raw": 0.5295319924040768,
+   "degen_bar": 0.5094568269080932,
+   "D_DEGENERATE": true,
+   "frac_of_exc": 0.09631065472894373,
+   "frac_of_inh": 0.09388656037788093,
+   "dir_confirm": false,
+   "BULK_ACCOUNTS": false,
+   "SIGN_ACCOUNTS": false
+  },
+  "Tr_R": {
+   "NET_cutwA": 142.39313101113294,
+   "NET_f4wA": 96.6454170941779,
+   "NET_pred": 127.9009768219533,
+   "dNET_act": -0.1074436585763402,
+   "dNET_pred": -0.02190882709437797,
+   "S_sign": 0.7960900867982689,
+   "dNET_act_raw": -0.8317766166719097,
+   "S_sign_raw": 0.6832157730222983,
+   "degen_bar": 0.5254843225779289,
+   "D_DEGENERATE": true,
+   "frac_of_exc": 0.10331832220622748,
+   "frac_of_inh": 0.10021099500161766,
+   "dir_confirm": false,
+   "BULK_ACCOUNTS": false,
+   "SIGN_ACCOUNTS": false
+  }
+ },
+ "Q2b_relu_crossing": {
+  "NET_cutwA_Tr_L": 220.80281738627673,
+  "NET_f4wA_Tr_L": 176.16413895408732,
+  "CROSSES": false
+ },
+ "Q3_specificity": {
+  "S_sign_Ti_L": 0.34937109837670255,
+  "S_sign_Ti_R": 0.5004888610382883,
+  "SILENT_ON_Ti": false
+ },
+ "Q4_null": {
+  "ndraw": 2000,
+  "seed": 21521,
+  "kind": "membership permutation (L45b/L70 handedness class); per-side counts held EXACT",
+  "Ti": {
+   "A_inh": 0.07716199707405345,
+   "pct_up": 0.0175,
+   "pct_two": 0.035,
+   "null_mean": 0.000440807997279143,
+   "null_sd": 0.036917685618780186,
+   "null_p05": -0.060685267327606034,
+   "null_p95": 0.0610568174996187
+  },
+  "Tr": {
+   "A_inh": -0.034722418560043634,
+   "pct_up": 0.8525,
+   "pct_two": 0.29499999999999993,
+   "null_mean": 0.0005902661582562778,
+   "null_sd": 0.03460318167258275,
+   "null_p05": -0.05658786013283202,
+   "null_p95": 0.05957354992946898
+  }
+ },
+ "lam1_noop": {
+  "scale_tested": 3.7,
+  "max_abs_move": 1.1102230246251565e-16,
+  "is_noop": true
+ },
+ "branch": "D_DEGENERATE",
+ "predictions": {
+  "P1": {
+   "claim": "BULK_SYMMETRIC TRUE",
+   "got": true,
+   "scored": true
+  },
+  "P2": {
+   "claim": "Q2b CROSSES FALSE",
+   "got": false,
+   "scored": true
+  },
+  "P3": {
+   "claim": "branch B_SIGN",
+   "got": "D_DEGENERATE",
+   "scored": false
+  },
+  "P4": {
+   "claim": "SILENT_ON_Ti TRUE",
+   "got": false,
+   "scored": false
+  },
+  "P5": {
+   "claim": "Q4 Tr percentile more extreme than Ti",
+   "got": [
+    0.29499999999999993,
+    0.035
+   ],
+   "scored": false
+  }
+ },
+ "limits": [
+  "depth-1 in-mass under a uniform-X approximation; L208 already showed static drive does not predict dynamic level even in sign on Ti",
+  "the Tr_L pools were SELECTED for being dead (L208 post-hoc floor leg): every number here is a DESCRIPTION of a selected object, and Q4 is a handedness null on a preselected pool, not a p-value for 'a pool'",
+  "ret() mixes the floor with the small node-set change (cutwA drops ng_desc[:24], f4wA drops ng4[:20]); the node-matched eligible leg is reported beside it",
+  "B_BOTH is unreachable by construction (declared in the PREREG)"
+ ]
+}

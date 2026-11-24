@@ -39,7 +39,7 @@ window". Fixing item 1 needs new rollouts, not editing.
 
 ## Task 1 — verify scripts
 
-Interpreter `~/critters/peabrain/.venv/bin/python`, `CUDA_VISIBLE_DEVICES=""`.
+Interpreter `/home/t3rpz/critters/peabrain/.venv/bin/python`, `CUDA_VISIBLE_DEVICES=""`.
 Outputs in `review_fable_evidence_r2/verify_*.out`; statuses in `02_verify_exit_statuses.txt`.
 
 | script | exit | note |

@@ -1,0 +1,29 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[premise] pure_proj 560 of 1313 DNs | carrier True / mirror False (registered)
+[sub] G0_closure: n 21,809 edges 647,953 lam1(g=1) 227.786907 (rel spread 1.25e-16)
+[sub] G1_cutwA: n 21,785 edges 644,177 lam1(g=1) 227.779875 (rel spread 1.25e-16)
+[sub] F4_f4wA: n 21,789 edges 469,618 lam1(g=1) 200.510803 (rel spread 1.42e-16)
+[CERT-207] GREEN 522 checks at FLOAT EQUALITY (l207 ladder_table x3 substrates + 2 slot comparators + Q2 actors); artifact fingerprint unchanged
+[CERT-T] GREEN 272 checks: fast transposed census agrees with the verbatim reach_sub at max rel diff 9.05e-16 (< 1e-12)
+[pop] G0_closure: 1288 present descending cells with m_out>0 (1273 named types, 560 pure_proj)
+[pop] G1_cutwA: 1264 present descending cells with m_out>0 (1249 named types, 536 pure_proj)
+[pop] F4_f4wA: 1260 present descending cells with m_out>0 (1245 named types, 535 pure_proj)
+[strata] counts G0_closure [129, 129, 129, 127, 130, 129, 128, 129, 129, 129] | G1_cutwA [127, 126, 126, 127, 126, 126, 127, 126, 126, 127] | F4_f4wA [126, 126, 126, 126, 126, 126, 126, 126, 126, 126]
+[Q1] G0_closure: DNp33 type median 2.75903e-05 | pct among 426 type medians 0.131 | NULL pct 0.0145 (null med 0.000411367) -> T_TYPE_LOW
+[Q1] G1_cutwA: DNp33 type median 2.7592e-05 | pct among 411 type medians 0.141 | NULL pct 0.0105 (null med 0.000444818) -> T_TYPE_LOW
+[Q1] F4_f4wA: DNp33 type median 3.33736e-05 | pct among 409 type medians 0.169 | NULL pct 0.0130 (null med 0.000479518) -> T_TYPE_LOW
+[Q1] BRANCH T_TYPE_LOW (['T_TYPE_LOW', 'T_TYPE_LOW', 'T_TYPE_LOW'])
+[Q2] G0_closure: median pure 9.17346e-05 vs nonpure 0.000336298 (dlog10 -0.5642, ratio 0.273) | NULL pct 0.1660 -> C_CLASS_TYPICAL
+[Q2] G1_cutwA: median pure 8.35644e-05 vs nonpure 0.000336746 (dlog10 -0.6053, ratio 0.248) | NULL pct 0.2275 -> C_CLASS_TYPICAL
+[Q2] F4_f4wA: median pure 9.25719e-05 vs nonpure 0.000384002 (dlog10 -0.6179, ratio 0.241) | NULL pct 0.1700 -> C_CLASS_TYPICAL
+[Q2] BRANCH C_CLASS_TYPICAL (['C_CLASS_TYPICAL', 'C_CLASS_TYPICAL', 'C_CLASS_TYPICAL'])
+[Q3] G0_closure: carrier pct-in-pure_proj 0.318 (560 cells) | mirror pct-in-nonpure 0.144 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] G1_cutwA: carrier pct-in-pure_proj 0.336 (536 cells) | mirror pct-in-nonpure 0.152 (728 cells) -> D_CLASS_EXPLAINS
+[Q3] F4_f4wA: carrier pct-in-pure_proj 0.407 (535 cells) | mirror pct-in-nonpure 0.153 (725 cells) -> D_CLASS_EXPLAINS
+[Q3] BRANCH D_CLASS_EXPLAINS (['D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS', 'D_CLASS_EXPLAINS'])
+[READ] derived reading: MIXTURE

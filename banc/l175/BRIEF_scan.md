@@ -2,7 +2,7 @@
 
 Owner-directed (Discord, 2026-11-21 ~10:4x). You are the EXPERIMENTER this
 time, not a referee. You execute two pre-registered experiments in
-`~/critters/peabrain-lab/`. The lab's discipline is mandatory and
+`/home/t3rpz/critters/peabrain-lab/`. The lab's discipline is mandatory and
 is what makes your results admissible.
 
 ## Context (30 seconds)

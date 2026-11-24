@@ -1,0 +1,37 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[spectral] lam1(A_crofts) = 0.388120 (rel spread 1.06e-08)
+[sweep] 35 actors x depths 1-10, both normalisations (depth-1..3 vs L178 stored: max rel diff 0.0e+00)
+[conv] carrier cos(x_d, v1) = 0.0039 0.0362 0.1255 0.2928 0.5844 0.8137 0.9043 0.9374 0.9540 0.9649 -> d_conv None
+[null] 100 draws x depths 1-10 (med changed 138.0)
+[CERT-NULL] GREEN: all 8 stored L178 Q2b_null_anatomical statistics reproduced by FLOAT EQUALITY from my own null construction
+[CERT-206] GREEN 94 stored L206 G1 values reproduced by FLOAT EQUALITY (10 depths x 9 fields + lam1 + tail mean + the D10 pin); D10 = 10.38807894033
+[CERT-MV] GREEN 8 exact array equalities vs the certified np.add.at matvec (4 probes x 2 index orders); bilinear rel 0.00e+00
+[CERT-LEFT] GREEN right-replay rel 0.00e+00 / |cos-1| 2.22e-16; left lam1 30.179788 vs 30.179788 (rel 2.35e-16, spread 3.53e-16)
+[K] real carrier K 5.341134e-03 | P10 4.027713e+12 | lam1^10*K 3.348076e+12 | C_real 1.202993 (twin C 1.175480)
+[Q210-5] carrier K/m_out 3.165782e-05 rank 4 of 35 (family median 4.602493e-04)
+[CERT-REBUILD] GREEN 1000 stored null values (100 draws x depths 1-10) reproduced by FLOAT EQUALITY from my own operator rebuild
+[Q210-1] B_CLOSED_FORM | R_asym 11.3985 vs D10 10.3881 (ratio 1.0973) | R_bare 11.4039 | converged draws 100/100
+[Q210-3] C_real 1.202993 | C_null_med 1.102947 | C_twin 1.175480 | carrier cos(x10,v1) 0.964861
+[Q210-4] |lam2| ~ 26.946910 | lam2/lam1 0.892879 | rel spread 3.09e-10 | converged True
+[L219 read-only] fingerprinted 6 prior artifacts
+[CERT-219P] GREEN 1106 stored L210 values reproduced by FLOAT EQUALITY before any L219 quantity was read
+[L219 real] S_car 1.236560e-02 | identity (I) rel 4.21e-16 | m_out_op 25.393987 | U 0.169624 Q 0.181022 align 1.113626 | identity (II) rel 3.27e-16
+[CERT-WMULT] GREEN 7200 checks: the carrier's out-weight MULTISET is float-identical in all 100 draws and the out-degree is 69 in all 100 (the PREREG 0a premise, measured not assumed)
+[CERT-219D] GREEN 600 stored L210 per-draw values reproduced by FLOAT EQUALITY from my own rebuild -> the u_k read below ARE the certified draws' left Perron vectors
+[Q219-1] TARGET_QUALITY | rQ 12.6673 | rA 0.8981 | rU 11.4024 | lam ratio 0.999977 | bar 5.0 | spearman(logQ,logA) +0.1340
+[Q219-1] real  U 0.169624 Q 0.181022 align 1.113626
+[Q219-1] draws U med 1.934112 Q med 2.293065 [p05 1.568798, p95 3.475716] align med 1.000144 [p05 0.900755, p95 1.122972]
+[Q219-2] contribution Gini 0.8351 | weight Gini 0.1493 | spearman(w, u1[t]) +0.0670 | top-1 share 0.2536 | top-10 share 0.8316
+[Q219-2] cohort medians (33 family): Q 2.3413 align 1.0121 gini_contrib 0.7467 | twin Q 1.1796 align 0.9937 gini 0.7870
+[Q219-3] menu = 49,076 block edge destinations (9,803 distinct cells)
+[Q219-3] WM_REPRODUCES | menu-matched median S / S_car 11.4757 (S_car pct 0.0000) | node-uniform 4.7309 (pct 0.0000) | L210 K_ratio_med 11.4016
+[predictions] 4 of 5 (P1 True P2 True P3 True P4 False P5 True)
+[L219 read-only] all 6 prior artifacts unchanged
+[L219] wrote l219/static.json

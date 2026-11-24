@@ -16,3 +16,9 @@
 [CERT-LEFT] GREEN right-replay rel 0.00e+00 / |cos-1| 2.22e-16; left lam1 30.179788 vs 30.179788 (rel 2.35e-16, spread 3.53e-16)
 [K] real carrier K 5.341134e-03 | P10 4.027713e+12 | lam1^10*K 3.348076e+12 | C_real 1.202993 (twin C 1.175480)
 [Q210-5] carrier K/m_out 3.165782e-05 rank 4 of 35 (family median 4.602493e-04)
+[CERT-REBUILD] GREEN 1000 stored null values (100 draws x depths 1-10) reproduced by FLOAT EQUALITY from my own operator rebuild
+[Q210-1] B_CLOSED_FORM | R_asym 11.3985 vs D10 10.3881 (ratio 1.0973) | R_bare 11.4039 | converged draws 100/100
+[Q210-3] C_real 1.202993 | C_null_med 1.102947 | C_twin 1.175480 | carrier cos(x10,v1) 0.964861
+[Q210-4] |lam2| ~ 26.946910 | lam2/lam1 0.892879 | rel spread 3.09e-10 | converged True
+[PREDICTIONS] 3 of 5 correct: Q210_1=Y Q210_2=Y Q210_3=N Q210_4=Y Q210_5=N
+[done] wrote l210/static.json

@@ -1,0 +1,74 @@
+{
+ "0": {
+  "asis": {
+   "stay": 2584,
+   "to_fence": 352,
+   "parade": 96,
+   "to_boot": 156,
+   "settle": 2572
+  },
+  "Bj": {
+   "stay": 1592,
+   "to_pond": 1459,
+   "parade": 96,
+   "to_fence": 30,
+   "to_boot": 11,
+   "settle": 2572
+  },
+  "ticks": 5760
+ },
+ "1": {
+  "asis": {
+   "stay": 2577,
+   "to_boot": 162,
+   "parade": 114,
+   "to_fence": 351,
+   "settle": 2556
+  },
+  "Bj": {
+   "stay": 1597,
+   "to_pond": 1438,
+   "parade": 114,
+   "to_fence": 38,
+   "to_boot": 17,
+   "settle": 2556
+  },
+  "ticks": 5760
+ },
+ "2": {
+  "asis": {
+   "stay": 2559,
+   "to_fence": 326,
+   "to_boot": 170,
+   "parade": 135,
+   "settle": 2570
+  },
+  "Bj": {
+   "stay": 1603,
+   "to_pond": 1398,
+   "to_boot": 25,
+   "to_fence": 29,
+   "parade": 135,
+   "settle": 2570
+  },
+  "ticks": 5760
+ },
+ "3": {
+  "asis": {
+   "stay": 2523,
+   "to_fence": 349,
+   "to_boot": 151,
+   "parade": 160,
+   "settle": 2577
+  },
+  "Bj": {
+   "stay": 1633,
+   "to_pond": 1327,
+   "parade": 160,
+   "to_fence": 42,
+   "to_boot": 21,
+   "settle": 2577
+  },
+  "ticks": 5760
+ }
+}

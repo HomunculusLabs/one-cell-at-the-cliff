@@ -1,0 +1,315 @@
+{
+ "design": "L223 the READOUT-SPECIFICITY claim nulled properly: is the v783 DNp33 carrier unusual in its motor-vs-descending CONTRAST, scored in the cohort's OWN joint distribution? Static, zero rollouts.",
+ "prereg": "l223/PREREG.md",
+ "beta_L": 2.0,
+ "nt_mix": {
+  "acetylcholine": 86191,
+  "glutamate": 24873,
+  "gaba": 19171,
+  "dopamine": 5909,
+  "serotonin": 2281,
+  "unknown": 614,
+  "octopamine": 216
+ },
+ "cert_l207": {
+  "n_checks": 8,
+  "carrier": {
+   "gi": 132493,
+   "root_id": "720575940604103084",
+   "cell_type": "DNp33",
+   "side": "left",
+   "super_class": "descending",
+   "nt": "acetylcholine",
+   "nerve": "CV"
+  },
+  "mirror": {
+   "gi": 132179,
+   "root_id": "720575940633165452",
+   "cell_type": "DNp33",
+   "side": "right",
+   "super_class": "descending",
+   "nt": "acetylcholine",
+   "nerve": "CV"
+  },
+  "source": "l207/static.json (read-only, mtime asserted)"
+ },
+ "readout_primary": {
+  "kind": "v783 super_class==motor by nerve",
+  "sizes": {
+   "mot_PhN": 40,
+   "mot_MxLbN": 26,
+   "mot_CV": 20,
+   "mot_AN": 14,
+   "mot_ON": 10
+  },
+  "n_cells": 110,
+  "named": 110
+ },
+ "readout_secondary": {
+  "kind": "v783 super_class==descending minus actors",
+  "n_cells": 1301
+ },
+ "cert_783": {
+  "n_checks": 6,
+  "N": 139255,
+  "n_pairs": 15091983,
+  "live_nnz": 15091983,
+  "raw_rows": 16847997,
+  "mode": "array_equal / ==",
+  "note": "ids from the Zenodo npy; pair count cross-checked against the live coalesced graph's nnz."
+ },
+ "cert_mv": {
+  "n_checks": 4,
+  "mode": "EXACT array_equal (==)"
+ },
+ "cert_gate": {
+  "n_checks": 22,
+  "mode": "float equality (==)",
+  "source": "l207_tail.py reach_sub / power_iter_sub verbatim"
+ },
+ "lam1": {
+  "value": 552.6340796478873,
+  "rel_spread_last6": 4.11436217592849e-16,
+  "iters": 400
+ },
+ "rescale_noop": {
+  "rel_diff": 3.970137066455021e-16,
+  "lam1_scaled": 1657.9022389436618,
+  "note": "R measured invariant under A -> 3A (L209)"
+ },
+ "Q1_primary": {
+  "carrier_R": 1.6001329420295532e-06,
+  "mirror_R": 1.0027621125362924e-05,
+  "carrier_P2": 12.648220345819931,
+  "mirror_P2": 68.28868545807632,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.6931471805599453,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.02,
+  "mirror_pct": 0.25,
+  "cohort_k": 100,
+  "cohort_union_n": 122,
+  "cohort_median_carrier": 2.0581589159220384e-05,
+  "cohort_median_mirror": 1.6626373739425428e-05,
+  "cohort_zero_frac_carrier": 0.01,
+  "cohort_zero_frac_mirror": 0.01,
+  "cohort_min_carrier": 0.0,
+  "cohort_max_carrier": 0.0001733230671116423,
+  "carrier_rank_of_cohort": 3,
+  "mirror_rank_of_cohort": 26,
+  "deficit_vs_median": 12.862424501501362,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.3485815975868416,
+  "readout": "PRIMARY v783 motor (110 cells, 5 nerve pools)",
+  "per_pool_carrier": {
+   "mot_PhN": 0.0,
+   "mot_MxLbN": 0.0,
+   "mot_CV": 2.483906048674021,
+   "mot_AN": 10.16431429714591,
+   "mot_ON": 0.0
+  },
+  "per_pool_mirror": {
+   "mot_PhN": 0.0,
+   "mot_MxLbN": 0.0,
+   "mot_CV": 14.651711070757095,
+   "mot_AN": 45.01865506635982,
+   "mot_ON": 8.618319320959408
+  }
+ },
+ "branch": "S_SPECIFIC",
+ "Q2_secondary_descriptive": {
+  "carrier_R": 0.00015709137920956863,
+  "mirror_R": 0.00016350700753680461,
+  "carrier_P2": 1241.7258132010154,
+  "mirror_P2": 1113.4922698296552,
+  "carrier_P1": 6.238324625039507,
+  "mirror_P1": 4.852030263919617,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.29,
+  "mirror_pct": 0.36,
+  "cohort_k": 100,
+  "cohort_union_n": 122,
+  "cohort_median_carrier": 0.00022586693781832335,
+  "cohort_median_mirror": 0.00022275224328085314,
+  "cohort_zero_frac_carrier": 0.0,
+  "cohort_zero_frac_mirror": 0.0,
+  "cohort_min_carrier": 1.7226570598452664e-05,
+  "cohort_max_carrier": 0.0009287935489392673,
+  "carrier_rank_of_cohort": 30,
+  "mirror_rank_of_cohort": 37,
+  "deficit_vs_median": 1.4378060652010973,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.3485815975868416,
+  "readout": "SECONDARY v783 descending minus actors (1301), DESCRIPTIVE"
+ },
+ "Q3_robust_beta1": {
+  "carrier_R": 3.1863435275063676e-06,
+  "mirror_R": 1.2904791773847535e-05,
+  "carrier_P2": 11.886720335401122,
+  "mirror_P2": 41.476101573335754,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.6931471805599453,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 22.29849281357462,
+  "carrier_pct": 0.07,
+  "mirror_pct": 0.17,
+  "cohort_k": 100,
+  "cohort_union_n": 124,
+  "cohort_median_carrier": 3.4476976264641136e-05,
+  "cohort_median_mirror": 2.928150083591627e-05,
+  "cohort_zero_frac_carrier": 0.01,
+  "cohort_zero_frac_mirror": 0.01,
+  "cohort_min_carrier": 0.0,
+  "cohort_max_carrier": 0.00016993556402577245,
+  "carrier_rank_of_cohort": 8,
+  "mirror_rank_of_cohort": 18,
+  "deficit_vs_median": 10.820232020501198,
+  "mass_match_logspread_carrier": 0.3165223863897433,
+  "mass_match_logspread_mirror": 0.3362464714579523,
+  "readout": "PRIMARY readout, BETA_L=1.0 (pure |W|), ROBUSTNESS",
+  "lam1": 379.6520150406987,
+  "rel_spread_last6": 1.497250550736953e-16,
+  "cohort_identity_jaccard_carrier": 0.7094017094017094,
+  "d_carrier_pct_vs_primary": 0.05
+ },
+ "parent_branch_reproduced": "V_AVOIDS",
+ "cert_212": {
+  "n_checks": 139,
+  "mode": "float/int equality (==), recursive",
+  "source": "l212/static.json (read-only, mtime asserted)",
+  "note": "L212's whole Q1/Q2/Q3 table reproduced by RE-RUNNING its pipeline as a verbatim source slice, never by re-implementing it (L211 lesson)."
+ },
+ "bars": {
+  "pct_specific": 0.1,
+  "rho_degenerate": 0.95,
+  "zero_frac_escape": 0.1,
+  "cohort_k": 100,
+  "beta_L": 2.0
+ },
+ "cert_pair": {
+  "n_checks": 11,
+  "mode": "set / array_equal / float equality",
+  "note": "CV (motor) and CV2 (descending) cover the IDENTICAL cohort key set on the IDENTICAL operator, and both actors' entries equal L212's published R values."
+ },
+ "cert_rank": {
+  "n_checks": 252,
+  "mode": "exact tie-group identity",
+  "note": "the inherited rankvec is verified to be an AVERAGE-rank (midrank) estimator on THIS data before any C_rank is read (tick-252 midrank law); argsort-of-argsort would fail the tie-group gate."
+ },
+ "Q223_0_rho_first": {
+  "rho_COH_C": 0.4776237623762377,
+  "rho_COH_M": 0.4343474347434744,
+  "rho_COH_U": 0.4237544651560862,
+  "n_COH_C": 100,
+  "n_COH_M": 100,
+  "n_COH_U": 122,
+  "bar": 0.95,
+  "note": "Spearman (midranks) between the motor-readout R and the descending-readout R across the cohort. Read BEFORE the carrier's contrast because it decides whether the contrast carries any information at all."
+ },
+ "Q223_1_primary": {
+  "carrier_C_log": -4.5867409546521305,
+  "mirror_C_log": -2.791512451063902,
+  "carrier_pct_own_cohort": 0.04040404040404041,
+  "mirror_pct_own_cohort": 0.3434343434343434,
+  "carrier_rank_of_cohort": 5,
+  "mirror_rank_of_cohort": 35,
+  "n_scored_carrier": 99,
+  "n_scored_mirror": 99,
+  "excluded_zero_carrier": 1,
+  "excluded_zero_mirror": 1,
+  "zero_frac_COH_C": 0.01,
+  "zero_frac_COH_M": 0.01,
+  "bar": 0.1,
+  "note": "C_log(g) = log R_motor(g) - log R_desc(g). COHORT-FREE by construction: a cell's value cannot move when the comparison set moves (L222's cohort-relocation law applied prophylactically)"
+ },
+ "Q223_2_homolog_and_common": {
+  "carrier_pct_union": 0.03305785123966942,
+  "mirror_pct_union": 0.33884297520661155,
+  "n_scored_union": 121,
+  "excluded_zero_union": 1,
+  "d_pct_own": 0.30303030303030304,
+  "d_pct_union": 0.30578512396694213,
+  "cohort_free_d_C_log": 1.7952285035882287,
+  "cohort_free_ratio": 6.0208503505425,
+  "note": "L222's companion set: the OWN-cohort reading, the COMMON-cohort (union) reading and the COHORT-FREE raw values, all three reported so a cohort relocation cannot flip the sign unseen."
+ },
+ "primary_currency": "C_log percentile vs COH_C",
+ "Q223_3_companion_rank": {
+  "carrier_C_rank": -0.26732673267326734,
+  "mirror_C_rank": -0.10891089108910891,
+  "carrier_pct_rank": 0.19,
+  "mirror_pct_rank": 0.33,
+  "agreement_carrier": 0.1495959595959596,
+  "agreement_mirror": 0.01343434343434341,
+  "pool_n": 101,
+  "note": "C_rank = (midrank_motor - midrank_desc)/n on the common pool cohort + {actor}; reported beside C_log because L218 measured the same cell landing on OPPOSITE sides of the same null under two currencies of one quantity."
+ },
+ "Q223_4_descriptive": {
+  "cohort_C_log_min": -5.135995060183635,
+  "cohort_C_log_p05": -4.37063787161193,
+  "cohort_C_log_median": -2.22825680471378,
+  "cohort_C_log_p95": -0.9573343435087793,
+  "cohort_C_log_max": -0.1767118785403632,
+  "cohort_C_log_mean": -2.418650230327742,
+  "cohort_C_log_sd": 1.0554416643042093,
+  "cohort_C_rank_median": 0.009900990099009901,
+  "ratio_of_medians_log": -2.3955491091176526,
+  "carrier_z_in_cohort": -2.0542023284192434,
+  "mirror_z_in_cohort": -0.3824587766234029,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.3485815975868416,
+  "note": "ratio_of_medians_log is the OBSERVED-DERIVABLE quantity (PREREG 0e) and is reported beside the median of ratios precisely because they are not the same number."
+ },
+ "predictions": {
+  "Q223_1": {
+   "registered": "S_SPECIFIC",
+   "measured": "S_SPECIFIC",
+   "correct": true
+  },
+  "Q223_2": {
+   "registered": "rho(COH_C) in [0.40, 0.95)",
+   "measured": 0.4776237623762377,
+   "correct": true
+  },
+  "Q223_3": {
+   "registered": "carrier C_log pct < mirror C_log pct",
+   "measured": {
+    "carrier": 0.04040404040404041,
+    "mirror": 0.3434343434343434
+   },
+   "correct": true
+  },
+  "Q223_4": {
+   "registered": "excluded-zero count over COH_C <= 2",
+   "measured": 1,
+   "correct": true
+  },
+  "Q223_5": {
+   "registered": "|pct_log - pct_rank| <= 0.10 for the carrier",
+   "measured": 0.1495959595959596,
+   "correct": false
+  },
+  "Q223_6": {
+   "registered": "mirror C_log pct > 0.10 (the twin is NOT specific)",
+   "measured": 0.3434343434343434,
+   "correct": true
+  }
+ },
+ "n_predictions_correct": 5,
+ "observed_derivable_DESCRIPTION": {
+  "note": "PREREG 0e / Kriegeskorte 2009: l212/static.json was read while scoping, so the actors' R values in BOTH legs, hence both C_log values and their difference, and both cohort MEDIANS (hence the ratio-of-medians) were derivable before measurement and carry NO branch. Every branch sits on the cohort's per-cell JOINT distribution, its rho, and the percentiles of a contrast - none of which are determined by the stored summary.",
+  "carrier_C_log": -4.5867409546521305,
+  "mirror_C_log": -2.791512451063902
+ },
+ "limitations": [
+  "v783's cohort mass match is LOOSE (log-spread 0.316 / 0.349 against the 0.15 bar L212 registered and FAILED, Q212-5) - every percentile here inherits that looseness; stated, not repaired.",
+  "v783 is BRAIN-ONLY. L222 measured that ALL in-brain out-edges of BOTH actors sit below synapse 4, so the descending readout is a within-volume stand-in for 'everything else this cell talks to', not the cell's real output targets.",
+  "COH_C is 100 cells, so one cell is one percentile point (L207's resolution law): a 0.10 bar cannot separate 0.10 from 0.11.",
+  "ANATOMICAL leg only: no row mask, no settle, no seed, no rollouts - wiring geometry, NOT an operating point (L164). Operator powers are walks WITH revisits, not paths.",
+  "The contrast cancels readout SIZE only to the extent that size enters every cell's two legs the same way; it does not cancel a readout-specific DEGREE structure. L233 is the card that asks that question directly."
+ ],
+ "pins": "ALL GREEN",
+ "runtime_s": 233.01963639259338
+}

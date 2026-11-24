@@ -1,0 +1,113 @@
+{
+ "design": "L222b: delete EXACTLY the mirror's single direct motor edge and nothing else. POST-HOC addendum to L222.",
+ "parent": {
+  "script": "l222_static.py",
+  "prefix_lines": 906,
+  "note": "generated as a literal PREFIX slice; the parent's static.json is never opened for writing."
+ },
+ "target_edge": {
+  "edge_index": 13661056,
+  "src_gi": 132179,
+  "dst_gi": 116732,
+  "syn_count": 1.0,
+  "dst_root_id": "720575940611008718",
+  "dst_cell_type": "CB0810",
+  "dst_nerve": "AN",
+  "dst_side": "right"
+ },
+ "cert_dropgen": {
+  "n_checks": 10,
+  "mode": "EXACT array_equal (==)"
+ },
+ "cert_drop_mass": {
+  "d_om_mirror": 0.6931471805599436,
+  "want": 0.6931471805599453,
+  "abs_err": 1.6653345369377348e-15,
+  "ulp_of_om": 3.552713678800501e-15,
+  "err_in_ulp": 0.46875,
+  "bar_ulp": 4.0,
+  "note": "difference-of-sums vs summand: bar derived from np.spacing(om), not fixed (L216/L218)"
+ },
+ "drop_one": {
+  "carrier_R": 1.6001329427081003e-06,
+  "mirror_R": 1.0130887608518555e-05,
+  "carrier_P2": 12.648220345819931,
+  "mirror_P2": 66.84732641632172,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.0,
+  "carrier_m_out": 25.88201175203073,
+  "mirror_m_out": 21.605345633014675,
+  "carrier_pct": 0.02,
+  "mirror_pct": 0.25,
+  "cohort_k": 100,
+  "cohort_union_n": 125,
+  "cohort_median_carrier": 2.052725120498262e-05,
+  "cohort_median_mirror": 1.916410121599413e-05,
+  "cohort_zero_frac_carrier": 0.01,
+  "cohort_zero_frac_mirror": 0.01,
+  "cohort_min_carrier": 0.0,
+  "cohort_max_carrier": 0.0001733230671851411,
+  "carrier_rank_of_cohort": 3,
+  "mirror_rank_of_cohort": 26,
+  "deficit_vs_median": 12.828466096224384,
+  "mass_match_logspread_carrier": 0.31631784799628937,
+  "mass_match_logspread_mirror": 0.35466452648868163,
+  "pct_carrier_union": 0.016,
+  "pct_mirror_union": 0.256,
+  "gap_union": 0.24,
+  "gap": 0.23,
+  "ratio_R": 6.331278694489482,
+  "ratio_P2": 5.285117161831694,
+  "lam1": 552.6340795307133,
+  "rel_spread_last6": 2.057181088400426e-16,
+  "n_edges": 15091982,
+  "cohort_jaccard_carrier_vs_f1": 1.0,
+  "cohort_jaccard_mirror_vs_f1": 0.941747572815534
+ },
+ "baseline_unfloored": {
+  "carrier_pct": 0.02,
+  "mirror_pct": 0.25,
+  "gap": 0.23,
+  "carrier_R": 1.6001329420295532e-06,
+  "mirror_R": 1.0027621125362924e-05,
+  "carrier_P1": 0.0,
+  "mirror_P1": 0.6931471805599453,
+  "carrier_P2": 12.648220345819931,
+  "mirror_P2": 68.28868545807632,
+  "ratio_R": 6.266742507434562,
+  "ratio_P2": 5.399074620062642,
+  "lam1": 552.6340796478873
+ },
+ "delta": {
+  "d_mirror_pct": 0.0,
+  "d_carrier_pct": 0.0,
+  "d_gap": 0.0,
+  "d_ratio_R": 0.06453618705492037,
+  "d_ratio_P2": -0.1139574582309475,
+  "d_mirror_P2": -1.4413590417545947,
+  "d_mirror_P1": -0.6931471805599453,
+  "d_lam1": -1.1717406778188888e-07,
+  "frac_of_mirror_P2_lost": 0.021106850016017246
+ },
+ "verdict": {
+  "one_synapse_closes_the_break": false,
+  "direction": "the gap WIDENED or held",
+  "reading": "L212's P1 = log1p(1) coincidence is NOT the mechanism of the .020 / .250 split: deleting exactly that synapse does not close it."
+ },
+ "limitations": [
+  "POST-HOC: this leg was not in L222's PREREG; it is reported as DESCRIPTIVE and no L222 branch depends on it.",
+  "A one-edge deletion is a static anatomical perturbation, not a lesion experiment: no settle, no seed, no rollouts (L164).",
+  "The mirror's depth-1 motor arrival is carried ENTIRELY by this edge, so d_mirror_P1 is exactly -log1p(1) BY CONSTRUCTION and is a gate on the drop, never a finding.",
+  "Every L222 and L212 limitation is inherited verbatim."
+ ],
+ "parent_gates_reran": {
+  "cert_212": 139,
+  "cert_floorgen": 15,
+  "cert_monotone": 6,
+  "cert_783": 6,
+  "cert_mv": 4,
+  "cert_gate": 22,
+  "cert_l207": 8
+ },
+ "runtime_s": 342.4439187049866
+}

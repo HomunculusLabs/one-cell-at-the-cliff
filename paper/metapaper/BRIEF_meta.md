@@ -6,7 +6,7 @@ what internal gates could. Draft the skeleton for THAT paper.
 
 ## Sources (read-only; the receipts ARE the data)
 
-- ~/critters/peabrain/LANE-LOG.md — today's full trail
+- /home/t3rpz/critters/peabrain/LANE-LOG.md — today's full trail
   (adjudications, dispatches, gate events)
 - paper/review_fable.md, review_fable_r2.md, review_claudeai_fable_20261121.md,
   review_astra_r3.md, review_opus_r4.md + their evidence dirs

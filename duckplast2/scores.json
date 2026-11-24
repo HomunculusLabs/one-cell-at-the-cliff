@@ -1,0 +1,2455 @@
+{
+ "seeds": [
+  0,
+  1
+ ],
+ "partial": [],
+ "sessions": [
+  "S1",
+  "S2",
+  "S3",
+  "R"
+ ],
+ "final": "R",
+ "prereg": "367f63390098197eb1ac27ca9ea8868f7c77440251f3d1362ac40998db06679d",
+ "anchor_v1": {
+  "0": {
+   "turns": 192,
+   "label_mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "1": {
+   "turns": 192,
+   "label_mismatches": 0,
+   "max_abs_diff": 0.0
+  }
+ },
+ "routing_mismatch": {
+  "S1": 0,
+  "S2": 0,
+  "S3": 0,
+  "R": 0
+ },
+ "drift": {
+  "0:S1": {
+   "tag": "S1",
+   "T": 43200.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 183549,
+    "at_cap": 36,
+    "mean_abs_rel": 0.001753112766891718,
+    "mean_signed_rel": -0.0017523614224046469,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 349498,
+    "at_cap": 43960,
+    "mean_abs_rel": 0.03693026304244995,
+    "mean_signed_rel": 0.0369267500936985,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 153783,
+    "at_cap": 19681,
+    "mean_abs_rel": 0.019140655174851418,
+    "mean_signed_rel": 0.019113361835479736,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 686830,
+    "at_cap": 63677,
+    "mean_abs_rel": 0.02224704809486866,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "0:D1": {
+   "tag": "D1",
+   "T": 129600.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 183959,
+    "at_cap": 0,
+    "mean_abs_rel": 0.0017257004510611296,
+    "mean_signed_rel": -0.0017250007949769497,
+    "max_abs_rel": 0.19388489425182343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 350688,
+    "at_cap": 0,
+    "mean_abs_rel": 0.03723054379224777,
+    "mean_signed_rel": 0.037227217108011246,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 155408,
+    "at_cap": 0,
+    "mean_abs_rel": 0.018637455999851227,
+    "mean_signed_rel": 0.01861138828098774,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 690055,
+    "at_cap": 0,
+    "mean_abs_rel": 0.02220240794122219,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "0:S2": {
+   "tag": "S2",
+   "T": 129600.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 192297,
+    "at_cap": 116,
+    "mean_abs_rel": 0.0033854045905172825,
+    "mean_signed_rel": -0.003384516341611743,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 354661,
+    "at_cap": 52372,
+    "mean_abs_rel": 0.05171569436788559,
+    "mean_signed_rel": 0.05170891806483269,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 166323,
+    "at_cap": 25812,
+    "mean_abs_rel": 0.024260105565190315,
+    "mean_signed_rel": 0.02421097457408905,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 713281,
+    "at_cap": 78300,
+    "mean_abs_rel": 0.030558541417121887,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "0:D2": {
+   "tag": "D2",
+   "T": 216000.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 192319,
+    "at_cap": 0,
+    "mean_abs_rel": 0.0033383260015398264,
+    "mean_signed_rel": -0.0033374575432389975,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 355083,
+    "at_cap": 0,
+    "mean_abs_rel": 0.05186448246240616,
+    "mean_signed_rel": 0.0518578477203846,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 166982,
+    "at_cap": 0,
+    "mean_abs_rel": 0.023822883144021034,
+    "mean_signed_rel": 0.02377478964626789,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 714384,
+    "at_cap": 0,
+    "mean_abs_rel": 0.030466653406620026,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "0:S3": {
+   "tag": "S3",
+   "T": 216000.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 195858,
+    "at_cap": 473,
+    "mean_abs_rel": 0.004871957469731569,
+    "mean_signed_rel": -0.0048706866800785065,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357162,
+    "at_cap": 58232,
+    "mean_abs_rel": 0.06437403708696365,
+    "mean_signed_rel": 0.06436384469270706,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 171697,
+    "at_cap": 29646,
+    "mean_abs_rel": 0.02767353504896164,
+    "mean_signed_rel": 0.027602409943938255,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 724717,
+    "at_cap": 88351,
+    "mean_abs_rel": 0.037380389869213104,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "0:D3": {
+   "tag": "D3",
+   "T": 302400.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 195874,
+    "at_cap": 0,
+    "mean_abs_rel": 0.004796372726559639,
+    "mean_signed_rel": -0.004795133601874113,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357235,
+    "at_cap": 0,
+    "mean_abs_rel": 0.06425321102142334,
+    "mean_signed_rel": 0.06424322724342346,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 172471,
+    "at_cap": 0,
+    "mean_abs_rel": 0.027165768668055534,
+    "mean_signed_rel": 0.027096085250377655,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 725580,
+    "at_cap": 0,
+    "mean_abs_rel": 0.03714469447731972,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "0:R": {
+   "tag": "R",
+   "T": 302400.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 195874,
+    "at_cap": 0,
+    "mean_abs_rel": 0.004796372726559639,
+    "mean_signed_rel": -0.004795133601874113,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357235,
+    "at_cap": 0,
+    "mean_abs_rel": 0.06425321102142334,
+    "mean_signed_rel": 0.06424322724342346,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 172471,
+    "at_cap": 0,
+    "mean_abs_rel": 0.027165768668055534,
+    "mean_signed_rel": 0.027096085250377655,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 725580,
+    "at_cap": 0,
+    "mean_abs_rel": 0.03714469447731972,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "1:S1": {
+   "tag": "S1",
+   "T": 43200.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 184651,
+    "at_cap": 37,
+    "mean_abs_rel": 0.0017378923948854208,
+    "mean_signed_rel": -0.0017360299825668335,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 349878,
+    "at_cap": 43958,
+    "mean_abs_rel": 0.036920543760061264,
+    "mean_signed_rel": 0.03691563010215759,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 154264,
+    "at_cap": 19694,
+    "mean_abs_rel": 0.01914094015955925,
+    "mean_signed_rel": 0.01911311410367489,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 688793,
+    "at_cap": 63689,
+    "mean_abs_rel": 0.022239206358790398,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "1:D1": {
+   "tag": "D1",
+   "T": 129600.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 184762,
+    "at_cap": 0,
+    "mean_abs_rel": 0.0017047632718458772,
+    "mean_signed_rel": -0.0017029959708452225,
+    "max_abs_rel": 0.19384604692459106
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 351232,
+    "at_cap": 0,
+    "mean_abs_rel": 0.03722311183810234,
+    "mean_signed_rel": 0.03721844404935837,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 155587,
+    "at_cap": 0,
+    "mean_abs_rel": 0.01863185688853264,
+    "mean_signed_rel": 0.018605336546897888,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 691581,
+    "at_cap": 0,
+    "mean_abs_rel": 0.02219216711819172,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "1:S2": {
+   "tag": "S2",
+   "T": 129600.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 192299,
+    "at_cap": 114,
+    "mean_abs_rel": 0.003360048634931445,
+    "mean_signed_rel": -0.0033587696962058544,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 355410,
+    "at_cap": 52377,
+    "mean_abs_rel": 0.05172055587172508,
+    "mean_signed_rel": 0.05171423405408859,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 165989,
+    "at_cap": 25833,
+    "mean_abs_rel": 0.02424367144703865,
+    "mean_signed_rel": 0.02420235611498356,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 713698,
+    "at_cap": 78324,
+    "mean_abs_rel": 0.0305488258600235,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "1:D2": {
+   "tag": "D2",
+   "T": 216000.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 192329,
+    "at_cap": 0,
+    "mean_abs_rel": 0.003312360029667616,
+    "mean_signed_rel": -0.0033111076336354017,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 355489,
+    "at_cap": 0,
+    "mean_abs_rel": 0.05186634138226509,
+    "mean_signed_rel": 0.051860157400369644,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 167085,
+    "at_cap": 0,
+    "mean_abs_rel": 0.023807266727089882,
+    "mean_signed_rel": 0.02376682683825493,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 714903,
+    "at_cap": 0,
+    "mean_abs_rel": 0.030455783009529114,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "1:S3": {
+   "tag": "S3",
+   "T": 216000.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 196677,
+    "at_cap": 472,
+    "mean_abs_rel": 0.004852042533457279,
+    "mean_signed_rel": -0.004849368240684271,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357368,
+    "at_cap": 58218,
+    "mean_abs_rel": 0.06439223885536194,
+    "mean_signed_rel": 0.064383365213871,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 173612,
+    "at_cap": 29643,
+    "mean_abs_rel": 0.027646610513329506,
+    "mean_signed_rel": 0.027584290131926537,
+    "max_abs_rel": 0.20000001788139343
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 727657,
+    "at_cap": 88333,
+    "mean_abs_rel": 0.037374239414930344,
+    "max_abs_rel": 0.20000001788139343
+   }
+  },
+  "1:D3": {
+   "tag": "D3",
+   "T": 302400.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 196692,
+    "at_cap": 0,
+    "mean_abs_rel": 0.004775711335241795,
+    "mean_signed_rel": -0.004773091059178114,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357420,
+    "at_cap": 0,
+    "mean_abs_rel": 0.06426911056041718,
+    "mean_signed_rel": 0.06426041573286057,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 173911,
+    "at_cap": 0,
+    "mean_abs_rel": 0.02713835798203945,
+    "mean_signed_rel": 0.027077335864305496,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 728023,
+    "at_cap": 0,
+    "mean_abs_rel": 0.0371372327208519,
+    "max_abs_rel": 0.19600002467632294
+   }
+  },
+  "1:R": {
+   "tag": "R",
+   "T": 302400.0,
+   "FEAR": {
+    "edges": 238989,
+    "changed": 196692,
+    "at_cap": 0,
+    "mean_abs_rel": 0.004775711335241795,
+    "mean_signed_rel": -0.004773091059178114,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "JOY_SAL": {
+    "edges": 398951,
+    "changed": 357420,
+    "at_cap": 0,
+    "mean_abs_rel": 0.06426911056041718,
+    "mean_signed_rel": 0.06426041573286057,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "MOTOR": {
+    "edges": 309059,
+    "changed": 173911,
+    "at_cap": 0,
+    "mean_abs_rel": 0.02713835798203945,
+    "mean_signed_rel": 0.027077335864305496,
+    "max_abs_rel": 0.19600002467632294
+   },
+   "ALL": {
+    "edges": 946999,
+    "changed": 728023,
+    "at_cap": 0,
+    "mean_abs_rel": 0.0371372327208519,
+    "max_abs_rel": 0.19600002467632294
+   }
+  }
+ },
+ "Q1": {
+  "supported": true,
+  "mean_d_food_joy": 0.01697965717181282,
+  "per_seed": [
+   0.016976720305908723,
+   0.016982594037716917
+  ],
+  "band": [
+   0.002,
+   0.08
+  ],
+  "share_turns_gt0": 1,
+  "median": 0.015267765530630917,
+  "max": 0.08161336183547974,
+  "secondary_salience": {
+   "mean": 0.04592224671895785,
+   "per_seed": [
+    0.04590902957828173,
+    0.04593546385963398
+   ],
+   "band": [
+    0.005,
+    0.12
+   ],
+   "in_band": true
+  },
+  "secondary_move": {
+   "mean": 0.103375,
+   "per_seed": [
+    0.10325,
+    0.1035
+   ],
+   "positive": true
+  },
+  "noise_floor_mean_abs": {
+   "food_joy": 0.00030865307346210813,
+   "salience": 0.000522922662139819,
+   "move": 0.0019687500000000013
+  },
+  "by_session": {
+   "food_joy": {
+    "S1": [
+     0.008584492003259291,
+     0.008582405970579757
+    ],
+    "S2": [
+     0.014225238822237063,
+     0.014226885198217552
+    ],
+    "S3": [
+     0.016075637185440278,
+     0.016070117359401895
+    ],
+    "R": [
+     0.016976720305908723,
+     0.016982594037716917
+    ]
+   },
+   "salience": {
+    "S1": [
+     0.02598246886954049,
+     0.025983851605622443
+    ],
+    "S2": [
+     0.03908780261552929,
+     0.039057300024928555
+    ],
+    "S3": [
+     0.04222463266525864,
+     0.04222478896923017
+    ],
+    "R": [
+     0.04590902957828173,
+     0.04593546385963398
+    ]
+   },
+   "move": {
+    "S1": [
+     0.04262500000000001,
+     0.04268750000000001
+    ],
+    "S2": [
+     0.08612500000000001,
+     0.08612500000000001
+    ],
+    "S3": [
+     0.09921875,
+     0.0993125
+    ],
+    "R": [
+     0.10325,
+     0.1035
+    ]
+   },
+   "fear": {
+    "S1": [
+     -7.337001471935662e-05,
+     0.0
+    ],
+    "S2": [
+     0.0,
+     0.0
+    ],
+    "S3": [
+     0.0,
+     0.0
+    ],
+    "R": [
+     -6.340036146394648e-05,
+     0.0
+    ]
+   }
+  }
+ },
+ "arc_shift": {
+  "anger": {
+   "food_joy": [
+    0.01071,
+    1
+   ],
+   "salience": [
+    0.02271,
+    1
+   ],
+   "fear": [
+    -5e-05,
+    0
+   ],
+   "move": [
+    0.08603,
+    1
+   ],
+   "sleep": [
+    -0.00282,
+    0
+   ]
+  },
+  "apology": {
+   "food_joy": [
+    0.02309,
+    1
+   ],
+   "salience": [
+    0.01899,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.04941,
+    1
+   ],
+   "sleep": [
+    -0.00238,
+    0
+   ]
+  },
+  "confusion": {
+   "food_joy": [
+    0.01358,
+    1
+   ],
+   "salience": [
+    0.03628,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.05931,
+    1
+   ],
+   "sleep": [
+    -0.00448,
+    0
+   ]
+  },
+  "curiosity": {
+   "food_joy": [
+    0.02424,
+    1
+   ],
+   "salience": [
+    0.01068,
+    0.25
+   ],
+   "fear": [
+    -0.03413,
+    0
+   ],
+   "move": [
+    0.02281,
+    1
+   ],
+   "sleep": [
+    -0.0022,
+    0
+   ]
+  },
+  "fear": {
+   "food_joy": [
+    0.01175,
+    1
+   ],
+   "salience": [
+    0.02044,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.02266,
+    1
+   ],
+   "sleep": [
+    -0.00331,
+    0
+   ]
+  },
+  "feeding": {
+   "food_joy": [
+    0.03168,
+    0.71
+   ],
+   "salience": [
+    0.03089,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.04565,
+    1
+   ],
+   "sleep": [
+    -0.00413,
+    0
+   ]
+  },
+  "hunger": {
+   "food_joy": [
+    0.03426,
+    1
+   ],
+   "salience": [
+    0.02357,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.02894,
+    1
+   ],
+   "sleep": [
+    -0.00243,
+    0
+   ]
+  },
+  "kindness": {
+   "food_joy": [
+    0.01698,
+    1
+   ],
+   "salience": [
+    0.04592,
+    1
+   ],
+   "fear": [
+    -3e-05,
+    0
+   ],
+   "move": [
+    0.10337,
+    1
+   ],
+   "sleep": [
+    -0.00435,
+    0
+   ]
+  },
+  "mixed": {
+   "food_joy": [
+    0.02785,
+    0.71
+   ],
+   "salience": [
+    0.03084,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.06158,
+    1
+   ],
+   "sleep": [
+    -0.00339,
+    0
+   ]
+  },
+  "neutral": {
+   "food_joy": [
+    0.01176,
+    1
+   ],
+   "salience": [
+    0.02043,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.02256,
+    1
+   ],
+   "sleep": [
+    -0.00331,
+    0
+   ]
+  },
+  "sleep": {
+   "food_joy": [
+    0.00928,
+    1
+   ],
+   "salience": [
+    0.019,
+    1
+   ],
+   "fear": [
+    0.0,
+    0
+   ],
+   "move": [
+    0.01587,
+    0.75
+   ],
+   "sleep": [
+    -0.00165,
+    0
+   ]
+  }
+ },
+ "peak_shift": {
+  "lc": -0.00012897008977760777,
+  "oct": -0.00334318981410187,
+  "ser": 0.008383599928118915,
+  "dan": 0.002805749354796989,
+  "dop": 0.009348963639725035,
+  "dn": 0.00542942652148064
+ },
+ "Q2": {
+  "action": {
+   "supported": false,
+   "near_turns": {
+    "0": 89,
+    "1": 89
+   },
+   "N": 0,
+   "C": 0,
+   "N_by_seed": {
+    "0": 0,
+    "1": 0
+   },
+   "all_turn_flips": {
+    "0": 0,
+    "1": 0
+   },
+   "N_list": {
+    "0": [],
+    "1": []
+   },
+   "C_list": {
+    "0": [],
+    "1": []
+   },
+   "all_list": {
+    "0": [],
+    "1": []
+   }
+  },
+  "tag": {
+   "supported": true,
+   "near_turns": {
+    "0": 108,
+    "1": 108
+   },
+   "N": 12,
+   "C": 0,
+   "N_by_seed": {
+    "0": 6,
+    "1": 6
+   },
+   "all_turn_flips": {
+    "0": 6,
+    "1": 6
+   },
+   "N_list": {
+    "0": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ]
+    ],
+    "1": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ]
+    ]
+   },
+   "C_list": {
+    "0": [],
+    "1": []
+   },
+   "all_list": {
+    "0": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ]
+    ],
+    "1": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "neutral",
+       "low"
+      ],
+      [
+       "curious",
+       "low"
+      ]
+     ]
+    ]
+   }
+  },
+  "any": {
+   "supported": true,
+   "near_turns": {
+    "0": 157,
+    "1": 157
+   },
+   "N": 12,
+   "C": 0,
+   "N_by_seed": {
+    "0": 6,
+    "1": 6
+   },
+   "all_turn_flips": {
+    "0": 6,
+    "1": 6
+   },
+   "N_list": {
+    "0": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "settle",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "settle",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ]
+    ],
+    "1": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "settle",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "settle",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ]
+    ]
+   },
+   "C_list": {
+    "0": [],
+    "1": []
+   },
+   "all_list": {
+    "0": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "settle",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "settle",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ]
+    ],
+    "1": [
+     [
+      "greet_and_chat",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "bedtime",
+      4,
+      [
+       "settle",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "settle",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "picked_up",
+      5,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "quiet_afternoon",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "confused_gibberish",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ],
+     [
+      "slow_trust_build",
+      4,
+      [
+       "stay",
+       "stay",
+       "neutral",
+       "low"
+      ],
+      [
+       "stay",
+       "stay",
+       "curious",
+       "low"
+      ]
+     ]
+    ]
+   }
+  }
+ },
+ "flips_by_session": {
+  "S1": {
+   "reply": [
+    0,
+    0
+   ],
+   "ambient": [
+    0,
+    0
+   ],
+   "tag": [
+    2,
+    1
+   ]
+  },
+  "S2": {
+   "reply": [
+    0,
+    0
+   ],
+   "ambient": [
+    0,
+    0
+   ],
+   "tag": [
+    5,
+    5
+   ]
+  },
+  "S3": {
+   "reply": [
+    0,
+    0
+   ],
+   "ambient": [
+    0,
+    0
+   ],
+   "tag": [
+    5,
+    5
+   ]
+  },
+  "R": {
+   "reply": [
+    0,
+    0
+   ],
+   "ambient": [
+    0,
+    0
+   ],
+   "tag": [
+    6,
+    6
+   ]
+  }
+ },
+ "structural": {
+  "reply_intent_flips_all_sessions": 0,
+  "looming_turns": 96,
+  "looming_fear_min": [
+   1.0,
+   1.0
+  ]
+ },
+ "nearest_action_margins_seed0": {
+  "food_joy@0.6": [
+   [
+    0.011411355491594,
+    "teasing_mix",
+    8,
+    0.6114,
+    0.6804
+   ],
+   [
+    0.012416126504277814,
+    "feeding_joy",
+    8,
+    0.6124,
+    0.6814
+   ],
+   [
+    0.04633990735162796,
+    "teasing_mix",
+    7,
+    0.6463,
+    0.7193
+   ],
+   [
+    0.046874486554911776,
+    "mean_then_long_gap",
+    8,
+    0.6469,
+    0.7197
+   ]
+  ],
+  "fear@0.4": [
+   [
+    0.042064273274252106,
+    "apology_repair",
+    4,
+    0.3579,
+    0.3579
+   ],
+   [
+    0.042064273274252106,
+    "rain_then_scare_mix",
+    4,
+    0.3579,
+    0.3579
+   ],
+   [
+    0.07970503883327679,
+    "rain_then_scare_mix",
+    5,
+    0.3203,
+    0.3203
+   ],
+   [
+    0.10000000000000003,
+    "picked_up",
+    2,
+    0.3,
+    0.3
+   ]
+  ],
+  "sleep@0.7": [
+   [
+    0.012942299398201351,
+    "bedtime",
+    7,
+    0.7129,
+    0.7129
+   ],
+   [
+    0.023421327786066315,
+    "greet_hungry_evening",
+    8,
+    0.6766,
+    0.6711
+   ],
+   [
+    0.0259600617268001,
+    "bedtime",
+    4,
+    0.674,
+    0.6705
+   ],
+   [
+    0.03173338446616347,
+    "bedtime",
+    5,
+    0.6683,
+    0.6643
+   ]
+  ]
+ },
+ "Q3": {
+  "supported": true,
+  "replicates": true,
+  "strengthens": true,
+  "mean_d_salience": {
+   "S1": 0.013930979686729322,
+   "S2": 0.015389016927111837,
+   "S3": 0.016383033832826008,
+   "R": 0.017517075135606255
+  },
+  "detail": {
+   "S1": [
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14836649252735717,
+     "sal_p": 0.16230767102639032
+    },
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14825732936048688,
+     "sal_p": 0.16217811023491238
+    }
+   ],
+   "S2": [
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14837851926749435,
+     "sal_p": 0.16376010489920892
+    },
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14814034197915235,
+     "sal_p": 0.16353679020166145
+    }
+   ],
+   "S3": [
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.1482649144068234,
+     "sal_p": 0.16464285737521633
+    },
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14847112858323827,
+     "sal_p": 0.16485925328049736
+    }
+   ],
+   "R": [
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14831080052047185,
+     "sal_p": 0.16585356060465237
+    },
+    {
+     "frozen": [
+      "neutral",
+      "low"
+     ],
+     "plastic": [
+      "curious",
+      "low"
+     ],
+     "sal_f": 0.14854814072036682,
+     "sal_p": 0.1660395309073988
+    }
+   ]
+  }
+ },
+ "Q4": {
+  "supported": true,
+  "i_settle_identical": true,
+  "bedtime_settle_positives": 8,
+  "night_turns": 10,
+  "ii_baseline": true,
+  "quiet_max_abs": [
+   0.0,
+   0.0
+  ],
+  "bedtime_max_d_sleep": 0.003982304780595358,
+  "iii_threat": true,
+  "looming_turns": 24,
+  "iv_world": true,
+  "days_scored": 3,
+  "world": {
+   "0:D1": {
+    "nest": [
+     735,
+     728
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 547,
+    "first_ambient_divergence_tick": 541,
+    "act_diff_ticks": 509,
+    "ambient_diff_ticks": 194,
+    "acts_frozen": {
+     "idle": 537,
+     "dabble": 318,
+     "forage_pond": 205,
+     "investigate_fence": 31,
+     "investigate_boot": 41,
+     "investigate_goats": 47,
+     "nest": 735,
+     "dream": 6
+    },
+    "acts_plastic": {
+     "idle": 542,
+     "dabble": 322,
+     "forage_pond": 204,
+     "investigate_fence": 33,
+     "investigate_boot": 39,
+     "investigate_goats": 46,
+     "nest": 728,
+     "dream": 6
+    },
+    "ambient_frozen": {
+     "stay": 845,
+     "to_fence": 114,
+     "parade": 39,
+     "to_boot": 54,
+     "settle": 868
+    },
+    "ambient_plastic": {
+     "stay": 837,
+     "to_fence": 115,
+     "parade": 60,
+     "to_boot": 48,
+     "settle": 860
+    },
+    "passes_frozen": [
+     [
+      18.6,
+      0,
+      [
+       "swat",
+       "swat",
+       "water",
+       "water",
+       "water"
+      ],
+      [
+       "water",
+       "water",
+       "water"
+      ]
+     ],
+     [
+      0.01,
+      1,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      18.61,
+      0,
+      [
+       "swat",
+       "swat",
+       "water",
+       "water",
+       "water"
+      ],
+      [
+       "water",
+       "water",
+       "water"
+      ]
+     ],
+     [
+      0.07,
+      1,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     28,
+     31
+    ]
+   },
+   "0:D2": {
+    "nest": [
+     698,
+     693
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 2,
+    "first_ambient_divergence_tick": 4,
+    "act_diff_ticks": 910,
+    "ambient_diff_ticks": 372,
+    "acts_frozen": {
+     "dabble": 348,
+     "idle": 546,
+     "forage_pond": 203,
+     "investigate_goats": 48,
+     "investigate_boot": 42,
+     "investigate_fence": 32,
+     "nest": 698,
+     "dream": 3
+    },
+    "acts_plastic": {
+     "dabble": 336,
+     "idle": 561,
+     "forage_pond": 203,
+     "investigate_boot": 43,
+     "investigate_fence": 41,
+     "investigate_goats": 40,
+     "nest": 693,
+     "dream": 3
+    },
+    "ambient_frozen": {
+     "stay": 870,
+     "to_fence": 109,
+     "to_boot": 53,
+     "parade": 36,
+     "settle": 852
+    },
+    "ambient_plastic": {
+     "stay": 889,
+     "to_fence": 107,
+     "to_boot": 67,
+     "parade": 27,
+     "settle": 830
+    },
+    "passes_frozen": [
+     [
+      0.1,
+      2,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      0.09,
+      2,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     55,
+     53
+    ]
+   },
+   "0:D3": {
+    "nest": [
+     701,
+     686
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 0,
+    "first_ambient_divergence_tick": 0,
+    "act_diff_ticks": 921,
+    "ambient_diff_ticks": 376,
+    "acts_frozen": {
+     "dabble": 337,
+     "idle": 553,
+     "forage_pond": 204,
+     "investigate_goats": 35,
+     "investigate_boot": 35,
+     "investigate_fence": 52,
+     "nest": 701,
+     "dream": 3
+    },
+    "acts_plastic": {
+     "forage_pond": 203,
+     "idle": 553,
+     "investigate_boot": 42,
+     "dabble": 353,
+     "investigate_fence": 40,
+     "investigate_goats": 40,
+     "nest": 686,
+     "dream": 3
+    },
+    "ambient_frozen": {
+     "stay": 869,
+     "to_fence": 129,
+     "to_boot": 49,
+     "parade": 21,
+     "settle": 852
+    },
+    "ambient_plastic": {
+     "to_fence": 123,
+     "stay": 894,
+     "to_boot": 49,
+     "parade": 24,
+     "settle": 830
+    },
+    "passes_frozen": [
+     [
+      0.05,
+      3,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      0.01,
+      3,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     72,
+     68
+    ]
+   },
+   "1:D1": {
+    "nest": [
+     739,
+     730
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 546,
+    "first_ambient_divergence_tick": 537,
+    "act_diff_ticks": 405,
+    "ambient_diff_ticks": 169,
+    "acts_frozen": {
+     "idle": 523,
+     "dabble": 332,
+     "forage_pond": 203,
+     "investigate_boot": 39,
+     "investigate_fence": 35,
+     "investigate_goats": 43,
+     "nest": 739,
+     "dream": 6
+    },
+    "acts_plastic": {
+     "idle": 505,
+     "dabble": 359,
+     "forage_pond": 203,
+     "investigate_boot": 41,
+     "investigate_fence": 40,
+     "investigate_goats": 36,
+     "nest": 730,
+     "dream": 6
+    },
+    "ambient_frozen": {
+     "stay": 861,
+     "to_boot": 53,
+     "parade": 30,
+     "to_fence": 106,
+     "settle": 870
+    },
+    "ambient_plastic": {
+     "stay": 869,
+     "to_boot": 55,
+     "parade": 36,
+     "to_fence": 98,
+     "settle": 862
+    },
+    "passes_frozen": [
+     [
+      18.54,
+      0,
+      [
+       "swat",
+       "swat",
+       "water",
+       "water",
+       "water"
+      ],
+      [
+       "water",
+       "water",
+       "water"
+      ]
+     ],
+     [
+      0.11,
+      1,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      18.55,
+      0,
+      [
+       "swat",
+       "swat",
+       "water",
+       "water",
+       "water"
+      ],
+      [
+       "water",
+       "water",
+       "water"
+      ]
+     ],
+     [
+      0.11,
+      1,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     17,
+     19
+    ]
+   },
+   "1:D2": {
+    "nest": [
+     695,
+     683
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 0,
+    "first_ambient_divergence_tick": 4,
+    "act_diff_ticks": 842,
+    "ambient_diff_ticks": 399,
+    "acts_frozen": {
+     "dabble": 322,
+     "idle": 572,
+     "forage_pond": 205,
+     "investigate_goats": 41,
+     "investigate_fence": 44,
+     "investigate_boot": 38,
+     "nest": 695,
+     "dream": 3
+    },
+    "acts_plastic": {
+     "idle": 556,
+     "dabble": 353,
+     "forage_pond": 202,
+     "investigate_goats": 42,
+     "investigate_fence": 43,
+     "investigate_boot": 38,
+     "nest": 683,
+     "dream": 3
+    },
+    "ambient_frozen": {
+     "stay": 832,
+     "to_fence": 135,
+     "parade": 54,
+     "to_boot": 52,
+     "settle": 847
+    },
+    "ambient_plastic": {
+     "stay": 854,
+     "to_fence": 137,
+     "to_boot": 50,
+     "parade": 42,
+     "settle": 837
+    },
+    "passes_frozen": [
+     [
+      0.04,
+      2,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      0.08,
+      2,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     50,
+     43
+    ]
+   },
+   "1:D3": {
+    "nest": [
+     699,
+     691
+    ],
+    "ok": true,
+    "first_act_divergence_tick": 0,
+    "first_ambient_divergence_tick": 0,
+    "act_diff_ticks": 921,
+    "ambient_diff_ticks": 379,
+    "acts_frozen": {
+     "idle": 534,
+     "dabble": 353,
+     "investigate_goats": 34,
+     "forage_pond": 205,
+     "investigate_boot": 46,
+     "investigate_fence": 46,
+     "nest": 699,
+     "dream": 3
+    },
+    "acts_plastic": {
+     "dabble": 344,
+     "forage_pond": 204,
+     "idle": 552,
+     "investigate_boot": 51,
+     "investigate_fence": 36,
+     "investigate_goats": 39,
+     "nest": 691,
+     "dream": 3
+    },
+    "ambient_frozen": {
+     "to_fence": 110,
+     "stay": 884,
+     "to_boot": 57,
+     "parade": 30,
+     "settle": 839
+    },
+    "ambient_plastic": {
+     "stay": 871,
+     "to_boot": 65,
+     "to_fence": 107,
+     "parade": 47,
+     "settle": 830
+    },
+    "passes_frozen": [
+     [
+      0.12,
+      3,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "passes_plastic": [
+     [
+      0.11,
+      3,
+      [
+       "water"
+      ],
+      [
+       "water"
+      ]
+     ]
+    ],
+    "hoard": [
+     75,
+     68
+    ]
+   }
+  }
+ }
+}

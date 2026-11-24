@@ -1,0 +1,91 @@
+{
+ "design": "L221b post-hoc addendum: the leg-(a) rank identity under AVERAGE ranks, and the EDGE-vs-COST tie structure of the null that the parent's 11-vs-16 comparison conflated.",
+ "status": "POST-HOC (not pre-registered). Both items are DIAGNOSTIC: the first repairs an estimator, the second re-expresses an already-registered comparison in the currency the parent's own PREREG 0a declared primary. Neither moves L221's branch (F_METRIC) or bar.",
+ "parent": "l221/static.json",
+ "parent_prereg": "l221/PREREG.md",
+ "A_rank_identity": {
+  "prereg_claim": "0b: weight-vs-used, T_L-vs-used and L_L-vs-used are ONE statistic up to sign",
+  "parent_estimator": "ordinal ranks via np.argsort(np.argsort(x))",
+  "parent_rho_w_used": 0.22798684691267815,
+  "parent_rho_T_used": -0.1898428936792108,
+  "parent_rho_L_used": -0.1898428936792108,
+  "parent_identity_holds": false,
+  "avg_rank_rho_w_used": 0.2722815013413581,
+  "avg_rank_rho_T_used": -0.2722815013413581,
+  "avg_rank_rho_L_used": -0.2722815013413581,
+  "avg_rank_identity_abs_err_T": 0.0,
+  "avg_rank_identity_abs_err_L": 0.0,
+  "identity_holds_avg_rank": true,
+  "n_distinct_weights": 28,
+  "menu": 69,
+  "n_tied_edges": 41,
+  "largest_tie_group": 10,
+  "tie_group_sizes": [
+   10,
+   8,
+   8,
+   4,
+   4,
+   4,
+   4,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "ordinal_rank_mismatches": 47,
+  "verdict": "the identity is TRUE and the parent's estimator was wrong: with ties averaged the three rhos are exact mirrors; with ordinal ranks they are not, because reversing the value order does not reverse positional tie-breaking."
+ },
+ "B_edge_vs_cost_null": {
+  "carrier_n_edges": 11,
+  "carrier_n_costs": 11,
+  "carrier_tie_deficit": 0,
+  "null_edges_med": 21.0,
+  "null_edges_p05": 15.0,
+  "null_costs_med": 16.0,
+  "null_costs_p05": 12.0,
+  "null_tie_deficit_med": 5.0,
+  "null_tie_deficit_max": 12.0,
+  "n_draws_with_ties": 99,
+  "parent_L211_null_cost_med": 16.0,
+  "ratio_edges": 1.9090909090909092,
+  "ratio_costs": 1.4545454545454546,
+  "verdict": "the real wiring's realised first hops carry NO cost ties while the null's do, so a COST-count contrast is a mixture of narrowness and tie structure. The edge-currency contrast is the clean one and it is LARGER."
+ },
+ "limitations": [
+  "POST-HOC. Item A repairs an estimator for a quantity the PREREG explicitly declared mechanically expected and not evidence; item B re-expresses an already-registered count in the currency PREREG 0a declared primary. Neither is a new test and neither moves F_METRIC.",
+  "The avg-rank rho is still a 69-point correlation against a binary indicator with 11 positives; no null is attached to it and none is claimed.",
+  "Item B's edge-currency null median is measured on the same single l169c null family as the parent (L207's cross-null law)."
+ ],
+ "certification": {
+  "parent_slice": "l221_tail.py lines 1-440 VERBATIM (writer, predictions, primary and leg (b) CUT)",
+  "free_regates": [
+   "CERT-F4",
+   "CERT-178 420",
+   "CERT-NULL 8",
+   "CERT-REW",
+   "CERT-SI 240",
+   "CERT-MENU 100",
+   "CERT-FH 61,819",
+   "CERT-211 434",
+   "CERT-SIGEN 1,922,356",
+   "CERT-D5 6",
+   "CERT-CROFTS",
+   "CERT-FHE 93,930",
+   "CERT-DAG"
+  ],
+  "new_halting": {
+   "CERT_MONO": {
+    "checks": 2346,
+    "what": "all 69*68/2 pairwise order comparisons confirm T_L and L_L are EXACT order-reversals of the out-weight -- PREREG 0b's analytic premise asserted rather than trusted, which is what makes the avg-rank identity a GATE on the estimator and not an opinion"
+   }
+  },
+  "parent_untouched": "l221/static.json is NOT written by this script"
+ },
+ "parent_fingerprint": [
+  47183,
+  1795441516665309953
+ ]
+}

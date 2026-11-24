@@ -12,7 +12,7 @@ the three referee rounds + the independent second opinion.
   56-cell fixed-gain scan)
 - paper/review_astra_r3.md + evidence (cross-family; cross-seed
   time-locking; D2 confirmation; title demand)
-- ~/critters/peabrain/LANE-LOG.md (today's in-session lines:
+- /home/t3rpz/critters/peabrain/LANE-LOG.md (today's in-session lines:
   the adjudications, experiments L175-L191, receipts)
 - paper/DRAFT.md (the current folded state — where each fix landed)
 

@@ -1556,7 +1556,7 @@ would start.
 
 ## 7. Author/submit notes
 
-- Owner (the owner) reviews and submits under his account; venue q-bio.NC vs
+- Owner (Bill) reviews and submits under his account; venue q-bio.NC vs
   cs.NE is his call. Draft numbers re-verified by extract_numbers.py;
   full prose pass and figure polish (l136 fig is draft-quality) remain
   TODO before review. The real citation list shipped (L152, References

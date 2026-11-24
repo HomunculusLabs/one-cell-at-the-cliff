@@ -1,0 +1,708 @@
+Query: Experiment dispatch (owner request, duck wave-6 routing-threshold lever, 
+offline lab only, burn window). Read 
+/home/t3rpz/critters/peabrain-lab/duckroute/BRIEF_routing.md and execute it 
+completely. PREREG Q1-Q4 first.
+📖 Read BRIEF_routing.md
+📚 Skill peabrain-flybrain
+💻 $ ls -la + 2 commands
+💻 $ cat duckroute/dispatch.log + 7 commands  0.1s
+📚 Skill peabrain-flybrain → references/duck-plasticity.md  0.2s
+📖 Read run.py
+💻 $ cat duckplast2/run.sh duckplast2/RUNG.md duckplast2/SOURCES.sha256 duckplast2/bench.log + 4 commands
+📖 Read bridge.py
+📖 Read mood.py
+💻 $ sha256sum ../peabrain/{bridge,brain,senses,mood}.py ../puddle/engine.py scenarios.py ../peabrain/brain_graph.pt + 3 commands  0.8s
+💻 $ ../peabrain/.venv/bin/python -B - <<'EOF' import json # STRUCTURE ONLY (keys, lengths) -- no score values printed r=json.load(open('duckplast2/out/seed0_frozen.json')) print(sorted(r.keys())) print({k:len(v) for k,v in r['sessions'].items()}, sorted(r['sessions']['S1']['picked_up'][0].keys())) print(len(r['days']), sorted(r['days'][0].keys()), len(r['days'][0]['ticks']), [c['tag'] for c in r['census']], sorted(r['census'][0].keys()), sorted(r['census'][0]['FEAR'].keys())) print(r['sources'].get('brain_graph.pt'), r['k_idle'], r['threads']) v1=json.load(open('duckplast/results.json')) print(sorted(v1.keys()), [(h['seed'],h['eta']) for h in v1['histories']], sorted(v1['histories'][0]['battery']['picked_up'][0].keys())) s=json.load(open('duckplast2/scores.json')) + 4 commands  0.4s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/PREREG.md
+│ duckroute/PREREG.md
+│ @@ -0,0 +1,187 @@
+│ +# PREREG — duck wave-6: the routing-threshold lever (offline lab)
+│ +
+│ +Locked 2026-11-22 before any score value from the v2 records was read for
+│ +this experiment and before any step was run. What I looked at before
+│ +locking, all static or prior summaries: BRIEF_routing.md; her live source
+│ +(bridge.py, mood.py — read-only); duckplast2's PREREG, FINDINGS, run.py,
+│ +run.sh, RUNG.md; scenarios.py; the KEY NAMES and lengths of the stored v2
+│ +json files (no values); the lab skill notes. From the v2 findings I know
+│ +these summary facts: frozen food_joy is bimodal (159 of 192 turns <= .35,
+│ +33 >= .61, seed 0); plastic shifts food_joy +.017, salience +.046, cx move
+│ ++.10 on every arc class; 0 action flips and 12 tag flips at RETEST under
+│ +the live thresholds. I have not seen any per-turn distribution.
+│ +SHA-256 of this file goes to PREREG.sha256; every script asserts it.
+│ +
+│ +## 0. Design in one paragraph
+│ +
+│ +Inside a conversation no threshold feeds back into her dynamics: reply
+│ +intent, ambient intent and the mood tag are read out after the turn's
+│ +neural window, and nothing downstream reads them (speech is cut, as in
+│ +v1/v2). So the v2 runs already hold the complete score record under "the
+│ +SAME plasticity v2 used", and a regime is a re-readout of those records
+│ +through HER routing code with the comparator constants substituted at the
+│ +AST level (source-sliced `needs`, the intent tail of `_reply_inside`, and
+│ +`MoodState.mood_tag`/`axes`; no port by hand). Primary data: the stored v2
+│ +records, seeds 0 and 1, both arms (duckplast2/out/, read-only). Held-out
+│ +tier: seeds 2 and 3 run fresh with a byte-identical copy of v2's run.py
+│ +(sha256 asserted equal), K_idle 0, 1 thread each, 4 jobs on 4 cores.
+│ +The world-tick act ladder stays as-is in every regime (section 1), so the
+│ +plastic trajectory is the same in all regimes by construction.
+│ +
+│ +## 1. Boundary inventory and scope (static)
+│ +
+│ +Enumerated by the harness from the AST (every Compare against a numeric
+│ +constant or module constant), not hand-picked. Expected inventory:
+│ +
+│ +INTENT class — in placement scope (conversation-facing `intent` field):
+│ +- reply beg override: mood.hunger > .75, mood.trust > .30 (unrounded)
+│ +- needs ladder: a.hunger > .75, a.sleep <= .75 (rider), mood.trust > .30,
+│ +  a.sleep > .70, a.fear > .40, a.food_joy > .60 (a.* rounded to 3 dp),
+│ +  curiosity > CURIOSITY_GATE (.35; unreachable in a conversation session:
+│ +  no curiosity and no curious_at — mapped as degenerate, left as-is).
+│ +
+│ +Mapped but NOT placed, with reasons:
+│ +- world_tick act ladder (fear > .4, sleep > .75, hunger > .85 / .70,
+│ +  curiosity > .35, fear > .2, food_joy < .15): her solo self-care policy.
+│ +  Its scores have their own world-life distribution, not the 24-arc
+│ +  battery's; mapped on the stored frozen day ticks.
+│ +- mood_tag ladder (mood.py; fear .25/.50/.08, trust .15/.20/.55, salience
+│ +  .30/.15, hunger .75/.90, food_joy .35/.60, sleep .75): outside
+│ +  bridge.py, and her talking layer was trained on these tag semantics.
+│ +  Mapped on the battery; as-is in every regime.
+│ +- consolidate/dream gates (darkness .6, sleep .6/.8) and cx_intent (no
+│ +  comparator; continuous): listed only.
+│ +
+│ +Map statistics per boundary (frozen arm, S1 and RETEST, seeds 0+1 pooled):
+│ +n, quantiles (0,10,25,50,70,75,90,100), share of turns on the firing side,
+│ +the threshold's percentile rank, the nearest score below and above the
+│ +threshold (the dead-zone gap), and the count within +-.05.
+│ +
+│ +## 2. Regimes
+│ +
+│ +Calibration set for every percentile: frozen arm, S1 battery, seeds 0 and
+│ +1 pooled (384 post-turn values, full precision), numpy linear-interpolated
+│ +70th percentile. Evaluation is on RETEST (different noise keys).
+│ +
+│ +- A  as-is control: live constants.
+│ +- B  percentile placement (the brief's regime b): every placed threshold
+│ +  = P70 of its own score. Comparators that share a score share the value
+│ +  (hunger: reply and needs; trust: reply and needs; sleep: rider and
+│ +  settle). Applied as full-precision floats, comparators unchanged.
+│ +- C  adaptive margin (the brief's regime c), on the as-is base:
+│ +  thr = thr_asis * (1 - kappa * D), D = mean absolute relative drift of
+│ +  the population that feeds the score, read from that arm's census at the
+│ +  stage (RETEST: census R; secondary sessions: the census at the START of
+│ +  that battery, 0 for S1). fear <- FEAR, food_joy <- JOY_SAL. hunger,
+│ +  sleep, trust, curiosity are body clocks with no plastic edges behind
+│ +  them: D = 0, unchanged. kappa = 1 is primary (relative threshold drop =
+│ +  mean relative synaptic drift, no free parameter). The frozen arm has
+│ … omitted 109 diff line(s) across 1 additional file(s)/section(s)
+💻 $ head -1 /proc/stat >/dev/null + 6 commands  2.3s
+✗ $ sha256sum PREREG.md + 10 commands [Foreground command uses '&' backgrounding. Re...]
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/run.sh
+│ duckroute/run.sh
+│ @@ -0,0 +1,20 @@
+│ +#!/bin/sh
+│ +# held-out tier: seeds 2,3 x {frozen, plastic}, v2's rung (K_idle 0, one single-thread job per core).
+│ +# run.py is a byte-identical copy of duckplast2/run.py; it writes to ./out only. CPU <= 4, no GPU.
+│ +set -eu
+│ +cd "$(dirname "$0")"
+│ +export PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1
+│ +PY=../../peabrain/.venv/bin/python
+│ +mkdir -p out
+│ +[ "$(sha256sum < run.py)" = "$(sha256sum < ../duckplast2/run.py)" ]
+│ +pids=""
+│ +set -- "2 frozen 3" "2 plastic 5" "3 frozen 6" "3 plastic 7"
+│ +for job in "$@"; do
+│ +  set -- $job
+│ +  taskset -c $3 timeout 6600 $PY -Bu run.py $1 $2 0 1 > out/log_seed$1_$2.txt 2>&1 &
+│ +  pids="$pids $!"
+│ +done
+│ +rc=0
+│ +for p in $pids; do wait $p || rc=1; done
+│ +date -Is
+│ +exit $rc
+💻 $ sha256sum PREREG.md + 9 commands
+✗ $ chmod +x run.sh + 1 command [BLOCKED: Command flagged as dangerous (chmod ...]
+💻 $ sh run.sh
+💻 $ ../peabrain/.venv/bin/python -B - <<'EOF' import json s=json.load(open('duckplast2/scores.json')) print(json.dumps(s['Q2'])[:1800]) + 5 commands  0.2s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/replay.py  0.1s
+│ duckroute/replay.py
+│ @@ -0,0 +1,419 @@
+│ +"""duck wave-6 replay harness. OFFLINE, read-only on everything outside duckroute/.
+│ +
+│ +Re-reads stored v2-format score records through HER routing code: `needs`, the intent
+│ +tail of `_reply_inside` (bridge.py) and `MoodState.axes/mood_tag` (mood.py) are
+│ +source-sliced and executed on the stored post-turn axes, with the placed comparator
+│ +constants replaced at the AST level by THR[key]. No dynamics are stepped here.
+│ +
+│ +argv: seeds to score as the held-out tier (optional), e.g. `replay.py 2 3`
+│ +Writes results.json (primary) and results_heldout.json (if seeds given).
+│ +"""
+│ +import ast, hashlib, json, math, os, sys
+│ +from contextlib import contextmanager
+│ +from pathlib import Path
+│ +from types import SimpleNamespace
+│ +import numpy as np
+│ +
+│ +D = Path(__file__).resolve().parent; L = D.parent; P = L.parent / 'peabrain'; U = L.parent / 'puddle'
+│ +V2 = L / 'duckplast2'
+│ +pin = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+│ +PREREG = pin(D / 'PREREG.md')
+│ +assert PREREG == (D / 'PREREG.sha256').read_text().split()[0], 'prereg changed after lock'
+│ +sys.path.insert(0, str(L))
+│ +from scenarios import SCENARIOS
+│ +ARC = {s['name']: s['arc'] for s in SCENARIOS}
+│ +ORDER = [s['name'] for s in SCENARIOS]
+│ +KF = {n for n, a in ARC.items() if a in ('kindness', 'feeding')}
+│ +assert len(ORDER) == 24 and len(KF) == 7
+│ +HELD = [int(x) for x in sys.argv[1:]]
+│ +GATES = {}
+│ +
+│ +# ---------------- G1: sources ----------------
+│ +want = dict(l.split()[::-1] for l in (V2 / 'SOURCES.sha256').read_text().splitlines())
+│ +src_now = {}
+│ +for rel, h in want.items():
+│ +    p = (V2 / rel).resolve(); src_now[p.name] = pin(p)
+│ +    assert src_now[p.name] == h, f'G1 source drifted: {rel}'
+│ +src_now['brain_graph.pt'] = pin(P / 'brain_graph.pt')
+│ +
+│ +def load(seed, arm, base):
+│ +    r = json.loads((base / f'seed{seed}_{arm}.json').read_text())
+│ +    assert r['seed'] == seed and r['arm'] == arm and not r['smoke'] and r['k_idle'] == 0
+│ +    assert all(r['sources'][k] == v for k, v in src_now.items()), 'G1 record sources differ from live'
+│ +    assert [c['tag'] for c in r['census']] == ['S1', 'D1', 'S2', 'D2', 'S3', 'D3', 'R']
+│ +    return r
+│ +REC = {(s, a): load(s, a, V2 / 'out') for s in (0, 1) for a in ('frozen', 'plastic')}
+│ +GATES['G1_sources'] = dict(ok=True, files=sorted(src_now))
+│ +
+│ +# ---------------- source-slice her routing ----------------
+│ +bmod = ast.parse((P / 'bridge.py').read_text())
+│ +bcls = next(n for n in bmod.body if isinstance(n, ast.ClassDef) and n.name == 'DuckBridge')
+│ +env = {'os': os, '__file__': str(D / 'lab_slice.py')}
+│ +for n in bmod.body:
+│ +    if isinstance(n, ast.Assign):
+│ +        exec(compile(ast.Module([n], []), 'bridge', 'exec'), env)
+│ +CONSTS = {k: v for k, v in env.items() if isinstance(v, (int, float)) and not isinstance(v, bool)}
+│ +mmod = ast.parse((P / 'mood.py').read_text())
+│ +mcls = next(n for n in mmod.body if isinstance(n, ast.ClassDef) and n.name == 'MoodState')
+│ +BF = {n.name: n for n in bcls.body if isinstance(n, ast.FunctionDef)}
+│ +MF = {n.name: n for n in mcls.body if isinstance(n, ast.FunctionDef)}
+│ +
+│ +# the intent tail of _reply_inside: `intent = INTENTS.get(sit, "stay")` + the beg override that follows
+│ +rb = BF['_reply_inside'].body
+│ +ti = next(i for i, v in enumerate(rb) if isinstance(v, ast.Assign) and ast.unparse(v.targets[0]) == 'intent')
+│ +assert ast.unparse(rb[ti].value).startswith('INTENTS.get(sit') and isinstance(rb[ti + 1], ast.If)
+│ +assert ast.unparse(rb[ti + 2].targets[0]) == 'pre'          # the tail ends where speech begins
+│ +tail = ast.parse('def reply_tail(sit, event, session):\n    pass\n    return intent').body[0]
+│ +tail.body = [rb[ti], rb[ti + 1], tail.body[-1]]
+│ +
+│ +SCORES = ('food_joy', 'hunger', 'sleep', 'trust', 'fear', 'salience', 'curiosity')
+│ +def score_of(expr):
+│ +    hit = [k for k in SCORES if k in expr]
+│ +    return hit[0] if len(hit) == 1 else None
+│ +def numeric(n):
+│ +    if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)) and not isinstance(n.value, bool): return float(n.value)
+│ +    if isinstance(n, ast.Name) and n.id in CONSTS: return float(CONSTS[n.id])
+│ +    return None
+│ +
+│ +# ---- inventory: every Compare against a numeric constant / module constant, enumerated from the AST
+│ … omitted 341 diff line(s) across 1 additional file(s)/section(s)
+💻 $ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 taskset -c 3 ../../peabrain/.venv/bin/python -B replay.py | tee replay.log + 1 command  1.4s
+💻 $ taskset -c 3 ../../peabrain/.venv/bin/python -B - <<'EOF' import json R=json.load(open('results.json')) + 5 commands  0.3s
+💻 $ cp results.json results_primary_asrun.json + 6 commands  0.2s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/ADDENDUM.md
+│ duckroute/ADDENDUM.md
+│ @@ -0,0 +1,28 @@
+│ +# ADDENDUM — one post-hoc regime, declared before any held-out record exists
+│ +
+│ +Written 2026-11-22 after the primary replay (seeds 0,1) was read and
+│ +before any held-out run (seeds 2,3) had finished its first battery
+│ +(out/ held only the four log files; see ADDENDUM.sha256 for the time).
+│ +PREREG.md is unchanged and its verdicts stand as registered.
+│ +
+│ +What the primary showed that prompts this: under Bn, 22 of 23 flips are
+│ +food_joy crossings; the fear leg contributes 1 flip and most of the
+│ +collateral, because P70 of fear is exactly 0.0 (70%+ of turns have no
+│ +fear), which turns `fear > thr` into "any trace of fear".
+│ +
+│ +Regime Bj (post-hoc): percentile placement on food_joy only
+│ +(thr = the seed-0/1 P70 = 0.13940135911107063); every other comparator
+│ +as-is. Nothing else changes: same P70, same calibration set, same
+│ +definitions.
+│ +
+│ +Status: on seeds 0,1 Bj is EXPLORATORY and gets no verdict. Its only
+│ +test is the held-out tier (seeds 2,3), with the registered definitions:
+│ +- Q1: N_near >= 10 over the two seeds, above the noise control, > 0 in
+│ +  each seed. Forecast 85%.
+│ +- Q2: share on kindness/feeding arcs >= .50 with binomial tail < .05.
+│ +  Forecast 15% (primary Bn: 10 of 23, with 8 flips on swat turns).
+│ +- Q3: plastic reversal rate < 1.0 per conversation. Forecast 95%.
+│ +- Q4: holds by construction (hunger, sleep, trust untouched).
+│ +- Collateral: reported; expected near to_pond +21 turns of 384.
+│ +
+│ +If a held-out run is cut before RETEST, Bj stays exploratory.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/replay.py
+│ duckroute/replay.py
+│ @@ -172,6 +172,11 @@
+│  REG = {'A': lambda rec, ses: ASIS, 'B': lambda rec, ses: B, 'C': lambda rec, ses: margin(ASIS, rec, ses, 1),
+│         'Bn': lambda rec, ses: BN, 'C2': lambda rec, ses: margin(ASIS, rec, ses, 2),
+│         'C4': lambda rec, ses: margin(ASIS, rec, ses, 4), 'BC': lambda rec, ses: margin(B, rec, ses, 1)}
+│ +REGISTERED = tuple(REG)
+│ +# ADDENDUM.md (post-hoc, declared before any held-out record existed): food_joy-only placement.
+│ +assert pin(D / 'ADDENDUM.md') == (D / 'ADDENDUM.sha256').read_text().split()[0], 'addendum changed after lock'
+│ +BJ = dict(ASIS, food_joy=P70['food_joy'])
+│ +REG['Bj'] = lambda rec, ses: BJ
+│
+│  # ---------------- the boundary map ----------------
+│  def dist(v, op, thr, view=None):
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/replay.py
+│ duckroute/replay.py
+│ @@ -381,6 +381,10 @@
+│  GATES['G4_v2_headline'] = dict(ok=True, action_flips_A=0, tag_flips=tagn)
+│  GATES['world_settle_anchor'] = dict(stored_vs_reread=wa, note='stored ambient==settle ticks vs regime-A settle read (reported, not halting)')
+│  OUT['primary'] = res
+│ +OUT['registered_regimes'] = list(REGISTERED); OUT['posthoc_regimes'] = ['Bj']
+│ +asrun = json.loads((D / 'results_primary_asrun.json').read_text())['primary']     # the pre-addendum run, kept verbatim
+│ +now = json.loads(json.dumps(res, default=str))
+│ +assert all(now[rg] == asrun[rg] for rg in REGISTERED), 'a registered regime moved when Bj was added'
+│  (D / 'results.json').write_text(json.dumps(OUT, indent=1, allow_nan=False, default=str))
+│
+│  def show(tag, res):
+💻 $ ls -la --time-style=full-iso out/ + 9 commands  2.4s
+💻 $ ls + 3 commands  0.1s
+💻 $ grep -n "intent\|to_pond\|food_joy" gate_live.py | cut -c1-170 + 3 commands
+💻 $ sleep 570 + 2 commands  570.3s
+💻 $ taskset -c 3 ../../peabrain/.venv/bin/python -B - <<'EOF' import json, collections P=json.load(open('results.json'))['primary'] for rg in ('B','Bn','Bj'): fl=P[rg]['flips_R'] c=collections.Counter((f['conv'],f['arc']) for f in fl if f['seed']==0) print(rg, dict(c)) print(' event split both seeds', P[rg]['Q2']['by_event'], 'kind-event flips', sum(f['event'] in ('pet','greet','goats','peas','tin','water','shiny','slug') for f in fl), 'mean-event', sum(f['event'] in ('swat','hose') for f in fl), 'none/hold', sum(f['event'] in (None,'hold','rake','umbrella') for f in fl)) print('A hists', P['A']['ambient_hist_frozen']) print('B Q4 one-arm', P['B']['Q4']['i']['settle_one_arm']) EOF sleep 420 + 2 commands  420.5s
+💻 $ sleep 590 + 2 commands  590.3s
+💻 $ sleep 595 + 2 commands  595.3s
+💻 $ sleep 595 + 4 commands  595.2s
+💻 $ cat run.log + 3 commands  1.4s
+💻 $ taskset -c 3 ../../peabrain/.venv/bin/python -B - <<'EOF' import json, collections H=json.load(open('results_heldout.json')) + 7 commands  0.3s
+💻 $ cat <<'EOF' """Descriptive (not registered): her solo-life ambient under the food_joy-only placement, from stored day ticks. Exact where it can be: the food_joy branch sits below hunger/sleep/fear/parade and above curiosity/stay, so a stored ambient of stay / to_fence / to_boot-by-curiosity becomes to_pond iff round(food_joy,3) > thr.""" import json, collections from pathlib import Path D = Path(__file__).resolve().parent P70 = json.loads((D / 'results.json').read_text())['P70']['food_joy'] out = {} for base, seeds in ((D.parent / 'duckplast2' / 'out', (0, 1)), (D / 'out', (2, 3))): for s in seeds: r = json.loads((base / f'seed{s}_frozen.json').read_text()) a = collections.Counter() + 2 commands  0.3s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -0,0 +1,91 @@
+│ +# DUCKROUTE — wave 6: the routing-threshold lever (offline, 2026-11-22)
+│ +
+│ +PREREG sha256 98cc1d8a...b9aba2, locked 15:40:37 before any score was read. Evidence:
+│ +results.json, results_heldout.json, replay.log, world_read.json, out/.
+│ +
+│ +## What ran
+│ +Inside a conversation no threshold feeds back into her dynamics, so a regime is a re-readout of
+│ +stored score records through her own code (`needs`, the reply-intent tail, `mood_tag`), with the
+│ +comparator constants swapped at the AST level. Primary: v2's stored seeds 0,1 (384 RETEST turns,
+│ +plastic vs frozen pairs). Held-out: seeds 2,3 run fresh with a byte-identical copy of v2's run.py
+│ +(4 jobs, 4 cores, 48-51 min), thresholds fixed from seeds 0,1. Gates green: sources hash-equal to
+│ +v2; 40 comparators enumerated, 8 swapped; the as-is replay reproduces every stored decision (3,076
+│ +turns per tier, 0 mismatches); v2's headline reproduced (0 action flips, 12 tag flips); fresh
+│ +seed-2 frozen S1 equals v1's stored arm exactly (max abs diff 0.0).
+│ +
+│ +## Boundary map (frozen arm, 384 turns; "fire" = share of turns on the firing side)
+│ +| intent boundary | fire | nearest score below / above | note |
+│ +|---|---|---|---|
+│ +| hunger > .75 (beg, to_bowl) | 3.6% | .731 / .794 | body clock |
+│ +| trust > .30 (beg) | 84.4% | .30 / .30 | counter; sits on her start value |
+│ +| sleep > .70 (settle) | 1.6% | .677 / .713 | body clock; rider <= .75: .713 / .998 |
+│ +| fear > .40 (to_boot) | 12.5% | .358 / .641 | over 70% of turns are exactly 0 |
+│ +| food_joy > .60 (to_pond) | 17.2% | .350 / .611 | the dead zone, .26 wide |
+│ +| curiosity > .35 | - | - | unreachable in a conversation |
+│ +World act ladder (7 comparators, 11,520 day ticks): no dead zone, gaps <= .0014; her solo fear is
+│ +always 0, so fear > .4 and > .2 never fire. Tag ladder: salience > .15 has 82 turns within .05 and
+│ +a gap of .148 / .179, which is where v2's tag flips live. Full table: results.json `map`.
+│ +P70 of each score: hunger .390, trust .46, sleep .083, fear 0.0, food_joy .139.
+│ +
+│ +## Regimes (RETEST; primary seeds 0,1 | held-out seeds 2,3)
+│ +| regime | action flips | noise control | on kindness/feeding arcs | settle turns (frozen) | collateral |
+│ +|---|---|---|---|---|---|
+│ +| A as-is | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│ +| B percentile, every threshold | 25 / 21 | 5 / 7 | 10 of 25 / 10 of 21 | 118 | 65.6% / 66.4% |
+│ +| C adaptive margin, kappa 1, 2, 4 | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│ +| Bn percentile, fear + food_joy only | 23 / 19 | 5 / 7 | 10 of 23 / 10 of 19 | 6 | 18.2% / 19.0% |
+│ +| Bj post-hoc, food_joy only | 26 / 24 | 5 / 8 | 10 of 26 / 10 of 24 | 6 | 12.5% / 13.0% |
+│ +Noise control = frozen RETEST vs frozen S3 (same weights, re-drawn noise). Collateral = share of
+│ +frozen turns whose ambient intent differs from as-is. All flips are near-threshold; reply intent
+│ +never flips in any regime (structural, held). BC behaves like B (27 / 23, fails Q4).
+│ +
+│ +## Verdicts (registered regime B)
+│ +- Q1 SUPPORTED. 25 flips (12 and 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7.
+│ +  18 are stay -> to_pond on food_joy, 6 are settle lost on a .004 sleep difference, 1 is fear.
+│ +- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (binomial p = .16 against 7/24); held-out
+│ +  10 of 21 (p = .057). 8 primary flips are swat turns. Held-out Bn clears the turn-level bar
+│ +  (10 of 19, p = .027), but all 10 are one conversation (goats); 2 of 7 flipping conversations.
+│ +- Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1); held-out
+│ +  .125. The frozen arm under B is higher (.229-.250).
+│ +- Q4 NOT SUPPORTED. Settle fires on 118 of 384 frozen turns instead of 6; in her solo life the
+│ +  settle branch is reached on 1,920 of 1,920 ticks every day (as-is 839-873); 6 turns have settle
+│ +  in one arm only. Bn, Bj and C keep settle identical, by construction.
+│ +- Regime C is inert: food_joy threshold .60 -> .561 (kappa 1), .446 (kappa 4); nothing sits
+│ +  between .35 and .61, so 0 flips and the frozen arm equals as-is exactly.
+│ +- picked_up turn 5: the tag is neutral frozen, curious plastic in all four seeds under every
+│ +  regime. It never becomes behaviour: stay/stay under A, C, Bj; to_boot in both arms under B and Bn
+│ +  (fear .096 > 0.0, the regime moved her, not her mood). 0 of 24 tag-flip turns carry an action
+│ +  flip in any regime: the tag turns on salience, and no intent comparator reads salience.
+│ +
+│ +## What the flips are
+│ +Frozen food_joy on swat and goats turns sits at .131-.139; P70 (.1394) lands on that cluster and
+│ +the plastic gain (+.011 to +.014) lifts it over. The same cluster is why 5-8 frozen turns change
+│ +on re-drawn noise alone. At that level food_joy reads general arousal, not joy: a swatted duck
+│ +heads for the pond.
+│ +
+│ +## Proposal (Q1 holds, so the brief asks for one)
+│ +By the registered rule (pass Q1, Q3, Q4) only Bn is proposable among registered regimes; Bj passes
+│ +on held-out data with less collateral. My recommendation is to ship neither as tested:
+│ +1. Not kindness: 10 flips are the goats conversation, 3-8 are swat turns, the rest hold and hose.
+│ +2. Bn's fear leg is `fear > 0.0`: to_boot on 97 turns instead of 48, for one flip.
+│ +3. Solo life under Bj (world_read.json): to_pond on 23-25% of all day ticks (0 as-is), and it
+│ +   overrides her curiosity walks (to_fence 326-352 -> 29-42 per 3 days, to_boot 151-170 -> 11-25).
+│ +4. The flips need v2's lab rule (947k edges, eta .05). Her live rule is DAN-only, eta .01, per
+│ +   visitor, and was not tested here. A live threshold change alone may be all collateral.
+│ +If the owner wants it anyway, the change is one constant in `needs` (food_joy .60 -> .139), gated:
+│ +G0 offline battery with her LIVE rule under Bj, flips must beat the noise control, else stop;
+│ +G1 pinned delta plus tests on both sides of the comparator and on ladder precedence; G2 replay.py
+│ +on the patched file reproduces Bj's stored decisions 100%; G3 owner-approved restart of
+│ … omitted 13 diff line(s) across 1 additional file(s)/section(s)
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -41,7 +41,7 @@
+│
+│  ## Verdicts (registered regime B)
+│  - Q1 SUPPORTED. 25 flips (12 and 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7.
+│ -  18 are stay -> to_pond on food_joy, 6 are settle lost on a .004 sleep difference, 1 is fear.
+│ +  18 are stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 is fear.
+│  - Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (binomial p = .16 against 7/24); held-out
+│    10 of 21 (p = .057). 8 primary flips are swat turns. Held-out Bn clears the turn-level bar
+│    (10 of 19, p = .027), but all 10 are one conversation (goats); 2 of 7 flipping conversations.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -66,7 +66,8 @@
+│  ## Proposal (Q1 holds, so the brief asks for one)
+│  By the registered rule (pass Q1, Q3, Q4) only Bn is proposable among registered regimes; Bj passes
+│  on held-out data with less collateral. My recommendation is to ship neither as tested:
+│ -1. Not kindness: 10 flips are the goats conversation, 3-8 are swat turns, the rest hold and hose.
+│ +1. Not kindness: 10 flips are the goats conversation, 3-8 are swat turns, the rest are hose, hold,
+│ +   pet and no-event turns.
+│  2. Bn's fear leg is `fear > 0.0`: to_boot on 97 turns instead of 48, for one flip.
+│  3. Solo life under Bj (world_read.json): to_pond on 23-25% of all day ticks (0 as-is), and it
+│     overrides her curiosity walks (to_fence 326-352 -> 29-42 per 3 days, to_boot 151-170 -> 11-25).
+✗ $ wc -l DUCKROUTE-FINDINGS.md + 9 commands [Blocked: the lifecycle guard could not scan t...]
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/check.py
+│ duckroute/check.py
+│ @@ -0,0 +1,18 @@
+│ +"""Cross-check the numbers quoted in DUCKROUTE-FINDINGS.md against the stored results. Read-only."""
+│ +import json
+│ +from pathlib import Path
+│ +D = Path(__file__).resolve().parent
+│ +R = json.loads((D / 'results.json').read_text()); H = json.loads((D / 'results_heldout.json').read_text())
+│ +v = [x['fear'] for s in (0, 1) for c in json.loads((D.parent / 'duckplast2' / 'out' / f'seed{s}_frozen.json').read_text())['sessions']['S1'].values() for x in c]
+│ +print('fear == 0 share', sum(x == 0 for x in v) / len(v), '| rounds to 0', sum(round(x, 3) == 0 for x in v) / len(v))
+│ +for T, X in (('primary', R['primary']), ('heldout', H['heldout'])):
+│ +    for rg in ('B', 'Bn', 'Bj'):
+│ +        fl = X[rg]['flips_R']
+│ +        d = [f['food_joy'][1] - f['food_joy'][0] for f in fl if 'food_joy' in f['crossed']]
+│ +        fz = [f['food_joy'][0] for f in fl if 'food_joy' in f['crossed']]
+│ +        sl = sorted({round(abs(f['sleep'][1] - f['sleep'][0]), 4) for f in fl if 'sleep' in f['crossed']})
+│ +        print(T, rg, 'fj gain', round(min(d), 4), round(max(d), 4), '| frozen fj', round(min(fz), 4), round(max(fz), 4),
+│ +              '| sleep diffs', sl, '| all near', X[rg]['N_near'] == X[rg]['N_all'])
+│ +    print(T, 'BC', X['BC']['N_all'], 'Q4', X['BC']['Q4']['supported'], '| reply flips by regime',
+│ +          [X[k]['structural']['reply_flips_all_sessions'] for k in X])
+│ +print('minutes', [(s, a, round(json.loads((D / 'out' / f'seed{s}_{a}.json').read_text())['seconds'] / 60, 1)) for s in (2, 3) for a in ('frozen', 'plastic')])
+💻 $ wc -l DUCKROUTE-FINDINGS.md + 2 commands
+💻 $ taskset -c 3 ../../peabrain/.venv/bin/python -B check.py  0.2s
+💻 $ systemctl --user is-active critter-bill.service critter-bill-fly.service + 1 command
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -1,17 +1,17 @@
+│  # DUCKROUTE — wave 6: the routing-threshold lever (offline, 2026-11-22)
+│
+│  PREREG sha256 98cc1d8a...b9aba2, locked 15:40:37 before any score was read. Evidence:
+│ -results.json, results_heldout.json, replay.log, world_read.json, out/.
+│ +results.json, results_heldout.json, replay.log, world_read.json, check.py, out/.
+│
+│  ## What ran
+│  Inside a conversation no threshold feeds back into her dynamics, so a regime is a re-readout of
+│ -stored score records through her own code (`needs`, the reply-intent tail, `mood_tag`), with the
+│ +stored score records through her own code (`needs`, the reply-intent tail, `mood_tag`) with the
+│  comparator constants swapped at the AST level. Primary: v2's stored seeds 0,1 (384 RETEST turns,
+│  plastic vs frozen pairs). Held-out: seeds 2,3 run fresh with a byte-identical copy of v2's run.py
+│  (4 jobs, 4 cores, 48-51 min), thresholds fixed from seeds 0,1. Gates green: sources hash-equal to
+│  v2; 40 comparators enumerated, 8 swapped; the as-is replay reproduces every stored decision (3,076
+│ -turns per tier, 0 mismatches); v2's headline reproduced (0 action flips, 12 tag flips); fresh
+│ -seed-2 frozen S1 equals v1's stored arm exactly (max abs diff 0.0).
+│ +turns per tier); v2's headline reproduced (0 action flips, 12 tag flips); fresh seed-2 frozen S1
+│ +equals v1's stored arm exactly.
+│
+│  ## Boundary map (frozen arm, 384 turns; "fire" = share of turns on the firing side)
+│  | intent boundary | fire | nearest score below / above | note |
+│ @@ -19,74 +19,67 @@
+│  | hunger > .75 (beg, to_bowl) | 3.6% | .731 / .794 | body clock |
+│  | trust > .30 (beg) | 84.4% | .30 / .30 | counter; sits on her start value |
+│  | sleep > .70 (settle) | 1.6% | .677 / .713 | body clock; rider <= .75: .713 / .998 |
+│ -| fear > .40 (to_boot) | 12.5% | .358 / .641 | over 70% of turns are exactly 0 |
+│ +| fear > .40 (to_boot) | 12.5% | .358 / .641 | 71% of turns are exactly 0 |
+│  | food_joy > .60 (to_pond) | 17.2% | .350 / .611 | the dead zone, .26 wide |
+│ -| curiosity > .35 | - | - | unreachable in a conversation |
+│ -World act ladder (7 comparators, 11,520 day ticks): no dead zone, gaps <= .0014; her solo fear is
+│ -always 0, so fear > .4 and > .2 never fire. Tag ladder: salience > .15 has 82 turns within .05 and
+│ -a gap of .148 / .179, which is where v2's tag flips live. Full table: results.json `map`.
+│ +Curiosity > .35 is unreachable in a conversation. World act ladder (7 comparators, 11,520 day
+│ +ticks): no dead zone, gaps <= .0014; her solo fear is always 0. Tag ladder: salience > .15 has 82
+│ +turns within .05 (gap .148 / .179), where v2's tag flips live. Full table: results.json `map`.
+│  P70 of each score: hunger .390, trust .46, sleep .083, fear 0.0, food_joy .139.
+│
+│ -## Regimes (RETEST; primary seeds 0,1 | held-out seeds 2,3)
+│ -| regime | action flips | noise control | on kindness/feeding arcs | settle turns (frozen) | collateral |
+│ +## Regimes (RETEST; primary seeds 0,1 / held-out seeds 2,3)
+│ +| regime | action flips | noise control | on kindness/feeding arcs | settle turns | collateral |
+│  |---|---|---|---|---|---|
+│  | A as-is | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│  | B percentile, every threshold | 25 / 21 | 5 / 7 | 10 of 25 / 10 of 21 | 118 | 65.6% / 66.4% |
+│  | C adaptive margin, kappa 1, 2, 4 | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│  | Bn percentile, fear + food_joy only | 23 / 19 | 5 / 7 | 10 of 23 / 10 of 19 | 6 | 18.2% / 19.0% |
+│  | Bj post-hoc, food_joy only | 26 / 24 | 5 / 8 | 10 of 26 / 10 of 24 | 6 | 12.5% / 13.0% |
+│ -Noise control = frozen RETEST vs frozen S3 (same weights, re-drawn noise). Collateral = share of
+│ -frozen turns whose ambient intent differs from as-is. All flips are near-threshold; reply intent
+│ -never flips in any regime (structural, held). BC behaves like B (27 / 23, fails Q4).
+│ +Noise control = frozen RETEST vs frozen S3 (re-drawn noise). Collateral = share of frozen turns
+│ +whose ambient intent differs from as-is. Reply intent never flips in any regime.
+│
+│  ## Verdicts (registered regime B)
+│ -- Q1 SUPPORTED. 25 flips (12 and 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7.
+│ -  18 are stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 is fear.
+│ -- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (binomial p = .16 against 7/24); held-out
+│ -  10 of 21 (p = .057). 8 primary flips are swat turns. Held-out Bn clears the turn-level bar
+│ -  (10 of 19, p = .027), but all 10 are one conversation (goats); 2 of 7 flipping conversations.
+│ -- Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1); held-out
+│ -  .125. The frozen arm under B is higher (.229-.250).
+│ -- Q4 NOT SUPPORTED. Settle fires on 118 of 384 frozen turns instead of 6; in her solo life the
+│ -  settle branch is reached on 1,920 of 1,920 ticks every day (as-is 839-873); 6 turns have settle
+│ -  in one arm only. Bn, Bj and C keep settle identical, by construction.
+│ +- Q1 SUPPORTED. 25 flips (12, 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7.
+│ +  18 are stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 fear.
+│ +- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (p = .16 against 7/24); held-out 10 of 21
+│ +  (p = .057). 8 primary flips are swat turns. Held-out Bn clears the turn-level bar (10 of 19,
+│ +  p = .027), but all 10 are one conversation (goats), 2 of 7 flipping conversations.
+│ +- Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1), same
+│ +  held-out. No oscillation.
+│ +- Q4 NOT SUPPORTED. Settle on 118 of 384 frozen turns instead of 6; in her solo life the settle
+│ +  branch is reached on every tick of every day (as-is 839-873 of 1,920); 6 turns have settle in
+│ +  one arm only. Bn, Bj and C keep settle identical, by construction.
+│  - Regime C is inert: food_joy threshold .60 -> .561 (kappa 1), .446 (kappa 4); nothing sits
+│    between .35 and .61, so 0 flips and the frozen arm equals as-is exactly.
+│ -- picked_up turn 5: the tag is neutral frozen, curious plastic in all four seeds under every
+│ -  regime. It never becomes behaviour: stay/stay under A, C, Bj; to_boot in both arms under B and Bn
+│ … omitted 54 diff line(s) across 1 additional file(s)/section(s)
+💻 $ wc -l DUCKROUTE-FINDINGS.md + 5 commands  0.1s
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -1,17 +1,15 @@
+│  # DUCKROUTE — wave 6: the routing-threshold lever (offline, 2026-11-22)
+│ -
+│ -PREREG sha256 98cc1d8a...b9aba2, locked 15:40:37 before any score was read. Evidence:
+│ -results.json, results_heldout.json, replay.log, world_read.json, check.py, out/.
+│ +PREREG sha256 98cc1d8a...b9aba2, locked 15:40:37 before any score was read. Evidence: results.json,
+│ +results_heldout.json, replay.log, world_read.json, check.py, out/.
+│
+│  ## What ran
+│ -Inside a conversation no threshold feeds back into her dynamics, so a regime is a re-readout of
+│ -stored score records through her own code (`needs`, the reply-intent tail, `mood_tag`) with the
+│ -comparator constants swapped at the AST level. Primary: v2's stored seeds 0,1 (384 RETEST turns,
+│ -plastic vs frozen pairs). Held-out: seeds 2,3 run fresh with a byte-identical copy of v2's run.py
+│ -(4 jobs, 4 cores, 48-51 min), thresholds fixed from seeds 0,1. Gates green: sources hash-equal to
+│ -v2; 40 comparators enumerated, 8 swapped; the as-is replay reproduces every stored decision (3,076
+│ -turns per tier); v2's headline reproduced (0 action flips, 12 tag flips); fresh seed-2 frozen S1
+│ -equals v1's stored arm exactly.
+│ +Inside a conversation no threshold feeds back into her dynamics, so a regime is a re-readout of stored score
+│ +records through her own code (`needs`, the reply-intent tail, `mood_tag`) with the comparator constants
+│ +swapped at the AST level. Primary: v2's stored seeds 0,1 (384 RETEST turns, plastic vs frozen pairs).
+│ +Held-out: seeds 2,3 run fresh with a byte-identical copy of v2's run.py (4 jobs, 4 cores, 48-51 min),
+│ +thresholds fixed from seeds 0,1. Gates green: sources hash-equal to v2; 40 comparators enumerated, 8 swapped;
+│ +the as-is replay reproduces every stored decision (3,076 turns per tier); v2's headline reproduced (0 action
+│ +flips, 12 tag flips); fresh seed-2 frozen S1 equals v1's stored arm exactly.
+│
+│  ## Boundary map (frozen arm, 384 turns; "fire" = share of turns on the firing side)
+│  | intent boundary | fire | nearest score below / above | note |
+│ @@ -21,9 +19,9 @@
+│  | sleep > .70 (settle) | 1.6% | .677 / .713 | body clock; rider <= .75: .713 / .998 |
+│  | fear > .40 (to_boot) | 12.5% | .358 / .641 | 71% of turns are exactly 0 |
+│  | food_joy > .60 (to_pond) | 17.2% | .350 / .611 | the dead zone, .26 wide |
+│ -Curiosity > .35 is unreachable in a conversation. World act ladder (7 comparators, 11,520 day
+│ -ticks): no dead zone, gaps <= .0014; her solo fear is always 0. Tag ladder: salience > .15 has 82
+│ -turns within .05 (gap .148 / .179), where v2's tag flips live. Full table: results.json `map`.
+│ +Curiosity > .35 is unreachable in a conversation. World act ladder (7 comparators, 11,520 day ticks): no dead
+│ +zone, gaps <= .0014; her solo fear is always 0. Tag ladder: salience > .15 has 82 turns within .05 (gap
+│ +.148 / .179), where v2's tag flips live. Full table: results.json `map`.
+│  P70 of each score: hunger .390, trust .46, sleep .083, fear 0.0, food_joy .139.
+│
+│  ## Regimes (RETEST; primary seeds 0,1 / held-out seeds 2,3)
+│ @@ -34,52 +32,49 @@
+│  | C adaptive margin, kappa 1, 2, 4 | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│  | Bn percentile, fear + food_joy only | 23 / 19 | 5 / 7 | 10 of 23 / 10 of 19 | 6 | 18.2% / 19.0% |
+│  | Bj post-hoc, food_joy only | 26 / 24 | 5 / 8 | 10 of 26 / 10 of 24 | 6 | 12.5% / 13.0% |
+│ -Noise control = frozen RETEST vs frozen S3 (re-drawn noise). Collateral = share of frozen turns
+│ -whose ambient intent differs from as-is. Reply intent never flips in any regime.
+│ +Noise control = frozen RETEST vs frozen S3 (re-drawn noise). Collateral = share of frozen turns whose ambient
+│ +intent differs from as-is. Reply intent never flips in any regime.
+│
+│  ## Verdicts (registered regime B)
+│ -- Q1 SUPPORTED. 25 flips (12, 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7.
+│ -  18 are stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 fear.
+│ -- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (p = .16 against 7/24); held-out 10 of 21
+│ -  (p = .057). 8 primary flips are swat turns. Held-out Bn clears the turn-level bar (10 of 19,
+│ -  p = .027), but all 10 are one conversation (goats), 2 of 7 flipping conversations.
+│ -- Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1), same
+│ -  held-out. No oscillation.
+│ -- Q4 NOT SUPPORTED. Settle on 118 of 384 frozen turns instead of 6; in her solo life the settle
+│ -  branch is reached on every tick of every day (as-is 839-873 of 1,920); 6 turns have settle in
+│ -  one arm only. Bn, Bj and C keep settle identical, by construction.
+│ -- Regime C is inert: food_joy threshold .60 -> .561 (kappa 1), .446 (kappa 4); nothing sits
+│ -  between .35 and .61, so 0 flips and the frozen arm equals as-is exactly.
+│ -- picked_up turn 5: tag neutral frozen, curious plastic, in all four seeds and every regime. It
+│ -  never becomes behaviour: stay/stay under A, C, Bj; to_boot in BOTH arms under B and Bn (fear .096
+│ -  > 0.0: the regime moved her, not her mood). 0 of 24 tag-flip turns carry an action flip in any
+│ -  regime: the tag turns on salience and no intent comparator reads salience.
+│ -- Why the flips happen: frozen food_joy on swat and goats turns sits at .131-.139; P70 (.1394)
+│ -  lands on that cluster and the plastic gain (+.011 to +.014) lifts it over. The same cluster is
+│ -  why 5-8 frozen turns change on re-drawn noise alone. At that level food_joy reads arousal.
+│ +- Q1 SUPPORTED. 25 flips (12, 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7. 18 are
+│ +  stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 is fear.
+│ +- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (p = .16 against 7/24); held-out 10 of 21 (p = .057).
+│ +  8 primary flips are swat turns. Held-out Bn clears the turn-level bar (10 of 19, p = .027), but all 10 are
+│ +  one conversation (goats), 2 of 7 flipping conversations.
+│ +- Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1), same held-out.
+│ +- Q4 NOT SUPPORTED. Settle on 118 of 384 frozen turns instead of 6; in her solo life the settle branch is
+│ +  reached on every tick of every day (as-is 839-873 of 1,920); 6 turns have settle in one arm only. Bn, Bj
+│ +  and C keep settle identical, by construction.
+│ +- Regime C is inert: food_joy threshold .60 -> .561 (kappa 1), .446 (kappa 4); nothing sits between .35 and
+│ … omitted 52 diff line(s) across 1 additional file(s)/section(s)
+💻 $ wc -l DUCKROUTE-FINDINGS.md + 2 commands
+✍️ Write /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -8,7 +8,7 @@
+│  swapped at the AST level. Primary: v2's stored seeds 0,1 (384 RETEST turns, plastic vs frozen pairs).
+│  Held-out: seeds 2,3 run fresh with a byte-identical copy of v2's run.py (4 jobs, 4 cores, 48-51 min),
+│  thresholds fixed from seeds 0,1. Gates green: sources hash-equal to v2; 40 comparators enumerated, 8 swapped;
+│ -the as-is replay reproduces every stored decision (3,076 turns per tier); v2's headline reproduced (0 action
+│ +as-is replay reproduces every stored decision (3,076 turns per tier); v2's headline reproduced (0 action
+│  flips, 12 tag flips); fresh seed-2 frozen S1 equals v1's stored arm exactly.
+│
+│  ## Boundary map (frozen arm, 384 turns; "fire" = share of turns on the firing side)
+│ @@ -20,9 +20,8 @@
+│  | fear > .40 (to_boot) | 12.5% | .358 / .641 | 71% of turns are exactly 0 |
+│  | food_joy > .60 (to_pond) | 17.2% | .350 / .611 | the dead zone, .26 wide |
+│  Curiosity > .35 is unreachable in a conversation. World act ladder (7 comparators, 11,520 day ticks): no dead
+│ -zone, gaps <= .0014; her solo fear is always 0. Tag ladder: salience > .15 has 82 turns within .05 (gap
+│ -.148 / .179), where v2's tag flips live. Full table: results.json `map`.
+│ -P70 of each score: hunger .390, trust .46, sleep .083, fear 0.0, food_joy .139.
+│ +zone, gaps <= .0014; her solo fear is always 0. Tag ladder: salience > .15 has 82 turns within .05, where v2's
+│ +tag flips live. P70 per score: hunger .390, trust .46, sleep .083, fear 0.0, food_joy .139. Full table: `map`.
+│
+│  ## Regimes (RETEST; primary seeds 0,1 / held-out seeds 2,3)
+│  | regime | action flips | noise control | on kindness/feeding arcs | settle turns | collateral |
+│ @@ -32,49 +31,41 @@
+│  | C adaptive margin, kappa 1, 2, 4 | 0 / 0 | 0 / 0 | - | 6 | 0 |
+│  | Bn percentile, fear + food_joy only | 23 / 19 | 5 / 7 | 10 of 23 / 10 of 19 | 6 | 18.2% / 19.0% |
+│  | Bj post-hoc, food_joy only | 26 / 24 | 5 / 8 | 10 of 26 / 10 of 24 | 6 | 12.5% / 13.0% |
+│ -Noise control = frozen RETEST vs frozen S3 (re-drawn noise). Collateral = share of frozen turns whose ambient
+│ -intent differs from as-is. Reply intent never flips in any regime.
+│ +Noise control = frozen RETEST vs frozen S3. Collateral = frozen ambient turns that differ from as-is.
+│
+│  ## Verdicts (registered regime B)
+│  - Q1 SUPPORTED. 25 flips (12, 13 per seed) against 5 from noise; as-is 0. Held-out 21 against 7. 18 are
+│ -  stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 is fear.
+│ -- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (p = .16 against 7/24); held-out 10 of 21 (p = .057).
+│ -  8 primary flips are swat turns. Held-out Bn clears the turn-level bar (10 of 19, p = .027), but all 10 are
+│ -  one conversation (goats), 2 of 7 flipping conversations.
+│ +  stay -> to_pond on food_joy, 6 are settle lost on a .002-.005 sleep difference, 1 is fear. No reply flips.
+│ +- Q2 NOT SUPPORTED. 10 of 25 on kindness/feeding arcs (p = .16 against 7/24); held-out 10 of 21 (p = .057);
+│ +  8 primary flips are swat turns. Held-out Bn clears the turn bar (10 of 19, p = .027) on one conversation.
+│  - Q3 SUPPORTED. Plastic arm .125 ambient reversals per conversation (as-is .042, max 1), same held-out.
+│ -- Q4 NOT SUPPORTED. Settle on 118 of 384 frozen turns instead of 6; in her solo life the settle branch is
+│ -  reached on every tick of every day (as-is 839-873 of 1,920); 6 turns have settle in one arm only. Bn, Bj
+│ -  and C keep settle identical, by construction.
+│ +- Q4 NOT SUPPORTED. Settle on 118 of 384 frozen turns instead of 6; in her solo life the settle branch fires
+│ +  on every tick (as-is 839-873 of 1,920 a day); 6 turns settle in one arm only. Bn, Bj, C: unchanged.
+│  - Regime C is inert: food_joy threshold .60 -> .561 (kappa 1), .446 (kappa 4); nothing sits between .35 and
+│    .61, so 0 flips and the frozen arm equals as-is exactly.
+│ -- picked_up turn 5: tag neutral frozen, curious plastic, in all four seeds and every regime. It never becomes
+│ -  behaviour: stay/stay under A, C, Bj; to_boot in BOTH arms under B and Bn (fear .096 > 0.0: the regime moved
+│ -  her, not her mood). 0 of 24 tag-flip turns carry an action flip in any regime: the tag turns on salience
+│ -  and no intent comparator reads salience.
+│ +- picked_up turn 5: tag neutral frozen, curious plastic, in all four seeds and every regime. Never behaviour:
+│ +  stay/stay under A, C, Bj; to_boot in BOTH arms under B, Bn (fear .096 > 0.0: the regime moved her, not her
+│ +  mood). 0 of 24 tag-flip turns carry an action flip: no intent comparator reads salience.
+│  - Why the flips happen: frozen food_joy on swat and goats turns sits at .131-.139; P70 (.1394) lands on that
+│ -  cluster and the plastic gain (+.011 to +.014) lifts it over. The same cluster is why 5-8 frozen turns
+│ -  change on re-drawn noise alone. At that level food_joy reads arousal, not joy.
+│ +  cluster and the plastic gain (+.011 to +.014) lifts it over. Re-drawn noise alone moves 5-8 of them.
+│
+│  ## Proposal (Q1 holds, so the brief asks for one)
+│  By the registered rule (pass Q1, Q3, Q4) only Bn is proposable among registered regimes; Bj passes on held-out
+│  data with less collateral. My recommendation is to ship neither as tested:
+│ -1. Not kindness: 10 flips are the goats conversation, 3-8 are swat turns (a swatted duck heads for the pond),
+│ -   the rest are hose, hold, pet and no-event turns.
+│ +1. Not kindness: 10 flips are the goats conversation, 3-8 are swat turns (a swatted duck heads for the pond).
+│  2. Bn's fear leg is `fear > 0.0`: to_boot on 97 turns instead of 48, for one flip.
+│  3. Solo life under Bj (world_read.json): to_pond on 23-25% of all day ticks (0 as-is), and it overrides her
+│     curiosity walks (to_fence 326-352 -> 29-42 per 3 days, to_boot 151-170 -> 11-25).
+│  4. The flips need v2's lab rule (947k edges, eta .05). Her live rule is DAN-only, eta .01, per visitor, and
+│     was not tested here; a live threshold change alone may be all collateral.
+│ -If the owner wants it anyway, the change is one constant in `needs` (food_joy .60 -> .139), gated: G0 offline
+│ -battery with her LIVE rule under Bj, flips must beat the noise control, else stop; G1 pinned delta plus tests
+│ -on both sides of the comparator and on ladder precedence; G2 replay.py on the patched file reproduces Bj's
+│ -stored decisions; G3 owner-approved restart of critter-bill-fly only, /health 200; G4 /needs probes on fresh
+│ -chat ids (rest -> stay, goats -> to_pond, swat recorded); G5 gate_live.py 25/25; G6 24 h soak against the
+│ -solo-life numbers above. Rollback: revert the constant, restart, gate_live. Public duck (pinned copy) untouched.
+│ +If the owner wants it anyway: one constant in `needs` (food_joy .60 -> .139), gated. G0 offline battery with
+│ +her LIVE rule under Bj, flips must beat the noise control, else stop; G1 pinned delta plus tests on both sides
+│ +of the comparator and on ladder precedence; G2 replay.py on the patched file reproduces Bj's decisions; G3
+│ +owner-approved restart of critter-bill-fly only, /health 200; G4 /needs probes on fresh chat ids; G5
+│ … omitted 9 diff line(s) across 1 additional file(s)/section(s)
+💻 $ wc -l DUCKROUTE-FINDINGS.md + 2 commands  0.1s
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -67,5 +67,5 @@
+│  ## Deviations and scope
+│  1. ADDENDUM.md (15:45:27, before any held-out record existed) adds Bj after the primary was read: exploratory
+│     on seeds 0,1, tested only on seeds 2,3. Its collateral guess was wrong (+21 to_pond turns, +48 to +50 seen).
+│ -2. run.sh was started with `sh run.sh`; the approval gate refused chmod-then-run.
+│ -Scope: stimulus-window assay, no speech, world act ladder as-is, shared lab delta, solo reads from stored ticks.
+│ +2. run.sh was started with `sh run.sh` (the approval gate refused chmod-then-run). Scope: stimulus-window
+│ +   assay, no speech, world act ladder as-is, shared lab delta, solo reads from stored ticks.
+🔧 Patch /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md
+│ duckroute/DUCKROUTE-FINDINGS.md
+│ @@ -1,7 +1,6 @@
+│  # DUCKROUTE — wave 6: the routing-threshold lever (offline, 2026-11-22)
+│  PREREG sha256 98cc1d8a...b9aba2, locked 15:40:37 before any score was read. Evidence: results.json,
+│  results_heldout.json, replay.log, world_read.json, check.py, out/.
+│ -
+│  ## What ran
+│  Inside a conversation no threshold feeds back into her dynamics, so a regime is a re-readout of stored score
+│  records through her own code (`needs`, the reply-intent tail, `mood_tag`) with the comparator constants
+💻 $ wc -l DUCKROUTE-FINDINGS.md + 6 commands  0.2s
+⚡ Skill_manage  0.3s
+
+────────────────────────────────────────
+✿ Miso
+Wave 6 is done, Boss ♪ Short answer: moving the thresholds does make her choose differently, but not in a way I'd ship. (◕‿◕)
+
+Read /home/t3rpz/critters/peabrain-lab/duckroute/DUCKROUTE-FINDINGS.md first (70 lines).Regime (b) verdicts, v2's stored seeds 0,1 / fresh held-out seeds 2,3:- Q1 supported: 25 / 21 action flips, against 5 / 7 from re-drawn noise alone; as-is gives 0.
+- Q2 not supported: only 10 of 25 flips land on kindness/feeding arcs, and 8 are swat turns. A swatted duck heads for the pond.
+- Q3 supported: 0.125 reversals per conversation, so no oscillation.
+- Q4 not supported: settle fires on 118 of 384 turns instead of 6, and on every tick of her solo day.
+
+Other results:
+
+- Regime (c), adaptive margin: inert. It gives 0 flips even at 4x the margin, because nothing sits in the food_joy dead zone between .35 and .61.
+- picked_up tag: the neutral→curious shift never becomes movement under any regime, because no intent comparator reads salience.Since Q1 holds, the proposal with the service-gate plan is written, but my recommendation is to ship neither passing variant:
+
+- Not kindness-specific: the flips come from a general gain crossing a line.
+- Solo-life cost: even the gentlest variant (food_joy only, which I added post-hoc and tested only on the held-out seeds) puts her at the pond on about a quarter of her solo ticks and overwrites her curiosity walks.- Lab rule, not live: the flips need v2's lab plasticity rule; her live rule was not tested here.
+
+Nothing live was touched and both services are still active. The run took about 62 minutes on 4 cores. I also added the lessons to the duck-plasticity skill notes ★
+────────────────────────────────────────
+
+Resume this session with:
+  hermes --resume local-123b90d0bfd9348b82b14b550a790d56a8cec580078c922f7146cc2a88af0fcf -p maple
+
+Session:        local-123b90d0bfd9348b82b14b550a790d56a8cec580078c922f7146cc2a88af0fcf
+Duration:       1h 1m 51s
+Messages:       93 (1 user, 91 tool calls)

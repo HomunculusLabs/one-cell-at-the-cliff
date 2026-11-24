@@ -1,0 +1,52 @@
+CERT-3 GREEN: f4 ladder K 73 | carrier rank 21 | 319 rank 33 | f4 twin gi 290 gap 2.44e-05
+f4wA: n 21,789 | edges 469,618 | dropped 20
+f4ng: n 21,788 | edges 469,537 | dropped 21
+f4tw: n 21,788 | edges 469,519 | dropped 21
+graphs built 4s | K 77 n_cut 21,732 edges_cut 639,164
+cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+g_cutwA 0.143658 == stored EXACT | af_final 0.109035
+cutng25 bracket af(0.12)=0.08976 af(0.18)=0.11972 target 0.10906
+g_cutng25 0.145445 == stored EXACT | af_final 0.109025
+eMotTop5 bracket af(0.12)=0.09058 af(0.18)=0.12120 target 0.10906
+g_eMotTop5 0.143613 | af_final 0.109051 | |af-target| 5.54e-06 (staircase)
+eMotBot5 bracket af(0.12)=0.09060 af(0.18)=0.12196 target 0.10906
+g_eMotBot5 0.143671 | af_final 0.109020 | |af-target| 3.61e-05 (staircase)
+f4wA bracket af(0.1)=0.07895 af(0.4)=0.12880 target 0.10906
+g_f4wA 0.150514525 | af_final 0.108954 | |af-target| 1.02e-04 (staircase)
+f4ng bracket af(0.1)=0.07879 af(0.4)=0.12432 target 0.10906
+g_f4ng 0.162309861 | af_final 0.109020 | |af-target| 3.59e-05 (staircase)
+f4tw bracket af(0.1)=0.07874 af(0.4)=0.12883 target 0.10906
+g_f4tw 0.152618986 | af_final 0.109051 | |af-target| 5.26e-06 (staircase)
+L169 swap gains | wAgN 0.145445455 (cutwA graph) | n25gW 0.143658196 (cutng25 graph)
+seed 801 done af {'f4wA': 0.10978016257286072, 'f4ng': 0.10822471231222153, 'f4tw': 0.1111162081360817, 'cutwA': 0.1126004159450531, 'cutng25': 0.10916268825531006} | 165s
+seed 901 done af {'f4wA': 0.10955069214105606, 'f4ng': 0.1112080067396164, 'f4tw': 0.10831650346517563, 'cutwA': 0.10938719660043716, 'cutng25': 0.10755600780248642} | 180s
+seed 3801 done af {'f4wA': 0.10776079446077347, 'f4ng': 0.11107031255960464, 'f4tw': 0.10946392267942429, 'cutwA': 0.10828551650047302, 'cutng25': 0.10911678522825241} | 195s
+seed 3802 done af {'f4wA': 0.11134058237075806, 'f4ng': 0.11428309231996536, 'f4tw': 0.10987699776887894, 'cutwA': 0.11108560860157013, 'cutng25': 0.10925450176000595} | 211s
+seed 3803 done af {'f4wA': 0.11184542626142502, 'f4ng': 0.10941802710294724, 'f4tw': 0.10964751243591309, 'cutwA': 0.10823961347341537, 'cutng25': 0.10847411304712296} | 226s
+seed 3804 done af {'f4wA': 0.10987195372581482, 'f4ng': 0.11015237867832184, 'f4tw': 0.10928034037351608, 'cutwA': 0.11053477227687836, 'cutng25': 0.10865773260593414} | 241s
+seed 3805 done af {'f4wA': 0.11239616572856903, 'f4ng': 0.10822471231222153, 'f4tw': 0.10996878892183304, 'cutwA': 0.11007574200630188, 'cutng25': 0.10985126346349716} | 255s
+seed 3806 done af {'f4wA': 0.10757721960544586, 'f4ng': 0.10753625631332397, 'f4tw': 0.10817881673574448, 'cutwA': 0.10943309962749481, 'cutng25': 0.10916268825531006} | 270s
+seed 3807 done af {'f4wA': 0.10831153392791748, 'f4ng': 0.11162107437849045, 'f4tw': 0.10689370334148407, 'cutwA': 0.1086527407169342, 'cutng25': 0.10943812131881714} | 285s
+seed 3808 done af {'f4wA': 0.10982605814933777, 'f4ng': 0.10735267400741577, 'f4tw': 0.10721497982740402, 'cutwA': 0.1086527407169342, 'cutng25': 0.11012669652700424} | 301s
+seed 3809 done af {'f4wA': 0.10459405928850174, 'f4ng': 0.10845419764518738, 'f4tw': 0.1108408272266388, 'cutwA': 0.11030525714159012, 'cutng25': 0.10975945740938187} | 316s
+seed 3810 done af {'f4wA': 0.1090458482503891, 'f4ng': 0.10850009322166443, 'f4tw': 0.10514962673187256, 'cutwA': 0.10782648622989655, 'cutng25': 0.1078314334154129} | 331s
+seed 3811 done af {'f4wA': 0.10996374487876892, 'f4ng': 0.11455847322940826, 'f4tw': 0.11088673025369644, 'cutwA': 0.109800323843956, 'cutng25': 0.10962174087762833} | 346s
+seed 3812 done af {'f4wA': 0.11005553603172302, 'f4ng': 0.10840829461812973, 'f4tw': 0.10905085504055023, 'cutwA': 0.10879044979810715, 'cutng25': 0.10801506042480469} | 361s
+seed 3813 done af {'f4wA': 0.10973426699638367, 'f4ng': 0.10813291370868683, 'f4tw': 0.11019827425479889, 'cutwA': 0.11232499778270721, 'cutng25': 0.10902497172355652} | 376s
+seed 3814 done af {'f4wA': 0.10968837141990662, 'f4ng': 0.10790343582630157, 'f4tw': 0.10950981825590134, 'cutwA': 0.11016754806041718, 'cutng25': 0.10888725519180298} | 391s
+seed 3815 done af {'f4wA': 0.10835742950439453, 'f4ng': 0.10482834279537201, 'f4tw': 0.10964751243591309, 'cutwA': 0.1086527407169342, 'cutng25': 0.1093922108411789} | 406s
+seed 3816 done af {'f4wA': 0.10950479656457901, 'f4ng': 0.1116669699549675, 'f4tw': 0.11093262583017349, 'cutwA': 0.10911177098751068, 'cutng25': 0.10948402434587479} | 422s
+rollouts done 422s
+raw_l226.npz checkpointed BEFORE analysis
+B38 absence across 42 stored npzs: PASS
+FC-169B2 (12 arms x 22 keys x 2 seeds) vs raw_l169b2: PASS (max 0.0e+00)
+f4 gain identity vs l169b2 stored: {'f4wA': True, 'f4ng': True, 'f4tw': True}
+C0-NT(b2) f4 separation: PASS (min 2.874e-02)
+P-af f4wA: g 0.150514525 | settled stair 1.02e-04 | rollout af mean 0.10937 (max off 4.46e-03)
+P-af f4ng: g 0.162309861 | settled stair 3.59e-05 | rollout af mean 0.10951 (max off 5.50e-03)
+P-af f4tw: g 0.152618986 | settled stair 5.26e-06 | rollout af mean 0.10917 (max off 3.91e-03)
+P-af(b2) settled-staircase gate: PASS
+CERT-SUBSET GREEN: 230 bit-identity checks (5 arms x 22 keys + af, 2 anchor seeds) max 0.0e+00
+CERT-GAIN GREEN: 7 fresh bisects == stored values EXACT
+CERT-SEP GREEN: all f4 arms separated from base + from each other
+L226 ANCHORS PASS (CERT-SUBSET 0.0e+00 over 230 checks) | done 423s

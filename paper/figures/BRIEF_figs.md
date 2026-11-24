@@ -7,7 +7,7 @@ same fonts, stroke weights, palette; small multiples, no chartjunk).
 
 ## Figure 4 — the 36-arm scatter (the paper's new face)
 
-- Data: ~/critters/peabrain-lab/banc/l175/results_l175.json
+- Data: /home/t3rpz/critters/peabrain-lab/banc/l175/results_l175.json
   (per-cell x_mean on the k=24 base, delivered drive, kR/16, meanR) plus
   banc/l185/results_l185.json (fresh-batch points for the six key arms —
   show both batches where available)
@@ -26,7 +26,7 @@ same fonts, stroke weights, palette; small multiples, no chartjunk).
 
 ## Figure 5 — three readouts per arm (the honesty panel)
 
-- Data: ~/critters/peabrain-lab/banc/l184/threepanel.csv
+- Data: /home/t3rpz/critters/peabrain-lab/banc/l184/threepanel.csv
   (arm × chopped / unchopped-1.4Hz / cross-seed columns)
 - Form: small-multiples grid or a grouped dot plot — every arm a row,
   three colored dots per row, consistent ordering (by chopped value);

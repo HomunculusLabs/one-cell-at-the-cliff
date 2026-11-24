@@ -1,0 +1,7 @@
+CERT-227 19 checks
+A) contradiction: parent rule recommends SGN at |r_rho| >= 0.830 where SGN power = 0.075 (MAG 0.072); SGN max over grid 0.135
+B) power floor .50:  cal beta=0.3286 -> |r| 0.2386 (lam 0.30) | beta=.50 -> |r| 0.7941 (lam 0.90)
+   power floor .80:  cal -> |r| 0.0007 | beta=.50 -> |r| 0.5718
+C) retro: measured |r_rho| 0.6830 -> MAG power 0.234 ; L214 Q3 H_TIE read at that power. crossing NOT reached (0.683 < 0.830).
+D) rule_v2 written (4 steps), supersedes the parent's one_line.
+L227b DONE

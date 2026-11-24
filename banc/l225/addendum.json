@@ -1,0 +1,282 @@
+{
+ "status": "POST-HOC addendum to L225. Declared post-hoc: no branch, no registered bar, no prediction. The parent's registered quantities are UNCHANGED and are re-certified here before any addendum number is read (CERT-225).",
+ "parent": "l225/static.json",
+ "prereg": "l225/PREREG.md (parent's; this addendum is NOT registered)",
+ "cert_225": {
+  "n_checks": 63,
+  "mode": "float/int/str equality (==)",
+  "source": "l225/static.json (read-only, fingerprinted)"
+ },
+ "parent_headline_is_wrong": {
+  "parent_headline": "DNp33 is one of a small family of 5 types surviving the nonselective FDR.",
+  "corrected_headline": "DNp33's TYPE-level avoidance does NOT survive multiplicity correction. Its uncorrected permutation p is 0.01555 (BH q 0.1573), rank 42 of 426 descending types, and it is NOT one of the 5 types that do survive BH at alpha 0.05 -- a result that holds on all three substrates (q 0.157, 0.142, 0.192).",
+  "dnp33_survives_per_substrate": {
+   "G0_closure": false,
+   "G1_cutwA": false,
+   "F4_f4wA": false
+  },
+  "why": "the registered branch set is defined on the COUNT of survivors, so F_SMALL_FAMILY is a true statement about the family SIZE and carries no information about whether the ACTOR is in it; the prose generator silently supplied that missing clause",
+  "method_law": "a branch defined on a COUNT cannot answer a MEMBERSHIP question: when the card asks 'is this actor special', the branch definition must contain the actor's membership, or the verdict sentence will be generated from an assumption the measurement never made"
+ },
+ "B_power_or_magnitude": {
+  "method": "Wilson score 95% interval for the permutation tail probability",
+  "per_substrate": {
+   "G0_closure": {
+    "n_draws": 20000,
+    "n_null_le_real": 310,
+    "p_point": 0.015549222538873057,
+    "pi_wilson95": [
+     0.013878667262035885,
+     0.017307415676329495
+    ],
+    "bh_required_p_at_own_rank": 0.004929577464788733,
+    "bh_required_p_at_rank1": 0.00011737089201877935,
+    "ci_excludes_own_rank_requirement": true,
+    "ci_excludes_rank1_requirement": true,
+    "verdict": "MAGNITUDE: the tail probability itself is too large; no draw count can make this p BH-significant"
+   },
+   "G1_cutwA": {
+    "n_draws": 20000,
+    "n_null_le_real": 229,
+    "p_point": 0.011499425028748563,
+    "pi_wilson95": [
+     0.010066511366285016,
+     0.013021127064134812
+    ],
+    "bh_required_p_at_own_rank": 0.0037712895377128956,
+    "bh_required_p_at_rank1": 0.00012165450121654502,
+    "ci_excludes_own_rank_requirement": true,
+    "ci_excludes_rank1_requirement": true,
+    "verdict": "MAGNITUDE: the tail probability itself is too large; no draw count can make this p BH-significant"
+   },
+   "F4_f4wA": {
+    "n_draws": 20000,
+    "n_null_le_real": 274,
+    "p_point": 0.013749312534373281,
+    "pi_wilson95": [
+     0.012179828372192605,
+     0.015406945895974753
+    ],
+    "bh_required_p_at_own_rank": 0.003545232273838631,
+    "bh_required_p_at_rank1": 0.00012224938875305625,
+    "ci_excludes_own_rank_requirement": true,
+    "ci_excludes_rank1_requirement": true,
+    "verdict": "MAGNITUDE: the tail probability itself is too large; no draw count can make this p BH-significant"
+   }
+  },
+  "reading": "L213's draw count was not the limitation on the ACTOR. The resolution floor (premise 0a) was the limitation on the FAMILY: it is why the survivors were invisible, not why DNp33 failed."
+ },
+ "C_uncorrected_vs_corrected": {
+  "per_substrate": {
+   "G0_closure": {
+    "m_types": 426,
+    "expected_by_chance": 21.3,
+    "n_pass_uncorrected_low": 63,
+    "n_pass_uncorrected_high": 40,
+    "excess_over_chance_low": 2.9577464788732395,
+    "n_at_or_below_dnp33_l213_pct": 38,
+    "dnp33_l213_null_pct": 0.0145,
+    "n_survivors_after_bh": 5
+   },
+   "G1_cutwA": {
+    "m_types": 411,
+    "expected_by_chance": 20.55,
+    "n_pass_uncorrected_low": 58,
+    "n_pass_uncorrected_high": 40,
+    "excess_over_chance_low": 2.8223844282238444,
+    "n_at_or_below_dnp33_l213_pct": 28,
+    "dnp33_l213_null_pct": 0.0105,
+    "n_survivors_after_bh": 2
+   },
+   "F4_f4wA": {
+    "m_types": 409,
+    "expected_by_chance": 20.450000000000003,
+    "n_pass_uncorrected_low": 58,
+    "n_pass_uncorrected_high": 38,
+    "excess_over_chance_low": 2.8361858190709044,
+    "n_at_or_below_dnp33_l213_pct": 26,
+    "dnp33_l213_null_pct": 0.013,
+    "n_survivors_after_bh": 1
+   }
+  },
+  "reading": "the type-level signal is REAL in aggregate -- more types clear the uncorrected bar than chance allows -- and that is exactly why a single preselected type's uncorrected percentile cannot carry the claim"
+ },
+ "D_survivor_family": {
+  "survivors_on_all_three": [
+   "oviDNa_b"
+  ],
+  "survivors_on_any": [
+   "DNg82",
+   "DNge005",
+   "DNp13",
+   "DNpe046",
+   "oviDNa_b"
+  ],
+  "n_any": 5,
+  "n_all3": 1,
+  "rows": [
+   {
+    "type": "DNg82",
+    "substrates": [
+     "G0_closure"
+    ],
+    "n_substrates": 1,
+    "G0_closure": {
+     "n_members": 4,
+     "median_R": 9.461009383004905e-06,
+     "p_low": 0.0002999850007499625,
+     "q_low": 0.031948402579871006
+    },
+    "annotation_primary": {
+     "cell_class": "descending_neuron",
+     "flow": "intrinsic",
+     "hemilineage": "LB12",
+     "nerve": "",
+     "neurotransmitter_predicted": "acetylcholine",
+     "region": "neck_connective",
+     "side": "left"
+    }
+   },
+   {
+    "type": "DNge005",
+    "substrates": [
+     "G0_closure"
+    ],
+    "n_substrates": 1,
+    "G0_closure": {
+     "n_members": 2,
+     "median_R": 9.121774633684983e-07,
+     "p_low": 0.0005499725013749313,
+     "q_low": 0.046857657117144146
+    },
+    "annotation_primary": {
+     "cell_class": "descending_neuron",
+     "flow": "intrinsic",
+     "hemilineage": "putative_primary",
+     "nerve": "",
+     "neurotransmitter_predicted": "acetylcholine",
+     "region": "neck_connective",
+     "side": "left"
+    }
+   },
+   {
+    "type": "DNp13",
+    "substrates": [
+     "G0_closure"
+    ],
+    "n_substrates": 1,
+    "G0_closure": {
+     "n_members": 2,
+     "median_R": 1.8306041677036016e-05,
+     "p_low": 0.00014999250037498125,
+     "q_low": 0.02129893505324734
+    },
+    "annotation_primary": {
+     "cell_class": "descending_neuron",
+     "flow": "intrinsic",
+     "hemilineage": "PSp2",
+     "nerve": "",
+     "neurotransmitter_predicted": "acetylcholine",
+     "region": "neck_connective",
+     "side": "left"
+    }
+   },
+   {
+    "type": "DNpe046",
+    "substrates": [
+     "G0_closure",
+     "G1_cutwA"
+    ],
+    "n_substrates": 2,
+    "G0_closure": {
+     "n_members": 2,
+     "median_R": 0.0,
+     "p_low": 0.00014999250037498125,
+     "q_low": 0.02129893505324734
+    },
+    "G1_cutwA": {
+     "n_members": 2,
+     "median_R": 0.0,
+     "p_low": 4.999750012499375e-05,
+     "q_low": 0.010274486275686215
+    },
+    "annotation_primary": {
+     "cell_class": "descending_neuron",
+     "flow": "intrinsic",
+     "hemilineage": "SMPpv1",
+     "nerve": "",
+     "neurotransmitter_predicted": "gaba",
+     "region": "neck_connective",
+     "side": "left"
+    }
+   },
+   {
+    "type": "oviDNa_b",
+    "substrates": [
+     "G0_closure",
+     "G1_cutwA",
+     "F4_f4wA"
+    ],
+    "n_substrates": 3,
+    "G0_closure": {
+     "n_members": 4,
+     "median_R": 6.259283778608058e-06,
+     "p_low": 0.00014999250037498125,
+     "q_low": 0.02129893505324734
+    },
+    "G1_cutwA": {
+     "n_members": 4,
+     "median_R": 6.259670254363333e-06,
+     "p_low": 4.999750012499375e-05,
+     "q_low": 0.010274486275686215
+    },
+    "F4_f4wA": {
+     "n_members": 4,
+     "median_R": 5.397781145749162e-06,
+     "p_low": 4.999750012499375e-05,
+     "q_low": 0.020448977551122443
+    },
+    "annotation_primary": {
+     "cell_class": "descending_neuron",
+     "flow": "intrinsic",
+     "hemilineage": "SMPpv1",
+     "nerve": "",
+     "neurotransmitter_predicted": "gaba",
+     "region": "neck_connective",
+     "side": "left"
+    }
+   }
+  ],
+  "dnp33_annotation_primary": {
+   "cell_class": "descending_neuron",
+   "flow": "intrinsic",
+   "hemilineage": "putative_primary",
+   "nerve": "",
+   "neurotransmitter_predicted": "acetylcholine",
+   "region": "neck_connective",
+   "side": "left"
+  },
+  "reading": "the only type surviving on ALL THREE substrates is oviDNa_b; DNp33 survives on none. Q225-2's shared-annotation rule fired on G1_cutwA (hemilineage SMPpv1 at share 1.000, p .0005 <= .05/25) and the survivors' modal neurotransmitter there is gaba -- neither of which is DNp33's (putative_primary / acetylcholine), so the cheaper explanation that exists belongs to the SURVIVORS and not to the actor"
+ },
+ "E_what_l213_becomes": {
+  "l213_claim": "Q213-1 branch T_TYPE_LOW: the DNp33 type median sits at within-mass-stratum permutation null percentile .0145/.0105/.0130, read against a .05 bar on ONE preselected type",
+  "unchanged": "the percentile itself is REPRODUCED here at float equality (CERT-SEED) and at 10x the draws reads 0.01550 on the primary substrate -- it is a correct measurement",
+  "what_changes": "it is UNCORRECTED. Benjamini-Hochberg over the 426 >=2-member descending types puts DNp33 at q 0.1573, rank 42, outside the surviving family on all three substrates; and (B) shows no draw count can change that",
+  "honest_reading": "the TYPE-level avoidance claim for DNp33 is WITHDRAWN as an inferential claim and retained as a DESCRIPTION of a cell selected for being extreme (Kriegeskorte 2009). The CELL-level claims of L206-L212 are untouched by this card: they were already labelled selected, and their de-circularising leg is L212's independent-specimen v783 reading",
+  "what_survives_instead": "a nonselective finding the family did not have before: there IS a small, substrate-consistent set of descending types that avoid the motor pools beyond multiplicity-corrected chance, headed by oviDNa_b"
+ },
+ "method_laws": [
+  "A branch defined on a COUNT cannot answer a MEMBERSHIP question. F_SMALL_FAMILY fired correctly at 5 survivors and the verdict prose then claimed the actor was one of them -- an assumption the measurement never made. Put the actor's membership INSIDE the branch definition whenever the card asks whether a specific unit is special.",
+  "A permutation p-value's draw count has TWO separate consequences, and they bind on different objects: the RESOLUTION FLOOR 1/(B+1) decides whether the FAMILY's strongest members can be rejected at all (at B=2000 nothing could be, and 2 of 3 substrates' survivors sit AT the floor), while the tail probability's confidence interval decides whether a PARTICULAR unit can ever clear its own BH requirement. Compute both before calling a non-survival a power problem.",
+  "An UNCORRECTED percentile on a preselected unit and a multiplicity-corrected one can disagree by an order of magnitude (.0145 -> q .157 = 10.8x) while the underlying measurement is bit-identical. The correction is not a detail of presentation; it is the difference between a claim and a description.",
+  "When a card's own framing predicts the uncomfortable answer (Kriegeskorte's policy step (1) predicts the actor may be one of many), scoring the registered prediction FALSE is the cheap part; the work is deriving what the prior claim becomes, which is a different sentence, not a weaker adverb."
+ ],
+ "limitations": [
+  "The addendum is POST-HOC: nothing here carries a registered branch.",
+  "BH assumes p-values are valid; permutation p-values here are censored at 5.00e-05 and discrete, so q-values near the floor are conservative.",
+  "The Wilson interval is a normal-score approximation; the exact Clopper-Pearson interval would be marginally wider and is not computed (no new dependency introduced).",
+  "Survivor-family membership is read on three non-independent substrates of ONE specimen; 'transport' here means substrate robustness, never cross-specimen replication.",
+  "DNp33's type median remains a 2-POINT statistic (L213 limit 1)."
+ ],
+ "runtime_s": 28.259547472000122
+}

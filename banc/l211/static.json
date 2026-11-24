@@ -1,0 +1,995 @@
+{
+ "design": "L211 is the hidden route the CARRIER's EDGES or its NEIGHBOURHOOD? Decompose L206's +3.675-bit search-information excess (pct 100.0) into the FIRST-HOP term -log2 T of the carrier's own chosen out-edge and the REMAINDER from its 69 targets onward, each against the SAME 100 degree-neutral destination-swap draws (seed 16943). PREREG l211/PREREG.md.",
+ "prereg": "l211/PREREG.md",
+ "cert_f4": {
+  "K4": 73,
+  "carrier_rank": 21,
+  "twin_gi": 290,
+  "mass_gap_rel": 2.4362329626845237e-05,
+  "n_f4wA": 21789,
+  "edges_f4wA": 469618,
+  "n_family": 33
+ },
+ "gains": {
+  "g_f4wA": 0.15051452517509462,
+  "g_f4ng": 0.16230986118316648,
+  "g_f4tw": 0.15261898636817928
+ },
+ "csr_orientation": {
+  "carrier_local": 470,
+  "out_edges": 69,
+  "in_edges": 12,
+  "convention": "W[target,source]"
+ },
+ "pools": {
+  "n_pools": 20,
+  "n_pool_cells": 303,
+  "sizes": {
+   "Ti_fL": 50,
+   "Ti_eL": 6,
+   "Ti_fR": 51,
+   "Ti_eR": 6,
+   "Tr_fL": 31,
+   "Tr_eL": 24,
+   "Tr_fR": 31,
+   "Tr_eR": 24,
+   "Ta_aL": 12,
+   "Ta_bL": 3,
+   "Ta_aR": 12,
+   "Ta_bR": 3,
+   "Sr_aL": 6,
+   "Sr_bL": 11,
+   "Sr_aR": 6,
+   "Sr_bR": 13,
+   "Pr_aL": 4,
+   "Pr_bL": 3,
+   "Pr_aR": 4,
+   "Pr_bR": 3
+  }
+ },
+ "cert_rew": {
+  "med_relocated": 80.0,
+  "med_mass_motor_share": 0.1090891270920994,
+  "first5_match": true
+ },
+ "cert_178": {
+  "n_checks": 420,
+  "mode": "float equality (==)",
+  "source": "l178/static.json E_anatomical.all_actors",
+  "n_actors": 35,
+  "depths": [
+   1,
+   2,
+   3
+  ]
+ },
+ "spectral": {
+  "lam1_abs": 30.179788269078884,
+  "rayleigh_abs": 30.17978826907889,
+  "rel_spread_abs": 1.1771831025204646e-16,
+  "lam1_crofts": 0.3881201140476021,
+  "rayleigh_crofts": 0.38812011460766443,
+  "rel_spread_crofts": 1.0592419740504443e-08,
+  "strength_convention": "s(n) = out-strength + in-strength of |g*W_beta| (our reading of the review's undirected convention, DISCLOSED as a choice on a directed graph)",
+  "note": "lam1 by power iteration on the nonnegative operator (Perron-Frobenius); normalisation leg N1 divides depth-d sums by lam1^d so depths are comparable."
+ },
+ "sweep_selfcheck_max_rel_diff_vs_l178": 0.0,
+ "cert_null": {
+  "n_checks": 8,
+  "mode": "float equality (==)",
+  "source": "l178/static.json Q2b_null_anatomical"
+ },
+ "G2_search_information": {
+  "branch": "G2_SI_HIGH",
+  "carrier": {
+   "n_reach": 303,
+   "n_unreach": 0,
+   "si_mean": 22.39317740345491,
+   "si_min": 10.377410112735276,
+   "si_med": 21.459346193239426,
+   "dist_mean": 1.489994386339637
+  },
+  "twin": {
+   "n_reach": 303,
+   "n_unreach": 0,
+   "si_mean": 20.202005346103054,
+   "si_min": 6.908283694770865,
+   "si_med": 18.863418113402986,
+   "dist_mean": 1.3923418856779606
+  },
+  "family_si_mean_med": 20.269773413028425,
+  "family_si_mean_min": 15.304864536249077,
+  "family_si_mean_max": 24.578172074435514,
+  "n_family_with_si": 33,
+  "carrier_rank_of_35": 32,
+  "null_si_med": 18.71799427882452,
+  "null_si_p05": 17.07985915338181,
+  "null_si_p95": 20.624021945635477,
+  "n_null_finite": 100,
+  "carrier_percentile": 100.0,
+  "null_reach_med": 303.0,
+  "n_pool_cells": 303,
+  "definitions": {
+   "length": "L_uv = -log10(A_uv / A_max), A = |g*W_beta| (our domain choice, DISCLOSED: the field normalises weights to (0,1] before the log)",
+   "A_max": 2.0566164818309005,
+   "transition": "T_uv = A_uv / out-strength(u)",
+   "SI": "-log2(prod T) accumulated along the L-shortest path during relaxation (so it is the SI of the path the length metric picks)",
+   "tie_note": "ties in L are broken by heap order; disclosed, not controlled."
+  },
+  "all_actors": {
+   "carrier": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 22.39317740345491,
+    "si_min": 10.377410112735276,
+    "si_med": 21.459346193239426,
+    "dist_mean": 1.489994386339637
+   },
+   "twin": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.202005346103054,
+    "si_min": 6.908283694770865,
+    "si_med": 18.863418113402986,
+    "dist_mean": 1.3923418856779606
+   },
+   "fam00_307": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 19.114231974181692,
+    "si_min": 7.7274196751259465,
+    "si_med": 18.328061707579618,
+    "dist_mean": 1.0193173494374679
+   },
+   "fam01_585": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.95016976022835,
+    "si_min": 6.5418655681336695,
+    "si_med": 18.578188688956693,
+    "dist_mean": 0.9229307206169628
+   },
+   "fam02_32072": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.732963272530142,
+    "si_min": 9.894514739791168,
+    "si_med": 19.52461911711208,
+    "dist_mean": 1.4279693748345414
+   },
+   "fam03_725": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.921206756850086,
+    "si_min": 9.893698871291427,
+    "si_med": 17.7930980652949,
+    "dist_mean": 1.2039362969282323
+   },
+   "fam04_228": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 19.838919264806655,
+    "si_min": 10.826638823649667,
+    "si_med": 19.88099548169488,
+    "dist_mean": 0.9134561548550917
+   },
+   "fam05_707": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.688291770838088,
+    "si_min": 10.573347579258176,
+    "si_med": 21.036455923091836,
+    "dist_mean": 1.370064642148011
+   },
+   "fam06_1266": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.352417843707308,
+    "si_min": 5.62037788684569,
+    "si_med": 17.524230505085644,
+    "dist_mean": 0.8870983423556817
+   },
+   "fam07_890": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.848712238556256,
+    "si_min": 10.906566347312966,
+    "si_med": 21.4351625058751,
+    "dist_mean": 1.5561667325997652
+   },
+   "fam08_924": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 21.41623829968689,
+    "si_min": 6.28491958706202,
+    "si_med": 22.27846541191903,
+    "dist_mean": 1.614051589192771
+   },
+   "fam09_32271": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 19.545778775317938,
+    "si_min": 10.277835799229901,
+    "si_med": 19.383756378754917,
+    "dist_mean": 1.432737440350461
+   },
+   "fam10_319": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 22.244131796524357,
+    "si_min": 6.108077895010531,
+    "si_med": 20.073805939210523,
+    "dist_mean": 1.3785037326594078
+   },
+   "fam11_354": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 19.018870164536235,
+    "si_min": 11.111224023512325,
+    "si_med": 18.777243850581474,
+    "dist_mean": 1.211442713065223
+   },
+   "fam12_549": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 22.310560438593527,
+    "si_min": 9.404980384608807,
+    "si_med": 20.343738289664433,
+    "dist_mean": 1.3035937650799807
+   },
+   "fam13_808": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.1576032206653,
+    "si_min": 10.237519731084012,
+    "si_med": 19.518907198645053,
+    "dist_mean": 0.9534564011795489
+   },
+   "fam14_779": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.55596232578788,
+    "si_min": 10.82348403707271,
+    "si_med": 18.179226965605032,
+    "dist_mean": 1.3125872596516872
+   },
+   "fam15_692": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 22.77942745981226,
+    "si_min": 5.075073987953814,
+    "si_med": 19.970672762636624,
+    "dist_mean": 0.8325059054412173
+   },
+   "fam16_559": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.20788181462979,
+    "si_min": 10.322366752579073,
+    "si_med": 19.839229851943827,
+    "dist_mean": 1.2340763801885288
+   },
+   "fam17_32097": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 21.04816764585335,
+    "si_min": 4.8248302616126635,
+    "si_med": 21.13901733053768,
+    "dist_mean": 1.5296845835475632
+   },
+   "fam18_826": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.269773413028425,
+    "si_min": 11.711495667839593,
+    "si_med": 19.26262891898026,
+    "dist_mean": 1.0726753858518945
+   },
+   "fam19_456": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 15.565861711069152,
+    "si_min": 12.45233529384176,
+    "si_med": 13.343802363143741,
+    "dist_mean": 0.8980853223537643
+   },
+   "fam20_722": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.9196931107186,
+    "si_min": 4.9330919532220925,
+    "si_med": 17.78069006412821,
+    "dist_mean": 0.8365511541319519
+   },
+   "fam21_1038": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.50460143907435,
+    "si_min": 9.776946239889611,
+    "si_med": 20.70731826889334,
+    "dist_mean": 0.9792488590321016
+   },
+   "fam22_1022": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.732023390002254,
+    "si_min": 9.947734420036008,
+    "si_med": 17.210266999269855,
+    "dist_mean": 1.3293242862797952
+   },
+   "fam23_643": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 21.256730094260817,
+    "si_min": 9.912529511747339,
+    "si_med": 21.436857988475456,
+    "dist_mean": 1.2638210535756902
+   },
+   "fam24_32005": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 15.966420157537863,
+    "si_min": 12.207346808621395,
+    "si_med": 14.64587583692661,
+    "dist_mean": 0.7617015786309472
+   },
+   "fam25_736": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.508904194425917,
+    "si_min": 5.025101645174387,
+    "si_med": 20.886551655614753,
+    "dist_mean": 1.1939325710739797
+   },
+   "fam26_1543": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 24.578172074435514,
+    "si_min": 9.471773345911032,
+    "si_med": 23.644613406383286,
+    "dist_mean": 1.7734719289793832
+   },
+   "fam27_1509": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 24.025716366435176,
+    "si_min": 10.758026145366898,
+    "si_med": 22.844652095777214,
+    "dist_mean": 1.784908425204035
+   },
+   "fam28_618": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 15.304864536249077,
+    "si_min": 12.148051542410393,
+    "si_med": 13.190120107705201,
+    "dist_mean": 0.8869683941229675
+   },
+   "fam29_1060": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 20.943298776767193,
+    "si_min": 5.029525785680634,
+    "si_med": 21.029889682654797,
+    "dist_mean": 1.4083662599076072
+   },
+   "fam30_1557": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.76972250081459,
+    "si_min": 8.631091540342307,
+    "si_med": 17.842566924128693,
+    "dist_mean": 0.902832829979937
+   },
+   "fam31_651": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 15.75702883991964,
+    "si_min": 12.042090985223396,
+    "si_med": 14.075426529096841,
+    "dist_mean": 0.7919947529630906
+   },
+   "fam32_122": {
+    "n_reach": 303,
+    "n_unreach": 0,
+    "si_mean": 18.705596472370456,
+    "si_min": 6.106965117243405,
+    "si_med": 18.036354181315062,
+    "dist_mean": 1.401806447783245
+   }
+  }
+ },
+ "banner": "\"\"\"GENERATED by l211_build.py \u2014 do not edit by hand.\nCERT-HEAD1 = l151_static.py lines 1-319 VERBATIM (sha256 e6245e8306dc8a0f).\nCERT-HEAD2 = l178_tail.py lines 7-149 VERBATIM (sha256 6e2e8fa4bd19eced).\nMID        = l206_mid.py (sha256 febbc390ad4f1a02).\nCERT-HEAD3 = l178_tail.py lines 348-458 VERBATIM (sha256 5bb7b56e6b6487d5).\nCERT-HEAD4 = l206_tail.py lines 22-263 VERBATIM (sha256 772a2410e76516e5).\nMID2       = l211_mid2.py (sha256 5a3b65c25fe714fa).\nCERT-HEAD5 = l206_tail.py lines 320-461 VERBATIM (sha256 1268be32fd73e4e9).\nTAIL       = l211_tail.py (sha256 01344b557db98d29).\nPREREG l211/PREREG.md. Writes l211/static.json ONLY.\n\"\"\"\n",
+ "L211_primary": {
+  "branch": "B_REMAINDER",
+  "share_fh": -0.005618879769401901,
+  "share_rem": 1.005618879769402,
+  "bars": {
+   "firsthop_if_share_ge": 0.6,
+   "remainder_if_share_le": 0.4
+  },
+  "D_total_bits": 3.5815652597499934,
+  "D_fh_bits": -0.0201243845808019,
+  "D_rem_bits": 3.6016896443307953,
+  "additivity_abs_err": 0.0,
+  "carrier": {
+   "n_reach": 303,
+   "si_mean": 22.39317740345491,
+   "fh_mean": 5.847280040722828,
+   "rem_mean": 16.54589736273208,
+   "fh_share_of_si": 0.2611188191551899,
+   "hop_mean": 3.8052805280528053,
+   "dist_mean": 1.489994386339637,
+   "n_distinct_first_hops": 11,
+   "fh_min": 5.515257714221297,
+   "fh_max": 6.711883423616468
+  },
+  "null_mean": {
+   "si": 18.811612143704917,
+   "fh": 5.86740442530363,
+   "rem": 12.944207718401286,
+   "hop": 3.203993399339934,
+   "dist": 1.2235333741117298
+  },
+  "null_median": {
+   "si": 18.71799427882452,
+   "fh": 5.860933327023411,
+   "rem": 12.839168362804203,
+   "hop": 3.2062706270627066,
+   "dist": 1.2183069361395402
+  },
+  "null_spread": {
+   "fh_p05": 5.710489788881727,
+   "fh_p95": 6.025831844882273,
+   "fh_sd": 0.10013768618400225,
+   "rem_p05": 11.235931042814205,
+   "rem_p95": 14.737101915992929,
+   "rem_sd": 1.0712593577043912
+  },
+  "percentiles": {
+   "fh": 45.0,
+   "rem": 100.0,
+   "si": 100.0,
+   "hop": 100.0,
+   "dist": 100.0
+  },
+  "menu": {
+   "n_out_edges": 69,
+   "log2_n_out": 6.108524456778169,
+   "menu_min_bits": 5.4963012879811535,
+   "menu_med_bits": 6.195185880629637,
+   "menu_max_bits": 6.711883423616468,
+   "invariant_across_draws": true,
+   "carrier_n_distinct_first_hops": 11,
+   "null_n_distinct_first_hops_med": 16.0
+  },
+  "reading": "D_fh can only be SELECTION among a fixed 69-edge menu (the null relocates destinations with the weight travelling with its source, so the menu is bit-identical in every draw) \u2014 registered in the PREREG before measuring."
+ },
+ "L211_cohort": {
+  "note": "DESCRIPTIVE. The 100 draws swap the CARRIER's out-edges, so they are not a null for any other source; the cohort is read as a cohort (L207: a percentile against 35 is resolution-limited).",
+  "n_family": 33,
+  "carrier_fh_share_of_si": 0.2611188191551899,
+  "twin_fh_share_of_si": 0.30678634491249146,
+  "family_fh_share_med": 0.2834957374928224,
+  "family_fh_share_min": 0.22081289155943368,
+  "family_fh_share_max": 0.3484349914680058,
+  "family_fh_mean_med": 5.649635391583161,
+  "family_rem_mean_med": 14.68002575208704,
+  "carrier_rem_rank_of_35": 32,
+  "carrier_fh_rank_of_35": 26,
+  "mirror": {
+   "gi": 928,
+   "local": 408,
+   "summary": {
+    "n_reach": 303,
+    "si_mean": 24.63396878448447,
+    "fh_mean": 6.068760566180802,
+    "rem_mean": 18.565208218303667,
+    "fh_share_of_si": 0.2463574026286486,
+    "hop_mean": 4.132013201320132,
+    "dist_mean": 1.6104836919809868,
+    "n_distinct_first_hops": 8,
+    "fh_min": 5.691094128697643,
+    "fh_max": 6.44081265641112
+   },
+   "share_gap_vs_carrier": 0.01476141652654131,
+   "n_out_edges": 74
+  },
+  "all_actors": {
+   "carrier": {
+    "n_reach": 303,
+    "si_mean": 22.39317740345491,
+    "fh_mean": 5.847280040722828,
+    "rem_mean": 16.54589736273208,
+    "fh_share_of_si": 0.2611188191551899,
+    "hop_mean": 3.8052805280528053,
+    "dist_mean": 1.489994386339637,
+    "n_distinct_first_hops": 11,
+    "fh_min": 5.515257714221297,
+    "fh_max": 6.711883423616468
+   },
+   "twin": {
+    "n_reach": 303,
+    "si_mean": 20.202005346103054,
+    "fh_mean": 6.197699380033568,
+    "rem_mean": 14.004305966069484,
+    "fh_share_of_si": 0.30678634491249146,
+    "hop_mean": 3.3531353135313533,
+    "dist_mean": 1.3923418856779606,
+    "n_distinct_first_hops": 11,
+    "fh_min": 5.598239790567196,
+    "fh_max": 7.0631037415283995
+   },
+   "fam00_307": {
+    "n_reach": 303,
+    "si_mean": 19.114231974181692,
+    "fh_mean": 6.421879834949949,
+    "rem_mean": 12.692352139231744,
+    "fh_share_of_si": 0.3359737311770738,
+    "hop_mean": 3.089108910891089,
+    "dist_mean": 1.0193173494374679,
+    "n_distinct_first_hops": 10,
+    "fh_min": 6.141309587551663,
+    "fh_max": 6.986007721793174
+   },
+   "fam01_585": {
+    "n_reach": 303,
+    "si_mean": 18.95016976022835,
+    "fh_mean": 5.740478591017657,
+    "rem_mean": 13.209691169210693,
+    "fh_share_of_si": 0.30292491643349184,
+    "hop_mean": 3.392739273927393,
+    "dist_mean": 0.9229307206169628,
+    "n_distinct_first_hops": 16,
+    "fh_min": 5.0845898196446955,
+    "fh_max": 6.696685614891204
+   },
+   "fam02_32072": {
+    "n_reach": 303,
+    "si_mean": 20.732963272530142,
+    "fh_mean": 5.947537158523735,
+    "rem_mean": 14.785426114006407,
+    "fh_share_of_si": 0.2868638255103574,
+    "hop_mean": 3.386138613861386,
+    "dist_mean": 1.4279693748345414,
+    "n_distinct_first_hops": 12,
+    "fh_min": 5.131865833340293,
+    "fh_max": 6.615172887232366
+   },
+   "fam03_725": {
+    "n_reach": 303,
+    "si_mean": 18.921206756850086,
+    "fh_mean": 5.694276713248242,
+    "rem_mean": 13.226930043601843,
+    "fh_share_of_si": 0.30094680463161955,
+    "hop_mean": 3.2475247524752477,
+    "dist_mean": 1.2039362969282323,
+    "n_distinct_first_hops": 15,
+    "fh_min": 5.445956016738956,
+    "fh_max": 6.467560423250654
+   },
+   "fam04_228": {
+    "n_reach": 303,
+    "si_mean": 19.838919264806655,
+    "fh_mean": 6.184846666167566,
+    "rem_mean": 13.65407259863909,
+    "fh_share_of_si": 0.31175320508205323,
+    "hop_mean": 3.174917491749175,
+    "dist_mean": 0.9134561548550917,
+    "n_distinct_first_hops": 11,
+    "fh_min": 5.53661663297025,
+    "fh_max": 6.973298438132751
+   },
+   "fam05_707": {
+    "n_reach": 303,
+    "si_mean": 20.688291770838088,
+    "fh_mean": 5.996816462452862,
+    "rem_mean": 14.691475308385225,
+    "fh_share_of_si": 0.2898652304829675,
+    "hop_mean": 3.597359735973597,
+    "dist_mean": 1.370064642148011,
+    "n_distinct_first_hops": 10,
+    "fh_min": 5.31503898932304,
+    "fh_max": 6.550736676939298
+   },
+   "fam06_1266": {
+    "n_reach": 303,
+    "si_mean": 18.352417843707308,
+    "fh_mean": 5.681084495657661,
+    "rem_mean": 12.671333348049647,
+    "fh_share_of_si": 0.309555097537494,
+    "hop_mean": 3.1716171617161715,
+    "dist_mean": 0.8870983423556817,
+    "n_distinct_first_hops": 19,
+    "fh_min": 5.244287065550425,
+    "fh_max": 6.5400369233763875
+   },
+   "fam07_890": {
+    "n_reach": 303,
+    "si_mean": 20.848712238556256,
+    "fh_mean": 5.419877563831735,
+    "rem_mean": 15.428834674724522,
+    "fh_share_of_si": 0.25996222221382886,
+    "hop_mean": 3.6303630363036303,
+    "dist_mean": 1.5561667325997652,
+    "n_distinct_first_hops": 7,
+    "fh_min": 5.051920803163944,
+    "fh_max": 6.501046213971769
+   },
+   "fam08_924": {
+    "n_reach": 303,
+    "si_mean": 21.41623829968689,
+    "fh_mean": 5.810128310175666,
+    "rem_mean": 15.606109989511221,
+    "fh_share_of_si": 0.2712954641647134,
+    "hop_mean": 3.7194719471947195,
+    "dist_mean": 1.614051589192771,
+    "n_distinct_first_hops": 10,
+    "fh_min": 5.596671778433993,
+    "fh_max": 6.558807694397808
+   },
+   "fam09_32271": {
+    "n_reach": 303,
+    "si_mean": 19.545778775317938,
+    "fh_mean": 5.68787451508531,
+    "rem_mean": 13.857904260232628,
+    "fh_share_of_si": 0.2910027060302072,
+    "hop_mean": 3.396039603960396,
+    "dist_mean": 1.432737440350461,
+    "n_distinct_first_hops": 11,
+    "fh_min": 5.251746075613787,
+    "fh_max": 6.598821663200598
+   },
+   "fam10_319": {
+    "n_reach": 303,
+    "si_mean": 22.244131796524357,
+    "fh_mean": 6.11713371419838,
+    "rem_mean": 16.126998082325976,
+    "fh_share_of_si": 0.274999886269069,
+    "hop_mean": 3.4752475247524752,
+    "dist_mean": 1.3785037326594078,
+    "n_distinct_first_hops": 11,
+    "fh_min": 5.035077751989538,
+    "fh_max": 6.624775437997363
+   },
+   "fam11_354": {
+    "n_reach": 303,
+    "si_mean": 19.018870164536235,
+    "fh_mean": 6.038313852304149,
+    "rem_mean": 12.980556312232086,
+    "fh_share_of_si": 0.317490671110609,
+    "hop_mean": 3.1419141914191417,
+    "dist_mean": 1.211442713065223,
+    "n_distinct_first_hops": 16,
+    "fh_min": 5.51942829966217,
+    "fh_max": 6.883594038416883
+   },
+   "fam12_549": {
+    "n_reach": 303,
+    "si_mean": 22.310560438593527,
+    "fh_mean": 5.820991655330897,
+    "rem_mean": 16.48956878326263,
+    "fh_share_of_si": 0.2609074600054223,
+    "hop_mean": 3.5280528052805282,
+    "dist_mean": 1.3035937650799807,
+    "n_distinct_first_hops": 9,
+    "fh_min": 4.995702561101286,
+    "fh_max": 6.439786203459475
+   },
+   "fam13_808": {
+    "n_reach": 303,
+    "si_mean": 20.1576032206653,
+    "fh_mean": 5.47757746857826,
+    "rem_mean": 14.68002575208704,
+    "fh_share_of_si": 0.271737537871701,
+    "hop_mean": 3.1155115511551155,
+    "dist_mean": 0.9534564011795489,
+    "n_distinct_first_hops": 5,
+    "fh_min": 5.341749322270972,
+    "fh_max": 5.985951598566944
+   },
+   "fam14_779": {
+    "n_reach": 303,
+    "si_mean": 20.55596232578788,
+    "fh_mean": 5.590561285265696,
+    "rem_mean": 14.965401040522185,
+    "fh_share_of_si": 0.27196786979183263,
+    "hop_mean": 3.5247524752475248,
+    "dist_mean": 1.3125872596516872,
+    "n_distinct_first_hops": 12,
+    "fh_min": 5.281632147020227,
+    "fh_max": 6.4132551710716745
+   },
+   "fam15_692": {
+    "n_reach": 303,
+    "si_mean": 22.77942745981226,
+    "fh_mean": 5.02999124546951,
+    "rem_mean": 17.74943621434275,
+    "fh_share_of_si": 0.22081289155943368,
+    "hop_mean": 3.924092409240924,
+    "dist_mean": 0.8325059054412173,
+    "n_distinct_first_hops": 11,
+    "fh_min": 4.835512165964698,
+    "fh_max": 6.384538413976389
+   },
+   "fam16_559": {
+    "n_reach": 303,
+    "si_mean": 20.20788181462979,
+    "fh_mean": 6.086620713372718,
+    "rem_mean": 14.121261101257073,
+    "fh_share_of_si": 0.30120033208855274,
+    "hop_mean": 3.567656765676568,
+    "dist_mean": 1.2340763801885288,
+    "n_distinct_first_hops": 15,
+    "fh_min": 5.312206759449845,
+    "fh_max": 6.707707381309975
+   },
+   "fam17_32097": {
+    "n_reach": 303,
+    "si_mean": 21.04816764585335,
+    "fh_mean": 5.501638858844752,
+    "rem_mean": 15.546528787008599,
+    "fh_share_of_si": 0.2613832686727301,
+    "hop_mean": 3.8613861386138613,
+    "dist_mean": 1.5296845835475632,
+    "n_distinct_first_hops": 12,
+    "fh_min": 4.8248302616126635,
+    "fh_max": 6.199837825502947
+   },
+   "fam18_826": {
+    "n_reach": 303,
+    "si_mean": 20.269773413028425,
+    "fh_mean": 5.685886617474229,
+    "rem_mean": 14.583886795554196,
+    "fh_share_of_si": 0.28051061556611273,
+    "hop_mean": 3.201320132013201,
+    "dist_mean": 1.0726753858518945,
+    "n_distinct_first_hops": 7,
+    "fh_min": 5.151955956280836,
+    "fh_max": 5.875644461391329
+   },
+   "fam19_456": {
+    "n_reach": 303,
+    "si_mean": 15.565861711069152,
+    "fh_mean": 5.292473067571766,
+    "rem_mean": 10.273388643497386,
+    "fh_share_of_si": 0.3400051449646503,
+    "hop_mean": 2.405940594059406,
+    "dist_mean": 0.8980853223537643,
+    "n_distinct_first_hops": 9,
+    "fh_min": 4.988079091292299,
+    "fh_max": 6.184947855475316
+   },
+   "fam20_722": {
+    "n_reach": 303,
+    "si_mean": 20.9196931107186,
+    "fh_mean": 5.0528473843761175,
+    "rem_mean": 15.866845726342483,
+    "fh_share_of_si": 0.241535444981609,
+    "hop_mean": 3.66996699669967,
+    "dist_mean": 0.8365511541319519,
+    "n_distinct_first_hops": 13,
+    "fh_min": 4.858575461217797,
+    "fh_max": 6.338295777696037
+   },
+   "fam21_1038": {
+    "n_reach": 303,
+    "si_mean": 20.50460143907435,
+    "fh_mean": 5.4160868003613425,
+    "rem_mean": 15.088514638713008,
+    "fh_share_of_si": 0.26414006711880006,
+    "hop_mean": 3.6204620462046204,
+    "dist_mean": 0.9792488590321016,
+    "n_distinct_first_hops": 12,
+    "fh_min": 4.839527894609609,
+    "fh_max": 6.258670886764811
+   },
+   "fam22_1022": {
+    "n_reach": 303,
+    "si_mean": 18.732023390002254,
+    "fh_mean": 5.310448785681489,
+    "rem_mean": 13.421574604320766,
+    "fh_share_of_si": 0.2834957374928224,
+    "hop_mean": 3.33993399339934,
+    "dist_mean": 1.3293242862797952,
+    "n_distinct_first_hops": 8,
+    "fh_min": 5.077020146541896,
+    "fh_max": 6.142053632195454
+   },
+   "fam23_643": {
+    "n_reach": 303,
+    "si_mean": 21.256730094260817,
+    "fh_mean": 6.154826550714656,
+    "rem_mean": 15.101903543546161,
+    "fh_share_of_si": 0.2895471939203114,
+    "hop_mean": 3.702970297029703,
+    "dist_mean": 1.2638210535756902,
+    "n_distinct_first_hops": 12,
+    "fh_min": 5.304019330364339,
+    "fh_max": 6.709223154838282
+   },
+   "fam24_32005": {
+    "n_reach": 303,
+    "si_mean": 15.966420157537863,
+    "fh_mean": 5.563259471366301,
+    "rem_mean": 10.403160686171562,
+    "fh_share_of_si": 0.3484349914680058,
+    "hop_mean": 2.541254125412541,
+    "dist_mean": 0.7617015786309472,
+    "n_distinct_first_hops": 5,
+    "fh_min": 5.448930471779855,
+    "fh_max": 6.368589508310553
+   },
+   "fam25_736": {
+    "n_reach": 303,
+    "si_mean": 20.508904194425917,
+    "fh_mean": 4.916847047655295,
+    "rem_mean": 15.592057146770621,
+    "fh_share_of_si": 0.239742065253376,
+    "hop_mean": 3.8217821782178216,
+    "dist_mean": 1.1939325710739797,
+    "n_distinct_first_hops": 17,
+    "fh_min": 4.51601919080681,
+    "fh_max": 6.179921691931922
+   },
+   "fam26_1543": {
+    "n_reach": 303,
+    "si_mean": 24.578172074435514,
+    "fh_mean": 5.649635391583161,
+    "rem_mean": 18.928536682852354,
+    "fh_share_of_si": 0.2298639367676783,
+    "hop_mean": 4.35973597359736,
+    "dist_mean": 1.7734719289793832,
+    "n_distinct_first_hops": 8,
+    "fh_min": 5.218202513492369,
+    "fh_max": 5.879264751798529
+   },
+   "fam27_1509": {
+    "n_reach": 303,
+    "si_mean": 24.025716366435176,
+    "fh_mean": 5.518256633872422,
+    "rem_mean": 18.507459732562754,
+    "fh_share_of_si": 0.2296812527755315,
+    "hop_mean": 4.32013201320132,
+    "dist_mean": 1.784908425204035,
+    "n_distinct_first_hops": 6,
+    "fh_min": 5.256259756718719,
+    "fh_max": 6.006957317009229
+   },
+   "fam28_618": {
+    "n_reach": 303,
+    "si_mean": 15.304864536249077,
+    "fh_mean": 5.139728479157692,
+    "rem_mean": 10.165136057091384,
+    "fh_share_of_si": 0.33582319314126635,
+    "hop_mean": 2.402640264026403,
+    "dist_mean": 0.8869683941229675,
+    "n_distinct_first_hops": 9,
+    "fh_min": 4.9158794986171035,
+    "fh_max": 5.888148468511854
+   },
+   "fam29_1060": {
+    "n_reach": 303,
+    "si_mean": 20.943298776767193,
+    "fh_mean": 5.094039009065284,
+    "rem_mean": 15.84925976770191,
+    "fh_share_of_si": 0.2432300213716189,
+    "hop_mean": 3.9141914191419143,
+    "dist_mean": 1.4083662599076072,
+    "n_distinct_first_hops": 11,
+    "fh_min": 4.6598866036873305,
+    "fh_max": 5.874705738923099
+   },
+   "fam30_1557": {
+    "n_reach": 303,
+    "si_mean": 18.76972250081459,
+    "fh_mean": 5.1612448854343365,
+    "rem_mean": 13.608477615380256,
+    "fh_share_of_si": 0.27497715457489275,
+    "hop_mean": 3.1914191419141913,
+    "dist_mean": 0.902832829979937,
+    "n_distinct_first_hops": 8,
+    "fh_min": 4.971867280565027,
+    "fh_max": 6.036900766218585
+   },
+   "fam31_651": {
+    "n_reach": 303,
+    "si_mean": 15.75702883991964,
+    "fh_mean": 5.4769634510037895,
+    "rem_mean": 10.280065388915851,
+    "fh_share_of_si": 0.34758859088511523,
+    "hop_mean": 2.5082508250825084,
+    "dist_mean": 0.7919947529630906,
+    "n_distinct_first_hops": 5,
+    "fh_min": 5.110802195452951,
+    "fh_max": 6.128274561445835
+   },
+   "fam32_122": {
+    "n_reach": 303,
+    "si_mean": 18.705596472370456,
+    "fh_mean": 5.751394663714975,
+    "rem_mean": 12.95420180865548,
+    "fh_share_of_si": 0.30746919362930814,
+    "hop_mean": 3.240924092409241,
+    "dist_mean": 1.401806447783245,
+    "n_distinct_first_hops": 9,
+    "fh_min": 4.823284204734961,
+    "fh_max": 6.476604299236708
+   },
+   "mirror_928": {
+    "n_reach": 303,
+    "si_mean": 24.63396878448447,
+    "fh_mean": 6.068760566180802,
+    "rem_mean": 18.565208218303667,
+    "fh_share_of_si": 0.2463574026286486,
+    "hop_mean": 4.132013201320132,
+    "dist_mean": 1.6104836919809868,
+    "n_distinct_first_hops": 8,
+    "fh_min": 5.691094128697643,
+    "fh_max": 6.44081265641112
+   }
+  }
+ },
+ "predictions": {
+  "Q211-1_branch_B_REMAINDER_and_share_in_0_025": {
+   "registered": "B_REMAINDER with share_fh in [0.00, 0.25]",
+   "measured": "B_REMAINDER share_fh -0.0056",
+   "correct": false
+  },
+  "Q211-2_fh_inside_rem_at_ceiling": {
+   "registered": "fh pct in (5,95) AND rem pct >= 99",
+   "measured": "fh pct 45.0, rem pct 100.0",
+   "correct": true
+  },
+  "Q211-3_fh_above_log2_69_and_share_of_si_below_045": {
+   "registered": "carrier fh_mean > 6.1085 bits AND fh/si < 0.45",
+   "measured": "fh_mean 5.8473, fh/si 0.2611",
+   "correct": false
+  },
+  "Q211-4_carrier_paths_also_longer_in_L": {
+   "registered": "carrier dist_mean > null median dist_mean",
+   "measured": "1.4900 vs 1.2183",
+   "correct": true
+  },
+  "Q211-5_mirror_share_within_015_of_carrier": {
+   "registered": "|mirror share - carrier share| <= 0.15",
+   "measured": "0.0148",
+   "correct": true
+  }
+ },
+ "predictions_score": "3 of 5",
+ "certification": {
+  "inherited_free": [
+   "CERT-HEAD1 l151_static.py 1-319",
+   "CERT-HEAD2 l178_tail.py 7-149 (CERT-F4, gains, CSR, 20 pools)",
+   "MID l206_mid.py",
+   "CERT-HEAD3 l178_tail.py 348-458 (CERT-REW, the 100 draws)",
+   "CERT-HEAD4 l206_tail.py 22-263 (CERT-178 420 values, lam1, depth sweep, CERT-NULL)",
+   "MID2 l211_mid2.py (heapq)",
+   "CERT-HEAD5 l206_tail.py 320-461 (the whole SI block)"
+  ],
+  "CERT_SI_leaves": 240,
+  "CERT_FH_exact_equalities": 61819,
+  "CERT_MENU_draws": 100,
+  "no_lab_module_imported": true,
+  "read_only_sources": {
+   "l206/static.json": [
+    52415,
+    1795365383579004651
+   ],
+   "l178/static.json": [
+    76378,
+    1795352033731572106
+   ]
+  }
+ },
+ "limitations": [
+  "ONE substrate (f4wA floor-4), ONE operator (A = |g*W_beta|), ONE null family (degree-neutral destination swaps, seed 16943) \u2014 L207's law: a deficit magnitude is null-specific and does not transport.",
+  "the SI length transform divides by A_max (a domain choice, disclosed; the field normalises weights to (0,1] first) and SI ties in L are broken by heap order, not controlled.",
+  "the first-hop menu invariance makes D_fh a SELECTION effect by construction; it is NOT evidence about how the carrier allocates out-weight, and the verdict says so.",
+  "the cohort and mirror legs are DESCRIPTIVE: the draws swap the carrier's edges and are not a null for another source.",
+  "the cutwA (unfloored) transport leg of the card is DEFERRED, declared in the PREREG and appended to the queue, not silently dropped.",
+  "relation to L219 declared: L219 asks target-choice-vs-quality in the left-Perron currency; whichever runs second cites the first and does NOT re-bank the finding as independent evidence."
+ ],
+ "pins": "ALL GREEN"
+}
