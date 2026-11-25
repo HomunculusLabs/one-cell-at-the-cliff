@@ -1,0 +1,185 @@
+## CONTROL-known-hit :: cat:q-bio.NC
+  [2611.27888v1] 2026-11-20 Darya V. Verveyko | Spatial model of neurogliovascular unit: arachidonic acid can control the stability
+    Arachidonic acid metabolites can have both vasoconstrictor and vasodilator effects, thereby influencing neuronal activity. In this work, to analyze possible patterns of activity of nervous tissue in response to changes i
+  [2611.27847v1] 2026-11-20 Stanislav V. Lagosha | Self-organized fractional silencing of pyramidal neurons under global depolarization in a spatial neuron-glial microcircuit model
+    Pathological transitions in nervous tissue, including epileptiform discharges and cortical spreading depolarization, depend on the interplay between cellular and interstitial mechanisms. We develop a biophysically detail
+  [2611.27795v1] 2026-11-20 Sundeep Kapila | The Four-Step Action Loop with Feedback: A teachable perception-action framework for everyday self-regulation
+    Everyday stress is largely a learned pattern: a familiar cue, a fast reading of threat, an automatic reaction and a body that stays activated. Body-based practices such as mindfulness, interoceptive training, Somatic Exp
+  [2611.27762v1] 2026-11-20 Yanzhe Zhao | From Novel Combinations to Informative Absence: Structural permission, communicative opportunity, and form choice in language learning
+    Language learners must infer which novel expressions are grammatically licensed and when continued absence is evidence against them. Our generative theory unites these capacities via counterfactual expression opportuniti
+  [2611.27242v1] 2026-11-20 Eiji Watanabe | Classical visual illusions in vision-language models under an instruction ladder
+    Vision-language models (VLMs) often name the "illusory" answer when shown a classical visual illusion, but it is unclear whether that answer comes from the picture or from knowledge about famous figures. We drew 300 new 
+  [2611.26949v1] 2026-11-20 Hiroshi Higashi | Serial Dependence Emerges from Optimizing Vision for Noise Robustness
+    Human visual perception is dynamically shaped by the recent past, a phenomenon known as serial dependence. Mechanistic models show that a residual memory trace can generate this dependency, yet its functional purpose (wh
+  [2611.26913v1] 2026-11-19 Prapti Roy | Surface Cues Over Structure: Probing LLM Behavior on Brain Connectivity Graphs
+    Resting-state functional magnetic resonance imaging (rs-fMRI) provides a noninvasive view of functional interactions across the brain, which can be represented as connectivity graphs for neurological disease analysis. La
+  [2611.26856v1] 2026-11-19 Mirko Morello | Self-Supervised Learning with Recursive Quadrature Filters for Neural Time Series
+    We develop self-supervised methods for training Recursive Quadrature Filter (RQF) encoders on unlabeled time series. RQFs are biologically motivated, complex-valued temporal filters that form a special class of diagonal 
+  [2611.26319v1] 2026-11-19 Ryan Fayyazi | A Control-Theoretic Approximation to Predictive Coding Dynamics
+    Backpropagation remains the dominant method for training deep neural networks, but its reliance on non-local computations has motivated the search for biologically plausible alternatives. Two prominent frameworks, predic
+  [2611.26258v1] 2026-11-19 Yuanyuan Yao | Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+    Neural tracking, the temporal alignment between a continuous stimulus and the elicited brain response, enables decoding of attention from electroencephalography (EEG), yet its application to naturalistic video remains la
+  [2611.26101v1] 2026-11-19 Shenghua Liu | Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+    Networks pass signals through many layers of interconnected units, so explaining what they compute means tracing how information travels from input to output and how pathways interact. Most existing approaches analyze on
+  [2611.26018v1] 2026-11-19 Diaoxuan He | Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model
+    Global Workspace Theory (GWT), a leading theory of consciousness, holds that information becomes conscious when it is broadcast to specialized processes that use it. Building a workspace into a network does not reveal wh
+  [2611.25830v1] 2026-11-19 Laia Barjuan | Regime-dependent reconstruction of structural connectivity: an in silico study of spatially constrained modular neuronal networks
+    Inferring structural connectivity from neuronal activity is a major challenge in neuroscience, yet the conditions under which inferred interactions faithfully reflect anatomical connections remain unclear. Here, we inves
+  [2611.25315v1] 2026-11-19 Sergey Musienko | When Should Deployed BCI Decoders Adapt? A Resource-Priced Ladder for Frozen EEG Trunks
+    When should a deployed MI decoder spend adaptation resources-not only how to adapt under shift? We study a thin control layer outside a frozen encoder: a resource ladder (factory -> Bayesian head -> affine map, with full
+  parsed:14 in-window:14 (cutoff 2026-11-09)
+
+## core :: all:Drosophila+AND+all:connectome
+  [2611.23320v1] 2026-11-15 Eran Kopel | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    Theories that tie experience to a system that re-reads its own state rarely say what a physical substrate must supply for such a loop to run. We state necessary conditions as measurable bounds in one currency: the number
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## core :: all:FlyWire
+  parsed:12 in-window:0 (cutoff 2026-11-09)
+
+## core :: %22connectome-constrained%22
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+  [2611.14498v2] 2026-11-10 Alexandre Garcia-Duran | Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+    Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with 
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## core :: all:NeuroMechFly
+  parsed:0 in-window:0 (cutoff 2026-11-09)
+
+## core :: all:flyGNN
+  parsed:0 in-window:0 (cutoff 2026-11-09)
+
+## rot1-edge-causal :: all:connectome+AND+all:perturbation
+  [2611.16555v1] 2026-11-12 David Hartman | Similarity-Guided Optimization Strategies for Approximate Network Symmetry Detection
+    Symmetry in complex networks is a structural property with broad implications for network function, dynamics, and robustness. While classical approaches rely on exact automorphisms and thus remain highly sensitive to sma
+  [2611.14498v2] 2026-11-10 Alexandre Garcia-Duran | Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+    Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with 
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## rot2-insilico-lesion :: all:%22in+silico%22+AND+all:lesion
+  parsed:14 in-window:0 (cutoff 2026-11-09)
+
+## rot3-edge-importance :: all:%22edge+importance%22+AND+all:network
+  [2611.16326v1] 2026-11-12 Ruiwu Niu | Tracing dependency networks explains how origins shape downstream vulnerability
+    Many systems sustain outcomes through chains of prerequisites, yet these dependencies are often partially observed. We trace backward from sampled outcomes to recover dependency structure and measure edge importance by t
+  [2611.13645v1] 2026-11-10 Ritsuki Yamada | Robustness of controllability scores for stable linear network systems
+    Controllability scores quantify node importance in linear network systems by optimizing the allocation of input strength. Although the volumetric controllability score (VCS) and average-energy controllability score (AECS
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## rot4-synapse-ablation :: all:synapse+AND+all:ablation
+  parsed:14 in-window:0 (cutoff 2026-11-09)
+
+## rot5-causal-contribution :: all:%22causal+contribution%22+AND+all:neurons
+  [2611.22234v1] 2026-11-17 Himanshu Mishra | The Fragility of Reasoning-Importance Attribution for Pruning Language Models
+    Attribution-guided pruning scores components by their causal contribution and protects the important ones, and it is increasingly applied to compress reasoning language models without destroying their chain of thought. I
+  parsed:9 in-window:1 (cutoff 2026-11-09)
+
+## rot6-pathlength-brainnet :: all:%22path+length%22+AND+all:%22brain+network%22
+  parsed:10 in-window:0 (cutoff 2026-11-09)
+
+## rot7-weighted-shortest :: all:%22weighted+network%22+AND+all:%22shortest+path%22
+  parsed:14 in-window:0 (cutoff 2026-11-09)
+
+## rot8-rank-ties :: all:Spearman+AND+all:ties
+  [2611.20087v2] 2026-11-15 Ephraim Kofi Ayi Kwapong | Does Learning Order Explain Forgetting? The Lie Bracket as an Early-Warning Signal for Catastrophic Forgetting Without Old Data
+    A network trained on task A and then task B ends at different weights than one trained on B and then A. To leading order this gap is set by the Lie bracket of the two tasks' gradient fields, and Dherin (2023) conjectured
+  [2611.12000v1] 2026-11-09 Haowei Lin | HyPLM Technical Report
+    Protein language models (PLMs) are standard tools for variant-effect prediction, protein annotation and design, but the compute needed to train and serve them keeps growing. We present HyPLM-Flash, an efficient and open 
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## rot9-asym-similarity :: all:%22set+containment%22+OR+all:%22asymmetric+similarity%22
+  [2611.27925v1] 2026-11-20 Sebastian van Strien | The Thurston algorithm for general entire maps on the complex plane: Existence and uniqueness
+    We prove that a marked topological entire Thurston map $(f,A)$ of stable parabolic type is Thurston equivalent relative to $A$ to a postsingularly finite entire function if and only if it has no Levy cycle relative to $A
+  [2611.22957v1] 2026-11-17 Arpita Ghosh | Sums and Products in Dynamically Central Syndetic Sets
+    Glasscock and Le introduced the notion \textit{dynamically central syndetic sets} in a minimal topological dynamical system under the minimal action of the semigroup $(\mathbb{N}, +).$ In this short note, we introduce th
+  [2611.22598v1] 2026-11-17 Abhishek Kumar Singh Sengar | Solution-Set Properties of Absolute Value Equations: Inverse Nonnegativity, Boundedness, and Connectedness
+    The solution-set properties of the absolute value equation (AVE) \(Ax+|x|=b\) were systematically investigated by Hladík (\emph{SIAM J. Matrix Anal. Appl.} \textbf{44}, 175-195, 2023), who also formulated several related
+  [2611.22270v1] 2026-11-17 Seiya Kawano | Teaching Language Models to Narrow Boolean Patent Searches from Search Feedback
+    Patent prior-art searchers issue Boolean queries line by line, broadening to find relevant documents and narrowing until candidates can be screened. We distill 38,397 Japan Patent Office search reports into executable ex
+  [2611.21548v1] 2026-11-16 Sydney Johns | TRACE: Topological Representations for Anomaly detection through Contrastive Embeddings
+    Intrusion detectors must recognize evolving malicious behavior even when confirmed attack labels are scarce or incomplete. We present TRACE, a topology-aware graph contrastive learning framework for label-efficient intru
+  [2611.21385v1] 2026-11-16 Xiaoqi Liu | \(A_α\)-Wronskian Vertices of Paths and Controllability of Path-Rooted Products
+    For a graph \(G\) with adjacency and degree matrices \(A(G)\) and \(D(G)\), set \(A_α(G)=αD(G)+(1-α)A(G)\) for \(0\leqα<1\). Using Chebyshev polynomials and a theorem of Conway and Jones, we classify the \(A_α\)-Wronskia
+  [2611.21188v1] 2026-11-16 Jinze Yang | No complete set of mutually unbiased bases in dimension ten contains the Fourier pair or three product bases
+    With computer-assisted proofs that $\mathbb{C}^6$ admits at most three mutually unbiased bases (MUBs) now available, $\mathbb{C}^{10}$ is the smallest dimension in which it is unknown whether a complete set of $d+1=11$ M
+  [2611.20797v1] 2026-11-16 Subhransu S. Bhattacharjee | Correspondence-Free Camera Pose Estimation by Matching Moments
+    The blind perspective-$n$-point (PnP) problem is to estimate the pose of a calibrated camera from 2D and 3D point sets with unknown correspondences. We show that, for complete, noiseless observations, fourteen permutatio
+  [2611.19378v1] 2026-11-14 Arthur Sinai | Lower bounds for the Kolmogorov widths of global attractors of dissipative systems
+    We introduce the notion of a strengthening set in a Hilbert space and prove an exponential lower bound for its Kolmogorov widths. For compact sets containing the origin, the strengthening property is equivalent to the ex
+  [2611.19333v1] 2026-11-14 Rishabh Gupta | Orbit AI: Evaluating Tool-Augmented Agents For Enterprise Question Answering
+    Enterprise information is commonly stored across multiple platforms rather than in one centralized location. Answering questions about workplace activities may require information from several sources, including project 
+  [2611.19005v1] 2026-11-13 Jiangze Yan | AdaMenu: Query-Adaptive Menus for Decision Models over Large Label Spaces
+    Decision models such as Jev return probabilities over caller-defined options and are increasingly used for classification. Large label spaces challenge both accuracy and scalability: larger menus can impair decisions, in
+  [2611.18474v1] 2026-11-13 Sahab Hajebi | Efficient Reconfiguration of Independent Transversals
+    We study the reconfiguration of independent transversals in graphs with a prescribed vertex partition. Given a graph $G$ with a vertex partition $\mathcal{V}=(V_1,\ldots,V_m)$, an independent transversal is an independen
+  [2611.17243v1] 2026-11-12 Xuwen Chen | Radiation and persistent shape dynamics for the five-dimensional energy-critical nonlinear wave equation
+    We consider the nonradial five-dimensional focusing energy-critical wave equation. We construct a forward-global solution which remains arbitrarily close to a nondegenerate sign-changing stationary state in the energy sp
+  [2611.16821v1] 2026-11-12  Mariya | Calibration and Conformal Prediction for Medical Question Answering in Arabic and English: Evidence from Two Non-Parallel Benchmarks
+    Large language models (LLMs) are increasingly tested on medical exam questions, but accuracy alone does not show when an answer can be trusted. I study the calibration and uncertainty of two open-weight models, Qwen2.5-7
+  parsed:14 in-window:14 (cutoff 2026-11-09)
+
+## rot10-vnc :: all:%22ventral+nerve+cord%22
+  parsed:2 in-window:0 (cutoff 2026-11-09)
+
+## rot11-walking-fly :: all:Drosophila+AND+all:walking
+  [2611.23320v1] 2026-11-15 Eran Kopel | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    Theories that tie experience to a system that re-reads its own state rarely say what a physical substrate must supply for such a loop to run. We state necessary conditions as measurable bounds in one currency: the number
+  [2611.12547v1] 2026-11-09 Adriano Barra | Memory in biological Lévy walks from the dynamic-entropy formalism
+    Lévy walks are recognized by the histogram of their flight lengths, while the renewal hypothesis on which the textbook model rests, that every flight is drawn afresh, is seldom tested. We test it with the dynamic-entropy
+  parsed:14 in-window:2 (cutoff 2026-11-09)
+
+## rot12-wholebrain-sim :: all:%22whole-brain+simulation%22
+  parsed:4 in-window:0 (cutoff 2026-11-09)
+
+## rot13-csne-listing :: cat:cs.NE
+  [2611.27322v1] 2026-11-20 Hyunseok Oh | Spiking Neural Networks Incrementally Track Firing-Rate Networks
+    Understanding how spiking neural networks (SNNs) efficiently process data streams is key to (i) studying how biological brains conserve energy for lifelong predictions and (ii) enabling efficient continuous AI inference.
+  [2611.27109v1] 2026-11-20 Haozhe Wang | Recurrent Amplification and Exact Nonexpansiveness Criteria for Query-Driven Erasure
+    The Query-derived Erase Direction (QED) augments a rank-one linear attention update with a key-orthogonal query component. Under scalar decay, this correction leaves the eigenvalues of each homogeneous state transition u
+  [2611.27073v1] 2026-11-20 Leilah Taouk | Seabird-Aware Multi-Objective Offshore Wind Capacity Allocation: A Gippsland Case Study
+    Offshore wind planning requires balancing capital cost, wind-resource potential, and seabird exposure. We formulate a spatial tri-objective mixed-integer linear program for offshore wind capacity allocation, minimizing c
+  [2611.26938v1] 2026-11-20 Jun Zhang | MG-EDA: Maturity-Gated Skew-Normal Estimation of Distribution Algorithms
+    Gaussian estimation of distribution algorithms shrink their variance on slopes and stall far from the optimum. This paper equips the corrections that act along the direction of movement -- a mean shift, an elongation of 
+  [2611.26504v1] 2026-11-19 Élodie Côté-Gauthier | Grid Cells as Spectral Successor Features: A Reusable Basis for Continual Reinforcement Learning
+    Continual reinforcement learning requires agents to adapt when the task changes while reusing what they know about the environment. Successor features separate dynamics from task-specific reward, but their effectiveness 
+  [2611.26412v1] 2026-11-19 Julian Ruddick | How to Effectively Manage the Energy in Residential Systems: Development and Comparison of Methods
+    The transition from fossil fuels presents significant challenges in energy management. To ensure a sustainable energy future, it is crucial to reduce energy consumption when possible and to synchronize electricity consum
+  [2611.26011v1] 2026-11-19 Claude Carlet | A Matter of Representation: Evolving Partial Spreads for Bent Functions
+    Partial spread ($\mathcal{PS}$) bent functions are Boolean functions of maximum nonlinearity built from families of subspaces that pairwise intersect only in the null vector. We design an Evolution Strategy (ES) to const
+  [2611.26671v1] 2026-11-19 Antoine Lejay | On the loss landscape of the linear neural network: beyond critical points
+    While the critical points of the loss landscape in linear neural networks have been extensively studied since the seminal work of Baldi \& Hornik in the late 1980s, a description of this landscape at an intermediate or g
+  [2611.25896v1] 2026-11-19 Edgar A. Duéñez-Guzmán | The Price of an Explanation: What Demanding Verifiable Artifacts Costs, and What It Buys Back
+    Generative models produce many candidate solutions but provide no intrinsic signal by which to rank them. One mitigation is to demand a \emph{verifiable artifact}: a program that can be executed against the available evi
+  [2611.25880v1] 2026-11-19 Eduardo Dueñez | Evolving Decoding Algorithms for Quantum Error Correction
+    Quantum computation entails robustness engineering: a noisy quantum state is measured continuously, and a classical algorithm (the decoder) must infer corrections that reliably remove the noise, fast enough to keep up. W
+  [2611.25855v1] 2026-11-19 Yifan Lu | HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents
+    Personalized LLM agents must act on a user's current preferences, which change across interactions and are rarely stated in full. Existing memory systems store and retrieve content from the interaction history and leave 
+  [2611.25610v1] 2026-11-19 Tiantian Li | Hierarchical Spatiotemporal World Modeling with Content-Adaptive Spatial Addressing
+    Long-horizon world modeling in partially observable environments requires compact memories that preserve spatial structure despite accumulated localization drift. Inspired by hippocampal episodic and spatial memory and t
+  [2611.25352v1] 2026-11-19 Faiek Ahsan | Compiling Constraints into Neuromorphic Ising Machines
+    Most practical combinatorial optimization problems involve constraints, and an Ising machine that flips one spin at a time can respect them only through energy penalties that raise barriers between feasible solutions. He
+  [2611.24848v1] 2026-11-18 Ruiqi Liu | Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+    Human vision and video stereo networks both reuse disparity evidence across time, yet a refresh of the input can invalidate a match formed milliseconds earlier. What tells a system whether an old match still counts? We a
+  parsed:14 in-window:14 (cutoff 2026-11-09)
+
+## rot14-motor-antagonist :: all:%22motor+neuron%22+AND+all:antagonist
+  parsed:1 in-window:0 (cutoff 2026-11-09)
+
+## rot15-connectome-foundation :: all:connectome+AND+all:%22foundation+model%22
+  parsed:7 in-window:0 (cutoff 2026-11-09)
+
+## rot16-graph-attribution :: all:%22graph+neural+network%22+AND+all:attribution
+  [2611.24886v1] 2026-11-18 Wenjie Sun | CREST: A Hardware-Aware GNN-Based Framework for High-Fidelity and Robust Superconducting Quantum Compilation
+    Quantum compilation on superconducting processors requires selecting a connected execution region whose topology and calibrated properties suit the input circuit. This choice constrains subsequent routing and influences 
+  [2611.23729v1] 2026-11-18 Ojas Sanghi | Toward Out-of-Distribution Generalization in Neural AC Power Flow
+    Growing uncertainty in power system operations from renewables integration, extreme weather, and data center loads challenges the reliability of traditional power flow solvers at scale. Machine learning-based proxies are
+  [2611.18430v1] 2026-11-13 Miguel Tenorio | Validating Graph Neural Network Feature Attribution Through Local Perturbations: A Study on CoMoFeNiCu Decomposition Enthalpy
+    Graph neural networks (GNNs) show promise for predicting materials properties, but interpretability remains a challenge, particularly understanding whether attributed feature importance reflects physical reality or stati
+  [2611.12379v1] 2026-11-09 Xavier Jurado | Reconstructing hourly traffic on every street of a capital from a sparse counting network: a graph neural network applied to Paris
+    Micro-scale air quality models require hourly traffic data on every road segment, whereas permanent counters cover only a small part of the network. A graph neural network (GNN) was developed to reconstruct hourly traffi
+  parsed:14 in-window:4 (cutoff 2026-11-09)
+
+=== SUMMARY: 22 angles, 0 still ERRORED, 11 with in-window hits ===

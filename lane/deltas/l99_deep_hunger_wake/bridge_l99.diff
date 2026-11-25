@@ -1,0 +1,84 @@
+--- /tmp/bridge_pre_l99.py	2026-11-16 15:33:30.579652939 -0500
++++ bridge.py	2026-11-16 15:34:53.661576092 -0500
+@@ -379,6 +379,23 @@
+             session.X = self.brain.X.clone()
+             self.brain.active_delta = None
+ 
++    def _dabble(self, s, rng, shiny_text, slug_text):
++        """One forage dabble at the pond: hunger relief, a neural water
++        event, a probabilistic find (12% shiny -> hoard + parade lap),
++        curiosity banked. Shared by the day forage branch and the L99
++        deep-hunger stir so the two stay one economy. Returns
++        (entry_text, find, parade)."""
++        s.mood.hunger = max(0.0, s.mood.hunger - 0.25 - 0.1 * rng.random())
++        s.mood.observe(5.0, event="water")          # dabbling, neurally
++        self._log_event(s, "water")
++        if rng.random() < 0.12:
++            s.shiny_found = True
++            s.hoard += 1                            # L10: this one she keeps
++            s.curiosity = min(1.0, s.curiosity + CURIOSITY_EVENT["shiny"])
++            return shiny_text, "shiny", True
++        s.curiosity = min(1.0, s.curiosity + CURIOSITY_EVENT["slug"])
++        return slug_text, "slug", False
++
+     def world_tick(self, session, rng=None):
+         """One beat of her solo life: drives speak, she acts on them herself.
+         Hand policy for now (Layer 2 replaces it with DAN-critic learning).
+@@ -399,24 +416,27 @@
+                 entry = "hid behind the planter until the fright faded"
+                 act = "hide"
+             elif a["sleep"] > 0.75:
+-                s.mood.food_joy = min(1.0, s.mood.food_joy + 0.05)
+-                entry = "curled up at the reeds and napped"
+-                act = "nest"
+-            elif a["hunger"] > 0.7:
+-                s.mood.hunger = max(0.0, s.mood.hunger - 0.25 - 0.1 * rng.random())
+-                s.mood.observe(5.0, event="water")     # dabbling, neurally
+-                self._log_event(s, "water")
+-                if rng.random() < 0.12:
+-                    entry = "dabbled at the pond -- found something SHINY"
+-                    s.shiny_found = True
+-                    s.hoard += 1               # L10: this one she keeps
+-                    parade = True
+-                    find = "shiny"
++                if a["hunger"] > 0.85:
++                    # L99 deep-hunger wake (owner call 11-16, option b):
++                    # too hungry to sleep through -- she stirs, dabbles
++                    # once, and settles back at the reeds next tick. Same
++                    # forage economy as day; NO nest food_joy (she is up).
++                    entry, _find, parade = self._dabble(
++                        s, rng,
++                        "stirred from the nest and dabbled half-asleep "
++                        "-- found something SHINY",
++                        "stirred from the nest, dabbled half-asleep, "
++                        "found a slug, back to the reeds")
++                    act = "forage_pond"
+                 else:
+-                    entry = "dabbled at the pond and found a slug"
+-                    find = "slug"
+-                # the pond gave her something interesting: it banks (L5)
+-                s.curiosity = min(1.0, s.curiosity + CURIOSITY_EVENT[find])
++                    s.mood.food_joy = min(1.0, s.mood.food_joy + 0.05)
++                    entry = "curled up at the reeds and napped"
++                    act = "nest"
++            elif a["hunger"] > 0.7:
++                entry, _find, parade = self._dabble(
++                    s, rng,
++                    "dabbled at the pond -- found something SHINY",
++                    "dabbled at the pond and found a slug")
+                 act = "forage_pond"
+             elif s.curiosity > CURIOSITY_GATE and rng.random() < INVESTIGATE_P:
+                 # drives are low here (fear/sleep/hunger branches all missed)
+@@ -487,7 +507,11 @@
+         with self.session_turn(session):
+             mood, level = session.mood.mood_tag()
+             a = session.mood.axes()
+-            if a["hunger"] > 0.75:
++            if a["hunger"] > 0.75 and a["sleep"] <= 0.75:
++                # L99 rider: a nested duck (sleep > .75) shows settle,
++                # not beg -- between deep-hunger stirs hunger crosses
++                # .75 for minutes at a stretch and the bar would
++                # flicker beg at the nest all night otherwise
+                 # she asks, when she trusts you enough to beg
+                 ambient = "beg" if session.mood.trust > 0.30 else "to_bowl"
+             elif a["sleep"] > 0.7:

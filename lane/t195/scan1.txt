@@ -1,0 +1,56 @@
+## core-drosophila-connectome
+  [2611.23320v1] 2026-11-15 q-bio.NC,physics.bio-ph | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+  [2611.14508v1] 2026-11-10 cs.LG,q-bio.NC | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+## core-flywire
+## core-connectome-constrained
+  [2611.14508v1] 2026-11-10 cs.LG,q-bio.NC | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+  [2611.14498v2] 2026-11-10 cs.CV,q-bio.NC | Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+## core-neuromechfly
+## rot-motor-primitive
+  [2611.26434v1] 2026-11-19 cs.CV,cs.RO | HumanCOIN: A 12,500-Hour Dataset for Human Intent in Egocentric Manipulation
+  [2611.26007v1] 2026-11-19 cs.AI | System-One RSI: Building Muscle Memory for Interactive Agents through Guided Practice
+  [2611.25373v1] 2026-11-19 cs.RO | Differentiable Hydrodynamics for Whole-Body MPC of Underwater Robots
+  [2611.24823v1] 2026-11-18 cs.HC | One size does not fit all: session-specific effects of deep brain stimulation on hand-motor kinematics in Parkinson's disease
+  [2611.24662v1] 2026-11-18 cs.CR,eess.SY | Gradient-Based Defensive Poisoning Against System Identification Attacks on Cyber-Physical Systems
+  [2611.24646v1] 2026-11-18 cs.RO | Conceptual full-vehicle modeling of a modular all-wheel-drive robotic ADS test platform as a foundation for a digital twin architecture
+  [2611.24279v1] 2026-11-18 cs.RO | QDD-MM: A Simple and Compact Open-Source Muscle Module with Quasi-Direct-Drive Motor for Tendon-driven Robots
+  [2611.24142v1] 2026-11-18 cs.RO | BiPathCPG: A Novel Load-Sharing Design Architecture for Compound Planetary Gearboxes
+  [2611.23855v1] 2026-11-18 cs.AI,cs.CV,cs.RO | RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop
+  [2611.23747v1] 2026-11-18 cs.MA,cs.HC | A Comparison of Heuristic, Human-Sensitive, and Self-Play DRL Policies in Human-Agent Teaming
+  [2611.23646v1] 2026-11-18 cs.CV | PRISM: Profiling and Representation of Individual Stereotypical Motion
+  [2611.23602v1] 2026-11-17 cs.CR | A-Tag: Cryptographic File Tagging with Enforced Live Human Presence
+## rot-sensorimotor-delay
+  [2611.23441v1] 2026-11-17 q-bio.NC,cs.NE,cs.RO | Hebbian self-organization of monosynaptic reflexes in a biologically realistic multiarticular limb
+  [2611.22499v1] 2026-11-17 cs.CL | From syllable representation via gesture generation to articulation: A spiking neural model
+  [2611.20719v1] 2026-11-16 cs.RO | ACiT: Proprioceptive-Prior Action Chunking with Inverted Transformers
+  [2611.20202v1] 2026-11-15 cs.RO | DAPPT: Domain-Aware Policies from Procedural Trajectories for Sim-to-Real Dexterous Tool Use
+  [2611.20164v1] 2026-11-15 eess.SP,cs.LG | Cross-Subject Priors for Maximum a Posteriori Estimation of Latent Structure Influence Models in Motor-Imagery EEG With Few Trials
+  [2611.19332v1] 2026-11-14 cs.AI | NI-ACT: A Neural Intent Interface for Brain-Embodied Manipulation
+  [2611.14382v1] 2026-11-10 cs.AI | Cognitive Mapping of Learning by Thinking Mechanisms in Large Language Models
+  [2611.10617v1] 2026-11-07 q-bio.NC,cs.LG | NeuroHorizon: Long-Horizon Forecasting of Neural Population Activity with Hierarchical Memory
+## rot-descending-command
+  [2611.26507v1] 2026-11-19 cs.LO,cs.PL | Hereditary permutations for simple types revisited: A baby case for University Algebra
+  [2611.26468v1] 2026-11-19 astro-ph.HE,astro-ph.CO | Multimessenger constraints on the origin of long gamma-ray bursts with plateaus: three cases
+  [2611.26207v1] 2026-11-19 math.AG | Surface sheaves on the quintic I. Expanded degenerations and virtual gluing
+  [2611.26163v1] 2026-11-19 math.AG,math.AC | Uniform Positivity of the $F$-Signature and Pure Descent of klt Singularities
+  [2611.25917v1] 2026-11-19 cs.LG | LIFT: Latent Flow Matching for Probabilistic Cell Fate Dynamics with Single Cell Snapshots
+  [2611.24527v1] 2026-11-18 cs.IT | Hull variation of algebraic geometry codes under divisor twists
+  [2611.23366v1] 2026-11-17 hep-th,cond-mat.stat-mech,math-ph,nlin.SI | Exact Solutions to Matrix Models and String Theories: The Global Construction
+  [2611.22993v1] 2026-11-17 math.CO,math.AT | Complete characterization of graphs with common maximal abelian cover
+  [2611.22863v1] 2026-11-17 math.GT | Positivity of minimal volume entropy for some closed manifolds with zero simplicial volume
+  [2611.21743v1] 2026-11-16 hep-th,cond-mat.str-el,hep-lat | Center anomalies without twists: torsion, exact degeneracies, and condensates
+  [2611.21484v1] 2026-11-16 math.SG,math.AG,math.CO,math.RT | Ice and mirrors
+  [2611.21056v1] 2026-11-16 cs.CL,cs.NE | Evaluation-Free Recursive Self-Improvement for Coding Agents
+## rot-graph-perturbation
+  [2611.26629v1] 2026-11-19 cs.CV | Posterior Matching Distillation
+  [2611.26614v1] 2026-11-19 stat.ME,math.ST | Additive Fréchet Regression for Random Objects
+  [2611.26612v1] 2026-11-19 stat.AP | BRUCE (Bayesian Rio Urban Climate Estimator): spatiotemporal interpolation of air temperature from heterogeneous sensor networks for operational heat monitoring
+  [2611.26604v1] 2026-11-19 cond-mat.str-el,quant-ph | Scalable Simulation of Strongly Correlated Fermions with Neural Gaussian Tensor Networks
+  [2611.26603v1] 2026-11-19 cs.CV,cs.LG | Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth
+  [2611.26587v1] 2026-11-19 quant-ph,cond-mat.dis-nn,cond-mat.str-el,physics.comp-ph | High-Accuracy Neural-Network Quantum States via Randomized Real-Time Dynamics
+  [2611.26564v1] 2026-11-19 cs.CR,cs.AI,cs.SI | GEOHunter: Mapping a Generative Engine Optimization Network in the Wild
+  [2611.26532v1] 2026-11-19 physics.optics,eess.IV,eess.SP,eess.SY | From power to spectrum: an off-the-shelf photodiode turned into a spectrometer by its bias alone
+  [2611.26528v1] 2026-11-19 cond-mat.mtrl-sci | Constitutive Kolmogorov-Arnold Networks in Finite Element Model Updating: Closed-Form Hyperelastic Strain Energies from Heterogeneous Experiments
+  [2611.26504v1] 2026-11-19 cs.LG | Grid Cells as Spectral Successor Features: A Reusable Basis for Continual Reinforcement Learning
+  [2611.26487v1] 2026-11-19 math.ST | Local Clustering Tests and Botnet Localization in Sparse Random Geometric Networks
+  [2611.26475v1] 2026-11-19 cs.LG,cs.AI,math.OC | A new algorithmic approach for finding flat minima: critically damped Polyak stepsizes

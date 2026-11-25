@@ -1,0 +1,74 @@
+--- bridge _dabble -> _log_event L386-392 ---
+386|        deep-hunger stir so the two stay one economy. Returns
+387|        (entry_text, find, parade)."""
+388|        s.mood.hunger = max(0.0, s.mood.hunger - 0.25 - 0.1 * rng.random())
+389|        s.mood.observe(5.0, event="water")          # dabbling, neurally
+390|        self._log_event(s, "water")
+391|        if rng.random() < 0.12:
+392|            s.shiny_found = True
+--- bridge world_tick -> consolidate_night L396-412 ---
+396|        s.curiosity = min(1.0, s.curiosity + CURIOSITY_EVENT["slug"])
+397|        return slug_text, "slug", False
+398|
+399|    def world_tick(self, session, rng=None):
+400|        """One beat of her solo life: drives speak, she acts on them herself.
+401|        Hand policy for now (Layer 2 replaces it with DAN-critic learning).
+402|        Self-care relieves the need; it never grants joy or trust — that is
+403|        what visitors are for. Returns the diary entry (or None)."""
+404|        import random as _r
+405|        rng = rng or _r.Random()
+406|        s = session
+407|        self.consolidate_night(s)             # deep night writes the day in, once
+408|        if self.dream(s, rng):                # ...and sometimes dreams it (L4)
+409|            return "dream"
+410|        with self.session_turn(s):
+411|            a = s.mood.axes()
+412|            parade = False
+--- bridge _reply_inside -> _log_event L560-569 ---
+560|            session.mood.sleep = min(1.0, session.mood.sleep + 0.6)
+561|        if sit == "eat_q":                      # interoception: thinking about
+562|            session.mood.hunger = min(1.0, session.mood.hunger + 0.05)  # peas
+563|        if sit == "empty_bowl":                 # and seeing the empty bowl
+564|            session.mood.hunger = min(1.0, session.mood.hunger + 0.10)  # is worse
+565|        session.mood.observe(2.0, event=event)
+566|        self._hebbian(session, event)          # write this moment into synapses
+567|        self._log_event(session, event)        # ...and remember it for tonight
+568|        mood, level = session.mood.mood_tag()
+569|        intent = INTENTS.get(sit, "stay")
+DEF _dabble L382 args=['self', 's', 'rng', 'shiny_text', 'slug_text']
+DEF world_tick L399 args=['self', 'session', 'rng']
+DEF reply L538 args=['self', 'text', 'session']
+DEF _reply_inside L542 args=['self', 'text', 'session']
+
+--- serve.py: session resolution / world tick scheduling ---
+87|def _safe_name(chat_id):
+88|    n = "".join(c for c in chat_id if c.isalnum() or c in "-_")[:64]
+89|    return n or hashlib.sha256(chat_id.encode()).hexdigest()[:16]
+91|def save_session(chat_id, s):
+95|        base = SESSIONS_DIR / _safe_name(chat_id)
+126|        print(f"session save failed for {chat_id}: {e}", file=sys.stderr)
+128|def load_session(chat_id):
+130|    base = SESSIONS_DIR / _safe_name(chat_id)
+131|    json_path = SESSIONS_DIR / (_safe_name(chat_id) + ".json")
+132|    pt_path = SESSIONS_DIR / (_safe_name(chat_id) + ".pt")
+137|        s = BRIDGE.open_session(seed=hash(chat_id) & 0xFFFF)
+166|        print(f"session load failed for {chat_id}: {e}", file=sys.stderr)
+198|WORLD_CHAT = "world"          # her solo life: one shared duck, one diary
+210|                s = session_for(WORLD_CHAT)
+211|                act = BRIDGE.world_tick(s, rng=rng)
+212|                save_session(WORLD_CHAT, s)
+216|def session_for(chat_id):
+218|    s = CHATS.get(chat_id)
+220|        s = load_session(chat_id)
+222|            CHATS[chat_id] = s
+224|        s = BRIDGE.open_session(seed=hash(chat_id) & 0xFFFF)
+225|        CHATS[chat_id] = s
+279|                s = session_for(WORLD_CHAT)
+
+--- callers of bridge.reply / _reply_inside in serve.py ---
+  serve.py:350 session_for(chat)
+  serve.py:210 session_for(WORLD_CHAT)
+  serve.py:211 world_tick(s)
+  serve.py:279 session_for(WORLD_CHAT)
+  serve.py:290 session_for(chat)
+  serve.py:353 reply(text, session)

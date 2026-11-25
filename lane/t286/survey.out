@@ -1,0 +1,31 @@
+CONST KIND_EVENTS = '("pet", "greet", "goats", "peas", "tin", "water", "shiny", "slug")'  (L55)
+CONST NIGHT_ETA = '0.02'  (L61)
+CONST NIGHT_CAP = '0.75'  (L62)
+CONST DREAM_GAIN = '0.3'  (L63)
+CONST TOP_FRAC = '0.10'  (L64)
+CONST MAX_REPLAYS = '5'  (L65)
+CONST NIGHT_DOWNSCALE = '0.98'  (L66)
+CONST DREAM_P = '0.35'  (L87)
+CONST MAX_DREAMS = '3'  (L89)
+CALL _log_event(...) in bridge.py:390 enclosing=_dabble last_arg="water"
+CALL consolidate_night(...) in bridge.py:407 enclosing=world_tick last_arg=s
+CALL dream(...) in bridge.py:408 enclosing=world_tick last_arg=rng
+CALL _log_event(...) in bridge.py:567 enclosing=_reply_inside last_arg=event
+
+MANIFEST rows=132
+ONE manifest row: {"ts": "2026-11-25T11:52:40.768748-05:00", "file": "snap_20261125_115240.json", "sha": "ab79adaf9f33", "diary_n": 50, "day_log_n": 100, "hoard": 286, "night_stamp": "2026-11-25", "mood": "happy:low", "intent": "to_fence", "brain": {"file": "brain/brain_20261125_115240.pt", "sha256": "b29e77d9af7f8ed9fa5ef33a9d6a00bd96fbcc50c3a9066b3896fa23a11d8cf4", "size": 1021653, "dedup": false}}
+
+SNAPS n=132 first=snap_20261116_055647.json last=snap_20261125_115240.json
+snap top-level keys: ['captured_at', 'world_sha256', 'axes', 'curiosity', 'curious_at', 'hoard', 'parade_ticks', 'night_stamp', 'dreams_tonight', 'dream_pool', 'last_seen', 'mind', 'memory', 'diary', 'day_log', 'needs', 'brain']
+  [axes] dict keys=['fear', 'food_joy', 'trust', 'salience', 'hunger', 'sleep', 'clock_s', 'last_peas_s']
+  [dream_pool] list len=1; one="water"
+  [mind] dict keys=['trust', 'fed', 'said_peas', 'greeted']
+  [memory] list len=0; one=None
+  [diary] list len=50; one={"t": 0.027942398274932057, "act": "forage_pond", "text": "dabbled at the pond and found a slug", "clock_s": 1795618674, "clock_s_end": 1795618674, "n": 1}
+  [day_log] list len=100; one={"ev": "water", "t": 1795583834.857136, "dan": 0.4957, "kc": 0.0782, "dop": 0.3813, "sal": 1.0}
+  [needs] dict keys=['mood', 'axes', 'synapse', 'trust', 'intent', 'cx']
+  [brain] dict keys=['file', 'sha256', 'size', 'dedup']
+
+DAY_LOG: snaps with a day_log=132 len min/med/max=0/83/100
+day_log record key-sets: {('dan', 'dop', 'ev', 'kc', 'sal', 't'): 8780}
+event census over all snap day_logs: [('water', 8780)]

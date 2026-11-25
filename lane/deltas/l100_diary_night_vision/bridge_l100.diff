@@ -1,0 +1,114 @@
+--- lane/l100/bridge_pre.py	2026-11-16 14:20:10.981769087 -0500
++++ bridge.py	2026-11-16 14:24:35.638792991 -0500
+@@ -16,9 +16,11 @@
+ The gate question this answers: does the talking layer AGREE with the brain?
+ We measure tag agreement on a scripted conversation.
+ """
++import os
+ import random
+ import re
+ import sys
++import time
+ from contextlib import contextmanager
+ 
+ sys.path.append("/home/t3rpz/critters/puddle")
+@@ -85,6 +87,55 @@
+ DREAM_P = 0.35       # chance a deep-night tick surfaces a dream — the small
+                      # hours hold a few dreams, not one per 45 s tick
+ MAX_DREAMS = 3       # nightly cap
++
++# ---- L100: diary night vision (owner-approved 11-16, BBS #54 11:40 hop) ----
++# Every entry is stamped with wall-clock seconds (the old `t` is a random
++# tie-break, useless for timing); identical consecutive acts within
++# DIARY_COALESCE_S coalesce into one counted entry (a night of 45-s naps
++# used to fill the 50-cap with identical lines within ~37 min of dusk);
++# entries evicted by the cap are appended to a jsonl archive first, so
++# week-scale diary evidence survives. Pure bookkeeping: ZERO rng draws
++# happen here (callers pass the t they already drew -- draw order is
++# behavior), and no branch logic anywhere reads these fields.
++DIARY_COALESCE_S = 900          # 15 min gap closes a run
++DIARY_KEEP = 50
++DIARY_ARCHIVE = os.path.join(
++    os.path.dirname(os.path.abspath(__file__)),
++    "sessions", "world_diary_archive.jsonl")
++
++
++def diary_append(s, act, text, t):
++    """Stamp, coalesce, archive-evict, append. Never raises into a tick."""
++    now = int(time.time())
++    try:
++        tail = s.diary[-1] if s.diary else None
++        if (tail is not None and "clock_s" in tail
++                and tail.get("act") == act
++                and tail.get("text") == text
++                and now - tail.get("clock_s_end", tail["clock_s"]) <= DIARY_COALESCE_S):
++            tail["n"] = tail.get("n", 1) + 1
++            tail["clock_s_end"] = now
++            return tail
++        evicted = []
++        if len(s.diary) >= DIARY_KEEP:
++            evicted = s.diary[:len(s.diary) - DIARY_KEEP + 1]
++        if evicted:
++            import json as _json
++            with open(DIARY_ARCHIVE, "a") as f:       # append-only, never rewrite
++                for e in evicted:
++                    f.write(_json.dumps(e, ensure_ascii=False) + "\n")
++            s.diary = s.diary[len(s.diary) - DIARY_KEEP + 1:]
++        s.diary.append({"t": t, "act": act, "text": text,
++                        "clock_s": now, "clock_s_end": now, "n": 1})
++        return s.diary[-1]
++    except Exception as exc:                     # persistence must not kill
++        print(f"[diary_append] archive failed (logged, kept in memory): "
++              f"{exc!r}", file=sys.stderr)
++        if len(s.diary) >= DIARY_KEEP:
++            s.diary = s.diary[-DIARY_KEEP:]
++        s.diary.append({"t": t, "act": act, "text": text,
++                        "clock_s": now, "clock_s_end": now, "n": 1})
++        return s.diary[-1]
+ DREAM_PARTNERS = ("the goats", "Cinnamon", "Chichi", "the boot",
+                   "the pond reeds", "the treat tin", "a kind stranger")
+ DREAM_PARTNER = {"goats": "the goats", "tin": "the treat tin"}  # never
+@@ -266,8 +317,7 @@
+         names = ", ".join(dict.fromkeys(dreamed))
+         entry = (f"slept deep as the day played back -- {names}; "
+                  "the good of it settled in for good")
+-        s.diary.append({"t": 0.5, "act": "consolidate", "text": entry})
+-        s.diary = s.diary[-50:]
++        diary_append(s, "consolidate", entry, 0.5)
+         return entry
+ 
+     def dream(self, session, rng):
+@@ -289,8 +339,7 @@
+         cast = [p for p in DREAM_PARTNERS if p != home] or list(DREAM_PARTNERS)
+         text = DREAM_TPL.get(ev, DREAM_DEFAULT).format(p=rng.choice(cast))
+         s.dreams_tonight = getattr(s, "dreams_tonight", 0) + 1
+-        s.diary.append({"t": rng.random(), "act": "dream", "text": text})
+-        s.diary = s.diary[-50:]
++        diary_append(s, "dream", text, rng.random())
+         return text
+ 
+     def preamble_for(self, sit, mood, level, session):
+@@ -387,18 +436,17 @@
+                 entry = None
+                 act = "idle"
+         if entry:
+-            s.diary.append({"t": _r.uniform(0, 1), "act": act, "text": entry})
+-            s.diary = s.diary[-50:]
++            diary_append(s, act, entry, _r.uniform(0, 1))
+         if getattr(s, "parade_ticks", 0) > 0:
+             s.parade_ticks -= 1                 # the strut wears off on its own
+         if parade:
+             # L10: a new shiny deserves a lap of honor -- motion she earned,
+             # rendered through the same intent channel, no joy/trust granted
+             s.parade_ticks = 3
+-            s.diary.append({"t": _r.uniform(0, 1), "act": "parade",
+-                            "text": f"paraded the shiny past the goats "
+-                                    f"(hoard: {s.hoard})"})
+-            s.diary = s.diary[-50:]
++            diary_append(s, "parade",
++                         f"paraded the shiny past the goats "
++                         f"(hoard: {s.hoard})",
++                         _r.uniform(0, 1))
+         return act
+ 
+     # ---- L7: locomotor readout from the descending population ----

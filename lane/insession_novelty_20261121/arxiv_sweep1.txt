@@ -1,0 +1,40 @@
+
+=== arXiv: mass-matched ablation ERROR: no element found: line 1, column 0
+
+=== arXiv: single-cell ablation connectome ERROR: no element found: line 1, column 0
+
+=== arXiv: identity ablation connectome (1 hits) ===
+  [2605.14048v3] 2026-05-13  Network-Aware Bilinear Tokenization for Brain Functional Connectivity Representation Learning
+
+=== arXiv: all-or-none connectome ERROR: no element found: line 1, column 0
+
+=== arXiv: DNp33 (0 hits) ===
+
+=== arXiv: removal mass ERROR: no element found: line 1, column 0
+
+=== arXiv: non-monotone ablation network (6 hits) ===
+  [2407.01012v3] 2024-07-01  Swish-T : Enhancing Swish Activation with Tanh Bias for Improved Neural Network Performance
+  [2605.11773v1] 2026-05-12  Is Monotonic Sampling Necessary in Diffusion Models?
+  [2104.01939v4] 2021-04-05  NQMIX: Non-monotonic Value Function Factorization for Deep Multi-Agent Reinforcement Learning
+  [2608.21059v1] 2026-08-21  The Cost of a Physics Prior Is Bounded by the Ablation Gap
+  [2311.04480v1] 2023-11-08  CLearViD: Curriculum Learning for Video Description
+  [2604.17025v3] 2026-04-18  Harness as an Asset: Enforcing Determinism via the Convergent AI Agent Framework (CAAF)
+
+=== arXiv: connectome-constrained recency ERROR: no element found: line 1, column 0
+
+=== arXiv: regime transition single neuron ERROR: no element found: line 1, column 0
+
+=== arXiv: descending neuron removal Drosophila model (0 hits) ===
+
+
+########## SEMANTIC SCHOLAR ##########
+
+=== SS search: mass matched ablation connectome identity ===
+
+=== SS search: single neuron ablation regime transition network model ===
+
+=== SS search: cell identity versus lesion size connectome ===
+
+=== SS: Habib/Petr/Rust citation check ===
+
+SWEEP DONE

@@ -1,0 +1,22 @@
+CONST {'KIND_EVENTS': ('pet', 'greet', 'goats', 'peas', 'tin', 'water', 'shiny', 'slug'), 'TOP_FRAC': 0.1, 'MAX_REPLAYS': 5}
+SESSIONS_DIR = /home/t3rpz/critters/peabrain/sessions | exists: True
+
+ARCHIVE snaps=132 passes=10
+
+==== SUMMARY ====
+world census: {'records': 8780, 'events': {'water': 8780}, 'non_kind': {}, 'snap_daylog_len_min_med_max': [0, 83, 100], 'snaps_at_cap_100': 51}
+S2: {'n_nights': 10, 'both_rules_water_only': 10, 'lossy_nights': 8, 'wm_extra_admitted_total': 1572, 'pass_local_hours': ['00', '18']}
+  night  0 pass 2026-11-16 18:47:34 win  12.8h open_start=True snaps=14 union= 95 {'water': 95} lossy=False tail=45.8m | DATE n=5 {'water': 5} | WM n=5 {'water': 5} | extra=0 | visitor-in-window=148 kindNW=109 nonkind=16
+  night  1 pass 2026-11-17 00:01:22 win   5.2h open_start=False snaps=4 union= 36 {'water': 36} lossy=False tail=66.9m | DATE n=1 {} | WM n=4 {'water': 4} | extra=36 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  2 pass 2026-11-18 00:08:00 win  24.1h open_start=False snaps=15 union=195 {'water': 195} lossy=True tail=77.0m | DATE n=1 {} | WM n=5 {'water': 5} | extra=195 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  3 pass 2026-11-19 00:02:52 win  23.9h open_start=False snaps=13 union=198 {'water': 198} lossy=True tail=55.1m | DATE n=1 {} | WM n=5 {'water': 5} | extra=198 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  4 pass 2026-11-20 00:05:07 win  24.0h open_start=False snaps=13 union=186 {'water': 186} lossy=True tail=128.4m | DATE n=1 {} | WM n=5 {'water': 5} | extra=186 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  5 pass 2026-11-21 00:06:14 win  24.0h open_start=False snaps=11 union=200 {'water': 200} lossy=True tail=22.0m | DATE n=1 {} | WM n=5 {'water': 5} | extra=200 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  6 pass 2026-11-22 00:05:54 win  24.0h open_start=False snaps=7 union=179 {'water': 179} lossy=True tail=176.8m | DATE n=1 {} | WM n=5 {'water': 5} | extra=179 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  7 pass 2026-11-23 00:03:38 win  24.0h open_start=False snaps=15 union=191 {'water': 191} lossy=True tail=67.5m | DATE n=1 {} | WM n=5 {'water': 5} | extra=191 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  8 pass 2026-11-24 00:07:02 win  24.1h open_start=False snaps=16 union=199 {'water': 199} lossy=True tail=28.8m | DATE n=1 {} | WM n=5 {'water': 5} | extra=199 | visitor-in-window=0 kindNW=0 nonkind=0
+  night  9 pass 2026-11-25 00:04:52 win  24.0h open_start=False snaps=15 union=188 {'water': 188} lossy=True tail=109.7m | DATE n=1 {} | WM n=5 {'water': 5} | extra=188 | visitor-in-window=0 kindNW=0 nonkind=0
+S1: {'verdict': 'TRUE', 'sessions_scanned': 621, 'sessions_with_errors': 0, 'records': 465, 'kind_non_water_records': 338, 'events': {'swat': 12, 'peas': 93, 'greet': 207, 'water': 79, 'goats': 12, 'hold': 12, 'rake': 12, 'shiny': 12, 'tin': 13, 'umbrella': 12, 'pet': 1}, 'non_kind': {'swat': 12, 'hold': 12, 'rake': 12, 'umbrella': 12}}
+S3: {'a_world_non_kind_records': 0, 'b_visitor_non_kind_records': 48, 'c_union_non_kind_per_night': {'0': 16, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0}, 'c_union_kind_non_water_per_night': {'0': 109, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0}}
+
+WROTE /home/t3rpz/critters/peabrain/lane/l295/results_l295.json 119758 bytes

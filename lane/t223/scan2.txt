@@ -1,0 +1,77 @@
+# tick 223 scan | cutoff 2026-11-01 | 2026-11-22T02:03:34.020684+00:00
+### rot: reciprocal inhibition + oscillation  [abs:"reciprocal inhibition" AND abs:oscillation]  in-window(21d): 0
+
+### rot: half-center oscillator  [abs:"half-center"]  in-window(21d): 1
+  - 2026-11-12 [2611.16389v1] On Energy-Based Modelling for Fluidic Excitable Neurons
+      Motivated by the potential of pneumatic excitable devices in soft robotics, this paper develops an energy-based, domain-agnostic equivalent of the Hodgkin-Huxley modelling framework using bond graph theory. The proposed model is used to guide the design of a pneumatic excitable neuron. The potential
+
+### rot: E/I ratio + rhythm  [abs:"excitation-inhibition" AND abs:rhythm]  in-window(21d): 0
+
+### rot: inhibitory gain + network dynamics  [abs:"inhibitory gain"]  in-window(21d): 0
+
+### rot: path contribution attribution  [abs:"path contribution"]  in-window(21d): 3
+  - 2026-11-19 [2611.26101v1] Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+      Networks pass signals through many layers of interconnected units, so explaining what they compute means tracing how information travels from input to output and how pathways interact. Most existing approaches analyze only pairwise interactions between components such as units, layers or attention h
+  - 2026-11-10 [2611.14500v1] The expected number of holes of the planar Wiener sausage
+      ```text Let $β_1^T(r)$ be the number of holes, that is, the first Betti number, of the Wiener sausage of radius $r$ of a planar Brownian motion run up to time $T$. We prove that $\mathbb{E}[β_1^T(r)]$ is of order $T/(r^2(\log T)^2)$ as $T\to\infty$, for each fixed $r>0$, which completes the lower bo
+  - 2026-11-09 [2611.12510v1] Real-Time Path Integral Resurgence: Which Classical Path Contributes?
+      Which complex classical paths contribute to a real-time Feynman path integral? Picard-Lefschetz theory answers this question with the intersection numbers of the thimbles, which are notoriously hard to compute in infinite dimensions. We show that resurgence provides a practical alternative. We compu
+
+### rot: recurrent attribution Jacobian  [abs:Jacobian AND abs:"recurrent network" AND abs:interpretability]  in-window(21d): 0
+
+### rot: in silico lesion  [abs:"in silico" AND abs:lesion]  in-window(21d): 0
+
+### rot: single neuron necessity  [abs:"single neuron" AND abs:necessity]  in-window(21d): 0
+
+### rot: virtual ablation network model  [abs:"virtual ablation"]  in-window(21d): 0
+
+### rot: cell type deletion simulation  [abs:"cell type" AND abs:deletion AND abs:network]  in-window(21d): 0
+
+### rot: motor neuron pool model  [abs:"motor neuron" AND abs:pool AND abs:model]  in-window(21d): 0
+
+### rot: ventral nerve cord  [abs:"ventral nerve cord"]  in-window(21d): 0
+
+### rot: insect locomotion control  [abs:insect AND abs:locomotion AND abs:control]  in-window(21d): 0
+
+### rot: memory consolidation replay model  [abs:"memory consolidation" AND abs:replay AND abs:model]  in-window(21d): 2
+  - 2026-11-17 [2611.23346v1] Securing and Auditing Long-Horizon LLM Agents: State-Transfer Auditing and Controls in the Agent Harness
+      Long-horizon LLM agents across codebases, web browsers, and enterprise infrastructure rely on an execution harness to move state between the working context, session history, persistent memory, and external environment. While conventional execution traces log model prompts and tool calls, critical s
+  - 2026-11-03 [2611.04196v1] DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation
+      Frontier LLM agents can turn known vulnerabilities into working exploits, but are costly and often access-restricted due to their potential for malicious use. Open-weight models offer a more accessible alternative, but struggle to maintain progress across long exploitation chains. They also often fa
+
+### rot: cat q-bio.NC recency  [cat:q-bio.NC]  in-window(21d): 12
+  - 2026-11-19 [2611.26319v1] A Control-Theoretic Approximation to Predictive Coding Dynamics
+      Backpropagation remains the dominant method for training deep neural networks, but its reliance on non-local computations has motivated the search for biologically plausible alternatives. Two prominent frameworks, predictive coding (PC) and deep feedback control (DFC), offer distinct approaches to l
+  - 2026-11-19 [2611.26258v1] Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+      Neural tracking, the temporal alignment between a continuous stimulus and the elicited brain response, enables decoding of attention from electroencephalography (EEG), yet its application to naturalistic video remains largely unexplored and mainly relies on linear canonical correlation analysis (CCA
+  - 2026-11-19 [2611.26101v1] Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+      Networks pass signals through many layers of interconnected units, so explaining what they compute means tracing how information travels from input to output and how pathways interact. Most existing approaches analyze only pairwise interactions between components such as units, layers or attention h
+  - 2026-11-19 [2611.26018v1] Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model
+      Global Workspace Theory (GWT), a leading theory of consciousness, holds that information becomes conscious when it is broadcast to specialized processes that use it. Building a workspace into a network does not reveal what the trained network computes with it: a module that reports an answer may hav
+  - 2026-11-19 [2611.25830v1] Regime-dependent reconstruction of structural connectivity: an in silico study of spatially constrained modular neuronal networks
+      Inferring structural connectivity from neuronal activity is a major challenge in neuroscience, yet the conditions under which inferred interactions faithfully reflect anatomical connections remain unclear. Here, we investigate in silico how spatial constraints in a neuronal network and its dynamical
+  - 2026-11-19 [2611.25315v1] When Should Deployed BCI Decoders Adapt? A Resource-Priced Ladder for Frozen EEG Trunks
+      When should a deployed MI decoder spend adaptation resources-not only how to adapt under shift? We study a thin control layer outside a frozen encoder: a resource ladder (factory -> Bayesian head -> affine map, with full fine-tune as an escape hatch) governed by regime-aware gating under a utility t
+  - 2026-11-18 [2611.25189v1] Cultural invariance in music-evoked emotions
+      Worldwide, people produce and listen to music to induce, express, and regulate their own and others' emotions. To what extent culture influences the emotions evoked by music is, however, contested. The documented global variation in musical behaviours and emotion concepts suggests substantial cross-
+  - 2026-11-18 [2611.25139v1] Persistence of Multifractal Dynamics at the Mammalian Neuromuscular Junction Across Extracellular Calcium Conditions
+      The neuromuscular junction represents a relevant experimental model for revealing important biophysical mechanisms underlying synaptic transmission. In this work, we revisited the time-series analysis of electrophysiological recordings obtained from mammalian diaphragm neuromuscular junctions. We ap
+  - 2026-11-18 [2611.24848v1] Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+      Human vision and video stereo networks both reuse disparity evidence across time, yet a refresh of the input can invalidate a match formed milliseconds earlier. What tells a system whether an old match still counts? We answer this from limited human data in three steps. First, nine temporal mechanis
+  - 2026-11-18 [2611.24782v1] Learning Trajectories Leave Decodable Traces in Neural Network Weight Space and Internal Representations
+      Neural networks trained on the same task develop related weight-space structures, yet remain distinguishable after learning. Do these differences merely reflect alternative solutions, or do they preserve information about individual learning histories? We tested whether final weights reveal initiali
+  - 2026-11-18 [2611.24767v1] Inferring Neural Activity Changes under Recording Uncertainty with Transformers and Variational Inference
+      A difference in recorded firing rate across days may reflect a change in neuronal activity, missed spikes or recording a different neuron. We present a statistical approach that combines neuron tracking with Bayesian estimates of stationary mean recorded firing rates. Bounds under assumed difference
+  - 2026-11-18 [2611.23795v1] A Dual-SOM Learner Model of Instructional Efficiency within Cognitive Load Theory
+      This paper presents a novel methodological framework, integrating a dual self-organising map (SOM) neural network architecture with Cognitive Load Theory (CLT), for assessing instructional efficiency within learning environments. By representing curriculum content as a directed acyclic graph of topi
+
+### rot: cat cs.NE recency  [cat:cs.NE AND abs:brain]  in-window(21d): 4
+  - 2026-11-12 [2611.16555v1] Similarity-Guided Optimization Strategies for Approximate Network Symmetry Detection
+      Symmetry in complex networks is a structural property with broad implications for network function, dynamics, and robustness. While classical approaches rely on exact automorphisms and thus remain highly sensitive to small perturbations, recent work of Liu has introduced approximate formulations tha
+  - 2026-11-10 [2611.13681v1] A Functional Preservation Score for Auditing Connectome Operations: Compression, Alignment, Transport, and Local-Rule Writing
+      We introduce the Functional Preservation Score (FPS), a null-normalised, behaviourally grounded measure of how much of a neural network's input-output function survives a structural operation, and use it to audit the operations underlying speculative "mind-migration" pipelines on public data that ru
+  - 2026-11-03 [2611.05167v1] Learning Behaviorally Relevant Dynamics in Multimodal Neural Recordings
+      Multimodal neural data can enable a more complete understanding of brain dynamics underlying behavior. Modalities such as spiking activity, local field potentials (LFPs), and behavior capture diverse spatiotemporal aspects of brain processes, yet prior neural-behavioral models that separate sources 
+  - 2026-11-02 [2611.03597v2] Structured Visual Landscape: Generating Preferred Representations in Biological and Artificial Neural Networks
+      Understanding how neurons respond to visual stimulus is an important question in both deep learning and neuroscience. It has significant implications for enhancing the interpretability of black-box artificial neural networks and for understanding the visual representation in the human brain. We prop
+

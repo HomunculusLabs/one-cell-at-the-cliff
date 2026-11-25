@@ -1,0 +1,43 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+n=73  window 2026-11-16T08:16 -> 2026-11-21T21:09
+sizes: {'CX': 2875, 'DN_all': 1303, 'DN_left': 646, 'DN_right': 649, 'KC': 5177, 'DAN': 331}
+
+== stay_vs_settle  (pos=settle n=29, neg=stay n=32, majority 0.525)
+   CLOCK: hour AUC 0.517 | order AUC 0.599 | hour-overlap 0.525
+   CX           n=  2875  AUC 0.998  d 0.498  p1 0.0005  p2 0.014 (72 sh)  loo 0.918
+   DN_all       n=  1303  AUC 0.998  d 0.498  p1 0.0005  p2 0.014 (72 sh)  loo 0.918
+   DN_left      n=   646  AUC 0.999  d 0.499  p1 0.0005  p2 0.014 (72 sh)  loo 0.918
+   DN_right     n=   649  AUC 0.997  d 0.497  p1 0.0005  p2 0.014 (72 sh)  loo 0.902
+   KC           n=  5177  AUC 0.778  d 0.278  p1 0.0005  p2 0.014 (72 sh)
+   DAN          n=   331  AUC 0.767  d 0.267  p1 0.0005  p2 0.014 (72 sh)
+   rand_CX_0    n=  2875  AUC 0.998  d 0.498  p1 0.0005  p2 0.014 (72 sh)
+   rand_DN_all_0 n=  1303  AUC 0.998  d 0.498  p1 0.0005  p2 0.014 (72 sh)
+   rand max d: {'CX': np.float64(0.499), 'DN_all': np.float64(0.499)}
+
+== stay_vs_to_fence  (pos=to_fence n=8, neg=stay n=32, majority 0.800)
+   CLOCK: hour AUC 0.494 | order AUC 0.551 | hour-overlap 0.825
+   CX           n=  2875  AUC 0.512  d 0.012  p1 0.9405  p2 0.959 (72 sh)  loo 0.425
+   DN_all       n=  1303  AUC 0.441  d 0.059  p1 0.6127  p2 0.630 (72 sh)  loo 0.800
+   DN_left      n=   646  AUC 0.449  d 0.051  p1 0.6762  p2 0.616 (72 sh)  loo 0.800
+   DN_right     n=   649  AUC 0.445  d 0.055  p1 0.6717  p2 0.589 (72 sh)  loo 0.750
+   KC           n=  5177  AUC 0.547  d 0.047  p1 0.6942  p2 0.699 (72 sh)
+   DAN          n=   331  AUC 0.527  d 0.027  p1 0.8256  p2 0.877 (72 sh)
+   rand_CX_0    n=  2875  AUC 0.488  d 0.012  p1 0.9260  p2 0.945 (72 sh)
+   rand_DN_all_0 n=  1303  AUC 0.484  d 0.016  p1 0.8966  p2 0.918 (72 sh)
+   rand max d: {'CX': np.float64(0.066), 'DN_all': np.float64(0.062)}
+
+DN L/R asymmetry (P5, descriptive): overall sd 0.0025
+   parade    n= 2  mean +0.0124  sd 0.0007
+   settle    n=29  mean +0.0145  sd 0.0027
+   stay      n=32  mean +0.0128  sd 0.0019
+   to_boot   n= 1  mean +0.0167  sd 0.0000
+   to_fence  n= 8  mean +0.0130  sd 0.0027
+   to_pond   n= 1  mean +0.0161  sd 0.0000
+
+GATES:
+   C1_naive_stay_vs_settle_CX {"pass": true, "auc": 0.9978448275862069, "p1": 0.0004997501249375312, "label": "CONFOUNDED by construction"}
+   C2_temporal_null_stay_vs_settle_CX {"pass": true, "p2": 0.0136986301369863}
+   C3_dissociation_stay_vs_to_fence {"pass": false, "named": {"CX": {"auc": 0.51171875, "d": 0.01171875, "p1": 0.9405297351324338, "p2": 0.958904109589041, "n_shift": 72, "size": 2875, "loo": 0.425}, "DN_all": {"auc": 0.44140625, "d": 0.05859375, "p1": 0.6126936531734133, "p2": 0.6301369863013698, "n_shift": 72, "size": 1303, "loo": 0
+   C4_specificity {"stay_vs_settle_CX": {"named_d": 0.49784482758620685, "max_rand_d": 0.4989224137931034, "pass": false}, "stay_vs_settle_DN_all": {"named_d": 0.49784482758620685, "max_rand_d": 0.4989224137931034, "pass": false}, "stay_vs_to_fence_CX": {"named_d": 0.01171875, "max_rand_d": 0.06640625, "pass": false}
+BRANCH: B_CONFOUND_ONLY

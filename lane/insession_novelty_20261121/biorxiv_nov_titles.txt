@@ -1,0 +1,76 @@
+2D U-NET Deep Learning Architecture for Atherosclerotic Lesion Segmentation and Quantification
+A complete adult Drosophila melanogaster brain tracheolar network
+A dynamic role for the apical extracellular matrix in cell migration during Drosophila abdominal morphogenesis
+Age-dependent changes in adult fat content differ between the vinegar fly, Drosophila melanogaster, and its parasitoid amber wasp, Leptopilina heterotoma
+A Kernel-Spectral Index for Single-Neuron Input-Output Complexity
+Altered visual responses in Drosophila BBSome mutants support a nonciliary role in the retina
+A medial entorhinal connectome reveals compartmentalized microcircuit architecture
+A multiscale modeling - experimental framework reveals the interplay between drivers of Drosophila wing morphogenesis
+A nanoscale atlas of extracellular vesicles and particles in Drosophila olfactory sensilla
+A novel function of neuroligin 3: Beyond sociality, Regulating lifespan in Drosophila
+A novel hybrid dysgenesis system in Drosophila melanogaster suggests that transposons may contribute to speciation
+Application of metagenomic sequencing to improve sessile serrated lesion detection using the faecal immunochemical test
+Assessing the Replicability of Scientific Claims in Drosophila Immunity Through an Analysis of 400 Publications
+Association between white-matter lesion volume and heart-rate variability: A comparison of T1w, T1w+T2w and T1w+FLAIR-based segmentations using FreeSurfer SAMSEG
+Cell identity and activation state determine the innate immune response to nanoplastics
+Citrobacter rodentium infection disrupts colonic mucus barrier function via ablation of intercrypt goblet cells
+Comparative Evaluation of Assumption Lean Community Detection Methods for Human Connectome Networks
+Comparative functional genomics reveals distributed SERPINE1 like characteristics among Drosophila serpins
+Connectome structure constrains neural activity across scales
+Contingency and determinism in rapid adaptation shape evolutionary rescue and extinction in Drosophila
+Co-transcriptional splicing of the Drosophila Y-loop A transcript is organized in chromatin hubs and shows variable delay which increases with spermatocyte maturation
+Data-Driven Decomposition of Precisely Aligned Fiber-Orientation-Preserving Probabilistic Tractography Connectomes with Non-Negative Matrix Factorization
+Dissection of neuropsychiatric-relevant behavioral and structural phenotypes utilizing neuron type-specific ablation of the Bassoon gene in mice
+E3 Ubiquitin Ligase Highwire/Phr1 Mediates Endocytic Control of JNK Signaling in Drosophila Neurons
+Evolutionary dynamics of RNA viruses during persistent infection in Drosophila melanogaster
+Force regulates mitotic entry timing during Drosophila gastrulation
+Functional cell type diversity in the Drosophila lamina is established by a single transcription factor dFezf, controlling a large repertoire of ion channels and receptors
+Functional definition of the Drosophila airway progenitor field through overlapping compensatory regulators
+Gain Control of Peripheral Input by Core Brain Thermosensors Drives Drosophila Thermoregulation
+Genotype-Informed Drosophila Kinome Screening Prioritizes PRKX as a Candidate Vulnerability in Bladder Cancer
+Geometric analysis of postnatal maturational transformations in brain's functional connectome
+High-resolution 3D genome mapping of late replicative senescence reveals hypomethylation-associated loop expansion, weakened cell identity, and locus-specific L1 derepression
+Historical adaptation to transposable element invasions in Drosophila is primarily due to insertions in existing piRNA clusters
+How mutation rate evolves: Gene expression shapes genome-wide mutation rates in Drosophila melanogaster and Caenorhabditis elegans
+Human single-neuron correlates of somatosensation
+Keratinocyte IL-17RA signaling promotes neutrophil recruitment and clinical lesions in experimental epidermolysis bullosa
+Lesion-Derived Estimated Functional and Structural Connectomes Predict Post-Stroke Recovery Outcomes
+MAFA Phosphorylation Controls Beta-Cell Identity and Sex-Specific Pancreatic Disease Outcomes
+Male host suppressors mask Wolbachia-induced cytoplasmic incompatibility in the invasive pest Drosophila suzukii
+Mapping genome-wide RNA-RNA and RNA-DNA interactions in nuclear hubs of male and female Drosophila cells
+MaxCAT-Net: Hybrid Transformer-Based Skin Lesion Classification and Lightweight Segmentation with Calibration and Cross-Dataset Validation
+Methylene blue modulates G3BP1-associated condensation and attenuates Kras-driven pancreatic preneoplastic lesions
+Mitochondrial remodeling controls innate immune effector function in Drosophila hemocytes
+Mixing, competence, and commitment set the stability of cell identity
+Neural drift during rest drives walking direction and memory consolidation in Drosophila
+NeuroGraphBench: Interacting with Drosophila Connectomes at Scale for Exploring the Functional Logic of Neural Circuits
+Novel Regulators of Sugar-dependent Food Consumption in Drosophila melanogaster
+Organ context dominates cell identity across a multi-organ single-cell atlas of grapevine
+Parallel enterocyte caspase and cytokine responses couple hypoxia to reoxygenation-dependent intestinal regeneration in Drosophila
+Path knockout: an analysis tool for connectome-driven circuit discovery
+Pathology foundation-model embeddings reveal a morphological landscape of breast lesions beyond diagnostic categories
+Pharmaco-genetic evidence of presymptomatic lysosomal dysfunction coupled to detrimental DPR secretion in Drosophila Models of C9orf72-linked ALS/FTD.
+Pooled sequencing reveals patterns of underlying genomic divergence in Drosophila chronotypes
+Predicting Drosophila Body Orientation from a Translational Trajectory using an Artificial Neural Network
+Presynaptic PMCA interacts with Dlg, regulating in vivo synaptic calcium in Drosophila larval NMJ
+Probe-assisted Structural Topography Reveals In-tissue Lesion Heterogeneity in Alzheimer's Disease
+Re-evaluating donor-cell identity after hiPSC-RGC transplantation in mouse models of optic neuropathy
+Regulation of sociality and neuronal development by the translation initiation factor eIF4H1 in Drosophila
+Revisiting the role of cAMP in Drosophila aversive olfactory memory formation
+Robust lesion network mapping reveals symptom-specific circuits
+Self-generated cues and learned landmarks support spatial learning in Drosophila
+Sensory recurrence and convergent integration in the C. elegans connectome
+Spatiotemporal WNT and BMP gradients orchestrate regional enteroendocrine cell diversity along the Drosophila midgut
+Structural basis of CO2 valence coding in Drosophila
+Superior Frontal Gyrus Cortical Thickness Mediates the Association Between Openness to Experience and Theory of Mind: Evidence from the Human Connectome Project
+Switches in single-neuron excitability class can induce rich dynamical states in balanced networks
+Targeted cancer ablation via programmable sensing of amplified oncogenic RNA
+Testing hypothesized neural substrates with lesions
+The C. elegans Connectome Toolbox: an open, extensible framework for multimodal connectomic data integration and analysis
+The role of the fruitless P3 transcript in development in Drosophila melanogaster
+The Test Used to Choose Between Pesticide Survival Models Tracks Lesion Persistence, Not Hazard Structure
+Tracking single neurons across days reveals acute and persistent effects of psilocybin in the mouse brain
+TrES-seq integrates single-cell RNA and nanobody-based histone mark profiles to decode epigenetic and transcriptional axes of cell identity
+Unified CEBRA learns shared neural latents across recordings to map single-neuron contributions to population codes
+Universal barcoded connectomics for massively parallel single-neuron projection mapping in diverse vertebrate species
+When spike sorting matters: single-neuron identity in the quantification of neural circuits

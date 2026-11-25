@@ -1,0 +1,42 @@
+
+=== arXiv: mass-matched ablation (3 hits) ===
+  [2610.00661v3] 2026-09-30  Exploring More, Reasoning Better: Stepwise Risk-Sensitive GRPO for Diffusion Language Models
+  [2609.32708v1] 2026-09-26  One-Step Generative Modeling via Unbalanced Optimal Transport
+  [1904.07086v1] 2019-04-15  First experiments on Revolver shell collisions at the OMEGA Laser
+
+=== arXiv: single-cell ablation connectome (0 hits) ===
+
+=== arXiv: all-or-none connectome (0 hits) ===
+
+=== arXiv: removal mass lesion (8 hits) ===
+  [2611.26323v1] 2026-11-19  Predicting Surface Displacement Fields of Laser Powder Bed Fusion Parts Using STL-Derived Graphs and Part-Level Des
+  [2610.39801v1] 2026-10-29  The first mass peak of merging black holes from core binding energies and jet-driven explosions
+  [2608.13959v2] 2026-08-14  Repair, Not Improvement: Decomposing Constrained Decoding in Tool-Call Abstention
+  [2603.10328v1] 2026-03-11  On the dual nature of atmospheric escape
+  [2601.17117v2] 2026-01-23  Non-Equilibrium Relativistic Core Collapse of Self-Interacting Dark Matter Halos -- Limits On Seed Black Hole Mass
+  [2509.18077v2] 2025-09-22  Star-forming galaxies in the cosmic web in the last 11 Gyr
+  [2408.01718v1] 2024-08-03  Giant Eruptions in Massive Stars and their Effect on the Stellar Structure
+  [2401.16331v1] 2024-01-29  Condensation mass sink and intensification of tropical storms
+
+=== arXiv: connectome-constrained recency (8 hits) ===
+  [2611.14508v1] 2026-11-10  When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+  [2611.14498v2] 2026-11-10  Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and
+  [2611.01866v1] 2026-11-01  The (Butter)fly Dream: Linear Separability of World-Model Rollouts in a Connectome-Constrained Visual Model
+  [2610.29205v2] 2026-10-21  Reconstruction differences rival individual differences in the fly compass connectome and break trained circuit mod
+  [2610.13018v1] 2026-10-09  FlyHack: Stress-Testing Mechanistic Claims in a Connectome-Constrained Visual Model
+  [2610.11422v1] 2026-10-08  Causal-fate dynamics of unrealized influence
+  [2609.24565v2] 2026-09-21  What Survives on Real Drawings: Active Sampling, Connectome Wiring, and Matched Baselines in Architectural Document
+  [2609.10890v1] 2026-09-09  Discovering Subtypes of Neurodegenerative Progression with a Scalable Connectome-Constrained Dynamic Model
+
+=== arXiv: regime transition single neuron (0 hits) ===
+
+=== arXiv: one cell ablation behavior (4 hits) ===
+  [2608.09798v1] 2026-08-10  FlowGRN: Scalable and Dropout-Robust Gene Regulatory Network Inference via Flow Matching-Based Trajectory Reconstru
+  [2604.13986v2] 2026-04-15  PRiMeFlow: Capturing Complex Expression Heterogeneity in Perturbation Response Modelling
+  [2407.07055v2] 2024-07-09  Multicell-Fold: geometric learning in folding multicellular life
+  [2209.15514v2] 2022-09-30  Cooperation in the Latent Space: The Benefits of Adding Mixture Components in Variational Autoencoders
+
+=== arXiv: cell-type ablation fly escape (1 hits) ===
+  [2410.07644v1] 2024-10-10  Mechanics of soft-body rolling motion without external torque
+
+RETRY DONE

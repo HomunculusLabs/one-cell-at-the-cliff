@@ -1,0 +1,42 @@
+## rotH-qbioNC-recency :: cat:q-bio.NC
+  [2611.26319v1] 2026-11-19 Ryan Fayyazi | A Control-Theoretic Approximation to Predictive Coding Dynamics
+    Backpropagation remains the dominant method for training deep neural networks, but its reliance on non-local computations has motivated the search for biologically plausible alternatives. Two prominent frameworks, predic
+  [2611.26258v1] 2026-11-19 Yuanyuan Yao | Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+    Neural tracking, the temporal alignment between a continuous stimulus and the elicited brain response, enables decoding of attention from electroencephalography (EEG), yet its application to naturalistic video remains la
+  [2611.26101v1] 2026-11-19 Shenghua Liu | Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+    Networks pass signals through many layers of interconnected units, so explaining what they compute means tracing how information travels from input to output and how pathways interact. Most existing approaches analyze on
+  [2611.26018v1] 2026-11-19 Diaoxuan He | Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model
+    Global Workspace Theory (GWT), a leading theory of consciousness, holds that information becomes conscious when it is broadcast to specialized processes that use it. Building a workspace into a network does not reveal wh
+  [2611.25830v1] 2026-11-19 Laia Barjuan | Regime-dependent reconstruction of structural connectivity: an in silico study of spatially constrained modular neuronal networks
+    Inferring structural connectivity from neuronal activity is a major challenge in neuroscience, yet the conditions under which inferred interactions faithfully reflect anatomical connections remain unclear. Here, we inves
+  [2611.25315v1] 2026-11-19 Sergey Musienko | When Should Deployed BCI Decoders Adapt? A Resource-Priced Ladder for Frozen EEG Trunks
+    When should a deployed MI decoder spend adaptation resources-not only how to adapt under shift? We study a thin control layer outside a frozen encoder: a resource ladder (factory -> Bayesian head -> affine map, with full
+  [2611.25189v1] 2026-11-18 Lidya Yurdum | Cultural invariance in music-evoked emotions
+    Worldwide, people produce and listen to music to induce, express, and regulate their own and others' emotions. To what extent culture influences the emotions evoked by music is, however, contested. The documented global 
+  [2611.25139v1] 2026-11-18 Adriano J. da Silva | Persistence of Multifractal Dynamics at the Mammalian Neuromuscular Junction Across Extracellular Calcium Conditions
+    The neuromuscular junction represents a relevant experimental model for revealing important biophysical mechanisms underlying synaptic transmission. In this work, we revisited the time-series analysis of electrophysiolog
+  [2611.24848v1] 2026-11-18 Ruiqi Liu | Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+    Human vision and video stereo networks both reuse disparity evidence across time, yet a refresh of the input can invalidate a match formed milliseconds earlier. What tells a system whether an old match still counts? We a
+  [2611.24782v1] 2026-11-18 Patrick Krauss | Learning Trajectories Leave Decodable Traces in Neural Network Weight Space and Internal Representations
+    Neural networks trained on the same task develop related weight-space structures, yet remain distinguishable after learning. Do these differences merely reflect alternative solutions, or do they preserve information abou
+  [2611.24767v1] 2026-11-18 Nilson Chapagain | Inferring Neural Activity Changes under Recording Uncertainty with Transformers and Variational Inference
+    A difference in recorded firing rate across days may reflect a change in neuronal activity, missed spikes or recording a different neuron. We present a statistical approach that combines neuron tracking with Bayesian est
+  [2611.23795v1] 2026-11-18 Spyridon Revithis | A Dual-SOM Learner Model of Instructional Efficiency within Cognitive Load Theory
+    This paper presents a novel methodological framework, integrating a dual self-organising map (SOM) neural network architecture with Cognitive Load Theory (CLT), for assessing instructional efficiency within learning envi
+  [2611.23755v1] 2026-11-18 Vasha DuTell | GramStatTexNet: Efficient, Interpretable, and Neuro-Inspired Texture Analysis-by-Synthesis
+    Deep networks achieve high realism in texture synthesis but often rely on opaque, over-parameterized representations that have limited direct connection to biological vision. Neuroscience-informed pyramid models are inte
+  [2611.23549v1] 2026-11-17 Yongxian Qian | Quantitative Modeling of Action-Potential-Driven Sodium Dynamics in Neurons: From Sodium Influx to Sodium MRI
+    Neuronal action potentials are accompanied by the influx of extracellular sodium ions (Na+) into axons through voltage-gated sodium channels. Repetitive neuronal firing can lead to activity-dependent increases in intrace
+
+## rotI-lesion-netmodel :: all:lesion+AND+all:%22network+model%22
+  (quiet in window)
+
+## rotJ-interneuron-necessity :: all:interneuron+AND+all:necessity
+  (quiet in window)
+
+## rotK-inhibition-rhythm :: all:%22reciprocal+inhibition%22+AND+all:rhythm
+  (quiet in window)
+
+## rotL-spiking-connectome :: all:%22spiking+network%22+AND+all:connectome
+  (quiet in window)
+

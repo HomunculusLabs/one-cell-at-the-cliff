@@ -1,0 +1,15 @@
+[core:drosophila-connectome] parsed:30 in-window:3  q=all:Drosophila AND all:connectome
+    2026-11-15  2611.23320v1  [q-bio.NC,physics.bio-ph]  Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    2026-11-10  2611.14508v1  [cs.LG,q-bio.NC]  When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    2026-11-02  2611.03897v2  [q-bio.NC]  Fly Whiskers Meet LiDAR: Robust Navigation under Sensor Failure
+
+[core:flywire] parsed:12 in-window:1  q=all:FlyWire
+    2026-11-01  2611.01457v1  [cs.CV]  ContactCut: A Partition-Aware Contact Selection Framework for False-Merge Correction in Connectomics
+
+[core:connectome-constrained] parsed:15 in-window:3  q=all:"connectome-constrained"
+    2026-11-10  2611.14508v1  [cs.LG,q-bio.NC]  When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    2026-11-10  2611.14498v2  [cs.CV,q-bio.NC]  Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+    2026-11-01  2611.01866v1  [cs.LG,q-bio.NC]  The (Butter)fly Dream: Linear Separability of World-Model Rollouts in a Connectome-Constrained Visual Model
+
+[core:neuromechfly] ERROR HTTP Error 503: Service Unavailable
+[core:fly-brain-model] ERROR HTTP Error 429: Unknown Error

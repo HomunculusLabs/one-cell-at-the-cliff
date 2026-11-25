@@ -1,0 +1,35 @@
+{"before_sha": "64a6664c2bb5610c4c926368ed48f989446a1bbc0b1924e8d99eb806880559e5", "after_sha": "75794e79602c16e6f3e10cc0b7c84ac4efba3afae16454f4f1bdee0b1a81a552"}
+PASS delta.removed_lines_empty | []
+PASS delta.added_code_is_exactly_the_two_lines | ['IDLE_SETTLE_S = 10.0', '        steps = min(steps, int(IDLE_SETTLE_S / 0.01))']
+PASS patched_file_is_the_live_file | mood.py == live path
+PASS structure.MoodState.observe | observe
+PASS structure.MoodState.axes | axes
+PASS structure.MoodState.mood_tag | mood_tag
+PASS structure.IDLE_SETTLE_S | 10.0
+PASS structure.before_has_no_cap | absent
+sensory channels: {'odor': 2281, 'taste': 410, 'looming': 762, 'touch': 2667, 'visual_shiny': 8346, 'sound': 2667}
+probes: {'DAN': 331, 'KC': 5177, 'LC': 762, 'CX': 2875}
+PASS steps.observe(1.0) | {'ran': 100, 'want': 100}
+PASS steps.observe(5.0) | {'ran': 500, 'want': 500}
+PASS steps.observe(9.99) | {'ran': 999, 'want': 999}
+PASS steps.observe(10.0) | {'ran': 1000, 'want': 1000}
+PASS steps.observe(10.01) | {'ran': 1000, 'want': 1000}
+PASS steps.observe(45.0) | {'ran': 1000, 'want': 1000}
+PASS steps.observe(600.0) | {'ran': 1000, 'want': 1000}
+PASS axes.identical idle 600.0s dark 1.0 | {'after': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.562}, 'before': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.562}, 'steps_after': 1000, 'steps_before': 60000}
+PASS steps idle 600.0s dark 1.0 | {'after': 1000, 'before': 60000}
+PASS axes.identical idle 600.0s dark 0.0 | {'after': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.287}, 'before': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.287}, 'steps_after': 1000, 'steps_before': 60000}
+PASS steps idle 600.0s dark 0.0 | {'after': 1000, 'before': 60000}
+PASS axes.identical idle 45.0s dark 1.0 | {'after': {'fear': 0.258, 'food_joy': 0.303, 'trust': 0.6, 'salience': 0.045, 'hunger': 0.431, 'sleep': 0.311}, 'before': {'fear': 0.258, 'food_joy': 0.303, 'trust': 0.6, 'salience': 0.045, 'hunger': 0.431, 'sleep': 0.311}, 'steps_after': 1000, 'steps_before': 4500}
+PASS steps idle 45.0s dark 1.0 | {'after': 1000, 'before': 4500}
+PASS calibration: same module twice reproduces to <= 1e-6 (greet) | {'same_code_max_dx': 5.960464477539063e-08}
+PASS event window identical greet 2.0s | {'after': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.64, 'salience': 0.788, 'hunger': 0.401, 'sleep': 0.291}, 'before': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.64, 'salience': 0.788, 'hunger': 0.401, 'sleep': 0.291}, 'steps': [200, 200], 'max_dx': 5.960464477539063e-08, 'same_code_floor': 5.960464477539063e-08, 'peak_max_dx': 1.4901161193847656e-08}
+PASS calibration: same module twice reproduces to <= 1e-6 (swat) | {'same_code_max_dx': 5.960464477539063e-08}
+PASS event window identical swat 2.0s | {'after': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.4, 'salience': 1.0, 'hunger': 0.401, 'sleep': 0.288}, 'before': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.4, 'salience': 1.0, 'hunger': 0.401, 'sleep': 0.288}, 'steps': [200, 200], 'max_dx': 5.960464477539063e-08, 'same_code_floor': 5.960464477539063e-08, 'peak_max_dx': 7.450580596923828e-09}
+PASS calibration: same module twice reproduces to <= 1e-6 (water) | {'same_code_max_dx': 5.960464477539063e-08}
+PASS event window identical water 5.0s | {'after': {'fear': 0.626, 'food_joy': 0.473, 'trust': 0.63, 'salience': 0.646, 'hunger': 0.404, 'sleep': 0.281}, 'before': {'fear': 0.626, 'food_joy': 0.473, 'trust': 0.63, 'salience': 0.646, 'hunger': 0.404, 'sleep': 0.281}, 'steps': [500, 500], 'max_dx': 5.960464477539063e-08, 'same_code_floor': 5.960464477539063e-08, 'peak_max_dx': 0.0}
+PASS capped window + peas: axes identical | {'after': {'fear': 0.258, 'food_joy': 0.83, 'trust': 0.67, 'salience': 0.449, 'hunger': 0.0, 'sleep': 0.224}, 'before': {'fear': 0.258, 'food_joy': 0.83, 'trust': 0.67, 'salience': 0.449, 'hunger': 0.0, 'sleep': 0.224}, 'steps': [1000, 4500]}
+PASS boot observe(30): axes identical | {'after': {'fear': 0.359, 'food_joy': 0.358, 'trust': 0.6, 'salience': 0.122, 'hunger': 0.421, 'sleep': 0.292}, 'before': {'fear': 0.359, 'food_joy': 0.358, 'trust': 0.6, 'salience': 0.122, 'hunger': 0.421, 'sleep': 0.292}, 'steps': [1000, 3000]}
+PASS live path observe(600) runs exactly 1,000 steps | 1000
+GATE PASS 30/30
+exit=0

@@ -1,0 +1,43 @@
+## core :: all:Drosophila+AND+all:connectome
+  [2611.23320v1] 2026-11-15 Eran Kopel | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    Theories that tie experience to a system that re-reads its own state rarely say what a physical substrate must supply for such a loop to run. We state necessary conditions as measurable bounds in one currency: the number
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+
+## core :: all:FlyWire
+  (quiet in window)
+
+## core :: %22connectome-constrained%22
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+  [2611.14498v2] 2026-11-10 Alexandre Garcia-Duran | Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+    Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with 
+
+## core :: all:NeuroMechFly
+  (quiet in window)
+
+## core :: all:flyGNN
+  (quiet in window)
+
+## rotA-L111-transmitter-DN :: all:%22descending+neurons%22+AND+all:locomotion
+  (quiet in window)
+
+## rotB-L111-glutamate :: all:glutamate+AND+all:Drosophila
+  (quiet in window)
+
+## rotC-connectome-sim :: all:connectome+AND+all:%22nerve+cord%22
+  (quiet in window)
+
+## rotD-single-cell-causal :: all:%22single+neuron%22+AND+all:causal+AND+all:connectome
+  (quiet in window)
+
+## rotE-mushroom-body :: all:%22mushroom+body%22+AND+all:Drosophila
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+
+## rotF-virtual-fly :: all:%22digital+twin%22+AND+all:brain
+  (quiet in window)
+
+## rotG-premotor :: all:premotor+AND+all:%22motor+neurons%22
+  (quiet in window)
+

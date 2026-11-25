@@ -1,0 +1,33 @@
+== (b) census: every line that writes plas_d (bridge.py, serve.py), with its enclosing function
+   bridge.py L197 in __init__(): self.plas_d = None                         # DAN-synapse deltas (set by host)
+   bridge.py L237 in open_session(): s.plas_d = torch.zeros(len(self.dan_src), device=self.brain.device)
+   bridge.py L245 in _hebbian(): session.plas_d += PLAS_ETA * X[self.dan_src] * X[self.dan_dst]
+   bridge.py L246 in _hebbian(): session.plas_d = session.plas_d.clamp(-PLAS_CAP, PLAS_CAP)
+   bridge.py L248 in _hebbian(): session.plas_d *= 0.75
+   bridge.py L307 in consolidate_night(): s.plas_d += NIGHT_ETA * X[self.dan_src] * X[self.dan_dst]
+   bridge.py L308 in consolidate_night(): s.plas_d = s.plas_d.clamp(-NIGHT_CAP, NIGHT_CAP)
+   bridge.py L311 in consolidate_night(): s.plas_d *= NIGHT_DOWNSCALE                # dFB arm: one pass
+   serve.py L163 in load_session(): s.plas_d = blob["plas_d"].to(BRIDGE.brain.device)
+   calls of _log_event: [{'line': 390, 'in': '_dabble'}, {'line': 567, 'in': '_reply_inside'}]
+   calls of consolidate_night: [{'line': 407, 'in': 'world_tick'}]
+   calls of _hebbian: [{'line': 566, 'in': '_reply_inside'}]
+   calls of _dabble: [{'line': 424, 'in': 'world_tick'}, {'line': 436, 'in': 'world_tick'}]
+
+== (a) two reads, 67 min apart
+   read1 {'mass': 2114.4055, 'max': 0.4972, 'min': 0.0003, 'mean': 0.0183, 'n': 115728, 'n_nonzero': 115728, 'n_ge_daycap': 2, 'n_ge_090_nightcap': 0, 'n_at_nightcap': 0}
+   read2 {'mass': 2114.4055, 'max': 0.4972, 'min': 0.0003, 'mean': 0.0183, 'n': 115728, 'n_nonzero': 115728, 'n_ge_daycap': 2, 'n_ge_090_nightcap': 0, 'n_at_nightcap': 0}
+   plas tensors equal: True | edges changed 0 | max|dplas| 0.0 | max|dX| 0.29519
+   two-read verdict: FLAT (dmass +0.0000)
+
+loading brain ... 0.3 s
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+sensory channels: {'odor': 2281, 'taste': 410, 'looming': 762, 'touch': 2667, 'visual_shiny': 8346, 'sound': 2667}
+probes: {'DAN': 331, 'KC': 5177, 'LC': 762, 'CX': 2875}
+   brain 139255 cells, gain 0.949955, darkness 0.3424  (2.2 s)
+   plasticity substrate: 115728 edges into 331 DAN cells | cap-bound mass 0.75 x n = 86796
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain/lane/l293/measure_l293.py", line 215, in <module>
+    st.update({"captured_at": m["captured_at"], "sha": bb["sha256"], "snap": m["file"],
+                              ~^^^^^^^^^^^^^^^
+KeyError: 'captured_at'

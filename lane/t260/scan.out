@@ -1,0 +1,163 @@
+# angles: 17
+#   rot-linz=all:linearization+AND+all:%22recurrent+neural+network%22+AND+all:dynamics
+#   rot-jacob=all:Jacobian+AND+all:%22neural+dynamics%22
+#   rot-effcon=all:%22effective+connectivity%22+AND+all:connectome
+#   rot-gain=all:%22gain+modulation%22+AND+all:%22network+dynamics%22
+#   rot-linresp=all:%22linear+response%22+AND+all:%22spiking+network%22
+#   rot-eibal=all:%22excitation-inhibition+balance%22+AND+all:connectome
+#   rot-balnet=all:%22balanced+network%22+AND+all:Drosophila
+#   rot-disinh=all:disinhibition+AND+all:circuit+AND+all:model
+#   rot-perron=all:%22Perron%22+AND+all:%22brain+network%22
+#   rot-walklen=all:%22walk+length%22+AND+all:%22brain+network%22
+#   rot-spectr=all:spectral+AND+all:connectome+AND+all:propagation
+#   rot-power=all:%22statistical+power%22+AND+all:connectomics
+#   rot-oos=all:%22out-of-sample%22+AND+all:%22neural+model%22+AND+all:validation
+#   rot-dn=all:%22descending+neuron%22+AND+all:Drosophila
+#   rot-silence=all:silencing+AND+all:connectome+AND+all:simulation
+#   rot-vnc=all:%22ventral+nerve+cord%22+AND+all:model
+#   rot-listNE=cat:cs.NE
+
+## CONTROL-known-hit :: cat:q-bio.NC
+  [2611.28601v1] 2026-11-21 Purvikalyani Prasannah | From local competition to bump attractors:how excitation width sets capacity, interference and updating in recurrent models of visual working memory
+    On-centre off-surround (OCOS) networks and bump attractors, the two main recurrent models of visual working memory, differ chiefly in how far recurrent excitation spreads. We place them in one family parameterised by exc
+  [2611.28507v1] 2026-11-21 Weiheng Yao | A generative framework for unified representations bridging electrophysiological and haemodynamic brain activity
+    Electrophysiological and haemodynamic recordings resolve brain activity at complementary temporal and spatial scales, yet paired acquisition remains difficult to scale. We propose a generative framework that aligns paire
+  [2611.28409v1] 2026-11-20 Jeffrey L. Krichmar | Simulating Episodic Like Memory in Octopus: Breaking the Rules
+    Episodic memory, which involves the recollection of past events, has been observed in several species including the invertebrate cuttlefish. In a subsequent experiment, episodic memory was not observed in the closely rel
+  [2611.28405v1] 2026-11-20 Marc-Andre Schulz | When Can an AI Agent Serve as a Model of Human Psychopathology?
+    Language models and AI agents are increasingly described in psychiatric terms, such as anxious, depressed, addicted or helpless. A recent study even proposed language models as experimental systems for psychiatry and as 
+  [2611.27888v1] 2026-11-20 Darya V. Verveyko | Spatial model of neurogliovascular unit: arachidonic acid can control the stability
+    Arachidonic acid metabolites can have both vasoconstrictor and vasodilator effects, thereby influencing neuronal activity. In this work, to analyze possible patterns of activity of nervous tissue in response to changes i
+  [2611.27847v1] 2026-11-20 Stanislav V. Lagosha | Self-organized fractional silencing of pyramidal neurons under global depolarization in a spatial neuron-glial microcircuit model
+    Pathological transitions in nervous tissue, including epileptiform discharges and cortical spreading depolarization, depend on the interplay between cellular and interstitial mechanisms. We develop a biophysically detail
+  [2611.27795v1] 2026-11-20 Sundeep Kapila | The Four-Step Action Loop with Feedback: A teachable perception-action framework for everyday self-regulation
+    Everyday stress is largely a learned pattern: a familiar cue, a fast reading of threat, an automatic reaction and a body that stays activated. Body-based practices such as mindfulness, interoceptive training, Somatic Exp
+  [2611.27762v1] 2026-11-20 Yanzhe Zhao | From Novel Combinations to Informative Absence: Structural permission, communicative opportunity, and form choice in language learning
+    Language learners must infer which novel expressions are grammatically licensed and when continued absence is evidence against them. Our generative theory unites these capacities via counterfactual expression opportuniti
+  [2611.27242v1] 2026-11-20 Eiji Watanabe | Classical visual illusions in vision-language models under an instruction ladder
+    Vision-language models (VLMs) often name the "illusory" answer when shown a classical visual illusion, but it is unclear whether that answer comes from the picture or from knowledge about famous figures. We drew 300 new 
+  [2611.26949v1] 2026-11-20 Hiroshi Higashi | Serial Dependence Emerges from Optimizing Vision for Noise Robustness
+    Human visual perception is dynamically shaped by the recent past, a phenomenon known as serial dependence. Mechanistic models show that a residual memory trace can generate this dependency, yet its functional purpose (wh
+  [2611.26913v1] 2026-11-19 Prapti Roy | Surface Cues Over Structure: Probing LLM Behavior on Brain Connectivity Graphs
+    Resting-state functional magnetic resonance imaging (rs-fMRI) provides a noninvasive view of functional interactions across the brain, which can be represented as connectivity graphs for neurological disease analysis. La
+  [2611.26856v1] 2026-11-19 Mirko Morello | Self-Supervised Learning with Recursive Quadrature Filters for Neural Time Series
+    We develop self-supervised methods for training Recursive Quadrature Filter (RQF) encoders on unlabeled time series. RQFs are biologically motivated, complex-valued temporal filters that form a special class of diagonal 
+  [2611.26319v1] 2026-11-19 Ryan Fayyazi | A Control-Theoretic Approximation to Predictive Coding Dynamics
+    Backpropagation remains the dominant method for training deep neural networks, but its reliance on non-local computations has motivated the search for biologically plausible alternatives. Two prominent frameworks, predic
+  [2611.26258v1] 2026-11-19 Yuanyuan Yao | Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+    Neural tracking, the temporal alignment between a continuous stimulus and the elicited brain response, enables decoding of attention from electroencephalography (EEG), yet its application to naturalistic video remains la
+  parsed:14 in-window:14 (cutoff 2026-11-10)
+
+## core :: all:Drosophila+AND+all:connectome
+  [2611.23320v1] 2026-11-15 Eran Kopel | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    Theories that tie experience to a system that re-reads its own state rarely say what a physical substrate must supply for such a loop to run. We state necessary conditions as measurable bounds in one currency: the number
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+  parsed:14 in-window:2 (cutoff 2026-11-10)
+
+## core :: all:FlyWire
+  parsed:12 in-window:0 (cutoff 2026-11-10)
+
+## core :: %22connectome-constrained%22
+  [2611.14508v1] 2026-11-10 Yeyuan Liu | When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+    Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the mod
+  [2611.14498v2] 2026-11-10 Alexandre Garcia-Duran | Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion
+    Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with 
+  parsed:14 in-window:2 (cutoff 2026-11-10)
+
+## core :: all:NeuroMechFly
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## core :: all:flyGNN
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-linz :: all:linearization+AND+all:%22recurrent+neural+network%22+AND+all:dynamics
+  [2611.21806v1] 2026-11-16 Xiangyang Ye | A Probabilistic Lateral Motion Prediction Model with Improved Response Fidelity for Vehicle-in-the-Loop Simulation
+    Vehicle-in-the-loop (VIL) simulation requires a lateral dynamics model that accurately reproduces vehicle responses and reliably generates horizontal lateral-position and heading commands through recursive integration. T
+  [2611.17711v1] 2026-11-13 Zihan Xu | Learning and Generating Time Trajectories of Multidimensional Stochastic Processes
+    We present a multidimensional statistics-informed neural network (SINN) framework for learning and generating trajectories of multicomponent stochastic processes. SINN is built upon a deterministic recurrent neural netwo
+  parsed:14 in-window:2 (cutoff 2026-11-10)
+
+## rot-jacob :: all:Jacobian+AND+all:%22neural+dynamics%22
+  [2611.21465v1] 2026-11-16 Maxime Rochkoulets | Warm Starting Neural Dynamics Models From Few Jacobian Samples
+    Model-based reinforcement learning (MBRL) leverages a model of the environment, used for planning and generating samples without interacting with the real world. Motivated by evidence that informed initialization signifi
+  parsed:5 in-window:1 (cutoff 2026-11-10)
+
+## rot-effcon :: all:%22effective+connectivity%22+AND+all:connectome
+  [2611.26911v1] 2026-11-19 Alessandro Crimi | InfantConnect: integrating developmental brain atlases and electrophysiological network analysis
+    The brains of infants change considerably during the first two years. Hence, developmental neuroimaging requires computational tools that account for age-related anatomy while supporting the analysis of electrophysiologi
+  parsed:13 in-window:1 (cutoff 2026-11-10)
+
+## rot-gain :: all:%22gain+modulation%22+AND+all:%22network+dynamics%22
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-linresp :: all:%22linear+response%22+AND+all:%22spiking+network%22
+  parsed:2 in-window:0 (cutoff 2026-11-10)
+
+## rot-eibal :: all:%22excitation-inhibition+balance%22+AND+all:connectome
+  parsed:1 in-window:0 (cutoff 2026-11-10)
+
+## rot-balnet :: all:%22balanced+network%22+AND+all:Drosophila
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-disinh :: all:disinhibition+AND+all:circuit+AND+all:model
+  parsed:2 in-window:0 (cutoff 2026-11-10)
+
+## rot-perron :: all:%22Perron%22+AND+all:%22brain+network%22
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-walklen :: all:%22walk+length%22+AND+all:%22brain+network%22
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-spectr :: all:spectral+AND+all:connectome+AND+all:propagation
+  parsed:2 in-window:0 (cutoff 2026-11-10)
+
+## rot-power :: all:%22statistical+power%22+AND+all:connectomics
+  parsed:12 in-window:0 (cutoff 2026-11-10)
+
+## rot-oos :: all:%22out-of-sample%22+AND+all:%22neural+model%22+AND+all:validation
+  [2611.27616v1] 2026-11-20 Gabriele Ranco | Do Econophysics-Inspired Inputs Improve Neural Covariance Forecasting? A Leakage-Free Walk-Forward Study of Intraday DJIA Data
+    Tools from econophysics, including Random Matrix Theory (RMT), Tsallis q-Gaussian tails, Hawkes self-excitation and diffusion-inspired regularization, are often proposed as ingredients for financial risk models, but thei
+  parsed:2 in-window:1 (cutoff 2026-11-10)
+
+## rot-dn :: all:%22descending+neuron%22+AND+all:Drosophila
+  parsed:2 in-window:0 (cutoff 2026-11-10)
+
+## rot-silence :: all:silencing+AND+all:connectome+AND+all:simulation
+  parsed:0 in-window:0 (cutoff 2026-11-10)
+
+## rot-vnc :: all:%22ventral+nerve+cord%22+AND+all:model
+  parsed:2 in-window:0 (cutoff 2026-11-10)
+
+## rot-listNE :: cat:cs.NE
+  [2611.28510v1] 2026-11-21 Dominic Wilson | On Monotonic Hamming Sphere Landscapes
+    Monotonic Hamming Sphere Landscapes (MHSL) are introduced: binary landscapes whose fitness is nonincreasing with Hamming distance from a unique global optimum, while points on the same Hamming sphere may be ordered arbit
+  [2611.28354v1] 2026-11-20 Mehrdad Khodapanahandeh | Understanding Membership Inference Attacks on EEG Models
+    Electroencephalography (EEG) signals contain sensitive, subject-specific information, making models trained on them potential targets for membership inference attacks (MIAs). Although MIAs have been studied extensively i
+  [2611.28192v1] 2026-11-20 Ajith Nayanananda | Rollout Scheduling for Chaotic Neural ODEs: Coverage Gains, Computational Cost, and Predictive Accuracy
+    Training Neural Ordinary Differential Equations (Neural ODEs) on chaotic systems is difficult because small changes in model parameters can lead to rapidly growing differences in predictions. A rollout is a trajectory pr
+  [2611.27322v1] 2026-11-20 Hyunseok Oh | Spiking Neural Networks Incrementally Track Firing-Rate Networks
+    Understanding how spiking neural networks (SNNs) efficiently process data streams is key to (i) studying how biological brains conserve energy for lifelong predictions and (ii) enabling efficient continuous AI inference.
+  [2611.27109v1] 2026-11-20 Haozhe Wang | Recurrent Amplification and Exact Nonexpansiveness Criteria for Query-Driven Erasure
+    The Query-derived Erase Direction (QED) augments a rank-one linear attention update with a key-orthogonal query component. Under scalar decay, this correction leaves the eigenvalues of each homogeneous state transition u
+  [2611.27073v1] 2026-11-20 Leilah Taouk | Seabird-Aware Multi-Objective Offshore Wind Capacity Allocation: A Gippsland Case Study
+    Offshore wind planning requires balancing capital cost, wind-resource potential, and seabird exposure. We formulate a spatial tri-objective mixed-integer linear program for offshore wind capacity allocation, minimizing c
+  [2611.26938v1] 2026-11-20 Jun Zhang | MG-EDA: Maturity-Gated Skew-Normal Estimation of Distribution Algorithms
+    Gaussian estimation of distribution algorithms shrink their variance on slopes and stall far from the optimum. This paper equips the corrections that act along the direction of movement -- a mean shift, an elongation of 
+  [2611.26504v1] 2026-11-19 Élodie Côté-Gauthier | Grid Cells as Spectral Successor Features: A Reusable Basis for Continual Reinforcement Learning
+    Continual reinforcement learning requires agents to adapt when the task changes while reusing what they know about the environment. Successor features separate dynamics from task-specific reward, but their effectiveness 
+  [2611.26412v1] 2026-11-19 Julian Ruddick | How to Effectively Manage the Energy in Residential Systems: Development and Comparison of Methods
+    The transition from fossil fuels presents significant challenges in energy management. To ensure a sustainable energy future, it is crucial to reduce energy consumption when possible and to synchronize electricity consum
+  [2611.26011v1] 2026-11-19 Claude Carlet | A Matter of Representation: Evolving Partial Spreads for Bent Functions
+    Partial spread ($\mathcal{PS}$) bent functions are Boolean functions of maximum nonlinearity built from families of subspaces that pairwise intersect only in the null vector. We design an Evolution Strategy (ES) to const
+  [2611.26671v1] 2026-11-19 Antoine Lejay | On the loss landscape of the linear neural network: beyond critical points
+    While the critical points of the loss landscape in linear neural networks have been extensively studied since the seminal work of Baldi \& Hornik in the late 1980s, a description of this landscape at an intermediate or g
+  [2611.25896v1] 2026-11-19 Edgar A. Duéñez-Guzmán | The Price of an Explanation: What Demanding Verifiable Artifacts Costs, and What It Buys Back
+    Generative models produce many candidate solutions but provide no intrinsic signal by which to rank them. One mitigation is to demand a \emph{verifiable artifact}: a program that can be executed against the available evi
+  [2611.25880v1] 2026-11-19 Eduardo Dueñez | Evolving Decoding Algorithms for Quantum Error Correction
+    Quantum computation entails robustness engineering: a noisy quantum state is measured continuously, and a classical algorithm (the decoder) must infer corrections that reliably remove the noise, fast enough to keep up. W
+  [2611.25855v1] 2026-11-19 Yifan Lu | HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents
+    Personalized LLM agents must act on a user's current preferences, which change across interactions and are rarely stated in full. Existing memory systems store and retrieve content from the interaction history and leave 
+  parsed:14 in-window:14 (cutoff 2026-11-10)
+
+=== SUMMARY: 23 angles, 0 still ERRORED, 8 with in-window hits ===

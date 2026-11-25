@@ -1,0 +1,10 @@
+## rotM-causal-protocol :: all:%22causal%22+AND+all:%22mechanistic%22+AND+all:verification
+  (quiet in window)
+
+## rotN-prereg-insilico :: all:preregistered+AND+all:simulation
+  [2611.25170v1] 2026-11-18 Sion Israel Sion | Before the Choice: An Evidential Framework for Studying Prospective Representations in Language Models
+    An observable decision reveals the selected action but does not determine which alternatives were internally represented. Drawing on prospection research and hippocampal forward-sweep observations, we develop Before the 
+
+## rotO-amplitude-balance :: all:%22phase+locking+value%22+AND+all:locomotion
+  (quiet in window)
+

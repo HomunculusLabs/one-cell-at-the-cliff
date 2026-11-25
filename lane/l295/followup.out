@@ -1,0 +1,21 @@
+system TZ: ('EST', 'EDT') | now local: 11:59  | TZ env: None
+service pid 2706698: TZ-ish env=[] | /etc/localtime -> /usr/share/zoneinfo/America/New_York
+
+VISITOR records=465 sessions_with_recs=326
+by local day: [('11-09', 198), ('11-10', 80), ('11-16', 148), ('11-25', 39)]
+last visitor record: 2026-11-25 03:37:24 water gate1795595826-fresh-7.json
+last 6: [('11-25 03:37', 'peas'), ('11-25 03:37', 'peas'), ('11-25 03:37', 'peas'), ('11-25 03:37', 'water'), ('11-25 03:37', 'water'), ('11-25 03:37', 'water')]
+last KIND non-water visitor record: 2026-11-25 03:37:23 peas
+kind-non-water per session: n_sessions 255 | top [('gate1794264678-fresh-0.json', 3), ('gate1794264678-fresh-2.json', 3), ('gate1794264678-fresh-6.json', 3), ('gate1794268976-fresh-0.json', 3), ('gate1794268976-fresh-2.json', 3)]
+
+MIDNIGHT SLIVER (pass local minute = max minutes of pass-date input the date rule can have):
+  night 0 pass 2026-11-16 18:47:34  sliver<= 48 min  reconstructed R_DATE kept=95  R_WM kept=95  tail_unarchived=45.8m
+  night 1 pass 2026-11-17 00:01:22  sliver<=  2 min  reconstructed R_DATE kept=0  R_WM kept=36  tail_unarchived=66.9m
+  night 2 pass 2026-11-18 00:08:00  sliver<=  9 min  reconstructed R_DATE kept=0  R_WM kept=195  tail_unarchived=77.0m
+  night 3 pass 2026-11-19 00:02:52  sliver<=  3 min  reconstructed R_DATE kept=0  R_WM kept=198  tail_unarchived=55.1m
+  night 4 pass 2026-11-20 00:05:07  sliver<=  6 min  reconstructed R_DATE kept=0  R_WM kept=186  tail_unarchived=128.4m
+  night 5 pass 2026-11-21 00:06:14  sliver<=  7 min  reconstructed R_DATE kept=0  R_WM kept=200  tail_unarchived=22.0m
+  night 6 pass 2026-11-22 00:05:54  sliver<=  6 min  reconstructed R_DATE kept=0  R_WM kept=179  tail_unarchived=176.8m
+  night 7 pass 2026-11-23 00:03:38  sliver<=  4 min  reconstructed R_DATE kept=0  R_WM kept=191  tail_unarchived=67.5m
+  night 8 pass 2026-11-24 00:07:02  sliver<=  8 min  reconstructed R_DATE kept=0  R_WM kept=199  tail_unarchived=28.8m
+  night 9 pass 2026-11-25 00:04:52  sliver<=  5 min  reconstructed R_DATE kept=0  R_WM kept=188  tail_unarchived=109.7m

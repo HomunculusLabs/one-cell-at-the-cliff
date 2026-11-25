@@ -1,0 +1,8 @@
+[rot:multiple-comparisons] parsed:4 in-window:0  q=all:"multiple comparisons" AND all:connectome
+
+[rot:fdr-neuroscience] parsed:4 in-window:0  q=all:"false discovery rate" AND all:"brain network"
+
+[rot:permutation-test-brain] parsed:4 in-window:0  q=all:"permutation test" AND all:connectome
+
+[core:neuromechfly] parsed:0 in-window:0  q=all:NeuroMechFly
+

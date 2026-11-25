@@ -1,0 +1,62 @@
+== (b) census: every line that writes plas_d (bridge.py, serve.py), with its enclosing function
+   bridge.py L197 in __init__(): self.plas_d = None                         # DAN-synapse deltas (set by host)
+   bridge.py L237 in open_session(): s.plas_d = torch.zeros(len(self.dan_src), device=self.brain.device)
+   bridge.py L245 in _hebbian(): session.plas_d += PLAS_ETA * X[self.dan_src] * X[self.dan_dst]
+   bridge.py L246 in _hebbian(): session.plas_d = session.plas_d.clamp(-PLAS_CAP, PLAS_CAP)
+   bridge.py L248 in _hebbian(): session.plas_d *= 0.75
+   bridge.py L307 in consolidate_night(): s.plas_d += NIGHT_ETA * X[self.dan_src] * X[self.dan_dst]
+   bridge.py L308 in consolidate_night(): s.plas_d = s.plas_d.clamp(-NIGHT_CAP, NIGHT_CAP)
+   bridge.py L311 in consolidate_night(): s.plas_d *= NIGHT_DOWNSCALE                # dFB arm: one pass
+   serve.py L163 in load_session(): s.plas_d = blob["plas_d"].to(BRIDGE.brain.device)
+   calls of _log_event: [{'line': 390, 'in': '_dabble'}, {'line': 567, 'in': '_reply_inside'}]
+   calls of consolidate_night: [{'line': 407, 'in': 'world_tick'}]
+   calls of _hebbian: [{'line': 566, 'in': '_reply_inside'}]
+   calls of _dabble: [{'line': 424, 'in': 'world_tick'}, {'line': 436, 'in': 'world_tick'}]
+
+== (a) two reads, 67 min apart
+   read1 {'mass': 2114.4055, 'max': 0.4972, 'min': 0.0003, 'mean': 0.0183, 'n': 115728, 'n_nonzero': 115728, 'n_ge_daycap': 2, 'n_ge_090_nightcap': 0, 'n_at_nightcap': 0}
+   read2 {'mass': 2114.4055, 'max': 0.4972, 'min': 0.0003, 'mean': 0.0183, 'n': 115728, 'n_nonzero': 115728, 'n_ge_daycap': 2, 'n_ge_090_nightcap': 0, 'n_at_nightcap': 0}
+   plas tensors equal: True | edges changed 0 | max|dplas| 0.0 | max|dX| 0.29519
+   two-read verdict: FLAT (dmass +0.0000)
+
+loading brain ... 0.2 s
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+sensory channels: {'odor': 2281, 'taste': 410, 'looming': 762, 'touch': 2667, 'visual_shiny': 8346, 'sound': 2667}
+probes: {'DAN': 331, 'KC': 5177, 'LC': 762, 'CX': 2875}
+   brain 139255 cells, gain 0.951454, darkness 0.3424  (1.0 s)
+   plasticity substrate: 115728 edges into 331 DAN cells | cap-bound mass 0.75 x n = 86796
+
+== (a) archive: 124 brain snapshots read, 0 missing/without delta
+   cross-check needs.synapse == round(clamp(mean*None,0,1),None): SKIPPED (synapse_trust line not parsed) of 124
+   span 2026-11-16T08:16 -> 2026-11-25T06:36 | 124 distinct states
+   mass first 878.16 (edge max 0.3091, DAN 0.2525) -> last 2114.41 (edge max 0.4972, DAN 0.4805)
+   Theil-Sen +97.234 mass/day over 7250 pairs (>=6 h): 6833 up / 0 down, sign p = 0 -> GROWING
+   relative change over the last 7 days: +47.1%
+   per date (local): date n mass_first mass_median mass_last edge_max pinned DAN_rest joy>0.6/n moods
+     2026-11-16 n14    878.16   878.16  1276.29  0.4009     0  0.2525   0/14 {'happy:low': 10, 'sleepy:low': 4}
+     2026-11-17 n15   1354.49  1354.49  1354.49  0.4125     0  0.3402   0/15 {'sleepy:low': 5, 'hungry:low': 1, 'happy:low': 9}
+     2026-11-18 n13   1437.21  1437.21  1437.21  0.4239     0  0.3558   1/13 {'hungry:low': 2, 'sleepy:low': 2, 'happy:low': 8, 'happy:high': 1}
+     2026-11-19 n13   1522.77  1522.77  1522.77  0.4350     0  0.3835   0/13 {'hungry:low': 4, 'sleepy:low': 1, 'happy:low': 8}
+     2026-11-20 n11   1612.72  1612.72  1612.72  0.4459     0  0.3951   1/11 {'sleepy:low': 1, 'happy:low': 8, 'hungry:low': 1, 'happy:high': 1}
+     2026-11-21 n7    1707.14  1707.14  1707.14  0.4566     0  0.4247   1/7  {'hungry:low': 3, 'happy:high': 1, 'happy:low': 3}
+     2026-11-22 n15   1804.36  1804.36  1804.36  0.4671     0  0.4317   1/15 {'happy:high': 1, 'sleepy:low': 4, 'happy:low': 10}
+     2026-11-23 n16   1904.88  1904.88  1904.88  0.4773     0  0.4546   1/16 {'hungry:low': 2, 'sleepy:low': 4, 'happy:high': 1, 'happy:low': 9}
+     2026-11-24 n15   2008.14  2008.14  2008.14  0.4874     0  0.4622   3/15 {'sleepy:low': 2, 'happy:low': 9, 'hungry:low': 1, 'happy:high': 3}
+     2026-11-25 n5    2114.41  2114.41  2114.41  0.4972     0  0.4953   0/5  {'hungry:low': 2, 'happy:low': 3}
+   last-to-last day steps: ['+78.21', '+82.72', '+85.55', '+89.96', '+94.42', '+97.22', '+100.52', '+103.25', '+106.27']
+   night_stamp -> 2026-11-16 at 2026-11-16T19:08: dmass +398.13 across a 1.1 h gap | day_log before 95, eligible 95 -> replays 5
+   night_stamp -> 2026-11-17 at 2026-11-17T00:09: dmass +78.21 across a 1.2 h gap | day_log before 36, eligible 0 -> replays 1
+   night_stamp -> 2026-11-18 at 2026-11-18T00:45: dmass +82.72 across a 1.9 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-19 at 2026-11-19T00:36: dmass +85.55 across a 1.5 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-20 at 2026-11-20T00:12: dmass +89.96 across a 2.3 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-21 at 2026-11-21T00:58: dmass +94.42 across a 1.2 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-22 at 2026-11-22T00:40: dmass +97.22 across a 3.5 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-23 at 2026-11-23T00:08: dmass +100.52 across a 1.2 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-24 at 2026-11-24T01:00: dmass +103.25 across a 1.4 h gap | day_log before 100, eligible 0 -> replays 1
+   night_stamp -> 2026-11-25 at 2026-11-25T00:08: dmass +106.27 across a 1.9 h gap | day_log before 100, eligible 0 -> replays 1
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain/lane/l293/measure_l293.py", line 310, in <module>
+    day = dt.datetime.fromtimestamp(e["clock_s"], NY).date().isoformat()
+                                    ~^^^^^^^^^^^
+KeyError: 'clock_s'

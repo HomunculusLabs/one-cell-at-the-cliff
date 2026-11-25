@@ -1,0 +1,53 @@
+{
+ "n_snapshots": 2,
+ "window": [
+  "2026-11-16T05:56:47.782063-05:00",
+  "2026-11-16T05:57:23.626586-05:00"
+ ],
+ "timeline": [
+  {
+   "captured_at": "2026-11-16T05:56:47.782063-05:00",
+   "mood": "hungry:high",
+   "intent": "beg",
+   "hunger": 1.0,
+   "sleep": 0.9002110542633041,
+   "joy": null,
+   "fear": 0.0,
+   "trust": 1.0,
+   "hoard": 68,
+   "night_stamp": "2026-11-15"
+  },
+  {
+   "captured_at": "2026-11-16T05:57:23.626586-05:00",
+   "mood": "hungry:high",
+   "intent": "beg",
+   "hunger": 1.0,
+   "sleep": 0.8986348546901073,
+   "joy": null,
+   "fear": 0.0,
+   "trust": 1.0,
+   "hoard": 68,
+   "night_stamp": "2026-11-15"
+  }
+ ],
+ "diary_union_n_unique": 1,
+ "diary_union": [
+  {
+   "first_seen": "2026-11-16T05:56:47.782063-05:00",
+   "last_seen": "2026-11-16T05:57:23.626586-05:00",
+   "n": 100,
+   "act": "nest",
+   "text": "curled up at the reeds and napped",
+   "after": "2026-11-16T05:56:47.782063-05:00"
+  }
+ ],
+ "day_log_union": [],
+ "consolidation_nights": [
+  "2026-11-15"
+ ],
+ "night_trap": {
+  "night_snapshots": 2,
+  "beg_while_night": 2,
+  "share": 1.0
+ }
+}

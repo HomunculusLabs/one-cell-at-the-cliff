@@ -1,0 +1,59 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+global mean activity: 0.037266 .. 0.055161 (ratio 1.480)
+
+== stay_vs_settle (pos n=29, neg n=32, majority 0.525)
+   CLOCK arc: acc 0.967 (start 19.0 h, width 9.5 h) | hour-linear AUC 0.517 | circ-midnight AUC 0.002
+   pos hours: [0.1, 0.2, 0.6, 0.8, 1.0, 1.4, 1.6, 2.1, 2.8, 3.0, 3.5, 4.0, 4.2, 5.2, 19.1, 19.5, 19.8, 20.4, 20.6, 20.8, 21.1, 21.6, 21.7, 21.9, 22.6, 22.9, 22.9, 23.1, 23.7]
+   neg hours: [5.4, 5.9, 7.4, 7.4, 8.3, 8.3, 9.1, 9.2, 9.3, 9.3, 10.0, 10.4, 10.4, 10.5, 10.5, 10.8, 11.6, 11.7, 11.7, 11.9, 13.0, 13.8, 15.3, 15.5, 16.1, 16.3, 16.7, 17.3, 17.8, 18.0, 18.9, 19.0]
+   WHOLE-BRAIN mean AUC 0.9978
+   --- global-normalised (pop_mean / whole_brain_mean) ---
+   CX            AUC 0.998  d 0.498  p1 0.0005  p2 0.014
+   DN_all        AUC 0.002  d 0.498  p1 0.0005  p2 0.014
+   DN_left       AUC 0.002  d 0.498  p1 0.0005  p2 0.014
+   DN_right      AUC 0.002  d 0.498  p1 0.0005  p2 0.014
+   KC            AUC 0.004  d 0.496  p1 0.0005  p2 0.014
+   DAN           AUC 0.281  d 0.219  p1 0.0025  p2 0.110
+   rand_CX_0     AUC 0.204  d 0.296  p1 0.0005  p2 0.014
+   rand_DN_all_0 AUC 0.010  d 0.490  p1 0.0005  p2 0.014
+   rand max d (normalised): {'CX': np.float64(0.498), 'DN_all': np.float64(0.5)}
+
+== stay_vs_to_fence (pos n=8, neg n=32, majority 0.800)
+   CLOCK arc: acc 0.825 (start 6.0 h, width 0.5 h) | hour-linear AUC 0.494 | circ-midnight AUC 0.510
+   pos hours: [6.4, 8.0, 9.0, 12.2, 13.0, 14.3, 16.2, 17.1]
+   neg hours: [5.4, 5.9, 7.4, 7.4, 8.3, 8.3, 9.1, 9.2, 9.3, 9.3, 10.0, 10.4, 10.4, 10.5, 10.5, 10.8, 11.6, 11.7, 11.7, 11.9, 13.0, 13.8, 15.3, 15.5, 16.1, 16.3, 16.7, 17.3, 17.8, 18.0, 18.9, 19.0]
+   WHOLE-BRAIN mean AUC 0.4414
+   --- global-normalised (pop_mean / whole_brain_mean) ---
+   CX            AUC 0.566  d 0.066  p1 0.5842  p2 0.507
+   DN_all        AUC 0.500  d 0.000  p1 1.0000  p2 1.000
+   DN_left       AUC 0.496  d 0.004  p1 0.9870  p2 1.000
+   DN_right      AUC 0.527  d 0.027  p1 0.8201  p2 0.808
+   KC            AUC 0.473  d 0.027  p1 0.8376  p2 0.822
+   DAN           AUC 0.570  d 0.070  p1 0.5572  p2 0.521
+   rand_CX_0     AUC 0.520  d 0.020  p1 0.8726  p2 0.932
+   rand_DN_all_0 AUC 0.543  d 0.043  p1 0.7416  p2 0.644
+   rand max d (normalised): {'CX': np.float64(0.035), 'DN_all': np.float64(0.066)}
+
+C4 (normalised): {
+ "stay_vs_settle_CX": {
+  "named_d": 0.49784482758620685,
+  "max_rand_d": 0.49784482758620685,
+  "pass": false
+ },
+ "stay_vs_settle_DN_all": {
+  "named_d": 0.4978448275862069,
+  "max_rand_d": 0.5,
+  "pass": false
+ },
+ "stay_vs_to_fence_CX": {
+  "named_d": 0.06640625,
+  "max_rand_d": 0.03515625,
+  "pass": true
+ },
+ "stay_vs_to_fence_DN_all": {
+  "named_d": 0.0,
+  "max_rand_d": 0.06640625,
+  "pass": false
+ }
+}
+A-P1 arc>=.95: True | A-P2 wholebrain>=.99: True | A-P3 CX-norm retains: True

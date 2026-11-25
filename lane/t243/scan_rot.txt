@@ -1,0 +1,85 @@
+[rot:multiple-comparisons] ERROR HTTP Error 429: Unknown Error
+[rot:fdr-neuroscience] ERROR HTTP Error 429: Unknown Error
+[rot:celltype-null] parsed:2 in-window:0  q=all:"cell type" AND all:"null model" AND all:network
+
+[rot:permutation-test-brain] ERROR HTTP Error 429: Unknown Error
+[rot:eigenvector-centrality] parsed:8 in-window:0  q=all:"eigenvector centrality" AND all:brain
+
+[rot:spectral-connectome] parsed:23 in-window:0  q=all:spectral AND all:connectome AND all:dynamics
+
+[rot:degree-correction] parsed:17 in-window:0  q=all:"degree correction" AND all:network AND all:null
+
+[rot:confound-size] parsed:0 in-window:0  q=all:confound AND all:"network size" AND all:neuroscience
+
+[rot:single-neuron-necessity] parsed:0 in-window:0  q=all:"single neuron" AND all:perturbation AND all:connectome
+
+[rot:descending-neuron] parsed:2 in-window:0  q=all:"descending neuron" AND all:Drosophila
+
+[rot:bilateral-asymmetry] parsed:1 in-window:0  q=all:bilateral AND all:asymmetry AND all:connectome
+
+[rot:insect-motor-control] parsed:0 in-window:0  q=all:insect AND all:"motor control" AND all:neural
+
+[rot:qbio-nc-recent] parsed:30 in-window:30  q=cat:q-bio.NC
+    2026-11-20  2611.26949v1  [q-bio.NC,cs.CV]  Serial Dependence Emerges from Optimizing Vision for Noise Robustness
+    2026-11-19  2611.26913v1  [q-bio.NC,cs.LG]  Surface Cues Over Structure: Probing LLM Behavior on Brain Connectivity Graphs
+    2026-11-19  2611.26856v1  [cs.LG,eess.SP,q-bio.NC]  Self-Supervised Learning with Recursive Quadrature Filters for Neural Time Series
+    2026-11-19  2611.26319v1  [cs.LG,cs.AI,q-bio.NC]  A Control-Theoretic Approximation to Predictive Coding Dynamics
+    2026-11-19  2611.26258v1  [eess.SP,q-bio.NC]  Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+    2026-11-19  2611.26101v1  [cs.LG,q-bio.NC]  Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+    2026-11-19  2611.26018v1  [cs.LG,cs.AI,q-bio.NC]  Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model
+    2026-11-19  2611.25830v1  [q-bio.NC]  Regime-dependent reconstruction of structural connectivity: an in silico study of spatially constrained modular neuronal networks
+    2026-11-19  2611.25315v1  [cs.HC,cs.LG,q-bio.NC]  When Should Deployed BCI Decoders Adapt? A Resource-Priced Ladder for Frozen EEG Trunks
+    2026-11-18  2611.25189v1  [q-bio.NC]  Cultural invariance in music-evoked emotions
+    2026-11-18  2611.25139v1  [q-bio.NC]  Persistence of Multifractal Dynamics at the Mammalian Neuromuscular Junction Across Extracellular Calcium Conditions
+    2026-11-18  2611.24848v1  [cs.NE,q-bio.NC]  Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+    2026-11-18  2611.24782v1  [cs.LG,cs.AI,q-bio.NC]  Learning Trajectories Leave Decodable Traces in Neural Network Weight Space and Internal Representations
+    2026-11-18  2611.24767v1  [q-bio.NC,stat.AP]  Inferring Neural Activity Changes under Recording Uncertainty with Transformers and Variational Inference
+    2026-11-18  2611.23795v1  [q-bio.NC,cs.CY,cs.NE]  A Dual-SOM Learner Model of Instructional Efficiency within Cognitive Load Theory
+    2026-11-18  2611.23755v1  [cs.CV,cs.GR,q-bio.NC]  GramStatTexNet: Efficient, Interpretable, and Neuro-Inspired Texture Analysis-by-Synthesis
+    2026-11-17  2611.23549v1  [q-bio.NC,physics.med-ph]  Quantitative Modeling of Action-Potential-Driven Sodium Dynamics in Neurons: From Sodium Influx to Sodium MRI
+    2026-11-17  2611.23486v1  [nlin.PS,physics.bio-ph,q-bio.NC]  How the material world of the brain, as a complex system governed by intermittent dynamics, gives rise to the supposedly "immaterial" world of mental processes such as thought
+    2026-11-17  2611.23441v1  [q-bio.NC,cs.NE,cs.RO]  Hebbian self-organization of monosynaptic reflexes in a biologically realistic multiarticular limb
+    2026-11-17  2611.23364v1  [q-bio.NC,cs.AI,cs.LG,cs.NE,cs.RO]  Neural Circuit Architectural Priors for Rat Locomotion
+    2026-11-17  2611.23182v1  [q-bio.NC,cs.NE]  Fully Spiking Neural Implementation of Lambda-Calculus Beta-Reduction via Biologically Documented Mechanisms
+    2026-11-17  2611.23177v1  [cs.CV,cs.LG,q-bio.NC]  Déjà View: A Shared Working-Memory Model for Visual Tasks
+    2026-11-17  2611.22868v1  [cs.AI,cs.CY,q-bio.NC]  Against Coercion: AI Alignment as a Synthetic Social Contract
+    2026-11-17  2611.22639v3  [q-bio.NC,cs.AI]  Hierarchical Control of Antiphase Synchronization in Biomorphic Spiking Neural Architectures for Locomotor Control
+    2026-11-17  2611.22440v1  [q-bio.NC,cs.CV]  The shape of individual differences in judgment: shared axes, personal weights, and when their spread crosses the consensus
+    2026-11-17  2611.22386v1  [q-bio.NC]  Earth-strength magnetic-field axis modulates non-spatial probabilistic decision-making in humans
+    2026-11-17  2611.22070v1  [physics.bio-ph,cond-mat.dis-nn,cond-mat.soft,nlin.AO,q-bio.NC]  Why do continual physical learners need sleep?
+    2026-11-17  2611.22054v1  [q-bio.NC,cs.LG]  A single inference process underlies the behavior and neural circuits of working memory
+    2026-11-16  2611.21592v1  [cond-mat.dis-nn,hep-th,q-bio.NC]  Connectivity from activity in spiking neural networks
+    2026-11-16  2611.21335v1  [q-bio.NC,cs.LG]  Anchoring Motion, Refining Trajectories: Generalizable Continuous Neural Decoding
+
+[rot:csne-recent] parsed:30 in-window:30  q=cat:cs.NE
+    2026-11-20  2611.27109v1  [cs.LG,cs.NE]  Recurrent Amplification and Exact Nonexpansiveness Criteria for Query-Driven Erasure
+    2026-11-20  2611.27073v1  [cs.NE,eess.SY]  Seabird-Aware Multi-Objective Offshore Wind Capacity Allocation: A Gippsland Case Study
+    2026-11-20  2611.26938v1  [stat.ME,cs.AI,cs.NE]  MG-EDA: Maturity-Gated Skew-Normal Estimation of Distribution Algorithms
+    2026-11-19  2611.26412v1  [eess.SY,cs.LG,cs.NE]  How to Effectively Manage the Energy in Residential Systems: Development and Comparison of Methods
+    2026-11-19  2611.26011v1  [cs.NE]  A Matter of Representation: Evolving Partial Spreads for Bent Functions
+    2026-11-19  2611.26671v1  [cs.LG,cs.AI,cs.NE,stat.ML]  On the loss landscape of the linear neural network: beyond critical points
+    2026-11-19  2611.25896v1  [cs.AI,cs.LG,cs.NE]  The Price of an Explanation: What Demanding Verifiable Artifacts Costs, and What It Buys Back
+    2026-11-19  2611.25880v1  [quant-ph,cs.AI,cs.MA,cs.NE]  Evolving Decoding Algorithms for Quantum Error Correction
+    2026-11-19  2611.25855v1  [cs.AI,cs.NE]  HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents
+    2026-11-19  2611.25610v1  [cs.NE,cs.LG]  Hierarchical Spatiotemporal World Modeling with Content-Adaptive Spatial Addressing
+    2026-11-19  2611.25352v1  [cs.ET,cond-mat.dis-nn,cs.AR,cs.NE,quant-ph]  Compiling Constraints into Neuromorphic Ising Machines
+    2026-11-18  2611.24848v1  [cs.NE,q-bio.NC]  Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+    2026-11-18  2611.24347v1  [cs.AI,astro-ph.CO,astro-ph.GA,cs.NE]  automodel: A Skill for Agentic Model Discovery
+    2026-11-18  2611.24251v1  [cs.NE]  Analysis of the (1+1)-EA-ES-Bilevel on Mixed Discrete-Continuous Optimization Problems with Interactions
+    2026-11-18  2611.24113v1  [math.OC,cs.LG,cs.NE,math.NA]  AG-BFGS: Foundations for Accelerated Geometry Learning
+    2026-11-18  2611.23949v1  [cs.NE]  Incremental Speciation in Evolutionary Red Teaming of Large Language Models
+    2026-11-18  2611.23795v1  [q-bio.NC,cs.CY,cs.NE]  A Dual-SOM Learner Model of Instructional Efficiency within Cognitive Load Theory
+    2026-11-18  2611.23728v1  [cs.NE,cs.AI,cs.CV]  AdaS-ViT: Test-Time Adaptive Routing for Spiking Vision Transformers with Ultra-High Energy Efficiency
+    2026-11-17  2611.23610v1  [physics.optics,cs.ET,cs.LG,cs.NE,physics.app-ph]  Optical Neural Networks Should Be Evaluated by Function, Not Only Physics
+    2026-11-17  2611.23509v1  [cs.AI,cs.CL,cs.NE]  GRAFT: Execution-Guided Genetic Recombination for Agent Design
+    2026-11-17  2611.24980v1  [stat.ML,cs.AI,cs.LG,cs.NE]  DL101 The Representation Capability of Neural Network Models
+    2026-11-17  2611.23441v1  [q-bio.NC,cs.NE,cs.RO]  Hebbian self-organization of monosynaptic reflexes in a biologically realistic multiarticular limb
+    2026-11-17  2611.23364v1  [q-bio.NC,cs.AI,cs.LG,cs.NE,cs.RO]  Neural Circuit Architectural Priors for Rat Locomotion
+    2026-11-17  2611.23182v1  [q-bio.NC,cs.NE]  Fully Spiking Neural Implementation of Lambda-Calculus Beta-Reduction via Biologically Documented Mechanisms
+    2026-11-17  2611.22828v1  [cs.NE,cs.LG]  TabDAG: Structured Evolutionary Search for Tabular Feature Engineering
+    2026-11-17  2611.22700v1  [cs.NE]  EM-SDTrack: Efficient Multi-Scale Spike-driven Tracking for Event Cameras
+    2026-11-17  2611.22060v1  [cs.NE]  Evolving Neural Solvers for Multi-objective Combinatorial Optimization
+    2026-11-16  2611.21941v1  [quant-ph,cs.CC,cs.IR,cs.NE]  Complexity and precision in quantum associative retrieval
+    2026-11-16  2611.21859v1  [cs.NE,q-bio.GN]  Diversity Preservation Recovers Transcription Factor Motifs Across Challenging Confounder Landscapes
+    2026-11-16  2611.21598v1  [cs.LG,cs.AI,cs.NE]  Mitigating Catastrophic Forgetting with Physics-Indexed Specialist Memory: the Evolutionary Neuroplastic Agent
+

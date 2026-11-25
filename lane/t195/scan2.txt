@@ -1,0 +1,55 @@
+## qbio-NC-recent
+  [2611.26319v1] 2026-11-19 | A Control-Theoretic Approximation to Predictive Coding Dynamics
+  [2611.26258v1] 2026-11-19 | Temporal Contrastive Alignment of EEG and Naturalistic Video Only Beats Linear Decoding On In-Sample Stimuli
+  [2611.26101v1] 2026-11-19 | Revealing Pathway Interactions in Network Computations with Complete Path Contribution
+  [2611.26018v1] 2026-11-19 | Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model
+  [2611.25830v1] 2026-11-19 | Regime-dependent reconstruction of structural connectivity: an in silico study of spatially constrained modular neuronal networks
+  [2611.25315v1] 2026-11-19 | When Should Deployed BCI Decoders Adapt? A Resource-Priced Ladder for Frozen EEG Trunks
+  [2611.25189v1] 2026-11-18 | Cultural invariance in music-evoked emotions
+  [2611.25139v1] 2026-11-18 | Persistence of Multifractal Dynamics at the Mammalian Neuromuscular Junction Across Extracellular Calcium Conditions
+  [2611.24848v1] 2026-11-18 | Old Matches, New Frames: Schedule-Gated Stereo Memory from Human Vision to Machine Matching
+  [2611.24782v1] 2026-11-18 | Learning Trajectories Leave Decodable Traces in Neural Network Weight Space and Internal Representations
+  [2611.24767v1] 2026-11-18 | Inferring Neural Activity Changes under Recording Uncertainty with Transformers and Variational Inference
+  [2611.23795v1] 2026-11-18 | A Dual-SOM Learner Model of Instructional Efficiency within Cognitive Load Theory
+  [2611.23755v1] 2026-11-18 | GramStatTexNet: Efficient, Interpretable, and Neuro-Inspired Texture Analysis-by-Synthesis
+  [2611.23549v1] 2026-11-17 | Quantitative Modeling of Action-Potential-Driven Sodium Dynamics in Neurons: From Sodium Influx to Sodium MRI
+  [2611.23486v1] 2026-11-17 | How the material world of the brain, as a complex system governed by intermittent dynamics, gives rise to the supposedly "immaterial" world of mental processes such as thought
+  [2611.23441v1] 2026-11-17 | Hebbian self-organization of monosynaptic reflexes in a biologically realistic multiarticular limb
+  [2611.23364v1] 2026-11-17 | Neural Circuit Architectural Priors for Rat Locomotion
+  [2611.23182v1] 2026-11-17 | Fully Spiking Neural Implementation of Lambda-Calculus Beta-Reduction via Biologically Documented Mechanisms
+  [2611.23177v1] 2026-11-17 | Déjà View: A Shared Working-Memory Model for Visual Tasks
+  [2611.22868v1] 2026-11-17 | Against Coercion: AI Alignment as a Synthetic Social Contract
+  [2611.22639v3] 2026-11-17 | Hierarchical Control of Antiphase Synchronization in Biomorphic Spiking Neural Architectures for Locomotor Control
+  [2611.22440v1] 2026-11-17 | The shape of individual differences in judgment: shared axes, personal weights, and when their spread crosses the consensus
+  [2611.22386v1] 2026-11-17 | Earth-strength magnetic-field axis modulates non-spatial probabilistic decision-making in humans
+  [2611.22070v1] 2026-11-17 | Why do continual physical learners need sleep?
+  [2611.22054v1] 2026-11-17 | A single inference process underlies the behavior and neural circuits of working memory
+## rot-antagonist-reflex
+  [2611.23441v1] 2026-11-17 | Hebbian self-organization of monosynaptic reflexes in a biologically realistic multiarticular limb
+## rot-cpg-selforg
+  [2611.26629v1] 2026-11-19 | Posterior Matching Distillation
+  [2611.26627v1] 2026-11-19 | RL Post-Training in Diffusion Transformers Is Activation Steering
+  [2611.26626v1] 2026-11-19 | High-temperature Gibbs states are uniformly Markovian and trivial
+  [2611.26624v1] 2026-11-19 | PlayCraft: Designing Engaging Games from Agent Play Experience
+  [2611.26617v1] 2026-11-19 | One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning
+  [2611.26615v1] 2026-11-19 | ScaleWorld: High-Resolution World Generation through Shared Prediction and Refinement
+  [2611.26613v1] 2026-11-19 | AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control
+  [2611.26604v1] 2026-11-19 | Scalable Simulation of Strongly Correlated Fermions with Neural Gaussian Tensor Networks
+  [2611.26603v1] 2026-11-19 | Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth
+  [2611.26595v1] 2026-11-19 | Coda-DaVinci: Reimagining Video Generation with Code2Video
+  [2611.26590v1] 2026-11-19 | Probing the "Conscious" Mind: Selective Access and Global Workspace in Vision-Language Models
+  [2611.26569v1] 2026-11-19 | Text-Aware, Vision-Blind: How Multimodal Image Editing Systems Handle Unsafe Inputs
+  [2611.26567v1] 2026-11-19 | Efficient and Variation-Tolerant Tree Inference via Compact and Scalable Mapping in Analog CAMs
+  [2611.26565v1] 2026-11-19 | PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity
+  [2611.26562v1] 2026-11-19 | Multi-institutional grading of Barrett's esophagus dysplasia without stain normalization using a pathology foundation model and multiple instance learning
+  [2611.26549v1] 2026-11-19 | Refractive Neutrino Mass: Effects of Fluctuations of the Dark Matter Field
+  [2611.26548v1] 2026-11-19 | Demographic inference in exoplanet chemistry is shaped by retrieval assumptions
+  [2611.26547v1] 2026-11-19 | Nonlinearly Causal General-Relativistic Superfluid Hydrodynamics: Simulating Vortex Dynamics in Neutron-Star Interiors
+  [2611.26540v1] 2026-11-19 | AURA: AUdio-dRiven streaming Avatar
+  [2611.26528v1] 2026-11-19 | Constitutive Kolmogorov-Arnold Networks in Finite Element Model Updating: Closed-Form Hyperelastic Strain Energies from Heterogeneous Experiments
+  [2611.26527v1] 2026-11-19 | Thermal-Guided Ensemble Reinforcement Learning for Regime-Adaptive Short-Term GPU Power Forecasting in AI Data Centers
+  [2611.26522v1] 2026-11-19 | Deterministic Temporal Embedding for Calcium Imaging Trace Extraction
+  [2611.26516v1] 2026-11-19 | Plan4D: Generative Plannable 4D Worlds
+  [2611.26511v1] 2026-11-19 | Direct3D-V3: Latent-Free Diffusion Transformers in the Native Voxel Domain
+  [2611.26508v1] 2026-11-19 | Visual Attribution Limits and Graded Provenance Auditing in Commercial Video-Generation APIs
+## rot-insect-leg-model

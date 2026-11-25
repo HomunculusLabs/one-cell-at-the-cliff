@@ -1,0 +1,4 @@
+[core:neuromechfly] ERROR HTTP Error 429: Unknown Error
+[core:fly-brain-model] parsed:12 in-window:1  q=all:"fly brain" AND all:model
+    2026-11-01  2611.01866v1  [cs.LG,q-bio.NC]  The (Butter)fly Dream: Linear Separability of World-Model Rollouts in a Connectome-Constrained Visual Model
+

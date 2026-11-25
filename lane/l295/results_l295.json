@@ -1,0 +1,6166 @@
+{
+ "card": "L295 slice 1 (PREREG on stored day_logs)",
+ "tick": 286,
+ "generated_at": "2026-11-25 11:58:04 EST",
+ "prereg_sha256": "f5647df7ac0ded1c360ac368ca1937ac1cfd91d8861ad90f280eb7884a8f9f78",
+ "constants": {
+  "KIND_EVENTS": [
+   "goats",
+   "greet",
+   "peas",
+   "pet",
+   "shiny",
+   "slug",
+   "tin",
+   "water"
+  ],
+  "TOP_FRAC": 0.1,
+  "MAX_REPLAYS": 5
+ },
+ "inputs": {
+  "archive_snaps": 132,
+  "archive_first": "snap_20261116_055647.json",
+  "archive_last": "snap_20261125_115240.json",
+  "archive_start_local": "2026-11-16 05:56",
+  "sessions_dir": "/home/t3rpz/critters/peabrain/sessions"
+ },
+ "world_census": {
+  "records": 8780,
+  "events": {
+   "water": 8780
+  },
+  "non_kind": {},
+  "snap_daylog_len_min_med_max": [
+   0,
+   83,
+   100
+  ],
+  "snaps_at_cap_100": 51
+ },
+ "S2_nights": [
+  {
+   "k": 0,
+   "pass_clock_s": 1794872854,
+   "pass_local": "2026-11-16 18:47:34",
+   "open_start": true,
+   "snaps_in_window": 14,
+   "lossy": false,
+   "union_records": 95,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 45.8,
+   "window_h": 12.85,
+   "union_composition": {
+    "water": 95
+   },
+   "union_kind": 95,
+   "R_DATE": {
+    "n_ranked": 95,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 1
+   },
+   "R_WM": {
+    "n_ranked": 95,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 1
+   },
+   "extra_admitted_by_wm": 0,
+   "union_visitor": {
+    "records": 148,
+    "sessions": 106,
+    "events": {
+     "swat": 4,
+     "peas": 29,
+     "greet": 68,
+     "water": 23,
+     "goats": 4,
+     "hold": 4,
+     "rake": 4,
+     "shiny": 4,
+     "tin": 4,
+     "umbrella": 4
+    },
+    "kind_non_water": 109,
+    "non_kind": 16
+   }
+  },
+  {
+   "k": 1,
+   "pass_clock_s": 1794891682,
+   "pass_local": "2026-11-17 00:01:22",
+   "open_start": false,
+   "snaps_in_window": 4,
+   "lossy": false,
+   "union_records": 36,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 66.9,
+   "window_h": 5.23,
+   "union_composition": {
+    "water": 36
+   },
+   "union_kind": 36,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 36,
+    "n": 4,
+    "composition": {
+     "water": 4
+    },
+    "kind_in_chosen": 4,
+    "dop_ties_at_cut": 2
+   },
+   "extra_admitted_by_wm": 36,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 2,
+   "pass_clock_s": 1794978480,
+   "pass_local": "2026-11-18 00:08:00",
+   "open_start": false,
+   "snaps_in_window": 15,
+   "lossy": true,
+   "union_records": 195,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 77.0,
+   "window_h": 24.11,
+   "union_composition": {
+    "water": 195
+   },
+   "union_kind": 195,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 195,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 4
+   },
+   "extra_admitted_by_wm": 195,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 3,
+   "pass_clock_s": 1795064572,
+   "pass_local": "2026-11-19 00:02:52",
+   "open_start": false,
+   "snaps_in_window": 13,
+   "lossy": true,
+   "union_records": 198,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 55.1,
+   "window_h": 23.91,
+   "union_composition": {
+    "water": 198
+   },
+   "union_kind": 198,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 198,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 4
+   },
+   "extra_admitted_by_wm": 198,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 4,
+   "pass_clock_s": 1795151107,
+   "pass_local": "2026-11-20 00:05:07",
+   "open_start": false,
+   "snaps_in_window": 13,
+   "lossy": true,
+   "union_records": 186,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 128.4,
+   "window_h": 24.04,
+   "union_composition": {
+    "water": 186
+   },
+   "union_kind": 186,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 186,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 7
+   },
+   "extra_admitted_by_wm": 186,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 5,
+   "pass_clock_s": 1795237574,
+   "pass_local": "2026-11-21 00:06:14",
+   "open_start": false,
+   "snaps_in_window": 11,
+   "lossy": true,
+   "union_records": 200,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 22.0,
+   "window_h": 24.02,
+   "union_composition": {
+    "water": 200
+   },
+   "union_kind": 200,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 200,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 3
+   },
+   "extra_admitted_by_wm": 200,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 6,
+   "pass_clock_s": 1795323954,
+   "pass_local": "2026-11-22 00:05:54",
+   "open_start": false,
+   "snaps_in_window": 7,
+   "lossy": true,
+   "union_records": 179,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 176.8,
+   "window_h": 23.99,
+   "union_composition": {
+    "water": 179
+   },
+   "union_kind": 179,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 179,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 4
+   },
+   "extra_admitted_by_wm": 179,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 7,
+   "pass_clock_s": 1795410218,
+   "pass_local": "2026-11-23 00:03:38",
+   "open_start": false,
+   "snaps_in_window": 15,
+   "lossy": true,
+   "union_records": 191,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 67.5,
+   "window_h": 23.96,
+   "union_composition": {
+    "water": 191
+   },
+   "union_kind": 191,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 191,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 3
+   },
+   "extra_admitted_by_wm": 191,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 8,
+   "pass_clock_s": 1795496822,
+   "pass_local": "2026-11-24 00:07:02",
+   "open_start": false,
+   "snaps_in_window": 16,
+   "lossy": true,
+   "union_records": 199,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 28.8,
+   "window_h": 24.06,
+   "union_composition": {
+    "water": 199
+   },
+   "union_kind": 199,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 199,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 3
+   },
+   "extra_admitted_by_wm": 199,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  },
+  {
+   "k": 9,
+   "pass_clock_s": 1795583092,
+   "pass_local": "2026-11-25 00:04:52",
+   "open_start": false,
+   "snaps_in_window": 15,
+   "lossy": true,
+   "union_records": 188,
+   "anomalous_pre_window": 0,
+   "unarchived_tail_min": 109.7,
+   "window_h": 23.96,
+   "union_composition": {
+    "water": 188
+   },
+   "union_kind": 188,
+   "R_DATE": {
+    "n_ranked": 0,
+    "n": 1,
+    "composition": {},
+    "kind_in_chosen": 0,
+    "dop_ties_at_cut": 0
+   },
+   "R_WM": {
+    "n_ranked": 188,
+    "n": 5,
+    "composition": {
+     "water": 5
+    },
+    "kind_in_chosen": 5,
+    "dop_ties_at_cut": 4
+   },
+   "extra_admitted_by_wm": 188,
+   "union_visitor": {
+    "records": 0,
+    "sessions": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "non_kind": 0
+   }
+  }
+ ],
+ "S2_summary": {
+  "n_nights": 10,
+  "both_rules_water_only": 10,
+  "lossy_nights": 8,
+  "wm_extra_admitted_total": 1572,
+  "pass_local_hours": [
+   "00",
+   "18"
+  ]
+ },
+ "S1_visitor": {
+  "verdict": "TRUE",
+  "sessions_scanned": 621,
+  "sessions_with_errors": 0,
+  "records": 465,
+  "kind_non_water_records": 338,
+  "events": {
+   "swat": 12,
+   "peas": 93,
+   "greet": 207,
+   "water": 79,
+   "goats": 12,
+   "hold": 12,
+   "rake": 12,
+   "shiny": 12,
+   "tin": 13,
+   "umbrella": 12,
+   "pet": 1
+  },
+  "non_kind": {
+   "swat": 12,
+   "hold": 12,
+   "rake": 12,
+   "umbrella": 12
+  },
+  "per_session": [
+   {
+    "file": "agg-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "agg-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "agg-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "agg-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "agg-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "beg-check.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "fear-recheck-2596429.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-arc.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bob-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bob-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bob-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bob-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bob-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-follow.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-6.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-7.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-goats.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-hibill-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-hibill-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-hibill-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-hold.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-name-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-name-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-name-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-name-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-name-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-rake.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-shiny.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-tin.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-umb.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate-water.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-arc.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-bob-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-bob-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-bob-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-bob-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-bob-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-follow.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-6.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-7.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-goats.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-hibill-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-hibill-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-hibill-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-hold.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-name-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-name-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-name-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-name-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-name-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-rake.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-shiny.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-tin.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-umb.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794167146-gate-water.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-arc.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-bob-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-bob-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-bob-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-bob-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-bob-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-follow.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-6.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-7.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-goats.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-hibill-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-hibill-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-hibill-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-hold.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-name-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-name-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-name-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-name-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-name-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-rake.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-shiny.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-tin.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-umb.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252083-gate-water.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-arc.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-bob-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-bob-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-bob-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-bob-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-bob-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-follow.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-6.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-7.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-goats.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-hibill-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-hibill-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-hibill-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-hold.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-name-0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-name-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-name-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-name-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-name-4.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-rake.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-shiny.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-tin.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-umb.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794252203-gate-water.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794264678-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794268976-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269033-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794269111-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794273406-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794300979-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794305413-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857000-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-fresh-4.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857120-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794857172-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1794861643-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-arc.json",
+    "day_log_n": 2,
+    "events": {
+     "swat": 1,
+     "peas": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-bob-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-bob-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-bob-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-bob-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-bob-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-follow.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "peas": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-0.json",
+    "day_log_n": 3,
+    "events": {
+     "greet": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-10.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-11.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-12.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-2.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-3.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-4.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-5.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-6.json",
+    "day_log_n": 3,
+    "events": {
+     "peas": 3
+    },
+    "kind_non_water": 3,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-7.json",
+    "day_log_n": 3,
+    "events": {
+     "water": 3
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-8.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-fresh-9.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-bowl.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-goats.json",
+    "day_log_n": 1,
+    "events": {
+     "goats": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-hibill-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-hibill-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-hibill-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-hold.json",
+    "day_log_n": 1,
+    "events": {
+     "hold": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-name-0.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-name-1.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-name-2.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-name-3.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-name-4.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-night.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-pet.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-rake.json",
+    "day_log_n": 1,
+    "events": {
+     "rake": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-shiny.json",
+    "day_log_n": 1,
+    "events": {
+     "shiny": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-tin.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-umb.json",
+    "day_log_n": 1,
+    "events": {
+     "umbrella": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "gate1795595826-gate-water.json",
+    "day_log_n": 1,
+    "events": {
+     "water": 1
+    },
+    "kind_non_water": 0,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "intent-check.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "l4probe2.json",
+    "day_log_n": 2,
+    "events": {
+     "greet": 1,
+     "pet": 1
+    },
+    "kind_non_water": 2,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "l7-gate-1610.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "l7-gate-1610b.json",
+    "day_log_n": 1,
+    "events": {
+     "tin": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "lane-probe-l5.json",
+    "day_log_n": 1,
+    "events": {
+     "greet": 1
+    },
+    "kind_non_water": 1,
+    "night_stamp": null,
+    "plas_mass": null
+   },
+   {
+    "file": "lanea-check.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "lanea-check2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "persist-test.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "rate-test.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "umb-recheck-15670.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "web-aw175fm0.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "web-rzqc9hgd.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "wiring-1.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   },
+   {
+    "file": "wiring-2.json",
+    "day_log_n": 0,
+    "events": {},
+    "kind_non_water": 0,
+    "night_stamp": "<absent>",
+    "plas_mass": null
+   }
+  ]
+ },
+ "S3": {
+  "a_world_non_kind_records": 0,
+  "b_visitor_non_kind_records": 48,
+  "c_union_non_kind_per_night": {
+   "0": 16,
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 0,
+   "9": 0
+  },
+  "c_union_kind_non_water_per_night": {
+   "0": 109,
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 0,
+   "9": 0
+  }
+ }
+}

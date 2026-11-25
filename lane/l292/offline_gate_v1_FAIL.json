@@ -1,0 +1,143 @@
+{
+ "passed": 24,
+ "total": 27,
+ "results": [
+  {
+   "name": "delta.removed_lines_empty",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "delta.added_code_is_exactly_the_two_lines",
+   "ok": true,
+   "detail": "['IDLE_SETTLE_S = 10.0', '        steps = min(steps, int(IDLE_SETTLE_S / 0.01))']"
+  },
+  {
+   "name": "patched_file_is_the_live_file",
+   "ok": true,
+   "detail": "mood.py == live path"
+  },
+  {
+   "name": "structure.MoodState.observe",
+   "ok": true,
+   "detail": "observe"
+  },
+  {
+   "name": "structure.MoodState.axes",
+   "ok": true,
+   "detail": "axes"
+  },
+  {
+   "name": "structure.MoodState.mood_tag",
+   "ok": true,
+   "detail": "mood_tag"
+  },
+  {
+   "name": "structure.IDLE_SETTLE_S",
+   "ok": true,
+   "detail": "10.0"
+  },
+  {
+   "name": "structure.before_has_no_cap",
+   "ok": true,
+   "detail": "absent"
+  },
+  {
+   "name": "steps.observe(1.0)",
+   "ok": true,
+   "detail": "{'ran': 100, 'want': 100}"
+  },
+  {
+   "name": "steps.observe(5.0)",
+   "ok": true,
+   "detail": "{'ran': 500, 'want': 500}"
+  },
+  {
+   "name": "steps.observe(9.99)",
+   "ok": true,
+   "detail": "{'ran': 999, 'want': 999}"
+  },
+  {
+   "name": "steps.observe(10.0)",
+   "ok": true,
+   "detail": "{'ran': 1000, 'want': 1000}"
+  },
+  {
+   "name": "steps.observe(10.01)",
+   "ok": true,
+   "detail": "{'ran': 1000, 'want': 1000}"
+  },
+  {
+   "name": "steps.observe(45.0)",
+   "ok": true,
+   "detail": "{'ran': 1000, 'want': 1000}"
+  },
+  {
+   "name": "steps.observe(600.0)",
+   "ok": true,
+   "detail": "{'ran': 1000, 'want': 1000}"
+  },
+  {
+   "name": "axes.identical idle 600.0s dark 1.0",
+   "ok": true,
+   "detail": "{'after': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.562}, 'before': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.562}, 'steps_after': 1000, 'steps_before': 60000}"
+  },
+  {
+   "name": "steps idle 600.0s dark 1.0",
+   "ok": true,
+   "detail": "{'after': 1000, 'before': 60000}"
+  },
+  {
+   "name": "axes.identical idle 600.0s dark 0.0",
+   "ok": true,
+   "detail": "{'after': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.287}, 'before': {'fear': 0.0, 'food_joy': 0.001, 'trust': 0.6, 'salience': 0.0, 'hunger': 0.82, 'sleep': 0.287}, 'steps_after': 1000, 'steps_before': 60000}"
+  },
+  {
+   "name": "steps idle 600.0s dark 0.0",
+   "ok": true,
+   "detail": "{'after': 1000, 'before': 60000}"
+  },
+  {
+   "name": "axes.identical idle 45.0s dark 1.0",
+   "ok": true,
+   "detail": "{'after': {'fear': 0.258, 'food_joy': 0.303, 'trust': 0.6, 'salience': 0.045, 'hunger': 0.431, 'sleep': 0.311}, 'before': {'fear': 0.258, 'food_joy': 0.303, 'trust': 0.6, 'salience': 0.045, 'hunger': 0.431, 'sleep': 0.311}, 'steps_after': 1000, 'steps_before': 4500}"
+  },
+  {
+   "name": "steps idle 45.0s dark 1.0",
+   "ok": true,
+   "detail": "{'after': 1000, 'before': 4500}"
+  },
+  {
+   "name": "event window identical greet 2.0s",
+   "ok": false,
+   "detail": "{'after': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.64, 'salience': 0.788, 'hunger': 0.401, 'sleep': 0.291}, 'before': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.64, 'salience': 0.788, 'hunger': 0.401, 'sleep': 0.291}, 'steps': [200, 200], 'peak': {'lc': 0.033425018191337585, 'dan': 0.07052918523550034, 'kc': 0.050775378942489624, 'oct': 0.053056295961141586, 'ser': 0.10399875044822693, 'dop': 0.2222365140914917, 'dn': 0.060558028519153595, 'dn_l': 0.06190749257802963, 'dn_r': 0.05932842567563057, 'at': 1000.2}}"
+  },
+  {
+   "name": "event window identical swat 2.0s",
+   "ok": false,
+   "detail": "{'after': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.4, 'salience': 1.0, 'hunger': 0.401, 'sleep': 0.288}, 'before': {'fear': 0.67, 'food_joy': 0.489, 'trust': 0.4, 'salience': 1.0, 'hunger': 0.401, 'sleep': 0.288}, 'steps': [200, 200], 'peak': {'lc': 0.03338559344410896, 'dan': 0.0705140084028244, 'kc': 0.050687216222286224, 'oct': 0.06484706699848175, 'ser': 0.13858568668365479, 'dop': 0.30932119488716125, 'dn': 0.08144528418779373, 'dn_l': 0.08336144685745239, 'dn_r': 0.0798398032784462, 'at': 1000.2}}"
+  },
+  {
+   "name": "event window identical water 5.0s",
+   "ok": false,
+   "detail": "{'after': {'fear': 0.626, 'food_joy': 0.473, 'trust': 0.63, 'salience': 0.652, 'hunger': 0.404, 'sleep': 0.281}, 'before': {'fear': 0.626, 'food_joy': 0.473, 'trust': 0.63, 'salience': 0.652, 'hunger': 0.404, 'sleep': 0.281}, 'steps': [500, 500], 'peak': {'lc': 0.03343333676457405, 'dan': 0.07053107023239136, 'kc': 0.05078451707959175, 'oct': 0.051975056529045105, 'ser': 0.10097003728151321, 'dop': 0.21301117539405823, 'dn': 0.0583818182349205, 'dn_l': 0.05963311716914177, 'dn_r': 0.05723067745566368, 'at': 1000.2}}"
+  },
+  {
+   "name": "capped window + peas: axes identical",
+   "ok": true,
+   "detail": "{'after': {'fear': 0.258, 'food_joy': 0.836, 'trust': 0.67, 'salience': 0.454, 'hunger': 0.0, 'sleep': 0.224}, 'before': {'fear': 0.258, 'food_joy': 0.836, 'trust': 0.67, 'salience': 0.454, 'hunger': 0.0, 'sleep': 0.224}, 'steps': [1000, 4500]}"
+  },
+  {
+   "name": "boot observe(30): axes identical",
+   "ok": true,
+   "detail": "{'after': {'fear': 0.359, 'food_joy': 0.358, 'trust': 0.6, 'salience': 0.122, 'hunger': 0.421, 'sleep': 0.292}, 'before': {'fear': 0.359, 'food_joy': 0.358, 'trust': 0.6, 'salience': 0.122, 'hunger': 0.421, 'sleep': 0.292}, 'steps': [1000, 3000]}"
+  },
+  {
+   "name": "live path observe(600) runs exactly 1,000 steps",
+   "ok": true,
+   "detail": "1000"
+  }
+ ],
+ "before_sha": "64a6664c2bb5610c4c926368ed48f989446a1bbc0b1924e8d99eb806880559e5",
+ "after_sha": "75794e79602c16e6f3e10cc0b7c84ac4efba3afae16454f4f1bdee0b1a81a552"
+}

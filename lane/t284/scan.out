@@ -1,0 +1,143 @@
+# angles (driver): 18 | window: 14 days | built-in: 1 control + 5 core
+#   rotA-hebbhome=all:Hebbian+AND+all:homeostatic+AND+all:stability
+#   rotA-scaling=all:%22synaptic+scaling%22+AND+all:plasticity
+#   rotA-rwmod=all:%22reward-modulated%22+AND+all:Hebbian
+#   rotA-meta=all:metaplasticity
+#   rotA-threefac=all:%22three-factor%22+AND+all:plasticity
+#   rotA-slide=all:%22sliding+threshold%22+AND+all:plasticity
+#   rotA-wnorm=all:%22weight+normalization%22+AND+all:spiking
+#   rotA-runaway=all:runaway+AND+all:synaptic+AND+all:plasticity
+#   rotB-flysleep=all:Drosophila+AND+all:sleep+AND+all:memory
+#   rotB-dasleep=all:dopamine+AND+all:sleep+AND+all:consolidation
+#   rotB-replaysel=all:replay+AND+all:sleep+AND+all:selection
+#   rotB-tagging=all:%22synaptic+tagging%22+AND+all:consolidation
+#   rotC-shapley=all:Shapley+AND+all:neurons+AND+all:ablation
+#   rotC-ablgrp=all:ablation+AND+all:%22neural+network%22+AND+all:interaction+AND+all:components
+#   rotC-matching=all:matching+AND+all:observational+AND+all:balance
+#   rotC-hetero=all:%22effect+heterogeneity%22+AND+all:matching
+#   rotC-lescomp=all:lesion+AND+all:connectome+AND+all:compensation
+#   rot-listNCsleep=cat:q-bio.NC+AND+all:sleep
+
+## CONTROL-known-hit :: cat:q-bio.NC
+  [2611.32829v1] 2026-11-24 Marcus Ghosh | Normative and neural network models of multisensory integration
+    Animals continuously detect scents, sights and sounds, which their brains combine into diverse multisensory streams. Multisensory integration accelerates learning, increases reaction speeds and helps to resolve sensory a
+  [2611.32825v1] 2026-11-24 Junxiang Zhang | EEG-World: Context-Conditioned Dynamics of the Watching Brain
+    Brain encoding models predict neural responses from audiovisual input, but typically overlook how ongoing brain activity shapes an individual's response. We introduce EEG-World, a recurrent world model that forecasts 10 
+  [2611.32792v1] 2026-11-24 Aude Maier | Accuracy of Noise Ceiling Estimators for Brain Scores
+    The internal activations of modern machine learning models align surprisingly well with the activities recorded in real brains. In the last five years, the alignment between encoding models and brain activities, often ca
+  [2611.32130v1] 2026-11-24 Dingjie Wu | Network topology imposes spectral constraints on collective nonequilibrium responses
+    Collective nonequilibrium dynamics in Langevin systems depend on both network topology and stochastic driving. Understanding the role of topology in responses to stochastic driving and in the emergence of nonequilibrium 
+  [2611.31644v1] 2026-11-23 Mauricio Muñoz Arias | The cyborg fly: reflexes survive engineered actuators, coordination needs stand-ins
+    Two wiring diagrams now cover the whole central nervous system of an adult fruit fly: one female, one male. Can such a diagram, run as a network of spiking neurons, drive a body? And if we swap the body's muscles for eng
+  [2611.31629v1] 2026-11-23 Dongsung Huh | The Self-Assembling Brain: Emergent Routing and Its Open Challenges
+    Biologically inspired alternatives to backpropagation, such as feedback alignment, relax the requirement for exact synaptic weight symmetry but still presuppose a fixed, pre-wired correspondence between forward and feedb
+  [2611.30788v1] 2026-11-23 Tadahiro Taniguchi | From joint attention to shared symbols: A free-energy principle account
+    Joint attention precedes vocabulary acquisition. How can attending to the same object help two people with different sensory experiences come to use a shared word? In a free-energy principle account, marginalizing the co
+  [2611.29888v1] 2026-11-23 Josue Casco-Rodriguez | Second-Order Dynamics in Noisy RNNs Produce Exploration and Temporal Compression in Replay
+    Biological neural networks (like the hippocampus) can internally generate "replay" resembling stimulus-driven activity. Recent computational models of replay use noisy recurrent neural networks (RNNs) trained to path-int
+  [2611.29886v1] 2026-11-23 Neeli Tummala | Active sensing as control over sensory acquisition
+    The term "active sensing" is used across neuroscience and engineering to describe a wide range of sensing behaviors, but there is no consensus on what makes sensing "active." We propose that the behaviors grouped under t
+  [2611.29594v1] 2026-11-22 Elizabeth B. Torres | Motoric signatures to detect original authorship versus cognitive effort in instructed motor responses of an emerging speaker with ASD
+    There is at present no objective, agnostic method to track levels of message authorship and agency in non-speakers who rely on assisted typing to communicate. Part of the problem is that nuances in spontaneous gestural m
+  [2611.29457v1] 2026-11-22 Xinjie Zhang | MAS-BIT: A Multi-Agent System for End-to-End BraIn-to-Text Decoding
+    Speech brain-computer interfaces aim to restore communication by translating neural activity into text, yet end-to-end decoders have historically trailed cascaded systems in accuracy. We introduce a Multi-Agent System fo
+  [2611.29256v1] 2026-11-22 Xianglong Bao | Denoised but Not Improved: What EEG Denoising Does to a Downstream Task
+    Scalp electroencephalography (EEG) is routinely denoised before it reaches a downstream model, and the denoising literature scores a method by how closely its output matches a clean reference waveform. That reference doe
+  [2611.29051v1] 2026-11-21 Maryam Farahmandrad | High-Resolution 3D Micro-CT Database of Transcranial Magnetic Stimulation (TMS) Coils for More Accurate Modelling, Technology Benchmarking, and Progress in Coil Design
+    Accurate modelling of transcranial magnetic stimulation (TMS) coils requires coil-specific geometric and electrical parameters. Yet detailed manufacturer models are rarely available, and internals may be widely available
+  [2611.28894v1] 2026-11-21 Nicholas Enbar-Salo | Topological Neural Collapse
+    Neural collapse (NC) predicts that, late in training, last-layer class features concentrate at their means and the means form a simplex equiangular tight frame (ETF). We ask whether NC also leaves a signature in the func
+  parsed:14 in-window:14 (cutoff 2026-11-11)
+
+## core :: all:Drosophila+AND+all:connectome
+  [2611.23320v1] 2026-11-15 Eran Kopel | Does a label survive the loop? A screen of necessary physical conditions for a self-measuring system, with a pre-registered test on fly connectomes
+    Theories that tie experience to a system that re-reads its own state rarely say what a physical substrate must supply for such a loop to run. We state necessary conditions as measurable bounds in one currency: the number
+  parsed:14 in-window:1 (cutoff 2026-11-11)
+
+## core :: all:FlyWire
+  parsed:12 in-window:0 (cutoff 2026-11-11)
+
+## core :: %22connectome-constrained%22
+  parsed:14 in-window:0 (cutoff 2026-11-11)
+
+## core :: all:NeuroMechFly
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## core :: all:flyGNN
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## rotA-hebbhome :: all:Hebbian+AND+all:homeostatic+AND+all:stability
+  parsed:4 in-window:0 (cutoff 2026-11-11)
+
+## rotA-scaling :: all:%22synaptic+scaling%22+AND+all:plasticity
+  parsed:5 in-window:0 (cutoff 2026-11-11)
+
+## rotA-rwmod :: all:%22reward-modulated%22+AND+all:Hebbian
+  parsed:8 in-window:0 (cutoff 2026-11-11)
+
+## rotA-meta :: all:metaplasticity
+  parsed:14 in-window:0 (cutoff 2026-11-11)
+
+## rotA-threefac :: all:%22three-factor%22+AND+all:plasticity
+  parsed:14 in-window:0 (cutoff 2026-11-11)
+
+## rotA-slide :: all:%22sliding+threshold%22+AND+all:plasticity
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## rotA-wnorm :: all:%22weight+normalization%22+AND+all:spiking
+  parsed:3 in-window:0 (cutoff 2026-11-11)
+
+## rotA-runaway :: all:runaway+AND+all:synaptic+AND+all:plasticity
+  parsed:2 in-window:0 (cutoff 2026-11-11)
+
+## rotB-flysleep :: all:Drosophila+AND+all:sleep+AND+all:memory
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## rotB-dasleep :: all:dopamine+AND+all:sleep+AND+all:consolidation
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## rotB-replaysel :: all:replay+AND+all:sleep+AND+all:selection
+  parsed:4 in-window:0 (cutoff 2026-11-11)
+
+## rotB-tagging :: all:%22synaptic+tagging%22+AND+all:consolidation
+  parsed:2 in-window:0 (cutoff 2026-11-11)
+
+## rotC-shapley :: all:Shapley+AND+all:neurons+AND+all:ablation
+  parsed:1 in-window:0 (cutoff 2026-11-11)
+
+## rotC-ablgrp :: all:ablation+AND+all:%22neural+network%22+AND+all:interaction+AND+all:components
+  parsed:14 in-window:0 (cutoff 2026-11-11)
+
+## rotC-matching :: all:matching+AND+all:observational+AND+all:balance
+  [2611.30770v1] 2026-11-23 Chengxuan Zhou | GRAIN: Shared-Budget Complementary Re-observation for Object Detection
+    Re-running a frozen detector on enlarged image crops recovers small and crowded objects without retraining, yet every crop costs an extra detector call. Existing slicing and adaptive-cropping pipelines plan crops per ima
+  [2611.29079v1] 2026-11-21 Andrzej Wodecki | Factory-simulator: A process-oriented environment for evaluating manufacturing decisions against optimisation-based references
+    Motivated by discussions with an electronics contract manufacturer about decision support, Factory-simulator provides a deterministic manufacturing environment for controlled research on the business performance of large
+  [2611.28878v1] 2026-11-21 Wenqing Tian | Eidetic Code World Model
+    Executable code can preserve a world's structural layout, yet video renderers frequently alter the appearance of previously visited places once they leave the camera view. We present Paintress, a code-conditioned world m
+  [2611.27029v1] 2026-11-20 Weikang Qiu | Mind World Models: Joint Learning of Motor EEG Representations and Action-Conditioned World Dynamics
+    Motor decoding from electroencephalography (EEG) supports non-invasive brain-computer interfaces, yet existing methods either rely on costly cue-based trials and coarse categorical labels or use pretraining objectives th
+  [2611.25407v1] 2026-11-19 Noah Sturgill | ChronoDossier: Long-Form Personas as Temporal Memory Representations
+    Long-horizon agents rely on stored records to recover a person's state as facts change. Reliable answers depend on how facts are recorded, retrieved, and presented to the reader. We treat a long-form persona dossier as a
+  [2611.28095v1] 2026-11-17 Saeed Noori Gashti | Horizon mergers and initial test-charge acceleration in charged black-hole geometries with anisotropic sources
+    We study horizon mergers and the initial radial acceleration of charged test particles in static, spherically symmetric black-hole geometries with a string cloud, a Kiselev power-law component, or a logarithmic profile c
+  [2611.22183v1] 2026-11-17 Alexander J Root | A Compilation Model for Divergent Parallel Workloads
+    Efficient execution on modern parallel machines requires more than abundant parallelism; it demands instruction coherence, memory coherence, and load balance to maximize SIMD utilization and memory bandwidth. Efficiently
+  [2611.19520v1] 2026-11-14 Hanne Thienpondt | Simulations of turbulent heat and particle transport in stellarator plasmas
+    Achieving sustained energy production in magnetic confinement fusion reactors requires a deep understanding of turbulent transport of heat and particles. This thesis investigates turbulent transport with a particular emp
+  parsed:14 in-window:8 (cutoff 2026-11-11)
+
+## rotC-hetero :: all:%22effect+heterogeneity%22+AND+all:matching
+  [2611.18116v1] 2026-11-13 Stanisław M. S. Halkiewicz | Positive Weights Do Not Certify TWFE Inference: A Design Diagnostic under Treatment-Effect Heterogeneity
+    Conventional two-way fixed-effects (TWFE) inference need not be uniformly adequate even when all treatment weights are positive. Under a local treatment-effect drift, the statistic for the equally weighted treated-cell e
+  parsed:14 in-window:1 (cutoff 2026-11-11)
+
+## rotC-lescomp :: all:lesion+AND+all:connectome+AND+all:compensation
+  parsed:0 in-window:0 (cutoff 2026-11-11)
+
+## rot-listNCsleep :: cat:q-bio.NC+AND+all:sleep
+  [2611.22070v1] 2026-11-17 Nada Elmeligy | Why do continual physical learners need sleep?
+    Sleep is widespread across the animal kingdom, including in organisms without a centralized nervous system. Does learning create a need for sleep, even without biology? To explore this question, we study a disordered spr
+  parsed:14 in-window:1 (cutoff 2026-11-11)
+
+=== SUMMARY: 24 angles, 0 still ERRORED, 5 with in-window hits ===
