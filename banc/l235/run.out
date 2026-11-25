@@ -1,0 +1,50 @@
+[pins] ladder+graphs GREEN (2s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[spectral] lam1(A_crofts) = 0.388120 (rel spread 1.06e-08)
+[sweep] 35 actors x depths 1-10, both normalisations (depth-1..3 vs L178 stored: max rel diff 0.0e+00)
+[conv] carrier cos(x_d, v1) = 0.0039 0.0362 0.1255 0.2928 0.5844 0.8137 0.9043 0.9374 0.9540 0.9649 -> d_conv None
+[null] 100 draws x depths 1-10 (med changed 138.0)
+[CERT-NULL] GREEN: all 8 stored L178 Q2b_null_anatomical statistics reproduced by FLOAT EQUALITY from my own null construction
+[CERT-206] GREEN 94 stored L206 G1 values reproduced by FLOAT EQUALITY (10 depths x 9 fields + lam1 + tail mean + the D10 pin); D10 = 10.38807894033
+[CERT-MV] GREEN 8 exact array equalities vs the certified np.add.at matvec (4 probes x 2 index orders); bilinear rel 0.00e+00
+[CERT-LEFT] GREEN right-replay rel 0.00e+00 / |cos-1| 2.22e-16; left lam1 30.179788 vs 30.179788 (rel 2.35e-16, spread 3.53e-16)
+[K] real carrier K 5.341134e-03 | P10 4.027713e+12 | lam1^10*K 3.348076e+12 | C_real 1.202993 (twin C 1.175480)
+[Q210-5] carrier K/m_out 3.165782e-05 rank 4 of 35 (family median 4.602493e-04)
+[CERT-REBUILD] GREEN 1000 stored null values (100 draws x depths 1-10) reproduced by FLOAT EQUALITY from my own operator rebuild
+[Q210-1] B_CLOSED_FORM | R_asym 11.3985 vs D10 10.3881 (ratio 1.0973) | R_bare 11.4039 | converged draws 100/100
+[Q210-3] C_real 1.202993 | C_null_med 1.102947 | C_twin 1.175480 | carrier cos(x10,v1) 0.964861
+[Q210-4] |lam2| ~ 26.946910 | lam2/lam1 0.892879 | rel spread 3.09e-10 | converged True
+[time] CERT-210M complete (parent measurement block re-run): 0.0s
+[CERT-218T] GREEN 1224 stored L210 values reproduced by FLOAT EQUALITY (1100 from the 100-draw per-draw table, 124 from the headline/certification blocks) BEFORE any d>10 number was read
+[time] CERT-218T: 0.0s
+[CERT-W50] GREEN 1010 float equalities: the depth-1..10 segment of every extended walk (1 real + 100 draws) reproduces the certified arrays exactly; extended to d=50
+[time] extended walks: 7.6s
+[anchors] GREEN D_prof(10)==D10, R_asym(10)==L210 R_asym, C_car(10)==L210 C_real -- the extension is continuous with the parent
+[NO-OP] GREEN max rel move under a global x3.7 rescale: real 3.32e-15 over 50 depths, draws 4.00e-15 over 5x50
+[time] NO-OP: 18.1s
+[Q218-1] CF_EXACT | D_50 11.37931 | R_asym(50) 11.38621 | C_prof(50) 0.999394 | plateau spread d40-50 1.23e-03 | K_ratio_med 11.40164 | lam-power factor 0.998833 | C_car(50) 1.001967
+[Q218-2] RATE_SPECTRAL | per-hop ratio of (C_car-1) over d20-45: median 0.892172 [0.890752, 0.892297] vs certified gap 0.892879 (|diff| 7.07e-04) | sign alternation False | draw-median rate 0.889687
+[time] Q218-1 + Q218-2: 18.1s
+[CERT-DEFLV] GREEN 4 deflations (real + 3 probe draws) agree with the certified lam2_defl at EXACT float equality on the eigenvalue and every convergence field; real |lam2| 26.946910 == parent LAM2
+[time] CERT-DEFLV: 34.2s
+[Q218-3 real] |lam2| R 26.946910 / L 26.946910 | signed Rayleigh +26.946910 / +26.946910 | residual 7.040e-09 / 3.542e-09 (bar 1e-03, resolved True) | K2 2.975487e-03 | A2 = K2/K +0.557089 | u2[carrier] +3.227996e-04
+[time-235] SLICE A complete (L218's block up to the real-graph Q218-3): 0.0s
+[CERT-235A] GREEN 630 float equalities == the artifact's own leaf count 630 over 29 keys (CERT-218T 1224 + CERT-W50 1010 + CERT-DEFLV + Q218-1/2 + the 50-depth profile), floor 495 derived from 10 core blocks
+[time-235] CERT-235A: 0.0s
+[time-235] the 100-draw loop (35 actors captured): 548.7s
+[CERT-235B] GREEN 334 float equalities: this card's own 35-actor loop reproduces L218's ENTIRE stored carrier draw block (A2 median/p05/p95/percentile, |u2| percentile + median, residuals, draws resolved), L218's Q210-2 u1 block (percentile 0.000, median), Q210-1's K percentile and median, and L234's 100 stored per-draw K2 values — so the cost slice (PREREG 0i) is the parent's loop, measured not assumed
+[time-235] CERT-235B: 548.7s
+[Q235-1] I_CARRIER | disagreement |pA2 - p|u2|| > 0.5: 1/35 = rate 0.0286 (abs-matched companion 1/35) | carrier D 0.840 (pA2 0.940 vs p|u2| 0.100) rank 1/35 | median D 0.070 mean 0.120
+[Q235-2] midrank Spearman(pA2, p|u2|) +0.248385 (distinct 24/24) | abs form +0.554487 | Spearman(pu1, D) +0.014456 (distinct 29/25) | Spearman(pR, pA2abs) +0.908817
+[Q235-3 ladder] mean rungs: u1-division s1 0.0769 | per-draw constant s2 0.0471 | sign s3 0.0429 | carrier (s1 0.840, s2 0.000, s3 0.000) | pu1 carrier 0.000 median cohort 0.310
+[time-235] Q235-1/2/3: 548.7s
+[predictions-235] 4/6 TRUE: P1=F P2=T P3=T P4=T P5=T P6=F
+[priors-235] GREEN 8 prior artifacts unchanged (size, mtime_ns) across the run
+[time-235] total: 548.7s
+[done] wrote l235/static.json

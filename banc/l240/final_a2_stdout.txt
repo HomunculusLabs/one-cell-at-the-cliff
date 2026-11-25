@@ -1,0 +1,6 @@
+FINAL: cutwA gate {'xmean': True, 'raw': True, 'af': True} traces 5368 measurable 69 unmeas []
+F 0.00022931491480943385 FLOOR69 4 pass False | SPLIT rho 0.2996 p 0.006439935600643994 agree 46 pass False
+VERDICT I_INSTRUMENT | metric NOT READ FLOOR_PASS=False (4/69), SPLIT_PASS=False (rho 0.2996, p 0.0064)
+sum singles 0.006519532278897554 top1 share 0.1918901554830175 top ['e14', 'e27', 'e45', 'e43', 'e49']
+companion floorN 0.005333731805284174 V69 5 V58 1 M_rej 1 V_rej 5 V_STRONGER
+pred {1: True, 2: True, 3: True, 4: True, 5: True} score 5

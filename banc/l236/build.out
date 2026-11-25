@@ -1,0 +1,10 @@
+[build] parent l219_static.py whole fcef1ff55e0beedb tail 3debfdf00691b662
+[build] SLICE P 1-989 (989 lines) sha 1e180562748807ed
+[build] SLICE H 1231-1281 (51 lines) sha 34331f4f3a3f20d5
+[build] SLICE R 1284-1309 (26 lines) sha 36d0d5bedb2bc307
+[build] SLICE T 1459-1474 (16 lines) sha da753da5eedbb46d
+[build] SLICE C 1476-1501 (26 lines) sha 755ed04d9dabc384
+[build] SLICE M 1536-1545 (10 lines) sha 20ac0206903d5d1a
+[build] SLICE W 1548-1556 (9 lines) sha 5cdb3bfed741e1ed
+[build] kept 1127 parent lines, CUT 545 (cut owns the per-draw loop, Q219_2/Q219_3 writers and json.dump)
+[build] wrote l236_static.py 1751 lines sha 033665492b93baf9

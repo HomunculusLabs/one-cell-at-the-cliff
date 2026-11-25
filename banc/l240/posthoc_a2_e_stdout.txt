@@ -1,0 +1,18 @@
+arms file keys of worker 3: ['addendum', 'archives', 'arms_built', 'base_edges', 'carrier', 'carrier_col', 'cert_menu_11', 'edges', 'menu69_n', 'menu_n', 'prereg', 'seeds', 'stage', 'unmeasurable', 'wid']
+edge record keys: ['edge_j', 'removed', 'syn_raw'] | removed[0] keys: ['csr_index', 'effective_weight', 'sign', 'syn', 'target']
+top-level keys mentioning settle/af/oppoint: []
+e1 (w3): csr_index 47122 | effective_weight 3.5835189819335938 | syn 35 | sign 1.0 | target 4945 | syn_raw 35.0
+e2 (w3): csr_index 47686 | effective_weight 2.5649492740631104 | syn 12 | sign 1.0 | target 4947 | syn_raw 12.0
+e8 (w3): csr_index 97641 | effective_weight 2.3025851249694824 | syn 9 | sign 1.0 | target 16630 | syn_raw 9.0
+e9 (w3): csr_index 126788 | effective_weight 1.7917594909667969 | syn 5 | sign 1.0 | target 22572 | syn_raw 5.0
+e16 (w4): csr_index 217255 | effective_weight 3.25809645652771 | syn 25 | sign 1.0 | target 65601 | syn_raw 25.0
+e21 (w4): csr_index 230848 | effective_weight 1.7917594909667969 | syn 5 | sign 1.0 | target 65941 | syn_raw 5.0
+e47 (w7): csr_index 331373 | effective_weight 3.6635615825653076 | syn 38 | sign 1.0 | target 68414 | syn_raw 38.0
+e55 (w8): csr_index 371803 | effective_weight 1.7917594909667969 | syn 5 | sign 1.0 | target 69309 | syn_raw 5.0
+e37 (w6): csr_index 301497 | effective_weight 2.079441547393799 | syn 7 | sign 1.0 | target 67689 | syn_raw 7.0
+e61 (w9): csr_index 442332 | effective_weight 1.6094379425048828 | syn 4 | sign 1.0 | target 71044 | syn_raw 4.0
+e42 (w7): csr_index 330251 | effective_weight 3.610917806625366 | syn 36 | sign 1.0 | target 68376 | syn_raw 36.0
+e43 (w7): csr_index 330690 | effective_weight 3.7376697063446045 | syn 41 | sign 1.0 | target 68391 | syn_raw 41.0
+e45 (w7): csr_index 331121 | effective_weight 1.6094379425048828 | syn 4 | sign 1.0 | target 68403 | syn_raw 4.0
+e27 (w5): csr_index 273104 | effective_weight 2.1972246170043945 | syn 8 | sign 1.0 | target 66994 | syn_raw 8.0
+no-op arms whose removed edge has a ZERO/absent effective weight (would mean a silent non-deletion): []

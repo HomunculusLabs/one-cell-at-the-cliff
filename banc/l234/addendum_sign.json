@@ -1,0 +1,21 @@
+{
+ "design": "POST-HOC addendum to L234 Q2: the sign-conditioned read of K2's null. DESCRIPTION, not registered.",
+ "n_draws": 100,
+ "n_K2_negative": 15,
+ "n_K_negative": 0,
+ "pct_K2_all": 0.2,
+ "n_below_real": 20,
+ "n_below_real_and_negative": 15,
+ "n_below_real_and_positive": 5,
+ "n_positive_draws": 85,
+ "pct_K2_among_positive_draws": 0.058823529411764705,
+ "pct_K_all": 0.0,
+ "pct_K_stored": 0.0,
+ "suppression_fold_K": 11.401637819176528,
+ "suppression_fold_K2_all": 4.487679592927918,
+ "suppression_fold_K2_positive": 5.320833712842637,
+ "fold_ratio_K_over_K2": 2.540653267034535,
+ "abs_pct_K2": 0.1,
+ "n_gates": 7,
+ "reading": "K's null is strictly positive BY PERRON-FROBENIUS (0 of 100 draws negative) while K2's straddles zero (15 of 100), so the two marginals are not comparable on a raw percentile scale: of the 20 draws below K2_real, 15 are below because they are NEGATIVE and only 5 because they are smaller in magnitude. Conditioned on positive draws the carrier's subdominant overlap sits at pct 0.0588 against K's 0.000, and the suppression folds are 11.40x vs 4.49x \u2014 so L218's claim that the carrier avoids the dominant mode HARDER survives, in a currency that has to be named."
+}

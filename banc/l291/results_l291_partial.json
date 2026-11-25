@@ -1,0 +1,64 @@
+{
+ "card": "L291",
+ "prereg_sha256": "670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252",
+ "sets_sha256": "bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed",
+ "harness_sha256": "9a7965c7ced69dae0bcde3e9350f62988351b591091887d750123c97be629285",
+ "l290_results_sha256": "83498d7c933414c7ee02f8ff088bcf62d59ec1bac16bc5ff5d274ff3a0628f5f",
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "K": 8,
+ "eps": 0.0004586298296188677,
+ "F": 0.00022931491480943385,
+ "exit_codes": {
+  "0": null,
+  "1": "0"
+ },
+ "cutwA_gate": {
+  "21": {
+   "xmean": true,
+   "raw": true,
+   "raw_all": true,
+   "af": true
+  }
+ },
+ "cutwA_arrays_compared": 532,
+ "trace_arrays_verified": 2416,
+ "pool_traces_verified": 12080,
+ "vacuous_by_identity": {
+  "abs": [],
+  "crofts": [],
+  "hop": []
+ },
+ "same_set_as_used": [],
+ "dup_pairs": [],
+ "status": "PARTIAL",
+ "effects_read": false,
+ "missing_arms": [
+  "s11f1",
+  "s11f2",
+  "s11w1",
+  "s11w2",
+  "s11w3",
+  "s30w1",
+  "s30w2",
+  "s30w3",
+  "gc30f"
+ ],
+ "note": "fewer than 2 L291 workers finished: verification only, no effect computed, branches NOT read"
+}

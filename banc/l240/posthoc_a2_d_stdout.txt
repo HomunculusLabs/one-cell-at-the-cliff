@@ -1,0 +1,16 @@
+base pool traces in worker 0: 380 | classes ('Ti', 'Tr', 'Ta', 'Sr', 'Pr') | suffixes ['aL', 'aR', 'bL', 'bR', 'eL', 'eR', 'fL', 'fR'] | seeds 19 ['3545', '3769', '3770'] ... ['801', '901']
+e1: workers [3] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e2: workers [3] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e8: workers [3] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e9: workers [3] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e16: workers [4] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e21: workers [4] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e47: workers [7] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e55: workers [8] | pool traces compared 320 | bit-identical to the base trace 320 | max |diff| over the whole 6000-step trace 0.000e+00
+e37: workers [6] | pool traces compared 320 | bit-identical to the base trace 302 | max |diff| over the whole 6000-step trace 3.729e-01 | differing e.g. [('fL', '3770', 0.00953), ('eL', '3770', 0.19641)]
+e61: workers [9] | pool traces compared 320 | bit-identical to the base trace 285 | max |diff| over the whole 6000-step trace 4.129e-01 | differing e.g. [('fL', '3773', 0.03282), ('eL', '3773', 0.16123)]
+e42: workers [7] | pool traces compared 320 | bit-identical to the base trace 267 | max |diff| over the whole 6000-step trace 8.427e-01 | differing e.g. [('fL', '3777', 0.01323), ('eL', '3777', 0.21666)]
+e43: workers [7] | pool traces compared 320 | bit-identical to the base trace 26 | max |diff| over the whole 6000-step trace 8.851e-01 | differing e.g. [('fL', '3769', 0.02), ('eL', '3769', 0.11939)]
+e45: workers [7] | pool traces compared 320 | bit-identical to the base trace 23 | max |diff| over the whole 6000-step trace 9.393e-01 | differing e.g. [('fL', '3769', 0.01994), ('eL', '3769', 0.13212)]
+e27: workers [5] | pool traces compared 320 | bit-identical to the base trace 14 | max |diff| over the whole 6000-step trace 9.574e-01 | differing e.g. [('fL', '3769', 0.05412), ('eL', '3769', 0.163)]
+e14: workers [0] | pool traces compared 320 | bit-identical to the base trace 24 | max |diff| over the whole 6000-step trace 9.013e-01 | differing e.g. [('fL', '3769', 0.01986), ('eL', '3769', 0.10584)]

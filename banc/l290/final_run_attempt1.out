@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l290/final_l290.py", line 77, in <module>
+    assert f'xmean_{a}_{s}' in X[w].files and f'af_{a}_{s}' in Z[w].files, (w, a, s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0, 'gc30', 801)

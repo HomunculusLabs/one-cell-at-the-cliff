@@ -1,0 +1,2 @@
+PARTIAL: workers () of 2 | exit {0: None, 1: None} | cutwA gate {}
+no effect read; branches NOT read; missing arms ['s11f1', 's11f2', 's11w1', 's11w2', 's11w3', 's30f1', 's30f2', 's30w1', 's30w2', 's30w3', 's46f1', 's46f2', 's46w1', 's46w2', 's46w3', 'gc30f', 'gh46f']

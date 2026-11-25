@@ -1,0 +1,2 @@
+PARTIAL: A2 workers (3, 4, 5) of 7 | arms built 26 of 58 | traces 3016 | cutwA gate {'xmean': True, 'raw': True, 'af': True}
+no effect read; gates NOT read

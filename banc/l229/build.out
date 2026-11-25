@@ -1,0 +1,14 @@
+inherited sha pins GREEN: {'head1': 'e6245e8306dc8a0f', 'head2': '66112b0c221d02d8', 'head3': '2fb8c7f54a56e5f1', 'head4': 'de636f4a18ee789b', 'head3_parentfile': 'dbc507e8f48530ae'}
+PARENT PIN GREEN: HEAD3's source file is the code that produced l215/static.json
+HEAD3 line-set audit GREEN: slice = lines 1-164 of 402; the 238 cut lines own L215's ROWS loop, Q-blocks and writer
+write-token audit on all four slices: clean
+AST import audit GREEN (L175): ['hashlib', 'itertools', 'json', 'math', 'numpy', 'os', 'pandas', 'time', 'torch']
+AST write audit GREEN: exactly ONE write site, l229/static.json (line 1088); no savez/to_csv/write_text/os.replace
+wrote /home/t3rpz/critters/peabrain-lab/banc/l229_static.py (1091 lines)
+  head1 sha256 e6245e8306dc8a0fadad78553fe51186d00b645307a18c2903d2c6ca2008813f
+  head2 sha256 66112b0c221d02d89649eff5d1f6f52399c4a2720dbbb44ba8adc6d56141e23e
+  head3 sha256 2fb8c7f54a56e5f1d756ad30e6293810fa17d84db35c79ef7e3a7b6d81a118d4
+  head4 sha256 de636f4a18ee789b8bd51fca5f7823ea6302ffd58be630b50c70965e865b8e0c
+  head3_parentfile sha256 dbc507e8f48530ae7facb71bb298afe48d37256504f3110a9d46539c7e5c7a56
+  tail sha256 8cb5b85ff2c7970c7dff7f304ebf7b8d18fd3b9f7910dff2adb8d9dc1b78e961
+  generated sha256 b7413ee719100561647f79978979e46855049d157a9a2b51f034c62d33f46df2

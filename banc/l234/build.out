@@ -1,0 +1,11 @@
+[pin1] GREEN l218_static.py banner == l218/static.json['banner']
+[pin2] GREEN l218_tail.py sha 5db068f586f3f097 == the banner's recorded TAIL sha, and is a literal SUFFIX of the parent
+[pin3] GREEN SLICE A is a literal PREFIX, AST-PROVEN write-free, assigns 30 o[...] measurement keys and none of the parent's five verdict keys, 1691 lines, sha256 ff3e3ae95b2cd21f
+[cut] GREEN 72 cut lines own exactly the parent's writer and o[...] keys ['amendments', 'limitations', 'predictions', 'priors_readonly', 'rows_per_draw_recomputed']
+[ast] GREEN exactly one write site (l234/static.json), one makedirs, no lab module imported
+wrote l234_static.py (2089 lines)
+SLICE A   l218_static.py 1-1691 sha256 ff3e3ae95b2cd21fb264c3c922ed761fb487b275dd79daee6bac6c9ec372d8af
+PARENT    l218_static.py whole    sha256 ff2f2a5d83d55ee63aae0e980e7cc487e0fd2029a6c916c7e198991db0abb10d
+PARENT    l218_tail.py   whole    sha256 5db068f586f3f0977ec48ba4d70630566cb838792cc311d58cc963fc13cee98e
+TAIL      l234_tail.py            sha256 a5065d7b17ee365ab9cd0a6c4f5dddae40ec8ed2e10be5db75428e7e508c75d8
+GENERATED sha256 eabc4728458140149d7335dbf4e6cb10a111f6c86eda8bebcaf9ce986efb5c5b

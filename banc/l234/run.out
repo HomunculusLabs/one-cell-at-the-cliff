@@ -1,0 +1,54 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[spectral] lam1(A_crofts) = 0.388120 (rel spread 1.06e-08)
+[sweep] 35 actors x depths 1-10, both normalisations (depth-1..3 vs L178 stored: max rel diff 0.0e+00)
+[conv] carrier cos(x_d, v1) = 0.0039 0.0362 0.1255 0.2928 0.5844 0.8137 0.9043 0.9374 0.9540 0.9649 -> d_conv None
+[null] 100 draws x depths 1-10 (med changed 138.0)
+[CERT-NULL] GREEN: all 8 stored L178 Q2b_null_anatomical statistics reproduced by FLOAT EQUALITY from my own null construction
+[CERT-206] GREEN 94 stored L206 G1 values reproduced by FLOAT EQUALITY (10 depths x 9 fields + lam1 + tail mean + the D10 pin); D10 = 10.38807894033
+[CERT-MV] GREEN 8 exact array equalities vs the certified np.add.at matvec (4 probes x 2 index orders); bilinear rel 0.00e+00
+[CERT-LEFT] GREEN right-replay rel 0.00e+00 / |cos-1| 2.22e-16; left lam1 30.179788 vs 30.179788 (rel 2.35e-16, spread 3.53e-16)
+[K] real carrier K 5.341134e-03 | P10 4.027713e+12 | lam1^10*K 3.348076e+12 | C_real 1.202993 (twin C 1.175480)
+[Q210-5] carrier K/m_out 3.165782e-05 rank 4 of 35 (family median 4.602493e-04)
+[CERT-REBUILD] GREEN 1000 stored null values (100 draws x depths 1-10) reproduced by FLOAT EQUALITY from my own operator rebuild
+[Q210-1] B_CLOSED_FORM | R_asym 11.3985 vs D10 10.3881 (ratio 1.0973) | R_bare 11.4039 | converged draws 100/100
+[Q210-3] C_real 1.202993 | C_null_med 1.102947 | C_twin 1.175480 | carrier cos(x10,v1) 0.964861
+[Q210-4] |lam2| ~ 26.946910 | lam2/lam1 0.892879 | rel spread 3.09e-10 | converged True
+[time] CERT-210M complete (parent measurement block re-run): 0.0s
+[CERT-218T] GREEN 1224 stored L210 values reproduced by FLOAT EQUALITY (1100 from the 100-draw per-draw table, 124 from the headline/certification blocks) BEFORE any d>10 number was read
+[time] CERT-218T: 0.0s
+[CERT-W50] GREEN 1010 float equalities: the depth-1..10 segment of every extended walk (1 real + 100 draws) reproduces the certified arrays exactly; extended to d=50
+[time] extended walks: 7.5s
+[anchors] GREEN D_prof(10)==D10, R_asym(10)==L210 R_asym, C_car(10)==L210 C_real -- the extension is continuous with the parent
+[NO-OP] GREEN max rel move under a global x3.7 rescale: real 3.32e-15 over 50 depths, draws 4.00e-15 over 5x50
+[time] NO-OP: 15.9s
+[Q218-1] CF_EXACT | D_50 11.37931 | R_asym(50) 11.38621 | C_prof(50) 0.999394 | plateau spread d40-50 1.23e-03 | K_ratio_med 11.40164 | lam-power factor 0.998833 | C_car(50) 1.001967
+[Q218-2] RATE_SPECTRAL | per-hop ratio of (C_car-1) over d20-45: median 0.892172 [0.890752, 0.892297] vs certified gap 0.892879 (|diff| 7.07e-04) | sign alternation False | draw-median rate 0.889687
+[time] Q218-1 + Q218-2: 15.9s
+[CERT-DEFLV] GREEN 4 deflations (real + 3 probe draws) agree with the certified lam2_defl at EXACT float equality on the eigenvalue and every convergence field; real |lam2| 26.946910 == parent LAM2
+[time] CERT-DEFLV: 28.1s
+[Q218-3 real] |lam2| R 26.946910 / L 26.946910 | signed Rayleigh +26.946910 / +26.946910 | residual 7.040e-09 / 3.542e-09 (bar 1e-03, resolved True) | K2 2.975487e-03 | A2 = K2/K +0.557089 | u2[carrier] +3.227996e-04
+[Q218-3] U2_NULL | A2_real +0.557089 vs draw median +0.211157 [p05 -0.089530, p95 +0.561986] pct 0.940 | |A2-med| 0.3459 -> DIRECTIONAL_ONLY False | u2[car] pct 0.100 | draws resolved 100/100 (max residual 7.08e-09)
+[time] Q218-3: 372.3s
+[time-234] SLICE A complete (L218's whole measurement block re-run): 0.0s
+[CERT-234A] GREEN 661 float equalities == the artifact's own leaf count 661 over 30 keys: L218's ENTIRE measurement block (CERT-218T 1224 + CERT-W50 1010 + CERT-DEFLV + Q218-1/2/3 + the 50-depth profile) reproduced
+[time-234] CERT-234A: 0.0s
+[CERT-234B] GREEN 6 exact agreements: defl_multi with ONE pair is bit-for-bit the certified defl_pair/defl_resid on eigenvalue, iterate and every convergence field (both directions)
+[time-234] CERT-234B: 2.1s
+[Q1 third mode] |lam3| R 25.951256 / L 25.951256 | signed Rayleigh +25.951256 / +25.951256 | residual 4.759e-12 / 5.706e-12 (bar 1e-03) | resolved True (res True sign True distinct True) | r3 +0.859889 gap3 0.859889 | K3 +4.154846e-04 | A3 = K3/K +0.077790 | u3[car] +1.306481e-04
+[Q1] CF_PARTIAL | one-mode max relerr d10-50 0.116165 -> two-mode 0.031469 (improve 3.691x) | d10 0.031469 d50 0.002106 | fitted A3 +0.087053 -> relerr 0.023975 | two-point implied r3 0.850857 A3 0.118575
+[time-234] Q1 third mode: 3.9s
+[CERT-234C] GREEN 100 per-draw K2 re-computed; every ratio K2_k/K_k == the slice's certified A2K at FLOAT EQUALITY | the derived shortcut A2K*KK disagrees by max rel 1.776e-16 (L226: a cost slice is an intervention until measured)
+[Q2] K2_SEPARATED | K2_real 2.975487e-03 vs draws median 1.335303e-02 [p05 -5.931164e-03, p95 3.333918e-02] pct 0.200 (K's own pct 0.000, floor resolution 0.01) | suppression folds: K 11.402x K2 4.488x
+[Q3 compose] ratio-of-medians 0.219270 vs median-of-ratios 0.211157 -> rel disagreement 0.038421 (PREREG 0g: these are DIFFERENT statistics)
+[time-234] Q2 + Q3: 414.2s
+[PREDICTIONS-234] 5 of 6 correct: P1=Y P2=Y P3=Y P4=Y P5=N P6=Y
+[priors-234] GREEN 6 prior artifacts unchanged (size, mtime_ns) across the run
+[time-234] total: 414.2s
+[done] wrote l234/static.json

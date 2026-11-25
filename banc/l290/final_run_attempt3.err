@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l290/final_l290.py", line 210, in <module>
+    assert abs(flip(_m)['p_two'] - 2 / 65536) < 1e-12 and abs(flip(_m)['p_up'] - 1.0) < 1e-12, 'flip self-check (sign reversal)'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: flip self-check (sign reversal)

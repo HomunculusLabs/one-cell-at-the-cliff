@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l240/final_a2.py", line 251, in <module>
+    assert SGN.shape == (65536, 16) and bool((SGN[0] > 0).all()) and bool(SGN[1, 0] < 0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

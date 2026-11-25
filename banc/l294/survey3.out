@@ -1,0 +1,185 @@
+results top keys l291: ['verdict', 'n_clear', 'clear', 'per_metric', 'twins', 'EDGE_NOT_GAIN_GROUP', 'lift', 'rho_E_eff_strat', 'predictions', 'score', 'card', 'prereg_sha256', 'sets_sha256', 'harness_sha256', 'l290_results_sha256', 'seeds', 'K', 'eps', 'F', 'exit_codes', 'cutwA_gate', 'cutwA_arrays_compared', 'trace_arrays_verified', 'pool_traces_verified', 'vacuous_by_identity', 'same_set_as_used', 'dup_pairs', 'status', 'floorN', 'strat_meta', 'arms', 'arms_gain', 'uniform_l290_reported_not_scored', 'context', 'means']
+results top keys l290: ['card', 'prereg_sha256', 'sets_sha256', 'harness_sha256', 'seeds', 'workers', 'exit_codes', 'anchors', 'cutwA_gate', 'cutwA_arrays_compared', 'trace_arrays_verified', 'pool_traces_verified', 'gains', 'sets', 'status', 'verdict', 'amendment_tick278', 'K', 'eps', 'F', 'floorN', 'per_metric', 'instrument', 'single_edge_carrier', 'twins', 'predictions', 'score', 'set_predictions', 'arms', 'descriptive']
+
+### menu: distinct targets / signs / noop
+ menu len 18 distinct targets 69 signs [1.0] effective_weight min/max 1.6094379425048828 3.7376697063446045
+ j->target one-to-one: True
+ log1p identity over the menu: max|ew - log1p(syn)| = 1.06e-07
+ menu rows with a NEGATIVE weight: 0
+ noop js: [1, 2, 8, 9, 16, 21, 47, 55] | noop menu rows: [{'j': 1, 'target': 4945, 'syn': 35, 'effective_weight': 3.5835189819335938, 'sign': 1.0}, {'j': 2, 'target': 4947, 'syn': 12, 'effective_weight': 2.5649492740631104, 'sign': 1.0}, {'j': 8, 'target': 16630, 'syn': 9, 'effective_weight': 2.3025851249694824, 'sign': 1.0}, {'j': 9, 'target': 22572, 'syn': 5, 'effective_weight': 1.7917594909667969, 'sign': 1.0}, {'j': 16, 'target': 65601, 'syn': 25, 'effective_weight': 3.25809645652771, 'sign': 1.0}, {'j': 21, 'target': 65941, 'syn': 5, 'effective_weight': 1.7917594909667969, 'sign': 1.0}, {'j': 47, 'target': 68414, 'syn': 38, 'effective_weight': 3.6635615825653076, 'sign': 1.0}, {'j': 55, 'target': 69309, 'syn': 5, 'effective_weight': 1.7917594909667969, 'sign': 1.0}]
+ random (l290) type/len: dict 15 | one: ["r11k1", [0, 5, 15, 16, 20, 23, 30, 32, 39, 43, 48]]
+ random_draw_order: null
+ same_set_pairs: null
+ raw_boundary_ties_left_out: null
+ used full: {"abs": [4, 12, 13, 14, 25, 38, 39, 59, 62, 64, 67], "crofts": [4, 5, 6, 12, 13, 14, 17, 21, 23, 24, 25, 26, 27, 29, 34, 39, 42, 43, 46, 53, 55, 56, 59, 60, 62, 63, 64, 65, 66, 67], "hop": [0, 4, 5, 6, 12, 13, 14, 15, 17, 20, 21, 23, 24, 25, 26, 27, 29, 32, 33, 34, 36, 38, 39, 40, 42, 43, 44, 46, 47, 49, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]}
+ raw full: {"11": [1, 4, 12, 16, 29, 39, 42, 43, 47, 49, 52], "30": [1, 2, 4, 7, 12, 13, 14, 16, 22, 25, 29, 30, 35, 36, 38, 39, 40, 42, 43, 44, 47, 48, 49, 50, 52, 56, 58, 64, 67, 68], "46": [1, 2, 3, 4, 5, 7, 8, 12, 13, 14, 16, 17, 19, 20, 22, 24, 25, 26, 27, 29, 30, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 56, 57, 58, 64, 66, 67, 68]}
+ rule: null
+
+### arms results: which population names are present, with which fields
+  l291 missing: []
+   [s11f1] fields={"E": 0.0019889300890679382, "CI": [0.0016769466116177353, 0.0023009135665181413], "in_F": 8.673356858278435, "k_neg": 0, "N": 0.0326226200658706, "N_clear": true, "n": 11, "eff": 8, "has14": false, "syn_sum": 212, "draws": 5, "gain": 0.14498258113861084, "dgain": 0.0013243854045867642}
+      per_seed type list len 16 one=0.002052627971214867
+   [s11f2] fields={"E": -0.00012324183764830365, "CI": [-0.0005166824603153191, 0.0002701987850187118], "in_F": -0.5374348971183167, "k_neg": 11, "N": 0.008343041702181296, "N_clear": false, "n": 11, "eff": 8, "has14": false, "syn_sum": 211, "draws": 3, "gain": 0.14341572403907776, "dgain": -0.00024247169494631682}
+      per_seed type list len 16 one=-0.00012117452720844177
+   [s46w3] fields={"E": 0.002789160737544199, "CI": [0.002421332623379878, 0.00315698885170852], "in_F": 12.163014952001959, "k_neg": 0, "N": 0.04588385106907161, "N_clear": true, "n": 46, "eff": 40, "has14": true, "syn_sum": 631, "draws": 1, "gain": 0.14464247703552244, "dgain": 0.0009842813014983576}
+      per_seed type list len 16 one=0.003162237137621409
+   [gc30f] fields={"E": 0.0016883213323518776, "CI": [0.0013527937053561259, 0.002023848959347629], "in_F": 7.362457578282306, "k_neg": 0, "N": 0.037940935031830186, "N_clear": true, "n": null, "eff": null, "has14": true, "syn_sum": 429, "draws": null, "gain": 0.14365819573402408, "dgain": 0.0}
+      per_seed type list len 16 one=0.0025106555827641673
+   [gh46f] fields={"E": 0.001345519801112198, "CI": [0.0010569496276550273, 0.0016340899745693686], "in_F": 5.867563399573712, "k_neg": 0, "N": 0.03680882656923005, "N_clear": true, "n": null, "eff": null, "has14": true, "syn_sum": 624, "draws": null, "gain": 0.14365819573402408, "dgain": 0.0}
+      per_seed type list len 16 one=0.0017745932414995717
+  l290 missing: []
+   [r11k1] fields={"E": 0.00022698991049415005, "CI": [-8.953578599019704e-05, 0.0005435156069784971], "in_F": 0.9898610854980108, "k_neg": 5, "N": 0.006246806829645739, "N_clear": false, "n": 11, "eff": 10, "has14": false, "syn_sum": 170, "gain": 0.1439349102973938}
+      per_seed type list len 16 one=0.000600035550258584
+   [r11k2] fields={"E": -0.0009954356240471755, "CI": [-0.0013848918195592465, -0.0006059794285351046], "in_F": -4.340910947176751, "k_neg": 14, "N": 0.016749468327201034, "N_clear": true, "n": 11, "eff": 10, "has14": false, "syn_sum": 116, "gain": 0.1431246292591095}
+      per_seed type list len 16 one=0.0005283852192514704
+   [rw11] fields={"E": 0.00032583276350596447, "CI": [-0.00015936045799230933, 0.0008110259850042383], "in_F": 1.4208965159407065, "k_neg": 6, "N": 0.01191768147070341, "N_clear": true, "n": 11, "eff": 8, "has14": false, "syn_sum": 359, "gain": 0.14329995632171633}
+      per_seed type list len 16 one=0.0002481738458019571
+   [rw30] fields={"E": 0.0021243102962202626, "CI": [0.0018804519242125782, 0.0023681686682279473], "in_F": 9.263724943428189, "k_neg": 0, "N": 0.04398979316575201, "N_clear": true, "n": 30, "eff": 26, "has14": true, "syn_sum": 668, "gain": 0.1436642181873322}
+      per_seed type list len 16 one=0.002271011474195433
+   [rw46] fields={"E": 0.0023198763677611508, "CI": [0.001890101820839205, 0.0027496509146830964], "in_F": 10.116552469729339, "k_neg": 0, "N": 0.04380499769958959, "N_clear": true, "n": 46, "eff": 41, "has14": true, "syn_sum": 808, "gain": 0.14384650111198424}
+      per_seed type list len 16 one=0.00241705446341791
+
+### arms_w* edges record: every key of one metric arm, one group arm
+  l291 w0 top keys: ['wid', 'stage', 'menu_n', 'menu69_n', 'cert_menu_11', 'carrier_col', 'carrier', 'base_edges', 'edges', 'arms_built', 'fixed', 'seeds', 'archives', 'prereg', 'sets_sha'] | arms_built 9
+   edges[s11w1] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'n', 'cell', 'syn_sum', 'draws']
+      edge_j: -1
+      removed len 11 | first {"target": 8506, "csr_index": 58553, "effective_weight": 2.1972246170043945, "syn": 8, "sign": 1.0} | last {"target": 72158, "csr_index": 487353, "effective_weight": 3.1354942321777344, "syn": 22, "sign": 1.0}
+      distinct targets 11 | distinct csr_index 11 | signs [1.0]
+      syn_raw: null
+      set: [3, 4, 5, 14, 35, 44, 47, 50, 53, 57, 64]
+      contains14: true
+      eff: 10
+      n: 11
+      cell: "w"
+      syn_sum: 207
+      draws: 116
+   edges[s30w3] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'n', 'cell', 'syn_sum', 'draws']
+      edge_j: -1
+      removed len 30 | first {"target": 4945, "csr_index": 47122, "effective_weight": 3.5835189819335938, "syn": 35, "sign": 1.0} | last {"target": 74500, "csr_index": 582750, "effective_weight": 2.3025851249694824, "syn": 9, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [1, 6, 7, 8, 11, 14, 16, 21, 24, 25, 29, 31, 32, 33, 36, 37, 38, 40, 42, 47, 50, 52, 53, 55, 59, 60, 62, 63, 64, 66]
+      contains14: true
+      eff: 24
+      n: 30
+      cell: "w"
+      syn_sum: 440
+      draws: 7
+   edges[gc30f] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'fixed_gain', 'twin_of']
+      edge_j: -1
+      removed len 30 | first {"target": 8509, "csr_index": 58875, "effective_weight": 3.465735912322998, "syn": 31, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [4, 5, 6, 12, 13, 14, 17, 21, 23, 24, 25, 26, 27, 29, 34, 39, 42, 43, 46, 53, 55, 56, 59, 60, 62, 63, 64, 65, 66, 67]
+      contains14: true
+      eff: 28
+      fixed_gain: true
+      twin_of: "gc30"
+  l291 w1 top keys: ['wid', 'stage', 'menu_n', 'menu69_n', 'cert_menu_11', 'carrier_col', 'carrier', 'base_edges', 'edges', 'arms_built', 'fixed', 'seeds', 'archives', 'prereg', 'sets_sha'] | arms_built 8
+   edges[s30f1] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'n', 'cell', 'syn_sum', 'draws']
+      edge_j: -1
+      removed len 30 | first {"target": 8509, "csr_index": 58875, "effective_weight": 3.465735912322998, "syn": 31, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [4, 5, 7, 11, 12, 15, 17, 21, 22, 23, 25, 26, 28, 33, 38, 41, 43, 44, 45, 47, 48, 50, 52, 54, 55, 57, 58, 61, 63, 67]
+      contains14: false
+      eff: 27
+      n: 30
+      cell: "f"
+      syn_sum: 410
+      draws: 27
+   edges[s46f2] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'n', 'cell', 'syn_sum', 'draws']
+      edge_j: -1
+      removed len 46 | first {"target": 4945, "csr_index": 47122, "effective_weight": 3.5835189819335938, "syn": 35, "sign": 1.0} | last {"target": 75716, "csr_index": 638666, "effective_weight": 2.4849066734313965, "syn": 11, "sign": 1.0}
+      distinct targets 46 | distinct csr_index 46 | signs [1.0]
+      syn_raw: null
+      set: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 18, 19, 20, 22, 23, 24, 25, 26, 27, 29, 31, 33, 34, 35, 38, 39, 42, 44, 46, 48, 51, 52, 54, 55, 56, 59, 60, 61, 64, 65, 66, 68]
+      contains14: false
+      eff: 41
+      n: 46
+      cell: "f"
+      syn_sum: 602
+      draws: 13
+   edges[gh46f] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff', 'fixed_gain', 'twin_of']
+      edge_j: -1
+      removed len 46 | first {"target": 2238, "csr_index": 17726, "effective_weight": 1.6094379425048828, "syn": 4, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 46 | distinct csr_index 46 | signs [1.0]
+      syn_raw: null
+      set: [0, 4, 5, 6, 12, 13, 14, 15, 17, 20, 21, 23, 24, 25, 26, 27, 29, 32, 33, 34, 36, 38, 39, 40, 42, 43, 44, 46, 47, 49, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]
+      contains14: true
+      eff: 43
+      fixed_gain: true
+      twin_of: "gh46"
+  l290 w0 top keys: ['wid', 'stage', 'menu_n', 'menu69_n', 'cert_menu_11', 'carrier_col', 'carrier', 'base_edges', 'edges', 'arms_built', 'fixed', 'seeds', 'archives', 'prereg', 'sets_sha', 'contains14', 'eff'] | arms_built 8
+   edges[gc30] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff']
+      edge_j: -1
+      removed len 30 | first {"target": 8509, "csr_index": 58875, "effective_weight": 3.465735912322998, "syn": 31, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [4, 5, 6, 12, 13, 14, 17, 21, 23, 24, 25, 26, 27, 29, 34, 39, 42, 43, 46, 53, 55, 56, 59, 60, 62, 63, 64, 65, 66, 67]
+      contains14: true
+      eff: 28
+   edges[e25f] keys=['edge_j', 'removed', 'syn_raw', 'fixed_gain']
+      edge_j: 25
+      removed len 1 | first {"target": 66466, "csr_index": 251074, "effective_weight": 2.6390573978424072, "syn": 13, "sign": 1.0} | last {"target": 66466, "csr_index": 251074, "effective_weight": 2.6390573978424072, "syn": 13, "sign": 1.0}
+      distinct targets 1 | distinct csr_index 1 | signs [1.0]
+      syn_raw: 13.0
+      fixed_gain: true
+   edges[e67f] keys=['edge_j', 'removed', 'syn_raw', 'fixed_gain']
+      edge_j: 67
+      removed len 1 | first {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 1 | distinct csr_index 1 | signs [1.0]
+      syn_raw: 21.0
+      fixed_gain: true
+  l290 w1 top keys: ['wid', 'stage', 'menu_n', 'menu69_n', 'cert_menu_11', 'carrier_col', 'carrier', 'base_edges', 'edges', 'arms_built', 'fixed', 'seeds', 'archives', 'prereg', 'sets_sha', 'contains14', 'eff'] | arms_built 8
+   edges[r11k1] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff']
+      edge_j: -1
+      removed len 11 | first {"target": 2238, "csr_index": 17726, "effective_weight": 1.6094379425048828, "syn": 4, "sign": 1.0} | last {"target": 68506, "csr_index": 335985, "effective_weight": 2.8332133293151855, "syn": 16, "sign": 1.0}
+      distinct targets 11 | distinct csr_index 11 | signs [1.0]
+      syn_raw: null
+      set: [0, 5, 15, 16, 20, 23, 30, 32, 39, 43, 48]
+      contains14: false
+      eff: 10
+   edges[r30k2] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff']
+      edge_j: -1
+      removed len 30 | first {"target": 2238, "csr_index": 17726, "effective_weight": 1.6094379425048828, "syn": 4, "sign": 1.0} | last {"target": 75716, "csr_index": 638666, "effective_weight": 2.4849066734313965, "syn": 11, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [0, 2, 3, 6, 8, 9, 10, 11, 15, 17, 18, 30, 33, 34, 37, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 66, 67, 68]
+      contains14: false
+      eff: 26
+   edges[e12f] keys=['edge_j', 'removed', 'syn_raw', 'fixed_gain']
+      edge_j: 12
+      removed len 1 | first {"target": 64961, "csr_index": 190533, "effective_weight": 3.2188758850097656, "syn": 24, "sign": 1.0} | last {"target": 64961, "csr_index": 190533, "effective_weight": 3.2188758850097656, "syn": 24, "sign": 1.0}
+      distinct targets 1 | distinct csr_index 1 | signs [1.0]
+      syn_raw: 24.0
+      fixed_gain: true
+  l290 w2 top keys: ['wid', 'stage', 'menu_n', 'menu69_n', 'cert_menu_11', 'carrier_col', 'carrier', 'base_edges', 'edges', 'arms_built', 'fixed', 'seeds', 'archives', 'prereg', 'sets_sha', 'contains14', 'eff'] | arms_built 9
+   edges[r30k3] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff']
+      edge_j: -1
+      removed len 30 | first {"target": 16630, "csr_index": 97641, "effective_weight": 2.3025851249694824, "syn": 9, "sign": 1.0} | last {"target": 75494, "csr_index": 628681, "effective_weight": 3.0910425186157227, "syn": 21, "sign": 1.0}
+      distinct targets 30 | distinct csr_index 30 | signs [1.0]
+      syn_raw: null
+      set: [8, 9, 13, 14, 18, 21, 22, 24, 25, 27, 28, 30, 31, 33, 35, 40, 45, 48, 49, 50, 52, 53, 54, 56, 59, 60, 61, 65, 66, 67]
+      contains14: true
+      eff: 27
+   edges[r46k5] keys=['edge_j', 'removed', 'syn_raw', 'set', 'contains14', 'eff']
+      edge_j: -1
+      removed len 46 | first {"target": 2238, "csr_index": 17726, "effective_weight": 1.6094379425048828, "syn": 4, "sign": 1.0} | last {"target": 75716, "csr_index": 638666, "effective_weight": 2.4849066734313965, "syn": 11, "sign": 1.0}
+      distinct targets 46 | distinct csr_index 46 | signs [1.0]
+      syn_raw: null
+      set: [0, 1, 2, 4, 5, 6, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25, 26, 28, 32, 34, 35, 39, 40, 43, 44, 45, 46, 49, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 65, 67, 68]
+      contains14: false
+      eff: 40
+   edges[e27f] keys=['edge_j', 'removed', 'syn_raw', 'fixed_gain']
+      edge_j: 27
+      removed len 1 | first {"target": 66994, "csr_index": 273104, "effective_weight": 2.1972246170043945, "syn": 8, "sign": 1.0} | last {"target": 66994, "csr_index": 273104, "effective_weight": 2.1972246170043945, "syn": 8, "sign": 1.0}
+      distinct targets 1 | distinct csr_index 1 | signs [1.0]
+      syn_raw: 8.0
+      fixed_gain: true
+
+### npz arrays (names/shapes only)
+  l291/raw_w0.npz 4564 keys; first 14: [('mm_cutwA_801', (6000,), 'float32'), ('xm_cutwA_801', (6000,), 'float32'), ('Ti_fL_cutwA_801', (6000,), 'float32'), ('Ti_eL_cutwA_801', (6000,), 'float32'), ('Ti_fR_cutwA_801', (6000,), 'float32'), ('Ti_eR_cutwA_801', (6000,), 'float32'), ('Tr_fL_cutwA_801', (6000,), 'float32'), ('Tr_eL_cutwA_801', (6000,), 'float32'), ('Tr_fR_cutwA_801', (6000,), 'float32'), ('Tr_eR_cutwA_801', (6000,), 'float32'), ('Ta_aL_cutwA_801', (6000,), 'float32'), ('Ta_bL_cutwA_801', (6000,), 'float32'), ('Ta_aR_cutwA_801', (6000,), 'float32'), ('Ta_bR_cutwA_801', (6000,), 'float32')]
+  l291/xm_w0.npz 163 keys; first 14: [('xmean_cutwA_801', (21785,), 'float32'), ('xmean_cutwA_901', (21785,), 'float32'), ('xmean_cutwA_3545', (21785,), 'float32'), ('xmean_cutwA_3769', (21785,), 'float32'), ('xmean_s11w1_3769', (21785,), 'float32'), ('xmean_s11w2_3769', (21785,), 'float32'), ('xmean_s11w3_3769', (21785,), 'float32'), ('xmean_s11f1_3769', (21785,), 'float32'), ('xmean_s11f2_3769', (21785,), 'float32'), ('xmean_s30w1_3769', (21785,), 'float32'), ('xmean_s30w2_3769', (21785,), 'float32'), ('xmean_s30w3_3769', (21785,), 'float32'), ('xmean_gc30f_3769', (21785,), 'float32'), ('xmean_cutwA_3770', (21785,), 'float32')]
+  l290/raw_w0.npz 4116 keys; first 14: [('mm_cutwA_801', (6000,), 'float32'), ('xm_cutwA_801', (6000,), 'float32'), ('Ti_fL_cutwA_801', (6000,), 'float32'), ('Ti_eL_cutwA_801', (6000,), 'float32'), ('Ti_fR_cutwA_801', (6000,), 'float32'), ('Ti_eR_cutwA_801', (6000,), 'float32'), ('Tr_fL_cutwA_801', (6000,), 'float32'), ('Tr_eL_cutwA_801', (6000,), 'float32'), ('Tr_fR_cutwA_801', (6000,), 'float32'), ('Tr_eR_cutwA_801', (6000,), 'float32'), ('Ta_aL_cutwA_801', (6000,), 'float32'), ('Ta_bL_cutwA_801', (6000,), 'float32'), ('Ta_aR_cutwA_801', (6000,), 'float32'), ('Ta_bR_cutwA_801', (6000,), 'float32')]
+  l290/xm_w0.npz 147 keys; first 14: [('xmean_cutwA_801', (21785,), 'float32'), ('xmean_cutwA_901', (21785,), 'float32'), ('xmean_cutwA_3545', (21785,), 'float32'), ('xmean_cutwA_3769', (21785,), 'float32'), ('xmean_gc30_3769', (21785,), 'float32'), ('xmean_gh46_3769', (21785,), 'float32'), ('xmean_rw11_3769', (21785,), 'float32'), ('xmean_rw30_3769', (21785,), 'float32'), ('xmean_rw46_3769', (21785,), 'float32'), ('xmean_e14f_3769', (21785,), 'float32'), ('xmean_e25f_3769', (21785,), 'float32'), ('xmean_e67f_3769', (21785,), 'float32'), ('xmean_cutwA_3770', (21785,), 'float32'), ('xmean_gc30_3770', (21785,), 'float32')]

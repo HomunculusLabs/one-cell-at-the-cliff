@@ -1,0 +1,52 @@
+{
+ "gain": {
+  "cutwA": 0.14365819573402408,
+  "gc30": 0.144052494764328,
+  "gh46": 0.14433772087097171,
+  "rw11": 0.14329995632171633,
+  "rw30": 0.1436642181873322,
+  "rw46": 0.14384650111198424,
+  "e14f": 0.14365819573402408,
+  "e25f": 0.14365819573402408,
+  "e67f": 0.14365819573402408
+ },
+ "cert_gain": {},
+ "source": {
+  "cutwA": "bisect (this process) == stored EXACT",
+  "gc30": "bisect (this process), fresh",
+  "gh46": "bisect (this process), fresh",
+  "rw11": "bisect (this process), fresh",
+  "rw30": "bisect (this process), fresh",
+  "rw46": "bisect (this process), fresh",
+  "e14f": "fixed base gain g_cutwA (stored float)",
+  "e25f": "fixed base gain g_cutwA (stored float)",
+  "e67f": "fixed base gain g_cutwA (stored float)"
+ },
+ "bisected": [
+  "cutwA",
+  "gc30",
+  "gh46",
+  "rw11",
+  "rw30",
+  "rw46"
+ ],
+ "stairs": {
+  "cutwA": 2.0839273929595947e-05,
+  "gc30": 5.540748437254939e-06,
+  "gh46": 5.540748437254939e-06,
+  "rw11": 5.540748437254939e-06,
+  "rw30": 2.0839273929595947e-05,
+  "rw46": 8.20433100064688e-05
+ },
+ "af_final": {
+  "cutwA": 0.10903527090946834,
+  "gc30": 0.10905056943496068,
+  "gh46": 0.10905056943496068,
+  "rw11": 0.10905056943496068,
+  "rw30": 0.10903527090946834,
+  "rw46": 0.10897406687339146
+ },
+ "stored_exact": {
+  "cutwA": true
+ }
+}

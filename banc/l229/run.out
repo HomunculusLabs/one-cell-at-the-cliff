@@ -1,0 +1,85 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+========================================================================
+[L215] resurrection static | NDRAW 2000 seed 21521
+[pins] substrates GREEN | cutwA 644,177 f4wA 469,618 elig 469,256 removed 174,921
+[CERT-G] GREEN g_cutwA 0.14365819573402408 g_f4wA 0.15051452517509462 ratio 1.04773
+[pins] pool sizes invariant on both substrates GREEN
+[CERT-205] GREEN 36 float equalities (c4_floor_retention)
+[CERT-TBL] GREEN 28 float equalities (table M_*/A_cell)
+[premise] L208 branch + POST-HOC label GREEN
+[CERT total] 66 float equalities before any L215 statistic
+========================================================================
+[L229] near-balance as a POPULATION question | PREREG l229/PREREG.md
+[CERT-W] GREEN | |W| 3000 |W_on| 1400
+[pool-sides] 10 built; all 20 pool sizes pinned; Ti/Tr masks ARRAY-IDENTICAL to the certified HEAD3 masks
+  Ti_L:56 Ti_R:57 Tr_L:55 Tr_R:55 Ta_L:15 Ta_R:15 Sr_L:17 Sr_R:19 Pr_L:7 Pr_R:7
+[CERT-215R] GREEN 68 float equalities (L215 rows reproduced) — this is what licenses extending inh_frac to six NEW pool-sides
+[anat Ti_L ] n  56 (50+6) | cutwA edges   6964 TOT    16131.3 inh_frac 0.455519 near -0.044481 | f4wA inh_frac 0.457404
+[anat Ti_R ] n  57 (51+6) | cutwA edges   8296 TOT    19655.9 inh_frac 0.451062 near -0.048938 | f4wA inh_frac 0.454181
+[anat Tr_L ] n  55 (31+24) | cutwA edges   8147 TOT    19504.7 inh_frac 0.494340 near -0.005660 | f4wA inh_frac 0.495009
+[anat Tr_R ] n  55 (31+24) | cutwA edges   8407 TOT    20118.3 inh_frac 0.496461 near -0.003539 | f4wA inh_frac 0.497326
+[anat Ta_L ] n  15 (12+3) | cutwA edges    641 TOT     1307.8 inh_frac 0.561114 near -0.061114 | f4wA inh_frac 0.566617
+[anat Ta_R ] n  15 (12+3) | cutwA edges    989 TOT     2032.1 inh_frac 0.522940 near -0.022940 | f4wA inh_frac 0.530750
+[anat Sr_L ] n  17 (6+11) | cutwA edges   3181 TOT     7815.7 inh_frac 0.477871 near -0.022129 | f4wA inh_frac 0.479520
+[anat Sr_R ] n  19 (6+13) | cutwA edges   3170 TOT     7735.3 inh_frac 0.490720 near -0.009280 | f4wA inh_frac 0.494152
+[anat Pr_L ] n   7 (4+3) | cutwA edges   1156 TOT     2798.0 inh_frac 0.485460 near -0.014540 | f4wA inh_frac 0.478223
+[anat Pr_R ] n   7 (4+3) | cutwA edges   1203 TOT     2884.5 inh_frac 0.497059 near -0.002941 | f4wA inh_frac 0.498911
+[0a] pool-sides with cutwA inh_frac > 0.5: 2 of 10 (0 => `near` and `inh_frac` are rank-identical by construction)
+[CERT-208L] GREEN 202 float equalities (L208 lvl/fhi/flo/pmax) — this is what licenses reading lvl for SIX NEW pool-sides and 12 arms
+[dyn B35 Ti_L ] lvl 0.08061..0.26064 (mean 0.11149) rng 0.180030 relrng 1.6148 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.3800 | DEAD False
+[dyn B35 Ti_R ] lvl 0.02611..0.10492 (mean 0.04546) rng 0.078806 relrng 1.7335 | max@full min@cutwA | fhi95 0.0000 flo 0.3937 | DEAD False
+[dyn B35 Tr_L ] lvl 0.00001..0.17207 (mean 0.02616) rng 0.172054 relrng 6.5761 | max@b65 min@eMotBot5 | fhi95 0.0000 flo 0.8301 | DEAD False
+[dyn B35 Tr_R ] lvl 0.02549..0.10026 (mean 0.05173) rng 0.074762 relrng 1.4451 | max@b65 min@full | fhi95 0.0000 flo 0.2915 | DEAD False
+[dyn B35 Ta_L ] lvl 0.00153..0.03007 (mean 0.02301) rng 0.028540 relrng 1.2404 | max@cutng25 min@b65 | fhi95 0.0000 flo 0.6379 | DEAD True
+[dyn B35 Ta_R ] lvl 0.01114..0.16511 (mean 0.03729) rng 0.153968 relrng 4.1292 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.6616 | DEAD False
+[dyn B35 Sr_L ] lvl 0.00731..0.21224 (mean 0.04267) rng 0.204938 relrng 4.8031 | max@b65 min@silW | fhi95 0.0000 flo 0.7122 | DEAD False
+[dyn B35 Sr_R ] lvl 0.01542..0.06204 (mean 0.02772) rng 0.046616 relrng 1.6818 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.6703 | DEAD False
+[dyn B35 Pr_L ] lvl -0.00001..0.02265 (mean 0.01728) rng 0.022655 relrng 1.3113 | max@eMotTop5 min@b65 | fhi95 0.0001 flo 0.8578 | DEAD True
+[dyn B35 Pr_R ] lvl 0.03157..0.08217 (mean 0.05453) rng 0.050598 relrng 0.9279 | max@b65 min@full | fhi95 0.0000 flo 0.6519 | DEAD False
+[dyn B36 Ti_L ] lvl 0.07728..0.25915 (mean 0.12567) rng 0.181873 relrng 1.4472 | max@b65 min@wAgN | fhi95 0.0000 flo 0.3395 | DEAD False
+[dyn B36 Ti_R ] lvl 0.02423..0.11869 (mean 0.05778) rng 0.094466 relrng 1.6349 | max@f4wA min@wAgN | fhi95 0.0000 flo 0.3461 | DEAD False
+[dyn B36 Tr_L ] lvl 0.00002..0.17203 (mean 0.02124) rng 0.172010 relrng 8.0966 | max@b65 min@n25gW | fhi95 0.0000 flo 0.7992 | DEAD False
+[dyn B36 Tr_R ] lvl 0.02595..0.10032 (mean 0.05818) rng 0.074373 relrng 1.2783 | max@b65 min@full | fhi95 0.0000 flo 0.3026 | DEAD False
+[dyn B36 Ta_L ] lvl 0.00163..0.03117 (mean 0.01919) rng 0.029543 relrng 1.5396 | max@wAgN min@b65 | fhi95 0.0000 flo 0.6972 | DEAD True
+[dyn B36 Ta_R ] lvl 0.01115..0.16387 (mean 0.03124) rng 0.152716 relrng 4.8880 | max@b65 min@cutwA | fhi95 0.0000 flo 0.6874 | DEAD False
+[dyn B36 Sr_L ] lvl 0.00696..0.21186 (mean 0.04882) rng 0.204900 relrng 4.1971 | max@b65 min@cutng25 | fhi95 0.0000 flo 0.6733 | DEAD False
+[dyn B36 Sr_R ] lvl 0.01556..0.06218 (mean 0.03131) rng 0.046622 relrng 1.4890 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.6663 | DEAD False
+[dyn B36 Pr_L ] lvl 0.00000..0.07136 (mean 0.02545) rng 0.071352 relrng 2.8034 | max@f4ng min@b65 | fhi95 0.0000 flo 0.8550 | DEAD False
+[dyn B36 Pr_R ] lvl 0.00171..0.08089 (mean 0.04190) rng 0.079185 relrng 1.8897 | max@b65 min@f4wA | fhi95 0.0000 flo 0.7348 | DEAD False
+[dyn B37 Ti_L ] lvl 0.07630..0.25935 (mean 0.12547) rng 0.183052 relrng 1.4589 | max@b65 min@wAgN | fhi95 0.0000 flo 0.3411 | DEAD False
+[dyn B37 Ti_R ] lvl 0.02461..0.11730 (mean 0.05853) rng 0.092682 relrng 1.5835 | max@f4wA min@wAgN | fhi95 0.0000 flo 0.3456 | DEAD False
+[dyn B37 Tr_L ] lvl 0.00003..0.17195 (mean 0.02103) rng 0.171923 relrng 8.1742 | max@b65 min@n25gW | fhi95 0.0000 flo 0.8023 | DEAD False
+[dyn B37 Tr_R ] lvl 0.02597..0.10038 (mean 0.05876) rng 0.074412 relrng 1.2664 | max@b65 min@full | fhi95 0.0000 flo 0.2993 | DEAD False
+[dyn B37 Ta_L ] lvl 0.00172..0.03116 (mean 0.01935) rng 0.029444 relrng 1.5215 | max@wAgN min@b65 | fhi95 0.0000 flo 0.6976 | DEAD True
+[dyn B37 Ta_R ] lvl 0.01112..0.16512 (mean 0.03158) rng 0.154002 relrng 4.8773 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.6841 | DEAD False
+[dyn B37 Sr_L ] lvl 0.00745..0.21241 (mean 0.04927) rng 0.204960 relrng 4.1603 | max@b65 min@cutng25 | fhi95 0.0000 flo 0.6743 | DEAD False
+[dyn B37 Sr_R ] lvl 0.01510..0.06231 (mean 0.03114) rng 0.047207 relrng 1.5162 | max@b65 min@eMotTop5 | fhi95 0.0000 flo 0.6682 | DEAD False
+[dyn B37 Pr_L ] lvl 0.00002..0.08527 (mean 0.02600) rng 0.085242 relrng 3.2789 | max@f4ng min@b65 | fhi95 0.0000 flo 0.8528 | DEAD False
+[dyn B37 Pr_R ] lvl 0.00200..0.08128 (mean 0.04208) rng 0.079277 relrng 1.8838 | max@b65 min@f4wA | fhi95 0.0000 flo 0.7343 | DEAD False
+[null] EXACT enumeration GREEN: 3,628,800 permutations, 166 attainable rho values, min two-sided p = 5.511e-07
+[leg primary                   ] rho -0.030303 | distinct 10/10 tie_free True | p_up 0.5408118386243386 p_two 0.9459700176366843
+[leg replication_B37           ] rho -0.115152 | distinct 10/10 tie_free True | p_up 0.6334964726631394 p_two 0.7589307760141093
+[leg menu_B35                  ] rho -0.090909 | distinct 10/10 tie_free True | p_up 0.6074887014991182 p_two 0.8112825176366844
+[leg currency_ifrac_B36        ] rho -0.454545 | distinct 10/10 tie_free True | p_up 0.9106897597001764 p_two 0.1912395282186949
+[leg substrate_f4wA_B36        ] rho +0.054545 | distinct 10/10 tie_free True | p_up 0.4458118386243386 p_two 0.8916236772486772
+[leg relrange_B36              ] rho +0.066667 | distinct 10/10 tie_free True | p_up 0.43257220017636683 p_two 0.8651444003527337
+[leg arms7_B36                 ] rho -0.090909 | distinct 10/10 tie_free True | p_up 0.6074887014991182 p_two 0.8112825176366844
+[leg level_B36                 ] rho +0.066667 | distinct 10/10 tie_free True | p_up 0.43257220017636683 p_two 0.8651444003527337
+[leg confound_near_ncells      ] rho -0.238542 | distinct 10/7 tie_free False | p_up None p_two None
+[leg confound_near_TOT         ] rho +0.272727 | distinct 10/10 tie_free True | p_up 0.22413828262786595 p_two 0.4482765652557319
+[leg confound_rng_ncells       ] rho +0.373104 | distinct 10/7 tie_free False | p_up None p_two None
+[leg confound_rng_TOT          ] rho +0.393939 | distinct 10/10 tie_free True | p_up 0.13158013668430335 p_two 0.2631602733686067
+[leg batch_agreement_B36_B37   ] rho +0.963636 | distinct 10/10 tie_free True | p_up 2.4526014109347444e-05 p_two 4.905202821869489e-05
+[BRANCH] B_FLOOR_DEGENERATE | dead(B36) ['Ta_L'] dead(any batch) ['Pr_L', 'Ta_L'] | rho primary -0.0303 B37 -0.1152 B35 -0.0909 | confound ncells -0.2385 TOT +0.2727 | population claim available: False
+[surviving subset] n 9 rho -0.416667
+[pred P1_all_below_half     ] FALSE | all ten cutwA inh_frac < 0.5 => near and inh_frac rank-identical
+[pred P2_primary_positive   ] FALSE | rho(near, rng_B36) > 0
+[pred P3_Tr_most_balanced   ] FALSE | Tr_L and Tr_R are the two highest `near` ranks (9 and 10)
+[pred P4_not_strong         ] TRUE  | branch is NOT B_BALANCE_PREDICTS
+[pred P5_three_batch_sign   ] TRUE  | rho(near, rng) agrees in SIGN across B35/B36/B37
+[pred P6_some_dead          ] TRUE  | at least one pool-side has max-over-arms level < 0.04
+[predictions] 3 of 6 TRUE
+[fingerprints] all npz + prior json UNCHANGED after the run
+[done] wrote l229/static.json
+[verdict] branch B_FLOOR_DEGENERATE | predictions 3/6 | primary rho -0.030303 p_two 0.9459700176366843

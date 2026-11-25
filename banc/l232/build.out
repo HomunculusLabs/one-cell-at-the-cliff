@@ -1,0 +1,19 @@
+[slice] A = l216_static.py 1-1360 (62321 B) sha 6a3760d0b387a807
+[slice] B = l217_tail.py 245-258 (520 B) sha b26c0ab47cf0e2bb
+[slice] C = l230_tail.py 39-211 (8278 B) sha 23b0e840aa278c10
+[pin]   l216_static.py whole sha 8d4740020fcd2a7b
+[pin]   l217_tail.py whole sha 9ffc9d582e205637
+[pin]   l230_tail.py whole sha e9be8999c9d9d351
+[inherited pin] SLICE A / SLICE B / l230_tail.py whole-file shas — ALL re-derived here AND present in l230_static.py's own banner
+[PARENT PIN] l216_tail.py sha d9cb45022621452b is a literal SUFFIX of l216_static.py AND the value that file's own banner records — GREEN
+[cut] 7 cut lines / 4 statements ['makedirs', 'dump', 'log', 'log'] — AST-proven to be the parent's writer plus its closing log
+[slice B] AST: defines exactly ['dcross'] and nothing else
+[slice C] AST: defines exactly ['leafcmp', 'leaves']; carries CERT-216 + NO-OP + CERT-AINF + CERT-217; no L230 measurement, no branch, no writer
+[AST import] modules ['json', 'math', 'numpy', 'os', 'pandas', 'time', 'torch'] — no lab module imported
+[AST write] exactly ONE write site: line 1983 json.dump(..., open('l232/static.json', 'w')) + one makedirs 'l232'
+[AST write] SLICE A proven WRITE-FREE (0 write sites, 0 makedirs)
+[AST write] SLICE B proven WRITE-FREE (0 write sites, 0 makedirs)
+[AST write] SLICE C proven WRITE-FREE (0 write sites, 0 makedirs)
+[deps] every inherited object the tail reads is defined in a slice
+[write] l232_static.py 1985 lines sha 621dffb890fbb12d
+[write] head sha c8895f3b5ce40cfd tail sha 1c0c28bd4cb9c2ce

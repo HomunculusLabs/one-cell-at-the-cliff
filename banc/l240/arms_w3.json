@@ -1,0 +1,162 @@
+{
+ "wid": 3,
+ "stage": "A2",
+ "menu_n": 80,
+ "menu69_n": 69,
+ "cert_menu_11": 11,
+ "unmeasurable": [],
+ "carrier_col": 467,
+ "carrier": 1110,
+ "base_edges": 644177,
+ "edges": {
+  "e0": {
+   "edge_j": 0,
+   "removed": [
+    {
+     "target": 2238,
+     "csr_index": 17726,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 4.0
+  },
+  "e1": {
+   "edge_j": 1,
+   "removed": [
+    {
+     "target": 4945,
+     "csr_index": 47122,
+     "effective_weight": 3.5835189819335938,
+     "syn": 35,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 35.0
+  },
+  "e2": {
+   "edge_j": 2,
+   "removed": [
+    {
+     "target": 4947,
+     "csr_index": 47686,
+     "effective_weight": 2.5649492740631104,
+     "syn": 12,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 12.0
+  },
+  "e3": {
+   "edge_j": 3,
+   "removed": [
+    {
+     "target": 8506,
+     "csr_index": 58553,
+     "effective_weight": 2.1972246170043945,
+     "syn": 8,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 8.0
+  },
+  "e5": {
+   "edge_j": 5,
+   "removed": [
+    {
+     "target": 9395,
+     "csr_index": 61016,
+     "effective_weight": 2.1972246170043945,
+     "syn": 8,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 8.0
+  },
+  "e6": {
+   "edge_j": 6,
+   "removed": [
+    {
+     "target": 9462,
+     "csr_index": 62583,
+     "effective_weight": 1.7917594909667969,
+     "syn": 5,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 5.0
+  },
+  "e7": {
+   "edge_j": 7,
+   "removed": [
+    {
+     "target": 9770,
+     "csr_index": 62991,
+     "effective_weight": 3.044522523880005,
+     "syn": 20,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 20.0
+  },
+  "e8": {
+   "edge_j": 8,
+   "removed": [
+    {
+     "target": 16630,
+     "csr_index": 97641,
+     "effective_weight": 2.3025851249694824,
+     "syn": 9,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 9.0
+  },
+  "e9": {
+   "edge_j": 9,
+   "removed": [
+    {
+     "target": 22572,
+     "csr_index": 126788,
+     "effective_weight": 1.7917594909667969,
+     "syn": 5,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 5.0
+  }
+ },
+ "arms_built": [
+  "e0",
+  "e1",
+  "e2",
+  "e3",
+  "e5",
+  "e6",
+  "e7",
+  "e8",
+  "e9"
+ ],
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "archives": 311,
+ "prereg": "d6c73be3a4c0621bb2db7f6ce6bc1a023be5fc93531772a6ae65937ca04298a0",
+ "addendum": "0c55e34d2d63c3b62494645ff5e8ba6fbadc5813d08a79bd6ff0a29b255c56a3"
+}

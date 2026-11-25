@@ -1,0 +1,162 @@
+{
+ "wid": 4,
+ "stage": "A2",
+ "menu_n": 80,
+ "menu69_n": 69,
+ "cert_menu_11": 11,
+ "unmeasurable": [],
+ "carrier_col": 467,
+ "carrier": 1110,
+ "base_edges": 644177,
+ "edges": {
+  "e10": {
+   "edge_j": 10,
+   "removed": [
+    {
+     "target": 64534,
+     "csr_index": 170679,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 4.0
+  },
+  "e11": {
+   "edge_j": 11,
+   "removed": [
+    {
+     "target": 64842,
+     "csr_index": 185750,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 4.0
+  },
+  "e15": {
+   "edge_j": 15,
+   "removed": [
+    {
+     "target": 65582,
+     "csr_index": 216317,
+     "effective_weight": 1.7917594909667969,
+     "syn": 5,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 5.0
+  },
+  "e16": {
+   "edge_j": 16,
+   "removed": [
+    {
+     "target": 65601,
+     "csr_index": 217255,
+     "effective_weight": 3.25809645652771,
+     "syn": 25,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 25.0
+  },
+  "e17": {
+   "edge_j": 17,
+   "removed": [
+    {
+     "target": 65608,
+     "csr_index": 217519,
+     "effective_weight": 2.1972246170043945,
+     "syn": 8,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 8.0
+  },
+  "e18": {
+   "edge_j": 18,
+   "removed": [
+    {
+     "target": 65820,
+     "csr_index": 226630,
+     "effective_weight": 1.945910096168518,
+     "syn": 6,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 6.0
+  },
+  "e19": {
+   "edge_j": 19,
+   "removed": [
+    {
+     "target": 65904,
+     "csr_index": 229615,
+     "effective_weight": 2.397895336151123,
+     "syn": 10,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 10.0
+  },
+  "e20": {
+   "edge_j": 20,
+   "removed": [
+    {
+     "target": 65921,
+     "csr_index": 229910,
+     "effective_weight": 2.397895336151123,
+     "syn": 10,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 10.0
+  },
+  "e21": {
+   "edge_j": 21,
+   "removed": [
+    {
+     "target": 65941,
+     "csr_index": 230848,
+     "effective_weight": 1.7917594909667969,
+     "syn": 5,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 5.0
+  }
+ },
+ "arms_built": [
+  "e10",
+  "e11",
+  "e15",
+  "e16",
+  "e17",
+  "e18",
+  "e19",
+  "e20",
+  "e21"
+ ],
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "archives": 311,
+ "prereg": "d6c73be3a4c0621bb2db7f6ce6bc1a023be5fc93531772a6ae65937ca04298a0",
+ "addendum": "0c55e34d2d63c3b62494645ff5e8ba6fbadc5813d08a79bd6ff0a29b255c56a3"
+}

@@ -1,0 +1,52 @@
+====================================================================================================
+unit                                        n_L    n_R      A_n      A_v1     A_tot  A_v1+A_n sig
+--- arm f4wA|beta ------------------------------------------------------------
+class/descending                            629    628  +0.0008  +0.02732  +0.02812  +0.02812 
+class/motor                                 347    381  -0.0467  +0.41688  +0.37753  +0.37018 *
+class/sensory                              3507   3787  -0.0384  +0.42324  +0.39121  +0.38486 *
+class/ventral_nerve_cord_intrinsic         6107   6223  -0.0094  +0.32464  +0.31620  +0.31524 *
+pool/Pr                                       7      7  +0.0000  +0.59041  +0.59041  +0.59041 *
+pool/Sr                                      17     19  -0.0556  +0.40872  +0.36137  +0.35316 *
+pool/Ta                                      15     15  +0.0000  +0.28243  +0.28243  +0.28243 
+pool/Ti                                      56     57  -0.0088  +0.28663  +0.27848  +0.27778 *
+pool/Tr                                      55     55  +0.0000  +0.44422  +0.44422  +0.44422 *
+pop/all                                   10590  11019  -0.0199  +0.34251  +0.32486  +0.32265 *
+pop/neck_connective                         626    624  +0.0016  +0.02676  +0.02836  +0.02836 
+pop/ventral_nerve_cord                     9963  10392  -0.0211  +0.34772  +0.32906  +0.32665 *
+--- arm whole|beta ------------------------------------------------------------
+class/descending                            629    628  +0.0008  -0.04280  -0.04201  -0.04201 
+class/motor                                 347    381  -0.0467  +0.14098  +0.09490  +0.09428 *
+class/sensory                              3507   3787  -0.0384  +0.09403  +0.05584  +0.05564 *
+class/ventral_nerve_cord_intrinsic         6107   6223  -0.0094  +0.11856  +0.10927  +0.10915 *
+pool/Pr                                       7      7  +0.0000  +0.22182  +0.22182  +0.22182 
+pool/Sr                                      17     19  -0.0556  +0.17568  +0.12131  +0.12013 
+pool/Ta                                      15     15  +0.0000  -0.07576  -0.07576  -0.07576 
+pool/Ti                                      56     57  -0.0088  +0.02954  +0.02070  +0.02069 
+pool/Tr                                      55     55  +0.0000  +0.15293  +0.15293  +0.15293 *
+pop/all                                   10590  11019  -0.0199  +0.10917  +0.08951  +0.08931 *
+pop/neck_connective                         626    624  +0.0016  -0.04340  -0.04181  -0.04180 
+pop/ventral_nerve_cord                     9963  10392  -0.0211  +0.12634  +0.10555  +0.10526 *
+wg/class/ascending                          962    875  +0.0474  +0.03646  +0.08368  +0.08382 
+wg/class/ascending_visceral_circulatory       3      2  +0.2000  -0.21087  -0.01134  -0.01087 
+wg/class/central_brain_intrinsic           9224  10543  -0.0667  +0.05149  -0.01529  -0.01524 
+wg/class/descending                         648    655  -0.0054  -0.03831  -0.04367  -0.04368 
+wg/class/motor                              397    434  -0.0445  +0.13999  +0.09606  +0.09546 *
+wg/class/optic_lobe_intrinsic               858  24377  -0.9320  +0.25446  -0.88818  -0.67754 *
+wg/class/sensory                           5924   6217  -0.0241  +0.21761  +0.19449  +0.19347 *
+wg/class/sensory_ascending                  255    253  +0.0039  +0.05493  +0.05886  +0.05887 
+wg/class/sensory_descending                   6      7  -0.0769  -0.07659  -0.15261  -0.15351 
+wg/class/ventral_nerve_cord_intrinsic      6115   6229  -0.0092  +0.11789  +0.10877  +0.10866 *
+wg/class/visceral_circulatory                88    100  -0.0638  +0.07227  +0.00848  +0.00844 
+wg/class/visual_centrifugal                 218    210  +0.0187  +0.02378  +0.04246  +0.04248 
+wg/class/visual_projection                 2101   3148  -0.1995  -0.02348  -0.22191  -0.22295 
+wg/pop/all                                26799  53050  -0.3288  +0.33593  +0.00806  +0.00717 *
+wg/pop/central_brain                      11462  12895  -0.0588  +0.05409  -0.00476  -0.00474 
+wg/pop/neck_connective                     1805   1732  +0.0206  +0.00253  +0.02317  +0.02317 
+wg/pop/optic_lobe                          3311  27799  -0.7871  +0.66203  -0.26126  -0.12512 *
+wg/pop/ventral_nerve_cord                 10070  10494  -0.0206  +0.12486  +0.10451  +0.10424 *
+[arm cutwA|beta  ] mean|A_v1| 0.30006 mean|A_v1+A_n| 0.28361 mean|A_tot| 0.28554 unexplained-by-count share 0.9452
+[arm cutwA|crofts] mean|A_v1| 0.03474 mean|A_v1+A_n| 0.02731 mean|A_tot| 0.02731 unexplained-by-count share 0.7861
+[arm f4wA|beta   ] mean|A_v1| 0.32679 mean|A_v1+A_n| 0.31034 mean|A_tot| 0.31269 unexplained-by-count share 0.9497
+[arm f4wA|crofts ] mean|A_v1| 0.29597 mean|A_v1+A_n| 0.30052 mean|A_tot| 0.29542 unexplained-by-count share 1.0154
+[arm whole|beta  ] mean|A_v1| 0.12762 mean|A_v1+A_n| 0.10361 mean|A_tot| 0.11530 unexplained-by-count share 0.8118
+[addendum] wrote l231/addendum.json; source sha256 5a591e01da1fbc2a unchanged

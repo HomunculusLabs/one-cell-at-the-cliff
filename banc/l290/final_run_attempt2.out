@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l290/final_l290.py", line 95, in <module>
+    assert a not in W_OF, ('an arm name is owned by two workers', a)
+           ^^^^^^^^^^^^^
+AssertionError: ('an arm name is owned by two workers', 'gc30')

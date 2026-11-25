@@ -1,0 +1,173 @@
+{
+ "passed": true,
+ "verdicts_seen": [
+  "E14_MEMBERSHIP_NOT_WEIGHT",
+  "I_INSTRUMENT_AT_GROUP",
+  "NOT_SPECIAL_AT_WEIGHT",
+  "NO_DECISION",
+  "SET_BEYOND_WEIGHT:abs",
+  "WEIGHT_CARRIES"
+ ],
+ "labels_seen": [
+  "E14_MEMBERSHIP",
+  "MIXED",
+  "NOT_SPECIAL",
+  "SET_BEYOND_WEIGHT",
+  "WEIGHT_CARRIES"
+ ],
+ "statuses_seen": [
+  "EXCEEDED_BY",
+  "EXCEEDS",
+  "WITHIN"
+ ],
+ "prediction_values_seen": {
+  "P1": [
+   false,
+   true
+  ],
+  "P2": [
+   false,
+   true
+  ],
+  "P3": [
+   false,
+   true
+  ],
+  "P4": [
+   false,
+   true
+  ],
+  "P5": [
+   false,
+   true
+  ],
+  "P6": [
+   false,
+   true
+  ],
+  "P7": [
+   false,
+   true
+  ]
+ },
+ "form_differences": [],
+ "scenarios": {
+  "aliased": {
+   "verdict": "SET_BEYOND_WEIGHT:abs",
+   "n_clear": 9,
+   "predictions": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true,
+    "P5": true,
+    "P6": false,
+    "P7": true
+   }
+  },
+  "instrument": {
+   "verdict": "I_INSTRUMENT_AT_GROUP",
+   "n_clear": 0,
+   "predictions": {
+    "P1": false,
+    "P2": true,
+    "P3": false,
+    "P4": true,
+    "P5": true,
+    "P6": true,
+    "P7": false
+   }
+  },
+  "set_beyond": {
+   "verdict": "SET_BEYOND_WEIGHT:abs",
+   "n_clear": 10,
+   "predictions": {
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "P4": true,
+    "P5": true,
+    "P6": true,
+    "P7": true
+   }
+  },
+  "membership": {
+   "verdict": "E14_MEMBERSHIP_NOT_WEIGHT",
+   "n_clear": 9,
+   "predictions": {
+    "P1": true,
+    "P2": true,
+    "P3": true,
+    "P4": false,
+    "P5": true,
+    "P6": true,
+    "P7": true
+   }
+  },
+  "weight_carries": {
+   "verdict": "WEIGHT_CARRIES",
+   "n_clear": 15,
+   "predictions": {
+    "P1": true,
+    "P2": false,
+    "P3": false,
+    "P4": false,
+    "P5": true,
+    "P6": true,
+    "P7": false
+   }
+  },
+  "not_special": {
+   "verdict": "NOT_SPECIAL_AT_WEIGHT",
+   "n_clear": 15,
+   "predictions": {
+    "P1": true,
+    "P2": false,
+    "P3": false,
+    "P4": false,
+    "P5": true,
+    "P6": true,
+    "P7": true
+   }
+  },
+  "no_decision": {
+   "verdict": "NO_DECISION",
+   "n_clear": 13,
+   "predictions": {
+    "P1": true,
+    "P2": false,
+    "P3": true,
+    "P4": true,
+    "P5": true,
+    "P6": true,
+    "P7": true
+   }
+  },
+  "twins_fail": {
+   "verdict": "WEIGHT_CARRIES",
+   "n_clear": 15,
+   "predictions": {
+    "P1": true,
+    "P2": false,
+    "P3": false,
+    "P4": false,
+    "P5": false,
+    "P6": true,
+    "P7": false
+   }
+  },
+  "lift_11": {
+   "verdict": "WEIGHT_CARRIES",
+   "n_clear": 15,
+   "predictions": {
+    "P1": true,
+    "P2": false,
+    "P3": false,
+    "P4": false,
+    "P5": true,
+    "P6": true,
+    "P7": false
+   }
+  }
+ }
+}

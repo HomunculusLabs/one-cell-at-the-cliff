@@ -1,0 +1,16 @@
+[cols] ['target_id', 'pt_supervoxel_id', 'pt_root_id', 'pt_position', 'cell_class', 'cell_type', 'fafb_783_match_id', 'flow', 'hemilineage', 'manc_121_match_id', 'neuropeptide_verified', 'neurotransmitter_predicted', 'region', 'side', 'super_class', 'user_id', 'neurotransmitter_verified', 'other_names', 'body_part_effector', 'cell_sub_class', 'cell_function', 'cell_function_detailed', 'nerve', 'peripheral_target_type', 'body_part_sensory']
+[pool] Ti_fL: n=50 with_cell_type=50 distinct_types=6
+[pool] Ti_fR: n=51 with_cell_type=51 distinct_types=7
+[pool] Ti_eL: n=6 with_cell_type=6 distinct_types=2
+[pool] Ti_eR: n=6 with_cell_type=6 distinct_types=2
+[pool] Tr_fL: n=31 with_cell_type=31 distinct_types=10
+[pool] Tr_fR: n=31 with_cell_type=31 distinct_types=11
+[pool] Tr_eL: n=24 with_cell_type=24 distinct_types=9
+[pool] Tr_eR: n=24 with_cell_type=24 distinct_types=9
+[pair] Ti: L=56 R=57 typedL=56 typedR=57 shared_types=8 paired_cells=54 one_to_one_types=0
+       multiplicity L {'accessory_tibia_flexor_A': 13, 'accessory_tibia_flexor_A_out_of_bundle': 2, 'accessory_tibia_flexor_B': 17, 'accessory_tibia_flexor_C': 3, 'tibia_extensor_FETi': 3, 'tibia_extensor_SETi': 3, 'tibia_flexor': 12, 'tibia_flexor_Fast': 3}
+       multiplicity R {'accessory_tibia_flexor_A': 12, 'accessory_tibia_flexor_A_out_of_bundle': 2, 'accessory_tibia_flexor_A_slow': 1, 'accessory_tibia_flexor_B': 18, 'accessory_tibia_flexor_C': 3, 'tibia_extensor_FETi': 3, 'tibia_extensor_SETi': 3, 'tibia_flexor': 13, 'tibia_flexor_Fast': 2}
+[pair] Tr: L=55 R=55 typedL=55 typedR=55 shared_types=13 paired_cells=39 one_to_one_types=0
+       multiplicity L {'accessory_trochanter_flexor': 7, 'accessory_trochanter_flexor_posterior_soma_ProLN': 2, 'sternotrochanter_extensor': 2, 'sternotrochanter_extensor_MesoLN_dorsal_3': 3, 'sternotrochanter_extensor_ventrolateral_ribbon': 3, 'tergotrochanter_extensor': 4, 'tergotrochanter_extensor_MetaAN': 3, 'tergotrochanter_extensor_PDMN': 2, 'tergotrochanter_extensor_TT_PDMN': 1, 'trochanter_extensor': 3, 'trochanter_extensor_LinJ': 3, 'trochanter_flexor_MesoAN': 3, 'trochanter_flexor_MesoAN_posterior_soma': 1, 'trochanter_flexor_MesoLN_ventral_3': 3, 'trochanter_flexor_ProAN': 3, 'trochanter_flexor_VProN': 3, 'trochanter_flexor_dorsomedial_ribbon': 3, 'trochanter_flexor_posterior_soma': 3, 'trochanter_flexor_ventrolateral_ribbon': 3}
+       multiplicity R {'accessory_trochanter_flexor': 6, 'accessory_trochanter_flexor_MetaLN': 3, 'sternotrochanter_extensor': 2, 'sternotrochanter_extensor_MesoLN_dorsal_3': 3, 'sternotrochanter_extensor_dorsomedial_ribbon': 3, 'tergotrochanter_extensor': 6, 'tergotrochanter_extensor_MetaAN': 3, 'tergotrochanter_extensor_TT': 1, 'trochanter_extensor': 2, 'trochanter_extensor_LinJ': 3, 'trochanter_extensor_MetaLN': 1, 'trochanter_flexor_MesoALN_posterior_soma': 1, 'trochanter_flexor_MesoAN': 3, 'trochanter_flexor_MesoLN_ventral_5': 3, 'trochanter_flexor_ProAN': 3, 'trochanter_flexor_VProN': 3, 'trochanter_flexor_dorsomedial_ribbon': 3, 'trochanter_flexor_posterior_soma': 1, 'trochanter_flexor_posterior_soma_ProAN': 2, 'trochanter_flexor_ventrolateral_ribbon': 3}
+[probe] DONE — no artifact written

@@ -1,0 +1,46 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l240/edge_run.py:304: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l240/edge_run.py:1019: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  out.append(dict(target=int(g),csr_index=int(j),effective_weight=float(vb[j]),syn=int(w_syn[_m][0]),sign=float(np.sign(vb[j]))))
+[work1 17:22:12] graphs built 5s | K 77 n_cut 21,732 edges_cut 639,164
+[work1 17:22:12] worker 1: cutwA + ['e38', 'e39', 'e59', 'e62', 'e64'] | bisected ['cutwA', 'e38', 'e39', 'e59', 'e62', 'e64'] | fixed []
+[work1 17:22:22] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work1 17:22:22] e38 bracket af(0.12)=0.09055 af(0.18)=0.12083 target 0.10906
+[work1 17:22:22] e39 bracket af(0.12)=0.09055 af(0.18)=0.11737 target 0.10906
+[work1 17:22:22] e59 bracket af(0.12)=0.09051 af(0.18)=0.11915 target 0.10906
+[work1 17:22:22] e62 bracket af(0.12)=0.09057 af(0.18)=0.12089 target 0.10906
+[work1 17:22:22] e64 bracket af(0.12)=0.09057 af(0.18)=0.12036 target 0.10906
+[work1 17:24:19] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work1 17:24:19] g_e38 0.14365807771682737 | af_final 0.109035 | |af-target| 2.08e-05
+[work1 17:24:19] g_e39 0.14365377187728884 | af_final 0.108989 | |af-target| 6.67e-05
+[work1 17:24:19] g_e59 0.14360857486724854 | af_final 0.108943 | |af-target| 1.13e-04
+[work1 17:24:19] g_e62 0.14365849614143375 | af_final 0.109035 | |af-target| 2.08e-05
+[work1 17:24:19] g_e64 0.14365834593772892 | af_final 0.109051 | |af-target| 5.54e-06
+[work1 17:24:19] g_cutwA == stored EXACT (0.14365819573402408)
+[work1 17:24:19] bisects done 131s
+[work1 17:24:28] seed 801 done af {'cutwA': 0.1126004159450531} | 141s
+[work1 17:24:38] C0A-187a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work1 17:24:38] seed 901 done af {'cutwA': 0.10938719660043716} | 151s
+[work1 17:24:48] C0A-187b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work1 17:24:48] seed 3545 done af {'cutwA': 0.10879044979810715} | 160s
+[work1 17:25:23] seed 3769 done af {'cutwA': 0.10920357704162598, 'e38': 0.10915767401456833, 'e39': 0.1088363528251648, 'e59': 0.10938719660043716, 'e62': 0.10920357704162598, 'e64': 0.10938719660043716} | 196s
+[work1 17:25:59] seed 3770 done af {'cutwA': 0.10993803292512894, 'e38': 0.1097085177898407, 'e39': 0.10621987283229828, 'e59': 0.11012164503335953, 'e62': 0.10998393595218658, 'e64': 0.10957080870866776} | 231s
+[work1 17:26:35] seed 3771 done af {'cutwA': 0.10943309962749481, 'e38': 0.10915767401456833, 'e39': 0.10966261476278305, 'e59': 0.10957080870866776, 'e62': 0.10934129357337952, 'e64': 0.10984622687101364} | 267s
+[work1 17:27:11] seed 3772 done af {'cutwA': 0.10897406190633774, 'e38': 0.10906586796045303, 'e39': 0.10906586796045303, 'e59': 0.10846912860870361, 'e62': 0.10901996493339539, 'e64': 0.10892815887928009} | 303s
+[work1 17:27:47] seed 3773 done af {'cutwA': 0.10369520634412766, 'e38': 0.10456736385822296, 'e39': 0.10447555780410767, 'e59': 0.10319026559591293, 'e62': 0.10369520634412766, 'e64': 0.10369520634412766} | 340s
+[work1 17:28:24] seed 3774 done af {'cutwA': 0.10966261476278305, 'e38': 0.109800323843956, 'e39': 0.10860683768987656, 'e59': 0.10869864374399185, 'e62': 0.10957080870866776, 'e64': 0.11002983897924423} | 377s
+[work1 17:29:01] seed 3775 done af {'cutwA': 0.11081019043922424, 'e38': 0.11085609346628189, 'e39': 0.11090199649333954, 'e59': 0.1106724813580513, 'e62': 0.11081019043922424, 'e64': 0.11081019043922424} | 414s
+[work1 17:29:38] seed 3776 done af {'cutwA': 0.10562313348054886, 'e38': 0.1056690365076065, 'e39': 0.1008492112159729, 'e59': 0.10355749726295471, 'e62': 0.10557723045349121, 'e64': 0.10557723045349121} | 451s
+[work1 17:30:15] seed 3777 done af {'cutwA': 0.1076887771487236, 'e38': 0.10732155293226242, 'e39': 0.10732155293226242, 'e59': 0.10649529844522476, 'e62': 0.10773468017578125, 'e64': 0.10750516504049301} | 488s
+[work1 17:30:51] seed 3778 done af {'cutwA': 0.10934129357337952, 'e38': 0.10924948006868362, 'e39': 0.11030525714159012, 'e59': 0.11039706319570541, 'e62': 0.10924948006868362, 'e64': 0.1096167117357254} | 524s
+[work1 17:31:27] seed 3779 done af {'cutwA': 0.109800323843956, 'e38': 0.10989212989807129, 'e39': 0.109800323843956, 'e59': 0.1087445467710495, 'e62': 0.10984622687101364, 'e64': 0.10966261476278305} | 559s
+[work1 17:32:02] seed 3780 done af {'cutwA': 0.10833141952753067, 'e38': 0.10833141952753067, 'e39': 0.10851503163576126, 'e59': 0.10791829228401184, 'e62': 0.10828551650047302, 'e64': 0.10791829228401184} | 594s
+[work1 17:32:36] seed 3781 done af {'cutwA': 0.10998393595218658, 'e38': 0.11030525714159012, 'e39': 0.11039706319570541, 'e59': 0.10993803292512894, 'e62': 0.10975442081689835, 'e64': 0.11016754806041718} | 628s
+[work1 17:33:08] seed 3782 done af {'cutwA': 0.10332797467708588, 'e38': 0.10332797467708588, 'e39': 0.1028689444065094, 'e59': 0.10236401110887527, 'e62': 0.10328207165002823, 'e64': 0.10332797467708588} | 661s
+[work1 17:33:40] seed 3783 done af {'cutwA': 0.10245581716299057, 'e38': 0.10263942927122116, 'e39': 0.1028689444065094, 'e59': 0.10236401110887527, 'e62': 0.10273123532533646, 'e64': 0.10240991413593292} | 692s
+[work1 17:34:08] seed 3784 done af {'cutwA': 0.1068166196346283, 'e38': 0.10695432871580124, 'e39': 0.10690842568874359, 'e59': 0.10709203779697418, 'e62': 0.1068166196346283, 'e64': 0.10713794082403183} | 721s
+[work1 17:34:08] rollouts done 721s
+[work1 17:34:08] worker 1 DONE 721s
+w1 exit 0

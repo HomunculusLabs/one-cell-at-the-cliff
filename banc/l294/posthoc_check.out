@@ -1,0 +1,21 @@
+T4 enumeration: u_i = sign(dgain_i)*dE_i = [np.float64(1.37061), np.float64(3.280712), np.float64(1.689671), np.float64(4.548628), np.float64(0.51643), np.float64(1.930024), np.float64(-1.927228)]  S_obs 1.629835
+  pattern +++++++  S +1.629835  >= obs
+  pattern ++++++-  S +2.180472  >= obs
+  pattern ++++-+-  S +2.032921  >= obs
+  pattern ++-+++-  S +1.697709  >= obs
+  pattern -+++++-  S +1.788869  >= obs
+  pattern -+++-+-  S +1.641318  >= obs
+T4 count >= S_obs: 6 / 128 = 0.04688   (script stored p_one 0.04688)
+
+POSTHOC mirror STRAT-RHO(EW_SUM, DGAIN) on B33 (the two predictors against each other):
+  n11: rho(EW, DGAIN) +0.227  (k arms 11)
+  n30: rho(EW, DGAIN) +0.255  (k arms 11)
+  n46: rho(EW, DGAIN) +0.164  (k arms 11)
+  strat-rho +0.2152
+
+POSTHOC L18 'negative dgain -> floor (|E| <= 2F)': 6 of 9 negative-dgain arms vs 1 of 9 others; Fisher two-sided 0.050 (unregistered)
+  not at floor despite negative dgain: [('r11k2', -4.3409, -0.000533566), ('r11k4', -4.6883, -1.78814e-05), ('r46k1', 3.8741, -0.000354556)]
+  at floor despite non-negative dgain: [('r11k1', 0.9899, 0.000276715)]
+
+parents untouched: results_l290 sha 83498d7c933414c7 | results_l291 sha a8b80c85491417a1
+EXIT 0

@@ -1,0 +1,39 @@
+FINAL: cutwA gate {20: True, 21: True} | traces 3068 pools 15340 | F 0.00022931491480943385 eps 0.0004586298296188677
+VERDICT NO_DECISION | n_clear 12 of 15 (bar 8 ) | score 4 / 7 {'P1': True, 'P2': True, 'P3': False, 'P4': False, 'P5': False, 'P6': True, 'P7': True}
+  abs    g11 n 11 eff 11 sum 210 E +4.34 F | exW 0 exF 1 by 3 within 1 -> MIXED
+      vs s11f1  adv  -4.33 F p_adv 1.00000 p_opp 0.00002 EXCEEDED_BY
+      vs s11f2  adv  +4.88 F p_adv 0.00041 p_opp 0.99960 EXCEEDS
+      vs s11w1  adv  -2.75 F p_adv 0.99947 p_opp 0.00055 EXCEEDED_BY
+      vs s11w2  adv  -2.14 F p_adv 0.99719 p_opp 0.00282 EXCEEDED_BY
+      vs s11w3  adv  +1.00 F p_adv 0.04109 p_opp 0.95892 WITHIN
+  crofts gc30 n 30 eff 28 sum 429 E +8.73 F | exW 1 exF 2 by 1 within 1 -> MIXED
+      vs s30f1  adv +10.69 F p_adv 0.00002 p_opp 1.00000 EXCEEDS
+      vs s30f2  adv  +6.73 F p_adv 0.00002 p_opp 1.00000 EXCEEDS
+      vs s30w1  adv  -6.01 F p_adv 1.00000 p_opp 0.00002 EXCEEDED_BY
+      vs s30w2  adv  +0.45 F p_adv 0.15079 p_opp 0.84923 WITHIN
+      vs s30w3  adv  +6.83 F p_adv 0.00002 p_opp 1.00000 EXCEEDS
+  hop    gh46 n 46 eff 43 sum 624 E +9.15 F | exW 0 exF 2 by 2 within 1 -> E14_MEMBERSHIP
+      vs s46f1  adv +12.04 F p_adv 0.00002 p_opp 1.00000 EXCEEDS
+      vs s46f2  adv +12.05 F p_adv 0.00002 p_opp 1.00000 EXCEEDS
+      vs s46w1  adv  -1.83 F p_adv 0.99355 p_opp 0.00647 WITHIN
+      vs s46w2  adv  -2.88 F p_adv 0.99921 p_opp 0.00081 EXCEEDED_BY
+      vs s46w3  adv  -3.01 F p_adv 1.00000 p_opp 0.00002 EXCEEDED_BY
+twins EDGE_NOT_GAIN_GROUP False {'gc30f': (1.37, True), 'gh46f': (3.28, True)}
+lift (g): {11: (5.77, 2e-05, True), 30: (-0.33, 0.68445, False), 46: (-4.34, 0.99997, False)} | rho(E,eff) 0.09181219346899279
+  s11f1  E  +8.67 F k_neg  0 clr vecclr e14 0 sum 212 draws 5 dg +1.32e-03
+  s11f2  E  -0.54 F k_neg 11     vec    e14 0 sum 211 draws 3 dg -2.42e-04
+  s11w1  E  +7.10 F k_neg  0 clr vecclr e14 1 sum 207 draws 116 dg +3.32e-04
+  s11w2  E  +6.48 F k_neg  0 clr vecclr e14 1 sum 214 draws 52 dg +2.97e-04
+  s11w3  E  +3.35 F k_neg  1 clr vecclr e14 1 sum 208 draws 119 dg +2.29e-05
+  s30f1  E  -1.96 F k_neg 12     vecclr e14 0 sum 410 draws 27 dg -4.98e-04
+  s30f2  E  +2.01 F k_neg  4 clr vecclr e14 0 sum 413 draws 5 dg +7.96e-04
+  s30w1  E +14.74 F k_neg  0 clr vecclr e14 1 sum 440 draws 14 dg +2.60e-03
+  s30w2  E  +8.28 F k_neg  0 clr vecclr e14 1 sum 415 draws 9 dg +3.05e-04
+  s30w3  E  +1.90 F k_neg  2     vecclr e14 1 sum 440 draws 7 dg +3.27e-04
+  s46f1  E  -2.90 F k_neg 12 clr vecclr e14 0 sum 610 draws 16 dg +2.34e-04
+  s46f2  E  -2.90 F k_neg 15 clr vec    e14 0 sum 602 draws 13 dg +1.37e-04
+  s46w1  E +10.98 F k_neg  0 clr vecclr e14 1 sum 606 draws 2 dg +1.16e-03
+  s46w2  E +12.03 F k_neg  0 clr vecclr e14 1 sum 645 draws 1 dg +1.12e-03
+  s46w3  E +12.16 F k_neg  0 clr vecclr e14 1 sum 631 draws 1 dg +9.84e-04
+  gc30f  E  +7.36 F k_neg  0 clr vecclr e14 1 sum 429 draws None dg +0.00e+00
+  gh46f  E  +5.87 F k_neg  0 clr vecclr e14 1 sum 624 draws None dg +0.00e+00

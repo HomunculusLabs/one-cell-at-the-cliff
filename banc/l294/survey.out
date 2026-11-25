@@ -1,0 +1,413 @@
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/results_l291.json 29376 B sha a8b80c85491417a1
+  [verdict] str NO_DECISION
+  [n_clear] int 12
+  [clear] dict(15) keys=['s11f1', 's11f2', 's11w1', 's11w2', 's11w3', 's30f1', 's30f2', 's30w1', 's30w2', 's30w3', 's46f1', 's46f2']
+  [per_metric] dict(3) keys=['abs', 'crofts', 'hop']
+  [twins] dict(2) keys=['gc30f', 'gh46f']
+  [EDGE_NOT_GAIN_GROUP] bool False
+  [lift] dict(3) keys=['11', '30', '46']
+  [rho_E_eff_strat] float 0.091812193468992789
+  [predictions] dict(7) keys=['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7']
+  [score] int 4
+  [card] str L291
+  [prereg_sha256] str 670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252
+  [sets_sha256] str bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed
+  [harness_sha256] str 9a7965c7ced69dae0bcde3e9350f62988351b591091887d750123c97be629285
+  [l290_results_sha256] str 83498d7c933414c7ee02f8ff088bcf62d59ec1bac16bc5ff5d274ff3a0628f5f
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [K] int 8
+  [eps] float 0.00045862982961886769
+  [F] float 0.00022931491480943385
+  [exit_codes] dict(2) keys=['0', '1']
+  [cutwA_gate] dict(2) keys=['20', '21']
+  [cutwA_arrays_compared] int 532
+  [trace_arrays_verified] int 3068
+  [pool_traces_verified] int 15340
+  [vacuous_by_identity] dict(3) keys=['abs', 'crofts', 'hop']
+  [same_set_as_used] list(0) []
+  [dup_pairs] list(0) []
+  [status] str FINAL
+  [floorN] float 0.005333731805284174
+  [strat_meta] dict(15) keys=['s11f1', 's11f2', 's11w1', 's11w2', 's11w3', 's30f1', 's30f2', 's30w1', 's30w2', 's30w3', 's46f1', 's46f2']
+  [arms] dict(21) keys=['s11f1', 's11f2', 's11w1', 's11w2', 's11w3', 's30f1', 's30f2', 's30w1', 's30w2', 's30w3', 's46f1', 's46f2']
+  [arms_gain] dict(18) keys=['s11f1', 's11f2', 's11w1', 's11w2', 's11w3', 's30f1', 's30f2', 's30w1', 's30w2', 's30w3', 's46f1', 's46f2']
+  [uniform_l290_reported_not_scored] dict(15) keys=['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [context] dict(3) keys=['E14_in_F', 'g11f_in_F', 'used_set_twin_g11f_note']
+  [means] dict(3) keys=['strat_with_e14', 'strat_free_e14', 'uniform_free_e14']
+
+--- one record of each l291 results type ---
+  results['verdict'] = "NO_DECISION"
+  results['n_clear'] = 12
+  results['clear'] -> ['s11f1'] = true
+  results['per_metric'] -> ['abs'] = {"arm": "g11", "n": 11, "eff": 11, "syn_sum": 210, "E": 0.0009961842760805213, "in_F": 4.344175680453991, "exW": 0, "exF": 1, "by": 3, "within": 1, "label": "MIXED", "vacuous": [], "comparators": {"s11f1": {"advantage": -0.000992745812987417, "in_F": -4.329181177824444, "D": -0.000992745812987417, "p_two": 3.0517578125e-05, "p_adv": 1.0, "p_opp": 1.52587890625e-05, "status": "EXCEEDED_BY", "status_l290_form": "EXCEEDED_BY"}, "s11f2": {"advantage": 0.001119426113728825, "in_F": 4.8816105775723075, "D": 0.001119426113728825, "p_two": 0.000823974609375, "p_adv": 0.0004119873046875, "p_opp": 0.999
+  results['twins'] -> ['gc30f'] = {"E_fixed": 0.0016883213323518776, "E_bisected": 0.0020026225737748097, "sign_agree": true, "diff": 0.0003143012414229321, "diff_in_F": 1.3706096774565402, "within": true}
+  results['EDGE_NOT_GAIN_GROUP'] = false
+  results['lift'] -> ['11'] = {"strat": ["s11f1", "s11f2"], "uniform": ["r11k1", "r11k2", "r11k3", "r11k4", "r11k5"], "D": 0.001323832012526833, "in_F": 5.77298695824896, "p_up": 1.52587890625e-05, "p_two": 3.0517578125e-05, "positive": true}
+  results['rho_E_eff_strat'] = 0.09181219346899279
+  results['predictions'] -> ['P1'] = true
+  results['score'] = 4
+  results['card'] = "L291"
+  results['prereg_sha256'] = "670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252"
+  results['sets_sha256'] = "bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed"
+  results['harness_sha256'] = "9a7965c7ced69dae0bcde3e9350f62988351b591091887d750123c97be629285"
+  results['l290_results_sha256'] = "83498d7c933414c7ee02f8ff088bcf62d59ec1bac16bc5ff5d274ff3a0628f5f"
+  results['seeds'] -> [0] = 3769
+  results['K'] = 8
+  results['eps'] = 0.0004586298296188677
+  results['F'] = 0.00022931491480943385
+  results['exit_codes'] -> ['0'] = "0"
+  results['cutwA_gate'] -> ['20'] = {"xmean": true, "raw": true, "raw_all": true, "af": true}
+  results['cutwA_arrays_compared'] = 532
+  results['trace_arrays_verified'] = 3068
+  results['pool_traces_verified'] = 15340
+  results['vacuous_by_identity'] -> ['abs'] = []
+  results['same_set_as_used'] = []
+  results['dup_pairs'] = []
+  results['status'] = "FINAL"
+  results['floorN'] = 0.005333731805284174
+  results['strat_meta'] -> ['s11f1'] = {"n": 11, "cell": "f", "syn_sum": 212, "draws": 5, "eff": 8, "contains14": false}
+  results['arms'] -> ['s11f1'] = {"E": 0.0019889300890679382, "CI": [0.0016769466116177353, 0.0023009135665181413], "in_F": 8.673356858278435, "k_neg": 0, "N": 0.0326226200658706, "N_clear": true, "n": 11, "eff": 8, "has14": false, "syn_sum": 212, "draws": 5, "gain": 0.14498258113861084, "dgain": 0.0013243854045867642, "per_seed": [0.002052627971214867, 0.0022077553642739466, 0.0029549043129534353, 0.0028421474442546987, 0.0007497067263282607, 0.001492538748922502, 0.0015793296209462952, 0.0021268299386833743, 0.0018131067343725472, 0.002857499701402224, 0.0018704261992152117, 0.002172615813158179, 0.001244438211242805, 0.002
+  results['arms_gain'] -> ['s11f1'] = 0.14498258113861084
+  results['uniform_l290_reported_not_scored'] -> ['r11k1'] = {"in_F": 0.9898610854980108, "syn_sum": 170, "has14": false, "in_band": false}
+  results['context'] -> ['E14_in_F'] = 5.455528541237024
+  results['means'] -> ['strat_with_e14'] = {"abs": 5.641626720717744, "crofts": 8.309578964577566, "hop": 11.722884076567896}
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/sets.json 21245 B sha bf4cba21780991d0
+  [card] str L291
+  [prereg_sha256] str 670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252
+  [seed] int 29113
+  [band] float 0.050000000000000003
+  [max_draws] int 2000000
+  [bands] dict(3) keys=['11', '30', '46']
+  [menu] list(69) of dict
+  [used] dict(3) keys=['abs', 'crofts', 'hop']
+  [raw] dict(3) keys=['11', '30', '46']
+  [random] dict(15) keys=['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [noop] list(8) [1, 2, 8, 9, 16, 21]
+  [strat] dict(15) keys=['s11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 's30f1', 's30f2', 's46w1', 's46w2']
+  [strat_draw_order] dict(15) keys=['s11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 's30f1', 's30f2', 's46w1', 's46w2']
+  [strat_meta] dict(15) keys=['s11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 's30f1', 's30f2', 's46w1', 's46w2']
+  [twins] dict(2) keys=['gc30f', 'gh46f']
+  [plan] dict(2) keys=['0', '1']
+  [same_set] list(0) []
+  [dup_pairs] list(0) []
+
+--- l291 sets: first record per top key ---
+  sets['card'] = "L291"
+  sets['prereg_sha256'] = "670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252"
+  sets['seed'] = 29113
+  sets['band'] = 0.05
+  sets['max_draws'] = 2000000
+  sets['bands'] -> ['11'] = [200, 220]
+  sets['menu'] -> [0] = {"j": 0, "target": 2238, "syn": 4, "effective_weight": 1.6094379425048828, "sign": 1.0}
+  sets['used'] -> ['abs'] = [4, 12, 13, 14, 25, 38, 39, 59, 62, 64, 67]
+  sets['raw'] -> ['11'] = [1, 4, 12, 16, 29, 39, 42, 43, 47, 49, 52]
+  sets['random'] -> ['r11k1'] = [0, 5, 15, 16, 20, 23, 30, 32, 39, 43, 48]
+  sets['noop'] -> [0] = 1
+  sets['strat'] -> ['s11w1'] = [3, 4, 5, 14, 35, 44, 47, 50, 53, 57, 64]
+  sets['strat_draw_order'] -> ['s11w1'] = [4, 50, 53, 14, 44, 64, 57, 3, 47, 35, 5]
+  sets['strat_meta'] -> ['s11w1'] = {"n": 11, "cell": "w", "syn_sum": 207, "draws": 116, "eff": 10, "contains14": true}
+  sets['twins'] -> ['gc30f'] = "gc30"
+  sets['plan'] -> ['0'] = ["s11w1", "s11w2", "s11w3", "s11f1", "s11f2", "s30w1", "s30w2", "s30w3", "gc30f"]
+  sets['same_set'] = []
+  sets['dup_pairs'] = []
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/gains_w0.json 1607 B sha aef8013cca8bff7c
+  [gain] dict(10) keys=['cutwA', 's11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 'gc30f']
+  [cert_gain] dict(0) keys=[]
+  [source] dict(10) keys=['cutwA', 's11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 'gc30f']
+  [bisected] list(9) ['cutwA', 's11w1', 's11w2', 's11w3', 's11f1', 's11f2']
+  [stairs] dict(9) keys=['cutwA', 's11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3']
+  [af_final] dict(9) keys=['cutwA', 's11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3']
+  [stored_exact] dict(1) keys=['cutwA']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/arms_w0.json 27854 B sha df2cf0ff3c614247
+  [wid] int 0
+  [stage] str L291-B
+  [menu_n] int 80
+  [menu69_n] int 69
+  [cert_menu_11] int 11
+  [carrier_col] int 467
+  [carrier] int 1110
+  [base_edges] int 644177
+  [edges] dict(9) keys=['s11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1', 's30w2', 's30w3', 'gc30f']
+  [arms_built] list(9) ['s11w1', 's11w2', 's11w3', 's11f1', 's11f2', 's30w1']
+  [fixed] list(1) ['gc30f']
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [archives] int 311
+  [prereg] str 670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252
+  [sets_sha] str bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/pools_w0.json 3433 B sha ea8dcdf5c36eee97
+  [wid] int 0
+  [pools] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+  [n_pools] int 20
+  [n_union] int 303
+  [sizes] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/anchors_w0.json 360 B sha 4bced3400d3e2a88
+  [c0a135_pass] bool True
+  [c0a175_pass] bool True
+  [fc150_pass] NoneType None
+  [silcut] dict(0) keys=[]
+  [silcut_pass] NoneType None
+  [c0a135_max] float 0
+  [c0a135_checks] int 46
+  [c0a135_pairs] list(1) of list
+  [g_cutwA] float 0.14365819573402408
+  [g_cutwA_stored_exact] bool True
+  [c0a175_max] float 0
+  [c0a175_checks] int 25
+  [c0a175_arms] list(1) ['cutwA']
+  [c0a175_seed] int 3545
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/gains_w1.json 1452 B sha 5fcbf1d759b8825f
+  [gain] dict(9) keys=['cutwA', 's30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1', 's46f2', 'gh46f']
+  [cert_gain] dict(0) keys=[]
+  [source] dict(9) keys=['cutwA', 's30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1', 's46f2', 'gh46f']
+  [bisected] list(8) ['cutwA', 's30f1', 's30f2', 's46w1', 's46w2', 's46w3']
+  [stairs] dict(8) keys=['cutwA', 's30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1', 's46f2']
+  [af_final] dict(8) keys=['cutwA', 's30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1', 's46f2']
+  [stored_exact] dict(1) keys=['cutwA']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/arms_w1.json 51126 B sha 0c0e133d9f9dd33f
+  [wid] int 1
+  [stage] str L291-B
+  [menu_n] int 80
+  [menu69_n] int 69
+  [cert_menu_11] int 11
+  [carrier_col] int 467
+  [carrier] int 1110
+  [base_edges] int 644177
+  [edges] dict(8) keys=['s30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1', 's46f2', 'gh46f']
+  [arms_built] list(8) ['s30f1', 's30f2', 's46w1', 's46w2', 's46w3', 's46f1']
+  [fixed] list(1) ['gh46f']
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [archives] int 311
+  [prereg] str 670e8f682e48749c5d87383c896a416bacd16c4d2136719896be35912e275252
+  [sets_sha] str bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/pools_w1.json 3433 B sha 4d862363b15cdc95
+  [wid] int 1
+  [pools] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+  [n_pools] int 20
+  [n_union] int 303
+  [sizes] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l291/anchors_w1.json 360 B sha 4bced3400d3e2a88
+  [c0a135_pass] bool True
+  [c0a175_pass] bool True
+  [fc150_pass] NoneType None
+  [silcut] dict(0) keys=[]
+  [silcut_pass] NoneType None
+  [c0a135_max] float 0
+  [c0a135_checks] int 46
+  [c0a135_pairs] list(1) of list
+  [g_cutwA] float 0.14365819573402408
+  [g_cutwA_stored_exact] bool True
+  [c0a175_max] float 0
+  [c0a175_checks] int 25
+  [c0a175_arms] list(1) ['cutwA']
+  [c0a175_seed] int 3545
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/results_l290.json 45671 B sha 83498d7c933414c7
+  [card] str L290 stage B
+  [prereg_sha256] str 27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1
+  [sets_sha256] str 0a48800bdcec39ca9fb02232485546735294e429b441bc319b6ad6541b807dcd
+  [harness_sha256] str 4c60ce6e8e81029b66d4e187d9c80bf872cee63a927daa3ad937eaeba1724c89
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [workers] dict(3) keys=['0', '1', '2']
+  [exit_codes] dict(3) keys=['0', '1', '2']
+  [anchors] dict(3) keys=['0', '1', '2']
+  [cutwA_gate] dict(3) keys=['0', '1', '2']
+  [cutwA_arrays_compared] int 532
+  [trace_arrays_verified] int 7196
+  [pool_traces_verified] int 35980
+  [gains] dict(97) keys=['e4', 'e12', 'e13', 'e14', 'e25', 'e38', 'e39', 'e59', 'e62', 'e64', 'e67', 'g11']
+  [sets] dict(20) keys=['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [status] str FINAL
+  [verdict] str NO_DECISION
+  [amendment_tick278] dict(2) keys=['contrasts_status_changed', 'verdict_under_tick277_rule']
+  [K] int 8
+  [eps] float 0.00045862982961886769
+  [F] float 0.00022931491480943385
+  [floorN] float 0.005333731805284174
+  [per_metric] dict(3) keys=['abs', 'crofts', 'hop']
+  [instrument] dict(7) keys=['random_clears', 'n_clear', 'bar', 'with_e14', 'without_e14', 'without_e14_clear', 'companion_e']
+  [single_edge_carrier] dict(3) keys=['fires', 'same_effect_as_used_set', 'used_set_exceeds']
+  [twins] dict(2) keys=['rows', 'EDGE_NOT_GAIN']
+  [predictions] dict(8) keys=['S1', 'S2', 'N1', 'R1', 'R2', 'R3', 'R4', 'R5']
+  [score] int 0
+  [set_predictions] dict(4) keys=['S1_overlap', 'S2_raw11_has14', 'noop_crofts', 'noop_hop']
+  [arms] dict(31) keys=['e12f', 'e14f', 'e25f', 'e27f', 'e67f', 'gc30', 'gh46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5']
+  [descriptive] dict(7) keys=['note', 'used', 'rho_E_eff_random', 'rho_E_synsum_random', 'mean_E_random_with_e14', 'mean_E_random_without_e14', 'single_effects']
+
+--- one record of each l290 results type ---
+  results['card'] = "L290 stage B"
+  results['prereg_sha256'] = "27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1"
+  results['sets_sha256'] = "0a48800bdcec39ca9fb02232485546735294e429b441bc319b6ad6541b807dcd"
+  results['harness_sha256'] = "4c60ce6e8e81029b66d4e187d9c80bf872cee63a927daa3ad937eaeba1724c89"
+  results['seeds'] -> [0] = 3769
+  results['workers'] -> ['0'] = {"arms": ["cutwA", "gc30", "gh46", "rw11", "rw30", "rw46", "e14f", "e25f", "e67f"], "secs": 1149.8322665691376}
+  results['exit_codes'] -> ['0'] = "0"
+  results['anchors'] -> ['0'] = {"c0a135_max": 0.0, "c0a175_max": 0.0}
+  results['cutwA_gate'] -> ['0'] = {"xmean": true, "raw": true, "raw_all": true, "af": true}
+  results['cutwA_arrays_compared'] = 532
+  results['trace_arrays_verified'] = 7196
+  results['pool_traces_verified'] = 35980
+  results['gains'] -> ['e4'] = 0.14365807771682737
+  results['sets'] -> ['r11k1'] = [0, 5, 15, 16, 20, 23, 30, 32, 39, 43, 48]
+  results['status'] = "FINAL"
+  results['verdict'] = "NO_DECISION"
+  results['amendment_tick278'] -> ['contrasts_status_changed'] = ["crofts:r30k1", "crofts:r30k3"]
+  results['K'] = 8
+  results['eps'] = 0.0004586298296188677
+  results['F'] = 0.00022931491480943385
+  results['floorN'] = 0.005333731805284174
+  results['per_metric'] -> ['abs'] = {"arm": "g11", "n": 11, "eff": 11, "E": 0.0009961842760805213, "comparators": {"rw11": {"advantage": 0.0006703515125745568, "in_F": 2.9232791645132847, "D": 0.0006703515125745568, "p_two": 0.015655517578125, "p_adv": 0.0078277587890625, "p_opp": 0.9921875, "status": "EXCEEDS", "tick277_status": "EXCEEDS", "tie_mass": 1.52587890625e-05}, "r11k1": {"advantage": 0.0007691943655863712, "in_F": 3.3543145949559805, "D": 0.0007691943655863712, "p_two": 0.00048828125, "p_adv": 0.000244140625, "p_opp": 0.9997711181640625, "status": "EXCEEDS", "tick277_status": "EXCEEDS", "tie_mass": 1.52587890625e-05},
+  results['instrument'] -> ['random_clears'] = {"r11k1": false, "r11k2": true, "r11k3": true, "r11k4": true, "r11k5": false, "r30k1": true, "r30k2": true, "r30k3": true, "r30k4": false, "r30k5": false, "r46k1": true, "r46k2": false, "r46k3": true, "r46k4": false, "r46k5": true}
+  results['single_edge_carrier'] -> ['fires'] = false
+  results['twins'] -> ['rows'] = {"e14f": {"E_fixed": 0.0008635672878539737, "E_bisected": 0.0012510340626742031, "sign_agree": true, "diff": 0.0003874667748202294, "diff_in_F": 1.689671058431692, "within": true, "dgain": 0.00015667319297787974}, "e25f": {"E_fixed": -0.0010262342480958234, "E_bisected": 1.6834037347838006e-05, "sign_agree": false, "diff": 0.0010430682854436614, "diff_in_F": 4.548628188055173, "within": false, "dgain": 0.0008501279354094782}, "e67f": {"E_fixed": -0.00023148871031783186, "E_bisected": -0.0003499137881606425, "sign_agree": true, "diff": 0.00011842507784281067, "diff_in_F": 0.5164298970314457, "w
+  results['predictions'] -> ['S1'] = false
+  results['score'] = 0
+  results['set_predictions'] -> ['S1_overlap'] = 3
+  results['arms'] -> ['e12f'] = {"E": 0.00039525405478530156, "CI": [-2.5072416932134386e-05, 0.0008155805265027375], "in_F": 1.7236299484216588, "k_neg": 4, "N": 0.014018845081508052, "N_clear": true, "n": 1, "eff": null, "has14": false, "syn_sum": null, "gain": 0.14365819573402408, "per_seed": [0.0017769666174748018, 0.0007124934237740174, 0.001178229873692982, 0.0007196539158174746, -0.0015556498471833713, 8.83837663230927e-05, 0.0004456428889332738, 1.6029199520754822e-05, 0.0011380380480326205, 0.0003138678087838409, 0.001000229366077788, 0.0010158921154793284, -7.655793835733074e-05, 4.420384647850842e-05, -4.774897952
+  results['descriptive'] -> ['note'] = "DESCRIPTIVE, no branch: a sum of members' SINGLE effects shares one control, so its sign is not a group claim (L240)"
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/sets.json 16547 B sha 0a48800bdcec39ca
+  [card] str L290 sets
+  [rule] str L290 PREREG s3
+  [prereg_sha256] str 27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1
+  [numpy] str 2.5.4
+  [menu] list(69) of dict
+  [used] dict(3) keys=['abs', 'crofts', 'hop']
+  [raw] dict(3) keys=['11', '30', '46']
+  [raw_boundary_ties_left_out] dict(3) keys=['11', '30', '46']
+  [random] dict(15) keys=['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [random_draw_order] dict(15) keys=['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [same_set_pairs] list(0) []
+  [noop] list(8) [1, 2, 8, 9, 16, 21]
+  [contains14] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [eff] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+
+--- l290 sets: first record per top key ---
+  sets['card'] = "L290 sets"
+  sets['rule'] = "L290 PREREG s3"
+  sets['prereg_sha256'] = "27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1"
+  sets['numpy'] = "2.5.4"
+  sets['menu'] -> [0] = {"j": 0, "target": 2238, "syn": 4, "effective_weight": 1.6094379425048828, "sign": 1.0}
+  sets['used'] -> ['abs'] = [4, 12, 13, 14, 25, 38, 39, 59, 62, 64, 67]
+  sets['raw'] -> ['11'] = [1, 4, 12, 16, 29, 39, 42, 43, 47, 49, 52]
+  sets['raw_boundary_ties_left_out'] -> ['11'] = 0
+  sets['random'] -> ['r11k1'] = [0, 5, 15, 16, 20, 23, 30, 32, 39, 43, 48]
+  sets['random_draw_order'] -> ['r11k1'] = [15, 0, 20, 48, 5, 32, 16, 43, 30, 39, 23]
+  sets['same_set_pairs'] = []
+  sets['noop'] -> [0] = 1
+  sets['contains14'] -> ['gc30'] = true
+  sets['eff'] -> ['gc30'] = 28
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/gains_w0.json 1284 B sha 5c867962a3945584
+  [gain] dict(9) keys=['cutwA', 'gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'e14f', 'e25f', 'e67f']
+  [cert_gain] dict(0) keys=[]
+  [source] dict(9) keys=['cutwA', 'gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'e14f', 'e25f', 'e67f']
+  [bisected] list(6) ['cutwA', 'gc30', 'gh46', 'rw11', 'rw30', 'rw46']
+  [stairs] dict(6) keys=['cutwA', 'gc30', 'gh46', 'rw11', 'rw30', 'rw46']
+  [af_final] dict(6) keys=['cutwA', 'gc30', 'gh46', 'rw11', 'rw30', 'rw46']
+  [stored_exact] dict(1) keys=['cutwA']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/arms_w0.json 92266 B sha 3eb5a5159c628f9b
+  [wid] int 0
+  [stage] str L290-B
+  [menu_n] int 80
+  [menu69_n] int 69
+  [cert_menu_11] int 11
+  [carrier_col] int 467
+  [carrier] int 1110
+  [base_edges] int 644177
+  [edges] dict(25) keys=['gc30', 'gh46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5']
+  [arms_built] list(8) ['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'e14f']
+  [fixed] list(3) ['e14f', 'e25f', 'e67f']
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [archives] int 311
+  [prereg] str 27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1
+  [sets_sha] str 0a48800bdcec39ca9fb02232485546735294e429b441bc319b6ad6541b807dcd
+  [contains14] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [eff] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/pools_w0.json 3433 B sha ea8dcdf5c36eee97
+  [wid] int 0
+  [pools] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+  [n_pools] int 20
+  [n_union] int 303
+  [sizes] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/gains_w1.json 1450 B sha 6df62910ff6c9270
+  [gain] dict(9) keys=['cutwA', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'e12f']
+  [cert_gain] dict(0) keys=[]
+  [source] dict(9) keys=['cutwA', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'e12f']
+  [bisected] list(8) ['cutwA', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5']
+  [stairs] dict(8) keys=['cutwA', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [af_final] dict(8) keys=['cutwA', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [stored_exact] dict(1) keys=['cutwA']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/arms_w1.json 92253 B sha 4f7235dcd80e278b
+  [wid] int 1
+  [stage] str L290-B
+  [menu_n] int 80
+  [menu69_n] int 69
+  [cert_menu_11] int 11
+  [carrier_col] int 467
+  [carrier] int 1110
+  [base_edges] int 644177
+  [edges] dict(25) keys=['gc30', 'gh46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5']
+  [arms_built] list(8) ['r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1']
+  [fixed] list(1) ['e12f']
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [archives] int 311
+  [prereg] str 27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1
+  [sets_sha] str 0a48800bdcec39ca9fb02232485546735294e429b441bc319b6ad6541b807dcd
+  [contains14] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [eff] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/pools_w1.json 3433 B sha 4d862363b15cdc95
+  [wid] int 1
+  [pools] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+  [n_pools] int 20
+  [n_union] int 303
+  [sizes] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/gains_w2.json 1606 B sha 7e16e8dde7ae662d
+  [gain] dict(10) keys=['cutwA', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2', 'r46k3', 'r46k4', 'r46k5', 'e27f']
+  [cert_gain] dict(0) keys=[]
+  [source] dict(10) keys=['cutwA', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2', 'r46k3', 'r46k4', 'r46k5', 'e27f']
+  [bisected] list(9) ['cutwA', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2']
+  [stairs] dict(9) keys=['cutwA', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2', 'r46k3', 'r46k4', 'r46k5']
+  [af_final] dict(9) keys=['cutwA', 'r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2', 'r46k3', 'r46k4', 'r46k5']
+  [stored_exact] dict(1) keys=['cutwA']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/arms_w2.json 92264 B sha 64c7e41e771af5cc
+  [wid] int 2
+  [stage] str L290-B
+  [menu_n] int 80
+  [menu69_n] int 69
+  [cert_menu_11] int 11
+  [carrier_col] int 467
+  [carrier] int 1110
+  [base_edges] int 644177
+  [edges] dict(25) keys=['gc30', 'gh46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2', 'r30k3', 'r30k4', 'r30k5']
+  [arms_built] list(9) ['r30k3', 'r30k4', 'r30k5', 'r46k1', 'r46k2', 'r46k3']
+  [fixed] list(1) ['e27f']
+  [seeds] list(16) [3769, 3770, 3771, 3772, 3773, 3774]
+  [archives] int 311
+  [prereg] str 27b6a473bdb2f9d6d8753d45ba2ca999150674411610467f9cd10f89a323e1f1
+  [sets_sha] str 0a48800bdcec39ca9fb02232485546735294e429b441bc319b6ad6541b807dcd
+  [contains14] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+  [eff] dict(20) keys=['gc30', 'gh46', 'rw11', 'rw30', 'rw46', 'r11k1', 'r11k2', 'r11k3', 'r11k4', 'r11k5', 'r30k1', 'r30k2']
+====================================================================================================
+/home/t3rpz/critters/peabrain-lab/banc/l290/pools_w2.json 3433 B sha ea35e56bb56d6876
+  [wid] int 2
+  [pools] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']
+  [n_pools] int 20
+  [n_union] int 303
+  [sizes] dict(20) keys=['Ti_fL', 'Ti_eL', 'Ti_fR', 'Ti_eR', 'Tr_fL', 'Tr_eL', 'Tr_fR', 'Tr_eR', 'Ta_aL', 'Ta_bL', 'Ta_aR', 'Ta_bR']

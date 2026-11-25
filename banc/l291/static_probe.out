@@ -1,0 +1,96 @@
+menu syn: n 69 sum 919 mean 13.32 sd 10.11 min 4 max 41
+rank (by raw syn, ties by j): j:syn  [* = no-op N0]
+   1  j43 syn   41     used: .CH
+   2  j29 syn   39     used: .CH
+   3  j39 syn   39     used: ACH
+   4  j47 syn   38 N0  used: ..H
+   5  j42 syn   36     used: .CH
+   6  j 1 syn   35 N0  used: ...
+   7  j 4 syn   31     used: ACH
+   8  j49 syn   26     used: ..H
+   9  j16 syn   25 N0  used: ...
+  10  j52 syn   25     used: ...
+  11  j12 syn   24     used: ACH
+  12  j50 syn   23     used: ...
+  13  j35 syn   22     used: ...
+  14  j64 syn   22     used: ACH
+  15  j67 syn   21     used: ACH
+  16  j 7 syn   20     used: ...
+  17  j14 syn   20     used: ACH
+  18  j22 syn   19     used: ...
+  19  j38 syn   18     used: A.H
+  20  j44 syn   17     used: ..H
+  21  j48 syn   16     used: ...
+  22  j36 syn   15     used: ..H
+  23  j25 syn   13     used: ACH
+  24  j40 syn   13     used: ..H
+  25  j 2 syn   12 N0  used: ...
+  26  j13 syn   12     used: ACH
+  27  j30 syn   12     used: ...
+  28  j56 syn   12     used: .CH
+  29  j58 syn   11     used: ..H
+  30  j68 syn   11     used: ...
+  31  j19 syn   10     used: ...
+  32  j20 syn   10     used: ..H
+  33  j24 syn   10     used: .CH
+  34  j57 syn   10     used: ..H
+  35  j 8 syn    9 N0  used: ...
+  36  j34 syn    9     used: .CH
+  37  j51 syn    9     used: ..H
+  38  j66 syn    9     used: .CH
+  39  j 3 syn    8     used: ...
+  40  j 5 syn    8     used: .CH
+  41  j17 syn    8     used: .CH
+  42  j26 syn    8     used: .CH
+  43  j27 syn    8     used: .CH
+  44  j41 syn    8     used: ...
+  45  j46 syn    8     used: .CH
+  46  j53 syn    8     used: .CH
+  47  j37 syn    7     used: ...
+  48  j18 syn    6     used: ...
+  49  j31 syn    6     used: ...
+  50  j33 syn    6     used: ..H
+  51  j59 syn    6     used: ACH
+  52  j 6 syn    5     used: .CH
+  53  j 9 syn    5 N0  used: ...
+  54  j15 syn    5     used: ..H
+  55  j21 syn    5 N0  used: .CH
+  56  j23 syn    5     used: .CH
+  57  j32 syn    5     used: ..H
+  58  j55 syn    5 N0  used: .CH
+  59  j63 syn    5     used: .CH
+  60  j 0 syn    4     used: ..H
+  61  j10 syn    4     used: ...
+  62  j11 syn    4     used: ...
+  63  j28 syn    4     used: ...
+  64  j45 syn    4     used: ...
+  65  j54 syn    4     used: ..H
+  66  j60 syn    4     used: .CH
+  67  j61 syn    4     used: ..H
+  68  j62 syn    4     used: ACH
+  69  j65 syn    4     used: .CH
+U_abs    n 11  eff 11  syn-sum   210  e14 share 0.095  no-op syn-sum 0
+U_crofts n 30  eff 28  syn-sum   429  e14 share 0.047  no-op syn-sum 10
+U_hop    n 46  eff 43  syn-sum   624  e14 share 0.032  no-op syn-sum 48
+e14: syn 20 weight rank 17 of 69 | in raw sets: {11: False, 30: True, 46: True}
+RW_11 syn-sum 359 | U(n=11) syn-sum 210 | overlap 3
+RW_30 syn-sum 668 | U(n=30) syn-sum 429 | overlap 12
+RW_46 syn-sum 808 | U(n=46) syn-sum 624 | overlap 31
+n 11 uniform-subset syn-sum: mean 146.5 sd 31.0 | U sum 210 = 2.05 sd, percentile 0.972
+    exact SD of an n-subset sum (finite population): 31.0
+    band +/-5%     width   10.5  accept 0.0389  (expected raw draws per subset 26)  P(e14|band) 0.201  P(e14|out) 0.158
+    band +/-10%    width   21.0  accept 0.0893  (expected raw draws per subset 11)  P(e14|band) 0.198  P(e14|out) 0.156
+    band +/-0.25sd width    7.7  accept 0.0272  (expected raw draws per subset 37)  P(e14|band) 0.202  P(e14|out) 0.158
+    band +/-0.5sd  width   15.5  accept 0.0599  (expected raw draws per subset 17)  P(e14|band) 0.200  P(e14|out) 0.157
+n 30 uniform-subset syn-sum: mean 399.6 sd 41.9 | U sum 429 = 0.70 sd, percentile 0.754
+    exact SD of an n-subset sum (finite population): 41.9
+    band +/-5%     width   21.5  accept 0.3090  (expected raw draws per subset 3)  P(e14|band) 0.459  P(e14|out) 0.424
+    band +/-10%    width   42.9  accept 0.5745  (expected raw draws per subset 2)  P(e14|band) 0.455  P(e14|out) 0.409
+    band +/-0.25sd width   10.5  accept 0.1531  (expected raw draws per subset 7)  P(e14|band) 0.460  P(e14|out) 0.431
+    band +/-0.5sd  width   21.0  accept 0.2952  (expected raw draws per subset 3)  P(e14|band) 0.459  P(e14|out) 0.425
+n 46 uniform-subset syn-sum: mean 612.7 sd 39.8 | U sum 624 = 0.28 sd, percentile 0.599
+    exact SD of an n-subset sum (finite population): 39.9
+    band +/-5%     width   31.2  accept 0.5533  (expected raw draws per subset 2)  P(e14|band) 0.673  P(e14|out) 0.659
+    band +/-10%    width   62.4  accept 0.8689  (expected raw draws per subset 1)  P(e14|band) 0.670  P(e14|out) 0.641
+    band +/-0.25sd width   10.0  accept 0.1818  (expected raw draws per subset 6)  P(e14|band) 0.674  P(e14|out) 0.665
+    band +/-0.5sd  width   19.9  accept 0.3626  (expected raw draws per subset 3)  P(e14|band) 0.674  P(e14|out) 0.662

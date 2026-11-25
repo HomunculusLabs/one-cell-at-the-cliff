@@ -1,0 +1,13 @@
+SELFTEST scenarios: ['aliased', 'instrument', 'lift_11', 'membership', 'no_decision', 'not_special', 'set_beyond', 'twins_fail', 'weight_carries']
+  aliased        -> SET_BEYOND_WEIGHT:abs      n_clear  9 labels ['SET_BEYOND_WEIGHT', 'MIXED', 'MIXED'] (exW/exF/by) [(3, 2, 0), (1, 2, 2), (2, 2, 0)] twins True lift11 False pred 1101101
+  instrument     -> I_INSTRUMENT_AT_GROUP      n_clear  0 labels ['SET_BEYOND_WEIGHT', 'SET_BEYOND_WEIGHT', 'SET_BEYOND_WEIGHT'] (exW/exF/by) [(3, 2, 0), (3, 2, 0), (3, 2, 0)] twins True lift11 True pred 0101110
+  set_beyond     -> SET_BEYOND_WEIGHT:abs      n_clear 10 labels ['SET_BEYOND_WEIGHT', 'SET_BEYOND_WEIGHT', 'SET_BEYOND_WEIGHT'] (exW/exF/by) [(3, 2, 0), (3, 2, 0), (3, 2, 0)] twins True lift11 True pred 1101111
+  membership     -> E14_MEMBERSHIP_NOT_WEIGHT  n_clear  9 labels ['E14_MEMBERSHIP', 'E14_MEMBERSHIP', 'E14_MEMBERSHIP'] (exW/exF/by) [(0, 2, 0), (0, 2, 0), (0, 2, 0)] twins True lift11 True pred 1110111
+  weight_carries -> WEIGHT_CARRIES             n_clear 15 labels ['WEIGHT_CARRIES', 'WEIGHT_CARRIES', 'WEIGHT_CARRIES'] (exW/exF/by) [(0, 0, 0), (0, 0, 0), (0, 0, 0)] twins True lift11 True pred 1000110
+  not_special    -> NOT_SPECIAL_AT_WEIGHT      n_clear 15 labels ['NOT_SPECIAL', 'NOT_SPECIAL', 'NOT_SPECIAL'] (exW/exF/by) [(0, 0, 5), (0, 0, 5), (0, 0, 5)] twins True lift11 True pred 1000111
+  no_decision    -> NO_DECISION                n_clear 13 labels ['E14_MEMBERSHIP', 'MIXED', 'MIXED'] (exW/exF/by) [(0, 2, 0), (1, 0, 0), (1, 0, 0)] twins True lift11 True pred 1011111
+  twins_fail     -> WEIGHT_CARRIES             n_clear 15 labels ['WEIGHT_CARRIES', 'WEIGHT_CARRIES', 'WEIGHT_CARRIES'] (exW/exF/by) [(0, 0, 0), (0, 0, 0), (0, 0, 0)] twins False lift11 True pred 1000010
+  lift_11        -> WEIGHT_CARRIES             n_clear 15 labels ['NOT_SPECIAL', 'WEIGHT_CARRIES', 'WEIGHT_CARRIES'] (exW/exF/by) [(0, 0, 2), (0, 0, 0), (0, 0, 0)] twins True lift11 True pred 1000110
+  verdicts seen ['E14_MEMBERSHIP_NOT_WEIGHT', 'I_INSTRUMENT_AT_GROUP', 'NOT_SPECIAL_AT_WEIGHT', 'NO_DECISION', 'SET_BEYOND_WEIGHT:abs', 'WEIGHT_CARRIES'] | labels ['E14_MEMBERSHIP', 'MIXED', 'NOT_SPECIAL', 'SET_BEYOND_WEIGHT', 'WEIGHT_CARRIES'] | statuses ['EXCEEDED_BY', 'EXCEEDS', 'WITHIN']
+  prediction values seen {'P1': [False, True], 'P2': [False, True], 'P3': [False, True], 'P4': [False, True], 'P5': [False, True], 'P6': [False, True], 'P7': [False, True]} | PREREG-form vs L290-form status differences []
+SELFTEST PASS: every registered branch reachable, both values of every prediction produced

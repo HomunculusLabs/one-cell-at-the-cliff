@@ -1,0 +1,102 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[GAIN-INV] GREEN lam1 rel 1.18e-16 | depth-2 rel 1.31e-16
+[CERT-GEN] GREEN 44 checks: generic builder/reach/power-iteration reproduce the certified f4wA specialisation at FLOAT EQUALITY
+========================================================================
+[L216] depth-decay law | NDRAW 2000 seed 20526 DMAX 8
+[pins] L205 substrate edge counts GREEN
+[pins] pool sizes invariant across all 7 L205 substrates GREEN
+[null] permutation draws rebuilt (per-side counts held EXACT)
+[CERT-205] GREEN 250 stored L205 values reproduced by FLOAT EQUALITY (2 joints x 7 substrates x 17 fields + 2 paired deltas) -> RNG stream, side convention, pool membership and the depth-1 anchor all certified
+[spectral] cutwA beta: lam1 227.779875 (rel spread 1.25e-16)
+[spectral] cutwA crofts: lam1 0.379465 (rel spread 4.19e-10)
+[spectral] f4wA beta: lam1 200.510803 (rel spread 1.42e-16)
+[spectral] f4wA crofts: lam1 0.388120 (rel spread 1.06e-08)
+[spectral] f4wA beta lam1 == the head's certified LAM1_G1 GREEN
+[CERT-GAP] GREEN 10 stored L210 values at FLOAT EQUALITY (lam2 26.946910057, gap 0.8928793607, 6 growth factors) -> the deflation machinery, V1, the left vector and seed 21004 all certified
+[CERT-209] GREEN 412 stored L209 values reproduced by FLOAT EQUALITY (8 cells x 3 depths x 17 fields + 4 lam1) BEFORE any depth > 3 was read
+[NO-OP] GREEN lam1^d normalisation is a measured no-op for A_cell at all 8 depths (max rel diff 7.19e-14 over 64 cells)
+[PI] cutwA  beta  : lam1 R 227.779875 L 227.779875 rel 0.00e+00 (bar 1.00e-09, spreads R 1.25e-16 L 1.25e-16)
+[A_inf] cutwA  beta   Ti: A_inf +0.256979 pct_abs 1.000 [null -0.0865,+0.0908]
+[A_inf] cutwA  beta   Tr: A_inf +0.406517 pct_abs 1.000 [null -0.1098,+0.1070]
+[PI] cutwA  crofts: lam1 R 0.379465131 L 0.379465131 rel 2.10e-09 (bar 4.19e-07, spreads R 4.19e-10 L 9.04e-11)
+[A_inf] cutwA  crofts Ti: A_inf -0.008413 pct_abs 0.178 [null -0.0582,+0.0625]
+[A_inf] cutwA  crofts Tr: A_inf +0.039218 pct_abs 0.873 [null -0.0426,+0.0416]
+[PI] f4wA   beta  : lam1 R 200.510803 L 200.510803 rel 0.00e+00 (bar 1.00e-09, spreads R 1.42e-16 L 1.42e-16)
+[A_inf] f4wA   beta   Ti: A_inf +0.286625 pct_abs 1.000 [null -0.0924,+0.0925]
+[A_inf] f4wA   beta   Tr: A_inf +0.444216 pct_abs 1.000 [null -0.1190,+0.1163]
+[PI] f4wA   crofts: lam1 R 0.388120114 L 0.388120113 rel 2.35e-09 (bar 1.32e-05, spreads R 1.06e-08 L 1.32e-08)
+[A_inf] f4wA   crofts Ti: A_inf +0.134285 pct_abs 0.994 [null -0.0805,+0.0861]
+[A_inf] f4wA   crofts Tr: A_inf +0.131460 pct_abs 1.000 [null -0.0513,+0.0510]
+[gap] cutwA  beta  : lam1 227.779875 |lam2| 204.586357 gap 0.898176 spread 8.31e-10 converged True
+[gap] cutwA  crofts: lam1 0.379465 |lam2| 0.363309 gap 0.957423 spread 3.51e-15 converged True
+[gap] f4wA   beta  : lam1 200.510803 |lam2| 179.031957 gap 0.892879 spread 3.09e-10 converged True
+[gap] f4wA   crofts: lam1 0.388120 |lam2| 0.378593 gap 0.975453 spread 1.29e-11 converged True
+[gap] f4wA beta gap 0.892879360735 vs L210's 0.892879360735 (rel 1.24e-16) — scale invariance of a spectral ratio
+[fit] cutwA  beta   Ti: A_inf +0.25698 r_deep 0.892089 (rms 0.00279) r_full 0.899471 r_bare 1.058517 (rms 1.03382) gap 0.898176 rel 0.006776830568916827 degen False
+[fit] cutwA  beta   Tr: A_inf +0.40652 r_deep 0.885356 (rms 0.00124) r_full 0.887045 r_bare 1.438073 (rms 0.297) gap 0.898176 rel 0.01427281676619474 degen False
+[fit] cutwA  crofts Ti: A_inf -0.00841 r_deep 0.846463 (rms 0.01374) r_full 0.862032 r_bare 0.895641 (rms 0.02948) gap 0.957423 rel 0.11589453552752543 degen False
+[fit] cutwA  crofts Tr: A_inf +0.03922 r_deep 0.820621 (rms 0.00208) r_full 0.815532 r_bare 1.138547 (rms 0.85047) gap 0.957423 rel 0.14288583088367665 degen False
+[fit] f4wA   beta   Ti: A_inf +0.28663 r_deep 0.891375 (rms 0.00338) r_full 0.899356 r_bare 1.07254 (rms 1.15857) gap 0.892879 rel 0.0016845101747230272 degen False
+[fit] f4wA   beta   Tr: A_inf +0.44422 r_deep 0.885197 (rms 0.00217) r_full 0.888581 r_bare 1.471665 (rms 0.36764) gap 0.892879 rel 0.008604075805714977 degen False
+[fit] f4wA   crofts Ti: A_inf +0.13428 r_deep 0.973917 (rms 0.0017) r_full 0.969796 r_bare 0.856671 (rms 0.0161) gap 0.975453 rel 0.0015745219851001132 degen False
+[fit] f4wA   crofts Tr: A_inf +0.13146 r_deep 0.948469 (rms 0.00692) r_full 0.934641 r_bare 1.190465 (rms 0.62955) gap 0.975453 rel 0.027663313758655314 degen False
+[BRANCH] R_SPECTRAL | primary ('f4wA', 'beta', 'Ti'): r_deep 0.891375 vs gap 0.892879 (rel 0.0017) | table agreement 6/8 within 10%, 8/8 within a factor 2
+[read-only] l209/static.json and l210/static.json fingerprints unchanged
+========================================================================
+[L231] does the LEFT-heavy Perron mode have a SOURCE? | NONSELECTIVE over pools x super_class x populations, BH-FDR | PREREG l231/PREREG.md
+[CERT-216] GREEN 1903 stored L216 values reproduced at FLOAT EQUALITY (table 64 depth cells + A_inf 8 + gaps 4 + fits 8; coverage bar 1900 DERIVED from the artifact's own leaves) BEFORE any crossing was read
+[NO-OP] RE-ASSERTED GREEN 128 checks over 64 depth cells, max rel diff 7.19e-14 == L216's stored value
+========================================================================
+[L231] certifications inherited; building the nonselective family
+[census] HALTING PIN GREEN — side labels left 26799 / right 53050 / midline 11; optic_lobe L 3311 R 27799 (8.40:1 RIGHT) vs ventral_nerve_cord L 10070 R 10494 (0.96) = the RECONSTRUCTION caveat, measured
+[CERT-231B] GREEN 44 structural checks — 10 pool-sides built by L229's construction, all 20 S101 per-side sizes pinned, the four Ti/Tr masks ARRAY-IDENTICAL to the GROUPS object L216 used, and every pool cell's annotation `side` agrees with its pool name
+  Ti_L:56 Ti_R:57 Tr_L:55 Tr_R:55 Ta_L:15 Ta_R:15 Sr_L:17 Sr_R:19 Pr_L:7 Pr_R:7
+[whole] built by the CERTIFIED generic builder: n 80635 edges 1830698
+[PI residual] cutwA|beta     lam1 227.78 residual 1.343e-16 (spread 1.25e-16)
+[PI residual] cutwA|crofts   lam1 0.379465 residual 3.676e-09 (spread 4.19e-10)
+[PI residual] f4wA|beta      lam1 200.511 residual 1.436e-16 (spread 1.42e-16)
+[PI residual] f4wA|crofts    lam1 0.38812 residual 2.806e-05 (spread 1.06e-08)
+[PI residual] whole|beta     lam1 278.299 residual 1.881e-14 (spread 6.13e-16) -> RESOLVED at bar 1e-03
+[units] 30 units: a_pools:5, b_class:4, c_pop:3, c_whole:18
+[units] substrate super_classes: ['descending', 'motor', 'sensory', 'ventral_nerve_cord_intrinsic']
+[CERT-231A] GREEN 8 cells — the general per-unit statistic reproduces every CERT-216-pinned A_inf within max ABSOLUTE 1.943e-16 (bar 8*eps = 1.776e-15); max relative 8.454e-15 at a worst conditioning factor 1/|A| of 118.9; the four BETA pool cells are the card's own Verify line
+[null] 78 (arm, unit) tests measured in 52s
+[BH] family m=78, q=0.05, rank-1 bar 6.410e-04, worst resolution floor 2.000e-04 (REJECTABLE), rejections 36/78
+[confound] cutwA|beta     n  12 rho(A_v1,A_count) -0.4930 rho(A_v1,A_inmass) +0.4615 (distinct 12/10/12)
+[confound] cutwA|crofts   n  12 rho(A_v1,A_count) -0.1549 rho(A_v1,A_inmass) +0.4406 (distinct 12/10/12)
+[confound] f4wA|beta      n  12 rho(A_v1,A_count) -0.4718 rho(A_v1,A_inmass) +0.4126 (distinct 12/10/12)
+[confound] f4wA|crofts    n  12 rho(A_v1,A_count) +0.4718 rho(A_v1,A_inmass) -0.3217 (distinct 12/10/12)
+[confound] whole|beta     n  30 rho(A_v1,A_count) -0.4787 rho(A_v1,A_inmass) +0.3330 (distinct 30/28/30)
+========================================================================
+[BRANCH] B_GLOBAL  (primary arm f4wA|beta)
+  A_glob(pop/all) +0.342508 p 2.000e-04 BH-sig True | median pool |A| 0.408720 -> R_glob 0.8380
+  pools: Ti +0.2866* Tr +0.4442* Ta +0.2824 Sr +0.4087* Pr +0.5904* | 4/5 BH-significant
+  classes |A|>=0.10 and BH-sig: [('class/motor', 0.4169), ('class/sensory', 0.4232), ('class/ventral_nerve_cord_intrinsic', 0.3246)]
+  F_CONFOUND False (rho(A_v1,A_count) -0.4718)
+[leg c] whole-graph NATIVE all-population A_v1 +0.335930 (count asym -0.3288) p 2.000e-04
+   wg/class/ascending                 A_v1 +0.036463 A_n +0.0474 A_inm +0.002176 p 3.31e-01 sig False
+   wg/class/ascending_visceral_circulatory A_v1 -0.210865 A_n +0.2000 A_inm -0.108386 p 6.00e-01 sig False
+   wg/class/central_brain_intrinsic   A_v1 +0.051491 A_n -0.0667 A_inm -0.037895 p 1.32e-01 sig False
+   wg/class/descending                A_v1 -0.038310 A_n -0.0054 A_inm -0.081522 p 6.34e-01 sig False
+   wg/class/motor                     A_v1 +0.139987 A_n -0.0445 A_inm +0.004383 p 1.15e-03 sig True
+   wg/class/optic_lobe_intrinsic      A_v1 +0.254462 A_n -0.9320 A_inm -0.332955 p 2.00e-04 sig True
+   wg/class/sensory                   A_v1 +0.217606 A_n -0.0241 A_inm -0.064532 p 2.00e-04 sig True
+   wg/class/sensory_ascending         A_v1 +0.054934 A_n +0.0039 A_inm +0.065431 p 1.63e-01 sig False
+   wg/class/sensory_descending        A_v1 -0.076589 A_n -0.0769 A_inm +0.008468 p 8.51e-01 sig False
+   wg/class/ventral_nerve_cord_intrinsic A_v1 +0.117891 A_n -0.0092 A_inm +0.028261 p 2.00e-04 sig True
+   wg/class/visceral_circulatory      A_v1 +0.072275 A_n -0.0638 A_inm -0.020492 p 7.55e-01 sig False
+   wg/class/visual_centrifugal        A_v1 +0.023784 A_n +0.0187 A_inm +0.008196 p 8.42e-01 sig False
+   wg/class/visual_projection         A_v1 -0.023480 A_n -0.1995 A_inm -0.465963 p 7.81e-01 sig False
+   wg/pop/all                         A_v1 +0.335930 A_n -0.3288 A_inm +0.171596 p 2.00e-04 sig True
+   wg/pop/central_brain               A_v1 +0.054092 A_n -0.0588 A_inm -0.049872 p 8.96e-02 sig False
+   wg/pop/neck_connective             A_v1 +0.002531 A_n +0.0206 A_inm -0.024243 p 9.61e-01 sig False
+   wg/pop/optic_lobe                  A_v1 +0.662026 A_n -0.7871 A_inm -0.122345 p 2.00e-04 sig True
+   wg/pop/ventral_nerve_cord          A_v1 +0.124862 A_n -0.0206 A_inm +0.028111 p 2.00e-04 sig True
+[predictions] 4/6 scoreable TRUE: P1=True P2=False P3=True P4=False P5=True P6=True
+[prior] l216/l209/l210 static.json (size, mtime_ns) unchanged GREEN
+[L231] DONE branch=B_GLOBAL preds=4/6 (56s body, 85s total)

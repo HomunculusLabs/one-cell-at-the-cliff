@@ -1,0 +1,87 @@
+L294 | PREREG sha 77b3dfb022d1a0b8 | F 0.000229315 | B 20000 | gates G1 G2 G2b G3 G4 G5 PASS
+ANCHORS: dgain x E ordinal L291-15 +0.8214 | SYN x E L290-15 +0.5892857143 | eff x E L290-15 +0.4286057679
+         cell means with/without (F): n11 +5.64/+4.07  n30 +8.31/+0.02  n46 +11.72/-2.90
+
+FAMILY (BH q 0.10, m 6):
+  T1  strat-rho +0.4476  p_two 0.08785  q 0.0878  [n11:-0.371 n30:+0.943 n46:+0.771]
+  T2  strat-rho +0.7000  p_two 0.00005  q 0.0001  [n11:+0.518 n30:+0.845 n46:+0.736]
+  T3  strat-rho +0.5455  p_two 0.00210  q 0.0042  [n11:+0.764 n30:+0.445 n46:+0.427]
+  T4  S +1.6298 F  p_one 0.0469  concordant 6/7  rho(dgain,dE) +0.607 p_exact 0.0833
+  T5  strat-rho +0.5182  p_two 0.00390  q 0.0058  [n11:+0.755 n30:+0.136 n46:+0.664]
+  T6  strat-rho +0.6788  p_two 0.00005  q 0.0001  [n11:+0.473 n30:+0.827 n46:+0.736]
+  T2 CARD35 companion: strat-rho +0.6764 p_two 0.00010
+
+VERDICT: A_GAIN_DELTA_MEDIATED / A_POOL_SPECIFIC | G_SHIFT_ON | predictions {"P1": false, "P2": true, "P3": true, "P4": true, "P5": false, "P6": true} | score 4/6
+
+DEGENERATE (definition-first):
+  EW_NEG: {'identically_zero': True, 'n_negative_menu': 0} | strat test UNMEASURABLE obs None unmeasurable [11, 30, 46]
+  NTGT: {'equals_n': True} | strat test UNMEASURABLE obs None unmeasurable [11, 30, 46]
+  NTGT_POOL: {'identically_zero': True} | strat test UNMEASURABLE obs None unmeasurable [11, 30, 46]
+
+DESCRIPTIVE:
+  mirror_rho_EW_SYN_B33: 0.9717533145929361
+  pooled_rho_E_DGAIN_L290_18: 0.5913312693498453
+  pooled_rho_E_DGAIN_L291_15_midrank: 0.8214285714285714
+  pooled_rho_E_DGAIN_L291_15_ordinal: 0.8214285714285714
+  pooled_rho_E_SYN_L291_15_ordinal: 0.2
+  strat_rho_ELR_DGAIN_B33: (0.7, {11: 0.5181818181818182, 30: 0.8363636363636363, 46: 0.7454545454545455}, [])
+  strat_rho_E_ECTRL_B33: (0.6848484848484849, {11: 0.7454545454545455, 30: 0.5181818181818182, 46: 0.7909090909090909}, [])
+  pooled_rho_ECTRL_DGAIN_B33: 0.5581550802139037
+  share_surviving: 0.030303030303030182
+  neg_dgain_table: {'L291_15': {'n_neg': 2, 'neg_at_floor': 2, 'pos_at_floor': 1, 'n_pos': 13, 'neg_E_F': [-0.537, -1.96]}, 'L290_18': {'n_neg': 9, 'neg_at_floor': 6, 'pos_at_floor': 1, 'n_pos': 9, 'neg_E_F': [-4.341, -4.688, 1.737, -1.624, -0.235, 3.874, 1.919, -1.886, 1.421]}}
+  e14_strat_B33: (None, {}, [11, 30, 46])
+  neff_strat_B33: (None, {11: -0.2407375032157338}, [30, 46])
+  e14_two_group_F: {11: {'with': 5.641626720717743, 'without': 0.12896107359454123, 'n_with': 3, 'n_without': 8}, 30: {'with': 9.717919931389474, 'without': 0.21933594906442794, 'n_with': 6, 'n_without': 5}, 46: {'with': 8.535793496999931, 'without': -0.7293830525293186, 'n_with': 7, 'n_without': 4}}
+  per_stratum_Ectrl_mean_F: {11: 0.3868736481723825, 30: 1.2340611522638836, 46: 1.0792359212097868}
+  per_stratum_E_mean_F: {11: 1.6324153409917785, 30: 5.400381757605363, 46: 5.166638388080204}
+  per_stratum_dgain_range: {11: [-0.0010041296482086182, 0.0013243854045867642], 30: [-0.0004980111122131758, 0.002595305442810003], 46: [-0.0004690861701965865, 0.0011620080471038685]}
+  floor_only: {"T1": {"n": 11, "obs": 0.6000000000000001, "per_stratum": {"30": 0.8, "46": 0.4}, "unmeasurable": [11], "pooled": 0.6545454545454545}, "T2": {"n": 23, "obs": 0.7566666666666666, "per_stratum": {"11": 0.8571428571428571, "30": 0.6428571428571429, "46": 0.7666666666666667}, "unmeasurable": [], "pooled": 0.7065217391304348}}
+
+TWIN PAIRS (dgain x1e-3, dE F bisected - fixed):
+  gc30 /gc30f dgain +0.3943  dE +1.371 F  concordant
+  gh46 /gh46f dgain +0.6795  dE +3.281 F  concordant
+  e14  /e14f  dgain +0.1567  dE +1.690 F  concordant
+  e25  /e25f  dgain +0.8501  dE +4.549 F  concordant
+  e67  /e67f  dgain -0.5145  dE -0.516 F  concordant
+  e12  /e12f  dgain -0.9353  dE -1.930 F  concordant
+  e27  /e27f  dgain -0.9476  dE +1.927 F  DISCORDANT
+
+ARMS (B33 + fixed):
+  s11f1  n11 L291  E  +8.673 F  Ectrl  +4.237 F  Ediff  +4.437 F  dgain +1.3244e-3  EW   30.7 syn 212 eff  8 e14 0
+  s11f2  n11 L291  E  -0.537 F  Ectrl  -0.690 F  Ediff  +0.152 F  dgain -0.2425e-3  EW   29.4 syn 211 eff  8 e14 0
+  s11w1  n11 L291  E  +7.098 F  Ectrl  +1.155 F  Ediff  +5.943 F  dgain +0.3317e-3  EW   31.5 syn 207 eff 10 e14 1
+  s11w2  n11 L291  E  +6.482 F  Ectrl  +0.773 F  Ediff  +5.709 F  dgain +0.2968e-3  EW   30.7 syn 214 eff 11 e14 1
+  s11w3  n11 L291  E  +3.345 F  Ectrl  +0.678 F  Ediff  +2.667 F  dgain +0.0229e-3  EW   30.8 syn 208 eff  9 e14 1
+  s30f1  n30 L291  E  -1.960 F  Ectrl  +0.854 F  Ediff  -2.814 F  dgain -0.4980e-3  EW   73.6 syn 410 eff 27 e14 0
+  s30f2  n30 L291  E  +2.006 F  Ectrl  -0.094 F  Ediff  +2.100 F  dgain +0.7961e-3  EW   74.3 syn 413 eff 26 e14 0
+  s30w1  n30 L291  E +14.742 F  Ectrl  +2.831 F  Ediff +11.911 F  dgain +2.5953e-3  EW   76.2 syn 440 eff 27 e14 1
+  s30w2  n30 L291  E  +8.284 F  Ectrl  +2.870 F  Ediff  +5.414 F  dgain +0.3048e-3  EW   74.8 syn 415 eff 27 e14 1
+  s30w3  n30 L291  E  +1.903 F  Ectrl  -0.074 F  Ediff  +1.976 F  dgain +0.3269e-3  EW   75.4 syn 440 eff 24 e14 1
+  s46f1  n46 L291  E  -2.896 F  Ectrl  -1.190 F  Ediff  -1.706 F  dgain +0.2340e-3  EW  111.4 syn 610 eff 41 e14 0
+  s46f2  n46 L291  E  -2.903 F  Ectrl  +0.897 F  Ediff  -3.800 F  dgain +0.1367e-3  EW  112.1 syn 602 eff 41 e14 0
+  s46w1  n46 L291  E +10.978 F  Ectrl  +0.962 F  Ediff +10.016 F  dgain +1.1620e-3  EW  112.1 syn 606 eff 42 e14 1
+  s46w2  n46 L291  E +12.028 F  Ectrl  +2.163 F  Ediff  +9.865 F  dgain +1.1180e-3  EW  114.1 syn 645 eff 41 e14 1
+  s46w3  n46 L291  E +12.163 F  Ectrl  +3.692 F  Ediff  +8.471 F  dgain +0.9843e-3  EW  113.5 syn 631 eff 40 e14 1
+  r11k1  n11 L290  E  +0.990 F  Ectrl  +0.031 F  Ediff  +0.958 F  dgain +0.2767e-3  EW   27.7 syn 170 eff 10 e14 0
+  r11k2  n11 L290  E  -4.341 F  Ectrl  -1.780 F  Ediff  -2.561 F  dgain -0.5336e-3  EW   25.5 syn 116 eff 10 e14 0
+  r11k3  n11 L290  E  -2.223 F  Ectrl  +0.314 F  Ediff  -2.538 F  dgain +0.3173e-3  EW   27.3 syn 152 eff 11 e14 0
+  r11k4  n11 L290  E  -4.688 F  Ectrl  -0.169 F  Ediff  -4.519 F  dgain -0.0179e-3  EW   24.6 syn 114 eff 10 e14 0
+  r11k5  n11 L290  E  +1.737 F  Ectrl  -1.106 F  Ediff  +2.844 F  dgain -1.0041e-3  EW   29.1 syn 176 eff  9 e14 0
+  r30k1  n30 L290  E +11.899 F  Ectrl  +0.739 F  Ediff +11.161 F  dgain +0.8162e-3  EW   76.7 syn 441 eff 26 e14 1
+  r30k2  n30 L290  E  +2.909 F  Ectrl  +0.644 F  Ediff  +2.266 F  dgain +0.5273e-3  EW   74.3 syn 426 eff 26 e14 0
+  r30k3  n30 L290  E +12.216 F  Ectrl  +2.545 F  Ediff  +9.670 F  dgain +1.5901e-3  EW   70.2 syn 336 eff 27 e14 1
+  r30k4  n30 L290  E  -1.624 F  Ectrl  +1.238 F  Ediff  -2.862 F  dgain -0.3540e-3  EW   73.6 syn 393 eff 27 e14 0
+  r30k5  n30 L290  E  -0.235 F  Ectrl  -0.636 F  Ediff  +0.401 F  dgain -0.2674e-3  EW   73.2 syn 398 eff 26 e14 0
+  r46k1  n46 L290  E  +3.874 F  Ectrl  +0.748 F  Ediff  +3.126 F  dgain -0.3546e-3  EW  113.0 syn 616 eff 41 e14 1
+  r46k2  n46 L290  E  +1.919 F  Ectrl  -1.075 F  Ediff  +2.994 F  dgain -0.2297e-3  EW  111.3 syn 610 eff 40 e14 1
+  r46k3  n46 L290  E  +8.673 F  Ectrl  +2.351 F  Ediff  +6.321 F  dgain +0.5664e-3  EW  109.5 syn 585 eff 40 e14 1
+  r46k4  n46 L290  E  -1.886 F  Ectrl  +0.301 F  Ediff  -2.187 F  dgain -0.4691e-3  EW  110.2 syn 576 eff 41 e14 0
+  r46k5  n46 L290  E  +4.767 F  Ectrl  +1.672 F  Ediff  +3.095 F  dgain +0.4825e-3  EW  108.5 syn 568 eff 40 e14 0
+  rw11   n11 L290  E  +1.421 F  Ectrl  +0.813 F  Ediff  +0.608 F  dgain -0.3582e-3  EW   38.5 syn 359 eff  8 e14 0
+  rw30   n30 L290  E  +9.264 F  Ectrl  +2.657 F  Ediff  +6.606 F  dgain +0.0060e-3  EW   92.0 syn 668 eff 26 e14 1
+  rw46   n46 L290  E +10.117 F  Ectrl  +1.351 F  Ediff  +8.765 F  dgain +0.1883e-3  EW  128.4 syn 808 eff 41 e14 1
+  gc30f  n30 L291* E  +7.362 F  Ectrl  +1.646 F  Ediff  +5.717 F  dgain +0.0000e-3  EW   74.4 syn 429 eff 28 e14 1
+  gh46f  n46 L291* E  +5.868 F  Ectrl  +1.899 F  Ediff  +3.969 F  dgain +0.0000e-3  EW  112.5 syn 624 eff 43 e14 1
+
+wrote results_l294.json
+EXIT 0

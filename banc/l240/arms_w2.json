@@ -1,0 +1,129 @@
+{
+ "wid": 2,
+ "menu_n": 80,
+ "carrier_col": 467,
+ "carrier": 1110,
+ "base_edges": 644177,
+ "edges": {
+  "e67": {
+   "edge_j": 67,
+   "removed": [
+    {
+     "target": 75494,
+     "csr_index": 628681,
+     "effective_weight": 3.0910425186157227,
+     "syn": 21,
+     "sign": 1.0
+    }
+   ]
+  },
+  "g11": {
+   "edge_j": null,
+   "removed": [
+    {
+     "target": 8509,
+     "csr_index": 58875,
+     "effective_weight": 3.465735912322998,
+     "syn": 31,
+     "sign": 1.0
+    },
+    {
+     "target": 64961,
+     "csr_index": 190533,
+     "effective_weight": 3.2188758850097656,
+     "syn": 24,
+     "sign": 1.0
+    },
+    {
+     "target": 65290,
+     "csr_index": 203101,
+     "effective_weight": 2.5649492740631104,
+     "syn": 12,
+     "sign": 1.0
+    },
+    {
+     "target": 65443,
+     "csr_index": 209994,
+     "effective_weight": 3.044522523880005,
+     "syn": 20,
+     "sign": 1.0
+    },
+    {
+     "target": 66466,
+     "csr_index": 251074,
+     "effective_weight": 2.6390573978424072,
+     "syn": 13,
+     "sign": 1.0
+    },
+    {
+     "target": 68053,
+     "csr_index": 316469,
+     "effective_weight": 2.944438934326172,
+     "syn": 18,
+     "sign": 1.0
+    },
+    {
+     "target": 68338,
+     "csr_index": 328557,
+     "effective_weight": 3.6888794898986816,
+     "syn": 39,
+     "sign": 1.0
+    },
+    {
+     "target": 70458,
+     "csr_index": 421473,
+     "effective_weight": 1.945910096168518,
+     "syn": 6,
+     "sign": 1.0
+    },
+    {
+     "target": 71155,
+     "csr_index": 447400,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    },
+    {
+     "target": 72158,
+     "csr_index": 487353,
+     "effective_weight": 3.1354942321777344,
+     "syn": 22,
+     "sign": 1.0
+    },
+    {
+     "target": 75494,
+     "csr_index": 628681,
+     "effective_weight": 3.0910425186157227,
+     "syn": 21,
+     "sign": 1.0
+    }
+   ]
+  }
+ },
+ "arms_built": [
+  "e67",
+  "g11",
+  "g11f",
+  "nf"
+ ],
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "archives": 311,
+ "prereg": "d6c73be3a4c0621bb2db7f6ce6bc1a023be5fc93531772a6ae65937ca04298a0"
+}

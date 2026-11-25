@@ -1,0 +1,13 @@
+[slice] A = l216_static.py 1-1360 (62321 B) sha 6a3760d0b387a807
+[slice] B = l217_tail.py 245-258 (520 B) sha b26c0ab47cf0e2bb
+[pin]   l216_static.py whole sha 8d4740020fcd2a7b
+[pin]   l217_tail.py whole sha 9ffc9d582e205637
+[PARENT PIN] l216_tail.py sha d9cb45022621452b is a literal SUFFIX of l216_static.py AND the value that file's own banner records — GREEN
+[cut] 7 cut lines / 4 statements ['makedirs', 'dump', 'log', 'log'] — AST-proven to be the parent's writer plus its closing log; SLICE A holds none of it
+[slice B] AST: defines exactly ['dcross'] and nothing else
+[AST import] modules ['json', 'math', 'numpy', 'os', 'pandas', 'time', 'torch'] — no lab module imported
+[AST write] exactly ONE write site: line 1921 json.dump(..., open('l230/static.json', 'w')) + one makedirs 'l230'
+[AST write] SLICE A proven WRITE-FREE (0 write sites, 0 makedirs) — re-running the parent cannot touch l216/static.json
+[deps] all 16 inherited objects are defined in the slices and used by the tail
+[write] l230_static.py 1926 lines sha a02e27563a8892ce
+[write] tail sha e9be8999c9d9d351

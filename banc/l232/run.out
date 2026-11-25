@@ -1,0 +1,66 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[GAIN-INV] GREEN lam1 rel 1.18e-16 | depth-2 rel 1.31e-16
+[CERT-GEN] GREEN 44 checks: generic builder/reach/power-iteration reproduce the certified f4wA specialisation at FLOAT EQUALITY
+========================================================================
+[L216] depth-decay law | NDRAW 2000 seed 20526 DMAX 8
+[pins] L205 substrate edge counts GREEN
+[pins] pool sizes invariant across all 7 L205 substrates GREEN
+[null] permutation draws rebuilt (per-side counts held EXACT)
+[CERT-205] GREEN 250 stored L205 values reproduced by FLOAT EQUALITY (2 joints x 7 substrates x 17 fields + 2 paired deltas) -> RNG stream, side convention, pool membership and the depth-1 anchor all certified
+[spectral] cutwA beta: lam1 227.779875 (rel spread 1.25e-16)
+[spectral] cutwA crofts: lam1 0.379465 (rel spread 4.19e-10)
+[spectral] f4wA beta: lam1 200.510803 (rel spread 1.42e-16)
+[spectral] f4wA crofts: lam1 0.388120 (rel spread 1.06e-08)
+[spectral] f4wA beta lam1 == the head's certified LAM1_G1 GREEN
+[CERT-GAP] GREEN 10 stored L210 values at FLOAT EQUALITY (lam2 26.946910057, gap 0.8928793607, 6 growth factors) -> the deflation machinery, V1, the left vector and seed 21004 all certified
+[CERT-209] GREEN 412 stored L209 values reproduced by FLOAT EQUALITY (8 cells x 3 depths x 17 fields + 4 lam1) BEFORE any depth > 3 was read
+[NO-OP] GREEN lam1^d normalisation is a measured no-op for A_cell at all 8 depths (max rel diff 7.19e-14 over 64 cells)
+[PI] cutwA  beta  : lam1 R 227.779875 L 227.779875 rel 0.00e+00 (bar 1.00e-09, spreads R 1.25e-16 L 1.25e-16)
+[A_inf] cutwA  beta   Ti: A_inf +0.256979 pct_abs 1.000 [null -0.0865,+0.0908]
+[A_inf] cutwA  beta   Tr: A_inf +0.406517 pct_abs 1.000 [null -0.1098,+0.1070]
+[PI] cutwA  crofts: lam1 R 0.379465131 L 0.379465131 rel 2.10e-09 (bar 4.19e-07, spreads R 4.19e-10 L 9.04e-11)
+[A_inf] cutwA  crofts Ti: A_inf -0.008413 pct_abs 0.178 [null -0.0582,+0.0625]
+[A_inf] cutwA  crofts Tr: A_inf +0.039218 pct_abs 0.873 [null -0.0426,+0.0416]
+[PI] f4wA   beta  : lam1 R 200.510803 L 200.510803 rel 0.00e+00 (bar 1.00e-09, spreads R 1.42e-16 L 1.42e-16)
+[A_inf] f4wA   beta   Ti: A_inf +0.286625 pct_abs 1.000 [null -0.0924,+0.0925]
+[A_inf] f4wA   beta   Tr: A_inf +0.444216 pct_abs 1.000 [null -0.1190,+0.1163]
+[PI] f4wA   crofts: lam1 R 0.388120114 L 0.388120113 rel 2.35e-09 (bar 1.32e-05, spreads R 1.06e-08 L 1.32e-08)
+[A_inf] f4wA   crofts Ti: A_inf +0.134285 pct_abs 0.994 [null -0.0805,+0.0861]
+[A_inf] f4wA   crofts Tr: A_inf +0.131460 pct_abs 1.000 [null -0.0513,+0.0510]
+[gap] cutwA  beta  : lam1 227.779875 |lam2| 204.586357 gap 0.898176 spread 8.31e-10 converged True
+[gap] cutwA  crofts: lam1 0.379465 |lam2| 0.363309 gap 0.957423 spread 3.51e-15 converged True
+[gap] f4wA   beta  : lam1 200.510803 |lam2| 179.031957 gap 0.892879 spread 3.09e-10 converged True
+[gap] f4wA   crofts: lam1 0.388120 |lam2| 0.378593 gap 0.975453 spread 1.29e-11 converged True
+[gap] f4wA beta gap 0.892879360735 vs L210's 0.892879360735 (rel 1.24e-16) — scale invariance of a spectral ratio
+[fit] cutwA  beta   Ti: A_inf +0.25698 r_deep 0.892089 (rms 0.00279) r_full 0.899471 r_bare 1.058517 (rms 1.03382) gap 0.898176 rel 0.006776830568916827 degen False
+[fit] cutwA  beta   Tr: A_inf +0.40652 r_deep 0.885356 (rms 0.00124) r_full 0.887045 r_bare 1.438073 (rms 0.297) gap 0.898176 rel 0.01427281676619474 degen False
+[fit] cutwA  crofts Ti: A_inf -0.00841 r_deep 0.846463 (rms 0.01374) r_full 0.862032 r_bare 0.895641 (rms 0.02948) gap 0.957423 rel 0.11589453552752543 degen False
+[fit] cutwA  crofts Tr: A_inf +0.03922 r_deep 0.820621 (rms 0.00208) r_full 0.815532 r_bare 1.138547 (rms 0.85047) gap 0.957423 rel 0.14288583088367665 degen False
+[fit] f4wA   beta   Ti: A_inf +0.28663 r_deep 0.891375 (rms 0.00338) r_full 0.899356 r_bare 1.07254 (rms 1.15857) gap 0.892879 rel 0.0016845101747230272 degen False
+[fit] f4wA   beta   Tr: A_inf +0.44422 r_deep 0.885197 (rms 0.00217) r_full 0.888581 r_bare 1.471665 (rms 0.36764) gap 0.892879 rel 0.008604075805714977 degen False
+[fit] f4wA   crofts Ti: A_inf +0.13428 r_deep 0.973917 (rms 0.0017) r_full 0.969796 r_bare 0.856671 (rms 0.0161) gap 0.975453 rel 0.0015745219851001132 degen False
+[fit] f4wA   crofts Tr: A_inf +0.13146 r_deep 0.948469 (rms 0.00692) r_full 0.934641 r_bare 1.190465 (rms 0.62955) gap 0.975453 rel 0.027663313758655314 degen False
+[BRANCH] R_SPECTRAL | primary ('f4wA', 'beta', 'Ti'): r_deep 0.891375 vs gap 0.892879 (rel 0.0017) | table agreement 6/8 within 10%, 8/8 within a factor 2
+[read-only] l209/static.json and l210/static.json fingerprints unchanged
+========================================================================
+[L232] the CROSSING-EXISTENCE rate as the PRIMARY | plateau in D FIRST, then NONSELECTIVE BH-FDR | PREREG l232/PREREG.md
+[CERT-216] GREEN 1903 stored L216 values reproduced at FLOAT EQUALITY (table 64 depth cells + A_inf 8 + gaps 4 + fits 8; coverage bar 1900 DERIVED from the artifact's own leaves) BEFORE any crossing was read
+[NO-OP] RE-ASSERTED GREEN 128 checks over 64 depth cells, max rel diff 7.19e-14 == L216's stored value
+[CERT-AINF] GREEN 152 float equalities — the per-draw A_inf null (2000 draws x 8 cells) comes from the same certified call that reproduces every stored A_inf percentile
+[CERT-217] GREEN 174 stored L217 values reproduced at FLOAT EQUALITY on the 8 beta/crofts cells (d_cross, sign changes, censoring, null crossing rate and its three percentiles) via L217's VERBATIM dcross — the crossing expression AND this run's draw stream certified
+[premise] PREREG 0a GREEN — 2 substrates x 2 operators x 2 joints = 8 cells (NOT 12); the registered family of 12 TESTS = 8 single-joint + 4 pair-level
+[CERT-232X] GREEN 128 checks (8 cells x 8 depths x [A_cell FLOAT EQUALITY, 2000-draw null vector ARRAY EQUALITY]) — the D=40 sweep's first 8 depths ARE the certified ones, so the draw stream is depth-invariant BY MEASUREMENT
+[saturation] |A_cell(d) - A_inf| < 1e-12 first at d = cutwA|beta|Ti:None, cutwA|beta|Tr:None, cutwA|crofts|Ti:None, cutwA|crofts|Tr:None, f4wA|beta|Ti:None, f4wA|beta|Tr:None, f4wA|crofts|Ti:None, f4wA|crofts|Tr:None
+[CERT-232D] GREEN 25 checks — the existence curves read at D=8 reproduce L217's stored per-cell null crossing rates, its censoring flags, its finite-draw counts AND its both-joints rate 0.0505 EXACTLY
+[Q1 plateau] worst remaining rise to D=40: D4:0.1900, D8:0.1230, D12:0.0835, D16:0.0540, D20:0.0345, D24:0.0220, D30:0.0090 | tol 0.01 -> D* = 30
+[Q1] BRANCH T_TRUNCATION | p_both(8) 0.0505 -> p_both(D*) 0.109 | ratio 2.158
+[Q2] BRANCH E_FAMILY_NULL | m=10 measurable of 12 | rank-1 bar 5.000e-03 vs resolution floor 4.9975e-04 (REJECTABLE, headroom 10.0x) | rejections 0: []
+[Q3] BRANCH O_REAL_EXTREME | N_real 7/8 cells cross by D=30; null N_cross mean 2.179 median 2.0 max 8 | p_omni 0.0140 (floor 4.9975e-04)
+[predictions] 5/6 — P1:T, P2:T, P3:T, P4:F, P5:T, P6:T
+[prior] l216/l217/l209/l210 static.json (size, mtime_ns) unchanged GREEN
+[L232] DONE Q1=T_TRUNCATION Q2=E_FAMILY_NULL Q3=O_REAL_EXTREME preds=5/6 (0s body, 28s total)

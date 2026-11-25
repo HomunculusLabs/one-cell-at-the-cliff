@@ -11693,3 +11693,407 @@ sides, four read-only fingerprints unchanged.
 NEXT: L260 (the GATED two-hop term -- the instrument both L215 and L228 named),
 L261 (the depth PROFILE of the ordering result plus the membership null that
 converts its 1/4 floor into a percentile), L262 (the share-currency audit).
+
+## L229 — near-balance as a POPULATION question (tick 261)
+
+Branch **B_FLOOR_DEGENERATE** (registered, first in order). Predictions 3/6.
+Static, zero rollouts; every dynamic number read from stored npz
+(l150/l169b2/l175f), fingerprinted before and after.
+
+WHAT WAS ASKED: L215 noticed Tr is the near-balanced joint (inh_frac
+.4943/.4965 vs Ti .4555/.4511) and Tr is the joint with a dead side. Asked
+NONSELECTIVELY over all ten cord pool-sides (Ti/Tr/Ta/Sr/Pr x L/R), with an
+EXACT n=10 membership-permutation null.
+
+WHAT CAME BACK:
+- rho(near, dynamic range) = -0.030303 (exact two-sided p .9460) primary B36;
+  -0.115152 B37 (fresh seeds); -0.090909 B35 (7-arm menu); +0.066667 relative
+  range; +0.054545 on f4wA. Nothing, in every currency and substrate.
+- RELIABILITY CONTROL (the thing that makes the null readable):
+  rho(range_B36, range_B37) = +0.963636, exact p 4.905e-05. The outcome is
+  reproducible across a fresh seed batch; the predictor does not predict.
+- CURRENCY (PREREG 0a earned the card): 2 of 10 pool-sides sit ABOVE
+  inh_frac 0.5 (Ta_L .561114, Ta_R .522940), so `near` and raw `inh_frac`
+  are NOT rank-identical and they straddle a registered band bar —
+  rho(inh_frac, range) = -0.454545. Without the pre-registered centred
+  currency this card would have reported a moderate INVERSION that is an
+  artifact of a ratio used as a nearness proxy past its monotone range.
+- P3 FALSE: the most balanced pool-side in the cord is Pr_R (-0.002941, 7
+  cells), ahead of Tr_R and Tr_L (ranks 9 and 8 of 10); Pr_R is unremarkably
+  labile. The Ti-vs-Tr contrast reproduces exactly (CERT-215R) but its
+  population ordering is wrong.
+- ESCAPE FIRED and short-circuited the population claim: Ta_L max level over
+  12 arms .031168 < dead bar .04; Pr_L dead in B35 (.022655) and alive in
+  B36/B37 (.071352/.085242) — the same pool-side dead or alive depending on
+  the arm MENU. Surviving subset n=9 rho -0.416667, p WITHHELD (the exact
+  n=10 enumeration does not apply at n=9).
+- Not confounded (|rho(near,n_cells)| .238542, |rho(near,TOT)| .272727 vs
+  bar .70) but range tracks received mass better than balance:
+  rho(range,TOT) +0.393939, rho(range,n_cells) +0.373104 (ties, p withheld).
+
+CERTIFICATION: CERT-215R 68 float equalities with the coverage bar DERIVED
+FROM THE ARTIFACT (a hand-typed 36 halted the first run at the true 68);
+CERT-208L 202 float equalities (lvl/fhi95/fhi90/flo/pmax via l208's exact
+expression); CERT-W six run-script literals + |W| 3000 / |W_on| 1400; the
+four Ti/Tr masks ARRAY-IDENTICAL to HEAD3's certified SIDEMASK; all 20 pool
+sizes pinned; four sha-pinned verbatim slices (l151_static 1-319
+e6245e8306dc8a0f / l178_tail 22-83 66112b0c221d02d8 / l215_tail 1-164
+2fb8c7f54a56e5f1, parent file dbc507e8f48530ae asserted a literal SUFFIX of
+l215_static.py / l169b2_verdict 13-63 de636f4a18ee789b); AST import audit and
+a write-SITE audit (one open(...,'w') and one json.dump on the SAME line);
+prior.md5 GREEN before and after on 7 files including all three npz.
+Generated l229_static.py 1,091 lines sha b7413ee719100561.
+
+LAWS: (1) a NEARNESS hypothesis stated on a RATIO is only testable while
+every unit sits on one side of the ratio's centre — register the centred
+currency, MEASURE the count past the centre, report both. (2) a null is
+readable only beside a reliability estimate of its OUTCOME; compute the
+cross-batch reliability in the same run, it is free from the stored npz.
+(3) derive a certification's coverage bar from the artifact, never type it.
+
+FOLLOW-ONS (LANE.md ideas 125): L263 if not balance, what predicts lability
+(and the per-POOL 20-unit route out of n=10); L264 the centred-currency
+audit; L265 the reliability-control audit of every lane null.
+
+## L230 — the CROSSING-PHASE law (tick 262)
+
+2026-11-24 ~00:2x. Q1 **PHASE_MODEL_INSUFFICIENT**, Q3 **CF_NOT_SEPARATED**,
+predictions 3/6. L216's two-term model gives d_cross = log(-A_inf/K)/log(rho)
+in closed form. Asked with the SHARED spectral gap (the card's wording, and
+the premise that makes the Ti-minus-Tr difference decompose additively) the
+closed form misses the measured crossing by 0.5336 hops on the primary cell
+against a registered 0.5 bar; asked with each cell's OWN stored r_deep it
+lands within 0.0288. 5 of 6 measurable cells inside 0.2 hops in the per-unit
+currency vs 2 of 6 in the shared one. The shared rate is the ONLY one that
+decomposes (identity error 1.8e-15, no common log(rho) exists otherwise), so
+exactness and adequacy are in tension by construction, amplified by
+1/|log rho| — ~9x on beta, 40x/23x on Crofts, which is why the Crofts cells
+miss by 5-9 hops.
+
+Attribution (DESCRIPTION, PREREG 0a): both beta pairs read share_K ~0.29-0.31
+with OPPOSING terms (T_A +3.8669, T_K -1.5706, D_cf +2.2963) = asymptote-
+carried; f4wA|crofts INVERTS at share_K 0.9011 with its asymptotes within
+2.2%. Same cells, two per-edge reweightings, opposite answers.
+
+Q3 is the instrument L217 named and could not build. L217's contrast died at
+a 0.0505 joint event rate; the closed form only needs the asymptote and the
+depth-1 term to disagree in sign, so the SAME null yields 0.5110 jointly =
+10.12x, 1,022 usable draws, ZERO new draws drawn. Marginality disclosed: the
+rate's 95% interval [0.4891, 0.5329] straddles its own 0.50 gate. And the
+rescued contrast REFUTES its hypothesis: |D_cf| 2.2963 at pct_abs 0.1350 —
+86.5% of label-permuted draws separate the joints MORE than the real wiring.
+share_K is generic too (pct_up 0.2715, null median 0.5075).
+
+Certs: SLICE A = l216_static.py 1-1360 VERBATIM (AST-proven write-free,
+inheriting CERT-205 250 + CERT-209 412 + the NO-OP), parent pin by SUFFIX,
+CUT audit structural by AST, SLICE B = l217_tail.py 245-258 (dcross),
+CERT-216 1,903 with a 1,900 coverage bar DERIVED from the artifact,
+CERT-217 174, CERT-AINF 152, NO-OP 128, prior.md5 (5 files) green both sides.
+33 s on om. banc/l230/, banc/l230_{build,tail}.py -> l230_static.py
+(sha a02e27563a8892ce). Follow-ons L266/L267/L268.
+
+
+## L231 — does the left-heavy Perron mode have a SOURCE? (tick 263)
+
+INTENT: L216's unregistered finding (the anatomical operator's dominant mode
+is strongly left-heavy on every beta pool cell, A_inf +0.26..+0.44) had never
+been localised. Asked nonselectively — five cord pool pairs, every
+super_class, the whole labelled population, four cord arms plus a whole-graph
+arm, 78 BH-FDR tests — with the per-side CELL COUNT and in-mass registered as
+the table's first two rows because a proofreading-completeness imbalance
+would manufacture exactly this result.
+
+OUTCOME: branch B_GLOBAL. A_glob +0.342508 on the primary arm against a median
+pool |A| of 0.408720 => R_glob 0.8380: the pools restate a cord-wide
+left-heaviness carried by sensory (+0.423), motor (+0.417) and vnc_intrinsic
+(+0.325), and ABSENT in the descending population (+0.027) and the neck
+connective (+0.027) — the same boundary L217's CORD_CARRIES drew from the
+other side. The reconstruction confound exists (left 26,799 / right 53,050
+side labels; optic lobe 8.40:1 right) and runs the WRONG WAY: rho(A, count
+asym) -0.4718, cord count ratio 0.96, count-free total-mass form reproducing
+95.0% of the effect.
+
+THE FAILED PREDICTION IS THE CARD: P4 expected the whole-graph population to
+read right-heavy and it read +0.335930 LEFT-heavy, because a per-CELL mean
+asymmetry equals -(count asymmetry) IDENTICALLY at equal total per-side mass.
+Residual +0.00717; count-free A_tot +0.00806. The whole brain+cord dominant
+mode is side-balanced to 0.8% on 79,849 cells and its apparent left-heaviness
+is the optic-lobe artifact in a 1/n disguise, with two sign flips
+(wg/pop/optic_lobe +0.66203 vs -0.26126; wg/class/optic_lobe_intrinsic
++0.25446 vs -0.88818).
+
+ARTIFACTS: banc/l231/{PREREG.md, VERDICT.md, static.json, addendum.json,
+prior.md5, probe.out, build.out, addendum.out, run.out, run.err}; code
+banc/l231_{probe,build,head,tail,addendum}.py -> l231_static.py (2,143 lines,
+sha 91fb58b054e49aa5). SLICE A = l216_static.py 1-1360 verbatim (AST-proven
+write-free), SLICE C = l230_tail.py 39-128 verbatim (CERT-216, 1,903
+equalities, artifact-derived bar 1,900). CERT-231A 8 cells at 1.943e-16
+absolute; CERT-231B 44; census pin halting. 85 s on om, nice -n 15, zero
+rollouts, zero live changes.
+
+FOLLOW-ONS: L269 (count-free currency audit of every per-unit-mean asymmetry
+in the L205-L231 family), L270 (where does the cord asymmetry BEGIN —
+neuromere / modality / descending-axis split), L271 (which lane confound
+screens could not have detected their own confound).
+
+
+## L232 — the crossing-EXISTENCE rate as the primary (tick 264)
+
+INTENT: L217 registered a timing contrast on the depth at which a pool cell's
+L/R asymmetry changes sign and could not score it, because its handedness null
+produced a crossing in BOTH joints in only 0.0505 of draws. That number was a
+degeneracy DIAGNOSTIC, post-hoc on L217's own card. L232 re-poses the event
+rate itself as the PRIMARY statistic on a question whose null was still
+unknown, and measures FIRST the one quantity that decides whether 0.0505 is an
+effect or an artifact of the depth horizon DMAX = 8: the null's censoring rate
+as a function of D, extended to D = 40.
+
+OUTCOME: Q1 T_TRUNCATION / Q2 E_FAMILY_NULL / Q3 O_REAL_EXTREME, predictions
+5 of 6.
+
+The 0.0505 was a truncation artifact. The null's both-joints rate on the
+primary arm rises monotonically — .0075 (D=2), .0185 (D=4), .0505 (D=8),
+.0755, .0910, .0980, .1090 (D*=30), .1150 (D=40) — a ratio of 2.158 over the
+registered 2.0 bar. The plateau is structural, not numerical: no cell reaches
+|A_cell(d) - A_inf| < 1e-12 within D = 40, so D* = 30 is where the null's own
+event supply is exhausted.
+
+Asked nonselectively, nothing survives BH: 10 of the registered 12 tests are
+measurable (2 FALSE BY UNMEASURABILITY — the real cutwA|crofts|Ti never
+crosses), the smallest p is .047 against a rank-1 bar of .005 (a 9.4x miss)
+and the resolution floor sits 10.0x BELOW that bar, so the family fails by
+MAGNITUDE, not power. Every single-joint p is .18-.35.
+
+The only instrument that fires is the multiplicity-free omnibus. PERM is keyed
+by (joint, side) only, so one draw is one side relabelling readable across all
+8 cells: 7 of 8 real cells cross by D* = 30 against a null per-draw count of
+mean 2.179 / median 2, p = 28/2000 = .0140.
+
+PREMISE CORRECTION 0a: the card's "12 substrate x operator x joint cells" is
+wrong by construction (len(SUBS) == 2, so len(CELLS) == 8); the family of 12
+TESTS is 8 single-joint + 4 pair-level, registered and asserted halting.
+
+METHOD LAWS. (1) A BH family can be both DILUTED and DEPENDENCE-BLIND while a
+multiplicity-free omnibus on the same draws is the only readable instrument:
+the 12 "tests" here consume only TWO independent randomisations (one Ti
+relabelling acting on 4 cells, one Tr relabelling on the other 4), which is
+visible in the null count histogram's lumpiness on even values — so BH's
+rank-1 bar q/m divides by a count that overstates the family's width, while
+the permutation null over the shared draw index carries the dependence exactly
+and needs no correction. Before building a BH family, count how many
+INDEPENDENT randomisations its members consume. (2) An event-existence RATE is
+a function of the observation HORIZON, and the horizon is usually inherited
+from an unrelated decision: DMAX = 8 was L216's depth-decay choice and
+inflated this contrast 2.158x.
+
+FREE CROSS-READS ON L230: its closed form predicted the cell L217 censored,
+f4wA|crofts|Ti, at d 15.03 — it does cross, measured 19.479 (first existence
+D = 20), a 4.45-hop / 29% under-prediction exactly the size L230's own
+amplification law 1/|log rho| = 40.2 anticipates on the Crofts arm. And its
+premise 0d holds: cutwA|crofts|Ti (A_inf -0.008413, same sign as K) does not
+cross by D = 40.
+
+CERTIFICATION: SLICE A = l216_static.py 1-1360 verbatim (write-free by AST,
+inherited pins re-derived and cross-checked against l230_static.py's banner);
+SLICE B = l217_tail.py 245-258 (dcross); SLICE C = l230_tail.py 39-211 =
+L230's OWN CERT-216 (1,903) + NO-OP (128) + CERT-AINF (152) + CERT-217 (174)
+block re-used verbatim. CERT-232X (128, halting): the D = 40 sweep's first 8
+depths reproduce L216's stored A_cell at float equality and its 2000-draw null
+vectors at ARRAY equality. CERT-232D (25, halting): the existence curves at
+D = 8 reproduce L217's stored rates, censoring flags, draw counts and its
+0.0505 exactly. 28 s on om, nice -n 15.
+
+ARTIFACTS: banc/l232/{PREREG.md, VERDICT.md, static.json, prior.md5,
+build.out, run.out, run.err}; code banc/l232_{build,head,tail}.py ->
+l232_static.py (1,985 lines, sha 621dffb890fbb12d).
+
+FOLLOW-ONS: L272 (the effective-family-width audit of every BH family in the
+lane), L273 (the horizon audit of every finite window a lane statistic rests
+on), L274 (Tr crosses before Ti on every one of the four arms — is that
+ordering real, and is it L32/L65's antiphase?).
+## L233 — does the destination geometry explain the asymptote?
+
+tick 265 (cron), 2026-11-24. Static, zero rollouts, no new RNG. PREREG
+banc/l233/PREREG.md first (nine premise corrections, zero amendments).
+
+Branches Q1 **D_MODE** / Q2 **L_DISTRIBUTED** / Q3 **H_ROBUST**;
+predictions 2 of 6 (P1, P6 true), all four failures load-bearing.
+
+The pools' leftward Perron asymmetry is NOT a degree statement. Primary arm
+f4wA|beta: A_inf +0.286625 (Ti) / +0.444216 (Tr) against operator-native
+in-mass -0.095690 / -0.012566, raw in-degree -0.088835 / -0.008880, L205's
+stored in-mass -0.096787 / -0.011792 — all four predictor currencies
+negative on 0 of 8 cells while A_inf is positive on 7 of 8. share_m_op
+-0.1550 / -0.0248 (mean -0.0899, bands [0.30,0.70)); the mode residual
+carries 115.5% / 102.5% of the drift. Within pool, log v1 DOES rise with
+log in-mass (midrank Spearman +0.7296 / +0.6253, slope +0.77) — the left
+side simply has less of it, so in-degree is a SUPPRESSOR of the asymmetry.
+Every mirror-matched motor type carries it: 8/8 shared Ti types and 13/13
+shared Tr types left-higher (exact sign tests p 0.0078 / 0.0002, mean
+log-ratio +0.6186 / +1.1627 = 1.86x / 3.20x), and the mirror-matched subset
+moves A_inf by only -1.6% / +1.9% (not a composition effect, unlike L231's
+optic lobe).
+
+Method laws: (1) a strong WITHIN-unit correlation licenses nothing about a
+BETWEEN-unit contrast and can carry the opposite sign — Simpson 1951 /
+Robinson 1950 / Neuhaus & Kalbfleisch 1998 as named prior art; register a
+SIGNED share with an S_SUPPRESSOR label. (2) normalising a leverage
+statistic by a quantity whose null is near zero turns its null into a test
+of the denominator (lev1 null means 2.19-33.74 vs real 0.03-0.05, pct_up
+0.000; the one cell clearing 0.50 is the A_inf -0.008413 cell from
+CERT-231A). (3) at effective family width 2 a sign-count omnibus over 8
+cells cannot resolve better than ~1/4 (p_omni 0.1620) where a type-level
+sign test over 8/13 types reads .0078/.0002 — the A_indeg omnibus
+histogram's even-only occupancy is the free tell. (4) an identity gate's
+absolute bar must be conditioned on its OPERANDS' magnitudes, not its
+result's (CERT-233B halt at 2.887e-15 vs 8*eps; repaired, 1.06 ulp).
+
+Gates: SLICE A = l216_static.py 1-1360 verbatim (CERT-F4/178/GEN/205/GAP/209
++ NO-OP free), SLICE B = l217_tail.py 245-258 (dcross), SLICE C =
+l230_tail.py 39-211 (CERT-216 1,903 / NO-OP 128 / CERT-AINF 152 / CERT-217
+174), SLICE D = l231_tail.py 429-450 (midrank + spearman). New halting
+gates CERT-233A 88 / CERT-233B 32 + 92 / CERT-233C 34. Generated
+l233_static.py 2,166 lines sha 6c95ac06b9674a41; 0.31 s body on om.
+Follow-ons L275 (through which paths?), L276 (signed-share audit), L277 (is
+the within-vs-between reversal a property of this asymmetry or this graph?).
+
+
+## L234 — the TWO-MODE closed form, and K2's own null (tick 266)
+
+Intent: close the two open ends L218 left. (a) Does a MEASURED third mode
+turn L218's one-mode closed form into a closed one? (b) K2 had no null of its
+own — L218 computed 100 per-draw K2 and discarded them — so A2's percentile
+was carrying a claim about two modes with only one marginal measured.
+
+Result: **Q1 CF_PARTIAL / Q2 K2_SEPARATED**, 5 of 6 predictions, the FALSE
+one load-bearing.
+
+- The third eigenpair resolves REAL and POSITIVE at residual 4.76e-12 /
+  5.71e-12 (mode 2 managed 7.0e-09), signed Rayleigh +25.9512564246914,
+  r3 = +0.8598886179489906, direct A3 = K3/K = +0.07778958. The two-mode
+  form improves the band 3.691x (0.11616512 -> 0.03146926) and still misses
+  the registered 1%, entirely at the shallow end (worst d=10, d50 0.0021).
+  Fitting A3 with r3 fixed only reaches 0.02398, so the miss is MODE
+  STRUCTURE, not coefficient — a fourth mode is required.
+- NEW RECURSIVE LAW: an anchor-implied mode coefficient is biased UPWARD by
+  every mode it omits and the bias COMPOUNDS — A2_direct/A2_implied 0.8838
+  (1.13x), A3_direct/A3_implied 0.65604 (1.52x). The direct eigenvector
+  construction is primary; the anchor estimate is a diagnostic of what you
+  left out.
+- K2's null: real 0.0029754868 vs draw median 0.013353032, suppression
+  4.488x at pct 0.200, against K's 11.402x at pct 0.000. P5 FALSE.
+- HEADLINE METHOD LAW: K's null is strictly positive BY PERRON-FROBENIUS
+  (0/100 negative) while K2's straddles zero (15/100), so a raw percentile
+  is not a comparable currency between modes — 15 of the 20 draws below
+  K2_real are below because they are NEGATIVE. Sign-conditioned, the
+  carrier reads pct 0.05882 vs K's 0.000 at folds 11.402x vs 5.321x =
+  2.54x, so L218's "avoids the dominant mode harder" survives, named.
+- SECOND LAW: a RATIO can sit at the 94th percentile while BOTH components
+  sit at or near the 0th (A2 pct 0.94; K below all 100 draws, K2 below 80).
+  Three different claims; L218 had one.
+- Compose check: ratio-of-medians 0.21926997 vs median-of-ratios
+  0.21115719, rel 0.03842.
+
+Verification: SLICE A = l218_static.py 1-1691 VERBATIM (literal PREFIX,
+AST-proven write-free; pinned by the parent's banner == the banner stored
+INSIDE l218/static.json). CERT-234A 661 float equalities on an
+artifact-DERIVED bar over 30 keys (re-runs CERT-218T 1224, CERT-W50 1010,
+CERT-DEFLV, CERT-206, CERT-MV, CERT-LEFT, CERT-REBUILD, CERT-178, CERT-NULL,
+CERT-F4, CERT-REW, the NO-OP and Q218-1/2/3 as the code that made the
+artifact). CERT-234B 6 (new deflation kernel admitted only by bit-exact
+agreement with the certified one). CERT-234C 100 (per-draw K2_k/K_k ==
+certified A2K at float equality; the declined derived shortcut measured at
+1.776e-16 = 0.8 ulp). Run 414 s on om, nice -n 15.
+
+Disclosed: the first run halted on a hand-typed `assert n_checks >= 1000` at
+the true 661 — the fourth instance of L224's derive-the-coverage-bar law, and
+the first where the guessed bar was the ONLY failure. Cost one 372 s slice
+re-execution; no registered quantity changed.
+
+Artifacts: banc/l234/{PREREG.md, VERDICT.md, static.json,
+addendum_sign.json, probe.out, addendum.out, prior.md5, build.out, run.out,
+run.err}; code banc/l234_{probe,build,tail}.py -> l234_static.py,
+banc/t266_addendum.py. Follow-ons L278/L279/L280 (LANE.md ideas 130).
+
+## tick 267 (2026-11-24) — L235: the currency inversion, asked nonselectively
+
+Branch I_CARRIER (1 of 35 actors disagree by >0.5; the one is the carrier, D
+0.840 vs cohort median 0.070). Predictions 4/6; P1 FALSE (registered
+I_CONVENTION) is the card, P6 FALSE by 0.0071. PREREG 0b's identity
+A2_k(c) = (u2_k[c]/u1_k[c]) * C_k asserted on all 35x100 cells (max rel
+5.682e-16). Ladder for the carrier: u1 division 0.840, per-draw constant
+0.000, sign 0.000; cohort means 0.0769 / 0.0471 / 0.0429. The carrier is the
+unique pu1 == 0.000 and unique pK == 0.0 cell of the 35. Spearman(pA2, p|u2|)
++0.248385 (abs form +0.554487, pR vs pA2abs +0.908817, pu1 vs D +0.014456).
+CERT-235A 630 (artifact-derived bar, floor 495), CERT-235B 334 (the cost
+slice admitted by measurement, L226). SLICE A = l218_static.py 1-1624,
+SLICE D = l231_tail.py 429-450. l235_static.py 2,049 lines, 548.7 s on om.
+Artifacts banc/l235/, code banc/l235_{build,tail}.py. Follow-ons
+L281/L282/L283 (ideas 131).
+
+## L236 — is the 11.4x special, or is it the MENU? (tick 268, 2026-11-24)
+
+Asked NONSELECTIVELY over all 1,253 DN source cells of the l169c DN->cord
+block (the 35 L178 actors are a measured SUBSET; union exactly 1,253).
+Branch PARTIAL, 1 of 6 predictions.
+
+- Population median r_mean 1.6461 (bars: >=5 MENU_PROPERTY, <1.6
+  CELL_SPECIFIC — missed CELL_SPECIFIC by 0.046). 34.0% of cells read >= 5x,
+  21.7% read >= 11.4x. The carrier's 11.7118 sits at percentile 0.7829 with
+  271 cells strictly higher: 272 cells have a LARGER deficit than the
+  headline value. The 11.4x is a COMMON value in this block.
+- The HOMOLOG DISAGREES BY BEING MORE EXTREME: right DNp33 (gi 928, read in
+  code from l207/static.json) r_mean 13.5481 = 1.157x the carrier. The
+  deficit is bilaterally consistent, hence a DNp33 TYPE property — the
+  "the carrier" framing of L206/L210/L218/L219 should read "the DNp33 type".
+- PREREG 0b (written before measuring) made the whole pass cost 8.8 s:
+  E[S_draw] = m_out * mu_MENU for ANY weight multiset, so the ratio is a
+  CLOSED FORM and "weight-matched" is cosmetic for it, load-bearing only for
+  the variance. L219's r_med is biased downward at low out-degree (null
+  median/mean .182 at n_out 1 -> .971 at 69); rho(r_mean, r_med) +0.9946.
+- FDR: B = 30,000 sized in advance so the floor 3.3332e-05 clears the BH
+  rank-1 bar 3.9904e-05. It cleared, and 177 cells still TIE AT THE FLOOR, so
+  the carrier's q is 2.3596e-04 at rank 177 (427 of 1,253 rejected, 190 the
+  other way). NEW LAW: a resolution floor does not only cap a p-value, it
+  TIES the units at it — register the expected tie count, not just the floor.
+- Degree screen BIT (rho(r_mean, n_out) -0.4544) and the matched reading moved
+  the carrier UP, .783 -> .895 (rank 17 of 171). NEW LAW: a screen that bites
+  is not automatically a deflation; register the direction it may move.
+- Amendment 0L, forced by a halting gate: u1 has EXACT zeros, so 1 cell of
+  1,253 has S_c == 0 and an UNDEFINED ratio (L224). Repaired with the bounded
+  zero-admitting d_mean currency; dec236 admitted by CERT-236D's 6,260 float
+  equalities against the parent's certified decomp219.
+
+Verified: 7 VERBATIM slices of l219_static.py (P 1-989, H 1231-1281,
+R 1284-1309, T 1459-1474, C 1476-1501, M 1536-1545, W 1548-1556), 545 cut
+lines AST-proven to own the parent's per-draw loop and writers; CERT-236A 86
+artifact-derived leaves / 236B 424 (the whole Q219_2_table, 35 actors x 9
+fields) / 236C 17 / 236D 6,260 / 236K bit-identical kernel / gate B rel
+1.52e-16 = 6,787 halting checks. Run 19.9 s on om against the parent's ~370 s
+per-draw eigendecomposition, CUT (L226/L235 cost slice). Artifacts
+banc/l236/, code banc/l236_{probe_build,build,mid1,mid2,tail}.py ->
+l236_static.py (1,751 lines, sha 033665492b93baf9).
+
+## tick 269 (2026-11-24) — L237: the destination-geometry leg comes back
+## NEGATIVE on every local predictor, and the deficit RECURSES
+
+Q1 C_TYPICAL / Q2 PARTIAL / Q2b M_RECURSES / Q3 H_ROBUST; 4 of 6 predictions.
+The carrier's 69 targets are composition-typical (D_max 0.0358, p 0.56365,
+0 of 3 classes BH-rejected) and size-typical (every local median within 7% of
+the menu median) while their u1 is 20.9x below it. The exact identity
+decomposition puts share_m_out -0.0494 / share_Q +1.0366 / share_align
++0.0128 on their log-u1 deficit of -2.275634 at 0.00 ulp: 103.7% is their own
+targets' u1, out-mass is a SUPPRESSOR. Zero set closed by proof (429 = 369
+no-out-edges + 60 all-zero-targets). Q2's registered escape died on its own
+companion: in-mass 0.329087 held-out crossed the 0.30 bar but out-mass ALONE
+is 0.669052 (2.03x) and rho(in-mass, out-mass) 0.509430 — borrowed signal.
+Homolog gi 928 Q 0.165627 = 0.915x, again more extreme.
+
+Laws: wrong-side-of-the-identity predictors borrow; a compositional family
+with C categories has C-1 free dimensions; "ordinary on every local count" is
+a POSITIVE result against a global eigenvector.
+
+Artifacts banc/l237/{PREREG.md, VERDICT.md, static.json, prior.md5,
+run.out, run.err}, code banc/l237_{build,tail}.py -> l237_static.py
+(1,841 lines, sha e6500e681a50cd64, 13.8 s), lane/t269_{fold,journal}.py.
+Follow-ons L287/L288/L289 in LANE.md ideas 133.

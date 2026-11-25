@@ -1,0 +1,56 @@
+[pins] ladder+graphs GREEN (3s)
+[CERT-F4] GREEN K4 73 carrier r21 twin gi 290 gap 2.44e-05 | f4wA n 21,789 edges 469,618 | family 33
+[CSR] W[target,source] GREEN: carrier out 69 in 12 (local 470)
+[MID] csr arrays GREEN (469,618 edges, orientation re-checked)
+[CERT-REW] GREEN: l169c P6 reproduced EXACTLY (100 draws, seed 16943)
+[Q2] 100 floor-4 draws: relocated med 69.0 min 69
+[CERT-178] GREEN 420 stored anatomical values reproduced by FLOAT EQUALITY (35 actors x depths 1-3 x P/S/per-mass/PI)
+[spectral] lam1(A_abs) = 30.179788 (Rayleigh 30.179788, rel spread last 6 1.18e-16)
+[spectral] lam1(A_crofts) = 0.388120 (rel spread 1.06e-08)
+[sweep] 35 actors x depths 1-10, both normalisations (depth-1..3 vs L178 stored: max rel diff 0.0e+00)
+[conv] carrier cos(x_d, v1) = 0.0039 0.0362 0.1255 0.2928 0.5844 0.8137 0.9043 0.9374 0.9540 0.9649 -> d_conv None
+[null] 100 draws x depths 1-10 (med changed 138.0)
+[CERT-NULL] GREEN: all 8 stored L178 Q2b_null_anatomical statistics reproduced by FLOAT EQUALITY from my own null construction
+[MID2] heapq available for the certified SI block
+[G2] actors done: carrier SI mean 22.39317740345491 (303/303 pool cells reachable) | twin 20.202005346103054
+[G2] null draw 0: SI mean 19.191889927203682 reach 303
+[G2] G2_SI_HIGH: carrier SI mean 22.39317740345491 vs null med 18.7180 [p05 17.0799, p95 20.6240] -> pct 100.0; family med 20.269773413028425
+[GAIN-INV] GREEN lam1 rel 1.18e-16 | depth-2 rel 1.31e-16
+[CERT-GEN] GREEN 44 checks: generic builder/reach/power-iteration reproduce the certified f4wA specialisation at FLOAT EQUALITY
+[CERT-SI] GREEN 240 stored L206 search-information values reproduced by FLOAT EQUALITY (35 actors + null summary)
+[CERT-MENU] GREEN: 69-edge first-hop menu bit-identical in all 100 draws (median 69.0 of 69 carrier out-edges relocated per draw) -> any first-hop effect is SELECTION, not allocation
+[CERT-FH] GREEN actors: 1216 EXACT equalities (carrier+twin pool dist/si) vs the certified dijkstra_si
+[L211] draw 0: si 19.1919 = fh 6.0338 + rem 13.1580
+[CERT-FH] GREEN all 100 draws: 61819 EXACT equalities total; rebuilt null median/p05/p95 float-identical to the certified block
+[L211] B_REMAINDER: D_total +3.5816 bits = fh -0.0201 + rem +3.6017 -> share_fh -0.006 | pct fh 45.0 rem 100.0
+[L211] cohort: carrier fh-share 0.261 vs family med 0.283; carrier rem rank 32/35, fh rank 26/35; mirror 928 share 0.246
+========================================================================
+[L220] the L211 TRANSPORT leg on the BASE unfloored cutwA substrate
+[CERT-211] GREEN 434 stored L211 values (primary + cohort) reproduced by FLOAT EQUALITY from my own re-run
+[CERT-SIGEN] GREEN 1922356 EXACT list/array equalities: ONE generic SI index builder reproduces the certified f4wA specialisation (START, END, L_L, T_L, TGT0, pos_in_sorted, A_max) before touching cutwA
+[0c] gain no-op MEASURED: max|dL| 2.220e-16 max|dT| 4.441e-15 -> carrier si_mean rel 1.587e-16, fh_mean rel 1.519e-16
+[L220] cutwA built: n 21,785 edges 644,177 | carrier local 467 out-degree 80 (f4wA 69) | pool cells 303 | A_max 13.663907
+[CERT-REWCUT] GREEN 31 stored l169c P6 values reproduced at FLOAT EQUALITY from my own cutwA-block call (100 draws, seed 16943) -> the cutwA SI null is the l169c NATIVE null, not an invented one
+[CERT-MENUCUT] GREEN: the 80-edge cutwA first-hop menu is bit-identical in all 100 draws (median 80.0 of 80 relocated) -> D_fh on cutwA is SELECTION, not allocation, by construction
+[L220] cutwA carrier: reach 303/303 | si 23.1119 = fh 5.9694 + rem 17.1425 | fh/si 0.2583 | hops 3.795 | distinct fh 11
+[L220] cut draw 0: si 19.5782 = fh 6.0930 + rem 13.4852
+[CERT-WALKCUT] GREEN 61206 EXACT equalities on cutwA between the certified dijkstra_si and the first-hop walker (carrier + 100 draws)
+[CERT-REBIND] GREEN 606 BIT-IDENTICAL f4wA values after rebinding the globals to cutwA and back -> the rebind is reversible, nothing leaked between substrates
+[L220] T_TRANSPORTS: cutwA D_total +3.9052 bits = fh -0.0533 + rem +3.9584 -> share_fh -0.0136 | pct si 99.0 fh 30.0 rem 99.0
+[L220] TRANSPORT: fh/si 0.2611 (f4wA) -> 0.2583 (cutwA), d -0.0028; share_fh -0.0056 -> -0.0136; fh-log2(out) -0.2612 -> -0.3525 (baseline shift +0.2134)
+[L220] cohort cutwA: carrier fh-share 0.258 vs family med 0.286 (f4wA family med 0.283); carrier rem rank 28/31; absent from cutwA 4
+========================================================================
+[L238] are the eleven realised first hops the SAME eleven targets on both substrates?
+[CERT-220] GREEN 896 stored L211 + L220 values (five blocks) reproduced by FLOAT EQUALITY from my own re-run; coverage bar 896 DERIVED from the stored file's own leaf count
+[L238] pools: f4wA 303 cutwA 303 common 303 | actors 36 (mirror apart) | cutwA-present non-mirror 31 (stored absent 4)
+[CERT-FE] GREEN 8696418 EXACT equalities (dist/si/fh/hop on EVERY node + range + cost-of-edge): identity walker == certified walker, 36 actors x 2 substrates (f4wA 4574882, cutwA 4121536)
+[CERT-COST] GREEN 72 recomputed cost counts == certified | [CERT-REBIND-238] GREEN 606
+[CERT-STAT] GREEN: hypergeometric tail == closed forms (5 pmf terms + floor + perfect overlap), midrank tie convention, Spearman +-1, tie gate
+[CERT-BH] GREEN: step-up count, monotone q-values, width sensitivity
+[L238] carrier: r_f4 11 (costs 11) r_cut 11 (costs 11) overlap 11 -> J 1.0000 = SAME_SET | contain f4 1.000 cut 1.000 | only f4 0 only cut 0 | N 80 K 69 n 80 p 1.000e+00 (floor 1.000e+00) | rhoC {'value': 0.9954128440366974, 'measurable': True, 'n_distinct_a': 9, 'n_distinct_b': 9} rhoU {'value': 0.9954128440366974, 'measurable': True, 'n_distinct_a': 9, 'n_distinct_b': 9}
+[L238] carrier f4: menu 69 reach 303 top 65443:113 65290:55 72158:55 75494:52 66466:9 70458:7 68053:5 64961:3 68338:2 8509:1 71155:1
+[L238] carrier cut: menu 80 reach 303 top 65443:115 72158:55 65290:54 75494:51 66466:9 68053:6 70458:6 64961:3 68338:2 8509:1 71155:1
+[L238] escape over 31 of 31: median r_f4 13.0 (e1 True: <=15) | frac in [8,14] 0.452 (e2 False: >=.50) | Spearman(r_f4, n_out) 0.25712932625881263 (e3 True: <.50) -> E_ACTOR_SPECIFIC
+[L238] family (m 31): median J 0.9286 [0.636, 1.000] bands {'SAME_SET': 29, 'PARTIAL': 2, 'SAME_COUNT_DIFFERENT_SET': 0} | BH rejected 0 of 31 measurable (m 31; min p 1.000e+00, carrier q 1.0000 rank 1) | identity==cost on BOTH substrates for 5 of 31 | r_f4 == r_cut for 14
+========================================================================
+L238 DONE 56s | carrier SAME_SET J 1.0000 (r 11/11, k 11) | escape E_ACTOR_SPECIFIC | family median J 0.9286 BH 0/31 | CERT-220 896/896 + FE 8696418 + COST 72 + REBIND 606 | predictions 4 of 5 (FALSE: ['P3_E_POOL_fires'])

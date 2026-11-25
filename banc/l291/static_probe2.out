@@ -1,0 +1,26 @@
+F 0.00022931491480943385 | used-set E (F): {'g11': 4.34, 'gc30': 8.73, 'gh46': 9.15} | sums {11: 210, 30: 429, 46: 624}
+arm      n  syn-sum     E(F)  e14  eff  in +/-5% band  sum-U
+r11k1   11     170    +0.99   0   10     no   -40
+r11k2   11     116    -4.34   0   10     no   -94
+r11k3   11     152    -2.22   0   11     no   -58
+r11k4   11     114    -4.69   0   10     no   -96
+r11k5   11     176    +1.74   0    9     no   -34
+rw11    11     359    +1.42   0    8     no   +149
+gc30    30     429    +8.73   1   28    YES   +0
+r30k1   30     441   +11.90   1   26    YES   +12
+r30k2   30     426    +2.91   0   26    YES   -3
+r30k3   30     336   +12.22   1   27     no   -93
+r30k4   30     393    -1.62   0   27     no   -36
+r30k5   30     398    -0.23   0   26     no   -31
+rw30    30     668    +9.26   1   26     no   +239
+gh46    46     624    +9.15   1   43    YES   +0
+r46k1   46     616    +3.87   1   41    YES   -8
+r46k2   46     610    +1.92   1   40    YES   -14
+r46k3   46     585    +8.67   1   40     no   -39
+r46k4   46     576    -1.89   0   41     no   -48
+r46k5   46     568    +4.77   0   40     no   -56
+rw46    46     808   +10.12   1   41     no   +184
+Traceback (most recent call last):
+  File "/home/t3rpz/critters/peabrain-lab/banc/l291/static_probe2.py", line 48, in <module>
+    spear(np.array([r[2] for r in rnd]), np.array([r[3] for r in rnd]),
+TypeError: spear() takes 2 positional arguments but 3 were given

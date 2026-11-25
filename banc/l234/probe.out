@@ -1,0 +1,39 @@
+stored: GAP 0.8928793607351002 LAM1 30.179788269078884 A2 0.5570889573086877
+stored: K 0.005341134141887085 K2 0.0029754868499497085 A2*K == K2 ? True
+stored relerr d10 0.1161651165819561 d50 0.018751052033734623
+probe one-mode relerr: d10 0.116165  max(d10-50) 0.116165  d50 0.018751
+
+ d   e(d)         one-mode      residual      resid/e      sign
+ 10  2.029931e-01  1.794124e-01  +2.358072e-02  +0.11617   +
+ 15  1.090510e-01  1.018161e-01  +7.234928e-03  +0.06634   +
+ 20  6.058026e-02  5.778036e-02  +2.799903e-03  +0.04622   +
+ 25  3.407141e-02  3.279021e-02  +1.281205e-03  +0.03760   +
+ 30  1.923655e-02  1.860836e-02  +6.281868e-04  +0.03266   +
+ 35  1.087275e-02  1.056020e-02  +3.125532e-04  +0.02875   +
+ 40  6.147643e-03  5.992885e-03  +1.547581e-04  +0.02517   +
+ 45  3.476847e-03  3.400947e-03  +7.590016e-05  +0.02183   +
+ 50  1.966910e-03  1.930029e-03  +3.688164e-05  +0.01875   +
+
+residual sign over d10-50: all positive True | all negative False | sign changes 0
+
+log-linear fit of |residual| on d10-50: r3 0.857799 (lam3 25.8882)  A3 0.069577
+fit relerr on the residual itself: max 0.3635
+two-point (d10,d50): r3 0.850857 (lam3 25.6787)  A3 0.118575
+implied two-mode relerr d10-50: max 0.032559 d10 0.000000 d50 0.000000
+ratio r3/r2 0.952936  (a 4th mode shows as curvature here)
+per-hop log-ratio of the residual: first -0.253992 last -0.145012 median -0.143824 spread 0.114516
+
+--- leg (b) stored-data census ---
+  Q218_3_u2.A2_draw_med = 0.21115719052097356
+  Q218_3_u2.A2_p05 = -0.08952980194069879
+  Q218_3_u2.A2_p95 = 0.5619860688686967
+  Q218_3_u2.A2_percentile = 0.94
+  Q218_3_u2.u2_carrier_percentile_absval = 0.1
+  Q218_3_u2.u2_draw_med_absval = 0.0015509278081445046
+  Q210_1.null_K_med = 0.06089767702943477
+  Q210_1.carrier_K_percentile = 0.0
+  per-draw K stored? True  n=100
+  per-draw K2 stored? False <- the card's premise
+  median(K_k) 6.08976770e-02 == stored null_K_med True
+  K2_real/K_real 0.557089 == stored A2 True
+  NOT derivable: median(K2_k), pct(K2_k < K2_real)  -> the card's leg

@@ -1,0 +1,96 @@
+{
+ "wid": 1,
+ "menu_n": 80,
+ "carrier_col": 467,
+ "carrier": 1110,
+ "base_edges": 644177,
+ "edges": {
+  "e38": {
+   "edge_j": 38,
+   "removed": [
+    {
+     "target": 68053,
+     "csr_index": 316469,
+     "effective_weight": 2.944438934326172,
+     "syn": 18,
+     "sign": 1.0
+    }
+   ]
+  },
+  "e39": {
+   "edge_j": 39,
+   "removed": [
+    {
+     "target": 68338,
+     "csr_index": 328557,
+     "effective_weight": 3.6888794898986816,
+     "syn": 39,
+     "sign": 1.0
+    }
+   ]
+  },
+  "e59": {
+   "edge_j": 59,
+   "removed": [
+    {
+     "target": 70458,
+     "csr_index": 421473,
+     "effective_weight": 1.945910096168518,
+     "syn": 6,
+     "sign": 1.0
+    }
+   ]
+  },
+  "e62": {
+   "edge_j": 62,
+   "removed": [
+    {
+     "target": 71155,
+     "csr_index": 447400,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    }
+   ]
+  },
+  "e64": {
+   "edge_j": 64,
+   "removed": [
+    {
+     "target": 72158,
+     "csr_index": 487353,
+     "effective_weight": 3.1354942321777344,
+     "syn": 22,
+     "sign": 1.0
+    }
+   ]
+  }
+ },
+ "arms_built": [
+  "e38",
+  "e39",
+  "e59",
+  "e62",
+  "e64"
+ ],
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "archives": 311,
+ "prereg": "d6c73be3a4c0621bb2db7f6ce6bc1a023be5fc93531772a6ae65937ca04298a0"
+}

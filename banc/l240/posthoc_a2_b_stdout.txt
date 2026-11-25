@@ -1,0 +1,18 @@
+BH over the 58 unseen edges, MEAN: rejected 0 [] | rank-1 bar 8.621e-04 | smallest 3: {'e43': '2.81e-03', 'e45': '2.05e-02', 'e18': '4.29e-02'}
+BH over the 58 unseen edges, VECTOR: rejected 1 ['e27'] | rank-1 bar 8.621e-04 | smallest 3: {'e27': '7.02e-04', 'e15': '1.72e-02', 'e60': '5.06e-02'}
+BH over the 11 seen edges, MEAN: rejected 1 ['e14'] | rank-1 bar 4.545e-03
+BH over the 11 seen edges, VECTOR: rejected 4 ['e14', 'e25', 'e67', 'e12'] | rank-1 bar 4.545e-03
+noise twin (A1, nf - cutwA): mean +0.691 F (SE 1.000 F), sd 9.173e-04, F 2.293149e-04
+per-edge signed means over 69: mean +0.412 F, median +0.221 F, positive 43/69, S_all 6.5195e-03 = 28.4 F
+per-edge signed means over the 58 new: mean +0.396 F, S 5.2730e-03 = 23.0 F, positive 36/58
+arms with gain == stored base gain: 15 of 69 ['e1', 'e2', 'e8', 'e9', 'e16', 'e21', 'e32', 'e33', 'e37', 'e42', 'e47', 'e53', 'e55', 'e61', 'e63']
+  e14: gain 0.14381486892700196 (delta +1.567e-04)
+  e25: gain 0.14450832366943356 (delta +8.501e-04)
+  e67: gain 0.14314373373985292 (delta -5.145e-04)
+  e12: gain 0.14272294163703922 (delta -9.353e-04)
+  e27: gain 0.1427106034755707 (delta -9.476e-04)
+  e43: gain 0.1437076985836029 (delta +4.950e-05)
+  e45: gain 0.14365858554840089 (delta +3.898e-07)
+SPLIT: rho 0.2996 p 0.006439935600643994 sign agree 46 / 69
+edges with |mean| > 1F: 15 ['e14', 'e27', 'e45', 'e43', 'e49', 'e67', 'e50', 'e46', 'e18', 'e22', 'e44', 'e60', 'e29', 'e28', 'e20']
+A1 companion (descriptive) above-floor edges were: e14, e25, e67, e12; vector floor A1 0.00533 vs floorN now 0.005333731805284174

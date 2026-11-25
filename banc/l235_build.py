@@ -1,0 +1,238 @@
+"""l235_build.py — generate l235_static.py from THREE pieces.
+
+  SLICE A = l218_static.py lines 1-1624 VERBATIM — a literal PREFIX of the
+            GENERATED parent, cut immediately before L218's OWN per-draw
+            deflation loop. It carries, as the code that ACTUALLY produced
+            l218/static.json: CERT-HEAD1..4, CERT-210M, CERT-218T (1224),
+            CERT-W50 (1010), CERT-DEFLV, the 50-depth walks, Q218-1/2 and
+            the real-graph Q218-3 scalars (K2_REAL / A2_REAL / U2).
+  SLICE D = l231_tail.py lines 429-450 VERBATIM — L231's midrank + spearman,
+            the L221 tie law in the exact form that produced l231's rank
+            statistics.
+  TAIL    = l235_tail.py — L235's body (its own 100-draw loop over 35
+            actors, PREREG 0i, admitted only by CERT-235B).
+
+PINS (none hand-typed as a fact about bytes):
+  1. l218_static.py's first 10 lines == l218/static.json["banner"], i.e. the
+     generated script's own banner as RECORDED INSIDE the artifact it made.
+  2. l218_tail.py's whole-file sha256 == the TAIL sha that banner records,
+     AND l218_tail.py is a literal SUFFIX of l218_static.py.
+  3. l231_tail.py's whole-file sha256 is the value l231_static.py's own
+     banner records, and it is a literal SUFFIX of l231_static.py.
+  4. SLICE A is a literal PREFIX of l218_static.py, AST-PROVEN write-free,
+     and its boundary is anchored on the parent's OWN lines; the CUT lines
+     are audited STRUCTURALLY by AST (never a bare-token scan, which fires
+     on the slice's own prose — that trap has bitten seven times).
+"""
+import ast
+import hashlib
+import json
+import pathlib
+
+PAR = pathlib.Path("l218_static.py")
+PTAIL = pathlib.Path("l218_tail.py")
+D_SRC = pathlib.Path("l231_tail.py")
+D_PAR = pathlib.Path("l231_static.py")
+TAIL_SRC = pathlib.Path("l235_tail.py")
+OUT = pathlib.Path("l235_static.py")
+CUT = 1624
+LO_D, HI_D = 429, 450
+
+
+def sha(t):
+    return hashlib.sha256(t.encode()).hexdigest()
+
+
+par_txt = PAR.read_text()
+par_lines = par_txt.splitlines(keepends=True)
+assert len(par_lines) == 1763, ("parent line count", len(par_lines))
+sliceA = "".join(par_lines[:CUT])
+cut_src = "".join(par_lines[CUT:])
+assert par_txt.startswith(sliceA), "SLICE A is not a literal PREFIX (STOP)"
+assert sliceA + cut_src == par_txt, "slice/cut do not reconstruct the parent"
+shaA = sha(sliceA)
+sha_par = sha(par_txt)
+ptail = PTAIL.read_text()
+sha_ptail = sha(ptail)
+tail = TAIL_SRC.read_text()
+sha_tail = sha(tail)
+
+# ---- PIN 1: the artifact's own record of the script that made it ----------
+S218 = json.loads(pathlib.Path("l218/static.json").read_text())
+banner = "".join(par_lines[:10])
+assert banner == S218["banner"], \
+    "l218_static.py's banner != the banner stored INSIDE l218/static.json -> " \
+    "the parent script MOVED since it produced the artifact (STOP)"
+print("[pin1] GREEN l218_static.py banner == l218/static.json['banner']")
+
+# ---- PIN 2: the parent's tail, by the banner's own sha + suffix ------------
+assert f"TAIL       = l218_tail.py (sha256 {sha_ptail[:16]})." in banner, \
+    (sha_ptail[:16], "l218_tail.py MOVED since l218_static.py was generated")
+assert par_txt.endswith(ptail), "l218_tail.py is not a SUFFIX of the parent"
+print(f"[pin2] GREEN l218_tail.py sha {sha_ptail[:16]} == the banner's "
+      f"recorded TAIL sha, and is a literal SUFFIX of the parent")
+
+# ---- PIN 3: SLICE D's source, by l231_static.py's own banner --------------
+D_full = D_SRC.read_text()
+sliceD = "".join(D_full.splitlines(keepends=True)[LO_D - 1:HI_D])
+assert sliceD in D_full, "SLICE D is not a literal substring of l231_tail.py"
+dpar = D_PAR.read_text()
+assert sha(D_full)[:16] in dpar, \
+    (sha(D_full)[:16], "l231_tail.py sha not recorded in l231_static.py")
+assert dpar.endswith(D_full), "l231_tail.py is not a SUFFIX of l231_static.py"
+_dt = ast.parse(sliceD)
+_ddefs = [n.name for n in _dt.body if isinstance(n, ast.FunctionDef)]
+assert _ddefs == ["midrank", "spearman"], (_ddefs, "SLICE D defs")
+assert len(_dt.body) == 2, (len(_dt.body), "SLICE D carries extra statements")
+assert 'kind="mergesort"' in sliceD, "SLICE D lost the stable sort"
+print(f"[pin3] GREEN SLICE D = l231_tail.py {LO_D}-{HI_D} defines exactly "
+      f"{_ddefs}, source sha {sha(D_full)[:16]} recorded in l231_static.py")
+
+# ---- PIN 4: SLICE A boundary anchors, DERIVED from the parent's own lines --
+assert par_lines[CUT - 1].strip() == "", ("SLICE A last line", par_lines[CUT - 1])
+assert par_lines[CUT - 2].rstrip("\n").endswith(
+    'f"A2 = K2/K {A2_REAL:+.6f} | u2[carrier] {float(U2[LC]):+.6e}")'), \
+    ("SLICE A penultimate line", par_lines[CUT - 2])
+assert par_lines[CUT].rstrip("\n") == "A2K, U2K, RESK, LFK = [], [], [], []", \
+    ("cut first line", par_lines[CUT])
+assert par_lines[CUT + 1].rstrip("\n") == "for k in range(len(rows210)):", \
+    ("cut second line", par_lines[CUT + 1])
+assert par_lines[0].startswith('"""GENERATED by l218_build.py'), "parent head"
+
+# the slice must CONTAIN every gate and kernel this card inherits ...
+for tok in ("CERT-218T", "CERT-W50", "CERT-DEFLV", "CERT-206", "CERT-MV",
+            "CERT-LEFT", "CERT-REBUILD", "CERT-178", "CERT-NULL", "CERT-F4",
+            "CERT-REW", "def mv(x, jv, ls, ld):", "def pi_dir(",
+            "def lam2_defl(", "def coeff(", "def defl_pair", "def defl_resid",
+            "DEEP = 50", "REB.append((ls2, ld2, va2))",
+            "KK = np.array([r[\"K\"] for r in rows210])",
+            'o["Q218_1_primary"]', 'o["Q218_2_rate"]', 'o["Q210_2_bare"]',
+            "K2_REAL = float(U2[LC])", "A2_REAL = K2_REAL / K_REAL",
+            "assert len(ACTORS) == 35"):
+    assert tok in sliceA, ("SLICE A lost", tok)
+# ... and must NOT reach into the parent's own draw loop / verdict / writer.
+# THE NEGATIVE AUDIT IS STRUCTURAL, BY AST: a bare-token scan fires on the
+# slice's own PROSE, so this card owns no negative token list at all.
+treeA = ast.parse(sliceA)
+
+
+def write_sites(tree):
+    """every Call that opens a file for writing or dumps json, by AST."""
+    hits = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call):
+            fn = node.func
+            name = (fn.attr if isinstance(fn, ast.Attribute)
+                    else getattr(fn, "id", ""))
+            if name in ("dump", "savez", "savez_compressed", "to_csv",
+                        "savetxt", "write_text", "write_bytes"):
+                hits.append((name, node.lineno))
+            if name == "open":
+                mode = ""
+                if len(node.args) > 1 and isinstance(node.args[1], ast.Constant):
+                    mode = str(node.args[1].value)
+                for kw in node.keywords:
+                    if kw.arg == "mode" and isinstance(kw.value, ast.Constant):
+                        mode = str(kw.value.value)
+                if any(c in mode for c in "wax+"):
+                    hits.append((f"open({mode!r})", node.lineno))
+            if name == "makedirs":
+                hits.append(("makedirs", node.lineno))
+    return hits
+
+
+def okeys(tree):
+    ks = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for t in node.targets:
+                if (isinstance(t, ast.Subscript) and isinstance(t.value, ast.Name)
+                        and t.value.id == "o"
+                        and isinstance(t.slice, ast.Constant)):
+                    ks.add(t.slice.value)
+    return ks
+
+
+assert write_sites(treeA) == [], ("SLICE A is NOT write-free", write_sites(treeA))
+sliceA_okeys = okeys(treeA)
+_LATE = {"Q218_3_u2", "predictions", "amendments", "limitations",
+         "priors_readonly", "rows_per_draw_recomputed"}
+assert sliceA_okeys.isdisjoint(_LATE), \
+    ("SLICE A assigns a post-cut key", sorted(sliceA_okeys & _LATE))
+# the slice must produce EVERY non-late key the artifact stores (CERT-235A's
+# coverage is derived from the artifact, so a missing key would halt the run)
+_missing = {k for k in S218 if k not in _LATE} - sliceA_okeys
+assert not _missing, ("SLICE A does not assign a stored key", sorted(_missing))
+print(f"[pin4] GREEN SLICE A is a literal PREFIX, AST-PROVEN write-free, "
+      f"assigns {len(sliceA_okeys)} o[...] keys covering all "
+      f"{len([k for k in S218 if k not in _LATE])} non-late artifact keys and "
+      f"none of the {len(_LATE)} post-cut keys, {CUT} lines, sha {shaA[:16]}")
+
+# the CUT lines, audited STRUCTURALLY: they own the parent's loop + writer
+tree_cut = ast.parse(cut_src)
+cut_writes = [n for n, _ in write_sites(tree_cut)]
+assert "dump" in cut_writes and "makedirs" in cut_writes, \
+    ("the cut must contain the parent's writer", cut_writes)
+assert okeys(tree_cut) == _LATE, ("the cut's o[...] keys", sorted(okeys(tree_cut)))
+_cut_loops = [n for n in tree_cut.body if isinstance(n, ast.For)]
+assert _cut_loops, "the cut must own the parent's per-draw loop"
+_first = _cut_loops[0]
+assert isinstance(_first.target, ast.Name) and _first.target.id == "k", \
+    ("the cut's first loop target", ast.dump(_first.target))
+assert ast.unparse(_first.iter) == "range(len(rows210))", \
+    ("the cut's first loop iterable", ast.unparse(_first.iter))
+assert ast.unparse(_first).count("defl_pair") == 2, \
+    "the cut's first loop is not the parent's two-sided deflation loop"
+print(f"[cut] GREEN {len(cut_src.splitlines())} cut lines own the parent's "
+      f"per-draw deflation loop (for k in range(len(rows210)), two "
+      f"defl_pair calls), {len(_cut_loops)} top-level For in all, its writer "
+      f"and o[...] keys {sorted(okeys(tree_cut))}")
+
+# ---- the TAIL: no certified def re-transcribed, this card's gates present --
+for fn in ("def jmatvec", "def reach(", "def power_iter(", "def sweep_actor",
+           "def build_sub", "def mv(", "def pi_dir(", "def lam2_defl(",
+           "def coeff(", "def defl_pair(", "def defl_resid(", "def midrank(",
+           "def spearman("):
+    assert fn not in tail, f"TAIL re-transcribes certified {fn!r} (L85)"
+for need in ("CERT-235A", "CERT-235B", 'out235["Q1_inversion_rate"]',
+             'out235["Q2_rank"]', 'out235["Q3_ladder"]',
+             'out235["cohort_35"]', "BRANCH235", "_ID_MAXREL", "PA2ABS",
+             "spearman(PA2, PU2)", "_PDK2", "assert len(NAMES) == 35"):
+    assert need in tail, f"TAIL lost {need!r}"
+# the TAIL must CONSUME the certified rank helpers it does not define
+assert "spearman(" in tail and "midrank" in sliceD, "rank helpers not wired"
+# L175: no lab module imported anywhere in the generated file
+body = sliceA + "\n\n# --- SLICE D = l231_tail.py lines 429-450 VERBATIM " \
+                "(L221 midrank/spearman) ---\n" + sliceD + "\n\n" + tail
+tree_all = ast.parse(body)
+bad = []
+for node in ast.walk(tree_all):
+    if isinstance(node, ast.Import):
+        bad += [a.name for a in node.names
+                if a.name.startswith(("l1", "l2", "l9"))]
+    elif isinstance(node, ast.ImportFrom):
+        if node.module and node.module.startswith(("l1", "l2", "l9")):
+            bad.append(node.module)
+assert not bad, ("a lab module is IMPORTED (L175)", bad)
+ws = write_sites(tree_all)
+dumps = [w for w in ws if w[0] == "dump"]
+opens = [w for w in ws if w[0].startswith("open(")]
+mkd = [w for w in ws if w[0] == "makedirs"]
+assert len(dumps) == 1 and len(opens) == 1 and len(mkd) == 1, \
+    ("write sites", ws)
+assert 'json.dump(out235, open("l235/static.json", "w"), indent=1)' in tail, \
+    "the single write is not the registered one"
+print("[ast] GREEN exactly one write site (l235/static.json), one makedirs, "
+      "no lab module imported")
+
+OUT.write_text(body)
+assert OUT.read_text() == body
+assert body.startswith(sliceA) and body.endswith(tail) and sliceD in body
+print(f"wrote {OUT} ({len(body.splitlines())} lines)")
+print(f"SLICE A   l218_static.py 1-{CUT} sha256 {shaA}")
+print(f"PARENT    l218_static.py whole    sha256 {sha_par}")
+print(f"PARENT    l218_tail.py   whole    sha256 {sha_ptail}")
+print(f"SLICE D   l231_tail.py {LO_D}-{HI_D}  sha256 {sha(sliceD)}")
+print(f"SOURCE    l231_tail.py   whole    sha256 {sha(D_full)}")
+print(f"TAIL      l235_tail.py            sha256 {sha_tail}")
+print(f"GENERATED sha256 {sha(body)}")

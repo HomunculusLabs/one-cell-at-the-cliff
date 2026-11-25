@@ -1,0 +1,148 @@
+{
+ "wid": 8,
+ "stage": "A2",
+ "menu_n": 80,
+ "menu69_n": 69,
+ "cert_menu_11": 11,
+ "unmeasurable": [],
+ "carrier_col": 467,
+ "carrier": 1110,
+ "base_edges": 644177,
+ "edges": {
+  "e49": {
+   "edge_j": 49,
+   "removed": [
+    {
+     "target": 68513,
+     "csr_index": 336379,
+     "effective_weight": 3.295836925506592,
+     "syn": 26,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 26.0
+  },
+  "e50": {
+   "edge_j": 50,
+   "removed": [
+    {
+     "target": 68539,
+     "csr_index": 337772,
+     "effective_weight": 3.178053855895996,
+     "syn": 23,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 23.0
+  },
+  "e51": {
+   "edge_j": 51,
+   "removed": [
+    {
+     "target": 68656,
+     "csr_index": 343935,
+     "effective_weight": 2.3025851249694824,
+     "syn": 9,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 9.0
+  },
+  "e52": {
+   "edge_j": 52,
+   "removed": [
+    {
+     "target": 68679,
+     "csr_index": 345130,
+     "effective_weight": 3.25809645652771,
+     "syn": 25,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 25.0
+  },
+  "e53": {
+   "edge_j": 53,
+   "removed": [
+    {
+     "target": 69186,
+     "csr_index": 366089,
+     "effective_weight": 2.1972246170043945,
+     "syn": 8,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 8.0
+  },
+  "e54": {
+   "edge_j": 54,
+   "removed": [
+    {
+     "target": 69187,
+     "csr_index": 366115,
+     "effective_weight": 1.6094379425048828,
+     "syn": 4,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 4.0
+  },
+  "e55": {
+   "edge_j": 55,
+   "removed": [
+    {
+     "target": 69309,
+     "csr_index": 371803,
+     "effective_weight": 1.7917594909667969,
+     "syn": 5,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 5.0
+  },
+  "e56": {
+   "edge_j": 56,
+   "removed": [
+    {
+     "target": 69814,
+     "csr_index": 393665,
+     "effective_weight": 2.5649492740631104,
+     "syn": 12,
+     "sign": 1.0
+    }
+   ],
+   "syn_raw": 12.0
+  }
+ },
+ "arms_built": [
+  "e49",
+  "e50",
+  "e51",
+  "e52",
+  "e53",
+  "e54",
+  "e55",
+  "e56"
+ ],
+ "seeds": [
+  3769,
+  3770,
+  3771,
+  3772,
+  3773,
+  3774,
+  3775,
+  3776,
+  3777,
+  3778,
+  3779,
+  3780,
+  3781,
+  3782,
+  3783,
+  3784
+ ],
+ "archives": 311,
+ "prereg": "d6c73be3a4c0621bb2db7f6ce6bc1a023be5fc93531772a6ae65937ca04298a0",
+ "addendum": "0c55e34d2d63c3b62494645ff5e8ba6fbadc5813d08a79bd6ff0a29b255c56a3"
+}

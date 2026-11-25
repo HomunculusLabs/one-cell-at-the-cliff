@@ -1,0 +1,621 @@
+{
+ "design": "L232 the CROSSING-EXISTENCE rate as the PRIMARY. L217's registered timing contrast was unscoreable because its handedness null produces a measured crossing in BOTH joints in only 0.0505 of draws \u2014 a degeneracy diagnostic, post-hoc on that card. This card re-poses the event rate itself as the primary statistic on a question whose null is still unknown, and measures FIRST the one quantity that decides whether 0.0505 is an effect or a truncation artifact of DMAX=8: the null's censoring rate as a function of the depth horizon D. Then the family of 12 existence tests (8 single-joint + 4 pair-level) is read NONSELECTIVELY with BH-FDR, plus a multiplicity-free omnibus over the shared draw index.",
+ "prereg": "l232/PREREG.md",
+ "inherited_certs": {
+  "cert_f4": {
+   "K4": 73,
+   "carrier_rank": 21,
+   "twin_gi": 290,
+   "mass_gap_rel": 2.4362329626845237e-05,
+   "n_f4wA": 21789,
+   "edges_f4wA": 469618,
+   "n_family": 33
+  },
+  "cert_178": {
+   "n_checks": 420,
+   "mode": "float equality (==)",
+   "source": "l178/static.json E_anatomical.all_actors",
+   "n_actors": 35,
+   "depths": [
+    1,
+    2,
+    3
+   ]
+  },
+  "cert_gen": {
+   "n_checks": 44,
+   "mode": "float equality (==) / array_equal",
+   "lam1_f4_via_generic": 30.179788269078884,
+   "note": "generic machinery certified on f4wA BEFORE any new substrate was built (L44)."
+  },
+  "cert_205": {
+   "n_checks": 250,
+   "mode": "float equality (==)",
+   "source": "l205/static.json table",
+   "n_substrates": 7,
+   "fields": [
+    "M_L",
+    "M_R",
+    "m_L",
+    "m_R",
+    "A_tot",
+    "A_cell",
+    "M_fL",
+    "M_fR",
+    "M_eL",
+    "M_eR",
+    "A_cell_pct_up",
+    "A_cell_pct_abs",
+    "A_tot_pct_up",
+    "null_A_cell_mean",
+    "null_A_cell_p05",
+    "null_A_cell_p95",
+    "null_A_cell_sd"
+   ]
+  },
+  "cert_gap": {
+   "n_checks": 10,
+   "mode": "float equality (==)",
+   "source": "l210/static.json Q210_4_gap",
+   "lam2": 26.94691005681583,
+   "gap": 0.8928793607351002,
+   "note": "L210 ran this on the GAIN-SCALED operator; the L216 beta operator is the same operator up to the scalar g_f4wA and a spectral RATIO is invariant to a global rescaling (L209's no-op law)"
+  },
+  "cert_209": {
+   "n_checks": 412,
+   "mode": "float equality (==)",
+   "source": "l209/static.json table + substrates",
+   "depths_certified": [
+    1,
+    2,
+    3
+   ],
+   "n_cells": 8
+  },
+  "gain_invariance": {
+   "lam1_g1": 200.51080275455487,
+   "lam1_g": 30.179788269078884,
+   "lam1_rel_diff": 1.1771831025204648e-16,
+   "depth2_rel_diff": 1.3109707834529467e-16,
+   "note": "R is gain invariant; the cross-substrate comparison is therefore admissible without re-bisecting a gain per substrate."
+  },
+  "csr_orientation": {
+   "carrier_local": 470,
+   "out_edges": 69,
+   "in_edges": 12,
+   "convention": "W[target,source]"
+  },
+  "pools": {
+   "n_pools": 20,
+   "n_pool_cells": 303,
+   "sizes": {
+    "Ti_fL": 50,
+    "Ti_eL": 6,
+    "Ti_fR": 51,
+    "Ti_eR": 6,
+    "Tr_fL": 31,
+    "Tr_eL": 24,
+    "Tr_fR": 31,
+    "Tr_eR": 24,
+    "Ta_aL": 12,
+    "Ta_bL": 3,
+    "Ta_aR": 12,
+    "Ta_bR": 3,
+    "Sr_aL": 6,
+    "Sr_bL": 11,
+    "Sr_aR": 6,
+    "Sr_bR": 13,
+    "Pr_aL": 4,
+    "Pr_bL": 3,
+    "Pr_aR": 4,
+    "Pr_bR": 3
+   }
+  },
+  "gains": {
+   "g_f4wA": 0.15051452517509462,
+   "g_f4ng": 0.16230986118316648,
+   "g_f4tw": 0.15261898636817928
+  }
+ },
+ "norm_noop_max_rel_diff": 7.194932353000473e-14,
+ "cert_216": {
+  "n_checks": 1903,
+  "coverage_bar_derived": 1900,
+  "mode": "float equality (==)",
+  "source": "l216/static.json table + A_inf + gaps + fits",
+  "l216_branch": "R_SPECTRAL",
+  "l216_primary": "f4wA|beta|Ti"
+ },
+ "noop": {
+  "n_checks": 128,
+  "max_rel_diff": 7.194932353000473e-14,
+  "equals_l216_stored": true
+ },
+ "cert_ainf": {
+  "n_checks": 152,
+  "ndraw": 2000,
+  "n_cells": 8,
+  "mode": "float equality (==)"
+ },
+ "cert_217": {
+  "n_checks": 174,
+  "coverage_bar_derived": 168,
+  "mode": "float equality (==)",
+  "source": "l217/static.json d_cross + Q1_crossing_phase",
+  "l217_q1_branch": "PHASE_DEGENERATE",
+  "l217_null_frac_both_cross": 0.0505
+ },
+ "premise": {
+  "n_subs": 2,
+  "n_cells": 8,
+  "n_arms": 4,
+  "n_tests_registered": 12,
+  "dmax": 8,
+  "dbig": 40,
+  "ndraw": 2000,
+  "resfloor": 0.0004997501249375312,
+  "card_said_12_cells_actual": 8
+ },
+ "cert_232x": {
+  "n_checks": 128,
+  "dbig": 40,
+  "dmax_certified": 8,
+  "mode": "A_cell float equality + null vector array equality",
+  "ndraw": 2000
+ },
+ "saturation_depth": {
+  "cutwA|beta|Ti": null,
+  "cutwA|beta|Tr": null,
+  "cutwA|crofts|Ti": null,
+  "cutwA|crofts|Tr": null,
+  "f4wA|beta|Ti": null,
+  "f4wA|beta|Tr": null,
+  "f4wA|crofts|Ti": null,
+  "f4wA|crofts|Tr": null
+ },
+ "cert_232d": {
+  "n_checks": 25,
+  "p_both_at_dmax": 0.0505,
+  "equals_l217_stored": true
+ },
+ "curves": {
+  "cutwA|beta|Ti": {
+   "null_cross_rate": {
+    "D2": 0.0685,
+    "D4": 0.112,
+    "D8": 0.1725,
+    "D12": 0.209,
+    "D16": 0.236,
+    "D20": 0.253,
+    "D30": 0.272,
+    "D40": 0.281
+   },
+   "null_censor_rate_at_dbig": 0.719,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 5,
+   "saturation_depth": null
+  },
+  "cutwA|beta|Tr": {
+   "null_cross_rate": {
+    "D2": 0.1105,
+    "D4": 0.1785,
+    "D8": 0.266,
+    "D12": 0.3035,
+    "D16": 0.3215,
+    "D20": 0.335,
+    "D30": 0.3485,
+    "D40": 0.3505
+   },
+   "null_censor_rate_at_dbig": 0.6495,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 2,
+   "saturation_depth": null
+  },
+  "cutwA|crofts|Ti": {
+   "null_cross_rate": {
+    "D2": 0.0715,
+    "D4": 0.101,
+    "D8": 0.134,
+    "D12": 0.147,
+    "D16": 0.153,
+    "D20": 0.1575,
+    "D30": 0.1575,
+    "D40": 0.159
+   },
+   "null_censor_rate_at_dbig": 0.841,
+   "real_crosses_at_dmax": false,
+   "real_crosses_at_dbig": false,
+   "real_first_cross_D": null,
+   "saturation_depth": null
+  },
+  "cutwA|crofts|Tr": {
+   "null_cross_rate": {
+    "D2": 0.106,
+    "D4": 0.1635,
+    "D8": 0.2215,
+    "D12": 0.254,
+    "D16": 0.2655,
+    "D20": 0.272,
+    "D30": 0.275,
+    "D40": 0.281
+   },
+   "null_censor_rate_at_dbig": 0.719,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 4,
+   "saturation_depth": null
+  },
+  "f4wA|beta|Ti": {
+   "null_cross_rate": {
+    "D2": 0.0785,
+    "D4": 0.127,
+    "D8": 0.194,
+    "D12": 0.2335,
+    "D16": 0.263,
+    "D20": 0.2825,
+    "D30": 0.3105,
+    "D40": 0.317
+   },
+   "null_censor_rate_at_dbig": 0.683,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 5,
+   "saturation_depth": null
+  },
+  "f4wA|beta|Tr": {
+   "null_cross_rate": {
+    "D2": 0.1105,
+    "D4": 0.1775,
+    "D8": 0.2705,
+    "D12": 0.3075,
+    "D16": 0.3305,
+    "D20": 0.3395,
+    "D30": 0.353,
+    "D40": 0.361
+   },
+   "null_censor_rate_at_dbig": 0.639,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 2,
+   "saturation_depth": null
+  },
+  "f4wA|crofts|Ti": {
+   "null_cross_rate": {
+    "D2": 0.092,
+    "D4": 0.1295,
+    "D8": 0.156,
+    "D12": 0.173,
+    "D16": 0.1765,
+    "D20": 0.1795,
+    "D30": 0.1805,
+    "D40": 0.1825
+   },
+   "null_censor_rate_at_dbig": 0.8175,
+   "real_crosses_at_dmax": false,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 20,
+   "saturation_depth": null
+  },
+  "f4wA|crofts|Tr": {
+   "null_cross_rate": {
+    "D2": 0.1065,
+    "D4": 0.173,
+    "D8": 0.231,
+    "D12": 0.2605,
+    "D16": 0.273,
+    "D20": 0.2765,
+    "D30": 0.2825,
+    "D40": 0.289
+   },
+   "null_censor_rate_at_dbig": 0.7110000000000001,
+   "real_crosses_at_dmax": true,
+   "real_crosses_at_dbig": true,
+   "real_first_cross_D": 3,
+   "saturation_depth": null
+  }
+ },
+ "pair_curves": {
+  "f4wA|beta": {
+   "D2": 0.0075,
+   "D4": 0.0185,
+   "D8": 0.0505,
+   "D12": 0.0755,
+   "D16": 0.091,
+   "D20": 0.098,
+   "D30": 0.109,
+   "D40": 0.115
+  },
+  "f4wA|crofts": {
+   "D2": 0.0095,
+   "D4": 0.021,
+   "D8": 0.0345,
+   "D12": 0.043,
+   "D16": 0.044,
+   "D20": 0.045,
+   "D30": 0.047,
+   "D40": 0.049
+  },
+  "cutwA|beta": {
+   "D2": 0.008,
+   "D4": 0.018,
+   "D8": 0.0465,
+   "D12": 0.068,
+   "D16": 0.08,
+   "D20": 0.0855,
+   "D30": 0.098,
+   "D40": 0.1025
+  },
+  "cutwA|crofts": {
+   "D2": 0.006,
+   "D4": 0.014,
+   "D8": 0.0285,
+   "D12": 0.0355,
+   "D16": 0.0375,
+   "D20": 0.039,
+   "D30": 0.0395,
+   "D40": 0.04
+  }
+ },
+ "Q1_plateau": {
+  "branch": "T_TRUNCATION",
+  "dstar": 30,
+  "plateau_tol": 0.01,
+  "worst_remaining_rise": {
+   "D2": 0.2505,
+   "D4": 0.19,
+   "D8": 0.123,
+   "D12": 0.08349999999999999,
+   "D16": 0.05399999999999999,
+   "D20": 0.03450000000000003,
+   "D24": 0.02200000000000002,
+   "D30": 0.009000000000000008,
+   "D40": 0.0
+  },
+  "p_both_at_dmax8": 0.0505,
+  "p_both_at_dstar": 0.109,
+  "ratio": 2.158415841584158,
+  "ratio_bars": {
+   "truncation": 2.0,
+   "stable": 0.5
+  },
+  "n_cells_saturated_by_dstar": 0,
+  "cells_saturated_by_dstar": [],
+  "plateau_numerically_forced": false,
+  "d_dependent_p_is_a_truncation_artifact": "PREREG 0i: registered in advance. p_both rises from 0.0505 at D=8 to 0.1090 at D*=30 \u2014 reported AS a truncation property of the horizon, never as an effect size."
+ },
+ "Q2_family": {
+  "branch": "E_FAMILY_NULL",
+  "d_read": 30,
+  "q": 0.05,
+  "m_registered": 12,
+  "m_measurable": 10,
+  "n_unmeasurable": 2,
+  "unmeasurable": [
+   "cell/cutwA|crofts|Ti",
+   "arm/cutwA|crofts"
+  ],
+  "rank1_bar": 0.005,
+  "resolution_floor": 0.0004997501249375312,
+  "rank1_rejectable": true,
+  "rank1_headroom": 10.005,
+  "n_rejected": 0,
+  "rejected": [],
+  "smallest_p": 0.047,
+  "tests": [
+   {
+    "name": "cell/cutwA|beta|Ti",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.272,
+    "bh_rank": 5,
+    "bh_bar": 0.025,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/cutwA|beta|Tr",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.3485,
+    "bh_rank": 9,
+    "bh_bar": 0.045,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/cutwA|crofts|Ti",
+    "kind": "single_joint",
+    "measurable": false,
+    "p": null,
+    "verdict": "FALSE BY UNMEASURABILITY (PREREG 0h): the REAL cell does not cross within D*, so there is no event to test"
+   },
+   {
+    "name": "cell/cutwA|crofts|Tr",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.275,
+    "bh_rank": 6,
+    "bh_bar": 0.030000000000000006,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/f4wA|beta|Ti",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.3105,
+    "bh_rank": 8,
+    "bh_bar": 0.04,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/f4wA|beta|Tr",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.353,
+    "bh_rank": 10,
+    "bh_bar": 0.05,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/f4wA|crofts|Ti",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.1805,
+    "bh_rank": 4,
+    "bh_bar": 0.02,
+    "bh_reject": false
+   },
+   {
+    "name": "cell/f4wA|crofts|Tr",
+    "kind": "single_joint",
+    "measurable": true,
+    "p": 0.2825,
+    "bh_rank": 7,
+    "bh_bar": 0.035,
+    "bh_reject": false
+   },
+   {
+    "name": "arm/f4wA|beta",
+    "kind": "pair_both",
+    "measurable": true,
+    "p": 0.109,
+    "bh_rank": 3,
+    "bh_bar": 0.015000000000000003,
+    "bh_reject": false
+   },
+   {
+    "name": "arm/f4wA|crofts",
+    "kind": "pair_both",
+    "measurable": true,
+    "p": 0.047,
+    "bh_rank": 1,
+    "bh_bar": 0.005,
+    "bh_reject": false
+   },
+   {
+    "name": "arm/cutwA|beta",
+    "kind": "pair_both",
+    "measurable": true,
+    "p": 0.098,
+    "bh_rank": 2,
+    "bh_bar": 0.01,
+    "bh_reject": false
+   },
+   {
+    "name": "arm/cutwA|crofts",
+    "kind": "pair_both",
+    "measurable": false,
+    "p": null,
+    "verdict": "FALSE BY UNMEASURABILITY (PREREG 0h): the REAL arm does not cross in both joints within D*"
+   }
+  ]
+ },
+ "Q3_omnibus": {
+  "branch": "O_REAL_EXTREME",
+  "d_read": 30,
+  "n_real": 7,
+  "n_cells": 8,
+  "p_omni": 0.014,
+  "resolution_floor": 0.0004997501249375312,
+  "at_floor": false,
+  "null_mean": 2.1795,
+  "null_median": 2.0,
+  "null_sd": 1.8963859707348607,
+  "null_max": 8,
+  "null_hist": {
+   "0": 589,
+   "1": 118,
+   "2": 590,
+   "3": 124,
+   "4": 387,
+   "5": 54,
+   "6": 110,
+   "7": 13,
+   "8": 15
+  },
+  "real_cells_crossing": [
+   "cutwA|beta|Ti",
+   "cutwA|beta|Tr",
+   "cutwA|crofts|Tr",
+   "f4wA|beta|Ti",
+   "f4wA|beta|Tr",
+   "f4wA|crofts|Ti",
+   "f4wA|crofts|Tr"
+  ],
+  "real_cells_not_crossing": [
+   "cutwA|crofts|Ti"
+  ],
+  "note": "PERM is keyed by (joint, side) only, so draw j is one side relabelling shared by all 8 cells; this is ONE test with no multiplicity correction needed."
+ },
+ "l230_prediction_check": {
+  "cell": "f4wA|crofts|Ti",
+  "l230_closed_form_d_cross": 15.03,
+  "crosses_by_dbig": true,
+  "measured_first_existence_D": 20,
+  "measured_d_cross_interpolated": 19.47895225534252,
+  "n_sign_changes": 1,
+  "status": "DESCRIPTION \u2014 no branch rests on this (L230's number was itself declared post-hoc arithmetic on stored values)."
+ },
+ "l230_nocross_check": {
+  "cell": "cutwA|crofts|Ti",
+  "l230_said": "UNAVAILABLE by premise: A_inf has the SAME sign as K, so the closed form says it never crosses",
+  "crosses_by_dbig": false,
+  "a_inf": -0.008413002252988949,
+  "status": "DESCRIPTION \u2014 an agreement check on L230's premise 0d."
+ },
+ "predictions": {
+  "P1_plateau_exists": {
+   "registered": "a plateau exists within D_BIG=40 (D* is not None)",
+   "value": 30,
+   "passed": true
+  },
+  "P2_null_rate_rises": {
+   "registered": "p_both(D*) > p_both(8)",
+   "value": 0.109,
+   "baseline": 0.0505,
+   "passed": true
+  },
+  "P3_truncation_branch": {
+   "registered": "T_TRUNCATION fires (ratio >= 2.0)",
+   "value": 2.158415841584158,
+   "passed": true
+  },
+  "P4_bh_rejection": {
+   "registered": "at least one of the 12 tests is BH-rejected at q=0.05",
+   "value": 0,
+   "passed": false
+  },
+  "P5_more_than_six_real": {
+   "registered": "the real wiring crosses in MORE than 6 of 8 cells at D*",
+   "value": 7,
+   "passed": true
+  },
+  "P6_omnibus_sig": {
+   "registered": "p_omni < 0.05",
+   "value": 0.014,
+   "passed": true
+  }
+ },
+ "predictions_score": "5/6",
+ "branch": "T_TRUNCATION",
+ "branches": {
+  "Q1": "T_TRUNCATION",
+  "Q2": "E_FAMILY_NULL",
+  "Q3": "O_REAL_EXTREME"
+ },
+ "constants": {
+  "DBIG": 40,
+  "DMAX": 8,
+  "NDRAW": 2000,
+  "Q_BH": 0.05,
+  "SAT_BAR": 1e-12,
+  "PLATEAU_TOL": 0.01,
+  "RATIO_TRUNC": 2.0,
+  "RATIO_STABLE": 0.5,
+  "PRIMARY": "f4wA|beta",
+  "SEED_PERM": 20526
+ },
+ "limitations": "(1) Every D=8 quantity in this card is OBSERVED-DERIVABLE from l216/static.json and l217/static.json and is scored as DESCRIPTION (PREREG 0b); only the D>8 rates, D*, and the p-values read at D* have a null that was unknown at registration. (2) The existence rate is monotone non-decreasing in D BY CONSTRUCTION (cumulative ANY), so the plateau is a LEVEL statement and the monotonicity is an assert, not a finding. (3) A plateau reached only AFTER the per-cell saturation depth is numerically forced rather than structural: the stored saturation_depth field is what distinguishes the two, and the Q1 record carries plateau_numerically_forced. (4) The null is L205's within-pool side-label permutation; it holds per-side counts exact and relocates nothing else, so it cannot speak to reconstruction completeness (L231's caveat). (5) The 12-test family is the registered one; tests whose REAL event does not exist within D* are scored FALSE BY UNMEASURABILITY and excluded from BH, which SHRINKS m and therefore LOOSENS every bar \u2014 m_measurable is stored beside m_registered. (6) p_omni and every rate share one resolution floor 1/(NDRAW+1) = 4.9975e-04; a p AT the floor is reported as '<= floor', never as a point value.",
+ "runtime_s": 0.3505587577819824,
+ "total_runtime_s": 27.628151178359985
+}

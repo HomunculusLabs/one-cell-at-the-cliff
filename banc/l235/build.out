@@ -1,0 +1,14 @@
+[pin1] GREEN l218_static.py banner == l218/static.json['banner']
+[pin2] GREEN l218_tail.py sha 5db068f586f3f097 == the banner's recorded TAIL sha, and is a literal SUFFIX of the parent
+[pin3] GREEN SLICE D = l231_tail.py 429-450 defines exactly ['midrank', 'spearman'], source sha 879539c97fbe4d93 recorded in l231_static.py
+[pin4] GREEN SLICE A is a literal PREFIX, AST-PROVEN write-free, assigns 29 o[...] keys covering all 29 non-late artifact keys and none of the 6 post-cut keys, 1624 lines, sha 5fd5ad299caf5975
+[cut] GREEN 139 cut lines own the parent's per-draw deflation loop (for k in range(len(rows210)), two defl_pair calls), 2 top-level For in all, its writer and o[...] keys ['Q218_3_u2', 'amendments', 'limitations', 'predictions', 'priors_readonly', 'rows_per_draw_recomputed']
+[ast] GREEN exactly one write site (l235/static.json), one makedirs, no lab module imported
+wrote l235_static.py (2049 lines)
+SLICE A   l218_static.py 1-1624 sha256 5fd5ad299caf5975520f9d4064cc2c94a2cc03690c85ee47cdfc520bbc5b477a
+PARENT    l218_static.py whole    sha256 ff2f2a5d83d55ee63aae0e980e7cc487e0fd2029a6c916c7e198991db0abb10d
+PARENT    l218_tail.py   whole    sha256 5db068f586f3f0977ec48ba4d70630566cb838792cc311d58cc963fc13cee98e
+SLICE D   l231_tail.py 429-450  sha256 887a396073745d8090f779c543b7884c4ca96b8b6ab6131b2713cb25b7169a88
+SOURCE    l231_tail.py   whole    sha256 879539c97fbe4d9310c4fe2887b08882bb2517577ff0b8274190b3e7785bc9ba
+TAIL      l235_tail.py            sha256 6b2e79813ddc5728d8dbfea3c8ef3731ab700648417e4d2dddade7a89acc1f52
+GENERATED sha256 7ed5d286f81fe7e6018c36637bf93b3c556ae90c3cf8ebcfd5953e921f2ed81b

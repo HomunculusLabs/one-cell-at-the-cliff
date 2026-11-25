@@ -1,0 +1,1066 @@
+{
+ "card": "L294",
+ "prereg_sha256": "77b3dfb022d1a0b8c1d862ebfb5b000514a015af52933014c89d65ff5f7a5a37",
+ "tick": 287,
+ "frozen": "2026-11-25 13:10 EST",
+ "F": 0.00022931491480943385,
+ "eps": 0.0004586298296188677,
+ "g_base": 0.14365819573402408,
+ "B_PERM": 20000,
+ "seed": 29400,
+ "q_bh": 0.1,
+ "populations": {
+  "B33": [
+   "s11f1",
+   "s11f2",
+   "s11w1",
+   "s11w2",
+   "s11w3",
+   "s30f1",
+   "s30f2",
+   "s30w1",
+   "s30w2",
+   "s30w3",
+   "s46f1",
+   "s46f2",
+   "s46w1",
+   "s46w2",
+   "s46w3",
+   "r11k1",
+   "r11k2",
+   "r11k3",
+   "r11k4",
+   "r11k5",
+   "r30k1",
+   "r30k2",
+   "r30k3",
+   "r30k4",
+   "r30k5",
+   "r46k1",
+   "r46k2",
+   "r46k3",
+   "r46k4",
+   "r46k5",
+   "rw11",
+   "rw30",
+   "rw46"
+  ],
+  "L290_18": [
+   "r11k1",
+   "r11k2",
+   "r11k3",
+   "r11k4",
+   "r11k5",
+   "r30k1",
+   "r30k2",
+   "r30k3",
+   "r30k4",
+   "r30k5",
+   "r46k1",
+   "r46k2",
+   "r46k3",
+   "r46k4",
+   "r46k5",
+   "rw11",
+   "rw30",
+   "rw46"
+  ],
+  "CARD35": [
+   "s11f1",
+   "s11f2",
+   "s11w1",
+   "s11w2",
+   "s11w3",
+   "s30f1",
+   "s30f2",
+   "s30w1",
+   "s30w2",
+   "s30w3",
+   "s46f1",
+   "s46f2",
+   "s46w1",
+   "s46w2",
+   "s46w3",
+   "r11k1",
+   "r11k2",
+   "r11k3",
+   "r11k4",
+   "r11k5",
+   "r30k1",
+   "r30k2",
+   "r30k3",
+   "r30k4",
+   "r30k5",
+   "r46k1",
+   "r46k2",
+   "r46k3",
+   "r46k4",
+   "r46k5",
+   "rw11",
+   "rw30",
+   "rw46",
+   "gc30f",
+   "gh46f"
+  ],
+  "strata_B33": {
+   "11": [
+    "s11f1",
+    "s11f2",
+    "s11w1",
+    "s11w2",
+    "s11w3",
+    "r11k1",
+    "r11k2",
+    "r11k3",
+    "r11k4",
+    "r11k5",
+    "rw11"
+   ],
+   "30": [
+    "s30f1",
+    "s30f2",
+    "s30w1",
+    "s30w2",
+    "s30w3",
+    "r30k1",
+    "r30k2",
+    "r30k3",
+    "r30k4",
+    "r30k5",
+    "rw30"
+   ],
+   "46": [
+    "s46f1",
+    "s46f2",
+    "s46w1",
+    "s46w2",
+    "s46w3",
+    "r46k1",
+    "r46k2",
+    "r46k3",
+    "r46k4",
+    "r46k5",
+    "rw46"
+   ]
+  }
+ },
+ "gates": {
+  "G1": "pass",
+  "G2": "pass (35 arms + 2, E and 16 per-seed values to 2e-9)",
+  "G2b": "pass",
+  "G3": "pass",
+  "G4": {
+   "anchor1_dgain_ordinal_L291_15": 0.8214285714285714,
+   "anchor2_syn_L290_15": 0.5892857142857143,
+   "anchor3_eff_L290_15": 0.4286057678550518,
+   "anchor4_6_cell_means": {
+    "11": [
+     5.641626720717743,
+     4.067960980580059
+    ],
+    "30": [
+     8.309578964577566,
+     0.02307618283325341
+    ],
+    "46": [
+     11.722884076567894,
+     -2.899488032112301
+    ]
+   }
+  },
+  "G5": "pass"
+ },
+ "tests": {
+  "T1": {
+   "stat": "STRAT-RHO(E, DGAIN) on L18",
+   "obs": 0.44761904761904764,
+   "per_stratum": {
+    "11": -0.37142857142857144,
+    "30": 0.9428571428571428,
+    "46": 0.7714285714285715
+   },
+   "unmeasurable_strata": [],
+   "p_two": 0.08784560771961401,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T2": {
+   "stat": "STRAT-RHO(E, DGAIN) on B33",
+   "obs": 0.7,
+   "per_stratum": {
+    "11": 0.5181818181818182,
+    "30": 0.8454545454545455,
+    "46": 0.7363636363636363
+   },
+   "unmeasurable_strata": [],
+   "p_two": 4.999750012499375e-05,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T3": {
+   "stat": "STRAT-RHO(E, EW_SUM) on B33",
+   "obs": 0.5454545454545454,
+   "per_stratum": {
+    "11": 0.7636363636363637,
+    "30": 0.44545454545454544,
+    "46": 0.42727272727272725
+   },
+   "unmeasurable_strata": [],
+   "p_two": 0.0020998950052497373,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T5": {
+   "stat": "STRAT-RHO(E_CTRL, DGAIN) on B33",
+   "obs": 0.5181818181818182,
+   "per_stratum": {
+    "11": 0.7545454545454545,
+    "30": 0.13636363636363635,
+    "46": 0.6636363636363637
+   },
+   "unmeasurable_strata": [],
+   "p_two": 0.0038998050097495125,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T6": {
+   "stat": "STRAT-RHO(E_DIFF, DGAIN) on B33",
+   "obs": 0.6787878787878788,
+   "per_stratum": {
+    "11": 0.4727272727272727,
+    "30": 0.8272727272727273,
+    "46": 0.7363636363636363
+   },
+   "unmeasurable_strata": [],
+   "p_two": 4.999750012499375e-05,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T2_card35": {
+   "stat": "STRAT-RHO(E, DGAIN) on CARD35 (companion)",
+   "obs": 0.676354895104895,
+   "per_stratum": {
+    "11": 0.5181818181818182,
+    "30": 0.7972027972027972,
+    "46": 0.6993006993006993
+   },
+   "unmeasurable_strata": [],
+   "p_two": 9.99950002499875e-05,
+   "B": 20000,
+   "readable": true,
+   "status": "READ"
+  },
+  "T4": {
+   "stat": "TWIN S = mean sign(dgain)*dE over 7 pairs",
+   "obs": 1.62983531791008,
+   "p_one": 0.046875,
+   "concordant": 6,
+   "rho_dgain_dE": 0.6071428571428571,
+   "p_rho_exact": 0.08333333333333333,
+   "readable": true,
+   "status": "READ"
+  }
+ },
+ "twin_pairs": [
+  {
+   "bisected": "gc30",
+   "fixed": "gc30f",
+   "dgain": 0.0003942990303039129,
+   "dE_F": 1.3706096774565402
+  },
+  {
+   "bisected": "gh46",
+   "fixed": "gh46f",
+   "dgain": 0.0006795251369476341,
+   "dE_F": 3.2807124260718905
+  },
+  {
+   "bisected": "e14",
+   "fixed": "e14f",
+   "dgain": 0.00015667319297787974,
+   "dE_F": 1.689671058431692
+  },
+  {
+   "bisected": "e25",
+   "fixed": "e25f",
+   "dgain": 0.0008501279354094782,
+   "dE_F": 4.548628188055173
+  },
+  {
+   "bisected": "e67",
+   "fixed": "e67f",
+   "dgain": -0.0005144619941711559,
+   "dE_F": -0.5164298970314457
+  },
+  {
+   "bisected": "e12",
+   "fixed": "e12f",
+   "dgain": -0.0009352540969848611,
+   "dE_F": -1.9300244556237247
+  },
+  {
+   "bisected": "e27",
+   "fixed": "e27f",
+   "dgain": -0.0009475922584533669,
+   "dE_F": 1.927228477299907
+  }
+ ],
+ "family_order": [
+  "T1",
+  "T2",
+  "T3",
+  "T4",
+  "T5",
+  "T6"
+ ],
+ "qvals": {
+  "T1": {
+   "p": 0.08784560771961401,
+   "q": 0.08784560771961401,
+   "readable": true,
+   "status": "READ"
+  },
+  "T2": {
+   "p": 4.999750012499375e-05,
+   "q": 0.00014999250037498125,
+   "readable": true,
+   "status": "READ"
+  },
+  "T3": {
+   "p": 0.0020998950052497373,
+   "q": 0.004199790010499475,
+   "readable": true,
+   "status": "READ"
+  },
+  "T4": {
+   "p": 0.046875,
+   "q": 0.05625,
+   "readable": true,
+   "status": "READ"
+  },
+  "T5": {
+   "p": 0.0038998050097495125,
+   "q": 0.0058497075146242685,
+   "readable": true,
+   "status": "READ"
+  },
+  "T6": {
+   "p": 4.999750012499375e-05,
+   "q": 0.00014999250037498125,
+   "readable": true,
+   "status": "READ"
+  }
+ },
+ "verdict": "A_GAIN_DELTA_MEDIATED",
+ "sub_label": "A_POOL_SPECIFIC",
+ "global_shift": "G_SHIFT_ON",
+ "predictions": {
+  "P1": false,
+  "P2": true,
+  "P3": true,
+  "P4": true,
+  "P5": false,
+  "P6": true
+ },
+ "score": 4,
+ "degenerate": {
+  "EW_NEG": {
+   "identically_zero": true,
+   "n_negative_menu": 0,
+   "strat": {
+    "stat": "STRAT-RHO(E, EW_NEG) on B33",
+    "obs": null,
+    "per_stratum": {},
+    "unmeasurable_strata": [
+     11,
+     30,
+     46
+    ],
+    "p_two": null,
+    "B": 20000,
+    "readable": false,
+    "status": "UNMEASURABLE"
+   }
+  },
+  "NTGT": {
+   "equals_n": true,
+   "strat": {
+    "stat": "STRAT-RHO(E, NTGT) on B33",
+    "obs": null,
+    "per_stratum": {},
+    "unmeasurable_strata": [
+     11,
+     30,
+     46
+    ],
+    "p_two": null,
+    "B": 20000,
+    "readable": false,
+    "status": "UNMEASURABLE"
+   }
+  },
+  "NTGT_POOL": {
+   "identically_zero": true,
+   "strat": {
+    "stat": "STRAT-RHO(E, NTGT_POOL) on B33",
+    "obs": null,
+    "per_stratum": {},
+    "unmeasurable_strata": [
+     11,
+     30,
+     46
+    ],
+    "p_two": null,
+    "B": 20000,
+    "readable": false,
+    "status": "UNMEASURABLE"
+   }
+  }
+ },
+ "descriptive": {
+  "mirror_rho_EW_SYN_B33": 0.9717533145929361,
+  "pooled_rho_E_DGAIN_L290_18": 0.5913312693498453,
+  "pooled_rho_E_DGAIN_L291_15_midrank": 0.8214285714285714,
+  "pooled_rho_E_DGAIN_L291_15_ordinal": 0.8214285714285714,
+  "pooled_rho_E_SYN_L291_15_ordinal": 0.2,
+  "strat_rho_ELR_DGAIN_B33": [
+   0.7,
+   {
+    "11": 0.5181818181818182,
+    "30": 0.8363636363636363,
+    "46": 0.7454545454545455
+   },
+   []
+  ],
+  "strat_rho_E_ECTRL_B33": [
+   0.6848484848484849,
+   {
+    "11": 0.7454545454545455,
+    "30": 0.5181818181818182,
+    "46": 0.7909090909090909
+   },
+   []
+  ],
+  "pooled_rho_ECTRL_DGAIN_B33": 0.5581550802139037,
+  "share_surviving": 0.030303030303030182,
+  "floor_only": {
+   "T1": {
+    "n": 11,
+    "obs": 0.6000000000000001,
+    "per_stratum": {
+     "30": 0.8,
+     "46": 0.4
+    },
+    "unmeasurable": [
+     11
+    ],
+    "pooled": 0.6545454545454545
+   },
+   "T2": {
+    "n": 23,
+    "obs": 0.7566666666666666,
+    "per_stratum": {
+     "11": 0.8571428571428571,
+     "30": 0.6428571428571429,
+     "46": 0.7666666666666667
+    },
+    "unmeasurable": [],
+    "pooled": 0.7065217391304348
+   }
+  },
+  "neg_dgain_table": {
+   "L291_15": {
+    "n_neg": 2,
+    "neg_at_floor": 2,
+    "pos_at_floor": 1,
+    "n_pos": 13,
+    "neg_E_F": [
+     -0.537,
+     -1.96
+    ]
+   },
+   "L290_18": {
+    "n_neg": 9,
+    "neg_at_floor": 6,
+    "pos_at_floor": 1,
+    "n_pos": 9,
+    "neg_E_F": [
+     -4.341,
+     -4.688,
+     1.737,
+     -1.624,
+     -0.235,
+     3.874,
+     1.919,
+     -1.886,
+     1.421
+    ]
+   }
+  },
+  "e14_strat_B33": [
+   null,
+   {},
+   [
+    11,
+    30,
+    46
+   ]
+  ],
+  "neff_strat_B33": [
+   null,
+   {
+    "11": -0.2407375032157338
+   },
+   [
+    30,
+    46
+   ]
+  ],
+  "e14_two_group_F": {
+   "11": {
+    "with": 5.641626720717743,
+    "without": 0.12896107359454123,
+    "n_with": 3,
+    "n_without": 8
+   },
+   "30": {
+    "with": 9.717919931389474,
+    "without": 0.21933594906442794,
+    "n_with": 6,
+    "n_without": 5
+   },
+   "46": {
+    "with": 8.535793496999931,
+    "without": -0.7293830525293186,
+    "n_with": 7,
+    "n_without": 4
+   }
+  },
+  "per_stratum_Ectrl_mean_F": {
+   "11": 0.3868736481723825,
+   "30": 1.2340611522638836,
+   "46": 1.0792359212097868
+  },
+  "per_stratum_E_mean_F": {
+   "11": 1.6324153409917785,
+   "30": 5.400381757605363,
+   "46": 5.166638388080204
+  },
+  "per_stratum_dgain_range": {
+   "11": [
+    -0.0010041296482086182,
+    0.0013243854045867642
+   ],
+   "30": [
+    -0.0004980111122131758,
+    0.002595305442810003
+   ],
+   "46": [
+    -0.0004690861701965865,
+    0.0011620080471038685
+   ]
+  }
+ },
+ "arms": [
+  {
+   "arm": "s11f1",
+   "size": 11,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 8.6734,
+   "Ectrl_F": 4.2368,
+   "Ediff_F": 4.4366,
+   "dgain": 0.00132439,
+   "ew": 30.658,
+   "syn": 212,
+   "neff": 8,
+   "has14": false
+  },
+  {
+   "arm": "s11f2",
+   "size": 11,
+   "family": "L291",
+   "fixed": false,
+   "E_F": -0.5374,
+   "Ectrl_F": -0.6898,
+   "Ediff_F": 0.1524,
+   "dgain": -0.000242472,
+   "ew": 29.353,
+   "syn": 211,
+   "neff": 8,
+   "has14": false
+  },
+  {
+   "arm": "s11w1",
+   "size": 11,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 7.0979,
+   "Ectrl_F": 1.155,
+   "Ediff_F": 5.9429,
+   "dgain": 0.000331671,
+   "ew": 31.503,
+   "syn": 207,
+   "neff": 10,
+   "has14": true
+  },
+  {
+   "arm": "s11w2",
+   "size": 11,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 6.4816,
+   "Ectrl_F": 0.773,
+   "Ediff_F": 5.7086,
+   "dgain": 0.000296845,
+   "ew": 30.709,
+   "syn": 214,
+   "neff": 11,
+   "has14": true
+  },
+  {
+   "arm": "s11w3",
+   "size": 11,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 3.3454,
+   "Ectrl_F": 0.6779,
+   "Ediff_F": 2.6675,
+   "dgain": 2.2949e-05,
+   "ew": 30.78,
+   "syn": 208,
+   "neff": 9,
+   "has14": true
+  },
+  {
+   "arm": "s30f1",
+   "size": 30,
+   "family": "L291",
+   "fixed": false,
+   "E_F": -1.9597,
+   "Ectrl_F": 0.8542,
+   "Ediff_F": -2.8139,
+   "dgain": -0.000498011,
+   "ew": 73.584,
+   "syn": 410,
+   "neff": 27,
+   "has14": false
+  },
+  {
+   "arm": "s30f2",
+   "size": 30,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 2.0058,
+   "Ectrl_F": -0.0939,
+   "Ediff_F": 2.0997,
+   "dgain": 0.000796065,
+   "ew": 74.253,
+   "syn": 413,
+   "neff": 26,
+   "has14": false
+  },
+  {
+   "arm": "s30w1",
+   "size": 30,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 14.7416,
+   "Ectrl_F": 2.8309,
+   "Ediff_F": 11.9107,
+   "dgain": 0.00259531,
+   "ew": 76.15,
+   "syn": 440,
+   "neff": 27,
+   "has14": true
+  },
+  {
+   "arm": "s30w2",
+   "size": 30,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 8.2845,
+   "Ectrl_F": 2.8703,
+   "Ediff_F": 5.4142,
+   "dgain": 0.000304803,
+   "ew": 74.805,
+   "syn": 415,
+   "neff": 27,
+   "has14": true
+  },
+  {
+   "arm": "s30w3",
+   "size": 30,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 1.9027,
+   "Ectrl_F": -0.0738,
+   "Ediff_F": 1.9765,
+   "dgain": 0.000326918,
+   "ew": 75.365,
+   "syn": 440,
+   "neff": 24,
+   "has14": true
+  },
+  {
+   "arm": "s46f1",
+   "size": 46,
+   "family": "L291",
+   "fixed": false,
+   "E_F": -2.8961,
+   "Ectrl_F": -1.1898,
+   "Ediff_F": -1.7063,
+   "dgain": 0.00023401,
+   "ew": 111.412,
+   "syn": 610,
+   "neff": 41,
+   "has14": false
+  },
+  {
+   "arm": "s46f2",
+   "size": 46,
+   "family": "L291",
+   "fixed": false,
+   "E_F": -2.9029,
+   "Ectrl_F": 0.8967,
+   "Ediff_F": -3.7996,
+   "dgain": 0.000136675,
+   "ew": 112.102,
+   "syn": 602,
+   "neff": 41,
+   "has14": false
+  },
+  {
+   "arm": "s46w1",
+   "size": 46,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 10.9776,
+   "Ectrl_F": 0.9618,
+   "Ediff_F": 10.0158,
+   "dgain": 0.00116201,
+   "ew": 112.052,
+   "syn": 606,
+   "neff": 42,
+   "has14": true
+  },
+  {
+   "arm": "s46w2",
+   "size": 46,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 12.028,
+   "Ectrl_F": 2.1627,
+   "Ediff_F": 9.8653,
+   "dgain": 0.00111799,
+   "ew": 114.069,
+   "syn": 645,
+   "neff": 41,
+   "has14": true
+  },
+  {
+   "arm": "s46w3",
+   "size": 46,
+   "family": "L291",
+   "fixed": false,
+   "E_F": 12.163,
+   "Ectrl_F": 3.6918,
+   "Ediff_F": 8.4712,
+   "dgain": 0.000984281,
+   "ew": 113.458,
+   "syn": 631,
+   "neff": 40,
+   "has14": true
+  },
+  {
+   "arm": "r11k1",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 0.9899,
+   "Ectrl_F": 0.0314,
+   "Ediff_F": 0.9584,
+   "dgain": 0.000276715,
+   "ew": 27.663,
+   "syn": 170,
+   "neff": 10,
+   "has14": false
+  },
+  {
+   "arm": "r11k2",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -4.3409,
+   "Ectrl_F": -1.7801,
+   "Ediff_F": -2.5608,
+   "dgain": -0.000533566,
+   "ew": 25.459,
+   "syn": 116,
+   "neff": 10,
+   "has14": false
+  },
+  {
+   "arm": "r11k3",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -2.2232,
+   "Ectrl_F": 0.3143,
+   "Ediff_F": -2.5375,
+   "dgain": 0.000317305,
+   "ew": 27.278,
+   "syn": 152,
+   "neff": 11,
+   "has14": false
+  },
+  {
+   "arm": "r11k4",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -4.6883,
+   "Ectrl_F": -0.1692,
+   "Ediff_F": -4.5191,
+   "dgain": -1.78814e-05,
+   "ew": 24.635,
+   "syn": 114,
+   "neff": 10,
+   "has14": false
+  },
+  {
+   "arm": "r11k5",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 1.7374,
+   "Ectrl_F": -1.1062,
+   "Ediff_F": 2.8437,
+   "dgain": -0.00100413,
+   "ew": 29.102,
+   "syn": 176,
+   "neff": 9,
+   "has14": false
+  },
+  {
+   "arm": "r30k1",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 11.8994,
+   "Ectrl_F": 0.7386,
+   "Ediff_F": 11.1608,
+   "dgain": 0.000816211,
+   "ew": 76.717,
+   "syn": 441,
+   "neff": 26,
+   "has14": true
+  },
+  {
+   "arm": "r30k2",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 2.9093,
+   "Ectrl_F": 0.6436,
+   "Ediff_F": 2.2657,
+   "dgain": 0.000527265,
+   "ew": 74.343,
+   "syn": 426,
+   "neff": 26,
+   "has14": false
+  },
+  {
+   "arm": "r30k3",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 12.2156,
+   "Ectrl_F": 2.5454,
+   "Ediff_F": 9.6702,
+   "dgain": 0.00159009,
+   "ew": 70.226,
+   "syn": 336,
+   "neff": 27,
+   "has14": true
+  },
+  {
+   "arm": "r30k4",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -1.6241,
+   "Ectrl_F": 1.2378,
+   "Ediff_F": -2.8619,
+   "dgain": -0.000354037,
+   "ew": 73.566,
+   "syn": 393,
+   "neff": 27,
+   "has14": false
+  },
+  {
+   "arm": "r30k5",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -0.2346,
+   "Ectrl_F": -0.636,
+   "Ediff_F": 0.4013,
+   "dgain": -0.00026737,
+   "ew": 73.234,
+   "syn": 398,
+   "neff": 26,
+   "has14": false
+  },
+  {
+   "arm": "r46k1",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 3.8741,
+   "Ectrl_F": 0.7478,
+   "Ediff_F": 3.1263,
+   "dgain": -0.000354556,
+   "ew": 112.96,
+   "syn": 616,
+   "neff": 41,
+   "has14": true
+  },
+  {
+   "arm": "r46k2",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 1.9185,
+   "Ectrl_F": -1.0749,
+   "Ediff_F": 2.9935,
+   "dgain": -0.000229672,
+   "ew": 111.265,
+   "syn": 610,
+   "neff": 40,
+   "has14": true
+  },
+  {
+   "arm": "r46k3",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 8.6727,
+   "Ectrl_F": 2.3514,
+   "Ediff_F": 6.3213,
+   "dgain": 0.00056644,
+   "ew": 109.452,
+   "syn": 585,
+   "neff": 40,
+   "has14": true
+  },
+  {
+   "arm": "r46k4",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": -1.886,
+   "Ectrl_F": 0.3006,
+   "Ediff_F": -2.1866,
+   "dgain": -0.000469086,
+   "ew": 110.227,
+   "syn": 576,
+   "neff": 41,
+   "has14": false
+  },
+  {
+   "arm": "r46k5",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 4.7674,
+   "Ectrl_F": 1.6724,
+   "Ediff_F": 3.095,
+   "dgain": 0.000482472,
+   "ew": 108.481,
+   "syn": 568,
+   "neff": 40,
+   "has14": false
+  },
+  {
+   "arm": "rw11",
+   "size": 11,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 1.4209,
+   "Ectrl_F": 0.8126,
+   "Ediff_F": 0.6083,
+   "dgain": -0.000358239,
+   "ew": 38.47,
+   "syn": 359,
+   "neff": 8,
+   "has14": false
+  },
+  {
+   "arm": "rw30",
+   "size": 30,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 9.2637,
+   "Ectrl_F": 2.6574,
+   "Ediff_F": 6.6063,
+   "dgain": 6.02245e-06,
+   "ew": 92.043,
+   "syn": 668,
+   "neff": 26,
+   "has14": true
+  },
+  {
+   "arm": "rw46",
+   "size": 46,
+   "family": "L290",
+   "fixed": false,
+   "E_F": 10.1166,
+   "Ectrl_F": 1.3512,
+   "Ediff_F": 8.7654,
+   "dgain": 0.000188305,
+   "ew": 128.423,
+   "syn": 808,
+   "neff": 41,
+   "has14": true
+  },
+  {
+   "arm": "gc30f",
+   "size": 30,
+   "family": "L291",
+   "fixed": true,
+   "E_F": 7.3625,
+   "Ectrl_F": 1.6456,
+   "Ediff_F": 5.7168,
+   "dgain": 0.0,
+   "ew": 74.37,
+   "syn": 429,
+   "neff": 28,
+   "has14": true
+  },
+  {
+   "arm": "gh46f",
+   "size": 46,
+   "family": "L291",
+   "fixed": true,
+   "E_F": 5.8676,
+   "Ectrl_F": 1.8989,
+   "Ediff_F": 3.9687,
+   "dgain": 0.0,
+   "ew": 112.517,
+   "syn": 624,
+   "neff": 43,
+   "has14": true
+  }
+ ],
+ "provenance": {
+  "results_l291_sha256": "a8b80c85491417a1f8fbb099c1c8c11854a0ab7ec623b6726c41055c132ff0f7",
+  "results_l290_sha256": "83498d7c933414c7ee02f8ff088bcf62d59ec1bac16bc5ff5d274ff3a0628f5f",
+  "sets_sha256": "bf4cba21780991d030a9d01f9daaf3388130901c9cf4f9dd8dd832626085c0ed"
+ }
+}

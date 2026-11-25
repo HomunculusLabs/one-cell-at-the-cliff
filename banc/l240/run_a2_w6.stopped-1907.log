@@ -1,0 +1,33 @@
+/home/t3rpz/critters/peabrain/.venv/lib/python3.12/site-packages/torch/_utils.py:383: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  result = torch.sparse_compressed_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l240/edge_run_a2.py:306: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:916.)
+  W = torch.sparse_coo_tensor(
+/home/t3rpz/critters/peabrain-lab/banc/l240/edge_run_a2.py:1033: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  out.append(dict(target=int(g),csr_index=int(j),effective_weight=float(vb[j]),syn=int(w_syn[_m][0]),sign=float(np.sign(vb[j]))))
+[work6 19:00:17] graphs built 7s | K 77 n_cut 21,732 edges_cut 639,164
+[work6 19:00:17] worker 6: cutwA + ['e31', 'e32', 'e33', 'e34', 'e35', 'e36', 'e37', 'e40'] | bisected ['cutwA', 'e31', 'e32', 'e33', 'e34', 'e35', 'e36', 'e37', 'e40'] | fixed []
+[work6 19:00:37] cutwA bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work6 19:00:37] e31 bracket af(0.12)=0.09057 af(0.18)=0.11929 target 0.10906
+[work6 19:00:37] e32 bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work6 19:00:37] e33 bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work6 19:00:37] e34 bracket af(0.12)=0.09046 af(0.18)=0.12057 target 0.10906
+[work6 19:00:37] e35 bracket af(0.12)=0.09055 af(0.18)=0.11826 target 0.10906
+[work6 19:00:37] e36 bracket af(0.12)=0.09054 af(0.18)=0.12143 target 0.10906
+[work6 19:00:37] e37 bracket af(0.12)=0.09057 af(0.18)=0.12022 target 0.10906
+[work6 19:00:37] e40 bracket af(0.12)=0.09057 af(0.18)=0.12149 target 0.10906
+[work6 19:05:20] g_cutwA 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e31 0.1436581528186798 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e32 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e33 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e34 0.14360391139984136 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e35 0.14380396127700806 | af_final 0.109051 | |af-target| 5.54e-06
+[work6 19:05:20] g_e36 0.14367040157318117 | af_final 0.109051 | |af-target| 5.54e-06
+[work6 19:05:20] g_e37 0.14365819573402408 | af_final 0.109035 | |af-target| 2.08e-05
+[work6 19:05:20] g_e40 0.14365789890289304 | af_final 0.109051 | |af-target| 5.54e-06
+[work6 19:05:20] g_cutwA == stored EXACT (0.14365819573402408)
+[work6 19:05:20] bisects done 310s
+[work6 19:05:33] seed 801 done af {'cutwA': 0.1126004159450531} | 324s
+[work6 19:05:47] C0A-187a [('cutwA', 'cutwA')] x 22 keys + af x 2 seeds vs raw_l135: PASS (max 0.0e+00, 46 checks)
+[work6 19:05:47] seed 901 done af {'cutwA': 0.10938719660043716} | 337s
+[work6 19:06:01] C0A-187b ['cutwA'] x (22 keys + af + xmean + xwin) @ 3545 vs stored L175 raws: PASS (max 0.0e+00, 25 checks)
+[work6 19:06:01] seed 3545 done af {'cutwA': 0.10879044979810715} | 351s
